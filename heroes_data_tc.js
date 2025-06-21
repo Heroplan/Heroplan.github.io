@@ -43019,13 +43019,13 @@ window.allHeroes =
         "source": "超級元素",
         "Release date": "2025-06-07",
         "star": 5,
-        "power": 1207,
+        "power": 1202,
         "attack": 1359,
         "defense": 1091,
         "health": 2119,
         "effects": [
             "對目標造成貪婪，持續 4 回合。特殊技能的友善效果僅影響具有「貪婪」的角色。（貪婪會阻止同一隊伍中所有其他英雄獲得友善效果，包括所有增益、治療和成長效果）。",
-            "所有敵人在 4 回合內受到共計 976 點流血傷害。",
+            "所有敵人在 4 回合內受到共計 988 點流血傷害。",
             "對所有敵人造成 310% 傷害。"
         ],
         "passives": [
@@ -43552,9 +43552,9 @@ window.allHeroes =
             "在 3 個回合內使目標與附近敵人的最大生命值降低 450 點。對有生命加成的目標效果更大。最大生命值不得低於原生命值的 30%。任何生命值加成會造成額外降低每回合 150 點。"
         ],
         "passives": [
-            "施放特殊技能時的效果：此角色施放特殊技能時，有 40% 機率執行下列行動 '",
-            "* 對所有敵人造成 70% 傷害。' '",
-            "* 所有敵人獲得 -34% 攻擊，持續 3 回合。'"
+            "施放特殊技能時的效果：此角色施放特殊技能時，有 40% 機率執行下列行動：",
+            "* 對所有敵人造成 70% 傷害。",
+            "* 所有敵人獲得 -34% 攻擊，持續 3 回合。"
         ],
         "family": "sun",
         "image": "https://i.imgur.com/0Yedhet.jpg",
@@ -43585,9 +43585,9 @@ window.allHeroes =
             "在 3 個回合內使目標與附近敵人的最大生命值降低 600 點。對有生命加成的目標效果更大。最大生命值不得低於原生命值的 30%。任何生命值加成會造成額外降低每回合 200 點。"
         ],
         "passives": [
-            "施放特殊技能時的效果：此角色施放特殊技能時，有 40% 機率執行下列行動 '",
-            "* 對所有敵人造成 70% 傷害。' '",
-            "* 所有敵人獲得 -34% 攻擊，持續 3 回合。'",
+            "施放特殊技能時的效果：此角色施放特殊技能時，有 40% 機率執行下列行動：",
+            "* 對所有敵人造成 70% 傷害。",
+            "* 所有敵人獲得 -34% 攻擊，持續 3 回合。",
             "施放特殊技能時效果的額外機率：此角色施放特殊技能時，為該施放賦予額外效果的任意被動技能有 3 次機會發動。",
             "生命值加成法力特別技能：每當敵人施放可直接提升生命值的特殊技能時，此角色都會獲得 5% 法力。"
         ],
@@ -43908,6 +43908,44 @@ window.allHeroes =
         "originalIndex": 1325
     },
     {
+        "name": "傑昆 (Jequn) C1",
+        "fancy_name": "",
+        "AetherPower": "",
+        "color": "黃色",
+        "class": "盜賊",
+        "speed": "飛速",
+        "skill": "黃金神聖符號",
+        "types": [
+            "攻擊所有目標",
+            "元素"
+        ],
+        "source": "超級元素",
+        "Release date": "",
+        "star": 5,
+        "power": 1213,
+        "attack": 1213,
+        "defense": 1104,
+        "health": 2535,
+        "effects": [
+            "對所有敵人造成 210% 傷害。",
+            "所有暗黑系敵人獲得 -39% 精準度，持續 3 回合。（失手率也會套用在攻擊型特殊技能上）。",
+            "所有冰雪系敵人獲得 -39% 防禦，持續 3 回合。",
+            "所有自然系敵人獲得 -39% 法力產出，持續 3 回合。（僅影響從配對磚格產生的法力，或防禦隊伍在其回合結束時獲得的法力）。",
+            "所有烈火敵人獲得 -39% 攻擊力，持續 3 回合。"
+        ],
+        "passives": [
+            "部隊精通：",
+            "攻擊角色時的被動技能：此英雄的部隊可對更弱的元素造成額外元素傷害。",
+            "- 已造成額外元素傷害： +150%",
+            "防禦角色時的被動技能：此英雄會從較強元素部隊受到較少的元素傷害。",
+            "- 已受到元素傷害： -25%"
+        ],
+        "family": "superelemental",
+        "image": "https://imgur.com/bIp33Sf.jpg",
+        "costume_id": 1,
+        "originalIndex": 1326
+    },
+    {
         "name": "尤恩 (Joon)",
         "fancy_name": "太陽之焰",
         "AetherPower": "閃避",
@@ -43934,7 +43972,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/d5mevmf.jpg",
         "costume_id": 0,
-        "originalIndex": 1326
+        "originalIndex": 1327
     },
     {
         "name": "尤恩 (Joon) C1",
@@ -43963,7 +44001,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/YXbYHIl.jpg",
         "costume_id": 1,
-        "originalIndex": 1327
+        "originalIndex": 1328
     },
     {
         "name": "尤恩 (Joon) C2",
@@ -43994,7 +44032,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/rJxyTcK.jpg",
         "costume_id": 2,
-        "originalIndex": 1328
+        "originalIndex": 1329
     },
     {
         "name": "尤恩 (Joon) 卡通",
@@ -44026,7 +44064,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/6UDBHvu.jpg",
         "costume_id": 3,
-        "originalIndex": 1329
+        "originalIndex": 1330
     },
     {
         "name": "尤恩 (Joon) 玻璃",
@@ -44059,7 +44097,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://imgur.com/7d9tXzA.jpg",
         "costume_id": 4,
-        "originalIndex": 1330
+        "originalIndex": 1331
     },
     {
         "name": "賈夫 (Jove)",
@@ -44092,7 +44130,7 @@ window.allHeroes =
         "family": "maskedgod",
         "image": "https://i.imgur.com/YFCeTvj.jpg",
         "costume_id": 0,
-        "originalIndex": 1331
+        "originalIndex": 1332
     },
     {
         "name": "賈斯提斯 (Justice)",
@@ -44122,7 +44160,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/nIFbFrG.jpg",
         "costume_id": 0,
-        "originalIndex": 1332
+        "originalIndex": 1333
     },
     {
         "name": "賈斯提斯 (Justice) C1",
@@ -44152,7 +44190,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/KCL7Y0s.jpg",
         "costume_id": 1,
-        "originalIndex": 1333
+        "originalIndex": 1334
     },
     {
         "name": "賈斯提斯 (Justice) C2",
@@ -44182,7 +44220,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/feWdynO.jpg",
         "costume_id": 2,
-        "originalIndex": 1334
+        "originalIndex": 1335
     },
     {
         "name": "賈斯提斯 (Justice) 卡通",
@@ -44214,7 +44252,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/ChEEEeb.jpg",
         "costume_id": 3,
-        "originalIndex": 1335
+        "originalIndex": 1336
     },
     {
         "name": "卡菈 (Kara)",
@@ -44248,7 +44286,7 @@ window.allHeroes =
         "family": 2022,
         "image": "https://i.imgur.com/ltyTaFe.jpg",
         "costume_id": 0,
-        "originalIndex": 1336
+        "originalIndex": 1337
     },
     {
         "name": "庫列佛 (Kullervo)",
@@ -44281,7 +44319,7 @@ window.allHeroes =
         "family": "kalevala",
         "image": "https://i.imgur.com/tmvOfKK.jpg",
         "costume_id": 0,
-        "originalIndex": 1337
+        "originalIndex": 1338
     },
     {
         "name": "庫列佛 (Kullervo) C1",
@@ -44314,7 +44352,7 @@ window.allHeroes =
         "family": "kalevala",
         "image": "https://i.imgur.com/llU8XwL.jpg",
         "costume_id": 1,
-        "originalIndex": 1338
+        "originalIndex": 1339
     },
     {
         "name": "公相君 (Kushanku)",
@@ -44361,7 +44399,7 @@ window.allHeroes =
         "family": "ninja",
         "image": "https://i.imgur.com/4sSfY3A.jpg",
         "costume_id": 0,
-        "originalIndex": 1339
+        "originalIndex": 1340
     },
     {
         "name": "老虎 (Laohu)",
@@ -44392,7 +44430,7 @@ window.allHeroes =
         "family": "lunaryear",
         "image": "https://i.imgur.com/3mERqj0.jpg",
         "costume_id": 0,
-        "originalIndex": 1340
+        "originalIndex": 1341
     },
     {
         "name": "菈札拉 (Lazara)",
@@ -44429,7 +44467,7 @@ window.allHeroes =
         "family": "champions",
         "image": "https://i.imgur.com/mxOSRGe.jpg",
         "costume_id": 0,
-        "originalIndex": 1341
+        "originalIndex": 1342
     },
     {
         "name": "檸檬木 (Lemonwood)",
@@ -44463,7 +44501,7 @@ window.allHeroes =
         "family": "astralelves",
         "image": "https://i.imgur.com/P0rxyPZ.jpg",
         "costume_id": 0,
-        "originalIndex": 1342
+        "originalIndex": 1343
     },
     {
         "name": "萊昂尼達斯 (Leonidas)",
@@ -44494,7 +44532,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/SPyWzYD.jpg",
         "costume_id": 0,
-        "originalIndex": 1343
+        "originalIndex": 1344
     },
     {
         "name": "萊昂尼達斯 (Leonidas) C1",
@@ -44523,7 +44561,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/c7cvRg8.jpg",
         "costume_id": 1,
-        "originalIndex": 1344
+        "originalIndex": 1345
     },
     {
         "name": "萊昂尼達斯 (Leonidas) C2",
@@ -44554,7 +44592,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/6haP2Yz.jpg",
         "costume_id": 2,
-        "originalIndex": 1345
+        "originalIndex": 1346
     },
     {
         "name": "萊昂尼達斯 (Leonidas) 卡通",
@@ -44588,7 +44626,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/PKsAK4b.jpg",
         "costume_id": 3,
-        "originalIndex": 1346
+        "originalIndex": 1347
     },
     {
         "name": "萊昂尼達斯 (Leonidas) 玻璃",
@@ -44623,7 +44661,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/7lvHaTO.jpg",
         "costume_id": 4,
-        "originalIndex": 1347
+        "originalIndex": 1348
     },
     {
         "name": "莉維雅 (Livia)",
@@ -44659,7 +44697,7 @@ window.allHeroes =
         "family": "owl",
         "image": "https://i.imgur.com/JTBt0dY.jpg",
         "costume_id": 0,
-        "originalIndex": 1348
+        "originalIndex": 1349
     },
     {
         "name": "馬林 (Malin)",
@@ -44696,7 +44734,7 @@ window.allHeroes =
         "family": "plainshunter",
         "image": "https://i.imgur.com/7OmJaIC.jpg",
         "costume_id": 0,
-        "originalIndex": 1349
+        "originalIndex": 1350
     },
     {
         "name": "馬洛西 (Malosi)",
@@ -44728,7 +44766,7 @@ window.allHeroes =
         "family": 2020,
         "image": "https://i.imgur.com/ttNHqjc.jpg",
         "costume_id": 0,
-        "originalIndex": 1350
+        "originalIndex": 1351
     },
     {
         "name": "梅提妲 (Matilda)",
@@ -44763,7 +44801,7 @@ window.allHeroes =
         "family": "morlovia",
         "image": "https://i.imgur.com/Lb4Sdwp.jpg",
         "costume_id": 0,
-        "originalIndex": 1351
+        "originalIndex": 1352
     },
     {
         "name": "梅兒 (May)",
@@ -44798,7 +44836,7 @@ window.allHeroes =
         "family": 2025,
         "image": "https://imgur.com/KK6zHLN.jpg",
         "costume_id": 0,
-        "originalIndex": 1352
+        "originalIndex": 1353
     },
     {
         "name": "梅潔 (Meg Giry)",
@@ -44834,7 +44872,7 @@ window.allHeroes =
         "family": "opera",
         "image": "https://i.imgur.com/GJH1yAl.jpg",
         "costume_id": 0,
-        "originalIndex": 1353
+        "originalIndex": 1354
     },
     {
         "name": "樂音女神 (Melodymuse)",
@@ -44866,7 +44904,7 @@ window.allHeroes =
         "family": "astralelves",
         "image": "https://i.imgur.com/PSc9HJP.jpg",
         "costume_id": 0,
-        "originalIndex": 1354
+        "originalIndex": 1355
     },
     {
         "name": "梅雷桑赫 (Meresankh)",
@@ -44902,7 +44940,7 @@ window.allHeroes =
         "family": "sun",
         "image": "https://i.imgur.com/PIgKmeD.jpg",
         "costume_id": 0,
-        "originalIndex": 1355
+        "originalIndex": 1356
     },
     {
         "name": "梅雷桑赫 (Meresankh) C1",
@@ -44940,7 +44978,7 @@ window.allHeroes =
         "family": "sun",
         "image": "https://i.imgur.com/4IURwj4.jpg",
         "costume_id": 1,
-        "originalIndex": 1356
+        "originalIndex": 1357
     },
     {
         "name": "雲母 (Mica)",
@@ -44981,7 +45019,7 @@ window.allHeroes =
         "family": "ninja",
         "image": "https://i.imgur.com/T4WxYxG.jpg",
         "costume_id": 0,
-        "originalIndex": 1357
+        "originalIndex": 1358
     },
     {
         "name": "月鈴 (Moonbell)",
@@ -45015,7 +45053,7 @@ window.allHeroes =
         "family": "astralelves",
         "image": "https://i.imgur.com/EiBBCez.jpg",
         "costume_id": 0,
-        "originalIndex": 1358
+        "originalIndex": 1359
     },
     {
         "name": "墨特加 (Motega)",
@@ -45056,7 +45094,7 @@ window.allHeroes =
         "family": "magic",
         "image": "https://i.imgur.com/87toXMW.jpg",
         "costume_id": 0,
-        "originalIndex": 1359
+        "originalIndex": 1360
     },
     {
         "name": "武藏 (Musashi)",
@@ -45086,7 +45124,7 @@ window.allHeroes =
         "family": 2017,
         "image": "https://i.imgur.com/1PxVmlq.jpg",
         "costume_id": 0,
-        "originalIndex": 1360
+        "originalIndex": 1361
     },
     {
         "name": "武藏 (Musashi) C1",
@@ -45118,7 +45156,7 @@ window.allHeroes =
         "family": 2017,
         "image": "https://i.imgur.com/dt3i5jN.jpg",
         "costume_id": 1,
-        "originalIndex": 1361
+        "originalIndex": 1362
     },
     {
         "name": "涅伊特 (Neith)",
@@ -45152,7 +45190,7 @@ window.allHeroes =
         "family": 2019,
         "image": "https://i.imgur.com/5p5UjK8.jpg",
         "costume_id": 0,
-        "originalIndex": 1362
+        "originalIndex": 1363
     },
     {
         "name": "涅墨西斯 (Nemesis)",
@@ -45192,7 +45230,7 @@ window.allHeroes =
         "family": "styx",
         "image": "https://i.imgur.com/erwVVF0.jpg",
         "costume_id": 0,
-        "originalIndex": 1363
+        "originalIndex": 1364
     },
     {
         "name": "尼斯蓋希特 (Nithgaest)",
@@ -45227,7 +45265,7 @@ window.allHeroes =
         "family": "beowulf",
         "image": "https://imgur.com/25R91G2.jpg",
         "costume_id": 0,
-        "originalIndex": 1364
+        "originalIndex": 1365
     },
     {
         "name": "諾恩 (Norns)",
@@ -45255,7 +45293,7 @@ window.allHeroes =
         "family": "vanaheim",
         "image": "https://i.imgur.com/evikfGP.jpg",
         "costume_id": 0,
-        "originalIndex": 1365
+        "originalIndex": 1366
     },
     {
         "name": "諾恩 (Norns) C1",
@@ -45283,7 +45321,7 @@ window.allHeroes =
         "family": "vanaheim",
         "image": "https://i.imgur.com/aH5vllh.jpg",
         "costume_id": 1,
-        "originalIndex": 1366
+        "originalIndex": 1367
     },
     {
         "name": "歐丁 (Odin)",
@@ -45313,7 +45351,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/WpdZnYI.jpg",
         "costume_id": 0,
-        "originalIndex": 1367
+        "originalIndex": 1368
     },
     {
         "name": "歐丁 (Odin) C1",
@@ -45343,7 +45381,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/guLxDJt.jpg",
         "costume_id": 1,
-        "originalIndex": 1368
+        "originalIndex": 1369
     },
     {
         "name": "奧基瑪 (Ogima)",
@@ -45377,7 +45415,7 @@ window.allHeroes =
         "family": "bard",
         "image": "https://i.imgur.com/8WZ5oVt.jpg",
         "costume_id": 0,
-        "originalIndex": 1369
+        "originalIndex": 1370
     },
     {
         "name": "奧納特而 (Onatel)",
@@ -45409,7 +45447,7 @@ window.allHeroes =
         "family": 2019,
         "image": "https://i.imgur.com/wCLflfr.jpg",
         "costume_id": 0,
-        "originalIndex": 1370
+        "originalIndex": 1371
     },
     {
         "name": "帕派羅斯 (Papyros)",
@@ -45442,7 +45480,7 @@ window.allHeroes =
         "family": "moon",
         "image": "https://i.imgur.com/cV84mq0.jpg",
         "costume_id": 0,
-        "originalIndex": 1371
+        "originalIndex": 1372
     },
     {
         "name": "帕派羅斯 (Papyros) C1",
@@ -45478,7 +45516,7 @@ window.allHeroes =
         "family": "moon",
         "image": "https://i.imgur.com/jWPUwhw.jpg",
         "costume_id": 1,
-        "originalIndex": 1372
+        "originalIndex": 1373
     },
     {
         "name": "佩扭莉特 (Penolite)",
@@ -45510,7 +45548,7 @@ window.allHeroes =
         "family": "gargoyle",
         "image": "https://i.imgur.com/ifFiCU7.jpg",
         "costume_id": 0,
-        "originalIndex": 1373
+        "originalIndex": 1374
     },
     {
         "name": "佩爾薩 (Persa)",
@@ -45552,7 +45590,7 @@ window.allHeroes =
         "family": "nightmaresofatlantis",
         "image": "https://i.imgur.com/XWgWbVt.jpg",
         "costume_id": 0,
-        "originalIndex": 1374
+        "originalIndex": 1375
     },
     {
         "name": "佩爾薩 (Persa) C1",
@@ -45595,7 +45633,7 @@ window.allHeroes =
         "family": "nightmaresofatlantis",
         "image": "https://i.imgur.com/nKfadia.jpg",
         "costume_id": 1,
-        "originalIndex": 1375
+        "originalIndex": 1376
     },
     {
         "name": "柏提南克斯 (Pertinax)",
@@ -45629,7 +45667,7 @@ window.allHeroes =
         "family": "owl",
         "image": "https://i.imgur.com/LyzgS9S.jpg",
         "costume_id": 0,
-        "originalIndex": 1376
+        "originalIndex": 1377
     },
     {
         "name": "菲洛梅娜 (Philomena)",
@@ -45663,7 +45701,7 @@ window.allHeroes =
         "family": "woodlandfaun",
         "image": "https://imgur.com/zZJxSMo.jpg",
         "costume_id": 0,
-        "originalIndex": 1377
+        "originalIndex": 1378
     },
     {
         "name": "波塞冬 (Poseidon)",
@@ -45693,7 +45731,7 @@ window.allHeroes =
         "family": "atlantis",
         "image": "https://i.imgur.com/4yAjxl7.jpg",
         "costume_id": 0,
-        "originalIndex": 1378
+        "originalIndex": 1379
     },
     {
         "name": "波塞冬 (Poseidon) C1",
@@ -45722,7 +45760,7 @@ window.allHeroes =
         "family": "atlantis",
         "image": "https://i.imgur.com/jU6Z8JO.jpg",
         "costume_id": 1,
-        "originalIndex": 1379
+        "originalIndex": 1380
     },
     {
         "name": "莉登布洛克教授 (Prof. Lidenbrock)",
@@ -45755,7 +45793,7 @@ window.allHeroes =
         "family": "underwild",
         "image": "https://i.imgur.com/1q7ZFV3.jpg",
         "costume_id": 0,
-        "originalIndex": 1380
+        "originalIndex": 1381
     },
     {
         "name": "莉登布洛克教授 (Prof. Lidenbrock) C1",
@@ -45789,7 +45827,7 @@ window.allHeroes =
         "family": "underwild",
         "image": "https://i.imgur.com/CwQ3ejX.jpg",
         "costume_id": 1,
-        "originalIndex": 1381
+        "originalIndex": 1382
     },
     {
         "name": "國王皇后 (Queen Guowang)",
@@ -45818,7 +45856,7 @@ window.allHeroes =
         "family": "journey",
         "image": "https://i.imgur.com/CNKl3X2.jpg",
         "costume_id": 0,
-        "originalIndex": 1382
+        "originalIndex": 1383
     },
     {
         "name": "拉娜 (Rana)",
@@ -45851,7 +45889,7 @@ window.allHeroes =
         "family": "sand",
         "image": "https://i.imgur.com/XCRwmmP.jpg",
         "costume_id": 0,
-        "originalIndex": 1383
+        "originalIndex": 1384
     },
     {
         "name": "拉娜 (Rana) C1",
@@ -45884,7 +45922,7 @@ window.allHeroes =
         "family": "sand",
         "image": "https://i.imgur.com/ETB8w9H.jpg",
         "costume_id": 1,
-        "originalIndex": 1384
+        "originalIndex": 1385
     },
     {
         "name": "蘭威爾 (Ranvir)",
@@ -45916,7 +45954,7 @@ window.allHeroes =
         "family": 2019,
         "image": "https://i.imgur.com/pCzfhdF.jpg",
         "costume_id": 0,
-        "originalIndex": 1385
+        "originalIndex": 1386
     },
     {
         "name": "里斯 (Rhys)",
@@ -45951,7 +45989,7 @@ window.allHeroes =
         "family": "bard",
         "image": "https://i.imgur.com/CuNew0r.jpg",
         "costume_id": 0,
-        "originalIndex": 1386
+        "originalIndex": 1387
     },
     {
         "name": "洛克 (Roc)",
@@ -45982,7 +46020,7 @@ window.allHeroes =
         "family": "sand",
         "image": "https://i.imgur.com/jRrOk7n.jpg",
         "costume_id": 0,
-        "originalIndex": 1387
+        "originalIndex": 1388
     },
     {
         "name": "洛克 (Roc) C1",
@@ -46013,7 +46051,7 @@ window.allHeroes =
         "family": "sand",
         "image": "https://i.imgur.com/wRsoDQK.jpg",
         "costume_id": 1,
-        "originalIndex": 1388
+        "originalIndex": 1389
     },
     {
         "name": "羅莎琳德 (Rosalind)",
@@ -46048,7 +46086,7 @@ window.allHeroes =
         "family": "garrisonguard",
         "image": "https://i.imgur.com/founMKj.jpg",
         "costume_id": 0,
-        "originalIndex": 1389
+        "originalIndex": 1390
     },
     {
         "name": "阮小七 (Ruan Xiaoqi)",
@@ -46088,7 +46126,7 @@ window.allHeroes =
         "family": "outlaws",
         "image": "https://imgur.com/YX2qCp0.jpg",
         "costume_id": 0,
-        "originalIndex": 1390
+        "originalIndex": 1391
     },
     {
         "name": "賽妮絲 (Salniss)",
@@ -46125,7 +46163,7 @@ window.allHeroes =
         "family": "astraldwarfs",
         "image": "https://i.imgur.com/iWjHJHA.jpg",
         "costume_id": 0,
-        "originalIndex": 1391
+        "originalIndex": 1392
     },
     {
         "name": "聖提皮蒙特 (Satinpimenter)",
@@ -46160,7 +46198,7 @@ window.allHeroes =
         "family": "moth",
         "image": "https://i.imgur.com/S7h6aSM.jpg",
         "costume_id": 0,
-        "originalIndex": 1392
+        "originalIndex": 1393
     },
     {
         "name": "捲軸怪 (Scrollbeast)",
@@ -46195,7 +46233,7 @@ window.allHeroes =
         "family": "goblin",
         "image": "https://i.imgur.com/oI9QMY8.jpg",
         "costume_id": 0,
-        "originalIndex": 1393
+        "originalIndex": 1394
     },
     {
         "name": "薩爾 (Shaal)",
@@ -46232,7 +46270,7 @@ window.allHeroes =
         "family": "construct",
         "image": "https://i.imgur.com/elVlVhm.jpg",
         "costume_id": 0,
-        "originalIndex": 1394
+        "originalIndex": 1395
     },
     {
         "name": "微光鱗片 (Shimmerscale)",
@@ -46265,7 +46303,7 @@ window.allHeroes =
         "family": "garrisonguard",
         "image": "https://i.imgur.com/5LBrUnk.jpg",
         "costume_id": 0,
-        "originalIndex": 1395
+        "originalIndex": 1396
     },
     {
         "name": "希弗 (Sif)",
@@ -46295,7 +46333,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/IEuL57g.jpg",
         "costume_id": 0,
-        "originalIndex": 1396
+        "originalIndex": 1397
     },
     {
         "name": "希弗 (Sif) C1",
@@ -46326,7 +46364,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/L0IBEq2.jpg",
         "costume_id": 1,
-        "originalIndex": 1397
+        "originalIndex": 1398
     },
     {
         "name": "銀爪 (Silverpaw)",
@@ -46359,7 +46397,7 @@ window.allHeroes =
         "family": "fox",
         "image": "https://i.imgur.com/Cj9sBht.jpg",
         "costume_id": 0,
-        "originalIndex": 1398
+        "originalIndex": 1399
     },
     {
         "name": "盧斯特力爵士 (Sir Roostley)",
@@ -46389,7 +46427,7 @@ window.allHeroes =
         "family": "springvale",
         "image": "https://i.imgur.com/YbdZndT.jpg",
         "costume_id": 0,
-        "originalIndex": 1399
+        "originalIndex": 1400
     },
     {
         "name": "斯拉吉斯 (Sludgus)",
@@ -46424,7 +46462,7 @@ window.allHeroes =
         "family": "slime",
         "image": "https://i.imgur.com/IpdLyXH.jpg",
         "costume_id": 0,
-        "originalIndex": 1400
+        "originalIndex": 1401
     },
     {
         "name": "唐三藏 (Tang Sanzang)",
@@ -46458,7 +46496,7 @@ window.allHeroes =
         "family": "kingdom",
         "image": "https://i.imgur.com/y2EYio1.jpg",
         "costume_id": 0,
-        "originalIndex": 1401
+        "originalIndex": 1402
     },
     {
         "name": "索爾 (Thor)",
@@ -46495,7 +46533,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/Cls9o26.jpg",
         "costume_id": 0,
-        "originalIndex": 1402
+        "originalIndex": 1403
     },
     {
         "name": "索爾 (Thor) C1",
@@ -46532,7 +46570,7 @@ window.allHeroes =
         "family": "midgard",
         "image": "https://i.imgur.com/LYyDsUh.jpg",
         "costume_id": 1,
-        "originalIndex": 1403
+        "originalIndex": 1404
     },
     {
         "name": "雷掌 (Thunderclap)",
@@ -46568,7 +46606,7 @@ window.allHeroes =
         "family": "junglehunter",
         "image": "https://i.imgur.com/8fPiMj3.jpg",
         "costume_id": 0,
-        "originalIndex": 1404
+        "originalIndex": 1405
     },
     {
         "name": "蘇拉 (Thura)",
@@ -46603,7 +46641,7 @@ window.allHeroes =
         "family": "plainshunter",
         "image": "https://i.imgur.com/3kaZWy1.jpg",
         "costume_id": 0,
-        "originalIndex": 1405
+        "originalIndex": 1406
     },
     {
         "name": "黃玉 (Topaz)",
@@ -46644,7 +46682,7 @@ window.allHeroes =
         "family": "ninja",
         "image": "https://i.imgur.com/yKvm70P.jpg",
         "costume_id": 0,
-        "originalIndex": 1406
+        "originalIndex": 1407
     },
     {
         "name": "烏賴烏斯 (Uraeus)",
@@ -46680,7 +46718,7 @@ window.allHeroes =
         "family": 2021,
         "image": "https://i.imgur.com/1T6P7Be.jpg",
         "costume_id": 0,
-        "originalIndex": 1407
+        "originalIndex": 1408
     },
     {
         "name": "梵莎麗 (Vaishali)",
@@ -46723,7 +46761,7 @@ window.allHeroes =
         "family": "magic",
         "image": "https://i.imgur.com/Ssu3ay2.jpg",
         "costume_id": 0,
-        "originalIndex": 1408
+        "originalIndex": 1409
     },
     {
         "name": "薇薇卡 (Vivica)",
@@ -46754,7 +46792,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/aHsNbej.jpg",
         "costume_id": 0,
-        "originalIndex": 1409
+        "originalIndex": 1410
     },
     {
         "name": "薇薇卡 (Vivica) C1",
@@ -46785,7 +46823,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/pm7wcbP.jpg",
         "costume_id": 1,
-        "originalIndex": 1410
+        "originalIndex": 1411
     },
     {
         "name": "薇薇卡 (Vivica) C2",
@@ -46816,7 +46854,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/J8lGs8A.jpg",
         "costume_id": 2,
-        "originalIndex": 1411
+        "originalIndex": 1412
     },
     {
         "name": "薇薇卡 (Vivica) 卡通",
@@ -46849,7 +46887,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/zJxvLuN.jpg",
         "costume_id": 3,
-        "originalIndex": 1412
+        "originalIndex": 1413
     },
     {
         "name": "薇薇卡 (Vivica) 玻璃",
@@ -46884,7 +46922,7 @@ window.allHeroes =
         "family": "classic",
         "image": "https://i.imgur.com/Vcxpsu2.jpg",
         "costume_id": 4,
-        "originalIndex": 1413
+        "originalIndex": 1414
     },
     {
         "name": "韋恩 (Wayne)",
@@ -46915,7 +46953,7 @@ window.allHeroes =
         "family": "morlovia",
         "image": "https://i.imgur.com/ogAtunM.jpg",
         "costume_id": 0,
-        "originalIndex": 1414
+        "originalIndex": 1415
     },
     {
         "name": "威西亞 (Wealhtheow)",
@@ -46953,7 +46991,7 @@ window.allHeroes =
         "family": "beowulf",
         "image": "https://i.imgur.com/yG43ChX.jpg",
         "costume_id": 0,
-        "originalIndex": 1415
+        "originalIndex": 1416
     },
     {
         "name": "白兔 (White Rabbit)",
@@ -46982,7 +47020,7 @@ window.allHeroes =
         "family": "wonderland",
         "image": "https://i.imgur.com/00qNGOk.jpg",
         "costume_id": 0,
-        "originalIndex": 1416
+        "originalIndex": 1417
     },
     {
         "name": "白兔 (White Rabbit) C1",
@@ -47013,7 +47051,7 @@ window.allHeroes =
         "family": "wonderland",
         "image": "https://i.imgur.com/qj3SAsZ.jpg",
         "costume_id": 1,
-        "originalIndex": 1417
+        "originalIndex": 1418
     },
     {
         "name": "葳若 (Willow)",
@@ -47053,7 +47091,7 @@ window.allHeroes =
         "family": "magic",
         "image": "https://i.imgur.com/Njfyzmw.jpg",
         "costume_id": 0,
-        "originalIndex": 1418
+        "originalIndex": 1419
     },
     {
         "name": "溫妮 (Winnie)",
@@ -47088,7 +47126,7 @@ window.allHeroes =
         "family": "stag",
         "image": "https://i.imgur.com/Dx6MykQ.jpg",
         "costume_id": 0,
-        "originalIndex": 1419
+        "originalIndex": 1420
     },
     {
         "name": "沃夫崗 (Wolfgang)",
@@ -47119,7 +47157,7 @@ window.allHeroes =
         "family": "wolf",
         "image": "https://i.imgur.com/8Qu4qUF.jpg",
         "costume_id": 0,
-        "originalIndex": 1420
+        "originalIndex": 1421
     },
     {
         "name": "沃夫崗 (Wolfgang) C1",
@@ -47154,7 +47192,7 @@ window.allHeroes =
         "family": "wolf",
         "image": "https://i.imgur.com/2DLIDng.jpg",
         "costume_id": 1,
-        "originalIndex": 1421
+        "originalIndex": 1422
     },
     {
         "name": "沃夫斯坦 (Wulfstan)",
@@ -47186,7 +47224,7 @@ window.allHeroes =
         "family": "cultist",
         "image": "https://i.imgur.com/EHlubEr.jpg",
         "costume_id": 0,
-        "originalIndex": 1422
+        "originalIndex": 1423
     },
     {
         "name": "艾薩維爾斯 (Xavier)",
@@ -47223,7 +47261,7 @@ window.allHeroes =
         "family": "superelemental",
         "image": "https://i.imgur.com/DZtGVoI.jpg",
         "costume_id": 0,
-        "originalIndex": 1423
+        "originalIndex": 1424
     },
     {
         "name": "蘭卓莉雅 (Zandria)",
@@ -47260,7 +47298,7 @@ window.allHeroes =
         "family": "superelemental",
         "image": "https://i.imgur.com/h5xLq71.jpg",
         "costume_id": 0,
-        "originalIndex": 1424
+        "originalIndex": 1425
     },
     {
         "name": "薩迦 (Zazha)",
@@ -47297,7 +47335,7 @@ window.allHeroes =
         "family": "magiccarpet",
         "image": "https://imgur.com/da8x4gT.jpg",
         "costume_id": 0,
-        "originalIndex": 1425
+        "originalIndex": 1426
     },
     {
         "name": "瑟肯納 (Zekena)",
@@ -47330,7 +47368,7 @@ window.allHeroes =
         "family": "underwild",
         "image": "https://i.imgur.com/hsqxizP.jpg",
         "costume_id": 0,
-        "originalIndex": 1426
+        "originalIndex": 1427
     },
     {
         "name": "瑟肯納 (Zekena) C1",
@@ -47363,7 +47401,7 @@ window.allHeroes =
         "family": "underwild",
         "image": "https://i.imgur.com/KswtgYH.jpg",
         "costume_id": 1,
-        "originalIndex": 1427
+        "originalIndex": 1428
     },
     {
         "name": "扎努克瓦 (Zenuk'wa)",
@@ -47396,7 +47434,7 @@ window.allHeroes =
         "family": "beachparty",
         "image": "https://i.imgur.com/wpHKBfv.jpg",
         "costume_id": 0,
-        "originalIndex": 1428
+        "originalIndex": 1429
     },
     {
         "name": "張飛 (Zhang Fei)",
@@ -47425,7 +47463,7 @@ window.allHeroes =
         "family": "kingdom",
         "image": "https://i.imgur.com/stJf0Qg.jpg",
         "costume_id": 0,
-        "originalIndex": 1429
+        "originalIndex": 1430
     },
     {
         "name": "張飛 (Zhang Fei) C1",
@@ -47461,7 +47499,7 @@ window.allHeroes =
         "family": "kingdom",
         "image": "https://i.imgur.com/LeENxWF.jpg",
         "costume_id": 1,
-        "originalIndex": 1430
+        "originalIndex": 1431
     },
     {
         "name": "諸葛亮 (Zhuge Liang)",
@@ -47492,7 +47530,7 @@ window.allHeroes =
         "family": "kingdom",
         "image": "https://i.imgur.com/jjSBiGT.jpg",
         "costume_id": 0,
-        "originalIndex": 1431
+        "originalIndex": 1432
     },
     {
         "name": "諸葛亮 (Zhuge Liang) C1",
@@ -47528,7 +47566,7 @@ window.allHeroes =
         "family": "kingdom",
         "image": "https://i.imgur.com/zdjoPv7.jpg",
         "costume_id": 1,
-        "originalIndex": 1432
+        "originalIndex": 1433
     },
     {
         "name": "佐拉 (Zora)",
@@ -47563,6 +47601,6 @@ window.allHeroes =
         "family": 2024,
         "image": "https://i.imgur.com/wf4Kvkm.jpg",
         "costume_id": 0,
-        "originalIndex": 1433
+        "originalIndex": 1434
     }
 ];

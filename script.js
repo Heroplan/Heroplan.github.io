@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
             resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, modalHeroDetails: "ℹ️ 英雄详情",
             closeBtnTitle: "关闭", modalOrigin: "起源", modalCoreStats: "📊 核心属性", modalSkillDetails: "📖 技能详情",
-            modalSkillName: "📄 名称:", modalSpeed: "⚡ 法速:", modalSkillType: "🏷️ 技能类型:",
+            modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭详情",
         },
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
             resultsCountText: (count) => `篩選清單中有 ${count} 位英雄`, modalHeroDetails: "ℹ️ 英雄詳情",
             closeBtnTitle: "關閉", modalOrigin: "起源", modalCoreStats: "📊 核心屬性", modalSkillDetails: "📖 技能詳情",
-            modalSkillName: "📄 名稱:", modalSpeed: "⚡ 法速:", modalSkillType: "🏷️ 技能類型:",
+            modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉詳情",
         }

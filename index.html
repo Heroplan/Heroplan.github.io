@@ -2,15 +2,28 @@
 <html lang="zh-CN">
 
 <head>
+    <script>
+        (function () {
+            try {
+                const themeCookie = document.cookie.match(/;?\s*theme=([^;]*)/);
+                let theme = themeCookie ? themeCookie[1] : null;
+                if (!theme) {
+                    const hour = new Date().getHours();
+                    theme = (hour >= 20 || hour < 8) ? 'dark' : 'light';
+                }
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
-        gtag('config', 'G-LPVF61FMD9', {
-            cookie_flags: 'SameSite=None;Secure'
-        });
+        gtag('config', 'G-LPVF61FMD9', { cookie_flags: 'SameSite=None;Secure' });
     </script>
     <script>
         var _hmt = _hmt || [];
@@ -23,38 +36,59 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heroplan 浏览器</title>
-    <link rel="stylesheet" href="style.css">
+    <title data-lang-key="pageTitle">Heroplan 浏览器</title>
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="js-loading">
+
+    <div id="page-loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
     <div class="main-container">
         <header>
             <div class="header-top-row">
-                <h1>Heroplan浏览器</h1>
-                <button id="theme-toggle-btn" class="theme-toggle-btn" title="切换日间/夜间模式">
-                    <span class="sun-icon">☀️</span>
-                    <span class="moon-icon">🌙</span>
-                </button>
+                <h1 data-lang-key="headerTitle">Heroplan浏览器</h1>
+                <div class="header-buttons">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn" title="切换日间/夜间模式">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                    <button id="lang-toggle-btn" class="lang-toggle-btn" title="切换语言">
+                        <span class="lang-cn">简</span>
+                        <span class="lang-tc">繁</span>
+                    </button>
+                </div>
             </div>
             <div class="header-info-container">
                 <div class="header-info-content">
-                    <span>由 <strong style="color: var(--md-sys-color-primary);">Heroplan.io</strong> 驱动</span>
-                    <span>独家赞助 <strong style="color: var(--md-sys-color-error);">SilverMan</strong></span>
-                    <span>译者制作 <strong style="color: var(--md-sys-color-tertiary);">Juno</strong></span>
+                    <span><span data-lang-key="poweredBy">由</span> <strong
+                            style="color: var(--md-sys-color-primary);">Heroplan.io</strong> <span
+                            data-lang-key="driven">驱动</span></span>
+                    <span><span data-lang-key="sponsoredBy">独家赞助</span> <strong
+                            style="color: var(--md-sys-color-error);">SilverMan</strong></span>
+                    <span><span data-lang-key="translatedBy">译者制作</span> <strong
+                            style="color: var(--md-sys-color-tertiary);">Juno</strong></span>
                 </div>
+                <span data-lang-key="footerInfo">英雄数据持续更新 | 简繁中文版</span>
                 <div class="header-info-footer">
-                    英雄数据持续更新 | 简体中文版
                 </div>
             </div>
             <p id="last-updated"></p>
         </header>
 
-        <div class="results-header">
-            <h3 id="results-count"></h3>
-        </div>
-        <div id="results-table-container">
+        <div id="results-wrapper">
+            <div class="results-header">
+                <h3 id="results-count"></h3>
+            </div>
+            <table class="manual-table">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -67,84 +101,82 @@
     <div id="filters-modal" class="hidden">
         <div id="filters-modal-content">
             <div class="filters-modal-header">
-                <h2>筛选英雄</h2>
+                <h2 data-lang-key="filterHeroes">筛选英雄</h2>
                 <button id="close-filters-modal-btn" class="close-btn" title="关闭">❌</button>
             </div>
-
             <div class="filters-grid">
                 <div class="filter-card">
                     <div class="filter-header" id="standard-filters-header">
-                        <h2>标准筛选</h2>
+                        <h2 data-lang-key="standardFilters">标准筛选</h2>
                         <button class="toggle-button" data-target="standard-filters-content">▼</button>
                     </div>
                     <div id="standard-filters-content" class="filter-content collapsed">
-                        <div class="filter-item"><label for="name-input">名称:</label><input type="text" id="name-input"
+                        <div class="filter-item"><label for="name-input" data-lang-key="nameLabel">名称:</label><input
+                                type="text" id="name-input" data-lang-key-placeholder="namePlaceholder"
                                 placeholder="输入英雄名称"></div>
-                        <div class="filter-item"><label for="star-select">星级:</label><select id="star-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="color-select">颜色:</label><select
-                                id="color-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="speed-select">法速:</label><select
-                                id="speed-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="class-select">职业:</label><select
-                                id="class-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="family-select">家族:</label><select
-                                id="family-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="source-select">起源:</label><select
-                                id="source-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="aetherpower-select">以太力量:</label><select
-                                id="aetherpower-select"></select>
+                        <div class="filter-item"><label for="star-select" data-lang-key="starLabel">星级:</label><select
+                                id="star-select"></select></div>
+                        <div class="filter-item"><label for="color-select" data-lang-key="colorLabel">颜色:</label><select
+                                id="color-select"></select></div>
+                        <div class="filter-item"><label for="speed-select" data-lang-key="speedLabel">法速:</label><select
+                                id="speed-select"></select></div>
+                        <div class="filter-item"><label for="class-select" data-lang-key="classLabel">职业:</label><select
+                                id="class-select"></select></div>
+                        <div class="filter-item"><label for="family-select"
+                                data-lang-key="familyLabel">家族:</label><select id="family-select"></select></div>
+                        <div class="filter-item"><label for="source-select"
+                                data-lang-key="sourceLabel">起源:</label><select id="source-select"></select></div>
+                        <div class="filter-item"><label for="aetherpower-select"
+                                data-lang-key="aetherPowerLabel">以太力量:</label><select id="aetherpower-select"></select>
                         </div>
                     </div>
                 </div>
                 <div class="filter-card">
                     <div class="filter-header" id="advanced-filters-header">
-                        <h2>高级筛选</h2>
+                        <h2 data-lang-key="advancedFilters">高级筛选</h2>
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
                     <div id="advanced-filters-content" class="filter-content collapsed">
-                        <div class="filter-item"><label for="type-input">特殊技能类别:</label><input type="text"
-                                id="type-input" placeholder="例如：增益,异常,治疗"></div>
-                        <div class="filter-item"><label for="effects-input">特殊技能文本:</label><input type="text"
-                                id="effects-input" placeholder=""></div>
-                        <div class="filter-item"><label for="passives-input">被动技能文本:</label><input type="text"
-                                id="passives-input" placeholder=""></div>
-
+                        <div class="filter-item"><label for="type-input"
+                                data-lang-key="skillTypeLabel">特殊技能类别:</label><input type="text" id="type-input"
+                                data-lang-key-placeholder="skillTypePlaceholder" placeholder="例如：增益,异常,治疗"></div>
+                        <div class="filter-item"><label for="effects-input"
+                                data-lang-key="skillTextLabel">特殊技能文本:</label><input type="text" id="effects-input"
+                                placeholder=""></div>
+                        <div class="filter-item"><label for="passives-input"
+                                data-lang-key="passiveSkillLabel">被动技能文本:</label><input type="text" id="passives-input"
+                                placeholder=""></div>
                         <div class="filter-item">
                             <label for="release-date-type"
-                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;">筛选:</label>
+                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;"
+                                data-lang-key="filterBy">筛选:</label>
                             <select id="release-date-type" style="flex-grow: 0; width: 90px; margin-right: 15px;">
-                                <option value="all">全部</option>
-                                <option value="hero">英雄</option>
-                                <option value="skin">皮肤</option>
+                                <option value="all" data-lang-key="all">全部</option>
+                                <option value="hero" data-lang-key="hero">英雄</option>
+                                <option value="skin" data-lang-key="skin">服装</option>
                             </select>
                             <label for="release-date-input"
-                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;">距离发布日期大于:</label>
-                            <input type="number" id="release-date-input" placeholder="1年半548 2年730"
-                                style="flex-grow: 1;">
+                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;"
+                                data-lang-key="daysSinceRelease">距离发布日期天数大于:</label>
+                            <input type="number" id="release-date-input" data-lang-key-placeholder="daysPlaceholder"
+                                placeholder="1年半548 2年730" style="flex-grow: 1;">
                             <span style="margin-left: 5px;"></span>
                         </div>
-
                         <div class="stat-filter-grid">
                             <div class="filter-item-compact">
-                                <label for="power-input">最低战力</label>
+                                <label for="power-input" data-lang-key="minPower">最低战力</label>
                                 <input type="number" id="power-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="attack-input">最低攻击</label>
+                                <label for="attack-input" data-lang-key="minAttack">最低攻击</label>
                                 <input type="number" id="attack-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="defense-input">最低防御</label>
+                                <label for="defense-input" data-lang-key="minDefense">最低防御</label>
                                 <input type="number" id="defense-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="health-input">最低生命</label>
+                                <label for="health-input" data-lang-key="minHealth">最低生命</label>
                                 <input type="number" id="health-input" min="0" value="">
                             </div>
                         </div>
@@ -152,22 +184,23 @@
                 </div>
             </div>
             <div class="filter-actions">
-                <button id="reset-filters-btn" class="reset-button">重置筛选</button>
+                <button id="reset-filters-btn" class="reset-button" data-lang-key="resetFilters">重置筛选</button>
             </div>
         </div>
     </div>
 
-    <button id="open-filters-btn" title="打开筛选">🔍</button>
+    <div class="floating-action-buttons">
+        <button id="open-filters-btn" title="打开筛选">🔍</button>
+    </div>
 
-    <script src="./heroes_data.js"></script>
-    <script src="./families_bonus.js"></script>
-    <script src="./family_values.js"></script>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </body>
 <footer>
     <div>
-        <p>《帝国与谜题》<span style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span> 数据查询平台</p>
-        <p class="footer-credit">© 2025 heroplan.github.io | 非官方资料站</p>
+        <p><span data-lang-key="footerGameName">《帝国与谜题》</span><span
+                style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span> <span
+                data-lang-key="footerPlatform">英雄数据查询平台</span></p>
+        <p class="footer-credit" data-lang-key="footerCredit">© 2025 heroplan.github.io | 非官方资料站</p>
     </div>
 </footer>
 

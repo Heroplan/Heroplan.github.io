@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closeBtnTitle: "关闭", modalOrigin: "起源", modalCoreStats: "📊 核心属性", modalSkillDetails: "📖 技能详情",
             modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
-            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭详情",
+            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭",
         },
         tc: {
             pageTitle: "Heroplan 瀏覽器", headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closeBtnTitle: "關閉", modalOrigin: "起源", modalCoreStats: "📊 核心屬性", modalSkillDetails: "📖 技能詳情",
             modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
-            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉詳情",
+            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
         }
     };
 
@@ -145,13 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 数据加载方式更新 ---
     async function loadData(lang) {
         try {
-            const response = await fetch(`./data_${lang}.json`);
+            const response = await fetch(`./data_${lang}.json?v=${new Date().getTime()}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
 
-            // 从单个JSON对象分配数据到全局变量
             allHeroes = data.allHeroes;
             families_bonus = data.families_bonus;
             family_values = data.family_values;
@@ -444,7 +443,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 if (key === 'color') {
                     const colorHex = getColorHex(content);
-                    // --- MODIFIED: 添加了 'color-text-outlined' 类 ---
                     return `<td class="col-color"><span class="color-text-outlined" style="color: ${colorHex}; font-weight: bold;">${content}</span></td>`;
                 }
                 if (key === 'family' && content) {
@@ -473,67 +471,142 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
+
         const renderListAsHTML = (itemsArray) => {
             if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
             return itemsArray.map(item => {
                 let cleanItem = String(item).trim();
                 if (cleanItem.includes(' * ')) {
                     const parts = cleanItem.split(' * ');
-                    let subHtml = `<li>&bull; ${parts[0].trim()}</li>`;
+                    let subHtml = `<li>${parts[0].trim()}</li>`;
                     for (let i = 1; i < parts.length; i++) {
-                        subHtml += `<li style="margin-left: 20px;">&bull; <i>${parts[i].trim()}</i></li>`;
+                        subHtml += `<li><i>${parts[i].trim()}</i></li>`;
                     }
                     return subHtml;
                 }
-                return `<li>&bull; ${cleanItem}</li>`;
+                return `<li>${cleanItem}</li>`;
             }).join('');
         };
+
+        let rawHeroName = hero.name || '未知英雄';
+        let tempName = rawHeroName;
+
+        let heroSkin = '';
+        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+        const skinMatch = tempName.match(skinPattern);
+        if (skinMatch && skinMatch[1]) {
+            const potentialSkin = skinMatch[1];
+            if (potentialSkin.match(/^C\d+$/i) || potentialSkin.toLowerCase() === '玻璃' || potentialSkin.toLowerCase().endsWith('皮肤') || potentialSkin.toLowerCase().endsWith('皮膚')) {
+                heroSkin = potentialSkin;
+                tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
+            }
+        }
+
+        let mainHeroName = tempName;
+        let englishName = '';
+        let traditionalChineseName = '';
+
+        const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
+        const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
+        const multiLangMatch = tempName.match(multiLangNamePattern);
+        const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
+
+        if (multiLangMatch) {
+            mainHeroName = multiLangMatch[1].trim();
+            traditionalChineseName = multiLangMatch[2].trim();
+            englishName = multiLangMatch[3].trim();
+        } else if (singleAltLangMatch) {
+            mainHeroName = singleAltLangMatch[1].trim();
+            const altName = singleAltLangMatch[2].trim();
+            if (/[a-zA-Z]/.test(altName) && !/[\u4e00-\u9fa5]/.test(altName)) {
+                englishName = altName;
+            } else {
+                traditionalChineseName = altName;
+            }
+        }
+
+        const nameBlockHTML = `
+            ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
+            <h1 class="hero-main-name">${mainHeroName}</h1>
+            ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
+        `;
+
         const heroFamily = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
         const translatedFamily = family_values[heroFamily] || hero.family;
         const heroTypesContent = (hero.types && hero.types.length > 0) ? hero.types.join('、') : langDict.none;
         const localImagePath = getLocalImagePath(hero.image);
         const avatarGlowClass = getColorGlowClass(hero.color);
-        let rawHeroName = hero.name || '未知英雄';
-        let mainHeroName = rawHeroName;
-        let altHeroNamesHTML = '';
-        let heroSkin = '';
-        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-        let tempName = rawHeroName;
-        const currentSkinMatch = tempName.match(skinPattern);
-        if (currentSkinMatch && currentSkinMatch[1]) {
-            const potentialSkin = currentSkinMatch[1];
-            if (tempName.trim() !== potentialSkin.trim() || rawHeroName.trim() !== potentialSkin.trim()) {
-                if (potentialSkin.match(/^C\d+$/i) || potentialSkin.toLowerCase() === '玻璃' || potentialSkin.toLowerCase().endsWith('皮肤') || potentialSkin.toLowerCase().endsWith('皮膚')) {
-                    heroSkin = potentialSkin;
-                    mainHeroName = tempName.substring(0, tempName.length - currentSkinMatch[0].length).trim();
-                } else { mainHeroName = rawHeroName.trim(); }
-            }
-        } else { mainHeroName = rawHeroName.trim(); }
-        const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
-        const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
-        let currentParsedNameForAlt = mainHeroName;
-        const multiLangMatch = currentParsedNameForAlt.match(multiLangNamePattern);
-        const singleAltLangMatch = currentParsedNameForAlt.match(singleAltLangNamePattern);
-        if (multiLangMatch) {
-            mainHeroName = multiLangMatch[1].trim();
-            const traditionalChinese = multiLangMatch[2].trim();
-            const englishName = multiLangMatch[3].trim();
-            altHeroNamesHTML = `<div class="hero-alt-names-container"><span class="hero-alt-name">${traditionalChinese}</span><span class="hero-alt-name">(${englishName})</span></div>`;
-        } else if (singleAltLangMatch) {
-            mainHeroName = singleAltLangMatch[1].trim();
-            const altName = singleAltLangMatch[2].trim();
-            altHeroNamesHTML = `<div class="hero-alt-names-container"><span class="hero-alt-name">(${altName})</span></div>`;
-        } else { mainHeroName = currentParsedNameForAlt.trim(); }
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
-        const releaseDateHTML = hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : '';
-        const aetherPowerHTML = hero.AetherPower ? `<span class="hero-info-block">⏫ ${hero.AetherPower}</span>` : '';
-        const skinContentHTML = heroSkin ? `<span class="hero-info-block">${langDict.modalSkin} ${heroSkin}</span>` : '';
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">❌</button></div><h1 class="hero-name-modal">${mainHeroName}</h1>${altHeroNamesHTML}${fancyNameHTML}<div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line"><span class="hero-info-block">${hero.class || langDict.none}</span>${aetherPowerHTML}${skinContentHTML}<span class="hero-info-block">${langDict.modalOrigin}: ${hero.source || langDict.none}</span>${releaseDateHTML}</div><hr><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style"><span class="icon">💪</span> ${hero.power || 0}</p></div><div><p class="metric-value-style"><span class="icon">⚔️</span> ${hero.attack || 0}</p></div><div><p class="metric-value-style"><span class="icon">🛡️</span> ${hero.defense || 0}</p></div><div><p class="metric-value-style"><span class="icon">❤️</span> ${hero.health || 0}</p></div></div></div></div><hr class="divider"><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block skill-category-block--inline-flex"><p class="uniform-style">${langDict.modalSkillName} <i>${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</i></p><p class="uniform-style">${langDict.modalSpeed} ${hero.speed || langDict.none}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillType} ${heroTypesContent}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects)}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives)}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(translatedFamily || hero.family)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+
+        const detailsHTML = `
+            <div class="details-header">
+                <h2>${langDict.modalHeroDetails}</h2>
+                <button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button>
+            </div>
+            
+            <div class="hero-title-block">
+                ${nameBlockHTML}
+                ${fancyNameHTML}
+            </div>
+            
+            <div class="details-body">
+                <div class="details-top-left">
+                    <img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}">
+                </div>
+                <div class="details-top-right">
+                     <div class="details-info-line">
+                        ${hero.class ? `<span class="hero-info-block">🎓 ${hero.class}</span>` : ''}
+                        ${hero.source ? `<span class="hero-info-block">🌍 ${hero.source}</span>` : ''}
+                        ${heroSkin ? `<span class="hero-info-block">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}
+                        ${hero.AetherPower ? `<span class="hero-info-block">⏫ ${hero.AetherPower}</span>` : ''}
+                        ${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}
+                    </div>
+                    
+                    <h3>${langDict.modalCoreStats}</h3>
+                    <div class="details-stats-grid">
+                        <div><p class="metric-value-style">💪 ${hero.power || 0}</p></div>
+                        <div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div>
+                        <div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div>
+                        <div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="details-bottom-section">
+                <h3>${langDict.modalSkillDetails}</h3>
+                
+                <div class="skill-category-block">
+                    <p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p>
+                    <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value">${hero.speed || langDict.none}</span></p>
+                    <p class="uniform-style">${langDict.modalSkillType} <span class="skill-value">${heroTypesContent}</span></p>
+                </div>
+
+                <div class="skill-category-block">
+                    <p class="uniform-style">${langDict.modalSpecialSkill}</p>
+                    <ul class="skill-list">${renderListAsHTML(hero.effects)}</ul>
+                </div>
+                
+                <div class="skill-category-block">
+                    <p class="uniform-style">${langDict.modalPassiveSkill}</p>
+                    <ul class="skill-list">${renderListAsHTML(hero.passives)}</ul>
+                </div>
+                
+                ${familyBonus.length > 0 ? `
+                <div class="skill-category-block">
+                    <p class="uniform-style">${langDict.modalFamilyBonus(translatedFamily || hero.family)}</p>
+                    <ul class="skill-list">${renderListAsHTML(familyBonus)}</ul>
+                </div>` : ''}
+            </div>
+            
+            <div class="modal-footer">
+                <button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button>
+            </div>`;
         modalContent.innerHTML = detailsHTML;
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
     }
+
 
     // --- 事件监听器绑定 ---
     function addEventListeners() {

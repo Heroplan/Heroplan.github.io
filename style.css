@@ -1,6 +1,10 @@
 /* 全局和基础样式 */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'HarmonyOS_Medium',
+            -apple-system, BlinkMacSystemFont,
+            "PingFang SC", "Microsoft YaHei",
+            "Source Han Sans SC", "Noto Sans CJK SC",
+            sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--md-sys-color-background);
@@ -463,6 +467,42 @@ input[type="number"] {
     vertical-align: middle;
     word-break: break-word;
     border-bottom: 1px solid var(--md-sys-color-surface-variant);
+}
+
+/* Hero Glow Effect Styles */
+.red-glow-border {
+    box-shadow: var(--hero-glow-red);
+    border-color: var(--hero-color-red);
+}
+
+.blue-glow-border {
+    box-shadow: var(--hero-glow-blue);
+    border-color: var(--hero-color-blue);
+}
+
+.green-glow-border {
+    box-shadow: var(--hero-glow-green);
+    border-color: var(--hero-color-green);
+}
+
+.yellow-glow-border {
+    box-shadow: var(--hero-glow-yellow);
+    border-color: var(--hero-color-yellow);
+}
+
+.purple-glow-border {
+    box-shadow: var(--hero-glow-purple);
+    border-color: var(--hero-color-purple);
+}
+
+.white-glow-border {
+    box-shadow: var(--hero-glow-white);
+    border-color: var(--hero-color-white);
+}
+
+.black-glow-border {
+    box-shadow: var(--hero-glow-black);
+    border-color: var(--hero-color-black);
 }
 
 html:not(.dark-theme) .color-text-outlined {

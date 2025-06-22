@@ -390,10 +390,8 @@ input[type="number"] {
     z-index: 11;
     border-bottom: 1px solid var(--md-sys-color-outline);
     padding: 0.2rem 0;
-    /* 保持一个较小的内边距以提供呼吸空间 */
 }
 
-/* ===== 新增：移除 h3 的默认外边距 ===== */
 #results-count {
     margin: 0;
 }
@@ -402,6 +400,12 @@ input[type="number"] {
     background-color: var(--md-sys-color-surface);
 }
 
+.empty-results-message {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1.1em;
+}
 
 .manual-table {
     width: 100%;
@@ -412,9 +416,11 @@ input[type="number"] {
 .manual-table thead {
     position: sticky;
     z-index: 10;
-    /* top 值将由 script.js 动态设置 */
 }
 
+.manual-table tbody {
+    /* No special styles needed */
+}
 
 .manual-table th {
     background-color: var(--md-sys-color-surface-variant);
@@ -424,10 +430,33 @@ input[type="number"] {
     font-weight: 600;
     border-bottom: 1px solid var(--md-sys-color-outline);
     white-space: nowrap;
+    position: relative;
+    padding-right: 1.2em;
 }
 
+.manual-table th:first-child,
+.manual-table th:not(.sortable) {
+    padding-right: 12px;
+}
 
-.manual-table th,
+.manual-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.manual-table th.sortable:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.manual-table th .sort-indicator {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1em;
+    text-align: left;
+}
+
 .manual-table td {
     padding: 6px 10px;
     font-size: 13px;
@@ -436,12 +465,23 @@ input[type="number"] {
     border-bottom: 1px solid var(--md-sys-color-surface-variant);
 }
 
+/* --- NEW: 新增文字描边样式 --- */
+html:not(.dark-theme) .color-text-outlined {
+    /* 使用四个方向的半透明阴影来模拟纤细的描边效果 */
+    text-shadow:
+        -0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        -0.5px 0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+}
+
+
 .manual-table .table-row {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-.manual-table .table-row:nth-child(even) {
+.manual-table tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.02);
 }
 
@@ -753,6 +793,16 @@ input[type="number"] {
     margin-bottom: 1rem;
 }
 
+.skill-category-block--inline-flex {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.skill-category-block--inline-flex .uniform-style {
+    margin-bottom: 0;
+}
+
 .skill-category-block .uniform-style {
     font-size: 1rem;
     font-weight: 600;
@@ -948,6 +998,12 @@ footer .footer-credit {
 
     #modal .details-body {
         grid-template-columns: 1fr;
+    }
+
+    .skill-category-block--inline-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
     }
 
     #modal .details-top-right {

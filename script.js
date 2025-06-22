@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let families_bonus = [];
     let family_values = {};
     let currentLang = 'cn';
+    let currentSort = { key: 'power', direction: 'desc' };
+    const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
+    const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
+
 
     // --- DOM 元素 ---
     const themeToggleButton = document.getElementById('theme-toggle-btn');
@@ -40,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cn: {
             pageTitle: "Heroplan 浏览器", headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
             sponsoredBy: "独家赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
-            filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", namePlaceholder: "输入英雄名称",
+            filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
             starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
             skillTypeLabel: "特殊技能类别:", skillTypePlaceholder: "例如：增益,异常,治疗", skillTextLabel: "特殊技能文本:",
@@ -49,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             minAttack: "最低攻击", minDefense: "最低防御", minHealth: "最低生命", resetFilters: "重置筛选",
             footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
             footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
-            resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, modalHeroDetails: "ℹ️ 英雄详情",
+            resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, noResults: "没有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄详情",
             closeBtnTitle: "关闭", modalOrigin: "起源", modalCoreStats: "📊 核心属性", modalSkillDetails: "📖 技能详情",
             modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
@@ -58,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tc: {
             pageTitle: "Heroplan 瀏覽器", headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
             sponsoredBy: "獨家贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
-            filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", namePlaceholder: "輸入英雄名稱",
+            filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
             starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
             skillTypeLabel: "特殊技能類別:", skillTypePlaceholder: "例如：增益,異常,治療", skillTextLabel: "特殊技能文本:",
@@ -67,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             minAttack: "最低攻擊", minDefense: "最低防禦", minHealth: "最低生命", resetFilters: "重置篩選",
             footerGameName: "《帝國與謎題》", footerPlatform: "英雄數據查詢平台",
             footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
-            resultsCountText: (count) => `篩選清單中有 ${count} 位英雄`, modalHeroDetails: "ℹ️ 英雄詳情",
+            resultsCountText: (count) => `篩選清單中有 ${count} 位英雄`, noResults: "沒有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄詳情",
             closeBtnTitle: "關閉", modalOrigin: "起源", modalCoreStats: "📊 核心屬性", modalSkillDetails: "📖 技能詳情",
             modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
@@ -138,34 +142,27 @@ document.addEventListener('DOMContentLoaded', function () {
         applyLanguage(savedLang);
     }
 
-    // --- 數據加載 ---
-    function loadScript(src) {
-        return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.onload = () => resolve();
-            script.onerror = () => reject(new Error(`Script load error for ${src}`));
-            document.head.appendChild(script);
-        });
-    }
-
+    // --- 数据加载方式更新 ---
     async function loadData(lang) {
         try {
-            await Promise.all([
-                loadScript(`./heroes_data_${lang}.js`),
-                loadScript(`./families_bonus_${lang}.js`),
-                loadScript(`./family_values_${lang}.js`)
-            ]);
-            allHeroes = window.allHeroes;
-            families_bonus = window.families_bonus;
-            family_values = window.family_values;
+            const response = await fetch(`./data_${lang}.json`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+
+            // 从单个JSON对象分配数据到全局变量
+            allHeroes = data.allHeroes;
+            families_bonus = data.families_bonus;
+            family_values = data.family_values;
+
             if (!allHeroes || !families_bonus || !family_values) {
-                throw new Error("One or more data variables are missing. Ensure data files use 'window.allHeroes', 'window.families_bonus', etc.");
+                throw new Error("一个或多个数据键在JSON文件中缺失。");
             }
             return true;
         } catch (error) {
-            console.error(error);
-            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>Error: Failed to load data. Please check the console for details.</p>`;
+            console.error("加载或解析数据文件失败:", error);
+            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>错误: 数据加载失败，请检查控制台获取详情。</p>`;
             if (pageLoader) pageLoader.classList.add('hidden');
             return false;
         }
@@ -177,11 +174,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resultsHeader && tableThead) {
             const headerHeight = resultsHeader.offsetHeight;
-            // ===== 修改：减去 1 像素来创建一个微小的重叠，从而消除缝隙 =====
             tableThead.style.top = `${headerHeight - 1}px`;
         }
     }
-
 
     const getColorGlowClass = (colorName) => {
         switch (String(colorName).toLowerCase()) {
@@ -193,6 +188,17 @@ document.addEventListener('DOMContentLoaded', function () {
             case '白色': case '白色': return 'white-glow-border';
             case '黑色': case '黑色': return 'black-glow-border';
             default: return '';
+        }
+    };
+
+    const getColorHex = (colorName) => {
+        switch (String(colorName).toLowerCase()) {
+            case '红色': case '紅色': return '#ff7a4c';
+            case '蓝色': case '藍色': return '#41d8fe';
+            case '绿色': case '綠色': return '#70e92f';
+            case '黄色': case '黃色': return '#f2e33a';
+            case '紫色': case '紫色': return '#e290ff';
+            default: return 'inherit';
         }
     };
 
@@ -337,51 +343,124 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
             return true;
         });
-        filteredHeroes.sort((a, b) => Number(b.power) - Number(a.power));
+
+        filteredHeroes.sort((a, b) => {
+            const key = currentSort.key;
+            const direction = currentSort.direction === 'asc' ? 1 : -1;
+            let valA = a[key];
+            let valB = b[key];
+
+            let comparison = 0;
+            const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
+
+            if (key === 'speed') {
+                const speedOrder = currentLang === 'cn' ? speedOrder_cn : speedOrder_tc;
+                const indexA = speedOrder.indexOf(String(valA));
+                const indexB = speedOrder.indexOf(String(valB));
+                const finalIndexA = indexA === -1 ? Infinity : indexA;
+                const finalIndexB = indexB === -1 ? Infinity : indexB;
+                comparison = finalIndexA - finalIndexB;
+            } else if (numericKeys.includes(key)) {
+                comparison = (Number(valA) || 0) - (Number(valB) || 0);
+            } else {
+                valA = String(valA || '');
+                valB = String(valB || '');
+                if (currentLang === 'tc') {
+                    comparison = valA.localeCompare(valB, 'zh-TW', { collation: 'stroke' });
+                } else {
+                    comparison = valA.localeCompare(valB, 'zh-CN');
+                }
+            }
+
+            comparison *= direction;
+
+            if (comparison === 0 && key !== 'power') {
+                return (Number(b.power) || 0) - (Number(a.power) || 0);
+            }
+
+            return comparison;
+        });
+
         renderTable(filteredHeroes);
-        if (resultsWrapper) {
-            resultsWrapper.scrollTop = 0;
-        }
     }
 
     function renderTable(heroes) {
         if (!resultsTable) return;
-        resultsCountEl.textContent = i18n[currentLang].resultsCountText(heroes.length);
+        if (resultsCountEl) {
+            resultsCountEl.textContent = i18n[currentLang].resultsCountText(heroes.length);
+        }
+
         const headers = {
-            image: i18n[currentLang].colorLabel.slice(0, -1), name: i18n[currentLang].nameLabel.slice(0, -1),
-            color: i18n[currentLang].colorLabel.slice(0, -1), star: i18n[currentLang].starLabel.slice(0, -1),
-            class: i18n[currentLang].classLabel.slice(0, -1), speed: i18n[currentLang].speedLabel.slice(0, -1),
-            power: i18n[currentLang].minPower.substring(2), attack: i18n[currentLang].minAttack.substring(2),
-            defense: i18n[currentLang].minDefense.substring(2), health: i18n[currentLang].minHealth.substring(2),
+            image: i18n[currentLang].avatarLabel,
+            name: i18n[currentLang].nameLabel.slice(0, -1),
+            color: i18n[currentLang].colorLabel.slice(0, -1),
+            star: i18n[currentLang].starLabel.slice(0, -1),
+            class: i18n[currentLang].classLabel.slice(0, -1),
+            speed: i18n[currentLang].speedLabel.slice(0, -1),
+            power: i18n[currentLang].minPower.substring(2),
+            attack: i18n[currentLang].minAttack.substring(2),
+            defense: i18n[currentLang].minDefense.substring(2),
+            health: i18n[currentLang].minHealth.substring(2),
             types: i18n[currentLang].skillTypeLabel.slice(0, -1)
         };
         const colKeys = Object.keys(headers);
+        const sortableKeys = ['name', 'color', 'star', 'class', 'speed', 'power', 'attack', 'defense', 'health'];
 
         let thead = resultsTable.querySelector('thead');
         if (!thead) {
             thead = document.createElement('thead');
             resultsTable.appendChild(thead);
         }
-        thead.innerHTML = '<tr>' + colKeys.map(key => `<th class="col-${key}">${headers[key]}</th>`).join('') + '</tr>';
+        thead.innerHTML = '<tr>' + colKeys.map(key => {
+            const isSortable = sortableKeys.includes(key);
+            let sortIndicator = '';
+            if (isSortable && currentSort.key === key) {
+                sortIndicator = currentSort.direction === 'asc' ? '▲' : '▼';
+            }
+            const headerText = headers[key];
+            return `<th class="col-${key} ${isSortable ? 'sortable' : ''}" data-sort-key="${key}">
+                        ${headerText}
+                        <span class="sort-indicator">${sortIndicator}</span>
+                    </th>`;
+        }).join('') + '</tr>';
 
         let tbody = resultsTable.querySelector('tbody');
         if (!tbody) {
             tbody = document.createElement('tbody');
             resultsTable.appendChild(tbody);
         }
-        tbody.innerHTML = heroes.map(hero => {
+
+        if (heroes.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="${colKeys.length}" class="empty-results-message">${i18n[currentLang].noResults}</td></tr>`;
+            return;
+        }
+
+        const rowsHTML = heroes.map(hero => {
             const cellsHTML = colKeys.map(key => {
                 let content = hero[key] || '';
                 if (key === 'image') {
                     const heroColorClass = getColorGlowClass(hero.color);
-                    return `<td class="col-image"><img src="${getLocalImagePath(content)}" class="hero-image ${heroColorClass}" alt="${hero.name}" loading="lazy"></td>`;
+                    return `<td class="col-image"><img src="${getLocalImagePath(hero.image)}" class="hero-image ${heroColorClass}" alt="${hero.name}" loading="lazy"></td>`;
                 }
-                if (key === 'family' && content) { content = family_values[String(content).toLowerCase()] || content; }
+                if (key === 'color') {
+                    const colorHex = getColorHex(content);
+                    // --- MODIFIED: 添加了 'color-text-outlined' 类 ---
+                    return `<td class="col-color"><span class="color-text-outlined" style="color: ${colorHex}; font-weight: bold;">${content}</span></td>`;
+                }
+                if (key === 'family' && content) {
+                    content = family_values[String(content).toLowerCase()] || content;
+                }
                 if (Array.isArray(content)) content = content.join(', ');
                 return `<td class="col-${key}">${content}</td>`;
             }).join('');
             return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
         }).join('');
+
+        tbody.innerHTML = rowsHTML;
+
+        if (resultsWrapper) {
+            resultsWrapper.scrollTop = 0;
+        }
     }
 
     function getLocalImagePath(url) {
@@ -450,7 +529,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const releaseDateHTML = hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : '';
         const aetherPowerHTML = hero.AetherPower ? `<span class="hero-info-block">⏫ ${hero.AetherPower}</span>` : '';
         const skinContentHTML = heroSkin ? `<span class="hero-info-block">${langDict.modalSkin} ${heroSkin}</span>` : '';
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">❌</button></div><h1 class="hero-name-modal">${mainHeroName}</h1>${altHeroNamesHTML}${fancyNameHTML}<div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line"><span class="hero-info-block">${hero.class || langDict.none}</span>${aetherPowerHTML}${skinContentHTML}<span class="hero-info-block">${langDict.modalOrigin}: ${hero.source || langDict.none}</span>${releaseDateHTML}</div><hr><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style"><span class="icon">💪</span> ${hero.power || 0}</p></div><div><p class="metric-value-style"><span class="icon">⚔️</span> ${hero.attack || 0}</p></div><div><p class="metric-value-style"><span class="icon">🛡️</span> ${hero.defense || 0}</p></div><div><p class="metric-value-style"><span class="icon">❤️</span> ${hero.health || 0}</p></div></div></div></div><hr class="divider"><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block" style="display: flex; align-items: baseline; gap: 10px;"><p class="uniform-style" style="margin-bottom: 0;">${langDict.modalSkillName} <i>${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</i></p><p class="uniform-style" style="margin-bottom: 0;">${langDict.modalSpeed} ${hero.speed || langDict.none}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillType} ${heroTypesContent}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects)}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives)}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(translatedFamily || hero.family)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">❌</button></div><h1 class="hero-name-modal">${mainHeroName}</h1>${altHeroNamesHTML}${fancyNameHTML}<div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line"><span class="hero-info-block">${hero.class || langDict.none}</span>${aetherPowerHTML}${skinContentHTML}<span class="hero-info-block">${langDict.modalOrigin}: ${hero.source || langDict.none}</span>${releaseDateHTML}</div><hr><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style"><span class="icon">💪</span> ${hero.power || 0}</p></div><div><p class="metric-value-style"><span class="icon">⚔️</span> ${hero.attack || 0}</p></div><div><p class="metric-value-style"><span class="icon">🛡️</span> ${hero.defense || 0}</p></div><div><p class="metric-value-style"><span class="icon">❤️</span> ${hero.health || 0}</p></div></div></div></div><hr class="divider"><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block skill-category-block--inline-flex"><p class="uniform-style">${langDict.modalSkillName} <i>${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</i></p><p class="uniform-style">${langDict.modalSpeed} ${hero.speed || langDict.none}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillType} ${heroTypesContent}</p></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects)}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives)}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(translatedFamily || hero.family)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
         modalContent.innerHTML = detailsHTML;
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
@@ -464,9 +543,29 @@ document.addEventListener('DOMContentLoaded', function () {
         if (langToggleButton) {
             langToggleButton.addEventListener('click', toggleLanguage);
         }
-        for (const key in filterInputs) { filterInputs[key].addEventListener('input', applyFiltersAndRender); }
-        modalOverlay.addEventListener('click', closeDetailsModal);
+        for (const key in filterInputs) {
+            if (filterInputs[key]) filterInputs[key].addEventListener('input', applyFiltersAndRender);
+        }
+        if (modalOverlay) modalOverlay.addEventListener('click', closeDetailsModal);
+
         if (resultsTable) {
+            const thead = resultsTable.querySelector('thead');
+            if (thead) {
+                thead.addEventListener('click', (event) => {
+                    const header = event.target.closest('th.sortable');
+                    if (header) {
+                        const sortKey = header.dataset.sortKey;
+                        if (currentSort.key === sortKey) {
+                            currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                        } else {
+                            currentSort.key = sortKey;
+                            const numericKeys = ['power', 'attack', 'defense', 'health', 'star'];
+                            currentSort.direction = numericKeys.includes(sortKey) ? 'desc' : 'asc';
+                        }
+                        applyFiltersAndRender();
+                    }
+                });
+            }
             resultsTable.addEventListener('click', (event) => {
                 const row = event.target.closest('.table-row');
                 if (row) {
@@ -476,9 +575,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-        openFiltersBtn.addEventListener('click', openFiltersModal);
-        closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
-        filtersModalOverlay.addEventListener('click', closeFiltersModal);
+        if (openFiltersBtn) openFiltersBtn.addEventListener('click', openFiltersModal);
+        if (closeFiltersModalBtn) closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
+        if (filtersModalOverlay) filtersModalOverlay.addEventListener('click', closeFiltersModal);
+
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 for (const key in filterInputs) {
@@ -510,10 +610,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
         window.addEventListener('popstate', function (event) {
-            modal.classList.add('hidden');
-            modalOverlay.classList.add('hidden');
-            filtersModal.classList.add('hidden');
-            filtersModalOverlay.classList.add('hidden');
+            if (modal) modal.classList.add('hidden');
+            if (modalOverlay) modalOverlay.classList.add('hidden');
+            if (filtersModal) filtersModal.classList.add('hidden');
+            if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
             document.body.classList.remove('modal-open');
         });
 
@@ -523,7 +623,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 应用初始化 ---
     async function initializeApp() {
         initializeLanguage();
-        // 主題初始化已在 <head> 中完成
         const dataLoaded = await loadData(currentLang);
         if (dataLoaded) {
             allHeroes.forEach((hero, index) => hero.originalIndex = index);

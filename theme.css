@@ -1,21 +1,21 @@
 :root {
-    /* 英雄颜色和光晕 - 來自您的版本 */
-    --hero-color-red: #E53935;
-    --hero-glow-red: 0 0 8px 2px #E53935;
-    --hero-color-blue: #1E88E5;
-    --hero-glow-blue: 0 0 8px 2px #1E88E5;
-    --hero-color-green: #43A047;
-    --hero-glow-green: 0 0 8px 2px #43A047;
-    --hero-color-yellow: #FDD835;
-    --hero-glow-yellow: 0 0 8px 2px #FDD835;
-    --hero-color-purple: #8E24AA;
-    --hero-glow-purple: 0 0 8px 2px #8E24AA;
+    /* 标准颜色 */
+    --hero-color-red: #ff7a4c;
+    --hero-glow-red: 0 0 8px 2px #ff7a4c;
+    --hero-color-blue: #41d8fe;
+    --hero-glow-blue: 0 0 8px 2px #41d8fe;
+    --hero-color-green: #70e92f;
+    --hero-glow-green: 0 0 8px 2px #70e92f;
+    --hero-color-yellow: #f2e33a;
+    --hero-glow-yellow: 0 0 8px 2px #f2e33a;
+    --hero-color-purple: #e290ff;
+    --hero-glow-purple: 0 0 8px 2px #e290ff;
     --hero-color-white: #E0E0E0;
     --hero-glow-white: 0 0 8px 2px #FFFFFF;
     --hero-color-black: #424242;
     --hero-glow-black: 0 0 8px 2px #616161;
 
-    /* 优化后的日间模式配色 - 來自您的版本 */
+    /* 优化后的日间模式配色 */
     --md-sys-color-primary: #4A90E2;
     --md-sys-color-on-primary: #FFFFFF;
     --md-sys-color-primary-container: #D4E5FF;
@@ -28,7 +28,8 @@
     --md-sys-color-on-tertiary: #FFFFFF;
     --md-sys-color-tertiary-container: #0084ff;
     --md-sys-color-on-tertiary-container: #1A332D;
-    --md-sys-color-background: #F8FAFF;
+    /* --- MODIFIED: 背景色加深 --- */
+    --md-sys-color-background: #F5F7FA;
     --md-sys-color-on-background: #1E2127;
     --md-sys-color-surface: #FFFFFF;
     --md-sys-color-on-surface: #1E2127;
@@ -49,9 +50,8 @@
     --md-sys-color-on-error-container: #410002;
 }
 
-/* ===== 关键修正：将 body.dark-theme 改为 html.dark-theme ===== */
 html.dark-theme {
-    /* 深色模式配色 - 來自您的版本 */
+    /* 深色模式配色 */
     --md-sys-color-primary: #7DB1FF;
     --md-sys-color-on-primary: #003A8C;
     --md-sys-color-primary-container: #2A5AB2;

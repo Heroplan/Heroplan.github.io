@@ -43909,8 +43909,8 @@ window.allHeroes =
     },
     {
         "name": "亚坤 (Jequn) C1",
-        "fancy_name": "",
-        "AetherPower": "",
+        "fancy_name": "鎏金之谜",
+        "AetherPower": "状态异常免疫",
         "color": "黄色",
         "class": "盗贼",
         "speed": "飞速",
@@ -43920,7 +43920,7 @@ window.allHeroes =
             "元素"
         ],
         "source": "超级元素人",
-        "Release date": "",
+        "Release date": "2025-06-20",
         "star": 5,
         "power": 1213,
         "attack": 1213,

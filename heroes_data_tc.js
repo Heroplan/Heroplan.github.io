@@ -43909,8 +43909,8 @@ window.allHeroes =
     },
     {
         "name": "傑昆 (Jequn) C1",
-        "fancy_name": "",
-        "AetherPower": "",
+        "fancy_name": "鍍金恩尼格瑪",
+        "AetherPower": "異常免疫",
         "color": "黃色",
         "class": "盜賊",
         "speed": "飛速",
@@ -43920,7 +43920,7 @@ window.allHeroes =
             "元素"
         ],
         "source": "超級元素",
-        "Release date": "",
+        "Release date": "2025-06-20",
         "star": 5,
         "power": 1213,
         "attack": 1213,

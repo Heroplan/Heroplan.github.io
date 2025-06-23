@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSort = { key: 'power', direction: 'desc' };
     const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
     const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
+    const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Tidal', 'Average', 'Slayer', 'Slow', 'Very Slow'];
 
 
     // --- DOM 元素 ---
     const themeToggleButton = document.getElementById('theme-toggle-btn');
-    const langToggleButton = document.getElementById('lang-toggle-btn');
+    const langSelectBtn = document.getElementById('lang-select-btn');
+    const langOptions = document.getElementById('lang-options');
     const resultsWrapper = document.getElementById('results-wrapper');
     const resultsTable = resultsWrapper ? resultsWrapper.querySelector('.manual-table') : null;
     const resultsCountEl = document.getElementById('results-count');
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装",
             daysSinceRelease: "距离发布日期天数大于:", daysPlaceholder: "1年半548 2年730", minPower: "最低战力",
             minAttack: "最低攻击", minDefense: "最低防御", minHealth: "最低生命", resetFilters: "重置筛选",
+
             footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
             footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
             resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, noResults: "没有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄详情",
@@ -76,20 +79,52 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
+        },
+        en: {
+            pageTitle: "Heroplan Browser", headerTitle: "Heroplan Browser", poweredBy: "Powered by", driven: "",
+            sponsoredBy: "Sponsored by", translatedBy: "Developed by", footerInfo: "Hero data is continuously updated | EN/CN Version",
+            filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name",
+            starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
+            sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", advancedFilters: "Advanced Filters",
+            skillTypeLabel: "Special Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Special Skill Text:",
+            passiveSkillLabel: "Passive Skill Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume",
+            daysSinceRelease: "Days since release>", daysPlaceholder: "1.5y=548 2y=730", minPower: "Min Power",
+            minAttack: "Min Attack", minDefense: "Min Defense", minHealth: "Min Health", resetFilters: "Reset Filters",
+            footerGameName: "Empires & Puzzles", footerPlatform: "Hero Data Platform",
+            footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",
+            resultsCountText: (count) => `Found ${count} heroes in the list`, noResults: "No matching heroes found", modalHeroDetails: "ℹ️ Hero Details",
+            closeBtnTitle: "Close", modalOrigin: "Origin", modalCoreStats: "📊 Core Stats", modalSkillDetails: "📖 Skill Details",
+            modalSkillName: "📄 Name:", modalSpeed: "⌛ Speed:", modalSkillType: "🏷️ Skill Type:",
+            modalSpecialSkill: "✨ Special Skill:", modalPassiveSkill: "🧿 Passive Skill:",
+            modalFamilyBonus: (family) => `👪 Family Bonus (${family}):`, modalSkin: "Costume:", none: "None", detailsCloseBtn: "Close",
         }
     };
 
     function applyLanguage(lang) {
-        document.documentElement.lang = lang === 'cn' ? 'zh-CN' : 'zh-TW';
+        if (lang === 'cn') {
+            document.documentElement.lang = 'zh-CN';
+        } else if (lang === 'tc') {
+            document.documentElement.lang = 'zh-TW';
+        } else {
+            document.documentElement.lang = 'en';
+        }
         document.body.setAttribute('data-lang', lang);
         currentLang = lang;
+
+        const langDict = i18n[lang] || i18n.cn; // Fallback to 'cn'
+
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
-            if (i18n[lang][key]) { el.textContent = i18n[lang][key]; }
+            const translation = langDict[key];
+            if (typeof translation === 'function') {
+                // We handle functional translations like resultsCountText separately
+            } else if (translation !== undefined) {
+                el.textContent = translation;
+            }
         });
         document.querySelectorAll('[data-lang-key-placeholder]').forEach(el => {
             const key = el.getAttribute('data-lang-key-placeholder');
-            if (i18n[lang][key]) { el.placeholder = i18n[lang][key]; }
+            if (langDict[key]) { el.placeholder = langDict[key]; }
         });
     }
 
@@ -131,15 +166,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- 語言切換 ---
-    function toggleLanguage() {
-        const newLang = currentLang === 'cn' ? 'tc' : 'cn';
-        setCookie('language', newLang, 365);
+    function changeLanguage(lang) {
+        setCookie('language', lang, 365);
         window.location.reload();
     }
 
     function initializeLanguage() {
-        const savedLang = getCookie('language') || 'cn';
-        applyLanguage(savedLang);
+        const savedLang = getCookie('language');
+        if (savedLang && i18n[savedLang]) {
+            applyLanguage(savedLang);
+        } else {
+            // Fallback to browser language or default to 'cn'
+            const browserLang = navigator.language.toLowerCase();
+            if (browserLang.includes('en')) {
+                applyLanguage('en');
+            } else if (browserLang.includes('zh-tw') || browserLang.includes('zh-hk')) {
+                applyLanguage('tc');
+            } else {
+                applyLanguage('cn');
+            }
+        }
     }
 
     // --- 数据加载方式更新 ---
@@ -161,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
         } catch (error) {
             console.error("加载或解析数据文件失败:", error);
-            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>错误: 数据加载失败，请检查控制台获取详情。</p>`;
+            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>Error: Failed to load data. Check console for details.</p>`;
             if (pageLoader) pageLoader.classList.add('hidden');
             return false;
         }
@@ -178,27 +224,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const getColorGlowClass = (colorName) => {
-        switch (String(colorName).toLowerCase()) {
-            case '红色': case '紅色': return 'red-glow-border';
-            case '蓝色': case '藍色': return 'blue-glow-border';
-            case '绿色': case '綠色': return 'green-glow-border';
-            case '黄色': case '黃色': return 'yellow-glow-border';
-            case '紫色': case '紫色': return 'purple-glow-border';
-            case '白色': case '白色': return 'white-glow-border';
-            case '黑色': case '黑色': return 'black-glow-border';
-            default: return '';
-        }
+        // Use a mapping to handle different languages
+        const colorMap = {
+            '红色': 'red', '紅色': 'red', 'red': 'red',
+            '蓝色': 'blue', '藍色': 'blue', 'blue': 'blue',
+            '绿色': 'green', '綠色': 'green', 'green': 'green',
+            '黄色': 'yellow', '黃色': 'yellow', 'yellow': 'yellow',
+            '紫色': 'purple', '紫色': 'purple', 'purple': 'purple',
+            '白色': 'white', '白色': 'white', 'white': 'white',
+            '黑色': 'black', '黑色': 'black', 'black': 'black',
+        };
+        const standardColor = colorMap[String(colorName).toLowerCase()];
+        return standardColor ? `${standardColor}-glow-border` : '';
     };
 
     const getColorHex = (colorName) => {
-        switch (String(colorName).toLowerCase()) {
-            case '红色': case '紅色': return '#ff7a4c';
-            case '蓝色': case '藍色': return '#41d8fe';
-            case '绿色': case '綠色': return '#70e92f';
-            case '黄色': case '黃色': return '#f2e33a';
-            case '紫色': case '紫色': return '#e290ff';
-            default: return 'inherit';
-        }
+        const colorMap = {
+            '红色': '#ff7a4c', '紅色': '#ff7a4c', 'red': '#ff7a4c',
+            '蓝色': '#41d8fe', '藍色': '#41d8fe', 'blue': '#41d8fe',
+            '绿色': '#70e92f', '綠色': '#70e92f', 'green': '#70e92f',
+            '黄色': '#f2e33a', '黃色': '#f2e33a', 'yellow': '#f2e33a',
+            '紫色': '#e290ff', '紫色': '#e290ff', 'purple': '#e290ff',
+        };
+        return colorMap[String(colorName).toLowerCase()] || 'inherit';
     };
 
     function populateFilters() {
@@ -210,10 +258,16 @@ document.addEventListener('DOMContentLoaded', function () {
             'speed': ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'],
             'star': ['5', '4', '3', '2', '1'],
         };
-        const CUSTOM_SORT = currentLang === 'cn' ? CUSTOM_SORT_CN : CUSTOM_SORT_TC;
+        const CUSTOM_SORT_EN = {
+            'speed': ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'slayer', 'Slow', 'Very Slow'],
+            'star': ['5', '4', '3', '2', '1'],
+        };
+
+        const CUSTOM_SORT = { cn: CUSTOM_SORT_CN, tc: CUSTOM_SORT_TC, en: CUSTOM_SORT_EN }[currentLang];
+        const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+
         const getSortedValues = (key, values) => {
             values = values.map(v => String(v || ''));
-            const locale = currentLang === 'cn' ? 'zh-CN' : 'zh-TW';
             if (key === 'family' || key === 'source') {
                 const translatedValues = values.map(v => ({
                     original: v,
@@ -223,22 +277,33 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             if (key === 'AetherPower') { return values.sort((a, b) => a.localeCompare(b, locale)); }
             if (CUSTOM_SORT[key]) {
-                return CUSTOM_SORT[key].filter(v => values.includes(String(v))).concat(values.filter(v => !CUSTOM_SORT[key].includes(String(v))).sort());
+                const customOrder = CUSTOM_SORT[key];
+                return values.slice().sort((a, b) => {
+                    const indexA = customOrder.indexOf(a);
+                    const indexB = customOrder.indexOf(b);
+                    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                    if (indexA !== -1) return -1;
+                    if (indexB !== -1) return 1;
+                    return a.localeCompare(b, locale);
+                });
             }
             return values.sort((a, b) => a.localeCompare(b, locale));
         };
         const createOptions = (values, key) => {
             const sortedValues = getSortedValues(key, values);
-            const options = [`<option value="无">${i18n[currentLang].none}</option>`, ...sortedValues.map(opt => {
+            const noneText = i18n[currentLang].none || 'None';
+            const options = [`<option value="${noneText}">${noneText}</option>`, ...sortedValues.map(opt => {
                 const displayText = (key === 'family' || key === 'source') ? (family_values[String(opt).toLowerCase()] || opt) : opt;
                 return `<option value="${opt}">${displayText}</option>`;
             })];
             return options.join('');
         };
-        const initFilter = (key, dataKey) => {
+        const initFilter = (key) => {
             const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
             const uniqueValues = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
-            filterInputs[key].innerHTML = createOptions(uniqueValues, heroDataKey);
+            if (filterInputs[key]) {
+                filterInputs[key].innerHTML = createOptions(uniqueValues, heroDataKey);
+            }
         };
         initFilter('star');
         initFilter('color');
@@ -246,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
         initFilter('class');
         initFilter('family');
         initFilter('source');
-        initFilter('aetherpower', 'AetherPower');
+        initFilter('aetherpower');
         document.querySelectorAll('.filter-card select').forEach(select => { select.style.textAlign = 'center'; });
     }
 
@@ -313,13 +378,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const heroTypesCombined = (hero.types && Array.isArray(hero.types)) ? hero.types.join(' ') : '';
                 if (keywords.length > 0 && !containsAllKeywords(heroTypesCombined, keywords)) return false;
             }
-            if (filters.star !== '无' && filters.star !== noneValue && String(hero.star) !== filters.star) return false;
-            if (filters.color !== '无' && filters.color !== noneValue && String(hero.color).toLowerCase() !== filters.color) return false;
-            if (filters.speed !== '无' && filters.speed !== noneValue && String(hero.speed).toLowerCase() !== filters.speed) return false;
-            if (filters.class !== '无' && filters.class !== noneValue && String(hero.class).toLowerCase() !== filters.class) return false;
-            if (filters.family !== '无' && filters.family !== noneValue && String(hero.family).toLowerCase() !== filters.family) return false;
-            if (filters.source !== '无' && filters.source !== noneValue && String(hero.source).toLowerCase() !== filters.source) return false;
-            if (filters.aetherpower !== '无' && filters.aetherpower !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower) return false;
+            if (filters.star !== noneValue && String(hero.star) !== filters.star) return false;
+            if (filters.color !== noneValue && String(hero.color).toLowerCase() !== filters.color) return false;
+            if (filters.speed !== noneValue && String(hero.speed).toLowerCase() !== filters.speed) return false;
+            if (filters.class !== noneValue && String(hero.class).toLowerCase() !== filters.class) return false;
+            if (filters.family !== noneValue && String(hero.family).toLowerCase() !== filters.family) return false;
+            if (filters.source !== noneValue && String(hero.source).toLowerCase() !== filters.source) return false;
+            if (filters.aetherpower !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower) return false;
             const releaseDateType = filters.releaseDateType;
             const releaseDateDays = Number(filters.releaseDateInput);
             const isSkin = hero.costume_id !== 0;
@@ -353,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
 
             if (key === 'speed') {
-                const speedOrder = currentLang === 'cn' ? speedOrder_cn : speedOrder_tc;
+                const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[currentLang];
                 const indexA = speedOrder.indexOf(String(valA));
                 const indexB = speedOrder.indexOf(String(valB));
                 const finalIndexA = indexA === -1 ? Infinity : indexA;
@@ -364,11 +429,9 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 valA = String(valA || '');
                 valB = String(valB || '');
-                if (currentLang === 'tc') {
-                    comparison = valA.localeCompare(valB, 'zh-TW', { collation: 'stroke' });
-                } else {
-                    comparison = valA.localeCompare(valB, 'zh-CN');
-                }
+                const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+                const options = currentLang === 'tc' ? { collation: 'stroke' } : {};
+                comparison = valA.localeCompare(valB, locale, options);
             }
 
             comparison *= direction;
@@ -388,19 +451,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (resultsCountEl) {
             resultsCountEl.textContent = i18n[currentLang].resultsCountText(heroes.length);
         }
-
+        const langDict = i18n[currentLang];
         const headers = {
-            image: i18n[currentLang].avatarLabel,
-            name: i18n[currentLang].nameLabel.slice(0, -1),
-            color: i18n[currentLang].colorLabel.slice(0, -1),
-            star: i18n[currentLang].starLabel.slice(0, -1),
-            class: i18n[currentLang].classLabel.slice(0, -1),
-            speed: i18n[currentLang].speedLabel.slice(0, -1),
-            power: i18n[currentLang].minPower.substring(2),
-            attack: i18n[currentLang].minAttack.substring(2),
-            defense: i18n[currentLang].minDefense.substring(2),
-            health: i18n[currentLang].minHealth.substring(2),
-            types: i18n[currentLang].skillTypeLabel.slice(0, -1)
+            image: langDict.avatarLabel,
+            name: langDict.nameLabel.slice(0, -1),
+            color: langDict.colorLabel.slice(0, -1),
+            star: langDict.starLabel.slice(0, -1),
+            class: langDict.classLabel.slice(0, -1),
+            speed: langDict.speedLabel.slice(0, -1),
+            power: langDict.minPower.replace('Min ', ''),
+            attack: langDict.minAttack.replace('Min ', ''),
+            defense: langDict.minDefense.replace('Min ', ''),
+            health: langDict.minHealth.replace('Min ', ''),
+            types: langDict.skillTypeLabel.slice(0, -1)
         };
         const colKeys = Object.keys(headers);
         const sortableKeys = ['name', 'color', 'star', 'class', 'speed', 'power', 'attack', 'defense', 'health'];
@@ -430,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (heroes.length === 0) {
-            tbody.innerHTML = `<tr><td colspan="${colKeys.length}" class="empty-results-message">${i18n[currentLang].noResults}</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="${colKeys.length}" class="empty-results-message">${langDict.noResults}</td></tr>`;
             return;
         }
 
@@ -488,42 +551,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }).join('');
         };
 
-        let rawHeroName = hero.name || '未知英雄';
+        let rawHeroName = hero.name || 'Unknown Hero';
         let tempName = rawHeroName;
-
-        let heroSkin = '';
-        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-        const skinMatch = tempName.match(skinPattern);
-        if (skinMatch && skinMatch[1]) {
-            const potentialSkin = skinMatch[1];
-            if (potentialSkin.match(/^C\d+$/i) || potentialSkin.toLowerCase() === '玻璃' || potentialSkin.toLowerCase().endsWith('皮肤') || potentialSkin.toLowerCase().endsWith('皮膚')) {
-                heroSkin = potentialSkin;
-                tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
-            }
-        }
-
         let mainHeroName = tempName;
         let englishName = '';
         let traditionalChineseName = '';
+        let heroSkin = '';
 
-        const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
-        const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
-        const multiLangMatch = tempName.match(multiLangNamePattern);
-        const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
-
-        if (multiLangMatch) {
-            mainHeroName = multiLangMatch[1].trim();
-            traditionalChineseName = multiLangMatch[2].trim();
-            englishName = multiLangMatch[3].trim();
-        } else if (singleAltLangMatch) {
-            mainHeroName = singleAltLangMatch[1].trim();
-            const altName = singleAltLangMatch[2].trim();
-            if (/[a-zA-Z]/.test(altName) && !/[\u4e00-\u9fa5]/.test(altName)) {
-                englishName = altName;
-            } else {
-                traditionalChineseName = altName;
+        if (currentLang !== 'en') {
+            const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+            const skinMatch = tempName.match(skinPattern);
+            if (skinMatch && skinMatch[1]) {
+                const potentialSkin = skinMatch[1];
+                if (potentialSkin.match(/^C\d+$/i) || potentialSkin.toLowerCase() === '玻璃' || potentialSkin.toLowerCase().endsWith('皮肤') || potentialSkin.toLowerCase().endsWith('皮膚')) {
+                    heroSkin = potentialSkin;
+                    tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
+                }
             }
+
+            const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
+            const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
+            const multiLangMatch = tempName.match(multiLangNamePattern);
+            const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
+
+            if (multiLangMatch) {
+                mainHeroName = multiLangMatch[1].trim();
+                traditionalChineseName = multiLangMatch[2].trim();
+                englishName = multiLangMatch[3].trim();
+            } else if (singleAltLangMatch) {
+                mainHeroName = singleAltLangMatch[1].trim();
+                const altName = singleAltLangMatch[2].trim();
+                if (/[a-zA-Z]/.test(altName) && !/[\u4e00-\u9fa5]/.test(altName)) {
+                    englishName = altName;
+                } else {
+                    traditionalChineseName = altName;
+                }
+            } else {
+                mainHeroName = tempName;
+            }
+        } else {
+            mainHeroName = hero.name;
         }
+
 
         const nameBlockHTML = `
             ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
@@ -534,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const heroFamily = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
         const translatedFamily = family_values[heroFamily] || hero.family;
-        const heroTypesContent = (hero.types && hero.types.length > 0) ? hero.types.join('、') : langDict.none;
+        const heroTypesContent = (hero.types && hero.types.length > 0) ? hero.types.join(', ') : langDict.none;
         const localImagePath = getLocalImagePath(hero.image);
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
@@ -613,11 +682,45 @@ document.addEventListener('DOMContentLoaded', function () {
         if (themeToggleButton) {
             themeToggleButton.addEventListener('click', toggleTheme);
         }
-        if (langToggleButton) {
-            langToggleButton.addEventListener('click', toggleLanguage);
+
+        // New language selection logic
+        if (langSelectBtn) {
+            langSelectBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                langOptions.classList.toggle('hidden');
+            });
         }
+        if (langOptions) {
+            langOptions.addEventListener('click', (event) => {
+                event.preventDefault();
+                const target = event.target;
+                if (target.classList.contains('lang-option')) {
+                    const newLang = target.getAttribute('data-lang');
+                    if (newLang && newLang !== currentLang) {
+                        changeLanguage(newLang);
+                    }
+                }
+            });
+        }
+        document.addEventListener('click', () => {
+            if (langOptions && !langOptions.classList.contains('hidden')) {
+                langOptions.classList.add('hidden');
+            }
+        });
+
+
         for (const key in filterInputs) {
-            if (filterInputs[key]) filterInputs[key].addEventListener('input', applyFiltersAndRender);
+            if (filterInputs[key]) {
+                const noneText = i18n[currentLang].none;
+                if (filterInputs[key].tagName === 'SELECT' && filterInputs[key].id !== 'release-date-type') {
+                    // Ensure the 'None' option is correctly selected after a language change
+                    if (filterInputs[key].value !== noneText) {
+                        // If a filter was active, try to maintain it, otherwise reset
+                        // This part can be complex, for now we reset to 'None' for simplicity on lang change
+                    }
+                }
+                filterInputs[key].addEventListener('input', applyFiltersAndRender);
+            }
         }
         if (modalOverlay) modalOverlay.addEventListener('click', closeDetailsModal);
 
@@ -656,8 +759,9 @@ document.addEventListener('DOMContentLoaded', function () {
             resetFiltersBtn.addEventListener('click', () => {
                 for (const key in filterInputs) {
                     const element = filterInputs[key];
+                    const noneText = i18n[currentLang].none;
                     if (element.tagName === 'SELECT') {
-                        element.value = element.id === 'release-date-type' ? 'all' : '无';
+                        element.value = element.id === 'release-date-type' ? 'all' : noneText;
                     } else { element.value = ''; }
                 }
                 applyFiltersAndRender();

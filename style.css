@@ -1,10 +1,10 @@
 /* 全局和基础样式 */
 body {
     font-family: 'HarmonyOS_Medium',
-            -apple-system, BlinkMacSystemFont,
-            "PingFang SC", "Microsoft YaHei",
-            "Source Han Sans SC", "Noto Sans CJK SC",
-            sans-serif;
+        -apple-system, BlinkMacSystemFont,
+        "PingFang SC", "Microsoft YaHei",
+        "Source Han Sans SC", "Noto Sans CJK SC",
+        sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--md-sys-color-background);
@@ -82,6 +82,8 @@ header {
     text-align: center;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--md-sys-color-outline);
+    position: relative;
+    z-index: 20;
 }
 
 .header-top-row {
@@ -1131,4 +1133,44 @@ footer .footer-credit {
         padding: 1rem;
         visibility: visible;
     }
+}
+
+/* ADDED: Language Selector Styles */
+.lang-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+#lang-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+#lang-options.hidden {
+    display: none !important;
+}
+
+.lang-option {
+    padding: 10px 15px;
+    color: var(--md-sys-color-on-surface);
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.lang-option:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
 }

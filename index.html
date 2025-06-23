@@ -37,8 +37,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-lang-key="pageTitle">Heroplan 浏览器</title>
-    <link rel="stylesheet"
-        href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
+    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
         onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="style.css">
@@ -59,10 +58,16 @@
                         <span class="sun-icon">☀️</span>
                         <span class="moon-icon">🌙</span>
                     </button>
-                    <button id="lang-toggle-btn" class="lang-toggle-btn" title="切换语言">
-                        <span class="lang-cn">简</span>
-                        <span class="lang-tc">繁</span>
-                    </button>
+                    <div class="lang-selector-container">
+                        <button id="lang-select-btn" class="lang-toggle-btn" title="切换语言">
+                            <span>🌐</span>
+                        </button>
+                        <div id="lang-options" class="hidden">
+                            <a href="#" class="lang-option" data-lang="cn">简体中文</a>
+                            <a href="#" class="lang-option" data-lang="tc">繁體中文</a>
+                            <a href="#" class="lang-option" data-lang="en">English</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="header-info-container">

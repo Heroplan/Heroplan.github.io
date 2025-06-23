@@ -1174,3 +1174,16 @@ footer .footer-credit {
     background-color: var(--md-sys-color-primary-container);
     color: var(--md-sys-color-on-primary-container);
 }
+
+/* 新增：用于对用户视觉隐藏，但对SEO和屏幕阅读器可见的文本 */
+.seo-text-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

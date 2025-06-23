@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSort = { key: 'power', direction: 'desc' };
     const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
     const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
-    const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Tidal', 'Average', 'Slayer', 'Slow', 'Very Slow'];
+    const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
 
 
     // --- DOM 元素 ---
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'star': ['5', '4', '3', '2', '1'],
         };
         const CUSTOM_SORT_EN = {
-            'speed': ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'slayer', 'Slow', 'Very Slow'],
+            'speed': ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'],
             'star': ['5', '4', '3', '2', '1'],
         };
 

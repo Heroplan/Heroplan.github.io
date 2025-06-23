@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 語言和文本管理 ---
     const i18n = {
         cn: {
-            pageTitle: "Heroplan 浏览器", headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
+            pageTitle: "帝国与谜题英雄资料库 | Heroplan", // 修改这里
+            headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
             sponsoredBy: "独家赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
             filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
             starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
@@ -63,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭",
         },
         tc: {
-            pageTitle: "Heroplan 瀏覽器", headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
+            pageTitle: "帝國與謎題英雄資料庫 | Heroplan", // 修改这里
+            headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
             sponsoredBy: "獨家贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
             filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
             starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
@@ -81,7 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
         },
         en: {
-            pageTitle: "Heroplan Browser", headerTitle: "Heroplan Browser", poweredBy: "Powered by", driven: "",
+            pageTitle: "Empires & Puzzles Hero Database | Heroplan", // 修改这里
+            headerTitle: "Heroplan Browser", poweredBy: "Powered by", driven: "",
             sponsoredBy: "Sponsored by", translatedBy: "Developed by", footerInfo: "Hero data is continuously updated | EN/CN Version",
             filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name",
             starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
@@ -112,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentLang = lang;
 
         const langDict = i18n[lang] || i18n.cn; // Fallback to 'cn'
+        document.title = langDict.pageTitle;
 
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');

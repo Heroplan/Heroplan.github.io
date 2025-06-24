@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cn: {
             pageTitle: "帝国与谜题英雄资料库 | Heroplan",
             headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
-            sponsoredBy: "独家赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
+            sponsoredBy: "赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
             filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
             starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tc: {
             pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
             headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
-            sponsoredBy: "獨家贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
+            sponsoredBy: "贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
             filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
             starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
@@ -235,14 +235,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- 英雄数据处理 ---
     function extractEnglishName(hero) {
-        let heroName = hero.name || '';
+        if (!hero || !hero.name) return null;
+        let heroName = hero.name;
 
-        // 统一预处理：先尝试剥离所有英雄名称末尾的皮肤/服装标识
+        // 步骤1：针对“经验拟态兽”的特殊处理
+        // 这个逻辑只对包含特定关键词的英雄生效
+        if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽')) {
+            const pattern = /\(([^)]+)\)/; // 找到第一个括号内的内容
+            const match = heroName.match(pattern);
+
+            // 确认括号里是 "Experience Mimic"
+            if (match && match[1] && match[1].includes('Experience Mimic')) {
+                const baseName = match[1]; // "Experience Mimic"
+
+                // 找到括号后的后缀
+                const afterParenthesesIndex = heroName.lastIndexOf(')') + 1;
+                const suffix = heroName.substring(afterParenthesesIndex).trim();
+
+                // 定义仅对拟态兽生效的颜色后缀
+                const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
+
+                if (suffix && allowedSuffixes.includes(suffix.toLowerCase())) {
+                    // 如果后缀匹配，则拼接后返回，例如 "Experience Mimic Nature"
+                    return `${baseName} ${suffix}`;
+                }
+                // 如果没有颜色后缀，则只返回基础名
+                return baseName;
+            }
+        }
+
+        // 步骤2：恢复使用您之前确认正常的、针对C1/C2/Toon等的通用解析逻辑
+        // 这个逻辑现在不会处理“经验拟态兽”，因为它已在上面被提前处理并返回
+        let tempName = heroName;
         const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-        const skinMatch = heroName.match(skinPattern);
+        const skinMatch = tempName.match(skinPattern);
         if (skinMatch && skinMatch[1]) {
             const potentialSkin = skinMatch[1].toLowerCase();
-            // 修复：增加对 'toon' 和 'glass' 等英文特殊服装名的判断
             if (potentialSkin.match(/^c\d+$/) ||
                 potentialSkin === 'glass' ||
                 potentialSkin === 'toon' ||
@@ -250,18 +278,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 potentialSkin.endsWith('卡通') ||
                 potentialSkin.endsWith('皮肤') ||
                 potentialSkin.endsWith('皮膚')) {
-                heroName = heroName.substring(0, heroName.length - skinMatch[0].length).trim();
+                tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
             }
         }
 
-        // 如果是英文环境，预处理后的名字即为英文标识符
         if (currentLang === 'en') {
-            return heroName;
+            return tempName;
         }
 
-        // 对其他语言环境，继续解析括号内的英文名
         const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
-        const multiLangMatch = heroName.match(multiLangNamePattern);
+        const multiLangMatch = tempName.match(multiLangNamePattern);
         if (multiLangMatch && multiLangMatch[3]) {
             const potentialEnglishName = multiLangMatch[3].trim();
             if (/[a-zA-Z]/.test(potentialEnglishName)) {
@@ -270,7 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
-        const singleAltLangMatch = heroName.match(singleAltLangNamePattern);
+        const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
         if (singleAltLangMatch && singleAltLangMatch[2]) {
             const potentialEnglishName = singleAltLangMatch[2].trim();
             if (/[a-zA-Z]/.test(potentialEnglishName) && !/[\u4e00-\u9fa5]/.test(potentialEnglishName)) {
@@ -278,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        return null; // 若无法解析出可靠的英文名，则返回null
+        return null;
     }
 
     // --- 数据加载方式更新 ---
@@ -704,29 +730,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 步骤 2: 基于剥离了皮肤信息的名字，进行后续处理
+        // 步骤 2: 基于剥离了皮肤信息的名字，进行后续的显示名称解析
         if (currentLang === 'en') {
             mainHeroName = tempName; // 英文环境下，剩余部分即为主名
         } else {
-            // 中文环境下，继续解析简/繁/英名称
-            const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
-            const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
-            const multiLangMatch = tempName.match(multiLangNamePattern);
-            const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
+            // 中文环境下，进行更精确的解析
+            const pattern = /^(.*?)\s*\(([^)]+)\)/; // 查找 "中文 (英文)" 部分
+            const match = tempName.match(pattern);
 
-            if (multiLangMatch) {
-                mainHeroName = multiLangMatch[1].trim();
-                traditionalChineseName = multiLangMatch[2].trim();
-                englishName = multiLangMatch[3].trim();
-            } else if (singleAltLangMatch) {
-                mainHeroName = singleAltLangMatch[1].trim();
-                const altName = singleAltLangMatch[2].trim();
-                if (/[a-zA-Z]/.test(altName) && !/[\u4e00-\u9fa5]/.test(altName)) {
-                    englishName = altName;
-                } else {
-                    traditionalChineseName = altName;
-                }
+            // 检查是否成功匹配，并且括号内包含英文字母
+            if (match && match[2] && /[a-zA-Z]/.test(match[2])) {
+                mainHeroName = match[1].trim();
+                englishName = match[2].trim();
+                // 此处的逻辑会自然地抛弃括号后的任何后缀（如 Nature）
             } else {
+                // 如果上述格式不匹配，则直接将剩余名字作为主名
                 mainHeroName = tempName;
             }
         }
@@ -875,6 +893,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- 事件监听器绑定 ---
+    // --- 事件监听器绑定 ---
     function addEventListeners() {
         if (themeToggleButton) {
             themeToggleButton.addEventListener('click', toggleTheme);
@@ -1010,7 +1029,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
                 const favString = favorites.join(',');
-                const url = `${window.location.origin}${window.location.pathname}?favs=${encodeURIComponent(favString)}&lang=${currentLang}`;
+                // 使用 lz-string 库进行压缩
+                const compressedFavs = LZString.compressToEncodedURIComponent(favString);
+                // 使用新的参数名 zfavs (zipped favorites)
+                const url = `${window.location.origin}${window.location.pathname}?zfavs=${compressedFavs}&lang=${currentLang}`;
+
                 navigator.clipboard.writeText(url).then(() => {
                     const originalText = shareFavoritesBtn.innerText;
                     shareFavoritesBtn.innerText = i18n[currentLang].shareFavoritesCopied || 'List Copied!';

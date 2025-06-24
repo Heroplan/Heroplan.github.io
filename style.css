@@ -101,6 +101,16 @@ header h1 {
     font-weight: 700;
 }
 
+header h1 a,
+.header-info-content a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-info-content a:hover {
+    text-decoration: underline;
+}
+
 .header-buttons {
     position: absolute;
     top: 50%;
@@ -354,14 +364,15 @@ input[type="number"] {
 }
 
 .filter-actions {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     margin-top: 1rem;
     margin-bottom: 0.8rem;
 }
 
-.reset-button {
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
+.action-button {
     border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 8px;
@@ -369,9 +380,11 @@ input[type="number"] {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
 }
 
-.reset-button:hover {
+.action-button:hover {
     filter: brightness(0.9);
     transform: translateY(-1px);
 }
@@ -471,6 +484,21 @@ input[type="number"] {
     border-bottom: 1px solid var(--md-sys-color-surface-variant);
 }
 
+.favorite-toggle-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--md-sys-color-outline);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-toggle-icon.favorited {
+    color: #FFD700;
+}
+
+.favorite-toggle-icon:hover {
+    transform: scale(1.2);
+}
+
 /* Hero Glow Effect Styles */
 .red-glow-border {
     box-shadow: var(--hero-glow-red);
@@ -539,6 +567,11 @@ html:not(.dark-theme) .color-text-outlined {
     transition: border-color 0.2s ease, box-shadow 0.3s ease;
 }
 
+.manual-table .col-fav {
+    width: 3%;
+    text-align: center;
+}
+
 .manual-table .col-image {
     width: 4%;
     text-align: center;
@@ -590,7 +623,8 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 .manual-table .col-types {
-    width: 17%;
+    width: 14%;
+    /* Adjusted width */
     white-space: normal;
     text-align: center;
 }
@@ -657,6 +691,78 @@ html:not(.dark-theme) .color-text-outlined {
     color: var(--md-sys-color-primary);
     font-weight: 700;
 }
+
+.details-header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#modal .favorite-btn {
+    /* 基础样式 (与其他按钮统一) */
+    background: var(--md-sys-color-surface-variant);
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    padding: 0;
+    line-height: 1;
+
+    /* 星星图标特定样式 */
+    font-size: 1.5rem;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+#modal .favorite-btn:hover {
+    background-color: var(--md-sys-color-primary-container);
+    transform: scale(1.1);
+}
+
+#modal .favorite-btn.favorited {
+    background-color: #FFD700;
+    /* 收藏状态下背景变为金色 */
+    color: var(--md-sys-color-on-primary);
+    /* 星星变为白色以适应背景 */
+}
+
+#modal .favorite-btn.favorited:hover {
+    filter: brightness(1.1);
+}
+
+#modal .share-btn {
+    font-size: 1.2rem;
+    background: var(--md-sys-color-surface-variant);
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--md-sys-color-on-surface-variant);
+    transition: all 0.2s ease;
+    margin-right: 10px;
+    /* Space between share and close buttons */
+}
+
+#modal .share-btn:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    transform: scale(1.1);
+}
+
+#modal .share-btn:disabled {
+    background-color: var(--md-sys-color-secondary-container);
+    cursor: default;
+    transform: none;
+}
+
 
 #modal .close-btn,
 #filters-modal .close-btn {
@@ -1008,22 +1114,16 @@ footer .footer-credit {
         display: none;
     }
 
-    .manual-table .col-power {
-        display: table-cell;
-    }
-
-    .manual-table .hero-image {
-        width: 30px;
-        height: 30px;
-        border-width: 1px;
+    .manual-table .col-fav {
+        width: 10%;
     }
 
     .manual-table .col-image {
-        width: 13%;
+        width: 15%;
     }
 
     .manual-table .col-name {
-        width: 42%;
+        width: 35%;
         text-align: left;
     }
 
@@ -1036,7 +1136,7 @@ footer .footer-credit {
     }
 
     .manual-table .col-star {
-        width: 15%;
+        width: 10%;
     }
 
     #modal,

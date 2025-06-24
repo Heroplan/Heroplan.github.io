@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let family_values = {};
     let currentLang = 'cn';
     let currentSort = { key: 'power', direction: 'desc' };
+    let temporaryFavorites = null; // 用于临时存储分享的收藏列表
     const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
     const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
     const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const filtersModalOverlay = document.getElementById('filters-modal-overlay');
     const closeFiltersModalBtn = document.getElementById('close-filters-modal-btn');
     const pageLoader = document.getElementById('page-loader-overlay');
+    const shareFavoritesBtn = document.getElementById('share-favorites-btn');
+    const openFavoritesBtn = document.getElementById('open-favorites-btn');
     const filterInputs = {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
         color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
@@ -44,17 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 語言和文本管理 ---
     const i18n = {
         cn: {
-            pageTitle: "帝国与谜题英雄资料库 | Heroplan", // 修改这里
+            pageTitle: "帝国与谜题英雄资料库 | Heroplan",
             headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
             sponsoredBy: "独家赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
             filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
             starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
             skillTypeLabel: "特殊技能类别:", skillTypePlaceholder: "例如：增益,异常,治疗", skillTextLabel: "特殊技能文本:",
-            passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装",
+            passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装", favorites: "收藏",
             daysSinceRelease: "距离发布日期天数大于:", daysPlaceholder: "1年半548 2年730", minPower: "战力",
             minAttack: "攻击", minDefense: "防御", minHealth: "生命", resetFilters: "重置筛选",
-
+            shareFavorites: "分享收藏", openFavorites: "打开收藏", shareFavoritesCopied: "列表已复制!",
             footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
             footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
             resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, noResults: "没有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄详情",
@@ -62,18 +65,20 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭",
+            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆"
         },
         tc: {
-            pageTitle: "帝國與謎題英雄資料庫 | Heroplan", // 修改这里
+            pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
             headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
             sponsoredBy: "獨家贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
             filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
             starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
             skillTypeLabel: "特殊技能類別:", skillTypePlaceholder: "例如：增益,異常,治療", skillTextLabel: "特殊技能文本:",
-            passiveSkillLabel: "被動技能文本:", filterBy: "篩選:", all: "全部", hero: "英雄", skin: "服裝",
+            passiveSkillLabel: "被動技能文本:", filterBy: "篩選:", all: "全部", hero: "英雄", skin: "服裝", favorites: "收藏",
             daysSinceRelease: "距離發佈日期天數大於:", daysPlaceholder: "1年半548 2年730", minPower: "戰力",
             minAttack: "攻擊", minDefense: "防禦", minHealth: "生命", resetFilters: "重置篩選",
+            shareFavorites: "分享收藏", openFavorites: "打開收藏", shareFavoritesCopied: "列表已複製!",
             footerGameName: "《帝國與謎題》", footerPlatform: "英雄數據查詢平台",
             footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
             resultsCountText: (count) => `篩選清單中有 ${count} 位英雄`, noResults: "沒有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄詳情",
@@ -81,18 +86,20 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
+            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆"
         },
         en: {
-            pageTitle: "Empires & Puzzles Hero Database | Heroplan", // 修改这里
+            pageTitle: "Empires & Puzzles Hero Database | Heroplan",
             headerTitle: "Heroplan Browser", poweredBy: "Powered by", driven: "",
             sponsoredBy: "Sponsored by", translatedBy: "Developed by", footerInfo: "Hero data is continuously updated | EN/CN Version",
             filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name",
             starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
             sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", advancedFilters: "Advanced Filters",
             skillTypeLabel: "Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Skill Text:",
-            passiveSkillLabel: "Passive Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume",
+            passiveSkillLabel: "Passive Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",
             daysSinceRelease: "Days since release>", daysPlaceholder: "1.5y=548 2y=730", minPower: "Power",
             minAttack: "Attack", minDefense: "Defense", minHealth: "Health", resetFilters: "Reset Filters",
+            shareFavorites: "Share Favorites", openFavorites: "Open Favorites", shareFavoritesCopied: "List Copied!",
             footerGameName: "Empires & Puzzles", footerPlatform: "Hero Data Platform",
             footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",
             resultsCountText: (count) => `Found ${count} heroes in the list`, noResults: "No matching heroes found", modalHeroDetails: "ℹ️ Hero Details",
@@ -100,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 Name:", modalSpeed: "⌛ Speed:", modalSkillType: "🏷️ Skill Type:",
             modalSpecialSkill: "✨ Special Skill:", modalPassiveSkill: "🧿 Passive Skill:",
             modalFamilyBonus: (family) => `👪 Family Bonus (${family}):`, modalSkin: "Costume:", none: "None", detailsCloseBtn: "Close",
+            shareButtonTitle: "Share", favoriteButtonTitle: "Favorite", favColumnHeader: "☆"
         }
     };
 
@@ -119,11 +127,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
-            const translation = langDict[key];
-            if (typeof translation === 'function') {
-                // We handle functional translations like resultsCountText separately
-            } else if (translation !== undefined) {
-                el.textContent = translation;
+            if (key === 'headerTitle' && el.tagName === 'H1') {
+                // Special handling for the H1 with a link inside
+                const link = el.querySelector('a');
+                if (link) link.textContent = langDict[key];
+            } else {
+                const translation = langDict[key];
+                if (typeof translation === 'function') {
+                    // We handle functional translations like resultsCountText separately
+                } else if (translation !== undefined) {
+                    el.textContent = translation;
+                }
             }
         });
         document.querySelectorAll('[data-lang-key-placeholder]').forEach(el => {
@@ -175,21 +189,96 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.reload();
     }
 
-    function initializeLanguage() {
-        const savedLang = getCookie('language');
-        if (savedLang && i18n[savedLang]) {
-            applyLanguage(savedLang);
+    // --- 收藏夹管理 ---
+    function getFavorites() {
+        try {
+            const favorites = localStorage.getItem('heroFavorites');
+            return favorites ? JSON.parse(favorites) : [];
+        } catch (e) {
+            console.error("Failed to get favorites from localStorage", e);
+            return [];
+        }
+    }
+
+    function saveFavorites(favoritesArray) {
+        try {
+            localStorage.setItem('heroFavorites', JSON.stringify(favoritesArray));
+        } catch (e) {
+            console.error("Failed to save favorites to localStorage", e);
+        }
+    }
+
+    function isFavorite(hero) {
+        if (!hero.english_name) return false;
+        const favorites = getFavorites();
+        const identifier = `${hero.english_name}-${hero.costume_id}`;
+        return favorites.includes(identifier);
+    }
+
+    function toggleFavorite(hero) {
+        if (!hero.english_name) {
+            console.warn("Cannot favorite hero with no English name:", hero.name);
+            return false;
+        }
+        let favorites = getFavorites();
+        const identifier = `${hero.english_name}-${hero.costume_id}`;
+        const index = favorites.indexOf(identifier);
+
+        if (index > -1) {
+            favorites.splice(index, 1); // Remove from favorites
         } else {
-            // Fallback to browser language or default to 'cn'
-            const browserLang = navigator.language.toLowerCase();
-            if (browserLang.includes('en')) {
-                applyLanguage('en');
-            } else if (browserLang.includes('zh-tw') || browserLang.includes('zh-hk')) {
-                applyLanguage('tc');
-            } else {
-                applyLanguage('cn');
+            favorites.push(identifier); // Add to favorites
+        }
+        saveFavorites(favorites);
+        return index === -1; // Return true if added, false if removed
+    }
+
+    // --- 英雄数据处理 ---
+    function extractEnglishName(hero) {
+        let heroName = hero.name || '';
+
+        // 统一预处理：先尝试剥离所有英雄名称末尾的皮肤/服装标识
+        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+        const skinMatch = heroName.match(skinPattern);
+        if (skinMatch && skinMatch[1]) {
+            const potentialSkin = skinMatch[1].toLowerCase();
+            // 修复：增加对 'toon' 和 'glass' 等英文特殊服装名的判断
+            if (potentialSkin.match(/^c\d+$/) ||
+                potentialSkin === 'glass' ||
+                potentialSkin === 'toon' ||
+                potentialSkin === '玻璃' ||
+                potentialSkin.endsWith('卡通') ||
+                potentialSkin.endsWith('皮肤') ||
+                potentialSkin.endsWith('皮膚')) {
+                heroName = heroName.substring(0, heroName.length - skinMatch[0].length).trim();
             }
         }
+
+        // 如果是英文环境，预处理后的名字即为英文标识符
+        if (currentLang === 'en') {
+            return heroName;
+        }
+
+        // 对其他语言环境，继续解析括号内的英文名
+        const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
+        const multiLangMatch = heroName.match(multiLangNamePattern);
+        if (multiLangMatch && multiLangMatch[3]) {
+            const potentialEnglishName = multiLangMatch[3].trim();
+            if (/[a-zA-Z]/.test(potentialEnglishName)) {
+                return potentialEnglishName;
+            }
+        }
+
+        const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
+        const singleAltLangMatch = heroName.match(singleAltLangNamePattern);
+        if (singleAltLangMatch && singleAltLangMatch[2]) {
+            const potentialEnglishName = singleAltLangMatch[2].trim();
+            if (/[a-zA-Z]/.test(potentialEnglishName) && !/[\u4e00-\u9fa5]/.test(potentialEnglishName)) {
+                return potentialEnglishName;
+            }
+        }
+
+        return null; // 若无法解析出可靠的英文名，则返回null
     }
 
     // --- 数据加载方式更新 ---
@@ -357,12 +446,40 @@ document.addEventListener('DOMContentLoaded', function () {
     function applyFiltersAndRender() {
         const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.toLowerCase()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
+
+        const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
+
         const containsAllKeywords = (text, keywords) => {
             if (!text) return false;
             text = String(text).toLowerCase();
             return keywords.every(keyword => text.includes(keyword));
         };
+
         filteredHeroes = allHeroes.filter(hero => {
+            // 步骤1：确定英雄是否符合基础类别筛选 (收藏、英雄、皮肤、或全部)
+            let matchesBaseFilter = false;
+            const releaseDateType = filters.releaseDateType;
+
+            if (releaseDateType === 'favorites') {
+                if (hero.english_name) {
+                    const heroIdentifier = `${hero.english_name}-${hero.costume_id}`;
+                    if (favoritesListToUse.includes(heroIdentifier)) {
+                        matchesBaseFilter = true;
+                    }
+                }
+            } else if (releaseDateType === 'hero') {
+                if (hero.costume_id === 0) matchesBaseFilter = true;
+            } else if (releaseDateType === 'skin') {
+                if (hero.costume_id !== 0) matchesBaseFilter = true;
+            } else { // 'all'
+                matchesBaseFilter = true;
+            }
+
+            if (!matchesBaseFilter) {
+                return false;
+            }
+
+            // 步骤2：如果符合基础类别，则继续应用所有其他筛选条件
             if (filters.name) {
                 const keywords = filters.name.split(' ').filter(k => k);
                 if (keywords.length > 0 && !containsAllKeywords(hero.name, keywords)) return false;
@@ -389,11 +506,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filters.family !== noneValue && String(hero.family).toLowerCase() !== filters.family) return false;
             if (filters.source !== noneValue && String(hero.source).toLowerCase() !== filters.source) return false;
             if (filters.aetherpower !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower) return false;
-            const releaseDateType = filters.releaseDateType;
+
             const releaseDateDays = Number(filters.releaseDateInput);
-            const isSkin = hero.costume_id !== 0;
-            if (releaseDateType === 'hero' && isSkin) return false;
-            if (releaseDateType === 'skin' && !isSkin) return false;
             if (releaseDateDays > 0) {
                 if (!hero['Release date']) return false;
                 const releaseDate = new Date(hero['Release date']);
@@ -409,9 +523,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.attack) > 0 && Number(hero.attack) < Number(filters.attack)) return false;
             if (Number(filters.defense) > 0 && Number(hero.defense) < Number(filters.defense)) return false;
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
+
+            // 如果通过了所有筛选，则保留该英雄
             return true;
         });
 
+        // ... 排序逻辑 (未改变) ...
         filteredHeroes.sort((a, b) => {
             const key = currentSort.key;
             const direction = currentSort.direction === 'asc' ? 1 : -1;
@@ -457,6 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const langDict = i18n[currentLang];
         const headers = {
+            fav: langDict.favColumnHeader,
             image: langDict.avatarLabel,
             name: langDict.nameLabel.slice(0, -1),
             color: langDict.colorLabel.slice(0, -1),
@@ -502,8 +620,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const rowsHTML = heroes.map(hero => {
+            const isHeroFavorite = isFavorite(hero);
             const cellsHTML = colKeys.map(key => {
                 let content = hero[key] || '';
+                if (key === 'fav') {
+                    if (!hero.english_name) {
+                        return `<td class="col-fav"></td>`; // No star if no english name
+                    }
+                    return `<td class="col-fav"><span class="favorite-toggle-icon ${isHeroFavorite ? 'favorited' : ''}" data-hero-id="${hero.originalIndex}">${isHeroFavorite ? '★' : '☆'}</span></td>`;
+                }
                 if (key === 'image') {
                     const heroColorClass = getColorGlowClass(hero.color);
                     return `<td class="col-image"><img src="${getLocalImagePath(hero.image)}" class="hero-image ${heroColorClass}" alt="${hero.name}" loading="lazy"></td>`;
@@ -557,22 +682,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let rawHeroName = hero.name || 'Unknown Hero';
         let tempName = rawHeroName;
-        let mainHeroName = tempName;
+        let mainHeroName = '';
         let englishName = '';
         let traditionalChineseName = '';
         let heroSkin = '';
 
-        if (currentLang !== 'en') {
-            const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-            const skinMatch = tempName.match(skinPattern);
-            if (skinMatch && skinMatch[1]) {
-                const potentialSkin = skinMatch[1];
-                if (potentialSkin.match(/^C\d+$/i) || potentialSkin.toLowerCase() === '玻璃' || potentialSkin.toLowerCase().endsWith('皮肤') || potentialSkin.toLowerCase().endsWith('皮膚')) {
-                    heroSkin = potentialSkin;
-                    tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
-                }
+        // 步骤 1: 对所有语言，首先统一解析并分离出皮肤信息
+        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+        const skinMatch = tempName.match(skinPattern);
+        if (skinMatch && skinMatch[1]) {
+            const potentialSkin = skinMatch[1].toLowerCase();
+            if (potentialSkin.match(/^c\d+$/) ||
+                potentialSkin === 'glass' ||
+                potentialSkin === 'toon' ||
+                potentialSkin === '玻璃' ||
+                potentialSkin.endsWith('卡通') ||
+                potentialSkin.endsWith('皮肤') ||
+                potentialSkin.endsWith('皮膚')) {
+                heroSkin = skinMatch[1]; // 保存原始大小写的皮肤名
+                tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
             }
+        }
 
+        // 步骤 2: 基于剥离了皮肤信息的名字，进行后续处理
+        if (currentLang === 'en') {
+            mainHeroName = tempName; // 英文环境下，剩余部分即为主名
+        } else {
+            // 中文环境下，继续解析简/繁/英名称
             const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
             const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
             const multiLangMatch = tempName.match(multiLangNamePattern);
@@ -593,8 +729,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 mainHeroName = tempName;
             }
-        } else {
-            mainHeroName = hero.name;
         }
 
 
@@ -615,7 +749,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const detailsHTML = `
             <div class="details-header">
                 <h2>${langDict.modalHeroDetails}</h2>
-                <button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button>
+                <div class="details-header-buttons">
+                    <button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button>
+                    <button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button>
+                    <button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button>
+                </div>
             </div>
             
             <div class="hero-title-block">
@@ -676,10 +814,65 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button>
             </div>`;
         modalContent.innerHTML = detailsHTML;
+
+        const favoriteBtn = document.getElementById('favorite-hero-btn');
+        const shareBtn = document.getElementById('share-hero-btn');
+
+        if (!hero.english_name) {
+            favoriteBtn.style.display = 'none';
+            shareBtn.style.display = 'none'; // 如果没有英文名，也隐藏分享按钮
+        } else {
+            const updateFavoriteButton = () => {
+                if (isFavorite(hero)) {
+                    favoriteBtn.textContent = '★';
+                    favoriteBtn.classList.add('favorited');
+                } else {
+                    favoriteBtn.textContent = '☆';
+                    favoriteBtn.classList.remove('favorited');
+                }
+            };
+
+            favoriteBtn.addEventListener('click', () => {
+                toggleFavorite(hero);
+                updateFavoriteButton();
+                // Also update the star in the main table
+                const tableStar = document.querySelector(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`);
+                if (tableStar) {
+                    if (isFavorite(hero)) {
+                        tableStar.textContent = '★';
+                        tableStar.classList.add('favorited');
+                    } else {
+                        tableStar.textContent = '☆';
+                        tableStar.classList.remove('favorited');
+                    }
+                }
+                if (filterInputs.releaseDateType.value === 'favorites') {
+                    applyFiltersAndRender();
+                }
+            });
+            updateFavoriteButton();
+
+            shareBtn.addEventListener('click', () => {
+                const identifier = `${hero.english_name}-${hero.costume_id}`;
+                const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}&lang=${currentLang}`;
+                navigator.clipboard.writeText(url).then(() => {
+                    const originalContent = shareBtn.innerHTML;
+                    shareBtn.innerText = '✅';
+                    shareBtn.disabled = true;
+                    setTimeout(() => {
+                        shareBtn.innerHTML = originalContent;
+                        shareBtn.disabled = false;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy URL: ', err);
+                    alert('Failed to copy link.');
+                });
+            });
+        }
+
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
     }
-
 
     // --- 事件监听器绑定 ---
     function addEventListeners() {
@@ -687,7 +880,6 @@ document.addEventListener('DOMContentLoaded', function () {
             themeToggleButton.addEventListener('click', toggleTheme);
         }
 
-        // New language selection logic
         if (langSelectBtn) {
             langSelectBtn.addEventListener('click', (event) => {
                 event.stopPropagation();
@@ -715,20 +907,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (const key in filterInputs) {
             if (filterInputs[key]) {
-                const noneText = i18n[currentLang].none;
-                if (filterInputs[key].tagName === 'SELECT' && filterInputs[key].id !== 'release-date-type') {
-                    // Ensure the 'None' option is correctly selected after a language change
-                    if (filterInputs[key].value !== noneText) {
-                        // If a filter was active, try to maintain it, otherwise reset
-                        // This part can be complex, for now we reset to 'None' for simplicity on lang change
+                filterInputs[key].addEventListener('input', () => {
+                    if (key === 'releaseDateType') {
+                        temporaryFavorites = null;
                     }
-                }
-                filterInputs[key].addEventListener('input', applyFiltersAndRender);
+                    applyFiltersAndRender();
+                });
             }
         }
         if (modalOverlay) modalOverlay.addEventListener('click', closeDetailsModal);
 
         if (resultsTable) {
+            const tbody = resultsTable.querySelector('tbody');
+            if (tbody) {
+                tbody.addEventListener('click', (event) => {
+                    const target = event.target;
+                    // Handle quick favorite toggle from table
+                    if (target.classList.contains('favorite-toggle-icon')) {
+                        event.stopPropagation();
+                        const heroId = parseInt(target.dataset.heroId, 10);
+                        const hero = allHeroes.find(h => h.originalIndex === heroId);
+                        if (hero) {
+                            const wasFavorited = isFavorite(hero);
+                            toggleFavorite(hero);
+                            const isNowFavorite = !wasFavorited;
+
+                            target.textContent = isNowFavorite ? '★' : '☆';
+                            target.classList.toggle('favorited', isNowFavorite);
+
+                            if (filterInputs.releaseDateType.value === 'favorites') {
+                                if (temporaryFavorites !== null && !isNowFavorite) {
+                                    const identifier = `${hero.english_name}-${hero.costume_id}`;
+                                    const index = temporaryFavorites.indexOf(identifier);
+                                    if (index > -1) {
+                                        temporaryFavorites.splice(index, 1);
+                                    }
+                                }
+                                applyFiltersAndRender();
+                            }
+                        }
+                    }
+                    // Handle opening details modal
+                    else {
+                        const row = target.closest('.table-row');
+                        if (row) {
+                            const heroId = parseInt(row.dataset.heroId, 10);
+                            const selectedHero = allHeroes.find(h => h.originalIndex === heroId);
+                            if (selectedHero) { openDetailsModal(selectedHero); }
+                        }
+                    }
+                });
+            }
             const thead = resultsTable.querySelector('thead');
             if (thead) {
                 thead.addEventListener('click', (event) => {
@@ -746,14 +975,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             }
-            resultsTable.addEventListener('click', (event) => {
-                const row = event.target.closest('.table-row');
-                if (row) {
-                    const heroId = parseInt(row.dataset.heroId, 10);
-                    const selectedHero = allHeroes.find(h => h.originalIndex === heroId);
-                    if (selectedHero) { openDetailsModal(selectedHero); }
-                }
-            });
         }
         if (openFiltersBtn) openFiltersBtn.addEventListener('click', openFiltersModal);
         if (closeFiltersModalBtn) closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
@@ -761,6 +982,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
+                temporaryFavorites = null;
                 for (const key in filterInputs) {
                     const element = filterInputs[key];
                     const noneText = i18n[currentLang].none;
@@ -771,6 +993,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 applyFiltersAndRender();
             });
         }
+
+        if (openFavoritesBtn) {
+            openFavoritesBtn.addEventListener('click', () => {
+                temporaryFavorites = null;
+                filterInputs.releaseDateType.value = 'favorites';
+                applyFiltersAndRender();
+            });
+        }
+
+        if (shareFavoritesBtn) {
+            shareFavoritesBtn.addEventListener('click', () => {
+                const favorites = getFavorites();
+                if (favorites.length === 0) {
+                    alert('No favorites to share.');
+                    return;
+                }
+                const favString = favorites.join(',');
+                const url = `${window.location.origin}${window.location.pathname}?favs=${encodeURIComponent(favString)}&lang=${currentLang}`;
+                navigator.clipboard.writeText(url).then(() => {
+                    const originalText = shareFavoritesBtn.innerText;
+                    shareFavoritesBtn.innerText = i18n[currentLang].shareFavoritesCopied || 'List Copied!';
+                    shareFavoritesBtn.disabled = true;
+                    setTimeout(() => {
+                        shareFavoritesBtn.innerText = originalText;
+                        shareFavoritesBtn.disabled = false;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy favorites link: ', err);
+                });
+            });
+        }
+
         document.querySelectorAll('#filters-modal .filter-header').forEach(header => {
             header.addEventListener('click', function (event) {
                 if (event.target.classList.contains('toggle-button')) { return; }
@@ -785,7 +1039,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (targetElement) {
                     targetElement.classList.toggle('collapsed');
                     this.classList.toggle('expanded');
-                    const currentState = targetElement.classList.contains('collapsed') ? 'collapsed' : 'expanded';
+                    const currentState = targetElement.classList.contains('collapsed') ? 'expanded' : 'collapsed';
                     setCookie(targetId + '_state', currentState, 365);
                 }
             });
@@ -800,17 +1054,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
         window.addEventListener('resize', adjustStickyHeaders);
     }
-
     // --- 应用初始化 ---
     async function initializeApp() {
-        initializeLanguage();
+        const urlParams = new URLSearchParams(window.location.search);
+        const viewHeroFromUrl = urlParams.get('view');
+        const langFromUrl = urlParams.get('lang');
+        const favsFromUrl = urlParams.get('favs');
+        const languageCookie = getCookie('language');
+
+        let langToUse = 'cn'; // Default language
+
+        if (languageCookie && i18n[languageCookie]) {
+            langToUse = languageCookie;
+        } else if (langFromUrl && i18n[langFromUrl]) {
+            langToUse = langFromUrl;
+        } else {
+            const browserLang = navigator.language.toLowerCase();
+            if (browserLang.includes('en')) {
+                langToUse = 'en';
+            } else if (browserLang.includes('zh-tw') || browserLang.includes('zh-hk')) {
+                langToUse = 'tc';
+            }
+        }
+        applyLanguage(langToUse);
+
         const dataLoaded = await loadData(currentLang);
         if (dataLoaded) {
-            allHeroes.forEach((hero, index) => hero.originalIndex = index);
+            allHeroes.forEach((hero, index) => {
+                hero.originalIndex = index;
+                hero.english_name = extractEnglishName(hero);
+            });
+
             populateFilters();
+
+            if (favsFromUrl) {
+                try {
+                    const favIdentifiers = decodeURIComponent(favsFromUrl).split(',');
+                    temporaryFavorites = favIdentifiers; // Store as temporary list
+                    filterInputs.releaseDateType.value = 'favorites';
+                } catch (e) {
+                    console.error("Failed to process favorites from URL", e);
+                }
+            }
+
             addEventListeners();
             applyFiltersAndRender();
             loadFilterStates();
+
+            if (viewHeroFromUrl && !favsFromUrl) {
+                const targetHero = allHeroes.find(h => {
+                    if (!h.english_name) return false;
+                    const identifier = `${h.english_name}-${h.costume_id}`;
+                    return identifier === viewHeroFromUrl;
+                });
+
+                if (targetHero) {
+                    openDetailsModal(targetHero);
+                }
+            }
 
             setTimeout(adjustStickyHeaders, 100);
         }

@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭",
-            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆"
+            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
+            favHeaderTitle: "一键收藏/取消全部",
+            confirmFavoriteAll: "您确定要收藏当前列表中的所有英雄吗？",
+            confirmUnfavoriteAll: "您确定要取消收藏当前列表中的所有英雄吗？"
         },
         tc: {
             pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -86,7 +89,10 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
             modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
             modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
-            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆"
+            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
+            favHeaderTitle: "一鍵收藏/取消全部",
+            confirmFavoriteAll: "您確定要收藏當前列表中的所有英雄嗎？",
+            confirmUnfavoriteAll: "您確定要取消收藏當前列表中的所有英雄嗎？"
         },
         en: {
             pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -107,7 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
             modalSkillName: "📄 Name:", modalSpeed: "⌛ Speed:", modalSkillType: "🏷️ Skill Type:",
             modalSpecialSkill: "✨ Special Skill:", modalPassiveSkill: "🧿 Passive Skill:",
             modalFamilyBonus: (family) => `👪 Family Bonus (${family}):`, modalSkin: "Costume:", none: "None", detailsCloseBtn: "Close",
-            shareButtonTitle: "Share", favoriteButtonTitle: "Favorite", favColumnHeader: "☆"
+            shareButtonTitle: "Share", favoriteButtonTitle: "Favorite", favColumnHeader: "☆",
+            favHeaderTitle: "Favorite/Unfavorite All",
+            confirmFavoriteAll: "Are you sure you want to favorite all heroes in the current list?",
+            confirmUnfavoriteAll: "Are you sure you want to unfavorite all heroes in the current list?"
         }
     };
 
@@ -238,34 +247,24 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!hero || !hero.name) return null;
         let heroName = hero.name;
 
-        // 步骤1：针对“经验拟态兽”的特殊处理
-        // 这个逻辑只对包含特定关键词的英雄生效
+        // 仅针对“经验拟态兽”的特殊处理，确保不影响其他英雄
         if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽')) {
             const pattern = /\(([^)]+)\)/; // 找到第一个括号内的内容
             const match = heroName.match(pattern);
 
-            // 确认括号里是 "Experience Mimic"
             if (match && match[1] && match[1].includes('Experience Mimic')) {
                 const baseName = match[1]; // "Experience Mimic"
-
-                // 找到括号后的后缀
                 const afterParenthesesIndex = heroName.lastIndexOf(')') + 1;
                 const suffix = heroName.substring(afterParenthesesIndex).trim();
-
-                // 定义仅对拟态兽生效的颜色后缀
                 const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
 
                 if (suffix && allowedSuffixes.includes(suffix.toLowerCase())) {
-                    // 如果后缀匹配，则拼接后返回，例如 "Experience Mimic Nature"
-                    return `${baseName} ${suffix}`;
+                    return `${baseName} ${suffix}`; // 返回 "Experience Mimic Nature" 等
                 }
-                // 如果没有颜色后缀，则只返回基础名
-                return baseName;
+                return baseName; // 如果没有颜色后缀，只返回 "Experience Mimic"
             }
         }
 
-        // 步骤2：恢复使用您之前确认正常的、针对C1/C2/Toon等的通用解析逻辑
-        // 这个逻辑现在不会处理“经验拟态兽”，因为它已在上面被提前处理并返回
         let tempName = heroName;
         const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
         const skinMatch = tempName.match(skinPattern);
@@ -306,6 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return null;
     }
+
 
     // --- 数据加载方式更新 ---
     async function loadData(lang) {
@@ -595,12 +595,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderTable(heroes) {
         if (!resultsTable) return;
-        if (resultsCountEl) {
-            resultsCountEl.textContent = i18n[currentLang].resultsCountText(heroes.length);
-        }
+
         const langDict = i18n[currentLang];
+
+        // START: 新增逻辑，用于判断表头星星的显示状态
+        const heroesToProcess = heroes.filter(h => h.english_name);
+        const favoritedCount = heroesToProcess.filter(isFavorite).length;
+
+        // 如果可收藏的英雄数量大于0，并且已收藏的数量小于总数，则代表下一次操作是“全部收藏”
+        const shouldPredictFavoriteAll = heroesToProcess.length > 0 && favoritedCount < heroesToProcess.length;
+
+        const favHeaderIcon = shouldPredictFavoriteAll ? '★' : '☆';
+        const favHeaderClass = shouldPredictFavoriteAll ? 'favorited' : '';
+        // END: 新增逻辑
+
+        if (resultsCountEl) {
+            resultsCountEl.textContent = langDict.resultsCountText(heroes.length);
+        }
+
         const headers = {
-            fav: langDict.favColumnHeader,
+            fav: favHeaderIcon, // 使用动态计算出的图标
             image: langDict.avatarLabel,
             name: langDict.nameLabel.slice(0, -1),
             color: langDict.colorLabel.slice(0, -1),
@@ -628,6 +642,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 sortIndicator = currentSort.direction === 'asc' ? '▲' : '▼';
             }
             const headerText = headers[key];
+
+            if (key === 'fav') {
+                // 为收藏列的表头应用动态的class和图标
+                return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
+            }
             return `<th class="col-${key} ${isSortable ? 'sortable' : ''}" data-sort-key="${key}">
                         ${headerText}
                         <span class="sort-indicator">${sortIndicator}</span>
@@ -734,17 +753,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentLang === 'en') {
             mainHeroName = tempName; // 英文环境下，剩余部分即为主名
         } else {
-            // 中文环境下，进行更精确的解析
-            const pattern = /^(.*?)\s*\(([^)]+)\)/; // 查找 "中文 (英文)" 部分
-            const match = tempName.match(pattern);
+            // 中文环境下，进行更精确的显示解析
+            const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
+            const multiLangMatch = tempName.match(multiLangNamePattern);
 
-            // 检查是否成功匹配，并且括号内包含英文字母
-            if (match && match[2] && /[a-zA-Z]/.test(match[2])) {
-                mainHeroName = match[1].trim();
-                englishName = match[2].trim();
-                // 此处的逻辑会自然地抛弃括号后的任何后缀（如 Nature）
+            const singleAltLangNamePattern = /^(.*?)\s*\(([^)]+)\)/;
+            const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
+
+            if (multiLangMatch) { // 优先处理 "简 繁 (英)" 格式
+                mainHeroName = multiLangMatch[1].trim();
+                traditionalChineseName = multiLangMatch[2].trim();
+                englishName = multiLangMatch[3].trim();
+            } else if (singleAltLangMatch && /[a-zA-Z]/.test(singleAltLangMatch[2])) { // 处理 "中 (英) ..." 格式
+                mainHeroName = singleAltLangMatch[1].trim();
+                englishName = singleAltLangMatch[2].trim();
+                // 任何后缀在此处被自然忽略，以满足显示要求
             } else {
-                // 如果上述格式不匹配，则直接将剩余名字作为主名
+                // 如果没有找到括号内的英文，则全部作为主名
                 mainHeroName = tempName;
             }
         }
@@ -893,7 +918,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- 事件监听器绑定 ---
-    // --- 事件监听器绑定 ---
     function addEventListeners() {
         if (themeToggleButton) {
             themeToggleButton.addEventListener('click', toggleTheme);
@@ -941,32 +965,29 @@ document.addEventListener('DOMContentLoaded', function () {
             if (tbody) {
                 tbody.addEventListener('click', (event) => {
                     const target = event.target;
-                    // Handle quick favorite toggle from table
+                    // 处理表格内的快速收藏/取消收藏点击
                     if (target.classList.contains('favorite-toggle-icon')) {
                         event.stopPropagation();
                         const heroId = parseInt(target.dataset.heroId, 10);
                         const hero = allHeroes.find(h => h.originalIndex === heroId);
                         if (hero) {
-                            const wasFavorited = isFavorite(hero);
+                            // 切换英雄在localStorage中的收藏状态
                             toggleFavorite(hero);
-                            const isNowFavorite = !wasFavorited;
 
+                            // 立即在UI上更新被点击的星星图标
+                            const isNowFavorite = isFavorite(hero);
                             target.textContent = isNowFavorite ? '★' : '☆';
                             target.classList.toggle('favorited', isNowFavorite);
 
-                            if (filterInputs.releaseDateType.value === 'favorites') {
-                                if (temporaryFavorites !== null && !isNowFavorite) {
-                                    const identifier = `${hero.english_name}-${hero.costume_id}`;
-                                    const index = temporaryFavorites.indexOf(identifier);
-                                    if (index > -1) {
-                                        temporaryFavorites.splice(index, 1);
-                                    }
-                                }
+                            // **核心修改**：
+                            // 仅当用户在查看自己的收藏列表时（即非临时列表），
+                            // 取消收藏后才刷新列表以隐藏该项目。
+                            if (filterInputs.releaseDateType.value === 'favorites' && temporaryFavorites === null) {
                                 applyFiltersAndRender();
                             }
                         }
                     }
-                    // Handle opening details modal
+                    // 处理打开英雄详情的点击
                     else {
                         const row = target.closest('.table-row');
                         if (row) {
@@ -980,8 +1001,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const thead = resultsTable.querySelector('thead');
             if (thead) {
                 thead.addEventListener('click', (event) => {
-                    const header = event.target.closest('th.sortable');
-                    if (header) {
+                    const header = event.target.closest('th');
+                    if (!header) return;
+
+                    // 处理排序点击
+                    if (header.classList.contains('sortable')) {
                         const sortKey = header.dataset.sortKey;
                         if (currentSort.key === sortKey) {
                             currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
@@ -991,6 +1015,36 @@ document.addEventListener('DOMContentLoaded', function () {
                             currentSort.direction = numericKeys.includes(sortKey) ? 'desc' : 'asc';
                         }
                         applyFiltersAndRender();
+                    }
+                    // 处理一键收藏点击
+                    else if (header.classList.contains('favorite-all-header')) {
+                        if (filteredHeroes.length === 0) return;
+
+                        const langDict = i18n[currentLang];
+                        const heroesToProcess = filteredHeroes.filter(h => h.english_name); // 只处理有英文名的
+                        if (heroesToProcess.length === 0) return;
+
+                        const favoritedCount = heroesToProcess.filter(isFavorite).length;
+                        const shouldFavoriteAll = favoritedCount < heroesToProcess.length;
+
+                        const message = shouldFavoriteAll ? langDict.confirmFavoriteAll : langDict.confirmUnfavoriteAll;
+
+                        if (window.confirm(message)) {
+                            let currentFavoritesSet = new Set(getFavorites());
+
+                            if (shouldFavoriteAll) {
+                                heroesToProcess.forEach(hero => {
+                                    currentFavoritesSet.add(`${hero.english_name}-${hero.costume_id}`);
+                                });
+                            } else {
+                                heroesToProcess.forEach(hero => {
+                                    currentFavoritesSet.delete(`${hero.english_name}-${hero.costume_id}`);
+                                });
+                            }
+
+                            saveFavorites(Array.from(currentFavoritesSet));
+                            applyFiltersAndRender();
+                        }
                     }
                 });
             }
@@ -1077,12 +1131,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         window.addEventListener('resize', adjustStickyHeaders);
     }
+
     // --- 应用初始化 ---
     async function initializeApp() {
         const urlParams = new URLSearchParams(window.location.search);
         const viewHeroFromUrl = urlParams.get('view');
         const langFromUrl = urlParams.get('lang');
-        const favsFromUrl = urlParams.get('favs');
+        const zfavsFromUrl = urlParams.get('zfavs'); // 新的压缩参数
+        const favsFromUrl = urlParams.get('favs');   // 旧的明文参数
         const languageCookie = getCookie('language');
 
         let langToUse = 'cn'; // Default language
@@ -1110,10 +1166,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
             populateFilters();
 
-            if (favsFromUrl) {
+            // 优先处理新的压缩格式链接
+            if (zfavsFromUrl) {
+                try {
+                    const favString = LZString.decompressFromEncodedURIComponent(zfavsFromUrl);
+                    if (favString) {
+                        temporaryFavorites = favString.split(',');
+                        filterInputs.releaseDateType.value = 'favorites';
+                    }
+                } catch (e) {
+                    console.error("Failed to decompress favorites from URL", e);
+                }
+            } else if (favsFromUrl) { // 兼容旧的明文格式链接
                 try {
                     const favIdentifiers = decodeURIComponent(favsFromUrl).split(',');
-                    temporaryFavorites = favIdentifiers; // Store as temporary list
+                    temporaryFavorites = favIdentifiers;
                     filterInputs.releaseDateType.value = 'favorites';
                 } catch (e) {
                     console.error("Failed to process favorites from URL", e);
@@ -1124,7 +1191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             applyFiltersAndRender();
             loadFilterStates();
 
-            if (viewHeroFromUrl && !favsFromUrl) {
+            if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
                 const targetHero = allHeroes.find(h => {
                     if (!h.english_name) return false;
                     const identifier = `${h.english_name}-${h.costume_id}`;

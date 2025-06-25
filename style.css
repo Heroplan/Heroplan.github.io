@@ -494,6 +494,9 @@ input[type="number"] {
 .favorite-toggle-icon.favorited {
     color: #FFD700;
 }
+.manual-table th.favorite-all-header.favorited {
+    color: #FFD700;
+}
 
 .favorite-toggle-icon:hover {
     transform: scale(1.2);

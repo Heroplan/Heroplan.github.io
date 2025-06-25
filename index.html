@@ -153,7 +153,10 @@
                 </div>
                 <div class="filter-card">
                     <div class="filter-header" id="advanced-filters-header">
-                        <h2 data-lang-key="advancedFilters">高级筛选</h2>
+                        <div class="filter-title-container">
+                            <h2 data-lang-key="advancedFilters">高级筛选</h2>
+                            <button id="advanced-filter-help-btn" class="help-btn" title="筛选语法说明">?</button>
+                        </div>
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
                     <div id="advanced-filters-content" class="filter-content collapsed">
@@ -211,6 +214,9 @@
             </div>
         </div>
     </div>
+
+    <div id="help-modal-overlay" class="hidden"></div>
+    <div id="help-modal" class="hidden"></div>
 
     <div class="floating-action-buttons">
         <button id="open-filters-btn" title="打开筛选">🔍</button>

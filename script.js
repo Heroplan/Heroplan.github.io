@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const pageLoader = document.getElementById('page-loader-overlay');
     const shareFavoritesBtn = document.getElementById('share-favorites-btn');
     const openFavoritesBtn = document.getElementById('open-favorites-btn');
+    const advancedFilterHelpBtn = document.getElementById('advanced-filter-help-btn');
+    const helpModal = document.getElementById('help-modal');
+    const helpModalOverlay = document.getElementById('help-modal-overlay');
     const filterInputs = {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
         color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
@@ -68,7 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
             shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
             favHeaderTitle: "一键收藏/取消全部",
             confirmFavoriteAll: "您确定要收藏当前列表中的所有英雄吗？",
-            confirmUnfavoriteAll: "您确定要取消收藏当前列表中的所有英雄吗？"
+            confirmUnfavoriteAll: "您确定要取消收藏当前列表中的所有英雄吗？",
+            filterHelpTitle: "高级筛选语法说明",
+            filterHelpIntro: "在“特殊技能/被动技能”输入框中，您可使用以下操作符构建复杂查询：",
+            filterHelpOr: "<li><strong>| (或):</strong> 查找包含多个关键词中任意一个的英雄。例如: <code>治疗|复活</code> 会找到技能中包含“治疗”或“复活”的英雄。</li>",
+            filterHelpAnd: "<li><strong>空格 (与):</strong> 查找必须同时包含多个关键词的英雄。例如: <code>攻击 提高</code> 会找到技能中同时包含“攻击”和“提升”的英雄。</li>",
+            filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定关键词的英雄。例如: <code>!治疗</code> 会找到所有技能中不含“治疗”的英雄。</li>",
+            filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵抗 治疗)</code> 会精确查找**某一句**技能描述中，同时包含“抵抗”和“治疗”的英雄。</li>",
+            filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>"
         },
         tc: {
             pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -92,7 +102,14 @@ document.addEventListener('DOMContentLoaded', function () {
             shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
             favHeaderTitle: "一鍵收藏/取消全部",
             confirmFavoriteAll: "您確定要收藏當前列表中的所有英雄嗎？",
-            confirmUnfavoriteAll: "您確定要取消收藏當前列表中的所有英雄嗎？"
+            confirmUnfavoriteAll: "您確定要取消收藏當前列表中的所有英雄嗎？",
+            filterHelpTitle: "高級篩選語法說明",
+            filterHelpIntro: "在“特殊技能/被動技能”輸入框中，您可使用以下運算子構建複雜查詢：",
+            filterHelpOr: "<li><strong>| (或):</strong> 尋找包含多個關鍵詞中任意一個的英雄。例如: <code>治療|復活</code> 會找到技能中包含“治療”或“復活”的英雄。</li>",
+            filterHelpAnd: "<li><strong>空格 (與):</strong> 尋找必須同時包含多個關鍵詞的英雄。例如: <code>攻擊 提升</code> 會找到技能中同時包含“攻擊”和“提升”的英雄。</li>",
+            filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定關鍵詞的英雄。例如: <code>!治療</code> 會找到所有技能中不含“治療”的英雄。</li>",
+            filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可進行複雜組合，並**強制在單句技能描述中進行匹配**。例如: <code>(抵禦 治療)</code> 會精確尋找**某一句**技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
+            filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>"
         },
         en: {
             pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -116,7 +133,14 @@ document.addEventListener('DOMContentLoaded', function () {
             shareButtonTitle: "Share", favoriteButtonTitle: "Favorite", favColumnHeader: "☆",
             favHeaderTitle: "Favorite/Unfavorite All",
             confirmFavoriteAll: "Are you sure you want to favorite all heroes in the current list?",
-            confirmUnfavoriteAll: "Are you sure you want to unfavorite all heroes in the current list?"
+            confirmUnfavoriteAll: "Are you sure you want to unfavorite all heroes in the current list?",
+            filterHelpTitle: "Advanced Filter Syntax",
+            filterHelpIntro: "In the 'Skill Text/Passive Text' fields, you can use these operators for complex queries:",
+            filterHelpOr: "<li><strong>| (OR):</strong> Finds heroes with any of the specified keywords. E.g., <code>heal|revive</code> finds heroes with 'heal' or 'revive'.</li>",
+            filterHelpAnd: "<li><strong>Space (AND):</strong> Finds heroes that must contain all keywords. E.g., <code>attack up</code> finds heroes with both 'attack' and 'up'.</li>",
+            filterHelpNot: "<li><strong>! (NOT):</strong> Excludes heroes with a specific keyword. E.g., <code>!heal</code> finds all heroes without 'heal' in their skills.</li>",
+            filterHelpGroup: "<li><strong>() (Grouping/Single-Line Match):</strong> Use parentheses for complex grouping and to **force matching within a single skill line**. E.g., <code>(resist heal)</code> will precisely find heroes where a **single line** of their skill description contains both 'resist' and 'heal'.</li>",
+            filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>"
         }
     };
 
@@ -145,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (typeof translation === 'function') {
                     // We handle functional translations like resultsCountText separately
                 } else if (translation !== undefined) {
-                    el.textContent = translation;
+                    el.innerHTML = translation;
                 }
             }
         });
@@ -443,6 +467,7 @@ document.addEventListener('DOMContentLoaded', function () {
         history.pushState({ modal: 'details' }, null);
     }
     function closeDetailsModal() { if (!modal.classList.contains('hidden')) { history.back(); } }
+
     function openFiltersModal() {
         filtersModal.classList.remove('hidden');
         filtersModalOverlay.classList.remove('hidden');
@@ -450,6 +475,40 @@ document.addEventListener('DOMContentLoaded', function () {
         history.pushState({ modal: 'filters' }, null);
     }
     function closeFiltersModal() { if (!filtersModal.classList.contains('hidden')) { history.back(); } }
+
+    function openHelpModal() {
+        renderHelpModalContent();
+        helpModal.classList.remove('hidden');
+        helpModalOverlay.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    }
+    function closeHelpModal() {
+        if (!helpModal.classList.contains('hidden')) {
+            helpModal.classList.add('hidden');
+            helpModalOverlay.classList.add('hidden');
+        }
+    }
+
+    function renderHelpModalContent() {
+        const langDict = i18n[currentLang];
+        const contentHTML = `
+            <h3>${langDict.filterHelpTitle}</h3>
+            <p>${langDict.filterHelpIntro}</p>
+            <ul>
+                ${langDict.filterHelpAnd}
+                ${langDict.filterHelpOr}
+                ${langDict.filterHelpNot}
+                ${langDict.filterHelpGroup}
+                ${langDict.filterHelpExample}
+            </ul>
+            <div class="modal-footer">
+                <button class="close-bottom-btn" id="close-help-modal-btn">${langDict.detailsCloseBtn}</button>
+            </div>
+        `;
+        helpModal.innerHTML = contentHTML;
+        document.getElementById('close-help-modal-btn').addEventListener('click', closeHelpModal);
+    }
+
     function loadFilterStates() {
         const filterSections = [
             { contentId: 'standard-filters-content', button: document.querySelector('#standard-filters-header .toggle-button') },
@@ -469,65 +528,90 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /**
-     * Checks if data matches a complex query with (), |, and ! operators.
-     * @param {string|string[]} data - The data to search within (string or array of strings).
-     * @param {string} query - The query string.
-     * @returns {boolean} True if the data matches the query.
-     */
     function matchesComplexQuery(data, query) {
         if (!query) return true;
         if (!data || (Array.isArray(data) && data.length === 0)) return false;
 
-        query = query.toLowerCase();
-        const dataAsArray = Array.isArray(data) ? data.map(i => String(i).toLowerCase()) : [String(data).toLowerCase()];
-        const dataAsJoinedString = dataAsArray.join(' ');
+        const lowerCaseQuery = query.toLowerCase();
+        const dataAsArray = Array.isArray(data)
+            ? data.map(item => String(item || '').toLowerCase())
+            : [String(data || '').toLowerCase()];
 
-        const orClauses = query.split('|').map(s => s.trim()).filter(s => s);
+        // 核心解析函数（完全重构）
+        function evaluate(expr, text) {
+            expr = expr.trim();
+            if (!expr) return true;
 
-        if (orClauses.length === 0) return true;
-
-        return orClauses.some(orClause => {
-            const parenParts = [];
-            const parenRegex = /\(([^)]+)\)/g;
-            const remainingTermsString = orClause.replace(parenRegex, (match, content) => {
-                parenParts.push(content.trim());
-                return '';
-            }).trim();
-
-            const parenMatch = parenParts.every(part => {
-                const andTerms = part.split(' ').map(s => s.trim()).filter(s => s);
-                return dataAsArray.some(item => {
-                    return andTerms.every(term => {
-                        if (term.includes('|')) {
-                            const orKeywords = term.split('|').filter(k => k);
-                            return orKeywords.some(orkw => item.includes(orkw));
-                        } else if (term.startsWith('!')) {
-                            const notTerm = term.substring(1);
-                            if (!notTerm) return true;
-                            return !item.includes(notTerm);
-                        } else {
-                            return item.includes(term);
-                        }
-                    });
-                });
-            });
-
-            if (!parenMatch) return false;
-
-            const remainingTerms = remainingTermsString.split(' ').map(s => s.trim()).filter(s => s);
-            const remainingMatch = remainingTerms.every(term => {
-                if (term.startsWith('!')) {
-                    const notTerm = term.substring(1);
-                    if (!notTerm) return true;
-                    return !dataAsJoinedString.includes(notTerm);
-                } else {
-                    return dataAsJoinedString.includes(term);
+            // 1. 处理最外层括号（强制单句整体匹配）
+            if (expr.startsWith('(') && expr.endsWith(')')) {
+                let balance = 0;
+                let validOuter = true;
+                for (let i = 1; i < expr.length - 1; i++) {
+                    if (expr[i] === '(') balance++;
+                    if (expr[i] === ')') balance--;
+                    if (balance < 0) {
+                        validOuter = false;
+                        break;
+                    }
                 }
-            });
+                if (validOuter && balance === 0) {
+                    return evaluate(expr.substring(1, expr.length - 1), text);
+                }
+            }
 
-            return remainingMatch;
-        });
+            // 2. 处理OR运算符（|）优先级最低
+            let balance = 0;
+            for (let i = 0; i < expr.length; i++) {
+                const char = expr[i];
+                if (char === '(') balance++;
+                if (char === ')') balance--;
+                if (char === '|' && balance === 0) {
+                    const left = expr.substring(0, i);
+                    const right = expr.substring(i + 1);
+                    return evaluate(left, text) || evaluate(right, text);
+                }
+            }
+
+            // 3. 处理AND运算符（空格）优先级高于OR
+            const andTerms = [];
+            let currentTerm = '';
+            balance = 0;
+            for (let i = 0; i <= expr.length; i++) {
+                const char = expr[i];
+                // 在括号平衡且遇到空格时拆分AND项
+                if (i === expr.length || (/\s/.test(char) && balance === 0)) {
+                    if (currentTerm) {
+                        andTerms.push(currentTerm);
+                        currentTerm = '';
+                    }
+                } else {
+                    if (char === '(') balance++;
+                    if (char === ')') balance--;
+                    currentTerm += char;
+                }
+            }
+            if (currentTerm) andTerms.push(currentTerm);
+
+            if (andTerms.length > 1) {
+                // 所有AND项必须同时满足
+                return andTerms.every(term => evaluate(term, text));
+            }
+
+            // 4. 处理NOT运算符（!）优先级最高
+            if (expr.startsWith('!')) {
+                const term = expr.substring(1).trim();
+                return !text.includes(term);
+            }
+
+            // 基础匹配：纯文本直接检查包含关系
+            return text.includes(expr);
+        }
+
+        // 启用分行匹配的条件：查询包含括号（强制单句匹配）
+        const usePerLineSearch = /[()]/.test(lowerCaseQuery);
+        return usePerLineSearch
+            ? dataAsArray.some(line => evaluate(lowerCaseQuery, line))
+            : evaluate(lowerCaseQuery, dataAsArray.join(' '));
     }
 
 
@@ -1104,6 +1188,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (closeFiltersModalBtn) closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
         if (filtersModalOverlay) filtersModalOverlay.addEventListener('click', closeFiltersModal);
 
+        if (advancedFilterHelpBtn) advancedFilterHelpBtn.addEventListener('click', openHelpModal);
+        if (helpModalOverlay) helpModalOverlay.addEventListener('click', closeHelpModal);
+
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
@@ -1155,7 +1242,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelectorAll('#filters-modal .filter-header').forEach(header => {
             header.addEventListener('click', function (event) {
-                if (event.target.classList.contains('toggle-button')) { return; }
+                if (event.target.classList.contains('toggle-button') || event.target.classList.contains('help-btn') || event.target.closest('.help-btn')) { return; }
                 const toggleButton = this.querySelector('.toggle-button');
                 if (toggleButton) { toggleButton.click(); }
             });
@@ -1177,6 +1264,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (modalOverlay) modalOverlay.classList.add('hidden');
             if (filtersModal) filtersModal.classList.add('hidden');
             if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
+            if (helpModal) helpModal.classList.add('hidden');
+            if (helpModalOverlay) helpModalOverlay.classList.add('hidden');
             document.body.classList.remove('modal-open');
         });
 

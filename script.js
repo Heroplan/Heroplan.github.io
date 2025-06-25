@@ -469,22 +469,86 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /**
+     * Checks if data matches a complex query with (), |, and ! operators.
+     * @param {string|string[]} data - The data to search within (string or array of strings).
+     * @param {string} query - The query string.
+     * @returns {boolean} True if the data matches the query.
+     */
+    function matchesComplexQuery(data, query) {
+        if (!query) return true;
+        if (!data || (Array.isArray(data) && data.length === 0)) return false;
+
+        query = query.toLowerCase();
+        const dataAsArray = Array.isArray(data) ? data.map(i => String(i).toLowerCase()) : [String(data).toLowerCase()];
+        const dataAsJoinedString = dataAsArray.join(' ');
+
+        // 1. Split by OR, as it has the lowest precedence.
+        const orClauses = query.split('|').map(s => s.trim()).filter(s => s);
+
+        if (orClauses.length === 0) return true;
+
+        // 2. Check if ANY of the OR clauses match.
+        return orClauses.some(orClause => {
+            // For each OR clause, ALL conditions within it must be true.
+
+            // 3. Extract parenthetical parts from this clause.
+            const parenParts = [];
+            const parenRegex = /\(([^)]+)\)/g;
+            const remainingTermsString = orClause.replace(parenRegex, (match, content) => {
+                parenParts.push(content.trim());
+                return '';
+            }).trim();
+
+            // 4. Evaluate parenthetical parts for this clause.
+            // All parenthetical expressions must match.
+            const parenMatch = parenParts.every(part => {
+                const keywords = part.split(' ').map(s => s.trim()).filter(s => s);
+                // Check if ANY SINGLE ITEM in the data array contains ALL keywords for this parenthesis.
+                return dataAsArray.some(item => {
+                    return keywords.every(kw => {
+                        if (kw.startsWith('!')) {
+                            const notKw = kw.substring(1);
+                            if (!notKw) return true;
+                            return !item.includes(notKw);
+                        } else {
+                            return item.includes(kw);
+                        }
+                    });
+                });
+            });
+
+            if (!parenMatch) return false; // This OR clause fails if any of its parenthesis parts don't match.
+
+            // 5. Evaluate the rest of the terms for this clause on the joined string.
+            const remainingTerms = remainingTermsString.split(' ').map(s => s.trim()).filter(s => s);
+            const remainingMatch = remainingTerms.every(term => {
+                if (term.startsWith('!')) {
+                    const notTerm = term.substring(1);
+                    if (!notTerm) return true;
+                    return !dataAsJoinedString.includes(notTerm);
+                } else {
+                    return dataAsJoinedString.includes(term);
+                }
+            });
+
+            if (!remainingMatch) return false; // This OR clause fails if its remaining terms don't match.
+
+            return true; // This OR clause succeeds as all its conditions are met.
+        });
+    }
+
+
     function applyFiltersAndRender() {
-        const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.toLowerCase()]));
+        const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
 
         const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
 
-        const containsAllKeywords = (text, keywords) => {
-            if (!text) return false;
-            text = String(text).toLowerCase();
-            return keywords.every(keyword => text.includes(keyword));
-        };
-
         filteredHeroes = allHeroes.filter(hero => {
-            // 步骤1：确定英雄是否符合基础类别筛选 (收藏、英雄、皮肤、或全部)
+            // Step 1: Determine if the hero matches the base filter type (Favorites, Hero, Costume, or All)
             let matchesBaseFilter = false;
-            const releaseDateType = filters.releaseDateType;
+            const releaseDateType = filters.releaseDateType.toLowerCase();
 
             if (releaseDateType === 'favorites') {
                 if (hero.english_name) {
@@ -505,33 +569,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 return false;
             }
 
-            // 步骤2：如果符合基础类别，则继续应用所有其他筛选条件
-            if (filters.name) {
-                const keywords = filters.name.split(' ').filter(k => k);
-                if (keywords.length > 0 && !containsAllKeywords(hero.name, keywords)) return false;
-            }
+            // Step 2: Apply all other filters if the base type matches
+            const lowerCaseName = hero.name.toLowerCase();
+            if (filters.name && !lowerCaseName.includes(filters.name.toLowerCase())) return false;
+
             if (filters.effects) {
-                const keywords = filters.effects.split(' ').filter(k => k);
-                const heroEffectsCombined = (hero.effects && Array.isArray(hero.effects)) ? hero.effects.join(' ') : '';
-                if (keywords.length > 0 && !containsAllKeywords(heroEffectsCombined, keywords)) return false;
+                if (!matchesComplexQuery(hero.effects, filters.effects)) return false;
             }
             if (filters.passives) {
-                const keywords = filters.passives.split(' ').filter(k => k);
-                const heroPassivesCombined = (hero.passives && Array.isArray(hero.passives)) ? hero.passives.join(' ') : '';
-                if (keywords.length > 0 && !containsAllKeywords(heroPassivesCombined, keywords)) return false;
+                if (!matchesComplexQuery(hero.passives, filters.passives)) return false;
             }
             if (filters.types) {
-                const keywords = filters.types.split(' ').filter(k => k);
-                const heroTypesCombined = (hero.types && Array.isArray(hero.types)) ? hero.types.join(' ') : '';
-                if (keywords.length > 0 && !containsAllKeywords(heroTypesCombined, keywords)) return false;
+                if (!matchesComplexQuery(hero.types, filters.types)) return false;
             }
-            if (filters.star !== noneValue && String(hero.star) !== filters.star) return false;
-            if (filters.color !== noneValue && String(hero.color).toLowerCase() !== filters.color) return false;
-            if (filters.speed !== noneValue && String(hero.speed).toLowerCase() !== filters.speed) return false;
-            if (filters.class !== noneValue && String(hero.class).toLowerCase() !== filters.class) return false;
-            if (filters.family !== noneValue && String(hero.family).toLowerCase() !== filters.family) return false;
-            if (filters.source !== noneValue && String(hero.source).toLowerCase() !== filters.source) return false;
-            if (filters.aetherpower !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower) return false;
+
+            if (filters.star.toLowerCase() !== noneValue && String(hero.star) !== filters.star) return false;
+            if (filters.color.toLowerCase() !== noneValue && String(hero.color).toLowerCase() !== filters.color.toLowerCase()) return false;
+            if (filters.speed.toLowerCase() !== noneValue && String(hero.speed).toLowerCase() !== filters.speed.toLowerCase()) return false;
+            if (filters.class.toLowerCase() !== noneValue && String(hero.class).toLowerCase() !== filters.class.toLowerCase()) return false;
+            if (filters.family.toLowerCase() !== noneValue && String(hero.family).toLowerCase() !== filters.family.toLowerCase()) return false;
+            if (filters.source.toLowerCase() !== noneValue && String(hero.source).toLowerCase() !== filters.source.toLowerCase()) return false;
+            if (filters.aetherpower.toLowerCase() !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower.toLowerCase()) return false;
 
             const releaseDateDays = Number(filters.releaseDateInput);
             if (releaseDateDays > 0) {
@@ -550,11 +608,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.defense) > 0 && Number(hero.defense) < Number(filters.defense)) return false;
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
 
-            // 如果通过了所有筛选，则保留该英雄
+            // If it passes all filters, keep the hero
             return true;
         });
 
-        // ... 排序逻辑 (未改变) ...
+
+        // Sorting logic remains the same
         filteredHeroes.sort((a, b) => {
             const key = currentSort.key;
             const direction = currentSort.direction === 'asc' ? 1 : -1;

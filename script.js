@@ -483,16 +483,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const dataAsArray = Array.isArray(data) ? data.map(i => String(i).toLowerCase()) : [String(data).toLowerCase()];
         const dataAsJoinedString = dataAsArray.join(' ');
 
-        // 1. Split by OR, as it has the lowest precedence.
         const orClauses = query.split('|').map(s => s.trim()).filter(s => s);
 
         if (orClauses.length === 0) return true;
 
-        // 2. Check if ANY of the OR clauses match.
         return orClauses.some(orClause => {
-            // For each OR clause, ALL conditions within it must be true.
-
-            // 3. Extract parenthetical parts from this clause.
             const parenParts = [];
             const parenRegex = /\(([^)]+)\)/g;
             const remainingTermsString = orClause.replace(parenRegex, (match, content) => {
@@ -500,27 +495,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 return '';
             }).trim();
 
-            // 4. Evaluate parenthetical parts for this clause.
-            // All parenthetical expressions must match.
             const parenMatch = parenParts.every(part => {
-                const keywords = part.split(' ').map(s => s.trim()).filter(s => s);
-                // Check if ANY SINGLE ITEM in the data array contains ALL keywords for this parenthesis.
+                const andTerms = part.split(' ').map(s => s.trim()).filter(s => s);
                 return dataAsArray.some(item => {
-                    return keywords.every(kw => {
-                        if (kw.startsWith('!')) {
-                            const notKw = kw.substring(1);
-                            if (!notKw) return true;
-                            return !item.includes(notKw);
+                    return andTerms.every(term => {
+                        if (term.includes('|')) {
+                            const orKeywords = term.split('|').filter(k => k);
+                            return orKeywords.some(orkw => item.includes(orkw));
+                        } else if (term.startsWith('!')) {
+                            const notTerm = term.substring(1);
+                            if (!notTerm) return true;
+                            return !item.includes(notTerm);
                         } else {
-                            return item.includes(kw);
+                            return item.includes(term);
                         }
                     });
                 });
             });
 
-            if (!parenMatch) return false; // This OR clause fails if any of its parenthesis parts don't match.
+            if (!parenMatch) return false;
 
-            // 5. Evaluate the rest of the terms for this clause on the joined string.
             const remainingTerms = remainingTermsString.split(' ').map(s => s.trim()).filter(s => s);
             const remainingMatch = remainingTerms.every(term => {
                 if (term.startsWith('!')) {
@@ -532,9 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
-            if (!remainingMatch) return false; // This OR clause fails if its remaining terms don't match.
-
-            return true; // This OR clause succeeds as all its conditions are met.
+            return remainingMatch;
         });
     }
 

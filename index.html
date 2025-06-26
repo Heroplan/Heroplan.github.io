@@ -160,6 +160,17 @@
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
                     <div id="advanced-filters-content" class="filter-content collapsed">
+                        <div class="filter-item">
+                            <label for="skill-type-source-select" data-lang-key="skillTypeSourceLabel">技能类别来源:</label>
+                            <div class="input-with-help">
+                                <select id="skill-type-source-select">
+                                    <option value="both" data-lang-key="sourceBoth">Both</option>
+                                    <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
+                                    <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
+                                </select>
+                                <button id="skill-type-help-btn" class="help-btn" title="技能类别来源说明">?</button>
+                            </div>
+                        </div>
                         <div class="filter-item"><label for="type-input"
                                 data-lang-key="skillTypeLabel">特殊技能类别:</label><input type="text" id="type-input"
                                 data-lang-key-placeholder="skillTypePlaceholder" placeholder="例如：增益,异常,治疗"></div>
@@ -217,6 +228,8 @@
 
     <div id="help-modal-overlay" class="hidden"></div>
     <div id="help-modal" class="hidden"></div>
+    <div id="skill-type-help-modal-overlay" class="hidden"></div>
+    <div id="skill-type-help-modal" class="hidden"></div>
 
     <div class="floating-action-buttons">
         <button id="open-filters-btn" title="打开筛选">🔍</button>

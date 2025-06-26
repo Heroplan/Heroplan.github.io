@@ -33,12 +33,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const advancedFilterHelpBtn = document.getElementById('advanced-filter-help-btn');
     const helpModal = document.getElementById('help-modal');
     const helpModalOverlay = document.getElementById('help-modal-overlay');
+    const skillTypeHelpBtn = document.getElementById('skill-type-help-btn');
+    const skillTypeHelpModal = document.getElementById('skill-type-help-modal');
+    const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
+
     const filterInputs = {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
         color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
         class: document.getElementById('class-select'), family: document.getElementById('family-select'),
         source: document.getElementById('source-select'),
         aetherpower: document.getElementById('aetherpower-select'),
+        skillTypeSource: document.getElementById('skill-type-source-select'),
         types: document.getElementById('type-input'),
         effects: document.getElementById('effects-input'), passives: document.getElementById('passives-input'),
         power: document.getElementById('power-input'), attack: document.getElementById('attack-input'),
@@ -56,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
             starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
+            skillTypeSourceLabel: "技能类别来源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
             skillTypeLabel: "特殊技能类别:", skillTypePlaceholder: "例如：增益,异常,治疗", skillTextLabel: "特殊技能文本:",
             passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装", favorites: "收藏",
             daysSinceRelease: "距离发布日期天数大于:", daysPlaceholder: "1年半548 2年730", minPower: "战力",
@@ -78,7 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpAnd: "<li><strong>空格 (与):</strong> 查找必须同时包含多个关键词的英雄。例如: <code>攻击 提高</code> 会找到技能中同时包含“攻击”和“提升”的英雄。</li>",
             filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定关键词的英雄。例如: <code>!治疗</code> 会找到所有技能中不含“治疗”的英雄。</li>",
             filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵抗 治疗)</code> 会精确查找**某一句**技能描述中，同时包含“抵抗”和“治疗”的英雄。</li>",
-            filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>"
+            filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>",
+            skillTypeHelpTitle: "技能类别来源说明",
+            skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p>
+                                   <ul>
+                                       <li><strong>Heroplan.io:</strong> 数据来自 Heroplan.io 网站。</li>
+                                       <li><strong>By Nynaeve:</strong> 数据来自 www.theravenscave.com，并由 AI 识别补全。</li>
+                                       <li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li>
+                                   </ul>`
         },
         tc: {
             pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -87,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
             starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
             sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
+            skillTypeSourceLabel: "技能類別來源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
             skillTypeLabel: "特殊技能類別:", skillTypePlaceholder: "例如：增益,異常,治療", skillTextLabel: "特殊技能文本:",
             passiveSkillLabel: "被動技能文本:", filterBy: "篩選:", all: "全部", hero: "英雄", skin: "服裝", favorites: "收藏",
             daysSinceRelease: "距離發佈日期天數大於:", daysPlaceholder: "1年半548 2年730", minPower: "戰力",
@@ -109,7 +123,14 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpAnd: "<li><strong>空格 (與):</strong> 尋找必須同時包含多個關鍵詞的英雄。例如: <code>攻擊 提升</code> 會找到技能中同時包含“攻擊”和“提升”的英雄。</li>",
             filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定關鍵詞的英雄。例如: <code>!治療</code> 會找到所有技能中不含“治療”的英雄。</li>",
             filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可進行複雜組合，並**強制在單句技能描述中進行匹配**。例如: <code>(抵禦 治療)</code> 會精確尋找**某一句**技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
-            filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>"
+            filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>",
+            skillTypeHelpTitle: "技能類別來源說明",
+            skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p>
+                                   <ul>
+                                       <li><strong>Heroplan.io:</strong> 資料來自 Heroplan.io 網站。</li>
+                                       <li><strong>By Nynaeve:</strong> 資料來自 www.theravenscave.com，並由 AI 識別補全。</li>
+                                       <li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li>
+                                   </ul>`
         },
         en: {
             pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -118,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name",
             starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
             sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", advancedFilters: "Advanced Filters",
+            skillTypeSourceLabel: "Type Source:", sourceBoth: "Both", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
             skillTypeLabel: "Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Skill Text:",
             passiveSkillLabel: "Passive Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",
             daysSinceRelease: "Days since release>", daysPlaceholder: "1.5y=548 2y=730", minPower: "Power",
@@ -140,7 +162,14 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpAnd: "<li><strong>Space (AND):</strong> Finds heroes that must contain all keywords. E.g., <code>attack up</code> finds heroes with both 'attack' and 'up'.</li>",
             filterHelpNot: "<li><strong>! (NOT):</strong> Excludes heroes with a specific keyword. E.g., <code>!heal</code> finds all heroes without 'heal' in their skills.</li>",
             filterHelpGroup: "<li><strong>() (Grouping/Single-Line Match):</strong> Use parentheses for complex grouping and to **force matching within a single skill line**. E.g., <code>(resist heal)</code> will precisely find heroes where a **single line** of their skill description contains both 'resist' and 'heal'.</li>",
-            filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>"
+            filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>",
+            skillTypeHelpTitle: "Skill Type Source Explanation",
+            skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p>
+                                   <ul>
+                                       <li><strong>Heroplan.io:</strong> Data from the Heroplan.io website.</li>
+                                       <li><strong>By Nynaeve:</strong> Data from www.theravenscave.com, supplemented by AI.</li>
+                                       <li><strong>Both:</strong> Searches tags from both sources simultaneously.</li>
+                                   </ul>`
         }
     };
 
@@ -169,7 +198,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (typeof translation === 'function') {
                     // We handle functional translations like resultsCountText separately
                 } else if (translation !== undefined) {
-                    el.innerHTML = translation;
+                    if (el.tagName === 'OPTION') {
+                        el.textContent = translation;
+                    } else {
+                        el.innerHTML = translation;
+                    }
                 }
             }
         });
@@ -477,11 +510,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeFiltersModal() { if (!filtersModal.classList.contains('hidden')) { history.back(); } }
 
     function openHelpModal() {
-        renderHelpModalContent();
+        renderHelpModalContent(helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']);
         helpModal.classList.remove('hidden');
         helpModalOverlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
     }
+
     function closeHelpModal() {
         if (!helpModal.classList.contains('hidden')) {
             helpModal.classList.add('hidden');
@@ -489,24 +523,40 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function renderHelpModalContent() {
+    function openSkillTypeHelpModal() {
+        renderHelpModalContent(skillTypeHelpModal, 'skillTypeHelpTitle', null, ['skillTypeHelpContent']);
+        skillTypeHelpModal.classList.remove('hidden');
+        skillTypeHelpModalOverlay.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    }
+
+    function closeSkillTypeHelpModal() {
+        if (!skillTypeHelpModal.classList.contains('hidden')) {
+            skillTypeHelpModal.classList.add('hidden');
+            skillTypeHelpModalOverlay.classList.add('hidden');
+        }
+    }
+
+    function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
         const langDict = i18n[currentLang];
+        const introHTML = introKey ? `<p>${langDict[introKey]}</p>` : '';
+        const listHTML = listKeys.map(key => langDict[key] || '').join('');
+
         const contentHTML = `
-            <h3>${langDict.filterHelpTitle}</h3>
-            <p>${langDict.filterHelpIntro}</p>
+            <h3>${langDict[titleKey]}</h3>
+            ${introHTML}
             <ul>
-                ${langDict.filterHelpAnd}
-                ${langDict.filterHelpOr}
-                ${langDict.filterHelpNot}
-                ${langDict.filterHelpGroup}
-                ${langDict.filterHelpExample}
+                ${listHTML}
             </ul>
             <div class="modal-footer">
-                <button class="close-bottom-btn" id="close-help-modal-btn">${langDict.detailsCloseBtn}</button>
+                <button class="close-bottom-btn" id="close-${modalElement.id}-btn">${langDict.detailsCloseBtn}</button>
             </div>
         `;
-        helpModal.innerHTML = contentHTML;
-        document.getElementById('close-help-modal-btn').addEventListener('click', closeHelpModal);
+        modalElement.innerHTML = contentHTML;
+        document.getElementById(`close-${modalElement.id}-btn`).addEventListener('click', () => {
+            if (modalElement === helpModal) closeHelpModal();
+            if (modalElement === skillTypeHelpModal) closeSkillTypeHelpModal();
+        });
     }
 
     function loadFilterStates() {
@@ -655,8 +705,18 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filters.passives) {
                 if (!matchesComplexQuery(hero.passives, filters.passives)) return false;
             }
+
             if (filters.types) {
-                if (!matchesComplexQuery(hero.types, filters.types)) return false;
+                let skillTypesToSearch = [];
+                const source = filters.skillTypeSource;
+                if (source === 'heroplan') {
+                    skillTypesToSearch = hero.types || [];
+                } else if (source === 'nynaeve') {
+                    skillTypesToSearch = hero.skill_types || [];
+                } else { // 'both'
+                    skillTypesToSearch = [...(hero.types || []), ...(hero.skill_types || [])];
+                }
+                if (!matchesComplexQuery(skillTypesToSearch, filters.types)) return false;
             }
 
             if (filters.star.toLowerCase() !== noneValue && String(hero.star) !== filters.star) return false;
@@ -802,7 +862,27 @@ document.addEventListener('DOMContentLoaded', function () {
         const rowsHTML = heroes.map(hero => {
             const isHeroFavorite = isFavorite(hero);
             const cellsHTML = colKeys.map(key => {
-                let content = hero[key] || '';
+                let content = '';
+                // --- 修改开始 ---
+                // 让表格中的技能类别列根据下拉菜单的选项来显示
+                if (key === 'types') {
+                    const source = filterInputs.skillTypeSource.value;
+                    let typesToShow = [];
+                    if (source === 'heroplan') {
+                        typesToShow = hero.types || [];
+                    } else if (source === 'nynaeve') {
+                        typesToShow = hero.skill_types || [];
+                    } else { // 'both'
+                        const allTypes = [...(hero.types || []), ...(hero.skill_types || [])];
+                        typesToShow = [...new Set(allTypes)];
+                    }
+                    content = typesToShow.join(', ');
+                } else {
+                    content = hero[key] || '';
+                }
+                // --- 修改结束 ---
+
+
                 if (key === 'fav') {
                     if (!hero.english_name) {
                         return `<td class="col-fav"></td>`; // No star if no english name
@@ -820,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (key === 'family' && content) {
                     content = family_values[String(content).toLowerCase()] || content;
                 }
-                if (Array.isArray(content)) content = content.join(', ');
+                if (Array.isArray(content) && key !== 'types') content = content.join(', ');
                 return `<td class="col-${key}">${content}</td>`;
             }).join('');
             return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
@@ -919,7 +999,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const heroFamily = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
         const translatedFamily = family_values[heroFamily] || hero.family;
-        const heroTypesContent = (hero.types && hero.types.length > 0) ? hero.types.join(', ') : langDict.none;
+
+        // --- 修改开始 ---
+        // 让英雄详情中的技能类别显示也根据下拉菜单的选项来变化
+        const source = filterInputs.skillTypeSource.value;
+        let skillTypesToDisplay = [];
+        if (source === 'heroplan') {
+            skillTypesToDisplay = hero.types || [];
+        } else if (source === 'nynaeve') {
+            skillTypesToDisplay = hero.skill_types || [];
+        } else { // 'both'
+            const allSkillTypes = [...(hero.types || []), ...(hero.skill_types || [])];
+            skillTypesToDisplay = [...new Set(allSkillTypes)];
+        }
+        const uniqueSkillTypes = skillTypesToDisplay.filter(t => t); // Remove empty/null
+
+        const heroTypesContent = uniqueSkillTypes.length > 0
+            ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-skill-type="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
+            : `<span class="skill-value">${langDict.none}</span>`;
+        // --- 修改结束 ---
+
         const localImagePath = getLocalImagePath(hero.image);
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
@@ -968,7 +1067,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="skill-category-block">
                     <p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p>
                     <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value">${hero.speed || langDict.none}</span></p>
-                    <p class="uniform-style">${langDict.modalSkillType} <span class="skill-value">${heroTypesContent}</span></p>
+                    <p class="uniform-style">${langDict.modalSkillType}</p>
+                    ${heroTypesContent}
                 </div>
 
                 <div class="skill-category-block">
@@ -1089,11 +1189,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (key === 'releaseDateType') {
                         temporaryFavorites = null;
                     }
+                    if (key === 'skillTypeSource') {
+                        setCookie('skillTypeSource', filterInputs.skillTypeSource.value, 365);
+                    }
                     applyFiltersAndRender();
                 });
             }
         }
         if (modalOverlay) modalOverlay.addEventListener('click', closeDetailsModal);
+
+        if (modalContent) {
+            modalContent.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target.classList.contains('skill-type-tag')) {
+                    const skillType = target.dataset.skillType;
+                    if (skillType) {
+                        closeDetailsModal();
+                        filterInputs.types.value = skillType;
+                        applyFiltersAndRender();
+                    }
+                }
+            });
+        }
 
         if (resultsTable) {
             const tbody = resultsTable.querySelector('tbody');
@@ -1191,15 +1308,33 @@ document.addEventListener('DOMContentLoaded', function () {
         if (advancedFilterHelpBtn) advancedFilterHelpBtn.addEventListener('click', openHelpModal);
         if (helpModalOverlay) helpModalOverlay.addEventListener('click', closeHelpModal);
 
+        if (skillTypeHelpBtn) skillTypeHelpBtn.addEventListener('click', openSkillTypeHelpModal);
+        if (skillTypeHelpModalOverlay) skillTypeHelpModalOverlay.addEventListener('click', closeSkillTypeHelpModal);
+
+
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
                 for (const key in filterInputs) {
+                    // 如果当前筛选是“技能类别来源”，则跳过重置逻辑
+                    if (key === 'skillTypeSource') {
+                        continue;
+                    }
+
                     const element = filterInputs[key];
-                    const noneText = i18n[currentLang].none;
-                    if (element.tagName === 'SELECT') {
-                        element.value = element.id === 'release-date-type' ? 'all' : noneText;
-                    } else { element.value = ''; }
+                    if (element) {
+                        if (element.tagName === 'SELECT') {
+                            if (element.id === 'release-date-type') {
+                                element.value = 'all';
+                            }
+                            else {
+                                const noneText = i18n[currentLang].none;
+                                element.value = noneText;
+                            }
+                        } else {
+                            element.value = '';
+                        }
+                    }
                 }
                 applyFiltersAndRender();
             });
@@ -1266,6 +1401,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
             if (helpModal) helpModal.classList.add('hidden');
             if (helpModalOverlay) helpModalOverlay.classList.add('hidden');
+            if (skillTypeHelpModal) skillTypeHelpModal.classList.add('hidden');
+            if (skillTypeHelpModalOverlay) skillTypeHelpModalOverlay.classList.add('hidden');
             document.body.classList.remove('modal-open');
         });
 
@@ -1305,6 +1442,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             populateFilters();
+
+            const savedSkillSource = getCookie('skillTypeSource');
+            if (savedSkillSource && filterInputs.skillTypeSource) {
+                const isValidOption = [...filterInputs.skillTypeSource.options].some(option => option.value === savedSkillSource);
+                if (isValidOption) {
+                    filterInputs.skillTypeSource.value = savedSkillSource;
+                }
+            }
 
             // 优先处理新的压缩格式链接
             if (zfavsFromUrl) {

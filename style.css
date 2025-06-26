@@ -324,6 +324,17 @@ hr.divider {
     margin-right: 0.5rem;
 }
 
+.filter-item .input-with-help {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-item .input-with-help select {
+    flex-grow: 1;
+}
+
 .filter-item input,
 .filter-item select {
     flex-grow: 1;
@@ -669,7 +680,8 @@ html:not(.dark-theme) .color-text-outlined {
 
 #modal-overlay,
 #filters-modal-overlay,
-#help-modal-overlay {
+#help-modal-overlay,
+#skill-type-help-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -698,7 +710,8 @@ html:not(.dark-theme) .color-text-outlined {
     transition: all 0.3s ease;
 }
 
-#help-modal {
+#help-modal,
+#skill-type-help-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -934,6 +947,13 @@ html:not(.dark-theme) .color-text-outlined {
     gap: 8px;
 }
 
+.skill-types-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
 #modal .details-body h3 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -1125,7 +1145,8 @@ footer .footer-credit {
 }
 
 /* Help Modal Specific Styles */
-#help-modal h3 {
+#help-modal h3,
+#skill-type-help-modal h3 {
     font-size: 1.6rem;
     color: var(--md-sys-color-primary);
     margin-top: 0;
@@ -1133,20 +1154,23 @@ footer .footer-credit {
     text-align: center;
 }
 
-#help-modal p {
+#help-modal p,
+#skill-type-help-modal p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--md-sys-color-on-surface);
 }
 
-#help-modal ul {
+#help-modal ul,
+#skill-type-help-modal ul {
     list-style-type: none;
     padding: 0;
     margin-top: 1.5rem;
 }
 
-#help-modal li {
+#help-modal li,
+#skill-type-help-modal li {
     margin-bottom: 1.2rem;
     padding: 0.8rem 0 0.8rem 1rem;
     border-left: 3px solid var(--md-sys-color-primary-container);
@@ -1163,6 +1187,11 @@ footer .footer-credit {
     border: 1px solid var(--md-sys-color-outline);
     color: var(--md-sys-color-tertiary);
 }
+
+#skill-type-help-modal strong {
+    color: var(--md-sys-color-primary);
+}
+
 
 @media (max-width: 768px) {
     .main-container {
@@ -1196,6 +1225,11 @@ footer .footer-credit {
         width: auto;
         min-width: auto;
         white-space: normal;
+        margin-bottom: 5px;
+    }
+
+    .filter-item .input-with-help {
+        width: 100%;
     }
 
     .manual-table .col-attack,
@@ -1234,13 +1268,15 @@ footer .footer-credit {
 
     #modal,
     #filters-modal,
-    #help-modal {
+    #help-modal,
+    #skill-type-help-modal {
         width: 90%;
     }
 
     #modal-content,
     #filters-modal-content,
-    #help-modal {
+    #help-modal,
+    #skill-type-help-modal {
         padding: 1.5rem 1rem;
     }
 
@@ -1383,4 +1419,15 @@ footer .footer-credit {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+.skill-types-container .skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-types-container .skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--md-sys-color-shadow);
 }

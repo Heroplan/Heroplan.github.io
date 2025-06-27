@@ -10,6 +10,62 @@ document.addEventListener('DOMContentLoaded', function () {
     const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
     const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
     const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
+    const nynaeveSkillTypeOrder = [
+        'Ability Scores Modifiers',
+        'AoE Attackers (Hit-3)',
+        'AoE Attackers (Hit-5)',
+        'Board Alterers',
+        'Buff Blockers',
+        'Buff Stealers',
+        'Buffers (ATK)',
+        'Buffers (DEF)',
+        'Bypassers',
+        'Chain & Random Attackers',
+        'Cleanse Blockers',
+        'Cleansers',
+        'Counterattackers',
+        'Damage Reducers',
+        'Damage Sharers',
+        'Dancers',
+        'Debuffers (ATK)',
+        'Debuffers (DEF)',
+        'Dispellers',
+        'Dodgers',
+        'DoT Attackers',
+        'Effect Duration Resetters',
+        'Extra Damage Dealers',
+        'Fiends Counters',
+        'Fiends Summoners',
+        'Ghost Form & Hiding',
+        'Heal over Time (HoT)',
+        'Healers (Special)',
+        'Healers',
+        'Healing Reducers',
+        'Health Boosters',
+        'Immunity Providers',
+        'Mana Corruption',
+        'Mana Generation Buffers',
+        'Mana Raisers',
+        'Mana Reducers or Blockers',
+        'Max Health Reducers',
+        'Mega Minions Summoners',
+        'Mindless Attack & Mindless Heal',
+        'Minions Boosters',
+        'Minions Counters',
+        'Minions Summoners',
+        'Negative Effects On Self Or Allies',
+        'Random Position',
+        'Reflectors',
+        'Resurrection Inhibitors',
+        'Revivers',
+        'Silencers',
+        'Sleepweavers',
+        'Snipers',
+        'Stacking Heroes',
+        'Status Effects Blockers',
+        'Status Effect Conversion',
+        'Taunters'
+    ];
 
 
     // --- DOM 元素 ---
@@ -86,12 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵抗 治疗)</code> 会精确查找**某一句**技能描述中，同时包含“抵抗”和“治疗”的英雄。</li>",
             filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>",
             skillTypeHelpTitle: "技能类别来源说明",
-            skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p>
-                                   <ul>
-                                       <li><strong>Heroplan.io:</strong> 数据来自 Heroplan.io 网站。</li>
-                                       <li><strong>By Nynaeve:</strong> 数据来自 www.theravenscave.com，并由 AI 识别补全。</li>
-                                       <li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li>
-                                   </ul>`
+            skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p><ul><li><strong>Heroplan.io:</strong> 数据来自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 网站。</li><li><strong>By Nynaeve:</strong> 数据来自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，经过AI补全和人工审核。</li><li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li></ul><p>各类别的详细定义，请参考源网站。</p>`
         },
         tc: {
             pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -122,15 +173,10 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpOr: "<li><strong>| (或):</strong> 尋找包含多個關鍵詞中任意一個的英雄。例如: <code>治療|復活</code> 會找到技能中包含“治療”或“復活”的英雄。</li>",
             filterHelpAnd: "<li><strong>空格 (與):</strong> 尋找必須同時包含多個關鍵詞的英雄。例如: <code>攻擊 提升</code> 會找到技能中同時包含“攻擊”和“提升”的英雄。</li>",
             filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定關鍵詞的英雄。例如: <code>!治療</code> 會找到所有技能中不含“治療”的英雄。</li>",
-            filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可進行複雜組合，並**強制在單句技能描述中進行匹配**。例如: <code>(抵禦 治療)</code> 會精確尋找**某一句**技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
+            filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵禦 治療)</code> 會精確尋找**某一句**技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
             filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>",
             skillTypeHelpTitle: "技能類別來源說明",
-            skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p>
-                                   <ul>
-                                       <li><strong>Heroplan.io:</strong> 資料來自 Heroplan.io 網站。</li>
-                                       <li><strong>By Nynaeve:</strong> 資料來自 www.theravenscave.com，並由 AI 識別補全。</li>
-                                       <li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li>
-                                   </ul>`
+            skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p><ul><li><strong>Heroplan.io:</strong> 資料來自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 網站。</li><li><strong>By Nynaeve:</strong> 資料來自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，經過AI補全和人工審核。</li><li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li></ul><p>各類別的詳細定義，請參考源網站。</p>`
         },
         en: {
             pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -164,12 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterHelpGroup: "<li><strong>() (Grouping/Single-Line Match):</strong> Use parentheses for complex grouping and to **force matching within a single skill line**. E.g., <code>(resist heal)</code> will precisely find heroes where a **single line** of their skill description contains both 'resist' and 'heal'.</li>",
             filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>",
             skillTypeHelpTitle: "Skill Type Source Explanation",
-            skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p>
-                                   <ul>
-                                       <li><strong>Heroplan.io:</strong> Data from the Heroplan.io website.</li>
-                                       <li><strong>By Nynaeve:</strong> Data from www.theravenscave.com, supplemented by AI.</li>
-                                       <li><strong>Both:</strong> Searches tags from both sources simultaneously.</li>
-                                   </ul>`
+            skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p><ul><li><strong>Heroplan.io:</strong> Data from the <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> website.</li><li><strong>By Nynaeve:</strong> Data from <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>, supplemented by AI and manually reviewed.</li><li><strong>Both:</strong> Searches tags from both sources simultaneously.</li></ul><p>For detailed category definitions, please refer to the source websites.</p>`
         }
     };
 
@@ -863,24 +904,31 @@ document.addEventListener('DOMContentLoaded', function () {
             const isHeroFavorite = isFavorite(hero);
             const cellsHTML = colKeys.map(key => {
                 let content = '';
-                // --- 修改开始 ---
-                // 让表格中的技能类别列根据下拉菜单的选项来显示
                 if (key === 'types') {
                     const source = filterInputs.skillTypeSource.value;
                     let typesToShow = [];
                     if (source === 'heroplan') {
-                        typesToShow = hero.types || [];
+                        typesToShow = hero.types ? [...hero.types] : [];
+                        typesToShow.sort((a, b) => a.localeCompare(b));
                     } else if (source === 'nynaeve') {
-                        typesToShow = hero.skill_types || [];
+                        typesToShow = hero.skill_types ? [...hero.skill_types] : [];
+                        typesToShow.sort((a, b) => {
+                            const indexA = nynaeveSkillTypeOrder.indexOf(a);
+                            const indexB = nynaeveSkillTypeOrder.indexOf(b);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
                     } else { // 'both'
-                        const allTypes = [...(hero.types || []), ...(hero.skill_types || [])];
-                        typesToShow = [...new Set(allTypes)];
+                        const allTypes = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+                        typesToShow = allTypes;
+                        typesToShow.sort((a, b) => a.localeCompare(b));
                     }
                     content = typesToShow.join(', ');
                 } else {
                     content = hero[key] || '';
                 }
-                // --- 修改结束 ---
 
 
                 if (key === 'fav') {
@@ -1000,24 +1048,31 @@ document.addEventListener('DOMContentLoaded', function () {
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
         const translatedFamily = family_values[heroFamily] || hero.family;
 
-        // --- 修改开始 ---
-        // 让英雄详情中的技能类别显示也根据下拉菜单的选项来变化
         const source = filterInputs.skillTypeSource.value;
         let skillTypesToDisplay = [];
         if (source === 'heroplan') {
-            skillTypesToDisplay = hero.types || [];
+            skillTypesToDisplay = hero.types ? [...hero.types] : [];
+            skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
         } else if (source === 'nynaeve') {
-            skillTypesToDisplay = hero.skill_types || [];
+            skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
+            skillTypesToDisplay.sort((a, b) => {
+                const indexA = nynaeveSkillTypeOrder.indexOf(a);
+                const indexB = nynaeveSkillTypeOrder.indexOf(b);
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+                return a.localeCompare(b);
+            });
         } else { // 'both'
-            const allSkillTypes = [...(hero.types || []), ...(hero.skill_types || [])];
-            skillTypesToDisplay = [...new Set(allSkillTypes)];
+            const allSkillTypes = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+            skillTypesToDisplay = allSkillTypes;
+            skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
         }
-        const uniqueSkillTypes = skillTypesToDisplay.filter(t => t); // Remove empty/null
+        const uniqueSkillTypes = skillTypesToDisplay.filter(t => t);
 
         const heroTypesContent = uniqueSkillTypes.length > 0
             ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-skill-type="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
             : `<span class="skill-value">${langDict.none}</span>`;
-        // --- 修改结束 ---
 
         const localImagePath = getLocalImagePath(hero.image);
         const avatarGlowClass = getColorGlowClass(hero.color);

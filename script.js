@@ -1231,11 +1231,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (inputElement) {
                     clearAllFilters();
-
                     if (filterType === 'passives' || filterType === 'effects') {
+                        // 1. 净化文本，移除标点和数字
                         filterValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim();
-                    }
 
+                        // 2. 如果净化后仍有内容，则用括号包裹
+                        if (filterValue) {
+                            filterValue = `(${filterValue})`;
+                        }
+                    }
                     closeDetailsModal();
                     inputElement.value = filterValue;
                     applyFiltersAndRender();

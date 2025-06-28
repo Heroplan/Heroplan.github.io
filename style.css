@@ -1469,3 +1469,37 @@ h1.hero-main-name.skill-type-tag:hover {
 #modal .skill-list li.skill-type-tag:hover {
     background-color: var(--md-sys-color-primary-container);
 }
+
+/* ADDED: New style for the reset button tag */
+.reset-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-left: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary-container);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.reset-tag:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/* 新增：用于堆叠模态框的更高层级 */
+#help-modal.stacked-modal,
+#skill-type-help-modal.stacked-modal {
+    z-index: 1003;
+}
+
+#help-modal-overlay.stacked-modal-overlay,
+#skill-type-help-modal-overlay.stacked-modal-overlay {
+    z-index: 1002;
+}

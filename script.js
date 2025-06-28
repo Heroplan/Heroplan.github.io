@@ -7,103 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentLang = 'cn';
     let currentSort = { key: 'power', direction: 'desc' };
     let temporaryFavorites = null; // 用于临时存储分享的收藏列表
-    const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
-    const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
-    const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
-
-    // Nynaeve 技能类型的英文排序标准 (Source of Truth)
-    const nynaeveSkillTypeOrder = [
-        'Snipers',
-        'AoE Attackers (Hit-3)',
-        'AoE Attackers (Hit-5)',
-        'Chain & Random Attackers',
-        'Bypassers',
-        'Dancers',
-        'Revivers',
-        'Healers',
-        'Health Boosters',
-        'Heal over Time (HoT)',
-        'Mega Minions Summoners',
-        'Minions Summoners',
-        'Fiends Summoners',
-        'DoT Attackers',
-        'Taunters',
-        'Healers (Special)',
-        'Healing Reducers',
-        'Ability Scores Modifiers',
-        'Negative Effects On Self Or Allies',
-        'Board Alterers',
-        'Buff Blockers',
-        'Buff Stealers',
-        'Buffers (ATK)',
-        'Buffers (DEF)',
-        'Cleanse Blockers',
-        'Cleansers',
-        'Counterattackers',
-        'Damage Reducers',
-        'Damage Sharers',
-        'Debuffers (ATK)',
-        'Debuffers (DEF)',
-        'Dispellers',
-        'Dodgers',
-        'Effect Duration Resetters',
-        'Extra Damage Dealers',
-        'Fiends Counters',
-        'Ghost Form & Hiding',
-        'Immunity Providers',
-        'Mana Corruption',
-        'Mana Generation Buffers',
-        'Mana Raisers',
-        'Mana Reducers or Blockers',
-        'Max Health Reducers',
-        'Mindless Attack & Mindless Heal',
-        'Minions Boosters',
-        'Minions Counters',
-        'Random Position',
-        'Reflectors',
-        'Resurrection Inhibitors',
-        'Silencers',
-        'Sleepweavers',
-        'Stacking Heroes',
-        'Status Effects Blockers',
-        'Status Effect Conversion'
-    ];
-
-    // 新增：技能类型翻译映射表
-    const skillTypeTranslations_cn = {
-        "Buffers (ATK)": "攻击增益", "Buffers (DEF)": "防御增益", "Debuffers (ATK)": "攻击减益", "Debuffers (DEF)": "防御减益",
-        "Stacks Removers": "叠加移除", "Stacking Heroes": "叠加", "Extra Damage Dealers": "额外伤害", "DoT Attackers": "持续伤害",
-        "Dispellers": "驱散", "Cleansers": "净化", "Buff Stealers": "增益窃取者", "Buff Blockers": "增益格挡者",
-        "Cleanse Blockers": "净化格挡者", "Status Effects Blockers": "状态效果格挡", "Effect Duration Resetters": "效果持续重置",
-        "Dancers": "舞者", "Healers": "治疗", "Healers (Special)": "特殊治疗", "Heal over Time (HoT)": "持续治疗",
-        "Health Boosters": "生命强化", "Max Health Reducers": "最大生命削减", "Healing Reducers": "治疗削减", "Revivers": "复活",
-        "Resurrection Inhibitors": "复活抑制", "Random Position": "重排队伍", "Mana Raisers": "法力提升", "Mana Generation Buffers": "法力生成增益",
-        "Mana Reducers or Blockers": "法力削减或格挡", "Mana Corruption": "法力腐败", "Mindless Attack & Mindless Heal": "精神错乱攻击&治疗",
-        "Silencers": "沉默", "Sleepweavers": "沉睡", "Taunters": "嘲讽", "Damage Sharers": "伤害分摊", "Damage Reducers": "伤害减免",
-        "Dodgers": "闪避", "Ghost Form & Hiding": "鬼魂形态与隐藏", "Immunity Providers": "提供免疫", "Minions Summoners": "召唤小兵",
-        "Mega Minions Summoners": "召唤巨型小兵", "Minions Counters": "反制小兵", "Minions Boosters": "小兵强化", "Fiends Summoners": "召唤恶魔",
-        "Fiends Counters": "反制恶魔", "Counterattackers": "反击", "Reflectors": "反射", "Bypassers": "绕过", "Targeting Type": "目标类型",
-        "Snipers": "狙击手", "AoE Attackers (Hit-5)": "全体攻击 (打5)", "AoE Attackers (Hit-3)": "范围攻击 (打3)",
-        "Chain & Random Attackers": "连锁与随机攻击", "Board Alterers": "改变面板", "Ability Scores Modifiers": "属性修改",
-        "Negative Effects On Self Or Allies": "对自身或友军负面效果", "Status Effect Conversion": "状态效果转换"
-    };
-    const skillTypeTranslations_tc = {
-        "Buffers (ATK)": "攻擊增益", "Buffers (DEF)": "防禦增益", "Debuffers (ATK)": "攻擊減益", "Debuffers (DEF)": "防禦減益",
-        "Stacks Removers": "疊加移除", "Stacking Heroes": "疊加", "Extra Damage Dealers": "額外傷害", "DoT Attackers": "持續傷害",
-        "Dispellers": "驅散", "Cleansers": "凈化", "Buff Stealers": "增益竊取者", "Buff Blockers": "增益格擋者",
-        "Cleanse Blockers": "凈化格擋者", "Status Effects Blockers": "狀態效果格擋", "Effect Duration Resetters": "效果持續重置",
-        "Dancers": "舞者", "Healers": "治療", "Healers (Special)": "特殊治療", "Heal over Time (HoT)": "持續治療",
-        "Health Boosters": "生命強化", "Max Health Reducers": "最大生命削減", "Healing Reducers": "治療削減", "Revivers": "復活",
-        "Resurrection Inhibitors": "復活抑製", "Random Position": "重排隊伍", "Mana Raisers": "法力提升", "Mana Generation Buffers": "法力生成增益",
-        "Mana Reducers or Blockers": "法力削減或格擋", "Mana Corruption": "法力腐敗", "Mindless Attack & Mindless Heal": "精神錯亂攻擊&治療",
-        "Silencers": "沈默", "Sleepweavers": "沈睡", "Taunters": "嘲諷", "Damage Sharers": "傷害分攤", "Damage Reducers": "傷害減免",
-        "Dodgers": "閃避", "Ghost Form & Hiding": "鬼魂形態與隱藏", "Immunity Providers": "提供免疫", "Minions Summoners": "召喚小兵",
-        "Mega Minions Summoners": "召喚巨型小兵", "Minions Counters": "反製小兵", "Minions Boosters": "小兵強化", "Fiends Summoners": "召喚惡魔",
-        "Fiends Counters": "反製惡魔", "Counterattackers": "反擊", "Reflectors": "反射", "Bypassers": "繞過", "Targeting Type": "目標類型",
-        "Snipers": "狙擊手", "AoE Attackers (Hit-5)": "全體攻擊 (打5)", "AoE Attackers (Hit-3)": "範圍攻擊 (打3)",
-        "Chain & Random Attackers": "連鎖與隨機攻擊", "Board Alterers": "改變面板", "Ability Scores Modifiers": "屬性修改",
-        "Negative Effects On Self Or Allies": "對自身或友軍負面效果", "Status Effect Conversion": "狀態效果轉換"
-    };
+    let modalStack = []; // 新增：用于管理模态框堆栈
 
     // 新增：根据翻译表，自动生成反向映射表（用于从中文查找英文）
     const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
@@ -151,110 +55,44 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // --- 語言和文本管理 ---
-    const i18n = {
-        cn: {
-            pageTitle: "帝国与谜题英雄资料库 | Heroplan",
-            headerTitle: "Heroplan浏览器", poweredBy: "由", driven: "驱动",
-            sponsoredBy: "赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
-            filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称",
-            starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
-            sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
-            skillTypeSourceLabel: "技能类别来源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
-            skillTypeLabel: "特殊技能类别:", skillTypePlaceholder: "例如：增益,异常,治疗", skillTextLabel: "特殊技能文本:",
-            passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装", favorites: "收藏",
-            daysSinceRelease: "距离发布日期天数大于:", daysPlaceholder: "1年半548 2年730", minPower: "战力",
-            minAttack: "攻击", minDefense: "防御", minHealth: "生命", resetFilters: "重置筛选",
-            shareFavorites: "分享收藏", openFavorites: "打开收藏", shareFavoritesCopied: "列表已复制!",
-            footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
-            footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
-            resultsCountText: (count) => `筛选列表中有 ${count} 位英雄`, noResults: "没有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄详情",
-            closeBtnTitle: "关闭", modalOrigin: "起源", modalCoreStats: "📊 核心属性", modalSkillDetails: "📖 技能详情",
-            modalSkillName: "📄 名称:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能类型:",
-            modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被动技能:",
-            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服装:", none: "无", detailsCloseBtn: "关闭",
-            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
-            favHeaderTitle: "一键收藏/取消全部",
-            confirmFavoriteAll: "您确定要收藏当前列表中的所有英雄吗？",
-            confirmUnfavoriteAll: "您确定要取消收藏当前列表中的所有英雄吗？",
-            filterHelpTitle: "高级筛选语法说明",
-            filterHelpIntro: "在“特殊技能/被动技能”输入框中，您可使用以下操作符构建复杂查询：",
-            filterHelpOr: "<li><strong>| (或):</strong> 查找包含多个关键词中任意一个的英雄。例如: <code>治疗|复活</code> 会找到技能中包含“治疗”或“复活”的英雄。</li>",
-            filterHelpAnd: "<li><strong>空格 (与):</strong> 查找必须同时包含多个关键词的英雄。例如: <code>攻击 提高</code> 会找到技能中同时包含“攻击”和“提升”的英雄。</li>",
-            filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定关键词的英雄。例如: <code>!治疗</code> 会找到所有技能中不含“治疗”的英雄。</li>",
-            filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵抗 治疗)</code> 会精确查找**某一句**技能描述中，同时包含“抵抗”和“治疗”的英雄。</li>",
-            filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>",
-            skillTypeHelpTitle: "技能类别来源说明",
-            skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p><ul><li><strong>Heroplan.io:</strong> 数据来自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 网站。</li><li><strong>By Nynaeve:</strong> 数据来自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，经过AI补全和人工审核。</li><li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li></ul><p>各类别的详细定义，请参考源网站。</p>`
-        },
-        tc: {
-            pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
-            headerTitle: "Heroplan瀏覽器", poweredBy: "由", driven: "驅動",
-            sponsoredBy: "贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
-            filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱",
-            starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
-            sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
-            skillTypeSourceLabel: "技能類別來源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
-            skillTypeLabel: "特殊技能類別:", skillTypePlaceholder: "例如：增益,異常,治療", skillTextLabel: "特殊技能文本:",
-            passiveSkillLabel: "被動技能文本:", filterBy: "篩選:", all: "全部", hero: "英雄", skin: "服裝", favorites: "收藏",
-            daysSinceRelease: "距離發佈日期天數大於:", daysPlaceholder: "1年半548 2年730", minPower: "戰力",
-            minAttack: "攻擊", minDefense: "防禦", minHealth: "生命", resetFilters: "重置篩選",
-            shareFavorites: "分享收藏", openFavorites: "打開收藏", shareFavoritesCopied: "列表已複製!",
-            footerGameName: "《帝國與謎題》", footerPlatform: "英雄數據查詢平台",
-            footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
-            resultsCountText: (count) => `篩選清單中有 ${count} 位英雄`, noResults: "沒有找到匹配的英雄", modalHeroDetails: "ℹ️ 英雄詳情",
-            closeBtnTitle: "關閉", modalOrigin: "起源", modalCoreStats: "📊 核心屬性", modalSkillDetails: "📖 技能詳情",
-            modalSkillName: "📄 名稱:", modalSpeed: "⌛ 法速:", modalSkillType: "🏷️ 技能類型:",
-            modalSpecialSkill: "✨ 特殊技能:", modalPassiveSkill: "🧿 被動技能:",
-            modalFamilyBonus: (family) => `👪 家族加成 (${family}):`, modalSkin: "服裝:", none: "無", detailsCloseBtn: "關閉",
-            shareButtonTitle: "分享", favoriteButtonTitle: "收藏", favColumnHeader: "☆",
-            favHeaderTitle: "一鍵收藏/取消全部",
-            confirmFavoriteAll: "您確定要收藏當前列表中的所有英雄嗎？",
-            confirmUnfavoriteAll: "您確定要取消收藏當前列表中的所有英雄嗎？",
-            filterHelpTitle: "高級篩選語法說明",
-            filterHelpIntro: "在“特殊技能/被動技能”輸入框中，您可使用以下運算子構建複雜查詢：",
-            filterHelpOr: "<li><strong>| (或):</strong> 尋找包含多個關鍵詞中任意一個的英雄。例如: <code>治療|復活</code> 會找到技能中包含“治療”或“復活”的英雄。</li>",
-            filterHelpAnd: "<li><strong>空格 (與):</strong> 尋找必須同時包含多個關鍵詞的英雄。例如: <code>攻擊 提升</code> 會找到技能中同時包含“攻擊”和“提升”的英雄。</li>",
-            filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定關鍵詞的英雄。例如: <code>!治療</code> 會找到所有技能中不含“治療”的英雄。</li>",
-            filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可进行复杂组合，并**强制在单句技能描述中进行匹配**。例如: <code>(抵禦 治療)</code> 會精確尋找**某一句**技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
-            filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>",
-            skillTypeHelpTitle: "技能類別來源說明",
-            skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p><ul><li><strong>Heroplan.io:</strong> 資料來自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 網站。</li><li><strong>By Nynaeve:</strong> 資料來自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，經過AI補全和人工審核。</li><li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li></ul><p>各類別的詳細定義，請參考源網站。</p>`
-        },
-        en: {
-            pageTitle: "Empires & Puzzles Hero Database | Heroplan",
-            headerTitle: "Heroplan Browser", poweredBy: "Powered by", driven: "",
-            sponsoredBy: "Sponsored by", translatedBy: "Developed by", footerInfo: "Hero data is continuously updated | EN/CN Version",
-            filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name",
-            starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
-            sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", advancedFilters: "Advanced Filters",
-            skillTypeSourceLabel: "Type Source:", sourceBoth: "Both", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
-            skillTypeLabel: "Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Skill Text:",
-            passiveSkillLabel: "Passive Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",
-            daysSinceRelease: "Days since release>", daysPlaceholder: "1.5y=548 2y=730", minPower: "Power",
-            minAttack: "Attack", minDefense: "Defense", minHealth: "Health", resetFilters: "Reset Filters",
-            shareFavorites: "Share Favorites", openFavorites: "Open Favorites", shareFavoritesCopied: "List Copied!",
-            footerGameName: "Empires & Puzzles", footerPlatform: "Hero Data Platform",
-            footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",
-            resultsCountText: (count) => `Found ${count} heroes in the list`, noResults: "No matching heroes found", modalHeroDetails: "ℹ️ Hero Details",
-            closeBtnTitle: "Close", modalOrigin: "Origin", modalCoreStats: "📊 Core Stats", modalSkillDetails: "📖 Skill Details",
-            modalSkillName: "📄 Name:", modalSpeed: "⌛ Speed:", modalSkillType: "🏷️ Skill Type:",
-            modalSpecialSkill: "✨ Special Skill:", modalPassiveSkill: "🧿 Passive Skill:",
-            modalFamilyBonus: (family) => `👪 Family Bonus (${family}):`, modalSkin: "Costume:", none: "None", detailsCloseBtn: "Close",
-            shareButtonTitle: "Share", favoriteButtonTitle: "Favorite", favColumnHeader: "☆",
-            favHeaderTitle: "Favorite/Unfavorite All",
-            confirmFavoriteAll: "Are you sure you want to favorite all heroes in the current list?",
-            confirmUnfavoriteAll: "Are you sure you want to unfavorite all heroes in the current list?",
-            filterHelpTitle: "Advanced Filter Syntax",
-            filterHelpIntro: "In the 'Skill Text/Passive Text' fields, you can use these operators for complex queries:",
-            filterHelpOr: "<li><strong>| (OR):</strong> Finds heroes with any of the specified keywords. E.g., <code>heal|revive</code> finds heroes with 'heal' or 'revive'.</li>",
-            filterHelpAnd: "<li><strong>Space (AND):</strong> Finds heroes that must contain all keywords. E.g., <code>attack up</code> finds heroes with both 'attack' and 'up'.</li>",
-            filterHelpNot: "<li><strong>! (NOT):</strong> Excludes heroes with a specific keyword. E.g., <code>!heal</code> finds all heroes without 'heal' in their skills.</li>",
-            filterHelpGroup: "<li><strong>() (Grouping/Single-Line Match):</strong> Use parentheses for complex grouping and to **force matching within a single skill line**. E.g., <code>(resist heal)</code> will precisely find heroes where a **single line** of their skill description contains both 'resist' and 'heal'.</li>",
-            filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>",
-            skillTypeHelpTitle: "Skill Type Source Explanation",
-            skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p><ul><li><strong>Heroplan.io:</strong> Data from the <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> website.</li><li><strong>By Nynaeve:</strong> Data from <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>, supplemented by AI and manually reviewed.</li><li><strong>Both:</strong> Searches tags from both sources simultaneously.</li></ul><p>For detailed category definitions, please refer to the source websites.</p>`
+    function areFiltersActive() {
+        const noneText = i18n[currentLang].none;
+        // Check text inputs for any value
+        if (filterInputs.name.value.trim() !== '' ||
+            filterInputs.types.value.trim() !== '' ||
+            filterInputs.effects.value.trim() !== '' ||
+            filterInputs.passives.value.trim() !== '' ||
+            filterInputs.releaseDateInput.value.trim() !== '' ||
+            filterInputs.power.value.trim() !== '' ||
+            filterInputs.attack.value.trim() !== '' ||
+            filterInputs.defense.value.trim() !== '' ||
+            filterInputs.health.value.trim() !== '') {
+            return true;
         }
-    };
+
+        // Check select inputs against their default "none" value
+        if (filterInputs.star.value !== noneText ||
+            filterInputs.color.value !== noneText ||
+            filterInputs.speed.value !== noneText ||
+            filterInputs.class.value !== noneText ||
+            filterInputs.family.value !== noneText ||
+            filterInputs.source.value !== noneText ||
+            filterInputs.aetherpower.value !== noneText) {
+            return true;
+        }
+
+        // Check the special 'releaseDateType' select against its default 'all' value
+        if (filterInputs.releaseDateType.value !== 'all') {
+            return true;
+        }
+
+        // Check if a shared favorites list is being displayed temporarily
+        if (temporaryFavorites !== null) {
+            return true;
+        }
+
+        return false;
+    }
 
     function applyLanguage(lang) {
         if (lang === 'cn') {
@@ -581,6 +419,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('modal-open');
         modal.scrollTop = 0;
         history.pushState({ modal: 'details' }, null);
+        modalStack.push('details');
     }
     function closeDetailsModal() { if (!modal.classList.contains('hidden')) { history.back(); } }
 
@@ -589,34 +428,41 @@ document.addEventListener('DOMContentLoaded', function () {
         filtersModalOverlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
         history.pushState({ modal: 'filters' }, null);
+        modalStack.push('filters');
     }
     function closeFiltersModal() { if (!filtersModal.classList.contains('hidden')) { history.back(); } }
 
     function openHelpModal() {
         renderHelpModalContent(helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']);
+        helpModal.classList.add('stacked-modal');
+        helpModalOverlay.classList.add('stacked-modal-overlay');
         helpModal.classList.remove('hidden');
         helpModalOverlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
+        history.pushState({ modal: 'help' }, null);
+        modalStack.push('help');
     }
 
     function closeHelpModal() {
         if (!helpModal.classList.contains('hidden')) {
-            helpModal.classList.add('hidden');
-            helpModalOverlay.classList.add('hidden');
+            history.back();
         }
     }
 
     function openSkillTypeHelpModal() {
         renderHelpModalContent(skillTypeHelpModal, 'skillTypeHelpTitle', null, ['skillTypeHelpContent']);
+        skillTypeHelpModal.classList.add('stacked-modal');
+        skillTypeHelpModalOverlay.classList.add('stacked-modal-overlay');
         skillTypeHelpModal.classList.remove('hidden');
         skillTypeHelpModalOverlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
+        history.pushState({ modal: 'skillTypeHelp' }, null);
+        modalStack.push('skillTypeHelp');
     }
 
     function closeSkillTypeHelpModal() {
         if (!skillTypeHelpModal.classList.contains('hidden')) {
-            skillTypeHelpModal.classList.add('hidden');
-            skillTypeHelpModalOverlay.classList.add('hidden');
+            history.back();
         }
     }
 
@@ -897,7 +743,20 @@ document.addEventListener('DOMContentLoaded', function () {
         // END: 新增逻辑
 
         if (resultsCountEl) {
-            resultsCountEl.textContent = langDict.resultsCountText(heroes.length);
+            const filtersAreActive = areFiltersActive();
+            if (filtersAreActive) {
+                resultsCountEl.innerHTML = `${langDict.resultsCountTextFiltered(heroes.length)} `;
+                const resetTag = document.createElement('span');
+                resetTag.className = 'reset-tag';
+                resetTag.textContent = langDict.resultsReset;
+                resetTag.onclick = (e) => {
+                    e.preventDefault();
+                    if (resetFiltersBtn) resetFiltersBtn.click();
+                };
+                resultsCountEl.appendChild(resetTag);
+            } else {
+                resultsCountEl.textContent = langDict.resultsCountTextUnfiltered(heroes.length);
+            }
         }
 
         const headers = {
@@ -1533,16 +1392,46 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+
+        // 重写 popstate 监听器以正确处理模态框堆栈
         window.addEventListener('popstate', function (event) {
-            if (modal) modal.classList.add('hidden');
-            if (modalOverlay) modalOverlay.classList.add('hidden');
-            if (filtersModal) filtersModal.classList.add('hidden');
-            if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
-            if (helpModal) helpModal.classList.add('hidden');
-            if (helpModalOverlay) helpModalOverlay.classList.add('hidden');
-            if (skillTypeHelpModal) skillTypeHelpModal.classList.add('hidden');
-            if (skillTypeHelpModalOverlay) skillTypeHelpModalOverlay.classList.add('hidden');
-            document.body.classList.remove('modal-open');
+            if (modalStack.length === 0) {
+                return; // 堆栈中没有模态框，不执行任何操作
+            }
+
+            const lastOpenModalId = modalStack.pop(); // 从堆栈中移除最上层的模态框
+
+            // 根据ID关闭对应的模态框
+            if (lastOpenModalId === 'details') {
+                if (modal) modal.classList.add('hidden');
+                if (modalOverlay) modalOverlay.classList.add('hidden');
+            } else if (lastOpenModalId === 'filters') {
+                if (filtersModal) filtersModal.classList.add('hidden');
+                if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
+            } else if (lastOpenModalId === 'help') {
+                if (helpModal) {
+                    helpModal.classList.add('hidden');
+                    helpModal.classList.remove('stacked-modal');
+                }
+                if (helpModalOverlay) {
+                    helpModalOverlay.classList.add('hidden');
+                    helpModalOverlay.classList.remove('stacked-modal-overlay');
+                }
+            } else if (lastOpenModalId === 'skillTypeHelp') {
+                if (skillTypeHelpModal) {
+                    skillTypeHelpModal.classList.add('hidden');
+                    skillTypeHelpModal.classList.remove('stacked-modal');
+                }
+                if (skillTypeHelpModalOverlay) {
+                    skillTypeHelpModalOverlay.classList.add('hidden');
+                    skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay');
+                }
+            }
+
+            // 如果堆栈为空，说明所有模态框都已关闭
+            if (modalStack.length === 0) {
+                document.body.classList.remove('modal-open');
+            }
         });
 
         window.addEventListener('resize', adjustStickyHeaders);

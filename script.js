@@ -10,31 +10,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
     const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
     const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
+
+    // Nynaeve 技能类型的英文排序标准 (Source of Truth)
     const nynaeveSkillTypeOrder = [
-        'Ability Scores Modifiers',
         'Snipers',
         'AoE Attackers (Hit-3)',
         'AoE Attackers (Hit-5)',
-        'Taunters',
-        'Heal over Time (HoT)',
-        'Healers (Special)',
+        'Chain & Random Attackers',
+        'Bypassers',
+        'Dancers',
+        'Revivers',
         'Healers',
-        'Healing Reducers',
         'Health Boosters',
+        'Heal over Time (HoT)',
+        'Mega Minions Summoners',
+        'Minions Summoners',
+        'Fiends Summoners',
         'DoT Attackers',
+        'Taunters',
+        'Healers (Special)',
+        'Healing Reducers',
+        'Ability Scores Modifiers',
+        'Negative Effects On Self Or Allies',
         'Board Alterers',
         'Buff Blockers',
         'Buff Stealers',
         'Buffers (ATK)',
         'Buffers (DEF)',
-        'Bypassers',
-        'Chain & Random Attackers',
         'Cleanse Blockers',
         'Cleansers',
         'Counterattackers',
         'Damage Reducers',
         'Damage Sharers',
-        'Dancers',
         'Debuffers (ATK)',
         'Debuffers (DEF)',
         'Dispellers',
@@ -42,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         'Effect Duration Resetters',
         'Extra Damage Dealers',
         'Fiends Counters',
-        'Fiends Summoners',
         'Ghost Form & Hiding',
         'Immunity Providers',
         'Mana Corruption',
@@ -50,22 +56,58 @@ document.addEventListener('DOMContentLoaded', function () {
         'Mana Raisers',
         'Mana Reducers or Blockers',
         'Max Health Reducers',
-        'Mega Minions Summoners',
         'Mindless Attack & Mindless Heal',
         'Minions Boosters',
         'Minions Counters',
-        'Minions Summoners',
-        'Negative Effects On Self Or Allies',
         'Random Position',
         'Reflectors',
         'Resurrection Inhibitors',
-        'Revivers',
         'Silencers',
         'Sleepweavers',
         'Stacking Heroes',
         'Status Effects Blockers',
         'Status Effect Conversion'
     ];
+
+    // 新增：技能类型翻译映射表
+    const skillTypeTranslations_cn = {
+        "Buffers (ATK)": "攻击增益", "Buffers (DEF)": "防御增益", "Debuffers (ATK)": "攻击减益", "Debuffers (DEF)": "防御减益",
+        "Stacks Removers": "叠加移除", "Stacking Heroes": "叠加", "Extra Damage Dealers": "额外伤害", "DoT Attackers": "持续伤害",
+        "Dispellers": "驱散", "Cleansers": "净化", "Buff Stealers": "增益窃取者", "Buff Blockers": "增益格挡者",
+        "Cleanse Blockers": "净化格挡者", "Status Effects Blockers": "状态效果格挡", "Effect Duration Resetters": "效果持续重置",
+        "Dancers": "舞者", "Healers": "治疗", "Healers (Special)": "特殊治疗", "Heal over Time (HoT)": "持续治疗",
+        "Health Boosters": "生命强化", "Max Health Reducers": "最大生命削减", "Healing Reducers": "治疗削减", "Revivers": "复活",
+        "Resurrection Inhibitors": "复活抑制", "Random Position": "重排队伍", "Mana Raisers": "法力提升", "Mana Generation Buffers": "法力生成增益",
+        "Mana Reducers or Blockers": "法力削减或格挡", "Mana Corruption": "法力腐败", "Mindless Attack & Mindless Heal": "精神错乱攻击&治疗",
+        "Silencers": "沉默", "Sleepweavers": "沉睡", "Taunters": "嘲讽", "Damage Sharers": "伤害分摊", "Damage Reducers": "伤害减免",
+        "Dodgers": "闪避", "Ghost Form & Hiding": "鬼魂形态与隐藏", "Immunity Providers": "提供免疫", "Minions Summoners": "召唤小兵",
+        "Mega Minions Summoners": "召唤巨型小兵", "Minions Counters": "反制小兵", "Minions Boosters": "小兵强化", "Fiends Summoners": "召唤恶魔",
+        "Fiends Counters": "反制恶魔", "Counterattackers": "反击", "Reflectors": "反射", "Bypassers": "绕过", "Targeting Type": "目标类型",
+        "Snipers": "狙击手", "AoE Attackers (Hit-5)": "全体攻击 (打5)", "AoE Attackers (Hit-3)": "范围攻击 (打3)",
+        "Chain & Random Attackers": "连锁与随机攻击", "Board Alterers": "改变面板", "Ability Scores Modifiers": "属性修改",
+        "Negative Effects On Self Or Allies": "对自身或友军负面效果", "Status Effect Conversion": "状态效果转换"
+    };
+    const skillTypeTranslations_tc = {
+        "Buffers (ATK)": "攻擊增益", "Buffers (DEF)": "防禦增益", "Debuffers (ATK)": "攻擊減益", "Debuffers (DEF)": "防禦減益",
+        "Stacks Removers": "疊加移除", "Stacking Heroes": "疊加", "Extra Damage Dealers": "額外傷害", "DoT Attackers": "持續傷害",
+        "Dispellers": "驅散", "Cleansers": "凈化", "Buff Stealers": "增益竊取者", "Buff Blockers": "增益格擋者",
+        "Cleanse Blockers": "凈化格擋者", "Status Effects Blockers": "狀態效果格擋", "Effect Duration Resetters": "效果持續重置",
+        "Dancers": "舞者", "Healers": "治療", "Healers (Special)": "特殊治療", "Heal over Time (HoT)": "持續治療",
+        "Health Boosters": "生命強化", "Max Health Reducers": "最大生命削減", "Healing Reducers": "治療削減", "Revivers": "復活",
+        "Resurrection Inhibitors": "復活抑製", "Random Position": "重排隊伍", "Mana Raisers": "法力提升", "Mana Generation Buffers": "法力生成增益",
+        "Mana Reducers or Blockers": "法力削減或格擋", "Mana Corruption": "法力腐敗", "Mindless Attack & Mindless Heal": "精神錯亂攻擊&治療",
+        "Silencers": "沈默", "Sleepweavers": "沈睡", "Taunters": "嘲諷", "Damage Sharers": "傷害分攤", "Damage Reducers": "傷害減免",
+        "Dodgers": "閃避", "Ghost Form & Hiding": "鬼魂形態與隱藏", "Immunity Providers": "提供免疫", "Minions Summoners": "召喚小兵",
+        "Mega Minions Summoners": "召喚巨型小兵", "Minions Counters": "反製小兵", "Minions Boosters": "小兵強化", "Fiends Summoners": "召喚惡魔",
+        "Fiends Counters": "反製惡魔", "Counterattackers": "反擊", "Reflectors": "反射", "Bypassers": "繞過", "Targeting Type": "目標類型",
+        "Snipers": "狙擊手", "AoE Attackers (Hit-5)": "全體攻擊 (打5)", "AoE Attackers (Hit-3)": "範圍攻擊 (打3)",
+        "Chain & Random Attackers": "連鎖與隨機攻擊", "Board Alterers": "改變面板", "Ability Scores Modifiers": "屬性修改",
+        "Negative Effects On Self Or Allies": "對自身或友軍負面效果", "Status Effect Conversion": "狀態效果轉換"
+    };
+
+    // 新增：根据翻译表，自动生成反向映射表（用于从中文查找英文）
+    const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
+    const reverseSkillTypeMap_tc = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([key, value]) => [value, key]));
 
 
     // --- DOM 元素 ---
@@ -912,14 +954,28 @@ document.addEventListener('DOMContentLoaded', function () {
                         typesToShow.sort((a, b) => a.localeCompare(b));
                     } else if (source === 'nynaeve') {
                         typesToShow = hero.skill_types ? [...hero.skill_types] : [];
+
+                        // ** MODIFIED: Nynaeve 技能排序逻辑修改 **
+                        const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
                         typesToShow.sort((a, b) => {
-                            const indexA = nynaeveSkillTypeOrder.indexOf(a);
-                            const indexB = nynaeveSkillTypeOrder.indexOf(b);
+                            // 如果是中文环境，先通过反向映射表找到对应的英文原文
+                            const englishA = (currentLang !== 'en' && reverseMap[a]) ? reverseMap[a] : a;
+                            const englishB = (currentLang !== 'en' && reverseMap[b]) ? reverseMap[b] : b;
+
+                            // 使用英文原文在标准排序数组中查找位置
+                            const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+                            const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
+
+                            // 如果两个都能在标准排序中找到，按标准排序
                             if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            // 如果只有 A 找到，A排前面
                             if (indexA !== -1) return -1;
+                            // 如果只有 B 找到，B排前面
                             if (indexB !== -1) return 1;
+                            // 如果都找不到，按本地化语言默认排序
                             return a.localeCompare(b);
                         });
+
                     } else { // 'both'
                         const allTypes = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
                         typesToShow = allTypes;
@@ -1055,14 +1111,20 @@ document.addEventListener('DOMContentLoaded', function () {
             skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
         } else if (source === 'nynaeve') {
             skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
+
+            // ** MODIFIED: Nynaeve 技能排序逻辑修改 **
+            const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
             skillTypesToDisplay.sort((a, b) => {
-                const indexA = nynaeveSkillTypeOrder.indexOf(a);
-                const indexB = nynaeveSkillTypeOrder.indexOf(b);
+                const englishA = (currentLang !== 'en' && reverseMap[a]) ? reverseMap[a] : a;
+                const englishB = (currentLang !== 'en' && reverseMap[b]) ? reverseMap[b] : b;
+                const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+                const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
                 if (indexA !== -1 && indexB !== -1) return indexA - indexB;
                 if (indexA !== -1) return -1;
                 if (indexB !== -1) return 1;
                 return a.localeCompare(b);
             });
+
         } else { // 'both'
             const allSkillTypes = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
             skillTypesToDisplay = allSkillTypes;

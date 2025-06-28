@@ -12,8 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
     const nynaeveSkillTypeOrder = [
         'Ability Scores Modifiers',
+        'Snipers',
         'AoE Attackers (Hit-3)',
         'AoE Attackers (Hit-5)',
+        'Taunters',
+        'Heal over Time (HoT)',
+        'Healers (Special)',
+        'Healers',
+        'Healing Reducers',
+        'Health Boosters',
+        'DoT Attackers',
         'Board Alterers',
         'Buff Blockers',
         'Buff Stealers',
@@ -31,17 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
         'Debuffers (DEF)',
         'Dispellers',
         'Dodgers',
-        'DoT Attackers',
         'Effect Duration Resetters',
         'Extra Damage Dealers',
         'Fiends Counters',
         'Fiends Summoners',
         'Ghost Form & Hiding',
-        'Heal over Time (HoT)',
-        'Healers (Special)',
-        'Healers',
-        'Healing Reducers',
-        'Health Boosters',
         'Immunity Providers',
         'Mana Corruption',
         'Mana Generation Buffers',
@@ -60,11 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
         'Revivers',
         'Silencers',
         'Sleepweavers',
-        'Snipers',
         'Stacking Heroes',
         'Status Effects Blockers',
-        'Status Effect Conversion',
-        'Taunters'
+        'Status Effect Conversion'
     ];
 
 

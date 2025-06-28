@@ -1420,14 +1420,30 @@ footer .footer-credit {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* MODIFIED: Generic skill tag hover effect for BLOCK elements */
+.hero-info-block.skill-type-tag,
+.uniform-style .skill-type-tag,
 .skill-types-container .skill-type-tag {
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.hero-info-block.skill-type-tag:hover,
+.uniform-style .skill-type-tag:hover,
 .skill-types-container .skill-type-tag:hover {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
+    background-color: var(--md-sys-color-primary) !important;
+    color: var(--md-sys-color-on-primary) !important;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px var(--md-sys-color-shadow);
+}
+
+/* MODIFIED: Specific hover effect for LIST items */
+#modal .skill-list li.skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#modal .skill-list li.skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary-container);
 }

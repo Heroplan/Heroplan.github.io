@@ -782,11 +782,20 @@ document.addEventListener('DOMContentLoaded', function () {
             const lowerCaseName = hero.name.toLowerCase();
             if (filters.name && !lowerCaseName.includes(filters.name.toLowerCase())) return false;
 
+            // MODIFIED: Sanitize effects text before matching
             if (filters.effects) {
-                if (!matchesComplexQuery(hero.effects, filters.effects)) return false;
+                const sanitizedEffects = Array.isArray(hero.effects)
+                    ? hero.effects.map(p => String(p || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim())
+                    : [String(hero.effects || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()];
+                if (!matchesComplexQuery(sanitizedEffects, filters.effects)) return false;
             }
+
             if (filters.passives) {
-                if (!matchesComplexQuery(hero.passives, filters.passives)) return false;
+                // MODIFIED: When filtering, also ignore all punctuation and symbols from the hero's data
+                const sanitizedPassives = Array.isArray(hero.passives)
+                    ? hero.passives.map(p => String(p || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim())
+                    : [String(hero.passives || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()];
+                if (!matchesComplexQuery(sanitizedPassives, filters.passives)) return false;
             }
 
             if (filters.types) {
@@ -1028,16 +1037,28 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
 
-        const renderListAsHTML = (itemsArray) => {
+        // MODIFIED: This function now handles 'effects', 'passives', or null filter types
+        const renderListAsHTML = (itemsArray, filterType = null) => {
             if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
+
             return itemsArray.map(item => {
                 let cleanItem = String(item).trim();
+
+                // If a filterType is provided ('effects' or 'passives'), make the item clickable
+                if (filterType) {
+                    const mainDesc = cleanItem.split(' * ')[0].trim();
+                    const displayHTML = cleanItem.replace(/ \* /g, '<br><i>') + '</i>'; // Ensure italic tag is closed
+                    return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${displayHTML}</li>`;
+                }
+
+                // Default rendering for non-filterable lists (e.g., family bonus)
                 if (cleanItem.includes(' * ')) {
                     const parts = cleanItem.split(' * ');
-                    let subHtml = `<li>${parts[0].trim()}</li>`;
+                    let subHtml = `<li>${parts[0].trim()}`;
                     for (let i = 1; i < parts.length; i++) {
-                        subHtml += `<li><i>${parts[i].trim()}</i></li>`;
+                        subHtml += `<br><i>${parts[i].trim()}</i>`;
                     }
+                    subHtml += `</li>`;
                     return subHtml;
                 }
                 return `<li>${cleanItem}</li>`;
@@ -1112,7 +1133,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (source === 'nynaeve') {
             skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
 
-            // ** MODIFIED: Nynaeve 技能排序逻辑修改 **
             const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
             skillTypesToDisplay.sort((a, b) => {
                 const englishA = (currentLang !== 'en' && reverseMap[a]) ? reverseMap[a] : a;
@@ -1133,7 +1153,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const uniqueSkillTypes = skillTypesToDisplay.filter(t => t);
 
         const heroTypesContent = uniqueSkillTypes.length > 0
-            ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-skill-type="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
+            ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
             : `<span class="skill-value">${langDict.none}</span>`;
 
         const localImagePath = getLocalImagePath(hero.image);
@@ -1162,9 +1182,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="details-top-right">
                      <div class="details-info-line">
                         ${hero.class ? `<span class="hero-info-block">🎓 ${hero.class}</span>` : ''}
-                        ${hero.source ? `<span class="hero-info-block">🌍 ${hero.source}</span>` : ''}
+                        ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${hero.source}">🌍 ${hero.source}</span>` : ''}
                         ${heroSkin ? `<span class="hero-info-block">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}
-                        ${hero.AetherPower ? `<span class="hero-info-block">⏫ ${hero.AetherPower}</span>` : ''}
+                        ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}" title="${langDict.filterBy} ${hero.AetherPower}">⏫ ${hero.AetherPower}</span>` : ''}
                         ${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}
                     </div>
                     
@@ -1190,17 +1210,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 <div class="skill-category-block">
                     <p class="uniform-style">${langDict.modalSpecialSkill}</p>
-                    <ul class="skill-list">${renderListAsHTML(hero.effects)}</ul>
+                    <ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul>
                 </div>
                 
                 <div class="skill-category-block">
                     <p class="uniform-style">${langDict.modalPassiveSkill}</p>
-                    <ul class="skill-list">${renderListAsHTML(hero.passives)}</ul>
+                    <ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul>
                 </div>
                 
                 ${familyBonus.length > 0 ? `
                 <div class="skill-category-block">
-                    <p class="uniform-style">${langDict.modalFamilyBonus(translatedFamily || hero.family)}</p>
+                    <p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}">${translatedFamily || hero.family}</span>`)}</p>
                     <ul class="skill-list">${renderListAsHTML(familyBonus)}</ul>
                 </div>` : ''}
             </div>
@@ -1230,7 +1250,6 @@ document.addEventListener('DOMContentLoaded', function () {
             favoriteBtn.addEventListener('click', () => {
                 toggleFavorite(hero);
                 updateFavoriteButton();
-                // Also update the star in the main table
                 const tableStar = document.querySelector(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`);
                 if (tableStar) {
                     if (isFavorite(hero)) {
@@ -1267,6 +1286,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
+    }
+
+    // --- NEW: Function to clear all filter inputs ---
+    function clearAllFilters() {
+        temporaryFavorites = null; // Also clear any temporary favorite lists
+        for (const key in filterInputs) {
+            if (key === 'skillTypeSource') {
+                continue;
+            }
+
+            const element = filterInputs[key];
+            if (element) {
+                if (element.tagName === 'SELECT') {
+                    if (element.id === 'release-date-type') {
+                        element.value = 'all';
+                    } else {
+                        const noneText = i18n[currentLang].none;
+                        element.value = noneText;
+                    }
+                } else {
+                    element.value = '';
+                }
+            }
+        }
     }
 
     // --- 事件监听器绑定 ---
@@ -1317,14 +1360,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (modalContent) {
             modalContent.addEventListener('click', (event) => {
-                const target = event.target;
-                if (target.classList.contains('skill-type-tag')) {
-                    const skillType = target.dataset.skillType;
-                    if (skillType) {
-                        closeDetailsModal();
-                        filterInputs.types.value = skillType;
-                        applyFiltersAndRender();
+                const target = event.target.closest('.skill-type-tag');
+                if (!target) return;
+
+                const filterType = target.dataset.filterType;
+                let filterValue = target.dataset.filterValue;
+
+                if (!filterType || filterValue === undefined) return;
+
+                const inputElement = filterInputs[filterType];
+
+                if (inputElement) {
+                    clearAllFilters();
+
+                    if (filterType === 'passives' || filterType === 'effects') {
+                        filterValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim();
                     }
+
+                    closeDetailsModal();
+                    inputElement.value = filterValue;
+                    applyFiltersAndRender();
                 }
             });
         }
@@ -1334,29 +1389,21 @@ document.addEventListener('DOMContentLoaded', function () {
             if (tbody) {
                 tbody.addEventListener('click', (event) => {
                     const target = event.target;
-                    // 处理表格内的快速收藏/取消收藏点击
                     if (target.classList.contains('favorite-toggle-icon')) {
                         event.stopPropagation();
                         const heroId = parseInt(target.dataset.heroId, 10);
                         const hero = allHeroes.find(h => h.originalIndex === heroId);
                         if (hero) {
-                            // 切换英雄在localStorage中的收藏状态
                             toggleFavorite(hero);
-
-                            // 立即在UI上更新被点击的星星图标
                             const isNowFavorite = isFavorite(hero);
                             target.textContent = isNowFavorite ? '★' : '☆';
                             target.classList.toggle('favorited', isNowFavorite);
 
-                            // **核心修改**：
-                            // 仅当用户在查看自己的收藏列表时（即非临时列表），
-                            // 取消收藏后才刷新列表以隐藏该项目。
                             if (filterInputs.releaseDateType.value === 'favorites' && temporaryFavorites === null) {
                                 applyFiltersAndRender();
                             }
                         }
                     }
-                    // 处理打开英雄详情的点击
                     else {
                         const row = target.closest('.table-row');
                         if (row) {
@@ -1373,7 +1420,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     const header = event.target.closest('th');
                     if (!header) return;
 
-                    // 处理排序点击
                     if (header.classList.contains('sortable')) {
                         const sortKey = header.dataset.sortKey;
                         if (currentSort.key === sortKey) {
@@ -1385,12 +1431,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                         applyFiltersAndRender();
                     }
-                    // 处理一键收藏点击
                     else if (header.classList.contains('favorite-all-header')) {
                         if (filteredHeroes.length === 0) return;
 
                         const langDict = i18n[currentLang];
-                        const heroesToProcess = filteredHeroes.filter(h => h.english_name); // 只处理有英文名的
+                        const heroesToProcess = filteredHeroes.filter(h => h.english_name);
                         if (heroesToProcess.length === 0) return;
 
                         const favoritedCount = heroesToProcess.filter(isFavorite).length;
@@ -1431,28 +1476,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
-                temporaryFavorites = null;
-                for (const key in filterInputs) {
-                    // 如果当前筛选是“技能类别来源”，则跳过重置逻辑
-                    if (key === 'skillTypeSource') {
-                        continue;
-                    }
-
-                    const element = filterInputs[key];
-                    if (element) {
-                        if (element.tagName === 'SELECT') {
-                            if (element.id === 'release-date-type') {
-                                element.value = 'all';
-                            }
-                            else {
-                                const noneText = i18n[currentLang].none;
-                                element.value = noneText;
-                            }
-                        } else {
-                            element.value = '';
-                        }
-                    }
-                }
+                clearAllFilters();
                 applyFiltersAndRender();
             });
         }
@@ -1473,9 +1497,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
                 const favString = favorites.join(',');
-                // 使用 lz-string 库进行压缩
                 const compressedFavs = LZString.compressToEncodedURIComponent(favString);
-                // 使用新的参数名 zfavs (zipped favorites)
                 const url = `${window.location.origin}${window.location.pathname}?zfavs=${compressedFavs}&lang=${currentLang}`;
 
                 navigator.clipboard.writeText(url).then(() => {
@@ -1531,8 +1553,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
         const viewHeroFromUrl = urlParams.get('view');
         const langFromUrl = urlParams.get('lang');
-        const zfavsFromUrl = urlParams.get('zfavs'); // 新的压缩参数
-        const favsFromUrl = urlParams.get('favs');   // 旧的明文参数
+        const zfavsFromUrl = urlParams.get('zfavs');
+        const favsFromUrl = urlParams.get('favs');
         const languageCookie = getCookie('language');
 
         let langToUse = 'cn'; // Default language
@@ -1568,7 +1590,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            // 优先处理新的压缩格式链接
             if (zfavsFromUrl) {
                 try {
                     const favString = LZString.decompressFromEncodedURIComponent(zfavsFromUrl);
@@ -1579,7 +1600,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } catch (e) {
                     console.error("Failed to decompress favorites from URL", e);
                 }
-            } else if (favsFromUrl) { // 兼容旧的明文格式链接
+            } else if (favsFromUrl) {
                 try {
                     const favIdentifiers = decodeURIComponent(favsFromUrl).split(',');
                     temporaryFavorites = favIdentifiers;

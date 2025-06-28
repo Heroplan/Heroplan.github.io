@@ -1421,6 +1421,28 @@ footer .footer-credit {
     border-width: 0;
 }
 
+/* ADDED: Hover/Click indicator styles for modal details */
+h1.hero-main-name.skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    padding: 0 0.5rem;
+    border-radius: 8px;
+}
+
+h1.hero-main-name.skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+/* Make Speed value in modal look like a clickable tag */
+.uniform-style .skill-value.skill-type-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 4px;
+    /* Add some space from the label */
+}
+
 /* MODIFIED: Generic skill tag hover effect for BLOCK elements */
 .hero-info-block.skill-type-tag,
 .uniform-style .skill-type-tag,

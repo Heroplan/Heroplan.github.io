@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let heroName = hero.name;
 
         // 仅针对“经验拟态兽”的特殊处理，确保不影响其他英雄
-        if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽')) {
+        if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽') || heroName.includes('經驗模仿怪')) {
             const pattern = /\(([^)]+)\)/; // 找到第一个括号内的内容
             const match = heroName.match(pattern);
 
@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const baseName = match[1]; // "Experience Mimic"
                 const afterParenthesesIndex = heroName.lastIndexOf(')') + 1;
                 const suffix = heroName.substring(afterParenthesesIndex).trim();
-                const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
+                const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire', 'holy'];
 
                 if (suffix && allowedSuffixes.includes(suffix.toLowerCase())) {
                     return `${baseName} ${suffix}`; // 返回 "Experience Mimic Nature" 等
@@ -1117,7 +1117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const nameBlockHTML = `
             ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
-            <h1 class="hero-main-name">${mainHeroName}</h1>
+            <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
             ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
         `;
 
@@ -1181,9 +1181,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="details-top-right">
                      <div class="details-info-line">
-                        ${hero.class ? `<span class="hero-info-block">🎓 ${hero.class}</span>` : ''}
+                        ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}" title="${langDict.filterBy} ${hero.class}">🎓 ${hero.class}</span>` : ''}
                         ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${hero.source}">🌍 ${hero.source}</span>` : ''}
-                        ${heroSkin ? `<span class="hero-info-block">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}
+                        ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}
                         ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}" title="${langDict.filterBy} ${hero.AetherPower}">⏫ ${hero.AetherPower}</span>` : ''}
                         ${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}
                     </div>
@@ -1203,11 +1203,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 <div class="skill-category-block">
                     <p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p>
-                    <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value">${hero.speed || langDict.none}</span></p>
+                    <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p>
                     <p class="uniform-style">${langDict.modalSkillType}</p>
                     ${heroTypesContent}
                 </div>
-
+    
                 <div class="skill-category-block">
                     <p class="uniform-style">${langDict.modalSpecialSkill}</p>
                     <ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul>

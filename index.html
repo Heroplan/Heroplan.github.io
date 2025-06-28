@@ -121,28 +121,34 @@
                     <span><span data-lang-key="translatedBy">译者制作</span> <strong
                             style="color: var(--md-sys-color-tertiary);">Juno</strong></span>
                 </div>
-                <span data-lang-key="footerInfo">英雄数据持续更新 | 简繁中文版</span>
                 <div class="header-info-footer">
+                    <span data-lang-key="footerInfo">英雄数据持续更新 | 简繁中文版</span>
                 </div>
             </div>
             <p id="last-updated"></p>
         </header>
 
         <section class="seo-text-hidden">
+            <h2>帝国与谜题英雄数据库</h2>
             <p>欢迎使用 Heroplan
                 <strong>《帝国与谜题》英雄资料</strong>查询平台。我们提供最新、最全面的<strong>英雄数据</strong>，包括英雄的星级、颜色、法速、职业、家族以及详细的<strong>特殊技能</strong>和被动技能说明。你可以使用强大的筛选功能，快速找到你需要的<strong>英雄攻略</strong>信息。
             </p>
         </section>
+
+        <hr class="divider">
+
         <div id="results-wrapper">
             <div class="results-header">
                 <h3 id="results-count"></h3>
             </div>
-            <table class="manual-table">
-                <thead>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <div id="results-table-container">
+                <table class="manual-table">
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -161,7 +167,9 @@
             <div class="filters-grid">
                 <div class="filter-card">
                     <div class="filter-header" id="standard-filters-header">
-                        <h2 data-lang-key="standardFilters">标准筛选</h2>
+                        <div class="filter-title-container">
+                            <h2 data-lang-key="standardFilters">标准筛选</h2>
+                        </div>
                         <button class="toggle-button" data-target="standard-filters-content">▼</button>
                     </div>
                     <div id="standard-filters-content" class="filter-content collapsed">

@@ -313,9 +313,10 @@ hr.divider {
     margin-bottom: 0.7rem;
 }
 
+/* MODIFIED: Unified and wider label style */
 .filter-item label {
-    width: 110px;
-    min-width: 110px;
+    width: 140px;
+    min-width: 140px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -348,6 +349,8 @@ hr.divider {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    height: 37px;
+    /* Explicit height for alignment */
 }
 
 .filter-item input:focus,
@@ -1493,6 +1496,7 @@ h1.hero-main-name.skill-type-tag:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 /* 新增：用于堆叠模态框的更高层级 */
 #help-modal.stacked-modal,
 #skill-type-help-modal.stacked-modal {
@@ -1502,4 +1506,51 @@ h1.hero-main-name.skill-type-tag:hover {
 #help-modal-overlay.stacked-modal-overlay,
 #skill-type-help-modal-overlay.stacked-modal-overlay {
     z-index: 1002;
+}
+
+/* 新增: 日期筛选的容器和内联按钮/日期显示样式 */
+.input-with-right-button {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.date-display-box {
+    /* MODIFIED: Use flex: 1 for 1:1 ratio */
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid var(--md-sys-color-outline);
+    border-right: none;
+    font-size: 0.9em;
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-variant);
+    text-align: center;
+    box-sizing: border-box;
+    height: 37px;
+    line-height: 20px;
+    /* Aligns text vertically */
+}
+
+.action-button-right {
+    /* MODIFIED: Use flex: 1 for 1:1 ratio */
+    flex: 1;
+    border: 1px solid var(--md-sys-color-outline);
+    border-left: none;
+    padding: 0 1rem;
+    height: 37px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    white-space: nowrap;
+}
+
+.action-button-right:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
 }

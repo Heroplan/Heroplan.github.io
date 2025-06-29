@@ -24,10 +24,10 @@
     <script>
         (function () {
             const today = new Date();
-            const yyyy = today.getFullYear();
+            const supabase = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const dd = String(today.getDate()).padStart(2, '0');
-            const version = `${yyyy}${mm}${dd}`;
+            const version = `${supabase}${mm}${dd}`;
 
             // 需要进行缓存破坏处理的本地资源文件
             const localAssets = [
@@ -94,6 +94,9 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄浏览器</a></h1>
                 <div class="header-buttons">
+                    <a href="calendar.jpg" target="_blank" class="theme-toggle-btn" title="查看日历">
+                        <span>📅</span>
+                    </a>
                     <button id="theme-toggle-btn" class="theme-toggle-btn" title="切换日间/夜间模式">
                         <span class="sun-icon">☀️</span>
                         <span class="moon-icon">🌙</span>
@@ -191,6 +194,15 @@
                         <div class="filter-item"><label for="aetherpower-select"
                                 data-lang-key="aetherPowerLabel">以太力量:</label><select id="aetherpower-select"></select>
                         </div>
+                        <div class="filter-item">
+                            <label for="release-date-type" data-lang-key="filterBy">筛选:</label>
+                            <select id="release-date-type" style="flex-grow: 1;">
+                                <option value="all" data-lang-key="all">全部</option>
+                                <option value="hero" data-lang-key="hero">英雄</option>
+                                <option value="skin" data-lang-key="skin">服装</option>
+                                <option value="favorites" data-lang-key="favorites">收藏</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="filter-card">
@@ -222,22 +234,25 @@
                         <div class="filter-item"><label for="passives-input"
                                 data-lang-key="passiveSkillLabel">被动技能文本:</label><input type="text" id="passives-input"
                                 placeholder=""></div>
-                        <div class="filter-item">
-                            <label for="release-date-type"
-                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;"
-                                data-lang-key="filterBy">筛选:</label>
-                            <select id="release-date-type" style="flex-grow: 0; width: auto; margin-right: 15px;">
-                                <option value="all" data-lang-key="all">全部</option>
-                                <option value="hero" data-lang-key="hero">英雄</option>
-                                <option value="skin" data-lang-key="skin">服装</option>
-                                <option value="favorites" data-lang-key="favorites">收藏</option>
-                            </select>
-                            <label for="release-date-input"
-                                style="width: auto; min-width: auto; flex-shrink: 0; margin-right: 5px;"
-                                data-lang-key="daysSinceRelease">距离发布日期天数大于:</label>
-                            <input type="number" id="release-date-input" data-lang-key-placeholder="daysPlaceholder"
-                                placeholder="1年半548 2年730" style="flex-grow: 1;">
-                            <span style="margin-left: 5px;"></span>
+
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                            <div class="filter-item">
+                                <label data-lang-key="oneClickMaxEventLabel">一键满级活动日期:</label>
+                                <div class="input-with-right-button">
+                                    <span id="one-click-max-date-display" class="date-display-box"></span>
+                                    <button id="filter-hero-730-btn" class="action-button-right"
+                                        data-lang-key="filterButtonLabel">筛选</button>
+                                </div>
+                            </div>
+                            <div class="filter-item">
+                                <label data-lang-key="purchaseCostumeEventLabel">购买服装活动日期:</label>
+                                <div class="input-with-right-button">
+                                    <span id="purchase-costume-date-display" class="date-display-box"></span>
+                                    <button id="filter-costume-548-btn" class="action-button-right"
+                                        data-lang-key="filterButtonLabel">筛选</button>
+                                </div>
+                            </div>
                         </div>
                         <div class="stat-filter-grid">
                             <div class="filter-item-compact">

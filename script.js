@@ -8,6 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentSort = { key: 'power', direction: 'desc' };
     let temporaryFavorites = null; // 用于临时存储分享的收藏列表
     let modalStack = []; // 新增：用于管理模态框堆栈
+    let temporaryDateFilter = null; // 新增: 用于一键日期筛选
+
+    // 新增: 定义硬编码的日期
+    const oneClickMaxDate = '2025-06-29';
+    const purchaseCostumeDate = '2025-07-28';
+
 
     // 新增：根据翻译表，自动生成反向映射表（用于从中文查找英文）
     const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
@@ -39,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTypeHelpModal = document.getElementById('skill-type-help-modal');
     const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
 
+    // 新增: 获取新日期筛选的DOM元素
+    const oneClickMaxDateDisplay = document.getElementById('one-click-max-date-display');
+    const purchaseCostumeDateDisplay = document.getElementById('purchase-costume-date-display');
+    const filterHero730Btn = document.getElementById('filter-hero-730-btn');
+    const filterCostume548Btn = document.getElementById('filter-costume-548-btn');
+
     const filterInputs = {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
         color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
@@ -51,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         power: document.getElementById('power-input'), attack: document.getElementById('attack-input'),
         defense: document.getElementById('defense-input'), health: document.getElementById('health-input'),
         releaseDateType: document.getElementById('release-date-type'),
-        releaseDateInput: document.getElementById('release-date-input'),
     };
 
     // --- 語言和文本管理 ---
@@ -62,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
             filterInputs.types.value.trim() !== '' ||
             filterInputs.effects.value.trim() !== '' ||
             filterInputs.passives.value.trim() !== '' ||
-            filterInputs.releaseDateInput.value.trim() !== '' ||
             filterInputs.power.value.trim() !== '' ||
             filterInputs.attack.value.trim() !== '' ||
             filterInputs.defense.value.trim() !== '' ||
@@ -88,6 +98,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Check if a shared favorites list is being displayed temporarily
         if (temporaryFavorites !== null) {
+            return true;
+        }
+
+        // 新增: 检查一键日期筛选是否激活
+        if (temporaryDateFilter !== null) {
             return true;
         }
 
@@ -665,18 +680,19 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filters.source.toLowerCase() !== noneValue && String(hero.source).toLowerCase() !== filters.source.toLowerCase()) return false;
             if (filters.aetherpower.toLowerCase() !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower.toLowerCase()) return false;
 
-            const releaseDateDays = Number(filters.releaseDateInput);
-            if (releaseDateDays > 0) {
+            // MODIFIED: 新增一键日期筛选逻辑
+            if (temporaryDateFilter) {
                 if (!hero['Release date']) return false;
                 const releaseDate = new Date(hero['Release date']);
                 if (isNaN(releaseDate.getTime())) return false;
-                const today = new Date();
-                today.setHours(0, 0, 0, 0);
+                const baseDate = new Date(temporaryDateFilter.base);
+                baseDate.setHours(0, 0, 0, 0);
                 releaseDate.setHours(0, 0, 0, 0);
-                const diffTime = today - releaseDate;
+                const diffTime = baseDate - releaseDate;
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                if (diffDays < releaseDateDays) return false;
+                if (diffDays < temporaryDateFilter.days) return false;
             }
+
             if (Number(filters.power) > 0 && Number(hero.power) < Number(filters.power)) return false;
             if (Number(filters.attack) > 0 && Number(hero.attack) < Number(filters.attack)) return false;
             if (Number(filters.defense) > 0 && Number(hero.defense) < Number(filters.defense)) return false;
@@ -1206,6 +1222,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- NEW: Function to clear all filter inputs ---
     function clearAllFilters() {
         temporaryFavorites = null; // Also clear any temporary favorite lists
+        temporaryDateFilter = null; // Also clear any temporary date filters
         for (const key in filterInputs) {
             if (key === 'skillTypeSource') {
                 continue;
@@ -1261,6 +1278,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const key in filterInputs) {
             if (filterInputs[key]) {
                 filterInputs[key].addEventListener('input', () => {
+                    temporaryDateFilter = null; // Deactivate one-click filter
                     if (key === 'releaseDateType') {
                         temporaryFavorites = null;
                     }
@@ -1399,6 +1417,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        // MODIFIED: 新增一键日期筛选按钮的事件监听
+        if (filterHero730Btn) {
+            filterHero730Btn.addEventListener('click', () => {
+                clearAllFilters();
+                filterInputs.releaseDateType.value = 'hero';
+                temporaryDateFilter = { base: oneClickMaxDate, days: 730 };
+                applyFiltersAndRender();
+            });
+        }
+
+        if (filterCostume548Btn) {
+            filterCostume548Btn.addEventListener('click', () => {
+                clearAllFilters();
+                filterInputs.releaseDateType.value = 'skin';
+                temporaryDateFilter = { base: purchaseCostumeDate, days: 548 };
+                applyFiltersAndRender();
+            });
+        }
+
+
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
@@ -1535,6 +1573,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             populateFilters();
+
+            // 新增: 初始化日期显示
+            if (oneClickMaxDateDisplay) oneClickMaxDateDisplay.textContent = oneClickMaxDate;
+            if (purchaseCostumeDateDisplay) purchaseCostumeDateDisplay.textContent = purchaseCostumeDate;
+
 
             const savedSkillSource = getCookie('skillTypeSource');
             if (savedSkillSource && filterInputs.skillTypeSource) {

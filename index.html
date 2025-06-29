@@ -94,15 +94,18 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄浏览器</a></h1>
                 <div class="header-buttons">
-                    <a href="calendar.jpg" target="_blank" class="theme-toggle-btn" title="查看日历">
+                    <button id="show-wanted-mission-btn" class="theme-toggle-btn">
+                        <span>🧰</span>
+                    </button>
+                    <a id="calendar-btn" href="calendar.jpg" target="_blank" class="theme-toggle-btn">
                         <span>📅</span>
                     </a>
-                    <button id="theme-toggle-btn" class="theme-toggle-btn" title="切换日间/夜间模式">
+                    <button id="theme-toggle-btn" class="theme-toggle-btn">
                         <span class="sun-icon">☀️</span>
                         <span class="moon-icon">🌙</span>
                     </button>
                     <div class="lang-selector-container">
-                        <button id="lang-select-btn" class="lang-toggle-btn" title="切换语言">
+                        <button id="lang-select-btn" class="lang-toggle-btn">
                             <span>🌐</span>
                         </button>
                         <div id="lang-options" class="hidden">
@@ -165,7 +168,7 @@
         <div id="filters-modal-content">
             <div class="filters-modal-header">
                 <h2 data-lang-key="filterHeroes">筛选英雄</h2>
-                <button id="close-filters-modal-btn" class="close-btn" title="关闭">❌</button>
+                <button id="close-filters-modal-btn" class="close-btn">❌</button>
             </div>
             <div class="filters-grid">
                 <div class="filter-card">
@@ -209,7 +212,7 @@
                     <div class="filter-header" id="advanced-filters-header">
                         <div class="filter-title-container">
                             <h2 data-lang-key="advancedFilters">高级筛选</h2>
-                            <button id="advanced-filter-help-btn" class="help-btn" title="筛选语法说明">?</button>
+                            <button id="advanced-filter-help-btn" class="help-btn"></button>
                         </div>
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
@@ -222,7 +225,7 @@
                                     <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
                                     <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
                                 </select>
-                                <button id="skill-type-help-btn" class="help-btn" title="技能类别来源说明">?</button>
+                                <button id="skill-type-help-btn" class="help-btn"></button>
                             </div>
                         </div>
                         <div class="filter-item"><label for="type-input"
@@ -289,7 +292,7 @@
     <div id="skill-type-help-modal" class="hidden"></div>
 
     <div class="floating-action-buttons">
-        <button id="open-filters-btn" title="打开筛选">🔍</button>
+        <button id="open-filters-btn">🔍</button>
     </div>
 
     <script src="./language.js" defer></script>

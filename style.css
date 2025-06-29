@@ -1554,3 +1554,75 @@ h1.hero-main-name.skill-type-tag:hover {
     color: var(--md-sys-color-on-primary);
     border-color: var(--md-sys-color-primary);
 }
+
+/* Wanted Mission Table Specific Styles */
+.manual-table.wanted-mission-table {
+    border-collapse: collapse;
+    /* Ensure borders are clean */
+    margin: 1.5rem auto;
+    /* Center the table */
+    width: 95%;
+    max-width: 850px;
+    /* Set a max-width for desktop */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+}
+
+.manual-table.wanted-mission-table th,
+.manual-table.wanted-mission-table td {
+    border: 1px solid var(--md-sys-color-outline);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.manual-table.wanted-mission-table th {
+    font-size: 1.1rem;
+    /* Increase header font size */
+    padding: 12px 8px;
+    font-weight: 700;
+}
+
+.manual-table.wanted-mission-table td {
+    font-size: 1rem;
+    /* Increase data cell font size */
+    padding: 12px 8px;
+    line-height: 1.4;
+}
+
+/* Make S1, S2 etc. bold and give a background */
+.manual-table.wanted-mission-table td:first-child,
+.manual-table.wanted-mission-table th:first-child {
+    font-weight: bold;
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .manual-table.wanted-mission-table {
+        width: 100%;
+        margin: 0.5rem auto;
+        font-size: 0.8rem;
+    }
+
+    .manual-table.wanted-mission-table th,
+    .manual-table.wanted-mission-table td {
+        padding: 8px 4px;
+        /* Reduce padding on mobile */
+    }
+
+    .manual-table.wanted-mission-table th {
+        font-size: 0.9rem;
+    }
+
+    .manual-table.wanted-mission-table td {
+        font-size: 0.85rem;
+    }
+
+    /* Reduce first column width on mobile */
+    .manual-table.wanted-mission-table th:first-child,
+    .manual-table.wanted-mission-table td:first-child {
+        width: 12%;
+        min-width: 40px;
+    }
+}

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let temporaryFavorites = null; // 用于临时存储分享的收藏列表
     let modalStack = []; // 新增：用于管理模态框堆栈
     let temporaryDateFilter = null; // 新增: 用于一键日期筛选
+    let isWantedMissionView = false; // 新增: 用于跟踪是否显示通缉任务表
 
     // 新增: 定义硬编码的日期
     const oneClickMaxDate = '2025-06-29';
@@ -19,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
     const reverseSkillTypeMap_tc = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([key, value]) => [value, key]));
 
+    // 新增: 通缉任务表数据
+    const wantedMissionData = [
+        { season: 'S1', daily: '7-4', red: '4-1', green: '7-5', blue: '8-7', purple: '7-4', yellow: '10-6' },
+        { season: 'S2', daily: ['4-3', '7-1'], red: '3-8', green: '7-1', blue: '8-10', purple: '21-10', yellow: ['13-1', '9-5'] },
+        { season: 'S3', daily: '9-8', red: '6-2', green: ['4-8', '30-6'], blue: '9-8', purple: '17-9', yellow: '8-6' },
+        { season: 'S4', daily: '6-10', red: ['12-6', '32-6'], green: '9-2', blue: ['8-2', '30-7'], purple: '14-8', yellow: '4-7' },
+        { season: 'S5', daily: ['5-10', '6-10'], red: '2-9', green: ['10-8', '30-8'], blue: '22-2', purple: '5-10', yellow: '16-8' },
+        { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '1-12'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
+    ];
 
     // --- DOM 元素 ---
     const themeToggleButton = document.getElementById('theme-toggle-btn');
@@ -44,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTypeHelpBtn = document.getElementById('skill-type-help-btn');
     const skillTypeHelpModal = document.getElementById('skill-type-help-modal');
     const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
+    const showWantedMissionBtn = document.getElementById('show-wanted-mission-btn');
 
     // 新增: 获取新日期筛选的DOM元素
     const oneClickMaxDateDisplay = document.getElementById('one-click-max-date-display');
@@ -106,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
         }
 
+        if (isWantedMissionView) {
+            return true;
+        }
+
         return false;
     }
 
@@ -146,6 +161,26 @@ document.addEventListener('DOMContentLoaded', function () {
             const key = el.getAttribute('data-lang-key-placeholder');
             if (langDict[key]) { el.placeholder = langDict[key]; }
         });
+
+        // Set dynamic titles for tooltips
+        const titles = {
+            'theme-toggle-btn': 'toggleThemeTitle',
+            'lang-select-btn': 'toggleLanguageTitle',
+            'show-wanted-mission-btn': 'showWantedMissionTitle',
+            'open-filters-btn': 'openFiltersTitle',
+            'calendar-btn': 'calendarTitle',
+            'close-filters-modal-btn': 'closeBtnTitle', // Reusing key
+            'advanced-filter-help-btn': 'filterSyntaxTitle',
+            'skill-type-help-btn': 'skillTypeSourceHelpTitle',
+        };
+
+        for (const id in titles) {
+            const element = document.getElementById(id);
+            const key = titles[id];
+            if (element && langDict[key]) {
+                element.title = langDict[key];
+            }
+        }
     }
 
     function setCookie(name, value, days) {
@@ -610,6 +645,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function applyFiltersAndRender() {
+        if (isWantedMissionView) {
+            if (resultsTable) resultsTable.classList.add('wanted-mission-table');
+            renderWantedMissionTable();
+            return;
+        }
+
+        if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
         const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
 
@@ -892,6 +934,73 @@ document.addEventListener('DOMContentLoaded', function () {
                 return `<td class="col-${key}">${content}</td>`;
             }).join('');
             return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
+        }).join('');
+
+        tbody.innerHTML = rowsHTML;
+
+        if (resultsWrapper) {
+            resultsWrapper.scrollTop = 0;
+        }
+    }
+
+    function renderWantedMissionTable() {
+        if (!resultsTable) return;
+        const langDict = i18n[currentLang]; // 首先获取当前语言的字典
+
+        if (resultsCountEl) {
+            resultsCountEl.innerHTML = `${langDict.wantedMissionTableTitle} `;
+            const resetTag = document.createElement('span');
+            resetTag.className = 'reset-tag';
+            resetTag.textContent = langDict.resultsReset;
+            resetTag.onclick = (e) => {
+                e.preventDefault();
+                isWantedMissionView = false;
+                if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
+                applyFiltersAndRender();
+            };
+            resultsCountEl.appendChild(resetTag);
+        }
+
+        // 将硬编码的文本替换为从 langDict 中获取
+        const headers = {
+            season: '',
+            daily: langDict.questHeaderDaily,
+            red: langDict.questHeaderRed,
+            green: langDict.questHeaderGreen,
+            blue: langDict.questHeaderBlue,
+            purple: langDict.questHeaderPurple,
+            yellow: langDict.questHeaderYellow
+        };
+
+        let thead = resultsTable.querySelector('thead');
+        if (!thead) {
+            thead = document.createElement('thead');
+            resultsTable.appendChild(thead);
+        }
+        thead.innerHTML = '<tr>' + Object.keys(headers).map(key => {
+            const colorMap = { red: '#ff7a4c', green: '#70e92f', blue: '#41d8fe', purple: '#e290ff', yellow: '#f2e33a' };
+            const style = colorMap[key] ? `style="color: ${colorMap[key]};"` : '';
+            return `<th ${style}>${headers[key]}</th>`;
+        }).join('') + '</tr>';
+
+        let tbody = resultsTable.querySelector('tbody');
+        if (!tbody) {
+            tbody = document.createElement('tbody');
+            resultsTable.appendChild(tbody);
+        }
+
+        const rowsHTML = wantedMissionData.map(row => {
+            const cellsHTML = Object.keys(headers).map(key => {
+                const value = row[key];
+                const colorMap = { red: 'var(--hero-color-red)', green: 'var(--hero-color-green)', blue: 'var(--hero-color-blue)', purple: 'var(--hero-color-purple)', yellow: 'var(--hero-color-yellow)' };
+                const style = colorMap[key] ? `style="color: ${colorMap[key]}; font-weight: bold;"` : '';
+
+                if (Array.isArray(value)) {
+                    return `<td ${style}>${value.join('<br>')}</td>`;
+                }
+                return `<td ${style}>${value}</td>`;
+            }).join('');
+            return `<tr>${cellsHTML}</tr>`;
         }).join('');
 
         tbody.innerHTML = rowsHTML;
@@ -1221,6 +1330,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- NEW: Function to clear all filter inputs ---
     function clearAllFilters() {
+        if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
+        isWantedMissionView = false;
         temporaryFavorites = null; // Also clear any temporary favorite lists
         temporaryDateFilter = null; // Also clear any temporary date filters
         for (const key in filterInputs) {
@@ -1278,6 +1389,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const key in filterInputs) {
             if (filterInputs[key]) {
                 filterInputs[key].addEventListener('input', () => {
+                    isWantedMissionView = false;
                     temporaryDateFilter = null; // Deactivate one-click filter
                     if (key === 'releaseDateType') {
                         temporaryFavorites = null;
@@ -1324,6 +1436,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tbody = resultsTable.querySelector('tbody');
             if (tbody) {
                 tbody.addEventListener('click', (event) => {
+                    if (isWantedMissionView) return;
                     const target = event.target;
                     if (target.classList.contains('favorite-toggle-icon')) {
                         event.stopPropagation();
@@ -1353,6 +1466,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const thead = resultsTable.querySelector('thead');
             if (thead) {
                 thead.addEventListener('click', (event) => {
+                    if (isWantedMissionView) return;
                     const header = event.target.closest('th');
                     if (!header) return;
 
@@ -1417,6 +1531,13 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        if (showWantedMissionBtn) {
+            showWantedMissionBtn.addEventListener('click', () => {
+                isWantedMissionView = true;
+                applyFiltersAndRender();
+            });
+        }
+
         // MODIFIED: 新增一键日期筛选按钮的事件监听
         if (filterHero730Btn) {
             filterHero730Btn.addEventListener('click', () => {
@@ -1439,6 +1560,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
+                isWantedMissionView = false;
                 temporaryFavorites = null;
                 filterInputs.releaseDateType.value = 'favorites';
                 applyFiltersAndRender();

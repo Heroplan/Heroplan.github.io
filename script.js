@@ -892,6 +892,61 @@ document.addEventListener('DOMContentLoaded', function () {
             return 'imgs/' + filename;
         } catch (e) { return ''; }
     }
+    /**
+         * 兼容性后备方案：使用 document.execCommand 复制文本
+         * @param {string} text 要复制的文本
+         * @returns {boolean} 是否复制成功
+         */
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+
+        // 避免在页面上可见或引起滚动
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            const successful = document.execCommand('copy');
+            document.body.removeChild(textArea);
+            return successful;
+        } catch (err) {
+            document.body.removeChild(textArea);
+            return false;
+        }
+    }
+
+    /**
+     * 统一的、兼容性强的文本复制函数
+     * @param {string} text 要复制的文本
+     * @returns {Promise<void>} 成功时 resolve，失败时 reject
+     */
+    function copyTextToClipboard(text) {
+        return new Promise((resolve, reject) => {
+            // 优先使用现代的、安全的 Clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(resolve).catch(() => {
+                    // 如果现代 API 失败（例如在某些 WebView 中），尝试后备方案
+                    if (fallbackCopyTextToClipboard(text)) {
+                        resolve();
+                    } else {
+                        reject(new Error('Fallback copy command failed.'));
+                    }
+                });
+            } else {
+                // 如果现代 API 不可用，直接使用后备方案
+                if (fallbackCopyTextToClipboard(text)) {
+                    resolve();
+                } else {
+                    reject(new Error('Clipboard API not available and fallback failed.'));
+                }
+            }
+        });
+    }
 
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
@@ -1128,7 +1183,8 @@ document.addEventListener('DOMContentLoaded', function () {
             shareBtn.addEventListener('click', () => {
                 const identifier = `${hero.english_name}-${hero.costume_id}`;
                 const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}&lang=${currentLang}`;
-                navigator.clipboard.writeText(url).then(() => {
+
+                copyTextToClipboard(url).then(() => {
                     const originalContent = shareBtn.innerHTML;
                     shareBtn.innerText = '✅';
                     shareBtn.disabled = true;
@@ -1138,7 +1194,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 2000);
                 }).catch(err => {
                     console.error('Failed to copy URL: ', err);
-                    alert('Failed to copy link.');
+                    alert('复制链接失败，请尝试手动复制。');
                 });
             });
         }
@@ -1231,15 +1287,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (inputElement) {
                     clearAllFilters();
-                    if (filterType === 'passives' || filterType === 'effects') {
-                        // 1. 净化文本，移除标点和数字
-                        filterValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim();
 
-                        // 2. 如果净化后仍有内容，则用括号包裹
+                    if (filterType === 'passives' || filterType === 'effects') {
+                        filterValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim();
                         if (filterValue) {
                             filterValue = `(${filterValue})`;
                         }
                     }
+
                     closeDetailsModal();
                     inputElement.value = filterValue;
                     applyFiltersAndRender();
@@ -1352,18 +1407,21 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
+        // ==================== START: 此处是您需要修改的关键逻辑 ====================
         if (shareFavoritesBtn) {
             shareFavoritesBtn.addEventListener('click', () => {
                 const favorites = getFavorites();
                 if (favorites.length === 0) {
-                    alert('No favorites to share.');
+                    // 使用 i18n 提供翻译后的提示
+                    alert(i18n[currentLang].noFavoritesToShare || 'No favorites to share.');
                     return;
                 }
                 const favString = favorites.join(',');
                 const compressedFavs = LZString.compressToEncodedURIComponent(favString);
                 const url = `${window.location.origin}${window.location.pathname}?zfavs=${compressedFavs}&lang=${currentLang}`;
 
-                navigator.clipboard.writeText(url).then(() => {
+                // 调用高兼容性的复制函数
+                copyTextToClipboard(url).then(() => {
                     const originalText = shareFavoritesBtn.innerText;
                     shareFavoritesBtn.innerText = i18n[currentLang].shareFavoritesCopied || 'List Copied!';
                     shareFavoritesBtn.disabled = true;
@@ -1373,9 +1431,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 2000);
                 }).catch(err => {
                     console.error('Failed to copy favorites link: ', err);
+                    // 使用 i18n 提供翻译后的失败提示
+                    alert(i18n[currentLang].copyLinkFailed || '复制链接失败，请尝试手动复制。');
                 });
             });
         }
+        // ==================== END: 修改结束 ====================
 
         document.querySelectorAll('#filters-modal .filter-header').forEach(header => {
             header.addEventListener('click', function (event) {

@@ -131,10 +131,12 @@ const i18n = {
         filterHelpOr: "<li><strong>| (或):</strong> 查找包含多个关键词中任意一个的英雄。例如: <code>治疗|复活</code> 会找到技能中包含“治疗”或“复活”的英雄。</li>",
         filterHelpAnd: "<li><strong>空格 (与):</strong> 查找必须同时包含多个关键词的英雄。例如: <code>攻击 提高</code> 会找到技能中同时包含“攻击”和“提升”的英雄。</li>",
         filterHelpNot: "<li><strong>! (非):</strong> 排除包含特定关键词的英雄。例如: <code>!治疗</code> 会找到所有技能中不含“治疗”的英雄。</li>",
-        filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号可进行复杂组合，并<strong style='color: var(--md-sys-color-error);'>强制在单句技能描述中进行匹配</strong>。例如: <code>(抵抗 治疗)</code> 会精确查找<strong style='color: var(--md-sys-color-error);'>某一句</strong>技能描述中，同时包含“抵抗”和“治疗”的英雄。</li>",
+        filterHelpGroup: "<li><strong>() (分组/单句匹配):</strong> 使用括号进行复杂组合时，<strong style='color: var(--md-sys-color-error);'>强制在单句技能描述中进行匹配</strong>。例如: <code>(抵抗 治疗)</code> 会查找在单句中同时包含“抵抗”和“治疗”的英雄。</li>",
         filterHelpExample: "<li><strong>综合示例:</strong> <code>((免疫|反弹) 增益)</code> 会查找能提供免疫或反弹增益的英雄（且所有条件需在同一句描述中满足）。</li>",
         skillTypeHelpTitle: "技能类别来源说明",
-        skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p><ul><li><strong>Heroplan.io:</strong> 数据来自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 网站。</li><li><strong>By Nynaeve:</strong> 数据来自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，经过AI补全和人工审核。</li><li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li></ul><p>各类别的详细定义，请参考源网站。</p>`
+        skillTypeHelpContent: `<p>您可以选择不同的技能分类标签来源进行筛选：</p><ul><li><strong>Heroplan.io:</strong> 数据来自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 网站。</li><li><strong>By Nynaeve:</strong> 数据来自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，经过AI补全和人工审核。</li><li><strong>全部:</strong> 同时搜索以上两种来源的标签。</li></ul><p>各类别的详细定义，请参考源网站。</p>`,
+        noFavoritesToShare: "没有可分享的收藏。",
+        copyLinkFailed: "复制链接失败，请尝试手动复制。"
     },
     tc: {
         pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -171,7 +173,9 @@ const i18n = {
         filterHelpGroup: "<li><strong>() (分組/單句匹配):</strong> 使用括號可进行复杂组合，并<strong style='color: var(--md-sys-color-error);'>强制在单句技能描述中进行匹配</strong>。例如: <code>(抵禦 治療)</code> 會精確尋找<strong style='color: var(--md-sys-color-error);'>某一句</strong>技能描述中，同時包含“抵禦”和“治療”的英雄。</li>",
         filterHelpExample: "<li><strong>綜合示例:</strong> <code>((免疫|反射) 增益)</code> 會尋找能提供免疫或反射增益的英雄（且所有條件需在同一句描述中滿足）。</li>",
         skillTypeHelpTitle: "技能類別來源說明",
-        skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p><ul><li><strong>Heroplan.io:</strong> 資料來自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 網站。</li><li><strong>By Nynaeve:</strong> 資料來自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，經過AI補全和人工審核。</li><li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li></ul><p>各類別的詳細定義，請參考源網站。</p>`
+        skillTypeHelpContent: `<p>您可以選擇不同的技能分類標籤來源進行篩選：</p><ul><li><strong>Heroplan.io:</strong> 資料來自 <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> 網站。</li><li><strong>By Nynaeve:</strong> 資料來自 <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>，經過AI補全和人工審核。</li><li><strong>全部:</strong> 同時搜索以上兩種來源的標籤。</li></ul><p>各類別的詳細定義，請參考源網站。</p>`,
+        noFavoritesToShare: "沒有可分享的收藏。",
+        copyLinkFailed: "複製鏈接失敗，請嘗試手動複製。"
     },
     en: {
         pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -208,6 +212,8 @@ const i18n = {
         filterHelpGroup: "<li><strong>() (Grouping/Single-Line Match):</strong> Use parentheses for complex grouping and to <strong style='color: var(--md-sys-color-error);'>force matching within a single skill line</strong>. E.g., <code>(resist heal)</code> will precisely find heroes where a <strong style='color: var(--md-sys-color-error);'>single line</strong> of their skill description contains both 'resist' and 'heal'.</li>",
         filterHelpExample: "<li><strong>Combined Example:</strong> <code>((immune|reflect) buff)</code> finds heroes who provide an immunity or reflection buff (and all conditions must be met in the same line).</li>",
         skillTypeHelpTitle: "Skill Type Source Explanation",
-        skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p><ul><li><strong>Heroplan.io:</strong> Data from the <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> website.</li><li><strong>By Nynaeve:</strong> Data from <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>, supplemented by AI and manually reviewed.</li><li><strong>Both:</strong> Searches tags from both sources simultaneously.</li></ul><p>For detailed category definitions, please refer to the source websites.</p>`
+        skillTypeHelpContent: `<p>You can choose different sources for skill category tags to filter by:</p><ul><li><strong>Heroplan.io:</strong> Data from the <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">Heroplan.io</a> website.</li><li><strong>By Nynaeve:</strong> Data from <a href="http://www.theravenscave.com/" target="_blank" rel="noopener noreferrer">www.theravenscave.com</a>, supplemented by AI and manually reviewed.</li><li><strong>Both:</strong> Searches tags from both sources simultaneously.</li></ul><p>For detailed category definitions, please refer to the source websites.</p>`,
+        noFavoritesToShare: "No favorites to share.",
+        copyLinkFailed: "Failed to copy link. Please try copying it manually."
     }
 };

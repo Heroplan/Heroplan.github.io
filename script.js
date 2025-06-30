@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- 全局變量 ---
+    let farmGuideScrollHandler = null;
     let filteredHeroes = [];
     let allHeroes = [];
     let families_bonus = [];
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let modalStack = []; // 新增：用于管理模态框堆栈
     let temporaryDateFilter = null; // 新增: 用于一键日期筛选
     let isWantedMissionView = false; // 新增: 用于跟踪是否显示通缉任务表
+    let isFarmingGuideView = false; // 新增: 用于跟踪是否显示材料指南
 
     // 新增: 定义硬编码的日期
     const oneClickMaxDate = '2025-06-29';
@@ -30,11 +32,56 @@ document.addEventListener('DOMContentLoaded', function () {
         { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '1-12'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
     ];
 
+    // 新增: 材料出处指南数据
+    const farmingGuideData = [
+        { item: "Experience", s1: "23-11", s2: "24-10N\n9-10N E", s3: "22-6N\n21-10H", s4: "10-8N\n23-5H", s5: "10-8N\n10-9H", s6: "2-10N\n6-27H" },
+        { item: "Food", s1: "17-1", s2: "27-9H\n27-9H E", s3: "22-6N\n36-1H", s4: "20-10N\n27-1H", s5: "10-8N\n8-10H", s6: "2-10N\n5-17H" },
+        { item: "Iron", s1: "17-1", s2: "27-9H\n9-4N E", s3: "22-6N\n27-1H", s4: "22-2N\n15-6H", s5: "10-8N\n10-10H", s6: "2-18N\n6-23H" },
+        { item: "Recruits", s1: "8-7", s2: "15-9N\n15-9N E", s3: "16-5N\n27-8H", s4: "23-6N\n2-1H", s5: "18-1N\n9-4H", s6: "1-26N\n3-4H" },
+        { item: "Heroes", s1: "8-7", s2: "21-10N\n3-4N E", s3: "16-10N\n17-2H", s4: "15-3N\n2-5H", s5: "1-10N\n2-8H", s6: "2-7N\n2-9H" },
+        { item: "Troops", s1: "8-7", s2: "9-10N\n3-4N E", s3: "16-3N\n26-4H", s4: "15-3N\n1-5H", s5: "3-4N\n1-1H", s6: "2-11N\n2-1H" },
+        { item: "Adventurer's Kit", s1: "5-8", s2: "1-8H\n1-2N E", s3: "16-4N\n26-4H", s4: "15-3N\n30-3H", s5: "5-6N\n25-8H", s6: "1-14N\n4-7H" },
+        { item: "Practice Sword", s1: "4-6", s2: "6-10H\n6-9N E", s3: "16-8N\n16-7H", s4: "20-4N\n2-10H", s5: "29-7N\n29-1H", s6: "2-10N\n5-14H" },
+        { item: "Rugged Clothes", s1: "7-7", s2: "4-3H\n4-9N E", s3: "19-5N\n27-1H", s4: "19-4N\n1-2H", s5: "22-1N\n15-8H", s6: "1-17N\n2-18H" },
+        { item: "Strong Rope", s1: "6-8", s2: "11-10H\n11-10H E", s3: "23-1N\n29-5H", s4: "20-4N\n2-5H", s5: "11-2N\n35-4H", s6: "1-9N\n1-3H" },
+        { item: "Training Manual", s1: "14-9", s2: "14-1H\n14-7N E", s3: "20-5N\n29-6H", s4: "31-1N\n14-1H", s5: "36-6N\n19-2H", s6: "2-18N\n2-15H" },
+        { item: "Arcane Scripts", s1: "12-9", s2: "12-6H\n12-6H E", s3: "19-6N\n27-5H", s4: "27-9N\n25-7H", s5: "6-2N\n4-4H", s6: "4-25N\n5-25H" },
+        { item: "Dagger", s1: "11-9", s2: "10-10H\n10-4H E", s3: "16-3N\n27-6H", s4: "20-4N\n2-8H", s5: "6-1N\n34-2H", s6: "3-4N\n3-10H" },
+        { item: "Leather Armor", s1: "6-8", s2: "8-10H\n8-10N E", s3: "16-4N\n26-6H", s4: "20-4N\n1-3H", s5: "3-7N\n4-3H", s6: "1-3N\n4-8H" },
+        { item: "Sharpening Stone", s1: "10-9", s2: "5-10H\n5-3N E", s3: "16-7N\n33-4H", s4: "20-4N\n26-1H", s5: "12-4N\n15-10H", s6: "2-14N\n2-21H" },
+        { item: "Wooden Shield", s1: "6-8", s2: "20-10H\n2-7N E", s3: "16-3N\n30-2H", s4: "33-7N\n23-3H", s5: "26-3N\n29-2H", s6: "2-9N\n2-12H" },
+        { item: "Battle Manual", s1: "19-9", s2: "15-8H\n7-4N E", s3: "16-7N\n17-2H", s4: "20-4N\n2-3H", s5: "11-6N\n1-3H", s6: "5-17N\n5-15H" },
+        { item: "Chainmail Shirt", s1: "23-11", s2: "13-7H\n9-4N E", s3: "16-6N\n26-10H", s4: "21-4N\n13-2H", s5: "5-3N\n7-1H", s6: "3-17N\n5-10H" },
+        { item: "Scabbard", s1: "21-9", s2: "24-7H\n3-4N E", s3: "16-4N\n26-8H", s4: "19-5N\n1-4H", s5: "17-8N\n13-8H", s6: "1-15N\n5-28H" },
+        { item: "Tall Boots", s1: "18-9", s2: "16-6H\n16-6H E", s3: "16-4N\n16-7H", s4: "20-2N\n24-1H", s5: "31-10N\n6-3H", s6: "5-4N\n2-3H" },
+        { item: "Clean Cloth", s1: "5-8", s2: "1-10H\n1-2N E", s3: "16-6N\n26-4H", s4: "31-8N\n26-6H", s5: "3-1N\n20-3H", s6: "2-13N\n3-14H" },
+        { item: "Common Herbs", s1: "8-7", s2: "9-10N\n9-4N E", s3: "17-8N\n34-6H", s4: "7-4N\n1-7H", s5: "26-10N\n2-6H", s6: "2-9N\n3-3H" },
+        { item: "Crude Iron", s1: "6-8", s2: "12-10H\n12-10N E", s3: "16-7N\n26-9H", s4: "20-4N\n7-9H", s5: "9-2N\n1-3H", s6: "6-10N\n6-20H" },
+        { item: "Large Bone", s1: "9-1", s2: "6-10H\n6-9N E", s3: "16-5N\n28-2H", s4: "25-7N\n25-1H", s5: "1-6N\n1-3H", s6: "2-11N\n4-19H" },
+        { item: "Leather Strips", s1: "10-9", s2: "3-10H\n3-4N E", s3: "16-6N\n26-4H", s4: "19-8N\n1-8H", s5: "36-7N\n20-10H", s6: "4-3N\n6-9H" },
+        { item: "Oil", s1: "10-9", s2: "5-10H\n5-3N E", s3: "16-5N\n27-2H", s4: "26-5N\n23-3H", s5: "11-8N\n9-7H", s6: "1-28N\n2-15H" },
+        { item: "String", s1: "7-7", s2: "10-10H\n6-9N E", s3: "20-5N\n33-4H", s4: "31-4N\n22-10H", s5: "27-10N\n32-4H", s6: "5-3N\n5-5H" },
+        { item: "Crypt Mushroom", s1: "23-11", s2: "23-6H\n23-6H E", s3: "18-8N\n27-1H", s4: "23-8N\n19-10H", s5: "3-7N\n28-8H", s6: "1-9N\n4-12H" },
+        { item: "Crystal Shard", s1: "23-11", s2: "18-6H\n2-10H E", s3: "30-4N\n28-1H", s4: "28-1N\n26-1H", s5: "24-3N\n19-1H", s6: "2-3N\n3-24H" },
+        { item: "Firestone", s1: "23-11", s2: "22-4H\n22-4H E", s3: "16-8N\n26-6H", s4: "33-3N\n1-1H", s5: "1-8N\n33-4H", s6: "3-10N\n3-5H" },
+        { item: "Metal Ores", s1: "15-9", s2: "11-10H\n3-1H E", s3: "18-6N\n16-2H", s4: "20-3N\n21-1H", s5: "12-6N\n22-6H", s6: "2-12N\n2-15H" },
+        { item: "Potent Leaves", s1: "16-9", s2: "19-1H\n19-1H E", s3: "16-7N\n26-4H", s4: "20-4N\n23-5H", s5: "2-2N\n29-7H", s6: "3-13N\n3-16H" },
+        { item: "Sunspire Feathers", s1: "18-9", s2: "20-2H\n20-2H E", s3: "16-9N\n28-1H", s4: "27-8N\n2-5H", s5: "18-8N\n1-3H", s6: "2-10N\n2-17H" },
+        { item: "Fine Steel", s1: "19-8", s2: "4-3H\n4-9N E", s3: "18-4N\n34-8H", s4: "23-1N\n23-2H", s5: "2-3N\n12-6H", s6: "3-5N\n3-11H" },
+        { item: "Grimoire Dust", s1: "20-4", s2: "10-4H\n10-4H E", s3: "16-5N\n27-6H", s4: "20-4N\n14-1H", s5: "2-2N\n23-3H", s6: "2-7N\n6-13H" },
+        { item: "Hardwood Lumber", s1: "21-9", s2: "19-1H\n19-1N E", s3: "16-5N\n26-2H", s4: "26-10N\n25-6H", s5: "5-10N\n9-8H", s6: "2-27N\n3-5H" },
+        { item: "Midnight Roots", s1: "22-9", s2: "12-6H\n12-6H E", s3: "18-8N\n28-4H", s4: "19-1N\n2-1H", s5: "12-8N\n8-3H", s6: "2-4N\n3-19H" },
+        { item: "Dragon Bone", s1: "6-8", s2: "24-7H\n9-4N E", s3: "16-4N\n30-6H", s4: "25-6N\n1-9H", s5: "26-6N\n5-4H", s6: "6-18N\n6-21H" },
+        { item: "Meteor Fragments", s1: "9-1", s2: "11-10H\n22-6N E", s3: "16-7N\n16-1H", s4: "21-1N\n1-6H", s5: "1-8N\n30-4H", s6: "2-8N\n2-21H" },
+        { item: "Orichalcum Nugget", s1: "5-8", s2: "18-10H\n14-7N E", s3: "16-5N\n26-6H", s4: "20-4N\n1-2H", s5: "9-4N\n6-7H", s6: "2-25N\n2-8H" },
+    ];
+
     // --- DOM 元素 ---
     const themeToggleButton = document.getElementById('theme-toggle-btn');
     const langSelectBtn = document.getElementById('lang-select-btn');
     const langOptions = document.getElementById('lang-options');
     const resultsWrapper = document.getElementById('results-wrapper');
+    const resultsHeader = document.querySelector('.results-header');
     const resultsTable = resultsWrapper ? resultsWrapper.querySelector('.manual-table') : null;
     const resultsCountEl = document.getElementById('results-count');
     const resetFiltersBtn = document.getElementById('reset-filters-btn');
@@ -55,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTypeHelpModal = document.getElementById('skill-type-help-modal');
     const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
     const showWantedMissionBtn = document.getElementById('show-wanted-mission-btn');
+    const showFarmingGuideBtn = document.getElementById('show-farming-guide-btn');
 
     // 新增: 获取新日期筛选的DOM元素
     const oneClickMaxDateDisplay = document.getElementById('one-click-max-date-display');
@@ -117,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
         }
 
-        if (isWantedMissionView) {
+        if (isWantedMissionView || isFarmingGuideView) {
             return true;
         }
 
@@ -366,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (resultsHeader && tableThead) {
             const headerHeight = resultsHeader.offsetHeight;
+            // 恢复为对所有视图都生效的单一逻辑
             tableThead.style.top = `${headerHeight - 1}px`;
         }
     }
@@ -643,15 +692,31 @@ document.addEventListener('DOMContentLoaded', function () {
             : evaluate(lowerCaseQuery, dataAsArray.join(' '));
     }
 
+    
 
     function applyFiltersAndRender() {
         if (isWantedMissionView) {
-            if (resultsTable) resultsTable.classList.add('wanted-mission-table');
+            if (resultsTable) {
+                resultsTable.classList.add('wanted-mission-table');
+                resultsTable.classList.remove('farming-guide-table');
+            }
             renderWantedMissionTable();
             return;
         }
 
-        if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
+        if (isFarmingGuideView) {
+            if (resultsTable) {
+                resultsTable.classList.remove('wanted-mission-table');
+                resultsTable.classList.add('farming-guide-table');
+            }
+            renderFarmingGuideTable();
+            return;
+        }
+
+        if (resultsTable) {
+            resultsTable.classList.remove('wanted-mission-table', 'farming-guide-table');
+        }
+
         const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
 
@@ -803,7 +868,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (resultsCountEl) {
             const filtersAreActive = areFiltersActive();
             if (filtersAreActive) {
-                resultsCountEl.innerHTML = `${langDict.resultsCountTextFiltered(heroes.length)} `;
+                resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextFiltered(heroes.length)}</span>`;
                 const resetTag = document.createElement('span');
                 resetTag.className = 'reset-tag';
                 resetTag.textContent = langDict.resultsReset;
@@ -813,7 +878,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 };
                 resultsCountEl.appendChild(resetTag);
             } else {
-                resultsCountEl.textContent = langDict.resultsCountTextUnfiltered(heroes.length);
+                resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextUnfiltered(heroes.length)}</span>`;
             }
         }
 
@@ -941,35 +1006,44 @@ document.addEventListener('DOMContentLoaded', function () {
         if (resultsWrapper) {
             resultsWrapper.scrollTop = 0;
         }
+        adjustStickyHeaders();
+        if (resultsWrapper && resultsHeader && farmGuideScrollHandler) {
+            resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
+            farmGuideScrollHandler = null;
+            // 重置整个标题栏的 transform
+            resultsHeader.style.transform = '';
+        }
     }
 
     function renderWantedMissionTable() {
         if (!resultsTable) return;
-        const langDict = i18n[currentLang]; // 首先获取当前语言的字典
+        const langDict = i18n[currentLang];
 
         if (resultsCountEl) {
-            resultsCountEl.innerHTML = `${langDict.wantedMissionTableTitle} `;
+            resultsCountEl.innerHTML = `<span>${langDict.wantedMissionTableTitle}</span>`;
             const resetTag = document.createElement('span');
             resetTag.className = 'reset-tag';
-            resetTag.textContent = langDict.resultsReset;
+            // MODIFIED: 将按钮文本从“重置”改为“返回列表”
+            resetTag.textContent = langDict.returnToList;
             resetTag.onclick = (e) => {
                 e.preventDefault();
                 isWantedMissionView = false;
                 if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
+                // 直接调用重置和渲染逻辑
+                clearAllFilters();
                 applyFiltersAndRender();
             };
             resultsCountEl.appendChild(resetTag);
         }
 
-        // 将硬编码的文本替换为从 langDict 中获取
         const headers = {
             season: '',
-            daily: langDict.questHeaderDaily,
-            red: langDict.questHeaderRed,
-            green: langDict.questHeaderGreen,
-            blue: langDict.questHeaderBlue,
-            purple: langDict.questHeaderPurple,
-            yellow: langDict.questHeaderYellow
+            daily: 'imgs/farm/wanted_normal.png',
+            red: 'imgs/farm/wanted_red.png',
+            green: 'imgs/farm/wanted_green.png',
+            blue: 'imgs/farm/wanted_blue.png',
+            purple: 'imgs/farm/wanted_purple.png',
+            yellow: 'imgs/farm/wanted_yellow.png'
         };
 
         let thead = resultsTable.querySelector('thead');
@@ -978,9 +1052,11 @@ document.addEventListener('DOMContentLoaded', function () {
             resultsTable.appendChild(thead);
         }
         thead.innerHTML = '<tr>' + Object.keys(headers).map(key => {
-            const colorMap = { red: '#ff7a4c', green: '#70e92f', blue: '#41d8fe', purple: '#e290ff', yellow: '#f2e33a' };
-            const style = colorMap[key] ? `style="color: ${colorMap[key]};"` : '';
-            return `<th ${style}>${headers[key]}</th>`;
+            const headerValue = headers[key];
+            if (key === 'season') {
+                return `<th></th>`;
+            }
+            return `<th><img src="${headerValue}" alt="${key}" style="height: 32px; vertical-align: middle;"></th>`;
         }).join('') + '</tr>';
 
         let tbody = resultsTable.querySelector('tbody');
@@ -1008,13 +1084,162 @@ document.addEventListener('DOMContentLoaded', function () {
         if (resultsWrapper) {
             resultsWrapper.scrollTop = 0;
         }
+        adjustStickyHeaders();
+        if (resultsWrapper && resultsHeader && farmGuideScrollHandler) {
+            resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
+            farmGuideScrollHandler = null;
+            resultsHeader.style.transform = '';
+        }
+    }
+
+    // 新增：通用的高亮主函数
+    function applyHighlight(cell) {
+        if (!isFarmingGuideView || !cell) return;
+
+        // 在应用新的高亮前，总是先清除旧的
+        clearFarmGuideHighlight();
+
+        const row = cell.parentElement;
+        const table = row.closest('table');
+        const colIndex = cell.dataset.colIndex;
+
+        // 1. 高亮当前单元格
+        cell.classList.add('highlight-cell');
+
+        // 2. 高亮对应的表头
+        const header = table.querySelector(`thead th[data-col-index="${colIndex}"]`);
+        if (header) {
+            header.classList.add('highlight-axis');
+        }
+
+        // 3. 高亮对应的行头
+        const rowLabel = row.querySelector('td:first-child');
+        if (rowLabel) {
+            rowLabel.classList.add('highlight-axis');
+        }
+    }
+
+    function handleFarmGuideHover(event) {
+        if (!isFarmingGuideView) return;
+        // 调用新的主高亮函数
+        applyHighlight(event.target.closest('td'));
+    }
+
+    function clearFarmGuideHighlight() {
+        if (!resultsTable) return;
+        // 同时清除两种高亮类
+        document.querySelectorAll('.highlight-axis, .highlight-cell').forEach(el => {
+            el.classList.remove('highlight-axis', 'highlight-cell');
+        });
+    }
+
+    function renderFarmingGuideTable() {
+        if (!resultsTable) return;
+
+        const langDict = i18n[currentLang];
+
+        if (resultsCountEl) {
+            resultsCountEl.innerHTML = `<span>${langDict.farmingGuideTableTitle}</span>`;
+            const resetTag = document.createElement('span');
+            resetTag.className = 'reset-tag';
+            // MODIFIED: 将按钮文本从“重置”改为“返回列表”
+            resetTag.textContent = langDict.returnToList;
+            resetTag.onclick = (e) => {
+                e.preventDefault();
+                isFarmingGuideView = false;
+                if (resultsTable) {
+                    resultsTable.classList.remove('wanted-mission-table', 'farming-guide-table');
+                    const tbody = resultsTable.querySelector('tbody');
+                    if (tbody) {
+                        tbody.removeEventListener('mouseover', handleFarmGuideHover);
+                        tbody.removeEventListener('mouseout', clearFarmGuideHighlight);
+                    }
+                }
+                // 直接调用重置和渲染逻辑
+                clearAllFilters();
+                applyFiltersAndRender();
+            };
+            resultsCountEl.appendChild(resetTag);
+        }
+
+        const headers = {
+            item: '', s1: 'S1', s2: 'S2', s3: 'S3', s4: 'S4', s5: 'S5', s6: 'S6'
+        };
+        const headerKeys = Object.keys(headers);
+
+        let thead = resultsTable.querySelector('thead');
+        if (!thead) {
+            thead = document.createElement('thead');
+            resultsTable.appendChild(thead);
+        }
+        thead.innerHTML = '<tr>' + headerKeys.map((key, index) => `<th data-col-index="${index}">${headers[key]}</th>`).join('') + '</tr>';
+
+        let tbody = resultsTable.querySelector('tbody');
+        if (!tbody) {
+            tbody = document.createElement('tbody');
+            resultsTable.appendChild(tbody);
+        }
+
+        tbody.innerHTML = farmingGuideData.map((row, rowIndex) => {
+            const cellsHTML = headerKeys.map((key, colIndex) => {
+                let value = row[key] || '';
+                if (key === 'item') {
+                    const imagePath = `imgs/farm/${value}.png`;
+                    return `<td data-col-index="${colIndex}"><img src="${imagePath}" alt="${value}" class="farm-item-image"></td>`;
+                }
+                if (typeof value === 'string') {
+                    value = value.replace(/\n/g, '<br>');
+                }
+                return `<td data-col-index="${colIndex}">${value}</td>`;
+            }).join('');
+            return `<tr data-row-index="${rowIndex}">${cellsHTML}</tr>`;
+        }).join('');
+
+        if (resultsTable.querySelector('tbody')) {
+            if (window.innerWidth < 769) {
+                resultsTable.querySelector('tbody').addEventListener('click', event => {
+                    if (!isFarmingGuideView) return;
+                    const cell = event.target.closest('td');
+                    if (!cell || !cell.dataset.colIndex) {
+                        clearFarmGuideHighlight();
+                        return;
+                    }
+                    applyHighlight(cell);
+                });
+            } else {
+                resultsTable.querySelector('tbody').addEventListener('mouseover', handleFarmGuideHover);
+                resultsTable.querySelector('tbody').addEventListener('mouseout', clearFarmGuideHighlight);
+            }
+        }
+
+        if (resultsWrapper) {
+            resultsWrapper.scrollTop = 0;
+            const stickyLeftCells = document.querySelectorAll('.manual-table.farming-guide-table td.sticky-left, .manual-table.farming-guide-table th.sticky-left');
+            resultsWrapper.addEventListener('scroll', () => {
+                if (resultsWrapper.scrollLeft > 0) {
+                    stickyLeftCells.forEach(cell => cell.classList.add('right-border-visible'));
+                } else {
+                    stickyLeftCells.forEach(cell => cell.classList.remove('right-border-visible'));
+                }
+            });
+        }
+        adjustStickyHeaders();
+        if (resultsWrapper && resultsHeader) {
+            if (farmGuideScrollHandler) {
+                resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
+            }
+            farmGuideScrollHandler = () => {
+                resultsHeader.style.transform = `translateX(${resultsWrapper.scrollLeft}px)`;
+            };
+            resultsWrapper.addEventListener('scroll', farmGuideScrollHandler);
+        }
     }
 
     function getLocalImagePath(url) {
         if (!url || typeof url !== 'string') return '';
         try {
             const filename = url.substring(url.lastIndexOf('/') + 1).split('?')[0];
-            return 'imgs/' + filename;
+            return 'imgs/heroes/' + filename;
         } catch (e) { return ''; }
     }
     /**
@@ -1330,8 +1555,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- NEW: Function to clear all filter inputs ---
     function clearAllFilters() {
-        if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
+        if (resultsTable) resultsTable.classList.remove('wanted-mission-table', 'farming-guide-table');
         isWantedMissionView = false;
+        isFarmingGuideView = false;
         temporaryFavorites = null; // Also clear any temporary favorite lists
         temporaryDateFilter = null; // Also clear any temporary date filters
         for (const key in filterInputs) {
@@ -1390,6 +1616,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filterInputs[key]) {
                 filterInputs[key].addEventListener('input', () => {
                     isWantedMissionView = false;
+                    isFarmingGuideView = false;
                     temporaryDateFilter = null; // Deactivate one-click filter
                     if (key === 'releaseDateType') {
                         temporaryFavorites = null;
@@ -1436,7 +1663,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const tbody = resultsTable.querySelector('tbody');
             if (tbody) {
                 tbody.addEventListener('click', (event) => {
-                    if (isWantedMissionView) return;
+                    if (isWantedMissionView || isFarmingGuideView) return;
                     const target = event.target;
                     if (target.classList.contains('favorite-toggle-icon')) {
                         event.stopPropagation();
@@ -1466,7 +1693,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const thead = resultsTable.querySelector('thead');
             if (thead) {
                 thead.addEventListener('click', (event) => {
-                    if (isWantedMissionView) return;
+                    if (isWantedMissionView || isFarmingGuideView) return;
                     const header = event.target.closest('th');
                     if (!header) return;
 
@@ -1534,6 +1761,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (showWantedMissionBtn) {
             showWantedMissionBtn.addEventListener('click', () => {
                 isWantedMissionView = true;
+                isFarmingGuideView = false;
+                applyFiltersAndRender();
+            });
+        }
+
+        if (showFarmingGuideBtn) {
+            showFarmingGuideBtn.addEventListener('click', () => {
+                isFarmingGuideView = true;
+                isWantedMissionView = false;
                 applyFiltersAndRender();
             });
         }
@@ -1561,6 +1797,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 isWantedMissionView = false;
+                isFarmingGuideView = false;
                 temporaryFavorites = null;
                 filterInputs.releaseDateType.value = 'favorites';
                 applyFiltersAndRender();
@@ -1612,7 +1849,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (targetElement) {
                     targetElement.classList.toggle('collapsed');
                     this.classList.toggle('expanded');
-                    const currentState = targetElement.classList.contains('collapsed') ? 'expanded' : 'collapsed';
+                    const currentState = targetElement.classList.contains('collapsed') ? 'collapsed' : 'expanded';
                     setCookie(targetId + '_state', currentState, 365);
                 }
             });

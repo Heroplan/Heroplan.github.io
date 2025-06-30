@@ -367,7 +367,7 @@ hr.divider {
 
 .stat-filter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.8rem;
     margin-top: 1rem;
     padding-top: 0.8rem;
@@ -457,6 +457,26 @@ input[type="number"] {
 
 #results-count {
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 1rem;
+}
+
+#results-table-container {
+    background-color: var(--md-sys-color-surface);
+}
+
+#results-wrapper {
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    /* 统一滚动容器 */
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 #results-table-container {
@@ -1195,6 +1215,142 @@ footer .footer-credit {
     color: var(--md-sys-color-primary);
 }
 
+/* Wanted Mission Table Specific Styles */
+.manual-table.wanted-mission-table {
+    border-collapse: collapse;
+    margin: 1.5rem auto;
+    width: 95%;
+    max-width: 850px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+}
+
+.manual-table.wanted-mission-table th,
+.manual-table.wanted-mission-table td {
+    border: 1px solid var(--md-sys-color-outline);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.manual-table.wanted-mission-table th {
+    font-size: 1.1rem;
+    padding: 12px 8px;
+    font-weight: 700;
+}
+
+.manual-table.wanted-mission-table td {
+    font-size: 1rem;
+    padding: 12px 8px;
+    line-height: 1.4;
+}
+
+.manual-table.wanted-mission-table td:first-child,
+.manual-table.wanted-mission-table th:first-child {
+    font-weight: bold;
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+#show-farming-guide-btn {
+    padding: 0;
+    line-height: 1;
+}
+
+#show-farming-guide-btn img {
+    vertical-align: middle;
+}
+
+/* ===== Farming Guide Table Styles (Final Revision) ===== */
+/* MODIFIED: 宽度、外边距和阴影与通缉任务表保持一致 */
+.manual-table.farming-guide-table {
+    width: 95%;
+    max-width: 850px;
+    margin: 1.5rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.manual-table.farming-guide-table th,
+.manual-table.farming-guide-table td {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+    /* 分别定义边框，默认移除左边框 */
+    border-top: 1px solid var(--md-sys-color-outline);
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    border-right: 1px solid var(--md-sys-color-outline);
+    border-left: none;
+}
+
+/* 只为第一列的单元格添加左边框 */
+.manual-table.farming-guide-table th:first-child,
+.manual-table.farming-guide-table td:first-child {
+    position: sticky;
+    left: -1px;
+    z-index: 1;
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+.manual-table.farming-guide-table td.sticky-left.right-border-visible {
+    border-right: 1px solid var(--md-sys-color-outline) !important;
+}
+
+.manual-table.farming-guide-table th.sticky-left.right-border-visible {
+    border-right: 1px solid var(--md-sys-color-outline) !important;
+}
+
+/* MODIFIED: 缩小了单元格文字大小以便更好地展示 */
+.manual-table.farming-guide-table td {
+    background-color: var(--md-sys-color-surface);
+    padding: 10px 8px;
+    font-size: 0.9rem;
+    /* 原为 1rem */
+}
+
+/* MODIFIED: 缩小了表头文字大小 */
+.manual-table.farming-guide-table thead th {
+    z-index: 2;
+    background-color: var(--md-sys-color-surface-variant);
+    font-size: 1rem;
+    /* 原为 1.1rem */
+    font-weight: 700;
+    padding: 12px 8px;
+}
+
+.manual-table.farming-guide-table td:first-child,
+.manual-table.farming-guide-table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+.manual-table.farming-guide-table thead th:first-child {
+    z-index: 3;
+}
+
+/* MODIFIED: 新的高亮规则，为悬浮单元格和其行列头设置不同样式 */
+
+/* 1. 为当前悬浮的单元格设置最醒目的高亮 */
+.manual-table.farming-guide-table .highlight-cell {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    font-weight: bold;
+}
+
+/* 2. 为对应的行列头设置一个次要的高亮 */
+.manual-table.farming-guide-table th.highlight-axis,
+.manual-table.farming-guide-table td.highlight-axis:first-child {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.farm-item-image {
+    height: 38px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
 
 @media (max-width: 768px) {
     .main-container {
@@ -1232,6 +1388,10 @@ footer .footer-credit {
     }
 
     .filter-item .input-with-help {
+        width: 100%;
+    }
+
+    .filter-item .input-with-right-button {
         width: 100%;
     }
 
@@ -1307,6 +1467,57 @@ footer .footer-credit {
         max-width: 150px;
         border-width: 3px;
     }
+
+    .manual-table.wanted-mission-table {
+        width: 100%;
+        margin: 0.5rem auto;
+        font-size: 0.8rem;
+    }
+
+    .manual-table.wanted-mission-table th,
+    .manual-table.wanted-mission-table td {
+        padding: 8px 4px;
+        /* Reduce padding on mobile */
+    }
+
+    .manual-table.wanted-mission-table th {
+        font-size: 0.9rem;
+    }
+
+    .manual-table.wanted-mission-table td {
+        font-size: 0.85rem;
+    }
+
+    .manual-table.wanted-mission-table th:first-child,
+    .manual-table.wanted-mission-table td:first-child {
+        width: 12%;
+        min-width: 40px;
+    }
+
+    /* MODIFIED SECTION FOR FARMING GUIDE TABLE ON MOBILE */
+    /* ADDED: 为移动端视图增加与通缉任务表一致的边距 */
+    .manual-table.farming-guide-table {
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    /* MODIFIED: 进一步缩小移动端字体以适应屏幕 */
+    .manual-table.farming-guide-table td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+        /* 原为 0.8rem */
+    }
+
+    /* MODIFIED: 进一步缩小移动端表头字体 */
+    .manual-table.farming-guide-table th {
+        padding: 8px 4px;
+        font-size: 0.85rem;
+        /* 原为 0.9rem */
+    }
+
+    .farm-item-image {
+        height: 28px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1339,7 +1550,7 @@ footer .footer-credit {
     }
 
     #filters-modal .filter-card:first-child {
-        flex: 0 0 35%;
+        flex: 0 0 40%;
     }
 
     #filters-modal .filter-card:last-child {
@@ -1553,76 +1764,4 @@ h1.hero-main-name.skill-type-tag:hover {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
     border-color: var(--md-sys-color-primary);
-}
-
-/* Wanted Mission Table Specific Styles */
-.manual-table.wanted-mission-table {
-    border-collapse: collapse;
-    /* Ensure borders are clean */
-    margin: 1.5rem auto;
-    /* Center the table */
-    width: 95%;
-    max-width: 850px;
-    /* Set a max-width for desktop */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    table-layout: auto;
-}
-
-.manual-table.wanted-mission-table th,
-.manual-table.wanted-mission-table td {
-    border: 1px solid var(--md-sys-color-outline);
-    text-align: center;
-    vertical-align: middle;
-}
-
-.manual-table.wanted-mission-table th {
-    font-size: 1.1rem;
-    /* Increase header font size */
-    padding: 12px 8px;
-    font-weight: 700;
-}
-
-.manual-table.wanted-mission-table td {
-    font-size: 1rem;
-    /* Increase data cell font size */
-    padding: 12px 8px;
-    line-height: 1.4;
-}
-
-/* Make S1, S2 etc. bold and give a background */
-.manual-table.wanted-mission-table td:first-child,
-.manual-table.wanted-mission-table th:first-child {
-    font-weight: bold;
-    background-color: var(--md-sys-color-surface-variant);
-}
-
-
-/* Mobile specific adjustments */
-@media (max-width: 768px) {
-    .manual-table.wanted-mission-table {
-        width: 100%;
-        margin: 0.5rem auto;
-        font-size: 0.8rem;
-    }
-
-    .manual-table.wanted-mission-table th,
-    .manual-table.wanted-mission-table td {
-        padding: 8px 4px;
-        /* Reduce padding on mobile */
-    }
-
-    .manual-table.wanted-mission-table th {
-        font-size: 0.9rem;
-    }
-
-    .manual-table.wanted-mission-table td {
-        font-size: 0.85rem;
-    }
-
-    /* Reduce first column width on mobile */
-    .manual-table.wanted-mission-table th:first-child,
-    .manual-table.wanted-mission-table td:first-child {
-        width: 12%;
-        min-width: 40px;
-    }
 }

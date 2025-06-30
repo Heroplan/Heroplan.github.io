@@ -28,8 +28,9 @@
     --md-sys-color-on-tertiary: #FFFFFF;
     --md-sys-color-tertiary-container: #0084ff;
     --md-sys-color-on-tertiary-container: #1A332D;
-    /* --- MODIFIED: 背景色加深 --- */
-    --md-sys-color-background: #F5F7FA;
+    /* --- MODIFIED: 背景色调灰以突出彩色文字 --- */
+    --md-sys-color-background: #F2F2F2;
+    /* Original: #F5F7FA */
     --md-sys-color-on-background: #1E2127;
     --md-sys-color-surface: #FFFFFF;
     --md-sys-color-on-surface: #1E2127;

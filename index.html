@@ -94,8 +94,12 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄浏览器</a></h1>
                 <div class="header-buttons">
+                    <button id="show-farming-guide-btn" class="theme-toggle-btn" title="Farming Guide">
+                        <img src="imgs/farm/Adventurer's Kit.png" alt="Farming"
+                            style="width: 24px; height: 24px; object-fit: contain;">
+                    </button>
                     <button id="show-wanted-mission-btn" class="theme-toggle-btn">
-                        <span>🧰</span>
+                        <img src="imgs/farm/wanted.png" alt="通缉任务" style="width: 24px; height: 24px; object-fit: contain;">
                     </button>
                     <a id="calendar-btn" href="calendar.jpg" target="_blank" class="theme-toggle-btn">
                         <span>📅</span>
@@ -156,6 +160,9 @@
                 </table>
             </div>
         </div>
+        <div id="farming-guide-container" class="hidden"></div>
+    </div>
+    </div>
     </div>
 
     <div id="modal-overlay" class="hidden"></div>
@@ -212,7 +219,7 @@
                     <div class="filter-header" id="advanced-filters-header">
                         <div class="filter-title-container">
                             <h2 data-lang-key="advancedFilters">高级筛选</h2>
-                            <button id="advanced-filter-help-btn" class="help-btn"></button>
+                            <button id="advanced-filter-help-btn" class="help-btn">?</button>
                         </div>
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
@@ -225,7 +232,7 @@
                                     <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
                                     <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
                                 </select>
-                                <button id="skill-type-help-btn" class="help-btn"></button>
+                                <button id="skill-type-help-btn" class="help-btn">?</button>
                             </div>
                         </div>
                         <div class="filter-item"><label for="type-input"
@@ -290,6 +297,12 @@
     <div id="help-modal" class="hidden"></div>
     <div id="skill-type-help-modal-overlay" class="hidden"></div>
     <div id="skill-type-help-modal" class="hidden"></div>
+
+    <div id="image-modal-overlay" class="hidden"></div>
+    <div id="image-modal" class="hidden">
+        <img id="image-modal-content" src="" alt="Farming Guide">
+        <button id="image-modal-close-btn" title="Close">✖</button>
+    </div>
 
     <div class="floating-action-buttons">
         <button id="open-filters-btn">🔍</button>

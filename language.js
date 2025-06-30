@@ -139,6 +139,7 @@ const i18n = {
         noFavoritesToShare: "没有可分享的收藏。",
         copyLinkFailed: "复制链接失败，请尝试手动复制。",
         wantedMissionTableTitle: "通缉任务表",
+        farmingGuideTableTitle: "材料出处指南",
         questHeaderDaily: "日常",
         questHeaderRed: "红",
         questHeaderGreen: "绿",
@@ -152,6 +153,7 @@ const i18n = {
         calendarTitle: "查看活动日历",
         filterSyntaxTitle: "筛选语法说明",
         skillTypeSourceHelpTitle: "技能类别来源说明",
+        returnToList: "返回",
     },
     tc: {
         pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -193,6 +195,7 @@ const i18n = {
         noFavoritesToShare: "沒有可分享的收藏。",
         copyLinkFailed: "複製鏈接失敗，請嘗試手動複製。",
         wantedMissionTableTitle: "通緝任務表",
+        farmingGuideTableTitle: "材料出處指南",
         questHeaderDaily: "日常",
         questHeaderRed: "紅",
         questHeaderGreen: "綠",
@@ -206,6 +209,7 @@ const i18n = {
         calendarTitle: "查看活動日曆",
         filterSyntaxTitle: "篩選語法說明",
         skillTypeSourceHelpTitle: "技能類別來源說明",
+        returnToList: "返回",
     },
     en: {
         pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -247,6 +251,7 @@ const i18n = {
         noFavoritesToShare: "No favorites to share.",
         copyLinkFailed: "Failed to copy link. Please try copying it manually.",
         wantedMissionTableTitle: "Wanted Mission Table",
+        farmingGuideTableTitle: "Farming Locations Guide",
         questHeaderDaily: "Daily",
         questHeaderRed: "Red",
         questHeaderGreen: "Green",
@@ -260,5 +265,6 @@ const i18n = {
         calendarTitle: "View Event Calendar",
         filterSyntaxTitle: "Filter Syntax Help",
         skillTypeSourceHelpTitle: "Skill Type Source Help",
+        returnToList: "Return",
     }
 };

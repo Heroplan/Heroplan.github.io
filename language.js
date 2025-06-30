@@ -3,7 +3,7 @@ const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐
 const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
 const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
 
-// Nynaeve 技能类型的英文排序标准 (Source of Truth)
+// Nynaeve 技能类型的英文排序标准
 const nynaeveSkillTypeOrder = [
     'Snipers',
     'AoE Attackers (Hit-3)',

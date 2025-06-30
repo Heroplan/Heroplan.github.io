@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // --- 全局變量 ---
+    // --- 全局变量 ---
     let farmGuideScrollHandler = null;
     let scrollPositions = {
         list: { top: 0, left: 0 },
@@ -13,20 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentLang = 'cn';
     let currentSort = { key: 'power', direction: 'desc' };
     let temporaryFavorites = null; // 用于临时存储分享的收藏列表
-    let modalStack = []; // 新增：用于管理模态框堆栈
-    let temporaryDateFilter = null; // 新增: 用于一键日期筛选
+    let modalStack = []; // 用于管理模态框堆栈
+    let temporaryDateFilter = null; // 用于一键日期筛选
 
-
-    // 新增: 定义硬编码的日期
+    // 定义硬编码的日期
     const oneClickMaxDate = '2025-06-29';
     const purchaseCostumeDate = '2025-07-28';
 
-
-    // 新增：根据翻译表，自动生成反向映射表（用于从中文查找英文）
+    // 根据翻译表，自动生成反向映射表（用于从中文查找英文）
     const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
     const reverseSkillTypeMap_tc = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([key, value]) => [value, key]));
 
-    // 新增: 通缉任务表数据
+    // 通缉任务表数据
     const wantedMissionData = [
         { season: 'S1', daily: '7-4', red: '4-1', green: '7-5', blue: '8-7', purple: '7-4', yellow: '10-6' },
         { season: 'S2', daily: ['4-3', '7-1'], red: '3-8', green: '7-1', blue: '8-10', purple: '21-10', yellow: ['13-1', '9-5'] },
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '1-12'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
     ];
 
-    // 新增: 材料出处指南数据
+    // 材料出处指南数据
     const farmingGuideData = [
         { item: "Experience", s1: "23-11", s2: "24-10N\n9-10N E", s3: "22-6N\n21-10H", s4: "10-8N\n23-5H", s5: "10-8N\n10-9H", s6: "2-10N\n6-27H" },
         { item: "Food", s1: "17-1", s2: "27-9H\n27-9H E", s3: "22-6N\n36-1H", s4: "20-10N\n27-1H", s5: "10-8N\n8-10H", s6: "2-10N\n5-17H" },
@@ -269,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const favorites = localStorage.getItem('heroFavorites');
             return favorites ? JSON.parse(favorites) : [];
         } catch (e) {
-            console.error("Failed to get favorites from localStorage", e);
+            console.error("从localStorage获取收藏夹失败", e);
             return [];
         }
     }
@@ -278,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             localStorage.setItem('heroFavorites', JSON.stringify(favoritesArray));
         } catch (e) {
-            console.error("Failed to save favorites to localStorage", e);
+            console.error("保存收藏夹到localStorage失败", e);
         }
     }
 
@@ -291,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function toggleFavorite(hero) {
         if (!hero.english_name) {
-            console.warn("Cannot favorite hero with no English name:", hero.name);
+            console.warn("无法收藏没有英文名的英雄:", hero.name);
             return false;
         }
         let favorites = getFavorites();
@@ -349,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 return potentialEnglishName;
             }
         }
-        const singleAltLangNamePattern = /^(.*?)\s+\((.*?)\)$/;
+        const singleAltLangNamePattern = /^(.*?)\s*\(([^)]+)\)/;
         const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
         if (singleAltLangMatch && singleAltLangMatch[2]) {
             const potentialEnglishName = singleAltLangMatch[2].trim();
@@ -376,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return true;
         } catch (error) {
             console.error("加载或解析数据文件失败:", error);
-            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>Error: Failed to load data. Check console for details.</p>`;
+            if (resultsWrapper) resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>错误：加载数据失败。请检查控制台获取详细信息。</p>`;
             if (pageLoader) pageLoader.classList.add('hidden');
             return false;
         }
@@ -855,64 +853,76 @@ document.addEventListener('DOMContentLoaded', function () {
         adjustStickyHeaders();
     }
 
-    // --- 视图管理函数 (重构) ---
-    function renderAndShowHeroList() {
-        heroTableView.classList.remove('hidden');
-        wantedMissionView.classList.add('hidden');
-        farmingGuideView.classList.add('hidden');
-        if (farmGuideScrollHandler) {
-            resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
-            resultsHeader.style.transform = '';
-            farmGuideScrollHandler = null;
-        }
-        applyFiltersAndRender();
-        history.pushState({ view: 'list' }, '');
-    }
-
-    function fastReturnToHeroView() {
-        // 1. 判断当前是哪个视图，并保存其滚动位置
-        if (!wantedMissionView.classList.contains('hidden')) {
+    // 用于保存当前可见视图滚动位置的辅助函数。
+    function saveCurrentViewScrollPosition() {
+        if (!heroTableView.classList.contains('hidden')) {
+            scrollPositions.list.top = resultsWrapper.scrollTop;
+            scrollPositions.list.left = resultsWrapper.scrollLeft;
+        } else if (!wantedMissionView.classList.contains('hidden')) {
             scrollPositions.wanted.top = resultsWrapper.scrollTop;
             scrollPositions.wanted.left = resultsWrapper.scrollLeft;
         } else if (!farmingGuideView.classList.contains('hidden')) {
             scrollPositions.farming.top = resultsWrapper.scrollTop;
             scrollPositions.farming.left = resultsWrapper.scrollLeft;
         }
+    }
 
-        // 2. 切换视图显示
+    // 此函数现在只处理返回英雄列表的UI更新。历史记录由popstate处理。
+    function showHeroListViewUI() {
+        // 保存我们正在离开的视图的滚动位置。
+        saveCurrentViewScrollPosition();
+
+        // 切换UI以显示英雄列表。
         heroTableView.classList.remove('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
 
-        // 3. 恢复英雄列表的滚动位置
+        // 恢复英雄列表的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.list.top;
         resultsWrapper.scrollLeft = scrollPositions.list.left;
 
-        // 4. 清理材料指南的特殊滚动处理
+        // 清理其他视图的特定处理器。
         if (farmGuideScrollHandler) {
             resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
             resultsHeader.style.transform = '';
             farmGuideScrollHandler = null;
         }
 
-        // 5. 只更新标题，不重绘表格
+        // 更新标题文本，而无需重新渲染整个表格。
         updateResultsHeader();
+    }
+
+    // --- 视图管理函数 ---
+    function renderAndShowHeroList(resetScroll = false) {
+        heroTableView.classList.remove('hidden');
+        wantedMissionView.classList.add('hidden');
+        farmingGuideView.classList.add('hidden');
+        if (farmGuideScrollHandler) {
+            resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
+            resultsHeader.style.transform = '';
+            farmGuideScrollHandler = null;
+        }
+
+        if (resetScroll) {
+            resultsWrapper.scrollTop = 0;
+        }
+
+        applyFiltersAndRender();
         history.pushState({ view: 'list' }, '');
     }
 
     function initAndShowWantedMissionView() {
-        // 1. 保存英雄列表当前的滚动位置
-        scrollPositions.list.top = resultsWrapper.scrollTop;
-        scrollPositions.list.left = resultsWrapper.scrollLeft;
+        // 保存当前视图的滚动位置。
+        saveCurrentViewScrollPosition();
 
-        // 2. 清理材料指南的特殊滚动处理程序
+        // 清理材料指南的滚动处理器。
         if (farmGuideScrollHandler) {
             resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
             resultsHeader.style.transform = '';
             farmGuideScrollHandler = null;
         }
 
-        // 3. 初始化通缉任务表格内容 (如果尚未初始化)
+        // 如果通缉任务表为空，则初始化它。
         if (wantedMissionTable.innerHTML.trim() === '') {
             const headers = {
                 season: '', daily: 'imgs/farm/wanted_normal.png', red: 'imgs/farm/wanted_red.png',
@@ -938,34 +948,33 @@ document.addEventListener('DOMContentLoaded', function () {
             wantedMissionTable.appendChild(tbody);
         }
 
-        // 4. 切换视图显示
+        // 切换视图可见性。
         heroTableView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
         wantedMissionView.classList.remove('hidden');
 
-        // 5. 恢复通缉任务视图的滚动位置
+        // 恢复此视图的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.wanted.top;
         resultsWrapper.scrollLeft = scrollPositions.wanted.left;
 
-        // 6. 更新头部信息
+        // 更新标题。
         const langDict = i18n[currentLang];
         resultsCountEl.innerHTML = `<span>${langDict.wantedMissionTableTitle}</span>`;
         const returnTag = document.createElement('span');
         returnTag.className = 'reset-tag';
         returnTag.textContent = langDict.returnToList;
-        returnTag.onclick = fastReturnToHeroView;
+        returnTag.onclick = () => { history.back(); };
         resultsCountEl.appendChild(returnTag);
 
         setTimeout(adjustStickyHeaders, 0);
         history.pushState({ view: 'wanted' }, '');
     }
-    
-    function initAndShowFarmingGuideView() {
-        // 1. 保存英雄列表当前的滚动位置
-        scrollPositions.list.top = resultsWrapper.scrollTop;
-        scrollPositions.list.left = resultsWrapper.scrollLeft;
 
-        // 2. 初始化材料指南表格内容 (如果尚未初始化)
+    function initAndShowFarmingGuideView() {
+        // 保存当前视图的滚动位置。
+        saveCurrentViewScrollPosition();
+
+        // 如果材料指南表为空，则初始化它。
         if (farmingGuideTable.innerHTML.trim() === '') {
             const headers = { item: '', s1: 'S1', s2: 'S2', s3: 'S3', s4: 'S4', s5: 'S5', s6: 'S6' };
             const headerKeys = Object.keys(headers);
@@ -997,25 +1006,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 3. 切换视图显示
+        // 切换视图可见性。
         heroTableView.classList.add('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.remove('hidden');
 
-        // 4. 恢复材料出处视图的滚动位置
+        // 恢复此视图的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.farming.top;
         resultsWrapper.scrollLeft = scrollPositions.farming.left;
 
-        // 5. 更新头部信息
+        // 更新标题。
         const langDict = i18n[currentLang];
         resultsCountEl.innerHTML = `<span>${langDict.farmingGuideTableTitle}</span>`;
         const returnTag = document.createElement('span');
         returnTag.className = 'reset-tag';
         returnTag.textContent = langDict.returnToList;
-        returnTag.onclick = fastReturnToHeroView;
+        returnTag.onclick = () => { history.back(); };
         resultsCountEl.appendChild(returnTag);
 
-        // 6. 添加/更新材料指南的特殊滚动处理
+        // 为此视图添加特殊的滚动处理器。
         if (!farmGuideScrollHandler) {
             farmGuideScrollHandler = () => {
                 resultsHeader.style.transform = `translateX(-${resultsWrapper.scrollLeft}px)`;
@@ -1212,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         shareBtn.disabled = false;
                     }, 2000);
                 }).catch(err => {
-                    console.error('Failed to copy URL: ', err);
+                    console.error('复制链接失败：', err);
                     alert('复制链接失败，请尝试手动复制。');
                 });
             });
@@ -1267,7 +1276,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     temporaryDateFilter = null;
                     if (key === 'releaseDateType') temporaryFavorites = null;
                     if (key === 'skillTypeSource') setCookie('skillTypeSource', filterInputs.skillTypeSource.value, 365);
-                    renderAndShowHeroList();
+                    renderAndShowHeroList(true);
                 });
             }
         }
@@ -1286,14 +1295,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     closeDetailsModal();
                     inputElement.value = filterValue;
-                    renderAndShowHeroList();
+                    renderAndShowHeroList(true);
                 }
             });
         }
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 clearAllFilters();
-                renderAndShowHeroList();
+                renderAndShowHeroList(true);
             });
         }
         if (filterHero730Btn) {
@@ -1301,7 +1310,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearAllFilters();
                 filterInputs.releaseDateType.value = 'hero';
                 temporaryDateFilter = { base: oneClickMaxDate, days: 730 };
-                renderAndShowHeroList();
+                renderAndShowHeroList(true);
             });
         }
         if (filterCostume548Btn) {
@@ -1309,14 +1318,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearAllFilters();
                 filterInputs.releaseDateType.value = 'skin';
                 temporaryDateFilter = { base: purchaseCostumeDate, days: 548 };
-                renderAndShowHeroList();
+                renderAndShowHeroList(true);
             });
         }
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
                 filterInputs.releaseDateType.value = 'favorites';
-                renderAndShowHeroList();
+                renderAndShowHeroList(true);
             });
         }
 
@@ -1412,7 +1421,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         shareFavoritesBtn.disabled = false;
                     }, 2000);
                 }).catch(err => {
-                    console.error('Failed to copy favorites link: ', err);
+                    console.error('复制收藏夹链接失败：', err);
                     alert(i18n[currentLang].copyLinkFailed);
                 });
             });
@@ -1434,11 +1443,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
-        window.addEventListener('popstate', function (event) {
-            const state = event.state || {};
-            if (state.view === 'wanted') { initAndShowWantedMissionView(); return; }
-            if (state.view === 'farming') { initAndShowFarmingGuideView(); return; }
 
+        window.addEventListener('popstate', function (event) {
+            // 首先，优先处理关闭任何打开的模态框。
             if (modalStack.length > 0) {
                 const lastOpenModalId = modalStack.pop();
                 if (lastOpenModalId === 'details') {
@@ -1455,8 +1462,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (skillTypeHelpModalOverlay) { skillTypeHelpModalOverlay.classList.add('hidden'); skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
-            } else {
-                fastReturnToHeroView();
+                // 关闭模态框后停止进一步处理。
+                return;
+            }
+
+            // 如果没有模态框打开，任何“返回”导航都应返回到英雄列表视图。
+            // 我们检查英雄列表是否已显示，以避免不必要的重复更新。
+            const isHeroListVisible = !heroTableView.classList.contains('hidden');
+            if (!isHeroListVisible) {
+                showHeroListViewUI();
             }
         });
         window.addEventListener('resize', adjustStickyHeaders);
@@ -1502,14 +1516,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         filterInputs.releaseDateType.value = 'favorites';
                     }
                 } catch (e) {
-                    console.error("Failed to decompress favorites from URL", e);
+                    console.error("从URL解压收藏夹失败", e);
                 }
             } else if (favsFromUrl) {
                 try {
                     temporaryFavorites = decodeURIComponent(favsFromUrl).split(',');
                     filterInputs.releaseDateType.value = 'favorites';
                 } catch (e) {
-                    console.error("Failed to process favorites from URL", e);
+                    console.error("处理URL中的收藏夹失败", e);
                 }
             }
             addEventListeners();

@@ -1,10 +1,7 @@
+/* ========== 基础样式 ========== */
 /* 全局和基础样式 */
 body {
-    font-family: 'HarmonyOS_Medium',
-        -apple-system, BlinkMacSystemFont,
-        "PingFang SC", "Microsoft YaHei",
-        "Source Han Sans SC", "Noto Sans CJK SC",
-        sans-serif;
+    font-family: 'HarmonyOS_Medium', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--md-sys-color-background);
@@ -17,60 +14,7 @@ body.modal-open {
     overflow: hidden;
 }
 
-/* 加载状态样式 */
-#page-loader-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--md-sys-color-background);
-    z-index: 99999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-#page-loader-overlay.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-spinner {
-    border: 8px solid var(--md-sys-color-surface-variant);
-    border-top: 8px solid var(--md-sys-color-primary);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1.2s linear infinite;
-}
-
-.loader-text {
-    margin-top: 20px;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: var(--md-sys-color-on-surface);
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.js-loading .header-buttons,
-.js-loading .main-container,
-.js-loading .floating-action-buttons {
-    visibility: hidden;
-}
-
+/* 容器布局 */
 .main-container {
     max-width: 1300px;
     margin: 0 auto;
@@ -78,6 +22,7 @@ body.modal-open {
     box-sizing: border-box;
 }
 
+/* ========== 头部样式 ========== */
 header {
     text-align: center;
     padding-bottom: 1rem;
@@ -121,7 +66,42 @@ header h1 a,
     gap: 15px;
 }
 
+.header-info-container {
+    background: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
+.header-info-content {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.header-info-footer {
+    font-size: 0.8em;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 6px;
+}
+
+header p {
+    font-size: 0.9rem;
+    color: var(--md-sys-color-on-surface);
+    margin-top: 0.5rem;
+}
+
+#last-updated {
+    font-size: 0.8em;
+    color: var(--md-sys-color-outline);
+    margin-top: 0.8rem;
+}
+
+/* ========== 按钮和切换控件 ========== */
 .theme-toggle-btn,
 .lang-toggle-btn {
     background-color: var(--md-sys-color-surface-variant);
@@ -169,47 +149,46 @@ html:not(.dark-theme) .moon-icon {
     display: none;
 }
 
-.header-info-container {
-    background: var(--md-sys-color-surface-variant);
-    color: var(--md-sys-color-on-surface-variant);
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.header-info-content {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.header-info-footer {
-    font-size: 0.8em;
-    color: var(--md-sys-color-on-surface-variant);
-    margin-top: 6px;
-}
-
-header p {
-    font-size: 0.9rem;
-    color: var(--md-sys-color-on-surface);
-    margin-top: 0.5rem;
-}
-
-#last-updated {
-    font-size: 0.8em;
-    color: var(--md-sys-color-outline);
-    margin-top: 0.8rem;
-}
-
-hr.divider {
+.action-button {
     border: none;
-    border-top: 1px solid var(--md-sys-color-outline);
-    margin: 1.5rem 0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
 }
 
+.action-button:hover {
+    filter: brightness(0.9);
+    transform: translateY(-1px);
+}
+
+.action-button-right {
+    flex: 1;
+    border: 1px solid var(--md-sys-color-outline);
+    border-left: none;
+    padding: 0 1rem;
+    height: 37px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    white-space: nowrap;
+}
+
+.action-button-right:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
+}
+
+/* ========== 筛选器样式 ========== */
 .filters-grid {
     display: flex;
     flex-direction: column;
@@ -254,44 +233,6 @@ hr.divider {
     font-weight: 600;
 }
 
-.help-btn {
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-    border: none;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
-    transition: all 0.2s ease;
-    padding: 0;
-}
-
-.help-btn:hover {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    transform: scale(1.1);
-}
-
-.toggle-button {
-    background: none;
-    border: none;
-    font-size: 1.1em;
-    cursor: pointer;
-    padding: 5px;
-    color: var(--md-sys-color-on-surface-variant);
-    transition: transform 0.3s ease-in-out;
-}
-
-.toggle-button.expanded {
-    transform: rotate(180deg);
-}
-
 .filter-content {
     padding: 1rem;
     transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -313,7 +254,6 @@ hr.divider {
     margin-bottom: 0.7rem;
 }
 
-/* MODIFIED: Unified and wider label style */
 .filter-item label {
     width: 140px;
     min-width: 140px;
@@ -350,7 +290,6 @@ hr.divider {
     box-sizing: border-box;
     text-align: center;
     height: 37px;
-    /* Explicit height for alignment */
 }
 
 .filter-item input:focus,
@@ -397,6 +336,7 @@ hr.divider {
     box-sizing: border-box;
 }
 
+/* 隐藏数字输入框的上下箭头 */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -416,31 +356,15 @@ input[type="number"] {
     margin-bottom: 0.8rem;
 }
 
-.action-button {
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-}
-
-.action-button:hover {
-    filter: brightness(0.9);
-    transform: translateY(-1px);
-}
-
+/* ========== 结果表格样式 ========== */
 #results-wrapper {
     max-height: 75vh;
     overflow-y: auto;
+    overflow-x: auto;
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
-
 
 .results-header {
     text-align: center;
@@ -469,20 +393,6 @@ input[type="number"] {
     background-color: var(--md-sys-color-surface);
 }
 
-#results-wrapper {
-    max-height: 75vh;
-    overflow-y: auto;
-    overflow-x: auto;
-    /* 统一滚动容器 */
-    border: 1px solid var(--md-sys-color-outline);
-    border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
-
-#results-table-container {
-    background-color: var(--md-sys-color-surface);
-}
-
 .empty-results-message {
     text-align: center;
     padding: 3rem 1rem;
@@ -499,10 +409,6 @@ input[type="number"] {
 .manual-table thead {
     position: sticky;
     z-index: 10;
-}
-
-.manual-table tbody {
-    /* No special styles needed */
 }
 
 .manual-table th {
@@ -548,70 +454,6 @@ input[type="number"] {
     border-bottom: 1px solid var(--md-sys-color-surface-variant);
 }
 
-.favorite-toggle-icon {
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: var(--md-sys-color-outline);
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.favorite-toggle-icon.favorited {
-    color: #FFD700;
-}
-
-.manual-table th.favorite-all-header.favorited {
-    color: #FFD700;
-}
-
-.favorite-toggle-icon:hover {
-    transform: scale(1.2);
-}
-
-/* Hero Glow Effect Styles */
-.red-glow-border {
-    box-shadow: var(--hero-glow-red);
-    border-color: var(--hero-color-red);
-}
-
-.blue-glow-border {
-    box-shadow: var(--hero-glow-blue);
-    border-color: var(--hero-color-blue);
-}
-
-.green-glow-border {
-    box-shadow: var(--hero-glow-green);
-    border-color: var(--hero-color-green);
-}
-
-.yellow-glow-border {
-    box-shadow: var(--hero-glow-yellow);
-    border-color: var(--hero-color-yellow);
-}
-
-.purple-glow-border {
-    box-shadow: var(--hero-glow-purple);
-    border-color: var(--hero-color-purple);
-}
-
-.white-glow-border {
-    box-shadow: var(--hero-glow-white);
-    border-color: var(--hero-color-white);
-}
-
-.black-glow-border {
-    box-shadow: var(--hero-glow-black);
-    border-color: var(--hero-color-black);
-}
-
-html:not(.dark-theme) .color-text-outlined {
-    text-shadow:
-        -0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
-        0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
-        -0.5px 0.5px 0 rgba(0, 0, 0, 0.4),
-        0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
-}
-
-
 .manual-table .table-row {
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -635,6 +477,7 @@ html:not(.dark-theme) .color-text-outlined {
     transition: border-color 0.2s ease, box-shadow 0.3s ease;
 }
 
+/* 表格列宽 */
 .manual-table .col-fav {
     width: 3%;
     text-align: center;
@@ -692,15 +535,11 @@ html:not(.dark-theme) .color-text-outlined {
 
 .manual-table .col-types {
     width: 14%;
-    /* Adjusted width */
     white-space: normal;
     text-align: center;
 }
 
-/* =================================== */
-/* ===== MODAL BEAUTIFICATION STYLES ===== */
-/* =================================== */
-
+/* ========== 模态框样式 ========== */
 #modal-overlay,
 #filters-modal-overlay,
 #help-modal-overlay,
@@ -787,7 +626,6 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 #modal .favorite-btn {
-    /* 基础样式 (与其他按钮统一) */
     background: var(--md-sys-color-surface-variant);
     border: none;
     cursor: pointer;
@@ -801,8 +639,6 @@ html:not(.dark-theme) .color-text-outlined {
     margin-right: 10px;
     padding: 0;
     line-height: 1;
-
-    /* 星星图标特定样式 */
     font-size: 1.5rem;
     color: var(--md-sys-color-on-surface-variant);
 }
@@ -814,9 +650,7 @@ html:not(.dark-theme) .color-text-outlined {
 
 #modal .favorite-btn.favorited {
     background-color: #FFD700;
-    /* 收藏状态下背景变为金色 */
     color: var(--md-sys-color-on-primary);
-    /* 星星变为白色以适应背景 */
 }
 
 #modal .favorite-btn.favorited:hover {
@@ -837,7 +671,6 @@ html:not(.dark-theme) .color-text-outlined {
     color: var(--md-sys-color-on-surface-variant);
     transition: all 0.2s ease;
     margin-right: 10px;
-    /* Space between share and close buttons */
 }
 
 #modal .share-btn:hover {
@@ -851,7 +684,6 @@ html:not(.dark-theme) .color-text-outlined {
     cursor: default;
     transform: none;
 }
-
 
 #modal .close-btn,
 #filters-modal .close-btn {
@@ -876,8 +708,7 @@ html:not(.dark-theme) .color-text-outlined {
     transform: rotate(90deg);
 }
 
-
-/* --- MODIFIED: 新的英雄标题区域样式 --- */
+/* 模态框内容样式 */
 .hero-title-block {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -885,18 +716,14 @@ html:not(.dark-theme) .color-text-outlined {
 
 .hero-english-name {
     font-size: 1.2rem;
-    /* 小字体 */
     font-weight: 400;
-    /* 细字体 */
     margin: 0 0 -0.25rem 0;
-    /* 负外边距，使其更贴近主标题 */
     color: var(--md-sys-color-on-surface-variant);
     letter-spacing: 0.5px;
 }
 
 .hero-main-name {
     font-size: 2.2rem;
-    /* 大字体 */
     font-weight: 700;
     margin: 0;
     color: var(--md-sys-color-primary);
@@ -915,7 +742,6 @@ html:not(.dark-theme) .color-text-outlined {
     font-weight: 500;
     color: var(--md-sys-color-on-secondary-container);
     margin: 0.5rem auto 0 auto;
-    /* 与上方名称保持紧凑间距 */
     background-color: var(--md-sys-color-secondary-container);
     border: none;
     border-radius: 20px;
@@ -1020,7 +846,7 @@ html:not(.dark-theme) .color-text-outlined {
     justify-content: center;
 }
 
-/* Skills Section Beautification */
+/* 技能区域样式 */
 #modal .details-bottom-section h3 {
     font-size: 1.4rem;
     font-weight: 600;
@@ -1047,12 +873,10 @@ html:not(.dark-theme) .color-text-outlined {
     margin-bottom: 0.75rem;
 }
 
-/* --- MODIFIED: 将 i 标签样式改为 .skill-value 类样式，并移除斜体 --- */
 .skill-category-block .uniform-style .skill-value {
     font-weight: 500;
     color: var(--md-sys-color-on-surface);
     font-style: normal;
-    /* 确保为非斜体 */
 }
 
 #modal .skill-list {
@@ -1085,7 +909,6 @@ html:not(.dark-theme) .color-text-outlined {
     font-size: 0.9em;
 }
 
-
 .modal-footer {
     display: flex;
     justify-content: center;
@@ -1111,6 +934,7 @@ html:not(.dark-theme) .color-text-outlined {
     transform: scale(1.05);
 }
 
+/* ========== 浮动操作按钮 ========== */
 .floating-action-buttons {
     position: fixed;
     bottom: 25px;
@@ -1143,6 +967,7 @@ html:not(.dark-theme) .color-text-outlined {
     transform: scale(1.05);
 }
 
+/* ========== 页脚样式 ========== */
 footer {
     background: var(--md-sys-color-surface-variant);
     color: var(--md-sys-color-on-surface-variant);
@@ -1167,7 +992,62 @@ footer .footer-credit {
     color: var(--md-sys-color-outline);
 }
 
-/* Help Modal Specific Styles */
+/* ========== 加载状态样式 ========== */
+#page-loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--md-sys-color-background);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#page-loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    border: 8px solid var(--md-sys-color-surface-variant);
+    border-top: 8px solid var(--md-sys-color-primary);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.2s linear infinite;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 加载时隐藏页面主要内容，防止闪烁 */
+.js-loading .header-buttons,
+.js-loading .main-container,
+.js-loading .floating-action-buttons {
+    visibility: hidden;
+}
+
+/* ========== 帮助模态框特定样式 ========== */
 #help-modal h3,
 #skill-type-help-modal h3 {
     font-size: 1.6rem;
@@ -1215,7 +1095,7 @@ footer .footer-credit {
     color: var(--md-sys-color-primary);
 }
 
-/* Wanted Mission Table Specific Styles */
+/* ========== 通缉任务表格特定样式 ========== */
 .manual-table.wanted-mission-table {
     border-collapse: collapse;
     margin: 1.5rem auto;
@@ -1260,8 +1140,7 @@ footer .footer-credit {
     vertical-align: middle;
 }
 
-/* ===== Farming Guide Table Styles (Final Revision) ===== */
-/* MODIFIED: 宽度、外边距和阴影与通缉任务表保持一致 */
+/* ========== 材料指南表格样式 ========== */
 .manual-table.farming-guide-table {
     width: 95%;
     max-width: 850px;
@@ -1278,14 +1157,12 @@ footer .footer-credit {
     vertical-align: middle;
     white-space: nowrap;
     transition: background-color 0.2s ease;
-    /* 分别定义边框，默认移除左边框 */
     border-top: 1px solid var(--md-sys-color-outline);
     border-bottom: 1px solid var(--md-sys-color-outline);
     border-right: 1px solid var(--md-sys-color-outline);
     border-left: none;
 }
 
-/* 只为第一列的单元格添加左边框 */
 .manual-table.farming-guide-table th:first-child,
 .manual-table.farming-guide-table td:first-child {
     position: sticky;
@@ -1302,20 +1179,16 @@ footer .footer-credit {
     border-right: 1px solid var(--md-sys-color-outline) !important;
 }
 
-/* MODIFIED: 缩小了单元格文字大小以便更好地展示 */
 .manual-table.farming-guide-table td {
     background-color: var(--md-sys-color-surface);
     padding: 10px 8px;
     font-size: 0.9rem;
-    /* 原为 1rem */
 }
 
-/* MODIFIED: 缩小了表头文字大小 */
 .manual-table.farming-guide-table thead th {
     z-index: 2;
     background-color: var(--md-sys-color-surface-variant);
     font-size: 1rem;
-    /* 原为 1.1rem */
     font-weight: 700;
     padding: 12px 8px;
 }
@@ -1332,20 +1205,16 @@ footer .footer-credit {
     z-index: 3;
 }
 
-/* 新的高亮规则：为悬浮单元格和其行列头设置不同样式 */
-
-/* 1. 为当前悬浮的单元格设置最醒目的高亮（文字为白色） */
+/* 材料指南表格悬浮高亮效果 */
 .manual-table.farming-guide-table .highlight-cell {
     background-color: var(--md-sys-color-primary);
     color: #FFFFFF;
     font-weight: bold;
 }
 
-/* 2. 为对应的行列头设置次要高亮，并修改文字颜色 */
 .manual-table.farming-guide-table th.highlight-axis,
 .manual-table.farming-guide-table td.highlight-axis:first-child {
     background-color: var(--md-sys-color-primary);
-    /* 新增：为高亮的行列头设置对应的、高对比度的文字颜色 */
     color: #FFFFFF;
 }
 
@@ -1355,7 +1224,227 @@ footer .footer-credit {
     vertical-align: middle;
 }
 
+/* ========== 英雄头像辉光效果 ========== */
+.red-glow-border {
+    box-shadow: var(--hero-glow-red);
+    border-color: var(--hero-color-red);
+}
 
+.blue-glow-border {
+    box-shadow: var(--hero-glow-blue);
+    border-color: var(--hero-color-blue);
+}
+
+.green-glow-border {
+    box-shadow: var(--hero-glow-green);
+    border-color: var(--hero-color-green);
+}
+
+.yellow-glow-border {
+    box-shadow: var(--hero-glow-yellow);
+    border-color: var(--hero-color-yellow);
+}
+
+.purple-glow-border {
+    box-shadow: var(--hero-glow-purple);
+    border-color: var(--hero-color-purple);
+}
+
+.white-glow-border {
+    box-shadow: var(--hero-glow-white);
+    border-color: var(--hero-color-white);
+}
+
+.black-glow-border {
+    box-shadow: var(--hero-glow-black);
+    border-color: var(--hero-color-black);
+}
+
+/* 亮色模式下为彩色文字添加黑色外描边以增加可读性 */
+html:not(.dark-theme) .color-text-outlined {
+    text-shadow:
+        -0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        -0.5px 0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ========== 收藏按钮样式 ========== */
+.favorite-toggle-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--md-sys-color-outline);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.favorite-toggle-icon.favorited {
+    color: #FFD700;
+}
+
+.manual-table th.favorite-all-header.favorited {
+    color: #FFD700;
+}
+
+.favorite-toggle-icon:hover {
+    transform: scale(1.2);
+}
+
+/* ========== 语言选择器样式 ========== */
+.lang-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+#lang-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+#lang-options.hidden {
+    display: none !important;
+}
+
+.lang-option {
+    padding: 10px 15px;
+    color: var(--md-sys-color-on-surface);
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.lang-option:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+/* ========== 视觉上隐藏但对SEO和屏幕阅读器可见的文本 ========== */
+.seo-text-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ========== 模态框中可点击元素的悬浮/点击指示器样式 ========== */
+h1.hero-main-name.skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    padding: 0 0.5rem;
+    border-radius: 8px;
+}
+
+h1.hero-main-name.skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.uniform-style .skill-value.skill-type-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 4px;
+}
+
+.hero-info-block.skill-type-tag,
+.uniform-style .skill-type-tag,
+.skill-types-container .skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-info-block.skill-type-tag:hover,
+.uniform-style .skill-type-tag:hover,
+.skill-types-container .skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary) !important;
+    color: var(--md-sys-color-on-primary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--md-sys-color-shadow);
+}
+
+#modal .skill-list li.skill-type-tag {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#modal .skill-list li.skill-type-tag:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+/* ========== 重置筛选标签的样式 ========== */
+.reset-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-left: 8px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary-container);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.reset-tag:hover {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== 用于堆叠模态框的更高层级 ========== */
+#help-modal.stacked-modal,
+#skill-type-help-modal.stacked-modal {
+    z-index: 1003;
+}
+
+#help-modal-overlay.stacked-modal-overlay,
+#skill-type-help-modal-overlay.stacked-modal-overlay {
+    z-index: 1002;
+}
+
+/* ========== 日期筛选的容器和内联按钮/日期显示样式 ========== */
+.input-with-right-button {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.date-display-box {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid var(--md-sys-color-outline);
+    border-right: none;
+    font-size: 0.9em;
+    color: var(--md-sys-color-on-surface);
+    background-color: var(--md-sys-color-surface-variant);
+    text-align: center;
+    box-sizing: border-box;
+    height: 37px;
+    line-height: 20px;
+}
+
+/* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
     .main-container {
         padding: 0.5rem;
@@ -1449,7 +1538,6 @@ footer .footer-credit {
 
     #modal .details-body {
         grid-template-columns: 1fr;
-        /* Single column layout */
         gap: 1.5rem;
     }
 
@@ -1459,12 +1547,10 @@ footer .footer-credit {
 
     .details-info-line {
         justify-content: center;
-        /* Center info blocks */
     }
 
     #modal .details-stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2x2 grid for stats */
     }
 
     #modal .hero-image-modal {
@@ -1482,7 +1568,6 @@ footer .footer-credit {
     .manual-table.wanted-mission-table th,
     .manual-table.wanted-mission-table td {
         padding: 8px 4px;
-        /* Reduce padding on mobile */
     }
 
     .manual-table.wanted-mission-table th {
@@ -1499,26 +1584,20 @@ footer .footer-credit {
         min-width: 40px;
     }
 
-    /* MODIFIED SECTION FOR FARMING GUIDE TABLE ON MOBILE */
-    /* ADDED: 为移动端视图增加与通缉任务表一致的边距 */
     .manual-table.farming-guide-table {
         width: 100%;
         margin: 0.5rem auto;
         margin-top: -1px;
     }
 
-    /* MODIFIED: 进一步缩小移动端字体以适应屏幕 */
     .manual-table.farming-guide-table td {
         padding: 6px 4px;
         font-size: 0.75rem;
-        /* 原为 0.8rem */
     }
 
-    /* MODIFIED: 进一步缩小移动端表头字体 */
     .manual-table.farming-guide-table th {
         padding: 8px 4px;
         font-size: 0.85rem;
-        /* 原为 0.9rem */
     }
 
     .farm-item-image {
@@ -1573,7 +1652,6 @@ footer .footer-credit {
 
     #filters-modal .filter-header .filter-title-container {
         margin: 0 auto;
-        /* Center the title container */
     }
 
     #filters-modal .filter-header:hover {
@@ -1588,186 +1666,49 @@ footer .footer-credit {
     }
 }
 
-/* ADDED: Language Selector Styles */
-.lang-selector-container {
-    position: relative;
-    display: inline-block;
+/* ========== 分隔线 ========== */
+hr.divider {
+    border: none;
+    border-top: 1px solid var(--md-sys-color-outline);
+    margin: 1.5rem 0;
 }
 
-#lang-options {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    margin-top: 8px;
-    background-color: var(--md-sys-color-surface);
-    border: 1px solid var(--md-sys-color-outline);
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1100;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    min-width: 120px;
-}
-
-#lang-options.hidden {
-    display: none !important;
-}
-
-.lang-option {
-    padding: 10px 15px;
-    color: var(--md-sys-color-on-surface);
-    text-decoration: none;
-    font-size: 0.95rem;
-    text-align: center;
-    transition: background-color 0.2s ease;
-}
-
-.lang-option:hover {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-}
-
-/* 新增：用于对用户视觉隐藏，但对SEO和屏幕阅读器可见的文本 */
-.seo-text-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* ADDED: Hover/Click indicator styles for modal details */
-h1.hero-main-name.skill-type-tag {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    display: inline-block;
-    padding: 0 0.5rem;
-    border-radius: 8px;
-}
-
-h1.hero-main-name.skill-type-tag:hover {
-    background-color: var(--md-sys-color-primary-container);
-}
-
-/* Make Speed value in modal look like a clickable tag */
-.uniform-style .skill-value.skill-type-tag {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 6px;
-    margin-left: 4px;
-    /* Add some space from the label */
-}
-
-/* MODIFIED: Generic skill tag hover effect for BLOCK elements */
-.hero-info-block.skill-type-tag,
-.uniform-style .skill-type-tag,
-.skill-types-container .skill-type-tag {
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-info-block.skill-type-tag:hover,
-.uniform-style .skill-type-tag:hover,
-.skill-types-container .skill-type-tag:hover {
-    background-color: var(--md-sys-color-primary) !important;
-    color: var(--md-sys-color-on-primary) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--md-sys-color-shadow);
-}
-
-/* MODIFIED: Specific hover effect for LIST items */
-#modal .skill-list li.skill-type-tag {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-#modal .skill-list li.skill-type-tag:hover {
-    background-color: var(--md-sys-color-primary-container);
-}
-
-/* ADDED: New style for the reset button tag */
-.reset-tag {
-    display: inline-block;
-    padding: 2px 8px;
-    margin-left: 8px;
-    font-size: 0.8em;
-    font-weight: 600;
-    color: var(--md-sys-color-on-primary-container);
-    background-color: var(--md-sys-color-primary-container);
-    border: 1px solid var(--md-sys-color-outline);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    vertical-align: middle;
-}
-
-.reset-tag:hover {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    border-color: var(--md-sys-color-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 新增：用于堆叠模态框的更高层级 */
-#help-modal.stacked-modal,
-#skill-type-help-modal.stacked-modal {
-    z-index: 1003;
-}
-
-#help-modal-overlay.stacked-modal-overlay,
-#skill-type-help-modal-overlay.stacked-modal-overlay {
-    z-index: 1002;
-}
-
-/* 新增: 日期筛选的容器和内联按钮/日期显示样式 */
-.input-with-right-button {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-}
-
-.date-display-box {
-    /* MODIFIED: Use flex: 1 for 1:1 ratio */
-    flex: 1;
-    padding: 8px 10px;
-    border-radius: 6px 0 0 6px;
-    border: 1px solid var(--md-sys-color-outline);
-    border-right: none;
-    font-size: 0.9em;
-    color: var(--md-sys-color-on-surface);
-    background-color: var(--md-sys-color-surface-variant);
-    text-align: center;
-    box-sizing: border-box;
-    height: 37px;
-    line-height: 20px;
-    /* Aligns text vertically */
-}
-
-.action-button-right {
-    /* MODIFIED: Use flex: 1 for 1:1 ratio */
-    flex: 1;
-    border: 1px solid var(--md-sys-color-outline);
-    border-left: none;
-    padding: 0 1rem;
-    height: 37px;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.9em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
+/* ========== 帮助按钮 ========== */
+.help-btn {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-    white-space: nowrap;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    transition: all 0.2s ease;
+    padding: 0;
 }
 
-.action-button-right:hover {
+.help-btn:hover {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-    border-color: var(--md-sys-color-primary);
+    transform: scale(1.1);
+}
+
+/* ========== 切换按钮 ========== */
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--md-sys-color-on-surface-variant);
+    transition: transform 0.3s ease-in-out;
+}
+
+.toggle-button.expanded {
+    transform: rotate(180deg);
 }

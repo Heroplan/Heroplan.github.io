@@ -1,87 +1,153 @@
 :root {
-    /* 标准颜色 */
+    /* ==========================================================================
+       英雄专属颜色 (用于头像辉光效果)
+       ========================================================================== */
     --hero-color-red: #ff7a4c;
+    /* 红色英雄边框色 */
     --hero-glow-red: 0 0 8px 2px #ff7a4c;
+    /* 红色英雄辉光 */
     --hero-color-blue: #41d8fe;
+    /* 蓝色英雄边框色 */
     --hero-glow-blue: 0 0 8px 2px #41d8fe;
+    /* 蓝色英雄辉光 */
     --hero-color-green: #70e92f;
+    /* 绿色英雄边框色 */
     --hero-glow-green: 0 0 8px 2px #70e92f;
+    /* 绿色英雄辉光 */
     --hero-color-yellow: #f2e33a;
+    /* 黄色英雄边框色 */
     --hero-glow-yellow: 0 0 8px 2px #f2e33a;
+    /* 黄色英雄辉光 */
     --hero-color-purple: #e290ff;
+    /* 紫色英雄边框色 */
     --hero-glow-purple: 0 0 8px 2px #e290ff;
+    /* 紫色英雄辉光 */
     --hero-color-white: #E0E0E0;
+    /* 白色英雄边框色 */
     --hero-glow-white: 0 0 8px 2px #FFFFFF;
+    /* 白色英雄辉光 */
     --hero-color-black: #424242;
+    /* 黑色英雄边框色 */
     --hero-glow-black: 0 0 8px 2px #616161;
+    /* 黑色英雄辉光 */
 
-    /* 优化后的日间模式配色 */
+    /* ==========================================================================
+       日间模式 (Light Theme) 配色方案 - 基于 Material Design 3
+       ========================================================================== */
+
+    /* --- 主要颜色 (Primary) --- */
+    /* 用于最关键的UI元素，如品牌标志、标题、活动按钮等，是界面的主色调。 */
     --md-sys-color-primary: #4A90E2;
+    /* 主要颜色 */
     --md-sys-color-on-primary: #FFFFFF;
+    /* 在“主要颜色”背景上的文本/图标颜色 */
     --md-sys-color-primary-container: #D4E5FF;
+    /* “主要颜色”的容器背景色，通常比主色调更柔和 */
     --md-sys-color-on-primary-container: #002D6E;
+    /* 在“主要颜色容器”背景上的文本/图标颜色 */
+
+    /* --- 次要颜色 (Secondary) --- */
+    /* 用于界面中不太重要的组件，作为主要颜色的补充，例如筛选标签、次要按钮。 */
     --md-sys-color-secondary: #6d7d82;
+    /* 次要颜色 */
     --md-sys-color-on-secondary: #FFFFFF;
+    /* 在“次要颜色”背景上的文本/图标颜色 */
     --md-sys-color-secondary-container: #E8EBF0;
+    /* “次要颜色”的容器背景色 */
     --md-sys-color-on-secondary-container: #2A2F38;
+    /* 在“次要颜色容器”背景上的文本/图标颜色 */
+
+    /* --- 第三颜色 (Tertiary) --- */
+    /* 用于提供对比或高亮，吸引用户的注意力，例如特殊标识或装饰性元素。 */
     --md-sys-color-tertiary: #0011ff;
+    /* 第三颜色 */
     --md-sys-color-on-tertiary: #FFFFFF;
+    /* 在“第三颜色”背景上的文本/图标颜色 */
     --md-sys-color-tertiary-container: #0084ff;
+    /* “第三颜色”的容器背景色 */
     --md-sys-color-on-tertiary-container: #1A332D;
-    /* --- MODIFIED: 背景色调灰以突出彩色文字 --- */
+    /* 在“第三颜色容器”背景上的文本/图标颜色 */
+
+    /* --- 界面表面与背景 (Surface & Background) --- */
+    /* 定义了UI组件和页面的基础颜色。 */
     --md-sys-color-background: #F2F2F2;
-    /* Original: #F5F7FA */
+    /* 页面的最底层背景色 */
     --md-sys-color-on-background: #1E2127;
+    /* 在“背景”之上的文本/图标颜色 */
     --md-sys-color-surface: #FFFFFF;
+    /* UI组件（如卡片、菜单）的“表面”颜色 */
     --md-sys-color-on-surface: #1E2127;
+    /* 在“表面”之上的文本/图标颜色 */
     --md-sys-color-surface-variant: #F0F3F9;
+    /* “表面”颜色的变体，用于创建视觉层次 */
     --md-sys-color-on-surface-variant: #444A54;
+    /* 在“表面变体”之上的文本/图标颜色 */
+
+    /* --- 其他UI元素 --- */
     --md-sys-color-outline: #C7CBD4;
+    /* 组件的轮廓/边框颜色 */
     --md-sys-color-shadow: rgba(0, 0, 0, 0.08);
+    /* 阴影颜色 */
     --md-sys-color-inverse-surface: #2E3138;
+    /* 反相表面颜色，用于需要与主背景形成强烈对比的元素 */
     --md-sys-color-inverse-on-surface: #F5F7FF;
+    /* 在“反相表面”之上的文本/图标颜色 */
     --md-sys-color-inverse-primary: #B8D4FF;
-    --button-contained-bg: var(--md-sys-color-primary-container);
-    --button-contained-hover-bg: #C1DBFF;
-    --button-contained-active-bg: #A8CDFF;
-    --button-outline-color: var(--md-sys-color-primary);
+    /* 在“反相表面”上使用的主要颜色 */
+
+    /* --- 错误状态颜色 (Error) --- */
+    /* 用于指示错误状态，如无效输入或失败操作。 */
     --md-sys-color-error: #D14545;
+    /* 错误状态的主颜色 */
     --md-sys-color-on-error: #FFFFFF;
+    /* 在“错误颜色”背景上的文本/图标颜色 */
     --md-sys-color-error-container: #FFE5E5;
+    /* “错误颜色”的容器背景色 */
     --md-sys-color-on-error-container: #410002;
+    /* 在“错误颜色容器”背景上的文本/图标颜色 */
 }
 
+/* ==========================================================================
+   夜间模式 (Dark Theme) 配色方案
+   当 <html> 标签拥有 .dark-theme 类时，以下变量将覆盖 :root 中的默认值。
+   ========================================================================== */
 html.dark-theme {
-    /* 深色模式配色 */
+    /* --- 主要颜色 --- */
     --md-sys-color-primary: #7DB1FF;
     --md-sys-color-on-primary: #003A8C;
     --md-sys-color-primary-container: #2A5AB2;
     --md-sys-color-on-primary-container: #D4E5FF;
+
+    /* --- 次要颜色 --- */
     --md-sys-color-secondary: #B8BBC4;
     --md-sys-color-on-secondary: #3A3D44;
     --md-sys-color-secondary-container: #51545C;
     --md-sys-color-on-secondary-container: #E8E9EC;
+
+    /* --- 第三颜色 --- */
     --md-sys-color-tertiary: #257cff;
     --md-sys-color-on-tertiary: #2A4740;
     --md-sys-color-tertiary-container: #4A7067;
     --md-sys-color-on-tertiary-container: #D4E8E3;
+
+    /* --- 错误状态颜色 --- */
     --md-sys-color-error: #FF8A8A;
     --md-sys-color-on-error: #690000;
     --md-sys-color-error-container: #930000;
     --md-sys-color-on-error-container: #FFE5E5;
+
+    /* --- 界面表面与背景 --- */
     --md-sys-color-background: #1A1C20;
     --md-sys-color-on-background: #E4E5E7;
     --md-sys-color-surface: #24262B;
     --md-sys-color-on-surface: #E4E5E7;
     --md-sys-color-surface-variant: #3C3E44;
     --md-sys-color-on-surface-variant: #C5C7CD;
+
+    /* --- 其他UI元素 --- */
     --md-sys-color-outline: #8E9097;
     --md-sys-color-shadow: #000000;
     --md-sys-color-inverse-surface: #E4E5E7;
     --md-sys-color-inverse-on-surface: #2E3035;
     --md-sys-color-inverse-primary: #4A90E2;
-    --button-contained-bg: var(--md-sys-color-primary-container);
-    --button-contained-hover-bg: #3A6AC2;
-    --button-contained-active-bg: #4A7AD2;
-    --button-outline-color: var(--md-sys-color-primary);
 }

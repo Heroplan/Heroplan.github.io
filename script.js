@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let temporaryDateFilter = null; // 新增: 用于一键日期筛选
     let isWantedMissionView = false; // 新增: 用于跟踪是否显示通缉任务表
     let isFarmingGuideView = false; // 新增: 用于跟踪是否显示材料指南
+    
 
     // 新增: 定义硬编码的日期
     const oneClickMaxDate = '2025-06-29';
@@ -1571,7 +1572,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clearAllFilters();
         applyFiltersAndRender();
     }
-    
+
     // --- 事件监听器绑定 ---
     function addEventListeners() {
         if (themeToggleButton) {

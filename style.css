@@ -1218,6 +1218,8 @@ footer .footer-credit {
 /* Wanted Mission Table Specific Styles */
 .manual-table.wanted-mission-table {
     border-collapse: collapse;
+    margin: 1.5rem auto;
+    margin-top: 0;
     width: 95%;
     max-width: 850px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1263,6 +1265,8 @@ footer .footer-credit {
 .manual-table.farming-guide-table {
     width: 95%;
     max-width: 850px;
+    margin: 1.5rem auto;
+    margin-top: -1px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
     table-layout: auto;
@@ -1470,6 +1474,8 @@ footer .footer-credit {
 
     .manual-table.wanted-mission-table {
         width: 100%;
+        margin: 0.5rem auto;
+        margin-top: 0px;
         font-size: 0.8rem;
     }
 
@@ -1496,8 +1502,9 @@ footer .footer-credit {
     /* MODIFIED SECTION FOR FARMING GUIDE TABLE ON MOBILE */
     /* ADDED: 为移动端视图增加与通缉任务表一致的边距 */
     .manual-table.farming-guide-table {
-        margin: -1px auto;
         width: 100%;
+        margin: 0.5rem auto;
+        margin-top: -1px;
     }
 
     /* MODIFIED: 进一步缩小移动端字体以适应屏幕 */

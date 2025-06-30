@@ -99,7 +99,8 @@
                             style="width: 24px; height: 24px; object-fit: contain;">
                     </button>
                     <button id="show-wanted-mission-btn" class="theme-toggle-btn">
-                        <img src="imgs/farm/wanted.png" alt="通缉任务" style="width: 24px; height: 24px; object-fit: contain;">
+                        <img src="imgs/farm/wanted.png" alt="通缉任务"
+                            style="width: 24px; height: 24px; object-fit: contain;">
                     </button>
                     <a id="calendar-btn" href="calendar.jpg" target="_blank" class="theme-toggle-btn">
                         <span>📅</span>
@@ -145,20 +146,27 @@
             </p>
         </section>
 
+
+
         <div id="results-wrapper">
             <div class="results-header">
                 <h3 id="results-count"></h3>
             </div>
-            <div id="results-table-container">
-                <table class="manual-table">
+            <div id="hero-table-view">
+                <table class="manual-table" id="hero-table">
                     <thead>
                     </thead>
                     <tbody>
                     </tbody>
                 </table>
             </div>
+            <div id="wanted-mission-view" class="hidden">
+                <table class="manual-table wanted-mission-table" id="wanted-mission-table"></table>
+            </div>
+            <div id="farming-guide-view" class="hidden">
+                <table class="manual-table farming-guide-table" id="farming-guide-table"></table>
+            </div>
         </div>
-        <div id="farming-guide-container" class="hidden"></div>
     </div>
     </div>
     </div>

@@ -1027,11 +1027,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resetTag.textContent = langDict.returnToList;
             resetTag.onclick = (e) => {
                 e.preventDefault();
-                isWantedMissionView = false;
-                if (resultsTable) resultsTable.classList.remove('wanted-mission-table');
-                // 直接调用重置和渲染逻辑
-                clearAllFilters();
-                applyFiltersAndRender();
+                resetToHeroListView();
             };
             resultsCountEl.appendChild(resetTag);
         }
@@ -1146,18 +1142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resetTag.textContent = langDict.returnToList;
             resetTag.onclick = (e) => {
                 e.preventDefault();
-                isFarmingGuideView = false;
-                if (resultsTable) {
-                    resultsTable.classList.remove('wanted-mission-table', 'farming-guide-table');
-                    const tbody = resultsTable.querySelector('tbody');
-                    if (tbody) {
-                        tbody.removeEventListener('mouseover', handleFarmGuideHover);
-                        tbody.removeEventListener('mouseout', clearFarmGuideHighlight);
-                    }
-                }
-                // 直接调用重置和渲染逻辑
-                clearAllFilters();
-                applyFiltersAndRender();
+                resetToHeroListView();
             };
             resultsCountEl.appendChild(resetTag);
         }
@@ -1536,7 +1521,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 copyTextToClipboard(url).then(() => {
                     const originalContent = shareBtn.innerHTML;
-                    shareBtn.innerText = '✅';
+                    shareBtn.innerText = '✔️';
                     shareBtn.disabled = true;
                     setTimeout(() => {
                         shareBtn.innerHTML = originalContent;
@@ -1580,7 +1565,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
-
+    function resetToHeroListView() {
+        isWantedMissionView = false;
+        isFarmingGuideView = false;
+        clearAllFilters();
+        applyFiltersAndRender();
+    }
+    
     // --- 事件监听器绑定 ---
     function addEventListeners() {
         if (themeToggleButton) {
@@ -1617,7 +1608,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 filterInputs[key].addEventListener('input', () => {
                     isWantedMissionView = false;
                     isFarmingGuideView = false;
-                    temporaryDateFilter = null; // Deactivate one-click filter
+                    temporaryDateFilter = null;
                     if (key === 'releaseDateType') {
                         temporaryFavorites = null;
                     }
@@ -1689,6 +1680,29 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                 });
+                // 移动端点击高亮和桌面端悬浮高亮逻辑
+                let lastClickedCell = null;
+                if (window.innerWidth < 769) {
+                    tbody.addEventListener('click', event => {
+                        if (!isFarmingGuideView) return;
+                        const cell = event.target.closest('td');
+                        if (!cell || !cell.dataset.colIndex) {
+                            clearFarmGuideHighlight();
+                            lastClickedCell = null;
+                            return;
+                        }
+                        if (cell === lastClickedCell) {
+                            clearFarmGuideHighlight();
+                            lastClickedCell = null;
+                        } else {
+                            applyHighlight(cell);
+                            lastClickedCell = cell;
+                        }
+                    });
+                } else {
+                    tbody.addEventListener('mouseover', handleFarmGuideHover);
+                    tbody.addEventListener('mouseout', clearFarmGuideHighlight);
+                }
             }
             const thead = resultsTable.querySelector('thead');
             if (thead) {
@@ -1760,6 +1774,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (showWantedMissionBtn) {
             showWantedMissionBtn.addEventListener('click', () => {
+                // MODIFIED: 添加历史状态
+                history.pushState({ view: 'wanted' }, '');
                 isWantedMissionView = true;
                 isFarmingGuideView = false;
                 applyFiltersAndRender();
@@ -1768,13 +1784,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (showFarmingGuideBtn) {
             showFarmingGuideBtn.addEventListener('click', () => {
+                // MODIFIED: 添加历史状态
+                history.pushState({ view: 'farming' }, '');
                 isFarmingGuideView = true;
                 isWantedMissionView = false;
                 applyFiltersAndRender();
             });
         }
 
-        // MODIFIED: 新增一键日期筛选按钮的事件监听
         if (filterHero730Btn) {
             filterHero730Btn.addEventListener('click', () => {
                 clearAllFilters();
@@ -1804,12 +1821,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // ==================== START: 此处是您需要修改的关键逻辑 ====================
         if (shareFavoritesBtn) {
             shareFavoritesBtn.addEventListener('click', () => {
                 const favorites = getFavorites();
                 if (favorites.length === 0) {
-                    // 使用 i18n 提供翻译后的提示
                     alert(i18n[currentLang].noFavoritesToShare || 'No favorites to share.');
                     return;
                 }
@@ -1817,7 +1832,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const compressedFavs = LZString.compressToEncodedURIComponent(favString);
                 const url = `${window.location.origin}${window.location.pathname}?zfavs=${compressedFavs}&lang=${currentLang}`;
 
-                // 调用高兼容性的复制函数
                 copyTextToClipboard(url).then(() => {
                     const originalText = shareFavoritesBtn.innerText;
                     shareFavoritesBtn.innerText = i18n[currentLang].shareFavoritesCopied || 'List Copied!';
@@ -1828,12 +1842,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 2000);
                 }).catch(err => {
                     console.error('Failed to copy favorites link: ', err);
-                    // 使用 i18n 提供翻译后的失败提示
                     alert(i18n[currentLang].copyLinkFailed || '复制链接失败，请尝试手动复制。');
                 });
             });
         }
-        // ==================== END: 修改结束 ====================
 
         document.querySelectorAll('#filters-modal .filter-header').forEach(header => {
             header.addEventListener('click', function (event) {
@@ -1855,44 +1867,46 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // 重写 popstate 监听器以正确处理模态框堆栈
+        // MODIFIED: 增强 popstate 监听器以处理返回事件
         window.addEventListener('popstate', function (event) {
-            if (modalStack.length === 0) {
-                return; // 堆栈中没有模态框，不执行任何操作
+            // 优先处理特殊视图的返回
+            if (isWantedMissionView || isFarmingGuideView) {
+                resetToHeroListView();
+                return; // 处理完毕，不再执行后续模态框逻辑
             }
 
-            const lastOpenModalId = modalStack.pop(); // 从堆栈中移除最上层的模态框
+            // 如果没有特殊视图，再处理模态框的返回逻辑
+            if (modalStack.length > 0) {
+                const lastOpenModalId = modalStack.pop();
+                if (lastOpenModalId === 'details') {
+                    if (modal) modal.classList.add('hidden');
+                    if (modalOverlay) modalOverlay.classList.add('hidden');
+                } else if (lastOpenModalId === 'filters') {
+                    if (filtersModal) filtersModal.classList.add('hidden');
+                    if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
+                } else if (lastOpenModalId === 'help') {
+                    if (helpModal) {
+                        helpModal.classList.add('hidden');
+                        helpModal.classList.remove('stacked-modal');
+                    }
+                    if (helpModalOverlay) {
+                        helpModalOverlay.classList.add('hidden');
+                        helpModalOverlay.classList.remove('stacked-modal-overlay');
+                    }
+                } else if (lastOpenModalId === 'skillTypeHelp') {
+                    if (skillTypeHelpModal) {
+                        skillTypeHelpModal.classList.add('hidden');
+                        skillTypeHelpModal.classList.remove('stacked-modal');
+                    }
+                    if (skillTypeHelpModalOverlay) {
+                        skillTypeHelpModalOverlay.classList.add('hidden');
+                        skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay');
+                    }
+                }
 
-            // 根据ID关闭对应的模态框
-            if (lastOpenModalId === 'details') {
-                if (modal) modal.classList.add('hidden');
-                if (modalOverlay) modalOverlay.classList.add('hidden');
-            } else if (lastOpenModalId === 'filters') {
-                if (filtersModal) filtersModal.classList.add('hidden');
-                if (filtersModalOverlay) filtersModalOverlay.classList.add('hidden');
-            } else if (lastOpenModalId === 'help') {
-                if (helpModal) {
-                    helpModal.classList.add('hidden');
-                    helpModal.classList.remove('stacked-modal');
+                if (modalStack.length === 0) {
+                    document.body.classList.remove('modal-open');
                 }
-                if (helpModalOverlay) {
-                    helpModalOverlay.classList.add('hidden');
-                    helpModalOverlay.classList.remove('stacked-modal-overlay');
-                }
-            } else if (lastOpenModalId === 'skillTypeHelp') {
-                if (skillTypeHelpModal) {
-                    skillTypeHelpModal.classList.add('hidden');
-                    skillTypeHelpModal.classList.remove('stacked-modal');
-                }
-                if (skillTypeHelpModalOverlay) {
-                    skillTypeHelpModalOverlay.classList.add('hidden');
-                    skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay');
-                }
-            }
-
-            // 如果堆栈为空，说明所有模态框都已关闭
-            if (modalStack.length === 0) {
-                document.body.classList.remove('modal-open');
             }
         });
 

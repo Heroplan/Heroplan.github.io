@@ -1218,7 +1218,6 @@ footer .footer-credit {
 /* Wanted Mission Table Specific Styles */
 .manual-table.wanted-mission-table {
     border-collapse: collapse;
-    margin: 1.5rem auto;
     width: 95%;
     max-width: 850px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -1264,7 +1263,6 @@ footer .footer-credit {
 .manual-table.farming-guide-table {
     width: 95%;
     max-width: 850px;
-    margin: 1.5rem auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
     table-layout: auto;
@@ -1330,19 +1328,21 @@ footer .footer-credit {
     z-index: 3;
 }
 
-/* MODIFIED: 新的高亮规则，为悬浮单元格和其行列头设置不同样式 */
+/* 新的高亮规则：为悬浮单元格和其行列头设置不同样式 */
 
-/* 1. 为当前悬浮的单元格设置最醒目的高亮 */
+/* 1. 为当前悬浮的单元格设置最醒目的高亮（文字为白色） */
 .manual-table.farming-guide-table .highlight-cell {
     background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
+    color: #FFFFFF;
     font-weight: bold;
 }
 
-/* 2. 为对应的行列头设置一个次要的高亮 */
+/* 2. 为对应的行列头设置次要高亮，并修改文字颜色 */
 .manual-table.farming-guide-table th.highlight-axis,
 .manual-table.farming-guide-table td.highlight-axis:first-child {
-    background-color: var(--md-sys-color-primary-container);
+    background-color: var(--md-sys-color-primary);
+    /* 新增：为高亮的行列头设置对应的、高对比度的文字颜色 */
+    color: #FFFFFF;
 }
 
 .farm-item-image {
@@ -1470,7 +1470,6 @@ footer .footer-credit {
 
     .manual-table.wanted-mission-table {
         width: 100%;
-        margin: 0.5rem auto;
         font-size: 0.8rem;
     }
 
@@ -1497,8 +1496,8 @@ footer .footer-credit {
     /* MODIFIED SECTION FOR FARMING GUIDE TABLE ON MOBILE */
     /* ADDED: 为移动端视图增加与通缉任务表一致的边距 */
     .manual-table.farming-guide-table {
+        margin: -1px auto;
         width: 100%;
-        margin: 0.5rem auto;
     }
 
     /* MODIFIED: 进一步缩小移动端字体以适应屏幕 */

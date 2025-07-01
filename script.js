@@ -1306,7 +1306,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     clearAllFilters();
 
                     if (filterType === 'passives' || filterType === 'effects') {
-                        filterValue = `(${filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim()})`;
+                        const cleanedValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, ' ').replace(/\s+/g, ' ').trim();
+                        filterValue = `(${cleanedValue})`;
                     } else if (filterType === 'types') {
                         filterValue = `[${filterValue}]`;
                     }

@@ -1793,7 +1793,13 @@ hr.divider {
     font-size: 14px;
     word-wrap: break-word;
     white-space: pre-wrap;
-    line-height: 1.4;
+    line-height: 1.1rem;
+    /* 添加黑色描边 */
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 #chat-simulator-input {
@@ -2115,6 +2121,7 @@ hr.divider {
         padding-bottom: 0.75rem;
     }
 }
+
 #io-splitter {
     height: 6px;
     /* 分割条高度 */

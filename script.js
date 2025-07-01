@@ -132,6 +132,29 @@ document.addEventListener('DOMContentLoaded', function () {
         releaseDateType: document.getElementById('release-date-type'),
     };
 
+    // --- 聊天模拟器新增变量 ---
+    const showChatSimulatorBtn = document.getElementById('show-chat-simulator-btn');
+    const chatSimulatorView = document.getElementById('chat-simulator-view');
+    const chatSimulatorInput = document.getElementById('chat-simulator-input');
+    const chatSimulatorPreview = document.getElementById('chat-simulator-preview');
+    const chatSimulatorCopyBtn = document.getElementById('chat-simulator-copy-btn');
+    const emojiGrid = document.getElementById('emoji-grid');
+    const insertColorBtn = document.getElementById('insert-color-btn');
+
+    // 自定义调色板元素
+    const customColorPicker = document.getElementById('custom-color-picker');
+    const svBox = document.getElementById('sv-box');
+    const svCursor = document.getElementById('sv-cursor');
+    const hueSlider = document.getElementById('hue-slider');
+    const hueCursor = document.getElementById('hue-cursor');
+    const colorPreviewBox = document.getElementById('color-preview-box');
+    const colorHexCodeInput = document.getElementById('color-hex-code');
+
+    // 调色板状态
+    let isDraggingHue = false;
+    let isDraggingSV = false;
+    let hsv = { h: 0, s: 1, v: 1 }; // Hue: 0-1, Saturation: 0-1, Value: 0-1
+
     function areFiltersActive() {
         const noneText = i18n[currentLang].none;
         if (filterInputs.name.value.trim() !== '' ||
@@ -875,6 +898,10 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (!farmingGuideView.classList.contains('hidden')) {
             scrollPositions.farming.top = resultsWrapper.scrollTop;
             scrollPositions.farming.left = resultsWrapper.scrollLeft;
+        } else if (chatSimulatorView && !chatSimulatorView.classList.contains('hidden')) {
+            if (!scrollPositions.chat) scrollPositions.chat = { top: 0, left: 0 };
+            scrollPositions.chat.top = resultsWrapper.scrollTop;
+            scrollPositions.chat.left = resultsWrapper.scrollLeft;
         }
     }
 
@@ -923,6 +950,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initAndShowWantedMissionView() {
+        if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         // 保存当前视图的滚动位置。
         saveCurrentViewScrollPosition();
 
@@ -982,6 +1010,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initAndShowFarmingGuideView() {
+        if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         // 保存当前视图的滚动位置。
         saveCurrentViewScrollPosition();
 
@@ -1256,7 +1285,267 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+    // ==========================================================================
+    // --- 聊天模拟器 (Chat Simulator) v3 ---
+    // ==========================================================================
 
+    // --- 颜色转换辅助函数 ---
+
+    function hsvToRgb(h, s, v) {
+        let r, g, b;
+        let i = Math.floor(h * 6);
+        let f = h * 6 - i;
+        let p = v * (1 - s);
+        let q = v * (1 - f * s);
+        let t = v * (1 - (1 - f) * s);
+        switch (i % 6) {
+            case 0: r = v, g = t, b = p; break;
+            case 1: r = q, g = v, b = p; break;
+            case 2: r = p, g = v, b = t; break;
+            case 3: r = p, g = q, b = v; break;
+            case 4: r = t, g = p, b = v; break;
+            case 5: r = v, g = p, b = q; break;
+        }
+        return {
+            r: Math.round(r * 255),
+            g: Math.round(g * 255),
+            b: Math.round(b * 255)
+        };
+    }
+
+    function rgbToHex(r, g, b) {
+        return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+
+    // --- 调色板更新逻辑 ---
+
+    function updateColorPickerUI() {
+        const { r, g, b } = hsvToRgb(hsv.h, hsv.s, hsv.v);
+        const hex = rgbToHex(r, g, b);
+
+        if (svBox) svBox.style.backgroundColor = `hsl(${hsv.h * 360}, 100%, 50%)`;
+        if (svCursor) {
+            svCursor.style.left = `${hsv.s * 100}%`;
+            svCursor.style.top = `${(1 - hsv.v) * 100}%`;
+        }
+        if (hueCursor) hueCursor.style.top = `${hsv.h * 100}%`;
+        if (colorPreviewBox) colorPreviewBox.style.backgroundColor = hex;
+        if (colorHexCodeInput) colorHexCodeInput.value = hex;
+    }
+
+
+    // --- 核心功能函数 ---
+
+    function insertTextAtCursor(textarea, textToInsert) {
+        const start = textarea.selectionStart;
+        const end = textarea.selectionEnd;
+        const text = textarea.value;
+        textarea.value = text.substring(0, start) + textToInsert + text.substring(end);
+        textarea.selectionStart = textarea.selectionEnd = start + textToInsert.length;
+        textarea.focus();
+        textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    function updateChatPreview() {
+        if (!chatSimulatorInput || !chatSimulatorPreview) return;
+        const rawText = chatSimulatorInput.value;
+        let html = '';
+        let currentColor = '#FFFFFF';
+        const emojiList = ['smile', 'alien', 'skull', 'grin', 'ghost', 'bunny', 'lol', 'richard', 'cat', 'rofl', 'mage', 'catgrey', 'sad', 'magered', 'dog', 'crying', 'staff', 'butterfly', 'blush', 'heart', 'butterflyblue', 'rolleyes', 'heartblue', 'fox', 'kiss', 'heartgreen', 'flower', 'love', 'heartyellow', 'sunflower', 'geek', 'heartpurple', 'palmtree', 'monocle', 'pizza', 'splash', 'think', 'cake', 'teardrop', 'tongue', 'donut', 'fire', 'cool', 'coffee', 'lightning', 'angry', 'sword', 'star', 'evil', 'swords', 'elementfire', 'thumbsup', 'axe', 'elementice', 'thumbsdown', 'axes', 'elementnature', 'horror', 'hammer', 'elementholy', 'hankey', 'helmet', 'elementdark', 'ham', 'hand'];
+
+        const tokens = rawText.split(/(\[#[A-Fa-f0-9]{6}\]|:[a-zA-Z0-9_]+:)/g).filter(Boolean);
+
+        tokens.forEach(token => {
+            const colorMatch = token.match(/^\[(#[A-Fa-f0-9]{6})\]$/);
+            const emojiMatch = token.match(/^:([a-zA-Z0-9_]+):$/);
+
+            if (colorMatch) {
+                currentColor = colorMatch[1];
+            } else if (emojiMatch && emojiList.includes(emojiMatch[1])) {
+                const emojiName = emojiMatch[1];
+                html += `<img src="imgs/emoticons/${emojiName}.png" alt="${token}" style="width: 20px; height: 20px; vertical-align: middle;">`;
+            } else {
+                const textWithBreaks = token.replace(/\n/g, '<br>');
+                html += `<span style="color: ${currentColor};">${textWithBreaks}</span>`;
+            }
+        });
+        chatSimulatorPreview.innerHTML = html;
+    }
+
+    function initAndShowChatSimulatorView() {
+        saveCurrentViewScrollPosition();
+
+        heroTableView.classList.add('hidden');
+        wantedMissionView.classList.add('hidden');
+        farmingGuideView.classList.add('hidden');
+        chatSimulatorView.classList.remove('hidden');
+
+        if (scrollPositions.chat) {
+            resultsWrapper.scrollTop = scrollPositions.chat.top;
+            resultsWrapper.scrollLeft = scrollPositions.chat.left;
+        } else {
+            scrollPositions.chat = { top: 0, left: 0 };
+        }
+
+        const langDict = i18n[currentLang];
+        resultsCountEl.innerHTML = `<span>${langDict.chatSimulatorTitle || '聊天模拟器'}</span>`;
+        const returnTag = document.createElement('span');
+        returnTag.className = 'reset-tag';
+        returnTag.textContent = langDict.returnToList;
+        returnTag.onclick = () => { history.back(); };
+        resultsCountEl.appendChild(returnTag);
+
+        setTimeout(adjustStickyHeaders, 0);
+        history.pushState({ view: 'chat' }, '');
+    }
+
+    // --- 事件监听器初始化 ---
+    function addChatSimulatorEventListeners() {
+        let isSimulatorInitialized = false;
+
+        if (showChatSimulatorBtn) {
+            showChatSimulatorBtn.addEventListener('click', () => {
+                initAndShowChatSimulatorView();
+
+                if (isSimulatorInitialized) return;
+
+                // --- 核心交互事件 ---
+                if (chatSimulatorInput) { chatSimulatorInput.addEventListener('input', updateChatPreview); }
+                if (insertColorBtn && colorHexCodeInput && chatSimulatorInput) {
+                    insertColorBtn.addEventListener('click', () => {
+                        const colorCode = `[${colorHexCodeInput.value}]`;
+                        insertTextAtCursor(chatSimulatorInput, colorCode);
+                    });
+                }
+                if (chatSimulatorCopyBtn && chatSimulatorInput) {
+                    chatSimulatorCopyBtn.addEventListener('click', () => {
+                        if (!chatSimulatorInput.value) return;
+                        navigator.clipboard.writeText(chatSimulatorInput.value).then(() => {
+                            const originalText = chatSimulatorCopyBtn.innerText;
+                            const langDict = i18n[currentLang];
+                            chatSimulatorCopyBtn.innerText = langDict.chatCopied || '已复制!';
+                            chatSimulatorCopyBtn.disabled = true;
+                            setTimeout(() => {
+                                chatSimulatorCopyBtn.innerText = originalText;
+                                chatSimulatorCopyBtn.disabled = false;
+                            }, 2000);
+                        }).catch(err => {
+                            console.error('复制失败:', err);
+                            alert('复制失败，请手动复制。');
+                        });
+                    });
+                }
+                if (emojiGrid && emojiGrid.children.length === 0) {
+                    const emojiList = ['smile', 'alien', 'skull', 'grin', 'ghost', 'bunny', 'lol', 'richard', 'cat', 'rofl', 'mage', 'catgrey', 'sad', 'magered', 'dog', 'crying', 'staff', 'butterfly', 'blush', 'heart', 'butterflyblue', 'rolleyes', 'heartblue', 'fox', 'kiss', 'heartgreen', 'flower', 'love', 'heartyellow', 'sunflower', 'geek', 'heartpurple', 'palmtree', 'monocle', 'pizza', 'splash', 'think', 'cake', 'teardrop', 'tongue', 'donut', 'fire', 'cool', 'coffee', 'lightning', 'angry', 'sword', 'star', 'evil', 'swords', 'elementfire', 'thumbsup', 'axe', 'elementice', 'thumbsdown', 'axes', 'elementnature', 'horror', 'hammer', 'elementholy', 'hankey', 'helmet', 'elementdark', 'ham','hand'];
+                    emojiList.forEach(emojiName => {
+                        const img = document.createElement('img');
+                        img.src = `imgs/emoticons/${emojiName}.png`;
+                        img.alt = `:${emojiName}:`;
+                        img.title = `:${emojiName}:`;
+                        img.addEventListener('click', () => {
+                            insertTextAtCursor(chatSimulatorInput, `:${emojiName}:`);
+                        });
+                        emojiGrid.appendChild(img);
+                    });
+                }
+
+                // --- 调色板事件 ---
+                function handleHueMove(event) { event.preventDefault(); const rect = hueSlider.getBoundingClientRect(); const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.h = Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
+                function handleSVMove(event) { event.preventDefault(); const rect = svBox.getBoundingClientRect(); const x = (event.clientX || event.touches[0].clientX) - rect.left; const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.s = Math.max(0, Math.min(1, x / rect.width)); hsv.v = 1 - Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
+                function stopDragging() { isDraggingHue = false; isDraggingSV = false; }
+
+                hueSlider.addEventListener('mousedown', (e) => { isDraggingHue = true; handleHueMove(e); });
+                svBox.addEventListener('mousedown', (e) => { isDraggingSV = true; handleSVMove(e); });
+                window.addEventListener('mousemove', (e) => { if (isDraggingHue) handleHueMove(e); if (isDraggingSV) handleSVMove(e); });
+                window.addEventListener('mouseup', stopDragging);
+                hueSlider.addEventListener('touchstart', (e) => { isDraggingHue = true; handleHueMove(e); }, { passive: false });
+                svBox.addEventListener('touchstart', (e) => { isDraggingSV = true; handleSVMove(e); }, { passive: false });
+                window.addEventListener('touchmove', (e) => { if (isDraggingHue) handleHueMove(e); if (isDraggingSV) handleSVMove(e); }, { passive: false });
+                window.addEventListener('touchend', stopDragging);
+
+
+                // --- 拖拽分割条逻辑 ---
+                const splitter = document.getElementById('io-splitter');
+                const previewWrapper = document.getElementById('chat-simulator-preview-wrapper');
+
+                // 新增：首次加载时，读取并应用Cookie中保存的高度
+                const savedHeight = getCookie('chatPreviewHeight');
+                if (savedHeight && previewWrapper) {
+                    previewWrapper.style.flexBasis = savedHeight;
+                    previewWrapper.style.flexGrow = '0';
+                    previewWrapper.style.flexShrink = '0';
+                }
+
+                if (splitter && previewWrapper && chatSimulatorInput) {
+                    let isDraggingSplitter = false;
+
+                    function onDragStart(e) {
+                        e.preventDefault();
+                        isDraggingSplitter = true;
+                        window.addEventListener('mousemove', onDragMove);
+                        window.addEventListener('mouseup', onDragEnd);
+                        window.addEventListener('touchmove', onDragMove, { passive: false });
+                        window.addEventListener('touchend', onDragEnd);
+                    }
+
+                    function onDragMove(e) {
+                        if (!isDraggingSplitter) return;
+                        e.preventDefault();
+
+                        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+                        const panel = splitter.parentElement;
+                        const panelRect = panel.getBoundingClientRect();
+                        const newPreviewHeight = clientY - panelRect.top - (splitter.offsetHeight / 2);
+
+                        const minHeight = 50;
+                        const panelContentHeight = panel.offsetHeight - chatSimulatorCopyBtn.offsetHeight - 20;
+
+                        if (newPreviewHeight >= minHeight && (panelContentHeight - newPreviewHeight - splitter.offsetHeight) >= minHeight) {
+                            previewWrapper.style.flexBasis = `${newPreviewHeight}px`;
+                            previewWrapper.style.flexGrow = '0';
+                            previewWrapper.style.flexShrink = '0';
+                        }
+                    }
+
+                    function onDragEnd() {
+                        if (!isDraggingSplitter) return;
+                        isDraggingSplitter = false;
+
+                        // 新增：拖拽结束后，将新的高度保存到Cookie
+                        if (previewWrapper.style.flexBasis) {
+                            setCookie('chatPreviewHeight', previewWrapper.style.flexBasis, 365);
+                        }
+
+                        window.removeEventListener('mousemove', onDragMove);
+                        window.removeEventListener('mouseup', onDragEnd);
+                        window.removeEventListener('touchmove', onDragMove);
+                        window.removeEventListener('touchend', onDragEnd);
+                    }
+
+                    splitter.addEventListener('mousedown', onDragStart);
+                    splitter.addEventListener('touchstart', onDragStart, { passive: false });
+                }
+
+                // --- 折叠功能事件监听 ---
+                document.querySelectorAll('.chat-simulator-panel > h3').forEach(header => {
+                    header.addEventListener('click', () => {
+                        if (window.innerWidth > 900) return;
+                        const panel = header.closest('.chat-simulator-panel');
+                        if (panel && (panel.classList.contains('chat-panel-colors') || panel.classList.contains('chat-panel-emojis'))) {
+                            panel.classList.toggle('collapsed');
+                            const toggleBtn = header.querySelector('.panel-toggle-btn');
+                            if (toggleBtn) {
+                                toggleBtn.classList.toggle('expanded', !panel.classList.contains('collapsed'));
+                            }
+                        }
+                    });
+                });
+
+                updateColorPickerUI();
+                isSimulatorInitialized = true;
+            });
+        }
+    }
     function addEventListeners() {
         if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
         if (langSelectBtn) {
@@ -1484,6 +1773,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 // 关闭模态框后停止进一步处理。
                 return;
             }
+            // 新增：处理聊天模拟器视图的返回
+            if (chatSimulatorView && !chatSimulatorView.classList.contains('hidden')) {
+                chatSimulatorView.classList.add('hidden');
+                showHeroListViewUI(); // 调用返回列表的函数
+                return; // 处理完毕，直接返回
+            }
 
             // 如果没有模态框打开，任何“返回”导航都应返回到英雄列表视图。
             // 我们检查英雄列表是否已显示，以避免不必要的重复更新。
@@ -1493,6 +1788,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
         window.addEventListener('resize', adjustStickyHeaders);
+        // 添加新的聊天模拟器事件监听
+        addChatSimulatorEventListeners();
     }
 
     async function initializeApp() {

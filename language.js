@@ -155,6 +155,15 @@ const i18n = {
         filterSyntaxTitle: "筛选语法说明",
         skillTypeSourceHelpTitle: "技能类别来源说明",
         returnToList: "返回",
+        // --- 聊天模拟器新增文本 ---
+        showChatSimulatorTitle: "聊天模拟器",
+        chatSimulatorTitle: "聊天模拟器",
+        chatPanelTitleColors: "选择颜色",
+        chatPanelTitleEmojis: "选择表情",
+        chatPanelTitleIO: "输入与预览",
+        chatInsertColorBtn: "插入",
+        chatCopyBtn: "复制内容",
+        chatCopied: "已复制!",
     },
     tc: {
         pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
@@ -212,6 +221,15 @@ const i18n = {
         filterSyntaxTitle: "篩選語法說明",
         skillTypeSourceHelpTitle: "技能類別來源說明",
         returnToList: "返回",
+        // --- 聊天模擬器新增文本 ---
+        showChatSimulatorTitle: "聊天模擬器",
+        chatSimulatorTitle: "聊天模擬器",
+        chatPanelTitleColors: "選擇顏色",
+        chatPanelTitleEmojis: "選擇表情",
+        chatPanelTitleIO: "輸入與預覽",
+        chatInsertColorBtn: "插入",
+        chatCopyBtn: "複製內容",
+        chatCopied: "已複製!",
     },
     en: {
         pageTitle: "Empires & Puzzles Hero Database | Heroplan",
@@ -269,5 +287,14 @@ const i18n = {
         filterSyntaxTitle: "Filter Syntax Help",
         skillTypeSourceHelpTitle: "Skill Type Source Help",
         returnToList: "Return",
+        // --- Chat Simulator New Texts ---
+        showChatSimulatorTitle: "Chat Simulator",
+        chatSimulatorTitle: "Chat Simulator",
+        chatPanelTitleColors: "Select Color",
+        chatPanelTitleEmojis: "Select Emojis",
+        chatPanelTitleIO: "Input & Preview",
+        chatInsertColorBtn: "Insert",
+        chatCopyBtn: "Copy Content",
+        chatCopied: "Copied!",
     }
 };

@@ -94,6 +94,9 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
                 <div class="header-buttons">
+                    <button id="show-chat-simulator-btn" class="theme-toggle-btn" title="聊天模拟器">
+                        <span style="font-size: 1.5rem;">🎨</span>
+                    </button>
                     <button id="show-farming-guide-btn" class="theme-toggle-btn" title="Farming Guide">
                         <img src="imgs/farm/Adventurer's Kit.png" alt="Farming"
                             style="width: 24px; height: 24px; object-fit: contain;">
@@ -166,9 +169,51 @@
             <div id="farming-guide-view" class="hidden">
                 <table class="manual-table farming-guide-table" id="farming-guide-table"></table>
             </div>
+            <div id="chat-simulator-view" class="hidden">
+                <div class="chat-simulator-container">
+                    <div class="chat-simulator-panel chat-panel-io">
+                        <h3 data-lang-key="chatPanelTitleIO">输入与预览</h3>
+                        <div id="chat-simulator-preview-wrapper">
+                            <div id="chat-simulator-preview"></div>
+                        </div>
+                    
+                        <div id="io-splitter"></div>
+                    
+                        <textarea id="chat-simulator-input"></textarea>
+                        <button id="chat-simulator-copy-btn" class="action-button" data-lang-key="chatCopyBtn">复制内容</button>
+                    </div>
+            
+                    <div class="chat-simulator-panel chat-panel-colors">
+                        <h3 data-lang-key="chatPanelTitleColors">选择颜色...</h3>
+                        <div class="panel-content">
+                            <div id="custom-color-picker">
+                                <div id="sv-box">
+                                    <div id="sv-cursor"></div>
+                                </div>
+                                <div id="hue-slider">
+                                    <div id="hue-cursor"></div>
+                                </div>
+                            </div>
+                            <div id="color-controls-wrapper">
+                                <div id="color-preview-box"></div>
+                                <div id="color-input-group">
+                                    <input type="text" id="color-hex-code" readonly>
+                                    <button id="insert-color-btn" class="action-button" data-lang-key="chatInsertColorBtn">插入</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="chat-simulator-panel chat-panel-emojis">
+                        <h3>选择表情<button class="panel-toggle-btn expanded">▼</button></h3>
+                        <div class="panel-content">
+                            <div id="emoji-grid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
     </div>
 
     <div id="modal-overlay" class="hidden"></div>
@@ -234,7 +279,7 @@
                             <label for="skill-type-source-select" data-lang-key="skillTypeSourceLabel">技能类别来源:</label>
                             <div class="input-with-help">
                                 <select id="skill-type-source-select">
-                                    <option value="both" data-lang-key="sourceBoth">Both</option>
+                                    <option value="both" data-lang-key="sourceBoth">全部</option>
                                     <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
                                     <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
                                 </select>

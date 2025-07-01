@@ -498,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeFiltersModal() { if (!filtersModal.classList.contains('hidden')) { history.back(); } }
 
     function openHelpModal() {
-        renderHelpModalContent(helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']);
+        renderHelpModalContent(helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExact', 'filterHelpExample']);
         helpModal.classList.add('stacked-modal');
         helpModalOverlay.classList.add('stacked-modal-overlay');
         helpModal.classList.remove('hidden');
@@ -621,17 +621,28 @@ document.addEventListener('DOMContentLoaded', function () {
             if (andTerms.length > 1) {
                 return andTerms.every(term => evaluate(term, text));
             }
+
             if (expr.startsWith('!')) {
                 const term = expr.substring(1).trim();
+                if (term.startsWith('[') && term.endsWith(']')) {
+                    const exactTerm = term.substring(1, term.length - 1).trim();
+                    return text !== exactTerm;
+                }
                 return !text.includes(term);
+            }
+            if (expr.startsWith('[') && expr.endsWith(']')) {
+                const term = expr.substring(1, expr.length - 1).trim();
+                return text === term;
             }
             return text.includes(expr);
         }
-        const usePerLineSearch = /[()]/.test(lowerCaseQuery);
+
+        const usePerLineSearch = /[()\[\]]/.test(lowerCaseQuery);
         return usePerLineSearch ?
             dataAsArray.some(line => evaluate(lowerCaseQuery, line)) :
             evaluate(lowerCaseQuery, dataAsArray.join(' '));
     }
+
 
     function updateResultsHeader() {
         const langDict = i18n[currentLang];
@@ -1287,12 +1298,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 const filterType = target.dataset.filterType;
                 let filterValue = target.dataset.filterValue;
                 if (!filterType || filterValue === undefined) return;
+
+                filterValue = filterValue.replace(/\s*[\(（][^\)）]*[\)）]/g, '').trim();
+
                 const inputElement = filterInputs[filterType];
                 if (inputElement) {
                     clearAllFilters();
+
                     if (filterType === 'passives' || filterType === 'effects') {
                         filterValue = `(${filterValue.replace(/[\p{P}\p{S}0-9]/gu, '').trim()})`;
+                    } else if (filterType === 'types') {
+                        filterValue = `[${filterValue}]`;
                     }
+
                     closeDetailsModal();
                     inputElement.value = filterValue;
                     renderAndShowHeroList(true);

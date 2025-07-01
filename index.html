@@ -176,15 +176,13 @@
                         <div id="chat-simulator-preview-wrapper">
                             <div id="chat-simulator-preview"></div>
                         </div>
-                    
                         <div id="io-splitter"></div>
-                    
                         <textarea id="chat-simulator-input"></textarea>
                         <button id="chat-simulator-copy-btn" class="action-button" data-lang-key="chatCopyBtn">复制内容</button>
                     </div>
             
                     <div class="chat-simulator-panel chat-panel-colors">
-                        <h3 data-lang-key="chatPanelTitleColors">选择颜色...</h3>
+                        <h3 data-lang-key="chatPanelTitleColors">选择颜色<button class="panel-toggle-btn expanded">▼</button></h3>
                         <div class="panel-content">
                             <div id="custom-color-picker">
                                 <div id="sv-box">
@@ -199,13 +197,20 @@
                                 <div id="color-input-group">
                                     <input type="text" id="color-hex-code" readonly>
                                     <button id="insert-color-btn" class="action-button" data-lang-key="chatInsertColorBtn">插入</button>
+                                    <button id="favorite-color-btn" class="action-button chat-favorite-btn" title="收藏此颜色"
+                                        data-lang-key="chatFavoriteColorBtn">⭐</button>
+                                </div>
+                            </div>
+                            <div id="favorite-colors-container">
+                                <h4 data-lang-key="chatFavoriteColorsTitle">已收藏的颜色</h4>
+                                <div id="favorite-colors-grid">
                                 </div>
                             </div>
                         </div>
                     </div>
             
                     <div class="chat-simulator-panel chat-panel-emojis">
-                        <h3>选择表情<button class="panel-toggle-btn expanded">▼</button></h3>
+                        <h3 data-lang-key="chatPanelTitleEmojis">选择表情<button class="panel-toggle-btn expanded">▼</button></h3>
                         <div class="panel-content">
                             <div id="emoji-grid">
                             </div>

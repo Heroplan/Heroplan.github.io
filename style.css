@@ -1860,13 +1860,14 @@ hr.divider {
     background-color: transparent;
 }
 
+/* --- 颜色控件样式更新 (v3 - 均分宽度 & 样式统一) --- */
+
+/* --- 颜色控件样式更新 (最终对齐修复版 v2) --- */
+
 #color-controls-wrapper {
     display: flex;
-    /* 使用 Flex 布局实现单行排列 */
     align-items: center;
-    /* 垂直居中对齐 */
     gap: 10px;
-    /* 在预览方块和输入组之间增加间距 */
     width: 100%;
     flex-shrink: 0;
     margin-bottom: 1rem;
@@ -1877,53 +1878,138 @@ hr.divider {
     height: 40px;
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
-    /* 为预览方块设置圆角 */
     flex-shrink: 0;
 }
 
 #color-input-group {
     display: flex;
     flex-grow: 1;
-    /* 让输入组占据剩余空间 */
-    align-items: center;
+    align-items: stretch;
+}
+
+/* 核心修复：直接在所有子项上强制设定高度，消除歧义 */
+#color-input-group>* {
+    flex: 1;
+    height: 40px;
+    /* 强制所有项目高度一致 */
+    box-sizing: border-box;
+    border: 1px solid var(--md-sys-color-outline);
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 #color-hex-code {
-    flex-grow: 1;
     text-align: center;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     background-color: var(--md-sys-color-surface-variant);
-    border: 1px solid var(--md-sys-color-outline);
-    border-right: none;
-    /* 移除右边框，与按钮无缝连接 */
+    color: var(--md-sys-color-on-surface);
     border-radius: 8px 0 0 8px;
-    /* 设置左侧圆角 */
-    padding: 0;
-    /* 移除内边距，通过高度控制 */
-    height: 40px;
-    /* 与预览方块和按钮同高 */
-    box-sizing: border-box;
-    line-height: 40px;
-    /* 垂直居中文本 */
+    min-width: 60px;
+}
+
+#insert-color-btn,
+.chat-favorite-btn {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#insert-color-btn:hover,
+.chat-favorite-btn:hover {
+    background-color: var(--md-sys-color-primary-container);
 }
 
 #insert-color-btn {
-    border-radius: 0 8px 8px 0;
-    /* 设置右侧圆角 */
-    white-space: nowrap;
-    height: 40px;
-    /* 与输入框同高 */
-    box-sizing: border-box;
-    padding: 0 1.2rem;
-    /* 调整内边距 */
-    border: 1px solid var(--md-sys-color-outline);
-    border-left: none;
-    /* 移除左边框 */
-    font-size: 1rem;
-    /* 统一字体大小 */
+    border-radius: 0;
 }
 
+.chat-favorite-btn {
+    border-radius: 0 8px 8px 0;
+    font-size: 1.5rem;
+}
+
+/* --- 已收藏颜色区域样式更新 (移除滚动条) --- */
+#favorite-colors-container {
+    margin-top: 1rem;
+    border-top: 1px solid var(--md-sys-color-outline);
+    padding-top: 1rem;
+    width: 100%;
+    /* 移除 flex-grow 和 overflow:hidden，允许其自由扩展高度 */
+}
+
+#favorite-colors-container h4 {
+    margin: 0 0 0.75rem 0;
+    text-align: center;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+#favorite-colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+    gap: 10px;
+    padding: 5px;
+    /* 移除 overflow-y: auto，不再出现滚动条 */
+}
+
+.favorite-color-item {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--md-sys-color-outline);
+    transition: transform 0.2s;
+}
+
+.favorite-color-item:hover {
+    transform: scale(1.1);
+}
+
+.remove-favorite-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+@media (min-width: 901px) {
+    .favorite-color-item:hover .remove-favorite-btn {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+}
+
+.favorite-color-item.show-remove .remove-favorite-btn {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
 
 /* --- 右侧 (新)：表情面板 --- */
 #emoji-grid {
@@ -1970,7 +2056,7 @@ hr.divider {
 
 
 /* --- 响应式设计 --- */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .chat-simulator-container {
         flex-direction: column;
         overflow-y: auto;

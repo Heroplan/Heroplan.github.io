@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let isDraggingHue = false;
     let isDraggingSV = false;
     let hsv = { h: 0, s: 1, v: 1 }; // Hue: 0-1, Saturation: 0-1, Value: 0-1
+    const emojiList = ['smile', 'grin', 'lol', 'rofl', 'sad', 'crying', 'blush', 'rolleyes', 'kiss', 'love', 'geek', 'monocle', 'think', 'tongue', 'cool', 'horror', 'angry', 'evil', 'hand', 'thumbsup', 'thumbsdown', 'hankey', 'ham', 'alien', 'ghost', 'richard', 'mage', 'magered', 'staff', 'heart', 'heartblue', 'heartgreen', 'heartyellow', 'heartpurple', 'pizza', 'cake', 'donut', 'coffee', 'sword', 'swords', 'axe', 'axes', 'hammer', 'helmet', 'skull', 'bunny', 'cat', 'catgrey', 'dog', 'butterfly', 'butterflyblue', 'fox', 'flower', 'sunflower', 'palmtree', 'splash', 'teardrop', 'fire', 'lightning', 'star', 'elementfire', 'elementice', 'elementnature', 'elementholy', 'elementdark'];
 
     function areFiltersActive() {
         const noneText = i18n[currentLang].none;
@@ -1351,7 +1352,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const rawText = chatSimulatorInput.value;
         let html = '';
         let currentColor = '#FFFFFF';
-        const emojiList = ['smile', 'alien', 'skull', 'grin', 'ghost', 'bunny', 'lol', 'richard', 'cat', 'rofl', 'mage', 'catgrey', 'sad', 'magered', 'dog', 'crying', 'staff', 'butterfly', 'blush', 'heart', 'butterflyblue', 'rolleyes', 'heartblue', 'fox', 'kiss', 'heartgreen', 'flower', 'love', 'heartyellow', 'sunflower', 'geek', 'heartpurple', 'palmtree', 'monocle', 'pizza', 'splash', 'think', 'cake', 'teardrop', 'tongue', 'donut', 'fire', 'cool', 'coffee', 'lightning', 'angry', 'sword', 'star', 'evil', 'swords', 'elementfire', 'thumbsup', 'axe', 'elementice', 'thumbsdown', 'axes', 'elementnature', 'horror', 'hammer', 'elementholy', 'hankey', 'helmet', 'elementdark', 'ham', 'hand'];
 
         const tokens = rawText.split(/(\[#[A-Fa-f0-9]{6}\]|:[a-zA-Z0-9_]+:)/g).filter(Boolean);
 
@@ -1400,6 +1400,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- 事件监听器初始化 ---
+    // --- 事件监听器初始化 (v9 - 实现移动端长按直接移除) ---
     function addChatSimulatorEventListeners() {
         let isSimulatorInitialized = false;
 
@@ -1409,15 +1410,97 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (isSimulatorInitialized) return;
 
-                // --- 核心交互事件 ---
-                if (chatSimulatorInput) { chatSimulatorInput.addEventListener('input', updateChatPreview); }
-                if (insertColorBtn && colorHexCodeInput && chatSimulatorInput) {
-                    insertColorBtn.addEventListener('click', () => {
-                        const colorCode = `[${colorHexCodeInput.value}]`;
-                        insertTextAtCursor(chatSimulatorInput, colorCode);
+                const favoriteColorBtn = document.getElementById('favorite-color-btn');
+                const favoriteColorsGrid = document.getElementById('favorite-colors-grid');
+
+                // --- 收藏颜色核心逻辑 ---
+                let favoriteColors = getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : [];
+
+                function renderFavoriteColors() {
+                    if (!favoriteColorsGrid) return;
+                    favoriteColorsGrid.innerHTML = '';
+                    favoriteColors.forEach(color => {
+                        const item = document.createElement('div');
+                        item.className = 'favorite-color-item';
+                        item.style.backgroundColor = color;
+                        item.dataset.color = color; // 将颜色存在data属性中
+
+                        const removeBtn = document.createElement('button');
+                        removeBtn.className = 'remove-favorite-btn';
+                        removeBtn.innerHTML = '&times;';
+                        removeBtn.title = '移除此颜色';
+
+                        // 桌面端：点击 "x" 按钮移除
+                        removeBtn.addEventListener('click', () => {
+                            favoriteColors = favoriteColors.filter(c => c !== color);
+                            setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                            renderFavoriteColors();
+                        });
+
+                        item.appendChild(removeBtn);
+
+                        // **** 新的长按与单击逻辑 ****
+                        let pressTimer = null;
+                        let isLongPress = false;
+
+                        const startPress = (e) => {
+                            // 只对触摸事件启用长按逻辑
+                            if (e.type === 'mousedown') return;
+
+                            e.preventDefault();
+                            isLongPress = false;
+
+                            pressTimer = setTimeout(() => {
+                                isLongPress = true;
+                                // **长按操作：直接移除颜色**
+                                const colorToRemove = item.dataset.color;
+                                favoriteColors = favoriteColors.filter(c => c !== colorToRemove);
+                                setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                                renderFavoriteColors();
+                            }, 500); // 500毫秒定义为长按
+                        };
+
+                        const cancelPress = () => {
+                            clearTimeout(pressTimer);
+                        };
+
+                        const clickAction = (e) => {
+                            // 如果是长按触发的，或者点击的是 "x" 按钮，则不执行插入操作
+                            if (isLongPress || e.target === removeBtn) {
+                                isLongPress = false; // 重置状态
+                                return;
+                            }
+                            // **单击/短按操作：插入颜色**
+                            insertTextAtCursor(chatSimulatorInput, `[${item.dataset.color}]`);
+                        };
+
+                        // 为桌面端和移动端短按绑定 'click' 事件
+                        item.addEventListener('click', clickAction);
+
+                        // 为移动端长按绑定触摸事件
+                        item.addEventListener('touchstart', startPress, { passive: false });
+                        item.addEventListener('touchend', cancelPress);
+                        item.addEventListener('touchmove', cancelPress); // 如果手指移动，则取消长按计时
+
+                        favoriteColorsGrid.appendChild(item);
                     });
                 }
-                if (chatSimulatorCopyBtn && chatSimulatorInput) {
+
+                if (favoriteColorBtn) {
+                    favoriteColorBtn.addEventListener('click', () => {
+                        const currentColor = colorHexCodeInput.value;
+                        if (currentColor && !favoriteColors.includes(currentColor)) {
+                            favoriteColors.unshift(currentColor);
+                            setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                            renderFavoriteColors();
+                        }
+                    });
+                }
+
+                // --- 核心交互事件 ---
+                if (chatSimulatorInput) { chatSimulatorInput.addEventListener('input', updateChatPreview); }
+                if (insertColorBtn) { insertColorBtn.addEventListener('click', () => { const colorCode = `[${colorHexCodeInput.value}]`; insertTextAtCursor(chatSimulatorInput, colorCode); }); }
+                if (chatSimulatorCopyBtn) {
                     chatSimulatorCopyBtn.addEventListener('click', () => {
                         if (!chatSimulatorInput.value) return;
                         navigator.clipboard.writeText(chatSimulatorInput.value).then(() => {
@@ -1429,22 +1512,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                 chatSimulatorCopyBtn.innerText = originalText;
                                 chatSimulatorCopyBtn.disabled = false;
                             }, 2000);
-                        }).catch(err => {
-                            console.error('复制失败:', err);
-                            alert('复制失败，请手动复制。');
-                        });
+                        }).catch(err => { console.error('复制失败:', err); alert('复制失败，请手动复制。'); });
                     });
                 }
                 if (emojiGrid && emojiGrid.children.length === 0) {
-                    const emojiList = ['smile', 'alien', 'skull', 'grin', 'ghost', 'bunny', 'lol', 'richard', 'cat', 'rofl', 'mage', 'catgrey', 'sad', 'magered', 'dog', 'crying', 'staff', 'butterfly', 'blush', 'heart', 'butterflyblue', 'rolleyes', 'heartblue', 'fox', 'kiss', 'heartgreen', 'flower', 'love', 'heartyellow', 'sunflower', 'geek', 'heartpurple', 'palmtree', 'monocle', 'pizza', 'splash', 'think', 'cake', 'teardrop', 'tongue', 'donut', 'fire', 'cool', 'coffee', 'lightning', 'angry', 'sword', 'star', 'evil', 'swords', 'elementfire', 'thumbsup', 'axe', 'elementice', 'thumbsdown', 'axes', 'elementnature', 'horror', 'hammer', 'elementholy', 'hankey', 'helmet', 'elementdark', 'ham','hand'];
+                    
                     emojiList.forEach(emojiName => {
                         const img = document.createElement('img');
                         img.src = `imgs/emoticons/${emojiName}.png`;
                         img.alt = `:${emojiName}:`;
                         img.title = `:${emojiName}:`;
-                        img.addEventListener('click', () => {
-                            insertTextAtCursor(chatSimulatorInput, `:${emojiName}:`);
-                        });
+                        img.addEventListener('click', () => { insertTextAtCursor(chatSimulatorInput, `:${emojiName}:`); });
                         emojiGrid.appendChild(img);
                     });
                 }
@@ -1453,7 +1531,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 function handleHueMove(event) { event.preventDefault(); const rect = hueSlider.getBoundingClientRect(); const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.h = Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
                 function handleSVMove(event) { event.preventDefault(); const rect = svBox.getBoundingClientRect(); const x = (event.clientX || event.touches[0].clientX) - rect.left; const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.s = Math.max(0, Math.min(1, x / rect.width)); hsv.v = 1 - Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
                 function stopDragging() { isDraggingHue = false; isDraggingSV = false; }
-
                 hueSlider.addEventListener('mousedown', (e) => { isDraggingHue = true; handleHueMove(e); });
                 svBox.addEventListener('mousedown', (e) => { isDraggingSV = true; handleSVMove(e); });
                 window.addEventListener('mousemove', (e) => { if (isDraggingHue) handleHueMove(e); if (isDraggingSV) handleSVMove(e); });
@@ -1463,65 +1540,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.addEventListener('touchmove', (e) => { if (isDraggingHue) handleHueMove(e); if (isDraggingSV) handleSVMove(e); }, { passive: false });
                 window.addEventListener('touchend', stopDragging);
 
-
                 // --- 拖拽分割条逻辑 ---
                 const splitter = document.getElementById('io-splitter');
                 const previewWrapper = document.getElementById('chat-simulator-preview-wrapper');
-
-                // 新增：首次加载时，读取并应用Cookie中保存的高度
                 const savedHeight = getCookie('chatPreviewHeight');
-                if (savedHeight && previewWrapper) {
-                    previewWrapper.style.flexBasis = savedHeight;
-                    previewWrapper.style.flexGrow = '0';
-                    previewWrapper.style.flexShrink = '0';
-                }
-
+                if (savedHeight && previewWrapper) { previewWrapper.style.flexBasis = savedHeight; previewWrapper.style.flexGrow = '0'; previewWrapper.style.flexShrink = '0'; }
                 if (splitter && previewWrapper && chatSimulatorInput) {
                     let isDraggingSplitter = false;
-
-                    function onDragStart(e) {
-                        e.preventDefault();
-                        isDraggingSplitter = true;
-                        window.addEventListener('mousemove', onDragMove);
-                        window.addEventListener('mouseup', onDragEnd);
-                        window.addEventListener('touchmove', onDragMove, { passive: false });
-                        window.addEventListener('touchend', onDragEnd);
-                    }
-
-                    function onDragMove(e) {
-                        if (!isDraggingSplitter) return;
-                        e.preventDefault();
-
-                        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-                        const panel = splitter.parentElement;
-                        const panelRect = panel.getBoundingClientRect();
-                        const newPreviewHeight = clientY - panelRect.top - (splitter.offsetHeight / 2);
-
-                        const minHeight = 50;
-                        const panelContentHeight = panel.offsetHeight - chatSimulatorCopyBtn.offsetHeight - 20;
-
-                        if (newPreviewHeight >= minHeight && (panelContentHeight - newPreviewHeight - splitter.offsetHeight) >= minHeight) {
-                            previewWrapper.style.flexBasis = `${newPreviewHeight}px`;
-                            previewWrapper.style.flexGrow = '0';
-                            previewWrapper.style.flexShrink = '0';
-                        }
-                    }
-
-                    function onDragEnd() {
-                        if (!isDraggingSplitter) return;
-                        isDraggingSplitter = false;
-
-                        // 新增：拖拽结束后，将新的高度保存到Cookie
-                        if (previewWrapper.style.flexBasis) {
-                            setCookie('chatPreviewHeight', previewWrapper.style.flexBasis, 365);
-                        }
-
-                        window.removeEventListener('mousemove', onDragMove);
-                        window.removeEventListener('mouseup', onDragEnd);
-                        window.removeEventListener('touchmove', onDragMove);
-                        window.removeEventListener('touchend', onDragEnd);
-                    }
-
+                    function onDragStart(e) { e.preventDefault(); isDraggingSplitter = true; window.addEventListener('mousemove', onDragMove); window.addEventListener('mouseup', onDragEnd); window.addEventListener('touchmove', onDragMove, { passive: false }); window.addEventListener('touchend', onDragEnd); }
+                    function onDragMove(e) { if (!isDraggingSplitter) return; e.preventDefault(); const clientY = e.touches ? e.touches[0].clientY : e.clientY; const panel = splitter.parentElement; const panelRect = panel.getBoundingClientRect(); const newPreviewHeight = clientY - panelRect.top - (splitter.offsetHeight / 2); const minHeight = 50; const panelContentHeight = panel.offsetHeight - chatSimulatorCopyBtn.offsetHeight - 20; if (newPreviewHeight >= minHeight && (panelContentHeight - newPreviewHeight - splitter.offsetHeight) >= minHeight) { previewWrapper.style.flexBasis = `${newPreviewHeight}px`; previewWrapper.style.flexGrow = '0'; previewWrapper.style.flexShrink = '0'; } }
+                    function onDragEnd() { if (!isDraggingSplitter) return; isDraggingSplitter = false; if (previewWrapper.style.flexBasis) { setCookie('chatPreviewHeight', previewWrapper.style.flexBasis, 365); } window.removeEventListener('mousemove', onDragMove); window.removeEventListener('mouseup', onDragEnd); window.removeEventListener('touchmove', onDragMove); window.removeEventListener('touchend', onDragEnd); }
                     splitter.addEventListener('mousedown', onDragStart);
                     splitter.addEventListener('touchstart', onDragStart, { passive: false });
                 }
@@ -1534,18 +1562,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (panel && (panel.classList.contains('chat-panel-colors') || panel.classList.contains('chat-panel-emojis'))) {
                             panel.classList.toggle('collapsed');
                             const toggleBtn = header.querySelector('.panel-toggle-btn');
-                            if (toggleBtn) {
-                                toggleBtn.classList.toggle('expanded', !panel.classList.contains('collapsed'));
-                            }
+                            if (toggleBtn) { toggleBtn.classList.toggle('expanded', !panel.classList.contains('collapsed')); }
                         }
                     });
                 });
 
+                // 初始化
                 updateColorPickerUI();
+                renderFavoriteColors();
                 isSimulatorInitialized = true;
             });
         }
     }
+    
     function addEventListeners() {
         if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
         if (langSelectBtn) {

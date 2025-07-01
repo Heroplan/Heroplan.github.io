@@ -1856,7 +1856,7 @@ hr.divider {
 #hue-cursor {
     position: absolute;
     width: 100%;
-    height: 5px;
+    height: 10px;
     left: 0;
     border: 2px solid white;
     border-radius: 2px;
@@ -1864,6 +1864,7 @@ hr.divider {
     pointer-events: none;
     transform: translateY(-50%);
     background-color: transparent;
+    box-sizing: border-box;
 }
 
 /* --- 颜色控件样式更新 (v3 - 均分宽度 & 样式统一) --- */

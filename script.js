@@ -2137,6 +2137,13 @@ document.addEventListener('DOMContentLoaded', function () {
             addEventListeners();
             applyFiltersAndRender(); // 首次渲染将使用加载的或默认的设置
             loadFilterStates();
+            // --- 新增：为新用户默认打开筛选框 ---
+            const hasVisited = getCookie('visited');
+            if (!hasVisited) {
+                // 如果 'visited' cookie 不存在，说明是新用户
+                openFiltersModal(); // 调用已有的函数打开筛选框
+                setCookie('visited', 'true', 365); // 设置cookie，有效期一年，下次不再打开
+            }
             if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
                 const targetHero = allHeroes.find(h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl);
                 if (targetHero) openDetailsModal(targetHero);

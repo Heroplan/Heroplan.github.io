@@ -763,6 +763,43 @@ input[type="number"] {
     align-items: center;
     gap: 1rem;
 }
+.details-core-settings-group .details-core-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    /* 微调内边距 */
+    margin: -0.5rem -0.75rem 0.5rem -0.75rem;
+    /* 利用负边距使其看起来像一个真正的头部 */
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+.details-core-settings-group .details-core-settings-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--md-sys-color-on-surface-variant);
+    font-weight: 600;
+}
+
+/* 确保内容区域在折叠时正确隐藏 */
+.details-core-settings-group .filter-content {
+    padding: 0;
+    /* 移除内边距，因为父元素已有 */
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 1000px;
+    /* 足够大的高度 */
+    opacity: 1;
+}
+
+.details-core-settings-group .filter-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: -0.5rem;
+    /* 折叠时移除间隙 */
+}
 
 #modal .hero-image-modal {
     width: 100%;
@@ -834,6 +871,40 @@ input[type="number"] {
     background-color: var(--md-sys-color-surface);
 }
 
+.details-core-settings-group {
+    background-color: var(--md-sys-color-surface-variant);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+}
+
+.details-core-settings-group h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.details-core-settings-group .details-selectors {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.details-core-settings-group h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
 #modal .metric-value-style {
     font-size: 1.4rem;
     font-weight: 700;
@@ -844,6 +915,118 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#modal .details-selectors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#modal .details-selector-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#modal .details-selector-item label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+#modal .details-selector-item select {
+    background-color: var(--md-sys-color-surface-variant);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-align-last: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    cursor: pointer;
+}
+
+html.dark-theme #modal .details-selector-item select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23CCC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+#modal .details-selector-item select:focus {
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+    outline: none;
+}
+
+#modal .details-selector-item select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.default-stat-selectors {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* 复用英雄详情页的样式以保持一致 */
+.default-stat-selectors .details-selector-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.default-stat-selectors .details-selector-item label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.default-stat-selectors .details-selector-item select {
+    background-color: var(--md-sys-color-surface-variant);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-align-last: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    cursor: pointer;
+}
+
+html.dark-theme .default-stat-selectors .details-selector-item select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23CCC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.default-stat-selectors .details-selector-item select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* 技能区域样式 */
@@ -1488,6 +1671,14 @@ h1.hero-main-name.skill-type-tag:hover {
         width: 100%;
     }
 
+    .default-stat-selectors {
+        grid-template-columns: 1fr;
+    }
+
+    #modal .details-selectors {
+        grid-template-columns: 1fr;
+    }
+
     .manual-table .col-attack,
     .manual-table .col-defense,
     .manual-table .col-health,
@@ -1663,6 +1854,33 @@ h1.hero-main-name.skill-type-tag:hover {
         opacity: 1;
         padding: 1rem;
         visibility: visible;
+    }
+
+    /* 高级筛选 -> 列表默认属性设置: 桌面端改为2+1布局 */
+    .default-stat-selectors {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* 设置为两列，用于第一行 */
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .default-stat-selectors .details-selector-item:nth-child(3) {
+        /* 让第三个项目（天赋优先级）横跨上面定义的两列，使其自动换到第二行 */
+        grid-column: 1 / -1;
+    }
+
+    #modal .details-selector-item label {
+        text-align: center;
+    }
+
+    .details-core-settings-group .details-selectors {
+        grid-template-columns: 1fr;
+    }
+
+    .details-core-settings-group .details-selectors .details-selector-item label {
+        text-align: center;
+        margin-right: 0;
     }
 }
 

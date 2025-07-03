@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let temporaryDateFilter = null; // 用于一键日期筛选
 
     // 定义硬编码的日期
-    const oneClickMaxDate = '2025-06-29';
+    const oneClickMaxDate = '2025-09-29';
     const purchaseCostumeDate = '2025-07-28';
 
     // 根据翻译表，自动生成反向映射表（用于从中文查找英文）
@@ -117,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const purchaseCostumeDateDisplay = document.getElementById('purchase-costume-date-display');
     const filterHero730Btn = document.getElementById('filter-hero-730-btn');
     const filterCostume548Btn = document.getElementById('filter-costume-548-btn');
+    const defaultLimitBreakSelect = document.getElementById('default-limit-break-select');
+    const defaultTalentSelect = document.getElementById('default-talent-select');
+    const defaultPrioritySelect = document.getElementById('default-priority-select');
+
 
     const filterInputs = {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
@@ -499,6 +503,92 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.filter-card select').forEach(select => { select.style.textAlign = 'center'; });
     }
 
+    function calculateHeroStats(hero, settings) {
+        const { lb, talent, priority } = settings;
+        let finalStats = {};
+
+        // 1. 根据天赋选择，确定用于计算的基础对象
+        let baseObjectForLB;
+        if (talent === 'none') {
+            baseObjectForLB = hero;
+        } else { // 'talent20' 或 'talent25'
+            if (priority === 'attack' && hero.attack_priority_stats) {
+                baseObjectForLB = hero.attack_priority_stats;
+            } else if (priority === 'defense' && hero.defense_priority_stats) {
+                baseObjectForLB = hero.defense_priority_stats;
+            } else {
+                baseObjectForLB = hero; // 备用
+            }
+        }
+
+        // 2. 根据突破等级选择属性
+        if (lb === 'lb1' && baseObjectForLB.lb1) {
+            finalStats = { ...baseObjectForLB.lb1 };
+        } else if (lb === 'lb2' && baseObjectForLB.lb2) {
+            finalStats = { ...baseObjectForLB.lb2 };
+        } else if (talent !== 'none' && baseObjectForLB.base) {
+            finalStats = { ...baseObjectForLB.base }; // 天赋路径下的 "无突破" 状态
+        } else {
+            // 英雄的绝对基础属性 (无天赋, 无突破)
+            finalStats = {
+                power: hero.power || 0,
+                attack: hero.attack || 0,
+                defense: hero.defense || 0,
+                health: hero.health || 0
+            };
+        }
+
+        // 3. 如果选择了25天赋，应用额外加成
+        if (talent === 'talent25') {
+            finalStats.power = (finalStats.power || 0) + 25;
+            if (priority === 'attack') {
+                finalStats.attack = (finalStats.attack || 0) + 150;
+                finalStats.health = (finalStats.health || 0) + 100;
+            } else { // 'defense' 优先级
+                finalStats.defense = (finalStats.defense || 0) + 180;
+                finalStats.health = (finalStats.health || 0) + 100;
+            }
+        }
+        return finalStats;
+    }
+
+    // --- 重构后的 updateHeroStats 函数 ---
+    function updateHeroStats(hero) {
+        const modal = document.getElementById('modal');
+        if (!modal || modal.classList.contains('hidden')) return;
+
+        // 从模态框内的选择器获取当前设置
+        const lbSelect = document.getElementById('limit-break-select');
+        const talentSelect = document.getElementById('talent-select');
+        const prioritySelect = document.getElementById('talent-priority-select');
+
+        const modalSettings = {
+            lb: lbSelect ? lbSelect.value : 'none',
+            talent: talentSelect ? talentSelect.value : 'none',
+            priority: prioritySelect ? prioritySelect.value : 'attack'
+        };
+
+        // 根据天赋选择禁用/启用优先级下拉框
+        if (prioritySelect) {
+            prioritySelect.disabled = (modalSettings.talent === 'none');
+        }
+
+        // 使用重用的计算函数获取最终属性
+        const finalStats = calculateHeroStats(hero, modalSettings);
+
+        // 更新模态框中的DOM元素
+        const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
+        const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
+        const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
+        const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
+
+        if (powerEl) powerEl.innerHTML = `💪 ${finalStats.power || 0}`;
+        if (attackEl) attackEl.innerHTML = `⚔️ ${finalStats.attack || 0}`;
+        if (defenseEl) defenseEl.innerHTML = `🛡️ ${finalStats.defense || 0}`;
+        if (healthEl) healthEl.innerHTML = `❤️ ${finalStats.health || 0}`;
+    }
+
+
     function openDetailsModal(hero) {
         renderDetailsInModal(hero);
         modal.classList.remove('hidden');
@@ -694,6 +784,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
         const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
+        // +++ 新增: 获取全局默认属性设置 +++
+        const defaultSettings = {
+            lb: defaultLimitBreakSelect.value,
+            talent: defaultTalentSelect.value,
+            priority: defaultPrioritySelect.value
+        };
+        // 根据全局天赋设置，禁用/启用优先级选择器
+        defaultPrioritySelect.disabled = (defaultSettings.talent === 'none');
 
         filteredHeroes = allHeroes.filter(hero => {
             let matchesBaseFilter = false;
@@ -764,14 +862,28 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
             return true;
         });
+        // +++ 新增: 为每个筛选后的英雄计算用于显示的属性 +++
+        filteredHeroes.forEach(hero => {
+            hero.displayStats = calculateHeroStats(hero, defaultSettings);
+        });
 
         filteredHeroes.sort((a, b) => {
             const key = currentSort.key;
             const direction = currentSort.direction === 'asc' ? 1 : -1;
-            let valA = a[key];
-            let valB = b[key];
-            let comparison = 0;
+
+            // +++ 修改: 排序时使用 displayStats +++
             const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
+            let valA, valB;
+
+            if (numericKeys.includes(key) && key !== 'star') {
+                valA = a.displayStats[key];
+                valB = b.displayStats[key];
+            } else {
+                valA = a[key];
+                valB = b[key];
+            }
+
+            let comparison = 0;
             if (key === 'speed') {
                 const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[currentLang];
                 const indexA = speedOrder.indexOf(String(valA));
@@ -789,8 +901,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 comparison = valA.localeCompare(valB, locale, options);
             }
             comparison *= direction;
+
+            // 次要排序也使用 displayStats.power
             if (comparison === 0 && key !== 'power') {
-                return (Number(b.power) || 0) - (Number(a.power) || 0);
+                return (Number(b.displayStats.power) || 0) - (Number(a.displayStats.power) || 0);
             }
             return comparison;
         });
@@ -861,6 +975,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     typesToShow.sort((a, b) => a.localeCompare(b));
                     content = typesToShow.join(', ');
+                } else if (key === 'power' || key === 'attack' || key === 'defense' || key === 'health') {
+                    // +++ 修改: 从 displayStats 获取属性值 +++
+                    content = hero.displayStats[key] || 0;
                 } else {
                     content = hero[key] || '';
                 }
@@ -1142,6 +1259,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
+
+        // 内部辅助函数，用于将技能数组渲染为HTML列表
         const renderListAsHTML = (itemsArray, filterType = null) => {
             if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
             return itemsArray.map(item => {
@@ -1158,6 +1277,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return `<li>${cleanItem}</li>`;
             }).join('');
         };
+
+        // --- 英雄名称和皮肤解析逻辑 ---
         let rawHeroName = hero.name || 'Unknown Hero';
         let tempName = rawHeroName;
         let mainHeroName = '';
@@ -1190,6 +1311,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
+
+        // --- 家族加成和技能类型逻辑 ---
         const heroFamily = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
         const translatedFamily = family_values[heroFamily] || hero.family;
@@ -1217,11 +1340,120 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const uniqueSkillTypes = skillTypesToDisplay.filter(t => t);
         const heroTypesContent = uniqueSkillTypes.length > 0 ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>` : `<span class="skill-value">${langDict.none}</span>`;
+
+        // --- 头像和额外信息 ---
         const localImagePath = getLocalImagePath(hero.image);
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}" title="${langDict.filterBy} ${hero.class}">🎓 ${hero.class}</span>` : ''}${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${hero.source}">🌍 ${hero.source}</span>` : ''}${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}" title="${langDict.filterBy} ${hero.AetherPower}">⏫ ${hero.AetherPower}</span>` : ''}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}">${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+
+        // +++ 修改：将选择器HTML单独定义，以便插入到新位置 +++
+        const selectorsHTML = `
+    <div class="details-core-settings-header">
+        <h4>${langDict.defaultStatSettingsTitle}</h4>
+        <button class="toggle-button" data-target="details-selectors-content" title="${langDict.toggleCollapse}">▼</button>
+    </div>
+    <div id="details-selectors-content" class="filter-content">
+        <div class="details-selectors">
+            <div class="details-selector-item">
+                <label for="limit-break-select">${langDict.limitBreakSetting}</label>
+                <select id="limit-break-select">
+                    <option value="none">${langDict.noLimitBreak}</option>
+                    <option value="lb1">${langDict.lb1}</option>
+                    <option value="lb2">${langDict.lb2}</option>
+                </select>
+            </div>
+            <div class="details-selector-item">
+                <label for="talent-select">${langDict.talentSetting}</label>
+                <select id="talent-select">
+                    <option value="none">${langDict.noTalent}</option>
+                    <option value="talent20">${langDict.talent20}</option>
+                    <option value="talent25">${langDict.talent25}</option>
+                </select>
+            </div>
+            <div class="details-selector-item">
+                <label for="talent-priority-select">${langDict.prioritySetting}</label>
+                <select id="talent-priority-select">
+                    <option value="attack">${langDict.attackPriority}</option>
+                    <option value="defense">${langDict.defensePriority}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+`;
+
+        // --- 完整的模态框HTML结构 ---
+        // +++ 修改：调整了核心属性区域的布局，将设置项移到属性下方并添加分组边框 +++
+        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}" title="${langDict.filterBy} ${hero.class}">🎓 ${hero.class}</span>` : ''}${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${hero.source}">🌍 ${hero.source}</span>` : ''}${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}" title="${langDict.filterBy} ${hero.AetherPower}">⏫ ${hero.AetherPower}</span>` : ''}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}">${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
         modalContent.innerHTML = detailsHTML;
+
+        // --- 核心修正逻辑 ---
+
+        // 1. 获取模态框内的选择器元素
+        const lbSelect = document.getElementById('limit-break-select');
+        const talentSelect = document.getElementById('talent-select');
+        const prioritySelect = document.getElementById('talent-priority-select');
+
+        // 2. 将模态框内的选择器设置为全局默认值
+        lbSelect.value = defaultLimitBreakSelect.value;
+        talentSelect.value = defaultTalentSelect.value;
+        prioritySelect.value = defaultPrioritySelect.value;
+
+        // 3. 直接使用已知的全局默认设置来执行第一次属性计算和渲染
+        const globalDefaultSettings = {
+            lb: defaultLimitBreakSelect.value,
+            talent: defaultTalentSelect.value,
+            priority: defaultPrioritySelect.value
+        };
+        const initialStats = calculateHeroStats(hero, globalDefaultSettings);
+
+        // 手动更新DOM
+        const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
+        const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
+        const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
+        const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
+
+        if (powerEl) powerEl.innerHTML = `💪 ${initialStats.power || 0}`;
+        if (attackEl) attackEl.innerHTML = `⚔️ ${initialStats.attack || 0}`;
+        if (defenseEl) defenseEl.innerHTML = `🛡️ ${initialStats.defense || 0}`;
+        if (healthEl) healthEl.innerHTML = `❤️ ${initialStats.health || 0}`;
+
+        // 同时，在打开时正确设置优先级选择框的禁用状态
+        prioritySelect.disabled = (globalDefaultSettings.talent === 'none');
+
+        // 4. 为后续的用户手动操作绑定事件监听器
+        function setupStatListeners() {
+            if (lbSelect) lbSelect.addEventListener('change', () => updateHeroStats(hero));
+            if (talentSelect) talentSelect.addEventListener('change', () => updateHeroStats(hero));
+            if (prioritySelect) prioritySelect.addEventListener('change', () => updateHeroStats(hero));
+        }
+        setupStatListeners();
+        function setupCollapseBehavior() {
+            const collapseBtn = document.querySelector('#modal .toggle-button');
+            const contentToCollapse = document.getElementById('details-selectors-content');
+
+            if (!collapseBtn || !contentToCollapse) return;
+
+            // 读取Cookie并设置初始状态
+            const savedState = getCookie('details_settings_state');
+            if (savedState === 'collapsed') {
+                contentToCollapse.classList.add('collapsed');
+                collapseBtn.classList.remove('expanded');
+            } else {
+                contentToCollapse.classList.remove('collapsed');
+                collapseBtn.classList.add('expanded');
+            }
+
+            // 添加点击事件
+            collapseBtn.addEventListener('click', function () {
+                contentToCollapse.classList.toggle('collapsed');
+                this.classList.toggle('expanded');
+                const newState = contentToCollapse.classList.contains('collapsed') ? 'collapsed' : 'expanded';
+                setCookie('details_settings_state', newState, 365); // 保存状态到Cookie，有效期一年
+            });
+        }
+        setupCollapseBehavior();
+
+        // --- 收藏与分享按钮的事件监听 ---
         const favoriteBtn = document.getElementById('favorite-hero-btn');
         const shareBtn = document.getElementById('share-hero-btn');
         if (!hero.english_name) {
@@ -1267,6 +1499,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         }
+
+        // --- 关闭按钮的事件监听 ---
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
     }
@@ -1400,7 +1634,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- 事件监听器初始化 ---
-    // --- 事件监听器初始化 (v9 - 实现移动端长按直接移除) ---
     function addChatSimulatorEventListeners() {
         let isSimulatorInitialized = false;
 
@@ -1658,6 +1891,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderAndShowHeroList(true);
             });
         }
+        // +++ 新增: 为全局默认属性选择器添加事件监听 +++
+        function handleDefaultStatChange() {
+            // 当设置改变时，保存到Cookie并重新渲染列表
+            setCookie('defaultLB', defaultLimitBreakSelect.value, 365);
+            setCookie('defaultTalent', defaultTalentSelect.value, 365);
+            setCookie('defaultPriority', defaultPrioritySelect.value, 365);
+            applyFiltersAndRender();
+        }
+
+        if (defaultLimitBreakSelect) defaultLimitBreakSelect.addEventListener('change', handleDefaultStatChange);
+        if (defaultTalentSelect) defaultTalentSelect.addEventListener('change', handleDefaultStatChange);
+        if (defaultPrioritySelect) defaultPrioritySelect.addEventListener('change', handleDefaultStatChange);
+
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
@@ -1846,6 +2092,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 hero.english_name = extractEnglishName(hero);
             });
             populateFilters();
+            // +++ 新增: 从Cookie加载并应用默认属性设置 +++
+            defaultLimitBreakSelect.value = getCookie('defaultLB') || 'none';
+            defaultTalentSelect.value = getCookie('defaultTalent') || 'none';
+            defaultPrioritySelect.value = getCookie('defaultPriority') || 'attack';
             history.replaceState({ view: 'list' }, '');
             if (oneClickMaxDateDisplay) oneClickMaxDateDisplay.textContent = oneClickMaxDate;
             if (purchaseCostumeDateDisplay) purchaseCostumeDateDisplay.textContent = purchaseCostumeDate;
@@ -1872,7 +2122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             addEventListeners();
-            applyFiltersAndRender();
+            applyFiltersAndRender(); // 首次渲染将使用加载的或默认的设置
             loadFilterStates();
             if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
                 const targetHero = allHeroes.find(h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl);

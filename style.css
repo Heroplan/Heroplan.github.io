@@ -763,6 +763,7 @@ input[type="number"] {
     align-items: center;
     gap: 1rem;
 }
+
 .details-core-settings-group .details-core-settings-header {
     display: flex;
     justify-content: space-between;
@@ -1857,14 +1858,13 @@ h1.hero-main-name.skill-type-tag:hover {
         visibility: visible;
     }
 
-                /* 高级筛选 -> 列表默认属性设置: 桌面端改为3个一行，并调整比例 */
-                .default-stat-selectors {
-                    display: grid;
-                    /* 将空间按 17:17:26 的比例划分，实现前两项各占约28.3%，第三项占约43.3% */
-                    grid-template-columns: 15fr 19fr 26fr;
-                    gap: 0.75rem;
-                    align-items: center;
-                }
+    /* 高级筛选 -> 列表默认属性设置: 桌面端改为3个一行，并调整比例 */
+    .default-stat-selectors {
+        display: grid;
+        grid-template-columns: 15fr 19fr 26fr;
+        gap: 0.75rem;
+        align-items: center;
+    }
 
     #modal .details-selector-item label {
         text-align: center;

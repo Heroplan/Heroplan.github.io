@@ -247,6 +247,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 element.title = langDict[key];
             }
         }
+        const metaDesc = document.getElementById('meta-description');
+
+        if (metaDesc && langDict.metaDescription) {
+            metaDesc.setAttribute('content', langDict.metaDescription);
+        }
     }
 
     function setCookie(name, value, days) {

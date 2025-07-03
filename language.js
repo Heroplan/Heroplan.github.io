@@ -100,6 +100,11 @@ const skillTypeTranslations_tc = {
 // --- 语言文本管理 ---
 const i18n = {
     cn: {
+        metaDescription: "Heroplan是为《帝国与谜题》(Empires & Puzzles)玩家打造的终极英雄资料库。快速查询和比较所有英雄的详细数据、特殊技能、家族加成和攻略信息。",
+        seoHeading: "《帝国与谜题》一站式英雄资料库与玩家工具箱",
+        seoPara1: "欢迎使用由 <strong>Heroplan.io</strong> 驱动的《帝国与谜题》(Empires & Puzzles) 终极英雄资料与攻略平台。我们提供最新、最全面的<strong>英雄数据</strong>，包括星级、颜色、法速、职业、家族、起源及所有<strong>服装</strong>信息。",
+        seoPara2: "本站的独特之处在于其强大的交互功能：使用我们强大的筛选系统，您不仅能按名称、来源等基本属性查找英雄，更能通过<strong>特殊技能文本</strong>、<strong>被动技能描述</strong>及精细的技能分类进行高级检索。独一无二的<strong>属性计算器</strong>，允许您实时查看英雄在不同极限突破（LB1/LB2）和天赋（+20/+25）等级下的确切战力、攻击、防御及生命值，为您的英雄成长规划提供数据支持。",
+        seoPara3: "除了英雄数据库，我们还集成了多种实用工具来提升您的游戏体验：使用创新的【<strong>聊天模拟器</strong>】，您可以轻松制作带自定义颜色和游戏表情的聊天内容并一键复制；查阅我们详尽的【<strong>材料出处指南</strong>】和【<strong>通缉任务</strong>】速查表，高效定位资源，优化您的游戏攻略。您可以收藏您喜爱的英雄组合，并通过链接将您的<strong>收藏列表</strong>分享给盟友。平台完整支持简/繁中文和英文，并提供日/夜间模式切换功能。",
         pageTitle: "帝国与谜题英雄资料库 | Heroplan",
         headerTitle: "Heroplan英雄资料库", poweredBy: "由", driven: "驱动",
         sponsoredBy: "赞助", translatedBy: "译者制作", footerInfo: "英雄数据持续更新 | 简繁体中文版",
@@ -180,6 +185,11 @@ const i18n = {
         
     },
     tc: {
+        metaDescription: "Heroplan是為《帝國與謎題》(Empires & Puzzles)玩家打造的終極英雄資料庫。快速查詢和比較所有英雄的詳細數據、特殊技能、家族加成和攻略資訊。",
+        seoHeading: "《帝國與謎題》一站式英雄資料庫與玩家工具箱",
+        seoPara1: "歡迎使用由 <strong>Heroplan.io</strong> 驅動的《帝國與謎題》(Empires & Puzzles) 終極英雄資料與攻略平台。我們提供最新、最全面的<strong>英雄數據</strong>，包括星級、顏色、法速、職業、家族、起源及所有<strong>服裝</strong>資訊。",
+        seoPara2: "本站的獨特之處在於其強大的互動功能：使用我們強大的篩選系統，您不僅能按名稱、來源等基本屬性查找英雄，更能透過<strong>特殊技能文本</strong>、<strong>被動技能描述</strong>及精細的技能分類進行進階檢索。獨一無二的<strong>屬性計算器</strong>，允許您即時查看英雄在不同極限突破（LB1/LB2）和天賦（+20/+25）等級下的確切戰力、攻擊、防禦及生命值，為您的英雄成長規劃提供數據支援。",
+        seoPara3: "除了英雄資料庫，我們還整合了多種實用工具來提升您的遊戲體驗：使用創新的【<strong>聊天模擬器</strong>】，您可以輕鬆製作帶自訂顏色和遊戲表情的聊天內容並一鍵複製；查閱我們詳盡的【<strong>材料出處指南</strong>】和【<strong>通緝任務</strong>】速查表，高效定位資源，最佳化您的遊戲攻略。您可以收藏您喜愛的英雄組合，並透過連結將您的<strong>收藏列表</strong>分享給盟友。平台完整支援簡/繁中文和英文，並提供日/夜間模式切換功能。",
         pageTitle: "帝國與謎題英雄資料庫 | Heroplan",
         headerTitle: "Heroplan英雄資料庫", poweredBy: "由", driven: "驅動",
         sponsoredBy: "贊助", translatedBy: "譯者製作", footerInfo: "英雄數據持續更新 | 簡繁中文版",
@@ -259,6 +269,11 @@ const i18n = {
         chatCopied: "已複製!",
     },
     en: {
+        metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
+        seoHeading: "Empires & Puzzles One-Stop Hero Database & Player Toolbox",
+        seoPara1: "Welcome to the ultimate hero data and strategy platform for Empires & Puzzles, powered by <strong>Heroplan.io</strong>. We provide the latest and most comprehensive <strong>hero data</strong>, including star rating, color, speed, class, family, origin, and all <strong>costume</strong> information.",
+        seoPara2: "What makes this site unique are its powerful interactive features: use our robust filtering system to find heroes not only by basic attributes like name and origin, but also through advanced searches of <strong>special skill text</strong>, <strong>passive descriptions</strong>, and detailed skill categories. The one-of-a-kind <strong>Stat Calculator</strong> allows you to see the exact power, attack, defense, and health of a hero at different Limit Break (LB1/LB2) and Talent (+20/+25) levels, providing data-driven support for your hero development plans.",
+        seoPara3: "In addition to the hero database, we've integrated several useful tools to enhance your gameplay: use the innovative [<strong>Chat Simulator</strong>] to easily create in-game messages with custom colors and emojis and copy them with one click; consult our detailed [<strong>Farming Guide</strong>] and [<strong>Wanted Missions</strong>] cheat sheet to efficiently locate resources and optimize your strategy. You can save your favorite heroes to a list and share your <strong>Favorites List</strong> with your alliance via a link. The platform fully supports Simplified/Traditional Chinese and English, and includes a Day/Night mode toggle.",
         pageTitle: "Empires & Puzzles Hero Database | Heroplan",
         headerTitle: "Heroplan Hero Database", poweredBy: "Powered by", driven: "",
         sponsoredBy: "Sponsored by", translatedBy: "Developed by", footerInfo: "Hero data is continuously updated | EN/CN Version",

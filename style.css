@@ -1857,19 +1857,14 @@ h1.hero-main-name.skill-type-tag:hover {
         visibility: visible;
     }
 
-    /* 高级筛选 -> 列表默认属性设置: 桌面端改为2+1布局 */
-    .default-stat-selectors {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* 设置为两列，用于第一行 */
-        gap: 0.75rem;
-        align-items: center;
-    }
-
-    .default-stat-selectors .details-selector-item:nth-child(3) {
-        /* 让第三个项目（天赋优先级）横跨上面定义的两列，使其自动换到第二行 */
-        grid-column: 1 / -1;
-    }
+                /* 高级筛选 -> 列表默认属性设置: 桌面端改为3个一行，并调整比例 */
+                .default-stat-selectors {
+                    display: grid;
+                    /* 将空间按 17:17:26 的比例划分，实现前两项各占约28.3%，第三项占约43.3% */
+                    grid-template-columns: 15fr 19fr 26fr;
+                    gap: 0.75rem;
+                    align-items: center;
+                }
 
     #modal .details-selector-item label {
         text-align: center;

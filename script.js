@@ -1428,10 +1428,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         setupStatListeners();
         function setupCollapseBehavior() {
-            const collapseBtn = document.querySelector('#modal .toggle-button');
+            // 步骤1：将选择器从按钮改为整个标题栏
+            const header = document.querySelector('#modal .details-core-settings-header');
             const contentToCollapse = document.getElementById('details-selectors-content');
+            // 依然需要获取按钮本身，用于旋转动画
+            const collapseBtn = header ? header.querySelector('.toggle-button') : null;
 
-            if (!collapseBtn || !contentToCollapse) return;
+            if (!header || !contentToCollapse || !collapseBtn) return;
 
             // 读取Cookie并设置初始状态
             const savedState = getCookie('details_settings_state');
@@ -1443,12 +1446,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 collapseBtn.classList.add('expanded');
             }
 
-            // 添加点击事件
-            collapseBtn.addEventListener('click', function () {
+            // 步骤2：将点击事件绑定到整个 header 上
+            header.addEventListener('click', function () {
+                // 折叠/展开内容的逻辑不变
                 contentToCollapse.classList.toggle('collapsed');
-                this.classList.toggle('expanded');
+
+                // 明确地为按钮切换 'expanded' 类，以触发旋转动画
+                collapseBtn.classList.toggle('expanded');
+
+                // 保存状态到Cookie的逻辑不变
                 const newState = contentToCollapse.classList.contains('collapsed') ? 'collapsed' : 'expanded';
-                setCookie('details_settings_state', newState, 365); // 保存状态到Cookie，有效期一年
+                setCookie('details_settings_state', newState, 365);
             });
         }
         setupCollapseBehavior();

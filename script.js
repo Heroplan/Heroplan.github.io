@@ -1495,9 +1495,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         // --- 家族加成和技能类型逻辑 ---
-        const heroFamily = String(hero.family || '').toLowerCase();
-        const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamily) || {}).bonus || [];
-        const translatedFamily = family_values[heroFamily] || hero.family;
+        const heroFamilyKey = String(hero.family || '').toLowerCase();
+        const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamilyKey) || {}).bonus || [];
+        const translatedFamily = family_values[heroFamilyKey] || hero.family;
         const source = filterInputs.skillTypeSource.value;
         let skillTypesToDisplay = [];
         if (source === 'heroplan') {
@@ -1528,6 +1528,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
 
+        // --- 家族信息块逻辑 ---
+        let familyBlockHTML = '';
+        if (hero.family) {
+            const familyFileName = String(hero.family).toLowerCase();
+            familyBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${familyFileName}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`;
+        }
+
         // --- 职业图标逻辑 ---
         const displayedClass = hero.class;
         let classBlockHTML = '';
@@ -1548,8 +1555,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let aetherPowerBlockHTML = '';
         if (hero.AetherPower) {
             const displayedPower = hero.AetherPower;
-            let englishPower = aetherPowerReverseMap[displayedPower] || displayedPower;
-            const iconHtml = `<img src="imgs/Aether Power/${englishPower.toLowerCase()}.png" class="aether-power-icon" alt="${displayedPower}"/>`;
+            const englishPower = aetherPowerReverseMap[displayedPower] || displayedPower;
+            const aetherFileName = englishPower.toLowerCase();
+            const iconHtml = `<img src="imgs/Aether Power/${aetherFileName}.png" class="aether-power-icon" alt="${displayedPower}"/>`;
             aetherPowerBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${displayedPower}" title="${langDict.filterBy} ${displayedPower}">⏫${iconHtml}${displayedPower}</span>`;
         }
 
@@ -1571,47 +1579,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">${iconHtml}${displayedSource}</span>`;
+            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">🌍${iconHtml}${displayedSource}</span>`;
         }
 
 
         // --- 选择器HTML ---
         const selectorsHTML = `
-<div class="details-core-settings-header">
-    <h4>${langDict.defaultStatSettingsTitle}</h4>
-    <button class="toggle-button" data-target="details-selectors-content" title="${langDict.toggleCollapse}">▼</button>
-</div>
-<div id="details-selectors-content" class="filter-content">
-    <div class="details-selectors">
-        <div class="details-selector-item">
-            <label for="limit-break-select">${langDict.limitBreakSetting}</label>
-            <select id="limit-break-select">
-                <option value="none">${langDict.noLimitBreak}</option>
-                <option value="lb1">${langDict.lb1}</option>
-                <option value="lb2">${langDict.lb2}</option>
-            </select>
-        </div>
-        <div class="details-selector-item">
-            <label for="talent-select">${langDict.talentSetting}</label>
-            <select id="talent-select">
-                <option value="none">${langDict.noTalent}</option>
-                <option value="talent20">${langDict.talent20}</option>
-                <option value="talent25">${langDict.talent25}</option>
-            </select>
-        </div>
-        <div class="details-selector-item">
-            <label for="talent-priority-select">${langDict.prioritySetting}</label>
-            <select id="talent-priority-select">
-                <option value="attack">${langDict.attackPriority}</option>
-                <option value="defense">${langDict.defensePriority}</option>
-            </select>
+    <div class="details-core-settings-header">
+        <h4>${langDict.defaultStatSettingsTitle}</h4>
+        <button class="toggle-button" data-target="details-selectors-content" title="${langDict.toggleCollapse}">▼</button>
+    </div>
+    <div id="details-selectors-content" class="filter-content">
+        <div class="details-selectors">
+            <div class="details-selector-item">
+                <label for="limit-break-select">${langDict.limitBreakSetting}</label>
+                <select id="limit-break-select">
+                    <option value="none">${langDict.noLimitBreak}</option>
+                    <option value="lb1">${langDict.lb1}</option>
+                    <option value="lb2">${langDict.lb2}</option>
+                </select>
+            </div>
+            <div class="details-selector-item">
+                <label for="talent-select">${langDict.talentSetting}</label>
+                <select id="talent-select">
+                    <option value="none">${langDict.noTalent}</option>
+                    <option value="talent20">${langDict.talent20}</option>
+                    <option value="talent25">${langDict.talent25}</option>
+                </select>
+            </div>
+            <div class="details-selector-item">
+                <label for="talent-priority-select">${langDict.prioritySetting}</label>
+                <select id="talent-priority-select">
+                    <option value="attack">${langDict.attackPriority}</option>
+                    <option value="defense">${langDict.defensePriority}</option>
+                </select>
+            </div>
         </div>
     </div>
-</div>
-`;
+    `;
 
         // --- 完整的模态框HTML结构 ---
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>` : ''}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${familyBlockHTML}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
         modalContent.innerHTML = detailsHTML;
 
         // --- 核心修正逻辑 ---

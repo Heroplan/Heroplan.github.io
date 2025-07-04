@@ -116,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function () {
         "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png", "challengefestival1": "challenge.png", "challengefestival2": "challenge.png"
     };
     const colorReverseMap = {
-        '红色': 'Red', '紅色': 'Red', 'red': 'Red',
-        '蓝色': 'Blue', '藍色': 'Blue', 'blue': 'Blue',
-        '绿色': 'Green', '綠色': 'Green', 'green': 'Green',
-        '黄色': 'Yellow', '黃色': 'Yellow', 'yellow': 'Yellow',
-        '紫色': 'Purple', 'purple': 'Purple'
+        '红': 'Red', '紅': 'Red', 'red': 'Red',
+        '蓝': 'Blue', '藍': 'Blue', 'blue': 'Blue',
+        '绿': 'Green', '綠': 'Green', 'green': 'Green',
+        '黄': 'Yellow', '黃': 'Yellow', 'yellow': 'Yellow',
+        '紫': 'Purple', 'purple': 'Purple'
     };
     let farmGuideScrollHandler = null;
     let scrollPositions = {

@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     const sourceIconMap = {
         "villains": "challenge.png", "musketeer": "alliance_quest.png", "pets": "challenge.png",
-        "lunaryear": "s1.png", "beowulf": "challenge.png", "moth": "challenge.png",
+        "lunaryear": "s1.png", "beowulf": "challenge.png", "moth": "alliance_quest.png",
         "beachparty": "s1.png", "kalevala": "s1.png", "avalon": "challenge.png",
         "ninja": "tower.png", "morlovia": "s1.png", "sand": "s1.png",
         "kingdom": "mercenary_war.png", "wonderland": "challenge.png", "superelemental": "elemental.png",

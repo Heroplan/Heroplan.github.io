@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "高塔 - 猫头鹰": "owltower", "联盟 - 骑士冲击": "knights", "S6 - 深海奥秘": "untoldtales1", "S7 - 烈焰与冰霜宝藏": "untoldtales2",
         "S3 - 瓦尔哈拉": "season3", "S4 - 蛮荒地界": "season4", "挑战 - 重返圣堂": "returntosanctuary",
         "至日召唤": "solstice", "挑战 - 众神狂欢节": "carnivalofgods", "月英": "hotm",
-        "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon",
+        "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon", "神话召唤 - 额外抽奖": "tavernoflegendssecret",
         "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "挑战节II - 杀手": "slayers",
         "荒野召唤": "wilderness", "挑战节I - 守护者": "teltoc", "挑战节I - 肃煞森林": "fables",
         "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "高塔 - 貓頭鷹": "owltower", "聯盟 - 騎士衝擊": "knights", "S6 - 深淵謎團": "untoldtales1", "S7 - 火焰與冰霜的寶藏": "untoldtales2",
         "S3 - 瓦爾哈拉": "season3", "S4 - 地底荒野": "season4", "挑戰 - 重返聖堂": "returntosanctuary",
         "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "月英": "hotm",
-        "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon",
+        "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon", "傳奇召喚 - 額外抽獎": "tavernoflegendssecret",
         "挑戰節II - 吟遊詩人": "festival", "星界召喚": "astral", "挑戰節II - 殺手": "slayers",
         "野地召喚": "wilderness", "挑戰節I - 守護者": "teltoc", "挑戰節I - 肅煞森林": "fables",
         "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
@@ -90,10 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "Tower - Owls": "owltower", "Alliance - Knights Clash": "knights", "S6 - Mysteries of the Deep": "untoldtales1", "S7 - Treasures of Flame and Frost": "untoldtales2",
         "S3 - Valhalla": "season3", "S4 - Wilderness": "season4", "Challenge - Return to Sanctuary": "returntosanctuary",
         "Solstice Summon": "solstice", "Challenge - Carnival of Gods": "carnivalofgods", "Hero of the Month": "hotm",
-        "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon",
+        "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon", "Legends Summon - Extra Draw": "tavernoflegendssecret",
         "Challenge Festival II - Bards": "festival", "Astral Summon": "astral", "Challenge Festival II - Slayers": "slayers",
         "Wilderness Summon": "wilderness", "Challenge Festival I - Guardians": "teltoc", "Challenge Festival I - Grim Forest": "fables",
-        "Myth Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
+        "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
         "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2",
     };
     const sourceIconMap = {
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "love": "s1.png", "goblinvillage": "goblin.png", "secretsummon": "lucky.png",
         "festival": "challenge.png", "astral": "astralelves.png", "slayers": "challenge.png",
         "wilderness": "wilderness.png", "teltoc": "challenge.png", "fables": "challenge.png",
-        "tavernoflegends": "hotm.png", "birthday": "diamond.png", "blackfriday": "diamond.png",
+        "tavernoflegends": "hotm.png", "tavernoflegendssecret": "hotm.png", "birthday": "diamond.png", "blackfriday": "diamond.png",
         "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png", "challengefestival1": "challenge.png", "challengefestival2": "challenge.png"
     };
     const colorReverseMap = {

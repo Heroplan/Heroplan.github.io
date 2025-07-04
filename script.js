@@ -1,5 +1,127 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- 全局变量 ---
+    const classReverseMap = {
+        "Barbarian": "Barbarian", "野蛮人": "Barbarian", "野人": "Barbarian",
+        "Cleric": "Cleric", "牧师": "Cleric", "牧師": "Cleric",
+        "Druid": "Druid", "德鲁伊": "Druid", "德魯伊": "Druid",
+        "Fighter": "Fighter", "战士": "Fighter", "戰士": "Fighter",
+        "Monk": "Monk", "僧侣": "Monk", "僧侶": "Monk",
+        "Paladin": "Paladin", "圣骑士": "Paladin", "聖騎士": "Paladin",
+        "Ranger": "Ranger", "游侠": "Ranger", "遊俠": "Ranger",
+        "Rogue": "Rogue", "盗贼": "Rogue", "盜賊": "Rogue",
+        "Sorcerer": "Sorcerer", "术士": "Sorcerer", "術士": "Sorcerer",
+        "Wizard": "Wizard", "巫师": "Wizard", "巫師": "Wizard"
+    };
+    const aetherPowerReverseMap = {
+        "状态异常防御": "Ailment Defense", "異常防禦": "Ailment Defense",
+        "状态异常反弹": "Ailment Reflect", "異常反射": "Ailment Reflect",
+        "状态异常免疫": "Ailment Immunity", "異常免疫": "Ailment Immunity",
+        "攻击提升": "Attack Up", "攻擊提升": "Attack Up",
+        "生命恢复加成": "Boosted Regen", "回復已加成": "Boosted Regen",
+        "坚壁": "Bulwark", "壁壘": "Bulwark",
+        "净化": "Cleanse", "淨化": "Cleanse",
+        "反击": "Counterattack", "反擊": "Counterattack",
+        "减伤": "Damage Reduction", "傷害減少": "Damage Reduction",
+        "防御提升": "Defense Up", "防禦提升": "Defense Up",
+        "闪避": "Dodge", "閃避": "Dodge",
+        "恶魔抵抗": "Fiend Resist", "惡魔抵禦": "Fiend Resist",
+        "骑士之毅": "Knight's Endurance", "騎士的耐力": "Knight's Endurance",
+        "气运": "Gamble", "豪賭": "Gamble",
+        "治疗提升": "Heal Increase", "治療增加": "Heal Increase",
+        "法力加成": "Mana Boost",
+        "法力生成": "Mana Generation", "法力產出": "Mana Generation",
+        "木乃伊": "Mummy",
+        "伤害反弹": "Pain Return", "疼痛回歸": "Pain Return",
+        "怒气": "Rage", "憤怒": "Rage",
+        "生命恢复": "Regen", "回復": "Regen",
+        "复活": "Revive", "復活": "Revive",
+        "特殊护甲": "Special Armor", "特殊盔甲": "Special Armor",
+        "特殊技能加成": "Special Boost", "特殊加成": "Special Boost",
+        "嘲讽": "Taunt", "嘲諷": "Taunt",
+        "吸血": "Vampire", "吸血鬼": "Vampire"
+    };
+    const sourceReverseMap = {
+        // Simplified Chinese
+        "挑战节-恶棍": "villains", "联盟-火枪手": "musketeer", "挑战节-超能萌宠": "pets",
+        "月活动-农历生肖": "lunaryear", "挑战-贝奥武夫": "beowulf", "联盟-飞蛾": "moth",
+        "月活动-海滩派对": "beachparty", "月活动-卡勒瓦拉": "kalevala", "挑战节-阿瓦隆": "avalon",
+        "高塔-忍者": "ninja", "月活动-莫洛维亚": "morlovia", "月活动-飞沙帝国": "sand",
+        "三国召唤": "kingdom", "挑战节-仙境": "wonderland", "超级元素人": "superelemental",
+        "高塔-魔法": "magic", "高塔-冥河": "styx", "月活动-冬日": "christmas",
+        "月活动-春谷": "springvale", "挑战节-海盗": "pirates", "挑战节-星落": "starfall",
+        "挑战-石像鬼": "gargoyle", "S1-经典": "season1", "S2-亚特兰蒂斯": "season2",
+        "S5-沙丘": "season5", "神秘-暗影": "shadow", "盟约召唤": "covenant",
+        "高塔-猫头鹰": "owltower", "联盟-骑士冲击": "knights", "S6-S7-秘闻": "untoldtales",
+        "S3-瓦尔哈拉": "season3", "S4-蛮荒地界": "season4", "挑战-重返圣堂": "returntosanctuary",
+        "至日召唤": "solstice", "挑战-众神狂欢节": "carnivalofgods", "月英": "hotm",
+        "月活动-恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖-秘密召唤": "secretsummon",
+        "挑战节-吟游诗人": "festival", "星体召唤": "astral", "挑战节-杀手": "slayers",
+        "荒野召唤": "wilderness", "挑战节-守护者": "teltoc", "挑战节-肃煞森林": "fables",
+        "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
+        "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战-歌剧之谜": "opera",
+        // Traditional Chinese
+        "挑戰節-惡棍": "villains", "聯盟-火槍手": "musketeer", "挑戰節-強大寵物": "pets",
+        "月活動-農曆新年": "lunaryear", "挑戰-貝武夫": "beowulf", "聯盟-飛蛾": "moth",
+        "月活動-海灘派對": "beachparty", "月活動-卡勒瓦拉": "kalevala", "挑戰節-阿瓦隆": "avalon",
+        "高塔-忍者": "ninja", "月活動-莫洛維亞": "morlovia", "月活動-飛沙帝國": "sand",
+        "三國召喚": "kingdom", "挑戰節-仙境": "wonderland", "超級元素": "superelemental",
+        "高塔-魔法": "magic", "高塔-冥河": "styx", "月活動-冬季": "christmas",
+        "月活動-斯普林維爾": "springvale", "挑戰節-海盜": "pirates", "挑戰節-星隕": "starfall",
+        "挑戰-石像鬼": "gargoyle", "S1-經典": "season1", "S2-亞特蘭蒂斯": "season2",
+        "S5-沙丘": "season5", "神秘-暗影": "shadow", "聖約召喚": "covenant",
+        "高塔-貓頭鷹": "owltower", "聯盟-騎士衝擊": "knights", "S6-S7-隱秘傳說": "untoldtales",
+        "S3-瓦爾哈拉": "season3", "S4-地底荒野": "season4", "挑戰-重返聖堂": "returntosanctuary",
+        "至日召喚": "solstice", "挑戰-眾神狂歡節": "carnivalofgods", "月英": "hotm",
+        "月活動-戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎-秘密召喚": "secretsummon",
+        "挑戰節-吟遊詩人": "festival", "星界召喚": "astral", "挑戰節-殺手": "slayers",
+        "野地召喚": "wilderness", "挑戰節-守護者": "teltoc", "挑戰節-肅煞森林": "fables",
+        "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
+        "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰-歌劇秘辛": "opera",
+        // English
+        "Challenge Festival-Villains": "villains", "Alliance-Musketeers": "musketeer", "Challenge Festival-Pets": "pets",
+        "Monthly Event-Lunar Year": "lunaryear", "Challenge-Beowulf": "beowulf", "Alliance-Moths": "moth",
+        "Monthly Event-Beach Party": "beachparty", "Monthly Event-Kalevala": "kalevala", "Challenge Festival-Avalon": "avalon",
+        "Tower-Ninjas": "ninja", "Monthly Event-Morlovia": "morlovia", "Monthly Event-Sand Empire": "sand",
+        "Three Kingdoms Summon": "kingdom", "Challenge Festival-Wonderland": "wonderland", "Super Elementals": "superelemental",
+        "Tower-Magic": "magic", "Tower-Styx": "styx", "Monthly Event-Winter": "christmas",
+        "Monthly Event-Springvale": "springvale", "Challenge Festival-Pirates": "pirates", "Challenge Festival-Starfall": "starfall",
+        "Challenge-Gargoyle": "gargoyle", "S1-Classic": "season1", "S2-Atlantis": "season2",
+        "S5-Dune": "season5", "Mystery-Shadow": "shadow", "Covenant Summon": "covenant",
+        "Tower-Owls": "owltower", "Alliance-Knights Clash": "knights", "S6-S7-Untold Tales": "untoldtales",
+        "S3-Valhalla": "season3", "S4-Wilderness": "season4", "Challenge-Return to Sanctuary": "returntosanctuary",
+        "Solstice Summon": "solstice", "Challenge-Carnival of Gods": "carnivalofgods", "Hero of the Month": "hotm",
+        "Monthly Event-Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw-Secret Summon": "secretsummon",
+        "Challenge Festival-Bards": "festival", "Astral Summon": "astral", "Challenge Festival-Slayers": "slayers",
+        "Wilderness Summon": "wilderness", "Challenge Festival-Guardians": "teltoc", "Challenge Festival-Grim Forest": "fables",
+        "Myth Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
+        "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge-Secrets of the Opera": "opera"
+    };
+    const sourceIconMap = {
+        "villains": "challenge.png", "musketeer": "alliance_quest.png", "pets": "challenge.png",
+        "lunaryear": "S1.png", "beowulf": "challenge.png", "moth": "challenge.png",
+        "beachparty": "S1.png", "kalevala": "S1.png", "avalon": "challenge.png",
+        "ninja": "tower.png", "morlovia": "S1.png", "sand": "S1.png",
+        "kingdom": "mercenary_war.png", "wonderland": "challenge.png", "superelemental": "elemental.png",
+        "magic": "tower.png", "styx": "tower.png", "christmas": "S1.png",
+        "springvale": "S1.png", "pirates": "challenge.png", "starfall": "challenge.png",
+        "gargoyle": "challenge.png", "season1": "S1.png", "season2": "S2.png",
+        "season5": "S5.png", "shadow": "shadow.png", "covenant": "covenant.png",
+        "owltower": "tower.png", "knights": "alliance_quest.png", "untoldtales": "S6.png",
+        "season3": "S3.png", "season4": "S4.png", "returntosanctuary": "challenge.png",
+        "solstice": "diamond.png", "carnivalofgods": "challenge.png", "hotm": "hotm.png",
+        "love": "S1.png", "goblinvillage": "goblin.png", "secretsummon": "lucky.png",
+        "festival": "challenge.png", "astral": "astralelves.png", "slayers": "challenge.png",
+        "wilderness": "wilderness.png", "teltoc": "challenge.png", "fables": "challenge.png",
+        "tavernoflegends": "hotm.png", "birthday": "diamond.png", "blackfriday": "diamond.png",
+        "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png"
+    };
+    const colorReverseMap = {
+        '红色': 'Red', '紅色': 'Red', 'red': 'Red',
+        '蓝色': 'Blue', '藍色': 'Blue', 'blue': 'Blue',
+        '绿色': 'Green', '綠色': 'Green', 'green': 'Green',
+        '黄色': 'Yellow', '黃色': 'Yellow', 'yellow': 'Yellow',
+        '紫色': 'Purple', 'purple': 'Purple'
+    };
     let farmGuideScrollHandler = null;
     let scrollPositions = {
         list: { top: 0, left: 0 },
@@ -917,6 +1039,39 @@ document.addEventListener('DOMContentLoaded', function () {
         renderTable(filteredHeroes);
     }
 
+    function getSkinInfo(hero) {
+        const name = hero.name || '';
+        if (!name) return { skinIdentifier: null, baseName: name };
+
+        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+        const skinMatch = name.match(skinPattern);
+
+        if (skinMatch && skinMatch[1] && hero.costume_id !== 0) {
+            const potentialSkin = skinMatch[1].toLowerCase();
+            if (potentialSkin.match(/^c\d+$/) || ['glass', 'toon', '玻璃'].includes(potentialSkin) || potentialSkin.endsWith('卡通') || potentialSkin.endsWith('皮肤') || potentialSkin.endsWith('皮膚')) {
+                return {
+                    skinIdentifier: skinMatch[1],
+                    baseName: name.substring(0, name.length - skinMatch[0].length).trim()
+                };
+            }
+        }
+        return { skinIdentifier: null, baseName: name };
+    }
+
+    function getCostumeIconName(skinIdentifier) {
+        if (!skinIdentifier) return null;
+        const lowerSkin = String(skinIdentifier).toLowerCase();
+
+        if (lowerSkin.startsWith('c')) {
+            const match = lowerSkin.match(/^c\d+/);
+            if (match) return match[0]; // returns 'c1', 'c2'
+        }
+        if (lowerSkin.includes('glass') || lowerSkin.includes('玻璃')) return 'glass';
+        if (lowerSkin.includes('toon') || lowerSkin.includes('卡通')) return 'toon';
+
+        return null;
+    }
+
     function renderTable(heroes) {
         if (!heroTable) return;
 
@@ -980,12 +1135,35 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     typesToShow.sort((a, b) => a.localeCompare(b));
                     content = typesToShow.join(', ');
-                } else if (key === 'power' || key === 'attack' || key === 'defense' || key === 'health') {
-                    // +++ 修改: 从 displayStats 获取属性值 +++
-                    content = hero.displayStats[key] || 0;
+                } else if (key === 'power') {
+                    content = `💪 ${hero.displayStats[key] || 0}`;
+                } else if (key === 'attack') {
+                    content = `⚔️ ${hero.displayStats[key] || 0}`;
+                } else if (key === 'defense') {
+                    content = `🛡️ ${hero.displayStats[key] || 0}`;
+                } else if (key === 'health') {
+                    content = `❤️ ${hero.displayStats[key] || 0}`;
+                } else if (key === 'star') {
+                    content = `${hero[key] || ''}⭐`;
                 } else {
                     content = hero[key] || '';
                 }
+
+                if (key === 'name' && hero.costume_id !== 0) {
+                    const skinInfo = getSkinInfo(hero);
+                    if (skinInfo.skinIdentifier) {
+                        const iconName = getCostumeIconName(skinInfo.skinIdentifier);
+                        if (iconName) {
+                            content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
+                        }
+                    }
+                }
+
+                if (key === 'class' && content) {
+                    const englishClass = classReverseMap[content] || content;
+                    content = `<img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${content}"/>${content}`;
+                }
+
                 if (key === 'fav') {
                     if (!hero.english_name) return `<td class="col-fav"></td>`;
                     return `<td class="col-fav"><span class="favorite-toggle-icon ${isHeroFavorite ? 'favorited' : ''}" data-hero-id="${hero.originalIndex}">${isHeroFavorite ? '★' : '☆'}</span></td>`;
@@ -995,8 +1173,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     return `<td class="col-image"><img src="${getLocalImagePath(hero.image)}" class="hero-image ${heroColorClass}" alt="${hero.name}" loading="lazy"></td>`;
                 }
                 if (key === 'color') {
-                    const colorHex = getColorHex(content);
-                    return `<td class="col-color"><span class="color-text-outlined" style="color: ${colorHex}; font-weight: bold;">${content}</span></td>`;
+                    const displayedColor = content; // content is hero.color
+                    if (displayedColor) {
+                        const englishColor = colorReverseMap[String(displayedColor).toLowerCase()] || displayedColor;
+                        // 只返回图标，并添加 title 属性用于悬浮提示
+                        const iconHtml = `<img src="imgs/colors/${englishColor}.png" class="color-icon" alt="${displayedColor}" title="${displayedColor}"/>`;
+                        return `<td class="col-color">${iconHtml}</td>`;
+                    } else {
+                        return `<td class="col-color"></td>`;
+                    }
                 }
                 if (key === 'family' && content) {
                     content = family_values[String(content).toLowerCase()] || content;
@@ -1284,21 +1469,13 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // --- 英雄名称和皮肤解析逻辑 ---
-        let rawHeroName = hero.name || 'Unknown Hero';
-        let tempName = rawHeroName;
+        const skinInfo = getSkinInfo(hero);
+        const heroSkin = skinInfo.skinIdentifier;
+        let tempName = skinInfo.baseName;
         let mainHeroName = '';
         let englishName = '';
         let traditionalChineseName = '';
-        let heroSkin = '';
-        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-        const skinMatch = tempName.match(skinPattern);
-        if (skinMatch && skinMatch[1]) {
-            const potentialSkin = skinMatch[1].toLowerCase();
-            if (potentialSkin.match(/^c\d+$/) || ['glass', 'toon', '玻璃'].includes(potentialSkin) || potentialSkin.endsWith('卡通') || potentialSkin.endsWith('皮肤') || potentialSkin.endsWith('皮膚')) {
-                heroSkin = skinMatch[1];
-                tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
-            }
-        }
+
         if (currentLang === 'en') {
             mainHeroName = tempName;
         } else {
@@ -1316,6 +1493,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
+
 
         // --- 家族加成和技能类型逻辑 ---
         const heroFamily = String(hero.family || '').toLowerCase();
@@ -1351,7 +1529,56 @@ document.addEventListener('DOMContentLoaded', function () {
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
 
-        // +++ 修改：将选择器HTML单独定义，以便插入到新位置 +++
+        // --- 职业图标逻辑 ---
+        const displayedClass = hero.class;
+        let classBlockHTML = '';
+        if (displayedClass) {
+            const englishClass = classReverseMap[displayedClass] || displayedClass;
+            classBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${displayedClass}" title="${langDict.filterBy} ${displayedClass}"><img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${displayedClass}"/>${displayedClass}</span>`;
+        }
+
+        // --- 皮肤信息块逻辑 ---
+        let skinBlockHTML = '';
+        if (heroSkin) {
+            const iconName = getCostumeIconName(heroSkin);
+            const iconHtml = iconName ? `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume"/>` : '👕';
+            skinBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">${iconHtml}${langDict.modalSkin} ${heroSkin}</span>`;
+        }
+
+        // --- 以太力量信息块逻辑 ---
+        let aetherPowerBlockHTML = '';
+        if (hero.AetherPower) {
+            const displayedPower = hero.AetherPower;
+            const englishPower = aetherPowerReverseMap[displayedPower] || displayedPower;
+            const iconHtml = `<img src="imgs/Aether Power/${englishPower}.png" class="aether-power-icon" alt="${displayedPower}"/>`;
+            aetherPowerBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${displayedPower}" title="${langDict.filterBy} ${displayedPower}">⏫${iconHtml}${displayedPower}</span>`;
+        }
+
+        // --- 起源信息块逻辑 (修正版) ---
+        let sourceBlockHTML = '';
+        if (hero.source) {
+            const displayedSource = hero.source;
+            const sourceKey = sourceReverseMap[displayedSource];
+            let iconHtml = '';
+
+            // *** 新增逻辑：检查是否为S1且有皮肤的英雄 ***
+            if (sourceKey === 'season1' && hero.costume_id !== 0) {
+                iconHtml = `<img src="imgs/coins/costume_key.png" class="source-icon" alt="Costume Key"/>`;
+            } else {
+                // 如果不是，则执行原来的逻辑
+                if (sourceKey) {
+                    const iconFilename = sourceIconMap[sourceKey];
+                    if (iconFilename) {
+                        iconHtml = `<img src="imgs/coins/${iconFilename}" class="source-icon" alt="${displayedSource}"/>`;
+                    }
+                }
+            }
+
+            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">🌍${iconHtml}${displayedSource}</span>`;
+        }
+
+
+        // --- 选择器HTML ---
         const selectorsHTML = `
     <div class="details-core-settings-header">
         <h4>${langDict.defaultStatSettingsTitle}</h4>
@@ -1384,11 +1611,10 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
     </div>
-`;
+    `;
 
         // --- 完整的模态框HTML结构 ---
-        // +++ 修改：调整了核心属性区域的布局，将设置项移到属性下方并添加分组边框 +++
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}" title="${langDict.filterBy} ${hero.class}">🎓 ${hero.class}</span>` : ''}${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${hero.source}">🌍 ${hero.source}</span>` : ''}${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">👕 ${langDict.modalSkin} ${heroSkin}</span>` : ''}${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}" title="${langDict.filterBy} ${hero.AetherPower}">⏫ ${hero.AetherPower}</span>` : ''}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}">${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${hero.family}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>` : ''}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${hero.family}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
         modalContent.innerHTML = detailsHTML;
 
         // --- 核心修正逻辑 ---

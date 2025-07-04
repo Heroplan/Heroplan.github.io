@@ -1574,7 +1574,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
 
-            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">🌍${iconHtml}${displayedSource}</span>`;
+            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">${iconHtml}${displayedSource}</span>`;
         }
 
 

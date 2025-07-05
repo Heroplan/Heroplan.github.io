@@ -432,3 +432,21 @@
     margin-left: auto;
     /* 将数值推到最右侧 */
 }
+/* ==========================================================================
+   新增：为禁用的自定义复选框按钮添加样式
+   ========================================================================== */
+
+.checkbox-container input[type="checkbox"]:disabled+.checkbox-label {
+    background-color: var(--md-sys-color-surface-variant);
+    /* 恢复到中性背景色 */
+    color: var(--md-sys-color-outline);
+    /* 文字颜色变灰，以示禁用 */
+    cursor: not-allowed;
+    /* 鼠标悬浮时显示禁止图标 */
+    opacity: 0.6;
+    /* 整体变淡 */
+    box-shadow: none;
+    /* 移除可能存在的辉光效果 */
+    pointer-events: none;
+    /* 禁用所有鼠标事件，如悬浮效果 */
+}

@@ -214,6 +214,9 @@ const i18n = {
         foodCostLabel: "食物:",
         ironCostLabel: "铁矿:",
         masterEmblemCostLabel: "大师纹章:",
+        manaPriorityHelpTitle: "法力优先说明",
+        manaPriorityHelpLine1: "突破后属性和天赋升级消耗资源数据均来自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
+        manaPriorityHelpLine2: "法力优先则以法力为最优先级，必定升级法力的天赋。",
 
 
     },
@@ -332,6 +335,9 @@ const i18n = {
         foodCostLabel: "食物:",
         ironCostLabel: "鐵礦:",
         masterEmblemCostLabel: "大師紋章:",
+        manaPriorityHelpTitle: "法力優先說明",
+        manaPriorityHelpLine1: "突破後屬性和天賦升級消耗資源數據均來自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
+        manaPriorityHelpLine2: "法力優先則以法力為最優先級,必定升級法力的天賦。",
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -448,5 +454,8 @@ const i18n = {
         foodCostLabel: "Food:",
         ironCostLabel: "Iron:",
         masterEmblemCostLabel: "Master Emblems:",
+        manaPriorityHelpTitle: "Mana Priority Help",
+        manaPriorityHelpLine1: "Limit-broken stats and talent upgrade costs are sourced from <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>.",
+        manaPriorityHelpLine2: "Mana Priority gives mana nodes the highest priority, ensuring they are always selected in the talent path.",
     }
 };

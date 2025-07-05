@@ -2459,3 +2459,72 @@ hr.divider {
         /* 让控件占据剩余空间 */
     }
 }
+/* ==========================================================================
+   新增：法力优先帮助按钮的容器样式
+   ========================================================================== */
+.details-selector-item .input-with-help {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ==========================================================================
+   新增：法力优先帮助模态框的样式
+   ========================================================================== */
+#mana-help-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--md-sys-color-surface);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    max-width: 650px;
+    width: 85%;
+    max-height: 85vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+}
+
+#mana-help-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#mana-help-modal.stacked-modal {
+    z-index: 1003;
+}
+
+#mana-help-modal-overlay.stacked-modal-overlay {
+    z-index: 1002;
+}
+
+#mana-help-modal h3 {
+    font-size: 1.6rem;
+    color: var(--md-sys-color-primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#mana-help-modal p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--md-sys-color-on-surface);
+}
+
+#mana-help-modal a {
+    color: var(--md-sys-color-primary);
+    text-decoration: underline;
+}

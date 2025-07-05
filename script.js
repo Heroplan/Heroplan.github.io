@@ -2203,6 +2203,46 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addEventListeners() {
+        // --- DOM 元素获取 ---
+        const manaPriorityHelpBtn = document.getElementById('mana-priority-help-btn');
+        const manaHelpModal = document.getElementById('mana-help-modal');
+        const manaHelpModalOverlay = document.getElementById('mana-help-modal-overlay');
+
+        /**
+         * 【已修正】打开法力优先帮助模态框
+         * 使用 innerHTML 确保超链接能正确渲染
+         */
+        function openManaHelpModal() {
+            const langDict = i18n[currentLang];
+
+            // 【核心修正】确保包含HTML链接的内容被正确解析
+            const contentHTML = `
+                <h3>${langDict.manaPriorityHelpTitle}</h3>
+                <p>${langDict.manaPriorityHelpLine1}</p>
+                <p>${langDict.manaPriorityHelpLine2}</p>
+                <div class="modal-footer">
+                    <button class="close-bottom-btn" id="close-mana-help-btn">${langDict.detailsCloseBtn}</button>
+                </div>
+            `;
+            manaHelpModal.innerHTML = contentHTML;
+
+            manaHelpModal.classList.add('stacked-modal');
+            manaHelpModalOverlay.classList.add('stacked-modal-overlay');
+            manaHelpModal.classList.remove('hidden');
+            manaHelpModalOverlay.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+            history.pushState({ modal: 'manaHelp' }, null);
+            modalStack.push('manaHelp');
+            document.getElementById('close-mana-help-btn').addEventListener('click', closeManaHelpModal);
+        }
+
+        function closeManaHelpModal() {
+            if (!manaHelpModal.classList.contains('hidden')) {
+                history.back();
+            }
+        }
+
+        // --- 原有的事件监听逻辑 ---
         if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
         if (langSelectBtn) {
             langSelectBtn.addEventListener('click', (event) => {
@@ -2282,15 +2322,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // 【修正】为全局默认属性选择器添加包含禁用逻辑的事件监听
         function handleDefaultSettingsChange() {
-            // 联动禁用/启用逻辑
             const selectedTalentLevel = defaultTalentSelect.value;
             const isDisabled = selectedTalentLevel === 'none';
             defaultTalentStrategySelect.disabled = isDisabled;
             defaultManaPriorityCheckbox.disabled = isDisabled;
-
-            // 保存设置到Cookie并重新渲染列表
             setCookie('defaultLB', defaultLimitBreakSelect.value, 365);
             setCookie('defaultTalent', selectedTalentLevel, 365);
             setCookie('defaultTalentStrategy', defaultTalentStrategySelect.value, 365);
@@ -2302,7 +2338,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (defaultTalentSelect) defaultTalentSelect.addEventListener('change', handleDefaultSettingsChange);
         if (defaultTalentStrategySelect) defaultTalentStrategySelect.addEventListener('change', handleDefaultSettingsChange);
         if (defaultManaPriorityCheckbox) defaultManaPriorityCheckbox.addEventListener('change', handleDefaultSettingsChange);
-
 
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
@@ -2385,6 +2420,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (showWantedMissionBtn) showWantedMissionBtn.addEventListener('click', () => initAndShowWantedMissionView());
         if (showFarmingGuideBtn) showFarmingGuideBtn.addEventListener('click', () => initAndShowFarmingGuideView());
 
+        if (manaPriorityHelpBtn) manaPriorityHelpBtn.addEventListener('click', openManaHelpModal);
+        if (manaHelpModalOverlay) manaHelpModalOverlay.addEventListener('click', closeManaHelpModal);
+
         if (shareFavoritesBtn) {
             shareFavoritesBtn.addEventListener('click', () => {
                 const favorites = getFavorites();
@@ -2404,7 +2442,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         shareFavoritesBtn.disabled = false;
                     }, 2000);
                 }).catch(err => {
-                    console.error('复制收藏夹链接失败：', err);
+                    console.error('复制链接失败：', err);
                     alert(i18n[currentLang].copyLinkFailed);
                 });
             });
@@ -2442,6 +2480,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else if (lastOpenModalId === 'skillTypeHelp') {
                     if (skillTypeHelpModal) { skillTypeHelpModal.classList.add('hidden'); skillTypeHelpModal.classList.remove('stacked-modal'); }
                     if (skillTypeHelpModalOverlay) { skillTypeHelpModalOverlay.classList.add('hidden'); skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
+                } else if (lastOpenModalId === 'manaHelp') {
+                    if (manaHelpModal) { manaHelpModal.classList.add('hidden'); manaHelpModal.classList.remove('stacked-modal'); }
+                    if (manaHelpModalOverlay) { manaHelpModalOverlay.classList.add('hidden'); manaHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
                 return;

@@ -956,7 +956,8 @@ input[type="number"] {
 }
 
 #modal .details-selector-item select {
-    background-color: var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-background);
+    /* 【修正】背景色与标准筛选框统一 */
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
     padding: 0.5rem 1rem;
@@ -964,7 +965,8 @@ input[type="number"] {
     text-align-last: center;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-on-surface);
+    /* 【修正】文字颜色也一并统一 */
     width: 100%;
     box-sizing: border-box;
     -webkit-appearance: none;
@@ -1017,7 +1019,8 @@ html.dark-theme #modal .details-selector-item select {
 }
 
 .default-stat-selectors .details-selector-item select {
-    background-color: var(--md-sys-color-surface-variant);
+    background-color: var(--md-sys-color-background);
+    /* 【修正】背景色与标准筛选框统一 */
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
     padding: 0.5rem 1rem;
@@ -1025,7 +1028,8 @@ html.dark-theme #modal .details-selector-item select {
     text-align-last: center;
     font-size: 0.95rem;
     font-weight: 500;
-    color: var(--md-sys-color-on-surface-variant);
+    color: var(--md-sys-color-on-surface);
+    /* 【修正】文字颜色也一并统一 */
     width: 100%;
     box-sizing: border-box;
     -webkit-appearance: none;

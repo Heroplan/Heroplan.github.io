@@ -152,22 +152,43 @@ const TalentTree = (() => {
     };
 
     const _getSmartPath = (targetNodeId) => {
-        const path = new Set();
-        let q = [targetNodeId];
-        let visited = new Set([targetNodeId]);
-        while (q.length > 0) {
-            const currentId = q.shift();
-            path.add(currentId);
-            const nodeInfo = talentData[currentId];
-            if (!nodeInfo.prereq) continue;
-            const activePrereq = nodeInfo.prereq.find(p => selectedNodes.has(p));
-            const prereqToFollow = activePrereq || nodeInfo.prereq[0];
-            if (prereqToFollow && !visited.has(prereqToFollow)) {
-                visited.add(prereqToFollow);
-                q.push(prereqToFollow);
+        // 【核心修正】使用递归算法，智能寻找连接到已选节点的最短路径
+
+        // 内部递归辅助函数
+        function findShortestPath(nodeId) {
+            // 基本情况1: 如果当前节点已经是亮的，我们找到了连接点，返回路径
+            if (selectedNodes.has(nodeId)) {
+                return [nodeId];
             }
+
+            const nodeInfo = talentData[nodeId];
+            // 基本情况2: 如果到达了根节点（没有父节点），返回路径
+            if (!nodeInfo || !nodeInfo.prereq) {
+                return [nodeId];
+            }
+
+            let bestPath = null;
+
+            // 探索所有父路径
+            for (const parentId of nodeInfo.prereq) {
+                const subPath = findShortestPath(parentId);
+                if (subPath) {
+                    // 如果找到了第一条路径，或者找到了更短的路径，则更新最佳路径
+                    if (bestPath === null || subPath.length < bestPath.length) {
+                        bestPath = subPath;
+                    }
+                }
+            }
+
+            // 将当前节点添加到最佳路径的前面并返回
+            if (bestPath) {
+                return [nodeId, ...bestPath];
+            }
+            return null; // 理论上不应发生，因为总能回到根节点
         }
-        return path;
+
+        const foundPath = findShortestPath(targetNodeId);
+        return new Set(foundPath || []);
     };
 
     const _findGuidedSegment = (forkNode, mergeNode, viaNodeId) => {

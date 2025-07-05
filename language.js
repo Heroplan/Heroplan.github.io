@@ -380,7 +380,7 @@ const i18n = {
         healthPriority: "Health > Defense > Attack",
         manaPriorityLabel: "Mana Node:",
         manaPriorityToggle: "Prioritize",
-        modalTalentSettingsTitle: "Break & Talent Settings",
+        modalTalentSettingsTitle: "Limit Break & Talent Settings",
         talentTreeTitle: "Class Talent Tree", modalSettings: "Settings", defaultStatSettingsTitle: "LB Talent Settings", toggleCollapse: "Click to collapse/expand", modalSkillDetails: "📖 Skill Details",
         modalSkillName: "📄 Name:", modalSpeed: "⌛ Speed:", modalSkillType: "🏷️ Skill Type:",
         modalSpecialSkill: "✨ Special Skill:", modalPassiveSkill: "🧿 Passive Skill:",

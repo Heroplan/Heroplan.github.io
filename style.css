@@ -992,12 +992,6 @@ html.dark-theme #modal .details-selector-item select {
     cursor: not-allowed;
 }
 
-.default-stat-selectors {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-}
 
 /* 复用英雄详情页的样式以保持一致 */
 .default-stat-selectors .details-selector-item {
@@ -1006,12 +1000,20 @@ html.dark-theme #modal .details-selector-item select {
     align-items: stretch;
 }
 
-.default-stat-selectors .details-selector-item label {
+.default-stat-selectors {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--md-sys-color-on-surface-variant);
     margin-bottom: 4px;
     text-align: center;
+}
+
+.details-selector-item label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+    margin-bottom: 4px;
+    text-align: left;
 }
 
 .default-stat-selectors .details-selector-item select {
@@ -1459,37 +1461,45 @@ footer .footer-credit {
 }
 
 /* ========== 英雄头像辉光效果 ========== */
-.red-glow-border {
+/* 【修正】提高选择器优先级，确保辉光效果能覆盖默认样式 */
+#modal .red-glow-border,
+.manual-table .red-glow-border {
     box-shadow: var(--hero-glow-red);
     border-color: var(--hero-color-red);
 }
 
-.blue-glow-border {
+#modal .blue-glow-border,
+.manual-table .blue-glow-border {
     box-shadow: var(--hero-glow-blue);
     border-color: var(--hero-color-blue);
 }
 
-.green-glow-border {
+#modal .green-glow-border,
+.manual-table .green-glow-border {
     box-shadow: var(--hero-glow-green);
     border-color: var(--hero-color-green);
 }
 
-.yellow-glow-border {
+#modal .yellow-glow-border,
+.manual-table .yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
     border-color: var(--hero-color-yellow);
 }
 
-.purple-glow-border {
+#modal .purple-glow-border,
+.manual-table .purple-glow-border {
     box-shadow: var(--hero-glow-purple);
     border-color: var(--hero-color-purple);
 }
 
-.white-glow-border {
+#modal .white-glow-border,
+.manual-table .white-glow-border {
     box-shadow: var(--hero-glow-white);
     border-color: var(--hero-color-white);
 }
 
-.black-glow-border {
+#modal .black-glow-border,
+.manual-table .black-glow-border {
     box-shadow: var(--hero-glow-black);
     border-color: var(--hero-color-black);
 }
@@ -1910,9 +1920,11 @@ h1.hero-main-name.skill-type-tag:hover {
     /* 高级筛选 -> 列表默认属性设置: 桌面端改为3个一行，并调整比例 */
     .default-stat-selectors {
         display: grid;
-        grid-template-columns: 15fr 19fr 26fr;
+        grid-template-columns: 1fr 1fr;
+        /* 新的2x2网格布局 */
         gap: 0.75rem;
-        align-items: center;
+        align-items: flex-start;
+        /* 顶部对齐 */
     }
 
     #modal .details-selector-item label {
@@ -2404,4 +2416,42 @@ hr.divider {
 #io-splitter:hover {
     background-color: var(--md-sys-color-primary);
     /* 悬浮时高亮 */
+}
+
+/* ==========================================================================
+   新增：全局天赋筛选控件的布局微调
+   ========================================================================== */
+
+/* 确保在移动设备上，标签在控件上方显示 */
+@media (max-width: 768px) {
+    .global-talent-settings-wrapper .filter-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .global-talent-settings-wrapper .filter-item label {
+        width: auto;
+        min-width: auto;
+        margin-bottom: 5px;
+    }
+}
+
+/* 在桌面端，让标签和控件在同一行对齐 */
+@media (min-width: 769px) {
+    .global-talent-settings-wrapper .filter-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .global-talent-settings-wrapper .filter-item label {
+        width: 40%;
+        /* 给予标签固定宽度比例 */
+        flex-shrink: 0;
+    }
+
+    .global-talent-settings-wrapper .details-selector-item,
+    .global-talent-settings-wrapper .checkbox-container {
+        width: 60%;
+        /* 让控件占据剩余空间 */
+    }
 }

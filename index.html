@@ -32,7 +32,9 @@
             // 需要进行缓存破坏处理的本地资源文件
             const localAssets = [
                 { selector: 'link[href="style.css"]', attribute: 'href' },
+                { selector: 'link[href="talent-tree.css"]', attribute: 'href' },
                 { selector: 'script[src="./script.js"]', attribute: 'src' },
+                { selector: 'script[src="./talent-tree.js"]', attribute: 'src' },
             ];
 
             // 延迟执行，确保DOM元素已加载
@@ -76,13 +78,14 @@
     <meta id="meta-description" name="description"
         content="Heroplan是為《帝國與謎題 / 帝国与谜题》(Empires & Puzzles)玩家打造的終極英雄資料庫(资料库)。快速查詢(查询)和比較(比较)所有英雄的詳細數據(详细数据)、特殊技能、家族加成和攻略信息。The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.">
     <meta name="keywords"
-        content="帝国与谜题, 帝國與謎題, Empires & Puzzles, 英雄, 攻略, 英雄资料, 英雄資料, 英雄数据, 英雄數據, Heroplan, 资料, 資料, 数据, 數據, Juno">
+        content="帝国与谜题, 帝國與謎題, Empires & Puzzles, 英雄, 攻略, 英雄资料, 英雄資料, 英雄数据, 英雄數據, Heroplan, 资料, 資料, 数据, 數據, Juno, 天赋模拟器, 天賦模擬器">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://heroplan.github.io/" />
     <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
         onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="talent-tree.css">
 </head>
 
 <body class="js-loading">
@@ -156,9 +159,7 @@
             <p data-lang-key="seoPara3">
                 除了英雄数据库，我们还集成了多种实用工具来提升您的游戏体验：使用创新的【<strong>聊天模拟器</strong>】，您可以轻松制作带自定义颜色和游戏表情的聊天内容并一键复制；查阅我们详尽的【<strong>材料出处指南</strong>】和【<strong>通缉任务</strong>】速查表，高效定位资源，优化您的游戏攻略。您可以收藏您喜爱的英雄组合，并通过链接将您的<strong>收藏列表</strong>分享给盟友。平台完整支持简/繁中文和英文，并提供日/夜间模式切换功能。
             </p>
-            </section>
-
-
+        </section>
 
         <div id="results-wrapper">
             <div class="results-header">
@@ -187,11 +188,13 @@
                         </div>
                         <div id="io-splitter"></div>
                         <textarea id="chat-simulator-input"></textarea>
-                        <button id="chat-simulator-copy-btn" class="action-button" data-lang-key="chatCopyBtn">复制内容</button>
+                        <button id="chat-simulator-copy-btn" class="action-button"
+                            data-lang-key="chatCopyBtn">复制内容</button>
                     </div>
-            
+
                     <div class="chat-simulator-panel chat-panel-colors">
-                        <h3 data-lang-key="chatPanelTitleColors">选择颜色<button class="panel-toggle-btn expanded">▼</button></h3>
+                        <h3 data-lang-key="chatPanelTitleColors">选择颜色<button
+                                class="panel-toggle-btn expanded">▼</button></h3>
                         <div class="panel-content">
                             <div id="custom-color-picker">
                                 <div id="sv-box">
@@ -205,9 +208,10 @@
                                 <div id="color-preview-box"></div>
                                 <div id="color-input-group">
                                     <input type="text" id="color-hex-code" readonly>
-                                    <button id="insert-color-btn" class="action-button" data-lang-key="chatInsertColorBtn">插入</button>
-                                    <button id="favorite-color-btn" class="action-button chat-favorite-btn" title="收藏此颜色"
-                                        data-lang-key="chatFavoriteColorBtn">⭐</button>
+                                    <button id="insert-color-btn" class="action-button"
+                                        data-lang-key="chatInsertColorBtn">插入</button>
+                                    <button id="favorite-color-btn" class="action-button chat-favorite-btn"
+                                        title="收藏此颜色" data-lang-key="chatFavoriteColorBtn">⭐</button>
                                 </div>
                             </div>
                             <div id="favorite-colors-container">
@@ -217,9 +221,10 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="chat-simulator-panel chat-panel-emojis">
-                        <h3 data-lang-key="chatPanelTitleEmojis">选择表情<button class="panel-toggle-btn expanded">▼</button></h3>
+                        <h3 data-lang-key="chatPanelTitleEmojis">选择表情<button
+                                class="panel-toggle-btn expanded">▼</button></h3>
                         <div class="panel-content">
                             <div id="emoji-grid">
                             </div>
@@ -310,28 +315,33 @@
                                 data-lang-key="passiveSkillLabel">被动技能文本:</label><input type="text" id="passives-input"
                                 placeholder=""></div>
 
-                                <div style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
-                                    <div class="filter-item">
-                                        <label>
-                                            <img src="imgs/event/herocoach.png" class="event-icon" alt="Hero Coach" />
-                                            <span data-lang-key="oneClickMaxEventLabel">一键满级活动日期:</span>
-                                        </label>
-                                        <div class="input-with-right-button">
-                                            <span id="one-click-max-date-display" class="date-display-box"></span>
-                                            <button id="filter-hero-730-btn" class="action-button-right" data-lang-key="filterButtonLabel">筛选</button>
-                                        </div>
-                                    </div>
-                                    <div class="filter-item">
-                                        <label>
-                                            <img src="imgs/event/visiting_outfitter.png" class="event-icon" alt="Visiting Outfitter" />
-                                            <span data-lang-key="purchaseCostumeEventLabel">购买服装活动日期:</span>
-                                        </label>
-                                        <div class="input-with-right-button">
-                                            <span id="purchase-costume-date-display" class="date-display-box"></span>
-                                            <button id="filter-costume-548-btn" class="action-button-right"
-                                                data-lang-key="filterButtonLabel">筛选</button>
-                                        </div>
-                                    </div>  </div>
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                            <div class="filter-item">
+                                <label>
+                                    <img src="imgs/event/herocoach.png" class="event-icon" alt="Hero Coach" />
+                                    <span data-lang-key="oneClickMaxEventLabel">一键满级活动日期:</span>
+                                </label>
+                                <div class="input-with-right-button">
+                                    <span id="one-click-max-date-display" class="date-display-box"></span>
+                                    <button id="filter-hero-730-btn" class="action-button-right"
+                                        data-lang-key="filterButtonLabel">筛选</button>
+                                </div>
+                            </div>
+                            <div class="filter-item">
+                                <label>
+                                    <img src="imgs/event/visiting_outfitter.png" class="event-icon"
+                                        alt="Visiting Outfitter" />
+                                    <span data-lang-key="purchaseCostumeEventLabel">购买服装活动日期:</span>
+                                </label>
+                                <div class="input-with-right-button">
+                                    <span id="purchase-costume-date-display" class="date-display-box"></span>
+                                    <button id="filter-costume-548-btn" class="action-button-right"
+                                        data-lang-key="filterButtonLabel">筛选</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
                             <div class="default-stat-selectors">
                                 <div class="details-selector-item">
@@ -351,11 +361,21 @@
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-priority-select" data-lang-key="prioritySetting">天赋优先级</label>
-                                    <select id="default-priority-select">
-                                        <option value="attack" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
-                                        <option value="defense" data-lang-key="defensePriority">防御 > 生命 > 攻击</option>
+                                    <label for="default-talent-strategy-select" data-lang-key="prioritySetting">天赋优先级</label>
+                                    <select id="default-talent-strategy-select">
+                                        <option value="atk-def-hp" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
+                                        <option value="atk-hp-def" data-lang-key="attackPriority2">攻击 > 生命 > 防御</option>
+                                        <option value="def-hp-atk" data-lang-key="defensePriority">防御 > 生命 > 攻击</option>
+                                        <option value="hp-def-atk" data-lang-key="healthPriority">生命 > 防御 > 攻击</option>
                                     </select>
+                                </div>
+                                <div class="details-selector-item">
+                                    <label for="default-mana-priority-checkbox" data-lang-key="manaPriorityLabel">法力节点</label>
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" id="default-mana-priority-checkbox">
+                                        <label for="default-mana-priority-checkbox" class="checkbox-label"
+                                            data-lang-key="manaPriorityToggle">优先选择</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -404,8 +424,10 @@
     </div>
 
     <script src="./language.js" defer></script>
-    <script src="./script.js" defer></script>
     <script src="./lz-string.min.js" defer></script>
+    <script src="./talent-tree.js" defer></script>
+    <script src="./script.js" defer></script>
+
 </body>
 <footer>
     <div>

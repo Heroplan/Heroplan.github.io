@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- 全局变量 ---
     const classReverseMap = {
-        "Barbarian": "Barbarian", "野蛮人": "Barbarian", "野人": "Barbarian",
-        "Cleric": "Cleric", "牧师": "Cleric", "牧師": "Cleric",
-        "Druid": "Druid", "德鲁伊": "Druid", "德魯伊": "Druid",
-        "Fighter": "Fighter", "战士": "Fighter", "戰士": "Fighter",
-        "Monk": "Monk", "僧侣": "Monk", "僧侶": "Monk",
-        "Paladin": "Paladin", "圣骑士": "Paladin", "聖騎士": "Paladin",
-        "Ranger": "Ranger", "游侠": "Ranger", "遊俠": "Ranger",
-        "Rogue": "Rogue", "盗贼": "Rogue", "盜賊": "Rogue",
-        "Sorcerer": "Sorcerer", "术士": "Sorcerer", "術士": "Sorcerer",
-        "Wizard": "Wizard", "巫师": "Wizard", "巫師": "Wizard"
+        "Barbarian": "barbarian", "野蛮人": "barbarian", "野人": "barbarian",
+        "Cleric": "cleric", "牧师": "cleric", "牧師": "cleric",
+        "Druid": "druid", "德鲁伊": "druid", "德魯伊": "druid",
+        "Fighter": "fighter", "战士": "fighter", "戰士": "fighter",
+        "Monk": "monk", "僧侣": "monk", "僧侶": "monk",
+        "Paladin": "paladin", "圣骑士": "paladin", "聖騎士": "paladin",
+        "Ranger": "ranger", "游侠": "ranger", "遊俠": "ranger",
+        "Rogue": "rogue", "盗贼": "rogue", "盜賊": "rogue",
+        "Sorcerer": "sorcerer", "术士": "sorcerer", "術士": "sorcerer",
+        "Wizard": "wizard", "巫师": "wizard", "巫師": "wizard"
     };
     const aetherPowerReverseMap = {
         "状态异常防御": "Ailment Defense", "異常防禦": "Ailment Defense",
@@ -199,6 +199,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { item: "Meteor Fragments", s1: "9-1", s2: "11-10H\n22-6N E", s3: "16-7N\n16-1H", s4: "21-1N\n1-6H", s5: "1-8N\n30-4H", s6: "2-8N\n2-21H" },
         { item: "Orichalcum Nugget", s1: "5-8", s2: "18-10H\n14-7N E", s3: "16-5N\n26-6H", s4: "20-4N\n1-2H", s5: "9-4N\n6-7H", s6: "2-25N\n2-8H" },
     ];
+    // 天赋升级消耗数据 (3星, 4星, 5星)
+    const costData = [{ "slot": 301, "emblem": 14, "emblemacc": 14, "food": "7,063", "foodacc": "7,063", "iron": "2,511", "ironacc": "2,511", "masteremblem": "", "masteremblemacc": "" }, { "slot": 302, "emblem": 7, "emblemacc": 21, "food": "8,591", "foodacc": "15,654", "iron": "3,054", "ironacc": "5,565", "masteremblem": "", "masteremblemacc": "" }, { "slot": 303, "emblem": 7, "emblemacc": 28, "food": "12,129", "foodacc": "27,783", "iron": "4,312", "ironacc": "9,877", "masteremblem": "", "masteremblemacc": "" }, { "slot": 304, "emblem": 14, "emblemacc": 42, "food": "21,895", "foodacc": "49,678", "iron": "7,784", "ironacc": "17,661", "masteremblem": "", "masteremblemacc": "" }, { "slot": 305, "emblem": 7, "emblemacc": 49, "food": "19,205", "foodacc": "68,883", "iron": "6,828", "ironacc": "24,489", "masteremblem": "", "masteremblemacc": "" }, { "slot": 306, "emblem": 7, "emblemacc": 56, "food": "22,743", "foodacc": "91,626", "iron": "8,086", "ironacc": "32,575", "masteremblem": "", "masteremblemacc": "" }, { "slot": 307, "emblem": 14, "emblemacc": 70, "food": "36,727", "foodacc": "128,353", "iron": "13,057", "ironacc": "45,632", "masteremblem": "", "masteremblemacc": "" }, { "slot": 308, "emblem": 17, "emblemacc": 87, "food": "31,352", "foodacc": "159,705", "iron": "11,145", "ironacc": "56,777", "masteremblem": "", "masteremblemacc": "" }, { "slot": 309, "emblem": 7, "emblemacc": 94, "food": "33,356", "foodacc": "193,061", "iron": "11,860", "ironacc": "68,637", "masteremblem": "", "masteremblemacc": "" }, { "slot": 310, "emblem": 17, "emblemacc": 111, "food": "38,792", "foodacc": "231,853", "iron": "13,789", "ironacc": "82,426", "masteremblem": "", "masteremblemacc": "" }, { "slot": 311, "emblem": 7, "emblemacc": 118, "food": "40,432", "foodacc": "272,285", "iron": "14,376", "ironacc": "96,802", "masteremblem": "", "masteremblemacc": "" }, { "slot": 312, "emblem": 14, "emblemacc": 132, "food": "61,448", "foodacc": "333,733", "iron": "21,845", "ironacc": "118,647", "masteremblem": "", "masteremblemacc": "" }, { "slot": 313, "emblem": 7, "emblemacc": 139, "food": "47,507", "foodacc": "381,240", "iron": "16,891", "ironacc": "135,538", "masteremblem": "", "masteremblemacc": "" }, { "slot": 314, "emblem": 7, "emblemacc": 146, "food": "51,045", "foodacc": "432,285", "iron": "18,149", "ironacc": "153,687", "masteremblem": "", "masteremblemacc": "" }, { "slot": 315, "emblem": 14, "emblemacc": 160, "food": "76,280", "foodacc": "508,565", "iron": "27,118", "ironacc": "180,805", "masteremblem": "", "masteremblemacc": "" }, { "slot": 316, "emblem": 7, "emblemacc": 167, "food": "58,121", "foodacc": "566,686", "iron": "20,665", "ironacc": "201,470", "masteremblem": "", "masteremblemacc": "" }, { "slot": 317, "emblem": 7, "emblemacc": 174, "food": "61,658", "foodacc": "628,344", "iron": "21,923", "ironacc": "223,393", "masteremblem": "", "masteremblemacc": "" }, { "slot": 318, "emblem": 7, "emblemacc": 181, "food": "65,196", "foodacc": "693,540", "iron": "23,181", "ironacc": "246,574", "masteremblem": "", "masteremblemacc": "" }, { "slot": 319, "emblem": 17, "emblemacc": 198, "food": "72,270", "foodacc": "765,810", "iron": "25,690", "ironacc": "272,264", "masteremblem": "", "masteremblemacc": "" }, { "slot": 320, "emblem": 35, "emblemacc": 233, "food": "98,226", "foodacc": "864,036", "iron": "34,920", "ironacc": "307,184", "masteremblem": "", "masteremblemacc": "" }, { "slot": 321, "emblem": 30, "emblemacc": 263, "food": "80,000", "foodacc": "944,036", "iron": "80,000", "ironacc": "387,184", "masteremblem": "3", "masteremblemacc": "3" }, { "slot": 322, "emblem": 30, "emblemacc": 293, "food": "80,000", "foodacc": "1,024,036", "iron": "80,000", "ironacc": "467,184", "masteremblem": "3", "masteremblemacc": "6" }, { "slot": 323, "emblem": 30, "emblemacc": 323, "food": "80,000", "foodacc": "1,104,036", "iron": "80,000", "ironacc": "547,184", "masteremblem": "3", "masteremblemacc": "9" }, { "slot": 324, "emblem": 30, "emblemacc": 353, "food": "80,000", "foodacc": "1,184,036", "iron": "80,000", "ironacc": "627,184", "masteremblem": "3", "masteremblemacc": "12" }, { "slot": 325, "emblem": 30, "emblemacc": 383, "food": "80,000", "foodacc": "1,264,036", "iron": "80,000", "ironacc": "707,184", "masteremblem": "3", "masteremblemacc": "15" }, { "slot": 401, "emblem": 30, "emblemacc": 30, "food": "17,658", "foodacc": "17,658", "iron": "6,278", "ironacc": "6,278", "masteremblem": "", "masteremblemacc": "" }, { "slot": 402, "emblem": 15, "emblemacc": 45, "food": "21,481", "foodacc": "39,139", "iron": "7,638", "ironacc": "13,916", "masteremblem": "", "masteremblemacc": "" }, { "slot": 403, "emblem": 15, "emblemacc": 60, "food": "30,326", "foodacc": "69,465", "iron": "10,783", "ironacc": "24,699", "masteremblem": "", "masteremblemacc": "" }, { "slot": 404, "emblem": 30, "emblemacc": 90, "food": "54,739", "foodacc": "124,204", "iron": "19,461", "ironacc": "44,160", "masteremblem": "", "masteremblemacc": "" }, { "slot": 405, "emblem": 15, "emblemacc": 105, "food": "48,016", "foodacc": "172,220", "iron": "17,073", "ironacc": "61,233", "masteremblem": "", "masteremblemacc": "" }, { "slot": 406, "emblem": 15, "emblemacc": 120, "food": "56,862", "foodacc": "229,082", "iron": "20,218", "ironacc": "81,451", "masteremblem": "", "masteremblemacc": "" }, { "slot": 407, "emblem": 30, "emblemacc": 150, "food": "91,821", "foodacc": "320,903", "iron": "32,645", "ironacc": "114,096", "masteremblem": "", "masteremblemacc": "" }, { "slot": 408, "emblem": 40, "emblemacc": 190, "food": "78,375", "foodacc": "399,278", "iron": "27,865", "ironacc": "141,961", "masteremblem": "", "masteremblemacc": "" }, { "slot": 409, "emblem": 15, "emblemacc": 205, "food": "83,397", "foodacc": "482,675", "iron": "29,653", "ironacc": "171,614", "masteremblem": "", "masteremblemacc": "" }, { "slot": 410, "emblem": 40, "emblemacc": 245, "food": "96,973", "foodacc": "579,648", "iron": "34,477", "ironacc": "206,091", "masteremblem": "", "masteremblemacc": "" }, { "slot": 411, "emblem": 15, "emblemacc": 260, "food": "101,000", "foodacc": "680,648", "iron": "35,944", "ironacc": "242,035", "masteremblem": "", "masteremblemacc": "" }, { "slot": 412, "emblem": 30, "emblemacc": 290, "food": "153,000", "foodacc": "833,648", "iron": "54,618", "ironacc": "296,653", "masteremblem": "", "masteremblemacc": "" }, { "slot": 413, "emblem": 15, "emblemacc": 305, "food": "118,000", "foodacc": "951,648", "iron": "42,234", "ironacc": "338,887", "masteremblem": "", "masteremblemacc": "" }, { "slot": 414, "emblem": 15, "emblemacc": 320, "food": "127,000", "foodacc": "1,078,648", "iron": "45,379", "ironacc": "384,266", "masteremblem": "", "masteremblemacc": "" }, { "slot": 415, "emblem": 30, "emblemacc": 350, "food": "190,000", "foodacc": "1,268,648", "iron": "67,802", "ironacc": "452,068", "masteremblem": "", "masteremblemacc": "" }, { "slot": 416, "emblem": 15, "emblemacc": 365, "food": "145,000", "foodacc": "1,413,648", "iron": "51,669", "ironacc": "503,737", "masteremblem": "", "masteremblemacc": "" }, { "slot": 417, "emblem": 15, "emblemacc": 380, "food": "154,000", "foodacc": "1,567,648", "iron": "54,814", "ironacc": "558,551", "masteremblem": "", "masteremblemacc": "" }, { "slot": 418, "emblem": 15, "emblemacc": 395, "food": "163,000", "foodacc": "1,730,648", "iron": "57,959", "ironacc": "616,510", "masteremblem": "", "masteremblemacc": "" }, { "slot": 419, "emblem": 40, "emblemacc": 435, "food": "180,000", "foodacc": "1,910,648", "iron": "64,232", "ironacc": "680,742", "masteremblem": "", "masteremblemacc": "" }, { "slot": 420, "emblem": 70, "emblemacc": 505, "food": "245,000", "foodacc": "2,155,648", "iron": "87,315", "ironacc": "768,057", "masteremblem": "", "masteremblemacc": "" }, { "slot": 421, "emblem": 50, "emblemacc": 555, "food": "200,000", "foodacc": "2,355,648", "iron": "200,000", "ironacc": "968,057", "masteremblem": "5", "masteremblemacc": "5" }, { "slot": 422, "emblem": 50, "emblemacc": 605, "food": "200,000", "foodacc": "2,555,648", "iron": "200,000", "ironacc": "1,168,057", "masteremblem": "5", "masteremblemacc": "10" }, { "slot": 423, "emblem": 50, "emblemacc": 655, "food": "200,000", "foodacc": "2,755,648", "iron": "200,000", "ironacc": "1,368,057", "masteremblem": "5", "masteremblemacc": "15" }, { "slot": 424, "emblem": 50, "emblemacc": 705, "food": "200,000", "foodacc": "2,955,648", "iron": "200,000", "ironacc": "1,568,057", "masteremblem": "5", "masteremblemacc": "20" }, { "slot": 425, "emblem": 50, "emblemacc": 755, "food": "200,000", "foodacc": "3,155,648", "iron": "200,000", "ironacc": "1,768,057", "masteremblem": "5", "masteremblemacc": "25" }, { "slot": 501, "emblem": 65, "emblemacc": 65, "food": "49,050", "foodacc": "49,050", "iron": "17,200", "ironacc": "17,200", "masteremblem": "", "masteremblemacc": "" }, { "slot": 502, "emblem": 50, "emblemacc": 115, "food": "59,670", "foodacc": "108,720", "iron": "21,080", "ironacc": "38,280", "masteremblem": "", "masteremblemacc": "" }, { "slot": 503, "emblem": 50, "emblemacc": 165, "food": "84,240", "foodacc": "192,960", "iron": "29,760", "ironacc": "68,040", "masteremblem": "", "masteremblemacc": "" }, { "slot": 504, "emblem": 65, "emblemacc": 230, "food": "152,000", "foodacc": "344,960", "iron": "53,320", "ironacc": "121,360", "masteremblem": "", "masteremblemacc": "" }, { "slot": 505, "emblem": 50, "emblemacc": 280, "food": "133,000", "foodacc": "477,960", "iron": "47,120", "ironacc": "168,480", "masteremblem": "", "masteremblemacc": "" }, { "slot": 506, "emblem": 50, "emblemacc": 330, "food": "157,000", "foodacc": "634,960", "iron": "55,800", "ironacc": "224,280", "masteremblem": "", "masteremblemacc": "" }, { "slot": 507, "emblem": 65, "emblemacc": 395, "food": "255,000", "foodacc": "889,960", "iron": "89,440", "ironacc": "313,720", "masteremblem": "", "masteremblemacc": "" }, { "slot": 508, "emblem": 80, "emblemacc": 475, "food": "217,000", "foodacc": "1,106,960", "iron": "77,880", "ironacc": "391,600", "masteremblem": "", "masteremblemacc": "" }, { "slot": 509, "emblem": 50, "emblemacc": 525, "food": "231,000", "foodacc": "1,337,960", "iron": "81,840", "ironacc": "473,440", "masteremblem": "", "masteremblemacc": "" }, { "slot": 510, "emblem": 80, "emblemacc": 605, "food": "269,000", "foodacc": "1,606,960", "iron": "96,360", "ironacc": "569,800", "masteremblem": "", "masteremblemacc": "" }, { "slot": 511, "emblem": 50, "emblemacc": 655, "food": "280,000", "foodacc": "1,886,960", "iron": "99,200", "ironacc": "669,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 512, "emblem": 65, "emblemacc": 720, "food": "426,000", "foodacc": "2,312,960", "iron": "149,000", "ironacc": "818,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 513, "emblem": 50, "emblemacc": 770, "food": "329,000", "foodacc": "2,641,960", "iron": "116,000", "ironacc": "934,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 514, "emblem": 50, "emblemacc": 820, "food": "354,000", "foodacc": "2,995,960", "iron": "125,000", "ironacc": "1,059,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 515, "emblem": 65, "emblemacc": 885, "food": "529,000", "foodacc": "3,524,960", "iron": "185,000", "ironacc": "1,244,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 516, "emblem": 50, "emblemacc": 935, "food": "403,000", "foodacc": "3,927,960", "iron": "142,000", "ironacc": "1,386,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 517, "emblem": 50, "emblemacc": 985, "food": "428,000", "foodacc": "4,355,960", "iron": "151,000", "ironacc": "1,537,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 518, "emblem": 50, "emblemacc": 1035, "food": "452,000", "foodacc": "4,807,960", "iron": "159,000", "ironacc": "1,696,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 519, "emblem": 80, "emblemacc": 1115, "food": "501,000", "foodacc": "5,308,960", "iron": "179,000", "ironacc": "1,875,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 520, "emblem": 125, "emblemacc": 1240, "food": "682,000", "foodacc": "5,990,960", "iron": "234,000", "ironacc": "2,109,000", "masteremblem": "", "masteremblemacc": "" }, { "slot": 521, "emblem": 100, "emblemacc": 1340, "food": "600,000", "foodacc": "6,590,960", "iron": "600,000", "ironacc": "2,709,000", "masteremblem": "10", "masteremblemacc": "10" }, { "slot": 522, "emblem": 100, "emblemacc": 1440, "food": "600,000", "foodacc": "7,190,960", "iron": "600,000", "ironacc": "3,309,000", "masteremblem": "10", "masteremblemacc": "20" }, { "slot": 523, "emblem": 100, "emblemacc": 1540, "food": "600,000", "foodacc": "7,790,960", "iron": "600,000", "ironacc": "3,909,000", "masteremblem": "10", "masteremblemacc": "30" }, { "slot": 524, "emblem": 100, "emblemacc": 1640, "food": "600,000", "foodacc": "8,390,960", "iron": "600,000", "ironacc": "4,509,000", "masteremblem": "10", "masteremblemacc": "40" }, { "slot": 525, "emblem": 100, "emblemacc": 1740, "food": "600,000", "foodacc": "8,990,960", "iron": "600,000", "ironacc": "5,109,000", "masteremblem": "10", "masteremblemacc": "50" }];
 
     // --- DOM 元素 ---
     const themeToggleButton = document.getElementById('theme-toggle-btn');
@@ -239,9 +241,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const purchaseCostumeDateDisplay = document.getElementById('purchase-costume-date-display');
     const filterHero730Btn = document.getElementById('filter-hero-730-btn');
     const filterCostume548Btn = document.getElementById('filter-costume-548-btn');
+
+    // --- 新增: 全局天赋设置控件 ---
+    const defaultTalentStrategySelect = document.getElementById('default-talent-strategy-select');
+    const defaultManaPriorityCheckbox = document.getElementById('default-mana-priority-checkbox');
     const defaultLimitBreakSelect = document.getElementById('default-limit-break-select');
     const defaultTalentSelect = document.getElementById('default-talent-select');
-    const defaultPrioritySelect = document.getElementById('default-priority-select');
 
 
     const filterInputs = {
@@ -630,77 +635,88 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.filter-card select').forEach(select => { select.style.textAlign = 'center'; });
     }
 
+    /**
+     * 【已重写 V7 - 修正战力公式基准】根据英雄、突破、天赋和路径策略计算最终属性
+     * @param {object} hero - 英雄对象
+     * @param {object} settings - 包含所有设置的对象 { lb, talent, strategy, manaPriority }
+     * @returns {object} - 包含最终 power, attack, defense, health 的对象
+     */
     function calculateHeroStats(hero, settings) {
-        const { lb, talent, priority } = settings;
-        let finalStats = {};
+        const { lb, talent, strategy, manaPriority } = settings;
 
-        // 1. 根据天赋选择，确定用于计算的基础对象
-        let baseObjectForLB;
-        if (talent === 'none') {
-            baseObjectForLB = hero;
-        } else { // 'talent20' 或 'talent25'
-            if (priority === 'attack' && hero.attack_priority_stats) {
-                baseObjectForLB = hero.attack_priority_stats;
-            } else if (priority === 'defense' && hero.defense_priority_stats) {
-                baseObjectForLB = hero.defense_priority_stats;
-            } else {
-                baseObjectForLB = hero; // 备用
-            }
+        // --- 步骤 1: 确定用于计算的“基础属性” ---
+        let baseStats = {
+            power: hero.power || 0,
+            attack: hero.attack || 0,
+            defense: hero.defense || 0,
+            health: hero.health || 0
+        };
+
+        if (lb === 'lb1' && hero.lb1) {
+            baseStats = { ...hero.lb1 };
+        } else if (lb === 'lb2' && hero.lb2) {
+            baseStats = { ...hero.lb2 };
         }
 
-        // 2. 根据突破等级选择属性
-        if (lb === 'lb1' && baseObjectForLB.lb1) {
-            finalStats = { ...baseObjectForLB.lb1 };
-        } else if (lb === 'lb2' && baseObjectForLB.lb2) {
-            finalStats = { ...baseObjectForLB.lb2 };
-        } else if (talent !== 'none' && baseObjectForLB.base) {
-            finalStats = { ...baseObjectForLB.base }; // 天赋路径下的 "无突破" 状态
-        } else {
-            // 英雄的绝对基础属性 (无天赋, 无突破)
-            finalStats = {
-                power: hero.power || 0,
-                attack: hero.attack || 0,
-                defense: hero.defense || 0,
-                health: hero.health || 0
-            };
+        let finalStats = {
+            attack: baseStats.attack,
+            defense: baseStats.defense,
+            health: baseStats.health
+        };
+
+        // --- 步骤 2: 计算最终的 攻击、防御、生命值 ---
+        if (talent !== 'none' && hero.class && typeof TalentTree !== 'undefined') {
+            const talentBonuses = TalentTree.getBonusesForPath(hero.class, strategy, manaPriority);
+            const attackPercentBonus = Math.floor((baseStats.attack || 0) * (talentBonuses.attack_percent / 100));
+            finalStats.attack = (baseStats.attack || 0) + talentBonuses.attack_flat + attackPercentBonus;
+
+            const defensePercentBonus = Math.floor((baseStats.defense || 0) * (talentBonuses.defense_percent / 100));
+            finalStats.defense = (baseStats.defense || 0) + talentBonuses.defense_flat + defensePercentBonus;
+
+            const healthPercentBonus = Math.floor((baseStats.health || 0) * (talentBonuses.health_percent / 100));
+            finalStats.health = (baseStats.health || 0) + talentBonuses.health_flat + healthPercentBonus;
         }
 
-        // 3. 如果选择了25天赋，应用额外加成
-        if (talent === 'talent25') {
-            finalStats.power = (finalStats.power || 0) + 25;
-            if (priority === 'attack') {
-                finalStats.attack = (finalStats.attack || 0) + 150;
-                finalStats.health = (finalStats.health || 0) + 100;
-            } else { // 'defense' 优先级
-                finalStats.defense = (finalStats.defense || 0) + 180;
-                finalStats.health = (finalStats.health || 0) + 100;
-            }
+        // --- 步骤 3: 【核心修正】使用标准算法计算战力 ---
+        const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
+        const star_power = STAR_BASE_POWER[hero.star] || 0;
+
+        // 【关键修正】: 属性战力基于天赋加成前的 baseStats 计算，而不是 finalStats
+        const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
+        const stats_final_power = Math.floor(stats_raw_power);
+
+        const skill_power = (8 - 1) * 5;
+
+        let talent_power = 0;
+        if (talent === 'talent20') {
+            talent_power = 20 * 5;
+        } else if (talent === 'talent25') {
+            talent_power = 25 * 5;
         }
+
+        finalStats.power = star_power + stats_final_power + skill_power + talent_power;
+
         return finalStats;
     }
 
-    // --- 重构后的 updateHeroStats 函数 ---
-    function updateHeroStats(hero) {
+
+    /**
+     * 【已重写】更新英雄详情模态框中的属性显示
+     * 此函数现在更加通用，可以接收一个完整的设置对象来计算属性
+     */
+    function updateHeroStatsInModal(hero, modalSettings) {
         const modal = document.getElementById('modal');
         if (!modal || modal.classList.contains('hidden')) return;
 
         // 从模态框内的选择器获取当前设置
-        const lbSelect = document.getElementById('limit-break-select');
-        const talentSelect = document.getElementById('talent-select');
-        const prioritySelect = document.getElementById('talent-priority-select');
+        const talentSelect = document.getElementById('modal-talent-select');
+        const prioritySelect = document.getElementById('modal-talent-priority-select');
 
-        const modalSettings = {
-            lb: lbSelect ? lbSelect.value : 'none',
-            talent: talentSelect ? talentSelect.value : 'none',
-            priority: prioritySelect ? prioritySelect.value : 'attack'
-        };
-
-        // 根据天赋选择禁用/启用优先级下拉框
         if (prioritySelect) {
-            prioritySelect.disabled = (modalSettings.talent === 'none');
+            prioritySelect.disabled = (talentSelect.value === 'none');
         }
 
-        // 使用重用的计算函数获取最终属性
+        // 使用通用计算函数
         const finalStats = calculateHeroStats(hero, modalSettings);
 
         // 更新模态框中的DOM元素
@@ -911,14 +927,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
         const noneValue = i18n[currentLang].none.toLowerCase();
         const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
-        // +++ 新增: 获取全局默认属性设置 +++
+
+        // 获取全局默认属性设置
         const defaultSettings = {
             lb: defaultLimitBreakSelect.value,
             talent: defaultTalentSelect.value,
-            priority: defaultPrioritySelect.value
+            strategy: defaultTalentStrategySelect.value,
+            manaPriority: defaultManaPriorityCheckbox.checked
         };
-        // 根据全局天赋设置，禁用/启用优先级选择器
-        defaultPrioritySelect.disabled = (defaultSettings.talent === 'none');
 
         filteredHeroes = allHeroes.filter(hero => {
             let matchesBaseFilter = false;
@@ -989,7 +1005,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
             return true;
         });
-        // +++ 新增: 为每个筛选后的英雄计算用于显示的属性 +++
+
+        // 为每个筛选后的英雄计算用于显示的属性
         filteredHeroes.forEach(hero => {
             hero.displayStats = calculateHeroStats(hero, defaultSettings);
         });
@@ -998,7 +1015,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const key = currentSort.key;
             const direction = currentSort.direction === 'asc' ? 1 : -1;
 
-            // +++ 修改: 排序时使用 displayStats +++
             const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
             let valA, valB;
 
@@ -1029,7 +1045,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             comparison *= direction;
 
-            // 次要排序也使用 displayStats.power
             if (comparison === 0 && key !== 'power') {
                 return (Number(b.displayStats.power) || 0) - (Number(a.displayStats.power) || 0);
             }
@@ -1446,8 +1461,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /**
+     * 在模态框中渲染英雄详情
+     * @param {object} hero - 英雄对象
+     */
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
+        // 【新增】获取英雄职业的小写英文键名，用于构建图标路径
+        const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
 
         // 内部辅助函数，用于将技能数组渲染为HTML列表
         const renderListAsHTML = (itemsArray, filterType = null) => {
@@ -1528,30 +1549,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
 
-        // --- 家族信息块逻辑 ---
+        // --- 家族、职业等信息块 ---
         let familyBlockHTML = '';
         if (hero.family) {
             const familyFileName = String(hero.family).toLowerCase();
             familyBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${familyFileName}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`;
         }
-
-        // --- 职业图标逻辑 ---
         const displayedClass = hero.class;
         let classBlockHTML = '';
         if (displayedClass) {
             const englishClass = (classReverseMap[displayedClass] || displayedClass).toLowerCase();
             classBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${displayedClass}" title="${langDict.filterBy} ${displayedClass}"><img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${displayedClass}"/>${displayedClass}</span>`;
         }
-
-        // --- 皮肤信息块逻辑 ---
         let skinBlockHTML = '';
         if (heroSkin) {
             const iconName = getCostumeIconName(heroSkin);
             const iconHtml = iconName ? `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume"/>` : '👕';
             skinBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">${iconHtml}${langDict.modalSkin} ${heroSkin}</span>`;
         }
-
-        // --- 以太力量信息块逻辑 ---
         let aetherPowerBlockHTML = '';
         if (hero.AetherPower) {
             const displayedPower = hero.AetherPower;
@@ -1560,150 +1575,286 @@ document.addEventListener('DOMContentLoaded', function () {
             const iconHtml = `<img src="imgs/Aether Power/${aetherFileName}.png" class="aether-power-icon" alt="${displayedPower}"/>`;
             aetherPowerBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${displayedPower}" title="${langDict.filterBy} ${displayedPower}">⏫${iconHtml}${displayedPower}</span>`;
         }
-
-        // --- 起源信息块逻辑 ---
         let sourceBlockHTML = '';
         if (hero.source) {
             const displayedSource = hero.source;
             const sourceKey = sourceReverseMap[displayedSource];
             let iconHtml = '';
-
             if (sourceKey === 'season1' && hero.costume_id !== 0) {
                 iconHtml = `<img src="imgs/coins/costume_key.png" class="source-icon" alt="Costume Key"/>`;
-            } else {
-                if (sourceKey) {
-                    const iconFilename = sourceIconMap[sourceKey];
-                    if (iconFilename) {
-                        iconHtml = `<img src="imgs/coins/${iconFilename}" class="source-icon" alt="${displayedSource}"/>`;
-                    }
+            } else if (sourceKey) {
+                const iconFilename = sourceIconMap[sourceKey];
+                if (iconFilename) {
+                    iconHtml = `<img src="imgs/coins/${iconFilename}" class="source-icon" alt="${displayedSource}"/>`;
                 }
             }
-
             sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">${iconHtml}${displayedSource}</span>`;
         }
 
+        // --- 天赋加成与消耗显示区域的HTML模板 ---
+        const talentBonusCostHTML = `
+            <div class="filter-header" id="modal-bonus-cost-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);">
+                <h2 data-lang-key="bonusAndCostTitle">${langDict.bonusAndCostTitle}</h2>
+                <button class="toggle-button expanded" data-target="modal-bonus-cost-content" data-cookie="modal_bonus_cost_state">▼</button>
+            </div>
+            <div id="modal-bonus-cost-content" class="filter-content">
+                <div id="modal-talent-bonus-display">
+                    </div>
+                <hr class="divider">
+                <div id="modal-talent-cost-display">
+                    <div class="cost-item">
+                        <img src="imgs/emblems/${englishClassKey}.png" class="cost-icon" alt="纹章图标">
+                        ${langDict.emblemCostLabel}
+                        <span id="cost-emblem">0</span>
+                    </div>
+                    <div class="cost-item">
+                        <img src="imgs/farm/Food.png" class="cost-icon" alt="食物图标">
+                        ${langDict.foodCostLabel}
+                        <span id="cost-food">0</span>
+                    </div>
+                    <div class="cost-item">
+                        <img src="imgs/farm/Iron.png" class="cost-icon" alt="铁矿图标">
+                        ${langDict.ironCostLabel}
+                        <span id="cost-iron">0</span>
+                    </div>
+                    <div class="cost-item">
+                        <img src="imgs/emblems/master_${englishClassKey}.png" class="cost-icon" alt="大师纹章图标">
+                        ${langDict.masterEmblemCostLabel}
+                        <span id="cost-master-emblem">0</span>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        // --- 选择器HTML ---
-        const selectorsHTML = `
-    <div class="details-core-settings-header">
-        <h4>${langDict.defaultStatSettingsTitle}</h4>
-        <button class="toggle-button" data-target="details-selectors-content" title="${langDict.toggleCollapse}">▼</button>
-    </div>
-    <div id="details-selectors-content" class="filter-content">
-        <div class="details-selectors">
-            <div class="details-selector-item">
-                <label for="limit-break-select">${langDict.limitBreakSetting}</label>
-                <select id="limit-break-select">
-                    <option value="none">${langDict.noLimitBreak}</option>
-                    <option value="lb1">${langDict.lb1}</option>
-                    <option value="lb2">${langDict.lb2}</option>
-                </select>
-            </div>
-            <div class="details-selector-item">
-                <label for="talent-select">${langDict.talentSetting}</label>
-                <select id="talent-select">
-                    <option value="none">${langDict.noTalent}</option>
-                    <option value="talent20">${langDict.talent20}</option>
-                    <option value="talent25">${langDict.talent25}</option>
-                </select>
-            </div>
-            <div class="details-selector-item">
-                <label for="talent-priority-select">${langDict.prioritySetting}</label>
-                <select id="talent-priority-select">
-                    <option value="attack">${langDict.attackPriority}</option>
-                    <option value="defense">${langDict.defensePriority}</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    `;
+        // 完整的天赋系统HTML结构
+        const talentSystemHTML = `
+            <div id="modal-talent-system-wrapper">
+                <div class="filter-header" id="modal-talent-settings-header">
+                    <h2 data-lang-key="modalTalentSettingsTitle">${langDict.modalTalentSettingsTitle}</h2>
+                    <button class="toggle-button expanded" data-target="modal-talent-settings-content" data-cookie="modal_settings_state">▼</button>
+                </div>
+                <div id="modal-talent-settings-content" class="filter-content">
+                    <div class="modal-talent-settings-wrapper">
+                        <div class="modal-talent-settings-grid">
+                            <div class="details-selector-item"><label for="modal-limit-break-select" data-lang-key="limitBreakSetting">${langDict.limitBreakSetting}</label><select id="modal-limit-break-select"><option value="none" data-lang-key="noLimitBreak">${langDict.noLimitBreak}</option><option value="lb1" data-lang-key="lb1">${langDict.lb1}</option><option value="lb2" data-lang-key="lb2">${langDict.lb2}</option></select></div>
+                            <div class="details-selector-item"><label for="modal-talent-select" data-lang-key="talentSetting">${langDict.talentSetting}</label><select id="modal-talent-select"><option value="none" data-lang-key="noTalent">${langDict.noTalent}</option><option value="talent20" data-lang-key="talent20">${langDict.talent20}</option><option value="talent25" data-lang-key="talent25">${langDict.talent25}</option></select></div>
+                            <div class="details-selector-item"><label for="modal-talent-strategy-select" data-lang-key="prioritySetting">${langDict.prioritySetting}</label><select id="modal-talent-strategy-select"><option value="atk-def-hp" data-lang-key="attackPriority">${langDict.attackPriority}</option><option value="atk-hp-def" data-lang-key="attackPriority2">${langDict.attackPriority2}</option><option value="def-hp-atk" data-lang-key="defensePriority">${langDict.defensePriority}</option><option value="hp-def-atk" data-lang-key="healthPriority">${langDict.healthPriority}</option></select></div>
+                            <div class="details-selector-item"><label for="modal-mana-priority-checkbox" data-lang-key="manaPriorityLabel">${langDict.manaPriorityLabel}</label><div class="checkbox-container"><input type="checkbox" id="modal-mana-priority-checkbox"><label for="modal-mana-priority-checkbox" class="checkbox-label" data-lang-key="manaPriorityToggle">${langDict.manaPriorityToggle}</label></div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                ${talentBonusCostHTML}
 
-        // --- 完整的模态框HTML结构 ---
-        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${familyBlockHTML}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.health || 0}</p></div></div><div class="details-core-settings-group">${selectorsHTML}</div></div></div><div class="details-bottom-section"><h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+                <div class="filter-header" id="modal-talent-tree-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);"><h2 data-lang-key="talentTreeTitle">${langDict.talentTreeTitle}</h2><button class="toggle-button expanded" data-target="modal-talent-tree-wrapper" data-cookie="modal_tree_state">▼</button></div>
+                <div id="modal-talent-tree-wrapper" class="filter-content" style="padding:0;"><div class="loader-spinner" style="margin: 3rem auto;"></div></div>
+            </div>
+        `;
+
+        // --- 最终的模态框HTML ---
+        const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${familyBlockHTML}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.displayStats.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.displayStats.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.displayStats.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.displayStats.health || 0}</p></div></div></div></div><div class="details-bottom-section">${talentSystemHTML}<h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
+
         modalContent.innerHTML = detailsHTML;
 
-        // --- 核心修正逻辑 ---
+        // --- 模态框内交互逻辑 ---
 
-        // 1. 获取模态框内的选择器元素
-        const lbSelect = document.getElementById('limit-break-select');
-        const talentSelect = document.getElementById('talent-select');
-        const prioritySelect = document.getElementById('talent-priority-select');
+        const modalLbSelect = document.getElementById('modal-limit-break-select');
+        const modalTalentSelect = document.getElementById('modal-talent-select');
+        const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
+        const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
 
-        // 2. 将模态框内的选择器设置为全局默认值
-        lbSelect.value = defaultLimitBreakSelect.value;
-        talentSelect.value = defaultTalentSelect.value;
-        prioritySelect.value = defaultPrioritySelect.value;
+        modalLbSelect.value = defaultLimitBreakSelect.value;
+        modalTalentSelect.value = defaultTalentSelect.value;
+        modalStrategySelect.value = defaultTalentStrategySelect.value;
+        modalManaCheckbox.checked = defaultManaPriorityCheckbox.checked;
 
-        // 3. 直接使用已知的全局默认设置来执行第一次属性计算和渲染
-        const globalDefaultSettings = {
-            lb: defaultLimitBreakSelect.value,
-            talent: defaultTalentSelect.value,
-            priority: defaultPrioritySelect.value
-        };
-        const initialStats = calculateHeroStats(hero, globalDefaultSettings);
+        let currentTalentBonuses = {};
 
-        // 手动更新DOM
-        const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
-        const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
-        const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
-        const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
+        function _updateModalStatsWithBonuses(hero, settings, bonuses) {
+            let baseStats = {
+                power: hero.power || 0, attack: hero.attack || 0,
+                defense: hero.defense || 0, health: hero.health || 0
+            };
+            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
 
-        if (powerEl) powerEl.innerHTML = `💪 ${initialStats.power || 0}`;
-        if (attackEl) attackEl.innerHTML = `⚔️ ${initialStats.attack || 0}`;
-        if (defenseEl) defenseEl.innerHTML = `🛡️ ${initialStats.defense || 0}`;
-        if (healthEl) healthEl.innerHTML = `❤️ ${initialStats.health || 0}`;
+            let finalStats = { ...baseStats };
 
-        // 同时，在打开时正确设置优先级选择框的禁用状态
-        prioritySelect.disabled = (globalDefaultSettings.talent === 'none');
-
-        // 4. 为后续的用户手动操作绑定事件监听器
-        function setupStatListeners() {
-            if (lbSelect) lbSelect.addEventListener('change', () => updateHeroStats(hero));
-            if (talentSelect) talentSelect.addEventListener('change', () => updateHeroStats(hero));
-            if (prioritySelect) prioritySelect.addEventListener('change', () => updateHeroStats(hero));
-        }
-        setupStatListeners();
-        function setupCollapseBehavior() {
-            // 步骤1：将选择器从按钮改为整个标题栏
-            const header = document.querySelector('#modal .details-core-settings-header');
-            const contentToCollapse = document.getElementById('details-selectors-content');
-            // 依然需要获取按钮本身，用于旋转动画
-            const collapseBtn = header ? header.querySelector('.toggle-button') : null;
-
-            if (!header || !contentToCollapse || !collapseBtn) return;
-
-            // 读取Cookie并设置初始状态
-            const savedState = getCookie('details_settings_state');
-            if (savedState === 'collapsed') {
-                contentToCollapse.classList.add('collapsed');
-                collapseBtn.classList.remove('expanded');
-            } else {
-                contentToCollapse.classList.remove('collapsed');
-                collapseBtn.classList.add('expanded');
+            if (settings.talent !== 'none') {
+                const attackPercentBonus = Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100));
+                finalStats.attack = (baseStats.attack || 0) + bonuses.attack_flat + attackPercentBonus;
+                const defensePercentBonus = Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100));
+                finalStats.defense = (baseStats.defense || 0) + bonuses.defense_flat + defensePercentBonus;
+                const healthPercentBonus = Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100));
+                finalStats.health = (baseStats.health || 0) + bonuses.health_flat + healthPercentBonus;
             }
 
-            // 步骤2：将点击事件绑定到整个 header 上
-            header.addEventListener('click', function () {
-                // 折叠/展开内容的逻辑不变
-                contentToCollapse.classList.toggle('collapsed');
+            const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
+            const star_power = STAR_BASE_POWER[hero.star] || 0;
+            const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
+            const stats_final_power = Math.floor(stats_raw_power);
+            const skill_power = (8 - 1) * 5;
+            let talent_power = 0;
+            if (settings.talent === 'talent20') talent_power = 20 * 5;
+            else if (settings.talent === 'talent25') talent_power = 25 * 5;
+            finalStats.power = star_power + stats_final_power + skill_power + talent_power;
 
-                // 明确地为按钮切换 'expanded' 类，以触发旋转动画
-                collapseBtn.classList.toggle('expanded');
-
-                // 保存状态到Cookie的逻辑不变
-                const newState = contentToCollapse.classList.contains('collapsed') ? 'collapsed' : 'expanded';
-                setCookie('details_settings_state', newState, 365);
-            });
+            const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
+            const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
+            const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
+            const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
+            if (powerEl) powerEl.innerHTML = `💪 ${finalStats.power || 0}`;
+            if (attackEl) attackEl.innerHTML = `⚔️ ${finalStats.attack || 0}`;
+            if (defenseEl) defenseEl.innerHTML = `🛡️ ${finalStats.defense || 0}`;
+            if (healthEl) healthEl.innerHTML = `❤️ ${finalStats.health || 0}`;
         }
-        setupCollapseBehavior();
 
-        // --- 收藏与分享按钮的事件监听 ---
-        const favoriteBtn = document.getElementById('favorite-hero-btn');
-        const shareBtn = document.getElementById('share-hero-btn');
-        if (!hero.english_name) {
-            favoriteBtn.style.display = 'none';
-            shareBtn.style.display = 'none';
+        // 实时更新“加成与消耗”区域的辅助函数
+        function _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats) {
+            const bonusDisplay = document.getElementById('modal-talent-bonus-display');
+
+            // 将百分比加成计算为具体数值
+            const calculatedBonuses = {
+                attack: bonuses.attack_flat + Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100)),
+                defense: bonuses.defense_flat + Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100)),
+                health: bonuses.health_flat + Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100)),
+                mana: bonuses.mana_percent,
+                healing: bonuses.healing_percent,
+                crit: bonuses.crit_percent
+            };
+
+            // 【新增】属性图标的文件名映射
+            const iconMap = {
+                attack: 'attack.png',
+                defense: 'defense.png',
+                health: 'health.png',
+                mana: 'mana.png',
+                healing: 'healing.png',
+                crit: 'critical.png'
+            };
+
+            const bonusMap = {
+                attack: { value: calculatedBonuses.attack, label: langDict.attackBonusLabel, isPercent: false },
+                defense: { value: calculatedBonuses.defense, label: langDict.defenseBonusLabel, isPercent: false },
+                health: { value: calculatedBonuses.health, label: langDict.healthBonusLabel, isPercent: false },
+                mana: { value: calculatedBonuses.mana, label: langDict.manaBonusLabel, isPercent: true },
+                healing: { value: calculatedBonuses.healing, label: langDict.healingBonusLabel, isPercent: true },
+                crit: { value: calculatedBonuses.crit, label: langDict.critBonusLabel, isPercent: true }
+            };
+
+            let bonusHTML = '';
+            for (const key in bonusMap) {
+                const bonus = bonusMap[key];
+                if (bonus.value > 0) {
+                    const sign = bonus.isPercent ? '%' : '';
+                    // 【修正】在标签前添加对应的图标
+                    bonusHTML += `<div class="bonus-item">
+                                    <img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">
+                                    ${bonus.label}
+                                    <span>+${bonus.value}${sign}</span>
+                                </div>`;
+                }
+            }
+            bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
+
+            // 资源消耗计算（保持不变）
+            const costs = { emblem: 0, food: 0, iron: 0, masterEmblem: 0 };
+            const star = parseInt(hero.star);
+            const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === star);
+
+            for (let i = 0; i < nodeCount; i++) {
+                const costEntry = relevantCosts[i];
+                if (costEntry) {
+                    costs.emblem += parseInt(costEntry.emblem) || 0;
+                    costs.food += parseInt(String(costEntry.food).replace(/,/g, '')) || 0;
+                    costs.iron += parseInt(String(costEntry.iron).replace(/,/g, '')) || 0;
+                    costs.masterEmblem += parseInt(costEntry.masteremblem) || 0;
+                }
+            }
+            document.getElementById('cost-emblem').textContent = costs.emblem.toLocaleString();
+            document.getElementById('cost-food').textContent = costs.food.toLocaleString();
+            document.getElementById('cost-iron').textContent = costs.iron.toLocaleString();
+            document.getElementById('cost-master-emblem').textContent = costs.masterEmblem.toLocaleString();
+        }
+
+        const talentChangeCallback = (bonuses, nodeCount) => {
+            currentTalentBonuses = bonuses;
+            const currentSettings = {
+                lb: modalLbSelect.value, talent: modalTalentSelect.value,
+                strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked
+            };
+            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
+            if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses);
+            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+        };
+
+        const talentTreeContainer = document.getElementById('modal-talent-tree-wrapper');
+        if (hero.class && typeof TalentTree !== 'undefined') {
+            TalentTree.init(talentTreeContainer, hero.class, {
+                strategy: modalStrategySelect.value,
+                manaPriority: modalManaCheckbox.checked
+            }, talentChangeCallback, langDict.talentTerms);
         } else {
+            talentTreeContainer.innerHTML = `<p style="text-align:center; padding: 2rem 0;">该英雄没有职业天赋。</p>`;
+        }
+
+        function handleTalentLevelChange() {
+            const newTalentLevel = modalTalentSelect.value;
+            const isDisabled = (newTalentLevel === 'none');
+            modalStrategySelect.disabled = isDisabled;
+            modalManaCheckbox.disabled = isDisabled;
+            if (typeof TalentTree !== 'undefined' && hero.class) {
+                TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+            }
+        }
+
+        modalStrategySelect.addEventListener('change', handleTalentLevelChange);
+        modalManaCheckbox.addEventListener('change', handleTalentLevelChange);
+        modalTalentSelect.addEventListener('change', handleTalentLevelChange);
+        modalLbSelect.addEventListener('change', () => {
+            const currentSettings = {
+                lb: modalLbSelect.value, talent: modalTalentSelect.value,
+            };
+            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
+            if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+
+            _updateModalStatsWithBonuses(hero, { ...currentSettings, ...{ strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked } }, currentTalentBonuses);
+            _updateBonusAndCostDisplay(currentTalentBonuses, Object.keys(currentTalentBonuses).length > 0 ? (currentSettings.talent === 'talent20' ? 20 : (currentSettings.talent === 'talent25' ? 25 : 0)) : 0, baseStats);
+        });
+
+        handleTalentLevelChange();
+
+        modalContent.querySelectorAll('.filter-header').forEach(header => {
+            const button = header.querySelector('.toggle-button');
+            if (!button) return;
+            const contentId = button.dataset.target;
+            const cookieName = button.dataset.cookie;
+            const contentElement = document.getElementById(contentId);
+            if (contentElement && cookieName) {
+                const savedState = getCookie(cookieName);
+                if (savedState === 'collapsed') {
+                    contentElement.classList.add('collapsed');
+                    button.classList.remove('expanded');
+                } else {
+                    contentElement.classList.remove('collapsed');
+                    button.classList.add('expanded');
+                }
+                header.addEventListener('click', () => {
+                    contentElement.classList.toggle('collapsed');
+                    button.classList.toggle('expanded');
+                    const newState = contentElement.classList.contains('collapsed') ? 'collapsed' : 'expanded';
+                    setCookie(cookieName, newState, 365);
+                });
+            }
+        });
+
+        document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
+        document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
+        const favoriteBtn = document.getElementById('favorite-hero-btn');
+        if (favoriteBtn) {
             const updateFavoriteButton = () => {
                 if (isFavorite(hero)) {
                     favoriteBtn.textContent = '★';
@@ -1726,6 +1877,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
             updateFavoriteButton();
+        }
+        const shareBtn = document.getElementById('share-hero-btn');
+        if (shareBtn) {
             shareBtn.addEventListener('click', () => {
                 const identifier = `${hero.english_name}-${hero.costume_id}`;
                 const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}&lang=${currentLang}`;
@@ -1739,14 +1893,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 2000);
                 }).catch(err => {
                     console.error('复制链接失败：', err);
-                    alert('复制链接失败，请尝试手动复制。');
+                    alert(langDict.copyLinkFailed);
                 });
             });
         }
-
-        // --- 关闭按钮的事件监听 ---
-        document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
-        document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
     }
 
     function clearAllFilters() {
@@ -1993,7 +2143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
                 if (emojiGrid && emojiGrid.children.length === 0) {
-                    
+
                     emojiList.forEach(emojiName => {
                         const img = document.createElement('img');
                         img.src = `imgs/emoticons/${emojiName}.png`;
@@ -2051,7 +2201,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-    
+
     function addEventListeners() {
         if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
         if (langSelectBtn) {
@@ -2082,7 +2232,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     temporaryDateFilter = null;
                     if (key === 'releaseDateType') temporaryFavorites = null;
                     if (key === 'skillTypeSource') setCookie('skillTypeSource', filterInputs.skillTypeSource.value, 365);
-                    renderAndShowHeroList(true);
+                    applyFiltersAndRender();
                 });
             }
         }
@@ -2093,30 +2243,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 const filterType = target.dataset.filterType;
                 let filterValue = target.dataset.filterValue;
                 if (!filterType || filterValue === undefined) return;
-
                 filterValue = filterValue.replace(/\s*[\(（][^\)）]*[\)）]/g, '').trim();
-
                 const inputElement = filterInputs[filterType];
                 if (inputElement) {
                     clearAllFilters();
-
                     if (filterType === 'passives' || filterType === 'effects') {
                         const cleanedValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, ' ').replace(/\s+/g, ' ').trim();
                         filterValue = `(${cleanedValue})`;
                     } else if (filterType === 'types') {
                         filterValue = `[${filterValue}]`;
                     }
-
                     closeDetailsModal();
                     inputElement.value = filterValue;
-                    renderAndShowHeroList(true);
+                    applyFiltersAndRender();
                 }
             });
         }
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
                 clearAllFilters();
-                renderAndShowHeroList(true);
+                applyFiltersAndRender();
             });
         }
         if (filterHero730Btn) {
@@ -2124,7 +2270,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearAllFilters();
                 filterInputs.releaseDateType.value = 'hero';
                 temporaryDateFilter = { base: oneClickMaxDate, days: 730 };
-                renderAndShowHeroList(true);
+                applyFiltersAndRender();
             });
         }
         if (filterCostume548Btn) {
@@ -2132,27 +2278,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearAllFilters();
                 filterInputs.releaseDateType.value = 'skin';
                 temporaryDateFilter = { base: purchaseCostumeDate, days: 548 };
-                renderAndShowHeroList(true);
+                applyFiltersAndRender();
             });
         }
-        // +++ 新增: 为全局默认属性选择器添加事件监听 +++
-        function handleDefaultStatChange() {
-            // 当设置改变时，保存到Cookie并重新渲染列表
+
+        // 【修正】为全局默认属性选择器添加包含禁用逻辑的事件监听
+        function handleDefaultSettingsChange() {
+            // 联动禁用/启用逻辑
+            const selectedTalentLevel = defaultTalentSelect.value;
+            const isDisabled = selectedTalentLevel === 'none';
+            defaultTalentStrategySelect.disabled = isDisabled;
+            defaultManaPriorityCheckbox.disabled = isDisabled;
+
+            // 保存设置到Cookie并重新渲染列表
             setCookie('defaultLB', defaultLimitBreakSelect.value, 365);
-            setCookie('defaultTalent', defaultTalentSelect.value, 365);
-            setCookie('defaultPriority', defaultPrioritySelect.value, 365);
+            setCookie('defaultTalent', selectedTalentLevel, 365);
+            setCookie('defaultTalentStrategy', defaultTalentStrategySelect.value, 365);
+            setCookie('defaultManaPriority', defaultManaPriorityCheckbox.checked, 365);
             applyFiltersAndRender();
         }
 
-        if (defaultLimitBreakSelect) defaultLimitBreakSelect.addEventListener('change', handleDefaultStatChange);
-        if (defaultTalentSelect) defaultTalentSelect.addEventListener('change', handleDefaultStatChange);
-        if (defaultPrioritySelect) defaultPrioritySelect.addEventListener('change', handleDefaultStatChange);
+        if (defaultLimitBreakSelect) defaultLimitBreakSelect.addEventListener('change', handleDefaultSettingsChange);
+        if (defaultTalentSelect) defaultTalentSelect.addEventListener('change', handleDefaultSettingsChange);
+        if (defaultTalentStrategySelect) defaultTalentStrategySelect.addEventListener('change', handleDefaultSettingsChange);
+        if (defaultManaPriorityCheckbox) defaultManaPriorityCheckbox.addEventListener('change', handleDefaultSettingsChange);
+
 
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
                 filterInputs.releaseDateType.value = 'favorites';
-                renderAndShowHeroList(true);
+                applyFiltersAndRender();
             });
         }
 
@@ -2272,7 +2428,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         window.addEventListener('popstate', function (event) {
-            // 首先，优先处理关闭任何打开的模态框。
             if (modalStack.length > 0) {
                 const lastOpenModalId = modalStack.pop();
                 if (lastOpenModalId === 'details') {
@@ -2289,25 +2444,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (skillTypeHelpModalOverlay) { skillTypeHelpModalOverlay.classList.add('hidden'); skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
-                // 关闭模态框后停止进一步处理。
                 return;
             }
-            // 新增：处理聊天模拟器视图的返回
             if (chatSimulatorView && !chatSimulatorView.classList.contains('hidden')) {
                 chatSimulatorView.classList.add('hidden');
-                showHeroListViewUI(); // 调用返回列表的函数
-                return; // 处理完毕，直接返回
+                showHeroListViewUI();
+                return;
             }
-
-            // 如果没有模态框打开，任何“返回”导航都应返回到英雄列表视图。
-            // 我们检查英雄列表是否已显示，以避免不必要的重复更新。
             const isHeroListVisible = !heroTableView.classList.contains('hidden');
             if (!isHeroListVisible) {
                 showHeroListViewUI();
             }
         });
         window.addEventListener('resize', adjustStickyHeaders);
-        // 添加新的聊天模拟器事件监听
         addChatSimulatorEventListeners();
     }
 
@@ -2336,10 +2485,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 hero.english_name = extractEnglishName(hero);
             });
             populateFilters();
-            // +++ 新增: 从Cookie加载并应用默认属性设置 +++
+
+            // 从Cookie加载并应用默认属性设置
             defaultLimitBreakSelect.value = getCookie('defaultLB') || 'none';
             defaultTalentSelect.value = getCookie('defaultTalent') || 'none';
-            defaultPrioritySelect.value = getCookie('defaultPriority') || 'attack';
+            defaultTalentStrategySelect.value = getCookie('defaultTalentStrategy') || 'atk-def-hp';
+            defaultManaPriorityCheckbox.checked = getCookie('defaultManaPriority') === 'true';
+
+            // 【新增】根据加载的天赋设置，初始化控件的禁用状态
+            const initialTalentDisabled = defaultTalentSelect.value === 'none';
+            defaultTalentStrategySelect.disabled = initialTalentDisabled;
+            defaultManaPriorityCheckbox.disabled = initialTalentDisabled;
+
             history.replaceState({ view: 'list' }, '');
             if (oneClickMaxDateDisplay) oneClickMaxDateDisplay.textContent = oneClickMaxDate;
             if (purchaseCostumeDateDisplay) purchaseCostumeDateDisplay.textContent = purchaseCostumeDate;
@@ -2366,14 +2523,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             addEventListeners();
-            applyFiltersAndRender(); // 首次渲染将使用加载的或默认的设置
+            applyFiltersAndRender();
             loadFilterStates();
-            // --- 新增：为新用户默认打开筛选框 ---
+
             const hasVisited = getCookie('visited');
             if (!hasVisited) {
-                // 如果 'visited' cookie 不存在，说明是新用户
-                openFiltersModal(); // 调用已有的函数打开筛选框
-                setCookie('visited', 'true', 365); // 设置cookie，有效期一年，下次不再打开
+                openFiltersModal();
+                setCookie('visited', 'true', 365);
             }
             if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
                 const targetHero = allHeroes.find(h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl);

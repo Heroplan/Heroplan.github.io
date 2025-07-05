@@ -821,7 +821,7 @@ input[type="number"] {
     max-width: 200px;
     height: auto;
     border-radius: 8px;
-    border: 4px solid;
+    border: 4px solid transparent;
     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -1465,45 +1465,44 @@ footer .footer-credit {
 }
 
 /* ========== 英雄头像辉光效果 ========== */
-/* 【修正】提高选择器优先级，确保辉光效果能覆盖默认样式 */
-#modal .red-glow-border,
-.manual-table .red-glow-border {
+#modal .hero-image-modal.red-glow-border,
+.manual-table .hero-image.red-glow-border {
     box-shadow: var(--hero-glow-red);
     border-color: var(--hero-color-red);
 }
 
-#modal .blue-glow-border,
-.manual-table .blue-glow-border {
+#modal .hero-image-modal.blue-glow-border,
+.manual-table .hero-image.blue-glow-border {
     box-shadow: var(--hero-glow-blue);
     border-color: var(--hero-color-blue);
 }
 
-#modal .green-glow-border,
-.manual-table .green-glow-border {
+#modal .hero-image-modal.green-glow-border,
+.manual-table .hero-image.green-glow-border {
     box-shadow: var(--hero-glow-green);
     border-color: var(--hero-color-green);
 }
 
-#modal .yellow-glow-border,
-.manual-table .yellow-glow-border {
+#modal .hero-image-modal.yellow-glow-border,
+.manual-table .hero-image.yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
     border-color: var(--hero-color-yellow);
 }
 
-#modal .purple-glow-border,
-.manual-table .purple-glow-border {
+#modal .hero-image-modal.purple-glow-border,
+.manual-table .hero-image.purple-glow-border {
     box-shadow: var(--hero-glow-purple);
     border-color: var(--hero-color-purple);
 }
 
-#modal .white-glow-border,
-.manual-table .white-glow-border {
+#modal .hero-image-modal.white-glow-border,
+.manual-table .hero-image.white-glow-border {
     box-shadow: var(--hero-glow-white);
     border-color: var(--hero-color-white);
 }
 
-#modal .black-glow-border,
-.manual-table .black-glow-border {
+#modal .hero-image-modal.black-glow-border,
+.manual-table .hero-image.black-glow-border {
     box-shadow: var(--hero-glow-black);
     border-color: var(--hero-color-black);
 }
@@ -2459,6 +2458,7 @@ hr.divider {
         /* 让控件占据剩余空间 */
     }
 }
+
 /* ==========================================================================
    新增：法力优先帮助按钮的容器样式
    ========================================================================== */

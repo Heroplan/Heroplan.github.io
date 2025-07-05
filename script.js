@@ -928,7 +928,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const noneValue = i18n[currentLang].none.toLowerCase();
         const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
 
-        // 获取全局默认属性设置
         const defaultSettings = {
             lb: defaultLimitBreakSelect.value,
             talent: defaultTalentSelect.value,
@@ -969,18 +968,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     [String(hero.passives || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()];
                 if (!matchesComplexQuery(sanitizedPassives, filters.passives)) return false;
             }
+
+            // 【核心修正】扩展技能类别筛选，使其同时支持中英文搜索
             if (filters.types) {
                 let skillTypesToSearch = [];
-                const source = filters.skillTypeSource;
+                const source = filters.skillTypeSource.value; // 注意：这里直接使用 filters.skillTypeSource
                 if (source === 'heroplan') {
                     skillTypesToSearch = hero.types || [];
                 } else if (source === 'nynaeve') {
-                    skillTypesToSearch = hero.skill_types || [];
-                } else {
-                    skillTypesToSearch = [...(hero.types || []), ...(hero.skill_types || [])];
+                    const originalTypes = hero.skill_types || [];
+                    // 将中文类别翻译回英文，并与原文合并，以支持双语搜索
+                    const englishTypes = originalTypes.map(t => reverseSkillTypeMap_cn[t] || reverseSkillTypeMap_tc[t] || t);
+                    skillTypesToSearch = [...originalTypes, ...englishTypes];
+                } else { // "both"
+                    const heroplanTypes = hero.types || [];
+                    const nynaeveOriginalTypes = hero.skill_types || [];
+                    const nynaeveEnglishTypes = nynaeveOriginalTypes.map(t => reverseSkillTypeMap_cn[t] || reverseSkillTypeMap_tc[t] || t);
+                    skillTypesToSearch = [...heroplanTypes, ...nynaeveOriginalTypes, ...nynaeveEnglishTypes];
                 }
-                if (!matchesComplexQuery(skillTypesToSearch, filters.types)) return false;
+
+                // 去重并移除空值
+                const uniqueSkillTypesToSearch = [...new Set(skillTypesToSearch.filter(t => t))];
+
+                if (!matchesComplexQuery(uniqueSkillTypesToSearch, filters.types)) return false;
             }
+
             if (filters.star.toLowerCase() !== noneValue && String(hero.star) !== filters.star) return false;
             if (filters.color.toLowerCase() !== noneValue && String(hero.color).toLowerCase() !== filters.color.toLowerCase()) return false;
             if (filters.speed.toLowerCase() !== noneValue && String(hero.speed).toLowerCase() !== filters.speed.toLowerCase()) return false;
@@ -988,6 +1000,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filters.family.toLowerCase() !== noneValue && String(hero.family).toLowerCase() !== filters.family.toLowerCase()) return false;
             if (filters.source.toLowerCase() !== noneValue && String(hero.source).toLowerCase() !== filters.source.toLowerCase()) return false;
             if (filters.aetherpower.toLowerCase() !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower.toLowerCase()) return false;
+
             if (temporaryDateFilter) {
                 if (!hero['Release date']) return false;
                 const releaseDate = new Date(hero['Release date']);
@@ -1003,10 +1016,10 @@ document.addEventListener('DOMContentLoaded', function () {
             if (Number(filters.attack) > 0 && Number(hero.attack) < Number(filters.attack)) return false;
             if (Number(filters.defense) > 0 && Number(hero.defense) < Number(filters.defense)) return false;
             if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
+
             return true;
         });
 
-        // 为每个筛选后的英雄计算用于显示的属性
         filteredHeroes.forEach(hero => {
             hero.displayStats = calculateHeroStats(hero, defaultSettings);
         });
@@ -1014,7 +1027,6 @@ document.addEventListener('DOMContentLoaded', function () {
         filteredHeroes.sort((a, b) => {
             const key = currentSort.key;
             const direction = currentSort.direction === 'asc' ? 1 : -1;
-
             const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
             let valA, valB;
 
@@ -1143,12 +1155,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     let typesToShow = [];
                     if (source === 'heroplan') {
                         typesToShow = hero.types ? [...hero.types] : [];
-                    } else if (source === 'nynaeve') {
-                        typesToShow = hero.skill_types ? [...hero.skill_types] : [];
-                    } else {
-                        typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+                        typesToShow.sort((a, b) => a.localeCompare(b));
+                    } else { // Handles 'nynaeve' and 'both' with custom sorting
+                        if (source === 'nynaeve') {
+                            typesToShow = hero.skill_types ? [...hero.skill_types] : [];
+                        } else { // 'both'
+                            typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+                        }
+                        const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
+                        typesToShow.sort((a, b) => {
+                            const englishA = (currentLang !== 'en' && reverseMap[a]) ? reverseMap[a] : a;
+                            const englishB = (currentLang !== 'en' && reverseMap[b]) ? reverseMap[b] : b;
+                            const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+                            const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
+                            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                            if (indexA !== -1) return -1;
+                            if (indexB !== -1) return 1;
+                            return a.localeCompare(b);
+                        });
                     }
-                    typesToShow.sort((a, b) => a.localeCompare(b));
                     content = typesToShow.join(', ');
                 } else if (key === 'power') {
                     content = `💪 ${hero.displayStats[key] || 0}`;
@@ -1462,15 +1487,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * 在模态框中渲染英雄详情
      * @param {object} hero - 英雄对象
      */
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
-        // 【新增】获取英雄职业的小写英文键名，用于构建图标路径
         const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
+        const avatarGlowClass = getColorGlowClass(hero.color);
 
-        // 内部辅助函数，用于将技能数组渲染为HTML列表
         const renderListAsHTML = (itemsArray, filterType = null) => {
             if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
             return itemsArray.map(item => {
@@ -1488,13 +1511,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }).join('');
         };
 
-        // --- 英雄名称和皮肤解析逻辑 ---
         const skinInfo = getSkinInfo(hero);
         const heroSkin = skinInfo.skinIdentifier;
         let tempName = skinInfo.baseName;
-        let mainHeroName = '';
-        let englishName = '';
-        let traditionalChineseName = '';
+        let mainHeroName = '', englishName = '', traditionalChineseName = '';
 
         if (currentLang === 'en') {
             mainHeroName = tempName;
@@ -1514,18 +1534,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
 
-
-        // --- 家族加成和技能类型逻辑 ---
         const heroFamilyKey = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamilyKey) || {}).bonus || [];
         const translatedFamily = family_values[heroFamilyKey] || hero.family;
+
+        // 【FIXED】Implement custom sorting for skill types based on nynaeveSkillTypeOrder
         const source = filterInputs.skillTypeSource.value;
         let skillTypesToDisplay = [];
         if (source === 'heroplan') {
             skillTypesToDisplay = hero.types ? [...hero.types] : [];
             skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
-        } else if (source === 'nynaeve') {
-            skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
+        } else { // Handles 'nynaeve' and 'both' with custom sorting
+            if (source === 'nynaeve') {
+                skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
+            } else { // 'both'
+                skillTypesToDisplay = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+            }
             const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
             skillTypesToDisplay.sort((a, b) => {
                 const englishA = (currentLang !== 'en' && reverseMap[a]) ? reverseMap[a] : a;
@@ -1537,19 +1561,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (indexB !== -1) return 1;
                 return a.localeCompare(b);
             });
-        } else {
-            skillTypesToDisplay = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
-            skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
         }
         const uniqueSkillTypes = skillTypesToDisplay.filter(t => t);
         const heroTypesContent = uniqueSkillTypes.length > 0 ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>` : `<span class="skill-value">${langDict.none}</span>`;
 
-        // --- 头像和额外信息 ---
         const localImagePath = getLocalImagePath(hero.image);
-        const avatarGlowClass = getColorGlowClass(hero.color);
         const fancyNameHTML = hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : '';
 
-        // --- 家族、职业等信息块 ---
         let familyBlockHTML = '';
         if (hero.family) {
             const familyFileName = String(hero.family).toLowerCase();
@@ -1591,42 +1609,23 @@ document.addEventListener('DOMContentLoaded', function () {
             sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">${iconHtml}${displayedSource}</span>`;
         }
 
-        // --- 天赋加成与消耗显示区域的HTML模板 ---
         const talentBonusCostHTML = `
             <div class="filter-header" id="modal-bonus-cost-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);">
                 <h2 data-lang-key="bonusAndCostTitle">${langDict.bonusAndCostTitle}</h2>
                 <button class="toggle-button expanded" data-target="modal-bonus-cost-content" data-cookie="modal_bonus_cost_state">▼</button>
             </div>
             <div id="modal-bonus-cost-content" class="filter-content">
-                <div id="modal-talent-bonus-display">
-                    </div>
+                <div id="modal-talent-bonus-display"></div>
                 <hr class="divider">
                 <div id="modal-talent-cost-display">
-                    <div class="cost-item">
-                        <img src="imgs/emblems/${englishClassKey}.png" class="cost-icon" alt="纹章图标">
-                        ${langDict.emblemCostLabel}
-                        <span id="cost-emblem">0</span>
-                    </div>
-                    <div class="cost-item">
-                        <img src="imgs/farm/Food.png" class="cost-icon" alt="食物图标">
-                        ${langDict.foodCostLabel}
-                        <span id="cost-food">0</span>
-                    </div>
-                    <div class="cost-item">
-                        <img src="imgs/farm/Iron.png" class="cost-icon" alt="铁矿图标">
-                        ${langDict.ironCostLabel}
-                        <span id="cost-iron">0</span>
-                    </div>
-                    <div class="cost-item">
-                        <img src="imgs/emblems/master_${englishClassKey}.png" class="cost-icon" alt="大师纹章图标">
-                        ${langDict.masterEmblemCostLabel}
-                        <span id="cost-master-emblem">0</span>
-                    </div>
+                    <div class="cost-item"><img src="imgs/emblems/${englishClassKey}.png" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
+                    <div class="cost-item"><img src="imgs/farm/Food.png" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
+                    <div class="cost-item"><img src="imgs/farm/Iron.png" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
+                    <div class="cost-item"><img src="imgs/emblems/master_${englishClassKey}.png" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
                 </div>
             </div>
         `;
 
-        // 完整的天赋系统HTML结构
         const talentSystemHTML = `
             <div id="modal-talent-system-wrapper">
                 <div class="filter-header" id="modal-talent-settings-header">
@@ -1643,20 +1642,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                 </div>
-                
                 ${talentBonusCostHTML}
-
                 <div class="filter-header" id="modal-talent-tree-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);"><h2 data-lang-key="talentTreeTitle">${langDict.talentTreeTitle}</h2><button class="toggle-button expanded" data-target="modal-talent-tree-wrapper" data-cookie="modal_tree_state">▼</button></div>
                 <div id="modal-talent-tree-wrapper" class="filter-content" style="padding:0;"><div class="loader-spinner" style="margin: 3rem auto;"></div></div>
             </div>
         `;
 
-        // --- 最终的模态框HTML ---
         const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${familyBlockHTML}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.displayStats.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.displayStats.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.displayStats.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.displayStats.health || 0}</p></div></div></div></div><div class="details-bottom-section">${talentSystemHTML}<h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
 
         modalContent.innerHTML = detailsHTML;
-
-        // --- 模态框内交互逻辑 ---
 
         const modalLbSelect = document.getElementById('modal-limit-break-select');
         const modalTalentSelect = document.getElementById('modal-talent-select');
@@ -1669,8 +1663,9 @@ document.addEventListener('DOMContentLoaded', function () {
         modalManaCheckbox.checked = defaultManaPriorityCheckbox.checked;
 
         let currentTalentBonuses = {};
+        let currentNodeCount = 0;
 
-        function _updateModalStatsWithBonuses(hero, settings, bonuses) {
+        function _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount) {
             let baseStats = {
                 power: hero.power || 0, attack: hero.attack || 0,
                 defense: hero.defense || 0, health: hero.health || 0
@@ -1694,9 +1689,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
             const stats_final_power = Math.floor(stats_raw_power);
             const skill_power = (8 - 1) * 5;
-            let talent_power = 0;
-            if (settings.talent === 'talent20') talent_power = 20 * 5;
-            else if (settings.talent === 'talent25') talent_power = 25 * 5;
+            const talent_power = nodeCount * 5;
+
             finalStats.power = star_power + stats_final_power + skill_power + talent_power;
 
             const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
@@ -1709,11 +1703,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (healthEl) healthEl.innerHTML = `❤️ ${finalStats.health || 0}`;
         }
 
-        // 实时更新“加成与消耗”区域的辅助函数
         function _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats) {
             const bonusDisplay = document.getElementById('modal-talent-bonus-display');
-
-            // 将百分比加成计算为具体数值
             const calculatedBonuses = {
                 attack: bonuses.attack_flat + Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100)),
                 defense: bonuses.defense_flat + Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100)),
@@ -1722,17 +1713,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 healing: bonuses.healing_percent,
                 crit: bonuses.crit_percent
             };
-
-            // 【新增】属性图标的文件名映射
             const iconMap = {
-                attack: 'attack.png',
-                defense: 'defense.png',
-                health: 'health.png',
-                mana: 'mana.png',
-                healing: 'healing.png',
-                crit: 'critical.png'
+                attack: 'attack.png', defense: 'defense.png', health: 'health.png',
+                mana: 'mana.png', healing: 'healing.png', crit: 'critical.png'
             };
-
             const bonusMap = {
                 attack: { value: calculatedBonuses.attack, label: langDict.attackBonusLabel, isPercent: false },
                 defense: { value: calculatedBonuses.defense, label: langDict.defenseBonusLabel, isPercent: false },
@@ -1741,27 +1725,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 healing: { value: calculatedBonuses.healing, label: langDict.healingBonusLabel, isPercent: true },
                 crit: { value: calculatedBonuses.crit, label: langDict.critBonusLabel, isPercent: true }
             };
-
             let bonusHTML = '';
             for (const key in bonusMap) {
                 const bonus = bonusMap[key];
                 if (bonus.value > 0) {
                     const sign = bonus.isPercent ? '%' : '';
-                    // 【修正】在标签前添加对应的图标
-                    bonusHTML += `<div class="bonus-item">
-                                    <img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">
-                                    ${bonus.label}
-                                    <span>+${bonus.value}${sign}</span>
-                                </div>`;
+                    bonusHTML += `<div class="bonus-item"><img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">${bonus.label}<span>+${bonus.value}${sign}</span></div>`;
                 }
             }
             bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
 
-            // 资源消耗计算（保持不变）
             const costs = { emblem: 0, food: 0, iron: 0, masterEmblem: 0 };
             const star = parseInt(hero.star);
             const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === star);
-
             for (let i = 0; i < nodeCount; i++) {
                 const costEntry = relevantCosts[i];
                 if (costEntry) {
@@ -1779,6 +1755,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const talentChangeCallback = (bonuses, nodeCount) => {
             currentTalentBonuses = bonuses;
+            currentNodeCount = nodeCount;
             const currentSettings = {
                 lb: modalLbSelect.value, talent: modalTalentSelect.value,
                 strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked
@@ -1786,7 +1763,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
             if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses);
+            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses, currentNodeCount);
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
         };
 
@@ -1816,13 +1793,13 @@ document.addEventListener('DOMContentLoaded', function () {
         modalLbSelect.addEventListener('change', () => {
             const currentSettings = {
                 lb: modalLbSelect.value, talent: modalTalentSelect.value,
+                strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked
             };
             let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
             if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-
-            _updateModalStatsWithBonuses(hero, { ...currentSettings, ...{ strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked } }, currentTalentBonuses);
-            _updateBonusAndCostDisplay(currentTalentBonuses, Object.keys(currentTalentBonuses).length > 0 ? (currentSettings.talent === 'talent20' ? 20 : (currentSettings.talent === 'talent25' ? 25 : 0)) : 0, baseStats);
+            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses, currentNodeCount);
+            _updateBonusAndCostDisplay(currentTalentBonuses, currentNodeCount, baseStats);
         });
 
         handleTalentLevelChange();

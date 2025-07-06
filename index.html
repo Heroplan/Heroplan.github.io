@@ -267,6 +267,10 @@
                                 id="speed-select"></select></div>
                         <div class="filter-item"><label for="class-select" data-lang-key="classLabel">职业:</label><select
                                 id="class-select"></select></div>
+                        <div class="filter-item">
+                            <label for="costume-type-select" data-lang-key="costumeTypeLabel">服装类型:</label>
+                            <select id="costume-type-select"></select>
+                        </div>
                         <div class="filter-item"><label for="family-select"
                                 data-lang-key="familyLabel">家族:</label><select id="family-select"></select></div>
                         <div class="filter-item"><label for="source-select"
@@ -342,10 +346,12 @@
                             </div>
                         </div>
 
-                        <div style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
                             <div class="default-stat-selectors">
                                 <div class="details-selector-item">
-                                    <label for="default-limit-break-select" data-lang-key="limitBreakSetting">突破设置</label>
+                                    <label for="default-limit-break-select"
+                                        data-lang-key="limitBreakSetting">突破设置</label>
                                     <select id="default-limit-break-select">
                                         <option value="none" data-lang-key="noLimitBreak">无突破</option>
                                         <option value="lb1" data-lang-key="lb1">LB1</option>
@@ -361,7 +367,8 @@
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-talent-strategy-select" data-lang-key="prioritySetting">天赋优先级</label>
+                                    <label for="default-talent-strategy-select"
+                                        data-lang-key="prioritySetting">天赋优先级</label>
                                     <select id="default-talent-strategy-select">
                                         <option value="atk-def-hp" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
                                         <option value="atk-hp-def" data-lang-key="attackPriority2">攻击 > 生命 > 防御</option>
@@ -370,7 +377,8 @@
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-mana-priority-checkbox" data-lang-key="manaPriorityLabel">法力节点</label>
+                                    <label for="default-mana-priority-checkbox"
+                                        data-lang-key="manaPriorityLabel">法力节点</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="default-mana-priority-checkbox">

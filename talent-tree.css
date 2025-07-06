@@ -187,8 +187,10 @@
     user-select: none;
     cursor: pointer;
     transition: filter 0.3s, box-shadow 0.3s;
-    filter: grayscale(85%) brightness(0.8);
     /* 未激活时变灰变暗 */
+    filter: grayscale(85%) brightness(0.8);
+    /* 消除移动端点击时的高亮框 */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* 最终天赋节点不可点击 */

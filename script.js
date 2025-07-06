@@ -253,6 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
         name: document.getElementById('name-input'), star: document.getElementById('star-select'),
         color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
         class: document.getElementById('class-select'), family: document.getElementById('family-select'),
+        costume: document.getElementById('costume-type-select'),
         source: document.getElementById('source-select'),
         aetherpower: document.getElementById('aetherpower-select'),
         skillTypeSource: document.getElementById('skill-type-source-select'),
@@ -303,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
             filterInputs.color.value !== noneText ||
             filterInputs.speed.value !== noneText ||
             filterInputs.class.value !== noneText ||
+            filterInputs.costume.value !== noneText ||
             filterInputs.family.value !== noneText ||
             filterInputs.source.value !== noneText ||
             filterInputs.aetherpower.value !== noneText) {
@@ -586,13 +588,24 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         const CUSTOM_SORT = { cn: CUSTOM_SORT_CN, tc: CUSTOM_SORT_TC, en: CUSTOM_SORT_EN }[currentLang];
         const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+
         const getSortedValues = (key, values) => {
             values = values.map(v => String(v || ''));
-            if (key === 'family' || key === 'source') {
+            if (key === 'family' || key === 'source' || key === 'costume') {
                 const translatedValues = values.map(v => ({
                     original: v,
                     translated: family_values[v.toLowerCase()] || v
                 }));
+                // 对服装类型进行自定义排序
+                if (key === 'costume') {
+                    return translatedValues.sort((a, b) => {
+                        const aIsC = a.original.startsWith('C');
+                        const bIsC = b.original.startsWith('C');
+                        if (aIsC && !bIsC) return -1;
+                        if (!aIsC && bIsC) return 1;
+                        return a.original.localeCompare(b.original, undefined, { numeric: true });
+                    }).map(item => item.original);
+                }
                 return translatedValues.sort((a, b) => a.translated.localeCompare(b.translated, locale)).map(item => item.original);
             }
             if (key === 'AetherPower') { return values.sort((a, b) => a.localeCompare(b, locale)); }
@@ -609,6 +622,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             return values.sort((a, b) => a.localeCompare(b, locale));
         };
+
         const createOptions = (values, key) => {
             const sortedValues = getSortedValues(key, values);
             const noneText = i18n[currentLang].none || 'None';
@@ -618,17 +632,25 @@ document.addEventListener('DOMContentLoaded', function () {
             })];
             return options.join('');
         };
+
         const initFilter = (key) => {
-            const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
-            const uniqueValues = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
+            let uniqueValues;
+            if (key === 'costume') {
+                uniqueValues = [...new Set(allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
+            } else {
+                const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
+                uniqueValues = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
+            }
             if (filterInputs[key]) {
-                filterInputs[key].innerHTML = createOptions(uniqueValues, heroDataKey);
+                filterInputs[key].innerHTML = createOptions(uniqueValues, key);
             }
         };
+
         initFilter('star');
         initFilter('color');
         initFilter('speed');
         initFilter('class');
+        initFilter('costume');
         initFilter('family');
         initFilter('source');
         initFilter('aetherpower');
@@ -1000,6 +1022,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filters.family.toLowerCase() !== noneValue && String(hero.family).toLowerCase() !== filters.family.toLowerCase()) return false;
             if (filters.source.toLowerCase() !== noneValue && String(hero.source).toLowerCase() !== filters.source.toLowerCase()) return false;
             if (filters.aetherpower.toLowerCase() !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower.toLowerCase()) return false;
+            if (filters.costume.toLowerCase() !== noneValue) {
+                const skinIdentifier = getSkinInfo(hero).skinIdentifier || '';
+                if (skinIdentifier.toLowerCase() !== filters.costume.toLowerCase()) {
+                    return false;
+                }
+            }
 
             if (temporaryDateFilter) {
                 if (!hero['Release date']) return false;
@@ -1189,11 +1217,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     content = hero[key] || '';
                 }
 
-                if (key === 'name' && hero.costume_id !== 0) {
+                if (key === 'name') {
                     const skinInfo = getSkinInfo(hero);
+                    content = skinInfo.baseName;
                     if (skinInfo.skinIdentifier) {
                         const iconName = getCostumeIconName(skinInfo.skinIdentifier);
                         if (iconName) {
+                            // 在基础名称前添加图标
                             content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
                         }
                     }
@@ -1580,10 +1610,11 @@ document.addEventListener('DOMContentLoaded', function () {
             classBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${displayedClass}" title="${langDict.filterBy} ${displayedClass}"><img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${displayedClass}"/>${displayedClass}</span>`;
         }
         let skinBlockHTML = '';
-        if (heroSkin) {
+        if (heroSkin) { // heroSkin 来自 getSkinInfo
             const iconName = getCostumeIconName(heroSkin);
             const iconHtml = iconName ? `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume"/>` : '👕';
-            skinBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="name" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">${iconHtml}${langDict.modalSkin} ${heroSkin}</span>`;
+            // 这行代码生成了 "服装: [图标] C1" 这样的效果
+            skinBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">${langDict.modalSkin} ${iconHtml}</span>`;
         }
         let aetherPowerBlockHTML = '';
         if (hero.AetherPower) {
@@ -1884,13 +1915,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const element = filterInputs[key];
             if (element) {
                 if (element.tagName === 'SELECT') {
-                    element.value = (element.id === 'release-date-type') ? 'all' : i18n[currentLang].none;
+                    if (element.id === 'release-date-type') {
+                        element.value = 'all';
+                    } else {
+                        element.value = i18n[currentLang].none;
+                    }
                 } else {
                     element.value = '';
                 }
             }
         }
     }
+
+
     // ==========================================================================
     // --- 聊天模拟器 (Chat Simulator) v3 ---
     // ==========================================================================

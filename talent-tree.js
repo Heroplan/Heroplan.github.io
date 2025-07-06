@@ -309,7 +309,7 @@ const TalentTree = (() => {
             return;
         }
 
-        const weights = { '攻击': 0, '防御': 0, '生命': 0, '法力': 0, '治疗': 0, '暴击': 0 };
+        const weights = { '攻击': 0, '防御': 0, '生命': 0, '法力': 0.5, '治疗': 0, '暴击': 0 };
         const parts = strategy.split('-');
         const statMap = { atk: '攻击', def: '防御', hp: '生命' };
         weights[statMap[parts[0]]] = 4;

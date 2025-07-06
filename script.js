@@ -553,10 +553,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const getColorGlowClass = (colorName) => {
         const colorMap = {
-            '红色': 'red', '紅色': 'red', 'red': 'red', '蓝色': 'blue', '藍色': 'blue', 'blue': 'blue',
-            '绿色': 'green', '綠色': 'green', 'green': 'green', '黄色': 'yellow', '黃色': 'yellow', 'yellow': 'yellow',
-            '紫色': 'purple', '紫色': 'purple', 'purple': 'purple', '白色': 'white', '白色': 'white', 'white': 'white',
-            '黑色': 'black', '黑色': 'black', 'black': 'black',
+            '红': 'red', '紅': 'red', 'red': 'red', '蓝': 'blue', '藍': 'blue', 'blue': 'blue',
+            '绿': 'green', '綠': 'green', 'green': 'green', '黄': 'yellow', '黃': 'yellow', 'yellow': 'yellow',
+            '紫': 'purple', '紫': 'purple', 'purple': 'purple', '白': 'white', '白': 'white', 'white': 'white',
+            '黑': 'black', '黑': 'black', 'black': 'black',
         };
         const standardColor = colorMap[String(colorName).toLowerCase()];
         return standardColor ? `${standardColor}-glow-border` : '';
@@ -564,9 +564,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const getColorHex = (colorName) => {
         const colorMap = {
-            '红色': '#ff7a4c', '紅色': '#ff7a4c', 'red': '#ff7a4c', '蓝色': '#41d8fe', '藍色': '#41d8fe', 'blue': '#41d8fe',
-            '绿色': '#70e92f', '綠色': '#70e92f', 'green': '#70e92f', '黄色': '#f2e33a', '黃色': '#f2e33a', 'yellow': '#f2e33a',
-            '紫色': '#e290ff', '紫色': '#e290ff', 'purple': '#e290ff',
+            '红': '#ff7a4c', '紅': '#ff7a4c', 'red': '#ff7a4c', '蓝': '#41d8fe', '藍': '#41d8fe', 'blue': '#41d8fe',
+            '绿': '#70e92f', '綠': '#70e92f', 'green': '#70e92f', '黄': '#f2e33a', '黃': '#f2e33a', 'yellow': '#f2e33a',
+            '紫': '#e290ff', '紫': '#e290ff', 'purple': '#e290ff',
         };
         return colorMap[String(colorName).toLowerCase()] || 'inherit';
     };

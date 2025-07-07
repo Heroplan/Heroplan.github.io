@@ -2471,7 +2471,7 @@ hr.divider {
 /* ==========================================================================
    新增：法力优先帮助模态框的样式
    ========================================================================== */
-#mana-help-modal {
+#lb-talent-help-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -2489,7 +2489,7 @@ hr.divider {
     box-sizing: border-box;
 }
 
-#mana-help-modal-overlay {
+#lb-talent-help-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -2501,15 +2501,15 @@ hr.divider {
     transition: opacity 0.3s ease;
 }
 
-#mana-help-modal.stacked-modal {
+#lb-talent-help-modal.stacked-modal {
     z-index: 1003;
 }
 
-#mana-help-modal-overlay.stacked-modal-overlay {
+#lb-talent-help-modal-overlay.stacked-modal-overlay {
     z-index: 1002;
 }
 
-#mana-help-modal h3 {
+#lb-talent-help-modal h3 {
     font-size: 1.6rem;
     color: var(--md-sys-color-primary);
     margin-top: 0;
@@ -2517,14 +2517,14 @@ hr.divider {
     text-align: center;
 }
 
-#mana-help-modal p {
+#lb-talent-help-modal p {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
     color: var(--md-sys-color-on-surface);
 }
 
-#mana-help-modal a {
+#lb-talent-help-modal a {
     color: var(--md-sys-color-primary);
     text-decoration: underline;
 }

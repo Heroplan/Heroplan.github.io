@@ -2218,40 +2218,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function addEventListeners() {
         // --- DOM 元素获取 ---
-        const manaPriorityHelpBtn = document.getElementById('mana-priority-help-btn');
-        const manaHelpModal = document.getElementById('mana-help-modal');
-        const manaHelpModalOverlay = document.getElementById('mana-help-modal-overlay');
+        const lbTalentHelpBtn = document.getElementById('lb-talent-help-btn');
+        const lbTalentHelpModal = document.getElementById('lb-talent-help-modal');
+        const lbTalentHelpModalOverlay = document.getElementById('lb-talent-help-modal-overlay');
 
-        /**
-         * 【已修正】打开法力优先帮助模态框
-         * 使用 innerHTML 确保超链接能正确渲染
-         */
-        function openManaHelpModal() {
+        function openLbTalentHelpModal() {
             const langDict = i18n[currentLang];
-
-            // 【核心修正】确保包含HTML链接的内容被正确解析
             const contentHTML = `
-                <h3>${langDict.manaPriorityHelpTitle}</h3>
-                <p>${langDict.manaPriorityHelpLine1}</p>
-                <p>${langDict.manaPriorityHelpLine2}</p>
+                <h3>${langDict.lbTalentHelpTitle}</h3>
+                <p>${langDict.lbTalentHelpLine1}</p>
+                <p>${langDict.lbTalentHelpLine2}</p>
                 <div class="modal-footer">
-                    <button class="close-bottom-btn" id="close-mana-help-btn">${langDict.detailsCloseBtn}</button>
+                    <button class="close-bottom-btn" id="close-lb-talent-help-btn">${langDict.detailsCloseBtn}</button>
                 </div>
             `;
-            manaHelpModal.innerHTML = contentHTML;
+            lbTalentHelpModal.innerHTML = contentHTML;
 
-            manaHelpModal.classList.add('stacked-modal');
-            manaHelpModalOverlay.classList.add('stacked-modal-overlay');
-            manaHelpModal.classList.remove('hidden');
-            manaHelpModalOverlay.classList.remove('hidden');
+            lbTalentHelpModal.classList.add('stacked-modal');
+            lbTalentHelpModalOverlay.classList.add('stacked-modal-overlay');
+            lbTalentHelpModal.classList.remove('hidden');
+            lbTalentHelpModalOverlay.classList.remove('hidden');
             document.body.classList.add('modal-open');
-            history.pushState({ modal: 'manaHelp' }, null);
-            modalStack.push('manaHelp');
-            document.getElementById('close-mana-help-btn').addEventListener('click', closeManaHelpModal);
+            history.pushState({ modal: 'lbTalentHelp' }, null); // 也更新历史状态
+            modalStack.push('lbTalentHelp');
+            document.getElementById('close-lb-talent-help-btn').addEventListener('click', closeLbTalentHelpModal);
         }
 
-        function closeManaHelpModal() {
-            if (!manaHelpModal.classList.contains('hidden')) {
+        function closeLbTalentHelpModal() {
+            if (!lbTalentHelpModal.classList.contains('hidden')) {
                 history.back();
             }
         }
@@ -2434,8 +2428,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (showWantedMissionBtn) showWantedMissionBtn.addEventListener('click', () => initAndShowWantedMissionView());
         if (showFarmingGuideBtn) showFarmingGuideBtn.addEventListener('click', () => initAndShowFarmingGuideView());
 
-        if (manaPriorityHelpBtn) manaPriorityHelpBtn.addEventListener('click', openManaHelpModal);
-        if (manaHelpModalOverlay) manaHelpModalOverlay.addEventListener('click', closeManaHelpModal);
+        if (lbTalentHelpBtn) {
+            lbTalentHelpBtn.addEventListener('click', openLbTalentHelpModal);
+            // 动态设置悬浮提示，使其支持多语言
+            const langDict = i18n[currentLang];
+            if (langDict.lbTalentHelpTitle) {
+                lbTalentHelpBtn.title = langDict.lbTalentHelpTitle;
+            }
+        }
+        if (lbTalentHelpModalOverlay) lbTalentHelpModalOverlay.addEventListener('click', closeLbTalentHelpModal);
 
         if (shareFavoritesBtn) {
             shareFavoritesBtn.addEventListener('click', () => {
@@ -2494,9 +2495,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else if (lastOpenModalId === 'skillTypeHelp') {
                     if (skillTypeHelpModal) { skillTypeHelpModal.classList.add('hidden'); skillTypeHelpModal.classList.remove('stacked-modal'); }
                     if (skillTypeHelpModalOverlay) { skillTypeHelpModalOverlay.classList.add('hidden'); skillTypeHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
-                } else if (lastOpenModalId === 'manaHelp') {
-                    if (manaHelpModal) { manaHelpModal.classList.add('hidden'); manaHelpModal.classList.remove('stacked-modal'); }
-                    if (manaHelpModalOverlay) { manaHelpModalOverlay.classList.add('hidden'); manaHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
+                } else if (lastOpenModalId === 'lbTalentHelp') {
+                    if (lbTalentHelpModal) { lbTalentHelpModal.classList.add('hidden'); lbTalentHelpModal.classList.remove('stacked-modal'); }
+                    if (lbTalentHelpModalOverlay) { lbTalentHelpModalOverlay.classList.add('hidden'); lbTalentHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
                 return;

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "挑战节II - 杀手": "slayers",
         "荒野召唤": "wilderness", "挑战节I - 守护者": "teltoc", "挑战节I - 肃煞森林": "fables",
         "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-        "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节I": "challengefestival1", "挑战节II": "challengefestival2",
+        "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节I": "challengefestival1", "挑战节II": "challengefestival2", "服装间": "costume",
         // Traditional Chinese
         "挑戰節II - 惡棍": "villains", "聯盟 - 火槍手": "musketeer", "挑戰節II - 強大寵物": "pets",
         "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "挑戰節II - 吟遊詩人": "festival", "星界召喚": "astral", "挑戰節II - 殺手": "slayers",
         "野地召喚": "wilderness", "挑戰節I - 守護者": "teltoc", "挑戰節I - 肅煞森林": "fables",
         "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-        "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節I": "challengefestival1", "挑戰節II": "challengefestival2",
+        "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節I": "challengefestival1", "挑戰節II": "challengefestival2", "服裝間": "costume",
         // English
         "Challenge Festival II - Villains": "villains", "Alliance - Musketeers": "musketeer", "Challenge Festival II - Pets": "pets",
         "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Challenge Festival II - Bards": "festival", "Astral Summon": "astral", "Challenge Festival II - Slayers": "slayers",
         "Wilderness Summon": "wilderness", "Challenge Festival I - Guardians": "teltoc", "Challenge Festival I - Grim Forest": "fables",
         "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
-        "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2",
+        "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume"
     };
     const sourceIconMap = {
         "villains": "challenge.png", "musketeer": "alliance_quest.png", "pets": "challenge.png",
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "festival": "challenge.png", "astral": "astralelves.png", "slayers": "challenge.png",
         "wilderness": "wilderness.png", "teltoc": "challenge.png", "fables": "challenge.png",
         "tavernoflegends": "hotm.png", "tavernoflegendssecret": "hotm.png", "birthday": "diamond.png", "blackfriday": "diamond.png",
-        "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png", "challengefestival1": "challenge.png", "challengefestival2": "challenge.png"
+        "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png", "challengefestival1": "challenge.png", "challengefestival2": "challenge.png", "costume": "costume_key.png",
     };
     const colorReverseMap = {
         '红': 'Red', '紅': 'Red', 'red': 'Red',
@@ -1629,9 +1629,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const displayedSource = hero.source;
             const sourceKey = sourceReverseMap[displayedSource];
             let iconHtml = '';
-            if (sourceKey === 'season1' && hero.costume_id !== 0) {
-                iconHtml = `<img src="imgs/coins/costume_key.png" class="source-icon" alt="Costume Key"/>`;
-            } else if (sourceKey) {
+            if (sourceKey) {
                 const iconFilename = sourceIconMap[sourceKey];
                 if (iconFilename) {
                     iconHtml = `<img src="imgs/coins/${iconFilename}" class="source-icon" alt="${displayedSource}"/>`;

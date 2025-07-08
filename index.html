@@ -14,7 +14,7 @@
                     const hour = new Date().getHours();
                     theme = (hour >= 20 || hour < 8) ? 'dark' : 'light';
                 }
-                if (theme === 'dark' ) {
+                if (theme === 'dark') {
                     document.documentElement.classList.add('dark-theme');
                 }
             } catch (e) { }
@@ -26,7 +26,7 @@
             const today = new Date();
             const supabase = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const dd = String(today.getDate()).padStart(2 , '0');
+            const dd = String(today.getDate()).padStart(2, '0');
             const version = `${supabase}${mm}${dd}`;
 
             // 需要进行缓存破坏处理的本地资源文件
@@ -142,7 +142,7 @@
                         <span data-lang-key="sponsoredBy"></span>
                         <strong style="color: var(--md-sys-color-error);">SilverMan,奈托</strong>
                     </span>
-                
+
                     <span>
                         <span data-lang-key="skillClassificationBy"></span>
                         <strong style="color: var(--md-sys-color-tertiary);">Nynaeve</strong>
@@ -157,11 +157,12 @@
                             <strong style="color: var(--md-sys-color-tertiary);">bbcamp.info</strong>
                         </a>
                     </span>
-                
+
                     <span>
                         <span data-lang-key="translatedBy"></span>
                         <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
-                    </span>          </div>
+                    </span>
+                </div>
                 <div class="header-info-footer">
                     <span data-lang-key="footerInfo">英雄数据持续更新 | 简繁中文版</span>
                 </div>
@@ -279,166 +280,141 @@
                     </div>
                     <div id="standard-filters-content" class="filter-content collapsed">
                         <div class="filter-item"><label for="name-input" data-lang-key="nameLabel">名称:</label><input
-                                type="text" id="name-input" data-lang-key-placeholder="namePlaceholder"
-                                placeholder="输入英雄名称"></div>
-                        <div class="filter-item"><label for="star-select" data-lang-key="starLabel">星级:</label><select
-                                id="star-select"></select></div>
-                        <div class="filter-item"><label for="color-select" data-lang-key="colorLabel">颜色:</label><select
-                                id="color-select"></select></div>
-                        <div class="filter-item"><label for="speed-select" data-lang-key="speedLabel">法速:</label><select
-                                id="speed-select"></select></div>
-                        <div class="filter-item"><label for="class-select" data-lang-key="classLabel">职业:</label><select
-                                id="class-select"></select></div>
-                        <div class="filter-item">
-                            <label for="costume-type-select" data-lang-key="costumeTypeLabel">服装类型:</label>
-                            <select id="costume-type-select"></select>
-                        </div>
-                        <div class="filter-item"><label for="family-select"
-                                data-lang-key="familyLabel">家族:</label><select id="family-select"></select></div>
-                        <div class="filter-item"><label for="source-select"
-                                data-lang-key="sourceLabel">起源:</label><select id="source-select"></select></div>
-                        <div class="filter-item"><label for="aetherpower-select"
-                                data-lang-key="aetherPowerLabel">以太力量:</label><select id="aetherpower-select"></select>
-                        </div>
-                        <div class="filter-item">
-                            <label for="release-date-type" data-lang-key="filterBy">筛选:</label>
-                            <select id="release-date-type" style="flex-grow: 1;">
-                                <option value="all" data-lang-key="all">全部</option>
-                                <option value="hero" data-lang-key="hero">英雄</option>
-                                <option value="skin" data-lang-key="skin">服装</option>
-                                <option value="favorites" data-lang-key="favorites">收藏</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="filter-card">
-                    <div class="filter-header" id="advanced-filters-header">
-                        <div class="filter-title-container">
-                            <h2 data-lang-key="advancedFilters">高级筛选</h2>
-                            <button id="advanced-filter-help-btn" class="help-btn">?</button>
-                        </div>
-                        <button class="toggle-button" data-target="advanced-filters-content">▼</button>
-                    </div>
-                    <div id="advanced-filters-content" class="filter-content collapsed">
-                        <div class="filter-item">
-                            <label for="skill-type-source-select" data-lang-key="skillTypeSourceLabel">技能类别来源:</label>
-                            <div class="input-with-help">
-                                <select id="skill-type-source-select">
-                                    <option value="both" data-lang-key="sourceBoth">全部</option>
-                                    <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
-                                    <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
-                                </select>
-                                <button id="skill-type-help-btn" class="help-btn">?</button>
-                            </div>
-                        </div>
-                        <div class="filter-item"><label for="type-input"
-                                data-lang-key="skillTypeLabel">特殊技能类别:</label><input type="text" id="type-input"
-                                data-lang-key-placeholder="skillTypePlaceholder" placeholder="例如：增益,异常,治疗"></div>
-                        <div class="filter-item"><label for="effects-input"
-                                data-lang-key="skillTextLabel">特殊技能文本:</label><input type="text" id="effects-input"
-                                placeholder=""></div>
-                        <div class="filter-item"><label for="passives-input"
-                                data-lang-key="passiveSkillLabel">被动技能文本:</label><input type="text" id="passives-input"
-                                placeholder=""></div>
+                                type="text" id="name-input" ...></div>
 
-                        <div
-                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
-                            <div class="filter-item">
-                                <label>
-                                    <img src="imgs/event/herocoach.png" class="event-icon" alt="Hero Coach" />
-                                    <span data-lang-key="oneClickMaxEventLabel">一键满级活动日期:</span>
-                                </label>
-                                <div class="input-with-right-button">
-                                    <span id="one-click-max-date-display" class="date-display-box"></span>
-                                    <button id="filter-hero-730-btn" class="action-button-right"
-                                        data-lang-key="filterButtonLabel">筛选</button>
-                                </div>
-                            </div>
-                            <div class="filter-item">
-                                <label>
-                                    <img src="imgs/event/visiting_outfitter.png" class="event-icon"
-                                        alt="Visiting Outfitter" />
-                                    <span data-lang-key="purchaseCostumeEventLabel">购买服装活动日期:</span>
-                                </label>
-                                <div class="input-with-right-button">
-                                    <span id="purchase-costume-date-display" class="date-display-box"></span>
-                                    <button id="filter-costume-548-btn" class="action-button-right"
-                                        data-lang-key="filterButtonLabel">筛选</button>
-                                </div>
-                            </div>
+                        <div id="standard-filters-container" class="filter-buttons-container">
                         </div>
-
-                        <div
-                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
-                            <div class="default-stat-selectors">
-                                <div class="details-selector-item">
-                                    <label for="default-limit-break-select"
-                                        data-lang-key="limitBreakSetting">突破设置</label>
-                                    <select id="default-limit-break-select">
-                                        <option value="none" data-lang-key="noLimitBreak">无突破</option>
-                                        <option value="lb1" data-lang-key="lb1">LB1</option>
-                                        <option value="lb2" data-lang-key="lb2">LB2</option>
-                                    </select>
-                                </div>
-                                <div class="details-selector-item">
-                                    <label for="default-talent-select" data-lang-key="talentSetting">天赋设置</label>
-                                    <select id="default-talent-select">
-                                        <option value="none" data-lang-key="noTalent">无天赋</option>
-                                        <option value="talent20" data-lang-key="talent20">20天赋</option>
-                                        <option value="talent25" data-lang-key="talent25">25天赋</option>
-                                    </select>
-                                </div>
-                                <div class="details-selector-item">
-                                    <label for="default-talent-strategy-select"
-                                        data-lang-key="prioritySetting">天赋优先级</label>
-                                    <select id="default-talent-strategy-select">
-                                        <option value="atk-def-hp" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
-                                        <option value="atk-hp-def" data-lang-key="attackPriority2">攻击 > 生命 > 防御</option>
-                                        <option value="def-hp-atk" data-lang-key="defensePriority">防御 > 生命 > 攻击</option>
-                                        <option value="hp-def-atk" data-lang-key="healthPriority">生命 > 防御 > 攻击</option>
-                                    </select>
-                                </div>
-                                <div class="details-selector-item">
-                                    <label for="default-mana-priority-checkbox"
-                                        data-lang-key="manaPriorityLabel">法力节点</label>
-                                    <div class="input-with-help">
-                                        <div class="checkbox-container" style="flex-grow:1;">
-                                            <input type="checkbox" id="default-mana-priority-checkbox">
-                                            <label for="default-mana-priority-checkbox" class="checkbox-label"
-                                                data-lang-key="manaPriorityToggle">优先选择</label>
-                                        </div>
-                                        <button id="lb-talent-help-btn" class="help-btn">?</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="stat-filter-grid">
-                            <div class="filter-item-compact">
-                                <label for="power-input" data-lang-key="minPower">战力</label>
-                                <input type="number" id="power-input" min="0" value="">
-                            </div>
-                            <div class="filter-item-compact">
-                                <label for="attack-input" data-lang-key="minAttack">攻击</label>
-                                <input type="number" id="attack-input" min="0" value="">
-                            </div>
-                            <div class="filter-item-compact">
-                                <label for="defense-input" data-lang-key="minDefense">防御</label>
-                                <input type="number" id="defense-input" min="0" value="">
-                            </div>
-                            <div class="filter-item-compact">
-                                <label for="health-input" data-lang-key="minHealth">生命</label>
-                                <input type="number" id="health-input" min="0" value="">
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
-            <div class="filter-actions">
-                <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
-                <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>
-                <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
+            <div class="filter-card">
+                <div class="filter-header" id="advanced-filters-header">
+                    <div class="filter-title-container">
+                        <h2 data-lang-key="advancedFilters">高级筛选</h2>
+                        <button id="advanced-filter-help-btn" class="help-btn">?</button>
+                    </div>
+                    <button class="toggle-button" data-target="advanced-filters-content">▼</button>
+                </div>
+                <div id="advanced-filters-content" class="filter-content collapsed">
+                    <div class="filter-item">
+                        <label for="skill-type-source-select" data-lang-key="skillTypeSourceLabel">技能类别来源:</label>
+                        <div class="input-with-help">
+                            <select id="skill-type-source-select">
+                                <option value="both" data-lang-key="sourceBoth">全部</option>
+                                <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
+                                <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
+                            </select>
+                            <button id="skill-type-help-btn" class="help-btn">?</button>
+                        </div>
+                    </div>
+                    <div class="filter-item"><label for="type-input"
+                            data-lang-key="skillTypeLabel">特殊技能类别:</label><input type="text" id="type-input"
+                            data-lang-key-placeholder="skillTypePlaceholder" placeholder="例如：增益,异常,治疗"></div>
+                    <div class="filter-item"><label for="effects-input"
+                            data-lang-key="skillTextLabel">特殊技能文本:</label><input type="text" id="effects-input"
+                            placeholder=""></div>
+                    <div class="filter-item"><label for="passives-input"
+                            data-lang-key="passiveSkillLabel">被动技能文本:</label><input type="text" id="passives-input"
+                            placeholder=""></div>
+
+                    <div
+                        style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                        <div class="filter-item">
+                            <label>
+                                <img src="imgs/event/herocoach.png" class="event-icon" alt="Hero Coach" />
+                                <span data-lang-key="oneClickMaxEventLabel">一键满级活动日期:</span>
+                            </label>
+                            <div class="input-with-right-button">
+                                <span id="one-click-max-date-display" class="date-display-box"></span>
+                                <button id="filter-hero-730-btn" class="action-button-right"
+                                    data-lang-key="filterButtonLabel">筛选</button>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <label>
+                                <img src="imgs/event/visiting_outfitter.png" class="event-icon"
+                                    alt="Visiting Outfitter" />
+                                <span data-lang-key="purchaseCostumeEventLabel">购买服装活动日期:</span>
+                            </label>
+                            <div class="input-with-right-button">
+                                <span id="purchase-costume-date-display" class="date-display-box"></span>
+                                <button id="filter-costume-548-btn" class="action-button-right"
+                                    data-lang-key="filterButtonLabel">筛选</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                        <div class="default-stat-selectors">
+                            <div class="details-selector-item">
+                                <label for="default-limit-break-select" data-lang-key="limitBreakSetting">突破设置</label>
+                                <select id="default-limit-break-select">
+                                    <option value="none" data-lang-key="noLimitBreak">无突破</option>
+                                    <option value="lb1" data-lang-key="lb1">LB1</option>
+                                    <option value="lb2" data-lang-key="lb2">LB2</option>
+                                </select>
+                            </div>
+                            <div class="details-selector-item">
+                                <label for="default-talent-select" data-lang-key="talentSetting">天赋设置</label>
+                                <select id="default-talent-select">
+                                    <option value="none" data-lang-key="noTalent">无天赋</option>
+                                    <option value="talent20" data-lang-key="talent20">20天赋</option>
+                                    <option value="talent25" data-lang-key="talent25">25天赋</option>
+                                </select>
+                            </div>
+                            <div class="details-selector-item">
+                                <label for="default-talent-strategy-select"
+                                    data-lang-key="prioritySetting">天赋优先级</label>
+                                <select id="default-talent-strategy-select">
+                                    <option value="atk-def-hp" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
+                                    <option value="atk-hp-def" data-lang-key="attackPriority2">攻击 > 生命 > 防御</option>
+                                    <option value="def-hp-atk" data-lang-key="defensePriority">防御 > 生命 > 攻击</option>
+                                    <option value="hp-def-atk" data-lang-key="healthPriority">生命 > 防御 > 攻击</option>
+                                </select>
+                            </div>
+                            <div class="details-selector-item">
+                                <label for="default-mana-priority-checkbox"
+                                    data-lang-key="manaPriorityLabel">法力节点</label>
+                                <div class="input-with-help">
+                                    <div class="checkbox-container" style="flex-grow:1;">
+                                        <input type="checkbox" id="default-mana-priority-checkbox">
+                                        <label for="default-mana-priority-checkbox" class="checkbox-label"
+                                            data-lang-key="manaPriorityToggle">优先选择</label>
+                                    </div>
+                                    <button id="lb-talent-help-btn" class="help-btn">?</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stat-filter-grid">
+                        <div class="filter-item-compact">
+                            <label for="power-input" data-lang-key="minPower">战力</label>
+                            <input type="number" id="power-input" min="0" value="">
+                        </div>
+                        <div class="filter-item-compact">
+                            <label for="attack-input" data-lang-key="minAttack">攻击</label>
+                            <input type="number" id="attack-input" min="0" value="">
+                        </div>
+                        <div class="filter-item-compact">
+                            <label for="defense-input" data-lang-key="minDefense">防御</label>
+                            <input type="number" id="defense-input" min="0" value="">
+                        </div>
+                        <div class="filter-item-compact">
+                            <label for="health-input" data-lang-key="minHealth">生命</label>
+                            <input type="number" id="health-input" min="0" value="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="filter-actions">
+            <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
+            <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>
+            <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
+        </div>
+    </div>
     </div>
 
     <div id="help-modal-overlay" class="hidden"></div>
@@ -447,6 +423,11 @@
     <div id="skill-type-help-modal" class="hidden"></div>
     <div id="lb-talent-help-modal-overlay" class="hidden"></div>
     <div id="lb-talent-help-modal" class="hidden"></div>
+    <div id="multi-select-modal-overlay" class="hidden"></div>
+    <div id="multi-select-modal" class="hidden">
+        <div id="multi-select-modal-content">
+        </div>
+    </div>
 
     <div id="image-modal-overlay" class="hidden"></div>
     <div id="image-modal" class="hidden">

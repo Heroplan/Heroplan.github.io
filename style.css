@@ -2522,3 +2522,323 @@ hr.divider {
     color: var(--md-sys-color-primary);
     text-decoration: underline;
 }
+
+/* ==========================================================================
+   新增：自定义图片下拉框样式 (方案一)
+   ========================================================================== */
+
+/* 自定义下拉框的容器 */
+.custom-select-container {
+    position: relative;
+    width: 100%;
+    height: 37px;
+    /* 与原生输入框高度保持一致 */
+    user-select: none;
+}
+
+/* 显示当前选中项的区域 */
+.select-selected {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: var(--md-sys-color-background);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 6px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select-selected.select-arrow-active {
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+}
+
+.select-selected .selected-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* 选项列表 (默认隐藏) */
+.select-items {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    /* right: 0; */
+    /* <--- 移除 right: 0 */
+    z-index: 1050;
+    background-color: var(--md-sys-color-surface);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-height: 250px;
+    overflow-y: auto;
+
+    /* --- 新增/修改下面三行 --- */
+    min-width: 100%;
+    /* 最小宽度与父容器一致 */
+    width: auto;
+    /* 宽度由内容决定 */
+    white-space: nowrap;
+    /* 确保选项列表内的文本不换行 */
+}
+
+.select-hide {
+    display: none;
+}
+
+/* 单个选项 */
+.select-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.select-option:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+.select-option.same-as-selected {
+    background-color: var(--md-sys-color-secondary-container);
+}
+
+/* 选项中的图标样式 */
+.option-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* 原生select框隐藏样式 */
+select.custom-select-hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   新增：多选模态框与筛选按钮样式
+   ========================================================================== */
+
+/* 筛选按钮样式 */
+.filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    padding: 8px 15px;
+    /* 可以适当增加左右内边距 */
+    box-sizing: border-box;
+    background-color: var(--md-sys-color-background);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    /* 可以使用更圆润的胶囊形状 */
+    color: var(--md-sys-color-on-surface);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: auto;
+    /* 移除 width: 100%，让宽度由内容决定 */
+    flex-shrink: 0;
+    /* 防止按钮在 flex 布局中被压缩 */
+    white-space: nowrap;
+    /* 确保按钮内部文本不换行 */
+}
+
+.filter-button:hover {
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+}
+
+/* 当有选项被选中时，按钮的高亮状态 */
+.filter-button.active {
+    background-color: var(--md-sys-color-primary-container);
+    border-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary-container);
+    font-weight: bold;
+}
+
+/* 多选模态框基础样式 (类似帮助模态框) */
+#multi-select-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1010;
+    /* 比主模态框高 */
+}
+
+#multi-select-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--md-sys-color-surface);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1011;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+
+    /* --- ↓↓↓ 核心修改如下 ↓↓↓ --- */
+    width: max-content;
+    /* 关键属性：让宽度由其最长的内容决定 */
+    min-width: 300px;
+    /* 设置一个最小宽度，防止内容过短时变得太窄 */
+    max-width: 700px;
+    /* 保持最大宽度限制，防止内容过长时撑破屏幕 */
+}
+
+#multi-select-modal-content {
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* 模态框内部样式 */
+.multi-select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.multi-select-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--md-sys-color-primary);
+}
+
+.multi-select-header .close-btn {
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.multi-select-options-grid {
+    display: flex;
+    /* 将布局从 grid 改为 flex */
+    flex-wrap: wrap;
+    /* 允许选项自动换行 */
+    gap: 0.75rem;
+    /* 保持选项之间的间距 */
+    margin-bottom: 1.5rem;
+}
+
+.multi-select-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+.multi-select-option:hover {
+    border-color: var(--md-sys-color-primary);
+}
+
+.multi-select-option.selected {
+    border-color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-primary-container);
+    box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.multi-select-option img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.multi-select-option span {
+    font-weight: 500;
+}
+
+.multi-select-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--md-sys-color-outline);
+}
+
+.multi-select-footer .action-button {
+    padding: 0.8rem 1.5rem;
+}
+
+.filter-buttons-container {
+    display: grid;
+    /* 关键：使用 Grid 布局 */
+    gap: 10px;
+    /* 按钮之间的间距 */
+
+    /* 核心魔法：创建自适应列，并让它们自动填充可用空间 */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+.filter-buttons-container .filter-button.checkbox-wrapper {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.filter-buttons-container .checkbox-container {
+    width: 100%;
+    height: 37px;
+    /* 与其他筛选按钮高度保持一致 */
+}
+
+.filter-buttons-container .checkbox-label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    /* 保持与 .filter-button 相同的内边距 */
+    font-size: 0.9em;
+    font-weight: normal;
+    /* 默认状态下非粗体 */
+}
+
+.filter-buttons-container input[type="checkbox"]:checked+.checkbox-label {
+    font-weight: bold;
+    /* 仅在选中时加粗 */
+}
+
+/* 针对移动设备（屏幕宽度 <= 768px）的样式调整 */
+@media (max-width: 768px) {
+    .multi-select-options-grid {
+        display: block;
+        /* 恢复块级显示，让每个选项独占一行 */
+    }
+
+    #multi-select-modal {
+        /* 在移动端，恢复为相对宽度，确保它不会超出屏幕 */
+        width: 90%;
+        min-width: unset;
+        /* 取消最小宽度限制 */
+    }
+
+    .multi-select-option {
+        display: flex;
+        /* 保持内部元素的 flex 布局 */
+        width: 100%;
+        /* 让每个选项占据整行宽度 */
+        margin-bottom: 5px;
+        /* 可以添加一些垂直间距 */
+    }
+}

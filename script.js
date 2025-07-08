@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活动 - 冬日": "christmas",
         "月活动 - 春谷": "springvale", "挑战节I - 海盗": "pirates", "挑战节II - 星落": "starfall",
         "挑战 - 石像鬼": "gargoyle", "S1 - 经典": "season1", "S2 - 亚特兰蒂斯": "season2",
-        "S5 - 沙丘": "season5", "神秘 - 暗影": "shadow", "盟约召唤": "covenant",
+        "S5 - 沙丘": "season5", "神秘 - 暗影召唤": "shadow", "盟约召唤": "covenant",
         "高塔 - 猫头鹰": "owltower", "联盟 - 骑士冲击": "knights", "S6 - 深海奥秘": "untoldtales1", "S7 - 烈焰与冰霜宝藏": "untoldtales2",
         "S3 - 瓦尔哈拉": "season3", "S4 - 蛮荒地界": "season4", "挑战 - 重返圣堂": "returntosanctuary",
         "至日召唤": "solstice", "挑战 - 众神狂欢节": "carnivalofgods", "月英": "hotm",
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "挑战节II - 杀手": "slayers",
         "荒野召唤": "wilderness", "挑战节I - 守护者": "teltoc", "挑战节I - 肃煞森林": "fables",
         "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-        "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节I": "challengefestival1", "挑战节II": "challengefestival2", "服装间": "costume",
+        "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume",
         // Traditional Chinese
         "挑戰節II - 惡棍": "villains", "聯盟 - 火槍手": "musketeer", "挑戰節II - 強大寵物": "pets",
         "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活動 - 冬季": "christmas",
         "月活動 - 斯普林維爾": "springvale", "挑戰節I - 海盜": "pirates", "挑戰節II - 星隕": "starfall",
         "挑戰 - 石像鬼": "gargoyle", "S1 - 經典": "season1", "S2 - 亞特蘭蒂斯": "season2",
-        "S5 - 沙丘": "season5", "神秘 - 暗影": "shadow", "聖約召喚": "covenant",
+        "S5 - 沙丘": "season5", "神秘 - 暗影召喚": "shadow", "聖約召喚": "covenant",
         "高塔 - 貓頭鷹": "owltower", "聯盟 - 騎士衝擊": "knights", "S6 - 深淵謎團": "untoldtales1", "S7 - 火焰與冰霜的寶藏": "untoldtales2",
         "S3 - 瓦爾哈拉": "season3", "S4 - 地底荒野": "season4", "挑戰 - 重返聖堂": "returntosanctuary",
         "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "月英": "hotm",
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "挑戰節II - 吟遊詩人": "festival", "星界召喚": "astral", "挑戰節II - 殺手": "slayers",
         "野地召喚": "wilderness", "挑戰節I - 守護者": "teltoc", "挑戰節I - 肅煞森林": "fables",
         "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-        "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節I": "challengefestival1", "挑戰節II": "challengefestival2", "服裝間": "costume",
+        "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume",
         // English
         "Challenge Festival II - Villains": "villains", "Alliance - Musketeers": "musketeer", "Challenge Festival II - Pets": "pets",
         "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Tower - Magic": "magic", "Tower - Styx": "styx", "Monthly Event - Winter": "christmas",
         "Monthly Event - Springvale": "springvale", "Challenge Festival I - Pirates": "pirates", "Challenge Festival II - Starfall": "starfall",
         "Challenge - Gargoyle": "gargoyle", "S1 - Classic": "season1", "S2 - Atlantis": "season2",
-        "S5 - Dune": "season5", "Mystery - Shadow": "shadow", "Covenant Summon": "covenant",
+        "S5 - Dune": "season5", "Mystery - Shadow Summon": "shadow", "Covenant Summon": "covenant",
         "Tower - Owls": "owltower", "Alliance - Knights Clash": "knights", "S6 - Mysteries of the Deep": "untoldtales1", "S7 - Treasures of Flame and Frost": "untoldtales2",
         "S3 - Valhalla": "season3", "S4 - Wilderness": "season4", "Challenge - Return to Sanctuary": "returntosanctuary",
         "Solstice Summon": "solstice", "Challenge - Carnival of Gods": "carnivalofgods", "Hero of the Month": "hotm",
@@ -122,6 +122,29 @@ document.addEventListener('DOMContentLoaded', function () {
         '黄': 'Yellow', '黃': 'Yellow', 'yellow': 'Yellow',
         '紫': 'Purple', 'purple': 'Purple'
     };
+    // 在 colorReverseMap 之后添加
+    const iconMaps = {
+        color: {
+            '红': 'imgs/colors/red.png', '紅': 'imgs/colors/red.png', 'red': 'imgs/colors/red.png',
+            '蓝': 'imgs/colors/blue.png', '藍': 'imgs/colors/blue.png', 'blue': 'imgs/colors/blue.png',
+            '绿': 'imgs/colors/green.png', '綠': 'imgs/colors/green.png', 'green': 'imgs/colors/green.png',
+            '黄': 'imgs/colors/yellow.png', '黃': 'imgs/colors/yellow.png', 'yellow': 'imgs/colors/yellow.png',
+            '紫': 'imgs/colors/purple.png', 'purple': 'imgs/colors/purple.png'
+        },
+        class: { // 利用已有的 classReverseMap 来构建
+            ...Object.fromEntries(Object.keys(classReverseMap).map(key => [key, `imgs/classes/${classReverseMap[key]}.png`]))
+        },
+        source: { // 利用已有的 sourceReverseMap 和 sourceIconMap 来构建
+            ...Object.fromEntries(Object.keys(sourceReverseMap).map(key => {
+                const sourceKey = sourceReverseMap[key];
+                const iconFilename = sourceIconMap[sourceKey];
+                return iconFilename ? [key, `imgs/coins/${iconFilename}`] : [key, null];
+            }).filter(entry => entry[1]))
+        },
+        aetherpower: { // <-- 新增 aetherpower 映射
+            ...Object.fromEntries(Object.keys(aetherPowerReverseMap).map(key => [key, `imgs/Aether Power/${aetherPowerReverseMap[key]}.png`]))
+        }
+    };
     let farmGuideScrollHandler = null;
     let scrollPositions = {
         list: { top: 0, left: 0 },
@@ -129,6 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
         farming: { top: 0, left: 0 }
     };
     let filteredHeroes = [];
+    let multiSelectFilters = {}; // 存储每个筛选器已选中的值，例如 { color: ['Red', 'Blue'], class: [] }
+    let availableOptions = {}; // 缓存每个筛选器的所有可用选项
     let allHeroes = [];
     let families_bonus = [];
     let family_values = {};
@@ -153,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { season: 'S3', daily: '9-8', red: '6-2', green: ['4-8', '30-6'], blue: '9-8', purple: '17-9', yellow: '8-6' },
         { season: 'S4', daily: '6-10', red: ['12-6', '32-6'], green: '9-2', blue: ['8-2', '30-7'], purple: '14-8', yellow: '4-7' },
         { season: 'S5', daily: ['5-10', '6-10'], red: '2-9', green: ['10-8', '30-8'], blue: '22-2', purple: '5-10', yellow: '16-8' },
-        { season: 'S6', daily: '1-26',  red: '1-24', green: ['1-11', '1-12'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
+        { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '1-12'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
     ];
 
     // 材料出处指南数据
@@ -250,18 +275,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     const filterInputs = {
-        name: document.getElementById('name-input'), star: document.getElementById('star-select'),
-        color: document.getElementById('color-select'), speed: document.getElementById('speed-select'),
-        class: document.getElementById('class-select'), family: document.getElementById('family-select'),
+        name: document.getElementById('name-input'),
+        star: document.getElementById('star-select'),
+        color: document.getElementById('color-select'),
+        speed: document.getElementById('speed-select'),
+        class: document.getElementById('class-select'),
+        family: document.getElementById('family-select'),
         costume: document.getElementById('costume-type-select'),
         source: document.getElementById('source-select'),
         aetherpower: document.getElementById('aetherpower-select'),
         skillTypeSource: document.getElementById('skill-type-source-select'),
         types: document.getElementById('type-input'),
-        effects: document.getElementById('effects-input'), passives: document.getElementById('passives-input'),
-        power: document.getElementById('power-input'), attack: document.getElementById('attack-input'),
-        defense: document.getElementById('defense-input'), health: document.getElementById('health-input'),
-        releaseDateType: document.getElementById('release-date-type'),
+        effects: document.getElementById('effects-input'),
+        passives: document.getElementById('passives-input'),
+        power: document.getElementById('power-input'),
+        attack: document.getElementById('attack-input'),
+        defense: document.getElementById('defense-input'),
+        health: document.getElementById('health-input'),
+        filterScope: document.getElementById('release-date-type'),
     };
 
     // --- 聊天模拟器新增变量 ---
@@ -289,36 +320,42 @@ document.addEventListener('DOMContentLoaded', function () {
     const emojiList = ['smile', 'grin', 'lol', 'rofl', 'sad', 'crying', 'blush', 'rolleyes', 'kiss', 'love', 'geek', 'monocle', 'think', 'tongue', 'cool', 'horror', 'angry', 'evil', 'hand', 'thumbsup', 'thumbsdown', 'hankey', 'ham', 'alien', 'ghost', 'richard', 'mage', 'magered', 'staff', 'heart', 'heartblue', 'heartgreen', 'heartyellow', 'heartpurple', 'pizza', 'cake', 'donut', 'coffee', 'sword', 'swords', 'axe', 'axes', 'hammer', 'helmet', 'skull', 'bunny', 'cat', 'catgrey', 'dog', 'butterfly', 'butterflyblue', 'fox', 'flower', 'sunflower', 'palmtree', 'splash', 'teardrop', 'fire', 'lightning', 'star', 'elementfire', 'elementice', 'elementnature', 'elementholy', 'elementdark'];
 
     function areFiltersActive() {
-        const noneText = i18n[currentLang].none;
-        if (filterInputs.name.value.trim() !== '' ||
-            filterInputs.types.value.trim() !== '' ||
-            filterInputs.effects.value.trim() !== '' ||
-            filterInputs.passives.value.trim() !== '' ||
-            filterInputs.power.value.trim() !== '' ||
-            filterInputs.attack.value.trim() !== '' ||
-            filterInputs.defense.value.trim() !== '' ||
-            filterInputs.health.value.trim() !== '') {
+        // 1. 检查所有文本输入框和未改造的筛选器
+        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
+            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
+            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
+            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
+            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
+            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
             return true;
         }
-        if (filterInputs.star.value !== noneText ||
-            filterInputs.color.value !== noneText ||
-            filterInputs.speed.value !== noneText ||
-            filterInputs.class.value !== noneText ||
-            filterInputs.costume.value !== noneText ||
-            filterInputs.family.value !== noneText ||
-            filterInputs.source.value !== noneText ||
-            filterInputs.aetherpower.value !== noneText) {
+
+        // 2. 检查所有新的多选筛选器
+        for (const key in multiSelectFilters) {
+            const selectedValues = multiSelectFilters[key];
+
+            // 对于“筛选范围”，如果它的值不是默认的 'all'，则视为激活状态
+            if (key === 'filterScope') {
+                if (selectedValues.length > 0 && selectedValues[0] !== 'all') {
+                    return true;
+                }
+            }
+            // 对于其他多选筛选器，只要有任何选择，就视为激活状态
+            else {
+                if (selectedValues.length > 0) {
+                    return true;
+                }
+            }
+        }
+
+        // 3. 检查临时的日期或收藏筛选是否激活
+        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
             return true;
         }
-        if (filterInputs.releaseDateType.value !== 'all') {
-            return true;
-        }
-        if (temporaryFavorites !== null) {
-            return true;
-        }
-        if (temporaryDateFilter !== null) {
-            return true;
-        }
+
+        // 如果以上所有条件都不满足，则说明没有任何筛选被激活
         return false;
     }
 
@@ -573,100 +610,326 @@ document.addEventListener('DOMContentLoaded', function () {
         return colorMap[String(colorName).toLowerCase()] || 'inherit';
     };
 
-    function populateFilters() {
-        const CUSTOM_SORT_CN = {
-            'speed': ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'],
-            'star': ['5', '4', '3', '2', '1'],
-        };
-        const CUSTOM_SORT_TC = {
-            'speed': ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'],
-            'star': ['5', '4', '3', '2', '1'],
-        };
-        const CUSTOM_SORT_EN = {
-            'speed': ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'],
-            'star': ['5', '4', '3', '2', '1'],
-        };
-        const CUSTOM_SORT = { cn: CUSTOM_SORT_CN, tc: CUSTOM_SORT_TC, en: CUSTOM_SORT_EN }[currentLang];
-        const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+    function getDisplayName(value, type) {
+        const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
+        if (!showEventNameCheckbox || showEventNameCheckbox.checked) {
+            return family_values[String(value).toLowerCase()] || value;
+        }
 
-        const getSortedValues = (key, values) => {
-            values = values.map(v => String(v || ''));
-            if (key === 'family' || key === 'source' || key === 'costume') {
-                const translatedValues = values.map(v => ({
-                    original: v,
-                    translated: family_values[v.toLowerCase()] || v
-                }));
-                // 对服装类型进行自定义排序
-                if (key === 'costume') {
-                    return translatedValues.sort((a, b) => {
-                        const aIsC = a.original.startsWith('C');
-                        const bIsC = b.original.startsWith('C');
-                        if (aIsC && !bIsC) return -1;
-                        if (!aIsC && bIsC) return 1;
-                        return a.original.localeCompare(b.original, undefined, { numeric: true });
-                    }).map(item => item.original);
-                }
-                return translatedValues.sort((a, b) => a.translated.localeCompare(b.translated, locale)).map(item => item.original);
+        let translatedValue = family_values[String(value).toLowerCase()] || value;
+        if (type === 'family' || type === 'source') {
+            const parts = translatedValue.split(' - ');
+            if (parts.length > 1) {
+                return parts.slice(1).join(' - ').trim();
             }
-            if (key === 'AetherPower') { return values.sort((a, b) => a.localeCompare(b, locale)); }
-            if (CUSTOM_SORT[key]) {
-                const customOrder = CUSTOM_SORT[key];
-                return values.slice().sort((a, b) => {
-                    const indexA = customOrder.indexOf(a);
-                    const indexB = customOrder.indexOf(b);
-                    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-                    if (indexA !== -1) return -1;
-                    if (indexB !== -1) return 1;
-                    return a.localeCompare(b, locale);
-                });
-            }
-            return values.sort((a, b) => a.localeCompare(b, locale));
-        };
-
-        const createOptions = (values, key) => {
-            const sortedValues = getSortedValues(key, values);
-            const noneText = i18n[currentLang].none || 'None';
-            const options = [`<option value="${noneText}">${noneText}</option>`, ...sortedValues.map(opt => {
-                const displayText = (key === 'family' || key === 'source') ? (family_values[String(opt).toLowerCase()] || opt) : opt;
-                return `<option value="${opt}">${displayText}</option>`;
-            })];
-            return options.join('');
-        };
-
-        const initFilter = (key) => {
-            let uniqueValues;
-            if (key === 'costume') {
-                uniqueValues = [...new Set(allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
-            } else {
-                const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
-                uniqueValues = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
-            }
-            if (filterInputs[key]) {
-                filterInputs[key].innerHTML = createOptions(uniqueValues, key);
-            }
-        };
-
-        initFilter('star');
-        initFilter('color');
-        initFilter('speed');
-        initFilter('class');
-        initFilter('costume');
-        initFilter('family');
-        initFilter('source');
-        initFilter('aetherpower');
-        document.querySelectorAll('.filter-card select').forEach(select => { select.style.textAlign = 'center'; });
+        }
+        return translatedValue;
     }
 
-    /**
-     * 【已重写 V7 - 修正战力公式基准】根据英雄、突破、天赋和路径策略计算最终属性
-     * @param {object} hero - 英雄对象
-     * @param {object} settings - 包含所有设置的对象 { lb, talent, strategy, manaPriority }
-     * @returns {object} - 包含最终 power, attack, defense, health 的对象
-     */
+    function populateFilters() {
+        const filtersToConvert = ['filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower'];
+        const langDict = i18n[currentLang];
+
+        filtersToConvert.forEach(key => {
+            let values;
+            if (key === 'filterScope') {
+                values = ['all', 'hero', 'skin', 'favorites'];
+            } else if (key === 'costume') {
+                values = [...new Set(allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
+            } else {
+                const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
+                values = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
+            }
+
+            const locale = { cn: 'zh-CN', tc: 'zh-TW' }[currentLang] || 'en-US';
+            const sortOptions = currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
+
+            if (key === 'speed') {
+                const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[currentLang];
+                if (speedOrder) {
+                    values.sort((a, b) => speedOrder.indexOf(a) - speedOrder.indexOf(b));
+                }
+            } else if (key === 'color') {
+                const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[currentLang];
+                if (colorOrder) {
+                    values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
+                }
+            } else if (key === 'family') {
+                values.sort((a, b) => {
+                    const translatedA = family_values[String(a).toLowerCase()] || a;
+                    const translatedB = family_values[String(b).toLowerCase()] || b;
+                    return translatedA.localeCompare(translatedB, locale, sortOptions);
+                });
+            } else if (key === 'costume') {
+                values.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+            } else {
+                values.sort((a, b) => String(a).localeCompare(String(b), locale));
+            }
+
+            availableOptions[key] = values;
+            if (key === 'filterScope') {
+                multiSelectFilters[key] = ['all'];
+            } else {
+                multiSelectFilters[key] = [];
+            }
+        });
+
+        const container = document.getElementById('standard-filters-container');
+        if (!container) return;
+
+        container.innerHTML = '';
+
+        filtersToConvert.forEach(key => {
+            const button = document.createElement('button');
+            button.id = `btn-filter-${key}`;
+            button.className = 'filter-button';
+
+            let title;
+            if (key === 'filterScope') {
+                title = langDict.filterHeroes;
+            } else {
+                const labelKey = key === 'aetherpower' ? 'aetherPowerLabel' : (key === 'costume' ? 'costumeTypeLabel' : `${key}Label`);
+                title = langDict[labelKey] ? langDict[labelKey].slice(0, -1) : key;
+            }
+            button.addEventListener('click', () => {
+                openMultiSelectModal(key, title);
+            });
+
+            container.appendChild(button);
+            updateFilterButtonUI(key);
+        });
+        const checkboxWrapper = document.createElement('div');
+        checkboxWrapper.className = 'filter-button';
+        checkboxWrapper.style.padding = '0';
+        checkboxWrapper.style.border = 'none';
+        checkboxWrapper.style.backgroundColor = 'transparent';
+
+        checkboxWrapper.innerHTML = `
+        <div class="checkbox-container" style="width: 100%; height: 100%;">
+            <input type="checkbox" id="show-event-name-checkbox">
+            <label for="show-event-name-checkbox" class="checkbox-label" data-lang-key="showEventNameLabel">${langDict.showEventNameLabel}</label>
+        </div>
+        `;
+        container.appendChild(checkboxWrapper);
+
+        // --- Corrected Checkbox State Management Logic ---
+        // This entire block is self-contained and robust.
+
+        // 1. Get the checkbox element that was just created
+        const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
+
+        // 2. Read the saved state from the cookie
+        const cookieValue = getCookie('showEventNameState');
+
+        // 3. Set the initial state:
+        //    - Default to checked (true) if the cookie doesn't exist (first visit).
+        //    - Otherwise, only uncheck if the cookie explicitly stores "false".
+        showEventNameCheckbox.checked = (cookieValue === null) ? true : (cookieValue !== 'false');
+
+        // 4. Add the event listener
+        showEventNameCheckbox.addEventListener('change', () => {
+            // Explicitly save the boolean state as a string "true" or "false"
+            setCookie('showEventNameState', showEventNameCheckbox.checked.toString(), 365);
+
+            // When the state changes, just re-apply filters and render the list.
+            // This call does NOT cause loops or disappearing buttons.
+            applyFiltersAndRender();
+        });
+    }
+
+    function updateFilterButtonUI(filterType) {
+        const button = document.getElementById(`btn-filter-${filterType}`);
+        if (!button) return;
+
+        const selectedCount = multiSelectFilters[filterType].length;
+        const langDict = i18n[currentLang];
+
+        let labelKey;
+        if (filterType === 'aetherpower') {
+            labelKey = 'aetherPowerLabel';
+        } else if (filterType === 'costume') {
+            labelKey = 'costumeTypeLabel';
+        } else if (filterType === 'filterScope') {
+            labelKey = 'filterScopeLabel'
+        }
+        else {
+            labelKey = `${filterType}Label`;
+        }
+        const label = langDict[labelKey] ? langDict[labelKey].slice(0, -1) : filterType;
+
+        if (selectedCount === 0) {
+            button.textContent = label;
+            button.classList.remove('active');
+        } else if (filterType === 'filterScope') {
+            const scope_label = langDict[`filterScope_${multiSelectFilters[filterType][0]}`]
+            button.textContent = `${label}: ${scope_label}`;
+            button.classList.add('active');
+        } else {
+            button.textContent = `${label} (${selectedCount})`;
+            button.classList.add('active');
+        }
+    }
+
+
+    function getIconForFilter(filterType, optionValue) {
+        if (!optionValue) return null;
+
+        switch (filterType) {
+            case 'color':
+            case 'class':
+                return (iconMaps[filterType] && iconMaps[filterType][optionValue]) || null;
+            case 'aetherpower':
+                let englishName;
+                if (currentLang === 'en') {
+                    englishName = optionValue;
+                } else {
+                    englishName = aetherPowerReverseMap[optionValue];
+                }
+                if (englishName) {
+                    const sanitizedName = englishName.trim().replace(/\s+/g, ' ');
+                    return `imgs/Aether Power/${sanitizedName}.png`;
+                }
+                return null;
+            case 'family':
+                return `imgs/family/${String(optionValue).toLowerCase()}.png`;
+            case 'source':
+                const sourceKey = sourceReverseMap[optionValue];
+                const iconFilename = sourceIconMap[sourceKey];
+                return iconFilename ? `imgs/coins/${iconFilename}` : null;
+            case 'star':
+                return null;
+            case 'costume':
+                const iconName = getCostumeIconName(optionValue);
+                return iconName ? `imgs/costume/${iconName}.png` : null;
+            default:
+                return null;
+        }
+    }
+
+    function resetAllFilters() {
+        if (typeof multiSelectFilters !== 'undefined') {
+            Object.keys(multiSelectFilters).forEach(key => {
+                if (key === 'filterScope') {
+                    multiSelectFilters[key] = ['all'];
+                } else {
+                    multiSelectFilters[key] = [];
+                }
+                if (typeof updateFilterButtonUI === 'function') {
+                    updateFilterButtonUI(key);
+                }
+            });
+        }
+
+        for (const key in filterInputs) {
+            if (multiSelectFilters.hasOwnProperty(key)) continue;
+            const element = filterInputs[key];
+            if (element) {
+                if (element.tagName === 'INPUT') {
+                    element.value = '';
+                }
+            }
+        }
+        temporaryFavorites = null;
+        temporaryDateFilter = null;
+    }
+
+    function openMultiSelectModal(filterType, title) {
+        const modal = document.getElementById('multi-select-modal');
+        const overlay = document.getElementById('multi-select-modal-overlay');
+        const modalContent = document.getElementById('multi-select-modal-content');
+
+        const options = availableOptions[filterType];
+        const currentSelections = new Set([...multiSelectFilters[filterType]]);
+
+        let optionsHTML = options.map(optionValue => {
+            const isSelected = currentSelections.has(optionValue);
+            const iconSrc = getIconForFilter(filterType, optionValue);
+            const iconHTML = iconSrc ? `<img src="${iconSrc}" alt="">` : '';
+            let displayText = optionValue;
+            if (filterType === 'family' || filterType === 'source') {
+                displayText = getDisplayName(optionValue, filterType);
+            } else if (filterType === 'filterScope') {
+                displayText = i18n[currentLang][`filterScope_${optionValue}`] || optionValue;
+            }
+            const starSuffix = filterType === 'star' ? '⭐' : '';
+
+            return `
+                <div class="multi-select-option ${isSelected ? 'selected' : ''}" data-value="${optionValue}">
+                    ${iconHTML}
+                    <span>${displayText}${starSuffix}</span>
+                </div>
+            `;
+        }).join('');
+
+        modalContent.innerHTML = `
+            <div class="multi-select-header">
+                <h3>${title}</h3>
+                <button class="close-btn" id="close-multi-select-modal-top">✖</button>
+            </div>
+            <div class="multi-select-options-grid">${optionsHTML}</div>
+            <div class="multi-select-footer">
+                <button class="action-button" id="clear-multi-select">${i18n[currentLang].clearSelection}</button>
+                <button class="action-button" id="close-multi-select-modal-bottom">${i18n[currentLang].detailsCloseBtn}</button>
+            </div>
+        `;
+
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        document.body.classList.add('modal-open');
+        modalContent.scrollTop = 0;
+
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+            if (document.querySelectorAll('#modal.hidden, #filters-modal.hidden').length === 2) {
+                document.body.classList.remove('modal-open');
+            }
+        };
+
+        modal.querySelectorAll('.multi-select-option').forEach(optionDiv => {
+            optionDiv.addEventListener('click', () => {
+                const value = optionDiv.dataset.value;
+                if (filterType === 'filterScope') {
+                    if (multiSelectFilters[filterType][0] === value) return;
+                    multiSelectFilters[filterType] = [value];
+                    modal.querySelectorAll('.multi-select-option.selected').forEach(div => div.classList.remove('selected'));
+                    optionDiv.classList.add('selected');
+
+                } else {
+                    const selections = new Set(multiSelectFilters[filterType]);
+                    if (selections.has(value)) {
+                        selections.delete(value);
+                        optionDiv.classList.remove('selected');
+                    } else {
+                        selections.add(value);
+                        optionDiv.classList.add('selected');
+                    }
+                    multiSelectFilters[filterType] = Array.from(selections);
+                }
+                applyFiltersAndRender();
+                updateFilterButtonUI(filterType);
+            });
+        });
+
+        const clearButton = document.getElementById('clear-multi-select');
+        if (filterType === 'filterScope') {
+            clearButton.style.display = 'none';
+        } else {
+            clearButton.addEventListener('click', () => {
+                multiSelectFilters[filterType] = [];
+                modal.querySelectorAll('.multi-select-option.selected').forEach(div => div.classList.remove('selected'));
+                applyFiltersAndRender();
+                updateFilterButtonUI(filterType);
+            });
+        }
+        document.getElementById('close-multi-select-modal-top').addEventListener('click', closeModal);
+        document.getElementById('close-multi-select-modal-bottom').addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+    }
+
     function calculateHeroStats(hero, settings) {
         const { lb, talent, strategy, manaPriority } = settings;
 
-        // --- 步骤 1: 确定用于计算的“基础属性” ---
         let baseStats = {
             power: hero.power || 0,
             attack: hero.attack || 0,
@@ -686,9 +949,8 @@ document.addEventListener('DOMContentLoaded', function () {
             health: baseStats.health
         };
 
-        // --- 步骤 2: 计算最终的 攻击、防御、生命值 ---
         if (talent !== 'none' && hero.class && typeof TalentTree !== 'undefined') {
-            const talentBonuses = TalentTree.getBonusesForPath(hero.class, strategy, manaPriority);
+            const talentBonuses = TalentTree.getBonusesForPath(hero.class, strategy, manaPriority, talent);
             const attackPercentBonus = Math.floor((baseStats.attack || 0) * (talentBonuses.attack_percent / 100));
             finalStats.attack = (baseStats.attack || 0) + talentBonuses.attack_flat + attackPercentBonus;
 
@@ -699,11 +961,9 @@ document.addEventListener('DOMContentLoaded', function () {
             finalStats.health = (baseStats.health || 0) + talentBonuses.health_flat + healthPercentBonus;
         }
 
-        // --- 步骤 3: 【核心修正】使用标准算法计算战力 ---
         const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
         const star_power = STAR_BASE_POWER[hero.star] || 0;
 
-        // 【关键修正】: 属性战力基于天赋加成前的 baseStats 计算，而不是 finalStats
         const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
         const stats_final_power = Math.floor(stats_raw_power);
 
@@ -722,26 +982,19 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    /**
-     * 【已重写】更新英雄详情模态框中的属性显示
-     * 此函数现在更加通用，可以接收一个完整的设置对象来计算属性
-     */
     function updateHeroStatsInModal(hero, modalSettings) {
         const modal = document.getElementById('modal');
         if (!modal || modal.classList.contains('hidden')) return;
 
-        // 从模态框内的选择器获取当前设置
         const talentSelect = document.getElementById('modal-talent-select');
-        const prioritySelect = document.getElementById('modal-talent-priority-select');
+        const prioritySelect = document.getElementById('modal-talent-strategy-select');
 
         if (prioritySelect) {
             prioritySelect.disabled = (talentSelect.value === 'none');
         }
 
-        // 使用通用计算函数
         const finalStats = calculateHeroStats(hero, modalSettings);
 
-        // 更新模态框中的DOM元素
         const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
         const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
         const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
@@ -946,9 +1199,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function applyFiltersAndRender() {
-        const filters = Object.fromEntries(Object.entries(filterInputs).map(([key, el]) => [key, el.value.trim()]));
-        const noneValue = i18n[currentLang].none.toLowerCase();
-        const favoritesListToUse = temporaryFavorites !== null ? temporaryFavorites : getFavorites();
+        const nameFilter = filterInputs.name ? filterInputs.name.value.trim().toLowerCase() : '';
+        const effectsFilter = filterInputs.effects ? filterInputs.effects.value.trim() : '';
+        const passivesFilter = filterInputs.passives ? filterInputs.passives.value.trim() : '';
+        const skillTypeFilter = filterInputs.types ? filterInputs.types.value.trim() : '';
+        const skillTypeSource = filterInputs.skillTypeSource ? filterInputs.skillTypeSource.value : 'both';
+
+        const filterScope = (multiSelectFilters.filterScope && multiSelectFilters.filterScope[0]) || 'all';
+
+        const powerFilter = filterInputs.power ? (Number(filterInputs.power.value) || 0) : 0;
+        const attackFilter = filterInputs.attack ? (Number(filterInputs.attack.value) || 0) : 0;
+        const defenseFilter = filterInputs.defense ? (Number(filterInputs.defense.value) || 0) : 0;
+        const healthFilter = filterInputs.health ? (Number(filterInputs.health.value) || 0) : 0;
+
+        const langDict = i18n[currentLang];
+        const noneValue = langDict.none.toLowerCase();
 
         const defaultSettings = {
             lb: defaultLimitBreakSelect.value,
@@ -958,76 +1223,56 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         filteredHeroes = allHeroes.filter(hero => {
-            let matchesBaseFilter = false;
-            const releaseDateType = filters.releaseDateType.toLowerCase();
-            if (releaseDateType === 'favorites') {
-                if (hero.english_name) {
-                    const heroIdentifier = `${hero.english_name}-${hero.costume_id}`;
-                    if (favoritesListToUse.includes(heroIdentifier)) {
-                        matchesBaseFilter = true;
-                    }
-                }
-            } else if (releaseDateType === 'hero') {
-                if (hero.costume_id === 0) matchesBaseFilter = true;
-            } else if (releaseDateType === 'skin') {
-                if (hero.costume_id !== 0) matchesBaseFilter = true;
-            } else {
-                matchesBaseFilter = true;
-            }
-            if (!matchesBaseFilter) return false;
-
-            const lowerCaseName = hero.name.toLowerCase();
-            if (filters.name && !lowerCaseName.includes(filters.name.toLowerCase())) return false;
-            if (filters.effects) {
-                const sanitizedEffects = Array.isArray(hero.effects) ?
-                    hero.effects.map(p => String(p || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()) :
-                    [String(hero.effects || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()];
-                if (!matchesComplexQuery(sanitizedEffects, filters.effects)) return false;
-            }
-            if (filters.passives) {
-                const sanitizedPassives = Array.isArray(hero.passives) ?
-                    hero.passives.map(p => String(p || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()) :
-                    [String(hero.passives || '').replace(/[\p{P}\p{S}0-9]/gu, '').trim()];
-                if (!matchesComplexQuery(sanitizedPassives, filters.passives)) return false;
+            if (filterScope === 'hero' && hero.costume_id !== 0) return false;
+            if (filterScope === 'skin' && hero.costume_id === 0) return false;
+            if (filterScope === 'favorites') {
+                const favoritesList = temporaryFavorites || getFavorites();
+                const heroIdentifier = `${hero.english_name}-${hero.costume_id}`;
+                if (!favoritesList.includes(heroIdentifier)) return false;
             }
 
-            // 【核心修正】扩展技能类别筛选，使其同时支持中英文搜索
-            if (filters.types) {
+            if (nameFilter && !hero.name.toLowerCase().includes(nameFilter)) return false;
+            if (effectsFilter && !matchesComplexQuery(hero.effects, effectsFilter)) return false;
+            if (passivesFilter && !matchesComplexQuery(hero.passives, passivesFilter)) return false;
+            if (skillTypeFilter) {
                 let skillTypesToSearch = [];
-                const source = filters.skillTypeSource.value; // 注意：这里直接使用 filters.skillTypeSource
-                if (source === 'heroplan') {
+                if (skillTypeSource === 'heroplan') {
                     skillTypesToSearch = hero.types || [];
-                } else if (source === 'nynaeve') {
+                } else if (skillTypeSource === 'nynaeve') {
                     const originalTypes = hero.skill_types || [];
-                    // 将中文类别翻译回英文，并与原文合并，以支持双语搜索
                     const englishTypes = originalTypes.map(t => reverseSkillTypeMap_cn[t] || reverseSkillTypeMap_tc[t] || t);
-                    skillTypesToSearch = [...originalTypes, ...englishTypes];
-                } else { // "both"
+                    skillTypesToSearch = [...new Set([...originalTypes, ...englishTypes])];
+                } else {
                     const heroplanTypes = hero.types || [];
                     const nynaeveOriginalTypes = hero.skill_types || [];
                     const nynaeveEnglishTypes = nynaeveOriginalTypes.map(t => reverseSkillTypeMap_cn[t] || reverseSkillTypeMap_tc[t] || t);
-                    skillTypesToSearch = [...heroplanTypes, ...nynaeveOriginalTypes, ...nynaeveEnglishTypes];
+                    skillTypesToSearch = [...new Set([...heroplanTypes, ...nynaeveOriginalTypes, ...nynaeveEnglishTypes])];
                 }
-
-                // 去重并移除空值
-                const uniqueSkillTypesToSearch = [...new Set(skillTypesToSearch.filter(t => t))];
-
-                if (!matchesComplexQuery(uniqueSkillTypesToSearch, filters.types)) return false;
+                if (!matchesComplexQuery(skillTypesToSearch.filter(Boolean), skillTypeFilter)) return false;
             }
 
-            if (filters.star.toLowerCase() !== noneValue && String(hero.star) !== filters.star) return false;
-            if (filters.color.toLowerCase() !== noneValue && String(hero.color).toLowerCase() !== filters.color.toLowerCase()) return false;
-            if (filters.speed.toLowerCase() !== noneValue && String(hero.speed).toLowerCase() !== filters.speed.toLowerCase()) return false;
-            if (filters.class.toLowerCase() !== noneValue && String(hero.class).toLowerCase() !== filters.class.toLowerCase()) return false;
-            if (filters.family.toLowerCase() !== noneValue && String(hero.family).toLowerCase() !== filters.family.toLowerCase()) return false;
-            if (filters.source.toLowerCase() !== noneValue && String(hero.source).toLowerCase() !== filters.source.toLowerCase()) return false;
-            if (filters.aetherpower.toLowerCase() !== noneValue && String(hero.AetherPower).toLowerCase() !== filters.aetherpower.toLowerCase()) return false;
-            if (filters.costume.toLowerCase() !== noneValue) {
-                const skinIdentifier = getSkinInfo(hero).skinIdentifier || '';
-                if (skinIdentifier.toLowerCase() !== filters.costume.toLowerCase()) {
+            for (const key in multiSelectFilters) {
+                if (key === 'filterScope') continue;
+                const selectedValues = multiSelectFilters[key];
+                if (selectedValues.length === 0) continue;
+
+                let heroValue;
+                if (key === 'costume') {
+                    heroValue = getSkinInfo(hero).skinIdentifier;
+                } else {
+                    const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
+                    heroValue = hero[heroDataKey];
+                }
+                if (!selectedValues.includes(String(heroValue))) {
                     return false;
                 }
             }
+
+            const calculatedStats = calculateHeroStats(hero, defaultSettings);
+            if (powerFilter > 0 && calculatedStats.power < powerFilter) return false;
+            if (attackFilter > 0 && calculatedStats.attack < attackFilter) return false;
+            if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
+            if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
 
             if (temporaryDateFilter) {
                 if (!hero['Release date']) return false;
@@ -1040,10 +1285,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
                 if (diffDays < temporaryDateFilter.days) return false;
             }
-            if (Number(filters.power) > 0 && Number(hero.power) < Number(filters.power)) return false;
-            if (Number(filters.attack) > 0 && Number(hero.attack) < Number(filters.attack)) return false;
-            if (Number(filters.defense) > 0 && Number(hero.defense) < Number(filters.defense)) return false;
-            if (Number(filters.health) > 0 && Number(hero.health) < Number(filters.health)) return false;
 
             return true;
         });
@@ -1119,7 +1360,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (lowerSkin.startsWith('c')) {
             const match = lowerSkin.match(/^c\d+/);
-            if (match) return match[0]; // returns 'c1', 'c2'
+            if (match) return match[0];
         }
         if (lowerSkin.includes('glass') || lowerSkin.includes('玻璃')) return 'glass';
         if (lowerSkin.includes('toon') || lowerSkin.includes('卡通')) return 'toon';
@@ -1184,10 +1425,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (source === 'heroplan') {
                         typesToShow = hero.types ? [...hero.types] : [];
                         typesToShow.sort((a, b) => a.localeCompare(b));
-                    } else { // Handles 'nynaeve' and 'both' with custom sorting
+                    } else {
                         if (source === 'nynaeve') {
                             typesToShow = hero.skill_types ? [...hero.skill_types] : [];
-                        } else { // 'both'
+                        } else {
                             typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
                         }
                         const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
@@ -1223,7 +1464,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (skinInfo.skinIdentifier) {
                         const iconName = getCostumeIconName(skinInfo.skinIdentifier);
                         if (iconName) {
-                            // 在基础名称前添加图标
                             content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
                         }
                     }
@@ -1264,7 +1504,6 @@ document.addEventListener('DOMContentLoaded', function () {
         adjustStickyHeaders();
     }
 
-    // 用于保存当前可见视图滚动位置的辅助函数。
     function saveCurrentViewScrollPosition() {
         if (!heroTableView.classList.contains('hidden')) {
             scrollPositions.list.top = resultsWrapper.scrollTop;
@@ -1282,32 +1521,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 此函数现在只处理返回英雄列表的UI更新。历史记录由popstate处理。
     function showHeroListViewUI() {
-        // 保存我们正在离开的视图的滚动位置。
         saveCurrentViewScrollPosition();
 
-        // 切换UI以显示英雄列表。
         heroTableView.classList.remove('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
 
-        // 恢复英雄列表的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.list.top;
         resultsWrapper.scrollLeft = scrollPositions.list.left;
 
-        // 清理其他视图的特定处理器。
         if (farmGuideScrollHandler) {
             resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
             resultsHeader.style.transform = '';
             farmGuideScrollHandler = null;
         }
 
-        // 更新标题文本，而无需重新渲染整个表格。
         updateResultsHeader();
     }
 
-    // --- 视图管理函数 ---
     function renderAndShowHeroList(resetScroll = false) {
         heroTableView.classList.remove('hidden');
         wantedMissionView.classList.add('hidden');
@@ -1328,17 +1560,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initAndShowWantedMissionView() {
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
-        // 保存当前视图的滚动位置。
         saveCurrentViewScrollPosition();
 
-        // 清理材料指南的滚动处理器。
         if (farmGuideScrollHandler) {
             resultsWrapper.removeEventListener('scroll', farmGuideScrollHandler);
             resultsHeader.style.transform = '';
             farmGuideScrollHandler = null;
         }
 
-        // 如果通缉任务表为空，则初始化它。
         if (wantedMissionTable.innerHTML.trim() === '') {
             const headers = {
                 season: '', daily: 'imgs/farm/wanted_normal.png', red: 'imgs/farm/wanted_red.png',
@@ -1364,16 +1593,13 @@ document.addEventListener('DOMContentLoaded', function () {
             wantedMissionTable.appendChild(tbody);
         }
 
-        // 切换视图可见性。
         heroTableView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
         wantedMissionView.classList.remove('hidden');
 
-        // 恢复此视图的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.wanted.top;
         resultsWrapper.scrollLeft = scrollPositions.wanted.left;
 
-        // 更新标题。
         const langDict = i18n[currentLang];
         resultsCountEl.innerHTML = `<span>${langDict.wantedMissionTableTitle}</span>`;
         const returnTag = document.createElement('span');
@@ -1388,10 +1614,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initAndShowFarmingGuideView() {
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
-        // 保存当前视图的滚动位置。
         saveCurrentViewScrollPosition();
 
-        // 如果材料指南表为空，则初始化它。
         if (farmingGuideTable.innerHTML.trim() === '') {
             const headers = { item: '', s1: 'S1', s2: 'S2', s3: 'S3', s4: 'S4', s5: 'S5', s6: 'S6' };
             const headerKeys = Object.keys(headers);
@@ -1423,16 +1647,13 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 切换视图可见性。
         heroTableView.classList.add('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.remove('hidden');
 
-        // 恢复此视图的滚动位置。
         resultsWrapper.scrollTop = scrollPositions.farming.top;
         resultsWrapper.scrollLeft = scrollPositions.farming.left;
 
-        // 更新标题。
         const langDict = i18n[currentLang];
         resultsCountEl.innerHTML = `<span>${langDict.farmingGuideTableTitle}</span>`;
         const returnTag = document.createElement('span');
@@ -1441,7 +1662,6 @@ document.addEventListener('DOMContentLoaded', function () {
         returnTag.onclick = () => { history.back(); };
         resultsCountEl.appendChild(returnTag);
 
-        // 为此视图添加特殊的滚动处理器。
         if (!farmGuideScrollHandler) {
             farmGuideScrollHandler = () => {
                 resultsHeader.style.transform = `translateX(-${resultsWrapper.scrollLeft}px)`;
@@ -1516,9 +1736,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /**
-     * @param {object} hero - 英雄对象
-     */
     function renderDetailsInModal(hero) {
         const langDict = i18n[currentLang];
         const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
@@ -1563,21 +1780,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
         const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
+        const translatedFamily = getDisplayName(hero.family, 'family');
+        const displayedSourceText = getDisplayName(hero.source, 'source');
 
         const heroFamilyKey = String(hero.family || '').toLowerCase();
         const familyBonus = (families_bonus.find(f => f.name.toLowerCase() === heroFamilyKey) || {}).bonus || [];
-        const translatedFamily = family_values[heroFamilyKey] || hero.family;
 
-        // 【FIXED】Implement custom sorting for skill types based on nynaeveSkillTypeOrder
         const source = filterInputs.skillTypeSource.value;
         let skillTypesToDisplay = [];
         if (source === 'heroplan') {
             skillTypesToDisplay = hero.types ? [...hero.types] : [];
             skillTypesToDisplay.sort((a, b) => a.localeCompare(b));
-        } else { // Handles 'nynaeve' and 'both' with custom sorting
+        } else {
             if (source === 'nynaeve') {
                 skillTypesToDisplay = hero.skill_types ? [...hero.skill_types] : [];
-            } else { // 'both'
+            } else {
                 skillTypesToDisplay = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
             }
             const reverseMap = currentLang === 'tc' ? reverseSkillTypeMap_tc : reverseSkillTypeMap_cn;
@@ -1610,10 +1827,9 @@ document.addEventListener('DOMContentLoaded', function () {
             classBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${displayedClass}" title="${langDict.filterBy} ${displayedClass}"><img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${displayedClass}"/>${displayedClass}</span>`;
         }
         let skinBlockHTML = '';
-        if (heroSkin) { // heroSkin 来自 getSkinInfo
+        if (heroSkin) {
             const iconName = getCostumeIconName(heroSkin);
             const iconHtml = iconName ? `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume"/>` : '👕';
-            // 这行代码生成了 "服装: [图标] C1" 这样的效果
             skinBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}" title="${langDict.filterBy} ${heroSkin}">${langDict.modalSkin} ${iconHtml}</span>`;
         }
         let aetherPowerBlockHTML = '';
@@ -1635,7 +1851,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     iconHtml = `<img src="imgs/coins/${iconFilename}" class="source-icon" alt="${displayedSource}"/>`;
                 }
             }
-            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSource}">${iconHtml}${displayedSource}</span>`;
+            sourceBlockHTML = `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}" title="${langDict.filterBy} ${displayedSourceText}">${iconHtml}${displayedSourceText}</span>`;
         }
 
         const talentBonusCostHTML = `
@@ -1878,7 +2094,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     tableStar.textContent = isFavorite(hero) ? '★' : '☆';
                     tableStar.classList.toggle('favorited', isFavorite(hero));
                 }
-                if (filterInputs.releaseDateType.value === 'favorites') {
+                if (filterInputs.filterScope.value === 'favorites') {
                     applyFiltersAndRender();
                 }
             });
@@ -1925,13 +2141,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
-    // ==========================================================================
-    // --- 聊天模拟器 (Chat Simulator) v3 ---
-    // ==========================================================================
-
-    // --- 颜色转换辅助函数 ---
-
     function hsvToRgb(h, s, v) {
         let r, g, b;
         let i = Math.floor(h * 6);
@@ -1958,8 +2167,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
     }
 
-    // --- 调色板更新逻辑 ---
-
     function updateColorPickerUI() {
         const { r, g, b } = hsvToRgb(hsv.h, hsv.s, hsv.v);
         const hex = rgbToHex(r, g, b);
@@ -1973,9 +2180,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (colorPreviewBox) colorPreviewBox.style.backgroundColor = hex;
         if (colorHexCodeInput) colorHexCodeInput.value = hex;
     }
-
-
-    // --- 核心功能函数 ---
 
     function insertTextAtCursor(textarea, textToInsert) {
         const start = textarea.selectionStart;
@@ -2039,7 +2243,6 @@ document.addEventListener('DOMContentLoaded', function () {
         history.pushState({ view: 'chat' }, '');
     }
 
-    // --- 事件监听器初始化 ---
     function addChatSimulatorEventListeners() {
         let isSimulatorInitialized = false;
 
@@ -2052,7 +2255,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const favoriteColorBtn = document.getElementById('favorite-color-btn');
                 const favoriteColorsGrid = document.getElementById('favorite-colors-grid');
 
-                // --- 收藏颜色核心逻辑 ---
                 let favoriteColors = getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : [];
 
                 function renderFavoriteColors() {
@@ -2062,14 +2264,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         const item = document.createElement('div');
                         item.className = 'favorite-color-item';
                         item.style.backgroundColor = color;
-                        item.dataset.color = color; // 将颜色存在data属性中
+                        item.dataset.color = color;
 
                         const removeBtn = document.createElement('button');
                         removeBtn.className = 'remove-favorite-btn';
                         removeBtn.innerHTML = '&times;';
                         removeBtn.title = '移除此颜色';
 
-                        // 桌面端：点击 "x" 按钮移除
                         removeBtn.addEventListener('click', () => {
                             favoriteColors = favoriteColors.filter(c => c !== color);
                             setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
@@ -2078,12 +2279,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         item.appendChild(removeBtn);
 
-                        // **** 新的长按与单击逻辑 ****
                         let pressTimer = null;
                         let isLongPress = false;
 
                         const startPress = (e) => {
-                            // 只对触摸事件启用长按逻辑
                             if (e.type === 'mousedown') return;
 
                             e.preventDefault();
@@ -2091,12 +2290,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
                             pressTimer = setTimeout(() => {
                                 isLongPress = true;
-                                // **长按操作：直接移除颜色**
                                 const colorToRemove = item.dataset.color;
                                 favoriteColors = favoriteColors.filter(c => c !== colorToRemove);
                                 setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
                                 renderFavoriteColors();
-                            }, 500); // 500毫秒定义为长按
+                            }, 500);
                         };
 
                         const cancelPress = () => {
@@ -2104,22 +2302,17 @@ document.addEventListener('DOMContentLoaded', function () {
                         };
 
                         const clickAction = (e) => {
-                            // 如果是长按触发的，或者点击的是 "x" 按钮，则不执行插入操作
                             if (isLongPress || e.target === removeBtn) {
-                                isLongPress = false; // 重置状态
+                                isLongPress = false;
                                 return;
                             }
-                            // **单击/短按操作：插入颜色**
                             insertTextAtCursor(chatSimulatorInput, `[${item.dataset.color}]`);
                         };
 
-                        // 为桌面端和移动端短按绑定 'click' 事件
                         item.addEventListener('click', clickAction);
-
-                        // 为移动端长按绑定触摸事件
                         item.addEventListener('touchstart', startPress, { passive: false });
                         item.addEventListener('touchend', cancelPress);
-                        item.addEventListener('touchmove', cancelPress); // 如果手指移动，则取消长按计时
+                        item.addEventListener('touchmove', cancelPress);
 
                         favoriteColorsGrid.appendChild(item);
                     });
@@ -2136,7 +2329,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
 
-                // --- 核心交互事件 ---
                 if (chatSimulatorInput) { chatSimulatorInput.addEventListener('input', updateChatPreview); }
                 if (insertColorBtn) { insertColorBtn.addEventListener('click', () => { const colorCode = `[${colorHexCodeInput.value}]`; insertTextAtCursor(chatSimulatorInput, colorCode); }); }
                 if (chatSimulatorCopyBtn) {
@@ -2166,7 +2358,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
 
-                // --- 调色板事件 ---
                 function handleHueMove(event) { event.preventDefault(); const rect = hueSlider.getBoundingClientRect(); const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.h = Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
                 function handleSVMove(event) { event.preventDefault(); const rect = svBox.getBoundingClientRect(); const x = (event.clientX || event.touches[0].clientX) - rect.left; const y = (event.clientY || event.touches[0].clientY) - rect.top; hsv.s = Math.max(0, Math.min(1, x / rect.width)); hsv.v = 1 - Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); }
                 function stopDragging() { isDraggingHue = false; isDraggingSV = false; }
@@ -2179,7 +2370,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.addEventListener('touchmove', (e) => { if (isDraggingHue) handleHueMove(e); if (isDraggingSV) handleSVMove(e); }, { passive: false });
                 window.addEventListener('touchend', stopDragging);
 
-                // --- 拖拽分割条逻辑 ---
                 const splitter = document.getElementById('io-splitter');
                 const previewWrapper = document.getElementById('chat-simulator-preview-wrapper');
                 const savedHeight = getCookie('chatPreviewHeight');
@@ -2193,7 +2383,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     splitter.addEventListener('touchstart', onDragStart, { passive: false });
                 }
 
-                // --- 折叠功能事件监听 ---
                 document.querySelectorAll('.chat-simulator-panel > h3').forEach(header => {
                     header.addEventListener('click', () => {
                         if (window.innerWidth > 900) return;
@@ -2206,7 +2395,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 });
 
-                // 初始化
                 updateColorPickerUI();
                 renderFavoriteColors();
                 isSimulatorInitialized = true;
@@ -2214,8 +2402,114 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function createCustomSelect(selectElement, type) {
+        if (!selectElement) return;
+
+        const oldContainer = selectElement.previousElementSibling;
+        if (oldContainer && oldContainer.classList.contains('custom-select-container')) {
+            oldContainer.remove();
+        }
+
+        const container = document.createElement('div');
+        container.className = 'custom-select-container';
+        selectElement.parentNode.insertBefore(container, selectElement);
+
+        const selectedDiv = document.createElement('div');
+        selectedDiv.className = 'select-selected';
+        container.appendChild(selectedDiv);
+
+        const noneText = i18n[currentLang].none;
+        const iconMap = iconMaps[type] || {};
+
+        const updateSelectedDisplay = (text, value) => {
+            const iconSrc = iconMap[value] || (type === 'source' ? iconMap[text] : null);
+            let iconHTML = '';
+            if (iconSrc) {
+                iconHTML = `<img src="${iconSrc}" class="option-icon" alt="${text}">`;
+            }
+            selectedDiv.innerHTML = `${iconHTML}<span class="selected-text">${text}</span>`;
+            selectedDiv.title = text;
+            container.dataset.value = value;
+            selectElement.value = value;
+            const event = new Event('input', { bubbles: true });
+            selectElement.dispatchEvent(event);
+        };
+
+        const initialOption = selectElement.options[selectElement.selectedIndex];
+        if (initialOption) {
+            updateSelectedDisplay(initialOption.text, initialOption.value);
+        }
+
+        selectedDiv.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const existingItemsDiv = document.querySelector('.select-items[data-owner-id="' + selectElement.id + '"]');
+            if (existingItemsDiv) {
+                existingItemsDiv.remove();
+                selectedDiv.classList.remove('select-arrow-active');
+                return;
+            }
+
+            document.querySelectorAll('.select-items').forEach(div => div.remove());
+            document.querySelectorAll('.select-arrow-active').forEach(div => div.classList.remove('select-arrow-active'));
+
+            selectedDiv.classList.add('select-arrow-active');
+
+            const itemsDiv = document.createElement('div');
+            itemsDiv.className = 'select-items';
+            itemsDiv.dataset.ownerId = selectElement.id;
+            document.body.appendChild(itemsDiv);
+
+            Array.from(selectElement.options).forEach(option => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'select-option';
+                if (option.value === container.dataset.value) optionDiv.classList.add('same-as-selected');
+                const iconSrc = iconMap[option.value] || (type === 'source' ? iconMap[option.text] : null);
+                let iconHTML = '';
+                if (iconSrc) iconHTML = `<img src="${iconSrc}" class="option-icon" alt="${option.text}">`;
+                optionDiv.innerHTML = `${iconHTML}${option.text}`;
+                optionDiv.addEventListener('click', function () {
+                    updateSelectedDisplay(option.text, option.value);
+                    itemsDiv.remove();
+                    selectedDiv.classList.remove('select-arrow-active');
+                });
+                itemsDiv.appendChild(optionDiv);
+            });
+
+            const scrollHijack = (e) => {
+                if (itemsDiv.scrollHeight <= itemsDiv.clientHeight) return;
+
+                const isAtBottom = Math.ceil(itemsDiv.scrollTop) + itemsDiv.clientHeight >= itemsDiv.scrollHeight;
+                const isAtTop = itemsDiv.scrollTop === 0;
+
+                if (e.deltaY < 0 && isAtTop) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                } else if (e.deltaY > 0 && isAtBottom) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            };
+
+            itemsDiv.addEventListener('wheel', scrollHijack, { passive: false });
+
+            const rect = selectedDiv.getBoundingClientRect();
+            itemsDiv.style.position = 'absolute';
+            itemsDiv.style.left = rect.left + 'px';
+            itemsDiv.style.top = rect.bottom + window.scrollY + 4 + 'px';
+            itemsDiv.style.minWidth = rect.width + 'px';
+            itemsDiv.style.width = 'auto';
+            itemsDiv.style.whiteSpace = 'nowrap';
+        });
+
+        selectElement.classList.add('custom-select-hidden');
+    }
+
+    document.addEventListener('click', function () {
+        document.querySelectorAll('.select-items').forEach(div => div.remove());
+        document.querySelectorAll('.select-arrow-active').forEach(div => div.classList.remove('select-arrow-active'));
+    });
+
     function addEventListeners() {
-        // --- DOM 元素获取 ---
         const lbTalentHelpBtn = document.getElementById('lb-talent-help-btn');
         const lbTalentHelpModal = document.getElementById('lb-talent-help-modal');
         const lbTalentHelpModalOverlay = document.getElementById('lb-talent-help-modal-overlay');
@@ -2237,7 +2531,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lbTalentHelpModal.classList.remove('hidden');
             lbTalentHelpModalOverlay.classList.remove('hidden');
             document.body.classList.add('modal-open');
-            history.pushState({ modal: 'lbTalentHelp' }, null); // 也更新历史状态
+            history.pushState({ modal: 'lbTalentHelp' }, null);
             modalStack.push('lbTalentHelp');
             document.getElementById('close-lb-talent-help-btn').addEventListener('click', closeLbTalentHelpModal);
         }
@@ -2248,7 +2542,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // --- 原有的事件监听逻辑 ---
         if (themeToggleButton) themeToggleButton.addEventListener('click', toggleTheme);
         if (langSelectBtn) {
             langSelectBtn.addEventListener('click', (event) => {
@@ -2276,7 +2569,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (filterInputs[key]) {
                 filterInputs[key].addEventListener('input', () => {
                     temporaryDateFilter = null;
-                    if (key === 'releaseDateType') temporaryFavorites = null;
+                    if (key === 'filterScope') temporaryFavorites = null;
                     if (key === 'skillTypeSource') setCookie('skillTypeSource', filterInputs.skillTypeSource.value, 365);
                     applyFiltersAndRender();
                 });
@@ -2286,43 +2579,47 @@ document.addEventListener('DOMContentLoaded', function () {
             modalContent.addEventListener('click', (event) => {
                 const target = event.target.closest('.skill-type-tag');
                 if (!target) return;
+
                 const filterType = target.dataset.filterType;
                 let filterValue = target.dataset.filterValue;
                 if (!filterType || filterValue === undefined) return;
-                filterValue = filterValue.replace(/\s*[\(（][^\)）]*[\)）]/g, '').trim();
-                const inputElement = filterInputs[filterType];
-                if (inputElement) {
-                    clearAllFilters();
-                    if (filterType === 'passives' || filterType === 'effects') {
-                        const cleanedValue = filterValue.replace(/[\p{P}\p{S}0-9]/gu, ' ').replace(/\s+/g, ' ').trim();
-                        filterValue = `(${cleanedValue})`;
-                    } else if (filterType === 'types') {
-                        filterValue = `[${filterValue}]`;
-                    }
-                    closeDetailsModal();
+
+                resetAllFilters();
+
+                if (multiSelectFilters.hasOwnProperty(filterType)) {
+                    multiSelectFilters[filterType] = [filterValue];
+                    updateFilterButtonUI(filterType);
+
+                } else if (filterInputs[filterType]) {
+                    const inputElement = filterInputs[filterType];
                     inputElement.value = filterValue;
-                    applyFiltersAndRender();
                 }
+
+                closeDetailsModal();
+                applyFiltersAndRender();
             });
         }
         if (resetFiltersBtn) {
             resetFiltersBtn.addEventListener('click', () => {
-                clearAllFilters();
+                resetAllFilters();
                 applyFiltersAndRender();
             });
         }
         if (filterHero730Btn) {
             filterHero730Btn.addEventListener('click', () => {
-                clearAllFilters();
-                filterInputs.releaseDateType.value = 'hero';
+                resetAllFilters();
+                multiSelectFilters.filterScope = ['hero'];
+                updateFilterButtonUI('filterScope');
                 temporaryDateFilter = { base: oneClickMaxDate, days: 730 };
                 applyFiltersAndRender();
             });
         }
+
         if (filterCostume548Btn) {
             filterCostume548Btn.addEventListener('click', () => {
-                clearAllFilters();
-                filterInputs.releaseDateType.value = 'skin';
+                resetAllFilters();
+                multiSelectFilters.filterScope = ['skin'];
+                updateFilterButtonUI('filterScope');
                 temporaryDateFilter = { base: purchaseCostumeDate, days: 548 };
                 applyFiltersAndRender();
             });
@@ -2348,7 +2645,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (openFavoritesBtn) {
             openFavoritesBtn.addEventListener('click', () => {
                 temporaryFavorites = null;
-                filterInputs.releaseDateType.value = 'favorites';
+                multiSelectFilters.filterScope = ['favorites'];
+                updateFilterButtonUI('filterScope');
                 applyFiltersAndRender();
             });
         }
@@ -2366,7 +2664,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             toggleFavorite(hero);
                             target.textContent = isFavorite(hero) ? '★' : '☆';
                             target.classList.toggle('favorited', isFavorite(hero));
-                            if (filterInputs.releaseDateType.value === 'favorites' && temporaryFavorites === null) {
+                            if (multiSelectFilters.filterScope[0] === 'favorites' && temporaryFavorites === null) {
                                 applyFiltersAndRender();
                             }
                         }
@@ -2428,7 +2726,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (lbTalentHelpBtn) {
             lbTalentHelpBtn.addEventListener('click', openLbTalentHelpModal);
-            // 动态设置悬浮提示，使其支持多语言
             const langDict = i18n[currentLang];
             if (langDict.lbTalentHelpTitle) {
                 lbTalentHelpBtn.title = langDict.lbTalentHelpTitle;
@@ -2540,13 +2837,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             populateFilters();
 
-            // 从Cookie加载并应用默认属性设置
             defaultLimitBreakSelect.value = getCookie('defaultLB') || 'none';
             defaultTalentSelect.value = getCookie('defaultTalent') || 'none';
             defaultTalentStrategySelect.value = getCookie('defaultTalentStrategy') || 'atk-def-hp';
             defaultManaPriorityCheckbox.checked = getCookie('defaultManaPriority') === 'true';
 
-            // 【新增】根据加载的天赋设置，初始化控件的禁用状态
             const initialTalentDisabled = defaultTalentSelect.value === 'none';
             defaultTalentStrategySelect.disabled = initialTalentDisabled;
             defaultManaPriorityCheckbox.disabled = initialTalentDisabled;
@@ -2563,7 +2858,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     const favString = LZString.decompressFromEncodedURIComponent(zfavsFromUrl);
                     if (favString) {
                         temporaryFavorites = favString.split(',');
-                        filterInputs.releaseDateType.value = 'favorites';
+                        multiSelectFilters.filterScope = ['favorites'];
+                        updateFilterButtonUI('filterScope');
                     }
                 } catch (e) {
                     console.error("从URL解压收藏夹失败", e);
@@ -2571,7 +2867,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (favsFromUrl) {
                 try {
                     temporaryFavorites = decodeURIComponent(favsFromUrl).split(',');
-                    filterInputs.releaseDateType.value = 'favorites';
+                    multiSelectFilters.filterScope = ['favorites'];
+                    updateFilterButtonUI('filterScope');
                 } catch (e) {
                     console.error("处理URL中的收藏夹失败", e);
                 }

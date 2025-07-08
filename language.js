@@ -2,6 +2,9 @@
 const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
 const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
 const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
+const colorOrder_cn = ['红', '绿', '蓝', '黄', '紫'];
+const colorOrder_tc = ['紅', '綠', '藍', '黃', '紫'];
+const colorOrder_en = ['Red', 'Green', 'Blue', 'Yellow', 'Purple'];
 
 // Nynaeve 技能类型的英文排序标准
 const nynaeveSkillTypeOrder = [
@@ -113,7 +116,11 @@ const i18n = {
         "aetherDataSource": "突破/天赋数据:", footerInfo: "英雄数据持续更新 | 简繁体中文版",
         filterHeroes: "筛选英雄", standardFilters: "标准筛选", nameLabel: "名称:", avatarLabel: "头像", namePlaceholder: "输入英雄名称", costumeTypeLabel: "服装类型:",
         starLabel: "星级:", colorLabel: "颜色:", speedLabel: "法速:", classLabel: "职业:", familyLabel: "家族:",
-        sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高级筛选",
+        sourceLabel: "起源:", aetherPowerLabel: "以太力量:", showEventNameLabel: "显示活动名称", filterHeroes: "筛选英雄",
+        filterScopeLabel: "筛选范围:", filterScope_all: "全部",
+        filterScope_hero: "英雄",
+        filterScope_skin: "服装",
+        filterScope_favorites: "收藏", clearSelection: "清空选择", advancedFilters: "高级筛选",
         skillTypeSourceLabel: "技能类别来源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
         skillTypeLabel: "特殊技能类别:", skillTypePlaceholder: "例如：增益,异常,治疗", skillTextLabel: "特殊技能文本:",
         passiveSkillLabel: "被动技能文本:", filterBy: "筛选:", all: "全部", hero: "英雄", skin: "服装", favorites: "收藏",
@@ -237,7 +244,11 @@ const i18n = {
         "aetherDataSource": "突破/天賦數據:", footerInfo: "英雄數據持續更新 | 簡繁中文版",
         filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱", costumeTypeLabel: "服裝類型:",
         starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
-        sourceLabel: "起源:", aetherPowerLabel: "以太力量:", advancedFilters: "高級篩選",
+        sourceLabel: "起源:", aetherPowerLabel: "以太力量:", showEventNameLabel: "顯示活動名稱", filterHeroes: "筛选英雄", 
+        filterScopeLabel: "篩選範圍:",
+        filterScope_hero: "英雄",
+        filterScope_skin: "服裝",
+        filterScope_favorites: "收藏", clearSelection: "清空選擇", advancedFilters: "高級篩選",
         skillTypeSourceLabel: "技能類別來源:", sourceBoth: "全部", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
         skillTypeLabel: "特殊技能類別:", skillTypePlaceholder: "例如：增益,異常,治療", skillTextLabel: "特殊技能文本:",
         passiveSkillLabel: "被動技能文本:", filterBy: "篩選:", all: "全部", hero: "英雄", skin: "服裝", favorites: "收藏",
@@ -359,7 +370,11 @@ const i18n = {
         "aetherDataSource": "Aether & Talent Data:", footerInfo: "Hero data is continuously updated | EN/CN Version",
         filterHeroes: "Filter Heroes", standardFilters: "Standard Filters", nameLabel: "Name:", avatarLabel: "Avatar", namePlaceholder: "Enter hero name", costumeTypeLabel: "Costume:",
         starLabel: "Stars:", colorLabel: "Color:", speedLabel: "Speed:", classLabel: "Class:", familyLabel: "Family:",
-        sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", advancedFilters: "Advanced Filters",
+        sourceLabel: "Origin:", aetherPowerLabel: "Aether Power:", showEventNameLabel: "Show Event Name", filterHeroes: "Filter Heroes",
+        filterScopeLabel: "Filter Range:", filterScope_all: "All",
+        filterScope_hero: "Hero",
+        filterScope_skin: "Costume",
+        filterScope_favorites: "Favorites", clearSelection: "Clear Selections", advancedFilters: "Advanced Filters",
         skillTypeSourceLabel: "Type Source:", sourceBoth: "Both", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
         skillTypeLabel: "Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Skill Text:",
         passiveSkillLabel: "Passive Text:", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",

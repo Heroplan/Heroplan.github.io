@@ -785,11 +785,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     englishName = aetherPowerReverseMap[optionValue];
                 }
+
                 if (englishName) {
-                    const sanitizedName = englishName.trim().replace(/\s+/g, ' ');
-                    return `imgs/Aether Power/${sanitizedName}.png`;
+                    // 关键修正：将获取到的英文名转换为小写来匹配你的文件名
+                    const aetherFileName = englishName.trim().toLowerCase();
+                    return `imgs/Aether Power/${aetherFileName}.png`;
                 }
-                return null;
+                    return null;
             case 'family':
                 return `imgs/family/${String(optionValue).toLowerCase()}.png`;
             case 'source':

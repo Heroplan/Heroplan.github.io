@@ -1882,7 +1882,9 @@ h1.hero-main-name.skill-type-tag:hover {
         font-size: 1.5rem;
     }
 }
-
+.filter-item label[for="name-input"] {
+    text-align: center;
+}
 @media (min-width: 769px) {
     #filters-modal .filters-grid {
         flex-direction: row;

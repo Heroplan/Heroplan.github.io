@@ -661,7 +661,37 @@ document.addEventListener('DOMContentLoaded', function () {
                     return translatedA.localeCompare(translatedB, locale, sortOptions);
                 });
             } else if (key === 'costume') {
-                values.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+                // --- 新增的服装类型自定义排序逻辑 ---
+
+                // 1. 根据不同语言，定义期望的排序顺序
+                // 注意：这里的字符串需要与英雄名字中提取出来的完全一致
+                const costumeOrder_cn = ['C1', 'C2', '卡通', '玻璃'];
+                const costumeOrder_tc = ['C1', 'C2', '卡通', '玻璃'];
+                const costumeOrder_en = ['C1', 'C2', 'Toon', 'Glass'];
+
+                // 2. 根据当前语言选择正确的排序数组
+                const order = { cn: costumeOrder_cn, tc: costumeOrder_tc, en: costumeOrder_en }[currentLang] || costumeOrder_en;
+
+                // 3. 使用自定义排序规则进行排序
+                values.sort((a, b) => {
+                    const indexA = order.indexOf(a);
+                    const indexB = order.indexOf(b);
+
+                    // 如果两个值都在我们的排序列表里，就按列表的顺序排
+                    if (indexA !== -1 && indexB !== -1) {
+                        return indexA - indexB;
+                    }
+                    // 如果只有 a 在列表里，a 排在前面
+                    if (indexA !== -1) {
+                        return -1;
+                    }
+                    // 如果只有 b 在列表里，b 排在前面
+                    if (indexB !== -1) {
+                        return 1;
+                    }
+                    // 如果都不在列表里（例如未来新增的服装类型），则按字母顺序排
+                    return a.localeCompare(b);
+                });
             } else {
                 values.sort((a, b) => String(a).localeCompare(String(b), locale));
             }
@@ -791,7 +821,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const aetherFileName = englishName.trim().toLowerCase();
                     return `imgs/Aether Power/${aetherFileName}.png`;
                 }
-                    return null;
+                return null;
             case 'family':
                 return `imgs/family/${String(optionValue).toLowerCase()}.png`;
             case 'source':

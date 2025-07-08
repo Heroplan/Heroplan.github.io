@@ -879,6 +879,8 @@ document.addEventListener('DOMContentLoaded', function () {
         overlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
         modalContent.scrollTop = 0;
+        history.pushState({ modal: 'multiSelect' }, null);
+        modalStack.push('multiSelect');
 
         const closeModal = () => {
             modal.classList.add('hidden');
@@ -2780,7 +2782,12 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('popstate', function (event) {
             if (modalStack.length > 0) {
                 const lastOpenModalId = modalStack.pop();
-                if (lastOpenModalId === 'details') {
+                if (lastOpenModalId === 'multiSelect') {
+                    const modal = document.getElementById('multi-select-modal');
+                    const overlay = document.getElementById('multi-select-modal-overlay');
+                    if (modal) modal.classList.add('hidden');
+                    if (overlay) overlay.classList.add('hidden');
+                } else if (lastOpenModalId === 'details') {
                     if (modal) modal.classList.add('hidden');
                     if (modalOverlay) modalOverlay.classList.add('hidden');
                 } else if (lastOpenModalId === 'filters') {

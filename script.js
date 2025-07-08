@@ -843,6 +843,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const options = availableOptions[filterType];
         const currentSelections = new Set([...multiSelectFilters[filterType]]);
 
+        // 1. 构建模态框内容
         let optionsHTML = options.map(optionValue => {
             const isSelected = currentSelections.has(optionValue);
             const iconSrc = getIconForFilter(filterType, optionValue);
@@ -875,21 +876,13 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
 
+        // 2. 显示模态框
         modal.classList.remove('hidden');
         overlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
         modalContent.scrollTop = 0;
-        history.pushState({ modal: 'multiSelect' }, null);
-        modalStack.push('multiSelect');
 
-        const closeModal = () => {
-            modal.classList.add('hidden');
-            overlay.classList.add('hidden');
-            if (document.querySelectorAll('#modal.hidden, #filters-modal.hidden').length === 2) {
-                document.body.classList.remove('modal-open');
-            }
-        };
-
+        // 3. 为弹窗内的所有选项和按钮绑定事件
         modal.querySelectorAll('.multi-select-option').forEach(optionDiv => {
             optionDiv.addEventListener('click', () => {
                 const value = optionDiv.dataset.value;
@@ -926,9 +919,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateFilterButtonUI(filterType);
             });
         }
-        document.getElementById('close-multi-select-modal-top').addEventListener('click', closeModal);
-        document.getElementById('close-multi-select-modal-bottom').addEventListener('click', closeModal);
-        overlay.addEventListener('click', closeModal);
+
+        document.getElementById('close-multi-select-modal-top').addEventListener('click', closeMultiSelectModal);
+        document.getElementById('close-multi-select-modal-bottom').addEventListener('click', closeMultiSelectModal);
+
+        // 4. 更新浏览器历史记录
+        history.pushState({ modal: 'multiSelect' }, null);
+        modalStack.push('multiSelect');
     }
 
     function calculateHeroStats(hero, settings) {
@@ -2512,6 +2509,14 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.select-items').forEach(div => div.remove());
         document.querySelectorAll('.select-arrow-active').forEach(div => div.classList.remove('select-arrow-active'));
     });
+    function closeMultiSelectModal() {
+        const modal = document.getElementById('multi-select-modal');
+        // 只有在弹窗可见时才执行，避免不必要的操作
+        if (modal && !modal.classList.contains('hidden')) {
+            // 直接调用 history.back()，使其行为和手机返回键完全一致
+            history.back();
+        }
+    }
 
     function addEventListeners() {
         const lbTalentHelpBtn = document.getElementById('lb-talent-help-btn');
@@ -2778,6 +2783,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+
+        const multiSelectModalOverlay = document.getElementById('multi-select-modal-overlay');
+        if (multiSelectModalOverlay) {
+            multiSelectModalOverlay.addEventListener('click', closeMultiSelectModal);
+        }
 
         window.addEventListener('popstate', function (event) {
             if (modalStack.length > 0) {

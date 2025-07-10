@@ -2195,6 +2195,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowWantedMissionView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
+            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }
@@ -2254,6 +2255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowFarmingGuideView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
+            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }
@@ -2881,6 +2883,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowChatSimulatorView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
+            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }

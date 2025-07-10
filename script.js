@@ -1622,6 +1622,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 最后，调用一次渲染函数来更新整个界面
         renderTeamDisplay();
+
+        // 【新增代码】在移动端，如果阵容配置是展开的，则滚动回顶部
+        const teamSimulatorWrapper = document.getElementById('team-simulator-wrapper'); // 获取队伍模拟器整个包装器元素
+        if (teamSimulatorWrapper) { // 确保元素存在
+            // 判断是否为移动端 (假设宽度小于等于 900px 为移动端断点)
+            if (window.innerWidth <= 900) {
+                // 判断阵容配置是否处于展开状态 (即没有 'collapsed' 类)
+                // 默认情况下，在移动端 #team-simulator-wrapper 展开时没有 collapsed 类
+                if (!teamSimulatorWrapper.classList.contains('collapsed')) { //
+                    // 滚动整个窗口到顶部
+                    window.scrollTo(0, 200);
+                }
+            }
+        }
     }
 
 
@@ -1634,7 +1648,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!savedTeamsList) return;
 
         const langDict = i18n[currentLang];
-        const myTeams = getSavedTeams();
+        const myTeams = getSavedTeams(); // 获取用户已保存的队伍
         savedTeamsList.innerHTML = '';
 
         if (!teams || teams.length === 0) {
@@ -1656,7 +1670,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let buttonHTML = '';
             if (isSharedView) {
-                const isAlreadyImported = myTeams.some(myTeam => myTeam.name === team.name);
+                // 【核心修改点】判断队伍是否已导入：不仅比较名字，还要比较英雄列表
+                const isAlreadyImported = myTeams.some(myTeam =>
+                    myTeam.name === team.name &&
+                    // 比较英雄列表是否完全一致
+                    // 确保长度一致且每个英雄ID都匹配
+                    myTeam.heroes.length === team.heroes.length &&
+                    myTeam.heroes.every((heroId, i) => heroId === team.heroes[i])
+                );
+
                 if (isAlreadyImported) {
                     buttonHTML = `<button class="action-button disabled" data-team-index="${index}">${langDict.importedBtn}</button>`;
                 } else {
@@ -1673,10 +1695,8 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             ${buttonHTML}
             `;
-            
-            // --- 【核心修复】 ---
-            // 移除了之前的 if(!buttonHTML.includes('disabled')) 判断
-            // 现在，为每一行都无条件地添加点击事件监听器
+
+            // ... (其他事件监听器和逻辑保持不变)
             row.addEventListener('click', (e) => {
                 // 如果点击的是按钮，则不触发查看阵容的事件
                 if (e.target.closest('button')) return;
@@ -1686,48 +1706,23 @@ document.addEventListener('DOMContentLoaded', function () {
             savedTeamsList.appendChild(row);
         });
 
-        // 事件监听器部分保持不变...
+        // 事件监听器
         if (isSharedView) {
             savedTeamsList.querySelectorAll('.import-team-btn').forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const teamIndex = parseInt(button.dataset.teamIndex, 10);
-                    const teamToImport = JSON.parse(JSON.stringify(sharedTeamsDataFromUrl[teamIndex]));
+                    const teamToImport = JSON.parse(JSON.stringify(sharedTeamsDataFromUrl[teamIndex])); // 深拷贝，避免引用问题
                     if (!teamToImport) return;
 
-                    let currentMyTeams = getSavedTeams();
-                    let finalTeamName = teamToImport.name;
-                    let isNameConflict = currentMyTeams.some(t => t.name === finalTeamName);
+                    let currentMyTeams = getSavedTeams(); // 获取用户已保存的队伍
 
-                    while (isNameConflict) {
-                        const newName = window.prompt(langDict.importEnterNewName(finalTeamName), finalTeamName);
-                        
-                        if (newName === null) {
-                            return; 
-                        }
+                    currentMyTeams.push(teamToImport); // 直接将新队伍添加到列表中
+                    saveTeams(currentMyTeams); // 保存更新后的队伍列表
 
-                        const trimmedName = newName.trim();
-                        if (trimmedName === "") {
-                            alert(langDict.teamNameRequired);
-                            continue; 
-                        }
+                    alert(langDict.importSuccess(teamToImport.name)); // 提示导入成功
 
-                        if (currentMyTeams.some(t => t.name === trimmedName)) {
-                            finalTeamName = trimmedName; 
-                            isNameConflict = true;
-                        } else {
-                            finalTeamName = trimmedName;
-                            isNameConflict = false;
-                        }
-                    }
-
-                    teamToImport.name = finalTeamName;
-                    currentMyTeams.push(teamToImport);
-                    saveTeams(currentMyTeams);
-
-                    alert(langDict.importSuccess(finalTeamName));
-                    
-                    renderSavedTeams(sharedTeamsDataFromUrl, true);
+                    renderSavedTeams(sharedTeamsDataFromUrl, true); // 重新渲染分享的队伍列表，更新按钮状态
                 });
             });
         } else {
@@ -1806,7 +1801,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return typesToShow.filter(Boolean).join(', ');
     }
-    // ========== 新增：独立的动态高度调整函数 ==========
+    // ========== 独立的动态高度调整函数 ==========
     function adjustTeamDisplayHeight() {
         const teamSimulatorDisplay = document.getElementById('team-simulator-display');
         // 如果模拟器本身不可见，或其父容器处于折叠状态，则不执行计算
@@ -1816,7 +1811,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 使用 requestAnimationFrame 确保在浏览器下次重绘前执行，以获得准确的尺寸
         requestAnimationFrame(() => {
-            // ========== 新增：获取桌面端标题的高度 ==========
+            // ========== 获取桌面端标题的高度 ==========
             const desktopHeader = teamSimulatorDisplay.querySelector('.team-display-desktop-header');
             let desktopHeaderHeight = 0;
             // 检查标题是否存在且当前是否为可见状态（仅在桌面端可见）
@@ -1828,7 +1823,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const tagsContainer = document.getElementById('team-tags-summary-container');
             let tagsHeight = 0;
-            if (tagsContainer && tagsContainer.style.display !== 'none') {
+            // 判断元素是否存在且可见，否则高度为0
+            if (tagsContainer && tagsContainer.style.display !== 'none' && !tagsContainer.classList.contains('collapsed')) {
                 const style = window.getComputedStyle(tagsContainer);
                 tagsHeight = tagsContainer.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
             }
@@ -1853,11 +1849,30 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // ========== 修改：将桌面标题高度计入总高度 ==========
-            const totalMinHeight = desktopHeaderHeight + tagsHeight + vLayoutHeight + 20;
-            teamSimulatorDisplay.style.minHeight = `${totalMinHeight}px`;
+            const calculatedLeftPanelHeight = desktopHeaderHeight + tagsHeight + vLayoutHeight + 20;
+            teamSimulatorDisplay.style.minHeight = `${calculatedLeftPanelHeight}px`;
+
+            // 【新增/修改代码】同步调整右侧面板的高度
+            const savedTeamsPanel = document.getElementById('saved-teams-panel');
+            const minPanelHeight = 450; // 定义最小高度为 450px
+
+            if (savedTeamsPanel) {
+                // 仅在桌面端应用此高度同步，因为移动端saved-teams-panel高度为auto
+                if (window.innerWidth > 900) { // 假设900px是桌面/移动端断点
+                    // 如果左侧计算高度大于最小面板高度，则将右侧高度设置为左侧高度
+                    if (calculatedLeftPanelHeight > minPanelHeight) {
+                        savedTeamsPanel.style.height = `${calculatedLeftPanelHeight}px`;
+                    } else {
+                        // 否则，右侧高度保持其CSS定义的最小高度（此处为450px）
+                        // 实际上不需要显式设置，因为min-height CSS规则会生效
+                        savedTeamsPanel.style.height = ''; // 清除内联样式，让CSS的min-height接管
+                    }
+                } else {
+                    savedTeamsPanel.style.height = 'auto'; // 确保移动端是auto
+                }
+            }
         });
     }
-    // ====================================================
 
     function renderTeamDisplay() {
         if (!teamDisplayGrid) return;
@@ -2157,7 +2172,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showHeroListViewUI() {
         saveCurrentViewScrollPosition();
-
+        applyFiltersAndRender();
         heroTableView.classList.remove('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
@@ -2195,7 +2210,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowWantedMissionView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
-            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }
@@ -2255,7 +2269,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowFarmingGuideView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
-            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }
@@ -2883,7 +2896,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function initAndShowChatSimulatorView() {
         if (teamSimulatorActive) {
             teamSimulatorActive = false;
-            applyFiltersAndRender();
             teamSimulatorWrapper.classList.add('hidden');
             headerInfoContainer.classList.remove('hidden');
         }

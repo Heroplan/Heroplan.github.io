@@ -1518,40 +1518,47 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     }
     /**
-     * 控制队伍模拟器的显示和隐藏（修正版）
+     * 控制队伍模拟器的显示和隐藏
      */
     function toggleTeamSimulator() {
         teamSimulatorActive = !teamSimulatorActive;
 
         if (teamSimulatorActive) {
             // --- 打开模拟器时的逻辑 ---
-            headerInfoContainer.classList.add('hidden');
-            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden');
-            multiSelectFilters.filterScope = ['favorites'];
-            temporaryFavorites = null;
-            applyFiltersAndRender();
+            headerInfoContainer.classList.add('hidden'); // 隐藏页眉信息
+            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden'); // 显示队伍模拟器
+
+            // 确保其他视图被隐藏，并默认显示英雄列表
+            heroTableView.classList.remove('hidden'); // 显示英雄列表
+            wantedMissionView.classList.add('hidden'); // 隐藏通缉任务视图
+            farmingGuideView.classList.add('hidden'); // 隐藏材料产出视图
+            if (chatSimulatorView) chatSimulatorView.classList.add('hidden'); // 隐藏聊天模拟器视图
+
+            multiSelectFilters.filterScope = ['favorites']; // 设置筛选范围为收藏夹
+            temporaryFavorites = null; // 清除临时收藏夹
+            applyFiltersAndRender(); // 应用筛选并渲染
             // 【新增】在打开模拟器时，应用已保存的折叠状态
-            applyCollapseStates();
+            applyCollapseStates(); // 应用折叠状态
 
             // 【修正】采用更直接的渲染逻辑，确保默认加载正确
             if (isViewingSharedTeams) {
                 // 如果是分享视图：激活“分享的队伍”标签，并直接渲染分享列表
-                myTeamsTabBtn.classList.remove('active');
-                sharedTeamsTabBtn.classList.add('active');
-                renderSavedTeams(sharedTeamsDataFromUrl, true);
+                myTeamsTabBtn.classList.remove('active'); // 移除“我的队伍”标签的激活状态
+                sharedTeamsTabBtn.classList.add('active'); // 添加“分享的队伍”标签的激活状态
+                renderSavedTeams(sharedTeamsDataFromUrl, true); // 渲染分享的队伍
             } else {
                 // 如果是普通视图：激活“我的队伍”标签，并直接渲染用户保存在Cookie中的列表
-                myTeamsTabBtn.classList.add('active');
-                sharedTeamsTabBtn.classList.remove('active');
-                renderSavedTeams(getSavedTeams(), false);
+                myTeamsTabBtn.classList.add('active'); // 添加“我的队伍”标签的激活状态
+                sharedTeamsTabBtn.classList.remove('active'); // 移除“分享的队伍”标签的激活状态
+                renderSavedTeams(getSavedTeams(), false); // 渲染保存的队伍
             }
 
         } else {
             // --- 关闭模拟器时的逻辑 ---
-            headerInfoContainer.classList.remove('hidden');
-            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden');
-            multiSelectFilters.filterScope = ['all'];
-            applyFiltersAndRender();
+            headerInfoContainer.classList.remove('hidden'); // 显示页眉信息
+            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden'); // 隐藏队伍模拟器
+            multiSelectFilters.filterScope = ['all']; // 重置筛选范围为全部
+            applyFiltersAndRender(); // 应用筛选并渲染 (这将默认显示英雄列表)
         }
     }
 

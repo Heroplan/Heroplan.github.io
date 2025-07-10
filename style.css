@@ -149,6 +149,15 @@ html:not(.dark-theme) .moon-icon {
     display: none;
 }
 
+.secondary-button {
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.secondary-button:hover {
+    filter: brightness(0.9);
+}
+
 .action-button {
     border: none;
     padding: 0.6rem 1.2rem;
@@ -188,6 +197,17 @@ html:not(.dark-theme) .moon-icon {
     border-color: var(--md-sys-color-primary);
 }
 
+.action-button.disabled {
+    background-color: var(--md-sys-color-surface-container-high);
+    color: var(--md-sys-color-outline);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.saved-team-row .action-button,
+.saved-team-row .remove-team-btn {
+    flex-shrink: 0;
+    /* 核心修复：禁止按钮被压缩 */
+}
 @media (min-width: 769px) {
     #advanced-filters-content .filter-item:has(> .input-with-right-button)>label {
         width: 40%;
@@ -1465,44 +1485,66 @@ footer .footer-credit {
 }
 
 /* ========== 英雄头像辉光效果 ========== */
+
+/* --- 红色发光 --- */
 #modal .hero-image-modal.red-glow-border,
-.manual-table .hero-image.red-glow-border {
+.manual-table .hero-image.red-glow-border,
+.team-hero-avatar.red-glow-border,
+.saved-team-avatar.red-glow-border {
     box-shadow: var(--hero-glow-red);
     border-color: var(--hero-color-red);
 }
 
+/* --- 蓝色发光 --- */
 #modal .hero-image-modal.blue-glow-border,
-.manual-table .hero-image.blue-glow-border {
+.manual-table .hero-image.blue-glow-border,
+.team-hero-avatar.blue-glow-border,
+.saved-team-avatar.blue-glow-border {
     box-shadow: var(--hero-glow-blue);
     border-color: var(--hero-color-blue);
 }
 
+/* --- 绿色发光 --- */
 #modal .hero-image-modal.green-glow-border,
-.manual-table .hero-image.green-glow-border {
+.manual-table .hero-image.green-glow-border,
+.team-hero-avatar.green-glow-border,
+.saved-team-avatar.green-glow-border {
     box-shadow: var(--hero-glow-green);
     border-color: var(--hero-color-green);
 }
 
+/* --- 黄色发光 --- */
 #modal .hero-image-modal.yellow-glow-border,
-.manual-table .hero-image.yellow-glow-border {
+.manual-table .hero-image.yellow-glow-border,
+.team-hero-avatar.yellow-glow-border,
+.saved-team-avatar.yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
     border-color: var(--hero-color-yellow);
 }
 
+/* --- 紫色发光 --- */
 #modal .hero-image-modal.purple-glow-border,
-.manual-table .hero-image.purple-glow-border {
+.manual-table .hero-image.purple-glow-border,
+.team-hero-avatar.purple-glow-border,
+.saved-team-avatar.purple-glow-border {
     box-shadow: var(--hero-glow-purple);
     border-color: var(--hero-color-purple);
 }
 
+/* --- 白色发光 --- */
 #modal .hero-image-modal.white-glow-border,
-.manual-table .hero-image.white-glow-border {
+.manual-table .hero-image.white-glow-border,
+.team-hero-avatar.white-glow-border,
+.saved-team-avatar.white-glow-border {
     box-shadow: var(--hero-glow-white);
     border-color: var(--hero-color-white);
 }
 
+/* --- 黑色发光 --- */
 #modal .hero-image-modal.black-glow-border,
-.manual-table .hero-image.black-glow-border {
+.manual-table .hero-image.black-glow-border,
+.team-hero-avatar.black-glow-border,
+.saved-team-avatar.black-glow-border {
     box-shadow: var(--hero-glow-black);
     border-color: var(--hero-color-black);
 }
@@ -1882,9 +1924,11 @@ h1.hero-main-name.skill-type-tag:hover {
         font-size: 1.5rem;
     }
 }
+
 .filter-item label[for="name-input"] {
     text-align: center;
 }
+
 @media (min-width: 769px) {
     #filters-modal .filters-grid {
         flex-direction: row;
@@ -2791,6 +2835,7 @@ select.custom-select-hidden {
     /* 核心魔法：创建自适应列，并让它们自动填充可用空间 */
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
+
 .filter-buttons-container .filter-button.checkbox-wrapper {
     padding: 0;
     border: none;
@@ -2842,5 +2887,653 @@ select.custom-select-hidden {
         /* 让每个选项占据整行宽度 */
         margin-bottom: 5px;
         /* 可以添加一些垂直间距 */
+    }
+}
+
+/* ========== 队伍模拟器样式 (修正版) ========== */
+
+/* 修正：为最外层容器设置最小高度，以解决遮挡下方列表的问题 */
+#team-simulator-display {
+    width: 66.67%;
+    margin-bottom: 1rem;
+}
+
+/* 修改 #team-display-grid 以容纳新的汇总行 */
+#team-display-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto auto;
+    /* 为汇总行增加第四行 */
+    gap: 5px;
+    position: relative;
+}
+
+/* 英雄头像插槽样式 */
+.team-hero-slot {
+    border: 1px dashed var(--md-sys-color-outline);
+    border-radius: 8px;
+    height: 62px;
+    /* 固定头像区域高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* 为交换图标定位 */
+}
+
+.team-hero-slot.filled {
+    border-color: transparent;
+}
+
+/* V形布局定位 */
+.team-hero-slot[data-pos="1"] {
+    grid-area: 1 / 1;
+}
+
+.team-hero-slot[data-pos="2"] {
+    grid-area: 2 / 2;
+}
+
+.team-hero-slot[data-pos="3"] {
+    grid-area: 3 / 3;
+}
+
+.team-hero-slot[data-pos="4"] {
+    grid-area: 2 / 4;
+}
+
+.team-hero-slot[data-pos="5"] {
+    grid-area: 1 / 5;
+}
+
+/* 英雄信息卡片（名字、属性、技能）的容器 */
+.team-info-slot {
+    position: absolute;
+    padding: 8px;
+    cursor: pointer;
+    width: calc(20% - 10px);
+    z-index: 5;
+}
+
+/* V形布局的绝对定位 */
+.team-info-slot[data-info-pos="1"] {
+    top: 65px;
+    left: 0;
+}
+
+.team-info-slot[data-info-pos="2"] {
+    top: 130px;
+    left: 20%;
+}
+
+.team-info-slot[data-info-pos="3"] {
+    top: 195px;
+    left: 40%;
+}
+
+.team-info-slot[data-info-pos="4"] {
+    top: 130px;
+    left: 60%;
+}
+
+.team-info-slot[data-info-pos="5"] {
+    top: 65px;
+    left: 80%;
+}
+
+/* 英雄头像图片 */
+.team-hero-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+}
+
+/* 1. 英雄名字居中显示 */
+.team-hero-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+/* 2. 四项属性以2x2格式排列 */
+.team-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 两列 */
+    gap: 4px 10px;
+    /* 行、列间距 */
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.team-hero-stats span {
+    text-align: left;
+    /* 属性文字本身左对齐 */
+}
+
+/* 技能文本样式 */
+.team-hero-skills {
+    font-size: 14px;
+    color: var(--md-sys-color-on-surface-variant);
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* 交换/移除图标样式 (保持不变) */
+.hero-action-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.hero-action-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* 新增：队伍标签汇总容器的定位和样式 */
+#team-tags-summary-container {
+    grid-column: 1 / -1;
+    /* 关键：使其横跨所有5列 */
+    grid-row: 4;
+    /* 关键：将其放置在第四行 */
+
+    padding: 1rem;
+    border: 1px dashed var(--md-sys-color-outline);
+    border-radius: 8px;
+    min-height: 50px;
+
+    /* 使用Flex布局来排列内部标签 */
+    display: none;
+    /* 初始隐藏，由JS在有英雄时显示 */
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 之前添加的、现在依然正确的单个标签样式 */
+.team-tag-item {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+}
+
+.team-tag-item .tag-count {
+    font-weight: bold;
+    color: var(--md-sys-color-primary);
+    font-size: 1.1em;
+    margin-left: 4px;
+}
+
+.no-tags-message {
+    color: var(--md-sys-color-on-surface-variant);
+    font-style: italic;
+}
+
+/* 针对移动设备（屏幕宽度 <= 768px）的样式调整 */
+@media (max-width: 768px) {
+    #team-simulator-display {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* 新增：让英雄名字在小屏幕上可以正常换行 */
+    .team-hero-name {
+        white-space: normal;
+        /* 允许自动换行 */
+        word-wrap: break-word;
+        /* 强制长单词或无空格文本换行 */
+    }
+
+    /* 新增：将属性显示改为单列（一行一条） */
+    .team-hero-stats {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        gap: 2px;
+    }
+
+    /* 新增：在移动端调整汇总区域的上边距 */
+    #team-tags-summary-container {
+        /* 增加上边距，确保其显示在所有英雄信息卡片的下方 */
+    }
+}
+
+/* 【新增】队伍模拟器最外层容器，使用Flex布局 */
+#team-simulator-wrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    /* 顶部对齐 */
+}
+
+/* 【修改】调整原 #team-simulator-display 样式以适应Flex布局 */
+#team-simulator-display {
+    flex: 2;
+    /* 占据约2/3宽度 */
+    min-width: 0;
+    /* Flex item 必备 */
+    width: auto;
+    margin-bottom: 0;
+}
+
+/* 【新增】右侧面板容器 */
+#saved-teams-panel {
+    flex: 1;
+    /* 占据约1/3宽度 */
+    min-width: 0;
+    /* Flex item 必备 */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 450px;
+    /* 与左侧高度匹配 */
+}
+
+/* 【新增】右侧面板中的按钮容器 */
+.saved-teams-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.saved-teams-actions .action-button {
+    flex-grow: 1;
+    /* 让两个按钮平分空间 */
+}
+
+/* 【新增】已存队伍列表容器 */
+#saved-teams-list-container {
+    flex-grow: 1;
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: var(--md-sys-color-surface);
+    display: flex;
+    flex-direction: column;
+}
+
+#saved-teams-list-container h4 {
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+#saved-teams-list {
+    overflow-y: auto;
+    /* 仅内容区滚动 */
+}
+
+/* 【新增】已存队伍的每一行样式 */
+.saved-team-row {
+    display: flex;
+    align-items: flex-end;
+    /* 【关键修改】改为底部对齐 */
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    background-color: var(--md-sys-color-surface-variant);
+    transition: background-color 0.2s;
+    /* 其他样式保持不变 */
+}
+
+.saved-team-row:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+/* 【新增】队名样式 */
+.saved-team-name {
+    font-weight: bold;
+    margin-right: auto;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+/* 【新增】英雄头像组样式 */
+.saved-team-avatars {
+    display: flex;
+    gap: 4px;
+}
+
+.saved-team-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    object-fit: cover;
+    background-color: var(--md-sys-color-surface);
+}
+
+/* 【新增】导入按钮样式 */
+.import-team-btn {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    flex-shrink: 0;
+    /* 防止按钮被压缩 */
+}
+
+/* 【新增】移除按钮样式 */
+.remove-team-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--md-sys-color-error);
+    margin-left: 10px;
+    padding: 0 5px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.saved-team-row:hover .remove-team-btn {
+    opacity: 1;
+}
+
+/* 【新增】当行可点击时，改变鼠标指针 */
+.saved-team-row.is-clickable {
+    cursor: pointer;
+}
+
+/* 【修改】增强悬停效果 */
+.saved-team-row:hover {
+    background-color: var(--md-sys-color-primary-container);
+}
+
+/* 针对移动设备（屏幕宽度 <= 900px）的样式调整 */
+@media (max-width: 900px) {
+    #team-simulator-wrapper {
+        flex-direction: column;
+    }
+
+    #saved-teams-panel {
+        width: 100%;
+        height: auto;
+        /* 高度自适应 */
+    }
+}
+
+/* 【新增】标签页系统样式 */
+.saved-teams-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    margin-bottom: 0.5rem;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--md-sys-color-on-surface-variant);
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.tab-button:hover {
+    background-color: var(--md-sys-color-surface-variant);
+}
+
+.tab-button.active {
+    color: var(--md-sys-color-primary);
+    border-bottom-color: var(--md-sys-color-primary);
+    font-weight: bold;
+}
+
+/* 【新增】队伍列表新布局样式 */
+.saved-team-row {
+    /* 修改为 flex 布局，以对齐内容和旁边的按钮 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* 内容和按钮之间的间距 */
+}
+
+.team-row-main-content {
+    /* 这个新容器将用于容纳队名和头像 */
+    flex-grow: 1;
+    /* 让它占据所有可用空间 */
+    display: flex;
+    flex-direction: column;
+    /* 设置为垂直（列）布局 */
+    gap: 0.3rem;
+    /* 队名和头像之间的垂直间距 */
+    min-width: 0;
+    /* 防止内容过长时破坏布局 */
+}
+
+.saved-team-name {
+    /* 调整队名样式以适应新布局 */
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 移除旧的、不再需要的样式 */
+    max-width: none;
+    margin-right: 0;
+}
+/* =================================== */
+/* 折叠功能样式 (视觉优化版) */
+/* =================================== */
+
+.saved-teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.saved-teams-tabs {
+    border-bottom: none;
+    /* 移除标签页自身的边框，统一由header管理 */
+    margin-bottom: 0;
+}
+
+.collapse-arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3E%3Cpath d='M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z' fill='%23666'%3E%3C/path%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+    /* 默认在桌面端隐藏 */
+    display: none;
+    margin-right: 0.75rem;
+    /* 给箭头一些右边距 */
+    flex-shrink: 0;
+    /* 防止箭头被压缩 */
+    transform: rotate(-180deg);
+}
+
+/* 当列表收起时，箭头旋转朝上 */
+#saved-teams-list-container.collapsed .collapse-arrow {
+    transform: rotate(0deg);
+}
+/* =================================== */
+/* 移动端响应式布局 (Mobile Responsive Layout) */
+/* =================================== */
+
+/* 在屏幕宽度小于 900px 时应用此样式 */
+@media (max-width: 900px) {
+
+    /* --- 已有的移动端堆叠布局 --- */
+    #team-simulator-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #team-simulator-display {
+        width: 100%;
+        flex: none;
+    }
+
+    #saved-teams-panel {
+        width: 100%;
+        height: auto;
+        flex: none;
+    }
+
+    /* -------------------------- */
+
+
+    /* 【核心】让整个面板在移动端看起来像一个卡片 */
+    #saved-teams-list-container {
+        border: 1px solid var(--md-sys-color-outline);
+        border-radius: 12px;
+        overflow: hidden;
+        /* 隐藏内部溢出的圆角 */
+    }
+
+    /* 【核心】让标题栏在移动端看起来像一个清晰的可点击区域 */
+    .saved-teams-header {
+        cursor: pointer;
+        padding: 0.25rem 0;
+        background-color: var(--md-sys-color-surface-container-high);
+        /* 给它一个明确的背景色 */
+        border-bottom: 1px solid var(--md-sys-color-outline-variant);
+        transition: background-color 0.2s;
+    }
+
+    /* 鼠标悬停时提供反馈 */
+    .saved-teams-header:hover {
+        background-color: var(--md-sys-color-surface-container-highest);
+    }
+
+    /* 在移动端显示箭头 */
+    .collapse-arrow {
+        display: block;
+    }
+
+    /* 当折叠时，隐藏列表内容 */
+    #saved-teams-list-container.collapsed #saved-teams-list {
+        display: none;
+    }
+
+    /* 当折叠时，标题栏的下边框也消失 */
+    #saved-teams-list-container.collapsed .saved-teams-header {
+        border-bottom-color: transparent;
+    }
+}
+/* =================================== */
+/* 更新：阵容配置区与操作按钮联动折叠功能 */
+/* =================================== */
+
+/* 1. 默认在桌面端隐藏折叠头 */
+#team-display-header {
+    display: none;
+}
+
+/* 2. 在移动端 (<= 900px) 应用折叠样式 */
+@media (max-width: 900px) {
+
+    /* 让主容器在移动端也是 flex-column，以便控制子元素 */
+    #team-simulator-wrapper {
+        flex-direction: column;
+    }
+
+    /* 显示并设置折叠头样式 */
+    #team-display-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 0.75rem 0.5rem;
+        background-color: var(--md-sys-color-surface-container-high);
+        border: 1px solid var(--md-sys-color-outline-variant);
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        user-select: none;
+        width: 100%;
+        /* 确保在 flex 布局中占满整行 */
+        box-sizing: border-box;
+        /* 包含内边距和边框 */
+    }
+
+    #team-display-header h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--md-sys-color-primary);
+    }
+
+    /* 箭头样式保持不变 */
+    #team-display-header .collapse-arrow {
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3E%3Cpath d='M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z' fill='%23666'%3E%3C/path%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.3s ease;
+        transform: rotate(-180deg);
+        /* 展开时，箭头朝上 */
+    }
+
+    /* 3. 【核心修改】折叠逻辑现在作用于 wrapper */
+    #team-simulator-wrapper.collapsed #team-simulator-display,
+    #team-simulator-wrapper.collapsed .saved-teams-actions {
+        display: none;
+    }
+
+    #team-simulator-wrapper.collapsed #team-display-header {
+        margin-bottom: 0;
+    }
+
+    #team-simulator-wrapper.collapsed #team-display-header .collapse-arrow {
+        transform: rotate(0deg);
+        /* 折叠时，箭头朝下 */
+    }
+}
+/* =================================== */
+/* 新增：阵容配置桌面/移动端标题控制 */
+/* =================================== */
+
+/* 1. 桌面端标题的样式：居中、设置字体和间距 */
+.team-display-desktop-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.team-display-desktop-header h3 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--md-sys-color-primary);
+    font-weight: 600;
+}
+
+
+/* 2. 响应式控制：在移动端 (<= 900px) 时 */
+@media (max-width: 900px) {
+
+    /* 隐藏桌面端标题 */
+    .team-display-desktop-header {
+        display: none;
     }
 }

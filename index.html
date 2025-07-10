@@ -99,6 +99,9 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
                 <div class="header-buttons">
+                    <button id="show-team-simulator-btn" class="theme-toggle-btn" title="队伍模拟器">
+                        <img src="imgs/event/war.png" alt="队伍模拟器" style="width: 28px; height: 28px; object-fit: contain;">
+                    </button>
                     <button id="show-chat-simulator-btn" class="theme-toggle-btn" title="聊天模拟器">
                         <span style="font-size: 1.5rem;">🎨</span>
                     </button>
@@ -183,6 +186,52 @@
                 除了英雄数据库，我们还集成了多种实用工具来提升您的游戏体验：使用创新的【<strong>聊天模拟器</strong>】，您可以轻松制作带自定义颜色和游戏表情的聊天内容并一键复制；查阅我们详尽的【<strong>材料出处指南</strong>】和【<strong>通缉任务</strong>】速查表，高效定位资源，优化您的游戏攻略。您可以收藏您喜爱的英雄组合，并通过链接将您的<strong>收藏列表</strong>分享给盟友。平台完整支持简/繁中文和英文，并提供日/夜间模式切换功能。
             </p>
         </section>
+        <div id="team-simulator-wrapper" class="hidden">
+            <div id="team-display-header">
+                <h4 data-lang-key="teamDisplayTitle">阵容配置</h4>
+                <div class="collapse-arrow"></div>
+            </div>
+            <div id="team-simulator-display">
+                <div class="team-display-desktop-header">
+                    <h3 data-lang-key="teamDisplayTitle">阵容配置</h3>
+                </div>
+                <div id="team-tags-summary-container"></div>
+                <div id="team-display-grid">
+                    <div class="team-hero-slot" data-pos="1"></div>
+                    <div class="team-hero-slot" data-pos="2"></div>
+                    <div class="team-hero-slot" data-pos="3"></div>
+                    <div class="team-hero-slot" data-pos="4"></div>
+                    <div class="team-hero-slot" data-pos="5"></div>
+                    <div class="team-info-slot" data-info-pos="1"></div>
+                    <div class="team-info-slot" data-info-pos="2"></div>
+                    <div class="team-info-slot" data-info-pos="3"></div>
+                    <div class="team-info-slot" data-info-pos="4"></div>
+                    <div class="team-info-slot" data-info-pos="5"></div>
+                </div>
+            </div>
+            <div id="saved-teams-panel">
+                <div class="saved-teams-actions">
+                    <button id="clear-team-btn" class="action-button secondary-button"
+                        data-lang-key="clearTeamBtn">清空阵容</button>
+                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn">保存队伍</button>
+                    <button id="share-team-list-btn" class="action-button"
+                        data-lang-key="shareTeamListBtn">分享列表</button>
+                </div>
+                <div id="saved-teams-list-container">
+                    <div class="saved-teams-header">
+                        <div class="saved-teams-tabs">
+                            <button id="tab-my-teams" class="tab-button" data-lang-key="myTeamsTab">我的队伍</button>
+                            <button id="tab-shared-teams" class="tab-button" data-lang-key="sharedTeamsTab"
+                                style="display: none;">分享的队伍</button>
+                        </div>
+                        <div class="collapse-arrow"></div>
+                    </div>
+
+                    <div id="saved-teams-list">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="results-wrapper">
             <div class="results-header">
@@ -270,9 +319,9 @@
                 <h2 data-lang-key="filterHeroes">筛选英雄</h2>
                 <button id="close-filters-modal-btn" class="close-btn">❌</button>
             </div>
-        
+
             <div class="filters-grid">
-        
+
                 <div class="filter-card">
                     <div class="filter-header" id="standard-filters-header">
                         <div class="filter-title-container">
@@ -289,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-        
+
                 <div class="filter-card">
                     <div class="filter-header" id="advanced-filters-header">
                         <div class="filter-title-container">
@@ -323,8 +372,9 @@
                             <label for="passives-input" data-lang-key="passiveSkillLabel">被动技能文本:</label>
                             <input type="text" id="passives-input" placeholder="">
                         </div>
-        
-                        <div style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
                             <div class="horizontal-filter-group">
                                 <div class="filter-item">
                                     <label>
@@ -351,11 +401,13 @@
                                 </div>
                             </div>
                         </div>
-        
-                        <div style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
                             <div class="default-stat-selectors">
                                 <div class="details-selector-item">
-                                    <label for="default-limit-break-select" data-lang-key="limitBreakSetting">突破设置</label>
+                                    <label for="default-limit-break-select"
+                                        data-lang-key="limitBreakSetting">突破设置</label>
                                     <select id="default-limit-break-select">
                                         <option value="none" data-lang-key="noLimitBreak">无突破</option>
                                         <option value="lb1" data-lang-key="lb1">LB1</option>
@@ -371,7 +423,8 @@
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-talent-strategy-select" data-lang-key="prioritySetting">天赋优先级</label>
+                                    <label for="default-talent-strategy-select"
+                                        data-lang-key="prioritySetting">天赋优先级</label>
                                     <select id="default-talent-strategy-select">
                                         <option value="atk-def-hp" data-lang-key="attackPriority">攻击 > 防御 > 生命</option>
                                         <option value="atk-hp-def" data-lang-key="attackPriority2">攻击 > 生命 > 防御</option>
@@ -380,7 +433,8 @@
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-mana-priority-checkbox" data-lang-key="manaPriorityLabel">法力节点</label>
+                                    <label for="default-mana-priority-checkbox"
+                                        data-lang-key="manaPriorityLabel">法力节点</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="default-mana-priority-checkbox">
@@ -392,7 +446,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                         <div class="stat-filter-grid">
                             <div class="filter-item-compact">
                                 <label for="power-input" data-lang-key="minPower">战力</label>
@@ -413,8 +467,9 @@
                         </div>
                     </div>
                 </div>
-        
-            </div> </div>
+
+            </div>
+        </div>
         <div class="filter-actions">
             <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
             <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>

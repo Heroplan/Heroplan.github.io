@@ -261,6 +261,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
     const showWantedMissionBtn = document.getElementById('show-wanted-mission-btn');
     const showFarmingGuideBtn = document.getElementById('show-farming-guide-btn');
+    const showTeamSimulatorBtn = document.getElementById('show-team-simulator-btn');
+    const teamSimulatorDisplay = document.getElementById('team-simulator-display');
+    const teamDisplayGrid = document.getElementById('team-display-grid');
+    const headerInfoContainer = document.querySelector('.header-info-container');
 
     const oneClickMaxDateDisplay = document.getElementById('one-click-max-date-display');
     const purchaseCostumeDateDisplay = document.getElementById('purchase-costume-date-display');
@@ -312,6 +316,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const hueCursor = document.getElementById('hue-cursor');
     const colorPreviewBox = document.getElementById('color-preview-box');
     const colorHexCodeInput = document.getElementById('color-hex-code');
+
+    // --- 新增: 队伍模拟器变量 ---
+    let teamSimulatorActive = false;
+    let teamSlots = Array(5).fill(null);
+    let swapModeActive = false; // 新增：标记是否进入交换模式
+    let selectedForSwapIndex = -1; // 新增：记录被选中要交换的英雄索引
+    let teamMemberInstanceCounter = 0;
+    const teamSimulatorWrapper = document.getElementById('team-simulator-wrapper');
+    const saveTeamBtn = document.getElementById('save-team-btn');
+    const shareTeamListBtn = document.getElementById('share-team-list-btn');
+    const savedTeamsList = document.getElementById('saved-teams-list');
+    let isViewingSharedTeams = false;
+    let sharedTeamsDataFromUrl = [];
+    const myTeamsTabBtn = document.getElementById('tab-my-teams');
+    const sharedTeamsTabBtn = document.getElementById('tab-shared-teams');
+
 
     // 调色板状态
     let isDraggingHue = false;
@@ -1038,8 +1058,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    function openDetailsModal(hero) {
-        renderDetailsInModal(hero);
+    function openDetailsModal(hero, context = {}) {
+        renderDetailsInModal(hero, context); // 传递上下文
         modal.classList.remove('hidden');
         modalOverlay.classList.remove('hidden');
         document.body.classList.add('modal-open');
@@ -1398,6 +1418,572 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return null;
     }
+    // ========== 新增：获取格式化英雄名称的复用函数 ==========
+    function getFormattedHeroNameHTML(hero) {
+        if (!hero) return '';
+
+        // 调用已有的函数来分离基本名称和皮肤信息
+        const skinInfo = getSkinInfo(hero);
+        let content = skinInfo.baseName;
+
+        // 如果有皮肤信息，则查找并添加对应的服装图标
+        if (skinInfo.skinIdentifier) {
+            const iconName = getCostumeIconName(skinInfo.skinIdentifier);
+            if (iconName) {
+                // 将服装图标的HTML代码添加到基本名称的前面
+                content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
+            }
+        }
+        return content;
+    }
+    // 【新增】新的渲染控制器
+    function renderActiveTabList() {
+        if (!myTeamsTabBtn) return; // 如果元素不存在则中止
+
+        if (sharedTeamsTabBtn.classList.contains('active')) {
+            renderSavedTeams(sharedTeamsDataFromUrl, true);
+        } else {
+            renderSavedTeams(getSavedTeams(), false);
+        }
+    }
+
+    // 【新增】用于管理折叠状态的Cookie函数
+    function getCollapseStates() {
+        try {
+            const statesJSON = getCookie('collapseStates');
+            // 默认状态为都不折叠
+            const defaults = { tagsCollapsed: false, listCollapsed: false };
+            // 如果Cookie存在，则用Cookie中的值覆盖默认值
+            return statesJSON ? { ...defaults, ...JSON.parse(statesJSON) } : defaults;
+        } catch (e) {
+            console.error("Failed to parse collapse states from cookie", e);
+            return { tagsCollapsed: false, listCollapsed: false };
+        }
+    }
+
+    function saveCollapseStates(states) {
+        setCookie('collapseStates', JSON.stringify(states), 365);
+    }
+
+    // 【新增】应用Cookie中保存的折叠状态到UI上
+    function applyCollapseStates() {
+        const states = getCollapseStates();
+        const tagsContainer = document.getElementById('team-tags-summary-container');
+        const listContainer = document.getElementById('saved-teams-list-container');
+
+        if (tagsContainer) {
+            tagsContainer.classList.toggle('collapsed', states.tagsCollapsed);
+        }
+        if (listContainer) {
+            // 队伍列表的折叠只在移动端生效
+            if (window.innerWidth <= 900) {
+                listContainer.classList.toggle('collapsed', states.listCollapsed);
+            }
+        }
+    }
+
+    // 【重构】updateTeamTags 函数，使其也拥有折叠结构
+    function updateTeamTags() {
+        const container = document.getElementById('team-tags-summary-container');
+        if (!container) return;
+
+        const activeTags = getActiveTags(); // 假设 getActiveTags() 函数已存在
+        const langDict = i18n[currentLang];
+
+        let contentHTML = '';
+        const tagKeys = Object.keys(activeTags);
+
+        if (tagKeys.length > 0) {
+            contentHTML = '<ul class="team-tags-list">';
+            // ... (您现有的生成标签列表的逻辑) ...
+            tagKeys.forEach(tag => {
+                const count = activeTags[tag];
+                const tagClass = count > 1 ? `tag-count-${Math.min(count, 5)}` : '';
+                contentHTML += `<li><span class="tag-label ${tagClass}">${tag} (${count})</span></li>`;
+            });
+            contentHTML += '</ul>';
+        } else {
+            contentHTML = `<p class="no-tags-message">${langDict.noTeamTags}</p>`;
+        }
+
+        // 生成包含标题栏和内容区的完整HTML
+        container.innerHTML = `
+        <div class="summary-tags-header">
+            <h5 data-lang-key="summaryTagsTitle">${langDict.summaryTagsTitle}</h5>
+            <div class="collapse-arrow"></div>
+        </div>
+        <div class="summary-tags-content">
+            ${contentHTML}
+        </div>
+    `;
+    }
+    /**
+     * 控制队伍模拟器的显示和隐藏（修正版）
+     */
+    function toggleTeamSimulator() {
+        teamSimulatorActive = !teamSimulatorActive;
+
+        if (teamSimulatorActive) {
+            // --- 打开模拟器时的逻辑 ---
+            headerInfoContainer.classList.add('hidden');
+            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden');
+            multiSelectFilters.filterScope = ['favorites'];
+            temporaryFavorites = null;
+            applyFiltersAndRender();
+            // 【新增】在打开模拟器时，应用已保存的折叠状态
+            applyCollapseStates();
+
+            // 【修正】采用更直接的渲染逻辑，确保默认加载正确
+            if (isViewingSharedTeams) {
+                // 如果是分享视图：激活“分享的队伍”标签，并直接渲染分享列表
+                myTeamsTabBtn.classList.remove('active');
+                sharedTeamsTabBtn.classList.add('active');
+                renderSavedTeams(sharedTeamsDataFromUrl, true);
+            } else {
+                // 如果是普通视图：激活“我的队伍”标签，并直接渲染用户保存在Cookie中的列表
+                myTeamsTabBtn.classList.add('active');
+                sharedTeamsTabBtn.classList.remove('active');
+                renderSavedTeams(getSavedTeams(), false);
+            }
+
+        } else {
+            // --- 关闭模拟器时的逻辑 ---
+            headerInfoContainer.classList.remove('hidden');
+            if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden');
+            multiSelectFilters.filterScope = ['all'];
+            applyFiltersAndRender();
+        }
+    }
+
+    // 【新增】从Cookie获取已存队伍
+    function getSavedTeams() {
+        try {
+            const teamsJSON = getCookie('savedTeams');
+            return teamsJSON ? JSON.parse(teamsJSON) : [];
+        } catch (e) {
+            console.error("从Cookie解析已存队伍失败", e);
+            return [];
+        }
+    }
+
+    // 【新增】将队伍列表保存到Cookie
+    function saveTeams(teams) {
+        try {
+            const teamsJSON = JSON.stringify(teams);
+            setCookie('savedTeams', teamsJSON, 365);
+        } catch (e) {
+            console.error("保存队伍到Cookie失败", e);
+        }
+    }
+    function clearTeamDisplay() {
+        teamSlots = [null, null, null, null, null];
+        renderTeamDisplay();
+    }
+
+    // 【新增】将指定的队伍加载到模拟器中显示
+    function displayTeamInSimulator(teamToShow) {
+        // 创建一个新的临时队伍槽位数组
+        const newTeamSlots = Array(5).fill(null);
+
+        // 获取当前的全局默认设置，用于加载的英雄
+        const defaultSettings = {
+            lb: defaultLimitBreakSelect.value,
+            talent: defaultTalentSelect.value,
+            strategy: defaultTalentStrategySelect.value,
+            manaPriority: defaultManaPriorityCheckbox.checked
+        };
+
+        // 遍历要显示的队伍数据
+        teamToShow.heroes.forEach((heroIdentifier, index) => {
+            // 确保索引在0-4范围内
+            if (heroIdentifier && index < 5) {
+                // 根据标识符从所有英雄数据中找到对应的英雄
+                const hero = allHeroes.find(h => `${h.english_name}-${h.costume_id}` === heroIdentifier);
+                if (hero) {
+                    // 如果找到英雄，则直接在【正确的位置 (index)】创建队伍成员对象
+                    newTeamSlots[index] = {
+                        instanceId: teamMemberInstanceCounter++,
+                        hero: hero,
+                        settings: { ...defaultSettings } // 为加载的英雄应用默认设置
+                    };
+                }
+            }
+        });
+
+        // 用构建好的、位置正确的队伍数据，替换全局的队伍数据
+        teamSlots = newTeamSlots;
+
+        // 最后，调用一次渲染函数来更新整个界面
+        renderTeamDisplay();
+    }
+
+
+    /**
+     * 渲染已存队伍列表到指定的DOM容器中（新布局版）
+     * @param {Array<Object>} teams - 要渲染的队伍对象数组。
+     * @param {boolean} [isSharedView=false] - 是否为分享视图模式。
+     */
+    function renderSavedTeams(teams, isSharedView = false) {
+        if (!savedTeamsList) return;
+
+        const langDict = i18n[currentLang];
+        const myTeams = getSavedTeams();
+        savedTeamsList.innerHTML = '';
+
+        if (!teams || teams.length === 0) {
+            const messageKey = isSharedView ? 'noTeamsToShare' : 'noSavedTeams';
+            savedTeamsList.innerHTML = `<p style="text-align: center; color: var(--md-sys-color-outline);">${langDict[messageKey]}</p>`;
+            return;
+        }
+
+        teams.forEach((team, index) => {
+            const row = document.createElement('div');
+            row.className = 'saved-team-row is-clickable';
+
+            let avatarsHTML = team.heroes.map(heroIdentifier => {
+                if (!heroIdentifier) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline);"></div>`;
+                const hero = allHeroes.find(h => `${h.english_name}-${h.costume_id}` === heroIdentifier);
+                if (hero) return `<img src="${getLocalImagePath(hero.image)}" class="saved-team-avatar ${getColorGlowClass(hero.color)}" alt="${hero.name}" title="${hero.name}">`;
+                return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error);">?</div>`;
+            }).join('');
+
+            let buttonHTML = '';
+            if (isSharedView) {
+                const isAlreadyImported = myTeams.some(myTeam => myTeam.name === team.name);
+                if (isAlreadyImported) {
+                    buttonHTML = `<button class="action-button disabled" data-team-index="${index}">${langDict.importedBtn}</button>`;
+                } else {
+                    buttonHTML = `<button class="import-team-btn action-button" data-team-index="${index}">${langDict.importTeamBtn}</button>`;
+                }
+            } else {
+                buttonHTML = `<button class="remove-team-btn" data-team-index="${index}" title="${langDict.removeTeamBtnTitle}">✖</button>`;
+            }
+
+            row.innerHTML = `
+            <div class="team-row-main-content">
+                <div class="saved-team-name" title="${team.name}">${team.name}</div>
+                <div class="saved-team-avatars">${avatarsHTML}</div>
+            </div>
+            ${buttonHTML}
+            `;
+            
+            // --- 【核心修复】 ---
+            // 移除了之前的 if(!buttonHTML.includes('disabled')) 判断
+            // 现在，为每一行都无条件地添加点击事件监听器
+            row.addEventListener('click', (e) => {
+                // 如果点击的是按钮，则不触发查看阵容的事件
+                if (e.target.closest('button')) return;
+                displayTeamInSimulator(team);
+            });
+
+            savedTeamsList.appendChild(row);
+        });
+
+        // 事件监听器部分保持不变...
+        if (isSharedView) {
+            savedTeamsList.querySelectorAll('.import-team-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const teamIndex = parseInt(button.dataset.teamIndex, 10);
+                    const teamToImport = JSON.parse(JSON.stringify(sharedTeamsDataFromUrl[teamIndex]));
+                    if (!teamToImport) return;
+
+                    let currentMyTeams = getSavedTeams();
+                    let finalTeamName = teamToImport.name;
+                    let isNameConflict = currentMyTeams.some(t => t.name === finalTeamName);
+
+                    while (isNameConflict) {
+                        const newName = window.prompt(langDict.importEnterNewName(finalTeamName), finalTeamName);
+                        
+                        if (newName === null) {
+                            return; 
+                        }
+
+                        const trimmedName = newName.trim();
+                        if (trimmedName === "") {
+                            alert(langDict.teamNameRequired);
+                            continue; 
+                        }
+
+                        if (currentMyTeams.some(t => t.name === trimmedName)) {
+                            finalTeamName = trimmedName; 
+                            isNameConflict = true;
+                        } else {
+                            finalTeamName = trimmedName;
+                            isNameConflict = false;
+                        }
+                    }
+
+                    teamToImport.name = finalTeamName;
+                    currentMyTeams.push(teamToImport);
+                    saveTeams(currentMyTeams);
+
+                    alert(langDict.importSuccess(finalTeamName));
+                    
+                    renderSavedTeams(sharedTeamsDataFromUrl, true);
+                });
+            });
+        } else {
+            savedTeamsList.querySelectorAll('.remove-team-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const teamIndex = parseInt(button.dataset.teamIndex, 10);
+                    let teams = getSavedTeams();
+                    const teamToRemove = teams[teamIndex];
+                    
+                    if (teamToRemove && window.confirm(langDict.confirmRemoveTeam(teamToRemove.name))) {
+                        teams.splice(teamIndex, 1);
+                        saveTeams(teams);
+                        renderActiveTabList();
+                    }
+                });
+            });
+        }
+    }
+
+    function addHeroToTeam(hero) {
+        const emptySlotIndex = teamSlots.findIndex(slot => slot === null);
+        if (emptySlotIndex !== -1) {
+            // 获取当前的全局默认设置
+            const defaultSettings = {
+                lb: defaultLimitBreakSelect.value,
+                talent: defaultTalentSelect.value,
+                strategy: defaultTalentStrategySelect.value,
+                manaPriority: defaultManaPriorityCheckbox.checked
+            };
+
+            // 创建包含英雄对象、独立设置和唯一实例ID的“队伍成员”对象
+            const teamMember = {
+                instanceId: teamMemberInstanceCounter++, // 分配唯一ID并递增计数器
+                hero: hero,
+                settings: { ...defaultSettings }
+            };
+
+            teamSlots[emptySlotIndex] = teamMember;
+            renderTeamDisplay();
+        }
+    }
+
+    /**
+     * NEW: 获取英雄技能类别的数组版本
+     * @param {object} hero - The hero object.
+     * @returns {string[]} An array of skill type strings.
+     */
+    function getSkillTypesArray(hero) {
+        if (!hero) return [];
+        const skillTypeSource = filterInputs.skillTypeSource ? filterInputs.skillTypeSource.value : 'both';
+        let typesToShow = [];
+
+        if (skillTypeSource === 'heroplan') {
+            typesToShow = hero.types || [];
+        } else if (skillTypeSource === 'nynaeve') {
+            typesToShow = hero.skill_types || [];
+        } else {
+            // 合并并去重
+            typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+        }
+        return typesToShow.filter(Boolean); // 过滤掉任何空或null值
+    }
+
+    // 辅助函数：获取格式化的技能类型文本
+    function getSkillTypesText(hero) {
+        if (!hero) return '';
+        const skillTypeSource = filterInputs.skillTypeSource ? filterInputs.skillTypeSource.value : 'both';
+        let typesToShow = [];
+        if (skillTypeSource === 'heroplan') {
+            typesToShow = hero.types || [];
+        } else if (skillTypeSource === 'nynaeve') {
+            typesToShow = hero.skill_types || [];
+        } else {
+            typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
+        }
+        return typesToShow.filter(Boolean).join(', ');
+    }
+    // ========== 新增：独立的动态高度调整函数 ==========
+    function adjustTeamDisplayHeight() {
+        const teamSimulatorDisplay = document.getElementById('team-simulator-display');
+        // 如果模拟器本身不可见，或其父容器处于折叠状态，则不执行计算
+        if (!teamSimulatorDisplay || (teamSimulatorDisplay.closest('#team-simulator-wrapper') && teamSimulatorDisplay.closest('#team-simulator-wrapper').classList.contains('collapsed'))) {
+            return;
+        }
+
+        // 使用 requestAnimationFrame 确保在浏览器下次重绘前执行，以获得准确的尺寸
+        requestAnimationFrame(() => {
+            // ========== 新增：获取桌面端标题的高度 ==========
+            const desktopHeader = teamSimulatorDisplay.querySelector('.team-display-desktop-header');
+            let desktopHeaderHeight = 0;
+            // 检查标题是否存在且当前是否为可见状态（仅在桌面端可见）
+            if (desktopHeader && window.getComputedStyle(desktopHeader).display !== 'none') {
+                const style = window.getComputedStyle(desktopHeader);
+                desktopHeaderHeight = desktopHeader.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
+            }
+            // ===============================================
+
+            const tagsContainer = document.getElementById('team-tags-summary-container');
+            let tagsHeight = 0;
+            if (tagsContainer && tagsContainer.style.display !== 'none') {
+                const style = window.getComputedStyle(tagsContainer);
+                tagsHeight = tagsContainer.offsetHeight + parseInt(style.marginTop) + parseInt(style.marginBottom);
+            }
+
+            let vLayoutHeight = 0;
+            const visibleInfoCards = teamSimulatorDisplay.querySelectorAll('.team-info-slot:not([style*="display: none"])');
+
+            if (visibleInfoCards.length > 0) {
+                let maxBottomPosition = 0;
+                visibleInfoCards.forEach(card => {
+                    const bottomPosition = card.offsetTop + card.offsetHeight;
+                    if (bottomPosition > maxBottomPosition) {
+                        maxBottomPosition = bottomPosition;
+                    }
+                });
+                vLayoutHeight = maxBottomPosition;
+            } else {
+                const gridContainer = document.getElementById('team-display-grid');
+                if (gridContainer) {
+                    vLayoutHeight = gridContainer.offsetHeight;
+                }
+            }
+
+            // ========== 修改：将桌面标题高度计入总高度 ==========
+            const totalMinHeight = desktopHeaderHeight + tagsHeight + vLayoutHeight + 20;
+            teamSimulatorDisplay.style.minHeight = `${totalMinHeight}px`;
+        });
+    }
+    // ====================================================
+
+    function renderTeamDisplay() {
+        if (!teamDisplayGrid) return;
+
+        // 步骤 1: 渲染英雄槽位和信息卡片 (此部分代码不变)
+        for (let i = 0; i < 5; i++) {
+            const slot = teamSlots[i];
+            const hero = slot ? slot.hero : null;
+            const pos = i + 1;
+
+            const heroSlot = teamDisplayGrid.querySelector(`.team-hero-slot[data-pos="${pos}"]`);
+            const infoSlot = teamDisplayGrid.querySelector(`.team-info-slot[data-info-pos="${pos}"]`);
+
+            if (!heroSlot || !infoSlot) continue;
+
+            heroSlot.innerHTML = '';
+            infoSlot.innerHTML = '';
+            heroSlot.classList.remove('filled');
+            infoSlot.style.display = 'none';
+            heroSlot.removeAttribute('data-instance-id');
+            infoSlot.removeAttribute('data-instance-id');
+
+            if (hero) {
+                heroSlot.classList.add('filled');
+                heroSlot.dataset.instanceId = slot.instanceId;
+                const avatar = document.createElement('img');
+                avatar.src = getLocalImagePath(hero.image);
+                avatar.className = `team-hero-avatar ${getColorGlowClass(hero.color)}`;
+                avatar.alt = hero.name;
+                heroSlot.appendChild(avatar);
+
+                infoSlot.innerHTML = `
+                    <div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div>
+                    <div class="team-hero-skills">${getSkillTypesText(hero) || i18n[currentLang].none}</div>
+                `;
+                infoSlot.dataset.instanceId = slot.instanceId;
+                infoSlot.style.display = 'block';
+
+                if (swapModeActive) {
+                    const actionIcon = document.createElement('div');
+                    actionIcon.className = 'hero-action-icon';
+                    if (i === selectedForSwapIndex) {
+                        actionIcon.textContent = '✖';
+                        actionIcon.classList.add('remove-hero-icon');
+                        actionIcon.dataset.action = 'remove';
+                    } else {
+                        actionIcon.textContent = '🔄';
+                        actionIcon.classList.add('swap-hero-icon');
+                        actionIcon.dataset.action = 'swap';
+                    }
+                    actionIcon.dataset.index = i;
+                    heroSlot.appendChild(actionIcon);
+                }
+            }
+        }
+
+        // 步骤 2: 渲染队伍标签汇总 (此部分代码不变)
+        const summaryContainer = document.getElementById('team-tags-summary-container');
+        if (!summaryContainer) return;
+
+        const tagCounts = {};
+        let teamHasHeroes = false;
+        teamSlots.forEach(slot => {
+            if (slot && slot.hero) {
+                teamHasHeroes = true;
+                const tags = getSkillTypesArray(slot.hero);
+                tags.forEach(tag => {
+                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+                });
+            }
+        });
+
+        if (!teamHasHeroes) {
+            summaryContainer.innerHTML = '';
+            summaryContainer.style.display = 'none';
+        } else {
+            summaryContainer.style.display = 'flex';
+            const sortedTags = Object.keys(tagCounts).sort((a, b) => {
+                // 内部辅助函数：根据当前语言，将标签名转为英文键名
+                const getEnglishKey = (tag) => {
+                    if (currentLang === 'cn') {
+                        // 使用已有的反向映射表查找英文键名
+                        return reverseSkillTypeMap_cn[tag] || tag;
+                    }
+                    if (currentLang === 'tc') {
+                        return reverseSkillTypeMap_tc[tag] || tag;
+                    }
+                    // 如果当前是英文，或找不到映射，则直接返回原标签
+                    return tag;
+                };
+
+                const englishA = getEnglishKey(a);
+                const englishB = getEnglishKey(b);
+
+                // 获取英文键名在 nynaeveSkillTypeOrder 数组中的索引
+                const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+                const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
+
+                // --- 排序规则 ---
+                // 1. 如果两个标签都能在排序数组中找到，则按数组中的顺序排
+                if (indexA !== -1 && indexB !== -1) {
+                    return indexA - indexB;
+                }
+                // 2. 如果只有 A 在数组中，那么 A 排在前面
+                if (indexA !== -1) {
+                    return -1;
+                }
+                // 3. 如果只有 B 在数组中，那么 B 排在前面
+                if (indexB !== -1) {
+                    return 1;
+                }
+                // 4. 如果两个标签都不在排序数组中（例如来自 Heroplan.io 的标签），
+                //    则沿用之前的本地化排序规则，将它们排在后面
+                const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+                const options = currentLang === 'tc' ? { collation: 'stroke' } : {};
+                return a.localeCompare(b, locale, options);
+            });
+
+            if (sortedTags.length === 0) {
+                summaryContainer.innerHTML = `<div class="no-tags-message">${i18n[currentLang].noTeamTags}</div>`;
+            } else {
+                const summaryHTML = sortedTags.map(tag => {
+                    const count = tagCounts[tag];
+                    const countHTML = count > 1 ? `<span class="tag-count">x${count}</span>` : '';
+                    return `<span class="team-tag-item">${tag}${countHTML}</span>`;
+                }).join('');
+                summaryContainer.innerHTML = summaryHTML;
+            }
+        }
+        // 【修改】调用独立的高度调整函数
+        adjustTeamDisplayHeight();
+        
+    }
 
     function renderTable(heroes) {
         if (!heroTable) return;
@@ -1408,7 +1994,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const heroesToProcess = heroes.filter(h => h.english_name);
         const favoritedCount = heroesToProcess.filter(isFavorite).length;
         const shouldPredictFavoriteAll = heroesToProcess.length > 0 && favoritedCount < heroesToProcess.length;
-        const favHeaderIcon = shouldPredictFavoriteAll ? '★' : '☆';
+
+        let favHeaderIcon = shouldPredictFavoriteAll ? '★' : '☆';
+        if (teamSimulatorActive) {
+            favHeaderIcon = '⬆️';
+        }
+
         const favHeaderClass = shouldPredictFavoriteAll ? 'favorited' : '';
         const headers = {
             fav: favHeaderIcon, image: langDict.avatarLabel, name: langDict.nameLabel.slice(0, -1),
@@ -1433,7 +2024,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const headerText = headers[key];
             if (key === 'fav') {
-                return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
+                // ========== 新增逻辑：判断是否在队伍模拟器模式 ==========
+                if (teamSimulatorActive) {
+                    // 在模拟器模式下，渲染一个空的表头单元格，从而隐藏按钮
+                    return `<th class="col-fav"></th>`;
+                } else {
+                    // 在普通模式下，保持原有逻辑，显示“一键收藏”按钮
+                    const favHeaderClass = shouldPredictFavoriteAll ? 'favorited' : '';
+                    const headerText = shouldPredictFavoriteAll ? '★' : '☆';
+                    return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
+                }
+                // =======================================================
             }
             return `<th class="col-${key} ${isSortable ? 'sortable' : ''}" data-sort-key="${key}">${headerText}<span class="sort-indicator">${sortIndicator}</span></th>`;
         }).join('') + '</tr>';
@@ -1490,14 +2091,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 if (key === 'name') {
-                    const skinInfo = getSkinInfo(hero);
-                    content = skinInfo.baseName;
-                    if (skinInfo.skinIdentifier) {
-                        const iconName = getCostumeIconName(skinInfo.skinIdentifier);
-                        if (iconName) {
-                            content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
-                        }
-                    }
+                    content = getFormattedHeroNameHTML(hero);
                 }
 
                 if (key === 'class' && content) {
@@ -1507,7 +2101,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (key === 'fav') {
                     if (!hero.english_name) return `<td class="col-fav"></td>`;
-                    return `<td class="col-fav"><span class="favorite-toggle-icon ${isHeroFavorite ? 'favorited' : ''}" data-hero-id="${hero.originalIndex}">${isHeroFavorite ? '★' : '☆'}</span></td>`;
+                    const icon = teamSimulatorActive ? '⬆️' : (isHeroFavorite ? '★' : '☆');
+                    const favClass = teamSimulatorActive ? '' : (isHeroFavorite ? 'favorited' : '');
+                    return `<td class="col-fav"><span class="favorite-toggle-icon ${favClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
                 }
                 if (key === 'image') {
                     const heroColorClass = getColorGlowClass(hero.color);
@@ -1590,6 +2186,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initAndShowWantedMissionView() {
+        if (teamSimulatorActive) {
+            teamSimulatorActive = false;
+            teamSimulatorWrapper.classList.add('hidden');
+            headerInfoContainer.classList.remove('hidden');
+        }
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         saveCurrentViewScrollPosition();
 
@@ -1644,6 +2245,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initAndShowFarmingGuideView() {
+        if (teamSimulatorActive) {
+            teamSimulatorActive = false;
+            teamSimulatorWrapper.classList.add('hidden');
+            headerInfoContainer.classList.remove('hidden');
+        }
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         saveCurrentViewScrollPosition();
 
@@ -1767,7 +2373,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function renderDetailsInModal(hero) {
+    function renderDetailsInModal(hero, context) {
+        const { teamSlotIndex, initialSettings } = context; // 从上下文中解构出队伍位置和初始设置
         const langDict = i18n[currentLang];
         const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
         const avatarGlowClass = getColorGlowClass(hero.color);
@@ -1933,10 +2540,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
         const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
 
-        modalLbSelect.value = defaultLimitBreakSelect.value;
-        modalTalentSelect.value = defaultTalentSelect.value;
-        modalStrategySelect.value = defaultTalentStrategySelect.value;
-        modalManaCheckbox.checked = defaultManaPriorityCheckbox.checked;
+        const settingsToUse = initialSettings || {
+            lb: defaultLimitBreakSelect.value,
+            talent: defaultTalentSelect.value,
+            strategy: defaultTalentStrategySelect.value,
+            manaPriority: defaultManaPriorityCheckbox.checked
+        };
+        modalLbSelect.value = settingsToUse.lb;
+        modalTalentSelect.value = settingsToUse.talent;
+        modalStrategySelect.value = settingsToUse.strategy;
+        modalManaCheckbox.checked = settingsToUse.manaPriority;
+
+        const updateTeamSlotAndRerender = () => {
+            if (teamSlotIndex === undefined || teamSlotIndex < 0) return;
+            if (!teamSlots[teamSlotIndex]) return;
+
+            const newSettings = {
+                lb: modalLbSelect.value,
+                talent: modalTalentSelect.value,
+                strategy: modalStrategySelect.value,
+                manaPriority: modalManaCheckbox.checked
+            };
+            teamSlots[teamSlotIndex].settings = newSettings;
+            renderTeamDisplay();
+        };
 
         let currentTalentBonuses = {};
         let currentNodeCount = 0;
@@ -2032,15 +2659,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const talentChangeCallback = (bonuses, nodeCount) => {
             currentTalentBonuses = bonuses;
             currentNodeCount = nodeCount;
-            const currentSettings = {
-                lb: modalLbSelect.value, talent: modalTalentSelect.value,
-                strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked
+            const currentSettingsInModal = {
+                lb: modalLbSelect.value,
+                talent: modalTalentSelect.value
             };
+            _updateModalStatsWithBonuses(hero, currentSettingsInModal, bonuses, nodeCount);
             let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
-            if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses, currentNodeCount);
+            if (currentSettingsInModal.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+            updateTeamSlotAndRerender();
         };
 
         const talentTreeContainer = document.getElementById('modal-talent-tree-wrapper');
@@ -2053,32 +2681,28 @@ document.addEventListener('DOMContentLoaded', function () {
             talentTreeContainer.innerHTML = `<p style="text-align:center; padding: 2rem 0;">该英雄没有职业天赋。</p>`;
         }
 
-        function handleTalentLevelChange() {
+        const handleSettingsChange = () => {
             const newTalentLevel = modalTalentSelect.value;
             const isDisabled = (newTalentLevel === 'none');
             modalStrategySelect.disabled = isDisabled;
             modalManaCheckbox.disabled = isDisabled;
+
             if (typeof TalentTree !== 'undefined' && hero.class) {
-                TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                if (newTalentLevel === 'none') {
+                    TalentTree.clear();
+                } else {
+                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                }
             }
-        }
+            updateTeamSlotAndRerender();
+        };
 
-        modalStrategySelect.addEventListener('change', handleTalentLevelChange);
-        modalManaCheckbox.addEventListener('change', handleTalentLevelChange);
-        modalTalentSelect.addEventListener('change', handleTalentLevelChange);
-        modalLbSelect.addEventListener('change', () => {
-            const currentSettings = {
-                lb: modalLbSelect.value, talent: modalTalentSelect.value,
-                strategy: modalStrategySelect.value, manaPriority: modalManaCheckbox.checked
-            };
-            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
-            if (currentSettings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (currentSettings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            _updateModalStatsWithBonuses(hero, currentSettings, currentTalentBonuses, currentNodeCount);
-            _updateBonusAndCostDisplay(currentTalentBonuses, currentNodeCount, baseStats);
-        });
+        modalLbSelect.addEventListener('change', handleSettingsChange);
+        modalTalentSelect.addEventListener('change', handleSettingsChange);
+        modalStrategySelect.addEventListener('change', handleSettingsChange);
+        modalManaCheckbox.addEventListener('change', handleSettingsChange);
 
-        handleTalentLevelChange();
+        handleSettingsChange();
 
         modalContent.querySelectorAll('.filter-header').forEach(header => {
             const button = header.querySelector('.toggle-button');
@@ -2248,6 +2872,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initAndShowChatSimulatorView() {
+        if (teamSimulatorActive) {
+            teamSimulatorActive = false;
+            teamSimulatorWrapper.classList.add('hidden');
+            headerInfoContainer.classList.remove('hidden');
+        }
         saveCurrentViewScrollPosition();
 
         heroTableView.classList.add('hidden');
@@ -2588,6 +3217,124 @@ document.addEventListener('DOMContentLoaded', function () {
                 langOptions.classList.toggle('hidden');
             });
         }
+        // ========== 更新：全局折叠功能的事件监听 ==========
+        const teamDisplayHeader = document.getElementById('team-display-header');
+        // 【修改】获取父容器 wrapper
+        const teamSimulatorWrapper = document.getElementById('team-simulator-wrapper');
+
+        if (teamDisplayHeader && teamSimulatorWrapper) {
+            teamDisplayHeader.addEventListener('click', () => {
+                // 【修改】在 wrapper 上切换 .collapsed 类
+                const isCollapsed = teamSimulatorWrapper.classList.toggle('collapsed');
+                setCookie('teamDisplayCollapsed', isCollapsed, 365);
+                // ========== 新增：如果是展开操作，则调用高度调整函数 ==========
+                if (!isCollapsed) {
+                    // 使用 setTimeout 给予 DOM 极短的反应时间，以确保 display:none 已移除
+                    setTimeout(adjustTeamDisplayHeight, 50);
+                }
+            });
+        }
+
+        // --- 队伍列表的折叠事件（更新版） ---
+    const savedTeamsHeader = document.querySelector('.saved-teams-header');
+    if (savedTeamsHeader) {
+        savedTeamsHeader.addEventListener('click', (e) => {
+            if (window.innerWidth > 900) return;
+            if (e.target.closest('.tab-button')) return;
+
+            const listContainer = document.getElementById('saved-teams-list-container');
+            if (listContainer) {
+                const wasCollapsed = listContainer.classList.contains('collapsed');
+                listContainer.classList.toggle('collapsed');
+
+                // 保存新的状态到Cookie
+                const currentStates = getCollapseStates();
+                currentStates.listCollapsed = !wasCollapsed;
+                saveCollapseStates(currentStates);
+            }
+        });
+    }
+        // 【新增】为“清空阵容”按钮添加事件
+        const clearTeamBtn = document.getElementById('clear-team-btn');
+        if (clearTeamBtn) {
+            clearTeamBtn.addEventListener('click', () => {
+                const langDict = i18n[currentLang];
+                // 确保当前队伍中有英雄时才提示，避免空点
+                if (teamSlots.some(s => s !== null) && window.confirm(langDict.confirmClearTeam)) {
+                    clearTeamDisplay(); // 调用清空函数
+                } else if (!teamSlots.some(s => s !== null)) {
+                    // 如果队伍本来就是空的，直接清空也无妨
+                    clearTeamDisplay();
+                }
+            });
+        }
+
+
+        // 【新增】保存队伍按钮事件
+        if (saveTeamBtn) {
+            saveTeamBtn.addEventListener('click', () => {
+                const langDict = i18n[currentLang];
+                const heroesInTeam = teamSlots.filter(s => s !== null);
+
+                if (heroesInTeam.length === 0) {
+                    alert(langDict.noHeroesInTeam);
+                    return;
+                }
+
+                const teamName = prompt(langDict.promptTeamName);
+                if (teamName === null) return;
+                if (!teamName.trim()) {
+                    alert(langDict.teamNameRequired);
+                    return;
+                }
+
+                const newTeam = {
+                    name: teamName.trim(),
+                    heroes: teamSlots.map(slot => slot ? `${slot.hero.english_name}-${slot.hero.costume_id}` : null)
+                };
+
+                const teams = getSavedTeams();
+                teams.push(newTeam);
+                saveTeams(teams);
+
+                // 【修正】调用 renderActiveTabList() 来正确刷新当前激活的标签页列表
+                // 这会读取刚刚保存到Cookie中的新数据并正确显示
+                renderActiveTabList();
+            });
+        }
+
+        // 【新增】分享列表按钮事件
+        if (shareTeamListBtn) {
+            shareTeamListBtn.addEventListener('click', () => {
+                const teams = getSavedTeams();
+                const langDict = i18n[currentLang];
+                if (teams.length === 0) {
+                    alert(langDict.noTeamsToShare);
+                    return;
+                }
+
+                const shareableData = teams.map(team => ({ n: team.name, h: team.heroes }));
+                const jsonString = JSON.stringify(shareableData);
+                const compressedData = LZString.compressToEncodedURIComponent(jsonString);
+                const url = `${window.location.origin}${window.location.pathname}?sharedTeams=${compressedData}&lang=${currentLang}`;
+
+                copyTextToClipboard(url).then(() => {
+                    const originalText = shareTeamListBtn.innerText;
+                    shareTeamListBtn.innerText = langDict.shareTeamListCopied;
+                    shareTeamListBtn.disabled = true;
+                    setTimeout(() => {
+                        shareTeamListBtn.innerText = originalText;
+                        shareTeamListBtn.disabled = false;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('复制分享链接失败:', err);
+                    alert(langDict.copyLinkFailed);
+                });
+            });
+        }
+        
+        
+
         if (langOptions) {
             langOptions.addEventListener('click', (event) => {
                 event.preventDefault();
@@ -2689,6 +3436,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 applyFiltersAndRender();
             });
         }
+        if (showTeamSimulatorBtn) {
+            showTeamSimulatorBtn.addEventListener('click', toggleTeamSimulator);
+        }
 
         if (heroTable) {
             const tbody = heroTable.querySelector('tbody');
@@ -2700,11 +3450,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         const heroId = parseInt(target.dataset.heroId, 10);
                         const hero = allHeroes.find(h => h.originalIndex === heroId);
                         if (hero) {
-                            toggleFavorite(hero);
-                            target.textContent = isFavorite(hero) ? '★' : '☆';
-                            target.classList.toggle('favorited', isFavorite(hero));
-                            if (multiSelectFilters.filterScope[0] === 'favorites' && temporaryFavorites === null) {
-                                applyFiltersAndRender();
+                            if (teamSimulatorActive) {
+                                addHeroToTeam(hero);
+                            } else {
+                                toggleFavorite(hero);
+                                target.textContent = isFavorite(hero) ? '★' : '☆';
+                                target.classList.toggle('favorited', isFavorite(hero));
+                                if (filterInputs.filterScope.value === 'favorites') {
+                                    applyFiltersAndRender();
+                                }
                             }
                         }
                     } else {
@@ -2752,6 +3506,97 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }
+
+        function handleTeamGridClick(event) {
+            event.stopPropagation(); // 阻止事件冒泡到全局点击
+            const targetIcon = event.target.closest('.hero-action-icon');
+            // 修改选择器以使用新的 data-instance-id
+            const targetSlotElement = event.target.closest('.team-hero-slot[data-instance-id]');
+            const targetInfoCard = event.target.closest('.team-info-slot[data-instance-id]');
+
+            if (swapModeActive) {
+                if (targetIcon) {
+                    const action = targetIcon.dataset.action;
+                    const targetIndex = parseInt(targetIcon.dataset.index, 10);
+
+                    if (action === 'remove') {
+                        teamSlots[targetIndex] = null;
+                    } else if (action === 'swap') {
+                        [teamSlots[selectedForSwapIndex], teamSlots[targetIndex]] = [teamSlots[targetIndex], teamSlots[selectedForSwapIndex]];
+                    }
+                    exitSwapMode();
+                    return;
+                }
+            }
+
+            if (targetInfoCard) {
+                // 通过唯一的 instanceId 查找正确的英雄
+                const instanceId = parseInt(targetInfoCard.dataset.instanceId, 10);
+
+                const slotIndex = teamSlots.findIndex(slot => slot && slot.instanceId === instanceId);
+
+                if (slotIndex > -1) {
+                    const slot = teamSlots[slotIndex];
+                    const context = {
+                        teamSlotIndex: slotIndex, // 传递正确的索引
+                        initialSettings: { ...slot.settings }
+                    };
+                    openDetailsModal(slot.hero, context);
+                }
+            } else if (targetSlotElement && !targetIcon) {
+                const instanceId = parseInt(targetSlotElement.dataset.instanceId, 10);
+                const slotIndex = teamSlots.findIndex(slot => slot && slot.instanceId === instanceId);
+                if (slotIndex > -1) {
+                    enterSwapMode(slotIndex);
+                }
+            }
+        }
+
+        function handleGlobalClickForSwapCancel(event) {
+            if (swapModeActive) {
+                // 如果点击的不是队伍区域，则退出交换模式
+                if (!event.target.closest('#team-display-grid')) {
+                    exitSwapMode();
+                }
+            }
+        }
+
+        function enterSwapMode(index) {
+            swapModeActive = true;
+            selectedForSwapIndex = index;
+            renderTeamDisplay(); // 重新渲染以显示图标
+        }
+
+        function exitSwapMode() {
+            swapModeActive = false;
+            selectedForSwapIndex = -1;
+            renderTeamDisplay(); // 重新渲染以移除图标
+        }
+
+        if (teamDisplayGrid) {
+            teamDisplayGrid.addEventListener('click', handleTeamGridClick);
+        }
+        // 【新增】我的队伍标签页点击事件
+        if (myTeamsTabBtn) {
+            myTeamsTabBtn.addEventListener('click', () => {
+                if (myTeamsTabBtn.classList.contains('active')) return;
+                sharedTeamsTabBtn.classList.remove('active');
+                myTeamsTabBtn.classList.add('active');
+                renderActiveTabList();
+            });
+        }
+
+        // 【新增】分享的队伍标签页点击事件
+        if (sharedTeamsTabBtn) {
+            sharedTeamsTabBtn.addEventListener('click', () => {
+                if (sharedTeamsTabBtn.classList.contains('active')) return;
+                myTeamsTabBtn.classList.remove('active');
+                sharedTeamsTabBtn.classList.add('active');
+                renderActiveTabList();
+            });
+        }
+        // 新增：全局点击事件，用于取消交换模式
+        document.addEventListener('click', handleGlobalClickForSwapCancel);
         if (openFiltersBtn) openFiltersBtn.addEventListener('click', openFiltersModal);
         if (closeFiltersModalBtn) closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
         if (filtersModalOverlay) filtersModalOverlay.addEventListener('click', closeFiltersModal);
@@ -2866,6 +3711,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const langFromUrl = urlParams.get('lang');
         const zfavsFromUrl = urlParams.get('zfavs');
         const favsFromUrl = urlParams.get('favs');
+        const sharedTeamsFromUrl = urlParams.get('sharedTeams');
         const languageCookie = getCookie('language');
         let langToUse = 'cn';
         if (languageCookie && i18n[languageCookie]) {
@@ -2922,8 +3768,44 @@ document.addEventListener('DOMContentLoaded', function () {
                     console.error("处理URL中的收藏夹失败", e);
                 }
             }
+            // 【新增】处理分享链接的逻辑
+            if (sharedTeamsFromUrl) {
+                try {
+                    const decompressedJSON = LZString.decompressFromEncodedURIComponent(sharedTeamsFromUrl);
+                    const sharedData = JSON.parse(decompressedJSON);
+
+                    if (Array.isArray(sharedData)) {
+                        sharedTeamsDataFromUrl = sharedData.map(team => ({ name: team.n, heroes: team.h }));
+                        isViewingSharedTeams = true;
+
+                        // 【修改】显示分享标签页按钮
+                        if (sharedTeamsTabBtn) sharedTeamsTabBtn.style.display = 'inline-flex';
+
+                        // 自动打开队伍模拟器
+                        toggleTeamSimulator();
+                    }   
+                } catch (e) {
+                    console.error("从URL处理分享的队伍失败", e);
+                    isViewingSharedTeams = false;
+                }
+            }
+
+            // 如果不是分享视图，则正常渲染
+            if (!isViewingSharedTeams) {
+                applyFiltersAndRender();
+            }
+            // ========== 更新：应用已保存的全局折叠状态 ==========
+            // 【修改】获取父容器 wrapper
+            const teamSimulatorWrapper = document.getElementById('team-simulator-wrapper');
+            const savedTeamDisplayState = getCookie('teamDisplayCollapsed');
+
+            if (savedTeamDisplayState === 'true' && teamSimulatorWrapper) {
+                if (window.innerWidth <= 900) {
+                    // 【修改】在 wrapper 上添加 .collapsed 类
+                    teamSimulatorWrapper.classList.add('collapsed');
+                }
+            }
             addEventListeners();
-            applyFiltersAndRender();
             loadFilterStates();
 
             const hasVisited = getCookie('visited');

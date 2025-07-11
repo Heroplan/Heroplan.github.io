@@ -1537,6 +1537,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (chatSimulatorView) chatSimulatorView.classList.add('hidden'); // 隐藏聊天模拟器视图
 
             multiSelectFilters.filterScope = ['favorites']; // 设置筛选范围为收藏夹
+            updateFilterButtonUI('filterScope');
             temporaryFavorites = null; // 清除临时收藏夹
             applyFiltersAndRender(); // 应用筛选并渲染
             // 【新增】在打开模拟器时，应用已保存的折叠状态
@@ -1560,6 +1561,7 @@ document.addEventListener('DOMContentLoaded', function () {
             headerInfoContainer.classList.remove('hidden'); // 显示页眉信息
             if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden'); // 隐藏队伍模拟器
             multiSelectFilters.filterScope = ['all']; // 重置筛选范围为全部
+            updateFilterButtonUI('filterScope');
             applyFiltersAndRender(); // 应用筛选并渲染 (这将默认显示英雄列表)
         }
     }

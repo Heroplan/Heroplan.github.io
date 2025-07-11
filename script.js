@@ -1558,6 +1558,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 sharedTeamsTabBtn.classList.remove('active'); // 移除“分享的队伍”标签的激活状态
                 renderSavedTeams(getSavedTeams(), false); // 渲染保存的队伍
             }
+            history.pushState({ view: 'teamSimulator' }, ''); 
 
         } else {
             // --- 关闭模拟器时的逻辑 ---
@@ -2241,9 +2242,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initAndShowWantedMissionView() {
         if (teamSimulatorActive) {
-            teamSimulatorActive = false;
-            teamSimulatorWrapper.classList.add('hidden');
-            headerInfoContainer.classList.remove('hidden');
+            toggleTeamSimulator();
         }
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         saveCurrentViewScrollPosition();
@@ -2300,9 +2299,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initAndShowFarmingGuideView() {
         if (teamSimulatorActive) {
-            teamSimulatorActive = false;
-            teamSimulatorWrapper.classList.add('hidden');
-            headerInfoContainer.classList.remove('hidden');
+            toggleTeamSimulator();
         }
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
         saveCurrentViewScrollPosition();
@@ -2926,9 +2923,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initAndShowChatSimulatorView() {
         if (teamSimulatorActive) {
-            teamSimulatorActive = false;
-            teamSimulatorWrapper.classList.add('hidden');
-            headerInfoContainer.classList.remove('hidden');
+            toggleTeamSimulator();
         }
         saveCurrentViewScrollPosition();
 
@@ -3767,6 +3762,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (lbTalentHelpModalOverlay) { lbTalentHelpModalOverlay.classList.add('hidden'); lbTalentHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
+                return;
+            }
+            if (teamSimulatorActive) {
+                toggleTeamSimulator();
                 return;
             }
             if (chatSimulatorView && !chatSimulatorView.classList.contains('hidden')) {

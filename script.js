@@ -1868,7 +1868,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (savedTeamsPanel) {
                 // 仅在桌面端应用此高度同步，因为移动端saved-teams-panel高度为auto
-                if (window.innerWidth > 900) { // 假设900px是桌面/移动端断点
+                if (window.innerWidth > 768) { // 假设768px是桌面/移动端断点
                     // 如果左侧计算高度大于最小面板高度，则将右侧高度设置为左侧高度
                     if (calculatedLeftPanelHeight > minPanelHeight) {
                         savedTeamsPanel.style.height = `${calculatedLeftPanelHeight}px`;
@@ -1884,10 +1884,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    let lastTeamDisplayHeight = 0;
     function renderTeamDisplay() {
-        if (!teamDisplayGrid) return;
+        // 1. 确保在函数开头声明并获取所有需要使用的DOM元素
+        const teamDisplayGrid = document.getElementById('team-display-grid');
+        if (!teamDisplayGrid) { // 现在可以安全地检查了
+            console.error("Error: teamDisplayGrid element not found.");
+            return;
+        }
 
-        // 步骤 1: 渲染英雄槽位和信息卡片 (此部分代码不变)
+        const teamSimulatorDisplay = document.getElementById('team-simulator-display');
+        // 如果 teamSimulatorDisplay 也是函数内部才获取的，也请在这里获取
+        if (!teamSimulatorDisplay) {
+            console.error("Error: teamSimulatorDisplay element not found.");
+            // 根据你的逻辑，如果缺少此元素，可能需要返回或处理
+        }
+
+        // 记录渲染前的关键信息
+        const currentScrollTop = window.scrollY; // 记录当前页面的滚动位置
+        let prevTeamGridHeight = teamDisplayGrid.offsetHeight; // 记录渲染前网格的高度
+
+        // 2. 执行英雄槽位和信息卡片的渲染逻辑
+        // 这一部分保持不变
         for (let i = 0; i < 5; i++) {
             const slot = teamSlots[i];
             const hero = slot ? slot.hero : null;
@@ -1939,9 +1957,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        // 步骤 2: 渲染队伍标签汇总 (此部分代码不变)
+        // 3. 渲染队伍标签汇总 (此部分保持不变)
         const summaryContainer = document.getElementById('team-tags-summary-container');
-        if (!summaryContainer) return;
+        if (!summaryContainer) {
+            console.error("Error: team-tags-summary-container element not found.");
+            return;
+        }
 
         const tagCounts = {};
         let teamHasHeroes = false;
@@ -1961,41 +1982,31 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             summaryContainer.style.display = 'flex';
             const sortedTags = Object.keys(tagCounts).sort((a, b) => {
-                // 内部辅助函数：根据当前语言，将标签名转为英文键名
                 const getEnglishKey = (tag) => {
                     if (currentLang === 'cn') {
-                        // 使用已有的反向映射表查找英文键名
                         return reverseSkillTypeMap_cn[tag] || tag;
                     }
                     if (currentLang === 'tc') {
                         return reverseSkillTypeMap_tc[tag] || tag;
                     }
-                    // 如果当前是英文，或找不到映射，则直接返回原标签
                     return tag;
                 };
 
                 const englishA = getEnglishKey(a);
                 const englishB = getEnglishKey(b);
 
-                // 获取英文键名在 nynaeveSkillTypeOrder 数组中的索引
                 const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
                 const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
 
-                // --- 排序规则 ---
-                // 1. 如果两个标签都能在排序数组中找到，则按数组中的顺序排
                 if (indexA !== -1 && indexB !== -1) {
                     return indexA - indexB;
                 }
-                // 2. 如果只有 A 在数组中，那么 A 排在前面
                 if (indexA !== -1) {
                     return -1;
                 }
-                // 3. 如果只有 B 在数组中，那么 B 排在前面
                 if (indexB !== -1) {
                     return 1;
                 }
-                // 4. 如果两个标签都不在排序数组中（例如来自 Heroplan.io 的标签），
-                //    则沿用之前的本地化排序规则，将它们排在后面
                 const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
                 const options = currentLang === 'tc' ? { collation: 'stroke' } : {};
                 return a.localeCompare(b, locale, options);
@@ -2012,9 +2023,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 summaryContainer.innerHTML = summaryHTML;
             }
         }
-        // 【修改】调用独立的高度调整函数
-        adjustTeamDisplayHeight();
 
+        // 4. 计算高度变化并调整滚动位置
+        // 使用 requestAnimationFrame 确保在 DOM 更新后立即获取新高度，并在下次绘制前调整滚动
+        requestAnimationFrame(() => {
+            const newTeamGridHeight = teamDisplayGrid.offsetHeight; // 获取渲染后的新高度
+            const heightDifference = newTeamGridHeight - prevTeamGridHeight;
+
+            if (heightDifference > 0) { // 如果高度增加了
+                window.scrollTo(window.scrollX, currentScrollTop + heightDifference);
+            }
+
+            // 最后调用调整父容器高度的函数，这也会在内部使用requestAnimationFrame
+            adjustTeamDisplayHeight();
+        });
     }
 
     function renderTable(heroes) {

@@ -433,7 +433,7 @@ const i18n = {
         filterScope_favorites: "Favorites", clearSelection: "Clear Selections", advancedFilters: "Advanced Filters",
         skillTypeSourceLabel: "Type Source:", sourceBoth: "Both", sourceHeroplan: "Heroplan.io", sourceNynaeve: "By Nynaeve",
         skillTypeLabel: "Skill Type:", skillTypePlaceholder: "e.g. buff, ailment, heal", skillTextLabel: "Skill Text:",
-        passiveSkillLabel: "Passive Text:", enableSkillQuickSearchLabel: "One - click Skill Search: ",
+        passiveSkillLabel: "Passive Text:", enableSkillQuickSearchLabel: "Quick Skill Search: ",
         enableSkillQuickSearchToggle: "Enable", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",
         oneClickMaxEventLabel: "Hero Coach:", purchaseCostumeEventLabel: "Visiting Outfitter:",
         filterButtonLabel: "Filter",

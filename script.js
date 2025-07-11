@@ -3408,7 +3408,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // 如果点击的是技能或被动相关的词条，并且一键搜索功能未启用，则不执行搜索逻辑
                 if (skillRelatedFilterTypes.includes(filterType) && !isQuickSearchEnabled) { //
-                    console.log(`一键搜索技能词条未启用，跳过对 ${filterType} 的搜索。`);
+                    //console.log(`一键搜索技能词条未启用，跳过对 ${filterType} 的搜索。`);
                     return; // 不执行搜索逻辑
                 }
 

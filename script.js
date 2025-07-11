@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const skillTypeHelpBtn = document.getElementById('skill-type-help-btn');
     const skillTypeHelpModal = document.getElementById('skill-type-help-modal');
     const skillTypeHelpModalOverlay = document.getElementById('skill-type-help-modal-overlay');
+    const enableSkillQuickSearchCheckbox = document.getElementById('enable-skill-quick-search-checkbox');
     const showWantedMissionBtn = document.getElementById('show-wanted-mission-btn');
     const showFarmingGuideBtn = document.getElementById('show-farming-guide-btn');
     const showTeamSimulatorBtn = document.getElementById('show-team-simulator-btn');
@@ -276,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const defaultManaPriorityCheckbox = document.getElementById('default-mana-priority-checkbox');
     const defaultLimitBreakSelect = document.getElementById('default-limit-break-select');
     const defaultTalentSelect = document.getElementById('default-talent-select');
+    const showLbTalentDetailsCheckbox = document.getElementById('show-lb-talent-details-checkbox');
 
 
     const filterInputs = {
@@ -1732,7 +1734,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const teamIndex = parseInt(button.dataset.teamIndex, 10);
                     let teams = getSavedTeams();
                     const teamToRemove = teams[teamIndex];
-                    
+
                     if (teamToRemove && window.confirm(langDict.confirmRemoveTeam(teamToRemove.name))) {
                         teams.splice(teamIndex, 1);
                         saveTeams(teams);
@@ -2004,7 +2006,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         // 【修改】调用独立的高度调整函数
         adjustTeamDisplayHeight();
-        
+
     }
 
     function renderTable(heroes) {
@@ -2531,225 +2533,224 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
 
-        const talentSystemHTML = `
-            <div id="modal-talent-system-wrapper">
-                <div class="filter-header" id="modal-talent-settings-header">
-                    <h2 data-lang-key="modalTalentSettingsTitle">${langDict.modalTalentSettingsTitle}</h2>
-                    <button class="toggle-button expanded" data-target="modal-talent-settings-content" data-cookie="modal_settings_state">▼</button>
+        const talentSystemHTML = showLbTalentDetailsCheckbox.checked ? `
+    <div id="modal-talent-system-wrapper">
+        <div class="filter-header" id="modal-talent-settings-header">
+            <h2 data-lang-key="modalTalentSettingsTitle">${langDict.modalTalentSettingsTitle}</h2>
+            <button class="toggle-button expanded" data-target="modal-talent-settings-content" data-cookie="modal_settings_state">▼</button>
+        </div>
+        <div id="modal-talent-settings-content" class="filter-content">
+            <div class="modal-talent-settings-wrapper">
+                <div class="modal-talent-settings-grid">
+                    <div class="details-selector-item"><label for="modal-limit-break-select" data-lang-key="limitBreakSetting">${langDict.limitBreakSetting}</label><select id="modal-limit-break-select"><option value="none" data-lang-key="noLimitBreak">${langDict.noLimitBreak}</option><option value="lb1" data-lang-key="lb1">${langDict.lb1}</option><option value="lb2" data-lang-key="lb2">${langDict.lb2}</option></select></div>
+                    <div class="details-selector-item"><label for="modal-talent-select" data-lang-key="talentSetting">${langDict.talentSetting}</label><select id="modal-talent-select"><option value="none" data-lang-key="noTalent">${langDict.noTalent}</option><option value="talent20" data-lang-key="talent20">${langDict.talent20}</option><option value="talent25" data-lang-key="talent25">${langDict.talent25}</option></select></div>
+                    <div class="details-selector-item"><label for="modal-talent-strategy-select" data-lang-key="prioritySetting">${langDict.prioritySetting}</label><select id="modal-talent-strategy-select"><option value="atk-def-hp" data-lang-key="attackPriority">${langDict.attackPriority}</option><option value="atk-hp-def" data-lang-key="attackPriority2">${langDict.attackPriority2}</option><option value="def-hp-atk" data-lang-key="defensePriority">${langDict.defensePriority}</option><option value="hp-def-atk" data-lang-key="healthPriority">${langDict.healthPriority}</option></select></div>
+                    <div class="details-selector-item"><label for="modal-mana-priority-checkbox" data-lang-key="manaPriorityLabel">${langDict.manaPriorityLabel}</label><div class="checkbox-container"><input type="checkbox" id="modal-mana-priority-checkbox"><label for="modal-mana-priority-checkbox" class="checkbox-label" data-lang-key="manaPriorityToggle">${langDict.manaPriorityToggle}</label></div></div>
                 </div>
-                <div id="modal-talent-settings-content" class="filter-content">
-                    <div class="modal-talent-settings-wrapper">
-                        <div class="modal-talent-settings-grid">
-                            <div class="details-selector-item"><label for="modal-limit-break-select" data-lang-key="limitBreakSetting">${langDict.limitBreakSetting}</label><select id="modal-limit-break-select"><option value="none" data-lang-key="noLimitBreak">${langDict.noLimitBreak}</option><option value="lb1" data-lang-key="lb1">${langDict.lb1}</option><option value="lb2" data-lang-key="lb2">${langDict.lb2}</option></select></div>
-                            <div class="details-selector-item"><label for="modal-talent-select" data-lang-key="talentSetting">${langDict.talentSetting}</label><select id="modal-talent-select"><option value="none" data-lang-key="noTalent">${langDict.noTalent}</option><option value="talent20" data-lang-key="talent20">${langDict.talent20}</option><option value="talent25" data-lang-key="talent25">${langDict.talent25}</option></select></div>
-                            <div class="details-selector-item"><label for="modal-talent-strategy-select" data-lang-key="prioritySetting">${langDict.prioritySetting}</label><select id="modal-talent-strategy-select"><option value="atk-def-hp" data-lang-key="attackPriority">${langDict.attackPriority}</option><option value="atk-hp-def" data-lang-key="attackPriority2">${langDict.attackPriority2}</option><option value="def-hp-atk" data-lang-key="defensePriority">${langDict.defensePriority}</option><option value="hp-def-atk" data-lang-key="healthPriority">${langDict.healthPriority}</option></select></div>
-                            <div class="details-selector-item"><label for="modal-mana-priority-checkbox" data-lang-key="manaPriorityLabel">${langDict.manaPriorityLabel}</label><div class="checkbox-container"><input type="checkbox" id="modal-mana-priority-checkbox"><label for="modal-mana-priority-checkbox" class="checkbox-label" data-lang-key="manaPriorityToggle">${langDict.manaPriorityToggle}</label></div></div>
-                        </div>
-                    </div>
-                </div>
-                ${talentBonusCostHTML}
-                <div class="filter-header" id="modal-talent-tree-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);"><h2 data-lang-key="talentTreeTitle">${langDict.talentTreeTitle}</h2><button class="toggle-button expanded" data-target="modal-talent-tree-wrapper" data-cookie="modal_tree_state">▼</button></div>
-                <div id="modal-talent-tree-wrapper" class="filter-content" style="padding:0;"><div class="loader-spinner" style="margin: 3rem auto;"></div></div>
             </div>
-        `;
+            ${talentBonusCostHTML}
+            <div class="filter-header" id="modal-talent-tree-header" style="margin-top: 1rem; border-top: 1px solid var(--md-sys-color-outline);"><h2 data-lang-key="talentTreeTitle">${langDict.talentTreeTitle}</h2><button class="toggle-button expanded" data-target="modal-talent-tree-wrapper" data-cookie="modal_tree_state">▼</button></div>
+            <div id="modal-talent-tree-wrapper" class="filter-content" style="padding:0;"><div class="loader-spinner" style="margin: 3rem auto;"></div></div>
+        </div>
+        ` : ''; // Conditional rendering
 
         const detailsHTML = `<div class="details-header"><h2>${langDict.modalHeroDetails}</h2><div class="details-header-buttons"><button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button><button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button><button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button></div></div><div class="hero-title-block">${nameBlockHTML}${fancyNameHTML}</div><div class="details-body"><div class="details-top-left"><img src="${localImagePath}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div><div class="details-top-right"><div class="details-info-line">${familyBlockHTML}${classBlockHTML}${skinBlockHTML}${sourceBlockHTML}${aetherPowerBlockHTML}${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}</div><h3>${langDict.modalCoreStats}</h3><div class="details-stats-grid"><div><p class="metric-value-style">💪 ${hero.displayStats.power || 0}</p></div><div><p class="metric-value-style">⚔️ ${hero.displayStats.attack || 0}</p></div><div><p class="metric-value-style">🛡️ ${hero.displayStats.defense || 0}</p></div><div><p class="metric-value-style">❤️ ${hero.displayStats.health || 0}</p></div></div></div></div><div class="details-bottom-section">${talentSystemHTML}<h3>${langDict.modalSkillDetails}</h3><div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}" title="${langDict.filterBy} ${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div><div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div><div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${translatedFamily || hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon" alt="${hero.family} icon"/>${translatedFamily || hero.family}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}</div><div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>`;
 
         modalContent.innerHTML = detailsHTML;
+        if (showLbTalentDetailsCheckbox.checked) { //
+            const modalLbSelect = document.getElementById('modal-limit-break-select');
+            const modalTalentSelect = document.getElementById('modal-talent-select');
+            const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
+            const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
 
-        const modalLbSelect = document.getElementById('modal-limit-break-select');
-        const modalTalentSelect = document.getElementById('modal-talent-select');
-        const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
-        const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
-
-        const settingsToUse = initialSettings || {
-            lb: defaultLimitBreakSelect.value,
-            talent: defaultTalentSelect.value,
-            strategy: defaultTalentStrategySelect.value,
-            manaPriority: defaultManaPriorityCheckbox.checked
-        };
-        modalLbSelect.value = settingsToUse.lb;
-        modalTalentSelect.value = settingsToUse.talent;
-        modalStrategySelect.value = settingsToUse.strategy;
-        modalManaCheckbox.checked = settingsToUse.manaPriority;
-
-        const updateTeamSlotAndRerender = () => {
-            if (teamSlotIndex === undefined || teamSlotIndex < 0) return;
-            if (!teamSlots[teamSlotIndex]) return;
-
-            const newSettings = {
-                lb: modalLbSelect.value,
-                talent: modalTalentSelect.value,
-                strategy: modalStrategySelect.value,
-                manaPriority: modalManaCheckbox.checked
+            const settingsToUse = initialSettings || {
+                lb: defaultLimitBreakSelect.value,
+                talent: defaultTalentSelect.value,
+                strategy: defaultTalentStrategySelect.value,
+                manaPriority: defaultManaPriorityCheckbox.checked
             };
-            teamSlots[teamSlotIndex].settings = newSettings;
-            renderTeamDisplay();
-        };
+            modalLbSelect.value = settingsToUse.lb;
+            modalTalentSelect.value = settingsToUse.talent;
+            modalStrategySelect.value = settingsToUse.strategy;
+            modalManaCheckbox.checked = settingsToUse.manaPriority;
 
-        let currentTalentBonuses = {};
-        let currentNodeCount = 0;
+            const updateTeamSlotAndRerender = () => {
+                if (teamSlotIndex === undefined || teamSlotIndex < 0) return;
+                if (!teamSlots[teamSlotIndex]) return;
 
-        function _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount) {
-            let baseStats = {
-                power: hero.power || 0, attack: hero.attack || 0,
-                defense: hero.defense || 0, health: hero.health || 0
+                const newSettings = {
+                    lb: modalLbSelect.value,
+                    talent: modalTalentSelect.value,
+                    strategy: modalStrategySelect.value,
+                    manaPriority: modalManaCheckbox.checked
+                };
+                teamSlots[teamSlotIndex].settings = newSettings;
+                renderTeamDisplay();
             };
-            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
 
-            let finalStats = { ...baseStats };
+            let currentTalentBonuses = {};
+            let currentNodeCount = 0;
 
-            if (settings.talent !== 'none') {
-                const attackPercentBonus = Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100));
-                finalStats.attack = (baseStats.attack || 0) + bonuses.attack_flat + attackPercentBonus;
-                const defensePercentBonus = Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100));
-                finalStats.defense = (baseStats.defense || 0) + bonuses.defense_flat + defensePercentBonus;
-                const healthPercentBonus = Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100));
-                finalStats.health = (baseStats.health || 0) + bonuses.health_flat + healthPercentBonus;
+            function _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount) {
+                let baseStats = {
+                    power: hero.power || 0, attack: hero.attack || 0,
+                    defense: hero.defense || 0, health: hero.health || 0
+                };
+                if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+                else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+
+                let finalStats = { ...baseStats };
+
+                if (settings.talent !== 'none') {
+                    const attackPercentBonus = Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100));
+                    finalStats.attack = (baseStats.attack || 0) + bonuses.attack_flat + attackPercentBonus;
+                    const defensePercentBonus = Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100));
+                    finalStats.defense = (baseStats.defense || 0) + bonuses.defense_flat + defensePercentBonus;
+                    const healthPercentBonus = Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100));
+                    finalStats.health = (baseStats.health || 0) + bonuses.health_flat + healthPercentBonus;
+                }
+
+                const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
+                const star_power = STAR_BASE_POWER[hero.star] || 0;
+                const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
+                const stats_final_power = Math.floor(stats_raw_power);
+                const skill_power = (8 - 1) * 5;
+                const talent_power = nodeCount * 5;
+
+                finalStats.power = star_power + stats_final_power + skill_power + talent_power;
+
+                const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
+                const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
+                const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
+                const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
+                if (powerEl) powerEl.innerHTML = `💪 ${finalStats.power || 0}`;
+                if (attackEl) attackEl.innerHTML = `⚔️ ${finalStats.attack || 0}`;
+                if (defenseEl) defenseEl.innerHTML = `🛡️ ${finalStats.defense || 0}`;
+                if (healthEl) healthEl.innerHTML = `❤️ ${finalStats.health || 0}`;
             }
 
-            const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
-            const star_power = STAR_BASE_POWER[hero.star] || 0;
-            const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
-            const stats_final_power = Math.floor(stats_raw_power);
-            const skill_power = (8 - 1) * 5;
-            const talent_power = nodeCount * 5;
+            function _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats) {
+                const bonusDisplay = document.getElementById('modal-talent-bonus-display');
+                const calculatedBonuses = {
+                    attack: bonuses.attack_flat + Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100)),
+                    defense: bonuses.defense_flat + Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100)),
+                    health: bonuses.health_flat + Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100)),
+                    mana: bonuses.mana_percent,
+                    healing: bonuses.healing_percent,
+                    crit: bonuses.crit_percent
+                };
+                const iconMap = {
+                    attack: 'attack.png', defense: 'defense.png', health: 'health.png',
+                    mana: 'mana.png', healing: 'healing.png', crit: 'critical.png'
+                };
+                const bonusMap = {
+                    attack: { value: calculatedBonuses.attack, label: langDict.attackBonusLabel, isPercent: false },
+                    defense: { value: calculatedBonuses.defense, label: langDict.defenseBonusLabel, isPercent: false },
+                    health: { value: calculatedBonuses.health, label: langDict.healthBonusLabel, isPercent: false },
+                    mana: { value: calculatedBonuses.mana, label: langDict.manaBonusLabel, isPercent: true },
+                    healing: { value: calculatedBonuses.healing, label: langDict.healingBonusLabel, isPercent: true },
+                    crit: { value: calculatedBonuses.crit, label: langDict.critBonusLabel, isPercent: true }
+                };
+                let bonusHTML = '';
+                for (const key in bonusMap) {
+                    const bonus = bonusMap[key];
+                    if (bonus.value > 0) {
+                        const sign = bonus.isPercent ? '%' : '';
+                        bonusHTML += `<div class="bonus-item"><img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">${bonus.label}<span>+${bonus.value}${sign}</span></div>`;
+                    }
+                }
+                bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
 
-            finalStats.power = star_power + stats_final_power + skill_power + talent_power;
+                const costs = { emblem: 0, food: 0, iron: 0, masterEmblem: 0 };
+                const star = parseInt(hero.star);
+                const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === star);
+                for (let i = 0; i < nodeCount; i++) {
+                    const costEntry = relevantCosts[i];
+                    if (costEntry) {
+                        costs.emblem += parseInt(costEntry.emblem) || 0;
+                        costs.food += parseInt(String(costEntry.food).replace(/,/g, '')) || 0;
+                        costs.iron += parseInt(String(costEntry.iron).replace(/,/g, '')) || 0;
+                        costs.masterEmblem += parseInt(costEntry.masteremblem) || 0;
+                    }
+                }
+                document.getElementById('cost-emblem').textContent = costs.emblem.toLocaleString();
+                document.getElementById('cost-food').textContent = costs.food.toLocaleString();
+                document.getElementById('cost-iron').textContent = costs.iron.toLocaleString();
+                document.getElementById('cost-master-emblem').textContent = costs.masterEmblem.toLocaleString();
+            }
 
-            const powerEl = modal.querySelector('.details-stats-grid > div:nth-child(1) p');
-            const attackEl = modal.querySelector('.details-stats-grid > div:nth-child(2) p');
-            const defenseEl = modal.querySelector('.details-stats-grid > div:nth-child(3) p');
-            const healthEl = modal.querySelector('.details-stats-grid > div:nth-child(4) p');
-            if (powerEl) powerEl.innerHTML = `💪 ${finalStats.power || 0}`;
-            if (attackEl) attackEl.innerHTML = `⚔️ ${finalStats.attack || 0}`;
-            if (defenseEl) defenseEl.innerHTML = `🛡️ ${finalStats.defense || 0}`;
-            if (healthEl) healthEl.innerHTML = `❤️ ${finalStats.health || 0}`;
+            const talentChangeCallback = (bonuses, nodeCount) => {
+                currentTalentBonuses = bonuses;
+                currentNodeCount = nodeCount;
+                const currentSettingsInModal = {
+                    lb: modalLbSelect.value,
+                    talent: modalTalentSelect.value
+                };
+                _updateModalStatsWithBonuses(hero, currentSettingsInModal, bonuses, nodeCount);
+                let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
+                if (currentSettingsInModal.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+                else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+                _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+                updateTeamSlotAndRerender();
+            };
+
+            const talentTreeContainer = document.getElementById('modal-talent-tree-wrapper');
+            if (hero.class && typeof TalentTree !== 'undefined') {
+                TalentTree.init(talentTreeContainer, hero.class, {
+                    strategy: modalStrategySelect.value,
+                    manaPriority: modalManaCheckbox.checked
+                }, talentChangeCallback, langDict.talentTerms);
+            } else {
+                talentTreeContainer.innerHTML = `<p style="text-align:center; padding: 2rem 0;">该英雄没有职业天赋。</p>`;
+            }
+
+            const handleSettingsChange = () => {
+                const newTalentLevel = modalTalentSelect.value;
+                const isDisabled = (newTalentLevel === 'none');
+                modalStrategySelect.disabled = isDisabled;
+                modalManaCheckbox.disabled = isDisabled;
+
+                if (typeof TalentTree !== 'undefined' && hero.class) {
+                    if (newTalentLevel === 'none') {
+                        TalentTree.clear();
+                    } else {
+                        TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                    }
+                }
+                updateTeamSlotAndRerender();
+            };
+
+            modalLbSelect.addEventListener('change', handleSettingsChange);
+            modalTalentSelect.addEventListener('change', handleSettingsChange);
+            modalStrategySelect.addEventListener('change', handleSettingsChange);
+            modalManaCheckbox.addEventListener('change', handleSettingsChange);
+
+            handleSettingsChange();
+
+            modalContent.querySelectorAll('.filter-header').forEach(header => {
+                const button = header.querySelector('.toggle-button');
+                if (!button) return;
+                const contentId = button.dataset.target;
+                const cookieName = button.dataset.cookie;
+                const contentElement = document.getElementById(contentId);
+                if (contentElement && cookieName) {
+                    const savedState = getCookie(cookieName);
+                    if (savedState === 'collapsed') {
+                        contentElement.classList.add('collapsed');
+                        button.classList.remove('expanded');
+                    } else {
+                        contentElement.classList.remove('collapsed');
+                        button.classList.add('expanded');
+                    }
+                    header.addEventListener('click', () => {
+                        contentElement.classList.toggle('collapsed');
+                        button.classList.toggle('expanded');
+                        const newState = contentElement.classList.contains('collapsed') ? 'collapsed' : 'expanded';
+                        setCookie(cookieName, newState, 365);
+                    });
+                }
+            });
         }
-
-        function _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats) {
-            const bonusDisplay = document.getElementById('modal-talent-bonus-display');
-            const calculatedBonuses = {
-                attack: bonuses.attack_flat + Math.floor((baseStats.attack || 0) * (bonuses.attack_percent / 100)),
-                defense: bonuses.defense_flat + Math.floor((baseStats.defense || 0) * (bonuses.defense_percent / 100)),
-                health: bonuses.health_flat + Math.floor((baseStats.health || 0) * (bonuses.health_percent / 100)),
-                mana: bonuses.mana_percent,
-                healing: bonuses.healing_percent,
-                crit: bonuses.crit_percent
-            };
-            const iconMap = {
-                attack: 'attack.png', defense: 'defense.png', health: 'health.png',
-                mana: 'mana.png', healing: 'healing.png', crit: 'critical.png'
-            };
-            const bonusMap = {
-                attack: { value: calculatedBonuses.attack, label: langDict.attackBonusLabel, isPercent: false },
-                defense: { value: calculatedBonuses.defense, label: langDict.defenseBonusLabel, isPercent: false },
-                health: { value: calculatedBonuses.health, label: langDict.healthBonusLabel, isPercent: false },
-                mana: { value: calculatedBonuses.mana, label: langDict.manaBonusLabel, isPercent: true },
-                healing: { value: calculatedBonuses.healing, label: langDict.healingBonusLabel, isPercent: true },
-                crit: { value: calculatedBonuses.crit, label: langDict.critBonusLabel, isPercent: true }
-            };
-            let bonusHTML = '';
-            for (const key in bonusMap) {
-                const bonus = bonusMap[key];
-                if (bonus.value > 0) {
-                    const sign = bonus.isPercent ? '%' : '';
-                    bonusHTML += `<div class="bonus-item"><img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">${bonus.label}<span>+${bonus.value}${sign}</span></div>`;
-                }
-            }
-            bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
-
-            const costs = { emblem: 0, food: 0, iron: 0, masterEmblem: 0 };
-            const star = parseInt(hero.star);
-            const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === star);
-            for (let i = 0; i < nodeCount; i++) {
-                const costEntry = relevantCosts[i];
-                if (costEntry) {
-                    costs.emblem += parseInt(costEntry.emblem) || 0;
-                    costs.food += parseInt(String(costEntry.food).replace(/,/g, '')) || 0;
-                    costs.iron += parseInt(String(costEntry.iron).replace(/,/g, '')) || 0;
-                    costs.masterEmblem += parseInt(costEntry.masteremblem) || 0;
-                }
-            }
-            document.getElementById('cost-emblem').textContent = costs.emblem.toLocaleString();
-            document.getElementById('cost-food').textContent = costs.food.toLocaleString();
-            document.getElementById('cost-iron').textContent = costs.iron.toLocaleString();
-            document.getElementById('cost-master-emblem').textContent = costs.masterEmblem.toLocaleString();
-        }
-
-        const talentChangeCallback = (bonuses, nodeCount) => {
-            currentTalentBonuses = bonuses;
-            currentNodeCount = nodeCount;
-            const currentSettingsInModal = {
-                lb: modalLbSelect.value,
-                talent: modalTalentSelect.value
-            };
-            _updateModalStatsWithBonuses(hero, currentSettingsInModal, bonuses, nodeCount);
-            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
-            if (currentSettingsInModal.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
-            updateTeamSlotAndRerender();
-        };
-
-        const talentTreeContainer = document.getElementById('modal-talent-tree-wrapper');
-        if (hero.class && typeof TalentTree !== 'undefined') {
-            TalentTree.init(talentTreeContainer, hero.class, {
-                strategy: modalStrategySelect.value,
-                manaPriority: modalManaCheckbox.checked
-            }, talentChangeCallback, langDict.talentTerms);
-        } else {
-            talentTreeContainer.innerHTML = `<p style="text-align:center; padding: 2rem 0;">该英雄没有职业天赋。</p>`;
-        }
-
-        const handleSettingsChange = () => {
-            const newTalentLevel = modalTalentSelect.value;
-            const isDisabled = (newTalentLevel === 'none');
-            modalStrategySelect.disabled = isDisabled;
-            modalManaCheckbox.disabled = isDisabled;
-
-            if (typeof TalentTree !== 'undefined' && hero.class) {
-                if (newTalentLevel === 'none') {
-                    TalentTree.clear();
-                } else {
-                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
-                }
-            }
-            updateTeamSlotAndRerender();
-        };
-
-        modalLbSelect.addEventListener('change', handleSettingsChange);
-        modalTalentSelect.addEventListener('change', handleSettingsChange);
-        modalStrategySelect.addEventListener('change', handleSettingsChange);
-        modalManaCheckbox.addEventListener('change', handleSettingsChange);
-
-        handleSettingsChange();
-
-        modalContent.querySelectorAll('.filter-header').forEach(header => {
-            const button = header.querySelector('.toggle-button');
-            if (!button) return;
-            const contentId = button.dataset.target;
-            const cookieName = button.dataset.cookie;
-            const contentElement = document.getElementById(contentId);
-            if (contentElement && cookieName) {
-                const savedState = getCookie(cookieName);
-                if (savedState === 'collapsed') {
-                    contentElement.classList.add('collapsed');
-                    button.classList.remove('expanded');
-                } else {
-                    contentElement.classList.remove('collapsed');
-                    button.classList.add('expanded');
-                }
-                header.addEventListener('click', () => {
-                    contentElement.classList.toggle('collapsed');
-                    button.classList.toggle('expanded');
-                    const newState = contentElement.classList.contains('collapsed') ? 'collapsed' : 'expanded';
-                    setCookie(cookieName, newState, 365);
-                });
-            }
-        });
-
         document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
         document.getElementById('hide-details-bottom-btn').addEventListener('click', closeDetailsModal);
         const favoriteBtn = document.getElementById('favorite-hero-btn');
@@ -3225,6 +3226,12 @@ document.addEventListener('DOMContentLoaded', function () {
             modalStack.push('lbTalentHelp');
             document.getElementById('close-lb-talent-help-btn').addEventListener('click', closeLbTalentHelpModal);
         }
+        if (showLbTalentDetailsCheckbox) {
+            showLbTalentDetailsCheckbox.addEventListener('change', () => {
+                setCookie('showLbTalentDetails', showLbTalentDetailsCheckbox.checked.toString(), 365);
+                // No need to re-render the main table, only affects modal
+            });
+        }
 
         function closeLbTalentHelpModal() {
             if (!lbTalentHelpModal.classList.contains('hidden')) {
@@ -3258,24 +3265,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // --- 队伍列表的折叠事件（更新版） ---
-    const savedTeamsHeader = document.querySelector('.saved-teams-header');
-    if (savedTeamsHeader) {
-        savedTeamsHeader.addEventListener('click', (e) => {
-            if (window.innerWidth > 900) return;
-            if (e.target.closest('.tab-button')) return;
+        const savedTeamsHeader = document.querySelector('.saved-teams-header');
+        if (savedTeamsHeader) {
+            savedTeamsHeader.addEventListener('click', (e) => {
+                if (window.innerWidth > 900) return;
+                if (e.target.closest('.tab-button')) return;
 
-            const listContainer = document.getElementById('saved-teams-list-container');
-            if (listContainer) {
-                const wasCollapsed = listContainer.classList.contains('collapsed');
-                listContainer.classList.toggle('collapsed');
+                const listContainer = document.getElementById('saved-teams-list-container');
+                if (listContainer) {
+                    const wasCollapsed = listContainer.classList.contains('collapsed');
+                    listContainer.classList.toggle('collapsed');
 
-                // 保存新的状态到Cookie
-                const currentStates = getCollapseStates();
-                currentStates.listCollapsed = !wasCollapsed;
-                saveCollapseStates(currentStates);
-            }
-        });
-    }
+                    // 保存新的状态到Cookie
+                    const currentStates = getCollapseStates();
+                    currentStates.listCollapsed = !wasCollapsed;
+                    saveCollapseStates(currentStates);
+                }
+            });
+        }
         // 【新增】为“清空阵容”按钮添加事件
         const clearTeamBtn = document.getElementById('clear-team-btn');
         if (clearTeamBtn) {
@@ -3354,8 +3361,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             });
         }
-        
-        
+
+
 
         if (langOptions) {
             langOptions.addEventListener('click', (event) => {
@@ -3390,8 +3397,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 const filterType = target.dataset.filterType;
                 let filterValue = target.dataset.filterValue;
+
                 if (!filterType || filterValue === undefined) return;
 
+                // 获取一键搜索技能词条设置的状态
+                const isQuickSearchEnabled = enableSkillQuickSearchCheckbox.checked;
+
+                // 定义受“一键搜索技能词条”设置影响的筛选类型
+                const skillRelatedFilterTypes = ['effects', 'passives']; //
+
+                // 如果点击的是技能或被动相关的词条，并且一键搜索功能未启用，则不执行搜索逻辑
+                if (skillRelatedFilterTypes.includes(filterType) && !isQuickSearchEnabled) { //
+                    console.log(`一键搜索技能词条未启用，跳过对 ${filterType} 的搜索。`);
+                    return; // 不执行搜索逻辑
+                }
+
+                // 对于所有其他类型的点击，或者如果点击的是技能/被动相关但一键搜索已启用，则执行以下搜索逻辑
                 resetAllFilters();
 
                 if (multiSelectFilters.hasOwnProperty(filterType)) {
@@ -3443,6 +3464,11 @@ document.addEventListener('DOMContentLoaded', function () {
             setCookie('defaultTalentStrategy', defaultTalentStrategySelect.value, 365);
             setCookie('defaultManaPriority', defaultManaPriorityCheckbox.checked, 365);
             applyFiltersAndRender();
+        }
+        if (enableSkillQuickSearchCheckbox) {
+            enableSkillQuickSearchCheckbox.addEventListener('change', () => {
+                setCookie('enableSkillQuickSearch', enableSkillQuickSearchCheckbox.checked.toString(), 365);
+            });
         }
 
         if (defaultLimitBreakSelect) defaultLimitBreakSelect.addEventListener('change', handleDefaultSettingsChange);
@@ -3758,6 +3784,10 @@ document.addEventListener('DOMContentLoaded', function () {
             defaultTalentSelect.value = getCookie('defaultTalent') || 'none';
             defaultTalentStrategySelect.value = getCookie('defaultTalentStrategy') || 'atk-def-hp';
             defaultManaPriorityCheckbox.checked = getCookie('defaultManaPriority') === 'true';
+            showLbTalentDetailsCheckbox.checked = getCookie('showLbTalentDetails') !== 'false';
+            if (enableSkillQuickSearchCheckbox) {
+                enableSkillQuickSearchCheckbox.checked = getCookie('enableSkillQuickSearch') !== 'false';
+            }
 
             const initialTalentDisabled = defaultTalentSelect.value === 'none';
             defaultTalentStrategySelect.disabled = initialTalentDisabled;
@@ -3805,7 +3835,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // 自动打开队伍模拟器
                         toggleTeamSimulator();
-                    }   
+                    }
                 } catch (e) {
                     console.error("从URL处理分享的队伍失败", e);
                     isViewingSharedTeams = false;

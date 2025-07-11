@@ -1529,6 +1529,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // --- 打开模拟器时的逻辑 ---
             headerInfoContainer.classList.add('hidden'); // 隐藏页眉信息
             if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden'); // 显示队伍模拟器
+            if (showTeamSimulatorBtn) {
+                showTeamSimulatorBtn.classList.add('simulator-exit-btn'); // 添加退出提示类
+            }
 
             // 确保其他视图被隐藏，并默认显示英雄列表
             heroTableView.classList.remove('hidden'); // 显示英雄列表
@@ -1558,6 +1561,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         } else {
             // --- 关闭模拟器时的逻辑 ---
+            if (showTeamSimulatorBtn) {
+                showTeamSimulatorBtn.classList.remove('simulator-exit-btn'); // 移除退出提示类
+            }
             headerInfoContainer.classList.remove('hidden'); // 显示页眉信息
             if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden'); // 隐藏队伍模拟器
             multiSelectFilters.filterScope = ['all']; // 重置筛选范围为全部

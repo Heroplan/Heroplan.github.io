@@ -2891,7 +2891,17 @@ select.custom-select-hidden {
 }
 
 /* ========== 队伍模拟器样式 (修正版) ========== */
+/* 队伍模拟器模式下浮动按钮的提示退出样式 */
+#show-team-simulator-btn.simulator-exit-btn {
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+}
 
+#show-team-simulator-btn.simulator-exit-btn:hover {
+    background-color: var(--md-sys-color-error-container);
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
 /* 修正：为最外层容器设置最小高度，以解决遮挡下方列表的问题 */
 #team-simulator-display {
     width: 66.67%;

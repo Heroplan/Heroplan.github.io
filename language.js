@@ -128,6 +128,46 @@ const i18n = {
         oneClickMaxEventLabel: "一键满级活动日期:", purchaseCostumeEventLabel: "购买服装活动日期:",
         filterButtonLabel: "筛选",
         minPower: "战力", minAttack: "攻击", minDefense: "防御", minHealth: "生命", resetFilters: "重置筛选",
+        exportSettings: "导出设置",
+        importSettings: "导入设置",
+        importModalTitle: "导入设置",
+        setting_heroFavorites: "收藏的英雄",
+        setting_savedTeams: "已存的队伍",
+        setting_favoriteColors: "聊天收藏颜色",
+        setting_otherSettings: "界面及通用设置",
+        exportModalTitle: "导出设置",
+        exportItems: "选择要导出的项目：",
+        importItems: "选择要导入的项目：",
+        selectAll: "全选",
+        exportSelected: "生成导出代码",
+        analyzeCode: "解析代码",
+        importSelected: "导入选中项",
+        exportResultTitle: "您的导出代码（请复制并妥善保存）：",
+        noDataToExport: "没有可供导出的数据。",
+        noDataInCode: "代码中未发现可导入的数据或代码已损坏。",
+        importInstructions: "请在下方粘贴您之前导出的设置代码:",
+        importModeOverwrite: "覆盖模式：删除所有现有设置，并用导入的设置替换。",
+        importModeAppend: "追加模式：保留现有设置，并将导入的设置合并进来（例如，收藏和已存队伍会合并去重）。",
+        importConfirmBtn: "确认导入",
+        importCancelBtn: "取消",
+        importSettingsSuccess: (mode, counts) => { // 【新增】用于设置导入的成功提示
+            if (mode === 'overwrite') {
+                return '设置已成功覆盖导入！页面即将刷新以应用更改。';
+            }
+            // 追加模式
+            const messages = [];
+            if (counts.favorites > 0) messages.push(`新增 ${counts.favorites} 个收藏英雄`);
+            if (counts.teams > 0) messages.push(`新增 ${counts.teams} 个队伍`);
+            if (counts.colors > 0) messages.push(`新增 ${counts.colors} 个收藏颜色`);
+
+            if (messages.length === 0) {
+                return '导入完成，没有新增项目。页面即将刷新。';
+            }
+            return `设置已成功追加导入！\n${messages.join('，')}。\n页面即将刷新以应用更改。`;
+        },
+        importError: "导入失败！代码无效或已损坏。请检查代码是否完整。",
+        saveToFile: "保存到文件",
+        importFromFile: "从文件导入",
         shareFavorites: "分享收藏", openFavorites: "打开收藏", shareFavoritesCopied: "列表已复制!",
         footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
         footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
@@ -284,6 +324,46 @@ const i18n = {
         oneClickMaxEventLabel: "一鍵滿級活動日期:", purchaseCostumeEventLabel: "購買服裝活動日期:",
         filterButtonLabel: "篩選",
         minPower: "戰力", minAttack: "攻擊", minDefense: "防禦", minHealth: "生命", resetFilters: "重置篩選",
+        exportSettings: "導出設定",
+        importSettings: "導入設定",
+        setting_heroFavorites: "收藏的英雄",
+        setting_savedTeams: "已存的隊伍",
+        setting_favoriteColors: "聊天收藏顏色",
+        setting_otherSettings: "界面及通用設定",
+        exportModalTitle: "匯出設定",
+        importModalTitle: "導入設定",
+        exportItems: "選擇要匯出的項目：",
+        importItems: "選擇要導入的項目：",
+        selectAll: "全選",
+        exportSelected: "生成匯出代碼",
+        analyzeCode: "解析代碼",
+        importSelected: "導入選中項",
+        exportResultTitle: "您的匯出代碼（請複製並妥善保存）：",
+        noDataToExport: "沒有可供匯出的數據。",
+        noDataInCode: "代碼中未發現可導入的數據或代碼已損壞。",
+        importInstructions: "請在下方貼上您先前導出的設定代碼:",
+        importModeOverwrite: "覆蓋模式：刪除所有現有設定，並用導入的設定替換。",
+        importModeAppend: "追加模式：保留現有設定，並將導入的設定合併進來（例如，收藏和已存隊伍會合併去重）。",
+        importConfirmBtn: "確認導入",
+        importCancelBtn: "取消",
+        importSettingsSuccess: (mode, counts) => { // 【新增】
+            if (mode === 'overwrite') {
+                return '設定已成功覆蓋導入！頁面即將刷新以應用更改。';
+            }
+            // 追加模式
+            const messages = [];
+            if (counts.favorites > 0) messages.push(`新增 ${counts.favorites} 個收藏英雄`);
+            if (counts.teams > 0) messages.push(`新增 ${counts.teams} 個隊伍`);
+            if (counts.colors > 0) messages.push(`新增 ${counts.colors} 個收藏顏色`);
+
+            if (messages.length === 0) {
+                return '導入完成，沒有新增項目。頁面即將刷新。';
+            }
+            return `設定已成功追加導入！\n${messages.join('，')}。\n頁面即將刷新以應用更改。`;
+        },
+        importError: "導入失敗！代碼無效或已損壞。請檢查代碼是否完整。",
+        saveToFile: "儲存至檔案",
+        importFromFile: "從檔案匯入",
         shareFavorites: "分享收藏", openFavorites: "打開收藏", shareFavoritesCopied: "列表已複製!",
         footerGameName: "《帝國與謎題》", footerPlatform: "英雄數據查詢平台",
         footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
@@ -438,6 +518,46 @@ const i18n = {
         oneClickMaxEventLabel: "Hero Coach:", purchaseCostumeEventLabel: "Visiting Outfitter:",
         filterButtonLabel: "Filter",
         minPower: "Power", minAttack: "Attack", minDefense: "Defense", minHealth: "Health", resetFilters: "Reset Filters",
+        exportSettings: "Export Settings",
+        importSettings: "Import Settings",
+        setting_heroFavorites: "Favorite Heroes",
+        setting_savedTeams: "Saved Teams",
+        setting_favoriteColors: "Favorite Chat Colors",
+        setting_otherSettings: "UI & General Settings",
+        exportModalTitle: "Export Settings",
+        importModalTitle: "Import Settings",
+        exportItems: "Select items to export:",
+        importItems: "Select items to import:",
+        selectAll: "Select All",
+        exportSelected: "Generate Export Code",
+        analyzeCode: "Analyze Code",
+        importSelected: "Import Selected",
+        exportResultTitle: "Your export code (please copy and save it):",
+        noDataToExport: "No data available to export.",
+        noDataInCode: "No importable data found in the code, or the code is corrupted.",
+        importInstructions: "Please paste your previously exported settings code below:",
+        importModeOverwrite: "Overwrite Mode: Deletes all current settings and replaces them with the imported ones.",
+        importModeAppend: "Append Mode: Keeps existing settings and merges the imported ones (e.g., favorites and saved teams will be merged and deduplicated).",
+        importConfirmBtn: "Confirm Import",
+        importCancelBtn: "Cancel",
+        importSettingsSuccess: (mode, counts) => { // 【新增】
+            if (mode === 'overwrite') {
+                return 'Settings have been successfully overwritten! The page will now reload to apply changes.';
+            }
+            // Append mode
+            const messages = [];
+            if (counts.favorites > 0) messages.push(`Added ${counts.favorites} favorite heroes`);
+            if (counts.teams > 0) messages.push(`Added ${counts.teams} teams`);
+            if (counts.colors > 0) messages.push(`Added ${counts.colors} favorite colors`);
+
+            if (messages.length === 0) {
+                return 'Import complete, no new items were added. The page will now reload.';
+            }
+            return `Settings successfully appended!\n${messages.join(', ')}.\nThe page will now reload to apply changes.`;
+        },
+        importError: "Import failed! The code is invalid or corrupted. Please check if the code is complete.",
+        saveToFile: "Save to File",
+        importFromFile: "Import from File",
         shareFavorites: "Share Favorites", openFavorites: "Open Favorites", shareFavoritesCopied: "List Copied!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Hero Data Platform",
         footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",

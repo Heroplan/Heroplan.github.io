@@ -577,7 +577,9 @@ input[type="number"] {
 #modal-overlay,
 #filters-modal-overlay,
 #help-modal-overlay,
-#skill-type-help-modal-overlay {
+#skill-type-help-modal-overlay,
+#import-settings-modal-overlay,
+#export-settings-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -607,7 +609,9 @@ input[type="number"] {
 }
 
 #help-modal,
-#skill-type-help-modal {
+#skill-type-help-modal,
+#import-settings-modal,
+#export-settings-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -624,7 +628,18 @@ input[type="number"] {
     padding: 2rem 2.5rem;
     box-sizing: border-box;
 }
+/* ========== 新增：提升导入/导出模态框层级 ========== */
+#import-settings-modal-overlay,
+#export-settings-modal-overlay {
+    z-index: 1020;
+    /* 将导入/导出遮罩层的层级提升，高于筛选框 */
+}
 
+#import-settings-modal,
+#export-settings-modal {
+    z-index: 1021;
+    /* 将导入/导出模态框自身的层级提升，确保在它自己的遮罩层之上 */
+}
 #modal-content,
 #filters-modal-content {
     padding: 2rem 2.5rem;

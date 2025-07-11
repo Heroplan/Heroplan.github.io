@@ -298,7 +298,6 @@ document.addEventListener('DOMContentLoaded', function () {
         attack: document.getElementById('attack-input'),
         defense: document.getElementById('defense-input'),
         health: document.getElementById('health-input'),
-        filterScope: document.getElementById('release-date-type'),
     };
 
     // --- 聊天模拟器新增变量 ---
@@ -1558,7 +1557,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 sharedTeamsTabBtn.classList.remove('active'); // 移除“分享的队伍”标签的激活状态
                 renderSavedTeams(getSavedTeams(), false); // 渲染保存的队伍
             }
-            history.pushState({ view: 'teamSimulator' }, ''); 
+            history.pushState({ view: 'teamSimulator' }, '');
 
         } else {
             // --- 关闭模拟器时的逻辑 ---
@@ -3225,7 +3224,397 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    let _tempImportedSettings = null; // 临时存储解析后的数据
+    // ==========================================================================
+    // 新增：导出模态框事件监听器（一次性初始化）
+    // ==========================================================================
+    function initializeExportModalListeners() {
+        const exportModal = document.getElementById('export-settings-modal');
+        const exportModalOverlay = document.getElementById('export-settings-modal-overlay');
+        const exportModalContent = document.getElementById('export-settings-modal-content');
+
+        if (!exportModal || !exportModalOverlay || !exportModalContent) return;
+
+        // 统一的关闭函数
+        const closeModal = () => {
+            if (!exportModal.classList.contains('hidden')) {
+                history.back();
+            }
+        };
+
+        // 为遮罩层只绑定一次点击事件
+        exportModalOverlay.addEventListener('click', (event) => {
+            event.stopPropagation();
+            closeModal();
+        });
+
+        // 为模态框内容区只绑定一次点击事件，以阻止事件穿透
+        exportModalContent.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        // 使用事件委托来处理动态生成的内容
+        exportModalContent.addEventListener('click', (event) => {
+            const target = event.target;
+            const langDict = i18n[currentLang];
+            const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
+            const dataSources = {
+                heroFavorites: { name: langDict.setting_heroFavorites, storage: 'localStorage' },
+                savedTeams: { name: langDict.setting_savedTeams, storage: 'cookie' },
+                favoriteColors: { name: langDict.setting_favoriteColors, storage: 'cookie' },
+                otherSettings: { name: langDict.setting_otherSettings, storage: 'cookie' }
+            };
+
+            if (target.id === 'close-export-modal-btn') {
+                closeModal();
+            }
+            else if (target.id === 'generate-export-code-btn') {
+                const settingsToExport = {};
+                document.querySelectorAll('.export-item-checkbox:checked').forEach(cb => {
+                    const key = cb.dataset.key;
+                    if (key === 'otherSettings') {
+                        otherSettingKeys.forEach(settingKey => {
+                            const value = getCookie(settingKey);
+                            if (value !== null) settingsToExport[settingKey] = value;
+                        });
+                    } else {
+                        const source = dataSources[key];
+                        const value = source.storage === 'localStorage' ? localStorage.getItem(key) : getCookie(key);
+                        if (value) settingsToExport[key] = value;
+                    }
+                });
+
+                const jsonString = JSON.stringify(settingsToExport);
+                const compressedString = LZString.compressToEncodedURIComponent(jsonString);
+
+                document.getElementById('export-code-textarea').value = compressedString;
+                document.getElementById('export-result-container').classList.remove('hidden');
+                document.getElementById('save-to-file-btn').classList.remove('hidden');
+            }
+            else if (target.id === 'save-to-file-btn') {
+                const textToSave = document.getElementById('export-code-textarea').value;
+                if (!textToSave) {
+                    alert('没有可保存的内容。');
+                    return;
+                }
+
+                const blob = new Blob([textToSave], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+
+                const today = new Date();
+                const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+                a.download = `heroplan_settings_${dateString}.txt`;
+
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+            else if (target.id === 'export-select-all') {
+                exportModalContent.querySelectorAll('.export-item-checkbox').forEach(cb => cb.checked = target.checked);
+            }
+        });
+
+        exportModalContent.addEventListener('change', (event) => {
+            if (event.target.classList.contains('export-item-checkbox')) {
+                const selectAllCheckbox = document.getElementById('export-select-all');
+                selectAllCheckbox.checked = Array.from(exportModalContent.querySelectorAll('.export-item-checkbox')).every(c => c.checked);
+            }
+        });
+    }
+
+    // ==========================================================================
+    // 最终修正版：导入模态框事件监听器（一次性初始化 + 事件委托）
+    // ==========================================================================
+    function initializeImportModalListeners() {
+        const importModal = document.getElementById('import-settings-modal');
+        const importModalOverlay = document.getElementById('import-settings-modal-overlay');
+        const importModalContent = document.getElementById('import-settings-modal-content');
+        if (!importModal || !importModalOverlay || !importModalContent) return;
+
+        // 统一的关闭函数
+        const closeModal = () => {
+            if (!importModal.classList.contains('hidden')) {
+                history.back();
+            }
+        };
+
+        // 1. 为静态的遮罩层和内容区绑定基础事件（只执行一次）
+        importModalOverlay.addEventListener('click', (event) => {
+            event.stopPropagation();
+            closeModal();
+        });
+
+        importModalContent.addEventListener('click', (event) => {
+            event.stopPropagation(); // 阻止穿透
+        });
+
+        // 2. 使用事件委托处理所有内部的【点击】事件
+        importModalContent.addEventListener('click', (event) => {
+            const target = event.target;
+
+            if (target.id === 'close-import-modal-btn') {
+                closeModal();
+            }
+            else if (target.id === 'import-from-file-btn') {
+                // 在点击时，才去获取动态生成的 file-importer-input
+                const fileInput = document.getElementById('file-importer-input');
+                if (fileInput) {
+                    fileInput.click();
+                }
+            }
+            else if (target.id === 'analyze-import-code-btn') {
+                const compressedString = document.getElementById('import-settings-textarea').value.trim();
+                if (!compressedString) return;
+
+                const langDict = i18n[currentLang];
+                try {
+                    const jsonString = LZString.decompressFromEncodedURIComponent(compressedString);
+                    _tempImportedSettings = JSON.parse(jsonString);
+                    if (typeof _tempImportedSettings !== 'object' || _tempImportedSettings === null) throw new Error("Invalid data format");
+                } catch (e) {
+                    alert(langDict.noDataInCode);
+                    _tempImportedSettings = null;
+                    return;
+                }
+
+                const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
+                const dataSources = {
+                    heroFavorites: { name: langDict.setting_heroFavorites, count: (_tempImportedSettings.heroFavorites ? JSON.parse(_tempImportedSettings.heroFavorites) : []).length },
+                    savedTeams: { name: langDict.setting_savedTeams, count: (_tempImportedSettings.savedTeams ? JSON.parse(_tempImportedSettings.savedTeams) : []).length },
+                    favoriteColors: { name: langDict.setting_favoriteColors, count: (_tempImportedSettings.favoriteColors ? JSON.parse(_tempImportedSettings.favoriteColors) : []).length },
+                    otherSettings: { name: langDict.setting_otherSettings, count: otherSettingKeys.filter(key => _tempImportedSettings[key] !== undefined).length }
+                };
+
+                const hasDataToImport = Object.values(dataSources).some(item => item.count > 0);
+                if (!hasDataToImport) {
+                    alert(langDict.noDataInCode); return;
+                }
+
+                let checkboxesHTML = Object.entries(dataSources).map(([key, { name, count }]) => {
+                    if (count > 0) return `<div style="margin-bottom: 0.5rem;"><label style="cursor:pointer;"><input type="checkbox" class="import-item-checkbox" data-key="${key}" checked> ${name} <span style="color: var(--md-sys-color-outline);">(${count})</span></label></div>`;
+                    return '';
+                }).join('');
+
+                const optionsContainer = document.getElementById('import-options-container');
+                optionsContainer.innerHTML = `
+                <p><strong>${langDict.importItems}</strong></p>
+                <div><label style="cursor:pointer; font-weight: bold;"><input type="checkbox" id="import-select-all" checked> ${langDict.selectAll}</label></div>
+                <hr class="divider" style="margin: 0.75rem 0;">
+                ${checkboxesHTML}
+                <div style="margin-top: 1.5rem;"><label style="display: flex; align-items: flex-start; cursor: pointer;"><input type="radio" name="import-mode" value="append" checked style="margin-top: 4px; margin-right: 8px;"><div><strong>${langDict.importModeAppend.split(/：|:/)[0]}</strong><span style="display: block; font-size: 0.9em; color: var(--md-sys-color-on-surface-variant);">${langDict.importModeAppend.split(/：|:/)[1]}</span></div></label></div>
+                <div style="margin-top: 0.5rem;"><label style="display: flex; align-items: flex-start; cursor: pointer;"><input type="radio" name="import-mode" value="overwrite" style="margin-top: 4px; margin-right: 8px;"><div><strong>${langDict.importModeOverwrite.split(/：|:/)[0]}</strong><span style="display: block; font-size: 0.9em; color: var(--md-sys-color-on-surface-variant);">${langDict.importModeOverwrite.split(/：|:/)[1]}</span></div></label></div>
+                <div class="multi-select-footer" style="justify-content:center;"><button class="action-button" id="confirm-import-btn">${langDict.importSelected}</button></div>
+            `;
+                optionsContainer.classList.remove('hidden');
+            }
+            else if (target.id === 'confirm-import-btn') {
+                handleImportConfirm();
+            }
+        });
+
+        // 3. 使用事件委托处理所有内部的【change】事件
+        importModalContent.addEventListener('change', (event) => {
+            const target = event.target;
+
+            if (target.id === 'file-importer-input') {
+                const file = target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    document.getElementById('import-settings-textarea').value = e.target.result;
+                    document.getElementById('analyze-import-code-btn').click();
+                };
+                reader.onerror = () => alert('读取文件时发生错误。');
+                reader.readAsText(file);
+                target.value = null; // 重置以便可以再次选择同名文件
+            }
+            else if (target.id === 'import-select-all') {
+                document.querySelectorAll('.import-item-checkbox').forEach(cb => cb.checked = target.checked);
+            }
+            else if (target.classList.contains('import-item-checkbox')) {
+                document.getElementById('import-select-all').checked = Array.from(document.querySelectorAll('.import-item-checkbox')).every(c => c.checked);
+            }
+        });
+    }
+    function openExportModal() {
+        const exportModal = document.getElementById('export-settings-modal');
+        const exportModalOverlay = document.getElementById('export-settings-modal-overlay');
+        const exportModalContent = document.getElementById('export-settings-modal-content');
+        if (!exportModal || !exportModalOverlay || !exportModalContent) return;
+
+        closeFiltersModal();
+
+        const langDict = i18n[currentLang];
+        const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
+
+        const dataSources = {
+            heroFavorites: { name: langDict.setting_heroFavorites, count: (localStorage.getItem('heroFavorites') ? JSON.parse(localStorage.getItem('heroFavorites')) : []).length, storage: 'localStorage' },
+            savedTeams: { name: langDict.setting_savedTeams, count: (getCookie('savedTeams') ? JSON.parse(getCookie('savedTeams')) : []).length, storage: 'cookie' },
+            favoriteColors: { name: langDict.setting_favoriteColors, count: (getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : []).length, storage: 'cookie' },
+            otherSettings: { name: langDict.setting_otherSettings, count: otherSettingKeys.filter(key => getCookie(key) !== null).length, storage: 'cookie' }
+        };
+
+        if (!Object.values(dataSources).some(item => item.count > 0)) {
+            alert(langDict.noDataToExport);
+            return;
+        }
+
+        let checkboxesHTML = Object.entries(dataSources).map(([key, { name, count }]) => {
+            if (count > 0) {
+                return `<div style="margin-bottom: 0.5rem;"><label style="cursor:pointer;"><input type="checkbox" class="export-item-checkbox" data-key="${key}" checked> ${name} <span style="color: var(--md-sys-color-outline);">(${count})</span></label></div>`;
+            }
+            return '';
+        }).join('');
+
+        exportModalContent.innerHTML = `
+        <div class="multi-select-header"><h3>${langDict.exportModalTitle}</h3><button class="close-btn" id="close-export-modal-btn">✖</button></div>
+        <p>${langDict.exportItems}</p>
+        <div style="margin: 1rem 0;">
+            <div><label style="cursor:pointer; font-weight: bold;"><input type="checkbox" id="export-select-all" checked> ${langDict.selectAll}</label></div>
+            <hr class="divider" style="margin: 0.75rem 0;">
+            ${checkboxesHTML}
+        </div>
+        <div id="export-result-container" class="hidden" style="margin-top:1.5rem;">
+            <p><strong>${langDict.exportResultTitle}</strong></p>
+            <textarea id="export-code-textarea" readonly style="width: 100%; height: 100px; resize: vertical;"></textarea>
+        </div>
+        <div class="multi-select-footer">
+            <button class="action-button" id="generate-export-code-btn">${langDict.exportSelected}</button>
+            <button class="action-button hidden" id="save-to-file-btn">${langDict.saveToFile}</button>
+        </div>
+    `;
+
+        exportModal.classList.remove('hidden');
+        exportModalOverlay.classList.remove('hidden');
+
+        history.pushState({ modal: 'exportSettings' }, null);
+        modalStack.push('exportSettings');
+    }
+
+    function openImportModal() {
+        const importModal = document.getElementById('import-settings-modal');
+        const importModalOverlay = document.getElementById('import-settings-modal-overlay');
+        const importModalContent = document.getElementById('import-settings-modal-content');
+        if (!importModal) return;
+
+        closeFiltersModal();
+
+        _tempImportedSettings = null;
+        const langDict = i18n[currentLang];
+
+        importModalContent.innerHTML = `
+        <div class="multi-select-header"><h3>${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn">✖</button></div>
+        <p>${langDict.importInstructions}</p>
+        <textarea id="import-settings-textarea" style="width: 100%; height: 120px; resize: vertical;"></textarea>
+        
+        <input type="file" id="file-importer-input" class="hidden" accept=".txt,text/plain">
+
+        <div class="multi-select-footer" style="justify-content: center; gap: 1rem;">
+            <button class="action-button" id="import-from-file-btn">${langDict.importFromFile}</button>
+            <button class="action-button" id="analyze-import-code-btn">${langDict.analyzeCode}</button>
+        </div>
+        <div id="import-options-container" class="hidden" style="margin-top:1rem;"></div>
+    `;
+
+        importModal.classList.remove('hidden');
+        importModalOverlay.classList.remove('hidden');
+
+        history.pushState({ modal: 'importSettings' }, null);
+        modalStack.push('importSettings');
+    }
+
+    function handleImportConfirm() {
+        const langDict = i18n[currentLang];
+        if (!_tempImportedSettings) {
+            alert(langDict.importError);
+            return;
+        }
+
+        const mode = document.querySelector('input[name="import-mode"]:checked').value;
+        const counters = { favorites: 0, teams: 0, colors: 0 };
+        const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
+
+        const selectedKeys = new Set();
+        document.querySelectorAll('.import-item-checkbox:checked').forEach(cb => selectedKeys.add(cb.dataset.key));
+
+        // 如果勾选了“其他设置”，则将所有相关键名加入
+        if (selectedKeys.has('otherSettings')) {
+            otherSettingKeys.forEach(key => selectedKeys.add(key));
+        }
+
+        for (const key of selectedKeys) {
+            if (!_tempImportedSettings.hasOwnProperty(key)) continue;
+
+            const importedValueStr = _tempImportedSettings[key];
+
+            switch (key) {
+                case 'heroFavorites':
+                    if (mode === 'append') {
+                        const existingArray = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
+                        const importedArray = JSON.parse(importedValueStr);
+                        const originalSize = new Set(existingArray).size;
+                        const mergedSet = new Set([...existingArray, ...importedArray]);
+                        counters.favorites = mergedSet.size - originalSize;
+                        localStorage.setItem(key, JSON.stringify(Array.from(mergedSet)));
+                    } else {
+                        localStorage.setItem(key, importedValueStr);
+                    }
+                    break;
+                case 'savedTeams':
+                case 'favoriteColors':
+                    if (mode === 'append') {
+                        const existingCookie = getCookie(key);
+                        const existingArray = existingCookie ? JSON.parse(existingCookie) : [];
+                        const importedArray = JSON.parse(importedValueStr);
+                        if (key === 'savedTeams') {
+                            const existingNames = new Set(existingArray.map(t => t.name));
+                            importedArray.forEach(team => { if (team.name && !existingNames.has(team.name)) { existingArray.push(team); counters.teams++; } });
+                            setCookie(key, JSON.stringify(existingArray), 365);
+                        } else {
+                            const originalSize = new Set(existingArray).size;
+                            const mergedSet = new Set([...existingArray, ...importedArray]);
+                            counters.colors = mergedSet.size - originalSize;
+                            setCookie(key, JSON.stringify(Array.from(mergedSet)), 365);
+                        }
+                    } else {
+                        setCookie(key, importedValueStr, 365);
+                    }
+                    break;
+                default:
+                    if (otherSettingKeys.includes(key)) {
+                        setCookie(key, importedValueStr, 365);
+                    }
+                    break;
+            }
+        }
+        _tempImportedSettings = null; // 清理临时数据
+        document.getElementById('import-settings-modal').classList.add('hidden');
+        document.getElementById('import-settings-modal-overlay').classList.add('hidden');
+        alert(langDict.importSettingsSuccess(mode, counters));
+        window.location.reload();
+    }
+
+
     function addEventListeners() {
+
+        // --- 为导出/导入按钮添加监听器 ---
+        const exportSettingsBtn = document.getElementById('export-settings-btn');
+        if (exportSettingsBtn) {
+            exportSettingsBtn.addEventListener('click', openExportModal);
+        } else {
+            console.error("严重错误 - 未找到 “导出设置” 按钮 (#export-settings-btn)!");
+        }
+
+        const importSettingsBtn = document.getElementById('import-settings-btn');
+        if (importSettingsBtn) {
+            importSettingsBtn.addEventListener('click', openImportModal);
+        } else {
+            console.error("严重错误 - 未找到 “导入设置” 按钮 (#import-settings-btn)!");
+        }
         const lbTalentHelpBtn = document.getElementById('lb-talent-help-btn');
         const lbTalentHelpModal = document.getElementById('lb-talent-help-modal');
         const lbTalentHelpModalOverlay = document.getElementById('lb-talent-help-modal-overlay');
@@ -3529,7 +3918,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 toggleFavorite(hero);
                                 target.textContent = isFavorite(hero) ? '★' : '☆';
                                 target.classList.toggle('favorited', isFavorite(hero));
-                                if (filterInputs.filterScope.value === 'favorites') {
+                                // 使用新的 multiSelectFilters 变量来判断当前的筛选范围
+                                if (multiSelectFilters.filterScope && multiSelectFilters.filterScope[0] === 'favorites') {
                                     applyFiltersAndRender();
                                 }
                             }
@@ -3760,6 +4150,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else if (lastOpenModalId === 'lbTalentHelp') {
                     if (lbTalentHelpModal) { lbTalentHelpModal.classList.add('hidden'); lbTalentHelpModal.classList.remove('stacked-modal'); }
                     if (lbTalentHelpModalOverlay) { lbTalentHelpModalOverlay.classList.add('hidden'); lbTalentHelpModalOverlay.classList.remove('stacked-modal-overlay'); }
+                } else if (lastOpenModalId === 'exportSettings') {
+                    const modal = document.getElementById('export-settings-modal');
+                    const overlay = document.getElementById('export-settings-modal-overlay');
+                    if (modal) modal.classList.add('hidden');
+                    if (overlay) overlay.classList.add('hidden');
+                } else if (lastOpenModalId === 'importSettings') {
+                    const modal = document.getElementById('import-settings-modal');
+                    const overlay = document.getElementById('import-settings-modal-overlay');
+                    if (modal) modal.classList.add('hidden');
+                    if (overlay) overlay.classList.add('hidden');
                 }
                 if (modalStack.length === 0) document.body.classList.remove('modal-open');
                 return;
@@ -3780,6 +4180,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         window.addEventListener('resize', adjustStickyHeaders);
         addChatSimulatorEventListeners();
+        initializeExportModalListeners();
+        initializeImportModalListeners();
     }
 
     async function initializeApp() {

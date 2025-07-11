@@ -491,6 +491,8 @@
             </div>
         </div>
         <div class="filter-actions">
+            <button id="export-settings-btn" class="action-button" data-lang-key="exportSettings">导出设置</button>
+            <button id="import-settings-btn" class="action-button" data-lang-key="importSettings">导入设置</button>
             <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
             <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>
             <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
@@ -514,6 +516,16 @@
     <div id="image-modal" class="hidden">
         <img id="image-modal-content" src="" alt="Farming Guide">
         <button id="image-modal-close-btn" title="Close">✖</button>
+    </div>
+    <div id="import-settings-modal-overlay" class="hidden"></div>
+    <div id="import-settings-modal" class="hidden">
+        <div id="import-settings-modal-content">
+        </div>
+    </div>
+    <div id="export-settings-modal-overlay" class="hidden"></div>
+    <div id="export-settings-modal" class="hidden">
+        <div id="export-settings-modal-content">
+        </div>
     </div>
 
     <div class="floating-action-buttons">

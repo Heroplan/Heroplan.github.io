@@ -3446,8 +3446,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const exportModalContent = document.getElementById('export-settings-modal-content');
         if (!exportModal || !exportModalOverlay || !exportModalContent) return;
 
-        closeFiltersModal();
-
         const langDict = i18n[currentLang];
         const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
 
@@ -3500,8 +3498,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const importModalOverlay = document.getElementById('import-settings-modal-overlay');
         const importModalContent = document.getElementById('import-settings-modal-content');
         if (!importModal) return;
-
-        closeFiltersModal();
 
         _tempImportedSettings = null;
         const langDict = i18n[currentLang];

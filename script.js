@@ -340,80 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let hsv = { h: 0, s: 1, v: 1 }; // Hue: 0-1, Saturation: 0-1, Value: 0-1
     const emojiList = ['smile', 'grin', 'lol', 'rofl', 'sad', 'crying', 'blush', 'rolleyes', 'kiss', 'love', 'geek', 'monocle', 'think', 'tongue', 'cool', 'horror', 'angry', 'evil', 'hand', 'thumbsup', 'thumbsdown', 'hankey', 'ham', 'alien', 'ghost', 'richard', 'mage', 'magered', 'staff', 'heart', 'heartblue', 'heartgreen', 'heartyellow', 'heartpurple', 'pizza', 'cake', 'donut', 'coffee', 'sword', 'swords', 'axe', 'axes', 'hammer', 'helmet', 'skull', 'bunny', 'cat', 'catgrey', 'dog', 'butterfly', 'butterflyblue', 'fox', 'flower', 'sunflower', 'palmtree', 'splash', 'teardrop', 'fire', 'lightning', 'star', 'elementfire', 'elementice', 'elementnature', 'elementholy', 'elementdark'];
 
-    function isOnlyFavoritesFilterActive() {
-        // 1. 检查筛选范围是否为“收藏”
-        if (!multiSelectFilters.filterScope || multiSelectFilters.filterScope[0] !== 'favorites') {
-            return false;
-        }
-
-        // 2. 检查所有文本输入框是否为空
-        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
-            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
-            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
-            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
-            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
-            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
-            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
-            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
-            return false;
-        }
-
-        // 3. 检查除 filterScope 之外的其他多选筛选器是否为空
-        for (const key in multiSelectFilters) {
-            if (key === 'filterScope') continue; // 跳过 filterScope 本身
-            if (multiSelectFilters[key] && multiSelectFilters[key].length > 0) {
-                return false;
-            }
-        }
-
-        // 4. 检查临时的日期或收藏筛选是否激活
-        // 当通过“打开收藏”按钮触发时，temporaryFavorites 为 null，这是正确的
-        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
-            return false;
-        }
-
-        // 所有其他筛选都未激活，只有收藏筛选是激活的
-        return true;
-    }
-    function areFiltersActive() {
-        // 1. 检查所有文本输入框和未改造的筛选器
-        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
-            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
-            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
-            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
-            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
-            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
-            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
-            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
-            return true;
-        }
-
-        // 2. 检查所有新的多选筛选器
-        for (const key in multiSelectFilters) {
-            const selectedValues = multiSelectFilters[key];
-
-            // 对于“筛选范围”，如果它的值不是默认的 'all'，则视为激活状态
-            if (key === 'filterScope') {
-                if (selectedValues.length > 0 && selectedValues[0] !== 'all') {
-                    return true;
-                }
-            }
-            // 对于其他多选筛选器，只要有任何选择，就视为激活状态
-            else {
-                if (selectedValues.length > 0) {
-                    return true;
-                }
-            }
-        }
-
-        // 3. 检查临时的日期或收藏筛选是否激活
-        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
-            return true;
-        }
-
-        // 如果以上所有条件都不满足，则说明没有任何筛选被激活
-        return false;
-    }
+    
 
     function applyLanguage(lang) {
         if (lang === 'cn') {
@@ -1262,24 +1189,128 @@ document.addEventListener('DOMContentLoaded', function () {
             evaluate(lowerCaseQuery, dataAsArray.join(' '));
     }
 
+    function areFiltersActive() {
+        // 1. 检查所有文本输入框和未改造的筛选器
+        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
+            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
+            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
+            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
+            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
+            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
+            return true;
+        }
+
+        // 2. 检查所有新的多选筛选器
+        for (const key in multiSelectFilters) {
+            const selectedValues = multiSelectFilters[key];
+
+            // 对于“筛选范围”，如果它的值不是默认的 'all'，则视为激活状态
+            if (key === 'filterScope') {
+                if (selectedValues.length > 0 && selectedValues[0] !== 'all') {
+                    return true;
+                }
+            }
+            // 对于其他多选筛选器，只要有任何选择，就视为激活状态
+            else {
+                if (selectedValues.length > 0) {
+                    return true;
+                }
+            }
+        }
+
+        // 3. 检查临时的日期或收藏筛选是否激活
+        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
+            return true;
+        }
+
+        // 如果以上所有条件都不满足，则说明没有任何筛选被激活
+        return false;
+    }
+
+    /**
+     * 检查是否仅有指定的筛选范围 (scope) 被激活，而无任何其他筛选条件。
+     * @param {string} scopeName - 要检查的筛选范围名称, e.g., 'favorites', 'hero', 'skin'.
+     * @returns {boolean}
+     */
+    function isOnlySpecificScopeFilterActive(scopeName) {
+        // 1. 检查筛选范围是否为传入的 scopeName
+        if (!multiSelectFilters.filterScope || multiSelectFilters.filterScope[0] !== scopeName) {
+            return false;
+        }
+
+        // 2. 检查所有文本输入框是否为空 (这部分逻辑是共享的)
+        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
+            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
+            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
+            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
+            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
+            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
+            return false;
+        }
+
+        // 3. 检查除 filterScope 之外的其他多选筛选器是否为空 (这部分逻辑是共享的)
+        for (const key in multiSelectFilters) {
+            if (key === 'filterScope') continue; // 跳过 filterScope 本身
+            if (multiSelectFilters[key] && multiSelectFilters[key].length > 0) {
+                return false;
+            }
+        }
+
+        // 4. 检查临时的日期或收藏筛选是否激活 (这部分逻辑是共享的)
+        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
+            return false;
+        }
+
+        // 如果通过所有检查，说明只有指定的 scope 筛选被激活
+        return true;
+    }
 
     function updateResultsHeader() {
         const langDict = i18n[currentLang];
         const count = filteredHeroes.length;
         const filtersAreActive = areFiltersActive();
-        const onlyFavoritesIsActive = isOnlyFavoritesFilterActive(); // 调用新的辅助函数
+
+        // --- 核心修改：调用新的通用函数 ---
+        const onlyFavoritesIsActive = isOnlySpecificScopeFilterActive('favorites');
+        const onlyHeroIsActive = isOnlySpecificScopeFilterActive('hero');
+        const onlyCostumeIsActive = isOnlySpecificScopeFilterActive('skin');
 
         if (resultsCountEl) {
-            // 优先处理“仅收藏”的特殊情况
+            // 清空现有内容
+            resultsCountEl.innerHTML = '';
+
+            let message = '';
+            let showResetButton = false;
+
+            // 判断逻辑保持不变
             if (onlyFavoritesIsActive) {
-                if (count > 0) {
-                    // 当收藏列表不为空时
-                    resultsCountEl.innerHTML = `<span>${langDict.favoritesListCount(count)}</span>`;
-                } else {
-                    // 当收藏列表为空时
-                    resultsCountEl.innerHTML = `<span>${langDict.favoritesListEmpty}</span>`;
-                }
-                // 同样添加重置按钮
+                message = (count > 0) ? langDict.favoritesListCount(count) : langDict.favoritesListEmpty;
+                showResetButton = true;
+            } else if (onlyHeroIsActive) {
+                message = langDict.resultsCountTextHeroOnly(count);
+                showResetButton = true;
+            } else if (onlyCostumeIsActive) {
+                message = langDict.resultsCountTextCostumeOnly(count);
+                showResetButton = true;
+            } else if (filtersAreActive) {
+                message = langDict.resultsCountTextFiltered(count);
+                showResetButton = true;
+            } else {
+                message = langDict.resultsCountTextUnfiltered(count);
+                showResetButton = false;
+            }
+
+            // 设置主信息
+            const messageSpan = document.createElement('span');
+            messageSpan.innerHTML = message;
+            resultsCountEl.appendChild(messageSpan);
+
+            // 如果需要，添加重置按钮
+            if (showResetButton) {
                 const resetTag = document.createElement('span');
                 resetTag.className = 'reset-tag';
                 resetTag.textContent = langDict.resultsReset;
@@ -1288,26 +1319,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (resetFiltersBtn) resetFiltersBtn.click();
                 };
                 resultsCountEl.appendChild(resetTag);
-            }
-            // 其次处理其他筛选被激活的情况
-            else if (filtersAreActive) {
-                resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextFiltered(count)}</span>`;
-                const resetTag = document.createElement('span');
-                resetTag.className = 'reset-tag';
-                resetTag.textContent = langDict.resultsReset;
-                resetTag.onclick = (e) => {
-                    e.preventDefault();
-                    if (resetFiltersBtn) resetFiltersBtn.click();
-                };
-                resultsCountEl.appendChild(resetTag);
-            }
-            // 最后处理没有任何筛选的情况
-            else {
-                resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextUnfiltered(count)}</span>`;
             }
         }
     }
-
+    
     function applyFiltersAndRender() {
         const nameFilter = filterInputs.name ? filterInputs.name.value.trim().toLowerCase() : '';
         const effectsFilter = filterInputs.effects ? filterInputs.effects.value.trim() : '';

@@ -571,7 +571,7 @@ const i18n = {
         footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",
         resultsCountTextFiltered: (count) => `Found ${count} heroes in the filtered list`,
         resultsCountTextUnfiltered: (count) => `There are ${count} heroes in game (Included Costumes)`,
-        resultsCountTextHeroOnly: (count) => `There are ${count} Heroes in game(Excluded Costumes)`,
+        resultsCountTextHeroOnly: (count) => `There are ${count} Heroes in game (Excluded Costumes)`,
         resultsCountTextCostumeOnly: (count) => `There are ${count} Costumes in game`,
         favoritesListCount: (count) => `There are ${count} heroes in the favorites list`,
         favoritesListEmpty: "Favorites list is empty. Please add heroes or reset filters",

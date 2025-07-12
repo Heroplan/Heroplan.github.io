@@ -1890,17 +1890,62 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // 辅助函数：获取格式化的技能类型文本
+    // 辅助函数：获取格式化的技能类型文本
     function getSkillTypesText(hero) {
         if (!hero) return '';
         const skillTypeSource = filterInputs.skillTypeSource ? filterInputs.skillTypeSource.value : 'both';
         let typesToShow = [];
+
+        // 步骤 1: 根据筛选源获取所有技能类别 (这部分逻辑不变)
         if (skillTypeSource === 'heroplan') {
-            typesToShow = hero.types || [];
+            typesToShow = hero.types ? [...hero.types] : [];
         } else if (skillTypeSource === 'nynaeve') {
-            typesToShow = hero.skill_types || [];
+            typesToShow = hero.skill_types ? [...hero.skill_types] : [];
         } else {
+            // 合并并去重
             typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
         }
+
+        // 步骤 2: 【核心修改】对获取到的技能类别进行排序
+        // 这个排序逻辑与底部汇总标签的逻辑完全一致
+        typesToShow.sort((a, b) => {
+            // 定义一个内部函数，用于获取排序所依赖的英文键名
+            const getEnglishKey = (tag) => {
+                if (currentLang === 'cn') {
+                    return reverseSkillTypeMap_cn[tag] || tag;
+                }
+                if (currentLang === 'tc') {
+                    return reverseSkillTypeMap_tc[tag] || tag;
+                }
+                return tag; // 如果当前是英文或找不到翻译，则直接使用原标签
+            };
+
+            const englishA = getEnglishKey(a);
+            const englishB = getEnglishKey(b);
+
+            // 从 nynaeveSkillTypeOrder 数组中查找索引
+            const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+            const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
+
+            // 如果两个标签都能在排序标准中找到，则按索引排序
+            if (indexA !== -1 && indexB !== -1) {
+                return indexA - indexB;
+            }
+            // 如果只有 A 能找到，A 排在前面
+            if (indexA !== -1) {
+                return -1;
+            }
+            // 如果只有 B 能找到，B 排在前面
+            if (indexB !== -1) {
+                return 1;
+            }
+            // 如果都找不到，则按当前语言的默认字符顺序排序 (例如中文按拼音/笔画)
+            const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[currentLang];
+            const options = currentLang === 'tc' ? { collation: 'stroke' } : {};
+            return a.localeCompare(b, locale, options);
+        });
+
+        // 步骤 3: 将排序后的数组格式化为最终的字符串 (这部分逻辑不变)
         return typesToShow.filter(Boolean).join(', ');
     }
     // ========== 独立的动态高度调整函数 ==========

@@ -340,6 +340,41 @@ document.addEventListener('DOMContentLoaded', function () {
     let hsv = { h: 0, s: 1, v: 1 }; // Hue: 0-1, Saturation: 0-1, Value: 0-1
     const emojiList = ['smile', 'grin', 'lol', 'rofl', 'sad', 'crying', 'blush', 'rolleyes', 'kiss', 'love', 'geek', 'monocle', 'think', 'tongue', 'cool', 'horror', 'angry', 'evil', 'hand', 'thumbsup', 'thumbsdown', 'hankey', 'ham', 'alien', 'ghost', 'richard', 'mage', 'magered', 'staff', 'heart', 'heartblue', 'heartgreen', 'heartyellow', 'heartpurple', 'pizza', 'cake', 'donut', 'coffee', 'sword', 'swords', 'axe', 'axes', 'hammer', 'helmet', 'skull', 'bunny', 'cat', 'catgrey', 'dog', 'butterfly', 'butterflyblue', 'fox', 'flower', 'sunflower', 'palmtree', 'splash', 'teardrop', 'fire', 'lightning', 'star', 'elementfire', 'elementice', 'elementnature', 'elementholy', 'elementdark'];
 
+    function isOnlyFavoritesFilterActive() {
+        // 1. 检查筛选范围是否为“收藏”
+        if (!multiSelectFilters.filterScope || multiSelectFilters.filterScope[0] !== 'favorites') {
+            return false;
+        }
+
+        // 2. 检查所有文本输入框是否为空
+        if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
+            (filterInputs.types && filterInputs.types.value.trim() !== '') ||
+            (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
+            (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
+            (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+            (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+            (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
+            (filterInputs.health && filterInputs.health.value.trim() !== '')) {
+            return false;
+        }
+
+        // 3. 检查除 filterScope 之外的其他多选筛选器是否为空
+        for (const key in multiSelectFilters) {
+            if (key === 'filterScope') continue; // 跳过 filterScope 本身
+            if (multiSelectFilters[key] && multiSelectFilters[key].length > 0) {
+                return false;
+            }
+        }
+
+        // 4. 检查临时的日期或收藏筛选是否激活
+        // 当通过“打开收藏”按钮触发时，temporaryFavorites 为 null，这是正确的
+        if (temporaryDateFilter !== null || temporaryFavorites !== null) {
+            return false;
+        }
+
+        // 所有其他筛选都未激活，只有收藏筛选是激活的
+        return true;
+    }
     function areFiltersActive() {
         // 1. 检查所有文本输入框和未改造的筛选器
         if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
@@ -1232,9 +1267,30 @@ document.addEventListener('DOMContentLoaded', function () {
         const langDict = i18n[currentLang];
         const count = filteredHeroes.length;
         const filtersAreActive = areFiltersActive();
+        const onlyFavoritesIsActive = isOnlyFavoritesFilterActive(); // 调用新的辅助函数
 
         if (resultsCountEl) {
-            if (filtersAreActive) {
+            // 优先处理“仅收藏”的特殊情况
+            if (onlyFavoritesIsActive) {
+                if (count > 0) {
+                    // 当收藏列表不为空时
+                    resultsCountEl.innerHTML = `<span>${langDict.favoritesListCount(count)}</span>`;
+                } else {
+                    // 当收藏列表为空时
+                    resultsCountEl.innerHTML = `<span>${langDict.favoritesListEmpty}</span>`;
+                }
+                // 同样添加重置按钮
+                const resetTag = document.createElement('span');
+                resetTag.className = 'reset-tag';
+                resetTag.textContent = langDict.resultsReset;
+                resetTag.onclick = (e) => {
+                    e.preventDefault();
+                    if (resetFiltersBtn) resetFiltersBtn.click();
+                };
+                resultsCountEl.appendChild(resetTag);
+            }
+            // 其次处理其他筛选被激活的情况
+            else if (filtersAreActive) {
                 resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextFiltered(count)}</span>`;
                 const resetTag = document.createElement('span');
                 resetTag.className = 'reset-tag';
@@ -1244,7 +1300,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (resetFiltersBtn) resetFiltersBtn.click();
                 };
                 resultsCountEl.appendChild(resetTag);
-            } else {
+            }
+            // 最后处理没有任何筛选的情况
+            else {
                 resultsCountEl.innerHTML = `<span>${langDict.resultsCountTextUnfiltered(count)}</span>`;
             }
         }
@@ -1519,6 +1577,24 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
     }
     /**
+     * 根据当前历史状态智能地设置主视图的历史记录。
+     * 如果当前已在主视图中，则替换状态；否则，添加新状态。
+     * @param {string} viewName - 要设置的新视图名称 ('wanted', 'farming', 'chat', 'teamSimulator')。
+     */
+    function setMainViewHistory(viewName) {
+        const mainViews = [ 'wanted', 'farming', 'chat', 'teamSimulator'];
+        const currentState = history.state || {};
+
+        if (currentState.view && mainViews.includes(currentState.view)) {
+            // 如果当前已在一个主视图中，则替换历史状态
+            history.replaceState({ view: viewName }, '');
+        } else {
+            // 否则（例如首次进入或从弹窗返回），则添加新的历史状态
+            history.pushState({ view: viewName }, '');
+        }
+    }
+
+    /**
      * 控制队伍模拟器的显示和隐藏
      */
     function toggleTeamSimulator() {
@@ -1557,7 +1633,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 sharedTeamsTabBtn.classList.remove('active'); // 移除“分享的队伍”标签的激活状态
                 renderSavedTeams(getSavedTeams(), false); // 渲染保存的队伍
             }
-            history.pushState({ view: 'teamSimulator' }, '');
+            // 【核心修改】调用新的历史记录处理函数
+            setMainViewHistory('teamSimulator');
 
         } else {
             // --- 关闭模拟器时的逻辑 ---
@@ -2293,7 +2370,8 @@ document.addEventListener('DOMContentLoaded', function () {
         resultsCountEl.appendChild(returnTag);
 
         setTimeout(adjustStickyHeaders, 0);
-        history.pushState({ view: 'wanted' }, '');
+        // 【核心修改】调用新的历史记录处理函数
+        setMainViewHistory('wanted');
     }
 
     function initAndShowFarmingGuideView() {
@@ -2357,7 +2435,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         setTimeout(adjustStickyHeaders, 0);
-        history.pushState({ view: 'farming' }, '');
+        // 【核心修改】调用新的历史记录处理函数
+        setMainViewHistory('farming');
     }
 
     function applyHighlight(cell) {
@@ -2947,7 +3026,8 @@ document.addEventListener('DOMContentLoaded', function () {
         resultsCountEl.appendChild(returnTag);
 
         setTimeout(adjustStickyHeaders, 0);
-        history.pushState({ view: 'chat' }, '');
+        // 【核心修改】调用新的历史记录处理函数
+        setMainViewHistory('chat');
     }
 
     function addChatSimulatorEventListeners() {
@@ -3593,7 +3673,6 @@ document.addEventListener('DOMContentLoaded', function () {
         alert(langDict.importSettingsSuccess(mode, counters));
         window.location.reload();
     }
-
 
     function addEventListeners() {
 

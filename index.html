@@ -33,8 +33,19 @@
             const localAssets = [
                 { selector: 'link[href="style.css"]', attribute: 'href' },
                 { selector: 'link[href="talent-tree.css"]', attribute: 'href' },
-                { selector: 'script[src="./script.js"]', attribute: 'src' },
                 { selector: 'script[src="./talent-tree.js"]', attribute: 'src' },
+                { selector: 'script[src="./language.js"]', attribute: 'src' },
+                { selector: 'script[src="./data.js"]', attribute: 'src' },
+                { selector: 'script[src="./utils.js"]', attribute: 'src' },
+                { selector: 'script[src="./state.js"]', attribute: 'src' },
+                { selector: 'script[src="./ui.js"]', attribute: 'src' },
+                { selector: 'script[src="./filters.js"]', attribute: 'src' },
+                { selector: 'script[src="./render.js"]', attribute: 'src' },
+                { selector: 'script[src="./special-views.js"]', attribute: 'src' },
+                { selector: 'script[src="./team-simulator.js"]', attribute: 'src' },
+                { selector: 'script[src="./chat-simulator.js"]', attribute: 'src' },
+                { selector: 'script[src="./import-export.js"]', attribute: 'src' },
+                { selector: 'script[src="./main.js"]', attribute: 'src' }
             ];
 
             // 延迟执行，确保DOM元素已加载
@@ -100,7 +111,8 @@
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
                 <div class="header-buttons">
                     <button id="show-team-simulator-btn" class="theme-toggle-btn" title="队伍模拟器">
-                        <img src="imgs/event/war.png" alt="队伍模拟器" style="width: 28px; height: 28px; object-fit: contain;">
+                        <img src="imgs/event/war.png" alt="队伍模拟器"
+                            style="width: 28px; height: 28px; object-fit: contain;">
                     </button>
                     <button id="show-chat-simulator-btn" class="theme-toggle-btn" title="聊天模拟器">
                         <span style="font-size: 1.5rem;">🎨</span>
@@ -373,7 +385,8 @@
                             <input type="text" id="passives-input" placeholder="">
                         </div>
                         <div class="filter-item">
-                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">一键搜索技能词条</label>
+                            <label for="enable-skill-quick-search-checkbox"
+                                data-lang-key="enableSkillQuickSearchLabel">一键搜索技能词条</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container" style="flex-grow:1;">
                                     <input type="checkbox" id="enable-skill-quick-search-checkbox" checked>
@@ -455,7 +468,8 @@
                                     </div>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="show-lb-talent-details-checkbox" data-lang-key="showLbTalentDetailsLabel">在详情页显示突破天赋</label>
+                                    <label for="show-lb-talent-details-checkbox"
+                                        data-lang-key="showLbTalentDetailsLabel">在详情页显示突破天赋</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="show-lb-talent-details-checkbox" checked>
@@ -535,8 +549,17 @@
     <script src="./language.js" defer></script>
     <script src="./lz-string.min.js" defer></script>
     <script src="./talent-tree.js" defer></script>
-    <script src="./script.js" defer></script>
-
+    <script src="./data.js" defer></script>
+    <script src="./utils.js" defer></script>
+    <script src="./state.js" defer></script>
+    <script src="./ui.js" defer></script>
+    <script src="./filters.js" defer></script>
+    <script src="./render.js" defer></script>
+    <script src="./special-views.js" defer></script>
+    <script src="./team-simulator.js" defer></script>
+    <script src="./chat-simulator.js" defer></script>
+    <script src="./import-export.js" defer></script>
+    <script src="./main.js" defer></script>
 </body>
 <footer>
     <div>

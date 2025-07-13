@@ -3562,3 +3562,126 @@ select.custom-select-hidden {
         display: none;
     }
 }
+
+
+/* --- 【更新】详情页天赋系统布局样式 --- */
+
+/* 桌面端样式 (屏幕宽度大于 768px) */
+@media (min-width: 769px) {
+
+    /* 隐藏移动端专用的选项卡导航 */
+    .mobile-tabs-container {
+        display: none;
+    }
+
+    /* 实现左右并排布局 */
+    .desktop-side-by-side {
+        display: flex;
+        gap: 1rem;
+    }
+
+    /* 让两个面板平分宽度 */
+    .desktop-side-by-side>div {
+        flex: 1;
+        min-width: 0;
+        /* 允许flex item收缩 */
+    }
+
+    /* 显示桌面版的区块标题 */
+    .desktop-only-header {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--md-sys-color-outline);
+    }
+}
+
+/* 移动端样式 (屏幕宽度小于等于 768px) */
+@media (max-width: 768px) {
+
+    /* 隐藏桌面版的区块标题 */
+    .desktop-only-header {
+        display: none;
+    }
+
+    /* 显示并设置选项卡导航样式 */
+    .mobile-tabs-container {
+        display: flex;
+        border-bottom: 1px solid var(--md-sys-color-outline);
+    }
+
+    .tab-link {
+        flex: 1;
+        padding: 0.75rem 0.5rem;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: var(--md-sys-color-on-surface-variant);
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .tab-link.active {
+        color: var(--md-sys-color-primary);
+        border-bottom-color: var(--md-sys-color-primary);
+        font-weight: 700;
+    }
+
+    /* 默认隐藏所有选项卡内容 */
+    .mobile-tab-content {
+        display: none;
+        padding-top: 1rem;
+    }
+
+    /* 只显示激活的选项卡内容 */
+    .mobile-tab-content.active {
+        display: block;
+    }
+}
+
+/* 确保所有可折叠区块的标题样式统一 */
+#modal-talent-system-wrapper .filter-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--md-sys-color-outline);
+}
+#modal-talent-system-wrapper .filter-header h2 {
+    flex-grow: 1;
+    /* 让标题元素占据所有可用的弹性空间 */
+    text-align: center;
+    /* 将标题元素内部的文字居中 */
+    margin: 0 1rem;
+    /* 保证标题和两边的图标有一定间距 */
+}
+
+#modal-talent-system-wrapper .filter-header:first-child {
+    border-top: none;
+}
+
+#modal-talent-system-wrapper .filter-content.collapsed {
+    display: none;
+}
+
+/* --- 【新增】修复详情页内副标题（h3）不居中的问题 --- */
+.desktop-only-header {
+    text-align: center;
+}
+
+/* --- 【新增】队伍模拟器换位模式下空槽位的样式 --- */
+.team-hero-slot .empty-slot-target-icon {
+    font-size: 2rem;
+    color: var(--md-sys-color-primary);
+    opacity: 0.6;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.team-hero-slot:hover .empty-slot-target-icon {
+    opacity: 1;
+}

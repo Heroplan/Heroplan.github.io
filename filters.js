@@ -405,12 +405,10 @@ function matchesComplexQuery(data, query) {
         if (expr.startsWith('[') && expr.endsWith(']')) {
             const term = expr.substring(1, expr.length - 1).trim();
             if (term === '') return true;
-            const escapedTerm = escapeRegExp(term);
-            // 使用兼容Unicode的正则表达式进行全词匹配
-            // (^|[^\p{L}\p{N}_]) 匹配开头或非(字母/数字/下划线)字符
-            // ($|[^\p{L}\p{N}_]) 匹配结尾或非(字母/数字/下划线)字符
-            const regex = new RegExp(`(^|[^\\p{L}\\p{N}_])${escapedTerm}($|[^\\p{L}\\p{N}_])`, 'iu');
-            return regex.test(text);
+
+            // 新逻辑：将文本按分隔符拆分为词条列表，进行精确匹配
+            const effectsList = text.split(/[,;]/).map(effect => effect.trim());
+            return effectsList.includes(term);
         }
 
         // 默认作为普通词语进行包含匹配

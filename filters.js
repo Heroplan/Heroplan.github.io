@@ -311,11 +311,21 @@ function openMultiSelectModal(filterType, title) {
  */
 function normalizeStringForSearch(str) {
     if (typeof str !== 'string') return String(str || '');
+    // 替换全角标点为半角，然后转为小写
     return str.replace(/（/g, '(').replace(/）/g, ')')
         .replace(/【/g, '[').replace(/】/g, ']')
         .replace(/：/g, ':').replace(/；/g, ';')
-        .replace(/，/g, ',').replace(/ /g, ' ')
+        .replace(/，/g, ',').replace(/ /g, ' ') // 全角空格
         .toLowerCase();
+}
+
+/**
+ * 转义字符串中的正则表达式特殊字符。
+ * @param {string} str - 输入字符串。
+ * @returns {string} 转义后的字符串。
+ */
+function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& 表示匹配到的整个字符串
 }
 
 /**
@@ -381,7 +391,7 @@ function matchesComplexQuery(data, query) {
             if (/\s/.test(char) && balance === 0 && !inBracket) {
                 const left = expr.substring(0, i);
                 const right = expr.substring(i + 1);
-                if (left.trim() === '' || right.trim() === '') continue; // 忽略无效分割
+                if (left.trim() === '' || right.trim() === '') continue;
                 return evaluate(left, text) && evaluate(right, text);
             }
         }
@@ -389,12 +399,18 @@ function matchesComplexQuery(data, query) {
         // 优先级 4: 处理 NOT (!) 和原子词 (包括 [])
         if (expr.startsWith('!')) {
             const term = expr.substring(1).trim();
-            // 递归调用evaluate来处理被否定的部分，以支持 !(a|b) 等复杂否定
             return !evaluate(term, text);
         }
 
         if (expr.startsWith('[') && expr.endsWith(']')) {
-            return text.includes(expr.substring(1, expr.length - 1).trim());
+            const term = expr.substring(1, expr.length - 1).trim();
+            if (term === '') return true;
+            const escapedTerm = escapeRegExp(term);
+            // 使用兼容Unicode的正则表达式进行全词匹配
+            // (^|[^\p{L}\p{N}_]) 匹配开头或非(字母/数字/下划线)字符
+            // ($|[^\p{L}\p{N}_]) 匹配结尾或非(字母/数字/下划线)字符
+            const regex = new RegExp(`(^|[^\\p{L}\\p{N}_])${escapedTerm}($|[^\\p{L}\\p{N}_])`, 'iu');
+            return regex.test(text);
         }
 
         // 默认作为普通词语进行包含匹配

@@ -261,7 +261,7 @@ const i18n = {
         filterHeroes: "篩選英雄", standardFilters: "標準篩選", nameLabel: "名稱:", avatarLabel: "頭像", namePlaceholder: "輸入英雄名稱", costumeTypeLabel: "服裝類型:",
         starLabel: "星級:", colorLabel: "顏色:", speedLabel: "法速:", classLabel: "職業:", familyLabel: "家族:",
         sourceLabel: "起源:", aetherPowerLabel: "以太力量:", showEventNameLabel: "顯示活動名稱", filterHeroes: "筛选英雄", 
-        filterScopeLabel: "篩選範圍:",
+        filterScopeLabel: "篩選範圍:", filterScope_all: "全部",
         filterScope_hero: "英雄",
         filterScope_skin: "服裝",
         filterScope_favorites: "收藏", clearSelection: "清空選擇", advancedFilters: "高級篩選",

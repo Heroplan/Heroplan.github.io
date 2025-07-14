@@ -79,7 +79,7 @@ function populateFilters() {
             values = [...new Set(allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
         } else {
             const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
-            values = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== ''))];
+            values = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== '').map(String))];
         }
 
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';

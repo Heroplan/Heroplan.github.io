@@ -101,38 +101,27 @@ function sortSkillTags(tags) {
 }
 
 /**
- * 获取英雄的技能类别数组，用于标签汇总。
+ * 获取英雄的技能类别数组，用于标签汇总 (修改为调用中央函数)。
  * @param {object} hero - 英雄对象。
  * @returns {string[]} 技能类别字符串数组。
  */
 function getSkillTypesArray(hero) {
     if (!hero) return [];
+    // ▼▼▼▼▼【修改】▼▼▼▼▼
     const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
-    let typesToShow = [];
-
-    if (skillTypeSource === 'heroplan') {
-        typesToShow = hero.types || [];
-    } else if (skillTypeSource === 'nynaeve') {
-        typesToShow = hero.skill_types || [];
-    } else {
-        typesToShow = [...new Set([...(hero.types || []), ...(hero.skill_types || [])])];
-    }
-    return typesToShow.filter(Boolean);
+    return getSkillTagsForHero(hero, skillTypeSource);
 }
 
 /**
- * 获取用于显示的格式化、已排序的技能类型文本，用于英雄信息卡。
+ * 获取用于显示的格式化、已排序的技能类型文本，用于英雄信息卡 (修改为调用中央函数)。
  * @param {object} hero - 英雄对象。
  * @returns {string} 逗号分隔的技能类型字符串。
  */
 function getSkillTypesText(hero) {
     if (!hero) return '';
-    let typesToShow = getSkillTypesArray(hero);
-
-    // 【修正】调用新的排序函数
-    typesToShow = sortSkillTags(typesToShow);
-
-    return typesToShow.join(', ');
+    // ▼▼▼▼▼【修改】▼▼▼▼▼
+    const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
+    return getSkillTagsForHero(hero, skillTypeSource).join(', ');
 }
 
 

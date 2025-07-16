@@ -1,4 +1,4 @@
-// filters.js: 处理所有与英雄筛选相关的功能。
+
 
 /**
  * 从 localStorage 获取收藏列表。
@@ -60,66 +60,102 @@ function toggleFavorite(hero) {
     return index === -1;
 }
 
+// ▼▼▼▼▼ 定义四个技能分类的日文排序规则 ▼▼▼▼▼
+const skillTagOrder_base = ["复活", "治疗：即时", "治疗：提高生命", "治疗：持续", "治疗：特殊", "治疗：伤害量", "攻击：单体", "攻击：随机", "攻击：数量变化", "攻击：两侧", "攻击：邻近轻伤", "攻击：范围", "攻击：全体", "攻击：持续伤害"];
+const skillTagOrder_special = ["净化状态异常", "驱散增益", "额外伤害", "额外攻击", "穿透/绕过", "无视闪避", "穿透小兵", "摧毁小兵", "摧毁小兵获得法力", "移除小兵造成伤害", "偷取小兵", "强化小兵", "摧毁恶魔", "连锁", "爆炸", "吞噬粘物", "法力恢复", "法力恢复（击杀）", "法力偷取", "削减法力", "偷取增益", "增益重新分配", "负面效果重新分配", "重置增益回合", "重置负面效果回合", "叠加：持续伤害", "叠加：生命恢复", "叠加：法力生成", "面板：伤害", "面板：生命恢复", "面板：提高伤害", "面板：防御力", "面板：法力生成", "面板：暴击", "通过伤害治疗", "通过小兵治疗", "回溯/偷取技能", "赌博/随机效果"];
+const skillTagOrder_buff = ["攻击力↑", "防御力↑", "暴击率↑", "法力生成↑", "伤害↑", "特殊技能伤害↑", "治疗量↑", "防御↑：火焰", "防御↑：冰霜", "防御↑：自然", "防御↑：神圣", "防御↑：暗黑", "防御↑：特殊技能", "防御↑：恶魔", "伤害↑：火焰", "伤害↑：冰霜", "伤害↑：自然", "伤害↑：神圣", "伤害↑：暗黑", "叠加：攻击力↑", "叠加：防御力↑", "成长：攻击力", "成长：防御力", "反击/反弹", "反弹负面效果", "闪避", "嘲讽", "伤害减免", "伤害分担", "免疫状态异常", "阻止负面效果", "阻止增益驱散", "阻止最大生命值↓", "阻止恶魔", "阻止复活", "潜行/幽灵形态", "拟态", "替换为增益", "恢复", "自我恢复", "自我复活", "复活：施法者", "增益被驱散时造成伤害", "自我减益"];
+const skillTagOrder_debuff = ["攻击力↓", "防御力↓", "命中率↓", "治疗量↓", "受到伤害↑", "法力生成↓/阻止", "最大生命值↓", "防御↓：火焰", "防御↓：冰霜", "防御↓：自然", "防御↓：神圣", "防御↓：暗黑", "防御↓：特殊技能", "攻击力↓：暗黑", "叠加：攻击力↓", "叠加：防御力↓", "叠加：受到伤害↑", "叠加：法力生成↓", "衰退：攻击力", "衰退：防御力", "持续伤害：燃烧", "持续伤害：水", "持续伤害：毒", "持续伤害：流血", "持续伤害：沙", "持续伤害：冰冻", "持续伤害：诅咒", "增益无效化", "天赋技能无效化", "阻止净化", "阻止治疗", "阻止小兵", "混乱/沉默/睡眠", "疯狂", "麻痹", "生命偷取", "法力偷取", "偷取治疗", "替换为负面效果","反弹增益", "减少增益回合", "初始化负面效果回合", "负面效果被净化时造成伤害", "改变颜色/位置"];
+
 /**
  * 填充所有筛选器按钮和选项。
  * 此函数会遍历所有英雄数据，提取出所有唯一的星级、颜色、职业等，并动态创建筛选按钮。
  */
 function populateFilters() {
-    // 定义需要动态生成按钮的筛选器类型
-    const filtersToConvert = ['filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower'];
+    // 这部分构建映射的逻辑不变，请保留
+    state.allHeroes.forEach(hero => {
+        if (Array.isArray(hero.cn_skill_info)) {
+            hero.cn_skill_info.forEach(categoryObject => {
+                const categoryName = Object.keys(categoryObject)[0];
+                const tags = categoryObject[categoryName];
+                if (Array.isArray(tags)) {
+                    tags.forEach(tag => {
+                        if (!state.skillTagToCategoryMap[tag]) {
+                            state.skillTagToCategoryMap[tag] = categoryName;
+                        }
+                    });
+                }
+            });
+        }
+    });
+
+    const filtersToConvert = [
+        'filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower',
+        'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'
+    ];
+
     const langDict = i18n[state.currentLang];
-    const allHeroes = state.allHeroes;
 
     filtersToConvert.forEach(key => {
         let values;
-        // 从所有英雄数据中提取该筛选器的唯一值
+
+        // --- 步骤 1: 仅从数据源收集原始、未排序的标签 ---
         if (key === 'filterScope') {
             values = ['all', 'hero', 'skin', 'favorites'];
         } else if (key === 'costume') {
-            values = [...new Set(allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
+            values = [...new Set(state.allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
+        } else if (key.startsWith('skillTag_')) {
+            const dataKeyMap = { skillTag_base: '基础技能', skillTag_special: '特殊效果', skillTag_buff: '增益效果', skillTag_debuff: '负面效果' };
+            const targetDataKey = dataKeyMap[key];
+            const skillSet = new Set();
+            state.allHeroes.forEach(hero => {
+                if (Array.isArray(hero.cn_skill_info)) {
+                    hero.cn_skill_info.forEach(categoryObject => {
+                        if (categoryObject[targetDataKey]) {
+                            categoryObject[targetDataKey].forEach(tag => skillSet.add(tag));
+                        }
+                    });
+                }
+            });
+            values = [...skillSet];
         } else {
             const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
-            values = [...new Set(allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== '').map(String))];
+            values = [...new Set(state.allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== '').map(String))];
         }
 
+        // --- 步骤 2: 根据 key 的类型，应用唯一的、正确的排序逻辑 ---
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';
         const sortOptions = state.currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
 
-        // 对不同类型的筛选器进行自定义排序
-        if (key === 'speed') {
+        if (key.startsWith('skillTag_')) {
+            const orderMap = { skillTag_base: skillTagOrder_base, skillTag_special: skillTagOrder_special, skillTag_buff: skillTagOrder_buff, skillTag_debuff: skillTagOrder_debuff };
+            const sortOrder = orderMap[key];
+            if (sortOrder) {
+                values.sort((a, b) => {
+                    const indexA = sortOrder.indexOf(a);
+                    const indexB = sortOrder.indexOf(b);
+                    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                    if (indexA !== -1) return -1;
+                    if (indexB !== -1) return 1;
+                    return a.localeCompare(b, locale, sortOptions);
+                });
+            }
+        } else if (key === 'speed') {
             const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[state.currentLang];
             if (speedOrder) values.sort((a, b) => speedOrder.indexOf(a) - speedOrder.indexOf(b));
         } else if (key === 'color') {
             const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[state.currentLang];
             if (colorOrder) values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
-        } else if (key === 'family') {
-            values.sort((a, b) => {
-                const translatedA = state.family_values[String(a).toLowerCase()] || a;
-                const translatedB = state.family_values[String(b).toLowerCase()] || b;
-                return translatedA.localeCompare(translatedB, locale, sortOptions);
-            });
-        } else if (key === 'costume') {
-            const costumeOrder_cn = ['C1', 'C2', '卡通', '玻璃'];
-            const costumeOrder_tc = ['C1', 'C2', '卡通', '玻璃'];
-            const costumeOrder_en = ['C1', 'C2', 'Toon', 'Glass'];
-            const order = { cn: costumeOrder_cn, tc: costumeOrder_tc, en: costumeOrder_en }[state.currentLang] || costumeOrder_en;
-            values.sort((a, b) => {
-                const indexA = order.indexOf(a), indexB = order.indexOf(b);
-                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-                if (indexA !== -1) return -1;
-                if (indexB !== -1) return 1;
-                return a.localeCompare(b);
-            });
         } else {
-            values.sort((a, b) => String(a).localeCompare(String(b), locale));
+            // 其他所有类型都使用默认排序
+            values.sort((a, b) => String(a).localeCompare(String(b), locale, sortOptions));
         }
 
-        // 将排序后的选项和初始筛选状态存入全局 state
+        // --- 步骤 3: 保存最终排序好的数据 ---
         state.availableOptions[key] = values;
-        state.multiSelectFilters[key] = (key === 'filterScope') ? ['all'] : [];
+        state.multiSelectFilters[key] = [];
     });
 
-    // 动态创建筛选器按钮到DOM中
+    // --- 步骤 4: 创建UI按钮 (这部分逻辑不变，无需修改) ---
     const container = document.getElementById('standard-filters-container');
     if (!container) return;
     container.innerHTML = '';
@@ -128,28 +164,27 @@ function populateFilters() {
         const button = document.createElement('button');
         button.id = `btn-filter-${key}`;
         button.className = 'filter-button';
-        let title = key;
-        if (key === 'filterScope') title = langDict.filterHeroes;
-        else {
-            const labelKey = key === 'aetherpower' ? 'aetherPowerLabel' : (key === 'costume' ? 'costumeTypeLabel' : `${key}Label`);
-            title = langDict[labelKey] ? langDict[labelKey].slice(0, -1) : key;
+        let title;
+        if (key === 'filterScope') {
+            title = langDict.filterHeroes;
+        } else {
+            const labelKey = key.startsWith('skillTag_')
+                ? key.replace('skillTag_', 'cnSkill_') + 'Label'
+                : (key === 'aetherpower' ? 'aetherPowerLabel' : (key === 'costume' ? 'costumeTypeLabel' : `${key}Label`));
+            let titleText = langDict[labelKey] || key;
+            if (titleText.endsWith(':')) {
+                titleText = titleText.slice(0, -1);
+            }
+            title = titleText;
         }
         button.addEventListener('click', () => openMultiSelectModal(key, title));
         container.appendChild(button);
         updateFilterButtonUI(key);
     });
 
-    // 创建“显示活动名称”复选框
     const checkboxWrapper = document.createElement('div');
     checkboxWrapper.className = 'filter-button checkbox-wrapper';
-    checkboxWrapper.style.padding = '0';
-    checkboxWrapper.style.border = 'none';
-    checkboxWrapper.style.backgroundColor = 'transparent';
-    checkboxWrapper.innerHTML = `
-        <div class="checkbox-container" style="width: 100%; height: 100%;">
-            <input type="checkbox" id="show-event-name-checkbox">
-            <label for="show-event-name-checkbox" class="checkbox-label" data-lang-key="showEventNameLabel">${langDict.showEventNameLabel}</label>
-        </div>`;
+    checkboxWrapper.innerHTML = `<div class="checkbox-container"><input type="checkbox" id="show-event-name-checkbox"><label for="show-event-name-checkbox" class="checkbox-label" data-lang-key="showEventNameLabel">${langDict.showEventNameLabel}</label></div>`;
     container.appendChild(checkboxWrapper);
     const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
     const cookieValue = getCookie('showEventNameState');
@@ -185,6 +220,13 @@ function getIconForFilter(filterType, optionValue) {
         case 'costume':
             const iconName = getCostumeIconName(optionValue);
             return iconName ? `imgs/costume/${iconName}.png` : null;
+        case 'skillTag_base':
+        case 'skillTag_special':
+        case 'skillTag_buff':
+        case 'skillTag_debuff':
+            // 使用回溯表找到简体中文键名 (即使当前是英文/繁中)
+            const chineseKey = skillTagReverseMap[optionValue] || optionValue;
+            return `imgs/skill/${chineseKey}.png`;
         default:
             return null;
     }
@@ -194,25 +236,30 @@ function getIconForFilter(filterType, optionValue) {
  * 重置所有筛选条件到初始状态。
  */
 function resetAllFilters() {
-    // 重置多选筛选器
     if (typeof state.multiSelectFilters !== 'undefined') {
         Object.keys(state.multiSelectFilters).forEach(key => {
-            state.multiSelectFilters[key] = (key === 'filterScope') ? ['all'] : [];
-            if (typeof updateFilterButtonUI === 'function') updateFilterButtonUI(key);
+            if (key === 'filterScope') state.multiSelectFilters[key] = ['all'];
+            else if (key === 'skillTag') state.multiSelectFilters[key] = {};
+            else state.multiSelectFilters[key] = [];
+
+            if (key.startsWith('skillTag_')) {
+                updateFilterButtonUI(key);
+            } else if (typeof updateFilterButtonUI === 'function') {
+                updateFilterButtonUI(key);
+            }
         });
     }
 
-    // 重置文本输入框
     const filterInputs = uiElements.filterInputs;
     for (const key in filterInputs) {
         if (state.multiSelectFilters.hasOwnProperty(key)) continue;
         const element = filterInputs[key];
         if (element && element.tagName === 'INPUT') element.value = '';
     }
-    // 重置临时筛选状态
     state.temporaryFavorites = null;
     state.temporaryDateFilter = null;
 }
+
 
 /**
  * 打开多选筛选模态框。
@@ -223,56 +270,56 @@ function openMultiSelectModal(filterType, title) {
     const modal = uiElements.multiSelectModal;
     const overlay = uiElements.multiSelectModalOverlay;
     const modalContent = modal.querySelector('#multi-select-modal-content');
+    const langDict = i18n[state.currentLang];
 
+    // ▼▼▼▼▼ 【修正】使用 state. 前缀访问全局状态 ▼▼▼▼▼
     const options = state.availableOptions[filterType];
-    const currentSelections = new Set([...state.multiSelectFilters[filterType]]);
+    const currentSelections = new Set([...(state.multiSelectFilters[filterType] || [])]);
 
-    // 构建模态框的HTML内容
+    // ▼▼▼【重构】在 options.map 中使用回溯表来查找图标 ▼▼▼
     let optionsHTML = options.map(optionValue => {
         const isSelected = currentSelections.has(optionValue);
+        // getIconForFilter 使用的是 optionValue (中文键)，这部分是正确的
         const iconSrc = getIconForFilter(filterType, optionValue);
-        const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="">` : '';
-        let displayText = optionValue;
+        const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'">` : '';
+
+        // --- 核心修复：为所有选项查找对应的翻译文本 ---
+        let displayText = langDict[optionValue] || optionValue;
+
+        // 对于“家族”和“起源”，如果关闭了“显示活动名称”，还需要特殊处理
         if (filterType === 'family' || filterType === 'source') {
             displayText = getDisplayName(optionValue, filterType);
-        } else if (filterType === 'filterScope') {
-            displayText = i18n[state.currentLang][`filterScope_${optionValue}`] || optionValue;
         }
+        // 对于“筛选范围”，使用独立的语言key
+        else if (filterType === 'filterScope') {
+            displayText = langDict[`filterScope_${optionValue}`] || optionValue;
+        }
+
         const starSuffix = filterType === 'star' ? '⭐' : '';
-        return `
-            <div class="multi-select-option ${isSelected ? 'selected' : ''}" data-value="${optionValue}">
-                ${iconHTML}
-                <span>${displayText}${starSuffix}</span>
-            </div>`;
+
+        // data-value 始终是简体中文，而 <span> 中显示的是翻译后的文本
+        return `<div class="multi-select-option ${isSelected ? 'selected' : ''}" data-value="${optionValue}">${iconHTML}<span>${displayText}${starSuffix}</span></div>`;
+
     }).join('');
 
     modalContent.innerHTML = `
-        <div class="multi-select-header">
-            <h3>${title}</h3>
-            <button class="close-btn" id="close-multi-select-modal-top">✖</button>
-        </div>
+        <div class="multi-select-header"><h3>${title}</h3><button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
         <div class="multi-select-options-grid">${optionsHTML}</div>
         <div class="multi-select-footer">
-            <button class="action-button" id="clear-multi-select">${i18n[state.currentLang].clearSelection}</button>
-            <button class="action-button" id="close-multi-select-modal-bottom">${i18n[state.currentLang].detailsCloseBtn}</button>
-        </div>`;
+            <button class="action-button" id="clear-multi-select">${langDict.clearSelection}</button>
+            <button class="action-button" id="close-multi-select-modal-bottom">${langDict.detailsCloseBtn}</button>
+        </div>
+    `;
 
-    // 显示模态框
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    modalContent.scrollTop = 0;
-
-    // 为模态框内的元素绑定事件
     modal.querySelectorAll('.multi-select-option').forEach(optionDiv => {
         optionDiv.addEventListener('click', () => {
             const value = optionDiv.dataset.value;
-            if (filterType === 'filterScope') { // 单选逻辑
+            if (filterType === 'filterScope') {
                 if (state.multiSelectFilters[filterType][0] === value) return;
                 state.multiSelectFilters[filterType] = [value];
                 modal.querySelectorAll('.multi-select-option.selected').forEach(div => div.classList.remove('selected'));
                 optionDiv.classList.add('selected');
-            } else { // 多选逻辑
+            } else {
                 const selections = new Set(state.multiSelectFilters[filterType]);
                 if (selections.has(value)) selections.delete(value);
                 else selections.add(value);
@@ -285,9 +332,8 @@ function openMultiSelectModal(filterType, title) {
     });
 
     const clearButton = document.getElementById('clear-multi-select');
-    if (filterType === 'filterScope') {
-        clearButton.style.display = 'none';
-    } else {
+    if (filterType === 'filterScope') clearButton.style.display = 'none';
+    else {
         clearButton.addEventListener('click', () => {
             state.multiSelectFilters[filterType] = [];
             modal.querySelectorAll('.multi-select-option.selected').forEach(div => div.classList.remove('selected'));
@@ -296,36 +342,15 @@ function openMultiSelectModal(filterType, title) {
         });
     }
 
+    // --- 通用模态框逻辑 ---
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    modalContent.scrollTop = 0;
     document.getElementById('close-multi-select-modal-top').addEventListener('click', () => history.back());
     document.getElementById('close-multi-select-modal-bottom').addEventListener('click', () => history.back());
-
-    // 添加历史记录以便浏览器后退可以关闭此模态框
     history.pushState({ modal: 'multiSelect' }, null);
     state.modalStack.push('multiSelect');
-}
-
-/**
- * 将字符串标准化，用于后续比较。
- * @param {string} str - 输入字符串。
- * @returns {string} 标准化后的字符串。
- */
-function normalizeStringForSearch(str) {
-    if (typeof str !== 'string') return String(str || '');
-    // 替换全角标点为半角，然后转为小写
-    return str.replace(/（/g, '(').replace(/）/g, ')')
-        .replace(/【/g, '[').replace(/】/g, ']')
-        .replace(/：/g, ':').replace(/；/g, ';')
-        .replace(/，/g, ',').replace(/ /g, ' ') // 全角空格
-        .toLowerCase();
-}
-
-/**
- * 转义字符串中的正则表达式特殊字符。
- * @param {string} str - 输入字符串。
- * @returns {string} 转义后的字符串。
- */
-function escapeRegExp(str) {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& 表示匹配到的整个字符串
 }
 
 /**
@@ -337,88 +362,61 @@ function escapeRegExp(str) {
 function matchesComplexQuery(data, query) {
     if (!query) return true;
     if (!data || (Array.isArray(data) && data.length === 0)) return false;
-
-    const normalizedQuery = normalizeStringForSearch(query);
+    const lowerCaseQuery = query.toLowerCase();
     const dataAsArray = Array.isArray(data) ?
-        data.map(item => normalizeStringForSearch(item)) : [normalizeStringForSearch(data)];
-
+        data.map(item => String(item || '').toLowerCase()) : [String(data || '').toLowerCase()];
     function evaluate(expr, text) {
         expr = expr.trim();
         if (!expr) return true;
-
-        // 优先级 1: 处理最外层的括号
         if (expr.startsWith('(') && expr.endsWith(')')) {
-            let balance = 0;
-            let isOuter = true;
+            let balance = 0, validOuter = true;
             for (let i = 1; i < expr.length - 1; i++) {
                 if (expr[i] === '(') balance++;
-                else if (expr[i] === ')') balance--;
-                if (balance < 0) {
-                    isOuter = false;
-                    break;
-                }
+                if (expr[i] === ')') balance--;
+                if (balance < 0) { validOuter = false; break; }
             }
-            if (isOuter && balance === 0) {
-                return evaluate(expr.substring(1, expr.length - 1), text);
-            }
+            if (validOuter && balance === 0) return evaluate(expr.substring(1, expr.length - 1), text);
         }
-
-        // 优先级 2: 处理 OR (|)
         let balance = 0;
-        let inBracket = false;
-        for (let i = expr.length - 1; i >= 0; i--) {
-            const char = expr[i];
-            if (char === ']') inBracket = true;
-            else if (char === '[') inBracket = false;
-            else if (char === ')') balance++;
-            else if (char === '(') balance--;
-
-            if (char === '|' && balance === 0 && !inBracket) {
+        for (let i = 0; i < expr.length; i++) {
+            if (expr[i] === '(') balance++;
+            if (expr[i] === ')') balance--;
+            if (expr[i] === '|' && balance === 0) {
                 return evaluate(expr.substring(0, i), text) || evaluate(expr.substring(i + 1), text);
             }
         }
-
-        // 优先级 3: 处理 AND (空格)
+        const andTerms = [];
+        let currentTerm = '';
         balance = 0;
-        inBracket = false;
-        for (let i = expr.length - 1; i >= 0; i--) {
+        for (let i = 0; i <= expr.length; i++) {
             const char = expr[i];
-            if (char === ']') inBracket = true;
-            else if (char === '[') inBracket = false;
-            else if (char === ')') balance++;
-            else if (char === '(') balance--;
-
-            if (/\s/.test(char) && balance === 0 && !inBracket) {
-                const left = expr.substring(0, i);
-                const right = expr.substring(i + 1);
-                if (left.trim() === '' || right.trim() === '') continue;
-                return evaluate(left, text) && evaluate(right, text);
+            if (i === expr.length || (/\s/.test(char) && balance === 0)) {
+                if (currentTerm) { andTerms.push(currentTerm); currentTerm = ''; }
+            } else {
+                if (char === '(') balance++;
+                if (char === ')') balance--;
+                currentTerm += char;
             }
         }
+        if (currentTerm) andTerms.push(currentTerm);
+        if (andTerms.length > 1) return andTerms.every(term => evaluate(term, text));
 
-        // 优先级 4: 处理 NOT (!) 和原子词 (包括 [])
         if (expr.startsWith('!')) {
             const term = expr.substring(1).trim();
-            return !evaluate(term, text);
+            if (term.startsWith('[') && term.endsWith(']')) {
+                return text !== term.substring(1, term.length - 1).trim();
+            }
+            return !text.includes(term);
         }
-
         if (expr.startsWith('[') && expr.endsWith(']')) {
-            const term = expr.substring(1, expr.length - 1).trim();
-            if (term === '') return true;
-
-            // 新逻辑：将文本按分隔符拆分为词条列表，进行精确匹配
-            const effectsList = text.split(/[,;]/).map(effect => effect.trim());
-            return effectsList.includes(term);
+            return text === expr.substring(1, expr.length - 1).trim();
         }
-
-        // 默认作为普通词语进行包含匹配
         return text.includes(expr);
     }
-
-    const usePerLineSearch = /[()\[\]|!]/.test(normalizedQuery) || /\s/.test(normalizedQuery);
+    const usePerLineSearch = /[()\[\]]/.test(lowerCaseQuery);
     return usePerLineSearch ?
-        dataAsArray.some(line => evaluate(normalizedQuery, line)) :
-        evaluate(normalizedQuery, dataAsArray.join(' '));
+        dataAsArray.some(line => evaluate(lowerCaseQuery, line)) :
+        evaluate(lowerCaseQuery, dataAsArray.join(' '));
 }
 
 /**
@@ -427,6 +425,7 @@ function matchesComplexQuery(data, query) {
  */
 function areFiltersActive() {
     const filterInputs = uiElements.filterInputs;
+    // 检查所有文本和数值输入框
     if ((filterInputs.name && filterInputs.name.value.trim() !== '') ||
         (filterInputs.types && filterInputs.types.value.trim() !== '') ||
         (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
@@ -437,15 +436,25 @@ function areFiltersActive() {
         (filterInputs.health && filterInputs.health.value.trim() !== '')) {
         return true;
     }
+
+    // 检查所有多选筛选器
     for (const key in state.multiSelectFilters) {
         const selectedValues = state.multiSelectFilters[key];
+        if (!selectedValues || selectedValues.length === 0) continue;
+
         if (key === 'filterScope') {
-            if (selectedValues.length > 0 && selectedValues[0] !== 'all') return true;
+            if (selectedValues[0] !== 'all') return true;
         } else {
-            if (selectedValues.length > 0) return true;
+            // 只要任何一个其他筛选器有值，就说明筛选已激活
+            return true;
         }
     }
-    if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null) return true;
+
+    // 检查临时筛选
+    if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null) {
+        return true;
+    }
+
     return false;
 }
 
@@ -487,14 +496,9 @@ function calculateHeroStats(hero, settings) {
         power: hero.power || 0, attack: hero.attack || 0,
         defense: hero.defense || 0, health: hero.health || 0
     };
-
-    // 应用极限突破的属性
     if (lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
     else if (lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-
     let finalStats = { attack: baseStats.attack, defense: baseStats.defense, health: baseStats.health };
-
-    // 应用天赋加成
     if (talent !== 'none' && hero.class && typeof TalentTree !== 'undefined') {
         const talentBonuses = TalentTree.getBonusesForPath(hero.class, strategy, manaPriority, talent);
         const attackPercentBonus = Math.floor((baseStats.attack || 0) * (talentBonuses.attack_percent / 100));
@@ -504,18 +508,15 @@ function calculateHeroStats(hero, settings) {
         const healthPercentBonus = Math.floor((baseStats.health || 0) * (talentBonuses.health_percent / 100));
         finalStats.health = (baseStats.health || 0) + talentBonuses.health_flat + healthPercentBonus;
     }
-
-    // 计算最终战力
     const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
     const star_power = STAR_BASE_POWER[hero.star] || 0;
     const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
     const stats_final_power = Math.floor(stats_raw_power);
-    const skill_power = (8 - 1) * 5; // 假设技能等级为8
+    const skill_power = (8 - 1) * 5;
     let talent_power = 0;
     if (talent === 'talent20') talent_power = 20 * 5;
     else if (talent === 'talent25') talent_power = 25 * 5;
     finalStats.power = star_power + stats_final_power + skill_power + talent_power;
-
     return finalStats;
 }
 
@@ -535,7 +536,6 @@ function applyFiltersAndRender() {
     const defenseFilter = filterInputs.defense ? (Number(filterInputs.defense.value) || 0) : 0;
     const healthFilter = filterInputs.health ? (Number(filterInputs.health.value) || 0) : 0;
 
-    // 获取全局默认的突破/天赋设置
     const defaultSettings = {
         lb: filterInputs.defaultLimitBreakSelect.value,
         talent: filterInputs.defaultTalentSelect.value,
@@ -543,7 +543,6 @@ function applyFiltersAndRender() {
         manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
     };
 
-    // 1. 过滤英雄
     state.filteredHeroes = state.allHeroes.filter(hero => {
         // 范围筛选
         if (filterScope === 'hero' && hero.costume_id !== 0) return false;
@@ -559,17 +558,28 @@ function applyFiltersAndRender() {
         if (effectsFilter && !matchesComplexQuery(hero.effects, effectsFilter)) return false;
         if (passivesFilter && !matchesComplexQuery(hero.passives, passivesFilter)) return false;
         if (skillTypeFilter) {
-            let skillTypesToSearch = getSkillTypesArray(hero, skillTypeSource, true);
-            if (!matchesComplexQuery(skillTypesToSearch.filter(Boolean), skillTypeFilter)) return false;
+            const skillTypesToSearch = getSkillTagsForHero(hero, skillTypeSource);
+            if (!matchesComplexQuery(skillTypesToSearch, skillTypeFilter)) return false;
         }
 
-        // 多选按钮筛选
+        // 标准多选筛选器循环
         for (const key in state.multiSelectFilters) {
-            if (key === 'filterScope') continue;
+            if (key === 'filterScope' || key.startsWith('skillTag_')) continue;
             const selectedValues = state.multiSelectFilters[key];
             if (selectedValues.length === 0) continue;
             let heroValue = (key === 'costume') ? getSkinInfo(hero).skinIdentifier : hero[key === 'aetherpower' ? 'AetherPower' : key];
             if (!selectedValues.includes(String(heroValue))) return false;
+        }
+
+        // 新的技能标签筛选逻辑
+        const heroAllSkillTags = new Set(hero.cn_skill_info?.flatMap(category => Object.values(category)[0]) || []);
+        const skillTagKeys = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
+        for (const key of skillTagKeys) {
+            const selections = state.multiSelectFilters[key];
+            if (selections && selections.length > 0) {
+                const hasMatch = selections.some(tag => heroAllSkillTags.has(tag));
+                if (!hasMatch) return false;
+            }
         }
 
         // 属性筛选（基于计算后的属性）
@@ -594,18 +604,17 @@ function applyFiltersAndRender() {
         return true;
     });
 
-    // 2. 为每个筛选出的英雄计算并附加用于显示的属性
+    // 为筛选出的英雄计算并附加用于显示的属性
     state.filteredHeroes.forEach(hero => {
         hero.displayStats = calculateHeroStats(hero, defaultSettings);
     });
 
-    // 3. 排序
+    // 排序
     state.filteredHeroes.sort((a, b) => {
         const key = state.currentSort.key;
         const direction = state.currentSort.direction === 'asc' ? 1 : -1;
         const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
         let valA, valB;
-
         if (numericKeys.includes(key) && key !== 'star') {
             valA = a.displayStats[key];
             valB = b.displayStats[key];
@@ -613,7 +622,6 @@ function applyFiltersAndRender() {
             valA = a[key];
             valB = b[key];
         }
-
         let comparison = 0;
         if (key === 'speed') {
             const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[state.currentLang];
@@ -627,14 +635,12 @@ function applyFiltersAndRender() {
             comparison = valA.localeCompare(valB, locale, state.currentLang === 'tc' ? { collation: 'stroke' } : {});
         }
         comparison *= direction;
-
-        // 如果主排序相同，则按战力降序作为第二排序
         if (comparison === 0 && key !== 'power') {
             return (Number(b.displayStats.power) || 0) - (Number(a.displayStats.power) || 0);
         }
         return comparison;
     });
 
-    // 4. 渲染结果
+    // 渲染结果
     renderTable(state.filteredHeroes);
 }

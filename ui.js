@@ -217,21 +217,24 @@ function updateFilterButtonUI(filterType) {
     const button = document.getElementById(`btn-filter-${filterType}`);
     if (!button) return;
 
-    const selectedCount = state.multiSelectFilters[filterType].length;
+    const selectedValues = state.multiSelectFilters[filterType] || [];
+    const selectedCount = selectedValues.length;
     const langDict = i18n[state.currentLang];
-    let labelKey;
-    if (filterType === 'aetherpower') labelKey = 'aetherPowerLabel';
-    else if (filterType === 'costume') labelKey = 'costumeTypeLabel';
-    else if (filterType === 'filterScope') labelKey = 'filterScopeLabel';
-    else labelKey = `${filterType}Label`;
 
-    const label = langDict[labelKey] ? langDict[labelKey].slice(0, -1) : filterType;
+    const labelKey = filterType.startsWith('skillTag_')
+        ? filterType.replace('skillTag_', 'cnSkill_') + 'Label'
+        : (filterType === 'aetherpower' ? 'aetherPowerLabel' : (filterType === 'costume' ? 'costumeTypeLabel' : `${filterType}Label`));
+
+    let label = langDict[labelKey] || filterType;
+    if (label.endsWith(':')) {
+        label = label.slice(0, -1);
+    }
 
     if (selectedCount === 0) {
         button.textContent = label;
         button.classList.remove('active');
     } else if (filterType === 'filterScope') {
-        const scope_label = langDict[`filterScope_${state.multiSelectFilters[filterType][0]}`]
+        const scope_label = langDict[`filterScope_${selectedValues[0]}`];
         button.textContent = `${label}: ${scope_label}`;
         button.classList.add('active');
     } else {

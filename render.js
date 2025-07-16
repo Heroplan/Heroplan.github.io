@@ -154,7 +154,8 @@ function renderTable(heroes) {
             } else if (key === 'star') {
                 content = `${hero[key] || ''}⭐`;
             } else if (key === 'types') {
-                content = getSkillTypesText(hero);
+                const source = uiElements.filterInputs.skillTypeSource.value;
+                content = getSkillTagsForHero(hero, source).join(', ');
             } else if (key === 'name') {
                 content = getFormattedHeroNameHTML(hero);
             } else if (key === 'class' && hero[key]) {
@@ -260,7 +261,8 @@ function renderDetailsInModal(hero, context = {}) {
     }
     const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
 
-    const uniqueSkillTypes = getSkillTypesArray(hero);
+    const source = filterInputs.skillTypeSource.value;
+    const uniqueSkillTypes = getSkillTagsForHero(hero, source);
     const heroTypesContent = uniqueSkillTypes.length > 0
         ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
         : `<span class="skill-value">${langDict.none}</span>`;

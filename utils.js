@@ -89,6 +89,62 @@ function copyTextToClipboard(text) {
 }
 
 /**
+ * 根据来源和自定义排序规则，获取英雄的技能标签数组。
+ * @param {object} hero - 英雄对象。
+ * @param {string} source - 来源 ('heroplan', 'nynaeve', 'bbcamp', 'both')。
+ * @returns {string[]} - 排序后的技能标签数组。
+ */
+function getSkillTagsForHero(hero, source) {
+    if (!hero) return [];
+
+    let tags = [];
+    const cnTags = hero.cn_skill_info?.flatMap(cat => Object.values(cat)[0]) || [];
+
+    switch (source) {
+        case 'heroplan':
+            tags = hero.types || [];
+            break;
+        case 'nynaeve':
+            tags = hero.skill_types || [];
+            break;
+        case 'bbcamp':
+            tags = cnTags;
+            break;
+        case 'both':
+        default:
+            tags = [...new Set([...(hero.types || []), ...(hero.skill_types || []), ...cnTags])];
+            break;
+    }
+
+    // 自定义排序逻辑
+    const priorityOrder = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+
+    tags.sort((a, b) => {
+        const categoryA = state.skillTagToCategoryMap[a];
+        const categoryB = state.skillTagToCategoryMap[b];
+
+        const indexA = categoryA ? priorityOrder.indexOf(categoryA) : -1;
+        const indexB = categoryB ? priorityOrder.indexOf(categoryB) : -1;
+
+        // 如果都在优先列表里
+        if (indexA !== -1 && indexB !== -1) {
+            if (indexA !== indexB) return indexA - indexB; // 按分类优先级排序
+            return a.localeCompare(b, 'zh-CN'); // 同分类内按字母排序
+        }
+
+        // A在，B不在
+        if (indexA !== -1) return -1;
+        // B在，A不在
+        if (indexB !== -1) return 1;
+
+        // 都不在优先列表里，按正常排序
+        return a.localeCompare(b, 'zh-CN');
+    });
+
+    return tags.filter(Boolean); // 过滤掉空值
+}
+
+/**
  * 从多语言混合的英雄名称中提取英文名。
  * @param {object} hero - 英雄对象。
  * @param {string} currentLang - 当前语言环境 ('cn', 'tc', 'en')。

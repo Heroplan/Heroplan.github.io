@@ -117,31 +117,48 @@ function getSkillTagsForHero(hero, source) {
     }
 
     // 自定义排序逻辑
-    const priorityOrder = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+    const priorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+    const orderArrays = {
+        "基础技能": skillTagOrder_base,
+        "特殊效果": skillTagOrder_special,
+        "增益效果": skillTagOrder_buff,
+        "负面效果": skillTagOrder_debuff
+    };
 
     tags.sort((a, b) => {
+        // 获取每个标签所属的分类
         const categoryA = state.skillTagToCategoryMap[a];
         const categoryB = state.skillTagToCategoryMap[b];
 
-        const indexA = categoryA ? priorityOrder.indexOf(categoryA) : -1;
-        const indexB = categoryB ? priorityOrder.indexOf(categoryB) : -1;
+        // 获取分类的优先级（在 priorityCategories 中的位置）
+        const priorityIndexA = categoryA ? priorityCategories.indexOf(categoryA) : -1;
+        const priorityIndexB = categoryB ? priorityCategories.indexOf(categoryB) : -1;
 
-        // 如果都在优先列表里
-        if (indexA !== -1 && indexB !== -1) {
-            if (indexA !== indexB) return indexA - indexB; // 按分类优先级排序
-            return a.localeCompare(b, 'zh-CN'); // 同分类内按字母排序
+        // --- 1. 按“分类”进行一级排序 ---
+        if (priorityIndexA !== priorityIndexB) {
+            if (priorityIndexA !== -1 && priorityIndexB !== -1) return priorityIndexA - priorityIndexB;
+            if (priorityIndexA !== -1) return -1; // a有分类，b没有，a排前面
+            if (priorityIndexB !== -1) return 1;  // b有分类，a没有，b排前面
         }
 
-        // A在，B不在
-        if (indexA !== -1) return -1;
-        // B在，A不在
-        if (indexB !== -1) return 1;
+        // --- 2. 如果分类相同，则按您定义的“分类内部顺序”进行二级排序 ---
+        if (priorityIndexA !== -1) { // 这意味着 a 和 b 都在同一个优先分类中
+            const sortOrder = orderArrays[categoryA]; // 获取该分类对应的排序规则数组
+            if (sortOrder) {
+                const indexA = sortOrder.indexOf(a);
+                const indexB = sortOrder.indexOf(b);
 
-        // 都不在优先列表里，按正常排序
+                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                if (indexA !== -1) return -1;
+                if (indexB !== -1) return 1;
+            }
+        }
+
+        // --- 3. 如果都不在任何优先分类和排序规则中，则按默认方式排序 ---
         return a.localeCompare(b, 'zh-CN');
     });
 
-    return tags.filter(Boolean); // 过滤掉空值
+    return tags.filter(Boolean);
 }
 
 /**

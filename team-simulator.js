@@ -119,7 +119,6 @@ function getSkillTypesArray(hero) {
  */
 function getSkillTypesText(hero) {
     if (!hero) return '';
-    // ▼▼▼▼▼【修改】▼▼▼▼▼
     const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
     return getSkillTagsForHero(hero, skillTypeSource).join(', ');
 }

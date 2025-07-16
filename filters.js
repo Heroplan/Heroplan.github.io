@@ -89,8 +89,7 @@ function populateFilters() {
     });
 
     const filtersToConvert = [
-        'filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower',
-        'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'
+        'filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower'//,'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'
     ];
 
     const langDict = i18n[state.currentLang];

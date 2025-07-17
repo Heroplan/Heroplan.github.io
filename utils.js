@@ -88,6 +88,10 @@ function copyTextToClipboard(text) {
     });
 }
 
+// 为 Nynaeve 技能类型创建反向查找表
+// 这些表将中文标签映射回其原始的英文键，以便进行排序
+const nynaeveCnToEnMap = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([en, cn]) => [cn, en]));
+const nynaeveTcToEnMap = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([en, tc]) => [tc, en]));
 /**
  * 根据来源和自定义排序规则，获取英雄的技能标签数组。
  * @param {object} hero - 英雄对象。
@@ -97,66 +101,87 @@ function copyTextToClipboard(text) {
 function getSkillTagsForHero(hero, source) {
     if (!hero) return [];
 
-    let tags = [];
-    const cnTags = hero.cn_skill_info?.flatMap(cat => Object.values(cat)[0]) || [];
+    // 根据当前语言获取对应的 Nynaeve 反向查找表
+    const nynaeveReverseMap = state.currentLang === 'cn' ? nynaeveCnToEnMap :
+        state.currentLang === 'tc' ? nynaeveTcToEnMap : null;
 
-    switch (source) {
-        case 'heroplan':
-            tags = hero.types || [];
-            break;
-        case 'nynaeve':
-            tags = hero.skill_types || [];
-            break;
-        case 'bbcamp':
-            tags = cnTags;
-            break;
-        case 'both':
-        default:
-            tags = [...new Set([...(hero.types || []), ...(hero.skill_types || []), ...cnTags])];
-            break;
-    }
+    // 为 Nynaeve 标签定义统一的排序函数
+    const sortNynaeveTags = (tags) => {
+        tags.sort((a, b) => {
+            // 在排序前，将中文标签转换回英文键
+            const englishA = nynaeveReverseMap ? (nynaeveReverseMap[a] || a) : a;
+            const englishB = nynaeveReverseMap ? (nynaeveReverseMap[b] || b) : b;
 
-    // 自定义排序逻辑
-    const priorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
-    const orderArrays = {
-        "基础技能": skillTagOrder_base,
-        "特殊效果": skillTagOrder_special,
-        "增益效果": skillTagOrder_buff,
-        "负面效果": skillTagOrder_debuff
+            const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
+            const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
+
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+            return a.localeCompare(b);
+        });
+        return tags;
     };
 
-    tags.sort((a, b) => {
-        // 获取每个标签所属的分类
-        const categoryA = state.skillTagToCategoryMap[a];
-        const categoryB = state.skillTagToCategoryMap[b];
+    // 为 bbcamp 标签定义统一的排序函数
+    const sortBbcampTags = (tags) => {
+        const priorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+        const orderArrays = { "基础技能": skillTagOrder_base, "特殊效果": skillTagOrder_special, "增益效果": skillTagOrder_buff, "负面效果": skillTagOrder_debuff };
 
-        // 获取分类的优先级（在 priorityCategories 中的位置）
-        const priorityIndexA = categoryA ? priorityCategories.indexOf(categoryA) : -1;
-        const priorityIndexB = categoryB ? priorityCategories.indexOf(categoryB) : -1;
+        tags.sort((a, b) => {
+            const categoryA = state.skillTagToCategoryMap[a];
+            const categoryB = state.skillTagToCategoryMap[b];
+            const priorityIndexA = categoryA ? priorityCategories.indexOf(categoryA) : -1;
+            const priorityIndexB = categoryB ? priorityCategories.indexOf(categoryB) : -1;
 
-        // --- 1. 按“分类”进行一级排序 ---
-        if (priorityIndexA !== priorityIndexB) {
-            if (priorityIndexA !== -1 && priorityIndexB !== -1) return priorityIndexA - priorityIndexB;
-            if (priorityIndexA !== -1) return -1; // a有分类，b没有，a排前面
-            if (priorityIndexB !== -1) return 1;  // b有分类，a没有，b排前面
-        }
-
-        // --- 2. 如果分类相同，则按您定义的“分类内部顺序”进行二级排序 ---
-        if (priorityIndexA !== -1) { // 这意味着 a 和 b 都在同一个优先分类中
-            const sortOrder = orderArrays[categoryA]; // 获取该分类对应的排序规则数组
-            if (sortOrder) {
-                const indexA = sortOrder.indexOf(a);
-                const indexB = sortOrder.indexOf(b);
-
-                if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-                if (indexA !== -1) return -1;
-                if (indexB !== -1) return 1;
+            if (priorityIndexA !== priorityIndexB) {
+                if (priorityIndexA !== -1 && priorityIndexB !== -1) return priorityIndexA - priorityIndexB;
+                if (priorityIndexA !== -1) return -1;
+                if (priorityIndexB !== -1) return 1;
             }
-        }
+            if (priorityIndexA !== -1) {
+                const sortOrder = orderArrays[categoryA];
+                if (sortOrder) {
+                    const chineseKeyA = skillTagReverseMap[a] || a;
+                    const chineseKeyB = skillTagReverseMap[b] || b;
+                    const indexA = sortOrder.indexOf(chineseKeyA);
+                    const indexB = sortOrder.indexOf(chineseKeyB);
+                    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+                    if (indexA !== -1) return -1;
+                    if (indexB !== -1) return 1;
+                }
+            }
+            return a.localeCompare(b, state.currentLang === 'cn' ? 'zh-CN' : 'zh-TW');
+        });
+        return tags;
+    };
 
-        // --- 3. 如果都不在任何优先分类和排序规则中，则按默认方式排序 ---
-        return a.localeCompare(b, 'zh-CN');
-    });
+    const cnTags = hero.cn_skill_info?.flatMap(cat => Object.values(cat)[0]) || [];
+    const nynaeveTags = hero.skill_types || [];
+    const heroplanTags = hero.types || [];
+
+    if (source === 'both') {
+        const sortedCnTags = sortBbcampTags([...cnTags]);
+        const sortedNynaeveTags = sortNynaeveTags([...nynaeveTags]);
+        const sortedHeroplanTags = [...heroplanTags].sort((a, b) => a.localeCompare(b));
+
+        const combinedTags = [...sortedCnTags, ...sortedNynaeveTags, ...sortedHeroplanTags];
+        return Array.from(new Set(combinedTags)).filter(Boolean);
+    }
+
+    let tags = [];
+    switch (source) {
+        case 'heroplan':
+            tags = [...heroplanTags].sort((a, b) => a.localeCompare(b));
+            break;
+        case 'nynaeve':
+            tags = sortNynaeveTags([...nynaeveTags]);
+            break;
+        case 'bbcamp':
+        default:
+            tags = sortBbcampTags([...cnTags]);
+            break;
+    }
 
     return tags.filter(Boolean);
 }

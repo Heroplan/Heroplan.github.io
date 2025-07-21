@@ -1,5 +1,3 @@
-// team-simulator.js: 管理队伍模拟器的所有功能。
-
 // --- 帮助函数 (Helpers) ---
 
 /**
@@ -60,45 +58,6 @@ function adjustTeamDisplayHeight() {
     });
 }
 
-/**
- * 【新增】根据多语言环境和预设顺序对技能标签进行排序。
- * 这是从您原始脚本中提取并封装的核心排序逻辑。
- * @param {string[]} tags - 未排序的技能标签数组。
- * @returns {string[]} 排序后的技能标签数组。
- */
-function sortSkillTags(tags) {
-    // 简体和繁体中文的技能名到英文键名的反向映射
-    const reverseSkillTypeMap_cn = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([key, value]) => [value, key]));
-    const reverseSkillTypeMap_tc = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([key, value]) => [value, key]));
-
-    return tags.sort((a, b) => {
-        // 定义一个内部函数，用于获取排序所依赖的英文键名
-        const getEnglishKey = (tag) => {
-            if (state.currentLang === 'cn') return reverseSkillTypeMap_cn[tag] || tag;
-            if (state.currentLang === 'tc') return reverseSkillTypeMap_tc[tag] || tag;
-            return tag; // 如果当前是英文或找不到翻译，则直接使用原标签
-        };
-
-        const englishA = getEnglishKey(a);
-        const englishB = getEnglishKey(b);
-
-        // 从 nynaeveSkillTypeOrder 预设顺序数组中查找索引
-        const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
-        const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
-
-        // 如果两个标签都能在排序标准中找到，则按索引排序
-        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-        // 如果只有 A 能找到，A 排在前面
-        if (indexA !== -1) return -1;
-        // 如果只有 B 能找到，B 排在前面
-        if (indexB !== -1) return 1;
-
-        // 如果都找不到，则按当前语言的默认字符顺序排序 (例如中文按拼音/笔画)
-        const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[state.currentLang];
-        const options = state.currentLang === 'tc' ? { collation: 'stroke' } : {};
-        return a.localeCompare(b, locale, options);
-    });
-}
 
 /**
  * 获取英雄的技能类别数组，用于标签汇总 (修改为调用中央函数)。
@@ -107,7 +66,7 @@ function sortSkillTags(tags) {
  */
 function getSkillTypesArray(hero) {
     if (!hero) return [];
-    // ▼▼▼▼▼【修改】▼▼▼▼▼
+    // ▼▼▼▼▼【保持】此處邏輯正確，它會調用 utils.js 中已修復的 getSkillTagsForHero 函數 ▼▼▼▼▼
     const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
     return getSkillTagsForHero(hero, skillTypeSource);
 }
@@ -302,14 +261,13 @@ function renderTeamDisplay() {
                 heroSlot.appendChild(actionIcon);
             }
         } else {
-            // --- 【新增】处理空槽位 ---
-            // 如果正处于换位模式，就在空槽位显示“移到此处”的图标
+            // --- 处理空槽位 ---
             if (state.swapModeActive) {
                 const actionIcon = document.createElement('div');
                 actionIcon.className = 'hero-action-icon empty-slot-target-icon';
-                actionIcon.textContent = '⬆️'; // 您可以换成其他喜欢的符号
+                actionIcon.textContent = '⬆️';
                 actionIcon.title = '移到此处';
-                actionIcon.dataset.action = 'move'; // 定义新的动作类型
+                actionIcon.dataset.action = 'move';
                 actionIcon.dataset.index = i;
                 heroSlot.appendChild(actionIcon);
             }
@@ -320,7 +278,7 @@ function renderTeamDisplay() {
 }
 
 /**
- * 更新队伍的技能标签汇总区域。
+ * 更新队伍的技能标签汇总区域，并使用正确的、统一的排序逻辑，且根据来源条件显示图标。
  */
 function updateTeamTags() {
     const summaryContainer = document.getElementById('team-tags-summary-container');
@@ -344,8 +302,51 @@ function updateTeamTags() {
         }
     });
 
-    // 【修正】调用新的排序函数
-    const sortedTags = sortSkillTags(Object.keys(tagCounts));
+    const uniqueTags = Object.keys(tagCounts);
+
+    // 【保留】完整的、正確的排序邏輯
+    const nynaeveReverseMap = state.currentLang === 'cn' ? nynaeveCnToEnMap : (state.currentLang === 'tc' ? nynaeveTcToEnMap : null);
+    const bbcampPriorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+    const bbcampOrderArrays = { "基础技能": skillTagOrder_base, "特殊效果": skillTagOrder_special, "增益效果": skillTagOrder_buff, "负面效果": skillTagOrder_debuff };
+
+    uniqueTags.sort((a, b) => {
+        const categoryA_bbcamp = state.skillTagToCategoryMap[skillTagReverseMap[a] || a];
+        const categoryB_bbcamp = state.skillTagToCategoryMap[skillTagReverseMap[b] || b];
+        const priorityA_bbcamp = categoryA_bbcamp ? bbcampPriorityCategories.indexOf(categoryA_bbcamp) : -1;
+        const priorityB_bbcamp = categoryB_bbcamp ? bbcampPriorityCategories.indexOf(categoryB_bbcamp) : -1;
+
+        if (priorityA_bbcamp !== -1 || priorityB_bbcamp !== -1) {
+            if (priorityA_bbcamp !== priorityB_bbcamp) return priorityA_bbcamp - priorityB_bbcamp;
+            const sortOrder = bbcampOrderArrays[categoryA_bbcamp];
+            if (sortOrder) {
+                const keyA = skillTagReverseMap[a] || a;
+                const keyB = skillTagReverseMap[b] || b;
+                const indexA = sortOrder.indexOf(keyA);
+                const indexB = sortOrder.indexOf(keyB);
+                if (indexA !== -1 || indexB !== -1) {
+                    if (indexA === indexB) return 0;
+                    return indexA !== -1 ? (indexB !== -1 ? indexA - indexB : -1) : 1;
+                }
+            }
+        }
+
+        const englishA_nynaeve = nynaeveReverseMap ? (nynaeveReverseMap[a] || a) : a;
+        const englishB_nynaeve = nynaeveReverseMap ? (nynaeveReverseMap[b] || b) : b;
+        const indexA_nynaeve = nynaeveSkillTypeOrder.indexOf(englishA_nynaeve);
+        const indexB_nynaeve = nynaeveSkillTypeOrder.indexOf(englishB_nynaeve);
+
+        if (indexA_nynaeve !== -1 || indexB_nynaeve !== -1) {
+            if (indexA_nynaeve === indexB_nynaeve) return 0;
+            return indexA_nynaeve !== -1 ? (indexB_nynaeve !== -1 ? indexA_nynaeve - indexB_nynaeve : -1) : 1;
+        }
+
+        return a.localeCompare(b);
+    });
+
+    const sortedTags = uniqueTags;
+
+    // --- 【核心修正】条件渲染逻辑 ---
+    const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
 
     if (sortedTags.length === 0) {
         summaryContainer.innerHTML = `<div class="no-tags-message">${i18n[state.currentLang].noTeamTags}</div>`;
@@ -353,10 +354,23 @@ function updateTeamTags() {
         summaryContainer.innerHTML = sortedTags.map(tag => {
             const count = tagCounts[tag];
             const countHTML = count > 1 ? `<span class="tag-count">x${count}</span>` : '';
-            return `<span class="team-tag-item">${tag}${countHTML}</span>`;
+
+            // 仅当来源为 'bbcamp' 时，才加入图标
+            if (skillTypeSource === 'bbcamp') {
+                // 使用一个代表性的类型（如'skillTag_base'）来调用getIconForFilter，因为图标查找逻辑只依赖于tag值本身
+                const iconSrc = getIconForFilter('skillTag_base', tag);
+                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+
+                // 修正了 class 语法的错误
+                return `<span class="team-tag-item">${iconHTML}${tag}${countHTML}</span>`;
+            } else {
+                // 对于其他所有来源，使用原始的纯文本样式
+                return `<span class="team-tag-item">${tag}${countHTML}</span>`;
+            }
         }).join('');
     }
 }
+
 
 /**
  * 根据当前激活的标签页（我的队伍/分享的队伍）渲染列表。

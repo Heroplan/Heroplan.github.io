@@ -263,9 +263,26 @@ function renderDetailsInModal(hero, context = {}) {
 
     const source = filterInputs.skillTypeSource.value;
     const uniqueSkillTypes = getSkillTagsForHero(hero, source);
-    const heroTypesContent = uniqueSkillTypes.length > 0
-        ? `<div class="skill-types-container">${uniqueSkillTypes.map(type => `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${type}</span>`).join('')}</div>`
-        : `<span class="skill-value">${langDict.none}</span>`;
+    let heroTypesContent = '';
+
+    if (uniqueSkillTypes.length > 0) {
+        const tagsHTML = uniqueSkillTypes.map(type => {
+            let innerHTML = type; // 默认只显示文字
+
+            // 如果来源是 bbcamp，则添加图标
+            if (source === 'bbcamp') {
+                const iconSrc = getIconForFilter('skillTag_base', type);
+                // 这里我们复用 option-icon class，因为它已经定义了合适的尺寸
+                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+                innerHTML = `${iconHTML}${type}`;
+            }
+
+            return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${innerHTML}</span>`;
+        }).join('');
+        heroTypesContent = `<div class="skill-types-container">${tagsHTML}</div>`;
+    } else {
+        heroTypesContent = `<span class="skill-value">${langDict.none}</span>`;
+    }
 
     const familyBonus = (state.families_bonus.find(f => f.name.toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || [];
 

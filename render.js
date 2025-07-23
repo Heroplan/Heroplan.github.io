@@ -218,32 +218,25 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
     if (!hero.dynamicDoTEffects || hero.dynamicDoTEffects.length === 0) return;
 
     hero.dynamicDoTEffects.forEach(dotInfo => {
-        // 在模态框中找到对应的技能描述 li 元素
-        // 我们假设 effects 列表是第一个 .skill-list
         const skillList = document.querySelector('#modal .skill-category-block .skill-list');
         if (!skillList || !skillList.children[dotInfo.index]) return;
 
         const liElement = skillList.children[dotInfo.index];
 
-        // 计算新的伤害值
-        const newTotalDamage = dotInfo.coefficient * currentAttack;
         const newDisplayDamage = dotInfo.isPerTurn
-            ? Math.round(newTotalDamage / dotInfo.turns)
-            : Math.round(newTotalDamage);
+            ? Math.round((dotInfo.coefficient * currentAttack) / dotInfo.turns)
+            : Math.round(dotInfo.coefficient * currentAttack);
 
         const dynamicSpanId = `dot-value-${dotInfo.index}`;
         let dynamicSpan = liElement.querySelector(`#${dynamicSpanId}`);
 
-        // 如果动态<span>标签还不存在，则创建它
         if (!dynamicSpan) {
-            // 使用正则表达式精确替换原始数值，避免替换错其他数字
             const regex = new RegExp(`\\b${dotInfo.originalDamage}\\b`);
             liElement.innerHTML = liElement.innerHTML.replace(
                 regex,
                 `<span id="${dynamicSpanId}" class="dynamic-value">${newDisplayDamage}</span>`
             );
         } else {
-            // 如果已经存在，直接更新数值
             dynamicSpan.textContent = newDisplayDamage;
         }
     });

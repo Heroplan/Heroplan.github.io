@@ -378,18 +378,40 @@ function matchesComplexQuery(data, query) {
     const lowerCaseQuery = query.toLowerCase();
     const dataAsArray = Array.isArray(data) ?
         data.map(item => String(item || '').toLowerCase()) : [String(data || '').toLowerCase()];
+
     function evaluate(expr, text) {
         expr = expr.trim();
         if (!expr) return true;
+
+        // 优先级 1：精确匹配。最先处理，防止内容被后续逻辑错误解析。
+        if (expr.startsWith('![')) {
+            if (expr.endsWith(']')) {
+                // 处理 `![完整字符串]`
+                return text.trim() !== expr.substring(2, expr.length - 1).trim();
+            }
+        } else if (expr.startsWith('[')) {
+            if (expr.endsWith(']')) {
+                // 处理 `[完整字符串]`
+                return text.trim() === expr.substring(1, expr.length - 1).trim();
+            }
+        }
+
+        // 优先级 2：处理分组圆括号 `()`
         if (expr.startsWith('(') && expr.endsWith(')')) {
-            let balance = 0, validOuter = true;
+            let balance = 0,
+                validOuter = true;
             for (let i = 1; i < expr.length - 1; i++) {
                 if (expr[i] === '(') balance++;
                 if (expr[i] === ')') balance--;
-                if (balance < 0) { validOuter = false; break; }
+                if (balance < 0) {
+                    validOuter = false;
+                    break;
+                }
             }
             if (validOuter && balance === 0) return evaluate(expr.substring(1, expr.length - 1), text);
         }
+
+        // 优先级 3：处理 OR `|`
         let balance = 0;
         for (let i = 0; i < expr.length; i++) {
             if (expr[i] === '(') balance++;
@@ -398,13 +420,18 @@ function matchesComplexQuery(data, query) {
                 return evaluate(expr.substring(0, i), text) || evaluate(expr.substring(i + 1), text);
             }
         }
+
+        // 优先级 4：处理 AND (空格)
         const andTerms = [];
         let currentTerm = '';
         balance = 0;
         for (let i = 0; i <= expr.length; i++) {
             const char = expr[i];
             if (i === expr.length || (/\s/.test(char) && balance === 0)) {
-                if (currentTerm) { andTerms.push(currentTerm); currentTerm = ''; }
+                if (currentTerm) {
+                    andTerms.push(currentTerm);
+                    currentTerm = '';
+                }
             } else {
                 if (char === '(') balance++;
                 if (char === ')') balance--;
@@ -414,23 +441,22 @@ function matchesComplexQuery(data, query) {
         if (currentTerm) andTerms.push(currentTerm);
         if (andTerms.length > 1) return andTerms.every(term => evaluate(term, text));
 
+        // 优先级 5：处理普通 NOT `!` 及默认的包含匹配
         if (expr.startsWith('!')) {
             const term = expr.substring(1).trim();
-            if (term.startsWith('[') && term.endsWith(']')) {
-                return text !== term.substring(1, term.length - 1).trim();
-            }
+            // 此处的 ![...] 已在优先级1处理，这里只处理 !term
             return !text.includes(term);
         }
-        if (expr.startsWith('[') && expr.endsWith(']')) {
-            return text === expr.substring(1, expr.length - 1).trim();
-        }
+
         return text.includes(expr);
     }
+
     const usePerLineSearch = /[()\[\]]/.test(lowerCaseQuery);
     return usePerLineSearch ?
         dataAsArray.some(line => evaluate(lowerCaseQuery, line)) :
         evaluate(lowerCaseQuery, dataAsArray.join(' '));
 }
+
 
 /**
  * 检查是否有任何筛选器处于激活状态。

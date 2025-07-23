@@ -110,7 +110,11 @@ async function initializeApp() {
     uiElements.filterInputs.defaultManaPriorityCheckbox.disabled = initialTalentDisabled;
     const savedSkillSource = getCookie('skillTypeSource');
     if (savedSkillSource && uiElements.filterInputs.skillTypeSource) {
+        // 如果有已保存的偏好，則使用它
         uiElements.filterInputs.skillTypeSource.value = savedSkillSource;
+    } else if (uiElements.filterInputs.skillTypeSource) {
+        // 否則 (新用戶)，將預設值設為 'bbcamp'
+        uiElements.filterInputs.skillTypeSource.value = 'bbcamp';
     }
 
     // 加载静态元素的折叠状态

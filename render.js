@@ -440,6 +440,20 @@ function renderDetailsInModal(hero, context = {}) {
             setCookie(cookieName, newState, 365);
         });
     });
+    // 动态伤害值计算逻辑，确保始终执行
+    // 1. 定义一个 settings 对象，从“高级筛选”面板获取当前的全局设置。
+    const settingsToUse = {
+        lb: filterInputs.defaultLimitBreakSelect.value,
+        talent: filterInputs.defaultTalentSelect.value,
+        strategy: filterInputs.defaultTalentStrategySelect.value,
+        manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
+    };
+
+    // 2. 无论天赋详情UI是否显示，都根据全局设置计算英雄的最终属性。
+    const initialStats = calculateHeroStats(hero, settingsToUse);
+
+    // 3. 立即调用函数，使用计算出的攻击力去更新模态框中的DoT伤害值。
+    updateDynamicDoTDisplay(hero, initialStats.attack);
 
     // 移动端选项卡切换逻辑
     const tabsContainer = modalContent.querySelector('.mobile-tabs-container');
@@ -564,9 +578,6 @@ function renderDetailsInModal(hero, context = {}) {
 
         if (typeof TalentTree !== 'undefined' && hero.class) {
             TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
-            // ▼▼▼ 在這裡手動調用一次，以顯示初始的動態傷害值 ▼▼▼
-            const initialStats = calculateHeroStats(hero, settingsToUse);
-            updateDynamicDoTDisplay(hero, initialStats.attack);
         }
         handleSettingsChange();
     }

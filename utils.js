@@ -88,6 +88,30 @@ function copyTextToClipboard(text) {
     });
 }
 
+/**
+ * 获取用于显示的名称（如家族、来源），如果关闭了“显示活动名称”，则只显示核心名称。
+ * @param {string} value - 原始值。
+ * @param {string} type - 类型 ('family' 或 'source')。
+ * @returns {string} 格式化后的显示名称。
+ */
+function getDisplayName(value, type) {
+    const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
+    // 如果复选框不存在或已选中，直接返回翻译后的值
+    if (!showEventNameCheckbox || showEventNameCheckbox.checked) {
+        return state.family_values[String(value).toLowerCase()] || value;
+    }
+
+    // 如果未选中，则尝试去除前缀
+    let translatedValue = state.family_values[String(value).toLowerCase()] || value;
+    if (type === 'family' || type === 'source') {
+        const parts = translatedValue.split(' - ');
+        if (parts.length > 1) {
+            return parts.slice(1).join(' - ').trim(); // 返回 " - " 之后的所有部分
+        }
+    }
+    return translatedValue;
+}
+
 // 为 Nynaeve 技能类型创建反向查找表
 // 这些表将中文标签映射回其原始的英文键，以便进行排序
 const nynaeveCnToEnMap = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([en, cn]) => [cn, en]));

@@ -155,6 +155,13 @@ function populateFilters() {
         } else if (key === 'color') {
             const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[state.currentLang];
             if (colorOrder) values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
+        } else if (key === 'family' || key === 'source') {
+            values.sort((a, b) => {
+                // 使用 getDisplayName 获取将要显示的文本来进行排序
+                const nameA = getDisplayName(a, key);
+                const nameB = getDisplayName(b, key);
+                return nameA.localeCompare(nameB, locale, sortOptions);
+            });
         } else {
             values.sort((a, b) => String(a).localeCompare(String(b), locale, sortOptions));
         }

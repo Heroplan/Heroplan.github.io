@@ -8,6 +8,85 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 /**
+ * 解析单个英雄的技能描述，找出所有符合新规则的DoT（持续伤害）效果，
+ * 并计算其伤害系数，同时排除包含'heal'的英文描述。
+ * @param {object} hero - 要处理的英雄对象。
+ */
+function parseAndStoreDoTInfo(hero) {
+    if (!hero.effects || !hero.attack || hero.attack === 0) return;
+
+    // 定义包含新规则的关键词组合，并标记每条规则是“总伤害”还是“每回合伤害”
+    const keywordSets = [
+        // --- 总伤害规则 (isPerTurn: false) ---
+        { keywords: ['敌人', '回合', '共计', '伤害'], isPerTurn: false },
+        { keywords: ['目标', '回合', '共计', '伤害'], isPerTurn: false },
+        { keywords: ['敵人', '回合', '共計', '傷害'], isPerTurn: false },
+        { keywords: ['目標', '回合', '共計', '傷害'], isPerTurn: false },
+        { keywords: ['敌人', '回合内', '伤害'], isPerTurn: false },
+        { keywords: ['目标', '回合内', '伤害'], isPerTurn: false },
+        { keywords: ['敵人', '回合内', '傷害'], isPerTurn: false },
+        { keywords: ['目標', '回合内', '傷害'], isPerTurn: false },
+        { keywords: ['enemies', 'damage', 'over', 'turn'], isPerTurn: false },
+        { keywords: ['target', 'damage', 'over', 'turn'], isPerTurn: false },
+
+        // --- 每回合伤害规则 (isPerTurn: true) ---
+        { keywords: ['敌人', '回合', '每回合', '伤害'], isPerTurn: true },
+        { keywords: ['目标', '回合', '每回合', '伤害'], isPerTurn: true },
+        { keywords: ['敵人', '回合', '每回合', '傷害'], isPerTurn: true },
+        { keywords: ['目標', '回合', '每回合', '傷害'], isPerTurn: true },
+        { keywords: ['enemies', 'damage', 'for', 'turn'], isPerTurn: true },
+        { keywords: ['target', 'damage', 'for', 'turn'], isPerTurn: true }
+    ];
+
+    hero.dynamicDoTEffects = []; // 初始化存储结果的数组
+
+    hero.effects.forEach((effectText, index) => {
+        const lowerEffectText = effectText.toLowerCase();
+
+        // 【排除规则】如果描述中包含 'immune' 'resisted'，则直接跳过此行
+        if (lowerEffectText.includes('immune') | lowerEffectText.includes('resisted')) {
+            return;
+        }
+
+        // 检查当前技能描述行是否满足某一组关键词共存的条件
+        const matchedSet = keywordSets.find(set =>
+            set.keywords.every(keyword => lowerEffectText.includes(keyword.toLowerCase()))
+        );
+
+        if (matchedSet) {
+            const numbers = effectText.match(/\d+/g);
+            if (!numbers || numbers.length < 2) return;
+
+            let damage = null;
+            let turns = null;
+
+            for (const numStr of numbers) {
+                const num = parseInt(numStr, 10);
+                if (num >= 100 && damage === null) {
+                    damage = num;
+                }
+                if (num > 0 && num <= 10 && turns === null) {
+                    turns = num;
+                }
+            }
+
+            if (damage !== null && turns !== null) {
+                const totalBaseDamage = matchedSet.isPerTurn ? damage * turns : damage;
+                const coefficient = totalBaseDamage / hero.attack;
+
+                hero.dynamicDoTEffects.push({
+                    index: index,
+                    coefficient: coefficient,
+                    turns: turns,
+                    isPerTurn: matchedSet.isPerTurn,
+                    originalDamage: damage
+                });
+            }
+        }
+    });
+}
+
+/**
  * 加载筛选器模态框内各区块的折叠状态。
  * 此函数在页面初始化时调用。
  */
@@ -72,6 +151,7 @@ async function initializeApp() {
     state.allHeroes.forEach((hero, index) => {
         hero.originalIndex = index;
         hero.english_name = extractEnglishName(hero, state.currentLang);
+        parseAndStoreDoTInfo(hero);
     });
 
     // 4. 初始化UI和筛选器

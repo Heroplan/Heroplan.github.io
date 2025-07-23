@@ -210,6 +210,46 @@ function generateGeneralSearchTerm(text) {
 }
 
 /**
+ * 根据英雄当前的攻击力，更新模态框中所有DoT技能的伤害数值。
+ * @param {object} hero - 英雄对象。
+ * @param {number} currentAttack - 英雄当前计算后的攻击力。
+ */
+function updateDynamicDoTDisplay(hero, currentAttack) {
+    if (!hero.dynamicDoTEffects || hero.dynamicDoTEffects.length === 0) return;
+
+    hero.dynamicDoTEffects.forEach(dotInfo => {
+        // 在模态框中找到对应的技能描述 li 元素
+        // 我们假设 effects 列表是第一个 .skill-list
+        const skillList = document.querySelector('#modal .skill-category-block .skill-list');
+        if (!skillList || !skillList.children[dotInfo.index]) return;
+
+        const liElement = skillList.children[dotInfo.index];
+
+        // 计算新的伤害值
+        const newTotalDamage = dotInfo.coefficient * currentAttack;
+        const newDisplayDamage = dotInfo.isPerTurn
+            ? Math.round(newTotalDamage / dotInfo.turns)
+            : Math.round(newTotalDamage);
+
+        const dynamicSpanId = `dot-value-${dotInfo.index}`;
+        let dynamicSpan = liElement.querySelector(`#${dynamicSpanId}`);
+
+        // 如果动态<span>标签还不存在，则创建它
+        if (!dynamicSpan) {
+            // 使用正则表达式精确替换原始数值，避免替换错其他数字
+            const regex = new RegExp(`\\b${dotInfo.originalDamage}\\b`);
+            liElement.innerHTML = liElement.innerHTML.replace(
+                regex,
+                `<span id="${dynamicSpanId}" class="dynamic-value">${newDisplayDamage}</span>`
+            );
+        } else {
+            // 如果已经存在，直接更新数值
+            dynamicSpan.textContent = newDisplayDamage;
+        }
+    });
+}
+
+/**
  * 在模态框中渲染英雄的详细信息。
  * @param {object} hero - 英雄对象。
  * @param {object} context - 上下文对象，主要用于队伍模拟器。
@@ -457,6 +497,7 @@ function renderDetailsInModal(hero, context = {}) {
             modal.querySelector('.details-stats-grid > div:nth-child(2) p').innerHTML = `⚔️ ${finalStats.attack || 0}`;
             modal.querySelector('.details-stats-grid > div:nth-child(3) p').innerHTML = `🛡️ ${finalStats.defense || 0}`;
             modal.querySelector('.details-stats-grid > div:nth-child(4) p').innerHTML = `❤️ ${finalStats.health || 0}`;
+            updateDynamicDoTDisplay(hero, finalStats.attack);
         }
 
         function _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats) {
@@ -530,6 +571,9 @@ function renderDetailsInModal(hero, context = {}) {
 
         if (typeof TalentTree !== 'undefined' && hero.class) {
             TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
+            // ▼▼▼ 在這裡手動調用一次，以顯示初始的動態傷害值 ▼▼▼
+            const initialStats = calculateHeroStats(hero, settingsToUse);
+            updateDynamicDoTDisplay(hero, initialStats.attack);
         }
         handleSettingsChange();
     }

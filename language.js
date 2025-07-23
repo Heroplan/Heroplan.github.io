@@ -244,7 +244,7 @@ const i18n = {
         ironCostLabel: "铁矿:",
         masterEmblemCostLabel: "大师纹章:",
         lbTalentHelpTitle: "突破与天赋设置说明",
-        lbTalentHelpLine1: "突破后属性和天赋升级消耗资源数据均来自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a><br><br>突破和天赋带来的属性加成只能展示对应的战力、攻击、防御和生命值，无法展示加成后的技能持续伤害和效果，技能相关具体数值请在游戏中查看。",
+        lbTalentHelpLine1: "突破后属性和天赋升级消耗资源数据均来自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "法力优先则以法力为最优先级，必定升级法力的天赋。",
 
 
@@ -448,7 +448,7 @@ const i18n = {
         ironCostLabel: "鐵礦:",
         masterEmblemCostLabel: "大師紋章:",
         lbTalentHelpTitle: "突破與天賦設置說明",
-        lbTalentHelpLine1: "突破後屬性和天賦升級消耗資源數據均來自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a><br><br>突破和天賦帶來的屬性加成只能展示對應的戰力、攻擊、防禦和生命值，無法展示加成後的技能持續傷害和效果，技能相關具體數值請在遊戲中查看。",
+        lbTalentHelpLine1: "突破後屬性和天賦升級消耗資源數據均來自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "法力優先則以法力為最優先級,必定升級法力的天賦。",
     },
     en: {
@@ -650,7 +650,7 @@ const i18n = {
         ironCostLabel: "Iron:",
         masterEmblemCostLabel: "Master Emblems:",
         lbTalentHelpTitle: "Limit Break & Talent Settings Help",
-        lbTalentHelpLine1: "Data for post-limit break stats and talent upgrade costs are from <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a><br><br>The stat bonuses from limit breaks and talents can only display the corresponding Power, Attack, Defense, and Health. They cannot show damage over time or skill effects after bonuses. Please check in-game for specific skill-related values.",
+        lbTalentHelpLine1: "Data for post-limit break stats and talent upgrade costs are from <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "Mana Priority gives mana nodes the highest priority, ensuring they are always selected in the talent path.",
     }
 }; 

@@ -222,7 +222,7 @@ const emojiList = ['smile', 'grin', 'lol', 'rofl', 'sad', 'crying', 'blush', 'ro
 
 // --- 硬编码日期 (用于特殊筛选) ---
 const oneClickMaxDate = '2025-09-29';
-const purchaseCostumeDate = '2025-07-28';
+const purchaseCostumeDate = '2025-10-28';
 
 // Nynaeve 技能类型的英文排序标准 (用于多语言排序)
 const nynaeveSkillTypeOrder = [

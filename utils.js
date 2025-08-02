@@ -219,10 +219,10 @@ function getSkillTagsForHero(hero, source) {
 function extractEnglishName(hero, currentLang) {
     if (!hero || !hero.name) return null;
     let heroName = hero.name;
-    if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽') || heroName.includes('經驗模仿怪')) {
+    if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽') || heroName.includes('經驗模仿怪') || heroName.includes('Ascension Mimic') || heroName.includes('进阶拟态兽') || heroName.includes('升等模仿怪')) {
         const pattern = /\(([^)]+)\)/;
         const match = heroName.match(pattern);
-        if (match && match[1] && match[1].includes('Experience Mimic')) {
+        if (match && match[1] && match[1].includes('Mimic')) {
             const baseName = match[1];
             const afterParenthesesIndex = heroName.lastIndexOf(')') + 1;
             const suffix = heroName.substring(afterParenthesesIndex).trim();

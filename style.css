@@ -1149,6 +1149,30 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
     font-size: 0.9em;
 }
 
+/* Container for the special skill icon and text */
+.skill-header-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.special-skill-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.skill-name-speed-block .uniform-style {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+}
+
+.skill-name-speed-block .uniform-style:last-child {
+    margin-bottom: 0;
+}
+
 .family-icon,
 .class-icon,
 .costume-icon,
@@ -1869,6 +1893,17 @@ h1.hero-main-name.skill-type-tag:hover {
         max-width: 150px;
         border-width: 3px;
     }
+    
+    .skill-header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+        /* 恢复技能类型标签容器为左对齐 */
+        .skill-types-container {
+            justify-content: center;
+        }
 
     .manual-table.wanted-mission-table {
         width: 100%;

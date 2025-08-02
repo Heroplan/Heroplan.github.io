@@ -346,6 +346,11 @@ function renderDetailsInModal(hero, context = {}) {
         </div>
     ` : '';
 
+    let specialSkillIconHTML = '';
+    if (hero.specialId) {
+        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.png" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
+    }
+
     const detailsHTML = `
         <div class="details-header">
             <h2>${langDict.modalHeroDetails}</h2>
@@ -378,7 +383,17 @@ function renderDetailsInModal(hero, context = {}) {
         <div class="details-bottom-section">
             ${talentSystemHTML}
             <h3>${langDict.modalSkillDetails}</h3>
-            <div class="skill-category-block"><p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p><p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}">${hero.speed || langDict.none}</span></p><p class="uniform-style">${langDict.modalSkillType}</p>${heroTypesContent}</div>
+            <div class="skill-category-block">
+                <div class="skill-header-container">
+                    ${specialSkillIconHTML}
+                    <div class="skill-name-speed-block">
+                        <p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p>
+                        <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}">${hero.speed || langDict.none}</span></p>
+                    </div>
+                </div>
+                <p class="uniform-style">${langDict.modalSkillType}</p>
+                ${heroTypesContent}
+            </div>
             <div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
             <div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
             ${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}

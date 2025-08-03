@@ -196,6 +196,18 @@ function updateResultsHeader() {
         messageSpan.innerHTML = message;
         uiElements.resultsCountEl.appendChild(messageSpan);
 
+        // --- 新增逻辑开始 ---
+        // 仅在未应用任何筛选时显示“查看最新”按钮
+        if (!filtersAreActive) {
+            const latestBtn = document.createElement('span');
+            latestBtn.id = 'view-latest-btn';
+            latestBtn.className = 'reset-tag'; // 复用样式
+            latestBtn.textContent = langDict.viewLatest;
+            latestBtn.title = langDict.viewLatest;
+            uiElements.resultsCountEl.appendChild(latestBtn);
+        }
+        // --- 新增逻辑结束 ---
+
         if (showResetButton) {
             const resetTag = document.createElement('span');
             resetTag.className = 'reset-tag';

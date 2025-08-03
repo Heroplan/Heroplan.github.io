@@ -354,6 +354,15 @@ function addEventListeners() {
             if (newLang && newLang !== state.currentLang) changeLanguage(newLang);
         }
     });
+    // “查看最新”按钮
+    uiElements.resultsHeader.addEventListener('click', (event) => {
+        if (event.target.id === 'view-latest-btn') {
+            // 设置全局排序状态为按发布日期降序
+            state.currentSort = { key: 'Release date', direction: 'desc' };
+            // 应用筛选并重新渲染表格
+            applyFiltersAndRender();
+        }
+    });
 
     // --- 特殊视图切换事件 ---
     showWantedMissionBtn.addEventListener('click', () => initAndShowWantedMissionView());

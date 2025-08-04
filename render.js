@@ -283,6 +283,13 @@ function renderDetailsInModal(hero, context = {}) {
         familyIconHTML = `<img src="${familyIconSrc}" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
     }
 
+    // 新增：根据 class 生成职业图标HTML
+    let classIconHTML = '';
+    if (hero.class) {
+        const englishClass = (classReverseMap[hero.class] || hero.class).toLowerCase();
+        classIconHTML = `<img src="imgs/classes/${englishClass}.png" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
+    }
+
 
     // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
     const renderListAsHTML = (itemsArray, filterType = null) => {
@@ -430,6 +437,7 @@ function renderDetailsInModal(hero, context = {}) {
                     
                     <div class="hero-avatar-overlays">
                         ${starsHTML}
+                        ${classIconHTML}
                         ${costumeIconHTML}
                         ${familyIconHTML}
                         <div id="modal-rank-container"></div>

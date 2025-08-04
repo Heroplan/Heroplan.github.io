@@ -3882,23 +3882,32 @@ select.custom-select-hidden {
     height: 30px;
 }
 
-/* --- 英雄详情页头像角标样式 --- */
-.hero-avatar-costume-icon {
+/* --- 新增：英雄详情页头像职业图标样式 --- */
+.hero-avatar-class-icon {
     position: absolute;
-    bottom: 46px;
+    top: 37px;
+    /* 位于30px高的星星 + 5px顶部偏移 + 2px间距 之下 */
     left: 5px;
+    width: 30px;
     height: 30px;
-    width: 42.5px;
     z-index: 4;
-    /* 确保在所有其他元素之上 */
 }
 
 .hero-avatar-family-icon {
     position: absolute;
-    bottom: 5px;
+    top: 70px;
     left: 5px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
+    z-index: 4;
+    /* 确保在所有其他元素之上 */
+}/* --- 英雄详情页头像角标样式 --- */
+.hero-avatar-costume-icon {
+    position: absolute;
+    top: 105px;
+    left: 5px;
+    height: 21px;
+    width: 30px;
     z-index: 4;
     /* 确保在所有其他元素之上 */
 }

@@ -714,9 +714,24 @@ function renderDetailsInModal(hero, context = {}) {
         modalStrategySelect.addEventListener('change', handleSettingsChange);
         modalManaCheckbox.addEventListener('change', handleSettingsChange);
 
+        // 1. 先初始化天赋树 (即使它会错误地设置下拉菜单)
         if (typeof TalentTree !== 'undefined' && hero.class) {
             TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
         }
+
+        // 2. 然后，用你保存的正确设置，强制覆盖下拉菜单的值
+        modalLbSelect.value = settingsToUse.lb;
+        modalTalentSelect.value = settingsToUse.talent;
+        modalStrategySelect.value = settingsToUse.strategy;
+        modalManaCheckbox.checked = settingsToUse.manaPriority;
+
+        // 3. 绑定事件监听器
+        modalLbSelect.addEventListener('change', handleSettingsChange);
+        modalTalentSelect.addEventListener('change', handleSettingsChange);
+        modalStrategySelect.addEventListener('change', handleSettingsChange);
+        modalManaCheckbox.addEventListener('change', handleSettingsChange);
+
+        // 4. 最后，调用一次 handleSettingsChange 来确保天赋树的显示和段位图标都与你正确的设置同步
         handleSettingsChange();
         updateRankDisplay();
     }

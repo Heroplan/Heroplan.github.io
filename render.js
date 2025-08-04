@@ -10,6 +10,23 @@
 function getSkinInfo(hero) {
     const name = hero.name || '';
     if (!name) return { skinIdentifier: null, baseName: name };
+
+    // ▼▼▼▼▼ 新增逻辑开始：专门处理拟态兽的颜色后缀 ▼▼▼▼▼
+    const isMimic = name.includes('Mimic') || name.includes('拟态兽') || name.includes('模仿怪');
+    if (isMimic) {
+        const afterParenthesesIndex = name.lastIndexOf(')');
+        if (afterParenthesesIndex !== -1 && afterParenthesesIndex < name.length - 1) {
+            const potentialSuffix = name.substring(afterParenthesesIndex + 1).trim().toLowerCase();
+            const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
+            if (allowedSuffixes.includes(potentialSuffix)) {
+                // 如果是拟态兽且后面跟着有效的颜色后缀，则移除后缀进行显示
+                const baseName = name.substring(0, afterParenthesesIndex + 1).trim();
+                return { skinIdentifier: null, baseName: baseName };
+            }
+        }
+    }
+    // ▲▲▲▲▲ 新增逻辑结束 ▲▲▲▲▲
+
     const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
     const skinMatch = name.match(skinPattern);
 

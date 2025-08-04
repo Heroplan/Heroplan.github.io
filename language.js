@@ -247,6 +247,12 @@ const i18n = {
         lbTalentHelpLine1: "突破后属性和天赋升级消耗资源数据均来自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "法力优先则以法力为最优先级，必定升级法力的天赋。",
         viewLatest: '查看最新',
+        modalAttributeTalentBtn: '属性天赋',
+        modalSkillTagsHeader: '📖 技能详情', 
+        modalSkillDetailsBtn: '标签',
+        modalSkillEffectBtn: '效果',
+        modalPassiveBtn: '被动',
+        modalFamilyBonusBtn: '家族',
 
 
     },
@@ -452,6 +458,12 @@ const i18n = {
         lbTalentHelpLine1: "突破後屬性和天賦升級消耗資源數據均來自 <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "法力優先則以法力為最優先級,必定升級法力的天賦。",
         viewLatest: '查看最新',
+        modalAttributeTalentBtn: '屬性天賦',
+        modalSkillTagsHeader: '📖 技能詳情',
+        modalSkillDetailsBtn: '標籤',
+        modalSkillEffectBtn: '效果',
+        modalPassiveBtn: '被動',
+        modalFamilyBonusBtn: '家族',
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -655,5 +667,11 @@ const i18n = {
         lbTalentHelpLine1: "Data for post-limit break stats and talent upgrade costs are from <a href='https://bbcamp.info' target='_blank' rel='noopener noreferrer'>https://bbcamp.info</a>",
         lbTalentHelpLine2: "Mana Priority gives mana nodes the highest priority, ensuring they are always selected in the talent path.",
         viewLatest: 'View Latest',
+        modalAttributeTalentBtn: 'Stats/Talents',
+        modalSkillTagsHeader: '📖 Skill Details',
+        modalSkillDetailsBtn: 'Tags',
+        modalSkillEffectBtn: 'Effects',
+        modalPassiveBtn: 'Passives',
+        modalFamilyBonusBtn: 'Family',
     }
 }; 

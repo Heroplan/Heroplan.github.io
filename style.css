@@ -3731,3 +3731,77 @@ select.custom-select-hidden {
     border-radius: 4px;
     transition: color 0.2s, background-color 0.2s;
 }
+
+/* --- 模态框粘性头部和滚动按钮样式 --- */
+
+#modal .details-header {
+    position: -webkit-sticky;
+    /* for Safari */
+    position: sticky;
+    top: 0;
+    background-color: var(--md-sys-color-surface);
+    z-index: 10;
+    padding-top: 1.5rem;
+    /* 增加顶部内边距，使其看起来不那么拥挤 */
+}
+
+.details-header-main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* 允许在小屏幕上换行 */
+    gap: 1rem;
+    flex-grow: 1;
+}
+
+.details-header-main h2 {
+    margin-right: auto;
+    /* 将标题推到最左边 */
+}
+
+.scroll-to-section-btns {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    /* 防止按钮组被压缩 */
+}
+
+.scroll-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 16px;
+    white-space: nowrap;
+}
+
+/* 确保右侧的功能按钮（收藏、分享、关闭）对齐 */
+.details-header-buttons {
+    align-self: flex-start;
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+    .details-header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        /* 移动端改为左对齐 */
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .details-header-main h2 {
+        margin-right: 0;
+    }
+
+    #modal .details-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .details-header-buttons {
+        position: absolute;
+        /* 将按钮移动到右上角 */
+        top: 1.5rem;
+        right: 1rem;
+    }
+}

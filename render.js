@@ -353,7 +353,16 @@ function renderDetailsInModal(hero, context = {}) {
 
     const detailsHTML = `
         <div class="details-header">
-            <h2>${langDict.modalHeroDetails}</h2>
+            <div class="details-header-main">
+                 <h2 id="modal-title-h2" style="cursor: pointer;" title="返回顶部">${langDict.modalHeroDetails}</h2>
+                 <div class="scroll-to-section-btns">
+                    <button id="scroll-to-stats-btn" class="scroll-btn action-button">${langDict.modalAttributeTalentBtn}</button>
+                    <button id="scroll-to-skill-tags-btn" class="scroll-btn action-button">${langDict.modalSkillDetailsBtn}</button>
+                    <button id="scroll-to-skill-effects-btn" class="scroll-btn action-button">${langDict.modalSkillEffectBtn}</button>
+                    <button id="scroll-to-passives-btn" class="scroll-btn action-button">${langDict.modalPassiveBtn}</button>
+                    ${familyBonus.length > 0 ? `<button id="scroll-to-family-btn" class="scroll-btn action-button">${langDict.modalFamilyBonusBtn}</button>` : ''}
+                 </div>
+            </div>
             <div class="details-header-buttons">
                 <button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button>
                 <button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button>
@@ -371,7 +380,7 @@ function renderDetailsInModal(hero, context = {}) {
                     ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}"><img src="imgs/coins/${sourceIconMap[sourceReverseMap[hero.source]]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}
                 </div>
-                <h3>${langDict.modalCoreStats}</h3>
+                <h3 id="modal-core-stats-header">${langDict.modalCoreStats}</h3>
                 <div class="details-stats-grid">
                     <div><p class="metric-value-style">💪 ${hero.displayStats.power || 0}</p></div>
                     <div><p class="metric-value-style">⚔️ ${hero.displayStats.attack || 0}</p></div>
@@ -382,7 +391,7 @@ function renderDetailsInModal(hero, context = {}) {
         </div>
         <div class="details-bottom-section">
             ${talentSystemHTML}
-            <h3>${langDict.modalSkillDetails}</h3>
+            <h3 id="modal-skill-details-header">${langDict.modalSkillTagsHeader}</h3>
             <div class="skill-category-block">
                 <div class="skill-header-container">
                     ${specialSkillIconHTML}
@@ -394,9 +403,9 @@ function renderDetailsInModal(hero, context = {}) {
                 <p class="uniform-style">${langDict.modalSkillType}</p>
                 ${heroTypesContent}
             </div>
-            <div class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
-            <div class="skill-category-block"><p class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
-            ${familyBonus.length > 0 ? `<div class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}
+            <div id="modal-skill-effects-section" class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
+            <div class="skill-category-block"><p id="modal-passives-section" class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
+            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}
         </div>
         <div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>
     `;
@@ -404,6 +413,37 @@ function renderDetailsInModal(hero, context = {}) {
     modalContent.innerHTML = detailsHTML;
 
     // --- JS逻辑部分 ---
+
+    // 新增：滚动到指定区域的按钮事件监听
+    const scrollToSection = (sectionId) => {
+        const section = modalContent.querySelector(`#${sectionId}`);
+        const header = modalContent.querySelector('.details-header');
+        if (section && header) {
+            // 计算滚动位置，需要减去sticky header的高度
+            const headerHeight = header.offsetHeight;
+            const sectionTop = section.offsetTop;
+
+            uiElements.modal.scrollTo({
+                top: sectionTop - headerHeight - 15, // 额外减去15px作为缓冲
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    document.getElementById('scroll-to-stats-btn')?.addEventListener('click', () => scrollToSection('modal-core-stats-header'));
+    document.getElementById('scroll-to-skill-tags-btn')?.addEventListener('click', () => scrollToSection('modal-skill-details-header'));
+    document.getElementById('scroll-to-skill-effects-btn')?.addEventListener('click', () => scrollToSection('modal-skill-effects-section'));
+    document.getElementById('scroll-to-passives-btn')?.addEventListener('click', () => scrollToSection('modal-passives-section'));
+    document.getElementById('scroll-to-family-btn')?.addEventListener('click', () => scrollToSection('modal-family-bonus-section'));
+
+    // 新增：为标题添加返回顶部功能
+    document.getElementById('modal-title-h2')?.addEventListener('click', () => {
+        uiElements.modal.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
 
     // 统一处理所有可折叠区块及其状态记忆
     modalContent.querySelectorAll('[data-cookie]').forEach(header => {

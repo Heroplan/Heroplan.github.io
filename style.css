@@ -1526,8 +1526,8 @@ footer .footer-credit {
 /* ========== 英雄头像辉光效果 ========== */
 
 /* --- 红色发光 --- */
-#modal .hero-image-modal.red-glow-border,
-.manual-table .hero-image.red-glow-border,
+#modal .hero-avatar-container-modal.red-glow-border,
+.manual-table .hero-avatar-container.red-glow-border,
 .team-hero-avatar.red-glow-border,
 .saved-team-avatar.red-glow-border {
     box-shadow: var(--hero-glow-red);
@@ -1535,8 +1535,8 @@ footer .footer-credit {
 }
 
 /* --- 蓝色发光 --- */
-#modal .hero-image-modal.blue-glow-border,
-.manual-table .hero-image.blue-glow-border,
+#modal .hero-avatar-container-modal.blue-glow-border,
+.manual-table .hero-avatar-container.blue-glow-border,
 .team-hero-avatar.blue-glow-border,
 .saved-team-avatar.blue-glow-border {
     box-shadow: var(--hero-glow-blue);
@@ -1544,8 +1544,8 @@ footer .footer-credit {
 }
 
 /* --- 绿色发光 --- */
-#modal .hero-image-modal.green-glow-border,
-.manual-table .hero-image.green-glow-border,
+#modal .hero-avatar-container-modal.green-glow-border,
+.manual-table .hero-avatar-container.green-glow-border,
 .team-hero-avatar.green-glow-border,
 .saved-team-avatar.green-glow-border {
     box-shadow: var(--hero-glow-green);
@@ -1553,8 +1553,8 @@ footer .footer-credit {
 }
 
 /* --- 黄色发光 --- */
-#modal .hero-image-modal.yellow-glow-border,
-.manual-table .hero-image.yellow-glow-border,
+#modal .hero-avatar-container-modal.yellow-glow-border,
+.manual-table .hero-avatar-container.yellow-glow-border,
 .team-hero-avatar.yellow-glow-border,
 .saved-team-avatar.yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
@@ -1562,8 +1562,8 @@ footer .footer-credit {
 }
 
 /* --- 紫色发光 --- */
-#modal .hero-image-modal.purple-glow-border,
-.manual-table .hero-image.purple-glow-border,
+#modal .hero-avatar-container-modal.purple-glow-border,
+.manual-table .hero-avatar-container.purple-glow-border,
 .team-hero-avatar.purple-glow-border,
 .saved-team-avatar.purple-glow-border {
     box-shadow: var(--hero-glow-purple);
@@ -1571,8 +1571,8 @@ footer .footer-credit {
 }
 
 /* --- 白色发光 --- */
-#modal .hero-image-modal.white-glow-border,
-.manual-table .hero-image.white-glow-border,
+#modal .hero-avatar-container-modal.white-glow-border,
+.manual-table .hero-avatar-container.white-glow-border,
 .team-hero-avatar.white-glow-border,
 .saved-team-avatar.white-glow-border {
     box-shadow: var(--hero-glow-white);
@@ -1580,8 +1580,8 @@ footer .footer-credit {
 }
 
 /* --- 黑色发光 --- */
-#modal .hero-image-modal.black-glow-border,
-.manual-table .hero-image.black-glow-border,
+#modal .hero-avatar-container-modal.black-glow-border,
+.manual-table .hero-avatar-container.black-glow-border,
 .team-hero-avatar.black-glow-border,
 .saved-team-avatar.black-glow-border {
     box-shadow: var(--hero-glow-black);
@@ -3804,4 +3804,152 @@ select.custom-select-hidden {
         top: 1.5rem;
         right: 1rem;
     }
+}
+
+/* --- 英雄头像容器和背景样式 --- */
+
+/* 表格中的头像容器 */
+.hero-avatar-container {
+    position: relative;
+    width: 40px;
+    /* 包含2px边框 */
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    /* 关键：为边框和辉光提供占位 */
+}
+
+/* 详情框中的头像容器 */
+.hero-avatar-container-modal {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    /* 关键：为边框和辉光提供占位 */
+    margin: 0 auto;
+}
+
+.hero-avatar-container-modal::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+/* 通用背景层样式 */
+.hero-avatar-background,
+.hero-avatar-background-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: inherit;
+    /* 继承父容器的圆角 */
+}
+
+/* 通用图片层样式 */
+.hero-avatar-image,
+.hero-avatar-image-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    object-fit: cover;
+    border-radius: inherit;
+    /* 继承父容器的圆角 */
+}
+
+/* --- 英雄详情页头像星星样式 --- */
+.hero-avatar-stars-container {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 3;
+    /* 确保在图片和背景之上 */
+    display: flex;
+    gap: 2px;
+    /* 星星之间的间距 */
+}
+
+.hero-avatar-star {
+    width: 30px;
+    height: 30px;
+}
+
+/* --- 英雄详情页头像角标样式 --- */
+.hero-avatar-costume-icon {
+    position: absolute;
+    bottom: 46px;
+    left: 5px;
+    height: 30px;
+    width: 42.5px;
+    z-index: 4;
+    /* 确保在所有其他元素之上 */
+}
+
+.hero-avatar-family-icon {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 40px;
+    width: 40px;
+    z-index: 4;
+    /* 确保在所有其他元素之上 */
+}
+
+/* --- 英雄详情页动态段位图标样式 --- */
+.hero-avatar-rank-container {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column-reverse;
+    /* 让突破条从下往上堆叠 */
+    align-items: center;
+    width: 55px;
+}
+
+.ascension-bar {
+    width: 60%;
+    height: 100%;
+    display: block;
+    margin-bottom: -8px;
+    /* 调整此值让突破条紧密重叠 */
+}
+
+.talent-node-container {
+    position: relative;
+    /* 为天赋数字提供定位基准 */
+    width: 45px;
+    /* 节点宽度 */
+    height: auto;
+    margin-bottom: -5px;
+    /* 调整节点与最上方突破条的重叠 */
+    z-index: 5;
+    /* 确保节点在最上层 */
+}
+
+.talent-node-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.talent-node-text {
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px white, -1px -1px 2px white;
+    /* 添加白色外发光以增加辨识度 */
 }

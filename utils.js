@@ -327,3 +327,71 @@ const getColorHex = (colorName) => {
     };
     return colorMap[String(colorName).toLowerCase()] || 'inherit';
 };
+
+/**
+ * 根据英雄颜色返回对应的亮色到标准色的CSS线性渐变背景。
+ * @param {string} colorName - 英雄的颜色名称。
+ * @returns {string} CSS background 字符串。
+ */
+function getHeroColorLightGradient(colorName) {
+    const colorMap = {
+        '红': { light: '#e55249', standard: '#9f231c' }, '紅': { light: '#e55249', standard: '#9f231c' }, 'red': { light: '#e55249', standard: '#9f231c' },
+        '蓝': { light: '#5eb1f2', standard: '#235d9a' }, '藍': { light: '#5eb1f2', standard: '#235d9a' }, 'blue': { light: '#5eb1f2', standard: '#235d9a' },
+        '绿': { light: '#54d57c', standard: '#1b753a' }, '綠': { light: '#54d57c', standard: '#1b753a' }, 'green': { light: '#54d57c', standard: '#1b753a' },
+        '黄': { light: '#fde362', standard: '#c89b1c' }, '黃': { light: '#fde362', standard: '#c89b1c' }, 'yellow': { light: '#fde362', standard: '#c89b1c' },
+        '紫': { light: '#9b70e0', standard: '#4c337b' }, 'purple': { light: '#9b70e0', standard: '#4c337b' }
+    };
+    const colors = colorMap[String(colorName).toLowerCase()];
+    if (colors) {
+        // 从上方的标准色，渐变到下方的亮色
+        return `linear-gradient(to bottom, ${colors.standard} 0%, ${colors.light} 100%)`;
+    }
+    return 'none'; // 如果颜色未定义，则不显示背景
+}
+
+/**
+ * 根据英雄星级、突破和天赋等级生成段位图标的完整HTML。
+ * @param {object} hero - 英雄对象。
+ * @param {string} lbSetting - 当前的突破设置 ('none', 'lb1', 'lb2')。
+ * @param {string} talentSetting - 当前的天赋设置 ('none', 'talent20', 'talent25')。
+ * @param {number} nodeCount - 当前已激活的天赋节点数量。
+ * @returns {string} 包含所有段位元素的HTML字符串。
+ */
+function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
+    if (!hero || !hero.star) return '';
+
+    let ascensionLevels = 0;
+    if (hero.star === 1) ascensionLevels = 2;
+    else if (hero.star === 2 || hero.star === 3) ascensionLevels = 3;
+    else if (hero.star >= 4) ascensionLevels = 4;
+
+    if (ascensionLevels === 0) return '';
+
+    let lbCount = 0;
+    if (lbSetting === 'lb1') lbCount = 1;
+    else if (lbSetting === 'lb2') lbCount = 2;
+
+    let barsHtml = '';
+    for (let i = 0; i < ascensionLevels; i++) {
+        const isLimitBreakBar = i < lbCount;
+        const barImage = isLimitBreakBar ? 'ascension_bar_limitbreak.png' : 'ascension_bar.png';
+        barsHtml += `<img src="imgs/other/${barImage}" class="ascension-bar" alt="ascension bar">`;
+    }
+
+    let talentNodeHtml = '';
+    // 使用传入的实际节点数量 nodeCount
+    const talentCount = nodeCount;
+
+    if (talentCount > 0) {
+        // 判断使用哪个图标，并显示实际的天赋点数
+        const nodeImage = talentCount >= 21 ? 'node_master.png' : 'node.png';
+        talentNodeHtml = `
+            <div class="talent-node-container">
+                <img src="imgs/other/${nodeImage}" class="talent-node-image" alt="talent node">
+                <span class="talent-node-text">${talentCount}</span>
+            </div>
+        `;
+    }
+
+    return `<div class="hero-avatar-rank-container">${barsHtml}${talentNodeHtml}</div>`;
+}

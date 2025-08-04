@@ -165,8 +165,16 @@ function renderTable(heroes) {
                 const favClass = state.teamSimulatorActive ? '' : (isHeroFavorite ? 'favorited' : '');
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${favClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
+                const gradientBg = getHeroColorLightGradient(hero.color);
+                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.png` : getLocalImagePath(hero.image);
                 const heroColorClass = getColorGlowClass(hero.color);
-                return `<td class="col-image"><img src="${getLocalImagePath(hero.image)}" class="hero-image ${heroColorClass}" alt="${hero.name}" loading="lazy"></td>`;
+
+                return `<td class="col-image">
+                            <div class="hero-avatar-container ${heroColorClass}">
+                                <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.png'">
+                            </div>
+                        </td>`;
             }
             else {
                 content = hero[key] || '';
@@ -248,6 +256,33 @@ function renderDetailsInModal(hero, context = {}) {
     const { modalContent, filterInputs } = uiElements;
     const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
     const avatarGlowClass = getColorGlowClass(hero.color);
+    // 新增：为详情框头像准备变量
+    const modalGradientBg = getHeroColorLightGradient(hero.color);
+    const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.png` : getLocalImagePath(hero.image);
+
+    // 根据星级生成星星的HTML
+    let starsHTML = '';
+    if (hero.star && hero.star > 0) {
+        starsHTML = '<div class="hero-avatar-stars-container">';
+        for (let i = 0; i < hero.star; i++) {
+            starsHTML += '<img src="imgs/other/star.png" class="hero-avatar-star" alt="star">';
+        }
+        starsHTML += '</div>';
+    }
+
+    // 新增：根据 costume_id 生成服装图标HTML
+    let costumeIconHTML = '';
+    if (hero.costume_id && hero.costume_id !== 0) {
+        costumeIconHTML = '<img src="imgs/other/costume.png" class="hero-avatar-costume-icon" alt="costume">';
+    }
+
+    // 新增：根据 family 生成家族图标HTML
+    let familyIconHTML = '';
+    if (hero.family) {
+        const familyIconSrc = `imgs/family/${String(hero.family).toLowerCase()}.png`;
+        familyIconHTML = `<img src="${familyIconSrc}" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
+    }
+
 
     // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
     const renderListAsHTML = (itemsArray, filterType = null) => {
@@ -388,7 +423,19 @@ function renderDetailsInModal(hero, context = {}) {
         </div>
         <div class="hero-title-block">${nameBlockHTML}${hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : ''}</div>
         <div class="details-body">
-            <div class="details-top-left"><img src="${getLocalImagePath(hero.image)}" class="hero-image-modal ${avatarGlowClass}" alt="${hero.name}"></div>
+            <div class="details-top-left">
+                <div class="hero-avatar-container-modal ${avatarGlowClass}">
+                    <div class="hero-avatar-background-modal" style="background: ${modalGradientBg};"></div>
+                    <img src="${modalImageSrc}" class="hero-avatar-image-modal" alt="${hero.name}" onerror="this.src='imgs/heroes/not_found.png'">
+                    
+                    <div class="hero-avatar-overlays">
+                        ${starsHTML}
+                        ${costumeIconHTML}
+                        ${familyIconHTML}
+                        <div id="modal-rank-container"></div>
+                    </div>
+                </div>
+            </div>
             <div class="details-top-right">
                 <div class="details-info-line">
                     ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.png" class="class-icon"/>${hero.class}</span>` : ''}
@@ -526,6 +573,26 @@ function renderDetailsInModal(hero, context = {}) {
         const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
         const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
 
+        const updateRankDisplay = (currentNodeCount = -1) => {
+            const lbSetting = modalLbSelect.value;
+            const talentSetting = modalTalentSelect.value;
+            const rankContainer = document.getElementById('modal-rank-container');
+
+            let talentCountToUse = 0;
+            if (currentNodeCount !== -1) {
+                // 如果从天赋树回调中传入了实时点数，则使用它
+                talentCountToUse = currentNodeCount;
+            } else {
+                // 否则（例如通过下拉菜单改变），则从设置中推断点数
+                talentCountToUse = parseInt(talentSetting.replace('talent', ''), 10) || 0;
+            }
+
+            if (rankContainer) {
+                // 将最终要使用的点数传递给HTML生成函数
+                rankContainer.innerHTML = generateRankHtml(hero, lbSetting, talentSetting, talentCountToUse);
+            }
+        };
+
         const settingsToUse = {
             lb: filterInputs.defaultLimitBreakSelect.value,
             talent: filterInputs.defaultTalentSelect.value,
@@ -608,6 +675,18 @@ function renderDetailsInModal(hero, context = {}) {
             if (currentSettingsInModal.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+
+            let newTalentSetting = 'none';
+            if (nodeCount > 20) {
+                newTalentSetting = 'talent25';
+            } else if (nodeCount > 0) {
+                newTalentSetting = 'talent20';
+            }
+
+            modalTalentSelect.value = newTalentSetting;
+
+            // 将天赋树返回的实时点数 nodeCount 传递给更新函数
+            updateRankDisplay(nodeCount);
         };
 
         const handleSettingsChange = () => {
@@ -619,6 +698,7 @@ function renderDetailsInModal(hero, context = {}) {
                 if (newTalentLevel === 'none') TalentTree.clear();
                 else TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
             }
+            updateRankDisplay();
         };
 
         modalLbSelect.addEventListener('change', handleSettingsChange);
@@ -630,6 +710,7 @@ function renderDetailsInModal(hero, context = {}) {
             TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
         }
         handleSettingsChange();
+        updateRankDisplay();
     }
 
     document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);

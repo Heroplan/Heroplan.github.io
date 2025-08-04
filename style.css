@@ -3865,6 +3865,36 @@ select.custom-select-hidden {
     border-radius: inherit;
     /* 继承父容器的圆角 */
 }
+/* --- 英雄详情页头像覆盖层 (Overlays) 样式 --- */
+.hero-avatar-overlays {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    /* 确保在背景和图片之上 */
+    pointer-events: none;
+    /* 允许点击穿透到图片（如果需要）*/
+}
+
+.hero-avatar-overlays>* {
+    pointer-events: auto;
+    /* 让覆盖层内的具体元素可以响应事件 */
+}
+
+/* --- 新增：避免覆盖层加载时跳动 --- */
+.hero-avatar-overlays.overlays-hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hero-avatar-overlays.overlays-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+    /* 平滑的淡入过渡效果 */
+}
 
 /* --- 英雄详情页头像星星样式 --- */
 .hero-avatar-stars-container {
@@ -3902,7 +3932,8 @@ select.custom-select-hidden {
     width: 30px;
     z-index: 4;
     /* 确保在所有其他元素之上 */
-}/* --- 英雄详情页头像角标样式 --- */
+}
+
 .hero-avatar-costume-icon {
     position: absolute;
     top: 105px;
@@ -3911,6 +3942,28 @@ select.custom-select-hidden {
     width: 30px;
     z-index: 4;
     /* 确保在所有其他元素之上 */
+}
+
+/* --- 优化：修复天赋切换时图标跳动/重复动画的问题 (v2) --- */
+@keyframes fadeInRankElement {
+    from {
+        opacity: 0;
+        transform: translateY(3px);
+        /* 一个微妙的向上动画效果 */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 【核心修改】
+  将动画直接应用在容器本身，而不是其子元素(*)。
+  这样可以确保容器在被定位到正确位置之前是不可见的。
+*/
+.hero-avatar-rank-container.animate-rank-in {
+    animation: fadeInRankElement 0.35s ease-out forwards;
 }
 
 /* --- 英雄详情页动态段位图标样式 --- */
@@ -3954,12 +4007,15 @@ select.custom-select-hidden {
 
 .talent-node-text {
     position: absolute;
-    top: 50%;
-    left: 48%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: black;
     font-weight: bold;
     font-size: 18px;
     text-shadow: 1px 1px 2px white, -1px -1px 2px white;
-    /* 添加白色外发光以增加辨识度 */
 }

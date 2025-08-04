@@ -251,6 +251,10 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
  * @param {object} context - 上下文对象，主要用于队伍模拟器。
  */
 function renderDetailsInModal(hero, context = {}) {
+    // 在后台预加载标准天赋节点图标和突破图标，以防止布局跳动。
+    new Image().src = 'imgs/other/node.png';
+    new Image().src = 'imgs/other/ascension_bar_limitbreak.png';
+    
     const { teamSlotIndex } = context;
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
@@ -433,9 +437,9 @@ function renderDetailsInModal(hero, context = {}) {
             <div class="details-top-left">
                 <div class="hero-avatar-container-modal ${avatarGlowClass}">
                     <div class="hero-avatar-background-modal" style="background: ${modalGradientBg};"></div>
-                    <img src="${modalImageSrc}" class="hero-avatar-image-modal" alt="${hero.name}" onerror="this.src='imgs/heroes/not_found.png'">
+                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" onerror="this.src='imgs/heroes/not_found.png'">
                     
-                    <div class="hero-avatar-overlays">
+                    <div class="hero-avatar-overlays overlays-hidden">
                         ${starsHTML}
                         ${classIconHTML}
                         ${costumeIconHTML}
@@ -485,6 +489,22 @@ function renderDetailsInModal(hero, context = {}) {
     modalContent.innerHTML = detailsHTML;
 
     // --- JS逻辑部分 ---
+    const modalHeroImg = document.getElementById('modal-hero-avatar-img');
+    const overlaysContainer = modalContent.querySelector('.hero-avatar-overlays');
+
+    if (modalHeroImg && overlaysContainer) {
+        const showOverlays = () => {
+            overlaysContainer.classList.remove('overlays-hidden');
+            overlaysContainer.classList.add('overlays-visible');
+        };
+
+        if (modalHeroImg.complete) {
+            showOverlays();
+        } else {
+            modalHeroImg.addEventListener('load', showOverlays);
+        }
+        modalHeroImg.addEventListener('error', showOverlays);
+    }
 
     // 新增：滚动到指定区域的按钮事件监听
     const scrollToSection = (sectionId) => {
@@ -580,24 +600,39 @@ function renderDetailsInModal(hero, context = {}) {
         const modalTalentSelect = document.getElementById('modal-talent-select');
         const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
         const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
+        // 新增：用于在内存中缓存天赋树计算出的最新加成状态
+        let currentTalentBonuses = { attack_flat: 0, attack_percent: 0, defense_flat: 0, defense_percent: 0, health_flat: 0, health_percent: 0, mana_percent: 0, healing_percent: 0, crit_percent: 0 };
+        let currentNodeCount = 0;
 
         const updateRankDisplay = (currentNodeCount = -1) => {
             const lbSetting = modalLbSelect.value;
             const talentSetting = modalTalentSelect.value;
             const rankContainer = document.getElementById('modal-rank-container');
 
+            if (!rankContainer) return;
+
+            // 检查容器在更新前是否已有内容
+            const hadContent = rankContainer.hasChildNodes();
+
             let talentCountToUse = 0;
             if (currentNodeCount !== -1) {
-                // 如果从天赋树回调中传入了实时点数，则使用它
                 talentCountToUse = currentNodeCount;
             } else {
-                // 否则（例如通过下拉菜单改变），则从设置中推断点数
                 talentCountToUse = parseInt(talentSetting.replace('talent', ''), 10) || 0;
             }
 
-            if (rankContainer) {
-                // 将最终要使用的点数传递给HTML生成函数
-                rankContainer.innerHTML = generateRankHtml(hero, lbSetting, talentSetting, talentCountToUse);
+            const newHtml = generateRankHtml(hero, lbSetting, talentSetting, talentCountToUse);
+            const hasNewContent = newHtml.trim() !== '';
+
+            // 更新HTML内容
+            rankContainer.innerHTML = newHtml;
+
+            // 仅在容器之前为空、现在有内容时，才触发一次动画
+            if (!hadContent && hasNewContent) {
+                const newRankContainerInner = rankContainer.querySelector('.hero-avatar-rank-container');
+                if (newRankContainerInner) {
+                    newRankContainerInner.classList.add('animate-rank-in');
+                }
             }
         };
 
@@ -677,6 +712,8 @@ function renderDetailsInModal(hero, context = {}) {
         }
 
         const talentChangeCallback = (bonuses, nodeCount) => {
+            currentTalentBonuses = bonuses;
+            currentNodeCount = nodeCount;
             const currentSettingsInModal = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
             _updateModalStatsWithBonuses(hero, currentSettingsInModal, bonuses, nodeCount);
             let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
@@ -684,35 +721,49 @@ function renderDetailsInModal(hero, context = {}) {
             else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
 
-            let newTalentSetting = 'none';
-            if (nodeCount > 20) {
-                newTalentSetting = 'talent25';
-            } else if (nodeCount > 0) {
-                newTalentSetting = 'talent20';
-            }
-
-            modalTalentSelect.value = newTalentSetting;
-
             // 将天赋树返回的实时点数 nodeCount 传递给更新函数
             updateRankDisplay(nodeCount);
         };
 
-        const handleSettingsChange = () => {
+        // 新增：一个通用的UI更新函数
+        const updateCommonUI = (bonuses, nodeCount) => {
+            const settings = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
+            _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount);
+
+            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
+            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+            updateRankDisplay(nodeCount);
+        };
+
+        // 新增：仅用于“突破设置”的处理器，它不会触碰天赋树
+        const handleStatUpdateOnly = () => {
+            updateCommonUI(currentTalentBonuses, currentNodeCount);
+        };
+
+        // 新增：仅用于天赋相关设置的处理器，它会刷新天赋树
+        const handleTreeAndStatUpdate = () => {
             const newTalentLevel = modalTalentSelect.value;
             const isDisabled = (newTalentLevel === 'none');
             modalStrategySelect.disabled = isDisabled;
             modalManaCheckbox.disabled = isDisabled;
+
             if (typeof TalentTree !== 'undefined' && hero.class) {
-                if (newTalentLevel === 'none') TalentTree.clear();
-                else TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                if (newTalentLevel === 'none') {
+                    TalentTree.clear();
+                } else {
+                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                }
+            } else {
+                handleStatUpdateOnly();
             }
-            updateRankDisplay();
         };
 
-        modalLbSelect.addEventListener('change', handleSettingsChange);
-        modalTalentSelect.addEventListener('change', handleSettingsChange);
-        modalStrategySelect.addEventListener('change', handleSettingsChange);
-        modalManaCheckbox.addEventListener('change', handleSettingsChange);
+        modalLbSelect.addEventListener('change', handleStatUpdateOnly);
+        modalTalentSelect.addEventListener('change', handleTreeAndStatUpdate);
+        modalStrategySelect.addEventListener('change', handleTreeAndStatUpdate);
+        modalManaCheckbox.addEventListener('change', handleTreeAndStatUpdate);
 
         // 1. 先初始化天赋树 (即使它会错误地设置下拉菜单)
         if (typeof TalentTree !== 'undefined' && hero.class) {
@@ -726,14 +777,14 @@ function renderDetailsInModal(hero, context = {}) {
         modalManaCheckbox.checked = settingsToUse.manaPriority;
 
         // 3. 绑定事件监听器
-        modalLbSelect.addEventListener('change', handleSettingsChange);
-        modalTalentSelect.addEventListener('change', handleSettingsChange);
-        modalStrategySelect.addEventListener('change', handleSettingsChange);
-        modalManaCheckbox.addEventListener('change', handleSettingsChange);
+        // 职责分离的事件监听器
+        modalLbSelect.addEventListener('change', handleStatUpdateOnly);
+        modalTalentSelect.addEventListener('change', handleTreeAndStatUpdate);
+        modalStrategySelect.addEventListener('change', handleTreeAndStatUpdate);
+        modalManaCheckbox.addEventListener('change', handleTreeAndStatUpdate);
 
-        // 4. 最后，调用一次 handleSettingsChange 来确保天赋树的显示和段位图标都与你正确的设置同步
-        handleSettingsChange();
-        updateRankDisplay();
+        // 4. 最后，调用一次 handleTreeAndStatUpdate 来确保天赋树的显示和段位图标都与正确的设置同步
+        handleTreeAndStatUpdate();
     }
 
     document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);

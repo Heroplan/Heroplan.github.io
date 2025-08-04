@@ -642,7 +642,7 @@ input[type="number"] {
 }
 #modal-content,
 #filters-modal-content {
-    padding: 2rem 2.5rem;
+    padding: 0rem 2.5rem;
 }
 
 .hidden {
@@ -1214,6 +1214,7 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
     margin-top: 1.5rem;
     padding-top: 1rem;
     border-top: 1px solid var(--md-sys-color-outline);
+    padding-bottom: 2rem;
 }
 
 .close-bottom-btn {

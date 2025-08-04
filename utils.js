@@ -387,7 +387,7 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
         const nodeImage = talentCount >= 21 ? 'node_master.png' : 'node.png';
         talentNodeHtml = `
             <div class="talent-node-container">
-                <img src="imgs/other/${nodeImage}" class="talent-node-image" alt="talent node">
+                <img src="imgs/talents/${nodeImage}" class="talent-node-image" alt="talent node">
                 <span class="talent-node-text">${talentCount}</span>
             </div>
         `;

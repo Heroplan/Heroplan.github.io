@@ -251,9 +251,6 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
  * @param {object} context - 上下文对象，主要用于队伍模拟器。
  */
 function renderDetailsInModal(hero, context = {}) {
-    // 在后台预加载标准天赋节点图标和突破图标，以防止布局跳动。
-    new Image().src = 'imgs/other/node.png';
-    new Image().src = 'imgs/other/ascension_bar_limitbreak.png';
     
     const { teamSlotIndex } = context;
     const langDict = i18n[state.currentLang];

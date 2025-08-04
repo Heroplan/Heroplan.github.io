@@ -450,7 +450,7 @@ const TalentTree = (() => {
         const text = nodeInfo.text;
 
         // 【核心修正】将判断条件从 <= 25 扩展为 >= 21，以包含26级的终极天赋节点
-        images.push({ src: `imgs/talents/${(level >= 21) ? 'master' : 'talent'}.png`, class: 'node-img-base' });
+        images.push({ src: `imgs/talents/${(level >= 21) ? 'node_master' : 'node'}.png`, class: 'node-img-base' });
 
         const statKeywordMap = { '攻击': 'attack.png', '防御': 'defense.png', '生命': 'health.png', '法力': 'mana.png', '治疗': 'healing.png', '暴击': 'critical.png' };
         let iconSrc = null;

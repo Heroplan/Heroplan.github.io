@@ -335,11 +335,11 @@ const getColorHex = (colorName) => {
  */
 function getHeroColorLightGradient(colorName) {
     const colorMap = {
-        '红': { light: '#e55249', standard: '#9f231c' }, '紅': { light: '#e55249', standard: '#9f231c' }, 'red': { light: '#e55249', standard: '#9f231c' },
-        '蓝': { light: '#5eb1f2', standard: '#235d9a' }, '藍': { light: '#5eb1f2', standard: '#235d9a' }, 'blue': { light: '#5eb1f2', standard: '#235d9a' },
-        '绿': { light: '#54d57c', standard: '#1b753a' }, '綠': { light: '#54d57c', standard: '#1b753a' }, 'green': { light: '#54d57c', standard: '#1b753a' },
-        '黄': { light: '#fde362', standard: '#c89b1c' }, '黃': { light: '#fde362', standard: '#c89b1c' }, 'yellow': { light: '#fde362', standard: '#c89b1c' },
-        '紫': { light: '#9b70e0', standard: '#4c337b' }, 'purple': { light: '#9b70e0', standard: '#4c337b' }
+        '红': { light: '#ef8b38', standard: '#660610' }, '紅': { light: '#ef8b38', standard: '#660610' }, 'red': { light: '#ef8b38', standard: '#660610' },
+        '蓝': { light: '#83e2f6', standard: '#113159' }, '藍': { light: '#83e2f6', standard: '#113159' }, 'blue': { light: '#83e2f6', standard: '#113159' },
+        '绿': { light: '#b4e48b', standard: '#175b07' }, '綠': { light: '#b4e48b', standard: '#175b07' }, 'green': { light: '#b4e48b', standard: '#175b07' },
+        '黄': { light: '#e6e402', standard: '#725404' }, '黃': { light: '#e6e402', standard: '#725404' }, 'yellow': { light: '#e6e402', standard: '#725404' },
+        '紫': { light: '#c177c3', standard: '#491b4c' }, 'purple': { light: '#c177c3', standard: '#491b4c' }
     };
     const colors = colorMap[String(colorName).toLowerCase()];
     if (colors) {

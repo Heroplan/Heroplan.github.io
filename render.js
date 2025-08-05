@@ -152,7 +152,7 @@ function renderTable(heroes) {
                 const source = uiElements.filterInputs.skillTypeSource.value;
                 content = getSkillTagsForHero(hero, source).join(', ');
             } else if (key === 'name') {
-                content = getFormattedHeroNameHTML(hero);
+                content = hero[key] || '';
             } else if (key === 'class' && hero[key]) {
                 const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();
                 content = `<img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
@@ -169,10 +169,22 @@ function renderTable(heroes) {
                 const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.png` : getLocalImagePath(hero.image);
                 const heroColorClass = getColorGlowClass(hero.color);
 
+                // --- 检查英雄是否有皮肤并生成图标HTML ---
+                let costumeIconHtml = '';
+                const skinInfo = getSkinInfo(hero);
+                if (skinInfo.skinIdentifier) {
+                    const iconName = getCostumeIconName(skinInfo.skinIdentifier);
+                    if (iconName) {
+                        // 使用一个新的、专门用于头像的CSS类
+                        costumeIconHtml = `<img src="imgs/costume/c1.png" class="table-avatar-costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
+                    }
+                }
+
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
                                 <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.png'">
+                                ${costumeIconHtml}
                             </div>
                         </td>`;
             }

@@ -4041,3 +4041,13 @@ select.custom-select-hidden {
     font-size: 18px;
     text-shadow: 1px 1px 2px white, -1px -1px 2px white;
 }
+
+/* --- 新增：表格中英雄头像左上角的服装图标样式 --- */
+.table-avatar-costume-icon {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 12px;
+    z-index: 3;
+    /* 确保图标在头像图片之上 */
+}

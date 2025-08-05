@@ -241,11 +241,26 @@ function renderTeamDisplay() {
             // --- 处理有英雄的槽位 ---
             heroSlot.classList.add('filled');
             heroSlot.dataset.instanceId = slot.instanceId;
+
+            // ▼▼▼【修改】使用新的HTML结构来添加背景色▼▼▼
+            const avatarContainer = document.createElement('div');
+            avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.color)}`;
+            avatarContainer.style.width = '60px';
+            avatarContainer.style.height = '60px';
+
+            const avatarBackground = document.createElement('div');
+            avatarBackground.className = 'hero-avatar-background';
+            avatarBackground.style.background = getHeroColorLightGradient(hero.color);
+
             const avatar = document.createElement('img');
             avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
-            avatar.className = `team-hero-avatar ${getColorGlowClass(hero.color)}`;
+            avatar.className = 'hero-avatar-image';
             avatar.alt = hero.name;
-            heroSlot.appendChild(avatar);
+
+            avatarContainer.appendChild(avatarBackground);
+            avatarContainer.appendChild(avatar);
+            heroSlot.appendChild(avatarContainer);
+            // ▲▲▲【修改结束】▲▲▲
 
             infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div><div class="team-hero-skills">${getSkillTypesText(hero) || i18n[state.currentLang].none}</div>`;
             infoSlot.dataset.instanceId = slot.instanceId;
@@ -407,16 +422,24 @@ function renderSavedTeams(teams, isSharedView = false) {
     teams.forEach((team, index) => {
         const row = document.createElement('div');
         row.className = 'saved-team-row is-clickable';
+
+        // ▼▼▼【修改】使用新的HTML结构来添加背景色▼▼▼
         let avatarsHTML = team.heroes.map(id => {
-            if (!id) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline);"></div>`;
+            if (!id) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline); width: 36px; height: 36px; display: inline-block;"></div>`;
             const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === id);
             if (hero) {
-                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
-                return `<img src="${imageSrc}" class="saved-team-avatar ${getColorGlowClass(hero.color)}" alt="${hero.name}" title="${hero.name}">`;
+                const imageSrc = `imgs/hero_icon/${hero.heroId}.webp`;
+                return `
+                    <div class="saved-team-avatar-container ${getColorGlowClass(hero.color)}" title="${hero.name}">
+                        <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.color)};"></div>
+                        <img src="${imageSrc}" class="saved-team-avatar-image" alt="${hero.name}">
+                    </div>
+                `;
             } else {
-                return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error);">?</div>`;
+                return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error); width: 36px; height: 36px; display: inline-block;">?</div>`;
             }
         }).join('');
+        // ▲▲▲【修改结束】▲▲▲
 
         let buttonHTML = '';
         if (isSharedView) {

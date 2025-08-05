@@ -1529,8 +1529,8 @@ footer .footer-credit {
 /* --- 红色发光 --- */
 #modal .hero-avatar-container-modal.red-glow-border,
 .manual-table .hero-avatar-container.red-glow-border,
-.team-hero-avatar.red-glow-border,
-.saved-team-avatar.red-glow-border {
+.sim-hero-avatar-container.red-glow-border,
+.saved-team-avatar-container.red-glow-border {
     box-shadow: var(--hero-glow-red);
     border-color: var(--hero-color-red);
 }
@@ -1538,8 +1538,8 @@ footer .footer-credit {
 /* --- 蓝色发光 --- */
 #modal .hero-avatar-container-modal.blue-glow-border,
 .manual-table .hero-avatar-container.blue-glow-border,
-.team-hero-avatar.blue-glow-border,
-.saved-team-avatar.blue-glow-border {
+.sim-hero-avatar-container.blue-glow-border,
+.saved-team-avatar-container.blue-glow-border {
     box-shadow: var(--hero-glow-blue);
     border-color: var(--hero-color-blue);
 }
@@ -1547,8 +1547,8 @@ footer .footer-credit {
 /* --- 绿色发光 --- */
 #modal .hero-avatar-container-modal.green-glow-border,
 .manual-table .hero-avatar-container.green-glow-border,
-.team-hero-avatar.green-glow-border,
-.saved-team-avatar.green-glow-border {
+.sim-hero-avatar-container.green-glow-border,
+.saved-team-avatar-container.green-glow-border {
     box-shadow: var(--hero-glow-green);
     border-color: var(--hero-color-green);
 }
@@ -1556,8 +1556,8 @@ footer .footer-credit {
 /* --- 黄色发光 --- */
 #modal .hero-avatar-container-modal.yellow-glow-border,
 .manual-table .hero-avatar-container.yellow-glow-border,
-.team-hero-avatar.yellow-glow-border,
-.saved-team-avatar.yellow-glow-border {
+.sim-hero-avatar-container.yellow-glow-border,
+.saved-team-avatar-container.yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
     border-color: var(--hero-color-yellow);
 }
@@ -1565,8 +1565,8 @@ footer .footer-credit {
 /* --- 紫色发光 --- */
 #modal .hero-avatar-container-modal.purple-glow-border,
 .manual-table .hero-avatar-container.purple-glow-border,
-.team-hero-avatar.purple-glow-border,
-.saved-team-avatar.purple-glow-border {
+.sim-hero-avatar-container.purple-glow-border,
+.saved-team-avatar-container.purple-glow-border {
     box-shadow: var(--hero-glow-purple);
     border-color: var(--hero-color-purple);
 }
@@ -1574,8 +1574,8 @@ footer .footer-credit {
 /* --- 白色发光 --- */
 #modal .hero-avatar-container-modal.white-glow-border,
 .manual-table .hero-avatar-container.white-glow-border,
-.team-hero-avatar.white-glow-border,
-.saved-team-avatar.white-glow-border {
+.sim-hero-avatar-container.white-glow-border,
+.saved-team-avatar-container.white-glow-border {
     box-shadow: var(--hero-glow-white);
     border-color: var(--hero-color-white);
 }
@@ -1583,8 +1583,8 @@ footer .footer-credit {
 /* --- 黑色发光 --- */
 #modal .hero-avatar-container-modal.black-glow-border,
 .manual-table .hero-avatar-container.black-glow-border,
-.team-hero-avatar.black-glow-border,
-.saved-team-avatar.black-glow-border {
+.sim-hero-avatar-container.black-glow-border,
+.saved-team-avatar-container.black-glow-border {
     box-shadow: var(--hero-glow-black);
     border-color: var(--hero-color-black);
 }
@@ -4050,4 +4050,73 @@ select.custom-select-hidden {
     height: 12px;
     z-index: 3;
     /* 确保图标在头像图片之上 */
+}
+
+/* --- 队伍模拟器头像样式 (修正版) --- */
+
+/* 用于顶部5个英雄槽位的头像 */
+.sim-hero-avatar-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    /* <-- 【已添加】恢复边框以支持辉光 */
+}
+
+.sim-hero-avatar-container .hero-avatar-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 2px;
+    /* 匹配容器圆角 */
+}
+
+.sim-hero-avatar-container .hero-avatar-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+/* 用于右侧已存队伍列表的头像 */
+.saved-team-avatar-container {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 2px solid transparent;
+    /* <-- 【已添加】恢复边框以支持辉光 */
+}
+
+.saved-team-avatar-container .saved-team-avatar-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.saved-team-avatar-container .saved-team-avatar-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+.saved-team-avatars .saved-team-avatar {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
 }

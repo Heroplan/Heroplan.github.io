@@ -3763,8 +3763,7 @@ select.custom-select-hidden {
 .scroll-to-section-btns {
     display: flex;
     gap: 0.5rem;
-    flex-shrink: 0;
-    /* 防止按钮组被压缩 */
+    flex-wrap: wrap;
 }
 
 .scroll-btn {
@@ -3794,10 +3793,33 @@ select.custom-select-hidden {
         margin-right: 0;
     }
 
-    #modal .details-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+        #modal .details-header {
+            /* 用负边距抵消父容器的内边距，消除顶部滚动空间 */
+            margin-top: -1.5rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
+            margin-bottom: 1.5rem;
+            /* 保持与下方内容的间距 */
+    
+            /* 将内边距重新应用到头部自身，以保持内容对齐 */
+            padding-top: 1.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            /* 保持底部内边距 */
+    
+            /* 确保粘性定位在最顶部 */
+            top: 0;
+            position: -webkit-sticky;
+            position: sticky;
+    
+            /* 以下是确保样式正确的其他属性 */
+            background-color: var(--md-sys-color-surface);
+            border-bottom: 1px solid var(--md-sys-color-outline);
+            z-index: 10;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
     .details-header-buttons {
         position: absolute;

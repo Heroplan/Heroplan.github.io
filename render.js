@@ -286,7 +286,7 @@ function renderDetailsInModal(hero, context = {}) {
     // 新增：根据 costume_id 生成服装图标HTML
     let costumeIconHTML = '';
     if (hero.costume_id && hero.costume_id !== 0) {
-        costumeIconHTML = '<img src="imgs/other/costume.png" class="hero-avatar-costume-icon" alt="costume">';
+        costumeIconHTML = '<img src="imgs/costume/c1.png" class="hero-avatar-costume-icon" alt="costume">';
     }
 
     // 新增：根据 family 生成家族图标HTML

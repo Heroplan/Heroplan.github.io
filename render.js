@@ -71,7 +71,7 @@ function getFormattedHeroNameHTML(hero) {
     if (skinInfo.skinIdentifier) {
         const iconName = getCostumeIconName(skinInfo.skinIdentifier);
         if (iconName) {
-            content = `<img src="imgs/costume/${iconName}.png" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
+            content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
         }
     }
     return content;
@@ -155,10 +155,10 @@ function renderTable(heroes) {
                 content = hero[key] || '';
             } else if (key === 'class' && hero[key]) {
                 const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();
-                content = `<img src="imgs/classes/${englishClass}.png" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
+                content = `<img src="imgs/classes/${englishClass}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
             } else if (key === 'color' && hero[key]) {
                 const englishColor = (colorReverseMap[String(hero[key]).toLowerCase()] || hero[key]).toLowerCase();
-                return `<td class="col-color"><img src="imgs/colors/${englishColor}.png" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
+                return `<td class="col-color"><img src="imgs/colors/${englishColor}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
                 if (!hero.english_name) return `<td class="col-fav"></td>`;
                 const icon = state.teamSimulatorActive ? '⬆️' : (isHeroFavorite ? '★' : '☆');
@@ -166,7 +166,7 @@ function renderTable(heroes) {
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${favClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.color);
-                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.png` : getLocalImagePath(hero.image);
+                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
                 const heroColorClass = getColorGlowClass(hero.color);
 
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
@@ -176,14 +176,14 @@ function renderTable(heroes) {
                     const iconName = getCostumeIconName(skinInfo.skinIdentifier);
                     if (iconName) {
                         // 使用一个新的、专门用于头像的CSS类
-                        costumeIconHtml = `<img src="imgs/costume/c1.png" class="table-avatar-costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
+                        costumeIconHtml = `<img src="imgs/costume/c1.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
                     }
                 }
 
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
-                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.png'">
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.webp'">
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
@@ -271,14 +271,14 @@ function renderDetailsInModal(hero, context = {}) {
     const avatarGlowClass = getColorGlowClass(hero.color);
     // 新增：为详情框头像准备变量
     const modalGradientBg = getHeroColorLightGradient(hero.color);
-    const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.png` : getLocalImagePath(hero.image);
+    const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
 
     // 根据星级生成星星的HTML
     let starsHTML = '';
     if (hero.star && hero.star > 0) {
         starsHTML = '<div class="hero-avatar-stars-container">';
         for (let i = 0; i < hero.star; i++) {
-            starsHTML += '<img src="imgs/other/star.png" class="hero-avatar-star" alt="star">';
+            starsHTML += '<img src="imgs/other/star.webp" class="hero-avatar-star" alt="star">';
         }
         starsHTML += '</div>';
     }
@@ -286,13 +286,13 @@ function renderDetailsInModal(hero, context = {}) {
     // 新增：根据 costume_id 生成服装图标HTML
     let costumeIconHTML = '';
     if (hero.costume_id && hero.costume_id !== 0) {
-        costumeIconHTML = '<img src="imgs/costume/c1.png" class="hero-avatar-costume-icon" alt="costume">';
+        costumeIconHTML = '<img src="imgs/costume/c1.webp" class="hero-avatar-costume-icon" alt="costume">';
     }
 
     // 新增：根据 family 生成家族图标HTML
     let familyIconHTML = '';
     if (hero.family) {
-        const familyIconSrc = `imgs/family/${String(hero.family).toLowerCase()}.png`;
+        const familyIconSrc = `imgs/family/${String(hero.family).toLowerCase()}.webp`;
         familyIconHTML = `<img src="${familyIconSrc}" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
     }
 
@@ -300,7 +300,7 @@ function renderDetailsInModal(hero, context = {}) {
     let classIconHTML = '';
     if (hero.class) {
         const englishClass = (classReverseMap[hero.class] || hero.class).toLowerCase();
-        classIconHTML = `<img src="imgs/classes/${englishClass}.png" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
+        classIconHTML = `<img src="imgs/classes/${englishClass}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
     }
 
 
@@ -401,10 +401,10 @@ function renderDetailsInModal(hero, context = {}) {
                         <div id="modal-talent-bonus-display"></div>
                         <hr class="divider">
                         <div id="modal-talent-cost-display">
-                            <div class="cost-item"><img src="imgs/emblems/${englishClassKey}.png" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
-                            <div class="cost-item"><img src="imgs/farm/Food.png" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
-                            <div class="cost-item"><img src="imgs/farm/Iron.png" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
-                            <div class="cost-item"><img src="imgs/emblems/master_${englishClassKey}.png" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
+                            <div class="cost-item"><img src="imgs/emblems/${englishClassKey}.webp" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
+                            <div class="cost-item"><img src="imgs/farm/Food.webp" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
+                            <div class="cost-item"><img src="imgs/farm/Iron.webp" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
+                            <div class="cost-item"><img src="imgs/emblems/master_${englishClassKey}.webp" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
                         </div>
                     </div>
                     <div id="talent-tree-panel" class="mobile-tab-content">
@@ -420,7 +420,7 @@ function renderDetailsInModal(hero, context = {}) {
 
     let specialSkillIconHTML = '';
     if (hero.specialId) {
-        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.png" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
+        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.webp" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
     }
 
     const detailsHTML = `
@@ -446,7 +446,7 @@ function renderDetailsInModal(hero, context = {}) {
             <div class="details-top-left">
                 <div class="hero-avatar-container-modal ${avatarGlowClass}">
                     <div class="hero-avatar-background-modal" style="background: ${modalGradientBg};"></div>
-                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" onerror="this.src='imgs/heroes/not_found.png'">
+                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" onerror="this.src='imgs/heroes/not_found.webp'">
                     
                     <div class="hero-avatar-overlays overlays-hidden">
                         ${starsHTML}
@@ -459,9 +459,9 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div class="details-top-right">
                 <div class="details-info-line">
-                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.png" class="class-icon"/>${hero.class}</span>` : ''}
-                    ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(heroSkin)}.png" class="costume-icon"/></span>` : ''}
-                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower).toLowerCase()}.png" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
+                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
+                    ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(heroSkin)}.webp" class="costume-icon"/></span>` : ''}
+                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
                     ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}"><img src="imgs/coins/${sourceIconMap[sourceReverseMap[hero.source]]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${hero['Release date']}</span>` : ''}
                 </div>
@@ -490,7 +490,7 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div id="modal-skill-effects-section" class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
             <div class="skill-category-block"><p id="modal-passives-section" class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
-            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.png" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}
+            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}
         </div>
         <div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>
     `;
@@ -686,7 +686,7 @@ function renderDetailsInModal(hero, context = {}) {
                 healing: bonuses.healing_percent,
                 crit: bonuses.crit_percent
             };
-            const iconMap = { attack: 'attack.png', defense: 'defense.png', health: 'health.png', mana: 'mana.png', healing: 'healing.png', crit: 'critical.png' };
+            const iconMap = { attack: 'attack.webp', defense: 'defense.webp', health: 'health.webp', mana: 'mana.webp', healing: 'healing.webp', crit: 'critical.webp' };
             const bonusMap = {
                 attack: { value: calculatedBonuses.attack, label: langDict.attackBonusLabel, isPercent: false },
                 defense: { value: calculatedBonuses.defense, label: langDict.defenseBonusLabel, isPercent: false },

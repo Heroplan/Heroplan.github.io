@@ -106,23 +106,23 @@ const sourceReverseMap = {
 
 // 英文标识符 -> 图标文件名
 const sourceIconMap = {
-    "villains": "challenge.png", "musketeer": "alliance_quest.png", "pets": "challenge.png",
-    "lunaryear": "s1.png", "beowulf": "challenge.png", "moth": "alliance_quest.png",
-    "beachparty": "s1.png", "kalevala": "s1.png", "avalon": "challenge.png",
-    "ninja": "tower.png", "morlovia": "s1.png", "sand": "s1.png",
-    "kingdom": "mercenary_war.png", "wonderland": "challenge.png", "superelemental": "elemental.png",
-    "magic": "tower.png", "styx": "tower.png", "christmas": "s1.png",
-    "springvale": "s1.png", "pirates": "challenge.png", "starfall": "challenge.png",
-    "gargoyle": "challenge.png", "season1": "s1.png", "season2": "s2.png",
-    "season5": "s5.png", "shadow": "shadow.png", "covenant": "covenant.png",
-    "owltower": "tower.png", "knights": "alliance_quest.png", "untoldtales1": "untoldtales.png", "untoldtales2": "untoldtales.png",
-    "season3": "s3.png", "season4": "s4.png", "returntosanctuary": "challenge.png",
-    "solstice": "diamond.png", "carnivalofgods": "challenge.png", "hotm": "hotm.png",
-    "love": "s1.png", "goblinvillage": "goblin.png", "secretsummon": "lucky.png",
-    "festival": "challenge.png", "astral": "astralelves.png", "slayers": "challenge.png",
-    "wilderness": "wilderness.png", "teltoc": "challenge.png", "fables": "challenge.png",
-    "tavernoflegends": "hotm.png", "tavernoflegendssecret": "hotm.png", "birthday": "diamond.png", "blackfriday": "diamond.png",
-    "harvest": "diamond.png", "monsterisland": "monster_angular.png", "opera": "challenge.png", "challengefestival1": "challenge.png", "challengefestival2": "challenge.png", "costume": "costume_key.png",
+    "villains": "challenge.webp", "musketeer": "alliance_quest.webp", "pets": "challenge.webp",
+    "lunaryear": "s1.webp", "beowulf": "challenge.webp", "moth": "alliance_quest.webp",
+    "beachparty": "s1.webp", "kalevala": "s1.webp", "avalon": "challenge.webp",
+    "ninja": "tower.webp", "morlovia": "s1.webp", "sand": "s1.webp",
+    "kingdom": "mercenary_war.webp", "wonderland": "challenge.webp", "superelemental": "elemental.webp",
+    "magic": "tower.webp", "styx": "tower.webp", "christmas": "s1.webp",
+    "springvale": "s1.webp", "pirates": "challenge.webp", "starfall": "challenge.webp",
+    "gargoyle": "challenge.webp", "season1": "s1.webp", "season2": "s2.webp",
+    "season5": "s5.webp", "shadow": "shadow.webp", "covenant": "covenant.webp",
+    "owltower": "tower.webp", "knights": "alliance_quest.webp", "untoldtales1": "untoldtales.webp", "untoldtales2": "untoldtales.webp",
+    "season3": "s3.webp", "season4": "s4.webp", "returntosanctuary": "challenge.webp",
+    "solstice": "diamond.webp", "carnivalofgods": "challenge.webp", "hotm": "hotm.webp",
+    "love": "s1.webp", "goblinvillage": "goblin.webp", "secretsummon": "lucky.webp",
+    "festival": "challenge.webp", "astral": "astralelves.webp", "slayers": "challenge.webp",
+    "wilderness": "wilderness.webp", "teltoc": "challenge.webp", "fables": "challenge.webp",
+    "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp",
 };
 
 // 颜色名称 -> 标准英文名
@@ -136,14 +136,14 @@ const colorReverseMap = {
 
 const iconMaps = {
     color: {
-        '红': 'imgs/colors/red.png', '紅': 'imgs/colors/red.png', 'red': 'imgs/colors/red.png',
-        '蓝': 'imgs/colors/blue.png', '藍': 'imgs/colors/blue.png', 'blue': 'imgs/colors/blue.png',
-        '绿': 'imgs/colors/green.png', '綠': 'imgs/colors/green.png', 'green': 'imgs/colors/green.png',
-        '黄': 'imgs/colors/yellow.png', '黃': 'imgs/colors/yellow.png', 'yellow': 'imgs/colors/yellow.png',
-        '紫': 'imgs/colors/purple.png', 'purple': 'imgs/colors/purple.png'
+        '红': 'imgs/colors/red.webp', '紅': 'imgs/colors/red.webp', 'red': 'imgs/colors/red.webp',
+        '蓝': 'imgs/colors/blue.webp', '藍': 'imgs/colors/blue.webp', 'blue': 'imgs/colors/blue.webp',
+        '绿': 'imgs/colors/green.webp', '綠': 'imgs/colors/green.webp', 'green': 'imgs/colors/green.webp',
+        '黄': 'imgs/colors/yellow.webp', '黃': 'imgs/colors/yellow.webp', 'yellow': 'imgs/colors/yellow.webp',
+        '紫': 'imgs/colors/purple.webp', 'purple': 'imgs/colors/purple.webp'
     },
     class: {
-        ...Object.fromEntries(Object.keys(classReverseMap).map(key => [key, `imgs/classes/${classReverseMap[key]}.png`]))
+        ...Object.fromEntries(Object.keys(classReverseMap).map(key => [key, `imgs/classes/${classReverseMap[key]}.webp`]))
     },
     source: {
         ...Object.fromEntries(Object.keys(sourceReverseMap).map(key => {
@@ -153,7 +153,7 @@ const iconMaps = {
         }).filter(entry => entry[1]))
     },
     aetherpower: {
-        ...Object.fromEntries(Object.keys(aetherPowerReverseMap).map(key => [key, `imgs/Aether Power/${aetherPowerReverseMap[key]}.png`]))
+        ...Object.fromEntries(Object.keys(aetherPowerReverseMap).map(key => [key, `imgs/Aether Power/${aetherPowerReverseMap[key]}.webp`]))
     }
 };
 

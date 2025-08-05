@@ -33,19 +33,6 @@ function getCookie(name) {
 }
 
 /**
- * 将远程英雄图片URL转换为本地路径。
- * @param {string} url - 原始图片 URL。
- * @returns {string} 本地图片路径。
- */
-function getLocalImagePath(url) {
-    if (!url || typeof url !== 'string') return '';
-    try {
-        const filename = url.substring(url.lastIndexOf('/') + 1).split('?')[0];
-        return 'imgs/heroes/' + filename;
-    } catch (e) { return ''; }
-}
-
-/**
  * 复制文本到剪贴板的后备方法 (用于不支持新API的浏览器)。
  * @param {string} text - 要复制的文本。
  * @returns {boolean} 是否复制成功。
@@ -374,7 +361,7 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
     let barsHtml = '';
     for (let i = 0; i < ascensionLevels; i++) {
         const isLimitBreakBar = i < lbCount;
-        const barImage = isLimitBreakBar ? 'ascension_bar_limitbreak.png' : 'ascension_bar.png';
+        const barImage = isLimitBreakBar ? 'ascension_bar_limitbreak.webp' : 'ascension_bar.webp';
         barsHtml += `<img src="imgs/other/${barImage}" class="ascension-bar" alt="ascension bar">`;
     }
 
@@ -384,7 +371,7 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
 
     if (talentCount > 0) {
         // 判断使用哪个图标，并显示实际的天赋点数
-        const nodeImage = talentCount >= 21 ? 'node_master.png' : 'node.png';
+        const nodeImage = talentCount >= 21 ? 'node_master.webp' : 'node.webp';
         talentNodeHtml = `
             <div class="talent-node-container">
                 <img src="imgs/talents/${nodeImage}" class="talent-node-image" alt="talent node">

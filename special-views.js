@@ -75,9 +75,9 @@ function initAndShowWantedMissionView() {
     // 检查表格是否已渲染，如果没有则只渲染一次
     if (wantedMissionTable.innerHTML.trim() === '') {
         const headers = {
-            season: '', daily: 'imgs/farm/wanted_normal.png', red: 'imgs/farm/wanted_red.png',
-            green: 'imgs/farm/wanted_green.png', blue: 'imgs/farm/wanted_blue.png',
-            purple: 'imgs/farm/wanted_purple.png', yellow: 'imgs/farm/wanted_yellow.png'
+            season: '', daily: 'imgs/farm/wanted_normal.webp', red: 'imgs/farm/wanted_red.webp',
+            green: 'imgs/farm/wanted_green.webp', blue: 'imgs/farm/wanted_blue.webp',
+            purple: 'imgs/farm/wanted_purple.webp', yellow: 'imgs/farm/wanted_yellow.webp'
         };
         // 创建表头
         let thead = wantedMissionTable.querySelector('thead') || wantedMissionTable.appendChild(document.createElement('thead'));
@@ -139,7 +139,7 @@ function initAndShowFarmingGuideView() {
         let tbody = farmingGuideTable.querySelector('tbody') || farmingGuideTable.appendChild(document.createElement('tbody'));
         tbody.innerHTML = farmingGuideData.map((row, rowIndex) => `<tr data-row-index="${rowIndex}">${headerKeys.map((key, colIndex) => {
             let value = row[key] || '';
-            if (key === 'item') return `<td data-col-index="${colIndex}"><img src="imgs/farm/${value}.png" alt="${value}" class="farm-item-image"></td>`;
+            if (key === 'item') return `<td data-col-index="${colIndex}"><img src="imgs/farm/${value}.webp" alt="${value}" class="farm-item-image"></td>`;
             return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
         }).join('')}</tr>`).join('');
 

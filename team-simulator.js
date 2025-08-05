@@ -242,7 +242,7 @@ function renderTeamDisplay() {
             heroSlot.classList.add('filled');
             heroSlot.dataset.instanceId = slot.instanceId;
             const avatar = document.createElement('img');
-            avatar.src = getLocalImagePath(hero.image);
+            avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
             avatar.className = `team-hero-avatar ${getColorGlowClass(hero.color)}`;
             avatar.alt = hero.name;
             heroSlot.appendChild(avatar);
@@ -410,7 +410,12 @@ function renderSavedTeams(teams, isSharedView = false) {
         let avatarsHTML = team.heroes.map(id => {
             if (!id) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline);"></div>`;
             const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === id);
-            return hero ? `<img src="${getLocalImagePath(hero.image)}" class="saved-team-avatar ${getColorGlowClass(hero.color)}" alt="${hero.name}" title="${hero.name}">` : `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error);">?</div>`;
+            if (hero) {
+                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
+                return `<img src="${imageSrc}" class="saved-team-avatar ${getColorGlowClass(hero.color)}" alt="${hero.name}" title="${hero.name}">`;
+            } else {
+                return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error);">?</div>`;
+            }
         }).join('');
 
         let buttonHTML = '';

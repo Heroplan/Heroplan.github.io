@@ -224,17 +224,17 @@ function getIconForFilter(filterType, optionValue) {
             return (iconMaps[filterType] && iconMaps[filterType][optionValue]) || null;
         case 'aetherpower':
             let englishName = (state.currentLang === 'en') ? optionValue : aetherPowerReverseMap[optionValue];
-            if (englishName) return `imgs/Aether Power/${englishName.trim().toLowerCase()}.png`;
+            if (englishName) return `imgs/Aether Power/${englishName.trim().toLowerCase()}.webp`;
             return null;
         case 'family':
-            return `imgs/family/${String(optionValue).toLowerCase()}.png`;
+            return `imgs/family/${String(optionValue).toLowerCase()}.webp`;
         case 'source':
             const sourceKey = sourceReverseMap[optionValue];
             const iconFilename = sourceIconMap[sourceKey];
             return iconFilename ? `imgs/coins/${iconFilename}` : null;
         case 'costume':
             const iconName = getCostumeIconName(optionValue);
-            return iconName ? `imgs/costume/${iconName}.png` : null;
+            return iconName ? `imgs/costume/${iconName}.webp` : null;
         case 'skillTag_base':
         case 'skillTag_special':
         case 'skillTag_buff':
@@ -246,7 +246,7 @@ function getIconForFilter(filterType, optionValue) {
             const sanitizedFilename = chineseKey.replace(/\//g, '');
 
             // 3. 使用处理过的安全文件名构建路径
-            return `imgs/skill/${sanitizedFilename}.png`;
+            return `imgs/skill/${sanitizedFilename}.webp`;
         default:
             return null;
     }

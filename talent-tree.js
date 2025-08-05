@@ -450,14 +450,14 @@ const TalentTree = (() => {
         const text = nodeInfo.text;
 
         // 【核心修正】将判断条件从 <= 25 扩展为 >= 21，以包含26级的终极天赋节点
-        images.push({ src: `imgs/talents/${(level >= 21) ? 'node_master' : 'node'}.png`, class: 'node-img-base' });
+        images.push({ src: `imgs/talents/${(level >= 21) ? 'node_master' : 'node'}.webp`, class: 'node-img-base' });
 
-        const statKeywordMap = { '攻击': 'attack.png', '防御': 'defense.png', '生命': 'health.png', '法力': 'mana.png', '治疗': 'healing.png', '暴击': 'critical.png' };
+        const statKeywordMap = { '攻击': 'attack.webp', '防御': 'defense.webp', '生命': 'health.webp', '法力': 'mana.webp', '治疗': 'healing.webp', '暴击': 'critical.webp' };
         let iconSrc = null;
 
         if (text.includes('天赋')) {
             // 使用已正确设置的 currentClassKey，确保图标路径正确
-            iconSrc = `imgs/classes/${currentClassKey}.png`;
+            iconSrc = `imgs/classes/${currentClassKey}.webp`;
         } else {
             for (const keyword in statKeywordMap) {
                 if (text.includes(keyword)) {
@@ -471,10 +471,10 @@ const TalentTree = (() => {
             images.push({ src: iconSrc, class: 'node-img-overlay' });
         }
         if (text.includes('%') && !text.includes('法力') && !text.includes('暴击') && !text.includes('治疗')) {
-            images.push({ src: 'imgs/talents/plus.png', class: 'node-img-plus' });
+            images.push({ src: 'imgs/talents/plus.webp', class: 'node-img-plus' });
         }
         if (nodeId === '20_1' || nodeId === '26_1') {
-            images.push({ src: 'imgs/talents/final.png', class: 'node-img-final-border' });
+            images.push({ src: 'imgs/talents/final.webp', class: 'node-img-final-border' });
         }
         return images;
     }

@@ -378,3 +378,15 @@ function openLbTalentHelpModal() {
 function closeLbTalentHelpModal() {
     if (!uiElements.lbTalentHelpModal.classList.contains('hidden')) history.back();
 }
+
+/**
+ * 将结果表格的滚动条滚动到最顶部。
+ */
+function scrollToTableTop() {
+    if (uiElements.resultsWrapper) {
+        uiElements.resultsWrapper.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 使用平滑滚动效果
+        });
+    }
+}

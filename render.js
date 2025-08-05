@@ -202,6 +202,7 @@ function renderTable(heroes) {
 
     tbody.innerHTML = rowsHTML;
     adjustStickyHeaders();
+    scrollToTableTop();
 }
 
 /**

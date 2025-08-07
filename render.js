@@ -152,7 +152,16 @@ function renderTable(heroes) {
                 const source = uiElements.filterInputs.skillTypeSource.value;
                 content = getSkillTagsForHero(hero, source).join(', ');
             } else if (key === 'name') {
-                content = hero[key] || '';
+                let displayName = hero.name;
+                // 定义要移除的元素后缀列表 (不区分大小写)
+                const ignorableSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire', 'red', 'blue', 'green', 'yellow', 'purple'];
+
+                // 构建正则表达式来匹配 " (element)" 或 " element" 这样的后缀
+                const suffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableSuffixes.join('|')})(?:\\))?$`, 'i');
+
+                // 从名字中移除匹配到的元素后缀
+                displayName = displayName.replace(suffixRegex, '').trim();
+                content = displayName || '';
             } else if (key === 'class' && hero[key]) {
                 const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();
                 content = `<img src="imgs/classes/${englishClass}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;

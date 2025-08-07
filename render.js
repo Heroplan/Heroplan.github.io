@@ -312,6 +312,33 @@ function renderDetailsInModal(hero, context = {}) {
         const englishClass = (classReverseMap[hero.class] || hero.class).toLowerCase();
         classIconHTML = `<img src="imgs/classes/${englishClass}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
     }
+    // --- 新增逻辑：生成被动技能图标(包含两种来源) ---
+    let passiveSkillsHtml = '';
+
+    const basePassives = hero.passiveSkills || [];
+    const costumePassives = hero.costumeBonusPassiveSkillIds || [];
+
+    // 将 costumePassives 数组倒序后，再与 basePassives 合并
+    const allPassiveSkills = [
+        ...basePassives,
+        ...[...costumePassives].reverse() // 使用 ... 创建副本再倒序，避免修改原始数据
+    ];
+
+    if (allPassiveSkills.length > 0) {
+        const passiveIconsHtml = allPassiveSkills.map(skillKey => {
+            const iconName = PassiveSkillIconCollection[skillKey];
+            if (iconName) {
+                const iconPath = `imgs/passive_icon/${iconName}.webp`;
+                const skillTitle = i18n[state.currentLang][skillKey] || skillKey;
+                return `<img src="${iconPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}" onerror="this.style.display='none'">`;
+            }
+            return '';
+        }).join('');
+
+        if (passiveIconsHtml) {
+            passiveSkillsHtml = `<div class="hero-avatar-passives-container">${passiveIconsHtml}</div>`;
+        }
+    }
 
 
     // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
@@ -464,6 +491,7 @@ function renderDetailsInModal(hero, context = {}) {
                         ${costumeIconHTML}
                         ${familyIconHTML}
                         <div id="modal-rank-container"></div>
+                        ${passiveSkillsHtml}
                     </div>
                 </div>
             </div>

@@ -318,9 +318,9 @@ function renderDetailsInModal(hero, context = {}) {
     const basePassives = hero.passiveSkills || [];
     const costumePassives = hero.costumeBonusPassiveSkillIds || [];
 
-    // 将 costumePassives 数组倒序后，再与 basePassives 合并
+    // 将 数组倒序后，再与合并
     const allPassiveSkills = [
-        ...basePassives,
+        ...[...basePassives].reverse(),
         ...[...costumePassives].reverse() // 使用 ... 创建副本再倒序，避免修改原始数据
     ];
 

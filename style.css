@@ -3989,10 +3989,10 @@ select.custom-select-hidden {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 18px;
-    text-shadow: 1px 1px 2px white, -1px -1px 2px white;
+    text-shadow: 1px 1px 2px black, -1px -1px 2px black;
 }
 
 /* --- 新增：表格中英雄头像左上角的服装图标样式 --- */
@@ -4146,4 +4146,55 @@ select.custom-select-hidden {
     width: 30px;
     height: 30px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7));
+}
+
+/* --- 新增：英雄详情页头像 Aether Power 图标样式 (含动态显示/定位) --- */
+.hero-aether-power-icon-container {
+    position: absolute;
+    right: 7px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    display: none;
+    /* 默认隐藏 */
+    transition: bottom 0.3s ease-in-out;
+    /* 为位置变化添加平滑过渡动画 */
+}
+
+/* 仅当头像容器有 .is-lb2 类时才显示 Aether Power 图标 */
+.hero-avatar-container-modal.is-lb2 .hero-aether-power-icon-container {
+    display: block;
+}
+
+/* 默认位置：当没有天赋时 (位于进阶条上方) */
+.hero-aether-power-icon-container {
+    bottom: 60px;
+}
+
+/* 当有天赋时 (.has-talents) 的位置：上移以避开天赋图标 */
+.hero-avatar-container-modal.has-talents .hero-aether-power-icon-container {
+    bottom: 100px;
+}
+
+.hero-aether-power-frame,
+.hero-aether-power-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-aether-power-frame {
+    z-index: 1;
+}
+
+.hero-aether-power-image {
+    z-index: 2;
+    top:4px;
+    left: 4px;
+    width: 80%;
+    height: 80%;
+    padding: 3px;
+    box-sizing: border-box;
 }

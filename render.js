@@ -324,6 +324,26 @@ function renderDetailsInModal(hero, context = {}) {
         ...[...costumePassives].reverse() // 使用 ... 创建副本再倒序，避免修改原始数据
     ];
 
+    // --- 新增：生成头像上的 Aether Power 叠加图标 ---
+    let aetherPowerIconHTML = '';
+    // 检查英雄是否有 AetherPower 属性
+    if (hero.AetherPower) {
+        const framePath = 'imgs/Aether Power/frame.webp';
+
+        // 【核心修正】使用您已有的 aetherPowerReverseMap 和逻辑来获取正确的图标文件名
+        const iconFileName = (aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower)
+            .toLowerCase()
+
+        const iconPath = `imgs/Aether Power/${iconFileName}.webp`;
+
+        aetherPowerIconHTML = `
+            <div class="hero-aether-power-icon-container" title="${hero.AetherPower}">
+                <img src="${framePath}" class="hero-aether-power-frame" alt="Aether Power Frame">
+                <img src="${iconPath}" class="hero-aether-power-image" alt="${hero.AetherPower}" onerror="this.style.display='none'">
+            </div>
+        `;
+    }
+
     if (allPassiveSkills.length > 0) {
         const passiveIconsHtml = allPassiveSkills.map(skillKey => {
             const iconName = PassiveSkillIconCollection[skillKey];
@@ -492,6 +512,7 @@ function renderDetailsInModal(hero, context = {}) {
                         ${familyIconHTML}
                         <div id="modal-rank-container"></div>
                         ${passiveSkillsHtml}
+                        ${aetherPowerIconHTML}
                     </div>
                 </div>
             </div>
@@ -768,6 +789,17 @@ function renderDetailsInModal(hero, context = {}) {
             else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
 
+            // ▼▼▼ 在此处添加新代码 ▼▼▼
+            const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
+            if (avatarContainerModal) {
+                // 根据当前 LB 设置，切换 .is-lb2 类
+                avatarContainerModal.classList.toggle('is-lb2', modalLbSelect.value === 'lb2');
+
+                // 根据是否有天赋节点 (nodeCount > 0)，切换 .has-talents 类
+                avatarContainerModal.classList.toggle('has-talents', nodeCount > 0);
+            }
+            // ▲▲▲ 新增代码结束 ▲▲▲
+
             // 将天赋树返回的实时点数 nodeCount 传递给更新函数
             updateRankDisplay(nodeCount);
         };
@@ -781,6 +813,18 @@ function renderDetailsInModal(hero, context = {}) {
             if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+
+            // ▼▼▼ 新增逻辑：根据设置动态添加/移除CSS类 ▼▼▼
+            const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
+            if (avatarContainerModal) {
+                // 根据是否为 LB2，切换 .is-lb2 类
+                avatarContainerModal.classList.toggle('is-lb2', settings.lb === 'lb2');
+
+                // 根据是否有天赋节点，切换 .has-talents 类
+                avatarContainerModal.classList.toggle('has-talents', nodeCount > 0);
+            }
+            // ▲▲▲ 新增逻辑结束 ▲▲▲
+
             updateRankDisplay(nodeCount);
         };
 

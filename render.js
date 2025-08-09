@@ -721,7 +721,7 @@ function renderDetailsInModal(hero, context = {}) {
             if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             let finalStats = { ...baseStats };
-            if (settings.talent !== 'none') {
+            if (nodeCount > 0 && bonuses) {
                 finalStats.attack += bonuses.attack_flat + Math.floor(baseStats.attack * (bonuses.attack_percent / 100));
                 finalStats.defense += bonuses.defense_flat + Math.floor(baseStats.defense * (bonuses.defense_percent / 100));
                 finalStats.health += bonuses.health_flat + Math.floor(baseStats.health * (bonuses.health_percent / 100));

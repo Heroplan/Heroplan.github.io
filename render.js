@@ -782,26 +782,8 @@ function renderDetailsInModal(hero, context = {}) {
         const talentChangeCallback = (bonuses, nodeCount) => {
             currentTalentBonuses = bonuses;
             currentNodeCount = nodeCount;
-            const currentSettingsInModal = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
-            _updateModalStatsWithBonuses(hero, currentSettingsInModal, bonuses, nodeCount);
-            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
-            if (currentSettingsInModal.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (currentSettingsInModal.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
-
-            // ▼▼▼ 在此处添加新代码 ▼▼▼
-            const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
-            if (avatarContainerModal) {
-                // 根据当前 LB 设置，切换 .is-lb2 类
-                avatarContainerModal.classList.toggle('is-lb2', modalLbSelect.value === 'lb2');
-
-                // 根据是否有天赋节点 (nodeCount > 0)，切换 .has-talents 类
-                avatarContainerModal.classList.toggle('has-talents', nodeCount > 0);
-            }
-            // ▲▲▲ 新增代码结束 ▲▲▲
-
-            // 将天赋树返回的实时点数 nodeCount 传递给更新函数
-            updateRankDisplay(nodeCount);
+            // 直接调用通用的UI更新函数，避免了所有重复的代码
+            updateCommonUI(bonuses, nodeCount);
         };
 
         // 新增：一个通用的UI更新函数

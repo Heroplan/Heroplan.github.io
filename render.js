@@ -782,7 +782,6 @@ function renderDetailsInModal(hero, context = {}) {
         const talentChangeCallback = (bonuses, nodeCount) => {
             currentTalentBonuses = bonuses;
             currentNodeCount = nodeCount;
-            // 直接调用通用的UI更新函数，避免了所有重复的代码
             updateCommonUI(bonuses, nodeCount);
         };
 
@@ -795,8 +794,6 @@ function renderDetailsInModal(hero, context = {}) {
             if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
-
-            // ▼▼▼ 新增逻辑：根据设置动态添加/移除CSS类 ▼▼▼
             const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
             if (avatarContainerModal) {
                 // 根据是否为 LB2，切换 .is-lb2 类
@@ -805,7 +802,6 @@ function renderDetailsInModal(hero, context = {}) {
                 // 根据是否有天赋节点，切换 .has-talents 类
                 avatarContainerModal.classList.toggle('has-talents', nodeCount > 0);
             }
-            // ▲▲▲ 新增逻辑结束 ▲▲▲
 
             updateRankDisplay(nodeCount);
         };

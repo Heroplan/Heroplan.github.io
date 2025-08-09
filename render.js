@@ -153,14 +153,18 @@ function renderTable(heroes) {
                 content = getSkillTagsForHero(hero, source).join(', ');
             } else if (key === 'name') {
                 let displayName = hero.name;
-                // 定义要移除的元素后缀列表 (不区分大小写)
-                const ignorableSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire', 'red', 'blue', 'green', 'yellow', 'purple'];
 
-                // 构建正则表达式来匹配 " (element)" 或 " element" 这样的后缀
-                const suffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableSuffixes.join('|')})(?:\\))?$`, 'i');
+                // 第1步: 移除元素后缀 (现有逻辑)
+                const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire', 'red', 'blue', 'green', 'yellow', 'purple'];
+                const elementSuffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableElementSuffixes.join('|')})(?:\\))?$`, 'i');
+                displayName = displayName.replace(elementSuffixRegex, '').trim();
 
-                // 从名字中移除匹配到的元素后缀
-                displayName = displayName.replace(suffixRegex, '').trim();
+                // ▼▼▼ 新增逻辑：移除服装后缀 ▼▼▼
+                // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
+                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|glass|toon|玻璃|卡通|皮肤|皮膚)(?:\]|\))?\s*$/i;
+                displayName = displayName.replace(costumeSuffixRegex, '').trim();
+                // ▲▲▲ 新增逻辑结束 ▲▲▲
+
                 content = displayName || '';
             } else if (key === 'class' && hero[key]) {
                 const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();

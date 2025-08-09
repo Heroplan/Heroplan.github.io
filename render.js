@@ -804,6 +804,29 @@ function renderDetailsInModal(hero, context = {}) {
             updateRankDisplay(nodeCount);
         };
 
+        // 新增：一个通用的UI更新函数
+        const updateCommonUI = (bonuses, nodeCount) => {
+            const settings = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
+            _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount);
+
+            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
+            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
+            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+
+            // ▼▼▼ 新增逻辑：根据设置动态添加/移除CSS类 ▼▼▼
+            const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
+            if (avatarContainerModal) {
+                // 根据是否为 LB2，切换 .is-lb2 类
+                avatarContainerModal.classList.toggle('is-lb2', settings.lb === 'lb2');
+
+                // 根据是否有天赋节点，切换 .has-talents 类
+                avatarContainerModal.classList.toggle('has-talents', nodeCount > 0);
+            }
+            // ▲▲▲ 新增逻辑结束 ▲▲▲
+
+            updateRankDisplay(nodeCount);
+        };
 
         // 新增：仅用于“突破设置”的处理器，它不会触碰天赋树
         const handleStatUpdateOnly = () => {

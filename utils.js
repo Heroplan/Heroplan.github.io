@@ -198,52 +198,52 @@ function getSkillTagsForHero(hero, source) {
 }
 
 /**
- * 从多语言混合的英雄名称中提取英文名。
+ * 从多语言混合的英雄名称中提取英文名 (v3 - 详情页权威规则版)
  * @param {object} hero - 英雄对象。
- * @param {string} currentLang - 当前语言环境 ('cn', 'tc', 'en')。
- * @returns {string|null} 提取出的英文名，如果不存在则为 null。
+ * @returns {string|null} 提取出的英文名。
  */
-function extractEnglishName(hero, currentLang) {
+function extractEnglishName(hero) {
     if (!hero || !hero.name) return null;
+
     let heroName = hero.name;
-    if (heroName.includes('Experience Mimic') || heroName.includes('经验拟态兽') || heroName.includes('經驗模仿怪') || heroName.includes('Ascension Mimic') || heroName.includes('进阶拟态兽') || heroName.includes('升等模仿怪')) {
-        const pattern = /\(([^)]+)\)/;
-        const match = heroName.match(pattern);
-        if (match && match[1] && match[1].includes('Mimic')) {
-            const baseName = match[1];
-            const afterParenthesesIndex = heroName.lastIndexOf(')') + 1;
-            const suffix = heroName.substring(afterParenthesesIndex).trim();
-            const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire', 'holy'];
-            if (suffix && allowedSuffixes.includes(suffix.toLowerCase())) {
-                return `${baseName} ${suffix}`;
-            }
-            return baseName;
-        }
-    }
-    let tempName = heroName;
+
+    // --- 步骤 1: 提取详情页 getSkinInfo 函数的逻辑，用于分离出基础名称 ---
+    // 这个逻辑会先尝试移除名称末尾的皮肤标识（如 C1, 玻璃, 卡通等）
     const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-    const skinMatch = tempName.match(skinPattern);
+    const skinMatch = heroName.match(skinPattern);
+    let baseName = heroName; // 默认为完整名称
+
     if (skinMatch && skinMatch[1]) {
         const potentialSkin = skinMatch[1].toLowerCase();
         if (potentialSkin.match(/^c\d+$/) ||
             ['glass', 'toon', '玻璃'].includes(potentialSkin) ||
-            potentialSkin.endsWith('卡通') || potentialSkin.endsWith('皮肤') || potentialSkin.endsWith('皮膚')) {
-            tempName = tempName.substring(0, tempName.length - skinMatch[0].length).trim();
+            potentialSkin.endsWith('卡通') ||
+            potentialSkin.endsWith('皮肤') ||
+            potentialSkin.endsWith('皮膚')) {
+            baseName = heroName.substring(0, heroName.length - skinMatch[0].length).trim();
         }
     }
-    if (currentLang === 'en') {
-        return tempName;
-    }
-    const multiLangNamePattern = /^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/;
-    const multiLangMatch = tempName.match(multiLangNamePattern);
-    if (multiLangMatch && multiLangMatch[3] && /[a-zA-Z]/.test(multiLangMatch[3])) {
-        return multiLangMatch[3].trim();
-    }
+
+    // --- 步骤 2: 应用详情页的括号解析规则到处理过的 baseName 上 ---
+    // 这是你确认过的“100%准确”的逻辑
     const singleAltLangNamePattern = /^(.*?)\s*\(([^)]+)\)/;
-    const singleAltLangMatch = tempName.match(singleAltLangNamePattern);
+    const singleAltLangMatch = baseName.match(singleAltLangNamePattern);
+
     if (singleAltLangMatch && singleAltLangMatch[2] && /[a-zA-Z]/.test(singleAltLangMatch[2]) && !/[\u4e00-\u9fa5]/.test(singleAltLangMatch[2])) {
         return singleAltLangMatch[2].trim();
     }
+
+    // 如果上述规则不匹配（例如纯英文名），我们提供一个备用方案
+    const multiLangMatch = baseName.match(/^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/);
+    if (multiLangMatch && multiLangMatch[3] && /[a-zA-Z]/.test(multiLangMatch[3])) {
+        return multiLangMatch[3].trim();
+    }
+
+    // 最后的备用方案，适用于没有括号的纯英文名
+    if (!/\(/.test(baseName)) {
+        return baseName;
+    }
+
     return null;
 }
 

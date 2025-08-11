@@ -53,19 +53,19 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_kalevala": "卡勒瓦拉召唤",
         "lottery.title.lottery_hero_halloween": "万圣节召唤",
         "lottery.title.lottery_hero_christmas": "圣诞节召唤",
-        "lottery.title.lottery_featured_event_opera": "歌剧召唤",
+        "lottery.title.lottery_featured_event_opera": "歌剧之谜召唤",
         "lottery.title.lottery_featured_event_gargoyles2": "石像鬼圣所召唤",
-        "lottery.title.lottery_featured_event_beowulf": "贝奥武夫召唤",
+        "lottery.title.lottery_featured_event_beowulf": "贝奥武夫挑战召唤",
         "lottery.title.lottery_featured_event_festival": "挑战节 I 召唤",
         "lottery.title.lottery_featured_event_festival_b": "挑战节 II 召唤",
-        "lottery.title.lottery_featured_event_masquerade": "化妆舞会召唤",
-        "lottery.title.lottery_featured_alliance_quest_castle": "骑士冲突召唤",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "火枪手召唤",
+        "lottery.title.lottery_featured_event_masquerade": "众神狂欢节召唤",
+        "lottery.title.lottery_featured_alliance_quest_castle": "骑士冲击召唤",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "英勇火枪手召唤",
         "lottery.title.lottery_featured_alliance_quest_moths": "飞蛾之夜召唤",
-        "lottery.title.lottery_tower_ninja_default": "忍者塔召唤",
-        "lottery.title.lottery_tower_owl_default": "猫头鹰塔召唤",
-        "lottery.title.lottery_tower_magic_default": "魔法塔召唤",
-        "lottery.title.lottery_tower_styx_default": "冥河塔召唤",
+        "lottery.title.lottery_tower_ninja_default": "忍者高塔召唤",
+        "lottery.title.lottery_tower_owl_default": "猫头鹰高塔召唤",
+        "lottery.title.lottery_tower_magic_default": "魔法高塔召唤",
+        "lottery.title.lottery_tower_styx_default": "冥河高塔召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -120,19 +120,19 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_kalevala": "卡勒瓦拉召喚",
         "lottery.title.lottery_hero_halloween": "萬聖節召喚",
         "lottery.title.lottery_hero_christmas": "聖誕節召喚",
-        "lottery.title.lottery_featured_event_opera": "歌劇召喚",
-        "lottery.title.lottery_featured_event_gargoyles2": "石像鬼聖所召喚",
-        "lottery.title.lottery_featured_event_beowulf": "貝奧武夫召唤",
+        "lottery.title.lottery_featured_event_opera": "歌劇秘辛召喚",
+        "lottery.title.lottery_featured_event_gargoyles2": "石像鬼聖殿召喚",
+        "lottery.title.lottery_featured_event_beowulf": "貝武夫的挑戰召唤",
         "lottery.title.lottery_featured_event_festival": "挑戰節 I 召喚",
         "lottery.title.lottery_featured_event_festival_b": "挑戰節 II 召喚",
-        "lottery.title.lottery_featured_event_masquerade": "化妆舞会召唤",
+        "lottery.title.lottery_featured_event_masquerade": "眾神嘉年華召唤",
         "lottery.title.lottery_featured_alliance_quest_castle": "騎士衝突召喚",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "火枪手召唤",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "英勇火槍手召唤",
         "lottery.title.lottery_featured_alliance_quest_moths": "飛蛾之夜召喚",
-        "lottery.title.lottery_tower_ninja_default": "忍者塔召喚",
-        "lottery.title.lottery_tower_owl_default": "貓頭鷹塔召喚",
-        "lottery.title.lottery_tower_magic_default": "魔法塔召喚",
-        "lottery.title.lottery_tower_styx_default": "冥河塔召喚",
+        "lottery.title.lottery_tower_ninja_default": "忍者高塔召喚",
+        "lottery.title.lottery_tower_owl_default": "貓頭鷹高塔召喚",
+        "lottery.title.lottery_tower_magic_default": "魔法高塔召喚",
+        "lottery.title.lottery_tower_styx_default": "冥河高塔召喚",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -187,21 +187,182 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_kalevala": "Kalevala Summon",
         "lottery.title.lottery_hero_halloween": "Halloween Summon",
         "lottery.title.lottery_hero_christmas": "Christmas Summon",
-        "lottery.title.lottery_featured_event_opera": "Opera Summon",
-        "lottery.title.lottery_featured_event_gargoyles2": "Gargoyles Summon",
-        "lottery.title.lottery_featured_event_beowulf_bulk": "Beowulf Summon",
+        "lottery.title.lottery_featured_event_opera": "Secrets of the Opera Summon",
+        "lottery.title.lottery_featured_event_gargoyles2": "Sanctuary of Gargoyles Summon",
+        "lottery.title.lottery_featured_event_beowulf_bulk": "Beowulf's Challenge Summon",
         "lottery.title.lottery_featured_event_festival": "Festival I Summon",
         "lottery.title.lottery_featured_event_festival_b": "Festival II Summon",
-        "lottery.title.lottery_featured_event_masquerade": "Masquerade Summon",
-        "lottery.title.lottery_featured_alliance_quest_castle": "Knight's Clash Summon",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "Musketeers Summon",
-        "lottery.title.lottery_featured_alliance_quest_moths": "Moths Night Summon",
+        "lottery.title.lottery_featured_event_masquerade": "Carnival of Gods Summon",
+        "lottery.title.lottery_featured_alliance_quest_castle": "Clash of Knights Summon",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "Brave Musketeers Summon",
+        "lottery.title.lottery_featured_alliance_quest_moths": "Night of the Moth Summon",
         "lottery.title.lottery_tower_ninja_default": "Ninja Tower Summon",
         "lottery.title.lottery_tower_owl_default": "Owl Tower Summon",
         "lottery.title.lottery_tower_magic_default": "Magic Tower Summon",
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
     }
 };
+
+// --- 抽奖核心辅助函数 (Summoning Core Helpers) ---
+
+/**
+ * 根据权重数组，随机返回一个索引
+ * @param {number[]} weights - 权重数组 (例如 [700, 250, 50])
+ * @returns {number} - 选中的索引
+ */
+function selectWeightedIndex(weights) {
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+    let random = Math.random() * totalWeight;
+
+    for (let i = 0; i < weights.length; i++) {
+        if (random < weights[i]) {
+            return i;
+        }
+        random -= weights[i];
+    }
+    return -1; // Fallback, should not happen with valid weights
+}
+
+/**
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (已加入全局排除逻辑)
+ * @param {string} bucketString - 例如 "heroes_ex_s1_3"
+ * @param {object} poolConfig - 当前的奖池配置
+ * @returns {Array} - 符合条件的英雄对象数组
+ */
+function getHeroPoolForBucket(bucketString, poolConfig) {
+    const parts = bucketString.split('_');
+    const type = parts[0];
+    let condition = parts[1];
+    let star = parseInt(parts.pop(), 10);
+
+    if (poolConfig.productType === 'CostumeSummon') {
+        // 1. 获取所有 classic 家族的英雄（包括本体和所有服装）
+        const classicHeroes = state.allHeroes.filter(h => h.family === 'classic');
+
+        // 2. 遍历所有 classic 英雄，为每一个英雄找出其 costume_id 最大的那个版本
+        const latestVersions = {};
+        classicHeroes.forEach(hero => {
+            if (!latestVersions[hero.english_name] || hero.costume_id > latestVersions[hero.english_name].costume_id) {
+                latestVersions[hero.english_name] = hero;
+            }
+        });
+
+        // 3. 从这些“最新版本”的英雄中，筛选出 costume_id > 0 (即必须是服装) 且符合当前 bucket 星级的英雄
+        const latestCostumeHeroes = Object.values(latestVersions).filter(hero => {
+            return hero.costume_id > 0 && hero.star === star;
+        });
+
+        // 4. 最后应用全局排除规则
+        return latestCostumeHeroes.filter(hero => {
+            // 无论 hero.family 是数字还是字符串，都先用 String() 转换
+            const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+            return !state.globalExcludeFamilies.includes(heroFamily);
+        });
+    }
+
+    // ▼▼▼▼▼【核心修改：重构通用奖池的构建逻辑】▼▼▼▼▼
+
+    // 步骤 1: 先筛选出符合条件的【本体英雄】
+    const initialPool = state.allHeroes.filter(hero => {
+        const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+        // 在所有筛选的最开始，应用全局排除规则
+        // 无论 hero.family 是数字还是字符串，都先用 String() 转换
+        if (state.globalExcludeFamilies && state.globalExcludeFamilies.includes(heroFamily)) {
+            return false;
+        }
+        if (hero.costume_id !== 0) return false; // 只从本体英雄开始筛选
+        if (hero.star !== star) return false;
+
+        switch (condition) {
+            case 'ex': return heroFamily !== 'classic';
+            case 's1': return heroFamily === 'classic';
+            case 'event':
+                const families = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                return families.includes(heroFamily);
+            case 'listed':
+                const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                const includedIds = poolConfig.includedHeroes || [];
+                return listedFamilies.includes(heroFamily) || includedIds.includes(hero.heroId);
+            case 'extraAssociatedFamilies':
+                const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
+                return extraFamilies.includes(heroFamily);
+            default: return false;
+        }
+    });
+
+    // 步骤 2: 遍历筛选出的本体英雄，应用“非S1自动换肤”规则
+    const finalPool = initialPool.map(baseHero => {
+        // 如果英雄是 S1 (classic) 家族，直接返回本体
+        if (baseHero.family === 'classic') {
+            return baseHero;
+        }
+
+        // 如果是非S1家族，从预计算的Map中查找它的最新版本
+        const latestVersion = state.latestHeroVersionsMap.get(baseHero.english_name);
+
+        // 如果最新版本是服装 (costume_id > 0)，则返回服装版本；否则，还是返回本体
+        if (latestVersion && latestVersion.costume_id > 0) {
+            return latestVersion;
+        } else {
+            return baseHero;
+        }
+    });
+
+    return finalPool;
+}
+
+/**
+ * 获取指定奖池中所有可能抽到的英雄的完整、去重列表 (v2 - 最终修正版)
+ * @param {object} poolConfig - 奖池配置对象
+ * @returns {Array} - 所有可能英雄的对象数组
+ */
+function getAllHeroesInPool(poolConfig) {
+    if (!poolConfig || !poolConfig.bucketConfig) return [];
+
+    let allPossibleHeroes = [];
+    if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
+        const heroesFromFeaturedList = poolConfig.featuredHeroes
+            .map(heroId => state.heroesByIdMap.get(heroId)) // 使用我们之前创建的Map来快速查找
+            .filter(Boolean); // 过滤掉未找到的英雄
+        allPossibleHeroes.push(...heroesFromFeaturedList);
+    }
+    const { bucketConfig } = poolConfig;
+
+    // 1. 遍历所有 bucket 类型来收集英雄
+    bucketConfig.forEach(bucketString => {
+        if (!bucketString || bucketString.startsWith('trainer')) {
+            return;
+        }
+
+        if (bucketString === 'featuredHero') {
+            const featuredIds = [
+                ...(poolConfig.featuredNonCostumedHeroes || []),
+                poolConfig.advertisedHero
+            ].filter(Boolean);
+
+            const featuredHeroes = state.allHeroes.filter(h => featuredIds.includes(h.heroId));
+            allPossibleHeroes.push(...featuredHeroes);
+
+        } else {
+            const heroesFromBucket = getHeroPoolForBucket(bucketString, poolConfig);
+            allPossibleHeroes.push(...heroesFromBucket);
+        }
+    });
+
+    // 【对最终结果进行“最新版本”筛选】
+    // 2. 无论英雄来自哪个池，我们都按 english_name 分组，并只保留 costume_id 最大的那一个
+    const finalLatestVersions = {};
+    allPossibleHeroes.forEach(hero => {
+        if (hero && hero.english_name) { // 确保英雄有 english_name
+            if (!finalLatestVersions[hero.english_name] || hero.costume_id > finalLatestVersions[hero.english_name].costume_id) {
+                finalLatestVersions[hero.english_name] = hero;
+            }
+        }
+    });
+
+    // 3. 返回最终的、纯净的英雄列表
+    return Object.values(finalLatestVersions);
+}
 
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
 const LotterySimulator = {
@@ -246,6 +407,10 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) { // <-- 
             renderSummonHistory();
         }
     });
+    // 6. 为召唤按钮绑定事件
+    document.getElementById('single-summon-btn')?.addEventListener('click', () => performSummon(1));
+    document.getElementById('ten-summon-btn')?.addEventListener('click', () => performSummon(10));
+    document.getElementById('thirty-summon-btn')?.addEventListener('click', () => performSummon(30));
 }
 
 /**
@@ -257,7 +422,7 @@ function getPoolDisplayName(poolConfig) {
     if (!poolConfig) return '';
 
     // 定义需要使用ID进行翻译的特殊productType列表
-    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon','TowerEventSummon'];
+    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon'];
     let titleKey = '';
 
     // 检查当前奖池的productType是否在特殊列表中
@@ -285,13 +450,40 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
     const summonPoolDetails = summonTypesConfig.SummonPool;
 
+    state.globalExcludeFamilies = (summonPoolDetails.exclude_for_all || []).map(f => f.toLowerCase());
+    // 预计算每个英雄的最新版本并存入 state
+    state.latestHeroVersionsMap = new Map();
+
+    // 创建 heroId -> heroObject 的映射表
+    state.heroesByIdMap = new Map();
+    state.allHeroes.forEach(hero => {
+        if (hero.english_name) {
+            const existing = state.latestHeroVersionsMap.get(hero.english_name);
+            if (!existing || hero.costume_id > existing.costume_id) {
+                state.latestHeroVersionsMap.set(hero.english_name, hero);
+            }
+        }
+        if (hero.heroId) {
+            state.heroesByIdMap.set(hero.heroId, hero);
+        }
+    });
+
+    state.allHeroes.forEach(hero => {
+        if (hero.english_name) {
+            const existing = state.latestHeroVersionsMap.get(hero.english_name);
+            // 如果尚未记录该英雄，或当前英雄的 costume_id 更大，则更新记录
+            if (!existing || hero.costume_id > existing.costume_id) {
+                state.latestHeroVersionsMap.set(hero.english_name, hero);
+            }
+        }
+    });
+
     allPoolsConfig.forEach(pool => {
         // 只处理基础召唤配置 (amount: 1)
         if (pool.amount === 1) {
             const details = summonPoolDetails[pool.id] || {};
             const productType = summonTypesConfig.SummonConfig[pool.productType] || {};
 
-            // 查找对应的10连和30连配置
             const bulk10 = allPoolsConfig.find(p => p.sourceProductId === pool.id && p.amount === 10);
             const bulk30 = allPoolsConfig.find(p => p.sourceProductId === pool.id && p.amount === 30);
 
@@ -302,10 +494,19 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
                 bulk10: bulk10 || null,
                 bulk30: bulk30 || null,
             };
+            // 如果当前处理的奖池ID是 lottery_season_atlantis
+            if (pool.id === 'lottery_season_atlantis') {
+                // 则强制将其精选英雄数量设置为 4
+                lotteryPoolsData[pool.id].featuredHeroNum = 4;
+            }
+            // 如果当前处理的奖池ID是 lottery_hero_valentines或lottery_hero_lunar_new_year
+            if (pool.id === 'lottery_hero_valentines' || pool.id === 'lottery_hero_lunar_new_year' ) {
+                // 则强制将其精选英雄数量设置为 2
+                lotteryPoolsData[pool.id].featuredHeroNum = 2;
+            }
         }
     });
 
-    // 将处理好的数据存入全局状态，方便访问
     state.allSummonPools = lotteryPoolsData;
 }
 
@@ -321,25 +522,22 @@ function renderActivityList() {
 
     listContainer.innerHTML = '';
 
-    const Pools = Object.values(state.allSummonPools);
+    const originalOrderPools = Object.values(state.allSummonPools);
 
-    Pools.forEach(pool => {
+    originalOrderPools.forEach(pool => {
         const listItem = document.createElement('li');
         listItem.dataset.poolId = pool.id;
 
-        // 调用统一的标题函数来获取显示名称
         const displayName = getPoolDisplayName(pool);
 
-        // 使用 banner 字段设置背景图片
         if (pool.banner) {
             listItem.style.backgroundImage = `url('imgs/lottery/banner/${pool.banner}.webp')`;
             listItem.style.backgroundSize = 'cover';
             listItem.style.backgroundRepeat = 'no-repeat';
             listItem.style.color = '#fff';
             listItem.style.textShadow = '1px 1px 2px black';
-            listItem.textContent = displayName; // 设置列表项的标题
+            listItem.textContent = displayName;
         } else {
-            // 如果没有banner，显示标题并附带提示
             listItem.textContent = displayName + ' (No Banner)';
         }
 
@@ -347,20 +545,15 @@ function renderActivityList() {
         listContainer.appendChild(listItem);
     });
 
-    if (Pools.length > 0) {
-        handleActivityClick(Pools.find(p => p.uiPriority > 0)?.id || Pools?.[0]?.id);
-    }
+    // 【重要】我们已经移除了这里自动调用 handleActivityClick 的逻辑
+    // 默认选择的逻辑将移至 toggleLotterySimulator 函数中
 }
 
 /**
- * 当用户点击左侧活动列表时，更新整个召唤主界面
+ * 当用户点击活动列表时，设置一个临时的英雄子集，并触发主筛选/渲染流程
  * @param {string} poolId - 被选中的奖池ID
  */
 function handleActivityClick(poolId) {
-    if (state.isEditingFeaturedHero) {
-        LotterySimulator.exitFeaturedHeroEditMode();
-    }
-
     document.querySelectorAll('#lottery-activity-list li').forEach(li => {
         li.classList.toggle('active', li.dataset.poolId === poolId);
     });
@@ -369,21 +562,69 @@ function handleActivityClick(poolId) {
     if (!poolConfig) return;
 
     state.currentSummonData = poolConfig;
-    state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
+    // 【自动填充精选英雄】
+    // 检查奖池配置中是否有 featuredHeroes 列表
+    if (poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
+        // 如果有，则根据 heroId 列表从我们创建的 Map 中查找英雄对象
+        state.customFeaturedHeroes = poolConfig.featuredHeroes.map(heroId =>
+            state.heroesByIdMap.get(heroId) || null
+        );
 
+        // 确保数组长度与卡槽数一致，不足的用 null 填充
+        const numSlots = poolConfig.featuredHeroNum || state.customFeaturedHeroes.length;
+        if (state.customFeaturedHeroes.length < numSlots) {
+            state.customFeaturedHeroes.length = numSlots;
+            state.customFeaturedHeroes.fill(null, poolConfig.featuredHeroes.length);
+        }
+    } else {
+        // 如果没有，则创建相应数量的空卡槽，供用户手动添加
+        state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
+    }
+
+    // --- 更新UI部分 (保持不变) ---
     const titleEl = document.getElementById('lottery-pool-title');
-    const backgroundEl = document.getElementById('lottery-background-image');
-    // 获取标题
     titleEl.textContent = getPoolDisplayName(poolConfig);
-
+    // ... (其他UI更新代码保持不变) ...
+    const backgroundEl = document.getElementById('lottery-background-image');
+    const portalContainer = document.getElementById('lottery-portal-container');
     if (poolConfig.lotterybg) {
         backgroundEl.style.backgroundImage = `url('imgs/lottery/lotterybg/${poolConfig.lotterybg}.webp')`;
     } else {
-        backgroundEl.style.backgroundImage = 'none'; // 没有 lotterybg 则移除背景
-        backgroundEl.style.backgroundColor = '#222'; // 可以设置一个默认背景色
+        backgroundEl.style.backgroundImage = 'none';
+        backgroundEl.style.backgroundColor = '#222';
     }
     backgroundEl.style.backgroundSize = '100% 100%';
     backgroundEl.style.backgroundPosition = 'center';
+    portalContainer.querySelector('.probability-info-icon')?.remove();
+    if (poolConfig.bucketConfig && poolConfig.bucketWeights) {
+        const infoIcon = document.createElement('div');
+        infoIcon.className = 'probability-info-icon';
+        infoIcon.textContent = 'ⓘ';
+        infoIcon.title = '查看概率详情';
+        infoIcon.addEventListener('click', () => {
+            let details = '当前奖池概率详情:\n\n';
+            poolConfig.bucketConfig.forEach((bucketName, index) => {
+                const weight = poolConfig.bucketWeights[index];
+                if (weight > 0) {
+                    const percentage = (weight / 10).toFixed(1);
+                    details += `${bucketName}: ${percentage}%\n`;
+                }
+            });
+            alert(details);
+        });
+        portalContainer.appendChild(infoIcon);
+    }
+
+    // ▼▼▼▼▼【核心修改】▼▼▼▼▼
+    // 1. 获取当前奖池的所有英雄，并将其设置为临时的“活动子集”
+    state.activeHeroSubset = getAllHeroesInPool(poolConfig);
+
+    // 2. 将默认排序设置为“按发布日期降序”
+    state.currentSort = { key: 'Release date', direction: 'desc' };
+
+    // 3. 调用全局的筛选和渲染函数，它现在会基于我们的子集进行操作
+    applyFiltersAndRender();
+    // ▲▲▲▲▲【修改结束】▲▲▲▲▲
 
     LotterySimulator.renderFeaturedHeroes();
     LotterySimulator.updateSummonButtons();
@@ -514,6 +755,7 @@ function addHeroToFeaturedSlot(selectedHero) {
     if (emptyIndex !== -1) {
         state.customFeaturedHeroes[emptyIndex] = selectedHero;
         renderFeaturedHeroes(); // 重新渲染以显示新英雄
+        applyFiltersAndRender(); // 刷新主英雄列表，并应用禁用状态
     } else {
         alert(i18n[state.currentLang].featuredSlotsFull || '所有精选英雄卡槽已满。');
     }
@@ -531,38 +773,61 @@ function removeHeroFromFeaturedSlot(slotIndex) {
 }
 
 // --- 抽奖核心与历史记录 (Summoning & History) ---
-
 /**
  * 执行抽奖
  * @param {number} count - 抽奖次数
  */
 async function performSummon(count) {
-    // ... 在这里实现您的抽奖算法 ...
-    // 1. 根据权重选择 bucket
-    // 2. 根据 bucket 从 state.allHeroes 筛选出英雄池
-    // 3. 随机抽取一个英雄
+    const poolConfig = state.currentSummonData;
+    if (!poolConfig) {
+        alert("Please select a summon pool first.");
+        return;
+    }
 
-    const summonedHeroes = [];
+    const summonedResults = []; // 修改变量名，现在存储的是包含来源的结果
     for (let i = 0; i < count; i++) {
-        // 伪代码：
-        // const hero = doSummonLogic(); 
-        // summonedHeroes.push(hero);
-    }
+        const { bucketWeights, bucketConfig } = poolConfig;
 
-    // 播放动画
-    for (let i = 0; i < summonedHeroes.length; i++) {
-        await showSummonAnimation(summonedHeroes[i], i * 200); // 错开显示
-    }
+        const bucketIndex = selectWeightedIndex(bucketWeights);
+        const bucketString = bucketConfig[bucketIndex];
 
-    // 更新历史记录
-    if (summonedHeroes.length > 0) {
-        state.summonHistory.unshift(summonedHeroes); // 在最前面插入新记录
-        if (state.summonHistory.length > 100) {
-            state.summonHistory.pop(); // 保持最多100条
+        let drawnHero = null;
+        let sourceBucket = bucketString || 'unknown'; // 记录来源
+
+        if (bucketString && bucketString.startsWith('trainer')) {
+            const star = parseInt(bucketString.split('_')[1], 10);
+            drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: 'trainer', image: `imgs/other/trainer_${star}.webp` };
+        } else if (bucketString === 'featuredHero') {
+            const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
+            if (validFeatured.length > 0) {
+                drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
+            } else {
+                const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+                drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+                sourceBucket = 'featuredHero (保底)'; // 明确标注保底
+            }
+        } else if (bucketString) {
+            const heroPool = getHeroPoolForBucket(bucketString, poolConfig);
+            if (heroPool.length > 0) {
+                drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
+            }
         }
-        saveHistoryToLocalStorage();
-        renderSummonHistory();
+
+        if (drawnHero) {
+            // ▼▼▼ 核心修改：存储一个包含英雄和来源的对象 ▼▼▼
+            summonedResults.push({ hero: drawnHero, bucket: sourceBucket });
+            // ▲▲▲ 修改结束 ▲▲▲
+        }
     }
+
+    // (历史记录和动画部分暂时保持不变)
+
+    // ▼▼▼ 核心修改：修改 alert 内容以展示来源 ▼▼▼
+    const resultText = summonedResults.map(result =>
+        `${result.hero.name} (${result.bucket})`
+    ).join('\n');
+    alert(`你抽到了:\n${resultText}`);
+    // ▲▲▲ 修改结束 ▲▲▲
 }
 
 /**
@@ -697,11 +962,12 @@ function toggleLotterySimulator() {
         button.classList.add('simulator-exit-btn');
         button.title = langDict.returnToList;
 
-        // 如果是首次激活，加载默认奖池
-        if (state.allSummonPools && !state.currentSummonData) {
-            const firstPool = Object.values(state.allSummonPools).sort((a, b) => (b.uiPriority || 0) - (a.uiPriority || 0))[0];
-            if (firstPool) {
-                LotterySimulator.handleActivityClick(firstPool.id);
+        // 无论如何，只要激活抽奖模拟器，就加载并显示默认的第一个奖池。
+        // 这确保了从任何其他视图（如队伍模拟器）切换过来时，列表都会被正确筛选。
+        if (state.allSummonPools) {
+            const firstPoolId = Object.keys(state.allSummonPools)[0];
+            if (firstPoolId) {
+                handleActivityClick(firstPoolId);
             }
         }
         setMainViewHistory('lotterySimulator'); // 浏览器历史记录管理
@@ -709,6 +975,7 @@ function toggleLotterySimulator() {
         // --- 关闭模拟器时的操作 ---
         button.classList.remove('simulator-exit-btn');
         button.title = langDict.lotterySimulatorTitle;
+        state.activeHeroSubset = null;
         if (state.isEditingFeaturedHero) {
             exitFeaturedHeroEditMode();
         }

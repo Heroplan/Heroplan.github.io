@@ -39,9 +39,9 @@
         },
         "CostumeSummon": {
             "bucketConfig": [
-                "heroes_event_3",
-                "heroes_event_4",
-                "heroes_event_5",
+                "heroes_s1_3",
+                "heroes_s1_4",
+                "heroes_s1_5",
                 "featuredHero"
             ],
             "featuredHeroNum": 2
@@ -214,19 +214,28 @@
         }
     },
     "SummonPool": {
-        "lottery_featured_alliance_quest_castle":{
+        "exclude_for_all": [
+            "mystery",
+            "mimic"
+        ],
+        "lottery_featured_alliance_quest_castle": {
             "AssociatedFamilies": [
                 "wolf",
                 "raven",
                 "stag",
                 "bear"
             ]
-        },"lottery_featured_alliance_quest_musketeers": {
+        },
+        "lottery_featured_alliance_quest_musketeers": {
             "AssociatedFamilies": [
                 "musketeer"
             ]
         },
         "lottery_astralelves_default": {
+            "featuredHeroes": [
+                "astral_dwarf_ceris",
+                "astral_lemonwood"
+            ],
             "AssociatedFamilies": [
                 "astralelves",
                 "astraldwarfs"
@@ -260,6 +269,11 @@
                 "bard"
             ]
         },
+        "lottery_featured_event_opera": {
+            "AssociatedFamilies": [
+                "opera"
+            ]
+        },
         "lottery_featured_event_masquerade": {
             "AssociatedFamilies": [
                 "masquerade",
@@ -276,6 +290,15 @@
                 "fox",
                 "construct"
             ],
+            "featuredHeroes": [
+                "fox_riverfang",
+                "moth_grovevert",
+                "magic_carpet_naeem",
+                "astral_dwarf_ixinn",
+                "astral_dwarf_gongoth",
+                "fox_sable"
+            ],
+            "advertisedHero": "fox_riverfang",
             "includedHeroes": [
                 "nomad_female_shaman",
                 "knights_bauchan",
@@ -362,6 +385,10 @@
             ]
         },
         "lottery_goblin_default": {
+            "featuredHeroes": [
+                "garrison_maisie",
+                "garrison_dima"
+            ],
             "AssociatedFamilies": [
                 "goblin",
                 "garrisonguard"
@@ -382,6 +409,11 @@
             ]
         },
         "lottery_mercenary_war_default": {
+            "featuredHeroes": [
+                "outlaw_sun_erniang",
+                "outlaw_ruan_xiaoqi",
+                "outlaw_song_jiang"
+            ],
             "AssociatedFamilies": [
                 "kingdom",
                 "journey",
@@ -389,6 +421,11 @@
             ]
         },
         "lottery_monster_island_default": {
+            "featuredHeroes": [
+                "monster_hunter_sigyn",
+                "monster_hunter_thura",
+                "monster_hunter_dubhain"
+            ],
             "AssociatedFamilies": [
                 "plainshunter",
                 "junglehunter",
@@ -401,6 +438,11 @@
             ]
         },
         "lottery_pickup_default": {
+
+            "featuredHeroes": [
+                "astral_dwarf_vard",
+                "tales2_dagr"
+            ],
             "includedHeroes": [
                 "s2_ariel",
                 "s3_odin",
@@ -409,6 +451,12 @@
             ]
         },
         "lottery_season_atlantis": {
+            "featuredHeroes": [
+                "s2_noble_lady_costume_warrior",
+                "holy_god_zora",
+                "s2_tethys",
+                "dark_god_zed"
+            ],
             "AssociatedFamilies": [
                 "lagoon",
                 "sakura",
@@ -416,6 +464,11 @@
             ]
         },
         "lottery_season_valhalla": {
+            "featuredHeroes": [
+                "s3_loki_female_costume_mother",
+                "s3_heimdall_costume_dreaded",
+                "s3_loki_male_costume_shapeshifter"
+            ],
             "AssociatedFamilies": [
                 "alfheim",
                 "asgard",
@@ -429,17 +482,32 @@
             ]
         },
         "lottery_season_underwild": {
+            "featuredHeroes": [
+                "s4_congalach_costume_kelp",
+                "s4_captain_nemo_costume_machinist",
+                "s4_russula_costume_painter"
+            ],
             "AssociatedFamilies": [
                 "underwild"
             ]
         },
         "lottery_season_season5": {
+            "featuredHeroes": [
+                "s5_meresankh_costume_disco",
+                "s5_maat_costume_river",
+                "s5_hathor_costume_starlit"
+            ],
             "AssociatedFamilies": [
                 "sun",
                 "moon"
             ]
         },
         "lottery_season_untold_tales1": {
+            "featuredHeroes": [
+                "tales1_persa_costume_jellyfish_noble",
+                "tales1_phorcys_costume_warrior_god",
+                "tales1_galapago_costume_quarry"
+            ],
             "AssociatedFamilies": [
                 "defendersofatlantis",
                 "nightmaresofatlantis"
@@ -449,6 +517,11 @@
             ]
         },
         "lottery_season_untold_tales2": {
+            "featuredHeroes": [
+                "tales2_motsognir",
+                "tales2_fimafeng",
+                "tales2_fafnir"
+            ],
             "AssociatedFamilies": [
                 "nidavellir",
                 "myrkheim"
@@ -460,21 +533,39 @@
             ]
         },
         "lottery_hero_lunar_new_year": {
+        "featuredHeroes": [
+          "lunar_new_year_xiaoqing",
+          "lunar_new_year_baishu"
+        ],
             "AssociatedFamilies": [
                 "lunaryear"
             ]
         },
         "lottery_hero_valentines": {
+        "featuredHeroes": [
+          "valentines_anteros",
+          "valentines_matchmaker_dodgrom"
+        ],
             "AssociatedFamilies": [
                 "cupid"
             ]
         },
         "lottery_hero_easter": {
+        "featuredHeroes": [
+          "easter_viscount_cluckwood",
+          "easter_sadie",
+          "easter_miss_ethel"
+        ],
             "AssociatedFamilies": [
                 "springvale"
             ]
         },
         "lottery_hero_beach_party": {
+        "featuredHeroes": [
+          "beachparty_andy_jay",
+          "beachparty_serena",
+          "beachparty_flip_costume_donut"
+        ],
             "AssociatedFamilies": [
                 "beachparty"
             ],
@@ -483,16 +574,31 @@
             ]
         },
         "lottery_hero_kalevala": {
+        "featuredHeroes": [
+          "kalevala_suomuhauki",
+          "kalevala_mother_lemminkainen",
+          "kalevala_louhi_costume_mistress"
+        ],
             "AssociatedFamilies": [
                 "kalevala"
             ]
         },
         "lottery_hero_halloween": {
+        "featuredHeroes": [
+          "halloween_wayne",
+          "halloween_chester",
+          "halloween_alucard_costume_mafia"
+        ],
             "AssociatedFamilies": [
                 "morlovia"
             ]
         },
         "lottery_hero_christmas": {
+        "featuredHeroes": [
+          "christmas_albin",
+          "christmas_ottilia",
+          "christmas_mr_pengi_costume_snowboarder"
+        ],
             "AssociatedFamilies": [
                 "christmas"
             ]
@@ -501,9 +607,55 @@
             "AssociatedFamilies": [
                 "investigator",
                 "cultist"
+            ],
+            "featuredHeroes": [
+                "shadow_rosanna",
+                "shadow_burton",
+                "shadow_atwood"
+            ],
+            "includedHeroes": [
+                "castle_bear_bearnadette",
+                "elemental_gastille",
+                "slime_mucktus",
+                "ballerina_firmin",
+                "masquerade_jana",
+                "fire_god_zidane",
+                "slayer_senan_costume_tentacles",
+                "s4_phileas_fogg_costume_engineer",
+                "musketeer_milady_de_winter",
+                "s3_norns_costume_puppeteers",
+                "elemental_zaria",
+                "masquerade_umbria",
+                "magic_cristobal",
+                "masquerade_fortuna",
+                "s4_professor_lidenbrock_costume_jeweler",
+                "fire_god_reuben",
+                "s4_xnolphod_costume_jailer",
+                "masquerade_februus",
+                "pirate_commodore_finley_costume_bleak",
+                "holy_god_onatel",
+                "tales1_sharkhai_costume_butcher",
+                "guardian_jackal_assassin_costume_bones",
+                "masquerade_fosco",
+                "gargoyle_kalo",
+                "s3_shadereave",
+                "elemental_lexi",
+                "s4_griffin_costume_priest",
+                "s4_zila_lei_costume_dancer",
+                "fables_hansel_costume_vampire_hunter",
+                "slayer_cillian",
+                "musketeer_felton",
+                "knights_treevil",
+                "halloween_goopy",
+                "pirate_vodnik",
+                "magic_kornel"
             ]
         },
         "lottery_super_elemental": {
+            "featuredHeroes": [
+                "elemental_ash",
+                "elemental_niki"
+            ],
             "AssociatedFamilies": [
                 "superelemental",
                 "slime"
@@ -532,8 +684,92 @@
         },
         "lottery_wilderness_default": {
             "AssociatedFamilies": [
+                "classic",
                 "woodlandfaun",
                 "wildcat"
+            ],
+            "featuredHeroes": [
+                "wild_cat_stravia",
+                "wild_cat_imagus",
+                "wild_cat_lennart",
+                "wild_cat_leonie"
+            ],
+            "advertisedHero": "wild_cat_stravia",
+            "includedHeroes": [
+                "styx_dante",
+                "knights_bauchan",
+                "mighty_pet_rufus",
+                "monster_hunter_basil",
+                "journey_general_yin",
+                "wonderland_bear",
+                "magic_roxia",
+                "forest_friar",
+                "bard_zarel",
+                "s3_grevle",
+                "musketeer_planchet",
+                "pirate_vodnik",
+                "gargoyle_soroca",
+                "s3_nordri",
+                "s4_helo",
+                "faun_saskia",
+                "musketeer_felton",
+                "oriental_female_mage",
+                "oriental_panda_berserker",
+                "s5_aqeela",
+                "knights_treevil",
+                "s2_lantern_ghost",
+                "gargoyle_budatin",
+                "undead_running_skeleton",
+                "knights_sir_lancelot",
+                "bard_zhabog",
+                "ballerina_raul",
+                "magic_lucy",
+                "s2_demon_master",
+                "gargoyle_kalo",
+                "styx_brontes",
+                "fables_hansel",
+                "goblin_mage",
+                "tales1_mulgog",
+                "masquerade_fosco",
+                "dwarwen_brewmaster",
+                "bard_garyas",
+                "s5_azmia",
+                "oriental_falconer",
+                "s5_scoratek",
+                "s3_mist",
+                "mighty_pet_waddles",
+                "s2_proteus",
+                "mighty_pet_cupcake",
+                "castle_bear_koda",
+                "journey_heifeng_guai",
+                "owl_fulvia",
+                "faun_araminta",
+                "s4_xenda",
+                "faun_isidore",
+                "ninja_ekanite",
+                "faun_peregrine",
+                "ballerina_prince_siegfried",
+                "s5_maat",
+                "ninja_oniwakamaru",
+                "magic_camilla",
+                "faun_verity",
+                "guardian_hippo",
+                "faun_gideon",
+                "s5_cleopatra",
+                "s5_eset",
+                "bard_ogima",
+                "s5_bastet",
+                "mighty_pet_luna",
+                "faun_tamlin",
+                "musketeer_rochefort",
+                "faun_myrtle",
+                "faun_maud",
+                "faun_yolanda",
+                "faun_bramble",
+                "faun_ascian",
+                "faun_philomena",
+                "faun_ysabel",
+                "faun_jolyon"
             ]
         }
     }

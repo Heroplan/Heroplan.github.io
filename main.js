@@ -146,22 +146,7 @@ async function initializeApp() {
         document.body.classList.remove('js-loading');
         return;
     }
-    // ▼▼▼ 加载抽奖配置文件 ▼▼▼
-    try {
-        const [poolsResponse, typesResponse] = await Promise.all([
-            fetch('./lottery.json'),      // 读取 lottery.json
-            fetch('./lottery_config.json') // 读取 lottery_config.json
-        ]);
-        const allPoolsConfig = await poolsResponse.json();
-        const summonTypesConfig = await typesResponse.json();
-
-        // 将组合后的标题字典传递给初始化函数
-        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig);
-
-    } catch (error) {
-        console.error("加载抽奖配置文件失败:", error);
-        // 即使抽奖文件加载失败，也让网站继续运行
-    }
+    
 
     // 3. 数据后处理
     state.allHeroes.forEach((hero, index) => {
@@ -191,6 +176,23 @@ async function initializeApp() {
         filterHero730Btn: document.getElementById('filter-hero-730-btn'),
         filterCostume548Btn: document.getElementById('filter-costume-548-btn'),
     });
+
+    // ▼▼▼ 加载抽奖配置文件 ▼▼▼
+    try {
+        const [poolsResponse, typesResponse] = await Promise.all([
+            fetch('./lottery.json'),      // 读取 lottery.json
+            fetch('./lottery_config.json') // 读取 lottery_config.json
+        ]);
+        const allPoolsConfig = await poolsResponse.json();
+        const summonTypesConfig = await typesResponse.json();
+
+        // 将组合后的标题字典传递给初始化函数
+        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig);
+
+    } catch (error) {
+        console.error("加载抽奖配置文件失败:", error);
+        // 即使抽奖文件加载失败，也让网站继续运行
+    }
 
     // 从Cookie恢复用户之前的设置
     uiElements.filterInputs.defaultLimitBreakSelect.value = getCookie('defaultLB') || 'none';
@@ -647,17 +649,20 @@ function handleTableBodyClick(event) {
     // 处理收藏/添加图标的点击
     if (target.classList.contains('favorite-toggle-icon')) {
         event.stopPropagation();
+
+        // 检查图标是否被禁用
+        if (target.classList.contains('disabled')) {
+            return; // 如果被禁用，则不执行任何后续操作
+        }
+
         const heroId = parseInt(target.dataset.heroId, 10);
         const hero = state.allHeroes.find(h => h.originalIndex === heroId);
         if (hero) {
             if (state.lotterySimulatorActive) {
-                // 如果抽奖模拟器是激活状态，则调用添加函数
                 LotterySimulator.addHeroToFeaturedSlot(hero);
             } else if (state.teamSimulatorActive) {
-                // 如果是队伍模拟器模式，则调用添加函数
                 addHeroToTeam(hero);
             } else {
-                // 否则，执行收藏逻辑
                 toggleFavorite(hero);
                 target.textContent = isFavorite(hero) ? '★' : '☆';
                 target.classList.toggle('favorited', isFavorite(hero));

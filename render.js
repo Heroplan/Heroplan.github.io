@@ -174,19 +174,25 @@ function renderTable(heroes) {
                 return `<td class="col-color"><img src="imgs/colors/${englishColor}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
                 let icon;
-                let favClass = '';
+                let cssClass = '';
 
-                // 统一判断：如果任一模拟器被激活，显示“添加”图标
                 if (state.teamSimulatorActive || state.lotterySimulatorActive) {
                     icon = '⬆️';
+                    // 检查英雄是否已被添加
+                    let isDisabled = false;
+                    if (state.lotterySimulatorActive && state.customFeaturedHeroes) {
+                        // .some() 方法会检查数组中是否至少有一个元素满足条件
+                        isDisabled = state.customFeaturedHeroes.some(fh => fh && fh.heroId === hero.heroId);
+                    }
+                    if (isDisabled) {
+                        cssClass = 'disabled'; // 如果已被添加，则附加 disabled 类
+                    }
                 } else {
-                    // 否则，显示收藏用的星星图标
                     const isHeroFavorite = isFavorite(hero);
                     icon = isHeroFavorite ? '★' : '☆';
-                    favClass = isHeroFavorite ? 'favorited' : '';
+                    cssClass = isHeroFavorite ? 'favorited' : '';
                 }
-                return `<td class="col-fav"><span class="favorite-toggle-icon ${favClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
-
+                return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.color);
                 const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
@@ -396,12 +402,16 @@ function renderDetailsInModal(hero, context = {}) {
     // --- 解析英雄名称 ---
     const skinInfo = getSkinInfo(hero);
     const heroSkin = skinInfo.skinIdentifier;
-    let mainHeroName = '', englishName = '', traditionalChineseName = '';
+    let mainHeroName = '';
+    let englishName = '';
+    let traditionalChineseName = '';
+
     if (state.currentLang === 'en') {
         mainHeroName = skinInfo.baseName;
     } else {
         const multiLangMatch = skinInfo.baseName.match(/^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/);
         const singleAltLangMatch = skinInfo.baseName.match(/^(.*?)\s*\(([^)]+)\)/);
+
         if (multiLangMatch) {
             mainHeroName = multiLangMatch[1].trim();
             traditionalChineseName = multiLangMatch[2].trim();
@@ -409,11 +419,19 @@ function renderDetailsInModal(hero, context = {}) {
         } else if (singleAltLangMatch && /[a-zA-Z]/.test(singleAltLangMatch[2])) {
             mainHeroName = singleAltLangMatch[1].trim();
             englishName = singleAltLangMatch[2].trim();
+            // 在这种情况下，没有独立的繁体中文名，所以 traditionalChineseName 保持为空字符串
         } else {
+            // 如果两种正则都不匹配，则将整个基础名称作为主名称
             mainHeroName = skinInfo.baseName;
         }
     }
-    const nameBlockHTML = `${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}<h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}`;
+
+    // 现在，正确地使用所有三个变量来构建最终的HTML
+    const nameBlockHTML = `
+        ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
+        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
+        ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
+    `;
 
     const source = filterInputs.skillTypeSource.value;
     const uniqueSkillTypes = getSkillTagsForHero(hero, source);

@@ -4504,3 +4504,37 @@ select.custom-select-hidden {
     text-align: center;
     /* 文本居中 */
 }
+
+/* ========== 抽奖概率说明图标样式 ========== */
+.probability-info-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    /* 确保在内容层之上 */
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.probability-info-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ========== 禁用的添加/收藏图标样式 ========== */
+.favorite-toggle-icon.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none !important;
+    /* 覆盖悬停时的放大效果 */
+}

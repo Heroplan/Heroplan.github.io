@@ -567,9 +567,14 @@ function calculateHeroStats(hero, settings) {
 }
 
 /**
- * 核心函数：应用所有筛选条件并重新渲染结果。
+ * 核心函数：应用所有筛选条件并重新渲染结果
  */
 function applyFiltersAndRender() {
+    // 1. 确定筛选的英雄数据源
+    // 如果在抽奖模拟器中查看奖池，则使用奖池的英雄子集；否则，使用全部英雄。
+    const baseHeroes = state.activeHeroSubset || state.allHeroes;
+
+    // 2. 获取所有筛选器的当前值
     const { filterInputs } = uiElements;
     const nameFilter = filterInputs.name ? filterInputs.name.value.trim().toLowerCase() : '';
     const effectsFilter = filterInputs.effects ? filterInputs.effects.value.trim() : '';
@@ -589,7 +594,8 @@ function applyFiltersAndRender() {
         manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
     };
 
-    state.filteredHeroes = state.allHeroes.filter(hero => {
+    // 3. 执行筛选
+    state.filteredHeroes = baseHeroes.filter(hero => {
         // 范围筛选
         if (filterScope === 'hero' && hero.costume_id !== 0) return false;
         if (filterScope === 'skin' && hero.costume_id === 0) return false;
@@ -650,29 +656,37 @@ function applyFiltersAndRender() {
         return true;
     });
 
-    // 为筛选出的英雄计算并附加用于显示的属性
+    // 4. 为筛选出的英雄计算并附加用于显示的属性
     state.filteredHeroes.forEach(hero => {
         hero.displayStats = calculateHeroStats(hero, defaultSettings);
     });
 
-    // 排序
+    // 5. 执行排序
     state.filteredHeroes.sort((a, b) => {
         const key = state.currentSort.key;
         const direction = state.currentSort.direction === 'asc' ? 1 : -1;
-        const numericKeys = ['star', 'power', 'attack', 'defense', 'health'];
+
         let valA, valB;
-        if (numericKeys.includes(key) && key !== 'star') {
+
+        // 为不同类型的排序键获取正确的值
+        if (['power', 'attack', 'defense', 'health'].includes(key)) {
             valA = a.displayStats[key];
             valB = b.displayStats[key];
+        } else if (key === 'Release date') {
+            valA = new Date(a[key] || '1970-01-01'); // 为没有日期的英雄提供一个很早的默认值
+            valB = new Date(b[key] || '1970-01-01');
         } else {
             valA = a[key];
             valB = b[key];
         }
+
         let comparison = 0;
+
+        // 执行比较
         if (key === 'speed') {
             const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[state.currentLang];
             comparison = speedOrder.indexOf(String(valA)) - speedOrder.indexOf(String(valB));
-        } else if (numericKeys.includes(key)) {
+        } else if (typeof valA === 'number' || valA instanceof Date) {
             comparison = (Number(valA) || 0) - (Number(valB) || 0);
         } else {
             valA = String(valA || '');
@@ -680,13 +694,18 @@ function applyFiltersAndRender() {
             const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[state.currentLang];
             comparison = valA.localeCompare(valB, locale, state.currentLang === 'tc' ? { collation: 'stroke' } : {});
         }
+
+        // 应用排序方向
         comparison *= direction;
+
+        // 如果主要排序键相同，则使用战力作为次要排序
         if (comparison === 0 && key !== 'power') {
-            return (Number(b.displayStats.power) || 0) - (Number(a.displayStats.power) || 0);
+            return (b.displayStats.power || 0) - (a.displayStats.power || 0);
         }
+
         return comparison;
     });
 
-    // 渲染结果
+    // 6. 渲染最终结果
     renderTable(state.filteredHeroes);
 }

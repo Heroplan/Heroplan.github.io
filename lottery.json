@@ -1,0 +1,1613 @@
+[
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_7th_birthday",
+        "banner":"event_lotterybanner_7thBirthday",
+        "lotterybg": "event_lotterybg_7thBirthday",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 120,
+        "associatedEvent": "7thBirthday",
+        "bonusChest": "7th_birthday_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 30,
+        "resetChestSummonCountOnNextEvent": true,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            15,
+            10,
+            0,
+            0
+        ],
+        "bonusLegendaryHeroChancePerMil": 1000,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_7th_birthday_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_black_7th_birthday",
+        "amount": 10
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_7th_birthday_30_bulk",
+        "gemPrice": 9400,
+        "sourceProductId": "lottery_black_7th_birthday",
+        "amount": 30
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_castle",
+        "banner":"event_lotterybanner_castle",
+        "lotterybg": "event_lotterybg_castle",
+        "sourceProductId": "lottery_featured_alliance_quest_castle",
+        "gemPrice": 300,
+        "amount": 1,
+        "advertisedHero": "castle_raven_rayne",
+        "associatedEvent": "AllianceQuestCastle",
+        "bucketWeights": [
+            2365,
+            925,
+            12,
+            1185,
+            400,
+            3,
+            10
+        ],
+        "includeCostumes": true
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_castle_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_alliance_quest_castle",
+        "amount": 10,
+        "includeCostumes": true
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_musketeers",
+        "banner": "event_lotterybanner_musketeer",
+        "lotterybg": "event_lotterybg_musketeer",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "musketeer_dartagnan",
+        "associatedEvent": "AllianceQuestMusketeers",
+        "bucketWeights": [
+            473,
+            185,
+            12,
+            237,
+            80,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_musketeers_bulk",
+        "banner":"event_lotterybanner_castle",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_alliance_quest_musketeers",
+        "amount": 10
+    },
+    {
+        "productType": "AstralElvesSummon",
+        "id": "lottery_astralelves_default",
+        "banner":"event_lotterybanner_astral_elves",
+        "lotterybg": "event_lotterybg_astral_elves",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 125,
+        "associatedEvent": "AstralElves",
+        "bucketWeights": [
+            568,
+            208,
+            16,
+            142,
+            57,
+            5,
+            4
+        ],
+        "featuredHeroNum": 2,
+        "bonusLegendaryHeroChancePerMil": 1000,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "AstralElvesSummon",
+        "id": "lottery_astralelves_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_astralelves_default",
+        "amount": 10
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_default",
+        "banner":"event_lotterybanner_black_summon",
+        "lotterybg": "event_lotterybg_black",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 120,
+        "associatedEvent": "BlackSummon",
+        "bonusChest": "black_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 20,
+        "resetChestSummonCountOnNextEvent": true,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            697,
+            265,
+            36,
+            2,
+            0,
+            0
+        ],
+        "bucketConfig": [
+            "heroes_ex_s1_3",
+            "heroes_ex_s1_4",
+            "heroes_ex_s1_5",
+            "featuredHero",
+            null,
+            null
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_black_default",
+        "amount": 10
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_default_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_black_default",
+        "amount": 30
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_opera",
+        "banner":"event_lotterybanner_opera",
+        "lotterybg": "event_lotterybg_opera",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "associatedEvent": "RecurringOpera",
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ]
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_opera_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_event_opera",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_gargoyles2",
+        "banner":"event_lotterybanner_fluffygargoyles",
+        "lotterybg": "event_lotterybg_fluffygargoyles",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "associatedEvent": "RecurringGargoyles2",
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_gargoyles2_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_event_gargoyles2",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_beowulf",
+        "banner":"event_lotterybanner_beowulfmeadhall",
+        "lotterybg": "event_lotterybg_beowulf",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 131,
+        "advertisedHero": "cultist_female_poisoner",
+        "associatedEvent": "RecurringBeowulf",
+        "bonusChest": "beowulf_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_beowulf_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_featured_event_beowulf",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_festival",
+        "banner":"event_lotterybanner_festival",
+        "lotterybg": "event_lotterybg_festival",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "fables_snow_white",
+        "associatedEvent": "RecurringFestival",
+        "bonusChest": "festival_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            710,
+            265,
+            15,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_festival_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_event_festival",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_festival_b",
+        "banner":"event_lotterybanner_festivalB",
+        "lotterybg": "event_lotterybg_festivalB",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 133,
+        "advertisedHero": "bard_narcisa",
+        "associatedEvent": "RecurringFestivalB",
+        "bonusChest": "festival_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            710,
+            265,
+            15,
+            10
+        ],
+        "bonusLegendaryHeroChancePerMil": 200,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_festival_b_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_featured_event_festival_b",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_masquerade",
+        "banner":"event_lotterybanner_masquerade",
+        "lotterybg": "event_lotterybg_masquerade",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "masquerade_carmenta",
+        "associatedEvent": "RecurringMasquerade",
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_masquerade_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_event_masquerade",
+        "amount": 10
+    },
+    {
+        "productType": "CostumeSummon",
+        "id": "lottery_costume_default",
+        "banner":"event_lotterybanner_costume",
+        "lotterybg": "event_lotterybg_costume",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "oriental_female_mystic_costume_scribe",
+        "bonusChest": "costume_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            12,
+            13
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "basicCostumeItemRarityWeights": [
+            0,
+            0,
+            710,
+            265,
+            12
+        ],
+        "featuredCostumeItemRarityWeights": [
+            0,
+            0,
+            0,
+            0,
+            13
+        ]
+    },
+    {
+        "productType": "CostumeSummon",
+        "id": "lottery_costume_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_costume_default",
+        "amount": 10,
+        "basicCostumeItemRarityWeights": [
+            0,
+            0,
+            710,
+            265,
+            12
+        ],
+        "featuredCostumeItemRarityWeights": [
+            0,
+            0,
+            0,
+            0,
+            13
+        ]
+    },
+    {
+        "productType": "CovenantSummon",
+        "id": "lottery_covenant_default",
+        "banner":"event_lotterybanner_covenant",
+        "lotterybg": "event_lotterybg_covenant",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 134,
+        "associatedEvent": "CovenantSummon",
+        "bonusChest": "covenant_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 20,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            9,
+            16,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "CovenantSummon",
+        "id": "lottery_covenant_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_covenant_default",
+        "amount": 10
+    },
+    {
+        "productType": "CovenantSummon",
+        "id": "lottery_covenant_default_30_bulk",
+        "gemPrice": 9400,
+        "sourceProductId": "lottery_covenant_default",
+        "amount": 30
+    },
+    {
+        "productType": "GoblinSummon",
+        "id": "lottery_goblin_default",
+        "banner":"event_lotterybanner_goblin",
+        "lotterybg": "event_lotterybg_goblin",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 129,
+        "associatedEvent": "Goblin",
+        "bucketWeights": [
+            568,
+            208,
+            16,
+            142,
+            57,
+            5,
+            4
+        ],
+        "bonusLegendaryHeroChancePerMil": 1000,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "GoblinSummon",
+        "id": "lottery_goblin_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_goblin_default",
+        "amount": 10
+    },
+    {
+        "productType": "HarvestSummon",
+        "id": "lottery_harvest_default",
+        "banner":"event_lotterybanner_harvest_festival_summon",
+        "lotterybg": "event_lotterybg_harvest_festival",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 120,
+        "associatedEvent": "Harvest",
+        "bucketWeights": [
+            710,
+            265,
+            23,
+            2
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "additionalDrawWeights": [
+            680,
+            200,
+            60,
+            26,
+            12,
+            9,
+            6,
+            4,
+            2,
+            1
+        ]
+    },
+    {
+        "productType": "HarvestSummon",
+        "id": "lottery_harvest_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_harvest_default",
+        "amount": 10,
+        "additionalDrawWeights": [
+            680,
+            200,
+            60,
+            26,
+            12,
+            9,
+            6,
+            4,
+            2,
+            1
+        ]
+    },
+    {
+        "productType": "HarvestSummon",
+        "id": "lottery_harvest_default_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_harvest_default",
+        "amount": 30,
+        "additionalDrawWeights": [
+            680,
+            200,
+            60,
+            26,
+            12,
+            9,
+            6,
+            4,
+            2,
+            1
+        ]
+    },
+    {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default",
+        "banner":"event_lotterybanner_legends",
+        "lotterybg": "event_lotterybg_legends",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 40,
+        "associatedEvent": "HeroesOfTheMonthEvent",
+        "bonusChest": "legends_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            0,
+            15,
+            10
+        ],
+        "secretLegendaryHeroChancePerMil": 1,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hotm_event_default",
+        "amount": 10
+    },
+    {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default_30_bulk",
+        "gemPrice": 7500,
+        "sourceProductId": "lottery_hotm_event_default",
+        "amount": 30
+    },
+    {
+        "productType": "MercenaryWarSummon",
+        "id": "lottery_mercenary_war_default",
+        "banner":"event_lotterybanner_mercenary_war",
+        "lotterybg": "event_lotterybg_mercenary_war",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 131,
+        "advertisedHero": "outlaw_sun_erniang",
+        "associatedEvent": "KingdomWar",
+        "bonusChest": "3kw_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            568,
+            208,
+            0,
+            142,
+            57,
+            15,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "MercenaryWarSummon",
+        "id": "lottery_mercenary_war_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_mercenary_war_default",
+        "amount": 10
+    },
+    {
+        "productType": "MercenaryWarSummon",
+        "id": "lottery_mercenary_war_default_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_mercenary_war_default",
+        "amount": 30
+    },
+    {
+        "productType": "MonsterIslandSummon",
+        "id": "lottery_monster_island_default",
+        "banner":"event_lotterybanner_monster_summon",
+        "lotterybg": "event_lotterybg_monster_island",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 100,
+        "advertisedHero": "monster_hunter_amund",
+        "associatedEvent": "MonsterIsland1",
+        "bonusChest": "monster_island_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 20,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            196,
+            119,
+            0,
+            514,
+            146,
+            15,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "MonsterIslandSummon",
+        "id": "lottery_monster_island_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_monster_island_default",
+        "amount": 10
+    },
+    {
+        "productType": "MonsterIslandSummon",
+        "id": "lottery_monster_island_default_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_monster_island_default",
+        "amount": 30
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_moths",
+        "banner":"event_lotterybanner_moths",
+        "lotterybg": "event_lotterybg_moths",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 131,
+        "advertisedHero": "musketeer_dartagnan",
+        "associatedEvent": "AllianceQuestMoths",
+        "bucketWeights": [
+            473,
+            185,
+            12,
+            237,
+            80,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "AllianceEventSummon",
+        "id": "lottery_featured_alliance_quest_moths_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_alliance_quest_moths",
+        "amount": 10
+    },
+    {
+        "productType": "PickupSummon",
+        "id": "lottery_pickup_default",
+        "banner":"event_lotterybanner_pickup_summon",
+        "lotterybg": "event_lotterybg_season1",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 50,
+        "bucketWeights": [
+            710,
+            265,
+            7,
+            18
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "PickupSummon",
+        "id": "lottery_pickup_default_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_pickup_default",
+        "amount": 10
+    },
+    {
+        "productType": "PickupSummon",
+        "id": "lottery_pickup_default_30_bulk",
+        "gemPrice": 7500,
+        "sourceProductId": "lottery_pickup_default",
+        "amount": 30
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_atlantis",
+        "banner":"event_lotterybanner_atlantis",
+        "lotterybg": "event_lotterybg_season2",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 30,
+        "bonusChest": "atlantis_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            196,
+            119,
+            9,
+            514,
+            146,
+            3,
+            13,
+            0,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "Season2"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_atlantis_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_atlantis",
+        "amount": 10,
+        "associatedSeason": "Season2"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_atlantis_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_atlantis",
+        "amount": 30,
+        "associatedSeason": "Season2"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_valhalla",
+        "banner":"event_lotterybanner_valhalla",
+        "lotterybg": "event_lotterybg_season3",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 40,
+        "bonusChest": "valhalla_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            196,
+            119,
+            9,
+            514,
+            146,
+            6,
+            10,
+            0,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "Season3"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_valhalla_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_valhalla",
+        "amount": 10,
+        "associatedSeason": "Season3"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_valhalla_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_valhalla",
+        "amount": 30,
+        "associatedSeason": "Season3"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_underwild",
+        "banner":"event_lotterybanner_underwild",
+        "lotterybg": "event_lotterybg_season4",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 40,
+        "bonusChest": "underwild_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            196,
+            119,
+            9,
+            514,
+            146,
+            6,
+            10,
+            0,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "Season4"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_underwild_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_underwild",
+        "amount": 10,
+        "associatedSeason": "Season4"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_underwild_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_underwild",
+        "amount": 30,
+        "associatedSeason": "Season4"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_season5",
+        "banner":"event_lotterybanner_dunes",
+        "lotterybg": "event_lotterybg_season5",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 40,
+        "bonusChest": "season5_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            196,
+            119,
+            9,
+            514,
+            146,
+            6,
+            10,
+            0,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "Season5"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_season5_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_season5",
+        "amount": 10,
+        "associatedSeason": "Season5"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_season5_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_season5",
+        "amount": 30,
+        "associatedSeason": "Season5"
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales1",
+        "banner":"event_lotterybanner_untold_tales1",
+        "lotterybg": "event_lotterybg_untoldtales1",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 121,
+        "bonusChest": "untold_tales1",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            296,
+            119,
+            9,
+            121,
+            57,
+            4,
+            10,
+            293,
+            89,
+            2
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "UntoldTales1",
+        "extraAssociatedFamilies": [
+            "atlantis"
+        ]
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales1_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_untold_tales1",
+        "amount": 10,
+        "associatedSeason": "UntoldTales1",
+        "extraAssociatedFamilies": [
+            "atlantis"
+        ]
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales1_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_untold_tales1",
+        "amount": 30,
+        "associatedSeason": "UntoldTales1",
+        "extraAssociatedFamilies": [
+            "atlantis"
+        ]
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales2",
+        "banner":"event_lotterybanner_untold_tales2",
+        "lotterybg": "event_lotterybg_untoldtales2",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 132,
+        "bonusChest": "untold_tales2",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            296,
+            119,
+            9,
+            121,
+            57,
+            4,
+            10,
+            293,
+            89,
+            2
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "associatedSeason": "UntoldTales2",
+        "extraAssociatedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+        ]
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales2_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_season_untold_tales2",
+        "amount": 10,
+        "associatedSeason": "UntoldTales2",
+        "extraAssociatedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+        ]
+    },
+    {
+        "productType": "MapSeasonSummon",
+        "id": "lottery_season_untold_tales2_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_season_untold_tales2",
+        "amount": 30,
+        "associatedSeason": "UntoldTales2",
+        "extraAssociatedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+        ]
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_lunar_new_year",
+        "banner":"event_lotterybanner_lunar_new_year",
+        "lotterybg": "event_lotterybg_lunar_new_year",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 40,
+        "advertisedHero": "lunar_new_year_xiaoqing",
+        "associatedEvent": "LunarNewYear",
+        "bucketWeights": [
+            710,
+            265,
+            12,
+            0,
+            0,
+            5,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "lunar_new_year_xiaoqing",
+            "lunar_new_year_baishu"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_lunar_new_year_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_lunar_new_year",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "lunar_new_year_xiaoqing",
+            "lunar_new_year_baishu"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_valentines",
+        "banner":"event_lotterybanner_valentines",
+        "lotterybg": "event_lotterybg_valentines",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 60,
+        "advertisedHero": "valentines_anteros",
+        "associatedEvent": "ValentinesSeasonal",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            142,
+            57,
+            3,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "valentines_anteros",
+            "valentines_matchmaker_dodgrom"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_valentines_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_valentines",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "valentines_anteros",
+            "valentines_matchmaker_dodgrom"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_easter",
+        "banner":"event_lotterybanner_easter",
+        "lotterybg": "event_lotterybg_easter",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 60,
+        "advertisedHero": "easter_viscount_cluckwood",
+        "associatedEvent": "Easter",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            142,
+            57,
+            3,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "easter_viscount_cluckwood",
+            "easter_sadie",
+            "easter_miss_ethel"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_easter_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_easter",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "easter_viscount_cluckwood",
+            "easter_sadie",
+            "easter_miss_ethel"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_beach_party",
+        "banner":"event_lotterybanner_beach_party",
+        "lotterybg": "event_lotterybg_beach_party",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 60,
+        "advertisedHero": "beachparty_andy_jay",
+        "associatedEvent": "BeachParty",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            47,
+            19,
+            1,
+            0,
+            0,
+            13,
+            95,
+            38,
+            2
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "linkedOrigins": [
+            "Summer"
+        ],
+        "featuredNonCostumedHeroes": [
+            "beachparty_andy_jay",
+            "beachparty_serena",
+            "beachparty_flip_costume_donut"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_beach_party_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_beach_party",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "beachparty_andy_jay",
+            "beachparty_serena",
+            "beachparty_flip_costume_donut"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_kalevala",
+        "banner":"event_lotterybanner_kalevala",
+        "lotterybg": "event_lotterybg_kalevala",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 41,
+        "advertisedHero": "kalevala_suomuhauki",
+        "associatedEvent": "Kalevala",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            142,
+            57,
+            3,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "kalevala_suomuhauki",
+            "kalevala_mother_lemminkainen",
+            "kalevala_louhi_costume_mistress"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_kalevala_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_kalevala",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "kalevala_suomuhauki",
+            "kalevala_mother_lemminkainen",
+            "kalevala_louhi_costume_mistress"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_halloween",
+        "banner": "event_lotterybanner_halloween",
+        "lotterybg": "event_lotterybg_halloween",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 40,
+        "advertisedHero": "halloween_wayne",
+        "associatedEvent": "Halloween",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            142,
+            57,
+            3,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "halloween_wayne",
+            "halloween_chester",
+            "halloween_alucard_costume_mafia"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_halloween_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_halloween",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "halloween_wayne",
+            "halloween_chester",
+            "halloween_alucard_costume_mafia"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_christmas",
+        "banner": "event_lotterybanner_christmas",
+        "lotterybg": "event_lotterybg_christmas",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 40,
+        "advertisedHero": "christmas_albin",
+        "associatedEvent": "Christmas",
+        "bucketWeights": [
+            568,
+            208,
+            9,
+            142,
+            57,
+            3,
+            0,
+            0,
+            13,
+            0,
+            0,
+            0
+        ],
+        "perfectSummon": "seasonal_perfect_10",
+        "hasMysteryHeroBonusRoll": true,
+        "featuredNonCostumedHeroes": [
+            "christmas_albin",
+            "christmas_ottilia",
+            "christmas_mr_pengi_costume_snowboarder"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "EpicHeroSummon",
+        "id": "lottery_hero_christmas_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_hero_christmas",
+        "amount": 10,
+        "featuredNonCostumedHeroes": [
+            "christmas_albin",
+            "christmas_ottilia",
+            "christmas_mr_pengi_costume_snowboarder"
+        ],
+        "availableEventCostumesAreFeatured": false
+    },
+    {
+        "productType": "ShadowSummon",
+        "id": "lottery_shadow_default",
+        "banner": "event_lotterybanner_shadow_summon",
+        "lotterybg": "event_lotterybg_shadow",
+        "gemPrice": 450,
+        "amount": 1,
+        "uiPriority": 129,
+        "associatedEvent": "ShadowQuest",
+        "bonusChest": "shadow_summon_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 5,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            639,
+            237,
+            14,
+            71,
+            28,
+            5,
+            6
+        ],
+        "bonusLegendaryHeroChancePerMil": 300,
+        "bonusLegendaryHeroPullAmount": 3,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ShadowSummon",
+        "id": "lottery_shadow_default_bulk",
+        "gemPrice": 3900,
+        "sourceProductId": "lottery_shadow_default",
+        "amount": 10
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_solstice_default",
+        "banner": "event_lotterybanner_solstice_summon",
+        "lotterybg": "event_lotterybg_solstice",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 120,
+        "associatedEvent": "SolsticeSummon",
+        "bonusChest": "solstice_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 20,
+        "resetChestSummonCountOnNextEvent": true,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            697,
+            265,
+            36,
+            2,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_solstice_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_black_solstice_default",
+        "amount": 10
+    },
+    {
+        "productType": "BlackSummon",
+        "id": "lottery_black_solstice_default_30_bulk",
+        "gemPrice": 8400,
+        "sourceProductId": "lottery_black_solstice_default",
+        "amount": 30
+    },
+    {
+        "productType": "SuperElementalSummon",
+        "id": "lottery_super_elemental",
+        "banner": "event_lotterybanner_super_elemental",
+        "lotterybg": "event_lotterybg_super_elemental",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 100,
+        "associatedEvent": "SuperElemental",
+        "bonusChest": "super_elemental_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            208,
+            19,
+            0,
+            57,
+            1,
+            5
+        ],
+        "extraBucketsPullAmount": 1,
+        "extraPullBucketWeights": [
+            75,
+            10,
+            7,
+            5,
+            3,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "includeCostumes": true,
+        "eventOffer": "superelemental_calendar"
+    },
+    {
+        "productType": "SuperElementalSummon",
+        "id": "lottery_super_elemental_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_super_elemental",
+        "amount": 10,
+        "extraBucketsPullAmount": 10,
+        "extraPullBucketWeights": [
+            75,
+            10,
+            7,
+            5,
+            3,
+            0
+        ],
+        "includeCostumes": true,
+        "eventOffer": "superelemental_calendar"
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_ninja_default",
+        "banner": "event_lotterybanner_tower_ninja",
+        "lotterybg": "event_lotterybg_tower_ninja",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "ninja_chikao",
+        "associatedEvent": "TowerNinja",
+        "bucketWeights": [
+            643,
+            208,
+            0,
+            67,
+            57,
+            15,
+            10
+        ],
+        "bonusLegendaryHeroChancePerMil": 200,
+        "bonusLegendaryHeroPullAmount": 1,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_ninja_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_tower_ninja_default",
+        "amount": 10
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_owl_default",
+        "banner": "event_lotterybanner_tower_owl",
+        "lotterybg": "event_lotterybg_tower_owl",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 100,
+        "advertisedHero": "owl_pertinax",
+        "associatedEvent": "TowerOwl",
+        "bucketWeights": [
+            643,
+            208,
+            0,
+            67,
+            57,
+            15,
+            10
+        ],
+        "bonusLegendaryHeroChancePerMil": 200,
+        "bonusLegendaryHeroPullAmount": 1,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_owl_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_tower_owl_default",
+        "amount": 10
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_magic_default",
+        "banner": "event_lotterybanner_tower_magic",
+        "lotterybg": "event_lotterybg_tower_magic",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 127,
+        "advertisedHero": "magic_carpet_lilli",
+        "associatedEvent": "TowerMagic",
+        "bucketWeights": [
+            643,
+            208,
+            0,
+            67,
+            57,
+            15,
+            10
+        ],
+        "bonusLegendaryHeroChancePerMil": 200,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_magic_default_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_tower_magic_default",
+        "amount": 10
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_styx_default",
+        "banner": "event_lotterybanner_tower_styx",
+        "lotterybg": "event_lotterybg_tower_styx",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 100,
+        "advertisedHero": "styx_thanatos",
+        "associatedEvent": "TowerStyx",
+        "bucketWeights": [
+            631,
+            208,
+            12,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "TowerEventSummon",
+        "id": "lottery_tower_styx_default_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_tower_styx_default",
+        "amount": 10
+    },
+    {
+        "productType": "WildernessSummon",
+        "id": "lottery_wilderness_default",
+        "banner": "event_lotterybanner_wilderness_summon",
+        "lotterybg": "event_lotterybg_wilderness",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 127,
+        "associatedEvent": "WildernessSummon",
+        "bonusChest": "wilderness_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 10,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            15,
+            10,
+            0,
+            0
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "WildernessSummon",
+        "id": "lottery_wilderness_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_wilderness_default",
+        "amount": 10
+    },
+    {
+        "productType": "WildernessSummon",
+        "id": "lottery_wilderness_default_30_bulk",
+        "gemPrice": 9400,
+        "sourceProductId": "lottery_wilderness_default",
+        "amount": 30
+    }
+]

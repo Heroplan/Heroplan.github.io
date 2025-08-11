@@ -92,7 +92,7 @@ function renderTable(heroes) {
     const favoritedCount = heroesToProcess.filter(isFavorite).length;
     const shouldPredictFavoriteAll = heroesToProcess.length > 0 && favoritedCount < heroesToProcess.length;
 
-    let favHeaderIcon = state.teamSimulatorActive ? '⬆️' : (shouldPredictFavoriteAll ? '★' : '☆');
+    let favHeaderIcon = (state.teamSimulatorActive || state.lotterySimulatorActive) ? '⬆️' : (shouldPredictFavoriteAll ? '★' : '☆');
 
     // 定义表头
     const headers = {
@@ -119,7 +119,7 @@ function renderTable(heroes) {
         let headerText = headers[key];
 
         if (key === 'fav') {
-            if (state.teamSimulatorActive) return `<th class="col-fav"></th>`; // 模拟器模式下为空
+            if (state.teamSimulatorActive || state.lotterySimulatorActive) return `<th class="col-fav"></th>`; // 模拟器模式下为空
             const favHeaderClass = shouldPredictFavoriteAll ? 'favorited' : '';
             headerText = shouldPredictFavoriteAll ? '★' : '☆';
             return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
@@ -173,10 +173,20 @@ function renderTable(heroes) {
                 const englishColor = (colorReverseMap[String(hero[key]).toLowerCase()] || hero[key]).toLowerCase();
                 return `<td class="col-color"><img src="imgs/colors/${englishColor}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
-                if (!hero.english_name) return `<td class="col-fav"></td>`;
-                const icon = state.teamSimulatorActive ? '⬆️' : (isHeroFavorite ? '★' : '☆');
-                const favClass = state.teamSimulatorActive ? '' : (isHeroFavorite ? 'favorited' : '');
+                let icon;
+                let favClass = '';
+
+                // 统一判断：如果任一模拟器被激活，显示“添加”图标
+                if (state.teamSimulatorActive || state.lotterySimulatorActive) {
+                    icon = '⬆️';
+                } else {
+                    // 否则，显示收藏用的星星图标
+                    const isHeroFavorite = isFavorite(hero);
+                    icon = isHeroFavorite ? '★' : '☆';
+                    favClass = isHeroFavorite ? 'favorited' : '';
+                }
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${favClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
+
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.color);
                 const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);

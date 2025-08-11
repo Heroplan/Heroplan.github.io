@@ -90,6 +90,12 @@ function getSkillTypesText(hero) {
  */
 function toggleTeamSimulator() {
     state.teamSimulatorActive = !state.teamSimulatorActive;
+    const isActive = state.teamSimulatorActive; // 使用变量判断是开启还是关闭
+
+    // 如果要“激活”队伍模拟器，并且抽奖模拟器当前是“激活”的，则先调用关闭函数把它关掉。
+    if (isActive && state.lotterySimulatorActive) {
+        LotterySimulator.toggle();
+    }
     const { teamSimulatorWrapper, showTeamSimulatorBtn, headerInfoContainer, heroTableView, wantedMissionView, farmingGuideView, chatSimulatorView, myTeamsTabBtn, sharedTeamsTabBtn } = uiElements;
 
     if (state.teamSimulatorActive) {

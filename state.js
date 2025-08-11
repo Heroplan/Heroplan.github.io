@@ -35,6 +35,11 @@ const state = {
     isViewingSharedTeams: false,    // 是否正在查看分享的队伍
     sharedTeamsDataFromUrl: [],     // 从URL解析出的分享队伍数据
 
+    // --- 抽奖模拟器状态 (位于 state.js) ---
+    lotterySimulatorActive: false,    // 新增：抽奖模拟器是否激活
+    isEditingFeaturedHero: false,   // 是否正在编辑某个精選英雄卡槽
+    editingSlotIndex: null,         // 正在编辑的卡槽的索引 (0, 1, 2...)
+
     // --- 聊天模拟器状态 ---
     isSimulatorInitialized: false,  // 聊天模拟器是否已初始化
     hsv: { h: 0, s: 1, v: 1 },      // 颜色选择器的HSV值

@@ -203,11 +203,13 @@ html:not(.dark-theme) .moon-icon {
     cursor: not-allowed;
     pointer-events: none;
 }
+
 .saved-team-row .action-button,
 .saved-team-row .remove-team-btn {
     flex-shrink: 0;
     /* 核心修复：禁止按钮被压缩 */
 }
+
 @media (min-width: 769px) {
     #advanced-filters-content .filter-item:has(> .input-with-right-button)>label {
         width: 40%;
@@ -628,6 +630,7 @@ input[type="number"] {
     padding: 2rem 2.5rem;
     box-sizing: border-box;
 }
+
 /* ========== 新增：提升导入/导出模态框层级 ========== */
 #import-settings-modal-overlay,
 #export-settings-modal-overlay {
@@ -640,6 +643,7 @@ input[type="number"] {
     z-index: 1021;
     /* 将导入/导出模态框自身的层级提升，确保在它自己的遮罩层之上 */
 }
+
 #modal-content,
 #filters-modal-content {
     padding: 0rem 2.5rem;
@@ -1894,17 +1898,18 @@ h1.hero-main-name.skill-type-tag:hover {
         max-width: 150px;
         border-width: 3px;
     }
-    
+
     .skill-header-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 0.5rem;
     }
-        /* 恢复技能类型标签容器为左对齐 */
-        .skill-types-container {
-            justify-content: center;
-        }
+
+    /* 恢复技能类型标签容器为左对齐 */
+    .skill-types-container {
+        justify-content: center;
+    }
 
     .manual-table.wanted-mission-table {
         width: 100%;
@@ -2941,18 +2946,21 @@ select.custom-select-hidden {
     }
 }
 
-/* ========== 队伍模拟器样式 (修正版) ========== */
+/* ========== 队伍抽奖模拟器样式 (修正版) ========== */
 /* 队伍模拟器模式下浮动按钮的提示退出样式 */
-#show-team-simulator-btn.simulator-exit-btn {
+#show-team-simulator-btn.simulator-exit-btn,
+#show-lottery-simulator-btn.simulator-exit-btn {
     background-color: var(--md-sys-color-error);
     color: var(--md-sys-color-on-error);
 }
 
-#show-team-simulator-btn.simulator-exit-btn:hover {
+#show-team-simulator-btn.simulator-exit-btn:hover,
+#show-lottery-simulator-btn.simulator-exit-btn:hover {
     background-color: var(--md-sys-color-error-container);
     filter: brightness(1.1);
     transform: scale(1.05);
 }
+
 /* 修正：为最外层容器设置最小高度，以解决遮挡下方列表的问题 */
 #team-simulator-display {
     width: 66.67%;
@@ -3402,6 +3410,7 @@ select.custom-select-hidden {
     max-width: none;
     margin-right: 0;
 }
+
 /* =================================== */
 /* 折叠功能样式 (视觉优化版) */
 /* =================================== */
@@ -3439,6 +3448,7 @@ select.custom-select-hidden {
 #saved-teams-list-container.collapsed .collapse-arrow {
     transform: rotate(0deg);
 }
+
 /* =================================== */
 /* 移动端响应式布局 (Mobile Responsive Layout) */
 /* =================================== */
@@ -3504,6 +3514,7 @@ select.custom-select-hidden {
         border-bottom-color: transparent;
     }
 }
+
 /* =================================== */
 /* 更新：阵容配置区与操作按钮联动折叠功能 */
 /* =================================== */
@@ -3572,6 +3583,7 @@ select.custom-select-hidden {
         /* 折叠时，箭头朝下 */
     }
 }
+
 /* =================================== */
 /* 新增：阵容配置桌面/移动端标题控制 */
 /* =================================== */
@@ -3688,6 +3700,7 @@ select.custom-select-hidden {
     padding: 0.75rem 0;
     border-top: 1px solid var(--md-sys-color-outline);
 }
+
 #modal-talent-system-wrapper .filter-header h2 {
     flex-grow: 1;
     /* 让标题元素占据所有可用的弹性空间 */
@@ -3793,33 +3806,33 @@ select.custom-select-hidden {
         margin-right: 0;
     }
 
-        #modal .details-header {
-            /* 用负边距抵消父容器的内边距，消除顶部滚动空间 */
-            margin-top: -1.5rem;
-            margin-left: -1rem;
-            margin-right: -1rem;
-            margin-bottom: 1.5rem;
-            /* 保持与下方内容的间距 */
-    
-            /* 将内边距重新应用到头部自身，以保持内容对齐 */
-            padding-top: 1.5rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-bottom: 1rem;
-            /* 保持底部内边距 */
-    
-            /* 确保粘性定位在最顶部 */
-            top: 0;
-            position: -webkit-sticky;
-            position: sticky;
-    
-            /* 以下是确保样式正确的其他属性 */
-            background-color: var(--md-sys-color-surface);
-            border-bottom: 1px solid var(--md-sys-color-outline);
-            z-index: 10;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    #modal .details-header {
+        /* 用负边距抵消父容器的内边距，消除顶部滚动空间 */
+        margin-top: -1.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-bottom: 1.5rem;
+        /* 保持与下方内容的间距 */
+
+        /* 将内边距重新应用到头部自身，以保持内容对齐 */
+        padding-top: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        /* 保持底部内边距 */
+
+        /* 确保粘性定位在最顶部 */
+        top: 0;
+        position: -webkit-sticky;
+        position: sticky;
+
+        /* 以下是确保样式正确的其他属性 */
+        background-color: var(--md-sys-color-surface);
+        border-bottom: 1px solid var(--md-sys-color-outline);
+        z-index: 10;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
     .details-header-buttons {
         position: absolute;
@@ -3887,6 +3900,7 @@ select.custom-select-hidden {
     border-radius: inherit;
     /* 继承父容器的圆角 */
 }
+
 /* --- 英雄详情页头像覆盖层 (Overlays) 样式 --- */
 .hero-avatar-overlays {
     position: absolute;
@@ -4191,10 +4205,302 @@ select.custom-select-hidden {
 
 .hero-aether-power-image {
     z-index: 2;
-    top:4px;
+    top: 4px;
     left: 4px;
     width: 80%;
     height: 80%;
     padding: 3px;
     box-sizing: border-box;
+}
+
+
+/* ========== 抽奖模拟器布局样式 (弹性布局修正版 v3) ========== */
+
+/* 1. 外层包装器: 确保其是一个flex容器 */
+#lottery-simulator-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    /* 模拟器激活时的高度由 #results-wrapper 决定，这里不需要固定高度 */
+}
+
+/* 2. 内容显示区: 填满可用空间 */
+#lottery-simulator-display {
+    flex-grow: 1;
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* 3. 主内容区: 这是实现左、中、右布局的关键 */
+.lottery-main-content {
+    display: flex;
+    /* 让其子元素 (左侧列表, 右侧包装器) 水平排列 */
+    flex-grow: 1;
+    padding: 10px;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* 4. 左侧活动列表: 限制高度并启用滚动 */
+#lottery-activity-list-container {
+    width: 250px;
+    flex-shrink: 0;
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    background-color: var(--md-sys-color-surface);
+    display: flex;
+    /* 使用flex布局来控制内部的ul */
+    flex-direction: column;
+    min-height: 0;
+}
+
+#lottery-activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    /* 关键：滚动条在这里生效 */
+}
+
+#lottery-activity-list li {
+    padding: 10px;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#lottery-activity-list li:last-child {
+    border-bottom: none;
+}
+
+#lottery-activity-list li.active {
+    box-shadow: inset 0 0 0 3px var(--md-sys-color-primary);
+    filter: brightness(1.1);
+}
+
+/* 5. 【新增】右侧内容包装器：包裹中间和右侧面板 */
+.lottery-center-right-wrapper {
+    flex-grow: 1;
+    /* 占据所有剩余的水平空间 */
+    display: flex;
+    /* 让其子元素 (中间区域, 右侧历史) 水平排列 */
+    gap: 10px;
+    min-width: 0;
+}
+
+/* --- 抽奖模拟器中间区域样式 --- */
+#lottery-portal-container {
+    width: 400px;
+    /* 防止在空间不足时被过度压缩 */
+    flex-shrink: 0;
+    /* 选择性添加，使其在最大宽度内自适应 */
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* 为背景和内容层的绝对定位提供基准 */
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+
+#lottery-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    /* 稍微调暗背景以突出内容 */
+    z-index: 1;
+}
+
+.lottery-content-overlay {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#lottery-pool-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.lottery-featured-area {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.featured-heroes-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100px;
+    /* 精选英雄列的宽度 */
+}
+
+.featured-hero-slot {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    /* 调整为更接近游戏内截图的比例 */
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid #a0a0a0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+        align-items: center;
+        /* 垂直居中 */
+        justify-content: center;
+        /* 水平居中 */
+}
+
+.featured-hero-slot:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+}
+
+.featured-hero-slot .hero-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.featured-hero-slot .action-icon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--md-sys-color-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid white;
+    box-shadow: 0 0 5px black;
+    opacity: 0;
+    /* 默认隐藏 */
+    transition: opacity 0.2s;
+}
+
+.featured-hero-slot:hover .action-icon {
+    opacity: 1;
+    /* 悬停时显示 */
+}
+
+
+#lottery-hero-display-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#summon-actions-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    flex-shrink: 0;
+}
+
+.summon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
+    background: linear-gradient(to bottom, #4a6c9b, #2a4a7b);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.summon-btn.hidden {
+    display: none;
+}
+
+.summon-btn .summon-amount {
+    font-size: 1rem;
+}
+
+.summon-btn .summon-cost {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+}
+
+.summon-btn .summon-cost img {
+    width: 20px;
+    height: 20px;
+}
+
+.summon-btn .gem-price {
+    font-size: 0.9rem;
+}
+
+/* ========== 抽奖历史记录占位符样式 ========== */
+
+/* 让历史记录面板的子元素能够正确填充空间 */
+#summon-history-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 让列表容器(message的父容器)填满所有可用垂直空间 */
+#summon-history-list-container {
+    flex-grow: 1;
+    display: flex;
+    /* 使用 Flexbox 来居中 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+}
+
+/* “功能尚未完成”文字的具体样式 */
+.feature-incomplete-message {
+    font-size: 1.5rem;
+    /* 设置一个较大的字号 */
+    font-weight: bold;
+    /* 字体加粗 */
+    color: var(--md-sys-color-outline);
+    /* 使用主题中的颜色，确保在亮/暗模式下都可见 */
+    text-align: center;
+    /* 文本居中 */
 }

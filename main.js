@@ -146,6 +146,22 @@ async function initializeApp() {
         document.body.classList.remove('js-loading');
         return;
     }
+    // ▼▼▼ 加载抽奖配置文件 ▼▼▼
+    try {
+        const [poolsResponse, typesResponse] = await Promise.all([
+            fetch('./lottery.json'),      // 读取 lottery.json
+            fetch('./lottery_config.json') // 读取 lottery_config.json
+        ]);
+        const allPoolsConfig = await poolsResponse.json();
+        const summonTypesConfig = await typesResponse.json();
+
+        // 将组合后的标题字典传递给初始化函数
+        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig);
+
+    } catch (error) {
+        console.error("加载抽奖配置文件失败:", error);
+        // 即使抽奖文件加载失败，也让网站继续运行
+    }
 
     // 3. 数据后处理
     state.allHeroes.forEach((hero, index) => {
@@ -405,6 +421,7 @@ function addEventListeners() {
             clearTeamDisplay();
         }
     });
+    
     document.getElementById('save-team-btn').addEventListener('click', () => {
         const langDict = i18n[state.currentLang];
         if (!state.teamSlots.some(s => s !== null)) { alert(langDict.noHeroesInTeam); return; }
@@ -585,6 +602,12 @@ function addEventListeners() {
             }
         });
     }
+    // --- 抽奖模拟器事件 ---
+
+    const showLotterySimulatorBtn = document.getElementById('show-lottery-simulator-btn');
+    if (showLotterySimulatorBtn) {
+        showLotterySimulatorBtn.addEventListener('click', LotterySimulator.toggle);
+    }
 
     // --- 聊天模拟器面板折叠事件 (移动端) ---
     document.querySelectorAll('.chat-simulator-panel > h3').forEach(header => {
@@ -621,14 +644,20 @@ function addEventListeners() {
  */
 function handleTableBodyClick(event) {
     const target = event.target;
+    // 处理收藏/添加图标的点击
     if (target.classList.contains('favorite-toggle-icon')) {
         event.stopPropagation();
         const heroId = parseInt(target.dataset.heroId, 10);
         const hero = state.allHeroes.find(h => h.originalIndex === heroId);
         if (hero) {
-            if (state.teamSimulatorActive) {
+            if (state.lotterySimulatorActive) {
+                // 如果抽奖模拟器是激活状态，则调用添加函数
+                LotterySimulator.addHeroToFeaturedSlot(hero);
+            } else if (state.teamSimulatorActive) {
+                // 如果是队伍模拟器模式，则调用添加函数
                 addHeroToTeam(hero);
             } else {
+                // 否则，执行收藏逻辑
                 toggleFavorite(hero);
                 target.textContent = isFavorite(hero) ? '★' : '☆';
                 target.classList.toggle('favorited', isFavorite(hero));
@@ -638,6 +667,7 @@ function handleTableBodyClick(event) {
             }
         }
     } else {
+        // 处理行的点击
         const row = target.closest('.table-row');
         if (row) {
             const heroId = parseInt(row.dataset.heroId, 10);
@@ -787,11 +817,12 @@ function handlePopState(event) {
 
         // 如果队伍模拟器当前是激活的，则调用 toggle 函数关闭它
         // toggleTeamSimulator 内部会处理UI和状态，但不会再错误地操作历史记录
+        // 按照正确的顺序关闭激活的视图
         if (state.teamSimulatorActive) {
             toggleTeamSimulator();
-        }
-        // 对于其他视图（通缉任务、材料、聊天），我们只需确保主列表视图被显示即可
-        else if (uiElements.heroTableView.classList.contains('hidden')) {
+        } else if (state.lotterySimulatorActive) {
+            LotterySimulator.toggle();
+        } else if (uiElements.heroTableView.classList.contains('hidden')) {
             showHeroListViewUI();
         }
     }
@@ -811,3 +842,4 @@ function debounce(func, delay) {
         timeout = setTimeout(() => func.apply(context, args), delay);
     };
 }
+

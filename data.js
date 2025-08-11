@@ -104,7 +104,7 @@ const sourceReverseMap = {
     "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume"
 };
 
-// 英文标识符 -> 图标文件名
+// 英文标识符 -> 起源图标文件名
 const sourceIconMap = {
     "villains": "challenge.webp", "musketeer": "alliance_quest.webp", "pets": "challenge.webp",
     "lunaryear": "s1.webp", "beowulf": "challenge.webp", "moth": "alliance_quest.webp",

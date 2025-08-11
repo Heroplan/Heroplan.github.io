@@ -30,6 +30,7 @@ const uiElements = {
     farmingGuideView: document.getElementById('farming-guide-view'),
     chatSimulatorView: document.getElementById('chat-simulator-view'),
     teamSimulatorWrapper: document.getElementById('team-simulator-wrapper'),
+    lotterySimulatorWrapper: document.getElementById('lottery-simulator-wrapper'),
 
     // 表格
     heroTable: document.getElementById('hero-table'),

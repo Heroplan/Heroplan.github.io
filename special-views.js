@@ -6,7 +6,7 @@
  * @param {string} viewName - 要设置的新视图名称 ('wanted', 'farming', 'chat', 'teamSimulator')。
  */
 function setMainViewHistory(viewName) {
-    const mainViews = ['wanted', 'farming', 'chat', 'teamSimulator'];
+    const mainViews = ['wanted', 'farming', 'chat', 'teamSimulator', 'lotterySimulator'];
     const currentState = history.state || {};
 
     if (currentState.view && mainViews.includes(currentState.view)) {
@@ -52,6 +52,7 @@ function showHeroListViewUI() {
     uiElements.wantedMissionView.classList.add('hidden');
     uiElements.farmingGuideView.classList.add('hidden');
     if (uiElements.chatSimulatorView) uiElements.chatSimulatorView.classList.add('hidden');
+    if (uiElements.lotterySimulatorWrapper) uiElements.lotterySimulatorWrapper.classList.add('hidden');
 
     // 恢复英雄列表的滚动位置
     uiElements.resultsWrapper.scrollTop = state.scrollPositions.list.top;
@@ -65,6 +66,8 @@ function showHeroListViewUI() {
  * 如果表格尚未创建，则动态生成。
  */
 function initAndShowWantedMissionView() {
+    // 如果当前在抽奖模拟器中，先退出
+    if (state.lotterySimulatorActive) LotterySimulator.toggle();
     // 如果当前在队伍模拟器中，先退出
     if (state.teamSimulatorActive) toggleTeamSimulator();
     if (uiElements.chatSimulatorView) uiElements.chatSimulatorView.classList.add('hidden');
@@ -122,6 +125,7 @@ function initAndShowWantedMissionView() {
  * 初始化并显示材料出处指南视图。
  */
 function initAndShowFarmingGuideView() {
+    if (state.lotterySimulatorActive) LotterySimulator.toggle();
     if (state.teamSimulatorActive) toggleTeamSimulator();
     if (uiElements.chatSimulatorView) uiElements.chatSimulatorView.classList.add('hidden');
     saveCurrentViewScrollPosition();
@@ -210,6 +214,7 @@ function clearFarmGuideHighlight() {
  * 初始化并显示聊天模拟器视图。
  */
 function initAndShowChatSimulatorView() {
+    if (state.lotterySimulatorActive) LotterySimulator.toggle();
     if (state.teamSimulatorActive) toggleTeamSimulator();
     saveCurrentViewScrollPosition();
 

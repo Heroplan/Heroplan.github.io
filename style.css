@@ -4284,14 +4284,16 @@ select.custom-select-hidden {
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 8px;
     background-color: var(--md-sys-color-surface);
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    /* 新增以下属性确保滚动容器有明确的高度 */
+
+    /* 核心修正：移除 flex 布局，直接管理内部元素的滚动 */
+    overflow-y: auto;
+    /* 让容器自身处理垂直滚动 */
     height: 100%;
-    /* 确保容器填满父级高度 */
-    overflow: hidden;
-    /* 防止内容溢出容器 */
+    /* 保持高度以填充父级 */
+    padding: 0;
+    /* 移除可能影响计算的内边距 */
+    box-sizing: border-box;
+    /* 确保边框和内边距包含在总高度内 */
 }
 
 /* 修改活动列表样式 */
@@ -4967,8 +4969,7 @@ html:not(.dark-theme) .color-text-outlined {
 /* 2. 为桌面端的三个面板分配宽度 */
 #lottery-activity-list-container {
     width: 250px;
-    flex-shrink: 0;
-    /* 防止被压缩 */
+    flex-shrink: 1;
 }
 
 #lottery-portal-container {
@@ -5290,4 +5291,22 @@ html:not(.dark-theme) .color-text-outlined {
     transform: scale(1.1);
     border-color: var(--md-sys-color-primary);
     box-shadow: 0 0 15px var(--md-sys-color-primary);
+}
+
+/* ========== 新增：移动端布局修正 ========== */
+
+/* 1. 为新的父容器设置Flex布局 */
+#main-content-area {
+    display: flex;
+    flex-direction: column;
+    /* 确保子元素垂直排列 */
+    gap: 1rem;
+    /* 在模拟器和表格之间增加一些间距 */
+}
+
+/* 2. 移除抽奖模拟器的高度限制，让其自适应内容 */
+#lottery-simulator-wrapper {
+    height: 600px;
+    flex-shrink: 1;
+    /* 防止在空间不足时被压缩 */
 }

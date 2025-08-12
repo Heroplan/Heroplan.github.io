@@ -419,8 +419,11 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         return state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-            const heroColor = (hero.color || '').toLowerCase();
-            return heroColor === state.selectedElementalColor &&
+            // ▼▼▼ 使用 colorReverseMap 来统一比较标准 ▼▼▼
+            const standardHeroColor = colorReverseMap[hero.color];
+            const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
+
+            return standardHeroColor === standardSelectedColor &&
                 hero.star === star &&
                 hero.costume_id === 0 &&
                 !state.globalExcludeFamilies.includes(heroFamily);
@@ -450,9 +453,10 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                 const isFamilyMatch = eventFamilies.includes(heroFamily);
                 if (!isFamilyMatch) return false;
                 if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                    // ▼▼▼ 核心修正 2：修改颜色比较逻辑 ▼▼▼
-                    const heroColor = (hero.color || '').toLowerCase();
-                    return heroColor === state.selectedElementalColor;
+                    // ▼▼▼ 使用 colorReverseMap 来统一比较标准 ▼▼▼
+                    const standardHeroColor = colorReverseMap[hero.color];
+                    const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
+                    return standardHeroColor === standardSelectedColor;
                 }
                 return true;
 

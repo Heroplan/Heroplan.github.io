@@ -179,9 +179,9 @@
         },
         "SuperElementalSummon": {
             "bucketConfig": [
-                "heroes_s1_3",
-                "heroes_s1_4",
-                "heroes_s1_5",
+                "heroes_listed_3",
+                "heroes_listed_4",
+                "heroes_listed_5",
                 "heroes_event_3",
                 "heroes_event_4",
                 "heroes_event_5",
@@ -218,6 +218,18 @@
             "mystery",
             "mimic"
         ],
+        "hotm": {
+            "family": "2025",
+            "ChancePerMil": "13"
+        },
+        "MysteryHero":{
+            "family":"mimic",
+            "ChancePerMil": "13"
+        },
+        "LegendsSummonMysteryHero": {
+            "family": "mystery",
+            "ChancePerMil": "1"
+        },
         "lottery_featured_alliance_quest_castle": {
             "AssociatedFamilies": [
                 "wolf",

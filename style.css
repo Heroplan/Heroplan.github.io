@@ -5184,3 +5184,110 @@ html:not(.dark-theme) .color-text-outlined {
 .probability-info-icon:hover {
     background-color: rgba(58, 140, 255, 0.3);
 }
+
+/* ========== 抽奖模拟器新增样式 (修正版) ========== */
+
+/* 1. 额外抽奖的“叠加”动画效果 */
+.bonus-summon-overlay {
+    position: absolute;
+    z-index: 0;
+    /* 层级低于英雄(z-index:10)，高于背景光效 */
+    opacity: 0;
+    /* 动画只负责淡入，不再淡出 */
+    animation: bonus-fade-in 0.4s ease-out forwards;
+}
+
+@keyframes bonus-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* 2. 汇总弹窗和历史记录中的 "Ex" 标签样式 (这部分不变) */
+.summary-hero-card .summary-ex-label,
+.summon-history-avatars .history-ex-label {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background-color: rgba(220, 20, 60, 0.85);
+    /* 深红色背景 */
+    color: white;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 3px;
+    z-index: 5;
+    line-height: 1;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.summary-hero-card .summary-ex-label {
+    font-size: 14px;
+}
+
+.summon-history-avatars .history-ex-label {
+    font-size: 11px;
+    top: 1px;
+    right: 1px;
+}
+
+/* ========== 超级元素人选择模态框样式 ========== */
+#elemental-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* 更暗的背景以示强制性 */
+    z-index: 2000;
+    /* 确保在最顶层 */
+}
+
+#elemental-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--md-sys-color-surface-container-high);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+    padding: 2rem;
+    text-align: center;
+}
+
+#elemental-modal h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--md-sys-color-primary);
+    font-size: 1.5rem;
+}
+
+.elemental-selection-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.elemental-icon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.elemental-icon:hover {
+    transform: scale(1.1);
+    border-color: var(--md-sys-color-primary);
+    box-shadow: 0 0 15px var(--md-sys-color-primary);
+}

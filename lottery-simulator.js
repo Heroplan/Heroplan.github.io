@@ -202,7 +202,6 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
     }
 };
-
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
 const LotterySimulator = {
     initialize: initializeLotterySimulator,
@@ -217,6 +216,7 @@ const LotterySimulator = {
 // --- 状态与配置 (State & Config) ---
 let lotteryPoolsData = null; // 用于存储处理过的奖池数据
 let lotteryTitleDict = {}; // 用于存储当前语言的标题字典
+let summonPoolDetails = {}; // 新增：用于存储奖池的详细配置
 
 // --- 初始化与数据处理 ---
 
@@ -257,7 +257,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         });
     }
 
-    // ▼▼▼ 添加移动端分页切换逻辑 ▼▼▼
+    // 6. 为移动端分页标签添加事件
     const tabs = document.querySelectorAll('.lottery-mobile-tabs .tab-button');
     const panels = document.querySelectorAll('.lottery-panel');
 
@@ -287,6 +287,24 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             }
         });
     });
+    // 7. 新增：为元素选择模态框添加事件监听
+    const elementalContainer = document.querySelector('.elemental-selection-container');
+    if (elementalContainer) {
+        elementalContainer.addEventListener('click', (event) => {
+            const target = event.target.closest('.elemental-icon');
+            if (target && target.dataset.color) {
+                // 存储选择的颜色
+                state.selectedElementalColor = target.dataset.color;
+
+                // 关闭模态框
+                document.getElementById('elemental-modal').classList.add('hidden');
+                document.getElementById('elemental-modal-overlay').classList.add('hidden');
+
+                // 继续处理后续的UI渲染和数据过滤
+                continueHandleActivityClick();
+            }
+        });
+    }
 }
 
 /**
@@ -294,7 +312,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
  */
 function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
-    const summonPoolDetails = summonTypesConfig.SummonPool;
+    summonPoolDetails = summonTypesConfig.SummonPool;
 
     state.globalExcludeFamilies = (summonPoolDetails.exclude_for_all || []).map(f => f.toLowerCase());
 
@@ -376,80 +394,135 @@ function getPoolDisplayName(poolConfig) {
 }
 
 /**
- * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池
- * @param {string} bucketString - 例如 "heroes_event_3"
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (已为服装召唤添加特殊抽取逻辑)
+ * @param {string} bucketString - 例如 "heroes_s1_3"
  * @param {object} poolConfig - 当前的奖池配置
  * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
     const parts = bucketString.split('_');
-    let condition = parts[1];
-    let star = parseInt(parts.pop(), 10);
+    const type = parts.length > 1 ? parts[1] : parts[0];
+    const star = parseInt(parts[parts.length - 1], 10);
 
+    if (isNaN(star)) return [];
+
+    // ▼▼▼ 新增：为服装召唤添加专属的、正确的抽取逻辑 ▼▼▼
     if (poolConfig.productType === 'CostumeSummon') {
-        const classicHeroes = state.allHeroes.filter(h => h.family === 'classic');
-        const latestVersions = {};
-        classicHeroes.forEach(hero => {
-            if (hero.english_name && (!latestVersions[hero.english_name] || hero.costume_id > latestVersions[hero.english_name].costume_id)) {
-                latestVersions[hero.english_name] = hero;
+        // 1. 创建一个Map来存储每个经典英雄的最新皮肤
+        const latestCostumes = new Map();
+        state.allHeroes.forEach(hero => {
+            if (hero.family === 'classic' && hero.costume_id > 0) {
+                const existing = latestCostumes.get(hero.english_name);
+                if (!existing || hero.costume_id > existing.costume_id) {
+                    latestCostumes.set(hero.english_name, hero);
+                }
             }
         });
-        const latestCostumeHeroes = Object.values(latestVersions).filter(hero => {
-            return hero.costume_id > 0 && hero.star === star;
-        });
-        return latestCostumeHeroes.filter(hero => {
+
+        // 2. 从所有最新皮肤中，根据桶的星级要求进行筛选
+        const allLatestCostumes = Array.from(latestCostumes.values());
+        return allLatestCostumes.filter(costume => costume.star === star);
+    }
+    // ▲▲▲ 服装召唤逻辑结束 ▲▲▲
+
+    // --- 对于其他活动，执行之前的正确逻辑 ---
+
+    // 特殊处理逻辑：SuperElementalSummon 中的 "listed" 类型
+    if (poolConfig.productType === 'SuperElementalSummon' && type === 'listed') {
+        return state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-            return !state.globalExcludeFamilies.includes(heroFamily);
+            return hero.color === state.selectedElementalColor &&
+                hero.star === star &&
+                hero.costume_id === 0 &&
+                !state.globalExcludeFamilies.includes(heroFamily);
         });
     }
 
+    // --- 标准过滤逻辑 ---
     const initialPool = state.allHeroes.filter(hero => {
-        const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-        if (state.globalExcludeFamilies && state.globalExcludeFamilies.includes(heroFamily)) {
+        // 基础条件：星级匹配，非皮肤，且不属于全局排除列表
+        if (hero.star !== star || hero.costume_id !== 0) {
             return false;
         }
-        if (hero.costume_id !== 0) return false;
-        if (hero.star !== star) return false;
+        const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+        if (state.globalExcludeFamilies.includes(heroFamily)) {
+            return false;
+        }
 
-        switch (condition) {
-            case 'ex': return heroFamily !== 'classic';
-            case 's1': return heroFamily === 'classic';
+        switch (type) {
+            case 's1':
+                return heroFamily === 'classic';
+
+            case 'ex':
+                return heroFamily !== 'classic';
+
             case 'event':
-                const families = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-                return families.includes(heroFamily);
+                const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                const isFamilyMatch = eventFamilies.includes(heroFamily);
+
+                if (!isFamilyMatch) return false;
+
+                if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+                    return hero.color === state.selectedElementalColor;
+                }
+
+                return true;
+
             case 'listed':
                 const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
                 const includedIds = poolConfig.includedHeroes || [];
                 return listedFamilies.includes(heroFamily) || includedIds.includes(hero.heroId);
+
             case 'extraAssociatedFamilies':
                 const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
                 return extraFamilies.includes(heroFamily);
-            default: return false;
+
+            default:
+                return false;
         }
     });
 
-    const finalPool = initialPool.map(baseHero => {
+    // 为非经典英雄应用“最新皮肤”逻辑
+    return initialPool.map(baseHero => {
         if (baseHero.family === 'classic') {
-            return baseHero;
+            return baseHero; // 此处对于非服装召唤是正确的
         }
         const latestVersion = state.latestHeroVersionsMap.get(baseHero.english_name);
-        if (latestVersion && latestVersion.costume_id > 0) {
-            return latestVersion;
-        } else {
-            return baseHero;
-        }
+        return latestVersion || baseHero;
     });
-
-    return finalPool;
 }
 
 /**
- * 获取指定奖池中所有可能抽到的英雄的完整、去重列表
+ * 获取指定奖池中所有可能抽到的英雄的完整、去重列表 (已为服装召唤添加特殊逻辑)
  * @param {object} poolConfig - 奖池配置对象
  * @returns {Array} - 所有可能英雄的对象数组
  */
 function getAllHeroesInPool(poolConfig) {
     if (!poolConfig) return [];
+
+    // ▼▼▼ 新增：为服装召唤添加专属处理逻辑 ▼▼▼
+    if (poolConfig.productType === 'CostumeSummon') {
+        const latestCostumes = new Map();
+
+        // 1. 遍历所有英雄
+        state.allHeroes.forEach(hero => {
+            // 2. 只考虑经典家族且是皮肤的英雄
+            if (hero.family === 'classic' && hero.costume_id > 0) {
+                const existing = latestCostumes.get(hero.english_name);
+                // 3. 如果尚未记录该英雄，或当前皮肤比已记录的更新，则更新记录
+                if (!existing || hero.costume_id > existing.costume_id) {
+                    latestCostumes.set(hero.english_name, hero);
+                }
+            }
+        });
+
+        // 4. 返回所有最新皮肤的列表
+        return Array.from(latestCostumes.values());
+    }
+    // ▲▲▲ 服装召唤专属逻辑结束 ▲▲▲
+
+
+    // --- 对于所有其他非服装召唤的活动，执行以下标准逻辑 ---
     let allPossibleHeroes = [];
 
     if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
@@ -469,8 +542,12 @@ function getAllHeroesInPool(poolConfig) {
                     ...(poolConfig.featuredNonCostumedHeroes || []),
                     poolConfig.advertisedHero
                 ].filter(Boolean);
-                const featuredHeroes = state.allHeroes.filter(h => featuredIds.includes(h.heroId));
+                let featuredHeroes = state.allHeroes.filter(h => featuredIds.includes(h.heroId));
+                if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+                    featuredHeroes = featuredHeroes.filter(h => h.color === state.selectedElementalColor);
+                }
                 allPossibleHeroes.push(...featuredHeroes);
+
             } else {
                 const heroesFromBucket = getHeroPoolForBucket(bucketString, poolConfig);
                 allPossibleHeroes.push(...heroesFromBucket);
@@ -490,6 +567,64 @@ function getAllHeroesInPool(poolConfig) {
     return Object.values(finalLatestVersions);
 }
 
+/**
+ * 在用户做出选择（例如元素颜色）后，继续处理活动点击的后续逻辑
+ */
+function continueHandleActivityClick() {
+    const poolConfig = state.currentSummonData;
+    if (!poolConfig) return;
+
+    // 根据配置自动填充精选英雄位
+    if (poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
+        state.customFeaturedHeroes = poolConfig.featuredHeroes.map(heroId =>
+            state.heroesByIdMap.get(heroId) || null
+        );
+        const numSlots = poolConfig.featuredHeroNum || state.customFeaturedHeroes.length;
+        if (state.customFeaturedHeroes.length < numSlots) {
+            state.customFeaturedHeroes.length = numSlots;
+            state.customFeaturedHeroes.fill(null, poolConfig.featuredHeroes.length);
+        }
+    } else {
+        state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
+    }
+
+    // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
+    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
+            // 如果英雄存在且颜色与选择的颜色相同，则保留，否则移除
+            if (hero && hero.color === state.selectedElementalColor) {
+                return hero;
+            }
+            return null;
+        });
+    }
+
+    // 更新召唤界面的核心UI元素
+    const titleEl = document.getElementById('lottery-pool-title');
+    const backgroundEl = document.getElementById('lottery-background-image');
+    if (titleEl) titleEl.textContent = getPoolDisplayName(poolConfig);
+    if (backgroundEl) {
+        if (poolConfig.lotterybg) {
+            backgroundEl.style.backgroundImage = `url('imgs/lottery/lotterybg/${poolConfig.lotterybg}.webp')`;
+        } else {
+            backgroundEl.style.backgroundImage = 'none';
+            backgroundEl.style.backgroundColor = '#222';
+        }
+    }
+
+    // 获取当前奖池的所有英雄（此时会根据选择的颜色进行过滤和扩展）
+    state.activeHeroSubset = getAllHeroesInPool(poolConfig);
+
+    // 将默认排序设置为“按发布日期降序”
+    state.currentSort = { key: 'Release date', direction: 'desc' };
+
+    // 调用全局的筛选和渲染函数
+    applyFiltersAndRender();
+
+    // 渲染精选英雄卡槽UI和更新召唤按钮
+    LotterySimulator.renderFeaturedHeroes();
+    LotterySimulator.updateSummonButtons();
+}
 
 // --- UI 渲染与事件处理 ---
 
@@ -524,7 +659,7 @@ function renderActivityList() {
  * 当用户点击活动列表时，更新所有相关UI并设置状态 (最终修正版)
  * @param {string} poolId - 被选中的奖池ID
  */
-function handleActivityClick(poolId) {
+async function handleActivityClick(poolId) {
     // 1. 更新左侧列表的激活状态样式
     document.querySelectorAll('#lottery-activity-list li').forEach(li => {
         li.classList.toggle('active', li.dataset.poolId === poolId);
@@ -536,6 +671,42 @@ function handleActivityClick(poolId) {
 
     // 3. 更新当前奖池状态
     state.currentSummonData = poolConfig;
+    state.selectedElementalColor = null; // 每次点击都重置颜色选择
+
+    // ▼▼▼ 在这里插入新代码 ▼▼▼
+    // 检查是否为超级元素人召唤，如果是，则弹出模态框并等待选择
+    if (poolConfig.productType === 'SuperElementalSummon') {
+        const elementalModal = document.getElementById('elemental-modal');
+        const elementalOverlay = document.getElementById('elemental-modal-overlay');
+
+        elementalModal.classList.remove('hidden');
+        elementalOverlay.classList.remove('hidden');
+
+        // 创建一个Promise，它将在用户选择颜色后“完成”
+        const userChoice = await new Promise(resolve => {
+            const elementalContainer = document.querySelector('.elemental-selection-container');
+
+            // 定义一个一次性的点击事件处理器
+            const handler = (event) => {
+                const target = event.target.closest('.elemental-icon');
+                if (target && target.dataset.color) {
+                    // 清除这个临时的监听器
+                    elementalContainer.removeEventListener('click', handler);
+                    // 关闭模态框
+                    elementalModal.classList.add('hidden');
+                    elementalOverlay.classList.add('hidden');
+                    // 将用户选择的颜色作为结果，让Promise完成
+                    resolve(target.dataset.color);
+                }
+            };
+
+            // 绑定这个一次性的监听器
+            elementalContainer.addEventListener('click', handler);
+        });
+
+        // 将用户选择的颜色保存到state中
+        state.selectedElementalColor = userChoice;
+    }
 
     // 4. 根据配置自动填充或清空精选英雄位
     if (poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
@@ -549,6 +720,16 @@ function handleActivityClick(poolId) {
         }
     } else {
         state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
+    }
+    // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
+    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
+            // 如果英雄存在且颜色与选择的颜色相同，则保留，否则移除
+            if (hero && hero.color === state.selectedElementalColor) {
+                return hero;
+            }
+            return null;
+        });
     }
 
     // 5. 更新召唤界面的核心UI元素 (这部分不变)
@@ -617,6 +798,7 @@ function handleActivityClick(poolId) {
     LotterySimulator.renderFeaturedHeroes();
     LotterySimulator.updateSummonButtons();
 }
+
 
 /**
  * 渲染精选英雄卡槽UI
@@ -729,38 +911,24 @@ function removeHeroFromFeaturedSlot(slotIndex) {
 
 // --- 动画与历史记录 ---
 
-// lottery-simulator.js
-
 async function performSummon(count) {
     const poolConfig = state.currentSummonData;
     if (!poolConfig) return;
 
-    const summonedResults = [];
-    // ... (这部分抽奖逻辑保持不变) ...
-    for (let i = 0; i < count; i++) {
+    const totalSummonedResults = [];
+
+    // 主召唤循环
+    for (let k = 0; k < count; k++) {
         const { bucketWeights, bucketConfig } = poolConfig;
         const bucketIndex = selectWeightedIndex(bucketWeights);
         const bucketString = bucketConfig[bucketIndex];
         let drawnHero = null;
-        let sourceBucket = bucketString || 'unknown';
 
         if (bucketString && bucketString.startsWith('trainer')) {
             const star = parseInt(bucketString.split('_')[1], 10);
-
-            // 1. 定义一个颜色数组
             const colors = ['红', '蓝', '绿', '黄', '紫'];
-            // 2. 从数组中随机选择一个颜色
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-            // 3. 创建训练师对象时，使用这个随机颜色
-            drawnHero = {
-                name: `${star}* 训练师`,
-                type: 'trainer',
-                star,
-                color: randomColor, // 使用随机颜色
-                image: `imgs/hero_icon/trainer_rainbow.webp`,
-                heroId: `trainer_rainbow`
-            };
+            drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
         } else if (bucketString === 'featuredHero') {
             const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
             if (validFeatured.length > 0) {
@@ -768,59 +936,105 @@ async function performSummon(count) {
             } else {
                 const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
                 drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
-                sourceBucket = 'featuredHero (保底)';
             }
         } else if (bucketString) {
             const heroPool = getHeroPoolForBucket(bucketString, poolConfig);
-            if (heroPool.length > 0) {
-                drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
-            }
+            if (heroPool.length > 0) drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
         }
 
         if (drawnHero) {
-            summonedResults.push({ hero: drawnHero, bucket: sourceBucket });
+            totalSummonedResults.push({ hero: drawnHero, bucket: bucketString || 'unknown' });
+
+            const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+            if (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil) {
+                for (let i = 0; i < (poolConfig.bonusLegendaryHeroPullAmount || 1); i++) {
+                    if (Math.random() * 1000 < poolConfig.bonusLegendaryHeroChancePerMil) {
+                        const bonusPool = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly
+                            ? state.allHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()))
+                            : state.allHeroes.filter(h => h.star === 5 && h.family && !state.globalExcludeFamilies.includes(String(h.family).toLowerCase()));
+                        if (bonusPool.length > 0) totalSummonedResults.push({ hero: bonusPool[Math.floor(Math.random() * bonusPool.length)], bucket: 'bonusLegendary' });
+                    }
+                }
+            }
+        }
+
+        if (poolConfig.hasMysteryHeroBonusRoll) {
+            const hotmInfo = summonPoolDetails.hotm;
+            if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
+                const hotmPool = state.allHeroes.filter(h => String(h.family) === String(hotmInfo.family));
+                if (hotmPool.length > 0) {
+                    const latestHotm = hotmPool.sort((a, b) => new Date(b['Release date']) - new Date(a['Release date']))[0];
+                    totalSummonedResults.push({ hero: latestHotm, bucket: 'hotm' });
+                }
+            }
+            let mysteryInfo = poolConfig.productType === 'LegendsSummon' ? summonPoolDetails.LegendsSummonMysteryHero : summonPoolDetails.MysteryHero;
+            if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
+                const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
+                if (mysteryPool.length > 0) totalSummonedResults.push({ hero: mysteryPool[Math.floor(Math.random() * mysteryPool.length)], bucket: 'mystery' });
+            }
+        }
+
+        if (poolConfig.additionalDrawWeights) {
+            const totalWeight = poolConfig.additionalDrawWeights.reduce((a, b) => a + b, 0);
+            let random = Math.random() * totalWeight;
+            for (let i = 0; i < poolConfig.additionalDrawWeights.length; i++) {
+                if (random < poolConfig.additionalDrawWeights[i]) {
+                    for (let j = 0; j < i + 1; j++) {
+                        const extraBucketIndex = selectWeightedIndex(bucketWeights);
+                        const extraBucketString = bucketConfig[extraBucketIndex];
+                        let extraHero = null;
+                        if (extraBucketString && extraBucketString.startsWith('trainer')) {
+                            const star = parseInt(extraBucketString.split('_')[1], 10);
+                            extraHero = { name: `${star}* 训练师`, type: 'trainer', star, color: ['红', '蓝', '绿', '黄', '紫'][Math.floor(Math.random() * 5)], image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
+                        } else if (extraBucketString === 'featuredHero') {
+                            const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
+                            if (validFeatured.length > 0) {
+                                extraHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
+                            } else {
+                                const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+                                extraHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+                            }
+                        } else if (extraBucketString) {
+                            const heroPool = getHeroPoolForBucket(extraBucketString, poolConfig);
+                            if (heroPool.length > 0) extraHero = heroPool[Math.floor(Math.random() * heroPool.length)];
+                        }
+                        if (extraHero) totalSummonedResults.push({ hero: extraHero, bucket: 'additionalDraw' });
+                    }
+                    break;
+                }
+                random -= poolConfig.additionalDrawWeights[i];
+            }
         }
     }
 
-    if (summonedResults.length === 0) return;
+    if (totalSummonedResults.length === 0) return;
 
-    // 1. 获取所有需要的元素
-    const titleElement = document.getElementById('lottery-pool-title');
-    const portalContainer = document.getElementById('lottery-portal-container'); // 用于水平居中的参照
+    // --- 动画播放和UI更新的完整逻辑 ---
+    const animationViewport = document.getElementById('lottery-hero-display-area');
     const blockerOverlay = document.getElementById('animation-blocker-overlay');
     const buttonParentContainer = document.getElementById('lottery-simulator-wrapper');
-    const animationViewport = document.getElementById('lottery-hero-display-area');
+    const skipButton = document.createElement('button');
+    const titleElement = document.getElementById('lottery-pool-title');
+    const portalContainer = document.getElementById('lottery-portal-container');
 
     if (!titleElement || !portalContainer || !animationViewport || !blockerOverlay || !buttonParentContainer) return;
 
-    // 2. 显示交互遮罩层
     blockerOverlay.classList.remove('hidden');
 
-    // 3. 创建按钮
-    const skipButton = document.createElement('button');
     skipButton.id = 'skip-animation-btn';
     skipButton.textContent = i18n[state.currentLang].skipAnimation || '跳过动画';
     skipButton.className = 'action-button';
-
-    // 4. **新的、更稳定的定位算法**
     const parentRect = buttonParentContainer.getBoundingClientRect();
     const titleRect = titleElement.getBoundingClientRect();
     const portalRect = portalContainer.getBoundingClientRect();
-
-    // 垂直位置: 永远在标题下方 15 像素的位置
     const targetTop = titleRect.bottom + 15;
-    // 水平位置: 永远在召唤主区域的水平中心
     const targetLeft = portalRect.left + (portalRect.width / 2);
-
-    // 5. 应用计算出的样式
     skipButton.style.position = 'absolute';
     skipButton.style.top = `${targetTop - parentRect.top}px`;
     skipButton.style.left = `${targetLeft - parentRect.left}px`;
-    // 仅使用 translateX(-50%) 来实现完美的水平居中
     skipButton.style.transform = 'translateX(-50%)';
-
-    // 6. 附加按钮并设置事件
     buttonParentContainer.appendChild(skipButton);
+
     let skip = false;
     const skipHandler = () => {
         skip = true;
@@ -831,70 +1045,78 @@ async function performSummon(count) {
     };
     skipButton.addEventListener('click', skipHandler, { once: true });
 
-    // 7. 循环播放动画
-    for (const result of summonedResults) {
+    // 核心修正：定义所有需要播放奖励动画的 bucket 类型
+    const bonusAnimationBuckets = ['additionalDraw', 'hotm', 'mystery'];
+
+    for (const result of totalSummonedResults) {
         if (skip) break;
-        await showSingleSummonAnimation(result.hero, animationViewport);
+        // 使用新的 bucket 列表来判断是否为奖励抽奖
+        const isBonusDraw = bonusAnimationBuckets.includes(result.bucket);
+        await showSingleSummonAnimation(result.hero, animationViewport, isBonusDraw);
     }
 
-    // 8. 动画结束后清理
     blockerOverlay.classList.add('hidden');
     if (buttonParentContainer.contains(skipButton)) {
         buttonParentContainer.removeChild(skipButton);
     }
-    showSummaryModal(summonedResults);
+    showSummaryModal(totalSummonedResults);
 
-    // 为关闭按钮添加事件，并在关闭时恢复主页面滚动
     const closeModal = () => {
         document.getElementById('summon-summary-modal').classList.add('hidden');
         document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
-        document.body.classList.remove('modal-open'); // 移除类，恢复滚动
-        updateSummonHistory(summonedResults, count);
+        document.body.classList.remove('modal-open');
+        updateSummonHistory(totalSummonedResults, count);
     };
-
     document.getElementById('summary-close-btn').onclick = closeModal;
-    document.getElementById('summon-summary-modal-overlay').onclick = closeModal; // 点击遮罩层也可关闭
-
+    document.getElementById('summon-summary-modal-overlay').onclick = closeModal;
 }
 
+
 /**
- * 在指定容器内播放使用特效图片的动画 (v6 - 特效图片版)
+ * 在指定容器内播放动画，并根据参数决定是否添加奖励动画
  * @param {object} hero - 抽到的英雄
  * @param {HTMLElement} animationViewport - 动画播放的容器
+ * @param {boolean} isBonusDraw - 是否为额外奖励抽奖
  * @returns {Promise}
  */
-function showSingleSummonAnimation(hero, animationViewport) {
+function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false) {
     return new Promise(resolve => {
-        animationViewport.innerHTML = ''; // 清空上一轮的动画元素
+        animationViewport.innerHTML = ''; // 清空上一轮的动画
 
-        // 1. 创建英雄头像 (将先出现)
+        // 如果是奖励抽奖，则先添加奖励动画层
+        if (isBonusDraw) {
+            const bonusImg = document.createElement('img');
+            bonusImg.src = 'imgs/lottery/gate/lottery_animation_bonus.webp';
+            bonusImg.className = 'bonus-summon-overlay';
+            animationViewport.appendChild(bonusImg);
+        }
+
+        // 创建英雄头像和背景光效（与之前逻辑相同）
         const heroAvatarContainer = document.createElement('div');
         heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.color)}`;
         heroAvatarContainer.style.background = getHeroColorLightGradient(hero.color);
-        heroAvatarContainer.style.maxWidth = '100px'; /* 设置最大宽度 */
-        heroAvatarContainer.style.maxHeight = '100px'; /* 设置最大高度 */
+        heroAvatarContainer.style.maxWidth = '100px';
+        heroAvatarContainer.style.maxHeight = '100px';
         const heroAvatarSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : (hero.image || '');
         heroAvatarContainer.innerHTML = `<img src="${heroAvatarSrc}" style="width: 100%; height: 100%; object-fit: contain;">`;
 
-
-        // 2. 创建光效图片
         const lightEffect = document.createElement('div');
         lightEffect.className = 'summon-animation-element';
         lightEffect.innerHTML = `<img src="imgs/lottery/gate/lottery_animation_light.webp" class="anim-light-img">`;
-        // 使用 CSS filter 给光效图片上色
         lightEffect.style.filter = `drop-shadow(0 0 15px ${getColorHex(hero.color)})`;
 
-        // 按顺序添加到容器中
+        // 按正确的层级顺序添加到容器
         animationViewport.appendChild(lightEffect);
         animationViewport.appendChild(heroAvatarContainer);
 
-        // 动画持续1.2秒后自动结束
+        // 统一在1.2秒后清除所有动画元素并结束
         setTimeout(() => {
-            animationViewport.innerHTML = ''; // 清空动画容器
-            resolve(); // 动画结束
+            animationViewport.innerHTML = '';
+            resolve();
         }, 1200);
     });
 }
+
 
 /**
  * 填充结果卡片的数据，并返回HTML字符串
@@ -924,8 +1146,8 @@ function populateResultCard(hero) {
 }
 
 /**
- * 显示包含所有抽奖结果的总结弹窗 (v5 - 卡片式、可换行)
- * @param {Array} results - 包含所有抽奖结果的数组
+ * 显示包含所有抽奖结果的总结弹窗
+ * @param {Array} results - 包含所有抽奖结果的数组，每个元素是 {hero, bucket}
  */
 function showSummaryModal(results) {
     const overlay = document.getElementById('summon-summary-modal-overlay');
@@ -938,6 +1160,8 @@ function showSummaryModal(results) {
     }
 
     scrollContainer.innerHTML = '';
+    const bonusBuckets = ['bonusLegendary', 'hotm', 'mystery', 'additionalDraw'];
+
     results.forEach(result => {
         const hero = result.hero;
 
@@ -947,17 +1171,11 @@ function showSummaryModal(results) {
 
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
-        // 修正：直接设置背景渐变
         avatar.style.background = getHeroColorLightGradient(hero.color);
 
-        // 新增：创建英雄头像图片元素
-        const heroAvatarSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
-        avatarImage.src = heroAvatarSrc;
-        avatarImage.alt = hero.name;
-
-        // 将图片添加到头像容器
+        avatarImage.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
         avatar.appendChild(avatarImage);
 
         const detailsOverlay = document.createElement('div');
@@ -978,31 +1196,36 @@ function showSummaryModal(results) {
 
         card.appendChild(avatar);
         card.appendChild(detailsOverlay);
+
+        // 新增逻辑：检查是否为奖励英雄并添加 "Ex" 标签
+        if (bonusBuckets.includes(result.bucket)) {
+            const exLabel = document.createElement('div');
+            exLabel.className = 'summary-ex-label';
+            exLabel.textContent = 'Ex';
+            card.appendChild(exLabel);
+        }
+
         scrollContainer.appendChild(card);
     });
 
     summaryModal.classList.remove('hidden');
     overlay.classList.remove('hidden');
-
-    // 在模态框打开时锁定主页面滚动
     document.body.classList.add('modal-open');
 }
 
 /**
  * 更新并渲染抽奖历史记录
- * @param {Array} results - 本次抽奖的结果数组
- * @param {number} count - 抽奖次数 (1, 10, 30)
+ * @param {Array} results - 本次抽奖的结果数组, 每个元素是 {hero, bucket}
+ * @param {number} count - 初始抽奖次数 (1, 10, 30)
  */
 function updateSummonHistory(results, count) {
     if (results.length > 0) {
-        // 1. 获取当前卡池的显示名称
         const currentPoolName = getPoolDisplayName(state.currentSummonData);
-
-        // 2. 将卡池名称和召唤结果一起存入历史记录
+        // 核心修正：保存完整的结果数组 (results)，而不是只提取英雄 (results.map(r => r.hero))
         state.summonHistory.unshift({
             count: count,
-            heroes: results.map(r => r.hero),
-            poolName: currentPoolName // 保存卡池名称
+            results: results, // 保存包含 hero 和 bucket 的完整对象
+            poolName: currentPoolName
         });
 
         if (state.summonHistory.length > 50) {
@@ -1025,36 +1248,25 @@ function renderSummonHistory() {
         return;
     }
 
+    const bonusBuckets = ['bonusLegendary', 'hotm', 'mystery', 'additionalDraw'];
+
     state.summonHistory.forEach(group => {
-        let heroesToRender = [];
-        let summonCount = 0;
-        let poolName = ''; // 新增：用于存储卡池名称的变量
-
-        if (Array.isArray(group)) { // 兼容旧格式
-            heroesToRender = group;
-            summonCount = group.length;
-        } else if (group && group.heroes) { // 使用新格式
-            heroesToRender = group.heroes;
-            summonCount = group.count;
-            poolName = group.poolName || ''; // 从记录中获取卡池名称
-        }
-
-        if (heroesToRender.length === 0) return;
+        // 核心修正：从 group.results 读取数据，并处理旧格式的兼容性
+        const resultsToRender = group.results || (Array.isArray(group) ? group.map(hero => ({ hero, bucket: '' })) : []);
+        if (resultsToRender.length === 0) return;
 
         const groupContainer = document.createElement('div');
         groupContainer.className = 'summon-history-group';
         const header = document.createElement('h5');
-
-        // 2. 组合新的标题
-        const summonTypeTitle = `${i18n[state.currentLang].summonOnce || '召唤'} x${summonCount}`;
-        // 如果记录中有卡池名称，就显示它；否则只显示召唤数量
-        header.textContent = poolName ? `${poolName} - ${summonTypeTitle}` : summonTypeTitle;
+        const summonTypeTitle = `${i18n[state.currentLang].summonOnce || '召唤'} x${group.count}`;
+        header.textContent = group.poolName ? `${group.poolName} - ${summonTypeTitle}` : summonTypeTitle;
 
         const avatarsContainer = document.createElement('div');
         avatarsContainer.className = 'summon-history-avatars';
-        heroesToRender.forEach(hero => {
+
+        resultsToRender.forEach(result => {
+            const hero = result.hero;
             if (!hero) return;
-            // 为每个头像创建新的HTML结构
             const avatarContainer = document.createElement('div');
             avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.color)}`;
             avatarContainer.title = hero.name;
@@ -1069,6 +1281,14 @@ function renderSummonHistory() {
             avatar.className = 'hero-avatar-image';
             avatar.alt = hero.name;
             avatarContainer.appendChild(avatar);
+
+            // 新增逻辑：检查是否为奖励英雄并添加 "Ex" 标签
+            if (bonusBuckets.includes(result.bucket)) {
+                const exLabel = document.createElement('div');
+                exLabel.className = 'history-ex-label';
+                exLabel.textContent = 'Ex';
+                avatarContainer.appendChild(exLabel);
+            }
 
             avatarsContainer.appendChild(avatarContainer);
         });

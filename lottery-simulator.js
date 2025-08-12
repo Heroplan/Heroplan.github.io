@@ -1324,7 +1324,7 @@ function showSummaryModal(results) {
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}
-            <div class="summary-hero-stars">${starsContent}</div>
+            <div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>
         `;
 
         card.appendChild(avatar);
@@ -1432,7 +1432,7 @@ function renderSummonHistory() {
             // ▼▼▼ 添加星星数量角标 ▼▼▼
             if (hero.star) {
                 const starLabel = document.createElement('div');
-                starLabel.className = 'history-hero-stars';
+                starLabel.className = `history-hero-stars star-level-${hero.star}`;
                 starLabel.innerHTML = `${hero.star}⭐`; // 使用星星表情符号
                 avatarContainer.appendChild(starLabel);
             }

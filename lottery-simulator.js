@@ -217,7 +217,7 @@ const LotterySimulator = {
 let lotteryPoolsData = null; // 用于存储处理过的奖池数据
 let lotteryTitleDict = {}; // 用于存储当前语言的标题字典
 let summonPoolDetails = {}; // 新增：用于存储奖池的详细配置
-
+let bonusTranslations = {};
 // --- 初始化与数据处理 ---
 
 /**
@@ -228,6 +228,7 @@ let summonPoolDetails = {}; // 新增：用于存储奖池的详细配置
 function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
     // 1. 根据当前语言，从全局变量中设置正确的标题字典
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.cn;
+    bonusTranslations = (i18n[state.currentLang] || i18n.cn).lottery_bonus_translations || {};
 
     // 2. 处理和整合奖池数据
     processSummonData(allPoolsConfig, summonTypesConfig);
@@ -1051,10 +1052,20 @@ async function performSummon(count) {
             if (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil) {
                 for (let i = 0; i < (poolConfig.bonusLegendaryHeroPullAmount || 1); i++) {
                     if (Math.random() * 1000 < poolConfig.bonusLegendaryHeroChancePerMil) {
-                        const bonusPool = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly
-                            ? state.allHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()))
-                            : state.allHeroes.filter(h => h.star === 5 && h.family && !state.globalExcludeFamilies.includes(String(h.family).toLowerCase()));
-                        if (bonusPool.length > 0) totalSummonedResults.push({ hero: bonusPool[Math.floor(Math.random() * bonusPool.length)], bucket: 'bonusLegendary' });
+                        const isEventOnly = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly;
+                        let bonusPool;
+
+                        if (isEventOnly) {
+                            // 真：仅限活动英雄
+                            bonusPool = state.allHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
+                        } else {
+                            // 假：任意非经典英雄
+                            bonusPool = state.allHeroes.filter(h => h.star === 5 && h.family && h.family !== 'classic' && !state.globalExcludeFamilies.includes(String(h.family).toLowerCase()));
+                        }
+
+                        if (bonusPool.length > 0) {
+                            totalSummonedResults.push({ hero: bonusPool[Math.floor(Math.random() * bonusPool.length)], bucket: 'bonusLegendary' });
+                        }
                     }
                 }
             }

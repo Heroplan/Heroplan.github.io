@@ -548,6 +548,30 @@ function getAllHeroesInPool(poolConfig) {
         });
     }
 
+    // ▼▼▼ 处理 nonFeaturedLegendaryHeroesAgeInDays 的逻辑 ▼▼▼
+    if (poolConfig.nonFeaturedLegendaryHeroesAgeInDays > 0) {
+        const days = poolConfig.nonFeaturedLegendaryHeroesAgeInDays;
+        const cutoffDate = new Date();
+        cutoffDate.setDate(new Date().getDate() - days);
+
+        const olderHeroes = state.allHeroes.filter(hero => {
+            // 确保英雄有发布日期
+            if (!hero['Release date']) {
+                return false;
+            }
+            const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+            // 检查所有条件
+            return hero.star === 5 &&                                     // 1. 是5星英雄
+                hero.costume_id === 0 &&                               // 2. 不是服装英雄
+                new Date(hero['Release date']) < cutoffDate &&         // 3. 发布日期早于截止日期
+                heroFamily !== 'classic' &&                            // 4. (可选但推荐) 排除经典S1英雄
+                !state.globalExcludeFamilies.includes(heroFamily);   // 5. 遵守全局排除规则
+        });
+
+        // 将筛选出的旧英雄添加到总卡池中
+        allPossibleHeroes.push(...olderHeroes);
+    }
+
     const finalLatestVersions = {};
     allPossibleHeroes.forEach(hero => {
         if (hero && hero.english_name) {

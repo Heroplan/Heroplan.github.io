@@ -1206,16 +1206,28 @@ async function performSummon(count) {
     if (buttonParentContainer.contains(skipButton)) {
         buttonParentContainer.removeChild(skipButton);
     }
+    // 1. 先显示结果弹窗
     showSummaryModal(totalSummonedResults);
 
+    // 2. 紧接着，立刻更新历史记录
+    updateSummonHistory(totalSummonedResults, count);
+
+    // 3. 定义关闭弹窗的函数
     const closeModal = () => {
         document.getElementById('summon-summary-modal').classList.add('hidden');
         document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
         document.body.classList.remove('modal-open');
-        updateSummonHistory(totalSummonedResults, count);
     };
+
+    const scrollContainer = document.getElementById('summon-summary-scroll-container');
+    if (scrollContainer) {
+        scrollContainer.scrollTop = 0;
+    }
+
+    // 4. 为按钮和遮罩层绑定关闭事件
     document.getElementById('summary-close-btn').onclick = closeModal;
     document.getElementById('summon-summary-modal-overlay').onclick = closeModal;
+
 }
 
 
@@ -1522,6 +1534,12 @@ function toggleLotterySimulator() {
         button.classList.add('simulator-exit-btn');
         button.title = langDict.returnToList;
         uiElements.headerInfoContainer.classList.add('hidden');
+
+        // ▼▼▼ 重置滚动条 ▼▼▼
+        const activityList = document.getElementById('lottery-activity-list-container');
+        const historyList = document.getElementById('summon-history-list-container');
+        if (activityList) activityList.scrollTop = 0;
+        if (historyList) historyList.scrollTop = 0;
 
         if (state.allSummonPools) {
             const firstPoolId = Object.keys(state.allSummonPools)[0];

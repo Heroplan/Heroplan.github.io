@@ -305,6 +305,7 @@ const i18n = {
             "NonClassicHero": "非经典英雄" 
         },
         "selectElementTitle": "请选择元素",
+        "summonSummaryOkBtn": "确定",
 
 
     },
@@ -567,6 +568,7 @@ const i18n = {
             "NonClassicHero": "非經典英雄"
         },
         "selectElementTitle": "請選擇元素",
+        "summonSummaryOkBtn": "確定",
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -827,5 +829,6 @@ const i18n = {
             "NonClassicHero": "Non-Classic Heroes"
         },
         "selectElementTitle": "Select Element",
+        "summonSummaryOkBtn": "OK",
     }
 }; 

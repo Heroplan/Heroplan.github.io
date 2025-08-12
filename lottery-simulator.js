@@ -895,40 +895,82 @@ function removeHeroFromFeaturedSlot(slotIndex) {
 
 // --- 动画与历史记录 ---
 
+// lottery-simulator.js
+
 async function performSummon(count) {
     const poolConfig = state.currentSummonData;
     if (!poolConfig) return;
+
+    // ▼▼▼ 核心修改开始 ▼▼▼
+
+    // 1. 判断是否为服装召唤，并预先构建专用的“最新服装”奖池
+    const isCostumeSummon = poolConfig.productType === 'CostumeSummon';
+    let costumePool = [];
+
+    if (isCostumeSummon) {
+        const latestCostumes = new Map();
+        // 这个逻辑与 getAllHeroesInPool 中处理服装召唤的逻辑完全相同
+        state.allHeroes.forEach(hero => {
+            if (hero.family === 'classic' && hero.costume_id > 0) {
+                const existing = latestCostumes.get(hero.english_name);
+                if (!existing || hero.costume_id > existing.costume_id) {
+                    latestCostumes.set(hero.english_name, hero);
+                }
+            }
+        });
+        costumePool = Array.from(latestCostumes.values());
+
+        // 如果服装池为空，则提前退出，避免错误
+        if (costumePool.length === 0) {
+            console.error("服装召唤奖池为空，无法执行召唤。");
+            return;
+        }
+    }
 
     const totalSummonedResults = [];
 
     // 主召唤循环
     for (let k = 0; k < count; k++) {
-        const { bucketWeights, bucketConfig } = poolConfig;
-        const bucketIndex = selectWeightedIndex(bucketWeights);
-        const bucketString = bucketConfig[bucketIndex];
         let drawnHero = null;
+        // 1. 在循环顶部声明 bucketString，确保它始终存在于作用域中。
+        let bucketString = 'unknown';
 
-        if (bucketString && bucketString.startsWith('trainer')) {
-            const star = parseInt(bucketString.split('_')[1], 10);
-            const colors = ['红', '蓝', '绿', '黄', '紫'];
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
-        } else if (bucketString === 'featuredHero') {
-            const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
-            if (validFeatured.length > 0) {
-                drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
-            } else {
-                const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
-                drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+        if (isCostumeSummon) {
+            // 对于服装召唤，直接从专用池中抽取。
+            drawnHero = costumePool[Math.floor(Math.random() * costumePool.length)];
+            // 2. 为服装召唤指定一个明确的 bucket 名称。
+            bucketString = 'costume';
+        } else {
+            // 对于所有其他召唤，使用原有的 bucket 逻辑。
+            const { bucketWeights, bucketConfig } = poolConfig;
+            const bucketIndex = selectWeightedIndex(bucketWeights);
+            // 3. 为 bucketString 变量赋予定位到的值。
+            bucketString = bucketConfig[bucketIndex];
+
+            if (bucketString && bucketString.startsWith('trainer')) {
+                const star = parseInt(bucketString.split('_')[1], 10);
+                const colors = ['红', '蓝', '绿', '黄', '紫'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
+            } else if (bucketString === 'featuredHero') {
+                const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
+                if (validFeatured.length > 0) {
+                    drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
+                } else {
+                    const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+                    drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+                }
+            } else if (bucketString) {
+                const heroPool = getHeroPoolForBucket(bucketString, poolConfig);
+                if (heroPool.length > 0) drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
             }
-        } else if (bucketString) {
-            const heroPool = getHeroPoolForBucket(bucketString, poolConfig);
-            if (heroPool.length > 0) drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
         }
 
-        if (drawnHero) {
-            totalSummonedResults.push({ hero: drawnHero, bucket: bucketString || 'unknown' });
 
+        if (drawnHero) {
+            totalSummonedResults.push({ hero: drawnHero, bucket: isCostumeSummon ? 'costume' : (bucketString || 'unknown') });
+
+            // 奖励抽奖逻辑 (保持不变)
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             if (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil) {
                 for (let i = 0; i < (poolConfig.bonusLegendaryHeroPullAmount || 1); i++) {
@@ -964,8 +1006,8 @@ async function performSummon(count) {
             for (let i = 0; i < poolConfig.additionalDrawWeights.length; i++) {
                 if (random < poolConfig.additionalDrawWeights[i]) {
                     for (let j = 0; j < i + 1; j++) {
-                        const extraBucketIndex = selectWeightedIndex(bucketWeights);
-                        const extraBucketString = bucketConfig[extraBucketIndex];
+                        const extraBucketIndex = selectWeightedIndex(poolConfig.bucketWeights);
+                        const extraBucketString = poolConfig.bucketConfig[extraBucketIndex];
                         let extraHero = null;
                         if (extraBucketString && extraBucketString.startsWith('trainer')) {
                             const star = parseInt(extraBucketString.split('_')[1], 10);
@@ -993,7 +1035,7 @@ async function performSummon(count) {
 
     if (totalSummonedResults.length === 0) return;
 
-    // --- 动画播放和UI更新的完整逻辑 ---
+    // --- 动画播放和UI更新的完整逻辑 (保持不变) ---
     const animationViewport = document.getElementById('lottery-hero-display-area');
     const blockerOverlay = document.getElementById('animation-blocker-overlay');
     const buttonParentContainer = document.getElementById('lottery-simulator-wrapper');
@@ -1029,12 +1071,10 @@ async function performSummon(count) {
     };
     skipButton.addEventListener('click', skipHandler, { once: true });
 
-    // 核心修正：定义所有需要播放奖励动画的 bucket 类型
     const bonusAnimationBuckets = ['additionalDraw', 'hotm', 'mystery'];
 
     for (const result of totalSummonedResults) {
         if (skip) break;
-        // 使用新的 bucket 列表来判断是否为奖励抽奖
         const isBonusDraw = bonusAnimationBuckets.includes(result.bucket);
         await showSingleSummonAnimation(result.hero, animationViewport, isBonusDraw);
     }

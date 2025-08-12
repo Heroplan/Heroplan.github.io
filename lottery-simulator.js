@@ -394,41 +394,28 @@ function getPoolDisplayName(poolConfig) {
 }
 
 /**
- * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (已为服装召唤添加特殊抽取逻辑)
- * @param {string} bucketString - 例如 "heroes_s1_3"
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (重构解析逻辑的最终修正版)
+ * @param {string} bucketString - 例如 "heroes_ex_s1_3"
  * @param {object} poolConfig - 当前的奖池配置
  * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
-    const parts = bucketString.split('_');
-    const type = parts.length > 1 ? parts[1] : parts[0];
-    const star = parseInt(parts[parts.length - 1], 10);
+    // 更稳定地从字符串末尾解析星级
+    const starMatch = bucketString.match(/_(\d+)$/);
+    if (!starMatch) return [];
+    const star = parseInt(starMatch[1], 10);
 
-    if (isNaN(star)) return [];
+    // 更准确地识别 bucket 类型
+    let bucketType = 'unknown';
+    if (bucketString.startsWith('heroes_event_')) bucketType = 'event';
+    else if (bucketString.startsWith('heroes_listed_')) bucketType = 'listed';
+    else if (bucketString.startsWith('heroes_ex_s1_')) bucketType = 'ex_s1';
+    else if (bucketString.startsWith('heroes_s1_')) bucketType = 's1';
+    else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
 
-    // ▼▼▼ 新增：为服装召唤添加专属的、正确的抽取逻辑 ▼▼▼
-    if (poolConfig.productType === 'CostumeSummon') {
-        // 1. 创建一个Map来存储每个经典英雄的最新皮肤
-        const latestCostumes = new Map();
-        state.allHeroes.forEach(hero => {
-            if (hero.family === 'classic' && hero.costume_id > 0) {
-                const existing = latestCostumes.get(hero.english_name);
-                if (!existing || hero.costume_id > existing.costume_id) {
-                    latestCostumes.set(hero.english_name, hero);
-                }
-            }
-        });
-
-        // 2. 从所有最新皮肤中，根据桶的星级要求进行筛选
-        const allLatestCostumes = Array.from(latestCostumes.values());
-        return allLatestCostumes.filter(costume => costume.star === star);
-    }
-    // ▲▲▲ 服装召唤逻辑结束 ▲▲▲
-
-    // --- 对于其他活动，执行之前的正确逻辑 ---
 
     // 特殊处理逻辑：SuperElementalSummon 中的 "listed" 类型
-    if (poolConfig.productType === 'SuperElementalSummon' && type === 'listed') {
+    if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         return state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
             return hero.color === state.selectedElementalColor &&
@@ -440,7 +427,6 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
     // --- 标准过滤逻辑 ---
     const initialPool = state.allHeroes.filter(hero => {
-        // 基础条件：星级匹配，非皮肤，且不属于全局排除列表
         if (hero.star !== star || hero.costume_id !== 0) {
             return false;
         }
@@ -449,23 +435,21 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             return false;
         }
 
-        switch (type) {
+        // 使用更准确的 bucketType 进行判断
+        switch (bucketType) {
             case 's1':
                 return heroFamily === 'classic';
 
-            case 'ex':
+            case 'ex_s1':
                 return heroFamily !== 'classic';
 
             case 'event':
                 const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
                 const isFamilyMatch = eventFamilies.includes(heroFamily);
-
                 if (!isFamilyMatch) return false;
-
                 if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
                     return hero.color === state.selectedElementalColor;
                 }
-
                 return true;
 
             case 'listed':
@@ -485,7 +469,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     // 为非经典英雄应用“最新皮肤”逻辑
     return initialPool.map(baseHero => {
         if (baseHero.family === 'classic') {
-            return baseHero; // 此处对于非服装召唤是正确的
+            return baseHero;
         }
         const latestVersion = state.latestHeroVersionsMap.get(baseHero.english_name);
         return latestVersion || baseHero;

@@ -717,21 +717,6 @@ async function handleActivityClick(poolId) {
     // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
 
-        // --- 你要求的调试输出代码 (可以取消注释来查看) ---
-        console.log("--- 开始筛选精选英雄 ---");
-        console.log(`用户选择的颜色值 (state.selectedElementalColor): "${state.selectedElementalColor}"`);
-        state.customFeaturedHeroes.forEach(hero => {
-             if (hero) {
-                const directComparison = hero.color === state.selectedElementalColor;
-                console.log(`正在比较: [${hero.name}] 的颜色 "${hero.color}" === "${state.selectedElementalColor}" -> 结果: ${directComparison}`);
-
-                const mapComparison = colorReverseMap[hero.color] === colorReverseMap[state.selectedElementalColor];
-                console.log(`使用反查表比较: "${colorReverseMap[hero.color]}" === "${colorReverseMap[state.selectedElementalColor]}" -> 结果: ${mapComparison}`);
-            }
-        });
-        console.log("--- 筛选结束 ---");
-        //--- 调试输出代码结束 ---
-
         // 使用正确的、基于 colorReverseMap 的筛选逻辑
         state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
             if (hero) {

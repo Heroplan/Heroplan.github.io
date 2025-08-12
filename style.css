@@ -5326,3 +5326,63 @@ html:not(.dark-theme) .color-text-outlined {
     }
 }
 
+/* ▼▼▼ 新增：抽奖历史记录中英雄星星角标的样式 ▼▼▼ */
+
+.history-hero-stars {
+    position: absolute;
+    /* 绝对定位，相对于父容器 .hero-avatar-container */
+    bottom: 1px;
+    /* 定位到右下角 */
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明黑色背景 */
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 1;
+    z-index: 4;
+    /* 确保在头像图片之上 */
+    text-shadow: 1px 1px 1px black;
+    /* 为文字添加一点阴影以增加可读性 */
+}
+
+/* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
+@media (max-width: 900px) {
+
+    /* 1. 缩小卡片本身的尺寸 */
+    .summary-hero-card {
+        width: 48px;
+        height: 48px;
+    }
+
+    .summary-color-icon {
+        position: absolute;
+        top: 0px;
+        /* 距离卡片顶部的距离 */
+        left: 0px;
+        /* 距离卡片左侧的距离 */
+        width: 20px;
+        /* 颜色图标的宽度 */
+        height: 20px;
+        /* 颜色图标的高度 */
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+    }
+
+    /* 2. 修改 .summary-hero-stars 容器的样式，使其变为右下角的角标 */
+    .summary-hero-stars {
+        /* 移除桌面端的 flex 布局和间距 */
+        display: block;
+        gap: 0;
+
+        /* 应用角标样式 */
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgb(255, 255, 255);
+        
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 1;
+    }
+}

@@ -1297,10 +1297,20 @@ function showSummaryModal(results) {
 
         const detailsOverlay = document.createElement('div');
         detailsOverlay.className = 'summary-details-overlay';
+        // ▼▼▼ 根据屏幕宽度决定星星的显示方式 ▼▼▼
+        const isMobile = window.innerWidth <= 900;
+        let starsContent = '';
 
-        let starsHTML = '';
-        for (let i = 0; i < hero.star; i++) {
-            starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
+        if (isMobile && hero.star) {
+            // 在移动端，生成文本内容
+            starsContent = `${hero.star}⭐`;
+        } else if (hero.star) {
+            // 在桌面端，生成图片内容
+            let starsHTML = '';
+            for (let i = 0; i < hero.star; i++) {
+                starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
+            }
+            starsContent = starsHTML;
         }
 
         const englishColor = (colorReverseMap[String(hero.color).toLowerCase()] || hero.color || 'default').toLowerCase();
@@ -1308,7 +1318,7 @@ function showSummaryModal(results) {
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}
-            <div class="summary-hero-stars">${starsHTML}</div>
+            <div class="summary-hero-stars">${starsContent}</div>
         `;
 
         card.appendChild(avatar);
@@ -1398,6 +1408,13 @@ function renderSummonHistory() {
             avatar.className = 'hero-avatar-image';
             avatar.alt = hero.name;
             avatarContainer.appendChild(avatar);
+            // ▼▼▼ 添加文本星星数量 ▼▼▼
+            if (hero.star) {
+                const starText = document.createElement('div');
+                starText.className = 'hero-star-text';
+                starText.textContent = `${hero.star}⭐`;
+                avatarContainer.appendChild(starText);
+            }
 
             // 新增逻辑：检查是否为奖励英雄并添加 "Ex" 标签
             if (bonusBuckets.includes(result.bucket)) {
@@ -1405,6 +1422,13 @@ function renderSummonHistory() {
                 exLabel.className = 'history-ex-label';
                 exLabel.textContent = 'Ex';
                 avatarContainer.appendChild(exLabel);
+            }
+            // ▼▼▼ 添加星星数量角标 ▼▼▼
+            if (hero.star) {
+                const starLabel = document.createElement('div');
+                starLabel.className = 'history-hero-stars';
+                starLabel.innerHTML = `${hero.star}⭐`; // 使用星星表情符号
+                avatarContainer.appendChild(starLabel);
             }
 
             avatarsContainer.appendChild(avatarContainer);

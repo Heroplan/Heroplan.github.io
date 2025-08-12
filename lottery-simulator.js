@@ -844,11 +844,17 @@ async function performSummon(count) {
     }
     showSummaryModal(summonedResults);
 
-    document.getElementById('summary-close-btn').onclick = () => {
+    // 为关闭按钮添加事件，并在关闭时恢复主页面滚动
+    const closeModal = () => {
         document.getElementById('summon-summary-modal').classList.add('hidden');
         document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
+        document.body.classList.remove('modal-open'); // 移除类，恢复滚动
         updateSummonHistory(summonedResults, count);
     };
+
+    document.getElementById('summary-close-btn').onclick = closeModal;
+    document.getElementById('summon-summary-modal-overlay').onclick = closeModal; // 点击遮罩层也可关闭
+
 }
 
 /**
@@ -977,6 +983,9 @@ function showSummaryModal(results) {
 
     summaryModal.classList.remove('hidden');
     overlay.classList.remove('hidden');
+
+    // 在模态框打开时锁定主页面滚动
+    document.body.classList.add('modal-open');
 }
 
 /**

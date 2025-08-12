@@ -4265,7 +4265,7 @@ select.custom-select-hidden {
     overflow: hidden;
 }
 
-/* 3. 主内容区: 这是实现左、中、右布局的关键 */
+/* 3. 主内容区 */
 .lottery-main-content {
     display: flex;
     /* 让其子元素 (左侧列表, 右侧包装器) 水平排列 */
@@ -4273,6 +4273,8 @@ select.custom-select-hidden {
     padding: 10px;
     gap: 10px;
     min-width: 0;
+    min-height: 400px;
+        /* 修正：设置最小高度 */
 }
 
 /* 4. 左侧活动列表: 限制高度并启用滚动 */

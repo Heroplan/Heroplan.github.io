@@ -696,6 +696,70 @@
         "amount": 10
     },
     {
+        "productType": "AscensionSummon",
+        "id": "lottery_ascension_default",
+        "banner": "event_lotterybanner_ascension",
+        "lotterybg": "event_lotterybg_ascension",
+        "gemPrice": 270,
+        "amount": 1,
+        "uiPriority": 90,
+        "bucketWeights": [
+            710,
+            265,
+            15,
+            10,
+            0,
+            0
+        ],
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
+        "productType": "AscensionSummon",
+        "id": "lottery_ascension_default_bulk",
+        "gemPrice": 2400,
+        "sourceProductId": "lottery_ascension_default",
+        "amount": 10,
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
+        "productType": "AscensionSummon",
+        "id": "lottery_ascension_default_30_bulk",
+        "gemPrice": 7200,
+        "sourceProductId": "lottery_ascension_default",
+        "amount": 30,
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
         "productType": "PickupSummon",
         "id": "lottery_pickup_default",
         "banner":"event_lotterybanner_pickup_summon",

@@ -124,6 +124,28 @@
             ],
             "featuredHeroNum": 3
         },
+        "AscensionSummon": {
+            "bucketConfig": [
+                "heroes_s1_3",
+                "heroes_s1_4",
+                "heroes_listed_5",
+                "featuredHero",
+                "trainer_3",
+                "trainer_4"
+            ],
+            "powerGradeWeights": [
+                0,
+                200,
+                200,
+                200,
+                0,
+                200,
+                0,
+                150,
+                50
+            ],
+            "featuredHeroNum": 4
+        },
         "PickupSummon": {
             "bucketConfig": [
                 "heroes_s1_3",
@@ -460,6 +482,14 @@
                 "s3_odin",
                 "s4_xnolphod",
                 "s5_el_naddaha"
+            ]
+        },
+        "lottery_ascension_default": {
+            "featuredHeroes": [
+                "tales1_ceto",
+                "tales1_ephyra",
+                "guardian_elephant",
+                "guardian_gorilla_chieftain"
             ]
         },
         "lottery_season_atlantis": {

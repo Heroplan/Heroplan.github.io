@@ -5397,11 +5397,13 @@ html:not(.dark-theme) .color-text-outlined {
 /* 4星: 黄色 (使用醒目的金黄色) */
 .summary-hero-stars.star-level-4,
 .history-hero-stars.star-level-4 {
+    font-size: 13px;
     color: #00ff37;
 }
 
 /* 5星: 红色 */
 .summary-hero-stars.star-level-5,
 .history-hero-stars.star-level-5 {
-    color: #FF4136;
+    font-size: 15px;
+    color: #ff0d00;
 }

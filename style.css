@@ -4274,7 +4274,7 @@ select.custom-select-hidden {
     gap: 10px;
     min-width: 0;
     min-height: 400px;
-        /* 修正：设置最小高度 */
+    /* 修正：设置最小高度 */
 }
 
 /* 4. 左侧活动列表: 限制高度并启用滚动 */
@@ -4832,19 +4832,19 @@ select.custom-select-hidden {
 
 @keyframes light-img-pulse {
     0% {
-        transform:translateY(40px) scale(1);
+        transform: translateY(40px) scale(1);
         opacity: 0;
     }
 
     50% {
         /* ▼▼▼ 将放大倍数从中途就开始显著增加 ▼▼▼ */
-        transform:translateY(40px) scale(1.5);
+        transform: translateY(40px) scale(1.5);
         opacity: 1;
     }
 
     100% {
         /* ▼▼▼ 最终放大到一个非常大的倍数再消失 ▼▼▼ */
-        transform:translateY(40px) scale(3);
+        transform: translateY(40px) scale(3);
         opacity: 0;
     }
 }
@@ -4881,8 +4881,8 @@ select.custom-select-hidden {
     overflow: hidden;
     /* 隐藏溢出的部分 */
     /* 关键：为边框和辉光提供占位 */
-        border: 3px solid transparent;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: 3px solid transparent;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -4902,6 +4902,7 @@ html:not(.dark-theme) .color-text-outlined {
     background-size: cover;
     background-position: center;
 }
+
 .summary-avatar-image {
     width: 100%;
     height: 100%;
@@ -4969,7 +4970,7 @@ html:not(.dark-theme) .color-text-outlined {
 /* 2. 为桌面端的三个面板分配宽度 */
 #lottery-activity-list-container {
     width: 250px;
-    flex-shrink: 1;
+    flex-shrink: 0;
 }
 
 #lottery-portal-container {
@@ -5057,7 +5058,8 @@ html:not(.dark-theme) .color-text-outlined {
 
 /* 抽奖概率说明图标样式 */
 .probability-info-icon {
-    position: relative; /* 修正：添加相对定位，以便子元素可以绝对定位 */
+    position: relative;
+    /* 修正：添加相对定位，以便子元素可以绝对定位 */
     top: 10px;
     left: 10px;
     z-index: 3;
@@ -5309,4 +5311,12 @@ html:not(.dark-theme) .color-text-outlined {
     height: 600px;
     flex-shrink: 1;
     /* 防止在空间不足时被压缩 */
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 900px) {
+    #lottery-activity-list-container {
+        width: 100%;
+        flex-shrink: 1;
+    }
 }

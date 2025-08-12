@@ -440,11 +440,9 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             return false;
         }
 
-        // 使用更准确的 bucketType 进行判断
         switch (bucketType) {
             case 's1':
                 return heroFamily === 'classic';
-
             case 'ex_s1':
                 return heroFamily !== 'classic';
 
@@ -476,7 +474,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
     // 为非经典英雄应用“最新皮肤”逻辑
     return initialPool.map(baseHero => {
-        if (baseHero.family === 'classic') {
+        if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
         }
         const latestVersion = state.latestHeroVersionsMap.get(baseHero.english_name);
@@ -536,9 +534,12 @@ function getAllHeroesInPool(poolConfig) {
                 ].filter(Boolean);
                 let featuredHeroes = state.allHeroes.filter(h => featuredIds.includes(h.heroId));
                 if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                    featuredHeroes = featuredHeroes.filter(h => h.color === state.selectedElementalColor);
+                    featuredHeroes = featuredHeroes.filter(h => {
+                        const standardHeroColor = colorReverseMap[h.color];
+                        const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
+                        return standardHeroColor === standardSelectedColor;
+                    });
                 }
-                allPossibleHeroes.push(...featuredHeroes);
 
             } else {
                 const heroesFromBucket = getHeroPoolForBucket(bucketString, poolConfig);
@@ -715,12 +716,32 @@ async function handleActivityClick(poolId) {
     }
     // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
-            // 如果英雄存在且颜色与选择的颜色相同，则保留，否则移除
-            if (hero && hero.color === state.selectedElementalColor) {
-                return hero;
+
+        // --- 你要求的调试输出代码 (可以取消注释来查看) ---
+        console.log("--- 开始筛选精选英雄 ---");
+        console.log(`用户选择的颜色值 (state.selectedElementalColor): "${state.selectedElementalColor}"`);
+        state.customFeaturedHeroes.forEach(hero => {
+             if (hero) {
+                const directComparison = hero.color === state.selectedElementalColor;
+                console.log(`正在比较: [${hero.name}] 的颜色 "${hero.color}" === "${state.selectedElementalColor}" -> 结果: ${directComparison}`);
+
+                const mapComparison = colorReverseMap[hero.color] === colorReverseMap[state.selectedElementalColor];
+                console.log(`使用反查表比较: "${colorReverseMap[hero.color]}" === "${colorReverseMap[state.selectedElementalColor]}" -> 结果: ${mapComparison}`);
             }
-            return null;
+        });
+        console.log("--- 筛选结束 ---");
+        //--- 调试输出代码结束 ---
+
+        // 使用正确的、基于 colorReverseMap 的筛选逻辑
+        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
+            if (hero) {
+                const standardHeroColor = colorReverseMap[hero.color];
+                const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
+                if (standardHeroColor === standardSelectedColor) {
+                    return hero; // 颜色匹配，保留英雄
+                }
+            }
+            return null; // 颜色不匹配或英雄为空，则移除
         });
     }
 

@@ -127,11 +127,11 @@ const sourceIconMap = {
 
 // 颜色名称 -> 标准英文名
 const colorReverseMap = {
-    '红': 'Red', '紅': 'Red', 'red': 'Red',
-    '蓝': 'Blue', '藍': 'Blue', 'blue': 'Blue',
-    '绿': 'Green', '綠': 'Green', 'green': 'Green',
-    '黄': 'Yellow', '黃': 'Yellow', 'yellow': 'Yellow',
-    '紫': 'Purple', 'purple': 'Purple'
+    '红': 'Red', '紅': 'Red', 'red': 'Red', 'Red': 'Red',
+    '蓝': 'Blue', '藍': 'Blue', 'blue': 'Blue', 'Blue': 'Blue',
+    '绿': 'Green', '綠': 'Green', 'green': 'Green', 'Green': 'Green',
+    '黄': 'Yellow', '黃': 'Yellow', 'yellow': 'Yellow', 'Yellow': 'Yellow',
+    '紫': 'Purple', 'purple': 'Purple', 'Purple': 'Purple'
 };
 
 const iconMaps = {

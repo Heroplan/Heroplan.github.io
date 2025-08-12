@@ -288,6 +288,23 @@ const i18n = {
             "trainer_3": "训练师(3星)",
             "trainer_4": "训练师(4星)",
         },
+        "lottery_bonus_translations": {
+            "bonusProbabilityTitle": "额外概率",
+            "hotm": "月度英雄概率",
+            "MysteryHero": "神秘英雄概率",
+            "LegendsSummonMysteryHero": "神话召唤神秘英雄概率",
+            "additionalDrawWeights": "额外抽取次数概率",
+            "bonusLegendaryHeroChancePerMil": "奖励传奇英雄概率",
+            "bonusLegendaryHeroChancePerMil": "奖励概率", 
+            "bonusLegendaryHeroType": "奖励英雄类型",
+            "bonusLegendaryProbabilityTitle": "额外传奇英雄",
+            "bonusLegendaryHeroPullAmount": "奖励抽取次数"
+        },
+        "lottery_bonus_values": {
+            "eventHeroesOnly": "活动英雄",
+            "NonClassicHero": "非经典英雄" 
+        },
+        "selectElementTitle": "请选择元素",
 
 
     },
@@ -534,6 +551,22 @@ const i18n = {
             "trainer_3": "訓練師(3星)",
             "trainer_4": "訓練師(4星)",
         },
+        "lottery_bonus_translations": {
+            "bonusProbabilityTitle": "額外機率",
+            "hotm": "月度英雄機率",
+            "MysteryHero": "神秘英雄機率",
+            "LegendsSummonMysteryHero": "傳奇召喚神秘英雄機率",
+            "additionalDrawWeights": "額外抽取次數機率",
+            "bonusLegendaryHeroChancePerMil": "獎勵機率",
+            "bonusLegendaryHeroType": "獎勵英雄類型",
+            "bonusLegendaryProbabilityTitle": "額外傳奇英雄",
+            "bonusLegendaryHeroPullAmount": "獎勵抽取次數"
+        },
+        "lottery_bonus_values": {
+            "eventHeroesOnly": "活動英雄",
+            "NonClassicHero": "非經典英雄"
+        },
+        "selectElementTitle": "請選擇元素",
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -778,5 +811,21 @@ const i18n = {
             "trainer_3": "Trainer (3*)",
             "trainer_4": "Trainer (4*)",
         },
+        "lottery_bonus_translations": {
+            "bonusProbabilityTitle": "Bonus Odds",
+            "hotm": "HOTM Rate",
+            "MysteryHero": "Mystery Hero Rate",
+            "LegendsSummonMysteryHero": "Legends Summon Mystery Hero Rate",
+            "additionalDrawWeights": "Additional Draw Rates",
+            "bonusLegendaryHeroChancePerMil": "Bonus Rate",
+            "bonusLegendaryHeroType": "Bonus Hero Type",
+            "bonusLegendaryProbabilityTitle": "Bonus Legendary Hero",
+            "bonusLegendaryHeroPullAmount": "Bonus Pulls"
+        },
+        "lottery_bonus_values": {
+            "eventHeroesOnly": "Event Heroes Only",
+            "NonClassicHero": "Non-Classic Heroes"
+        },
+        "selectElementTitle": "Select Element",
     }
 }; 

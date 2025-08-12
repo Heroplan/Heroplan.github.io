@@ -418,7 +418,8 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         return state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-            return hero.color === state.selectedElementalColor &&
+            const heroColor = (hero.color || '').toLowerCase();
+            return heroColor === state.selectedElementalColor &&
                 hero.star === star &&
                 hero.costume_id === 0 &&
                 !state.globalExcludeFamilies.includes(heroFamily);
@@ -448,7 +449,9 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                 const isFamilyMatch = eventFamilies.includes(heroFamily);
                 if (!isFamilyMatch) return false;
                 if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                    return hero.color === state.selectedElementalColor;
+                    // ▼▼▼ 核心修正 2：修改颜色比较逻辑 ▼▼▼
+                    const heroColor = (hero.color || '').toLowerCase();
+                    return heroColor === state.selectedElementalColor;
                 }
                 return true;
 
@@ -740,30 +743,103 @@ async function handleActivityClick(poolId) {
             infoIcon.style.top = '10px'; /* 修正：定位到顶部 */
             infoIcon.style.left = '10px'; /* 修正：定位到右侧 */
             infoIcon.title = i18n[state.currentLang].probabilityInfoTitle || '查看概率详情';
+            const formatPercentage = (rawValue) => {
+                const percentageNum = parseFloat(rawValue) / 10;
+                // 如果数字小于10，则在前面添加一个HTML空格实体
+                const prefix = percentageNum < 10 ? '&nbsp;' : '';
+                return `${prefix}${percentageNum.toFixed(1)}`;
+            };
 
-            // ▼▼▼【核心修改】生成 tooltip HTML 并附加到图标上 ▼▼▼
-            const translations = i18n[state.currentLang].lottery_bucket_translations || {};
+            // 1. 获取所有相关的翻译字典
+            const bucketTranslations = i18n[state.currentLang].lottery_bucket_translations || {};
+            const bonusTranslations = i18n[state.currentLang].lottery_bonus_translations || {};
+
+            // 2. 生成基础的 bucket 概率列表 (与之前相同)
             let listItems = '';
             poolConfig.bucketConfig.forEach((bucketName, index) => {
                 const weight = poolConfig.bucketWeights[index];
                 if (weight > 0) {
                     const percentage = (weight / 10).toFixed(1);
-                    const translatedName = translations[bucketName] || bucketName;
+                    const translatedName = bucketTranslations[bucketName] || bucketName;
                     listItems += `<li><span>${translatedName}</span><span>${percentage}%</span></li>`;
                 }
             });
 
+            // 3. 新增逻辑：检查并生成额外概率的列表
+            let bonusListItems = '';
+
+            let legendaryBonusItems = '';
+
+            // 将奖励传奇英雄的信息添加到新变量中
+            if (poolConfig.bonusLegendaryHeroChancePerMil) {
+                const typeName = bonusTranslations.bonusLegendaryHeroType || 'Bonus Hero Type';
+                const typeValueKey = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly ? "eventHeroesOnly" : "NonClassicHero";
+                const typeValue = (i18n[state.currentLang].lottery_bonus_values || {})[typeValueKey] || typeValueKey;
+                legendaryBonusItems += `<li><span>${typeName}</span><span>${typeValue}</span></li>`;
+
+                const probName = bonusTranslations.bonusLegendaryHeroChancePerMil || 'Bonus Probability';
+                const percentage = formatPercentage(poolConfig.bonusLegendaryHeroChancePerMil);
+                legendaryBonusItems += `<li><span>${probName}</span><span>${percentage}%</span></li>`;
+
+                if (poolConfig.bonusLegendaryHeroPullAmount) {
+                    const amountName = bonusTranslations.bonusLegendaryHeroPullAmount || 'Pull Amount';
+                    const amountValue = poolConfig.bonusLegendaryHeroPullAmount;
+                    legendaryBonusItems += `<li><span>${amountName}</span><span>${amountValue}</span></li>`;
+                }
+            }
+
+            // 检查月度英雄(HOTM)和神秘英雄
+            if (poolConfig.hasMysteryHeroBonusRoll) {
+                const hotmInfo = summonPoolDetails.hotm;
+                if (hotmInfo && hotmInfo.ChancePerMil) {
+                    const percentage = (parseInt(hotmInfo.ChancePerMil, 10) / 10).toFixed(1);
+                    const name = bonusTranslations.hotm || 'HOTM';
+                    bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;
+                }
+
+                const mysteryInfo = poolConfig.productType === 'LegendsSummon'
+                    ? summonPoolDetails.LegendsSummonMysteryHero
+                    : summonPoolDetails.MysteryHero;
+                if (mysteryInfo && mysteryInfo.ChancePerMil) {
+                    const percentage = (parseInt(mysteryInfo.ChancePerMil, 10) / 10).toFixed(1);
+                    const dictKey = poolConfig.productType === 'LegendsSummon' ? 'LegendsSummonMysteryHero' : 'MysteryHero';
+                    const name = bonusTranslations[dictKey] || 'Mystery Hero';
+                    bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;
+                }
+            }
+
+            // 检查额外抽取概率 (additionalDrawWeights)
+            if (poolConfig.additionalDrawWeights && poolConfig.additionalDrawWeights.length > 0) {
+                const percentages = poolConfig.additionalDrawWeights.map((w, i) => {
+                    const numberLabel = i + 1;
+                    const numberPrefix = numberLabel < 10 ? '&nbsp;&nbsp;' : '';
+                    // 这一行调用了 formatPercentage，是我们需要修改的地方
+                    return `${numberPrefix}${numberLabel} - ${formatPercentage(w)}%`;
+                }).join('<br>');
+                const name = bonusTranslations.additionalDrawWeights || 'Additional Draws';
+                // 注意：这个词条通常很长，所以我们让它独占一行显示
+                bonusListItems += `<li><span>${name}</span><span>${percentages}</span></li>`;
+            }
+
+            // 4. 组合最终的 HTML
             const tooltipHTML = `
                 <div class="probability-tooltip">
                     <h4>${i18n[state.currentLang].probabilityInfoTitle || '概率详情'}</h4>
-                    <p>${i18n[state.currentLang].probabilityInfoIntro || '以下是当前卡池的召唤概率:'}</p>
                     <ul>
                         ${listItems}
                     </ul>
+                    ${bonusListItems ? `
+                        <h4 style="margin-top:10px; padding-top:5px; border-top:1px dashed #fff;">${bonusTranslations.bonusProbabilityTitle || '额外概率'}</h4>
+                        <ul>${bonusListItems}</ul>
+                    ` : ''}
+                    
+                    ${legendaryBonusItems ? `
+                        <h4 style="margin-top:10px; padding-top:5px; border-top:1px dashed #fff;">${bonusTranslations.bonusLegendaryProbabilityTitle || '奖励传奇英雄'}</h4>
+                        <ul>${legendaryBonusItems}</ul>
+                    ` : ''}
                 </div>
             `;
             infoIcon.innerHTML += tooltipHTML;
-            // ▲▲▲【核心修改结束】▲▲▲
 
             portalContainer.appendChild(infoIcon);
         }
@@ -999,6 +1075,33 @@ async function performSummon(count) {
                 if (mysteryPool.length > 0) totalSummonedResults.push({ hero: mysteryPool[Math.floor(Math.random() * mysteryPool.length)], bucket: 'mystery' });
             }
         }
+
+        // 检查奖励传奇英雄 (Bonus Legendary Hero)
+        // ...
+        // 检查奖励传奇英雄 (Bonus Legendary Hero)
+        if (poolConfig.bonusLegendaryHeroChancePerMil) {
+
+            // 1. 新增：显示奖励英雄类型
+            const typeName = bonusTranslations.bonusLegendaryHeroType || 'Bonus Hero Type';
+            // 根据布尔值选择正确的字典键
+            const typeValueKey = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly ? "eventHeroesOnly" : "NonClassicHero";
+            // 获取翻译后的值
+            const typeValue = (i18n[state.currentLang].lottery_bonus_values || {})[typeValueKey] || typeValueKey;
+            bonusListItems += `<li><span>${typeName}</span><span>${typeValue}</span></li>`;
+
+            // 2. 显示概率 (标签已在字典中改为“奖励概率”)
+            const probName = bonusTranslations.bonusLegendaryHeroChancePerMil || 'Bonus Probability';
+            const percentage = formatPercentage(poolConfig.bonusLegendaryHeroChancePerMil);
+            bonusListItems += `<li><span>${probName}</span><span>${percentage}%</span></li>`;
+
+            // 3. 显示抽取次数 (保持不变)
+            if (poolConfig.bonusLegendaryHeroPullAmount) {
+                const amountName = bonusTranslations.bonusLegendaryHeroPullAmount || 'Pull Amount';
+                const amountValue = poolConfig.bonusLegendaryHeroPullAmount;
+                bonusListItems += `<li><span>${amountName}</span><span>${amountValue}</span></li>`;
+            }
+        }
+        // ...
 
         if (poolConfig.additionalDrawWeights) {
             const totalWeight = poolConfig.additionalDrawWeights.reduce((a, b) => a + b, 0);

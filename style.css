@@ -4773,6 +4773,7 @@ select.custom-select-hidden {
     border-top: 1px solid var(--md-sys-color-outline);
     border-bottom: 1px solid var(--md-sys-color-outline);
     margin-bottom: 1rem;
+    overscroll-behavior: contain;
 }
 
 /* Keyframes 动画 (部分微调) */
@@ -5096,7 +5097,7 @@ html:not(.dark-theme) .color-text-outlined {
     border-radius: 8px;
     padding: 5px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    width: 250px;
+    width: max-content;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -5263,8 +5264,12 @@ html:not(.dark-theme) .color-text-outlined {
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 2001;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
+    max-width: 90vw;
+    /* 核心修正：最大宽度为视口宽度的90% */
+    box-sizing: border-box;
+    /* 确保内边距被计算在宽度之内 */
 }
 
 #elemental-modal h3 {
@@ -5320,3 +5325,4 @@ html:not(.dark-theme) .color-text-outlined {
         flex-shrink: 1;
     }
 }
+

@@ -5051,3 +5051,134 @@ html:not(.dark-theme) .color-text-outlined {
         /* 使用 !important 确保最高优先级 */
     }
 }
+
+/* 抽奖概率说明图标样式 */
+.probability-info-icon {
+    position: relative; /* 修正：添加相对定位，以便子元素可以绝对定位 */
+    top: 10px;
+    left: 10px;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.probability-info-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 新增：概率详情悬浮提示（Tooltip）样式 */
+/* 概率提示框容器 - 确保背景可见 */
+.probability-tooltip {
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    z-index: 1005;
+    background-color: #020f25;
+    /* 深蓝色不透明背景 */
+    border: 2px solid #3a8cff;
+    /* 亮蓝色边框 */
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 标题样式 - 提高可读性 */
+.probability-tooltip h4 {
+    color: #ffffff;
+    font-size: 0.9em;
+    border-bottom: 1px solid #3a8cff;
+    margin: 5px;
+}
+
+/* 描述文本 */
+.probability-tooltip p {
+    color: #e0e0e0;
+    font-size: 0.8em;
+    line-height: 1.5;
+    margin: 10px;
+}
+
+/* 概率列表 */
+.probability-tooltip ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
+
+/* 列表项 - 增强对比度 */
+.probability-tooltip li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(223, 70, 70, 0.5);
+}
+
+/* 英雄类型名称 */
+.probability-tooltip li span:first-child {
+    color: #ffffff;
+    white-space: nowrap;
+    font-size: 0.7em;
+    padding: 2px;
+}
+
+/* 概率数值 - 突出显示 */
+.probability-tooltip li span:last-child {
+    color: #5699f8;
+    font-weight: bold;
+    font-size: 0.7em;
+    padding: 2px;
+}
+
+/* 小箭头样式 */
+.probability-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 15px;
+    border: 8px solid transparent;
+    border-bottom-color: #1a2b4a;
+}
+
+/* 显示状态 */
+.probability-info-icon:hover .probability-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 叹号图标样式 */
+.probability-info-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(26, 43, 74, 0.8);
+    border: 1px solid #3a8cff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.probability-info-icon:hover {
+    background-color: rgba(58, 140, 255, 0.3);
+}

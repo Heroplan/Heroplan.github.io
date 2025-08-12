@@ -571,23 +571,39 @@ function handleActivityClick(poolId) {
             const infoIcon = document.createElement('div');
             infoIcon.className = 'probability-info-icon';
             infoIcon.textContent = 'ⓘ';
-            infoIcon.title = '查看概率详情';
-            infoIcon.addEventListener('click', () => {
-                let details = '当前奖池概率详情:\n\n';
-                poolConfig.bucketConfig.forEach((bucketName, index) => {
-                    const weight = poolConfig.bucketWeights[index];
-                    if (weight > 0) {
-                        const percentage = (weight / 10).toFixed(1);
-                        details += `${bucketName}: ${percentage}%\n`;
-                    }
-                });
-                alert(details);
+            infoIcon.style.position = 'absolute'; /* 修正：添加绝对定位 */
+            infoIcon.style.top = '10px'; /* 修正：定位到顶部 */
+            infoIcon.style.left = '10px'; /* 修正：定位到右侧 */
+            infoIcon.title = i18n[state.currentLang].probabilityInfoTitle || '查看概率详情';
+
+            // ▼▼▼【核心修改】生成 tooltip HTML 并附加到图标上 ▼▼▼
+            const translations = i18n[state.currentLang].lottery_bucket_translations || {};
+            let listItems = '';
+            poolConfig.bucketConfig.forEach((bucketName, index) => {
+                const weight = poolConfig.bucketWeights[index];
+                if (weight > 0) {
+                    const percentage = (weight / 10).toFixed(1);
+                    const translatedName = translations[bucketName] || bucketName;
+                    listItems += `<li><span>${translatedName}</span><span>${percentage}%</span></li>`;
+                }
             });
+
+            const tooltipHTML = `
+                <div class="probability-tooltip">
+                    <h4>${i18n[state.currentLang].probabilityInfoTitle || '概率详情'}</h4>
+                    <p>${i18n[state.currentLang].probabilityInfoIntro || '以下是当前卡池的召唤概率:'}</p>
+                    <ul>
+                        ${listItems}
+                    </ul>
+                </div>
+            `;
+            infoIcon.innerHTML += tooltipHTML;
+            // ▲▲▲【核心修改结束】▲▲▲
+
             portalContainer.appendChild(infoIcon);
         }
     }
 
-    // ▼▼▼▼▼【核心修正】▼▼▼▼▼
     // 6. 获取当前奖池的所有英雄，并将其设置为临时的“活动子集”
     state.activeHeroSubset = getAllHeroesInPool(poolConfig);
 
@@ -596,7 +612,6 @@ function handleActivityClick(poolId) {
 
     // 8. 调用全局的筛选和渲染函数，而不是直接渲染表格
     applyFiltersAndRender();
-    // ▲▲▲▲▲【修正结束】▲▲▲▲▲
 
     // 9. 渲染精选英雄卡槽UI和更新召唤按钮
     LotterySimulator.renderFeaturedHeroes();
@@ -643,21 +658,12 @@ function renderFeaturedHeroes() {
             avatarContainer.append(avatarBackground, avatarImg);
             slot.appendChild(avatarContainer);
         }
-        let pressTimer = null;
-        const startPress = (e) => {
-            if (!state.customFeaturedHeroes[i]) return;
-            e.preventDefault();
-            pressTimer = setTimeout(() => {
+        // 改为双击移除
+        slot.addEventListener('dblclick', () => {
+            if (state.customFeaturedHeroes[i]) {
                 removeHeroFromFeaturedSlot(i);
-            }, 750);
-        };
-        const cancelPress = () => { clearTimeout(pressTimer); };
-        slot.addEventListener('mousedown', startPress);
-        slot.addEventListener('mouseup', cancelPress);
-        slot.addEventListener('mouseleave', cancelPress);
-        slot.addEventListener('touchstart', startPress, { passive: true });
-        slot.addEventListener('touchend', cancelPress);
-        slot.addEventListener('touchmove', cancelPress);
+            }
+        });
         if (i % 2 === 0) {
             leftColumn.appendChild(slot);
         } else {
@@ -1133,4 +1139,50 @@ function toggleLotterySimulator() {
         state.activeHeroSubset = null;
         applyFiltersAndRender();
     }
+}
+
+/**
+ * 隐藏概率详情模态框
+ */
+function closeProbabilityModal() {
+    const modal = document.getElementById('probability-modal');
+    const overlay = document.getElementById('probability-modal-overlay');
+    if (modal && overlay) {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+    }
+}
+
+/**
+ * 显示概率详情模态框
+ * @param {string} title - 模态框标题
+ * @param {string} intro - 模态框简介
+ * @param {Array} probabilities - 包含概率信息的数组
+ */
+function showProbabilityModal(title, intro, probabilities) {
+    const modal = document.getElementById('probability-modal');
+    const overlay = document.getElementById('probability-modal-overlay');
+    const content = document.getElementById('probability-modal-content');
+    if (!modal || !overlay || !content) return;
+
+    let listItems = '';
+    probabilities.forEach(item => {
+        listItems += `<li><span>${item.name}</span><span>${item.percentage}</span></li>`;
+    });
+
+    content.innerHTML = `
+        <h3>${title}</h3>
+        <p>${intro}</p>
+        <ul>
+            ${listItems}
+        </ul>
+        <div class="modal-footer">
+            <button class="close-bottom-btn" id="close-probability-modal-btn">${i18n[state.currentLang].detailsCloseBtn}</button>
+        </div>
+    `;
+
+    document.getElementById('close-probability-modal-btn')?.addEventListener('click', closeProbabilityModal);
+
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 }

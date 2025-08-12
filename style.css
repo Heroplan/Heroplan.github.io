@@ -1534,7 +1534,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.red-glow-border,
 .manual-table .hero-avatar-container.red-glow-border,
 .sim-hero-avatar-container.red-glow-border,
-.saved-team-avatar-container.red-glow-border {
+.saved-team-avatar-container.red-glow-border,
+.featured-hero-slot .hero-avatar-container.red-glow-border,
+#lottery-hero-display-area .summon-animation-element.red-glow-border,
+.summary-hero-card.red-glow-border,
+.summon-history-avatars .hero-avatar-container.red-glow-border {
     box-shadow: var(--hero-glow-red);
     border-color: var(--hero-color-red);
 }
@@ -1543,7 +1547,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.blue-glow-border,
 .manual-table .hero-avatar-container.blue-glow-border,
 .sim-hero-avatar-container.blue-glow-border,
-.saved-team-avatar-container.blue-glow-border {
+.saved-team-avatar-container.blue-glow-border,
+.featured-hero-slot .hero-avatar-container.blue-glow-border,
+#lottery-hero-display-area .summon-animation-element.blue-glow-border,
+.summary-hero-card.blue-glow-border,
+.summon-history-avatars .hero-avatar-container.blue-glow-border {
     box-shadow: var(--hero-glow-blue);
     border-color: var(--hero-color-blue);
 }
@@ -1552,7 +1560,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.green-glow-border,
 .manual-table .hero-avatar-container.green-glow-border,
 .sim-hero-avatar-container.green-glow-border,
-.saved-team-avatar-container.green-glow-border {
+.saved-team-avatar-container.green-glow-border,
+.featured-hero-slot .hero-avatar-container.green-glow-border,
+#lottery-hero-display-area .summon-animation-element.green-glow-border,
+.summary-hero-card.green-glow-border,
+.summon-history-avatars .hero-avatar-container.green-glow-border {
     box-shadow: var(--hero-glow-green);
     border-color: var(--hero-color-green);
 }
@@ -1561,7 +1573,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.yellow-glow-border,
 .manual-table .hero-avatar-container.yellow-glow-border,
 .sim-hero-avatar-container.yellow-glow-border,
-.saved-team-avatar-container.yellow-glow-border {
+.saved-team-avatar-container.yellow-glow-border,
+.featured-hero-slot .hero-avatar-container.yellow-glow-border,
+#lottery-hero-display-area .summon-animation-element.yellow-glow-border,
+.summary-hero-card.yellow-glow-border,
+.summon-history-avatars .hero-avatar-container.yellow-glow-border {
     box-shadow: var(--hero-glow-yellow);
     border-color: var(--hero-color-yellow);
 }
@@ -1570,7 +1586,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.purple-glow-border,
 .manual-table .hero-avatar-container.purple-glow-border,
 .sim-hero-avatar-container.purple-glow-border,
-.saved-team-avatar-container.purple-glow-border {
+.saved-team-avatar-container.purple-glow-border,
+.featured-hero-slot .hero-avatar-container.purple-glow-border,
+#lottery-hero-display-area .summon-animation-element.purple-glow-border,
+.summary-hero-card.purple-glow-border,
+.summon-history-avatars .hero-avatar-container.purple-glow-border {
     box-shadow: var(--hero-glow-purple);
     border-color: var(--hero-color-purple);
 }
@@ -1579,7 +1599,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.white-glow-border,
 .manual-table .hero-avatar-container.white-glow-border,
 .sim-hero-avatar-container.white-glow-border,
-.saved-team-avatar-container.white-glow-border {
+.saved-team-avatar-container.white-glow-border,
+.featured-hero-slot .hero-avatar-container.white-glow-border,
+#lottery-hero-display-area .summon-animation-element.white-glow-border,
+.summary-hero-card.white-glow-border,
+.summon-history-avatars .hero-avatar-container.white-glow-border {
     box-shadow: var(--hero-glow-white);
     border-color: var(--hero-color-white);
 }
@@ -1588,7 +1612,11 @@ footer .footer-credit {
 #modal .hero-avatar-container-modal.black-glow-border,
 .manual-table .hero-avatar-container.black-glow-border,
 .sim-hero-avatar-container.black-glow-border,
-.saved-team-avatar-container.black-glow-border {
+.saved-team-avatar-container.black-glow-border,
+.featured-hero-slot .hero-avatar-container.black-glow-border,
+#lottery-hero-display-area .summon-animation-element.black-glow-border,
+.summary-hero-card.black-glow-border,
+.summon-history-avatars .hero-avatar-container.black-glow-border {
     box-shadow: var(--hero-glow-black);
     border-color: var(--hero-color-black);
 }
@@ -4218,6 +4246,7 @@ select.custom-select-hidden {
 
 /* 1. 外层包装器: 确保其是一个flex容器 */
 #lottery-simulator-wrapper {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 60vh;
@@ -4250,17 +4279,26 @@ select.custom-select-hidden {
     border-radius: 8px;
     background-color: var(--md-sys-color-surface);
     display: flex;
-    /* 使用flex布局来控制内部的ul */
     flex-direction: column;
     min-height: 0;
+    /* 新增以下属性确保滚动容器有明确的高度 */
+    height: 100%;
+    /* 确保容器填满父级高度 */
+    overflow: hidden;
+    /* 防止内容溢出容器 */
 }
 
+/* 修改活动列表样式 */
 #lottery-activity-list {
     list-style: none;
     padding: 0;
     margin: 0;
     overflow-y: auto;
-    /* 关键：滚动条在这里生效 */
+    /* 启用垂直滚动 */
+    flex-grow: 1;
+    /* 使列表填满可用空间 */
+    min-height: 0;
+    /* 关键：允许在flex容器中缩小 */
 }
 
 #lottery-activity-list li {
@@ -4376,10 +4414,10 @@ select.custom-select-hidden {
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
     display: flex;
-        align-items: center;
-        /* 垂直居中 */
-        justify-content: center;
-        /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
 }
 
 .featured-hero-slot:hover {
@@ -4447,7 +4485,7 @@ select.custom-select-hidden {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    min-width: 120px;
+    min-width: 110px;
 }
 
 .summon-btn.hidden {
@@ -4474,35 +4512,115 @@ select.custom-select-hidden {
     font-size: 0.9rem;
 }
 
-/* ========== 抽奖历史记录占位符样式 ========== */
+/* --- 抽奖历史记录面板 --- */
 
-/* 让历史记录面板的子元素能够正确填充空间 */
+/* 1. 外层面板：这是您缺失的关键规则 */
 #summon-history-panel {
     display: flex;
+    /* 关键：将其设置为 flex 容器 */
     flex-direction: column;
+    /* 关键：使其子元素垂直排列 */
+    flex-grow: 1;
+    /* 关键：使其填满右侧剩余空间 */
+    min-width: 250px;
+    /* 设置一个最小宽度 */
+    min-height: 0;
+    /* 关键：解决内部滚动条问题 */
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 8px;
+    background-color: var(--md-sys-color-surface);
+    overflow: hidden;
 }
 
-/* 让列表容器(message的父容器)填满所有可用垂直空间 */
+/* 2. 头部：修改为 flex 布局，以便对齐标题和按钮 */
+.summon-history-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0.5rem;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    flex-shrink: 0;
+    /* 防止头部被压缩 */
+    user-select: none;
+    gap: 10px;
+}
+
+/* 3. 让标题占据主要空间 */
+.summon-history-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--md-sys-color-primary);
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* 4. 为清空按钮添加样式 */
+#clear-history-btn {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    margin-left: auto;
+    /* 将按钮推到最右侧 */
+    flex-shrink: 0;
+}
+
+/* 5. 列表容器：启用垂直滚动条 */
 #summon-history-list-container {
     flex-grow: 1;
-    display: flex;
-    /* 使用 Flexbox 来居中 */
-    align-items: center;
-    /* 垂直居中 */
-    justify-content: center;
-    /* 水平居中 */
+    /* 占据所有剩余的垂直空间 */
+    overflow-y: auto;
+    /* 当内容超出时，显示垂直滚动条 */
+    padding: 0.75rem;
 }
 
-/* “功能尚未完成”文字的具体样式 */
-.feature-incomplete-message {
-    font-size: 1.5rem;
-    /* 设置一个较大的字号 */
-    font-weight: bold;
-    /* 字体加粗 */
-    color: var(--md-sys-color-outline);
-    /* 使用主题中的颜色，确保在亮/暗模式下都可见 */
+/* 6. 每一个召唤组的样式 */
+.summon-history-group {
+    margin-bottom: 1rem;
+}
+
+.summon-history-group:last-child {
+    margin-bottom: 0;
+}
+
+.summon-history-group h5 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+/* 7. 头像容器：使用 flex-wrap 实现自动换行 */
+.summon-history-avatars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* 8. 头像大小修正 */
+.summon-history-avatars img {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--md-sys-color-outline);
+}
+
+.summon-history-avatars .hero-avatar-container {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 2px solid transparent;
+    /* 关键：为辉光提供占位 */
+}
+
+/* 9. “没有历史记录”的提示信息样式 */
+#summon-history-list .feature-incomplete-message {
     text-align: center;
-    /* 文本居中 */
+    padding: 2rem 0;
+    color: var(--md-sys-color-on-surface-variant);
+    font-style: italic;
 }
 
 /* ========== 抽奖概率说明图标样式 ========== */
@@ -4537,4 +4655,395 @@ select.custom-select-hidden {
     cursor: not-allowed;
     transform: none !important;
     /* 覆盖悬停时的放大效果 */
+}
+
+/* ========== 抽奖动画与结果样式 ========== */
+
+/* 1. 动画效果的容器 (即 #lottery-hero-display-area) */
+#lottery-hero-display-area {
+    position: relative;
+    overflow: visible;
+    /* 让它成为一个flex容器来居中所有动画元素 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    /* 提高层级，确保动画在精选英雄之上 */
+}
+
+/* 2. 动态创建的动画元素样式 */
+.summon-animation-element {
+    position: absolute;
+    /* 移除 top:0; left:0; 让父容器的flex布局来居中它们 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    max-width: 100px;
+    /* 设置最大宽度 */
+    max-height: 100px;
+    /* 设置最大高度 */
+}
+
+.summon-animation-element img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* 动态光效 */
+.anim-light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 40px 20px white;
+    transform: scale(0);
+    animation: light-grow-local 1s ease-in-out forwards;
+}
+
+/* 动态英雄头像 */
+.anim-hero-art {
+    animation: hero-reveal-local 1.2s ease-out forwards;
+}
+
+/* 4. 跳过动画按钮 */
+#skip-animation-btn {
+    position: absolute;
+    /* 使用绝对定位来实现悬浮 */
+    z-index: 999;
+    /* 确保层级高于遮罩层(998)和之前的按钮(20) */
+    /* left 和 top 会由 JS 动态设置 */
+}
+
+/* ▼▼▼ 添加新的遮罩层样式 ▼▼▼ */
+#animation-blocker-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* 一个几乎透明的背景，几乎不影响视觉 */
+    z-index: 998;
+    /* 关键：必须低于跳过按钮的 z-index (999) */
+    cursor: not-allowed;
+    /* 鼠标悬停时显示“禁止”光标，提供反馈 */
+}
+
+/* 5. 最终总结弹窗 (样式保持不变) */
+#summon-summary-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--md-sys-color-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    z-index: 2000;
+    text-align: center;
+}
+
+#summon-summary-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1999;
+}
+
+#summon-summary-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    padding: 1rem 5px;
+    border-top: 1px solid var(--md-sys-color-outline);
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    margin-bottom: 1rem;
+}
+
+/* Keyframes 动画 (部分微调) */
+@keyframes light-grow-local {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(8);
+    }
+
+    100% {
+        transform: scale(16);
+        opacity: 0;
+    }
+}
+
+@keyframes hero-reveal-local {
+    0% {
+        /* 开始时：在下方40px处，尺寸为0.5倍，完全透明 */
+        transform: translateY(40px) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        /* 动画中途：在下方40px处，尺寸放大到1.1倍，完全不透明 */
+        transform: translateY(40px) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        /* 结束时：在下方40px处，尺寸继续放大到1.3倍，完全透明 */
+        transform: translateY(40px) scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes card-appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== 特效图片动画样式 ========== */
+.anim-light-img {
+    animation: light-img-pulse 1.2s ease-out forwards;
+}
+
+
+@keyframes light-img-pulse {
+    0% {
+        transform:translateY(40px) scale(1);
+        opacity: 0;
+    }
+
+    50% {
+        /* ▼▼▼ 将放大倍数从中途就开始显著增加 ▼▼▼ */
+        transform:translateY(40px) scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        /* ▼▼▼ 最终放大到一个非常大的倍数再消失 ▼▼▼ */
+        transform:translateY(40px) scale(3);
+        opacity: 0;
+    }
+}
+
+/* ========== 总结弹窗英雄卡片样式 (v2 - 卡片式、可换行) ========== */
+
+/* 1. 结果的滚动/换行容器 */
+#summon-summary-scroll-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* 核心：允许内容换行 */
+    justify-content: center;
+    /* 居中对齐所有卡片 */
+    gap: 15px;
+    /* 卡片之间的间距 */
+    padding: 1rem 5px;
+    border-top: 1px solid var(--md-sys-color-outline);
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    margin-bottom: 1rem;
+    max-height: 60vh;
+    /* 增加一个最大高度，内容过多时容器自身出现滚动条 */
+    overflow-y: auto;
+    /* 垂直滚动 */
+}
+
+/* 2. 单个英雄卡片的外层容器 */
+.summary-hero-card {
+    position: relative;
+    /* 为内部的绝对定位元素提供基准 */
+    flex-shrink: 0;
+    width: 128px;
+    height: 128px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* 隐藏溢出的部分 */
+    /* 关键：为边框和辉光提供占位 */
+        border: 3px solid transparent;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* 修正：在亮色模式下，为彩色文字添加黑色外描边以增加可读性 */
+html:not(.dark-theme) .color-text-outlined {
+    text-shadow:
+        -0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px -0.5px 0 rgba(0, 0, 0, 0.4),
+        -0.5px 0.5px 0 rgba(0, 0, 0, 0.4),
+        0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* 3. 英雄头像 (作为背景图) */
+.summary-hero-card .summary-avatar {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.summary-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 4. 信息叠加层 */
+.summary-hero-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35%;
+    /* 叠加层高度 */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    /* 底部渐变，突出星星 */
+    pointer-events: none;
+}
+
+/* 5. 星星的样式 */
+.summary-hero-stars {
+    position: absolute;
+    bottom: 5px;
+    /* 距离卡片底部的距离 */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+
+.summary-hero-stars img {
+    height: 18px;
+    /* 星星的高度 */
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.9));
+}
+
+/* 6. 颜色图标的样式 */
+.summary-color-icon {
+    position: absolute;
+    top: 5px;
+    /* 距离卡片顶部的距离 */
+    left: 5px;
+    /* 距离卡片左侧的距离 */
+    width: 32px;
+    /* 颜色图标的宽度 */
+    height: 32px;
+    /* 颜色图标的高度 */
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+/* --- 召唤模拟器最终布局 (桌面端) --- */
+
+/* 1. 主内容区在桌面端是水平排列的 */
+.lottery-main-content {
+    display: flex;
+    flex-direction: row;
+    /* 水平排列 */
+    gap: 10px;
+}
+
+/* 2. 为桌面端的三个面板分配宽度 */
+#lottery-activity-list-container {
+    width: 250px;
+    flex-shrink: 0;
+    /* 防止被压缩 */
+}
+
+#lottery-portal-container {
+    width: 400px;
+    flex-shrink: 0;
+    /* 防止被压缩 */
+}
+
+#summon-history-panel {
+    flex-grow: 1;
+    /* 占据所有剩余空间 */
+    min-width: 250px;
+}
+
+
+/* --- 召唤模拟器移动端分页样式 (修正版) --- */
+
+/* 1. 移动端分页标签栏 (默认在桌面端隐藏) */
+.lottery-mobile-tabs {
+    display: none;
+    width: 100%;
+    border-bottom: 1px solid var(--md-sys-color-outline);
+    margin-bottom: 0.5rem;
+    flex-shrink: 0;
+    /* 确保标签栏不会被压缩 */
+}
+
+.lottery-mobile-tabs .tab-button {
+    flex: 1;
+    padding: 0.75rem 0.5rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--md-sys-color-on-surface-variant);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.lottery-mobile-tabs .tab-button.active {
+    color: var(--md-sys-color-primary);
+    border-bottom-color: var(--md-sys-color-primary);
+    font-weight: 700;
+}
+
+/* 2. 响应式断点 (当屏幕宽度小于等于 900px 时生效) */
+/* --- 召唤模拟器移动端分页样式 (最终修正版) --- */
+
+@media (max-width: 900px) {
+
+    /* 1. 显示分页标签栏 */
+    .lottery-mobile-tabs {
+        display: flex;
+    }
+
+    /* 2. 修改主内容区为垂直布局 */
+    .lottery-main-content {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* 3. 【核心修正】使用 ID 选择器来强制控制面板的显示/隐藏 */
+
+    /* a. 默认情况下，隐藏所有三个面板 */
+    #lottery-activity-list-container,
+    #lottery-portal-container,
+    #summon-history-panel {
+        display: none !important;
+        /* 使用 !important 确保最高优先级 */
+        width: 100%;
+        flex-grow: 1;
+        min-height: 0;
+    }
+
+    /* b. 只显示那个拥有 .active 类的面板 */
+    #lottery-activity-list-container.active,
+    #lottery-portal-container.active,
+    #summon-history-panel.active {
+        display: flex !important;
+        /* 使用 !important 确保最高优先级 */
+    }
 }

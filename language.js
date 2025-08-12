@@ -251,6 +251,9 @@ const i18n = {
         modalSkillEffectBtn: '技能效果',
         modalPassiveBtn: '被动技能',
         modalFamilyBonusBtn: '家族奖励',
+        lotteryTabActivity: '活动列表',
+        lotteryTabSummon: '召唤',
+        lotteryTabHistory: '历史记录',
 
 
     },
@@ -460,6 +463,9 @@ const i18n = {
         modalSkillEffectBtn: '技能效果',
         modalPassiveBtn: '被動技能',
         modalFamilyBonusBtn: '家族獎勵',
+        lotteryTabActivity: '活動列表',
+        lotteryTabSummon: '召喚',
+        lotteryTabHistory: '歷史記錄',
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -667,5 +673,8 @@ const i18n = {
         modalSkillEffectBtn: 'Skill Effects',
         modalPassiveBtn: 'Passive Skills',
         modalFamilyBonusBtn: 'Family Bonuses',
+        lotteryTabActivity: 'Events',
+        lotteryTabSummon: 'Summon',
+        lotteryTabHistory: 'History',
     }
 }; 

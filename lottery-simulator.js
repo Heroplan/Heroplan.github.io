@@ -1005,6 +1005,8 @@ async function performSummon(count) {
     }
 
     const totalSummonedResults = [];
+    // 在循环外预先获取当前奖池的完整英雄列表
+    const currentPoolHeroes = getAllHeroesInPool(poolConfig);
 
     // 主召唤循环
     for (let k = 0; k < count; k++) {
@@ -1056,11 +1058,11 @@ async function performSummon(count) {
                         let bonusPool;
 
                         if (isEventOnly) {
-                            // 真：仅限活动英雄
-                            bonusPool = state.allHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
+                            // 真：从当前奖池中筛选出活动英雄
+                            bonusPool = currentPoolHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
                         } else {
-                            // 假：任意非经典英雄
-                            bonusPool = state.allHeroes.filter(h => h.star === 5 && h.family && h.family !== 'classic' && !state.globalExcludeFamilies.includes(String(h.family).toLowerCase()));
+                            // 假：从当前奖池中筛选出任意非经典英雄
+                            bonusPool = currentPoolHeroes.filter(h => h.star === 5 && h.family && h.family !== 'classic');
                         }
 
                         if (bonusPool.length > 0) {

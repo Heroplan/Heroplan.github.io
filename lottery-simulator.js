@@ -1087,33 +1087,6 @@ async function performSummon(count) {
             }
         }
 
-        // 检查奖励传奇英雄 (Bonus Legendary Hero)
-        // ...
-        // 检查奖励传奇英雄 (Bonus Legendary Hero)
-        if (poolConfig.bonusLegendaryHeroChancePerMil) {
-
-            // 1. 新增：显示奖励英雄类型
-            const typeName = bonusTranslations.bonusLegendaryHeroType || 'Bonus Hero Type';
-            // 根据布尔值选择正确的字典键
-            const typeValueKey = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly ? "eventHeroesOnly" : "NonClassicHero";
-            // 获取翻译后的值
-            const typeValue = (i18n[state.currentLang].lottery_bonus_values || {})[typeValueKey] || typeValueKey;
-            bonusListItems += `<li><span>${typeName}</span><span>${typeValue}</span></li>`;
-
-            // 2. 显示概率 (标签已在字典中改为“奖励概率”)
-            const probName = bonusTranslations.bonusLegendaryHeroChancePerMil || 'Bonus Probability';
-            const percentage = formatPercentage(poolConfig.bonusLegendaryHeroChancePerMil);
-            bonusListItems += `<li><span>${probName}</span><span>${percentage}%</span></li>`;
-
-            // 3. 显示抽取次数 (保持不变)
-            if (poolConfig.bonusLegendaryHeroPullAmount) {
-                const amountName = bonusTranslations.bonusLegendaryHeroPullAmount || 'Pull Amount';
-                const amountValue = poolConfig.bonusLegendaryHeroPullAmount;
-                bonusListItems += `<li><span>${amountName}</span><span>${amountValue}</span></li>`;
-            }
-        }
-        // ...
-
         if (poolConfig.additionalDrawWeights) {
             const totalWeight = poolConfig.additionalDrawWeights.reduce((a, b) => a + b, 0);
             let random = Math.random() * totalWeight;

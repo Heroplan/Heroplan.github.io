@@ -1128,7 +1128,7 @@ async function performSummon(count) {
             let random = Math.random() * totalWeight;
             for (let i = 0; i < poolConfig.additionalDrawWeights.length; i++) {
                 if (random < poolConfig.additionalDrawWeights[i]) {
-                    for (let j = 0; j < i + 1; j++) {
+                    for (let j = 0; j < i; j++) {
                         const extraBucketIndex = selectWeightedIndex(poolConfig.bucketWeights);
                         const extraBucketString = poolConfig.bucketConfig[extraBucketIndex];
                         let extraHero = null;

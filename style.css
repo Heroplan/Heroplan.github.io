@@ -4270,7 +4270,7 @@ select.custom-select-hidden {
     display: flex;
     /* 让其子元素 (左侧列表, 右侧包装器) 水平排列 */
     flex-grow: 1;
-    padding: 10px;
+    padding: 3px;
     gap: 10px;
     min-width: 0;
     min-height: 400px;

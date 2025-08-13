@@ -452,21 +452,22 @@ function getFilteredMasterPool() {
 }
 
 
-
 /**
- * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池
- * (最终版：实现了从服装版反向查找基础版的智能逻辑)
- * @param {string} bucketString - 例如 "heroes_event_4"
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (重构解析逻辑的最终修正版)
+ * @param {string} bucketString - 例如 "heroes_ex_s1_3"
  * @param {object} poolConfig - 当前的奖池配置
- * @returns {Array} - 符合条件的【基础版】英雄对象数组
+ * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
-    const sourcePool = poolConfig.masterPool || state.allHeroes;
+    // 如果 poolConfig 中传入了 masterPool，则使用它作为基础；否则，使用全局的 state.allHeroes
+    const baseHeroPool = poolConfig.masterPool || state.allHeroes;
 
+    // 更稳定地从字符串末尾解析星级
     const starMatch = bucketString.match(/_(\d+)$/);
     if (!starMatch) return [];
     const star = parseInt(starMatch[1], 10);
 
+    // 更准确地识别 bucket 类型
     let bucketType = 'unknown';
     if (bucketString.startsWith('heroes_event_')) bucketType = 'event';
     else if (bucketString.startsWith('heroes_listed_')) bucketType = 'listed';
@@ -474,64 +475,76 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     else if (bucketString.startsWith('heroes_s1_')) bucketType = 's1';
     else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
 
-    const qualifies = (hero) => {
-        // 这个内部函数用来判断一个英雄是否符合卡池的基本要求（忽略costume_id）
-        if (hero.star !== star) return false;
 
-        const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-        if (state.globalExcludeFamilies.includes(heroFamily)) return false;
+    // 特殊处理逻辑：SuperElementalSummon 中的 "listed" 类型
+    if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
+        return state.allHeroes.filter(hero => {
+            const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+            // ▼▼▼ 使用 colorReverseMap 来统一比较标准 ▼▼▼
+            const standardHeroColor = colorReverseMap[hero.color];
+            const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
 
-        switch (bucketType) {
-            case 's1':
-                return heroFamily === 'classic';
-            case 'ex_s1':
-                return heroFamily !== 'classic';
-            case 'event':
-                const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-                return eventFamilies.includes(heroFamily);
-            case 'listed':
-                const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-                const includedIds = poolConfig.includedHeroes || [];
-                return listedFamilies.includes(heroFamily) || includedIds.includes(hero.heroId);
-            case 'extraAssociatedFamilies':
-                const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
-                return extraFamilies.includes(heroFamily);
-            default:
-                return false;
-        }
-    };
+            return standardHeroColor === standardSelectedColor &&
+                hero.star === star &&
+                hero.costume_id === 0 &&
+                !state.globalExcludeFamilies.includes(heroFamily);
+        });
+    }
 
-    // =================================================================
-    // ========= 新增的核心逻辑 (START) =========
-    // =================================================================
+    // --- 标准过滤逻辑 ---
     const processedHeroNames = new Set();
     const initialPool = [];
 
-    sourcePool.forEach(hero => {
-        // 1. 检查当前英雄是否符合卡池的基本条件（星级、家族等）
-        if (qualifies(hero)) {
-            // 2. 如果符合条件，获取该英雄的英文名（作为唯一标识）
+    baseHeroPool.forEach(hero => {
+        // 步骤 1: 检查当前英雄（无论是服装还是基础版）是否符合卡池的基本条件
+        const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+        let matches = false;
+
+        if (hero.star === star && !state.globalExcludeFamilies.includes(heroFamily)) {
+            switch (bucketType) {
+                case 's1':
+                    matches = (heroFamily === 'classic');
+                    break;
+                case 'ex_s1':
+                    matches = (heroFamily !== 'classic');
+                    break;
+                case 'event':
+                    const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                    matches = eventFamilies.includes(heroFamily);
+                    if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+                        const standardHeroColor = colorReverseMap[hero.color];
+                        const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
+                        matches = (standardHeroColor === standardSelectedColor);
+                    }
+                    break;
+                case 'listed':
+                    const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                    const includedIds = poolConfig.includedHeroes || [];
+                    matches = listedFamilies.includes(heroFamily) || includedIds.includes(hero.heroId);
+                    break;
+                case 'extraAssociatedFamilies':
+                    const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
+                    matches = extraFamilies.includes(heroFamily);
+                    break;
+            }
+        }
+
+        // 步骤 2: 如果符合条件，则查找其基础版并放入最终卡池
+        if (matches) {
             const heroName = hero.english_name;
-            // 3. 如果这个英雄我们还没处理过
             if (heroName && !processedHeroNames.has(heroName)) {
-                // 4. 将名字加入已处理列表，防止重复添加
                 processedHeroNames.add(heroName);
 
-                // 5. 无论当前英雄是基础版还是服装版，都去【主列表】中查找它的【基础版】
                 const baseVersion = state.allHeroes.find(h => h.english_name === heroName && h.costume_id === 0);
 
-                // 6. 如果找到了基础版，就把它加入最终的候选池
                 if (baseVersion) {
                     initialPool.push(baseVersion);
                 }
             }
         }
     });
-    // =================================================================
-    // ========= 新增的核心逻辑 (END) =========
-    // =================================================================
 
-    // 后续的“升级到最新版”逻辑保持不变，它会在抽中基础版后再进行替换
+    // 为非经典英雄应用“最新皮肤”逻辑
     return initialPool.map(baseHero => {
         if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
@@ -1180,6 +1193,7 @@ async function performSummon(count) {
                 } else {
                     const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
                     drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+                    console.error("警告:发生错误使用后备奖励。");
                 }
             } else if (bucketString) {
                 // 其他所有 bucket 都从已筛选的 masterHeroPool 中获取

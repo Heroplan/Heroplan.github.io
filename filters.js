@@ -643,12 +643,30 @@ function applyFiltersAndRender() {
 
         // 临时日期筛选
         if (state.temporaryDateFilter) {
-            if (!hero['Release date']) return false;
-            const releaseDate = new Date(hero['Release date']);
-            if (isNaN(releaseDate.getTime())) return false;
-            const baseDate = new Date(state.temporaryDateFilter.base);
-            baseDate.setHours(0, 0, 0, 0);
+            const releaseDateStr = hero['Release date'];
+            if (!releaseDateStr) return false;
+
+            // --- 手动解析英雄的发布日期 ---
+            const heroParts = releaseDateStr.split('-');
+            if (heroParts.length !== 3) return false; // 如果格式不符则排除
+            const heroYear = parseInt(heroParts[0], 10);
+            const heroMonth = parseInt(heroParts[1], 10) - 1; // JS月份从0开始
+            const heroDay = parseInt(heroParts[2], 10);
+            const releaseDate = new Date(heroYear, heroMonth, heroDay);
+
+            // --- 手动解析基础日期 ---
+            const baseParts = state.temporaryDateFilter.base.split('-');
+            if (baseParts.length !== 3) return false;
+            const baseYear = parseInt(baseParts[0], 10);
+            const baseMonth = parseInt(baseParts[1], 10) - 1;
+            const baseDay = parseInt(baseParts[2], 10);
+            const baseDate = new Date(baseYear, baseMonth, baseDay);
+
+            // 确保移除时间部分以进行纯粹的日期比较
             releaseDate.setHours(0, 0, 0, 0);
+            baseDate.setHours(0, 0, 0, 0);
+
+            // --- 计算日期差异并筛选 ---
             const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
             if (diffDays < state.temporaryDateFilter.days) return false;
         }

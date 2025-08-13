@@ -309,6 +309,7 @@ const i18n = {
             "NonClassicHero": "非经典英雄" 
         },
         "selectElementTitle": "请选择元素",
+        "superElementalExclusionNotice": "* 不包含180天内发布的非活动家族英雄",
         "summonSummaryOkBtn": "确定",
 
 
@@ -576,6 +577,7 @@ const i18n = {
             "NonClassicHero": "非經典英雄"
         },
         "selectElementTitle": "請選擇元素",
+        "superElementalExclusionNotice": "* 不包含180天內發佈的非活動家族英雄",
         "summonSummaryOkBtn": "確定",
     },
     en: {
@@ -841,6 +843,7 @@ const i18n = {
             "NonClassicHero": "Non-Classic Heroes"
         },
         "selectElementTitle": "Select Element",
+        "superElementalExclusionNotice": "* Does not include non-event family heroes released within 180 days",
         "summonSummaryOkBtn": "OK",
     }
 }; 

@@ -5106,6 +5106,10 @@ html:not(.dark-theme) .color-text-outlined {
     padding: 5px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     width: max-content;
+    max-width: 350px;
+        /* 设置最大宽度，防止溢出父容器 */
+        box-sizing: border-box;
+        /* 确保内边距和边框被计算在宽度内 */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -5553,4 +5557,21 @@ html:not(.dark-theme) .color-text-outlined {
 #elemental-modal,
 #probability-modal {
     z-index: 7001;
+}
+
+/* --- 新增：抽奖概率弹窗内的规则开关样式 --- */
+.probability-toggle-rule {
+    padding: 5px 10px;
+    margin: 0 5px 10px 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8em;
+}
+
+.probability-toggle-rule label {
+    cursor: pointer;
 }

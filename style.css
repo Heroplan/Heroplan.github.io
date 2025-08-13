@@ -3986,15 +3986,18 @@ select.custom-select-hidden {
   }
 #summon-summary-scroll-container {
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
   padding: 1rem 5px;
   border-top: 1px solid var(--md-sys-color-outline);
   border-bottom: 1px solid var(--md-sys-color-outline);
   margin-bottom: 1rem;
-  overscroll-behavior: contain
-  }
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 0;
+  /* <-- 新增这一行 */
+}
 /* Keyframes 动画 (部分微调) */
 @keyframes light-grow-local {
   0% {
@@ -4075,7 +4078,8 @@ select.custom-select-hidden {
   /* 隐藏溢出的部分 */
   /* 关键：为边框和辉光提供占位 */
   border: 3px solid transparent;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  font-size : 1rem;/* <-- 新增这一行，恢复字体大小 */
   }
 /* 修正：在亮色模式下，为彩色文字添加黑色外描边以增加可读性 */
 html:not(.dark-theme) .color-text-outlined {

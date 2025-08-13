@@ -382,3 +382,40 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
 
     return `<div class="hero-avatar-rank-container">${barsHtml}${talentNodeHtml}</div>`;
 }
+
+
+// 用于保存原始 console 方法的全局对象
+const _originalConsole = {
+    log: console.log,
+    warn: console.warn,
+    error: console.error,
+    info: console.info,
+    debug: console.debug,
+};
+
+// 空函数，用于“静音”console
+const _emptyFunc = () => { };
+
+/**
+ * 全局切换所有 console 日志记录的开关
+ * @param {boolean} enable - true为开启日志, false为关闭日志
+ */
+function toggleConsoleLogging(enable) {
+    if (enable) {
+        // 开启日志: 恢复所有原始的 console 方法
+        console.log = _originalConsole.log;
+        console.warn = _originalConsole.warn;
+        console.error = _originalConsole.error;
+        console.info = _originalConsole.info;
+        console.debug = _originalConsole.debug;
+        //console.log("日志记录功能已开启。");
+    } else {
+        // 关闭日志: 将所有 console 方法替换为空函数
+        //console.log("日志记录功能已关闭。");
+        console.log = _emptyFunc;
+        console.warn = _emptyFunc;
+        console.error = _emptyFunc;
+        console.info = _emptyFunc;
+        console.debug = _emptyFunc;
+    }
+}

@@ -118,6 +118,18 @@ function loadFilterCollapseStates() {
  * 初始化应用程序的核心函数。
  */
 async function initializeApp() {
+
+    // ▼▼▼ 根据HTML中的全局开关，统一设置日志功能 ▼▼▼
+    // 检查在 index.html 中定义的全局开关是否存在并且为 false
+    if (window.ENABLE_DEBUG_LOGGING === false) {
+        // 如果开关存在且被设为false，则关闭所有日志
+        toggleConsoleLogging(false);
+    } else {
+        // 否则（开关为true，或未定义），则保持日志功能开启
+        toggleConsoleLogging(true);
+        //console.log("调试日志已开启。如需关闭，请修改 index.html 中的全局开关。");
+    }
+
     // --- 防止因模态框导致页面滚动条消失而引起的布局跳动 ---
     const observer = new MutationObserver((mutationsList) => {
         for (const mutation of mutationsList) {
@@ -128,13 +140,15 @@ async function initializeApp() {
 
                 if (hasModalOpen && !wasModalOpen) {
                     // 'modal-open' 类刚刚被添加
-                    // 仅当页面确实有滚动条时才进行补偿
+                    console.log("检测到 modal-open 添加，准备添加 padding-right..."); // <-- 新增日志
                     if (window.innerWidth > document.documentElement.clientWidth) {
                         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                        console.log(`计算出滚动条宽度为: ${scrollbarWidth}px`); // <-- 新增日志
                         body.style.paddingRight = `${scrollbarWidth}px`;
                     }
                 } else if (!hasModalOpen && wasModalOpen) {
                     // 'modal-open' 类刚刚被移除
+                    console.log("检测到 modal-open 移除，准备移除 padding-right..."); // <-- 新增日志
                     body.style.paddingRight = '';
                 }
             }

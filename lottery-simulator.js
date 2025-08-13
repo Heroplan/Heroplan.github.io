@@ -396,48 +396,77 @@ function getPoolDisplayName(poolConfig) {
 }
 
 /**
- * 获取当前活动的主卡池，并应用所有实时的、用户选择的规则。
+ * 获取当前活动的主卡池，并根据活动类型应用所有特殊规则。
  * @returns {Array} 经过筛选后的英雄对象数组。
  */
 function getFilteredMasterPool() {
     const poolConfig = state.currentSummonData;
     if (!poolConfig) return [];
 
-    // 1. 获取完整的、未经筛选的英雄列表
+    // 第1步: 获取完整的、未经筛选的原始卡池
     let masterHeroPool = getAllHeroesInPool(poolConfig);
 
-    // 2. 检查“排除近期英雄”规则是否启用
-    const excludeToggle = document.getElementById('exclude-recent-heroes-toggle');
-    if ((poolConfig.productType === 'SuperElementalSummon1' || poolConfig.productType === 'HarvestSummon1') && excludeToggle && excludeToggle.checked) {
-        const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - 180);
+    // 第2步: 根据活动类型，应用不同的筛选规则
+    switch (poolConfig.productType) {
 
-        // 3. 如果启用，则筛选掉180天内的英雄
-        masterHeroPool = masterHeroPool.filter(hero => {
-            if (!hero['Release date']) return true; // 保留没有发布日期的英雄
-            return new Date(hero['Release date']) < cutoffDate;
-        });
+        case 'SuperElementalSummon':
+            // 应用“元素人活动”的强制180天排除规则
+            const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+            const cutoffDate = new Date();
+            cutoffDate.setHours(0, 0, 0, 0);
+            cutoffDate.setDate(cutoffDate.getDate() - 180);
+
+            masterHeroPool = masterHeroPool.filter(hero => {
+                const heroFamily = String(hero.family || '').toLowerCase();
+                if (associatedFamilies.includes(heroFamily)) {
+                    return true; // 规则1：关联家族不受影响
+                }
+                const releaseDateStr = hero['Release date'];
+                if (!releaseDateStr) {
+                    return true; // 保留无日期英雄
+                }
+                const parts = releaseDateStr.split('-');
+                if (parts.length === 3) {
+                    const year = parseInt(parts[0], 10);
+                    const month = parseInt(parts[1], 10) - 1;
+                    const day = parseInt(parts[2], 10);
+                    const releaseDate = new Date(year, month, day);
+                    return releaseDate < cutoffDate; // 规则2：其他英雄检查日期
+                }
+                return true;
+            });
+            break;
+
+        // 【未来扩展】您可以轻松地在这里为其他活动添加开关规则
+        // case 'BlackSummon':
+        // case 'HarvestSummon':
+        //     const excludeToggle = document.getElementById('exclude-recent-heroes-toggle');
+        //     if (excludeToggle && excludeToggle.checked) {
+        //         // 在此应用这些活动的筛选逻辑...
+        //     }
+        //     break;
     }
 
+    // 第3步: 返回经过处理的最终卡池
     return masterHeroPool;
 }
 
+
+
 /**
- * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (重构解析逻辑的最终修正版)
- * @param {string} bucketString - 例如 "heroes_ex_s1_3"
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池
+ * (最终版：实现了从服装版反向查找基础版的智能逻辑)
+ * @param {string} bucketString - 例如 "heroes_event_4"
  * @param {object} poolConfig - 当前的奖池配置
- * @returns {Array} - 符合条件的英雄对象数组
+ * @returns {Array} - 符合条件的【基础版】英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
-    // 如果 poolConfig 中传入了 masterPool，则使用它作为基础；否则，使用全局的 state.allHeroes
-    const baseHeroPool = poolConfig.masterPool || state.allHeroes;
+    const sourcePool = poolConfig.masterPool || state.allHeroes;
 
-    // 更稳定地从字符串末尾解析星级
     const starMatch = bucketString.match(/_(\d+)$/);
     if (!starMatch) return [];
     const star = parseInt(starMatch[1], 10);
 
-    // 更准确地识别 bucket 类型
     let bucketType = 'unknown';
     if (bucketString.startsWith('heroes_event_')) bucketType = 'event';
     else if (bucketString.startsWith('heroes_listed_')) bucketType = 'listed';
@@ -445,65 +474,64 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     else if (bucketString.startsWith('heroes_s1_')) bucketType = 's1';
     else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
 
+    const qualifies = (hero) => {
+        // 这个内部函数用来判断一个英雄是否符合卡池的基本要求（忽略costume_id）
+        if (hero.star !== star) return false;
 
-    // 特殊处理逻辑：SuperElementalSummon 中的 "listed" 类型
-    if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
-        return state.allHeroes.filter(hero => {
-            const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-            // ▼▼▼ 使用 colorReverseMap 来统一比较标准 ▼▼▼
-            const standardHeroColor = colorReverseMap[hero.color];
-            const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
-
-            return standardHeroColor === standardSelectedColor &&
-                hero.star === star &&
-                hero.costume_id === 0 &&
-                !state.globalExcludeFamilies.includes(heroFamily);
-        });
-    }
-
-    // --- 标准过滤逻辑 ---
-    const initialPool = baseHeroPool.filter(hero => {
-        if (hero.star !== star || hero.costume_id !== 0) {
-            return false;
-        }
         const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-        if (state.globalExcludeFamilies.includes(heroFamily)) {
-            return false;
-        }
+        if (state.globalExcludeFamilies.includes(heroFamily)) return false;
 
         switch (bucketType) {
             case 's1':
                 return heroFamily === 'classic';
             case 'ex_s1':
                 return heroFamily !== 'classic';
-
             case 'event':
                 const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-                const isFamilyMatch = eventFamilies.includes(heroFamily);
-                if (!isFamilyMatch) return false;
-                if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                    // ▼▼▼ 使用 colorReverseMap 来统一比较标准 ▼▼▼
-                    const standardHeroColor = colorReverseMap[hero.color];
-                    const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
-                    return standardHeroColor === standardSelectedColor;
-                }
-                return true;
-
+                return eventFamilies.includes(heroFamily);
             case 'listed':
                 const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
                 const includedIds = poolConfig.includedHeroes || [];
                 return listedFamilies.includes(heroFamily) || includedIds.includes(hero.heroId);
-
             case 'extraAssociatedFamilies':
                 const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
                 return extraFamilies.includes(heroFamily);
-
             default:
                 return false;
         }
-    });
+    };
 
-    // 为非经典英雄应用“最新皮肤”逻辑
+    // =================================================================
+    // ========= 新增的核心逻辑 (START) =========
+    // =================================================================
+    const processedHeroNames = new Set();
+    const initialPool = [];
+
+    sourcePool.forEach(hero => {
+        // 1. 检查当前英雄是否符合卡池的基本条件（星级、家族等）
+        if (qualifies(hero)) {
+            // 2. 如果符合条件，获取该英雄的英文名（作为唯一标识）
+            const heroName = hero.english_name;
+            // 3. 如果这个英雄我们还没处理过
+            if (heroName && !processedHeroNames.has(heroName)) {
+                // 4. 将名字加入已处理列表，防止重复添加
+                processedHeroNames.add(heroName);
+
+                // 5. 无论当前英雄是基础版还是服装版，都去【主列表】中查找它的【基础版】
+                const baseVersion = state.allHeroes.find(h => h.english_name === heroName && h.costume_id === 0);
+
+                // 6. 如果找到了基础版，就把它加入最终的候选池
+                if (baseVersion) {
+                    initialPool.push(baseVersion);
+                }
+            }
+        }
+    });
+    // =================================================================
+    // ========= 新增的核心逻辑 (END) =========
+    // =================================================================
+
+    // 后续的“升级到最新版”逻辑保持不变，它会在抽中基础版后再进行替换
     return initialPool.map(baseHero => {
         if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
@@ -595,7 +623,7 @@ function getAllHeroesInPool(poolConfig) {
             return hero.star === 5 &&                                     // 1. 是5星英雄
                 hero.costume_id === 0 &&                               // 2. 不是服装英雄
                 new Date(hero['Release date']) < cutoffDate &&         // 3. 发布日期早于截止日期
-                heroFamily !== 'classic' &&                            // 4. (可选但推荐) 排除经典S1英雄
+                heroFamily !== 'classic' &&                            // 4. 排除经典S1英雄
                 !state.globalExcludeFamilies.includes(heroFamily);   // 5. 遵守全局排除规则
         });
 
@@ -614,45 +642,6 @@ function getAllHeroesInPool(poolConfig) {
 
     const finalPool = Object.values(finalLatestVersions);
 
-    // ▼▼▼ 新的强制筛选180天规则 ▼▼▼
-    if (poolConfig.productType === 'SuperElementalSummon') {
-        const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-
-        // 【核心修正】创建截止日期，并移除时间部分以进行纯日期比较
-        const cutoffDate = new Date();
-        cutoffDate.setHours(0, 0, 0, 0); // 将时间设为本地时区的午夜
-        cutoffDate.setDate(cutoffDate.getDate() - 180);
-
-        return finalPool.filter(hero => {
-            const heroFamily = String(hero.family || '').toLowerCase();
-
-            // 规则1: 如果英雄的家族是“关联家族”，则不受日期限制，保留。
-            if (associatedFamilies.includes(heroFamily)) {
-                return true;
-            }
-
-            // 规则2: 对于其他所有英雄，检查其发布日期。
-            const releaseDateStr = hero['Release date'];
-            if (!releaseDateStr) {
-                return true; // 保留没有发布日期的英雄
-            }
-
-            // 【核心修正】手动、可靠地解析 YYYY-MM-DD 格式的日期字符串
-            const parts = releaseDateStr.split('-');
-            if (parts.length === 3) {
-                const year = parseInt(parts[0], 10);
-                const month = parseInt(parts[1], 10) - 1; // JS的月份是从0开始的
-                const day = parseInt(parts[2], 10);
-                const releaseDate = new Date(year, month, day);
-
-                // 进行可靠的日期比较
-                return releaseDate < cutoffDate;
-            }
-
-            // 如果日期格式不符合预期，则默认保留该英雄
-            return true;
-        });
-    }
 
     return finalPool; // 原有的 return 语句现在只对非元素人活动生效
 }
@@ -763,7 +752,6 @@ async function handleActivityClick(poolId) {
     state.currentSummonData = poolConfig;
     state.selectedElementalColor = null; // 每次点击都重置颜色选择
 
-    // ▼▼▼ 在这里插入新代码 ▼▼▼
     // 检查是否为超级元素人召唤，如果是，则弹出模态框并等待选择
     if (poolConfig.productType === 'SuperElementalSummon') {
         const elementalModal = document.getElementById('elemental-modal');
@@ -811,7 +799,7 @@ async function handleActivityClick(poolId) {
     } else {
         state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
     }
-    // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
+    // 如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
 
         // 使用正确的、基于 colorReverseMap 的筛选逻辑
@@ -849,7 +837,7 @@ async function handleActivityClick(poolId) {
             infoIcon.textContent = 'ⓘ';
             infoIcon.style.position = 'absolute'; /* 修正：添加绝对定位 */
             infoIcon.style.top = '10px'; /* 修正：定位到顶部 */
-            infoIcon.style.left = '10px'; /* 修正：定位到右侧 */
+            infoIcon.style.left = '10px'; /* 修正：定位到左侧 */
             infoIcon.title = i18n[state.currentLang].probabilityInfoTitle || '查看概率详情';
             const formatPercentage = (rawValue) => {
                 const percentageNum = parseFloat(rawValue) / 10;
@@ -930,6 +918,7 @@ async function handleActivityClick(poolId) {
             }
 
             // 4. 组合最终的 HTML
+            // 特殊规则备用
             let toggleHTML = '';
             if (poolConfig.productType === 'SuperElementalSummon1' || poolConfig.productType === 'HarvestSummon1') {
                 const toggleId = 'exclude-recent-heroes-toggle';
@@ -1145,8 +1134,6 @@ async function performSummon(count) {
     }
 
     const totalSummonedResults = [];
-    // 在循环外预先获取当前奖池的完整英雄列表
-    const currentPoolHeroes = getAllHeroesInPool(poolConfig);
 
     // 主召唤循环
     for (let k = 0; k < count; k++) {
@@ -1215,10 +1202,10 @@ async function performSummon(count) {
 
                         if (isEventOnly) {
                             // 真：从当前奖池中筛选出活动英雄
-                            bonusPool = currentPoolHeroes.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
+                            bonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
                         } else {
                             // 假：从当前奖池中筛选出任意非经典英雄
-                            bonusPool = currentPoolHeroes.filter(h => h.star === 5 && h.family && h.family !== 'classic');
+                            bonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && h.family !== 'classic');
                         }
 
                         if (bonusPool.length > 0) {

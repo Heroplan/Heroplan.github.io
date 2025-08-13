@@ -1049,9 +1049,24 @@ async function performSummon(count) {
         let bucketString = 'unknown';
 
         if (isCostumeSummon) {
-            // 对于服装召唤，直接从专用池中抽取。
-            drawnHero = costumePool[Math.floor(Math.random() * costumePool.length)];
-            // 2. 为服装召唤指定一个明确的 bucket 名称。
+            // 1. 首先根据权重选择一个“桶” (决定星级)
+            const { bucketWeights, bucketConfig } = poolConfig;
+            const bucketIndex = selectWeightedIndex(bucketWeights);
+            bucketString = bucketConfig[bucketIndex]; // e.g., "heroes_s1_3", "heroes_s1_4", "heroes_s1_5", "featuredHero"
+
+            // 2. 从桶的名称中解析出目标星级
+            const starMatch = bucketString.match(/_(\d+)$/);
+            const isFeatured = bucketString === 'featuredHero';
+            const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
+
+            // 3. 从预先构建的服装总池中，筛选出符合该星级的英雄
+            const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
+
+            // 4. 从符合星级的池中随机抽取一个英雄
+            if (heroPoolOfStar.length > 0) {
+                drawnHero = heroPoolOfStar[Math.floor(Math.random() * heroPoolOfStar.length)];
+            }
+            // 为了历史记录的简洁性，我们将桶统一命名为 'costume'
             bucketString = 'costume';
         } else {
             // 对于所有其他召唤，使用原有的 bucket 逻辑。

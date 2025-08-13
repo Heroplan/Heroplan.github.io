@@ -371,6 +371,22 @@ function loadStaticCollapseStates() {
  * 绑定页面上所有主要的事件监听器。
  */
 function addEventListeners() {
+    // --- 新增：为图片展示弹窗添加关闭事件 ---
+    const imageModal = document.getElementById('image-modal');
+    const imageModalOverlay = document.getElementById('image-modal-overlay');
+    const imageModalCloseBtn = document.getElementById('image-modal-close-btn');
+
+    const closeImageModal = () => {
+        if (imageModal) {
+            imageModal.classList.add('hidden');
+            // 关闭时移除尺寸控制类，以免影响其他功能
+            imageModal.classList.remove('show-hero-portrait');
+        }
+        if (imageModalOverlay) imageModalOverlay.classList.add('hidden');
+    };
+
+    if (imageModalOverlay) imageModalOverlay.addEventListener('click', closeImageModal);
+    if (imageModalCloseBtn) imageModalCloseBtn.addEventListener('click', closeImageModal);
     const {
         themeToggleButton, langSelectBtn, langOptions, openFiltersBtn, closeFiltersModalBtn, filtersModalOverlay,
         showWantedMissionBtn, showFarmingGuideBtn, showTeamSimulatorBtn,
@@ -661,6 +677,7 @@ function addEventListeners() {
             }
         });
     });
+    
 
 
     // --- 浏览器历史与窗口事件 ---

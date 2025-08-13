@@ -5424,3 +5424,133 @@ html:not(.dark-theme) .color-text-outlined {
     border: none !important;
     box-shadow: none !important;
 }
+
+/* --- 英雄详情页头像可点击状态 --- */
+.hero-avatar-container-modal.is-clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.hero-avatar-container-modal.is-clickable:hover {
+    transform: scale(1.03);
+    /* 鼠标悬浮时轻微放大，提供反馈 */
+}
+
+/* --- 为英雄立绘展示调整图片模态框的尺寸 --- */
+#image-modal.show-hero-portrait #image-modal-content {
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    max-height: 85vh;
+    /* 确保不会超出屏幕高度 */
+}
+
+/* --- 图片模态框通用样式 --- */
+/* (这里的样式将适用于所有使用 #image-modal 的地方, 包括您的材料指南) */
+#image-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+#image-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    max-width: 90vw;
+    /* 通用最大宽度 */
+    max-height: 90vh;
+    /* 通用最大高度 */
+}
+
+#image-modal-content {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#image-modal-close-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- 【核心修正】仅用于英雄立绘展示的特定样式 --- */
+/* (这里的样式只会在点击英雄头像时生效) */
+#image-modal.show-hero-portrait {
+    /* 当显示立绘时，我们可能不需要背景或边框 */
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+#image-modal.show-hero-portrait #image-modal-content {
+    /* 这是您期望的“放大”效果 */
+    max-width: 500px;
+    width: auto;
+    height: auto;
+}
+
+/* ========== 模态框层级 (z-index) 统一修正 ========== */
+
+/* 基础弹窗层 (详情, 筛选器) */
+#modal-overlay,
+#filters-modal-overlay {
+    z-index: 5000;
+}
+
+#modal,
+#filters-modal {
+    z-index: 5001;
+}
+
+/* 第二层弹窗 (在基础之上，例如多选、帮助) */
+#multi-select-modal-overlay,
+#help-modal-overlay,
+#skill-type-help-modal-overlay,
+#lb-talent-help-modal-overlay {
+    z-index: 6000;
+}
+
+#multi-select-modal,
+#help-modal,
+#skill-type-help-modal,
+#lb-talent-help-modal {
+    z-index: 6001;
+}
+
+/* 最高层弹窗 (在所有之上，例如图片、导入/导出、抽奖总结) */
+#image-modal-overlay,
+#import-settings-modal-overlay,
+#export-settings-modal-overlay,
+#summon-summary-modal-overlay,
+#elemental-modal-overlay,
+#probability-modal-overlay {
+    z-index: 7000;
+}
+
+#image-modal,
+#import-settings-modal,
+#export-settings-modal,
+#summon-summary-modal,
+#elemental-modal,
+#probability-modal {
+    z-index: 7001;
+}

@@ -973,4 +973,41 @@ function renderDetailsInModal(hero, context = {}) {
         closeDetailsModal();
         applyFiltersAndRender();
     });
+
+    // --- 新增逻辑：检查立绘是否存在并绑定点击事件 ---
+    const avatarContainer = modalContent.querySelector('.hero-avatar-container-modal');
+
+    if (hero.heroId && avatarContainer && overlaysContainer) {
+        const avatarSrc = `imgs/avatar/${hero.heroId}.webp`;
+
+        const imgCheck = new Image();
+
+        // 如果图片加载成功 (意味着立绘存在)
+        imgCheck.onload = () => {
+            avatarContainer.classList.add('is-clickable');
+            overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
+
+            const openImageModal = () => {
+                const imageModal = document.getElementById('image-modal');
+                const imageModalOverlay = document.getElementById('image-modal-overlay');
+                const imageModalContent = document.getElementById('image-modal-content');
+
+                if (imageModal && imageModalOverlay && imageModalContent) {
+                    imageModalContent.src = avatarSrc;
+                    imageModal.classList.add('show-hero-portrait');
+                    imageModal.classList.remove('hidden');
+                    imageModalOverlay.classList.remove('hidden');
+                }
+            };
+
+            overlaysContainer.addEventListener('click', openImageModal);
+        };
+
+        // 如果图片加载失败，确保覆盖层恢复不可点击状态
+        imgCheck.onerror = () => {
+            overlaysContainer.style.pointerEvents = 'none';
+        };
+
+        imgCheck.src = avatarSrc;
+    }
 }

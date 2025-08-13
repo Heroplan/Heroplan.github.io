@@ -109,7 +109,10 @@ function applyLanguage(lang) {
         'theme-toggle-btn': 'toggleThemeTitle', 'lang-select-btn': 'toggleLanguageTitle',
         'show-wanted-mission-btn': 'showWantedMissionTitle', 'open-filters-btn': 'openFiltersTitle',
         'calendar-btn': 'calendarTitle', 'close-filters-modal-btn': 'closeBtnTitle',
-        'advanced-filter-help-btn': 'filterSyntaxTitle', 'skill-type-help-btn': 'skillTypeSourceHelpTitle',
+        'advanced-filter-help-btn': 'filterSyntaxTitle', 'skill-type-help-btn': 'skillTypeSourceHelpTitle', 'show-lottery-simulator-btn': 'showLotterySimulatorTitle',
+        'show-team-simulator-btn': 'showTeamSimulatorTitle',
+        'show-chat-simulator-btn': 'showChatSimulatorTitle',
+        'show-farming-guide-btn': 'showFarmingGuideTitle'
     };
     for (const id in titles) {
         const element = document.getElementById(id);

@@ -14,6 +14,19 @@ body.modal-open {
     overflow: hidden;
 }
 
+/* 为所有模态框添加滚动抑制，防止滚动穿透到body */
+#modal,
+#filters-modal,
+#help-modal,
+#skill-type-help-modal,
+#import-settings-modal,
+#export-settings-modal,
+#multi-select-modal,
+#lb-talent-help-modal,
+#summon-summary-modal {
+    overscroll-behavior: contain;
+}
+
 /* 容器布局 */
 .main-container {
     max-width: 1300px;
@@ -404,6 +417,7 @@ input[type="number"] {
     border: 1px solid var(--md-sys-color-outline);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    scrollbar-gutter: stable; /* 【新增修复】为表格容器也预留滚动条空间，防止其跳动 */
 }
 
 .results-header {
@@ -4578,6 +4592,7 @@ select.custom-select-hidden {
     overflow-y: auto;
     /* 当内容超出时，显示垂直滚动条 */
     padding: 0.75rem;
+    scrollbar-gutter: stable;/* 始终预留垂直滚动条的空间，防止其出现时挤压内容，从而确保容器宽度恒定不变 */
 }
 
 /* 6. 每一个召唤组的样式 */

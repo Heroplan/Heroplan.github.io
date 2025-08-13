@@ -118,6 +118,33 @@ function loadFilterCollapseStates() {
  * 初始化应用程序的核心函数。
  */
 async function initializeApp() {
+    // --- 防止因模态框导致页面滚动条消失而引起的布局跳动 ---
+    const observer = new MutationObserver((mutationsList) => {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                const body = mutation.target;
+                const hasModalOpen = body.classList.contains('modal-open');
+                const wasModalOpen = mutation.oldValue ? mutation.oldValue.includes('modal-open') : false;
+
+                if (hasModalOpen && !wasModalOpen) {
+                    // 'modal-open' 类刚刚被添加
+                    // 仅当页面确实有滚动条时才进行补偿
+                    if (window.innerWidth > document.documentElement.clientWidth) {
+                        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                        body.style.paddingRight = `${scrollbarWidth}px`;
+                    }
+                } else if (!hasModalOpen && wasModalOpen) {
+                    // 'modal-open' 类刚刚被移除
+                    body.style.paddingRight = '';
+                }
+            }
+        }
+    });
+
+    observer.observe(document.body, {
+        attributes: true,
+        attributeOldValue: true
+    });
     // 1. 处理URL参数和Cookie，确定语言
     const urlParams = new URLSearchParams(window.location.search);
     const viewHeroFromUrl = urlParams.get('view');

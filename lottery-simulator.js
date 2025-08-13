@@ -212,6 +212,7 @@ const LotterySimulator = {
     addHeroToFeaturedSlot: addHeroToFeaturedSlot,
 };
 
+const summonSound = new Audio('sounds/ui_summon-additional-draws.ogg');
 
 // --- 状态与配置 (State & Config) ---
 let lotteryPoolsData = null; // 用于存储处理过的奖池数据
@@ -1254,40 +1255,86 @@ async function performSummon(count) {
  * @returns {Promise}
  */
 function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false) {
+    // 播放声音
+    summonSound.currentTime = 0;
+    summonSound.play();
+
     return new Promise(resolve => {
-        animationViewport.innerHTML = ''; // 清空上一轮的动画
+        animationViewport.innerHTML = ''; // 确保视口在每次动画开始时都是干净的
 
-        // 如果是奖励抽奖，则先添加奖励动画层
-        if (isBonusDraw) {
-            const bonusImg = document.createElement('img');
-            bonusImg.src = 'imgs/lottery/gate/lottery_animation_bonus.webp';
-            bonusImg.className = 'bonus-summon-overlay';
-            animationViewport.appendChild(bonusImg);
-        }
-
-        // 创建英雄头像和背景光效（与之前逻辑相同）
+        // 1. 创建所有需要的元素
         const heroAvatarContainer = document.createElement('div');
-        heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.color)}`;
-        heroAvatarContainer.style.background = getHeroColorLightGradient(hero.color);
-        heroAvatarContainer.style.maxWidth = '100px';
-        heroAvatarContainer.style.maxHeight = '100px';
-        const heroAvatarSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : (hero.image || '');
-        heroAvatarContainer.innerHTML = `<img src="${heroAvatarSrc}" style="width: 100%; height: 100%; object-fit: contain;">`;
-
+        const heroImage = document.createElement('img');
         const lightEffect = document.createElement('div');
+
+        // 2. 设置图片通用样式
+        heroImage.style.width = '100%';
+        heroImage.style.height = '100%';
+        heroImage.style.objectFit = 'contain';
+
+        // 3. 设置光效
         lightEffect.className = 'summon-animation-element';
         lightEffect.innerHTML = `<img src="imgs/lottery/gate/lottery_animation_light.webp" class="anim-light-img">`;
         lightEffect.style.filter = `drop-shadow(0 0 15px ${getColorHex(hero.color)})`;
 
-        // 按正确的层级顺序添加到容器
-        animationViewport.appendChild(lightEffect);
-        animationViewport.appendChild(heroAvatarContainer);
+        // 4. 定义一个统一的函数来播放动画，确保所有元素都已准备好
+        const playAnimation = () => {
+            if (isBonusDraw) {
+                const bonusImg = document.createElement('img');
+                bonusImg.src = 'imgs/lottery/gate/lottery_animation_bonus.webp';
+                bonusImg.className = 'bonus-summon-overlay';
+                animationViewport.appendChild(bonusImg);
+            }
+            animationViewport.appendChild(lightEffect);
+            animationViewport.appendChild(heroAvatarContainer);
+            setTimeout(() => {
+                animationViewport.innerHTML = '';
+                resolve();
+            }, 1200);
+        };
 
-        // 统一在1.2秒后清除所有动画元素并结束
-        setTimeout(() => {
-            animationViewport.innerHTML = '';
-            resolve();
-        }, 1200);
+        const baseIconId = hero.heroId || null;
+
+        if (baseIconId) {
+            const avatarSrc = `imgs/avatar/${baseIconId}.webp`;
+            const iconSrc = `imgs/hero_icon/${baseIconId}.webp`;
+
+            // 【核心修正】在这里为两种情况分别设置样式，确保不互相干扰
+
+            // a. 当立绘加载成功时
+            heroImage.onload = () => {
+                // 清除可能存在的内联样式，并应用“立绘”专属样式
+                heroAvatarContainer.removeAttribute('style');
+                heroAvatarContainer.className = 'summon-animation-element anim-hero-art is-avatar';
+                heroAvatarContainer.appendChild(heroImage);
+                playAnimation();
+            };
+
+            // b. 当立绘加载失败时
+            heroImage.onerror = () => {
+                // 清除可能存在的内联样式，并应用“常规”样式
+                heroAvatarContainer.removeAttribute('style');
+                heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.color)}`;
+                heroAvatarContainer.style.background = getHeroColorLightGradient(hero.color);
+                heroImage.onload = null;
+
+                heroImage.src = iconSrc; // 加载备用头像
+                heroImage.onerror = null; // 移除onerror，防止备用头像也失败导致死循环
+                heroAvatarContainer.appendChild(heroImage);
+                playAnimation();
+            };
+
+            // c. 触发加载
+            heroImage.src = avatarSrc;
+
+        } else {
+            // 如果英雄没有ID (例如训练师)，直接使用常规样式
+            heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.color)}`;
+            heroAvatarContainer.style.background = getHeroColorLightGradient(hero.color);
+            heroImage.src = hero.image || '';
+            heroAvatarContainer.appendChild(heroImage);
+            playAnimation();
+        }
     });
 }
 

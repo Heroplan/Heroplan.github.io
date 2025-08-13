@@ -4686,49 +4686,42 @@ select.custom-select-hidden {
 #lottery-hero-display-area {
     position: relative;
     overflow: visible;
-    /* 让它成为一个flex容器来居中所有动画元素 */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 5;
-    /* 提高层级，确保动画在精选英雄之上 */
 }
 
-/* 2. 动态创建的动画元素样式 */
+/* 2. 动画元素的基础容器样式 (用于光效和头像) */
 .summon-animation-element {
     position: absolute;
-    /* 移除 top:0; left:0; 让父容器的flex布局来居中它们 */
     display: flex;
     align-items: center;
     justify-content: center;
     pointer-events: none;
+}
+
+/* 3. 【核心修正】为英雄头像/立绘容器定义通用基础样式 */
+.summon-animation-element.anim-hero-art {
     max-width: 100px;
-    /* 设置最大宽度 */
+    /* 默认尺寸 (用于小头像) */
     max-height: 100px;
-    /* 设置最大高度 */
-}
-
-.summon-animation-element img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* 动态光效 */
-.anim-light {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 0 0 40px 20px white;
-    transform: scale(0);
-    animation: light-grow-local 1s ease-in-out forwards;
-}
-
-/* 动态英雄头像 */
-.anim-hero-art {
+    border-radius: 8px;
+    border: 2px solid transparent;
+    /* 为辉光效果提供占位边框 */
     animation: hero-reveal-local 1.2s ease-out forwards;
 }
+
+/* 4. 【核心修正】当显示高清立绘时的覆盖样式 */
+.summon-animation-element.anim-hero-art.is-avatar {
+    max-width: 365px;
+    /* 确保立绘放大 */
+    max-height: 365px;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
 
 /* 4. 跳过动画按钮 */
 #skip-animation-btn {
@@ -5421,4 +5414,13 @@ html:not(.dark-theme) .color-text-outlined {
 .history-hero-stars.star-level-5 {
     font-size: 15px;
     color: #ff0d00;
+}
+
+/* --- 新增：抽奖动画中显示立绘时的特殊样式 --- */
+.summon-animation-element.anim-hero-art.is-avatar {
+    width: 150% !important;
+    height: 150% !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }

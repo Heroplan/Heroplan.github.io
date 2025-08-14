@@ -313,7 +313,7 @@ const i18n = {
         "summonSummaryOkBtn": "确定",
         "muteSound": "静音",
         "unmuteSound": "取消静音",
-        "featuredHeroRequired": '请在下方使用⬆️,至少设置一位精选英雄后再进行召唤。',
+        "featuredHeroRequired": '请在下方表格使用⬆️,至少设置一位精选英雄后再进行召唤。',
 
 
     },

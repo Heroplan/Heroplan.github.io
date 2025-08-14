@@ -227,6 +227,13 @@ let bonusTranslations = {};
  * @param {object} summonTypesConfig - 来自“奖池种类.json”的数据
  */
 function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
+    // ▼▼▼ 预加载动画资源 ▼▼▼
+    const assetsToPreload = [
+        'sounds/ui_summon-additional-draws.ogg',      // 抽奖音效
+        'imgs/lottery/gate/lottery_animation_light.webp', // 核心光效图片
+        'imgs/lottery/gate/lottery_animation_bonus.webp'  // 奖励召唤图片
+    ];
+    preloadAssets(assetsToPreload);
     const soundToggleButton = document.getElementById('toggle-sound-btn');
     const langDict = i18n[state.currentLang] || i18n.cn;
 

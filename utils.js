@@ -419,3 +419,32 @@ function toggleConsoleLogging(enable) {
         console.debug = _emptyFunc;
     }
 }
+
+/**
+ * 预加载一组指定的静态资源（图片、音频），让浏览器提前缓存它们
+ * @param {string[]} assetUrls - 要预加载的资源URL数组
+ */
+function preloadAssets(assetUrls) {
+    if (!Array.isArray(assetUrls)) {
+        console.error("preloadAssets: 提供的参数不是一个数组。");
+        return;
+    }
+
+    assetUrls.forEach(url => {
+        try {
+            const fileExtension = url.split('.').pop().toLowerCase();
+
+            // 根据文件扩展名判断是图片还是音频
+            if (['png', 'jpg', 'jpeg', 'gif', 'webp'].includes(fileExtension)) {
+                const img = new Image();
+                img.src = url;
+            } else if (['mp3', 'wav', 'ogg'].includes(fileExtension)) {
+                const audio = new Audio();
+                audio.preload = 'auto'; // 设置为自动预加载
+                audio.src = url;
+            }
+        } catch (e) {
+            console.warn(`预加载资源失败: ${url}`, e);
+        }
+    });
+}

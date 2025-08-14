@@ -253,6 +253,11 @@
             "ChancePerMil": "1"
         },
         "lottery_featured_alliance_quest_castle": {
+            "featuredHeroes": [
+                "castle_wolf_quenell",
+                "castle_bear_bearnadette",
+                "castle_wolf_wolfgang"
+            ],
             "AssociatedFamilies": [
                 "wolf",
                 "raven",
@@ -261,6 +266,11 @@
             ]
         },
         "lottery_featured_alliance_quest_musketeers": {
+            "featuredHeroes": [
+                "musketeer_rochefort",
+                "musketeer_cardinal_richelieu",
+                "musketeer_porthos"
+            ],
             "AssociatedFamilies": [
                 "musketeer"
             ]
@@ -276,16 +286,30 @@
             ]
         },
         "lottery_featured_event_gargoyles2": {
+            "featuredHeroes": [
+                "gargoyle_vincent",
+                "gargoyle_guffa",
+                "gargoyle_hilda"
+            ],
             "AssociatedFamilies": [
                 "gargoyle"
             ]
         },
         "lottery_featured_event_beowulf": {
+            "featuredHeroes": [
+                "beowulf_grendels_mother",
+                "beowulf_nithgaest",
+                "beowulf_modthryth"
+            ],
             "AssociatedFamilies": [
                 "beowulf"
             ]
         },
         "lottery_featured_event_festival": {
+            "featuredHeroes": [
+                "wonderland_hatter_costume_tea",
+                "wonderland_knave_of_hearts"
+            ],
             "AssociatedFamilies": [
                 "avalon",
                 "corellia",
@@ -295,6 +319,11 @@
             ]
         },
         "lottery_featured_event_festival_b": {
+            "featuredHeroes": [
+                "circus_director_zuri_costume_clown",
+                "bard_merith",
+                "circus_eiora_and_fluffy_costume_dark"
+            ],
             "AssociatedFamilies": [
                 "villains",
                 "starfall",
@@ -304,11 +333,21 @@
             ]
         },
         "lottery_featured_event_opera": {
+            "featuredHeroes": [
+                "ballerina_charlotta",
+                "ballerina_armand",
+                "ballerina_von_rothbart"
+            ],
             "AssociatedFamilies": [
                 "opera"
             ]
         },
         "lottery_featured_event_masquerade": {
+            "featuredHeroes": [
+                "masquerade_februus",
+                "masquerade_umbria",
+                "masquerade_jana"
+            ],
             "AssociatedFamilies": [
                 "masquerade",
                 "maskedgod"

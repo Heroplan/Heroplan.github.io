@@ -13,7 +13,7 @@
     <link rel="preload" href="imgs/other/star.webp" as="image">
 
     <script>
-        window.ENABLE_DEBUG_LOGGING = false;
+        window.ENABLE_DEBUG_LOGGING = true;
         (function () {
             try {
                 const themeCookie = document.cookie.match(/;?\s*theme=([^;]*)/);
@@ -317,9 +317,13 @@
 
                         <div id="summon-history-panel" class="lottery-panel">
                             <div class="summon-history-header">
-                                <h4 data-lang-key="summonHistoryTitle">召唤历史记录</h4>
-                                <button id="clear-history-btn" class="action-button secondary-button"
-                                    data-lang-key="clearHistoryBtn">清空</button>
+                                <h4 id="summon-history-title" data-lang-key="summonHistoryTitle">召唤历史记录</h4>
+                                <div class="history-view-toggle">
+                                    <input type="checkbox" id="toggle-history-view-checkbox" class="toggle-switch-checkbox">
+                                    <label for="toggle-history-view-checkbox" class="toggle-switch-label"></label>
+                                    <span class="toggle-label-text" data-lang-key="toggleShowAllHistoryLabel">显示全部记录</span>
+                                </div>
+                                <button id="clear-history-btn" class="action-button secondary-button" data-lang-key="clearHistoryBtn">清空</button>
                                 <div class="collapse-arrow"></div>
                             </div>
                             <div id="summon-history-list-container">

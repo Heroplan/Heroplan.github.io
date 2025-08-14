@@ -5551,3 +5551,146 @@ html:not(.dark-theme) .color-text-outlined {
   box-shadow: 0 0 10px #ffd700;
   /* 添加金色辉光 */
 }
+
+/* --- 抽奖历史记录视图切换开关 --- */
+.history-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  /* 将开关推到标题和清空按钮之间 */
+}
+
+.toggle-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-switch-label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 20px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.toggle-switch-label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.toggle-switch-checkbox:checked+.toggle-switch-label {
+  background: var(--md-sys-color-primary);
+}
+
+.toggle-switch-checkbox:checked+.toggle-switch-label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.toggle-label-text {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  user-select: none;
+}
+
+
+/* --- 历史记录中的概率信息图标和悬浮窗 (样式统一修正版) --- */
+.history-probability-icon {
+  /* 完全复用主图标的样式 */
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: rgba(26, 43, 74, 0.8);
+  border: 1px solid #3a8cff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s;
+  margin-right: 10px;
+  /* 与标题保持间距 */
+  flex-shrink: 0;
+  /* 防止被压缩 */
+}
+
+.history-probability-icon:hover {
+  background-color: rgba(58, 140, 255, 0.3);
+}
+
+.history-probability-icon .probability-tooltip::before {
+  margin-left: 0;
+  /* 核心修正：调整定位以适应列表环境 */
+  top: calc(100% + 8px);
+  /* 增加与图标的距离 */
+  left: 50%;
+  /* 从图标中心点开始 */
+  transform: translateX(-50%);
+  /* 将自身向左移动50%，实现居中 */
+  max-width: 350px;
+  /* 保持与主提示框一致的最大宽度 */
+}
+
+/* 确保箭头正确定位 */
+.history-probability-icon .probability-tooltip::before {
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+}
+
+.history-probability-icon:hover .probability-tooltip {
+  opacity: 1;
+  visibility: visible;
+  font-size: 1.2em;
+    padding: 2px
+}
+
+/* --- 抽奖历史记录主标题栏布局 --- */
+.summon-history-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* 在元素间添加间距 */
+}
+
+/* 主标题元素 */
+#summon-history-title {
+  flex-grow: 1;
+  /* 让标题自动占据可用空间 */
+  text-align: center;
+  /* 标题文字居中 */
+  margin: 0;
+  /* 移除默认边距 */
+}
+
+/* 视图切换开关 */
+.history-view-toggle {
+  margin-left: auto;
+  /* 将开关推向右侧，但在清空按钮之前 */
+}
+
+/* 历史记录中每个抽奖组的标题 */
+.summon-history-group h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: left;
+  /* 确保组标题左对齐 */
+}

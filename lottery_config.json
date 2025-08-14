@@ -21,7 +21,7 @@
                 "heroes_event_5",
                 "featuredHero"
             ],
-            "featuredHeroNum": 3
+            "featuredHeroNum": 2
         },
         "ChallengeEventSummon": {
             "bucketConfig": [
@@ -67,7 +67,7 @@
                 "heroes_event_5",
                 "featuredHero"
             ],
-            "featuredHeroNum": 3
+            "featuredHeroNum": 2
         },
         "HarvestSummon": {
             "bucketConfig": [
@@ -153,7 +153,7 @@
                 "heroes_listed_5",
                 "featuredHero"
             ],
-            "featuredHeroNum": 3
+            "featuredHeroNum": 2
         },
         "MapSeasonSummon": {
             "bucketConfig": [
@@ -209,7 +209,7 @@
                 "heroes_event_5",
                 "featuredHero"
             ],
-            "featuredHeroNum": 3
+            "featuredHeroNum": 2
         },
         "TowerEventSummon": {
             "bucketConfig": [
@@ -267,8 +267,8 @@
         },
         "lottery_astralelves_default": {
             "featuredHeroes": [
-                "astral_dwarf_ceris",
-                "astral_lemonwood"
+                "astral_dwarf_hygil",
+                "astral_dwarf_ceris"
             ],
             "AssociatedFamilies": [
                 "astralelves",
@@ -317,7 +317,11 @@
         "lottery_costume_default": {
             "AssociatedFamilies": [
                 "classic"
-            ]
+            ],
+              "featuredHeroes": [
+                "exalted_female_statue_costume_glass",
+                "nomad_female_lord_costume_glass"
+              ]
         },
         "lottery_covenant_default": {
             "AssociatedFamilies": [
@@ -560,9 +564,9 @@
         },
         "lottery_season_untold_tales2": {
             "featuredHeroes": [
-                "tales2_motsognir",
-                "tales2_fimafeng",
-                "tales2_fafnir"
+                "tales2_svafa",
+                "tales2_ott",
+                "tales2_gandr"
             ],
             "AssociatedFamilies": [
                 "nidavellir",
@@ -693,10 +697,50 @@
                 "magic_kornel"
             ]
         },
-        "lottery_super_elemental": {
+        "lottery_harvest_default": {
             "featuredHeroes": [
-                "elemental_ash",
-                "elemental_niki"
+                "vegetable_bartholomew",
+                "vegetable_elsbeth"
+            ],
+            "AssociatedFamilies": [
+                "vegetable"
+            ]
+        },
+        "lottery_black_solstice_default": {
+            "featuredHeroes": [
+                "mahayoddha_bhima",
+                "mahayoddha_chitrangada"
+            ],
+            "AssociatedFamilies": [
+                "mahayoddha"
+            ]
+        },
+        "lottery_black_default": {
+            "featuredHeroes": [
+                "beowulf_hrothgar",
+                "beowulf_wealhtheow"
+            ],
+            "AssociatedFamilies": [
+                "beowulf"
+            ]
+        },
+        "lottery_black_default": {
+            "featuredHeroes": [
+                "wild_cat_leonie",
+                "wild_cat_rajesh"
+            ],
+            "AssociatedFamilies": [
+                "wild_cat"
+            ]
+        },
+        "lottery_super_elemental": {
+            "featuredHeroes_red": [
+                "slime_zestique",
+                "elemental_ash"
+            ],
+            "featuredHeroes_purple": [
+                "elemental_griffex_costume_camera",
+                "elemental_gastille"
             ],
             "AssociatedFamilies": [
                 "superelemental",
@@ -706,20 +750,40 @@
         "lottery_tower_ninja_default": {
             "AssociatedFamilies": [
                 "ninja"
+            ],
+            "featuredHeroes": [
+                "ninja_azurite",
+                "ninja_ekanite",
+                "ninja_garnet"
             ]
         },
         "lottery_tower_owl_default": {
             "AssociatedFamilies": [
                 "owl"
+            ],
+            "featuredHeroes": [
+                "owl_fulvia",
+                "owl_relius",
+                "owl_timius"
             ]
         },
         "lottery_tower_magic_default": {
             "AssociatedFamilies": [
                 "magic",
                 "magiccarpet"
+            ],
+            "featuredHeroes": [
+                "magic_carpet_agadh",
+                "magic_ray_costume_spiky",
+                "magic_milena_costume_ice"
             ]
         },
         "lottery_tower_styx_default": {
+            "featuredHeroes": [
+                "styx_amphitrite",
+                "styx_charon",
+                "styx_erebus"
+            ],
             "AssociatedFamilies": [
                 "styx"
             ]

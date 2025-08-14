@@ -194,6 +194,10 @@ async function initializeApp() {
         hero.originalIndex = index;
         hero.english_name = extractEnglishName(hero, state.currentLang);
         parseAndStoreDoTInfo(hero);
+        // ▼▼▼ 如果英雄没有发布日期，则添加特殊标记 ▼▼▼
+        if (!hero['Release date']) {
+            hero.isFeaturedOnly = true;
+        }
     });
 
     // 4. 初始化UI和筛选器

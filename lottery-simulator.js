@@ -227,6 +227,38 @@ let bonusTranslations = {};
  * @param {object} summonTypesConfig - 来自“奖池种类.json”的数据
  */
 function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
+    const soundToggleButton = document.getElementById('toggle-sound-btn');
+    const langDict = i18n[state.currentLang] || i18n.cn;
+
+    if (soundToggleButton) {
+        // 从Cookie加载用户设置，如果不存在，则默认为 true (开启音效)
+        state.soundEnabled = getCookie('lotterySoundEnabled') !== 'false';
+
+        const updateSoundButtonUI = () => {
+            if (state.soundEnabled) {
+                soundToggleButton.classList.remove('sound-off');
+                soundToggleButton.title = langDict.muteSound || '静音';
+            } else {
+                soundToggleButton.classList.add('sound-off');
+                soundToggleButton.title = langDict.unmuteSound || '取消静音';
+            }
+        };
+
+        // 初始化按钮的显示状态和提示文字
+        updateSoundButtonUI();
+
+        // 为按钮添加点击事件监听
+        soundToggleButton.addEventListener('click', () => {
+            // 切换音效状态
+            state.soundEnabled = !state.soundEnabled;
+            // 将新的设置保存到Cookie，有效期一年
+            setCookie('lotterySoundEnabled', state.soundEnabled, 365);
+            // 更新按钮的显示
+            updateSoundButtonUI();
+        });
+    }
+
+
     // 1. 根据当前语言，从全局变量中设置正确的标题字典
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.cn;
     bonusTranslations = (i18n[state.currentLang] || i18n.cn).lottery_bonus_translations || {};
@@ -289,24 +321,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             }
         });
     });
-    // 7. 新增：为元素选择模态框添加事件监听
-    const elementalContainer = document.querySelector('.elemental-selection-container');
-    if (elementalContainer) {
-        elementalContainer.addEventListener('click', (event) => {
-            const target = event.target.closest('.elemental-icon');
-            if (target && target.dataset.color) {
-                // 存储选择的颜色
-                state.selectedElementalColor = target.dataset.color;
-
-                // 关闭模态框
-                document.getElementById('elemental-modal').classList.add('hidden');
-                document.getElementById('elemental-modal-overlay').classList.add('hidden');
-
-                // 继续处理后续的UI渲染和数据过滤
-                continueHandleActivityClick();
-            }
-        });
-    }
+    
 }
 
 /**
@@ -346,6 +361,10 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
                 bulk10: bulk10 || null,
                 bulk30: bulk30 || null,
             };
+
+            if (pool.id === 'lottery_hero_lunar_new_year' || pool.id === 'lottery_hero_valentines') {
+                lotteryPoolsData[pool.id].featuredHeroNum = 2;
+            }
 
             if (pool.id === 'lottery_season_atlantis') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 4;
@@ -496,6 +515,9 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     const initialPool = [];
 
     baseHeroPool.forEach(hero => {
+        if (hero.isFeaturedOnly) {
+            return false;
+        }
         // 步骤 1: 检查当前英雄（无论是服装还是基础版）是否符合卡池的基本条件
         const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
         let matches = false;
@@ -659,64 +681,6 @@ function getAllHeroesInPool(poolConfig) {
     return finalPool; // 原有的 return 语句现在只对非元素人活动生效
 }
 
-/**
- * 在用户做出选择（例如元素颜色）后，继续处理活动点击的后续逻辑
- */
-function continueHandleActivityClick() {
-    const poolConfig = state.currentSummonData;
-    if (!poolConfig) return;
-
-    // 根据配置自动填充精选英雄位
-    if (poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
-        state.customFeaturedHeroes = poolConfig.featuredHeroes.map(heroId =>
-            state.heroesByIdMap.get(heroId) || null
-        );
-        const numSlots = poolConfig.featuredHeroNum || state.customFeaturedHeroes.length;
-        if (state.customFeaturedHeroes.length < numSlots) {
-            state.customFeaturedHeroes.length = numSlots;
-            state.customFeaturedHeroes.fill(null, poolConfig.featuredHeroes.length);
-        }
-    } else {
-        state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
-    }
-
-    // 新增逻辑：如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
-    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
-            // 如果英雄存在且颜色与选择的颜色相同，则保留，否则移除
-            if (hero && hero.color === state.selectedElementalColor) {
-                return hero;
-            }
-            return null;
-        });
-    }
-
-    // 更新召唤界面的核心UI元素
-    const titleEl = document.getElementById('lottery-pool-title');
-    const backgroundEl = document.getElementById('lottery-background-image');
-    if (titleEl) titleEl.textContent = getPoolDisplayName(poolConfig);
-    if (backgroundEl) {
-        if (poolConfig.lotterybg) {
-            backgroundEl.style.backgroundImage = `url('imgs/lottery/lotterybg/${poolConfig.lotterybg}.webp')`;
-        } else {
-            backgroundEl.style.backgroundImage = 'none';
-            backgroundEl.style.backgroundColor = '#222';
-        }
-    }
-
-    // 获取当前奖池的所有英雄（此时会根据选择的颜色进行过滤和扩展）
-    state.activeHeroSubset = getAllHeroesInPool(poolConfig);
-
-    // 将默认排序设置为“按发布日期降序”
-    state.currentSort = { key: 'Release date', direction: 'desc' };
-
-    // 调用全局的筛选和渲染函数
-    applyFiltersAndRender();
-
-    // 渲染精选英雄卡槽UI和更新召唤按钮
-    LotterySimulator.renderFeaturedHeroes();
-    LotterySimulator.updateSummonButtons();
-}
 
 // --- UI 渲染与事件处理 ---
 
@@ -800,33 +764,54 @@ async function handleActivityClick(poolId) {
     }
 
     // 4. 根据配置自动填充或清空精选英雄位
-    if (poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
-        state.customFeaturedHeroes = poolConfig.featuredHeroes.map(heroId =>
-            state.heroesByIdMap.get(heroId) || null
-        );
-        const numSlots = poolConfig.featuredHeroNum || state.customFeaturedHeroes.length;
-        if (state.customFeaturedHeroes.length < numSlots) {
-            state.customFeaturedHeroes.length = numSlots;
-            state.customFeaturedHeroes.fill(null, poolConfig.featuredHeroes.length);
-        }
-    } else {
-        state.customFeaturedHeroes = Array(poolConfig.featuredHeroNum || 0).fill(null);
-    }
-    // 如果当前是超级元素人召唤，则根据选择的颜色过滤精选英雄
-    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+    const numSlots = poolConfig.featuredHeroNum || 0;
+    let heroesForSlots = []; // 创建一个临时数组来存放最终选择的英雄
 
-        // 使用正确的、基于 colorReverseMap 的筛选逻辑
-        state.customFeaturedHeroes = state.customFeaturedHeroes.map(hero => {
-            if (hero) {
-                const standardHeroColor = colorReverseMap[hero.color];
-                const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
-                if (standardHeroColor === standardSelectedColor) {
-                    return hero; // 颜色匹配，保留英雄
-                }
-            }
-            return null; // 颜色不匹配或英雄为空，则移除
-        });
+    // --- 调试信息 ---
+    console.log("[步骤1: 检查初始状态] 当前活动配置 (poolConfig):", poolConfig);
+    console.log("[步骤1: 检查初始状态] 已选择的元素颜色 (selectedElementalColor):", state.selectedElementalColor);
+    console.log("[步骤1: 检查初始状态] 精选英雄上限 (numSlots):", numSlots);
+    // --- 调试信息结束 ---
+
+    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+        // --- 超级元素人召唤的专属逻辑 ---
+        console.log("[流程] 进入“超级元素人召唤”专属逻辑...");
+
+        // 1. 根据选择的颜色（如 "red"）动态构建要查找的键名（如 "featuredHeroes_red"）
+        const dynamicKey = `featuredHeroes_${state.selectedElementalColor}`;
+        // --- 调试信息 ---
+        console.log(`[步骤2: 构建钥匙] 生成的动态钥匙是: "${dynamicKey}"`);
+        // --- 调试信息结束 ---
+
+        // 2. 使用这个动态键名从活动配置中获取英雄ID列表
+        const heroIdList = poolConfig[dynamicKey];
+        // --- 调试信息 ---
+        console.log("[步骤3: 获取ID列表] 使用动态钥匙从配置中获取到的英雄ID列表是:", heroIdList);
+        // --- 调试信息结束 ---
+
+        // 3. 如果找到了对应颜色的列表，则将其转换为英雄对象
+        if (heroIdList && Array.isArray(heroIdList)) {
+            heroesForSlots = heroIdList.map(heroId => state.heroesByIdMap.get(heroId) || null);
+            // --- 调试信息 ---
+            console.log("[步骤4: 转换英雄对象] 将ID列表转换为英雄对象后的结果是:", heroesForSlots);
+            // --- 调试信息结束 ---
+        } else {
+            console.warn(`[警告] 未能在活动配置中找到名为 "${dynamicKey}" 的英雄列表。`);
+        }
+
+    } else {
+        // --- 适用于所有其他普通召唤的逻辑 ---
+        console.log("[流程] 进入常规召唤逻辑...");
+        if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
+            heroesForSlots = poolConfig.featuredHeroes.map(heroId => state.heroesByIdMap.get(heroId) || null);
+        }
     }
+
+    // 4. 用最终确定的英雄列表填充状态，并严格遵守 numSlots 的数量限制
+    state.customFeaturedHeroes = heroesForSlots.slice(0, numSlots);
+    // --- 调试信息 ---
+    console.log(`[步骤5: 截取英雄] 根据上限 (${numSlots}) 截取后，最终的精选英雄列表是:`, state.customFeaturedHeroes);
+    // --- 调试信息结束 ---
 
     // 5. 更新召唤界面的核心UI元素 (这部分不变)
     const titleEl = document.getElementById('lottery-pool-title');
@@ -1004,7 +989,7 @@ async function handleActivityClick(poolId) {
 
 
 /**
- * 渲染精选英雄卡槽UI
+ * 渲染精选英雄卡槽UI (已添加调试信息)
  */
 function renderFeaturedHeroes() {
     const leftColumn = document.getElementById('featured-heroes-left');
@@ -1014,47 +999,66 @@ function renderFeaturedHeroes() {
     leftColumn.innerHTML = '';
     rightColumn.innerHTML = '';
 
+    // --- 新增调试信息 ---
+    console.log("--- [渲染步骤] 进入 renderFeaturedHeroes 函数 ---");
     const numFeatured = state.currentSummonData.featuredHeroNum || 0;
-    if (state.customFeaturedHeroes.length !== numFeatured) {
-        state.customFeaturedHeroes = Array(numFeatured).fill(null);
-    }
+    console.log("[渲染步骤] > 从配置中读取到的精选英雄数量 (numFeatured):", numFeatured);
+    console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的内容:", state.customFeaturedHeroes);
+    console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的长度:", state.customFeaturedHeroes.length);
+    // --- 调试信息结束 ---
+
+    // 您的代码中可能存在一个重置数组的逻辑，我们暂时将其注释掉来排查问题
+    // if (state.customFeaturedHeroes.length !== numFeatured) {
+    //     console.warn("[渲染步骤] > 警告：数组长度与配置不符，数组将被重置！这可能是问题所在。");
+    //     state.customFeaturedHeroes = Array(numFeatured).fill(null);
+    // }
 
     for (let i = 0; i < numFeatured; i++) {
         const slot = document.createElement('div');
         slot.className = 'featured-hero-slot';
         slot.dataset.slotIndex = i;
         const hero = state.customFeaturedHeroes[i] || null;
+
+        if (hero && hero.isFeaturedOnly) {
+            slot.classList.add('non-removable');
+        }
+
         if (hero) {
-            // 使用新的HTML结构来添加背景色和辉光
+            // --- 调试信息 ---
+            console.log(`[渲染步骤] > 正在为卡槽 #${i} 渲染英雄: ${hero.name}`);
+            // --- 调试信息结束 ---
             const avatarContainer = document.createElement('div');
             avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.color)}`;
             avatarContainer.style.width = '100%';
             avatarContainer.style.height = '100%';
-
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
             avatarBackground.style.background = getHeroColorLightGradient(hero.color);
-
             const avatarImg = document.createElement('img');
             avatarImg.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
             avatarImg.className = 'hero-avatar-image';
             avatarImg.alt = hero.name;
-
             avatarContainer.append(avatarBackground, avatarImg);
             slot.appendChild(avatarContainer);
+        } else {
+            // --- 调试信息 ---
+            console.log(`[渲染步骤] > 卡槽 #${i} 为空 (null)。`);
+            // --- 调试信息结束 ---
         }
-        // 改为双击移除
+
         slot.addEventListener('dblclick', () => {
-            if (state.customFeaturedHeroes[i]) {
+            if (state.customFeaturedHeroes[i] && !state.customFeaturedHeroes[i].isFeaturedOnly) {
                 removeHeroFromFeaturedSlot(i);
             }
         });
+
         if (i % 2 === 0) {
             leftColumn.appendChild(slot);
         } else {
             rightColumn.appendChild(slot);
         }
     }
+    console.log("--- [渲染步骤] renderFeaturedHeroes 函数执行完毕 ---");
 }
 
 /**
@@ -1407,9 +1411,11 @@ async function performSummon(count) {
  * @returns {Promise}
  */
 function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false) {
-    // 播放声音
-    summonSound.currentTime = 0;
-    summonSound.play();
+    // 播放声音 (仅在音效开启时)
+    if (state.soundEnabled) {
+        summonSound.currentTime = 0;
+        summonSound.play();
+    }
 
     return new Promise(resolve => {
         animationViewport.innerHTML = ''; // 确保视口在每次动画开始时都是干净的

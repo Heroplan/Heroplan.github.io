@@ -311,6 +311,8 @@ const i18n = {
         "selectElementTitle": "请选择元素",
         "superElementalExclusionNotice": "* 不包含180天内发布的非活动家族英雄",
         "summonSummaryOkBtn": "确定",
+        "muteSound": "静音",
+        "unmuteSound": "取消静音",
 
 
     },
@@ -579,6 +581,8 @@ const i18n = {
         "selectElementTitle": "請選擇元素",
         "superElementalExclusionNotice": "* 不包含180天內發佈的非活動家族英雄",
         "summonSummaryOkBtn": "確定",
+        "muteSound": "靜音",
+        "unmuteSound": "取消靜音",
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -845,5 +849,7 @@ const i18n = {
         "selectElementTitle": "Select Element",
         "superElementalExclusionNotice": "* Does not include non-event family heroes released within 180 days",
         "summonSummaryOkBtn": "OK",
+        "muteSound": "Mute",
+        "unmuteSound": "Unmute",
     }
 }; 

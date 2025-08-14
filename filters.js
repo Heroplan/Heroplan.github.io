@@ -674,13 +674,40 @@ function applyFiltersAndRender() {
         return true;
     });
 
+    // 从已筛选的结果中，再次过滤掉那些被标记为“仅限精选”的特殊英雄
+    state.filteredHeroes = state.filteredHeroes.filter(hero => !hero.isFeaturedOnly);
+
     // 4. 为筛选出的英雄计算并附加用于显示的属性
     state.filteredHeroes.forEach(hero => {
         hero.displayStats = calculateHeroStats(hero, defaultSettings);
     });
 
+    // ▼▼▼ 在排序开始前，创建一个精选英雄ID的集合，用于快速查找 ▼▼▼
+    const featuredHeroIds = new Set();
+    if (state.lotterySimulatorActive) {
+        (state.customFeaturedHeroes || [])
+            .filter(Boolean) // 过滤掉 null 或 undefined
+            .forEach(hero => featuredHeroIds.add(hero.heroId));
+    }
+
     // 5. 执行排序
     state.filteredHeroes.sort((a, b) => {
+        // ▼▼▼ 置顶逻辑 ▼▼▼
+        // 仅当抽奖模拟器激活时，才执行精选英雄置顶规则
+        if (state.lotterySimulatorActive) {
+            const aIsFeatured = featuredHeroIds.has(a.heroId);
+            const bIsFeatured = featuredHeroIds.has(b.heroId);
+
+            if (aIsFeatured && !bIsFeatured) {
+                return -1; // a是精选，b不是，a排在前面
+            }
+            if (!aIsFeatured && bIsFeatured) {
+                return 1; // b是精选，a不是，b排在前面
+            }
+        }
+        // ▲▲▲ 新增逻辑结束 ▲▲▲
+
+        // 如果两个都是精选，或者两个都不是（或模拟器未激活），则执行原有的排序逻辑
         const key = state.currentSort.key;
         const direction = state.currentSort.direction === 'asc' ? 1 : -1;
 

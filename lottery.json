@@ -490,7 +490,7 @@
         "id": "lottery_harvest_default",
         "banner":"event_lotterybanner_harvest_festival_summon",
         "lotterybg": "event_lotterybg_harvest_festival",
-        "gemPrice": 400,
+        "gemPrice": 450,
         "amount": 1,
         "uiPriority": 120,
         "associatedEvent": "Harvest",
@@ -517,7 +517,7 @@
     {
         "productType": "HarvestSummon",
         "id": "lottery_harvest_default_bulk",
-        "gemPrice": 3400,
+        "gemPrice": 3900,
         "sourceProductId": "lottery_harvest_default",
         "amount": 10,
         "additionalDrawWeights": [
@@ -536,7 +536,7 @@
     {
         "productType": "HarvestSummon",
         "id": "lottery_harvest_default_30_bulk",
-        "gemPrice": 8400,
+        "gemPrice": 10800,
         "sourceProductId": "lottery_harvest_default",
         "amount": 30,
         "additionalDrawWeights": [

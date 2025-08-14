@@ -812,6 +812,11 @@ async function handleActivityClick(poolId) {
     // --- 调试信息 ---
     console.log(`[步骤5: 截取英雄] 根据上限 (${numSlots}) 截取后，最终的精选英雄列表是:`, state.customFeaturedHeroes);
     // --- 调试信息结束 ---
+    
+    // b. 【关键修复】如果英雄数量不足卡槽数量，用 null 补齐，确保数组长度正确
+    while (state.customFeaturedHeroes.length < numSlots) {
+        state.customFeaturedHeroes.push(null);
+    }
 
     // 5. 更新召唤界面的核心UI元素 (这部分不变)
     const titleEl = document.getElementById('lottery-pool-title');
@@ -1086,20 +1091,45 @@ function updateSummonButtons() {
 }
 
 /**
- * 将一个英雄添加到下一个可用的精选卡槽中
+ * 将一个英雄添加到下一个可用的精选卡槽中 (已添加调试信息)
  * @param {object} selectedHero - 从主列表选择的英雄
  */
 function addHeroToFeaturedSlot(selectedHero) {
+    // --- 新增调试信息 ---
+    console.log("--- [手动添加精选] 函数 addHeroToFeaturedSlot 已触发 ---");
+    console.log("[手动添加精选] > 准备添加的英雄:", selectedHero);
+    // --- 调试信息结束 ---
+
     if (selectedHero.star !== 5) {
+        // --- 新增调试信息 ---
+        console.warn("[手动添加精选] > 添加失败：英雄不是5星。");
+        // --- 调试信息结束 ---
         alert(i18n[state.currentLang].mustSelect5StarHero || '请选择一位5星英雄。');
         return;
     }
+
+    // --- 新增调试信息 ---
+    // 使用 JSON.stringify 和 parse 来打印数组在这一刻的“快照”，而不是一个可能变化的引用
+    console.log("[手动添加精选] > 添加前，当前的精选英雄列表 (state.customFeaturedHeroes):", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
+    // --- 调试信息结束 ---
+
     const emptyIndex = state.customFeaturedHeroes.findIndex(h => h === null || h === undefined);
+
+    // --- 新增调试信息 ---
+    console.log(`[手动添加精选] > 查找空卡槽的结果 (emptyIndex): ${emptyIndex}`);
+    // --- 调试信息结束 ---
+
     if (emptyIndex !== -1) {
         state.customFeaturedHeroes[emptyIndex] = selectedHero;
+        // --- 新增调试信息 ---
+        console.log("[手动添加精选] > 添加成功！更新后的列表:", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
+        // --- 调试信息结束 ---
         renderFeaturedHeroes();
         applyFiltersAndRender();
     } else {
+        // --- 新增调试信息 ---
+        console.warn("[手动添加精选] > 添加失败：未找到空卡槽 (findIndex 返回 -1)。");
+        // --- 调试信息结束 ---
         alert(i18n[state.currentLang].featuredSlotsFull || '所有精选英雄卡槽已满。');
     }
 }

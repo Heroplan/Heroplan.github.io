@@ -4284,7 +4284,7 @@ select.custom-select-hidden {
 }
 
 #lottery-activity-list li.active {
-  box-shadow: inset 0 0 0 3px var(--md-sys-color-primary);
+  box-shadow: inset 0 0 0 3px red, 0 0 10px yellow;
   filter: brightness(1.1)
 }
 

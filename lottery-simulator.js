@@ -812,8 +812,8 @@ async function handleActivityClick(poolId) {
     // --- 调试信息 ---
     console.log(`[步骤5: 截取英雄] 根据上限 (${numSlots}) 截取后，最终的精选英雄列表是:`, state.customFeaturedHeroes);
     // --- 调试信息结束 ---
-    
-    // b. 【关键修复】如果英雄数量不足卡槽数量，用 null 补齐，确保数组长度正确
+
+    // 如果英雄数量不足卡槽数量，用 null 补齐，确保数组长度正确
     while (state.customFeaturedHeroes.length < numSlots) {
         state.customFeaturedHeroes.push(null);
     }
@@ -1150,6 +1150,14 @@ function removeHeroFromFeaturedSlot(slotIndex) {
 
 async function performSummon(count) {
     const poolConfig = state.currentSummonData;
+
+    // 检查当前活动是否应该有精选英雄，并且用户是否一个都未设置
+    if (poolConfig.featuredHeroNum > 0 && !state.customFeaturedHeroes.some(h => h !== null)) {
+        // 如果条件满足，则弹出提示并终止抽奖
+        const langDict = i18n[state.currentLang];
+        alert(langDict.featuredHeroRequired);
+        return; // 终止函数执行
+    }
     if (!poolConfig) {
         console.error("错误：未选择任何抽奖活动 (poolConfig is null)。");
         return;

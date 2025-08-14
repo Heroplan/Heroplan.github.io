@@ -231,7 +231,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
     const langDict = i18n[state.currentLang] || i18n.cn;
 
     if (soundToggleButton) {
-        // 从Cookie加载用户设置，如果不存在，则默认为 true (开启音效)
+        // 【读取Cookie】从Cookie加载用户设置，如果不存在，则默认为 true (开启音效)
         state.soundEnabled = getCookie('lotterySoundEnabled') !== 'false';
 
         const updateSoundButtonUI = () => {
@@ -244,14 +244,14 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             }
         };
 
-        // 初始化按钮的显示状态和提示文字
+        // 根据读取到的Cookie初始化按钮的显示状态
         updateSoundButtonUI();
 
         // 为按钮添加点击事件监听
         soundToggleButton.addEventListener('click', () => {
             // 切换音效状态
             state.soundEnabled = !state.soundEnabled;
-            // 将新的设置保存到Cookie，有效期一年
+            // 【保存Cookie】将新的设置保存到Cookie，有效期一年
             setCookie('lotterySoundEnabled', state.soundEnabled, 365);
             // 更新按钮的显示
             updateSoundButtonUI();

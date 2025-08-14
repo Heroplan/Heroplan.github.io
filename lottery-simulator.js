@@ -768,40 +768,40 @@ async function handleActivityClick(poolId) {
     let heroesForSlots = []; // 创建一个临时数组来存放最终选择的英雄
 
     // --- 调试信息 ---
-    console.log("[步骤1: 检查初始状态] 当前活动配置 (poolConfig):", poolConfig);
-    console.log("[步骤1: 检查初始状态] 已选择的元素颜色 (selectedElementalColor):", state.selectedElementalColor);
-    console.log("[步骤1: 检查初始状态] 精选英雄上限 (numSlots):", numSlots);
+    //console.log("[步骤1: 检查初始状态] 当前活动配置 (poolConfig):", poolConfig);
+    //console.log("[步骤1: 检查初始状态] 已选择的元素颜色 (selectedElementalColor):", state.selectedElementalColor);
+    //console.log("[步骤1: 检查初始状态] 精选英雄上限 (numSlots):", numSlots);
     // --- 调试信息结束 ---
 
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
         // --- 超级元素人召唤的专属逻辑 ---
-        console.log("[流程] 进入“超级元素人召唤”专属逻辑...");
+        //console.log("[流程] 进入“超级元素人召唤”专属逻辑...");
 
         // 1. 根据选择的颜色（如 "red"）动态构建要查找的键名（如 "featuredHeroes_red"）
         const dynamicKey = `featuredHeroes_${state.selectedElementalColor}`;
         // --- 调试信息 ---
-        console.log(`[步骤2: 构建钥匙] 生成的动态钥匙是: "${dynamicKey}"`);
+        //console.log(`[步骤2: 构建钥匙] 生成的动态钥匙是: "${dynamicKey}"`);
         // --- 调试信息结束 ---
 
         // 2. 使用这个动态键名从活动配置中获取英雄ID列表
         const heroIdList = poolConfig[dynamicKey];
         // --- 调试信息 ---
-        console.log("[步骤3: 获取ID列表] 使用动态钥匙从配置中获取到的英雄ID列表是:", heroIdList);
+        //console.log("[步骤3: 获取ID列表] 使用动态钥匙从配置中获取到的英雄ID列表是:", heroIdList);
         // --- 调试信息结束 ---
 
         // 3. 如果找到了对应颜色的列表，则将其转换为英雄对象
         if (heroIdList && Array.isArray(heroIdList)) {
             heroesForSlots = heroIdList.map(heroId => state.heroesByIdMap.get(heroId) || null);
             // --- 调试信息 ---
-            console.log("[步骤4: 转换英雄对象] 将ID列表转换为英雄对象后的结果是:", heroesForSlots);
+            //console.log("[步骤4: 转换英雄对象] 将ID列表转换为英雄对象后的结果是:", heroesForSlots);
             // --- 调试信息结束 ---
         } else {
-            console.warn(`[警告] 未能在活动配置中找到名为 "${dynamicKey}" 的英雄列表。`);
+            //console.warn(`[警告] 未能在活动配置中找到名为 "${dynamicKey}" 的英雄列表。`);
         }
 
     } else {
         // --- 适用于所有其他普通召唤的逻辑 ---
-        console.log("[流程] 进入常规召唤逻辑...");
+        //console.log("[流程] 进入常规召唤逻辑...");
         if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
             heroesForSlots = poolConfig.featuredHeroes.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
@@ -810,7 +810,7 @@ async function handleActivityClick(poolId) {
     // 4. 用最终确定的英雄列表填充状态，并严格遵守 numSlots 的数量限制
     state.customFeaturedHeroes = heroesForSlots.slice(0, numSlots);
     // --- 调试信息 ---
-    console.log(`[步骤5: 截取英雄] 根据上限 (${numSlots}) 截取后，最终的精选英雄列表是:`, state.customFeaturedHeroes);
+    //console.log(`[步骤5: 截取英雄] 根据上限 (${numSlots}) 截取后，最终的精选英雄列表是:`, state.customFeaturedHeroes);
     // --- 调试信息结束 ---
 
     // 如果英雄数量不足卡槽数量，用 null 补齐，确保数组长度正确
@@ -1005,16 +1005,16 @@ function renderFeaturedHeroes() {
     rightColumn.innerHTML = '';
 
     // --- 新增调试信息 ---
-    console.log("--- [渲染步骤] 进入 renderFeaturedHeroes 函数 ---");
+    //console.log("--- [渲染步骤] 进入 renderFeaturedHeroes 函数 ---");
     const numFeatured = state.currentSummonData.featuredHeroNum || 0;
-    console.log("[渲染步骤] > 从配置中读取到的精选英雄数量 (numFeatured):", numFeatured);
-    console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的内容:", state.customFeaturedHeroes);
-    console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的长度:", state.customFeaturedHeroes.length);
+    //console.log("[渲染步骤] > 从配置中读取到的精选英雄数量 (numFeatured):", numFeatured);
+    //console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的内容:", state.customFeaturedHeroes);
+    //console.log("[渲染步骤] > 当前 state.customFeaturedHeroes 的长度:", state.customFeaturedHeroes.length);
     // --- 调试信息结束 ---
 
     // 您的代码中可能存在一个重置数组的逻辑，我们暂时将其注释掉来排查问题
     // if (state.customFeaturedHeroes.length !== numFeatured) {
-    //     console.warn("[渲染步骤] > 警告：数组长度与配置不符，数组将被重置！这可能是问题所在。");
+    //     //console.warn("[渲染步骤] > 警告：数组长度与配置不符，数组将被重置！这可能是问题所在。");
     //     state.customFeaturedHeroes = Array(numFeatured).fill(null);
     // }
 
@@ -1030,7 +1030,7 @@ function renderFeaturedHeroes() {
 
         if (hero) {
             // --- 调试信息 ---
-            console.log(`[渲染步骤] > 正在为卡槽 #${i} 渲染英雄: ${hero.name}`);
+            //console.log(`[渲染步骤] > 正在为卡槽 #${i} 渲染英雄: ${hero.name}`);
             // --- 调试信息结束 ---
             const avatarContainer = document.createElement('div');
             avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.color)}`;
@@ -1047,7 +1047,7 @@ function renderFeaturedHeroes() {
             slot.appendChild(avatarContainer);
         } else {
             // --- 调试信息 ---
-            console.log(`[渲染步骤] > 卡槽 #${i} 为空 (null)。`);
+            //console.log(`[渲染步骤] > 卡槽 #${i} 为空 (null)。`);
             // --- 调试信息结束 ---
         }
 
@@ -1063,7 +1063,7 @@ function renderFeaturedHeroes() {
             rightColumn.appendChild(slot);
         }
     }
-    console.log("--- [渲染步骤] renderFeaturedHeroes 函数执行完毕 ---");
+    //console.log("--- [渲染步骤] renderFeaturedHeroes 函数执行完毕 ---");
 }
 
 /**
@@ -1096,13 +1096,13 @@ function updateSummonButtons() {
  */
 function addHeroToFeaturedSlot(selectedHero) {
     // --- 新增调试信息 ---
-    console.log("--- [手动添加精选] 函数 addHeroToFeaturedSlot 已触发 ---");
-    console.log("[手动添加精选] > 准备添加的英雄:", selectedHero);
+    //console.log("--- [手动添加精选] 函数 addHeroToFeaturedSlot 已触发 ---");
+    //console.log("[手动添加精选] > 准备添加的英雄:", selectedHero);
     // --- 调试信息结束 ---
 
     if (selectedHero.star !== 5) {
         // --- 新增调试信息 ---
-        console.warn("[手动添加精选] > 添加失败：英雄不是5星。");
+        //console.warn("[手动添加精选] > 添加失败：英雄不是5星。");
         // --- 调试信息结束 ---
         alert(i18n[state.currentLang].mustSelect5StarHero || '请选择一位5星英雄。');
         return;
@@ -1110,25 +1110,25 @@ function addHeroToFeaturedSlot(selectedHero) {
 
     // --- 新增调试信息 ---
     // 使用 JSON.stringify 和 parse 来打印数组在这一刻的“快照”，而不是一个可能变化的引用
-    console.log("[手动添加精选] > 添加前，当前的精选英雄列表 (state.customFeaturedHeroes):", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
+    //console.log("[手动添加精选] > 添加前，当前的精选英雄列表 (state.customFeaturedHeroes):", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
     // --- 调试信息结束 ---
 
     const emptyIndex = state.customFeaturedHeroes.findIndex(h => h === null || h === undefined);
 
     // --- 新增调试信息 ---
-    console.log(`[手动添加精选] > 查找空卡槽的结果 (emptyIndex): ${emptyIndex}`);
+    //console.log(`[手动添加精选] > 查找空卡槽的结果 (emptyIndex): ${emptyIndex}`);
     // --- 调试信息结束 ---
 
     if (emptyIndex !== -1) {
         state.customFeaturedHeroes[emptyIndex] = selectedHero;
         // --- 新增调试信息 ---
-        console.log("[手动添加精选] > 添加成功！更新后的列表:", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
+        //console.log("[手动添加精选] > 添加成功！更新后的列表:", JSON.parse(JSON.stringify(state.customFeaturedHeroes)));
         // --- 调试信息结束 ---
         renderFeaturedHeroes();
         applyFiltersAndRender();
     } else {
         // --- 新增调试信息 ---
-        console.warn("[手动添加精选] > 添加失败：未找到空卡槽 (findIndex 返回 -1)。");
+        //console.warn("[手动添加精选] > 添加失败：未找到空卡槽 (findIndex 返回 -1)。");
         // --- 调试信息结束 ---
         alert(i18n[state.currentLang].featuredSlotsFull || '所有精选英雄卡槽已满。');
     }
@@ -1159,19 +1159,19 @@ async function performSummon(count) {
         return; // 终止函数执行
     }
     if (!poolConfig) {
-        console.error("错误：未选择任何抽奖活动 (poolConfig is null)。");
+        //console.error("错误：未选择任何抽奖活动 (poolConfig is null)。");
         return;
     }
 
     // --- 调试信息 ---
-    console.log(`===================\n[主流程] 开始召唤：从奖池 "${poolConfig.id}" 进行 ${count} 次召唤\n===================`);
+    //console.log(`===================\n[主流程] 开始召唤：从奖池 "${poolConfig.id}" 进行 ${count} 次召唤\n===================`);
 
     const masterHeroPool = getFilteredMasterPool();
     const isCostumeSummon = poolConfig.productType === 'CostumeSummon';
     let costumePool = [];
 
     if (isCostumeSummon) {
-        console.log("[主流程] 检测到“服装召唤”，正在构建专用最新服装池...");
+        //console.log("[主流程] 检测到“服装召唤”，正在构建专用最新服装池...");
         const latestCostumes = new Map();
         state.allHeroes.forEach(hero => {
             if (hero.family === 'classic' && hero.costume_id > 0) {
@@ -1182,10 +1182,10 @@ async function performSummon(count) {
             }
         });
         costumePool = Array.from(latestCostumes.values());
-        console.log(`[主流程] 服装池构建完毕，共找到 ${costumePool.length} 个最新版服装英雄。`);
+        //console.log(`[主流程] 服装池构建完毕，共找到 ${costumePool.length} 个最新版服装英雄。`);
 
         if (costumePool.length === 0) {
-            console.error("错误：服装召唤奖池为空，无法执行召唤。");
+            //console.error("错误：服装召唤奖池为空，无法执行召唤。");
             return;
         }
     }
@@ -1194,82 +1194,82 @@ async function performSummon(count) {
 
     // 主召唤循环
     for (let k = 0; k < count; k++) {
-        console.log(`\n--- [第 ${k + 1}/${count} 次召唤] ---`);
+        //console.log(`\n--- [第 ${k + 1}/${count} 次召唤] ---`);
         let drawnHero = null;
         let bucketString = 'unknown';
 
         if (isCostumeSummon) {
-            console.log("[抽奖中] 使用“服装召唤”逻辑...");
+            //console.log("[抽奖中] 使用“服装召唤”逻辑...");
             const { bucketWeights, bucketConfig } = poolConfig;
             const bucketIndex = selectWeightedIndex(bucketWeights);
             bucketString = bucketConfig[bucketIndex];
             const starMatch = bucketString.match(/_(\d+)$/);
             const isFeatured = bucketString === 'featuredHero';
             const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
-            console.log(`[抽奖中] > 选中桶: ${bucketString}, 目标星级: ${targetStar}`);
+            //console.log(`[抽奖中] > 选中桶: ${bucketString}, 目标星级: ${targetStar}`);
 
             const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
-            console.log(`[抽奖中] > 在服装池中找到 ${heroPoolOfStar.length} 个符合条件的英雄。`);
+            //console.log(`[抽奖中] > 在服装池中找到 ${heroPoolOfStar.length} 个符合条件的英雄。`);
 
             if (heroPoolOfStar.length > 0) {
                 drawnHero = heroPoolOfStar[Math.floor(Math.random() * heroPoolOfStar.length)];
-                console.log(`[抽奖中] > 成功抽到: ${drawnHero.name}`);
+                //console.log(`[抽奖中] > 成功抽到: ${drawnHero.name}`);
             } else {
-                console.warn(`[抽奖中] > 警告: 目标星级 ${targetStar} 的服装英雄池为空。`);
+                //console.warn(`[抽奖中] > 警告: 目标星级 ${targetStar} 的服装英雄池为空。`);
             }
             bucketString = 'costume';
         } else {
-            console.log("[抽奖中] 使用常规召唤逻辑...");
+            //console.log("[抽奖中] 使用常规召唤逻辑...");
             const { bucketWeights, bucketConfig } = poolConfig;
             const bucketIndex = selectWeightedIndex(bucketWeights);
             bucketString = bucketConfig[bucketIndex];
-            console.log(`[抽奖中] > 权重计算后，选中桶: "${bucketString}"`);
+            //console.log(`[抽奖中] > 权重计算后，选中桶: "${bucketString}"`);
 
             if (bucketString && bucketString.startsWith('trainer')) {
-                console.log("[抽奖中] > 桶类型为“训练师”，正在生成...");
+                //console.log("[抽奖中] > 桶类型为“训练师”，正在生成...");
                 const star = parseInt(bucketString.split('_')[1], 10);
                 const colors = ['红', '蓝', '绿', '黄', '紫'];
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
                 drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
-                console.log(`[抽奖中] > 成功生成: ${drawnHero.name}`);
+                //console.log(`[抽奖中] > 成功生成: ${drawnHero.name}`);
             } else if (bucketString === 'featuredHero') {
-                console.log("[抽奖中] > 桶类型为“精选英雄”，正在检查...");
-                console.log("[抽奖中] > 抽奖前，原始 state.customFeaturedHeroes 内容:", state.customFeaturedHeroes);
+                //console.log("[抽奖中] > 桶类型为“精选英雄”，正在检查...");
+                //console.log("[抽奖中] > 抽奖前，原始 state.customFeaturedHeroes 内容:", state.customFeaturedHeroes);
                 if (state.currentSummonData.productType === 'SuperElementalSummon') {
-                    console.log("[抽奖中] > 当前为“超级元素人召唤”，已选择的颜色是:", state.selectedElementalColor);
+                    //console.log("[抽奖中] > 当前为“超级元素人召唤”，已选择的颜色是:", state.selectedElementalColor);
                 }
                 const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
-                console.log(`[抽奖中] > 筛选后，有效的精选英雄数量: ${validFeatured.length}`);
+                //console.log(`[抽奖中] > 筛选后，有效的精选英雄数量: ${validFeatured.length}`);
                 if (validFeatured.length > 0) {
                     drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
-                    console.log(`[抽奖中] > 成功抽到精选英雄: ${drawnHero.name}`);
+                    //console.log(`[抽奖中] > 成功抽到精选英雄: ${drawnHero.name}`);
                 } else {
-                    console.warn("[抽奖中] > 警告: 有效的精选英雄列表为空，将触发内部后备。");
+                    //console.warn("[抽奖中] > 警告: 有效的精选英雄列表为空，将触发内部后备。");
                     const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
                     drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                     if (drawnHero) console.log(`[抽奖中] > 成功抽到内部后备英雄: ${drawnHero.name}`);
                 }
             } else if (bucketString) {
-                console.log(`[抽奖中] > 桶类型为常规英雄桶，正在调用 getHeroPoolForBucket('${bucketString}')...`);
+                //console.log(`[抽奖中] > 桶类型为常规英雄桶，正在调用 getHeroPoolForBucket('${bucketString}')...`);
                 const heroPool = getHeroPoolForBucket(bucketString, { ...poolConfig, masterPool: masterHeroPool });
-                console.log(`[抽奖中] > getHeroPoolForBucket 返回了 ${heroPool.length} 个英雄。`);
+                //console.log(`[抽奖中] > getHeroPoolForBucket 返回了 ${heroPool.length} 个英雄。`);
                 if (heroPool.length > 0) {
                     drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
-                    console.log(`[抽奖中] > 成功抽到: ${drawnHero.name}`);
+                    //console.log(`[抽奖中] > 成功抽到: ${drawnHero.name}`);
                 }
             }
         }
 
         // 【重要】通用后备机制，防止因任何意外情况导致抽奖失败
         if (!drawnHero) {
-            console.warn(`[后备机制] > 警告：在第 ${k + 1} 次召唤中，未能从桶 "${bucketString}" 抽到任何英雄。正在启用通用后备机制...`);
+            //console.warn(`[后备机制] > 警告：在第 ${k + 1} 次召唤中，未能从桶 "${bucketString}" 抽到任何英雄。正在启用通用后备机制...`);
             const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
             if (fallbackPool.length > 0) {
                 drawnHero = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
                 bucketString = 'fallback_s1_3'; // 更新桶名以供记录
-                console.log(`[后备机制] > 成功获取后备英雄: ${drawnHero.name}`);
+                //console.log(`[后备机制] > 成功获取后备英雄: ${drawnHero.name}`);
             } else {
-                console.error("[后备机制] > 严重错误：通用后备池 (heroes_s1_3) 也为空！此次召唤失败。");
+                //console.error("[后备机制] > 严重错误：通用后备池 (heroes_s1_3) 也为空！此次召唤失败。");
             }
         }
 
@@ -1278,13 +1278,13 @@ async function performSummon(count) {
             totalSummonedResults.push({ hero: drawnHero, bucket: isCostumeSummon ? 'costume' : (bucketString || 'unknown') });
 
             // 奖励抽奖逻辑
-            console.log("[奖励检查] 正在检查是否触发奖励召唤...");
+            //console.log("[奖励检查] 正在检查是否触发奖励召唤...");
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             if (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil) {
-                console.log("[奖励检查] > 符合传奇奖励条件，进行概率检定...");
+                //console.log("[奖励检查] > 符合传奇奖励条件，进行概率检定...");
                 for (let i = 0; i < (poolConfig.bonusLegendaryHeroPullAmount || 1); i++) {
                     if (Math.random() * 1000 < poolConfig.bonusLegendaryHeroChancePerMil) {
-                        console.log(`[奖励检查] > 成功触发【传奇奖励】召唤！`);
+                        //console.log(`[奖励检查] > 成功触发【传奇奖励】召唤！`);
                         const isEventOnly = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly;
                         let bonusPool;
                         if (isEventOnly) {
@@ -1294,7 +1294,7 @@ async function performSummon(count) {
                         }
                         if (bonusPool.length > 0) {
                             const bonusHero = bonusPool[Math.floor(Math.random() * bonusPool.length)];
-                            console.log(`[奖励检查] > 传奇奖励英雄: ${bonusHero.name}`);
+                            //console.log(`[奖励检查] > 传奇奖励英雄: ${bonusHero.name}`);
                             totalSummonedResults.push({ hero: bonusHero, bucket: 'bonusLegendary' });
                         }
                     }
@@ -1304,21 +1304,21 @@ async function performSummon(count) {
             if (poolConfig.hasMysteryHeroBonusRoll) {
                 const hotmInfo = summonPoolDetails.hotm;
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
-                    console.log(`[奖励检查] > 成功触发【月度英雄】召唤！`);
+                    //console.log(`[奖励检查] > 成功触发【月度英雄】召唤！`);
                     const hotmPool = state.allHeroes.filter(h => String(h.family) === String(hotmInfo.family));
                     if (hotmPool.length > 0) {
                         const latestHotm = hotmPool.sort((a, b) => new Date(b['Release date']) - new Date(a['Release date']))[0];
-                        console.log(`[奖励检查] > 月度英雄: ${latestHotm.name}`);
+                        //console.log(`[奖励检查] > 月度英雄: ${latestHotm.name}`);
                         totalSummonedResults.push({ hero: latestHotm, bucket: 'hotm' });
                     }
                 }
                 let mysteryInfo = poolConfig.productType === 'LegendsSummon' ? summonPoolDetails.LegendsSummonMysteryHero : summonPoolDetails.MysteryHero;
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
-                    console.log(`[奖励检查] > 成功触发【神秘英雄】召唤！`);
+                    //console.log(`[奖励检查] > 成功触发【神秘英雄】召唤！`);
                     const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
                     if (mysteryPool.length > 0) {
                         const mysteryHero = mysteryPool[Math.floor(Math.random() * mysteryPool.length)];
-                        console.log(`[奖励检查] > 神秘英雄: ${mysteryHero.name}`);
+                        //console.log(`[奖励检查] > 神秘英雄: ${mysteryHero.name}`);
                         totalSummonedResults.push({ hero: mysteryHero, bucket: 'mystery' });
                     }
                 }
@@ -1329,7 +1329,7 @@ async function performSummon(count) {
                 let random = Math.random() * totalWeight;
                 for (let i = 0; i < poolConfig.additionalDrawWeights.length; i++) {
                     if (random < poolConfig.additionalDrawWeights[i]) {
-                        if (i > 0) console.log(`[奖励检查] > 成功触发【${i}次额外】召唤！`);
+                        if (i > 0) //console.log(`[奖励检查] > 成功触发【${i}次额外】召唤！`);
                         for (let j = 0; j < i; j++) {
                             const extraBucketIndex = selectWeightedIndex(poolConfig.bucketWeights);
                             const extraBucketString = poolConfig.bucketConfig[extraBucketIndex];
@@ -1350,7 +1350,7 @@ async function performSummon(count) {
                                 if (heroPool.length > 0) extraHero = heroPool[Math.floor(Math.random() * heroPool.length)];
                             }
                             if (extraHero) {
-                                console.log(`[奖励检查] > 额外召唤 #${j + 1} 结果: ${extraHero.name}`);
+                                //console.log(`[奖励检查] > 额外召唤 #${j + 1} 结果: ${extraHero.name}`);
                                 totalSummonedResults.push({ hero: extraHero, bucket: 'additionalDraw' });
                             }
                         }
@@ -1363,7 +1363,7 @@ async function performSummon(count) {
     }
 
     // --- 调试信息 ---
-    console.log(`\n===================\n[主流程] 召唤结束，总计获得 ${totalSummonedResults.length} 个结果。\n===================`);
+    //console.log(`\n===================\n[主流程] 召唤结束，总计获得 ${totalSummonedResults.length} 个结果。\n===================`);
 
 
     if (totalSummonedResults.length === 0) return;
@@ -1572,7 +1572,7 @@ function showSummaryModal(results) {
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
 
     if (!overlay || !summaryModal || !scrollContainer) {
-        console.error('显示总结弹窗失败：缺少必要的HTML元素。');
+        //console.error('显示总结弹窗失败：缺少必要的HTML元素。');
         return;
     }
 
@@ -1746,7 +1746,7 @@ function saveHistoryToLocalStorage() {
         const historyJSON = JSON.stringify(state.summonHistory);
         localStorage.setItem('summonHistory', historyJSON);
     } catch (e) {
-        console.error("无法保存抽奖历史:", e);
+        //console.error("无法保存抽奖历史:", e);
     }
 }
 
@@ -1758,7 +1758,7 @@ function loadHistoryFromLocalStorage() {
         const historyJSON = localStorage.getItem('summonHistory');
         state.summonHistory = historyJSON ? JSON.parse(historyJSON) : [];
     } catch (e) {
-        console.error("无法加载抽奖历史:", e);
+        //console.error("无法加载抽奖历史:", e);
         state.summonHistory = [];
     }
 }

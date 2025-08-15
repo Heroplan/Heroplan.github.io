@@ -298,6 +298,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
 
     const toggleHistoryCheckbox = document.getElementById('toggle-history-view-checkbox');
     if (toggleHistoryCheckbox) {
+        toggleHistoryCheckbox.checked = state.showAllSummonHistory; 
         toggleHistoryCheckbox.addEventListener('change', () => {
             state.showAllSummonHistory = toggleHistoryCheckbox.checked;
             renderSummonHistory();
@@ -1392,6 +1393,11 @@ function showSummaryModal(results) {
         card.className = `summary-hero-card ${getColorGlowClass(hero.color)}`;
         card.title = hero.name;
 
+        // 【新增代码】如果是5星英雄，则添加跑马灯效果的CSS类
+        if (hero.star === 5) {
+            card.classList.add('star-5-marquee');
+        }
+
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
         avatar.style.background = getHeroColorLightGradient(hero.color);
@@ -1597,6 +1603,10 @@ function renderSummonHistory() {
             const avatarContainer = document.createElement('div');
             avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.color)}`;
             avatarContainer.title = hero.name;
+            // 【新增代码】如果是5星英雄，则添加跑马灯效果的CSS类
+            if (hero.star === 5) {
+                avatarContainer.classList.add('star-5-marquee');
+            }
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
             avatarBackground.style.background = getHeroColorLightGradient(hero.color);

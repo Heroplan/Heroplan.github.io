@@ -5694,3 +5694,89 @@ html:not(.dark-theme) .color-text-outlined {
   text-align: left;
   /* 确保组标题左对齐 */
 }
+
+/* --- 5星英雄动态半透明彩虹扫光效果 --- */
+
+/* 为包含跑马灯效果的父元素设置基础样式 (保持不变) */
+.summary-hero-card.star-5-marquee,
+.hero-avatar-container.star-5-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 定义扫光伪元素 */
+.summary-hero-card.star-5-marquee::before,
+.hero-avatar-container.star-5-marquee::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100%;
+  z-index: 3;
+
+  /* 
+   * =======================================================
+   *                         核心修改
+   * =======================================================
+   *
+   * 增加 opacity 属性来设置整体的半透明效果。
+   * 0.6 代表 60% 的不透明度。
+   * 你可以按喜好调整这个值 (例如 0.4 会更透明, 0.8 会更实)。
+   * =======================================================
+  */
+  opacity: 0.6;
+
+  /* 彩虹色的线性渐变 (保持不变) */
+  background: linear-gradient(90deg,
+      #ff0000,
+      /* Red */
+      #ff7f00,
+      /* Orange */
+      #ffff00,
+      /* Yellow */
+      #00ff00,
+      /* Green */
+      #0000ff,
+      /* Blue */
+      #8b00ff,
+      /* Violet */
+      #ff0000
+      /* Back to Red to make the loop seamless */
+    );
+  background-size: 300% 100%;
+
+  /* 倾斜光束 (保持不变) */
+  transform: skewX(-25deg);
+
+  /* 两个动画 (保持不变) */
+  animation:
+    marquee-light-sweep 1.5s infinite ease-in-out,
+    rainbow-flow 2s linear infinite;
+}
+
+/* 定义【移动】动画的关键帧 (保持不变) */
+@keyframes marquee-light-sweep {
+  0% {
+    left: -100%;
+  }
+
+  40% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+/* 定义【背景流动】的动画 (保持不变) */
+@keyframes rainbow-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}

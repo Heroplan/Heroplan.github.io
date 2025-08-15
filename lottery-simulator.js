@@ -1188,7 +1188,7 @@ async function performSummon(count) {
                                     extraHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                                 }
                             } else if (extraBucketString) {
-                                const heroPool = getHeroPoolForBucket(extraBucketString, poolConfig);
+                                const heroPool = getHeroPoolForBucket(extraBucketString, { ...poolConfig, masterPool: masterHeroPool }); 
                                 if (heroPool.length > 0) extraHero = heroPool[Math.floor(Math.random() * heroPool.length)];
                             }
                             if (extraHero) {

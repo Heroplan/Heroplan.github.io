@@ -849,8 +849,19 @@ async function handleActivityClick(poolId) {
             }
 
             let specialNoticeHTML = '';
-            if (poolConfig.productType === 'SuperElementalSummon') {
-                const noticeText = i18n[state.currentLang].superElementalExclusionNotice || '* Does not include non-associated family heroes released within 180 days';
+            const langDict = i18n[state.currentLang];
+            let noticeText = '';
+            if (poolConfig.latestIncludedHeroAgeInDays > 0) {
+                // 检查是否存在这条新规则
+                if (langDict.latestHeroAgeNotice) {
+                    noticeText = langDict.latestHeroAgeNotice(poolConfig.latestIncludedHeroAgeInDays);
+                }
+            } else if (poolConfig.productType === 'SuperElementalSummon') {
+                // 如果没有新规则，再检查是否为超级元素人奖池
+                noticeText = i18n[state.currentLang].superElementalExclusionNotice || '* Does not include non-associated family heroes released within 180 days';
+            }
+            // 如果生成了说明文本，则创建HTML
+            if (noticeText) {
                 specialNoticeHTML = `<p style="font-size: 0.7em; color: var(--md-sys-color-primary); margin: 10px 5px 0 5px; text-align: center;">${noticeText}</p>`;
             }
 

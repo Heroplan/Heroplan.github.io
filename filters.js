@@ -705,7 +705,7 @@ function applyFiltersAndRender() {
                 return 1; // b是精选，a不是，b排在前面
             }
         }
-        // ▲▲▲ 新增逻辑结束 ▲▲▲
+        // ▲▲▲ 逻辑结束 ▲▲▲
 
         // 如果两个都是精选，或者两个都不是（或模拟器未激活），则执行原有的排序逻辑
         const key = state.currentSort.key;

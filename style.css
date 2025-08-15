@@ -5788,48 +5788,52 @@ html:not(.dark-theme) .color-text-outlined {
   gap: 1rem;
 }
 
-/* --- 移动端历史记录标题栏布局修正 (最终Grid布局版) --- */
+/* --- 移动端历史记录标题栏布局修正 (最终悬浮图标版) --- */
 @media (max-width: 900px) {
+
+  /* 1. 设置父容器为相对定位，作为悬浮图标的基准 */
   .summon-history-header {
-    /* 1. 改为 Grid 布局 */
-    display: grid;
-    /* 2. 定义列: 第一列宽度自适应(给图标)，第二列占据剩余空间(给标题) */
-    grid-template-columns: auto 1fr;
-    /* 3. 定义行间距并居中对齐 */
-    row-gap: 0.75rem;
-    align-items: center;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许内容换行 */
+    justify-content: center;
+    /* 居中对齐 */
+    /* 关键：在左侧留出空间给悬浮的图标 */
+    padding-left: 42px;
+    padding-right: 1rem;
+    /* 保持右侧对称间距 */
+    box-sizing: border-box;
   }
 
-  /* 4. 隐藏不必要的折叠箭头 */
+  /* 2. 隐藏不必要的折叠箭头 */
   #summon-history-panel .collapse-arrow {
     display: none;
   }
 
-  /* 5. 将图标放在第1行、第1列 */
+  /* 3. 【核心】将图标悬浮在父容器的左侧 */
   .history-probability-icon {
-    grid-row: 1;
-    grid-column: 1 / 2;
+    position: absolute;
+    left: 8px;
+    /* 距离左边框8px */
+    top: 14px;
+    /* 距离顶部14px，使其与标题行垂直对齐 */
+    z-index: 2;
   }
 
-  /* 6. 将标题放在第1行、第2列 */
+  /* 4. 让标题强制占据第一行 */
   #summon-history-title {
-    grid-row: 1;
-    grid-column: 2 / 3;
+    flex-basis: 100%;
     text-align: center;
+    order: 1;
   }
 
-  /* 7. 【关键】当图标不存在时，让标题占据整行以保证居中 */
-  #summon-history-title:first-child {
-    grid-column: 1 / -1;
-    /* 占据所有列 */
-  }
-
-  /* 8. 将控件组放在第2行，并让它横跨所有列 */
+  /* 5. 让控件组强制占据第二行 */
   .summon-history-controls {
-    grid-row: 2;
-    grid-column: 1 / -1;
-    /* 占据所有列 */
+    flex-basis: 100%;
     justify-content: center;
-    /* 将内部的按钮等控件居中 */
+    order: 2;
+    margin-top: 0.5rem;
+    /* 在标题和控件之间增加一点间距 */
   }
 }

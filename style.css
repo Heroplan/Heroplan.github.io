@@ -4689,7 +4689,7 @@ select.custom-select-hidden {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 600px;
+  max-width: 1300px;
   background-color: var(--md-sys-color-surface);
   border-radius: 12px;
   padding: 1.5rem;
@@ -4820,8 +4820,8 @@ select.custom-select-hidden {
   position: relative;
   /* 为内部的绝对定位元素提供基准 */
   flex-shrink: 0;
-  width: 128px;
-  height: 128px;
+  width: 100px;
+  height: 100px;
   border-radius: 8px;
   overflow: hidden;
   /* 隐藏溢出的部分 */

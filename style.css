@@ -5780,3 +5780,50 @@ html:not(.dark-theme) .color-text-outlined {
     background-position: 100% 50%;
   }
 }
+
+/* --- 抽奖历史记录控件包裹容器 --- */
+.summon-history-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --- 移动端历史记录标题栏布局修正 (最终版) --- */
+@media (max-width: 900px) {
+  .summon-history-header {
+    flex-wrap: wrap;
+    /* 允许项目换行 */
+    align-items: center;
+    /* 垂直居中每一行的内容 */
+    row-gap: 0.75rem;
+    /* 设置行与行之间的垂直间距 */
+  }
+
+  /* 1. 精确隐藏此面板中多余的折叠箭头 */
+  #summon-history-panel .collapse-arrow {
+    display: none;
+  }
+
+  /* 2. 确保图标在最左侧 */
+  .history-probability-icon {
+    flex-shrink: 0;
+    /* 防止图标被压缩 */
+  }
+
+  /* 3. 让标题占据图标右侧所有剩余空间，并将文本居中 */
+  #summon-history-title {
+    flex-grow: 1;
+    text-align: center;
+    /* 移除可能干扰布局的 order 属性 */
+  }
+
+  /* 4. 让控件组强制换到第二行，并将其内容居中 */
+  .summon-history-controls {
+    flex-basis: 100%;
+    /* 强制占据一整行来实现换行 */
+    justify-content: center;
+    /* 将内部的按钮等控件居中 */
+    order: 3;
+    /* 确保它始终在最下方 */
+  }
+}

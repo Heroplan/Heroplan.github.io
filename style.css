@@ -5787,53 +5787,48 @@ html:not(.dark-theme) .color-text-outlined {
   align-items: center;
   gap: 1rem;
 }
-
-/* --- 移动端历史记录标题栏布局修正 (最终悬浮图标版) --- */
+/* --- 移动端历史记录标题栏布局修正 (最终 Block 布局强制版) --- */
 @media (max-width: 900px) {
 
-  /* 1. 设置父容器为相对定位，作为悬浮图标的基准 */
-  .summon-history-header {
+  /* 1. 父容器仅作为定位基准和内边距容器 */
+  #summon-history-panel .summon-history-header {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    /* 允许内容换行 */
-    justify-content: center;
-    /* 居中对齐 */
-    /* 关键：在左侧留出空间给悬浮的图标 */
-    padding-left: 42px;
-    padding-right: 1rem;
-    /* 保持右侧对称间距 */
+    padding: 0.75rem 1rem 0.75rem 42px;
+    /* 为悬浮图标和边缘留出空间 */
     box-sizing: border-box;
   }
 
-  /* 2. 隐藏不必要的折叠箭头 */
+  /* 2. 隐藏箭头 */
   #summon-history-panel .collapse-arrow {
     display: none;
   }
 
-  /* 3. 【核心】将图标悬浮在父容器的左侧 */
-  .history-probability-icon {
+  /* 3. 图标依然悬浮，完全脱离布局流 */
+  #summon-history-panel .history-probability-icon {
     position: absolute;
     left: 8px;
-    /* 距离左边框8px */
-    top: 14px;
-    /* 距离顶部14px，使其与标题行垂直对齐 */
-    z-index: 2;
+    top: 15px;
   }
 
-  /* 4. 让标题强制占据第一行 */
-  #summon-history-title {
-    flex-basis: 100%;
+  /* 4. 【核心】强制标题和控件组使用最基础的 block 布局 */
+  #summon-history-header>#summon-history-title,
+  #summon-history-header>.summon-history-controls {
+    display: block;
+    /* 强制每个元素占据独立的一行 */
+    width: 100%;
+    /* 确保它们撑满宽度 */
     text-align: center;
-    order: 1;
+    /* 居中文本 */
+    margin-bottom: 0.5rem;
+    /* 添加一些垂直间距 */
   }
 
-  /* 5. 让控件组强制占据第二行 */
-  .summon-history-controls {
-    flex-basis: 100%;
+  /* 5. 修正控件组内部的对齐（控件组自身还是flex容器） */
+  #summon-history-header>.summon-history-controls {
+    display: flex;
     justify-content: center;
-    order: 2;
-    margin-top: 0.5rem;
-    /* 在标题和控件之间增加一点间距 */
+    /* 居中其内部的按钮和开关 */
+    width: auto;
+    /* 宽度由flex子项决定 */
   }
 }

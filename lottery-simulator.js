@@ -897,7 +897,14 @@ async function handleActivityClick(poolId) {
                 }
             }, 0);
 
-            portalContainer.appendChild(infoIcon);
+            // 【核心修正】将图标添加到 .lottery-content-overlay 内部，
+            // 而不是 portalContainer，以确保它们在同一个堆叠上下文中。
+            const contentOverlay = portalContainer.querySelector('.lottery-content-overlay');
+            if (contentOverlay) {
+                contentOverlay.appendChild(infoIcon);
+            } else {
+                portalContainer.appendChild(infoIcon); // Fallback in case structure changes
+            }
         }
     }
 

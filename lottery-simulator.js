@@ -1670,6 +1670,13 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
         return null;
     }
 
+    // ▼▼▼ 1: 计算“普通抽取”的总次数 ▼▼▼
+    const hotmCount = allResults.filter(r => r.bucket === 'hotm').length;
+    const mysteryCount = allResults.filter(r => r.bucket === 'mystery').length;
+    const bonusLegendaryCount = allResults.filter(r => r.bucket === 'bonusLegendary').length;
+    // 分母 = 抽到的英雄总数 - 所有奖励英雄的数量 (因为奖励槽位本身不能再次触发奖励)
+    const probabilityDenominator = allResults.length - hotmCount - mysteryCount - bonusLegendaryCount;
+
     const totalHeroesDrawn = allResults.length;
     const bonusLegendaryResults = allResults.filter(r => r.bucket === 'bonusLegendary');
     const baseResults = allResults.filter(r => r.bucket !== 'hotm' && r.bucket !== 'mystery' && r.bucket !== 'bonusLegendary');
@@ -1703,8 +1710,9 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
 
     // 2. 额外事件统计
     const eventStats = {
-        hotm: { count: allResults.filter(r => r.bucket === 'hotm').length, total: totalHeroesDrawn },
-        mystery: { count: allResults.filter(r => r.bucket === 'mystery').length, total: totalHeroesDrawn },
+        // ▼▼▼ 2: 使用“普通抽取”总次数作为概率计算的分母 ▼▼▼
+        hotm: { count: hotmCount, total: probabilityDenominator },
+        mystery: { count: mysteryCount, total: probabilityDenominator },
     };
 
     // 3. 额外传奇英雄统计

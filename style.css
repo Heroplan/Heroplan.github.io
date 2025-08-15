@@ -5788,42 +5788,48 @@ html:not(.dark-theme) .color-text-outlined {
   gap: 1rem;
 }
 
-/* --- 移动端历史记录标题栏布局修正 (最终版) --- */
+/* --- 移动端历史记录标题栏布局修正 (最终Grid布局版) --- */
 @media (max-width: 900px) {
   .summon-history-header {
-    flex-wrap: wrap;
-    /* 允许项目换行 */
-    align-items: center;
-    /* 垂直居中每一行的内容 */
+    /* 1. 改为 Grid 布局 */
+    display: grid;
+    /* 2. 定义列: 第一列宽度自适应(给图标)，第二列占据剩余空间(给标题) */
+    grid-template-columns: auto 1fr;
+    /* 3. 定义行间距并居中对齐 */
     row-gap: 0.75rem;
-    /* 设置行与行之间的垂直间距 */
+    align-items: center;
   }
 
-  /* 1. 精确隐藏此面板中多余的折叠箭头 */
+  /* 4. 隐藏不必要的折叠箭头 */
   #summon-history-panel .collapse-arrow {
     display: none;
   }
 
-  /* 2. 确保图标在最左侧 */
+  /* 5. 将图标放在第1行、第1列 */
   .history-probability-icon {
-    flex-shrink: 0;
-    /* 防止图标被压缩 */
+    grid-row: 1;
+    grid-column: 1 / 2;
   }
 
-  /* 3. 让标题占据图标右侧所有剩余空间，并将文本居中 */
+  /* 6. 将标题放在第1行、第2列 */
   #summon-history-title {
-    flex-grow: 1;
+    grid-row: 1;
+    grid-column: 2 / 3;
     text-align: center;
-    /* 移除可能干扰布局的 order 属性 */
   }
 
-  /* 4. 让控件组强制换到第二行，并将其内容居中 */
+  /* 7. 【关键】当图标不存在时，让标题占据整行以保证居中 */
+  #summon-history-title:first-child {
+    grid-column: 1 / -1;
+    /* 占据所有列 */
+  }
+
+  /* 8. 将控件组放在第2行，并让它横跨所有列 */
   .summon-history-controls {
-    flex-basis: 100%;
-    /* 强制占据一整行来实现换行 */
+    grid-row: 2;
+    grid-column: 1 / -1;
+    /* 占据所有列 */
     justify-content: center;
     /* 将内部的按钮等控件居中 */
-    order: 3;
-    /* 确保它始终在最下方 */
   }
 }

@@ -554,6 +554,37 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 function getAllHeroesInPool(poolConfig) {
     if (!poolConfig) return [];
 
+    // 根据 latestIncludedHeroAgeInDays 配置预筛选主英雄池
+    let masterPoolForBuckets = state.allHeroes;
+    if (poolConfig.latestIncludedHeroAgeInDays > 0) {
+        const days = poolConfig.latestIncludedHeroAgeInDays;
+        const now = new Date();
+        const baseDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+
+        masterPoolForBuckets = state.allHeroes.filter(hero => {
+            const heroFamily = String(hero.family || '').toLowerCase();
+            if (heroFamily === 'classic') {
+                return true; // 此规则不适用于经典英雄
+            }
+            const releaseDateStr = hero['Release date'];
+            if (!releaseDateStr) return false;
+
+            const heroParts = releaseDateStr.split('-');
+            if (heroParts.length !== 3) return false;
+            const heroYear = parseInt(heroParts[0], 10);
+            const heroMonth = parseInt(heroParts[1], 10) - 1;
+            const heroDay = parseInt(heroParts[2], 10);
+            const releaseDate = new Date(Date.UTC(heroYear, heroMonth, heroDay));
+
+            const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
+
+            if (diffDays > days || diffDays < 0) {
+                return false;
+            }
+            return true;
+        });
+    }
+
     if (poolConfig.productType === 'CostumeSummon') {
         const latestCostumes = new Map();
         state.allHeroes.forEach(hero => {
@@ -595,7 +626,7 @@ function getAllHeroesInPool(poolConfig) {
                 }
 
             } else {
-                const heroesFromBucket = getHeroPoolForBucket(bucketString, poolConfig);
+                const heroesFromBucket = getHeroPoolForBucket(bucketString, { ...poolConfig, masterPool: masterPoolForBuckets });
                 allPossibleHeroes.push(...heroesFromBucket);
             }
         });

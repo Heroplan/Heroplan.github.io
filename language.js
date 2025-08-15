@@ -319,6 +319,7 @@ const i18n = {
         "muteSound": "静音",
         "unmuteSound": "取消静音",
         "featuredHeroRequired": '请在下方表格使用⬆️,至少设置一位精选英雄后再进行召唤。',
+        "totalHeroesCountText": (count) => `(共 ${count} 位)`,
 
 
     },
@@ -595,6 +596,7 @@ const i18n = {
         "muteSound": "靜音",
         "unmuteSound": "取消靜音",
         "featuredHeroRequired": '請在下方表格使用⬆️,至少設置一位精選英雄後再進行召喚。',
+        "totalHeroesCountText": (count) => `(共 ${count} 位)`,
     },
     en: {
         metaDescription: "The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.",
@@ -869,5 +871,6 @@ const i18n = {
         "muteSound": "Mute",
         "unmuteSound": "Unmute",
         "featuredHeroRequired": 'Please use the ⬆️ icon in the table below to set at least one featured hero before summoning.',
+        "totalHeroesCountText": (count) => `(Total ${count})`,
     }
 }; 

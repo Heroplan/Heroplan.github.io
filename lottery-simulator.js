@@ -1515,9 +1515,11 @@ function renderSummonHistory() {
             }
 
             // 组合最终的 HTML
+            // 调用新的多语言函数来生成总数文本
+            const totalText = langDict.totalHeroesCountText ? langDict.totalHeroesCountText(stats.totalHeroesDrawn) : `(共 ${stats.totalHeroesDrawn} 位)`;
             const tooltipHTML = `
                 <div class="probability-tooltip">
-                    <h4>${langDict.calculatedProbabilitiesTitle} (共 ${stats.totalHeroesDrawn} 位)</h4>
+                    <h4>${langDict.calculatedProbabilitiesTitle} ${totalText}</h4>
                     <ul>${listItems}</ul>
                     ${bonusListItems ? `
                         <h4 style="margin-top:10px; padding-top:5px; border-top:1px dashed #fff;">${bonusTranslations.bonusProbabilityTitle}</h4>

@@ -50,5 +50,6 @@ const state = {
     _tempImportedSettings: null,    // 临时存储从代码中解析出的待导入设置
     skillTagToCategoryMap: {}, // 为技能标签分类映射表提供一个初始空对象
 
+    modalContext: {}, // 新增：用于存储模态框的上下文，例如关闭时的回调
     selectedElementalColor: null,
 };

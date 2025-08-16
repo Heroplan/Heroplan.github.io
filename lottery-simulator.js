@@ -296,6 +296,17 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         });
     }
 
+    // ▼▼▼ 为抽奖结果弹窗的关闭按钮和遮罩层添加返回事件监听 ▼▼▼
+    const closeSummaryModal = () => {
+        if (uiElements.summonSummaryModal && !uiElements.summonSummaryModal.classList.contains('hidden')) {
+            history.back();
+        }
+    };
+    document.getElementById('summary-close-btn').addEventListener('click', closeSummaryModal);
+    if (uiElements.summonSummaryModalOverlay) {
+        uiElements.summonSummaryModalOverlay.addEventListener('click', closeSummaryModal);
+    }
+
     const toggleHistoryCheckbox = document.getElementById('toggle-history-view-checkbox');
     if (toggleHistoryCheckbox) {
         toggleHistoryCheckbox.checked = state.showAllSummonHistory; 
@@ -1262,18 +1273,6 @@ async function performSummon(count) {
     }
     showSummaryModal(totalSummonedResults);
     updateSummonHistory(allGroupedResults, count);
-
-    const closeModal = () => {
-        document.getElementById('summon-summary-modal').classList.add('hidden');
-        document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
-        document.body.classList.remove('modal-open');
-    };
-    const scrollContainer = document.getElementById('summon-summary-scroll-container');
-    if (scrollContainer) {
-        scrollContainer.scrollTop = 0;
-    }
-    document.getElementById('summary-close-btn').onclick = closeModal;
-    document.getElementById('summon-summary-modal-overlay').onclick = closeModal;
 }
 
 
@@ -1447,12 +1446,44 @@ function showSummaryModal(results) {
             card.appendChild(exLabel);
         }
 
+        // 检查是否为可查看详情的真实英雄
+        if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+            const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
+            if (targetHero) {
+                card.classList.add('is-clickable');
+                card.addEventListener('click', () => {
+                    // 先隐藏当前的总结弹窗
+                    document.getElementById('summon-summary-modal').classList.add('hidden');
+                    document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
+
+                    // 打开英雄详情，并传入一个 onClose 回调函数
+                    openDetailsModal(targetHero, {
+                        onClose: () => {
+                            // 当详情弹窗关闭时，这个函数会被调用
+                            const summaryModal = document.getElementById('summon-summary-modal');
+                            const summaryOverlay = document.getElementById('summon-summary-modal-overlay');
+                            if (summaryModal && summaryOverlay) {
+                                // 重新显示总结弹窗
+                                summaryModal.classList.remove('hidden');
+                                summaryOverlay.classList.remove('hidden');
+                                // 确保页面依然处于模态框打开状态
+                                document.body.classList.add('modal-open');
+                            }
+                        }
+                    });
+                });
+            }
+        }
+
         scrollContainer.appendChild(card);
     });
 
     summaryModal.classList.remove('hidden');
     overlay.classList.remove('hidden');
     document.body.classList.add('modal-open');
+    // ▼▼▼ 将弹窗状态推入浏览器历史记录 ▼▼▼
+    history.pushState({ modal: 'summonSummary' }, null);
+    state.modalStack.push('summonSummary');
 }
 
 /**
@@ -1623,6 +1654,18 @@ function renderSummonHistory() {
             avatar.className = 'hero-avatar-image';
             avatar.alt = hero.name;
             avatarContainer.appendChild(avatar);
+
+            // 检查是否为可查看详情的真实英雄
+            if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+                const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
+                if (targetHero) {
+                    avatarContainer.classList.add('is-clickable');
+                    avatarContainer.addEventListener('click', () => {
+                        openDetailsModal(targetHero);
+                    });
+                }
+            }
+
             if (bonusBuckets.includes(result.bucket)) {
                 const exLabel = document.createElement('div');
                 exLabel.className = 'history-ex-label';

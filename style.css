@@ -5895,3 +5895,20 @@ html:not(.dark-theme) .color-text-outlined {
     display: none;
   }
 }
+
+/* --- 新增：为抽奖结果和历史记录中可点击的英雄头像添加交互样式 --- */
+.summary-hero-card.is-clickable,
+.summon-history-avatars .hero-avatar-container.is-clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-hero-card.is-clickable:hover,
+.summon-history-avatars .hero-avatar-container.is-clickable:hover {
+  transform: scale(1.05);
+  /* 鼠标悬浮时轻微放大 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  /* 添加阴影提升层次感 */
+  z-index: 5;
+  /* 确保放大时不会被其他元素遮挡 */
+}

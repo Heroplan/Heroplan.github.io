@@ -59,6 +59,8 @@ const uiElements = {
     exportSettingsModalOverlay: document.getElementById('export-settings-modal-overlay'),
     importSettingsModal: document.getElementById('import-settings-modal'),
     importSettingsModalOverlay: document.getElementById('import-settings-modal-overlay'),
+    summonSummaryModal: document.getElementById('summon-summary-modal'),
+    summonSummaryModalOverlay: document.getElementById('summon-summary-modal-overlay'),
 
     // 筛选器输入框 (在filters.js中定义并赋值)
     filterInputs: {},
@@ -291,6 +293,7 @@ function loadCollapseStates() {
 
 // --- 模态框管理 ---
 function openDetailsModal(hero, context = {}) {
+    state.modalContext = context; // 在打开模态框时存储上下文
     renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');
     uiElements.modalOverlay.classList.remove('hidden');

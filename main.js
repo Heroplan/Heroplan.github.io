@@ -854,6 +854,17 @@ function handlePopState(event) {
     // 1. 优先处理模态框的关闭
     if (state.modalStack.length > 0) {
         const modalType = state.modalStack.pop();
+        // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
+        if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
+            // 先隐藏当前的详情弹窗
+            uiElements.modal.classList.add('hidden');
+            uiElements.modalOverlay.classList.add('hidden');
+
+            // 执行回调（例如：重新显示抽奖结果弹窗）
+            state.modalContext.onClose();
+            state.modalContext = {}; // 清理上下文，避免重复执行
+            return; // 提前返回，不再执行后续的关闭逻辑
+        }
         let modal, overlay;
         switch (modalType) {
             case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
@@ -864,6 +875,7 @@ function handlePopState(event) {
             case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
             case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
             case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
+            case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
         }
         if (modal) modal.classList.add('hidden');
         if (overlay) overlay.classList.add('hidden');

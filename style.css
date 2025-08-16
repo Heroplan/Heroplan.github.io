@@ -4513,12 +4513,28 @@ select.custom-select-hidden {
 }
 
 /* 4. 为清空按钮添加样式 */
+
 #clear-history-btn {
+  /* 布局样式 */
   padding: 4px 12px;
   font-size: 0.8rem;
-  margin-left: auto;
-  /* 将按钮推到最右侧 */
-  flex-shrink: 0
+  flex-shrink: 0;
+
+  /* 最终样式：使用主题中的“主要”颜色以确保视觉效果 */
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+  /* 保持与其他 action-button 一致的其余样式 */
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#clear-history-btn:hover {
+  filter: brightness(1.1);
+  /* 主颜色通常使用提亮效果 */
+  transform: translateY(-1px);
 }
 
 /* 5. 列表容器：启用垂直滚动条 */
@@ -5830,5 +5846,52 @@ html:not(.dark-theme) .color-text-outlined {
     /* 居中其内部的按钮和开关 */
     width: auto;
     /* 宽度由flex子项决定 */
+  }
+}
+
+/* --- 移动端历史记录标题栏布局修正 (最终版) --- */
+@media (max-width: 900px) {
+
+  /* 1. 设置header为flex容器, 允许内容换行并提供定位上下文 */
+  #summon-history-panel .summon-history-header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许项目换行 */
+    justify-content: center;
+    /* 将第二行的控件居中 */
+    padding: 0.75rem 1rem 0.75rem 45px;
+    /* 左侧留出空间给绝对定位的图标 */
+    box-sizing: border-box;
+  }
+
+  /* 2. 叹号图标通过绝对定位固定在左上角, 脱离布局流 */
+  #summon-history-panel .history-probability-icon {
+    position: absolute;
+    left: 8px;
+    top: 15px;
+    /* 垂直对齐到标题的大致位置 */
+  }
+
+  /* 3. 标题占据第一整行, 强制控件换行 */
+  #summon-history-header>#summon-history-title {
+    width: 100%;
+    /* 占据整行宽度 */
+    text-align: center;
+    /* 文本居中 */
+    margin-bottom: 0.5rem;
+    /* 与第二行控件的间距 */
+  }
+
+  /* 4. 控件组将自动换到第二行, 并由父容器的 justify-content 居中 */
+  #summon-history-header .summon-history-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  /* 5. 在移动端隐藏折叠箭头 */
+  #summon-history-panel .collapse-arrow {
+    display: none;
   }
 }

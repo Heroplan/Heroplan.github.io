@@ -876,6 +876,14 @@ async function handleActivityClick(poolId) {
             if (noticeText) {
                 specialNoticeHTML = `<p style="font-size: 0.7em; color: var(--md-sys-color-primary); margin: 10px 5px 0 5px; text-align: center;">${noticeText}</p>`;
             }
+            // 如果该奖池不包含神话/神秘英雄的额外抽取机会，则添加特别说明
+            if (!poolConfig.hasMysteryHeroBonusRoll) {
+                const noHotmNoticeText = langDict.noHotmAndMysteryBonusNotice || '';
+                if (noHotmNoticeText) {
+                    // 将“无法获得”的说明追加到 HTML 中
+                    specialNoticeHTML += `<p style="font-size: 0.7em; color: var(--md-sys-color-on-surface-variant); margin: 10px 5px 0 5px; text-align: center;">* ${noHotmNoticeText}</p>`;
+                }
+            }
 
             const tooltipHTML = `
                 <div class="probability-tooltip">

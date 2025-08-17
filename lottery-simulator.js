@@ -1526,6 +1526,12 @@ function showSummaryModal(results) {
 
         scrollContainer.appendChild(card);
     });
+    // ▼▼▼ 在显示弹窗前，将滚动条重置到顶部 ▼▼▼
+    // ▼▼▼ 使用 setTimeout 将滚动条重置操作推迟到下一次事件循环 ▼▼▼
+    // 这可以确保浏览器有足够的时间渲染新添加的内容
+    setTimeout(() => {
+        scrollContainer.scrollTop = 0;
+    }, 0);
 
     summaryModal.classList.remove('hidden');
     overlay.classList.remove('hidden');

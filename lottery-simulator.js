@@ -260,6 +260,34 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             updateSoundButtonUI();
         });
     }
+    const animationToggleButton = document.getElementById('toggle-animation-btn'); //
+    if (animationToggleButton) { //
+        const modes = ['full', 'skip', 'silent']; //
+        const icons = ['▶️', '⏩', '⏭️']; //
+        const getTitles = () => ({ //
+            full: (i18n[state.currentLang] || i18n.cn).playMode_full || 'Play Full Animation', //
+            skip: (i18n[state.currentLang] || i18n.cn).playMode_skip || 'Skip Animation', //
+            silent: (i18n[state.currentLang] || i18n.cn).playMode_silent || 'Direct to History' //
+        }); //
+
+        state.lotteryAnimationMode = getCookie('lotteryAnimationMode') || 'full'; //
+
+        const updateAnimationButtonUI = () => { //
+            const modeIndex = modes.indexOf(state.lotteryAnimationMode); //
+            const titles = getTitles(); //
+            animationToggleButton.textContent = icons[modeIndex]; //
+            animationToggleButton.title = titles[state.lotteryAnimationMode]; //
+        }; //
+        updateAnimationButtonUI(); // 调用函数以设置按钮的初始状态
+
+        animationToggleButton.addEventListener('click', () => { //
+            let currentIndex = modes.indexOf(state.lotteryAnimationMode); //
+            currentIndex = (currentIndex + 1) % modes.length; // 循环切换到下一个模式
+            state.lotteryAnimationMode = modes[currentIndex]; // 更新全局状态
+            setCookie('lotteryAnimationMode', state.lotteryAnimationMode, 365); // 将新模式保存到Cookie
+            updateAnimationButtonUI(); // 更新按钮的显示
+        }); //
+    } //
 
 
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.cn;
@@ -1078,6 +1106,7 @@ async function performSummon(count) {
         if (costumePool.length === 0) return;
     }
 
+
     const allGroupedResults = [];
 
     for (let k = 0; k < count; k++) {
@@ -1233,6 +1262,18 @@ async function performSummon(count) {
 
     const totalSummonedResults = allGroupedResults.flat();
     if (totalSummonedResults.length === 0) return;
+
+    // 步骤 1: 无论何种模式，都先更新历史记录
+    updateSummonHistory(allGroupedResults, count);
+
+    // 步骤 2: 根据当前模式决定后续操作
+    if (state.lotteryAnimationMode === 'silent') { // 对应 '⏭️' 模式
+        return; // 直接结束
+    }
+    if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式
+        showSummaryModal(totalSummonedResults); // 只显示弹窗
+        return;
+    }
 
     const animationViewport = document.getElementById('lottery-hero-display-area');
     const blockerOverlay = document.getElementById('animation-blocker-overlay');
@@ -1509,7 +1550,7 @@ function updateSummonHistory(groupedResults, count) {
             poolName: currentPoolName
         });
 
-        if (state.summonHistory.length > 50) {
+        if (state.summonHistory.length > 1000) {
             state.summonHistory.pop();
         }
         saveHistoryToLocalStorage();

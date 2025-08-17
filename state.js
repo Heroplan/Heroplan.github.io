@@ -37,6 +37,7 @@ const state = {
 
     // --- 抽奖模拟器状态 (位于 state.js) ---
     lotterySimulatorActive: false,    // 新增：抽奖模拟器是否激活
+    lotteryAnimationMode: 'full',    // 新增：动画模式的状态，默认为 'full'
     isEditingFeaturedHero: false,   // 是否正在编辑某个精選英雄卡槽
     editingSlotIndex: null,         // 正在编辑的卡槽的索引 (0, 1, 2...)
 

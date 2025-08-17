@@ -5514,6 +5514,7 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 /* --- 抽奖音效开关按钮样式 --- */
+#toggle-animation-btn,
 #toggle-sound-btn {
   position: absolute;
   top: 15px;
@@ -5554,6 +5555,11 @@ html:not(.dark-theme) .color-text-outlined {
 
 #toggle-sound-btn.sound-off .sound-off-icon {
   display: inline;
+}
+
+#toggle-animation-btn {
+  right: 55px;
+  /* 定位在声音按钮左侧 */
 }
 
 /* --- 不可移除的精选英雄卡槽样式 --- */

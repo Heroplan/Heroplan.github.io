@@ -11,7 +11,7 @@ const state = {
     multiSelectFilters: {}, // 存储多选筛选器的当前选中值
     availableOptions: {}, // 缓存每个筛选器的所有可用选项
     currentLang: 'cn',  // 当前语言
-    currentSort: { key: 'power', direction: 'desc' }, // 当前表格排序规则
+    currentSort: { key: 'Release date', direction: 'desc' }, // 当前表格排序规则
 
     // --- 临时筛选状态 ---
     temporaryFavorites: null, // 用于临时存储分享链接中的收藏列表

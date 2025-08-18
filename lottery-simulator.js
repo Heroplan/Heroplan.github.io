@@ -1321,7 +1321,6 @@ async function performSummon(count) {
         buttonParentContainer.removeChild(skipButton);
     }
     showSummaryModal(totalSummonedResults);
-    updateSummonHistory(allGroupedResults, count);
 }
 
 

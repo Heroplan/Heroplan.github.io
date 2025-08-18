@@ -1217,8 +1217,25 @@ async function performSummon(count) {
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
                     const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
                     if (mysteryPool.length > 0) {
-                        const mysteryHero = mysteryPool[Math.floor(Math.random() * mysteryPool.length)];
-                        singlePullResults.push({ hero: mysteryHero, bucket: 'mystery' });
+                        let mysteryHero = null; // 先声明一个变量用于存放结果
+
+                        // 判断是否为神话召唤
+                        if (poolConfig.productType === 'LegendsSummon') {
+                            // 如果是，则使用随机逻辑
+                            mysteryHero = mysteryPool[Math.floor(Math.random() * mysteryPool.length)];
+                        } else {
+                            // 否则，使用获取最新英雄的逻辑
+                            mysteryHero = mysteryPool.sort((a, b) => {
+                                if (!a['Release date']) return 1;
+                                if (!b['Release date']) return -1;
+                                return b['Release date'].localeCompare(a['Release date']);
+                            })[0];
+                        }
+
+                        // 将最终选出的英雄添加到结果中
+                        if (mysteryHero) {
+                            singlePullResults.push({ hero: mysteryHero, bucket: 'mystery' });
+                        }
                     }
                 }
             }

@@ -240,3 +240,124 @@ function initAndShowChatSimulatorView() {
     setTimeout(adjustStickyHeaders, 0);
     setMainViewHistory('chat');
 }
+
+/**
+ * 显示灵魂兑换英雄列表的模态框
+ */
+
+function showSoulExchangeModal() {
+
+    const overlay = uiElements.summonSummaryModalOverlay;
+    const summaryModal = uiElements.summonSummaryModal;
+    // 直接通过ID获取，确保稳健性
+    const scrollContainer = document.getElementById('summon-summary-scroll-container');
+    if (!overlay || !summaryModal || !scrollContainer) {
+        return;
+    }
+
+    const langDict = i18n[state.currentLang];
+    const modalTitle = summaryModal.querySelector('h3');
+    if (modalTitle) {
+        modalTitle.textContent = langDict.soulExchangeModalTitle;
+    }
+
+    scrollContainer.innerHTML = ''; // 清空之前的内容
+
+    // ▼▼▼ 【核心修改】辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
+    const createSoulExchangeCard = (hero, options = {}) => {
+        const card = document.createElement('div');
+        card.className = `summary-hero-card ${getColorGlowClass(hero.color)}`;
+        card.title = hero.name;
+
+        if (hero.star === 5) {
+            card.classList.add('star-5-marquee');
+        }
+
+        const avatar = document.createElement('div');
+        avatar.className = 'summary-avatar';
+        avatar.style.background = getHeroColorLightGradient(hero.color);
+
+        const avatarImage = document.createElement('img');
+        avatarImage.className = 'summary-avatar-image';
+        avatarImage.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+        avatar.appendChild(avatarImage);
+
+        const detailsOverlay = document.createElement('div');
+        detailsOverlay.className = 'summary-hero-details'; // 使用新的 class 以便精确控制样式
+
+        let starsContent = '';
+        // ▼▼▼ 只有在 options.hideStars 不为 true 时才显示星星 ▼▼▼
+        if (!options.hideStars && hero.star) {
+            starsContent = `${hero.star}⭐`;
+        }
+
+        const starsHTML = starsContent
+            ? `<div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>`
+            : '';
+
+        const englishColor = (colorReverseMap[String(hero.color).toLowerCase()] || hero.color || 'default').toLowerCase();
+        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${englishColor}.webp">`;
+
+        detailsOverlay.innerHTML = `${colorIconHTML}${starsHTML}`;
+
+        card.appendChild(avatar);
+        card.appendChild(detailsOverlay);
+
+        if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+            const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
+            if (targetHero) {
+                card.classList.add('is-clickable');
+                card.addEventListener('click', () => {
+                    summaryModal.classList.add('hidden');
+                    overlay.classList.add('hidden');
+                    openDetailsModal(targetHero, {
+                        onClose: () => {
+                            summaryModal.classList.remove('hidden');
+                            overlay.classList.remove('hidden');
+                            document.body.classList.add('modal-open');
+                        }
+                    });
+                });
+            }
+        }
+        return card;
+    };
+
+    // ▼▼▼ 手动构建每个分组并在之间添加分隔线 ▼▼▼
+    const allGroups = [
+        soulExchange.ten,
+        soulExchange.fifteen,
+        soulExchange.twenty
+    ];
+
+    allGroups.forEach((heroIds, index) => {
+        // 在第二个和第三个分组前添加分隔线
+        if (index > 0) {
+            const separator = document.createElement('hr');
+            separator.className = 'soul-exchange-separator';
+            scrollContainer.appendChild(separator);
+        }
+
+        const heroesContainer = document.createElement('div');
+        heroesContainer.className = 'soul-exchange-heroes-container';
+
+        heroIds.forEach(id => {
+            const hero = state.heroesByIdMap.get(id);
+            if (hero) {
+                // 调用卡片创建函数，并传入 hideStars: true 选项
+                const card = createSoulExchangeCard(hero, { hideStars: true });
+                heroesContainer.appendChild(card);
+            }
+        });
+
+        scrollContainer.appendChild(heroesContainer);
+    });
+
+    // 显示弹窗的逻辑保持不变
+    setTimeout(() => { scrollContainer.scrollTop = 0; }, 0);
+    summaryModal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    history.pushState({ modal: 'summonSummary' }, null);
+    state.modalStack.push('summonSummary');
+}

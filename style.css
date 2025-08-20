@@ -5918,3 +5918,40 @@ html:not(.dark-theme) .color-text-outlined {
   z-index: 5;
   /* 确保放大时不会被其他元素遮挡 */
 }
+
+.soul-exchange-group {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.soul-exchange-group-title {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+.soul-exchange-heroes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* --- 灵魂交换分隔线样式 --- */
+.soul-exchange-separator {
+  border: none;
+  border-top: 1px solid var(--md-sys-color-outline);
+  margin: 1.5rem auto;
+  /* 分隔线上下的间距 */
+  width: 90%;
+  /* 分隔线宽度 */
+}
+
+/* (可选) 如果您想让英雄列表之间的间距更紧凑，可以调整这个 */
+.soul-exchange-heroes-container {
+  padding-top: 0.5rem;
+  /* 调整容器与分隔线之间的距离 */
+}

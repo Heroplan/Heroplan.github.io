@@ -127,7 +127,7 @@ async function initializeApp() {
     } else {
         // 否则（开关为true，或未定义），则保持日志功能开启
         toggleConsoleLogging(true);
-        //console.log("调试日志已开启。如需关闭，请修改 index.html 中的全局开关。");
+        // console.log("调试日志已开启。如需关闭，请修改 index.html 中的全局开关。");
     }
 
     // --- 防止因模态框导致页面滚动条消失而引起的布局跳动 ---
@@ -140,15 +140,15 @@ async function initializeApp() {
 
                 if (hasModalOpen && !wasModalOpen) {
                     // 'modal-open' 类刚刚被添加
-                    console.log("检测到 modal-open 添加，准备添加 padding-right..."); // <-- 新增日志
+                    // console.log("检测到 modal-open 添加，准备添加 padding-right..."); // <-- 新增日志
                     if (window.innerWidth > document.documentElement.clientWidth) {
                         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-                        console.log(`计算出滚动条宽度为: ${scrollbarWidth}px`); // <-- 新增日志
+                        // console.log(`计算出滚动条宽度为: ${scrollbarWidth}px`); // <-- 新增日志
                         body.style.paddingRight = `${scrollbarWidth}px`;
                     }
                 } else if (!hasModalOpen && wasModalOpen) {
                     // 'modal-open' 类刚刚被移除
-                    console.log("检测到 modal-open 移除，准备移除 padding-right..."); // <-- 新增日志
+                    // console.log("检测到 modal-open 移除，准备移除 padding-right..."); // <-- 新增日志
                     body.style.paddingRight = '';
                 }
             }
@@ -271,6 +271,13 @@ async function initializeApp() {
     history.replaceState({ view: 'list' }, '');
     document.getElementById('one-click-max-date-display').textContent = oneClickMaxDate;
     document.getElementById('purchase-costume-date-display').textContent = purchaseCostumeDate;
+    // 初始化灵魂交换行
+    const soulExchangeDateDisplay = document.getElementById('soul-exchange-date-display');
+    const showSoulExchangeBtn = document.getElementById('show-soul-exchange-btn');
+    if (soulExchangeDateDisplay && showSoulExchangeBtn) {
+        soulExchangeDateDisplay.textContent = soulExchange.Date;
+        showSoulExchangeBtn.disabled = !soulExchange.show;
+    }
 
     if (zfavsFromUrl || favsFromUrl) {
         try {
@@ -607,6 +614,23 @@ function addEventListeners() {
             updateFilterButtonUI('filterScope');
             state.temporaryDateFilter = { base: purchaseCostumeDate, days: 548 };
             applyFiltersAndRender();
+        });
+    }
+    
+
+    // 为灵魂交换的“展示列表”按钮添加点击事件
+    const showSoulExchangeBtn = document.getElementById('show-soul-exchange-btn');
+    if (showSoulExchangeBtn) {
+        showSoulExchangeBtn.addEventListener('click', () => {
+            // 检查按钮是否被禁用
+            if (!showSoulExchangeBtn.disabled) {
+                // ▼▼▼ 在显示列表前，先关闭筛选框 ▼▼▼
+                closeFiltersModal();
+                // ▼▼▼ 新增 setTimeout 以解决执行时机问题 ▼▼▼
+                setTimeout(() => {
+                    showSoulExchangeModal();
+                }, 100);
+            }
         });
     }
 

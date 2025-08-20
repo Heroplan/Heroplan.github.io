@@ -495,7 +495,24 @@
                 "kingdom",
                 "journey",
                 "outlaws"
-            ]
+            ],
+              "limitedPoolSummonConfiguration": {
+                "enabled": true,
+                "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
+                "requiredItemAmount": 100,
+                "heroes": [
+                  "kingdom_diaochan_costume_flowers",
+                  "kingdom_zhuge_liang_costume_crane",
+                  "kingdom_cao_cao_costume_ice",
+                  "journey_xiwangmu",
+                  "journey_nineheaded_beast",
+                  "journey_queen_guowang",
+                  "journey_erlang_shen",
+                  "kingdom_sun_quan_costume_fire_bat",
+                  "kingdom_lu_bu_costume_tiger_lord",
+                  "kingdom_guan_yu_costume_dragon"
+                ]
+            }
         },
         "lottery_monster_island_default": {
             "featuredHeroes": [

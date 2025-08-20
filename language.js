@@ -325,6 +325,7 @@ const i18n = {
         "featuredHeroRequired": '请在下方表格使用⬆️,至少设置一位精选英雄后再进行召唤。',
         "totalHeroesCountText": (count) => `(共 ${count} 位)`,
         "latestHeroAgeNotice": (days) => `* 仅包含 ${days} 天内发布的英雄和服装`,
+        "w3kLimitedPoolTitle": "查看三国限定奖池",
 
 
     },
@@ -607,6 +608,7 @@ const i18n = {
         "featuredHeroRequired": '請在下方表格使用⬆️,至少設置一位精選英雄後再進行召喚。',
         "totalHeroesCountText": (count) => `(共 ${count} 位)`,
         "latestHeroAgeNotice": (days) => `* 僅包含 ${days} 天內發佈的英雄和服裝`,
+        "w3kLimitedPoolTitle": "查看三國限定獎池",
 
     },
     en: {
@@ -888,5 +890,6 @@ const i18n = {
         "featuredHeroRequired": 'Please use the ⬆️ icon in the table below to set at least one featured hero before summoning.',
         "totalHeroesCountText": (count) => `(Total ${count})`,
         "latestHeroAgeNotice": (days) => `* Only includes heroes and costumes released within ${days} days`,
+        "w3kLimitedPoolTitle": "View 3K Limited Pool",
     }
 }; 

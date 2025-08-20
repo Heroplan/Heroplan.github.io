@@ -260,34 +260,34 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             updateSoundButtonUI();
         });
     }
-    const animationToggleButton = document.getElementById('toggle-animation-btn'); //
-    if (animationToggleButton) { //
-        const modes = ['full', 'skip', 'silent']; //
-        const icons = ['▶️', '⏩', '⏭️']; //
-        const getTitles = () => ({ //
-            full: (i18n[state.currentLang] || i18n.cn).playMode_full || 'Play Full Animation', //
-            skip: (i18n[state.currentLang] || i18n.cn).playMode_skip || 'Skip Animation', //
-            silent: (i18n[state.currentLang] || i18n.cn).playMode_silent || 'Direct to History' //
-        }); //
+    const animationToggleButton = document.getElementById('toggle-animation-btn');
+    if (animationToggleButton) {
+        const modes = ['full', 'skip', 'silent'];
+        const icons = ['▶️', '⏩', '⏭️'];
+        const getTitles = () => ({
+            full: (i18n[state.currentLang] || i18n.cn).playMode_full || 'Play Full Animation',
+            skip: (i18n[state.currentLang] || i18n.cn).playMode_skip || 'Skip Animation',
+            silent: (i18n[state.currentLang] || i18n.cn).playMode_silent || 'Direct to History'
+        });
 
-        state.lotteryAnimationMode = getCookie('lotteryAnimationMode') || 'full'; //
+        state.lotteryAnimationMode = getCookie('lotteryAnimationMode') || 'full';
 
-        const updateAnimationButtonUI = () => { //
-            const modeIndex = modes.indexOf(state.lotteryAnimationMode); //
-            const titles = getTitles(); //
-            animationToggleButton.textContent = icons[modeIndex]; //
-            animationToggleButton.title = titles[state.lotteryAnimationMode]; //
-        }; //
+        const updateAnimationButtonUI = () => {
+            const modeIndex = modes.indexOf(state.lotteryAnimationMode);
+            const titles = getTitles();
+            animationToggleButton.textContent = icons[modeIndex];
+            animationToggleButton.title = titles[state.lotteryAnimationMode];
+        };
         updateAnimationButtonUI(); // 调用函数以设置按钮的初始状态
 
-        animationToggleButton.addEventListener('click', () => { //
-            let currentIndex = modes.indexOf(state.lotteryAnimationMode); //
+        animationToggleButton.addEventListener('click', () => {
+            let currentIndex = modes.indexOf(state.lotteryAnimationMode);
             currentIndex = (currentIndex + 1) % modes.length; // 循环切换到下一个模式
             state.lotteryAnimationMode = modes[currentIndex]; // 更新全局状态
             setCookie('lotteryAnimationMode', state.lotteryAnimationMode, 365); // 将新模式保存到Cookie
             updateAnimationButtonUI(); // 更新按钮的显示
-        }); //
-    } //
+        });
+    }
 
 
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.cn;
@@ -736,6 +736,16 @@ function renderActivityList() {
  * @param {string} poolId - 被选中的奖池ID
  */
 async function handleActivityClick(poolId) {
+    // ▼▼▼ 新增代码：在处理新奖池前，先移除可能存在的旧的特殊按钮和其包装容器 ▼▼▼
+    const existingWrapper = document.getElementById('lottery-title-wrapper');
+    if (existingWrapper) {
+        const titleEl = existingWrapper.querySelector('#lottery-pool-title');
+        if (titleEl) {
+            existingWrapper.parentNode.insertBefore(titleEl, existingWrapper); // 将标题移回原位
+        }
+        existingWrapper.remove(); // 移除包装容器
+    }
+
     document.querySelectorAll('#lottery-activity-list li').forEach(li => {
         li.classList.toggle('active', li.dataset.poolId === poolId);
     });
@@ -792,7 +802,46 @@ async function handleActivityClick(poolId) {
     const backgroundEl = document.getElementById('lottery-background-image');
     const portalContainer = document.getElementById('lottery-portal-container');
 
+
     if (titleEl) titleEl.textContent = getPoolDisplayName(poolConfig);
+    // ▼▼▼ 检查是否为三国召唤，并处理其特殊规则 ▼▼▼
+    if (poolId === 'lottery_mercenary_war_default') {
+        const limitedPoolConfig = poolConfig.limitedPoolSummonConfiguration;
+        if (limitedPoolConfig && limitedPoolConfig.enabled && limitedPoolConfig.heroes) {
+            const heroIds = limitedPoolConfig.heroes;
+            const heroesToShow = heroIds.map(id => state.heroesByIdMap.get(id)).filter(Boolean);
+
+            if (titleEl && heroesToShow.length > 0) {
+                // 创建一个包装容器用于居中标题和新按钮
+                const titleWrapper = document.createElement('div');
+                titleWrapper.id = 'lottery-title-wrapper';
+                titleWrapper.style.display = 'flex';
+                titleWrapper.style.flexDirection = 'column'; // 设置为垂直布局
+                titleWrapper.style.alignItems = 'center';    // 保持水平居中
+
+                // 将原标题移入包装容器
+                titleEl.parentNode.insertBefore(titleWrapper, titleEl);
+                titleWrapper.appendChild(titleEl);
+
+                // 创建并设置新按钮
+                const w3kButton = document.createElement('button');
+                w3kButton.id = 'w3k-limited-pool-btn';
+                w3kButton.className = 'theme-toggle-btn';
+                w3kButton.title = (i18n[state.currentLang] || i18n.cn).w3kLimitedPoolTitle;
+                w3kButton.innerHTML = `<img src="imgs/coins/red_lucky.webp" style="width: 28px; height: 28px;">`;
+                w3kButton.style.marginTop = '1px'; // 添加上边距
+
+                // 为按钮添加点击事件
+                w3kButton.addEventListener('click', () => {
+                    const resultsForModal = heroesToShow.map(hero => ({ hero: hero, bucket: 'w3k_limited' }));
+                    showSummaryModal(resultsForModal);
+                });
+
+                // 将按钮添加到包装容器中
+                titleWrapper.appendChild(w3kButton);
+            }
+        }
+    }
     if (backgroundEl) {
         if (poolConfig.lotterybg) {
             backgroundEl.style.backgroundImage = `url('imgs/lottery/lotterybg/${poolConfig.lotterybg}.webp')`;

@@ -4723,21 +4723,6 @@ select.custom-select-hidden {
   z-index: 1999
 }
 
-#summon-summary-scroll-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 1rem 5px;
-  border-top: 1px solid var(--md-sys-color-outline);
-  border-bottom: 1px solid var(--md-sys-color-outline);
-  margin-bottom: 1rem;
-  max-height: 60vh;
-  overflow-y: auto;
-  font-size: 0;
-  /* <-- 新增这一行 */
-}
-
 /* Keyframes 动画 (部分微调) */
 @keyframes light-grow-local {
   0% {
@@ -4884,22 +4869,26 @@ html:not(.dark-theme) .color-text-outlined {
   pointer-events: none
 }
 
-/* 5. 星星的样式 */
+/* 5. 星星的样式 (自适应修改版) */
 .summary-hero-stars {
   position: absolute;
-  bottom: 5px;
-  /* 距离卡片底部的距离 */
+  bottom: 5%;
+  /* 修改为百分比定位 */
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 1px
+  gap: 1%;
+  /* 间距也修改为百分比 */
 }
 
 .summary-hero-stars img {
-  height: 18px;
-  /* 星星的高度 */
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.9))
+  height: 18%;
+  /* 高度修改为百分比 */
+  width: 18%;
+  /* 宽度自动以保持比例 */
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.9));
 }
+
 
 /* 6. 颜色图标的样式 */
 .summary-color-icon {
@@ -4908,9 +4897,9 @@ html:not(.dark-theme) .color-text-outlined {
   /* 距离卡片顶部的距离 */
   left: 5px;
   /* 距离卡片左侧的距离 */
-  width: 32px;
+  width: 30%;
   /* 颜色图标的宽度 */
-  height: 32px;
+  height: auto;
   /* 颜色图标的高度 */
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8))
 }
@@ -5313,9 +5302,9 @@ html:not(.dark-theme) .color-text-outlined {
     /* 距离卡片顶部的距离 */
     left: 0;
     /* 距离卡片左侧的距离 */
-    width: 20px;
+    width: 30%;
     /* 颜色图标的宽度 */
-    height: 20px;
+    height: auto;
     /* 颜色图标的高度 */
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8))
   }
@@ -5944,7 +5933,7 @@ html:not(.dark-theme) .color-text-outlined {
 .soul-exchange-separator {
   border: none;
   border-top: 1px solid var(--md-sys-color-outline);
-  margin: 1.5rem auto;
+  margin: 1rem auto;
   /* 分隔线上下的间距 */
   width: 90%;
   /* 分隔线宽度 */
@@ -5954,4 +5943,57 @@ html:not(.dark-theme) .color-text-outlined {
 .soul-exchange-heroes-container {
   padding-top: 0.5rem;
   /* 调整容器与分隔线之间的距离 */
+}
+
+/* --- 抽奖结果弹窗专属网格布局 --- */
+
+/* 桌面端 (默认): 10列网格 */
+/* 仅当 #summon-summary-modal 拥有 .summon-result-view 类时，此规则才生效 */
+#summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px; /* 10列时，间距可以适当减小 */
+}
+
+/* 同样，只针对抽奖结果弹窗内的卡片，使其自适应网格 */
+#summon-summary-modal.summon-result-view .summary-hero-card {
+  width: 100%; /* 宽度自动填满网格单元 */
+  height: auto; /* 高度自适应 */
+  aspect-ratio: 1 / 1; /* 保持1:1的正方形比例 */
+  max-width: 120px; /* 可以设置一个最大宽度防止过大 */
+}
+
+/* 移动端 (小于等于900px): 5列网格 */
+@media (max-width: 900px) {
+  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+}
+/* --- 新增：灵魂交换弹窗移动端5列网格布局 --- */
+@media (max-width: 900px) {
+
+  /* 仅当弹窗是灵魂交换视图时，应用以下网格布局 */
+  #summon-summary-modal.soul-exchange-view .soul-exchange-heroes-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 核心：创建5个等宽的列 */
+    gap: 8px;
+    /* 调整英雄卡片之间的间距 */
+  }
+
+  /* 使英雄卡片自适应网格单元格的大小 */
+  #summon-summary-modal.soul-exchange-view .summary-hero-card {
+    width: 100%;
+    /* 宽度占满单元格 */
+    height: auto;
+    /* 高度自动调整 */
+    aspect-ratio: 1 / 1;
+    /* 保持1:1的正方形比例 */
+  }
+}
+
+#summon-summary-modal.soul-exchange-view #summon-summary-scroll-container {
+  display: block;
+  /* 将布局从 flex 更改为 block */
 }

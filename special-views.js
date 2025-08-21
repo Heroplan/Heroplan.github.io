@@ -254,6 +254,9 @@ function showSoulExchangeModal() {
     if (!overlay || !summaryModal || !scrollContainer) {
         return;
     }
+    summaryModal.classList.add('soul-exchange-view');
+    summaryModal.classList.remove('summon-result-view'); // 为确保干净，移除另一个标志
+
 
     const langDict = i18n[state.currentLang];
     const modalTitle = summaryModal.querySelector('h3');

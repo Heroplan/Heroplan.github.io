@@ -1502,7 +1502,10 @@ function showSummaryModal(results) {
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
     if (!overlay || !summaryModal || !scrollContainer) {
         return;
-    }
+    } 
+    summaryModal.classList.add('summon-result-view');
+    summaryModal.classList.remove('soul-exchange-view'); // 为确保干净，移除另一个标志
+
 
     scrollContainer.innerHTML = '';
     const bonusBuckets = ['bonusLegendary', 'hotm', 'mystery', 'additionalDraw'];

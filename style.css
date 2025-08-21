@@ -1301,60 +1301,7 @@ footer .footer-credit {
   color: var(--md-sys-color-outline)
 }
 
-/* ========== 加载状态样式 ========== */
-#page-loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--md-sys-color-background);
-  z-index: 99999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.5s ease, visibility 0.5s ease
-}
 
-#page-loader-overlay.hidden {
-  opacity: 0;
-  visibility: hidden
-}
-
-.loader-spinner {
-  border: 8px solid var(--md-sys-color-surface-variant);
-  border-top: 8px solid var(--md-sys-color-primary);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1.2s linear infinite
-}
-
-.loader-text {
-  margin-top: 20px;
-  font-size: 1.1em;
-  font-weight: 500;
-  color: var(--md-sys-color-on-surface)
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* 加载时隐藏页面主要内容，防止闪烁 */
-.js-loading .header-buttons,
-.js-loading .main-container,
-.js-loading .floating-action-buttons {
-  visibility: hidden
-}
 
 /* ========== 帮助模态框特定样式 ========== */
 #help-modal h3,

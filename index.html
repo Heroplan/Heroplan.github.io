@@ -3,6 +3,54 @@
 
 <head>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <style>
+        /* 确保背景颜色变量能被立即使用 */
+        :root {
+            --md-sys-color-background: #FEFBFF;
+            /* 默认亮色主题背景 */
+        }
+    
+        html.dark-theme {
+            --md-sys-color-background: #141218;
+            /* 暗色主题背景 */
+        }
+    
+        #page-loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* 直接使用上面定义的变量 */
+            background-color: var(--md-sys-color-background);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .loader-spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            border-top-color: #4A90E2;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.2s linear infinite;
+        }
+    
+        .js-loading .header-buttons,
+        .js-loading .main-container,
+        .js-loading .floating-action-buttons,
+        .js-loading footer {
+            visibility: hidden;
+        }
+    
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <!-- 预加载星星、标准天赋节点图标和突破图标，以防止布局跳动。 -->

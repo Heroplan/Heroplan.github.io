@@ -1503,6 +1503,12 @@ function showSummaryModal(results) {
     if (!overlay || !summaryModal || !scrollContainer) {
         return;
     } 
+
+    const langDict = i18n[state.currentLang];
+    const modalTitle = summaryModal.querySelector('h3');
+    if (modalTitle) {
+        modalTitle.textContent = langDict.summonResultsTitle;
+    }
     summaryModal.classList.add('summon-result-view');
     summaryModal.classList.remove('soul-exchange-view'); // 为确保干净，移除另一个标志
 

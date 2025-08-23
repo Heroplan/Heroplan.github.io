@@ -526,6 +526,48 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         });
     }
 
+    // 对于 'listed' 类型的奖池, 必须分别处理 includedHeroes (精确版本) 和 AssociatedFamilies (最新版本)
+    if (bucketType === 'listed') {
+        const finalPool = [];
+        const processedNames = new Set(); // 用于防止重复添加
+
+        // 1. 从 includedHeroes 列表中添加精确版本的英雄
+        const includedIds = poolConfig.includedHeroes || [];
+        if (includedIds.length > 0) {
+            includedIds.forEach(heroId => {
+                const exactHero = state.heroesByIdMap.get(heroId);
+                // 检查精确的英雄是否与当前奖池桶的星级匹配
+                if (exactHero && exactHero.star === star) {
+                    finalPool.push(exactHero);
+                    if (exactHero.english_name) {
+                        processedNames.add(exactHero.english_name);
+                    }
+                }
+            });
+        }
+
+        // 2. 从 AssociatedFamilies 中添加最新服装版本的英雄
+        const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+        if (listedFamilies.length > 0) {
+            baseHeroPool.forEach(hero => {
+                if (hero.isFeaturedOnly) return;
+
+                const heroFamily = String(hero.family || '').toLowerCase();
+                if (hero.star === star && listedFamilies.includes(heroFamily) && !state.globalExcludeFamilies.includes(heroFamily)) {
+                    if (hero.english_name && !processedNames.has(hero.english_name)) {
+                        processedNames.add(hero.english_name);
+                        // 对于家族, 我们获取其最新版本
+                        const latestVersion = state.latestHeroVersionsMap.get(hero.english_name);
+                        if (latestVersion) {
+                            finalPool.push(latestVersion);
+                        }
+                    }
+                }
+            });
+        }
+        return finalPool;
+    }
+
     const processedHeroNames = new Set();
     const initialPool = [];
 
@@ -690,15 +732,17 @@ function getAllHeroesInPool(poolConfig) {
         allPossibleHeroes.push(...olderHeroes);
     }
 
-    const finalLatestVersions = {};
+    // --- 修正后的去重逻辑 ---
+    // 使用 heroId 作为键来确保每个英雄/服装的独一无二，防止错误地替换掉特定版本
+    const finalUniqueHeroes = new Map();
     allPossibleHeroes.forEach(hero => {
-        if (hero && hero.english_name) {
-            if (!finalLatestVersions[hero.english_name] || hero.costume_id > finalLatestVersions[hero.english_name].costume_id) {
-                finalLatestVersions[hero.english_name] = hero;
+        if (hero && hero.heroId) {
+            if (!finalUniqueHeroes.has(hero.heroId)) {
+                finalUniqueHeroes.set(hero.heroId, hero);
             }
         }
     });
-    return Object.values(finalLatestVersions);
+    return Array.from(finalUniqueHeroes.values());
 }
 
 

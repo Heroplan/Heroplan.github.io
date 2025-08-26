@@ -5179,7 +5179,7 @@ html:not(.dark-theme) .color-text-outlined {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 0;
   border: 3px solid transparent;
   transition: all 0.2s ease-in-out
 }

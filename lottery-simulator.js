@@ -807,6 +807,7 @@ async function handleActivityClick(poolId) {
         const elementalOverlay = document.getElementById('elemental-modal-overlay');
         elementalModal.classList.remove('hidden');
         elementalOverlay.classList.remove('hidden');
+        document.body.classList.add('modal-open'); 
 
         const userChoice = await new Promise(resolve => {
             const elementalContainer = document.querySelector('.elemental-selection-container');
@@ -816,6 +817,7 @@ async function handleActivityClick(poolId) {
                     elementalContainer.removeEventListener('click', handler);
                     elementalModal.classList.add('hidden');
                     elementalOverlay.classList.add('hidden');
+                    document.body.classList.remove('modal-open');
                     resolve(target.dataset.color);
                 }
             };

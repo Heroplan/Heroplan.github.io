@@ -5944,3 +5944,8 @@ html:not(.dark-theme) .color-text-outlined {
   display: block;
   /* 将布局从 flex 更改为 block */
 }
+
+/* 当任何模态框打开时，禁止body滚动 */
+body.modal-open {
+  overflow: hidden;
+}

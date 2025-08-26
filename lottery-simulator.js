@@ -464,9 +464,11 @@ function getFilteredMasterPool() {
     switch (poolConfig.productType) {
         case 'SuperElementalSummon':
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+            // 从配置读取天数，如果配置不存在则默认为 60
+            const days = poolConfig.latestIncludedNonEventHeroAgeInDays || 60;
             const cutoffDate = new Date();
             cutoffDate.setHours(0, 0, 0, 0);
-            cutoffDate.setDate(cutoffDate.getDate() - 60);
+            cutoffDate.setDate(cutoffDate.getDate() - days);
 
             masterHeroPool = masterHeroPool.filter(hero => {
                 const heroFamily = String(hero.family || '').toLowerCase();
@@ -991,7 +993,11 @@ async function handleActivityClick(poolId) {
                 }
             } else if (poolConfig.productType === 'SuperElementalSummon') {
                 // 如果没有新规则，再检查是否为超级元素人奖池
-                noticeText = i18n[state.currentLang].superElementalExclusionNotice || '* Does not include non-associated family heroes released within 180 days';
+                // 读取配置的天数并调用新的多语言函数
+                const days = poolConfig.latestIncludedNonEventHeroAgeInDays || 60;
+                if (langDict.superElementalExclusionNotice) {
+                    noticeText = langDict.superElementalExclusionNotice(days);
+                }
             }
             // 如果生成了说明文本，则创建HTML
             if (noticeText) {

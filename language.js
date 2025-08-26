@@ -317,7 +317,7 @@ const i18n = {
             "NonClassicHero": "非经典英雄" 
         },
         "selectElementTitle": "请选择元素",
-        "superElementalExclusionNotice": "* 不包含180天内发布的非活动家族英雄",
+        "superElementalExclusionNotice": (days) => `* 不包含${days}天内发布的非活动家族英雄`,
         "noHotmAndMysteryBonusNotice": "此召唤不包含月度英雄和神秘英雄的额外抽取机会。",
         "summonSummaryOkBtn": "确定",
         "playMode_full": "播放完整动画",
@@ -603,7 +603,7 @@ const i18n = {
             "NonClassicHero": "非經典英雄"
         },
         "selectElementTitle": "請選擇元素",
-        "superElementalExclusionNotice": "* 不包含180天內發佈的非活動家族英雄", 
+        "superElementalExclusionNotice": (days) => `* 不包含${days}天內發佈的非活動家族英雄`,
         "noHotmAndMysteryBonusNotice": "此召喚不包含月度英雄和神秘英雄的額外抽取機會。",
         "summonSummaryOkBtn": "確定",
         "playMode_full": "播放完整動畫", 
@@ -888,7 +888,7 @@ const i18n = {
             "NonClassicHero": "Non-Classic Heroes"
         },
         "selectElementTitle": "Select Element",
-        "superElementalExclusionNotice": "* Does not include non-event family heroes released within 180 days",
+        "superElementalExclusionNotice": (days) => `* Does not include non-event family heroes released within ${days} days`,
         "noHotmAndMysteryBonusNotice": "This summon does not include a chance for a bonus draw of the Hero of the Month or a Mystery Hero.",
         "summonSummaryOkBtn": "OK",
         "playMode_full": "Play Full Animation", 

@@ -466,7 +466,7 @@ function getFilteredMasterPool() {
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             const cutoffDate = new Date();
             cutoffDate.setHours(0, 0, 0, 0);
-            cutoffDate.setDate(cutoffDate.getDate() - 180);
+            cutoffDate.setDate(cutoffDate.getDate() - 60);
 
             masterHeroPool = masterHeroPool.filter(hero => {
                 const heroFamily = String(hero.family || '').toLowerCase();

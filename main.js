@@ -269,13 +269,13 @@ async function initializeApp() {
 
     // 6. 根据URL参数执行特殊操作
     history.replaceState({ view: 'list' }, '');
-    document.getElementById('one-click-max-date-display').textContent = oneClickMaxDate;
-    document.getElementById('purchase-costume-date-display').textContent = purchaseCostumeDate;
+    document.getElementById('one-click-max-date-display').textContent = formatLocalDate(oneClickMaxDate);
+    document.getElementById('purchase-costume-date-display').textContent = formatLocalDate(purchaseCostumeDate);
     // 初始化灵魂交换行
     const soulExchangeDateDisplay = document.getElementById('soul-exchange-date-display');
     const showSoulExchangeBtn = document.getElementById('show-soul-exchange-btn');
     if (soulExchangeDateDisplay && showSoulExchangeBtn) {
-        soulExchangeDateDisplay.textContent = soulExchange.Date;
+        soulExchangeDateDisplay.textContent = formatLocalDate(soulExchange.Date);
         showSoulExchangeBtn.disabled = !soulExchange.show;
     }
 

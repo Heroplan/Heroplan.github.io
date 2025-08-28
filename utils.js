@@ -448,3 +448,35 @@ function preloadAssets(assetUrls) {
         }
     });
 }
+
+/**
+ * 将 "YYYY-MM-DD" 格式的日期字符串格式化为用户本地化的日期格式。
+ * @param {string} dateString - "YYYY-MM-DD" 格式的日期字符串。
+ * @returns {string} 本地化格式的日期字符串，或原始字符串（如果格式无效）。
+ */
+function formatLocalDate(dateString) {
+    // 检查输入是否为有效的 "YYYY-MM-DD" 格式
+    if (!dateString || !/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+        return dateString; // 如果格式不符或为空，直接返回原始值
+    }
+
+    try {
+        // 拆分字符串以避免因时区问题导致的日期偏差
+        const parts = dateString.split('-');
+        const year = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10) - 1; // 月份在JavaScript中是从0开始的
+        const day = parseInt(parts[2], 10);
+        const date = new Date(year, month, day);
+
+        // 让浏览器根据用户的系统/浏览器设置自动决定区域格式
+        // 传入 undefined 作为第一个参数，会使用运行时的默认locale
+        return date.toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        });
+    } catch (e) {
+        console.error("日期格式化失败:", dateString, e);
+        return dateString; // 如果发生错误，返回原始字符串
+    }
+}

@@ -16,14 +16,14 @@ const soulExchange = {
         "s5_bastet_costume_forest",
         "journey_erlang_shen",
         "construct_brimstone",
-        "astral_starwalker",
+        "construct_skarn",
         "owl_relius"
     ],
     twenty: [
         "goblin_acidfire",
         "champions_lazara",
         "owl_lodius",
-        "construct_skarn",
+        "astral_starwalker",
         "gargoyle_garten"
     ],
     show: true

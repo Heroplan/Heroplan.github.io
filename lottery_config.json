@@ -233,6 +233,15 @@
                 "trainer_4"
             ],
             "featuredHeroNum": 4
+        },
+        "MimicSummon": {
+            "bucketConfig": [
+                "heroes_event_3",
+                "heroes_event_4",
+                "heroes_event_5",
+                "featuredHero"
+            ],
+            "featuredHeroNum": 3
         }
     },
     "SummonPool": {
@@ -357,8 +366,8 @@
                 "classic"
             ],
               "featuredHeroes": [
-                "exalted_female_statue_costume_glass",
-                "nomad_female_lord_costume_glass"
+                "forest_titan_costume_glass",
+                "nordic_ice_enchantress_costume_glass"
               ]
         },
         "lottery_covenant_default": {
@@ -368,11 +377,11 @@
             ],
             "featuredHeroes": [
                 "fox_riverfang",
-                "tales2_dularfulr",
-                "bard_astrid",
+                "moth_grovevert",
+                "magic_carpet_naeem",
                 "astral_dwarf_ixinn",
-                "slime_goldrip",
-                "beowulf_beowulf"
+                "astral_dwarf_gongoth",
+                "fox_sable"
             ],
             "advertisedHero": "fox_riverfang",
               "includedHeroes": [
@@ -599,9 +608,9 @@
         },
         "lottery_season_season5": {
             "featuredHeroes": [
-                "s5_sobek_costume_guardian",
-                "s5_hetepheres_costume_spa",
-                "s5_ahmose_costume_reborn"
+                "s5_anubis_costume_dancefloor",
+                "s5_sneferu_costume_vanquisher",
+                "s5_hetepheres_costume_spa"
             ],
             "AssociatedFamilies": [
                 "sun",
@@ -800,7 +809,7 @@
         "lottery_super_elemental": {
             "featuredHeroes_red": [
                 "slime_zestique",
-                "elemental_ash"
+                "elemental_ignazio_costume_medic"
             ],
             "featuredHeroes_purple": [
                 "elemental_griffex_costume_camera",
@@ -872,10 +881,10 @@
                 "wildcat1"
             ],
             "featuredHeroes": [
-                "wild_cat_stravia",
-                "faun_ascian",
                 "wild_cat_lennart",
-                "castle_bear_bearnadette"
+                "wild_cat_leonie",
+                "wild_cat_rajesh",
+                "elemental_gastille"
             ],
             "advertisedHero": "wild_cat_stravia",
             "includedHeroes": [
@@ -952,7 +961,14 @@
                 "faun_philomena",
                 "faun_ysabel",
                 "faun_jolyon"
-              ]
-            }
+            ]
+        },
+        "lottery_mimic_default": {
+            "includedOrigins": [
+                "Season2",
+                "Season3",
+                "Mimic"
+            ]
+        }
     }
 }

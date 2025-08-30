@@ -66,6 +66,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "猫头鹰高塔召唤",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召唤",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召唤",
+        "lottery.title.mimicsummon": "拟态兽召唤(未完成)",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -133,6 +134,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "貓頭鷹高塔召喚",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召喚",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召喚",
+        "lottery.title.mimicsummon": "模仿怪召喚(未完成)",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -200,6 +202,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "Owl Tower Summon",
         "lottery.title.lottery_tower_magic_default": "Magic Tower Summon",
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
+        "lottery.title.mimicsummon": "Mimic Summon(Working)",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域

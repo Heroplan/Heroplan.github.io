@@ -1313,12 +1313,12 @@
         "advertisedHero": "halloween_wayne",
         "associatedEvent": "Halloween",
         "bucketWeights": [
-            568,
-            208,
-            9,
-            142,
-            57,
-            3,
+            0,
+            0,
+            0,
+            710,
+            265,
+            12,
             0,
             0,
             13,
@@ -1328,6 +1328,9 @@
         ],
         "perfectSummon": "seasonal_perfect_10",
         "hasMysteryHeroBonusRoll": true,
+        "linkedOrigins": [
+            "Halloween"
+        ],
         "featuredNonCostumedHeroes": [
             "halloween_wayne",
             "halloween_chester",
@@ -1674,5 +1677,46 @@
         "gemPrice": 9400,
         "sourceProductId": "lottery_wilderness_default",
         "amount": 30
+    },
+    {
+        "productType": "MimicSummon",
+        "id": "lottery_mimic_default",
+        "banner":"event_lotterybanner_mimic_summon",
+        "lotterybg": "event_lotterybg_mimic_summon",
+        "gemPrice": 270,
+        "amount": 1,
+        "uiPriority": 60,
+        "bucketWeights": [
+            710,
+            265,
+            10,
+            15
+        ],
+        "includedOrigins": [
+            "Season2",
+            "Season3",
+            "Mimic"
+        ],
+        "amountOfSelectableFeaturedSlots": 3,
+        "entitiesToChooseFrom": [
+            "mimic_ascension_item_purple",
+            "mimic_emblem_red",
+            "mimic_ascension_item_yellow",
+            "mimic_ascension_item_green",
+            "mimic_ascension_item_blue",
+            "mimic_ascension_item_red",
+            "mimic_training_hero_purple",
+            "mimic_training_hero_yellow",
+            "mimic_training_hero_green",
+            "mimic_training_hero_blue",
+            "mimic_training_hero_red"
+        ]
+    },
+    {
+        "productType": "MimicSummon",
+        "id": "lottery_mimic_default_bulk",
+        "gemPrice": 2400,
+        "sourceProductId": "lottery_mimic_default",
+        "amount": 10
     }
 ]

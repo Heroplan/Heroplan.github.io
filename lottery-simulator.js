@@ -1218,7 +1218,7 @@ function addHeroToFeaturedSlot(selectedHero) {
         renderFeaturedHeroes();
         applyFiltersAndRender();
     } else {
-        alert(i18n[state.currentLang].featuredSlotsFull || '所有精选英雄卡槽已满。');
+        alert(i18n[state.currentLang].featuredSlotsFull || '所有精选英雄卡槽已满，可双击精选英雄头像移除。');
     }
 }
 

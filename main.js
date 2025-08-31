@@ -190,6 +190,7 @@ async function initializeApp() {
     
 
     // 3. 数据后处理
+    populateOriginToFamiliesMap();
     state.allHeroes.forEach((hero, index) => {
         hero.originalIndex = index;
         hero.english_name = extractEnglishName(hero, state.currentLang);
@@ -946,3 +947,33 @@ function debounce(func, delay) {
     };
 }
 
+/**
+ * 遍历所有英雄，生成一个从“起源”到其下所有“家族”的映射表。
+ * 这个函数在应用启动时调用一次。
+ */
+function populateOriginToFamiliesMap() {
+    console.log("[日志-映射生成] 开始生成 起源->家族 映射表...");
+    const tempMap = {};
+
+    state.allHeroes.forEach(hero => {
+        if (hero.source && hero.family) {
+            // 使用 sourceReverseMap 将本地化的起源名称转为标准的英文ID
+            const englishOrigin = sourceReverseMap[hero.source];
+            if (englishOrigin) {
+                const originKey = englishOrigin.toLowerCase();
+                const familyKey = String(hero.family).toLowerCase();
+
+                if (!tempMap[originKey]) {
+                    tempMap[originKey] = new Set(); // 使用 Set 自动去重
+                }
+                tempMap[originKey].add(familyKey);
+            }
+        }
+    });
+
+    // 将 Set 转换为数组，并赋值给在 data.js 中声明的全局变量
+    for (const origin in tempMap) {
+        originToFamiliesMap[origin] = Array.from(tempMap[origin]);
+    }
+    console.log("[日志-映射生成] 映射表生成完毕:", originToFamiliesMap);
+}

@@ -695,14 +695,24 @@ function applyFiltersAndRender() {
         // ▼▼▼ 置顶逻辑 ▼▼▼
         // 仅当抽奖模拟器激活时，才执行精选英雄置顶规则
         if (state.lotterySimulatorActive) {
+            const poolConfig = state.currentSummonData;
+
+            // --- 规则1: 已被设置为精选的英雄，永远排在最顶部 ---
             const aIsFeatured = featuredHeroIds.has(a.heroId);
             const bIsFeatured = featuredHeroIds.has(b.heroId);
+            if (aIsFeatured && !bIsFeatured) return -1;
+            if (!aIsFeatured && bIsFeatured) return 1;
 
-            if (aIsFeatured && !bIsFeatured) {
-                return -1; // a是精选，b不是，a排在前面
-            }
-            if (!aIsFeatured && bIsFeatured) {
-                return 1; // b是精选，a不是，b排在前面
+            // --- 规则2 (新增): 如果配置了 entitiesToChooseFrom，则“可选”的英雄排第二 ---
+            // 这个规则只在两个英雄都“未被精选”时生效
+            if (poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
+                const aIsEligible = poolConfig.entitiesToChooseFrom.includes(a.heroId);
+                const bIsEligible = poolConfig.entitiesToChooseFrom.includes(b.heroId);
+
+                // 如果 a 可选而 b 不可选，a 排在前面
+                if (aIsEligible && !bIsEligible) return -1;
+                // 如果 b 可选而 a 不可选，b 排在前面
+                if (!aIsEligible && bIsEligible) return 1;
             }
         }
         // ▲▲▲ 逻辑结束 ▲▲▲

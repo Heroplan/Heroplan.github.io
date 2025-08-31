@@ -86,7 +86,35 @@
                 "heroes_event_5",
                 "featuredHero"
             ],
-            "featuredHeroNum": 3
+            "featuredHeroNum": 3,
+            "entitiesToChooseFrom": [
+                "champions_mistra",
+                "champions_satori",
+                "champions_nogu",
+                "champions_ramona",
+                "champions_norman",
+                "champions_lazara",
+                "forest_god_gregorion_costume_alchemist",
+                "dark_god_september_costume_engineer",
+                "witch_king_costume_cosmic",
+                "forest_god_zeline_costume_avian",
+                "forest_god_evelyn_costume_huntress",
+                "holy_god_musashi_costume_prisoner",
+                "holy_god_delilah_costume_guardian",
+                "fire_god_natalya_costume_seamstress",
+                "fire_god_zimkitha_costume_adventurer",
+                "fire_god_ares_costume_keymaster",
+                "ice_god_october_costume_farmer",
+                "dark_god_aeron_costume_periwig",
+                "ice_god_perseus_costume_frozen",
+                "dark_god_hel_costume_omen",
+                "ice_god_eskimo_costume_champion",
+                "holy_god_drake_lee_costume_serene",
+                "ice_god_athena_costume_wargoddess",
+                "dark_god_seshat_costume_revenant",
+                "fire_god_doom_costume_avenger",
+                "forest_god_oberon_costume_everoak"
+            ]
         },
         "MercenaryWarSummon": {
             "bucketConfig": [
@@ -253,8 +281,8 @@
             "family": "hotm2025",
             "ChancePerMil": "13"
         },
-        "MysteryHero":{
-            "family":"mimic",
+        "MysteryHero": {
+            "family": "mimic",
             "ChancePerMil": "15"
         },
         "LegendsSummonMysteryHero": {
@@ -365,10 +393,10 @@
             "AssociatedFamilies": [
                 "classic"
             ],
-              "featuredHeroes": [
+            "featuredHeroes": [
                 "forest_titan_costume_glass",
                 "nordic_ice_enchantress_costume_glass"
-              ]
+            ]
         },
         "lottery_covenant_default": {
             "AssociatedFamilies": [
@@ -384,7 +412,7 @@
                 "fox_sable"
             ],
             "advertisedHero": "fox_riverfang",
-              "includedHeroes": [
+            "includedHeroes": [
                 "nomad_female_shaman",
                 "knights_bauchan",
                 "nomad_mage",
@@ -467,7 +495,7 @@
                 "construct_gwynn",
                 "fox_foxglove",
                 "fox_nettletail"
-              ]
+            ]
         },
         "lottery_goblin_default": {
             "featuredHeroes": [
@@ -504,21 +532,21 @@
                 "journey",
                 "outlaw"
             ],
-              "limitedPoolSummonConfiguration": {
+            "limitedPoolSummonConfiguration": {
                 "enabled": true,
                 "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
                 "requiredItemAmount": 100,
                 "heroes": [
-                  "kingdom_diaochan_costume_flowers",
-                  "kingdom_zhuge_liang_costume_crane",
-                  "kingdom_cao_cao_costume_ice",
-                  "journey_xiwangmu",
-                  "journey_nineheaded_beast",
-                  "journey_queen_guowang",
-                  "journey_erlang_shen",
-                  "kingdom_sun_quan_costume_fire_bat",
-                  "kingdom_lu_bu_costume_tiger_lord",
-                  "kingdom_guan_yu_costume_dragon"
+                    "kingdom_diaochan_costume_flowers",
+                    "kingdom_zhuge_liang_costume_crane",
+                    "kingdom_cao_cao_costume_ice",
+                    "journey_xiwangmu",
+                    "journey_nineheaded_beast",
+                    "journey_queen_guowang",
+                    "journey_erlang_shen",
+                    "kingdom_sun_quan_costume_fire_bat",
+                    "kingdom_lu_bu_costume_tiger_lord",
+                    "kingdom_guan_yu_costume_dragon"
                 ]
             }
         },
@@ -545,10 +573,9 @@
             ]
         },
         "lottery_pickup_default": {
-
             "featuredHeroes": [
-              "faun_verity",
-              "faun_peregrine"
+                "faun_verity",
+                "faun_peregrine"
             ],
             "includedHeroes": [
                 "s2_ariel",
@@ -648,39 +675,39 @@
             ]
         },
         "lottery_hero_lunar_new_year": {
-        "featuredHeroes": [
-          "lunar_new_year_xiaoqing",
-          "lunar_new_year_baishu"
-        ],
+            "featuredHeroes": [
+                "lunar_new_year_xiaoqing",
+                "lunar_new_year_baishu"
+            ],
             "AssociatedFamilies": [
                 "zodiac"
             ]
         },
         "lottery_hero_valentines": {
-        "featuredHeroes": [
-          "valentines_anteros",
-          "valentines_matchmaker_dodgrom"
-        ],
+            "featuredHeroes": [
+                "valentines_anteros",
+                "valentines_matchmaker_dodgrom"
+            ],
             "AssociatedFamilies": [
                 "cupid"
             ]
         },
         "lottery_hero_easter": {
-        "featuredHeroes": [
-          "easter_viscount_cluckwood",
-          "easter_sadie",
-          "easter_miss_ethel"
-        ],
+            "featuredHeroes": [
+                "easter_viscount_cluckwood",
+                "easter_sadie",
+                "easter_miss_ethel"
+            ],
             "AssociatedFamilies": [
                 "easter"
             ]
         },
         "lottery_hero_beach_party": {
-        "featuredHeroes": [
-          "beachparty_andy_jay",
-          "beachparty_serena",
-          "beachparty_flip_costume_donut"
-        ],
+            "featuredHeroes": [
+                "beachparty_andy_jay",
+                "beachparty_serena",
+                "beachparty_flip_costume_donut"
+            ],
             "AssociatedFamilies": [
                 "beachparty"
             ],
@@ -689,31 +716,31 @@
             ]
         },
         "lottery_hero_kalevala": {
-        "featuredHeroes": [
-          "kalevala_suomuhauki",
-          "kalevala_mother_lemminkainen",
-          "kalevala_louhi_costume_mistress"
-        ],
+            "featuredHeroes": [
+                "kalevala_suomuhauki",
+                "kalevala_mother_lemminkainen",
+                "kalevala_louhi_costume_mistress"
+            ],
             "AssociatedFamilies": [
                 "kalevala"
             ]
         },
         "lottery_hero_halloween": {
-        "featuredHeroes": [
-          "halloween_wayne",
-          "halloween_chester",
-          "halloween_alucard_costume_mafia"
-        ],
+            "featuredHeroes": [
+                "halloween_wayne",
+                "halloween_chester",
+                "halloween_alucard_costume_mafia"
+            ],
             "AssociatedFamilies": [
                 "halloween"
             ]
         },
         "lottery_hero_christmas": {
-        "featuredHeroes": [
-          "christmas_albin",
-          "christmas_ottilia",
-          "christmas_mr_pengi_costume_snowboarder"
-        ],
+            "featuredHeroes": [
+                "christmas_albin",
+                "christmas_ottilia",
+                "christmas_mr_pengi_costume_snowboarder"
+            ],
             "AssociatedFamilies": [
                 "winter"
             ]
@@ -968,6 +995,19 @@
                 "Season2",
                 "Season3",
                 "Mimic"
+            ],
+            "entitiesToChooseFrom": [
+                "mimic_ascension_item_purple",
+                "mimic_emblem_red",
+                "mimic_ascension_item_yellow",
+                "mimic_ascension_item_green",
+                "mimic_ascension_item_blue",
+                "mimic_ascension_item_red",
+                "mimic_training_hero_purple",
+                "mimic_training_hero_yellow",
+                "mimic_training_hero_green",
+                "mimic_training_hero_blue",
+                "mimic_training_hero_red"
             ]
         }
     }

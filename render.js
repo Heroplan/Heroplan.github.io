@@ -184,6 +184,14 @@ function renderTable(heroes) {
                         // .some() 方法会检查数组中是否至少有一个元素满足条件
                         isDisabled = state.customFeaturedHeroes.some(fh => fh && fh.heroId === hero.heroId);
                     }
+                    // ▼▼▼ 处理 entitiesToChooseFrom ▼▼▼
+                    const poolConfig = state.currentSummonData;
+                    if (!isDisabled && poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
+                        // 如果英雄ID不在允许的列表中，则禁用
+                        if (!poolConfig.entitiesToChooseFrom.includes(hero.heroId)) {
+                            isDisabled = true;
+                        }
+                    }
                     if (isDisabled) {
                         cssClass = 'disabled'; // 如果已被添加，则附加 disabled 类
                     }

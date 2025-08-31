@@ -74,6 +74,8 @@ const aetherPowerReverseMap = {
     "吸血": "Vampire", "吸血鬼": "Vampire"
 };
 
+var originToFamiliesMap = {};
+
 // 英雄来源/活动名称 -> 英文标识符
 const sourceReverseMap = {
     // 简体中文
@@ -93,7 +95,7 @@ const sourceReverseMap = {
     "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "挑战节II - 杀手": "slayers",
     "荒野召唤": "wilderness", "挑战节I - 守护者": "teltoc", "挑战节I - 肃煞森林": "fables",
     "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume",
+    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "拟态兽召唤": "mimic",
     // 繁體中文
     "挑戰節II - 惡棍": "villains", "聯盟 - 火槍手": "musketeer", "挑戰節II - 強大寵物": "pets",
     "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
@@ -111,7 +113,7 @@ const sourceReverseMap = {
     "挑戰節II - 吟遊詩人": "festival", "星界召喚": "astral", "挑戰節II - 殺手": "slayers",
     "野地召喚": "wilderness", "挑戰節I - 守護者": "teltoc", "挑戰節I - 肅煞森林": "fables",
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume",
+    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "模仿怪召喚": "mimic",
     // English
     "Challenge Festival II - Villains": "villains", "Alliance - Musketeers": "musketeer", "Challenge Festival II - Pets": "pets",
     "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
@@ -129,7 +131,7 @@ const sourceReverseMap = {
     "Challenge Festival II - Bards": "festival", "Astral Summon": "astral", "Challenge Festival II - Slayers": "slayers",
     "Wilderness Summon": "wilderness", "Challenge Festival I - Guardians": "teltoc", "Challenge Festival I - Grim Forest": "fables",
     "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
-    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume"
+    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Mimic Summon": "mimic"
 };
 
 // 英文标识符 -> 起源图标文件名
@@ -150,7 +152,7 @@ const sourceIconMap = {
     "festival": "challenge.webp", "astral": "astralelves.webp", "slayers": "challenge.webp",
     "wilderness": "wilderness.webp", "teltoc": "challenge.webp", "fables": "challenge.webp",
     "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
-    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp",
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "mimic.webp",
 };
 
 // 颜色名称 -> 标准英文名

@@ -66,7 +66,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "猫头鹰高塔召唤",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召唤",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召唤",
-        "lottery.title.mimicsummon": "拟态兽召唤(未完成)",
+        "lottery.title.mimicsummon": "拟态兽召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -134,7 +134,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "貓頭鷹高塔召喚",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召喚",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召喚",
-        "lottery.title.mimicsummon": "模仿怪召喚(未完成)",
+        "lottery.title.mimicsummon": "模仿怪召喚",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -202,7 +202,7 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_owl_default": "Owl Tower Summon",
         "lottery.title.lottery_tower_magic_default": "Magic Tower Summon",
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
-        "lottery.title.mimicsummon": "Mimic Summon(Working)",
+        "lottery.title.mimicsummon": "Mimic Summon",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
@@ -499,13 +499,26 @@ function getFilteredMasterPool() {
 
 
 /**
- * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池
- * @param {string} bucketString - 例如 "heroes_ex_s1_3"
+ * 根据 bucket 字符串和奖池配置，构建一个临时的英雄池 (最终修正版)
+ * @param {string} bucketString - 例如 "heroes_event_3"
  * @param {object} poolConfig - 当前的奖池配置
  * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
     const baseHeroPool = poolConfig.masterPool || state.allHeroes;
+
+    const explicitlyIncludedFamilies = new Set();
+    if (poolConfig.AssociatedFamilies) {
+        poolConfig.AssociatedFamilies.forEach(f => explicitlyIncludedFamilies.add(String(f).toLowerCase()));
+    }
+    if (poolConfig.includedOrigins) {
+        poolConfig.includedOrigins.forEach(origin => {
+            const originKey = origin.toLowerCase();
+            if (originToFamiliesMap[originKey]) {
+                originToFamiliesMap[originKey].forEach(family => explicitlyIncludedFamilies.add(family));
+            }
+        });
+    }
 
     const starMatch = bucketString.match(/_(\d+)$/);
     if (!starMatch) return [];
@@ -517,7 +530,6 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     else if (bucketString.startsWith('heroes_ex_s1_')) bucketType = 'ex_s1';
     else if (bucketString.startsWith('heroes_s1_')) bucketType = 's1';
     else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
-
 
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         return state.allHeroes.filter(hero => {
@@ -531,17 +543,13 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         });
     }
 
-    // 对于 'listed' 类型的奖池, 必须分别处理 includedHeroes (精确版本) 和 AssociatedFamilies (最新版本)
     if (bucketType === 'listed') {
         const finalPool = [];
-        const processedNames = new Set(); // 用于防止重复添加
-
-        // 1. 从 includedHeroes 列表中添加精确版本的英雄
+        const processedNames = new Set();
         const includedIds = poolConfig.includedHeroes || [];
         if (includedIds.length > 0) {
             includedIds.forEach(heroId => {
                 const exactHero = state.heroesByIdMap.get(heroId);
-                // 检查精确的英雄是否与当前奖池桶的星级匹配
                 if (exactHero && exactHero.star === star) {
                     finalPool.push(exactHero);
                     if (exactHero.english_name) {
@@ -550,18 +558,14 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                 }
             });
         }
-
-        // 2. 从 AssociatedFamilies 中添加最新服装版本的英雄
         const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
         if (listedFamilies.length > 0) {
             baseHeroPool.forEach(hero => {
                 if (hero.isFeaturedOnly) return;
-
                 const heroFamily = String(hero.family || '').toLowerCase();
                 if (hero.star === star && listedFamilies.includes(heroFamily) && !state.globalExcludeFamilies.includes(heroFamily)) {
                     if (hero.english_name && !processedNames.has(hero.english_name)) {
                         processedNames.add(hero.english_name);
-                        // 对于家族, 我们获取其最新版本
                         const latestVersion = state.latestHeroVersionsMap.get(hero.english_name);
                         if (latestVersion) {
                             finalPool.push(latestVersion);
@@ -578,12 +582,18 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
     baseHeroPool.forEach(hero => {
         if (hero.isFeaturedOnly) {
-            return false;
+            return;
         }
         const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
         let matches = false;
 
-        if (hero.star === star && !state.globalExcludeFamilies.includes(heroFamily)) {
+        const isGloballyExcluded = state.globalExcludeFamilies.includes(heroFamily);
+        const isExplicitlyIncluded = explicitlyIncludedFamilies.has(heroFamily);
+        if (isGloballyExcluded && isExplicitlyIncluded) {
+            // Log for exemption is kept for debugging
+        }
+
+        if (hero.star === star && (!isGloballyExcluded || isExplicitlyIncluded)) {
             switch (bucketType) {
                 case 's1':
                     matches = (heroFamily === 'classic');
@@ -592,8 +602,12 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                     matches = (heroFamily !== 'classic');
                     break;
                 case 'event':
-                    const eventFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
+                    // ▼▼▼ 核心修正逻辑 ▼▼▼
+                    // 直接使用我们在这函数开头就计算好的、包含了所有明确家族的列表
+                    let eventFamilies = Array.from(explicitlyIncludedFamilies);
                     matches = eventFamilies.includes(heroFamily);
+                    // ▲▲▲ 修正结束 ▲▲▲
+
                     if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
                         const standardHeroColor = colorReverseMap[hero.color];
                         const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
@@ -613,6 +627,11 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         }
 
         if (matches) {
+            // ▼▼▼ 如果是 "mimic" 家族，则直接添加，不进行名称去重 ▼▼▼
+            if (heroFamily === 'mimic') {
+                initialPool.push(hero);
+                return; // 跳过后续的名称去重逻辑
+            }
             const heroName = hero.english_name;
             if (heroName && !processedHeroNames.has(heroName)) {
                 processedHeroNames.add(heroName);
@@ -625,6 +644,11 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     });
 
     return initialPool.map(baseHero => {
+        // ▼▼▼ 如果是 "mimic" 家族，直接返回本身，不去查找“最新版本” ▼▼▼
+        const baseHeroFamily = String(baseHero.family || '').toLowerCase();
+        if (baseHeroFamily === 'mimic') {
+            return baseHero;
+        }
         if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
         }
@@ -643,6 +667,18 @@ function getAllHeroesInPool(poolConfig) {
 
     // 根据 latestIncludedHeroAgeInDays 配置预筛选主英雄池
     let masterPoolForBuckets = state.allHeroes;
+    // ▼▼▼ 处理 includedOrigins ▼▼▼
+    if (poolConfig.includedOrigins && Array.isArray(poolConfig.includedOrigins) && poolConfig.includedOrigins.length > 0) {
+        const allowedOrigins = poolConfig.includedOrigins.map(o => o.toLowerCase());
+        const originalCount = masterPoolForBuckets.length;
+        masterPoolForBuckets = masterPoolForBuckets.filter(hero => {
+            if (!hero.source) return false;
+            // 使用 sourceReverseMap 将英雄的本地化起源转回英文ID
+            const englishOrigin = sourceReverseMap[hero.source];
+            return englishOrigin.toLowerCase() && allowedOrigins.includes(englishOrigin.toLowerCase());
+        });
+    }
+
     if (poolConfig.latestIncludedHeroAgeInDays > 0) {
         const days = poolConfig.latestIncludedHeroAgeInDays;
         const now = new Date();
@@ -720,6 +756,18 @@ function getAllHeroesInPool(poolConfig) {
     }
 
     if (poolConfig.nonFeaturedLegendaryHeroesAgeInDays > 0) {
+        const explicitlyIncludedFamilies = new Set();
+        if (poolConfig.AssociatedFamilies) {
+            poolConfig.AssociatedFamilies.forEach(f => explicitlyIncludedFamilies.add(String(f).toLowerCase()));
+        }
+        if (poolConfig.includedOrigins) {
+            poolConfig.includedOrigins.forEach(origin => {
+                const originKey = origin.toLowerCase();
+                if (originToFamiliesMap[originKey]) {
+                    originToFamiliesMap[originKey].forEach(family => explicitlyIncludedFamilies.add(family));
+                }
+            });
+        }
         const days = poolConfig.nonFeaturedLegendaryHeroesAgeInDays;
         const cutoffDate = new Date();
         cutoffDate.setDate(new Date().getDate() - days);
@@ -728,6 +776,9 @@ function getAllHeroesInPool(poolConfig) {
                 return false;
             }
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+            const isGloballyExcluded = state.globalExcludeFamilies.includes(heroFamily);
+            const isExplicitlyIncluded = explicitlyIncludedFamilies.has(heroFamily);
+            const isAllowed = !isGloballyExcluded || isExplicitlyIncluded;
             return hero.star === 5 &&
                 hero.costume_id === 0 &&
                 new Date(hero['Release date']) < cutoffDate &&
@@ -1149,6 +1200,14 @@ function updateSummonButtons() {
  * @param {object} selectedHero - 从主列表选择的英雄
  */
 function addHeroToFeaturedSlot(selectedHero) {
+    const poolConfig = state.currentSummonData;
+    // ▼▼▼ 处理 entitiesToChooseFrom 安全校验 ▼▼▼
+    if (poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
+        if (!poolConfig.entitiesToChooseFrom.includes(selectedHero.heroId)) {
+            alert("该英雄无法在此奖池中被选为精选英雄。"); // 可以后续添加到多语言
+            return;
+        }
+    }
     if (selectedHero.star !== 5) {
         alert(i18n[state.currentLang].mustSelect5StarHero || '请选择一位5星英雄。');
         return;

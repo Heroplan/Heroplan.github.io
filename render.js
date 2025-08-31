@@ -178,22 +178,32 @@ function renderTable(heroes) {
 
                 if (state.teamSimulatorActive || state.lotterySimulatorActive) {
                     icon = '⬆️';
-                    // 检查英雄是否已被添加
-                    let isDisabled = false;
-                    if (state.lotterySimulatorActive && state.customFeaturedHeroes) {
-                        // .some() 方法会检查数组中是否至少有一个元素满足条件
-                        isDisabled = state.customFeaturedHeroes.some(fh => fh && fh.heroId === hero.heroId);
-                    }
-                    // ▼▼▼ 处理 entitiesToChooseFrom ▼▼▼
-                    const poolConfig = state.currentSummonData;
-                    if (!isDisabled && poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
-                        // 如果英雄ID不在允许的列表中，则禁用
-                        if (!poolConfig.entitiesToChooseFrom.includes(hero.heroId)) {
+                    if (state.lotterySimulatorActive) {
+                        // 检查英雄是否已被添加
+                        let isDisabled = false;
+
+                        // 规则1: 英雄不是5星则禁用
+                        if (hero.star !== 5) {
                             isDisabled = true;
                         }
-                    }
-                    if (isDisabled) {
-                        cssClass = 'disabled'; // 如果已被添加，则附加 disabled 类
+
+                        // 规则2: 如果尚未被禁用，再检查是否已被添加
+                        if (!isDisabled && state.customFeaturedHeroes) {
+                            isDisabled = state.customFeaturedHeroes.some(fh => fh && fh.heroId === hero.heroId);
+                        }
+
+                        // 规则3: 如果尚未被禁用，再检查是否在允许列表中
+                        const poolConfig = state.currentSummonData;
+                        if (!isDisabled && poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
+                            if (!poolConfig.entitiesToChooseFrom.includes(hero.heroId)) {
+                                isDisabled = true;
+                            }
+                        }
+
+                        // 最终根据 isDisabled 的结果来决定是否添加 'disabled' 类
+                        if (isDisabled) {
+                            cssClass = 'disabled';
+                        }
                     }
                 } else {
                     const isHeroFavorite = isFavorite(hero);
@@ -203,7 +213,16 @@ function renderTable(heroes) {
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.color);
-                const imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
+                let imageSrc; // 先声明变量
+
+                // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
+                if (String(hero.family).toLowerCase() === 'trainer') {
+                    // 如果是训练师，则强制使用 hero.image 属性中我们预设的路径
+                    imageSrc = hero.image;
+                } else {
+                    // 对于所有其他英雄，保留原始逻辑
+                    imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
+                }
                 const heroColorClass = getColorGlowClass(hero.color);
 
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
@@ -301,7 +320,7 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
  * @param {object} context - 上下文对象，主要用于队伍模拟器。
  */
 function renderDetailsInModal(hero, context = {}) {
-    
+
     const { teamSlotIndex } = context;
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;

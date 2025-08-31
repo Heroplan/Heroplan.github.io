@@ -602,11 +602,13 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                     matches = (heroFamily !== 'classic');
                     break;
                 case 'event':
-                    // ▼▼▼ 核心修正逻辑 ▼▼▼
                     // 直接使用我们在这函数开头就计算好的、包含了所有明确家族的列表
                     let eventFamilies = Array.from(explicitlyIncludedFamilies);
+                    // ▼▼▼ 如果奖池允许训练师，则将'trainer'家族视为活动家族 ▼▼▼
+                    if (poolConfig.allowsTrainerCharacter) {
+                        eventFamilies.push('trainer');
+                    }
                     matches = eventFamilies.includes(heroFamily);
-                    // ▲▲▲ 修正结束 ▲▲▲
 
                     if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
                         const standardHeroColor = colorReverseMap[hero.color];
@@ -627,8 +629,8 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         }
 
         if (matches) {
-            // ▼▼▼ 如果是 "mimic" 家族，则直接添加，不进行名称去重 ▼▼▼
-            if (heroFamily === 'mimic') {
+            // ▼▼▼ 如果是 "mimic" 或 "trainer" 家族，则直接添加，不进行名称去重 ▼▼▼
+            if (heroFamily === 'mimic' || heroFamily === 'trainer') {
                 initialPool.push(hero);
                 return; // 跳过后续的名称去重逻辑
             }
@@ -644,11 +646,12 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     });
 
     return initialPool.map(baseHero => {
-        // ▼▼▼ 如果是 "mimic" 家族，直接返回本身，不去查找“最新版本” ▼▼▼
+        // ▼▼▼ 如果是 "mimic" 或 "trainer" 家族，直接返回本身，不去查找“最新版本” ▼▼▼
         const baseHeroFamily = String(baseHero.family || '').toLowerCase();
-        if (baseHeroFamily === 'mimic') {
+        if (baseHeroFamily === 'mimic' || baseHeroFamily === 'trainer') {
             return baseHero;
         }
+
         if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
         }
@@ -731,10 +734,39 @@ function getAllHeroesInPool(poolConfig) {
 
     if (poolConfig.bucketConfig) {
         poolConfig.bucketConfig.forEach(bucketString => {
-            if (!bucketString || bucketString.startsWith('trainer')) {
+            if (!bucketString) {
                 return;
             }
-            if (bucketString === 'featuredHero') {
+            // ▼▼▼ 处理 trainer_x 桶，使其显示所有颜色的训练师 ▼▼▼
+            if (bucketString.startsWith('trainer')) {
+                const starMatch = bucketString.match(/_(\d+)$/);
+                if (starMatch) {
+                    const star = parseInt(starMatch[1], 10);
+                    const colors = [
+                        { name: '红', id: 'red' },
+                        { name: '蓝', id: 'blue' },
+                        { name: '绿', id: 'green' },
+                        { name: '黄', id: 'yellow' },
+                        { name: '紫', id: 'purple' }
+                    ];
+
+                    // 为当前星级创建所有5种颜色的训练师，以供显示
+                    colors.forEach((color, index) => {
+                        const trainerHero = {
+                            name: `${star}* ${color.name}训练师英雄`,
+                            star: star,
+                            color: color.name,
+                            family: 'trainer',
+                            source: 'trainer',
+                            heroId: `trainer_${star}_${color.id}`,
+                            originalIndex: -1 * (2000 + star * 10 + index),
+                            displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
+                            image: `imgs/hero_icon/trainer_rainbow.webp`
+                        };
+                        allPossibleHeroes.push(trainerHero);
+                    });
+                }
+            } else if (bucketString === 'featuredHero') {
                 const featuredIds = [
                     ...(poolConfig.featuredNonCostumedHeroes || []),
                     poolConfig.advertisedHero
@@ -786,6 +818,41 @@ function getAllHeroesInPool(poolConfig) {
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
         allPossibleHeroes.push(...olderHeroes);
+    }
+
+    // ▼▼▼ 新增逻辑：处理 allowsTrainerCharacter ▼▼▼
+    if (poolConfig.allowsTrainerCharacter) {
+        //console.log(`[日志-训练师] 检测到 allowsTrainerCharacter 规则，正在添加训练师英雄...`);
+        const stars = [3, 4]; // 包含3、4星
+        const colors = [
+            { name: '红', id: 'red' },
+            { name: '蓝', id: 'blue' },
+            { name: '绿', id: 'green' },
+            { name: '黄', id: 'yellow' },
+            { name: '紫', id: 'purple' }
+        ];
+
+        stars.forEach(star => {
+            colors.forEach((color, index) => {
+                const trainerHero = {
+                    name: `${star}* ${color.name}训练师英雄`,
+                    star: star,
+                    color: color.name,
+                    family: 'trainer',
+                    source: 'trainer',
+                    heroId: `trainer_${star}_${color.id}`,
+                    // 使用负数作为originalIndex以避免与真实英雄冲突
+                    originalIndex: -1 * (1000 + star * 10 + index),
+                    // 提供一些基础属性以便显示和排序
+                    power: 0, attack: 0, defense: 0, health: 0,
+                    displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
+                    // 为避免图片丢失，统一使用已有的彩虹训练师图片
+                    image: `imgs/hero_icon/trainer_rainbow.webp`
+                };
+                allPossibleHeroes.push(trainerHero);
+            });
+        });
+        //console.log(`[日志-训练师] 已添加 ${stars.length * colors.length} 个训练师英雄。`);
     }
 
     // --- 修正后的去重逻辑 ---
@@ -1647,7 +1714,12 @@ function showSummaryModal(results) {
 
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
-        avatarImage.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+        // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
+        if (String(hero.family).toLowerCase() === 'trainer') {
+            avatarImage.src = hero.image; // 强制使用预设的 trainer_rainbow.webp 路径
+        } else {
+            avatarImage.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+        }
         avatar.appendChild(avatarImage);
 
         const detailsOverlay = document.createElement('div');
@@ -1893,7 +1965,12 @@ function renderSummonHistory() {
             avatarBackground.style.background = getHeroColorLightGradient(hero.color);
             avatarContainer.appendChild(avatarBackground);
             const avatar = document.createElement('img');
-            avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+            // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
+            if (String(hero.family).toLowerCase() === 'trainer') {
+                avatar.src = hero.image; // 强制使用预设的 trainer_rainbow.webp 路径
+            } else {
+                avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+            }
             avatar.className = 'hero-avatar-image';
             avatar.alt = hero.name;
             avatarContainer.appendChild(avatar);

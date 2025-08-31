@@ -596,6 +596,10 @@ function applyFiltersAndRender() {
 
     // 3. 执行筛选
     state.filteredHeroes = baseHeroes.filter(hero => {
+        // 如果是抽奖模拟器模式，并且当前英雄是训练师，则无条件保留，不进行任何筛选。
+        if (state.lotterySimulatorActive && String(hero.family).toLowerCase() === 'trainer') {
+            return true;
+        }
         // 范围筛选
         if (filterScope === 'hero' && hero.costume_id !== 0) return false;
         if (filterScope === 'skin' && hero.costume_id === 0) return false;

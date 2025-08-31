@@ -958,6 +958,10 @@ function renderDetailsInModal(hero, context = {}) {
 
     // 为技能标签点击筛选功能
     modalContent.addEventListener('click', (event) => {
+        // ▼▼▼ 在抽奖模拟器模式下，禁用此功能 ▼▼▼
+        if (state.lotterySimulatorActive) {
+            return; // 直接退出
+        }
         const target = event.target.closest('.skill-type-tag');
         if (!target) return;
 

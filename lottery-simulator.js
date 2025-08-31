@@ -2170,6 +2170,7 @@ function toggleLotterySimulator() {
         button.classList.add('simulator-exit-btn');
         button.title = langDict.returnToList;
         uiElements.headerInfoContainer.classList.add('hidden');
+        document.body.classList.add('lottery-mode-active');
 
         const activityList = document.getElementById('lottery-activity-list-container');
         const historyList = document.getElementById('summon-history-list-container');
@@ -2188,6 +2189,7 @@ function toggleLotterySimulator() {
         button.classList.remove('simulator-exit-btn');
         button.title = langDict.lotterySimulatorTitle;
         uiElements.headerInfoContainer.classList.remove('hidden');
+        document.body.classList.remove('lottery-mode-active');
         state.activeHeroSubset = null;
         applyFiltersAndRender();
     }

@@ -5949,3 +5949,15 @@ html:not(.dark-theme) .color-text-outlined {
 body.modal-open {
   overflow: hidden;
 }
+
+/* --- 新增：抽奖模拟器模式下禁用标签点击的效果 --- */
+.lottery-mode-active #modal .skill-type-tag {
+  cursor: default !important;
+}
+
+.lottery-mode-active #modal .skill-type-tag:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+  transform: none !important;
+  box-shadow: none !important;
+}

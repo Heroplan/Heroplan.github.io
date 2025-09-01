@@ -5950,12 +5950,14 @@ body.modal-open {
   overflow: hidden;
 }
 
-/* --- 新增：抽奖模拟器模式下禁用标签点击的效果 --- */
-.lottery-mode-active #modal .skill-type-tag {
+/* --- 新增：抽奖与队伍模拟器模式下禁用标签点击视觉效果 --- */
+.lottery-mode-active #modal .skill-type-tag,
+.team-mode-active #modal .skill-type-tag {
   cursor: default !important;
 }
 
-.lottery-mode-active #modal .skill-type-tag:hover {
+.lottery-mode-active #modal .skill-type-tag:hover,
+.team-mode-active #modal .skill-type-tag:hover {
   background-color: inherit !important;
   color: inherit !important;
   transform: none !important;

@@ -115,6 +115,7 @@ function toggleTeamSimulator() {
         applyFiltersAndRender();
         renderActiveTabList();
         setMainViewHistory('teamSimulator');
+        document.body.classList.add('team-mode-active');
 
     } else {
         if (showTeamSimulatorBtn) {
@@ -126,6 +127,7 @@ function toggleTeamSimulator() {
         state.multiSelectFilters.filterScope = ['all'];
         updateFilterButtonUI('filterScope');
         applyFiltersAndRender();
+        document.body.classList.remove('team-mode-active');
     }
 }
 

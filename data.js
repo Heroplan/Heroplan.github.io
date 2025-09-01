@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2025-09-25';
 const purchaseCostumeDate = '2025-10-28';
 const soulExchange = {
-    Date: '2025-08-28',
+    Date: '2025-11-28',
     ten: [
         "gargoyle_uwe",
         "holy_god_aviana",
@@ -26,7 +26,7 @@ const soulExchange = {
         "astral_starwalker",
         "gargoyle_garten"
     ],
-    show: true
+    show: false
 }
 // --- 英雄属性映射表 (用于多语言转换和图标查找) ---
 

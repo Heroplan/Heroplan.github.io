@@ -1447,7 +1447,26 @@ async function performSummon(count) {
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
                     const hotmPool = state.allHeroes.filter(h => String(h.family) === String(hotmInfo.family));
                     if (hotmPool.length > 0) {
-                        const latestHotm = hotmPool.sort((a, b) => new Date(b['Release date']) - new Date(a['Release date']))[0];
+                        // ▼▼▼ 优先选择 Lottery_Only 的月度英雄 ▼▼▼
+                        const latestHotm = hotmPool.sort((a, b) => {
+                            const aIsLotteryOnly = !a['Release date'];
+                            const bIsLotteryOnly = !b['Release date'];
+
+                            // 规则1: 如果 a 是 Lottery_Only 而 b 不是，a 优先 (视为“更新”)
+                            if (aIsLotteryOnly && !bIsLotteryOnly) {
+                                return -1;
+                            }
+                            // 规则2: 如果 b 是 Lottery_Only 而 a 不是，b 优先
+                            if (bIsLotteryOnly && !aIsLotteryOnly) {
+                                return 1;
+                            }
+
+                            // 规则3: 如果两者都是或都不是 Lottery_Only，则按常规日期排序
+                            // 为无日期的英雄提供一个极早的默认日期，以确保排序稳定性
+                            const dateA = a['Release date'] ? new Date(a['Release date']) : new Date(0);
+                            const dateB = b['Release date'] ? new Date(b['Release date']) : new Date(0);
+                            return dateB - dateA;
+                        })[0];
                         singlePullResults.push({ hero: latestHotm, bucket: 'hotm' });
                     }
                 }

@@ -5961,3 +5961,17 @@ body.modal-open {
   transform: none !important;
   box-shadow: none !important;
 }
+
+/* --- 新增：为右侧动作按钮添加禁用状态的样式 --- */
+.action-button-right:disabled {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-outline);
+  cursor: not-allowed;
+  border-color: var(--md-sys-color-outline);
+}
+
+/* 确保在禁用状态下，悬浮效果也被覆盖 */
+.action-button-right:disabled:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-outline);
+}

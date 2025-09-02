@@ -682,44 +682,53 @@ function getAllHeroesInPool(poolConfig) {
         });
     }
 
-    if (poolConfig.latestIncludedHeroAgeInDays > 0) {
-        const days = poolConfig.latestIncludedHeroAgeInDays;
-        const now = new Date();
-        const baseDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+    // ▼▼▼ 统一处理两种日期筛选规则 ▼▼▼
+    if (poolConfig.latestIncludedHeroDate || poolConfig.latestIncludedHeroAgeInDays > 0) {
 
-        masterPoolForBuckets = state.allHeroes.filter(hero => {
+        // 步骤 1: 确定基准日期 (baseDate)，即时间窗口的“结束日期”
+        let baseDate;
+        if (poolConfig.latestIncludedHeroDate) {
+            console.log(`[日志-日期筛选] 使用 latestIncludedHeroDate: ${poolConfig.latestIncludedHeroDate} 作为基准日期。`);
+            const parts = poolConfig.latestIncludedHeroDate.split('-');
+            if (parts.length === 3) {
+                baseDate = new Date(Date.UTC(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10)));
+            }
+        } else {
+            // 如果没有设置固定日期，则使用今天的日期作为基准
+            const now = new Date();
+            baseDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+        }
+
+        // 步骤 2: 根据基准日期和天数计算“起始日期” (startDate)
+        let startDate = null; // 如果为null，则代表没有起始日期限制
+        if (poolConfig.latestIncludedHeroAgeInDays > 0) {
+            const days = poolConfig.latestIncludedHeroAgeInDays;
+            console.log(`[日志-日期筛选] 使用 latestIncludedHeroAgeInDays: ${days} 天。将从基准日期回溯。`);
+            startDate = new Date(baseDate.getTime());
+            startDate.setUTCDate(startDate.getUTCDate() - (days - 1)); // -1 是为了包含起始当天
+        }
+
+        // 步骤 3: 执行筛选
+        masterPoolForBuckets = masterPoolForBuckets.filter(hero => {
+            // 保留已有的豁免和排除规则
             const heroFamily = String(hero.family || '').toLowerCase();
-            if (heroFamily === 'classic') {
-                return true; // 此规则不适用于经典英雄
-            }
-            // ▼▼▼ 检查英雄是否为当前最新的月度英雄 ▼▼▼
+            if (heroFamily === 'classic') return true;
             const hotmInfo = summonPoolDetails.hotm;
-            if (hotmInfo && heroFamily === String(hotmInfo.family).toLowerCase()) {
-                // 如果英雄属于当前月英家族，则将其从主卡池中排除
-                return false;
-            }
+            if (hotmInfo && heroFamily === String(hotmInfo.family).toLowerCase()) return false;
+            if (hero.star !== 5) return true;
 
-            // ▼▼▼ 日期限制仅对5星英雄生效 ▼▼▼
-            if (hero.star !== 5) {
-                return true; // 如果英雄不是5星，则不受此日期规则限制，直接保留
-            }
-
+            // 解析英雄的发布日期
             const releaseDateStr = hero['Release date'];
             if (!releaseDateStr) return false;
-
             const heroParts = releaseDateStr.split('-');
             if (heroParts.length !== 3) return false;
-            const heroYear = parseInt(heroParts[0], 10);
-            const heroMonth = parseInt(heroParts[1], 10) - 1;
-            const heroDay = parseInt(heroParts[2], 10);
-            const releaseDate = new Date(Date.UTC(heroYear, heroMonth, heroDay));
+            const heroReleaseDate = new Date(Date.UTC(parseInt(heroParts[0], 10), parseInt(heroParts[1], 10) - 1, parseInt(heroParts[2], 10)));
 
-            const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
+            // 最终判断逻辑：英雄的发布日期必须在 [startDate, baseDate] 这个窗口内
+            const isAfterStartDate = startDate ? heroReleaseDate >= startDate : true; // 如果没有起始日期限制，则此条件为真
+            const isBeforeBaseDate = heroReleaseDate <= baseDate;
 
-            if (diffDays > days || diffDays < 0) {
-                return false;
-            }
-            return true;
+            return isAfterStartDate && isBeforeBaseDate;
         });
     }
 

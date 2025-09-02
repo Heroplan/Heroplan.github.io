@@ -692,6 +692,12 @@ function getAllHeroesInPool(poolConfig) {
             if (heroFamily === 'classic') {
                 return true; // 此规则不适用于经典英雄
             }
+            // ▼▼▼ 检查英雄是否为当前最新的月度英雄 ▼▼▼
+            const hotmInfo = summonPoolDetails.hotm;
+            if (hotmInfo && heroFamily === String(hotmInfo.family).toLowerCase()) {
+                // 如果英雄属于当前月英家族，则将其从主卡池中排除
+                return false;
+            }
             const releaseDateStr = hero['Release date'];
             if (!releaseDateStr) return false;
 

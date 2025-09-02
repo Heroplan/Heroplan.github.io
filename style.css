@@ -5977,3 +5977,12 @@ body.modal-open {
   background-color: var(--md-sys-color-surface-container-high);
   color: var(--md-sys-color-outline);
 }
+
+/* --- 新增：为平板电脑端（如iPad横屏）优化抽奖结果的网格布局 --- */
+@media (min-width: 901px) and (max-width: 1200px) {
+  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+    grid-template-columns: repeat(8, 1fr);
+    /* 在平板上显示8列 */
+    gap: 10px;
+  }
+}

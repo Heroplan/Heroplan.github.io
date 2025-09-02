@@ -698,6 +698,12 @@ function getAllHeroesInPool(poolConfig) {
                 // 如果英雄属于当前月英家族，则将其从主卡池中排除
                 return false;
             }
+
+            // ▼▼▼ 日期限制仅对5星英雄生效 ▼▼▼
+            if (hero.star !== 5) {
+                return true; // 如果英雄不是5星，则不受此日期规则限制，直接保留
+            }
+
             const releaseDateStr = hero['Release date'];
             if (!releaseDateStr) return false;
 

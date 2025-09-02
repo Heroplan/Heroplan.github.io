@@ -1076,7 +1076,7 @@ async function handleActivityClick(poolId) {
                 const mysteryInfo = poolConfig.productType === 'LegendsSummon'
                     ? summonPoolDetails.LegendsSummonMysteryHero
                     : summonPoolDetails.MysteryHero;
-                if (mysteryInfo && mysteryInfo.ChancePerMil) {
+                if (mysteryInfo && mysteryInfo.ChancePerMil && parseInt(mysteryInfo.ChancePerMil, 10) > 0) {
                     const percentage = (parseInt(mysteryInfo.ChancePerMil, 10) / 10).toFixed(1);
                     const dictKey = poolConfig.productType === 'LegendsSummon' ? 'LegendsSummonMysteryHero' : 'MysteryHero';
                     const name = bonusTranslations[dictKey] || 'Mystery Hero';

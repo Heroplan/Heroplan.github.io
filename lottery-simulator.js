@@ -1558,18 +1558,18 @@ async function performSummon(count) {
     const totalSummonedResults = allGroupedResults.flat();
     if (totalSummonedResults.length === 0) return;
 
-    // 步骤 1: 无论何种模式，都先更新历史记录
-    updateSummonHistory(allGroupedResults, count);
-
-    // 步骤 2: 根据当前模式决定后续操作
-    if (state.lotteryAnimationMode === 'silent') { // 对应 '⏭️' 模式
+    // 步骤 1: 根据当前模式决定后续操作和历史记录更新时机
+    if (state.lotteryAnimationMode === 'silent') { // 对应 '⏭️' 模式 (静音/直接进历史)
+        updateSummonHistory(allGroupedResults, count); // 立刻更新历史
         return; // 直接结束
     }
-    if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式
+    if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式 (跳过动画)
+        updateSummonHistory(allGroupedResults, count); // 立刻更新历史
         showSummaryModal(totalSummonedResults); // 只显示弹窗
         return;
     }
 
+    // 步骤 2: 对于 'full' 模式 (播放完整动画)
     const animationViewport = document.getElementById('lottery-hero-display-area');
     const blockerOverlay = document.getElementById('animation-blocker-overlay');
     const buttonParentContainer = document.getElementById('lottery-simulator-wrapper');
@@ -1615,6 +1615,8 @@ async function performSummon(count) {
     if (buttonParentContainer.contains(skipButton)) {
         buttonParentContainer.removeChild(skipButton);
     }
+    // 步骤 3: 在动画播放完毕、显示结果弹窗前，才更新历史记录
+    updateSummonHistory(allGroupedResults, count);
     showSummaryModal(totalSummonedResults);
 }
 

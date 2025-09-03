@@ -5986,3 +5986,55 @@ body.modal-open {
     gap: 10px;
   }
 }
+
+/* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
+@media (max-width: 900px) {
+
+  /* 这是关键修复。我们确保当模态框是“召唤结果视图”时，其内容容器被明确设置为5列的网格布局。 */
+  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+
+  /* 这确保了网格中的每个卡片都能完全填充其单元格，并保持正方形，从而防止堆叠问题。 */
+  #summon-summary-modal.summon-result-view .summary-hero-card {
+    width: 100%;
+    /* 让卡片宽度填满所在的网格列 */
+    height: auto;
+    /* 高度自动调整，以维持宽高比 */
+    aspect-ratio: 1 / 1;
+    /* 维持1:1的正方形宽高比 */
+    margin-bottom: 0;
+    /* 移除可能干扰布局的底部外边距 */
+  }
+
+  /* 之前固定卡片尺寸的规则可以被移除或注释掉，因为现在的网格布局更稳健。我们保留其他针对图标和星星的移动端样式。 */
+  .summary-hero-card {
+    /* 在网格布局下，不再需要固定的宽高。 */
+    /* width: 48px; */
+    /* height: 48px; */
+  }
+
+  .summary-color-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+  }
+
+  .summary-hero-stars {
+    display: block;
+    gap: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+  }
+}

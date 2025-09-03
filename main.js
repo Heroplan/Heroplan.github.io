@@ -44,7 +44,7 @@ function parseAndStoreDoTInfo(hero) {
         const lowerEffectText = effectText.toLowerCase();
 
         // 【排除规则】如果描述中包含 'immune' 'resisted'，则直接跳过此行
-        if (lowerEffectText.includes('immune') | lowerEffectText.includes('resisted') | lowerEffectText.includes('奔涌') | lowerEffectText.includes('Surge') ) {
+        if (lowerEffectText.includes('immune') | lowerEffectText.includes('resisted') | lowerEffectText.includes('fiend') | lowerEffectText.includes('恶魔') | lowerEffectText.includes('惡魔') | lowerEffectText.includes('奔涌') | lowerEffectText.includes('surge') ) {
             return;
         }
 

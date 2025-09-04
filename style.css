@@ -614,7 +614,6 @@ input[type="number"] {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
   cursor: pointer;
   transition: opacity 0.3s ease
 }
@@ -635,7 +634,6 @@ input[type="number"] {
   background: var(--md-sys-color-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
   max-width: 900px;
   width: 85%;
   max-height: 85vh;
@@ -654,7 +652,6 @@ input[type="number"] {
   background: var(--md-sys-color-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
   max-width: 650px;
   width: 85%;
   max-height: 85vh;
@@ -664,18 +661,6 @@ input[type="number"] {
   box-sizing: border-box
 }
 
-/* ========== 新增：提升导入/导出模态框层级 ========== */
-#import-settings-modal-overlay,
-#export-settings-modal-overlay {
-  z-index: 1020;
-  /* 将导入/导出遮罩层的层级提升，高于筛选框 */
-}
-
-#import-settings-modal,
-#export-settings-modal {
-  z-index: 1021;
-  /* 将导入/导出模态框自身的层级提升，确保在它自己的遮罩层之上 */
-}
 
 #modal-content,
 #filters-modal-content {
@@ -773,7 +758,9 @@ input[type="number"] {
 
 #modal .close-btn,
 #filters-modal .close-btn,
-#redeem-codes-modal .close-btn {
+#redeem-codes-modal .close-btn,
+#import-settings-modal .close-btn,
+#export-settings-modal .close-btn {
   font-size: 1.2rem;
   background: var(--md-sys-color-surface-variant);
   border: none;
@@ -790,7 +777,9 @@ input[type="number"] {
 
 #modal .close-btn:hover,
 #filters-modal .close-btn:hover,
-#redeem-codes-modal .close-btn:hover {
+#redeem-codes-modal .close-btn:hover,
+#import-settings-modal .close-btn:hover,
+#export-settings-modal .close-btn:hover {
   background-color: var(--md-sys-color-error-container);
   color: var(--md-sys-color-on-error-container);
   transform: rotate(90deg)

@@ -1042,3 +1042,32 @@ function renderDetailsInModal(hero, context = {}) {
         imgCheck.src = avatarSrc;
     }
 }
+
+/**
+ * 动态渲染可用的兑换码到模态框中。
+ */
+function renderRedeemCodesModal() {
+    const langDict = i18n[state.currentLang];
+    const contentEl = document.getElementById('redeem-codes-content');
+
+    const html = codes.map(code => `
+        <div class="redeem-code-row">
+            <span class="code-text">${code}</span>
+            <div class="redeem-code-actions">
+                <a href="https://www.empiresandpuzzles.com/redeem?code=${code}" target="_blank" rel="noopener noreferrer" class="action-button redeem-btn">${langDict.redeemBtn}</a>
+            </div>
+        </div>
+    `).join('');
+
+    contentEl.innerHTML = html;
+
+    // 使用事件委托来处理所有兑换按钮的点击事件
+    contentEl.addEventListener('click', function (event) {
+        const redeemButton = event.target.closest('.redeem-btn');
+        // 检查是否点击了兑换按钮，并且该按钮还没有被点击过
+        if (redeemButton && !redeemButton.classList.contains('redeemed')) {
+            redeemButton.innerHTML = `${langDict.redeemBtn} ✅`; // 改变按钮文本
+            redeemButton.classList.add('redeemed'); // 添加一个类，防止重复改变
+        }
+    });
+}

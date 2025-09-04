@@ -332,6 +332,9 @@ const i18n = {
         "totalHeroesCountText": (count) => `(共 ${count} 位)`,
         "latestHeroAgeNotice": (days) => `* 仅包含 ${days} 天内发布的英雄和服装`,
         "w3kLimitedPoolTitle": "查看三国限定奖池",
+        "showRedeemCodesTitle": "查看可用兑换码",
+        "redeemCodesModalTitle": "可用兑换码",
+        "redeemBtn": '兑换',
 
 
     },
@@ -621,6 +624,9 @@ const i18n = {
         "totalHeroesCountText": (count) => `(共 ${count} 位)`,
         "latestHeroAgeNotice": (days) => `* 僅包含 ${days} 天內發佈的英雄和服裝`,
         "w3kLimitedPoolTitle": "查看三國限定獎池",
+        "showRedeemCodesTitle": "查看可用兌換碼",
+        "redeemCodesModalTitle": "可用兌換碼",
+        "redeemBtn": '兌換',
 
     },
     en: {
@@ -909,5 +915,8 @@ const i18n = {
         "totalHeroesCountText": (count) => `(Total ${count})`,
         "latestHeroAgeNotice": (days) => `* Only includes heroes and costumes released within ${days} days`,
         "w3kLimitedPoolTitle": "View 3K Limited Pool",
+        "showRedeemCodesTitle": "View Redeem Codes",
+        "redeemCodesModalTitle": "Available Redeem Codes",
+        "redeemBtn": 'Redeem',
     }
 }; 

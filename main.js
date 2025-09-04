@@ -420,7 +420,7 @@ function addEventListeners() {
         openFavoritesBtn, shareFavoritesBtn, resetFiltersBtn,
         modalOverlay, advancedFilterHelpBtn, helpModalOverlay, skillTypeHelpBtn, skillTypeHelpModalOverlay,
         lbTalentHelpBtn, lbTalentHelpModalOverlay,
-        exportSettingsBtn, importSettingsBtn,  multiSelectModalOverlay
+        exportSettingsBtn, importSettingsBtn, multiSelectModalOverlay, showRedeemCodesBtn
     } = uiElements;
 
     // --- 主界面UI事件 ---
@@ -455,6 +455,7 @@ function addEventListeners() {
     showWantedMissionBtn.addEventListener('click', () => initAndShowWantedMissionView());
     showFarmingGuideBtn.addEventListener('click', () => initAndShowFarmingGuideView());
     addChatSimulatorEventListeners();
+    showRedeemCodesBtn.addEventListener('click', openRedeemCodesModal);
 
     // --- 模态框事件 ---
     openFiltersBtn.addEventListener('click', openFiltersModal);
@@ -468,6 +469,9 @@ function addEventListeners() {
     skillTypeHelpModalOverlay.addEventListener('click', closeSkillTypeHelpModal);
     lbTalentHelpBtn.addEventListener('click', openLbTalentHelpModal);
     lbTalentHelpModalOverlay.addEventListener('click', closeLbTalentHelpModal);
+    document.getElementById('close-redeem-codes-modal-btn').addEventListener('click', closeRedeemCodesModal);
+    document.getElementById('redeem-codes-footer-close-btn').addEventListener('click', closeRedeemCodesModal);
+    uiElements.redeemCodesModalOverlay.addEventListener('click', closeRedeemCodesModal);
 
     // --- 导入/导出事件 ---
     exportSettingsBtn.addEventListener('click', openExportModal);
@@ -901,6 +905,7 @@ function handlePopState(event) {
             case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
             case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
             case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
+            case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
         }
         if (modal) modal.classList.add('hidden');
         if (overlay) overlay.classList.add('hidden');
@@ -977,3 +982,4 @@ function populateOriginToFamiliesMap() {
     }
     console.log("[日志-映射生成] 映射表生成完毕:", originToFamiliesMap);
 }
+

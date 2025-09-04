@@ -72,16 +72,36 @@ header h1 a,
 }
 
 .header-buttons {
-  /* 使用 grid 布局来实现每行4个 */
+  /* 使用 grid 布局来实现每行5个 */
   display: grid;
   /* 设置每列的宽度，确保其在桌面端可以正确排列 */
-  grid-template-columns: repeat(4, minmax(40px, 1fr));
+  grid-template-columns: repeat(5, minmax(40px, 1fr));
   gap: 15px;
   /* 设置按钮之间的间距 */
   position: absolute;
   top: 50%;
   right: 0;
   transform: translatey(-40%)
+}
+
+/* 将第6个按钮（第二行的第1个）放入第2列 */
+.header-buttons> :nth-child(6) {
+  grid-column: 2;
+}
+
+/* 将第7个按钮放入第3列 */
+.header-buttons> :nth-child(7) {
+  grid-column: 3;
+}
+
+/* 将第8个按钮放入第4列 */
+.header-buttons> :nth-child(8) {
+  grid-column: 4;
+}
+
+/* 将第9个按钮（最后一个）放入第5列 */
+.header-buttons> :nth-child(9) {
+  grid-column: 5;
 }
 
 .header-info-container {
@@ -745,7 +765,8 @@ input[type="number"] {
 }
 
 #modal .close-btn,
-#filters-modal .close-btn {
+#filters-modal .close-btn,
+#redeem-codes-modal .close-btn {
   font-size: 1.2rem;
   background: var(--md-sys-color-surface-variant);
   border: none;
@@ -761,7 +782,8 @@ input[type="number"] {
 }
 
 #modal .close-btn:hover,
-#filters-modal .close-btn:hover {
+#filters-modal .close-btn:hover,
+#redeem-codes-modal .close-btn:hover {
   background-color: var(--md-sys-color-error-container);
   color: var(--md-sys-color-on-error-container);
   transform: rotate(90deg)
@@ -6036,5 +6058,121 @@ body.modal-open {
     font-size: 11px;
     font-weight: bold;
     line-height: 1;
+  }
+}
+
+/* --- 为兑换码模态框添加遮罩层与核心样式 (修正版) --- */
+#redeem-codes-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 7000;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#redeem-codes-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--md-sys-color-surface);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 7001;
+
+  /* --- 核心宽度修正 --- */
+  width: auto;
+  /* 宽度由内容自适应 */
+  min-width: 320px;
+  /* 最小宽度 */
+  max-width: 90vw;
+  /* 最大宽度不超过屏幕的90% */
+
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 兑换码模态框美化样式 (v4 - 移除复制按钮) --- */
+
+/* 标题居中 */
+#redeem-codes-modal .filters-modal-header h2 {
+  flex-grow: 1;
+  text-align: center;
+  padding-left: 36px;
+}
+
+/* 内容区域 */
+#redeem-codes-content {
+  padding: 0 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* 每一行兑换码 */
+.redeem-code-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.redeem-code-row:last-child {
+  border-bottom: none;
+}
+
+/* 兑换码文本 */
+.code-text {
+  font-family: monospace;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
+  margin-right: 1.5rem;
+  word-break: break-all;
+}
+
+/* 按钮容器 */
+.redeem-code-actions {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* 兑换按钮 */
+.redeem-btn {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  min-width: 110px;
+  /* 为桌面端设置最小宽度 */
+  text-align: center;
+  text-decoration: none;
+  justify-content: center;
+  /* 确保按钮内文本和图标居中 */
+}
+
+/* ========== 移动端适配 ========== */
+@media (max-width: 768px) {
+  #redeem-codes-content {
+    padding: 0 1rem;
+  }
+
+  .redeem-code-row {
+    padding: 0.75rem 0;
+  }
+
+  .code-text {
+    font-size: 0.9em;
+    margin-right: 0.75rem;
+  }
+
+  .redeem-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8em;
+    min-width: 80px;
+    /* 为移动端设置一个较小的最小宽度 */
   }
 }

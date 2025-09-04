@@ -20,6 +20,7 @@ const uiElements = {
     showFarmingGuideBtn: document.getElementById('show-farming-guide-btn'),
     showTeamSimulatorBtn: document.getElementById('show-team-simulator-btn'),
     showChatSimulatorBtn: document.getElementById('show-chat-simulator-btn'),
+    showRedeemCodesBtn: document.getElementById('show-redeem-codes-btn'),
 
     // 容器与视图
     resultsWrapper: document.getElementById('results-wrapper'),
@@ -61,6 +62,8 @@ const uiElements = {
     importSettingsModalOverlay: document.getElementById('import-settings-modal-overlay'),
     summonSummaryModal: document.getElementById('summon-summary-modal'),
     summonSummaryModalOverlay: document.getElementById('summon-summary-modal-overlay'),
+    redeemCodesModal: document.getElementById('redeem-codes-modal'),
+    redeemCodesModalOverlay: document.getElementById('redeem-codes-modal-overlay'),
 
     // 筛选器输入框 (在filters.js中定义并赋值)
     filterInputs: {},
@@ -114,7 +117,8 @@ function applyLanguage(lang) {
         'advanced-filter-help-btn': 'filterSyntaxTitle', 'skill-type-help-btn': 'skillTypeSourceHelpTitle', 'show-lottery-simulator-btn': 'showLotterySimulatorTitle',
         'show-team-simulator-btn': 'showTeamSimulatorTitle',
         'show-chat-simulator-btn': 'showChatSimulatorTitle',
-        'show-farming-guide-btn': 'showFarmingGuideTitle'
+        'show-farming-guide-btn': 'showFarmingGuideTitle',
+        'show-redeem-codes-btn': 'showRedeemCodesTitle'
     };
     for (const id in titles) {
         const element = document.getElementById(id);
@@ -384,6 +388,19 @@ function openLbTalentHelpModal() {
 
 function closeLbTalentHelpModal() {
     if (!uiElements.lbTalentHelpModal.classList.contains('hidden')) history.back();
+}
+
+function openRedeemCodesModal() {
+    renderRedeemCodesModal(); // 动态生成内容
+    uiElements.redeemCodesModal.classList.remove('hidden');
+    uiElements.redeemCodesModalOverlay.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    history.pushState({ modal: 'redeemCodes' }, null);
+    state.modalStack.push('redeemCodes');
+}
+
+function closeRedeemCodesModal() {
+    if (!uiElements.redeemCodesModal.classList.contains('hidden')) history.back();
 }
 
 /**

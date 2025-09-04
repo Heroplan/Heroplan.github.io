@@ -169,6 +169,9 @@
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
                 <div class="header-buttons">
+                    <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
+                        <img src="imgs/other/gift.webp" alt="Redeem Codes" style="width: 24px; height: 24px; object-fit: contain;">
+                    </button>
                     <button id="show-lottery-simulator-btn" class="theme-toggle-btn" title="抽奖模拟器">
                         <img src="imgs/lottery/icon/lottery.webp" alt="抽奖模拟器"
                             style="width: 28px; height: 28px; object-fit: contain;">
@@ -711,6 +714,20 @@
     <div id="probability-modal-overlay" class="hidden"></div>
     <div id="probability-modal" class="hidden">
         <div id="probability-modal-content">
+        </div>
+    </div>
+
+    <!-- 新增：兑换码模态框 -->
+    <div id="redeem-codes-modal-overlay" class="hidden"></div>
+    <div id="redeem-codes-modal" class="hidden">
+        <div class="filters-modal-header">
+            <h2 data-lang-key="redeemCodesModalTitle"></h2>
+            <button id="close-redeem-codes-modal-btn" class="close-btn">✖</button>
+        </div>
+        <div id="redeem-codes-content">
+        </div>
+        <div class="modal-footer">
+            <button class="close-bottom-btn" id="redeem-codes-footer-close-btn" data-lang-key="detailsCloseBtn"></button>
         </div>
     </div>
 

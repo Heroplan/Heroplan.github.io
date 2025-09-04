@@ -619,6 +619,13 @@ input[type="number"] {
   transition: opacity 0.3s ease
 }
 
+#help-modal-overlay,
+#skill-type-help-modal-overlay,
+#import-settings-modal-overlay,
+#export-settings-modal-overlay {
+  z-index: 1001;
+}
+
 #modal,
 #filters-modal {
   position: fixed;
@@ -1744,12 +1751,12 @@ h1.hero-main-name.skill-type-tag:hover {
 /* ========== 用于堆叠模态框的更高层级 ========== */
 #help-modal.stacked-modal,
 #skill-type-help-modal.stacked-modal {
-  z-index: 1003
+  z-index: 6003
 }
 
 #help-modal-overlay.stacked-modal-overlay,
 #skill-type-help-modal-overlay.stacked-modal-overlay {
-  z-index: 1002
+  z-index: 6002
 }
 
 /* ========== 日期筛选的容器和内联按钮/日期显示样式 ========== */
@@ -2557,7 +2564,7 @@ hr.divider {
   background: var(--md-sys-color-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
+  z-index: 6001;
   max-width: 650px;
   width: 85%;
   max-height: 85vh;
@@ -2574,17 +2581,17 @@ hr.divider {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
+  z-index: 6000;
   cursor: pointer;
   transition: opacity 0.3s ease
 }
 
 #lb-talent-help-modal.stacked-modal {
-  z-index: 1003
+  z-index: 6003
 }
 
 #lb-talent-help-modal-overlay.stacked-modal-overlay {
-  z-index: 1002
+  z-index: 6002
 }
 
 #lb-talent-help-modal h3 {

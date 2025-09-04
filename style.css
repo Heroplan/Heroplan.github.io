@@ -760,7 +760,8 @@ input[type="number"] {
 #filters-modal .close-btn,
 #redeem-codes-modal .close-btn,
 #import-settings-modal .close-btn,
-#export-settings-modal .close-btn {
+#export-settings-modal .close-btn,
+#multi-select-modal .close-btn {
   font-size: 1.2rem;
   background: var(--md-sys-color-surface-variant);
   border: none;
@@ -779,7 +780,8 @@ input[type="number"] {
 #filters-modal .close-btn:hover,
 #redeem-codes-modal .close-btn:hover,
 #import-settings-modal .close-btn:hover,
-#export-settings-modal .close-btn:hover {
+#export-settings-modal .close-btn:hover,
+#multi-select-modal .close-btn:hover {
   background-color: var(--md-sys-color-error-container);
   color: var(--md-sys-color-on-error-container);
   transform: rotate(90deg)

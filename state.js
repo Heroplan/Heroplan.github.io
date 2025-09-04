@@ -25,6 +25,7 @@ const state = {
         farming: { top: 0, left: 0 },
         chat: { top: 0, left: 0 }
     },
+    redeemedCodes: new Set(),
 
     // --- 队伍模拟器状态 ---
     teamSimulatorActive: false,     // 队伍模拟器是否激活

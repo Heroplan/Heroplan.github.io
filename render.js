@@ -1050,14 +1050,26 @@ function renderRedeemCodesModal() {
     const langDict = i18n[state.currentLang];
     const contentEl = document.getElementById('redeem-codes-content');
 
-    const html = codes.map(code => `
-        <div class="redeem-code-row">
-            <span class="code-text">${code}</span>
-            <div class="redeem-code-actions">
-                <a href="https://www.empiresandpuzzles.com/redeem?code=${code}" target="_blank" rel="noopener noreferrer" class="action-button redeem-btn">${langDict.redeemBtn}</a>
+    const html = codes.map(code => {
+        const isRedeemed = state.redeemedCodes.has(code);
+        const buttonText = isRedeemed ? `${langDict.redeemBtn} ✅` : langDict.redeemBtn;
+        const buttonClass = isRedeemed ? 'action-button redeem-btn redeemed' : 'action-button redeem-btn';
+
+        return `
+            <div class="redeem-code-row">
+                <span class="code-text">${code}</span>
+                <div class="redeem-code-actions">
+                    <a href="https://www.empiresandpuzzles.com/redeem?code=${code}" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="${buttonClass}" 
+                       data-code="${code}">
+                       ${buttonText}
+                    </a>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     contentEl.innerHTML = html;
 
@@ -1066,6 +1078,10 @@ function renderRedeemCodesModal() {
         const redeemButton = event.target.closest('.redeem-btn');
         // 检查是否点击了兑换按钮，并且该按钮还没有被点击过
         if (redeemButton && !redeemButton.classList.contains('redeemed')) {
+            const code = redeemButton.dataset.code;
+            if (code) {
+                state.redeemedCodes.add(code); // 将兑换码添加到会话状态中
+            }
             redeemButton.innerHTML = `${langDict.redeemBtn} ✅`; // 改变按钮文本
             redeemButton.classList.add('redeemed'); // 添加一个类，防止重复改变
         }

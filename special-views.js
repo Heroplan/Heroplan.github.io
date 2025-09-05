@@ -266,7 +266,7 @@ function showSoulExchangeModal() {
 
     scrollContainer.innerHTML = ''; // 清空之前的内容
 
-    // ▼▼▼ 【核心修改】辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
+    // ▼▼▼ 辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
     const createSoulExchangeCard = (hero, options = {}) => {
         const card = document.createElement('div');
         card.className = `summary-hero-card ${getColorGlowClass(hero.color)}`;

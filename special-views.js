@@ -254,8 +254,8 @@ function showSoulExchangeModal() {
     if (!overlay || !summaryModal || !scrollContainer) {
         return;
     }
+    summaryModal.classList.remove('single-pull-result-view', 'summon-result-view');
     summaryModal.classList.add('soul-exchange-view');
-    summaryModal.classList.remove('summon-result-view'); // 为确保干净，移除另一个标志
 
 
     const langDict = i18n[state.currentLang];

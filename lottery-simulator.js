@@ -688,7 +688,7 @@ function getAllHeroesInPool(poolConfig) {
         // 步骤 1: 确定基准日期 (baseDate)，即时间窗口的“结束日期”
         let baseDate;
         if (poolConfig.latestIncludedHeroDate) {
-            console.log(`[日志-日期筛选] 使用 latestIncludedHeroDate: ${poolConfig.latestIncludedHeroDate} 作为基准日期。`);
+            //console.log(`[日志-日期筛选] 使用 latestIncludedHeroDate: ${poolConfig.latestIncludedHeroDate} 作为基准日期。`);
             const parts = poolConfig.latestIncludedHeroDate.split('-');
             if (parts.length === 3) {
                 baseDate = new Date(Date.UTC(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10)));
@@ -703,7 +703,7 @@ function getAllHeroesInPool(poolConfig) {
         let startDate = null; // 如果为null，则代表没有起始日期限制
         if (poolConfig.latestIncludedHeroAgeInDays > 0) {
             const days = poolConfig.latestIncludedHeroAgeInDays;
-            console.log(`[日志-日期筛选] 使用 latestIncludedHeroAgeInDays: ${days} 天。将从基准日期回溯。`);
+            //console.log(`[日志-日期筛选] 使用 latestIncludedHeroAgeInDays: ${days} 天。将从基准日期回溯。`);
             startDate = new Date(baseDate.getTime());
             startDate.setUTCDate(startDate.getUTCDate() - (days - 1)); // -1 是为了包含起始当天
         }
@@ -1441,7 +1441,7 @@ async function performSummon(count) {
                     // 检查本次机会是否成功触发
                     if (Math.random() * 1000 < poolConfig.bonusLegendaryHeroChancePerMil) {
 
-                        // 4. 【核心修正】从候选池中，过滤掉“触发英雄”和“已获得的奖励英雄”
+                        // 4. 从候选池中，过滤掉“触发英雄”和“已获得的奖励英雄”
                         const availableBonusPool = baseBonusPool.filter(hero => {
                             const isNotTriggerHero = hero.heroId !== drawnHero.heroId;
                             const isNotAlreadyAwarded = !awardedBonusHeroesInThisPull.some(awarded => awarded.heroId === hero.heroId);
@@ -1564,8 +1564,12 @@ async function performSummon(count) {
         return; // 直接结束
     }
     if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式 (跳过动画)
-        updateSummonHistory(allGroupedResults, count); // 立刻更新历史
-        showSummaryModal(totalSummonedResults); // 只显示弹窗
+        // ▼▼▼ 根据结果数量决定调用哪个模态框 ▼▼▼
+        if (count === 1) {
+            showSinglePullResultsModal(totalSummonedResults);
+        } else {
+            showSummaryModal(totalSummonedResults);
+        }
         return;
     }
 
@@ -1617,7 +1621,12 @@ async function performSummon(count) {
     }
     // 步骤 3: 在动画播放完毕、显示结果弹窗前，才更新历史记录
     updateSummonHistory(allGroupedResults, count);
-    showSummaryModal(totalSummonedResults);
+    // ▼▼▼ 根据结果数量决定调用哪个模态框 ▼▼▼
+    if (count === 1) {
+        showSinglePullResultsModal(totalSummonedResults);
+    } else {
+        showSummaryModal(totalSummonedResults);
+    }
 }
 
 
@@ -1740,8 +1749,9 @@ function showSummaryModal(results) {
     if (modalTitle) {
         modalTitle.textContent = langDict.summonResultsTitle;
     }
+    // ▼▼▼ 确保只应用当前视图所需的CSS类 ▼▼▼
+    summaryModal.classList.remove('single-pull-result-view', 'soul-exchange-view');
     summaryModal.classList.add('summon-result-view');
-    summaryModal.classList.remove('soul-exchange-view'); // 为确保干净，移除另一个标志
 
 
     scrollContainer.innerHTML = '';
@@ -2280,4 +2290,93 @@ function showProbabilityModal(title, intro, probabilities) {
     document.getElementById('close-probability-modal-btn')?.addEventListener('click', closeProbabilityModal);
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
+}
+
+/**
+ * 显示单次召唤结果的专属模态框（支持1个或多个英雄）
+ * @param {Array} results - 本次单抽获得的所有英雄结果
+ */
+function showSinglePullResultsModal(results) {
+    const overlay = document.getElementById('summon-summary-modal-overlay');
+    const summaryModal = document.getElementById('summon-summary-modal');
+    const scrollContainer = document.getElementById('summon-summary-scroll-container');
+    if (!overlay || !summaryModal || !scrollContainer) return;
+
+    const langDict = i18n[state.currentLang];
+    const modalTitle = summaryModal.querySelector('h3');
+    if (modalTitle) {
+        modalTitle.textContent = langDict.summonResultsTitle;
+    }
+
+    // ▼▼▼ 确保只应用当前视图所需的CSS类 ▼▼▼
+    summaryModal.classList.remove('summon-result-view', 'soul-exchange-view');
+    summaryModal.classList.add('single-pull-result-view');
+
+    scrollContainer.innerHTML = ''; // 清空内容
+    const bonusBuckets = ['bonusLegendary', 'hotm', 'mystery', 'additionalDraw'];
+
+    // 复用 showSummaryModal 中的卡片创建逻辑
+    results.forEach(result => {
+        const hero = result.hero;
+        const card = document.createElement('div');
+        card.className = `summary-hero-card ${getColorGlowClass(hero.color)}`;
+        card.title = hero.name;
+
+        if (hero.star === 5) {
+            card.classList.add('star-5-marquee');
+        }
+
+        const avatar = document.createElement('div');
+        avatar.className = 'summary-avatar';
+        avatar.style.background = getHeroColorLightGradient(hero.color);
+
+        const avatarImage = document.createElement('img');
+        avatarImage.className = 'summary-avatar-image';
+        if (String(hero.family).toLowerCase() === 'trainer') {
+            avatarImage.src = hero.image;
+        } else {
+            avatarImage.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : hero.image;
+        }
+        avatar.appendChild(avatarImage);
+
+        const detailsOverlay = document.createElement('div');
+        detailsOverlay.className = 'summary-details-overlay';
+        let starsContent = '';
+        if (hero.star) {
+            starsContent = `${hero.star}⭐`;
+        }
+        const englishColor = (colorReverseMap[String(hero.color).toLowerCase()] || hero.color || 'default').toLowerCase();
+        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${englishColor}.webp">`;
+
+        detailsOverlay.innerHTML = `
+            ${colorIconHTML}
+            <div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>
+        `;
+
+        card.appendChild(avatar);
+        card.appendChild(detailsOverlay);
+
+        if (bonusBuckets.includes(result.bucket)) {
+            const exLabel = document.createElement('div');
+            exLabel.className = 'summary-ex-label';
+            exLabel.textContent = 'Ex';
+            card.appendChild(exLabel);
+        }
+
+        if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+            const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
+            if (targetHero) {
+                card.classList.add('is-clickable');
+                card.addEventListener('click', () => openDetailsModal(targetHero));
+            }
+        }
+        scrollContainer.appendChild(card);
+    });
+
+    // 打开模态框
+    summaryModal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    history.pushState({ modal: 'summonSummary' }, null);
+    state.modalStack.push('summonSummary');
 }

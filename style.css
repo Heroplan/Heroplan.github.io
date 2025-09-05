@@ -6174,3 +6174,42 @@ body.modal-open {
     /* 为移动端设置一个较小的最小宽度 */
   }
 }
+
+/* --- 新增：单抽结果专属模态框样式 --- */
+
+/* 1. 模态框本身：自适应宽度 */
+#summon-summary-modal.single-pull-result-view {
+  width: auto;
+  /* 宽度由内容决定 */
+  max-width: 90vw;
+  /* 在移动端不超过屏幕宽度 */
+}
+
+/* 2. 内容容器：使用flex布局水平居中英雄卡片 */
+#summon-summary-modal.single-pull-result-view #summon-summary-scroll-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* 允许多个英雄（如触发奖励时）换行 */
+  justify-content: center;
+  /* 水平居中 */
+  gap: 0rem;
+  /* 卡片之间的间距 */
+}
+
+/* 3. 英雄卡片：设置一个合适的基础尺寸 */
+#summon-summary-modal.single-pull-result-view .summary-hero-card {
+  max-width: 92px;
+  max-height: 92px;
+}
+
+/* 4. 移动端优化：在小屏幕上缩小卡片尺寸 */
+@media (max-width: 768px) {
+  /* 【核心修正】强制模态框在移动端使用大部分屏幕宽度 */
+    #summon-summary-modal.single-pull-result-view {
+      width: 80vw;
+    }
+  #summon-summary-modal.single-pull-result-view .summary-hero-card {
+    width: 60px;
+    height: 60px;
+  }
+}

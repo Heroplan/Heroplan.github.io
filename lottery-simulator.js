@@ -1564,6 +1564,7 @@ async function performSummon(count) {
         return; // 直接结束
     }
     if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式 (跳过动画)
+        updateSummonHistory(allGroupedResults, count);
         // ▼▼▼ 根据结果数量决定调用哪个模态框 ▼▼▼
         if (count === 1) {
             showSinglePullResultsModal(totalSummonedResults);
@@ -1627,6 +1628,7 @@ async function performSummon(count) {
     } else {
         showSummaryModal(totalSummonedResults);
     }
+
 }
 
 

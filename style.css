@@ -5998,17 +5998,8 @@ body.modal-open {
   color: var(--md-sys-color-outline);
 }
 
-/* --- 新增：为平板电脑端（如iPad横屏）优化抽奖结果的网格布局 --- */
-@media (min-width: 901px) and (max-width: 1200px) {
-  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
-    grid-template-columns: repeat(8, 1fr);
-    /* 在平板上显示8列 */
-    gap: 10px;
-  }
-}
-
 /* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 
   /* 这是关键修复。我们确保当模态框是“召唤结果视图”时，其内容容器被明确设置为5列的网格布局。 */
   #summon-summary-modal.summon-result-view #summon-summary-scroll-container {

@@ -9,12 +9,12 @@
             --md-sys-color-background: #FEFBFF;
             /* 默认亮色主题背景 */
         }
-    
+
         html.dark-theme {
             --md-sys-color-background: #141218;
             /* 暗色主题背景 */
         }
-    
+
         #page-loader-overlay {
             position: fixed;
             top: 0;
@@ -28,7 +28,7 @@
             justify-content: center;
             align-items: center;
         }
-    
+
         .loader-spinner {
             border: 8px solid rgba(0, 0, 0, 0.1);
             border-top-color: #4A90E2;
@@ -37,14 +37,14 @@
             height: 60px;
             animation: spin 1.2s linear infinite;
         }
-    
+
         .js-loading .header-buttons,
         .js-loading .main-container,
         .js-loading .floating-action-buttons,
         .js-loading footer {
             visibility: hidden;
         }
-    
+
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -62,6 +62,10 @@
 
     <script>
         window.ENABLE_DEBUG_LOGGING = false;
+        // 检测UA是否包含 "iPad" 字符串，并添加相应的类
+        if (navigator.userAgent.includes('iPad')) {
+            document.documentElement.classList.add('is-ipad'); // 添加到 <html> 标签上更通用
+        }
         (function () {
             try {
                 const themeCookie = document.cookie.match(/;?\s*theme=([^;]*)/);
@@ -104,7 +108,12 @@
                 { selector: 'script[src="./team-simulator.js"]', attribute: 'src' },
                 { selector: 'script[src="./chat-simulator.js"]', attribute: 'src' },
                 { selector: 'script[src="./import-export.js"]', attribute: 'src' },
-                { selector: 'script[src="./main.js"]', attribute: 'src' }
+                { selector: 'script[src="./main.js"]', attribute: 'src' },
+                { selector: 'script[src="./lottery.json"]', attribute: 'src' },
+                { selector: 'script[src="./lottery_config.json"]', attribute: 'src' },
+                { selector: 'script[src="./data_cn.json"]', attribute: 'src' },
+                { selector: 'script[src="./data_tc.json"]', attribute: 'src' },
+                { selector: 'script[src="./data_en.json"]', attribute: 'src' },
             ];
 
             // 延迟执行，确保DOM元素已加载
@@ -170,7 +179,8 @@
                 <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
                 <div class="header-buttons">
                     <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
-                        <img src="imgs/other/gift.webp" alt="Redeem Codes" style="width: 24px; height: 24px; object-fit: contain;">
+                        <img src="imgs/other/gift.webp" alt="Redeem Codes"
+                            style="width: 24px; height: 24px; object-fit: contain;">
                     </button>
                     <button id="show-lottery-simulator-btn" class="theme-toggle-btn" title="抽奖模拟器">
                         <img src="imgs/lottery/icon/lottery.webp" alt="抽奖模拟器"
@@ -372,11 +382,14 @@
                                 <h4 id="summon-history-title" data-lang-key="summonHistoryTitle">召唤历史记录</h4>
                                 <div class="summon-history-controls">
                                     <div class="history-view-toggle">
-                                        <input type="checkbox" id="toggle-history-view-checkbox" class="toggle-switch-checkbox">
+                                        <input type="checkbox" id="toggle-history-view-checkbox"
+                                            class="toggle-switch-checkbox">
                                         <label for="toggle-history-view-checkbox" class="toggle-switch-label"></label>
-                                        <span class="toggle-label-text" data-lang-key="toggleShowAllHistoryLabel">显示全部记录</span>
+                                        <span class="toggle-label-text"
+                                            data-lang-key="toggleShowAllHistoryLabel">显示全部记录</span>
                                     </div>
-                                    <button id="clear-history-btn" class="action-button" data-lang-key="clearHistoryBtn">清空</button>
+                                    <button id="clear-history-btn" class="action-button"
+                                        data-lang-key="clearHistoryBtn">清空</button>
                                 </div>
                                 <div class="collapse-arrow"></div>
                             </div>
@@ -571,12 +584,14 @@
                                 </div>
                                 <div class="filter-item">
                                     <label>
-                                        <img src="imgs/event/soulexchange.webp" class="event-icon" alt="Soul Exchange" />
+                                        <img src="imgs/event/soulexchange.webp" class="event-icon"
+                                            alt="Soul Exchange" />
                                         <span data-lang-key="soulExchangeEventLabel">灵魂交换活动:</span>
                                     </label>
                                     <div class="input-with-right-button">
                                         <span id="soul-exchange-date-display" class="date-display-box"></span>
-                                        <button id="show-soul-exchange-btn" class="action-button-right" data-lang-key="showListBtnLabel">展示列表</button>
+                                        <button id="show-soul-exchange-btn" class="action-button-right"
+                                            data-lang-key="showListBtnLabel">展示列表</button>
                                     </div>
                                 </div>
                             </div>
@@ -727,7 +742,8 @@
         <div id="redeem-codes-content">
         </div>
         <div class="modal-footer">
-            <button class="close-bottom-btn" id="redeem-codes-footer-close-btn" data-lang-key="detailsCloseBtn"></button>
+            <button class="close-bottom-btn" id="redeem-codes-footer-close-btn"
+                data-lang-key="detailsCloseBtn"></button>
         </div>
     </div>
 

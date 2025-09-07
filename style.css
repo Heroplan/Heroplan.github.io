@@ -634,7 +634,7 @@ input[type="number"] {
   background: var(--md-sys-color-surface);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 900px;
+  max-width: 768px;
   width: 85%;
   max-height: 85vh;
   overflow-y: auto;
@@ -3311,7 +3311,7 @@ select.custom-select-hidden {
 }
 
 /* 针对移动设备（屏幕宽度 <= 900px）的样式调整 */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   #team-simulator-wrapper {
     flex-direction: column
   }
@@ -3425,7 +3425,7 @@ select.custom-select-hidden {
 /* 移动端响应式布局 (Mobile Responsive Layout) */
 /* =================================== */
 /* 在屏幕宽度小于 900px 时应用此样式 */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* --- 已有的移动端堆叠布局 --- */
   #team-simulator-wrapper {
@@ -3493,7 +3493,7 @@ select.custom-select-hidden {
 }
 
 /* 2. 在移动端 (<= 900px) 应用折叠样式 */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 让主容器在移动端也是 flex-column，以便控制子元素 */
   #team-simulator-wrapper {
@@ -3569,7 +3569,7 @@ select.custom-select-hidden {
 }
 
 /* 2. 响应式控制：在移动端 (<= 900px) 时 */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 隐藏桌面端标题 */
   .team-display-desktop-header {
@@ -4931,7 +4931,7 @@ html:not(.dark-theme) .color-text-outlined {
 
 /* 2. 响应式断点 (当屏幕宽度小于等于 900px 时生效) */
 /* --- 召唤模拟器移动端分页样式 (最终修正版) --- */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   /* 1. 显示分页标签栏 */
   .lottery-mobile-tabs {
@@ -5228,7 +5228,7 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 /* 移动端响应式调整 */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   #lottery-activity-list-container {
     width: 100%;
     flex-shrink: 1
@@ -5255,7 +5255,7 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 /* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 1. 缩小卡片本身的尺寸 */
   .summary-hero-card {
@@ -5488,7 +5488,6 @@ html:not(.dark-theme) .color-text-outlined {
   cursor: pointer;
   z-index: 10;
   transition: all 0.2s
-
 }
 
 #toggle-sound-btn:hover {
@@ -5636,7 +5635,7 @@ html:not(.dark-theme) .color-text-outlined {
   opacity: 1;
   visibility: visible;
   font-size: 1.2em;
-    padding: 2px
+  padding: 2px
 }
 
 /* --- 抽奖历史记录主标题栏布局 --- */
@@ -5765,8 +5764,9 @@ html:not(.dark-theme) .color-text-outlined {
   align-items: center;
   gap: 1rem;
 }
+
 /* --- 移动端历史记录标题栏布局修正 (最终 Block 布局强制版) --- */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 1. 父容器仅作为定位基准和内边距容器 */
   #summon-history-panel .summon-history-header {
@@ -5812,7 +5812,7 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 /* --- 移动端历史记录标题栏布局修正 (最终版) --- */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 1. 设置header为flex容器, 允许内容换行并提供定位上下文 */
   #summon-history-panel .summon-history-header {
@@ -5919,26 +5919,24 @@ html:not(.dark-theme) .color-text-outlined {
 #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 10px; /* 10列时，间距可以适当减小 */
+  gap: 10px;
+  /* 10列时，间距可以适当减小 */
 }
 
 /* 同样，只针对抽奖结果弹窗内的卡片，使其自适应网格 */
 #summon-summary-modal.summon-result-view .summary-hero-card {
-  width: 100%; /* 宽度自动填满网格单元 */
-  height: auto; /* 高度自适应 */
-  aspect-ratio: 1 / 1; /* 保持1:1的正方形比例 */
-  max-width: 120px; /* 可以设置一个最大宽度防止过大 */
+  width: 100%;
+  /* 宽度自动填满网格单元 */
+  height: auto;
+  /* 高度自适应 */
+  aspect-ratio: 1 / 1;
+  /* 保持1:1的正方形比例 */
+  max-width: 120px;
+  /* 可以设置一个最大宽度防止过大 */
 }
 
-/* 移动端 (小于等于900px): 5列网格 */
-@media (max-width: 900px) {
-  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-}
 /* --- 新增：灵魂交换弹窗移动端5列网格布局 --- */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 
   /* 仅当弹窗是灵魂交换视图时，应用以下网格布局 */
   #summon-summary-modal.soul-exchange-view .soul-exchange-heroes-container {
@@ -5998,57 +5996,6 @@ body.modal-open {
   color: var(--md-sys-color-outline);
 }
 
-/* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
-@media (max-width: 1200px) {
-
-  /* 这是关键修复。我们确保当模态框是“召唤结果视图”时，其内容容器被明确设置为5列的网格布局。 */
-  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-
-  /* 这确保了网格中的每个卡片都能完全填充其单元格，并保持正方形，从而防止堆叠问题。 */
-  #summon-summary-modal.summon-result-view .summary-hero-card {
-    width: 100%;
-    /* 让卡片宽度填满所在的网格列 */
-    height: auto;
-    /* 高度自动调整，以维持宽高比 */
-    aspect-ratio: 1 / 1;
-    /* 维持1:1的正方形宽高比 */
-    margin-bottom: 0;
-    /* 移除可能干扰布局的底部外边距 */
-  }
-
-  /* 之前固定卡片尺寸的规则可以被移除或注释掉，因为现在的网格布局更稳健。我们保留其他针对图标和星星的移动端样式。 */
-  .summary-hero-card {
-    /* 在网格布局下，不再需要固定的宽高。 */
-    /* width: 48px; */
-    /* height: 48px; */
-  }
-
-  .summary-color-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: auto;
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
-  }
-
-  .summary-hero-stars {
-    display: block;
-    gap: 0;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(255, 255, 255);
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 1;
-  }
-}
 
 /* --- 为兑换码模态框添加遮罩层与核心样式 (修正版) --- */
 #redeem-codes-modal-overlay {
@@ -6195,12 +6142,170 @@ body.modal-open {
 
 /* 4. 移动端优化：在小屏幕上缩小卡片尺寸 */
 @media (max-width: 768px) {
+
   /* 【核心修正】强制模态框在移动端使用大部分屏幕宽度 */
-    #summon-summary-modal.single-pull-result-view {
-      width: 80vw;
-    }
+  #summon-summary-modal.single-pull-result-view {
+    width: 80vw;
+  }
+
   #summon-summary-modal.single-pull-result-view .summary-hero-card {
     width: 60px;
     height: 60px;
   }
+}
+
+
+/* ▼▼▼ 移动端抽奖结果样式调整 (最终版) ▼▼▼ */
+@media (max-width: 768px) {
+
+  /* 核心修复: 确保滚动容器在内容溢出时产生滚动条 */
+  #summon-summary-modal #summon-summary-scroll-container {
+    /* 设置一个最大高度，确保容器在垂直方向上不会无限延伸。
+       这个值需要根据你的页面布局来调整，以保证模态框的标题和底部按钮有足够空间。*/
+    max-height: 60vh;
+    /* 当内容超出 max-height 时，自动添加一个垂直滚动条 */
+    overflow-y: auto;
+    /* 确保在iPad上显示时可以平滑滚动 */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 这是关键修复。我们确保当模态框是“召唤结果视图”时，其内容容器被明确设置为5列的网格布局。 */
+  #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    /* 创建新的堆叠上下文，以修复iPad上的渲染bug */
+    transform: translateZ(0);
+  }
+
+  /* 这确保了网格中的每个卡片都能完全填充其单元格，并保持正方形，从而防止堆叠问题。 */
+  #summon-summary-modal.summon-result-view .summary-hero-card {
+    width: 100%;
+    /* 让卡片宽度填满所在的网格列 */
+    aspect-ratio: 1;
+    /* 维持1:1的正方形宽高比 */
+    margin-bottom: 0;
+    /* 移除可能干扰布局的底部外边距 */
+  }
+
+  /* 之前固定卡片尺寸的规则可以被移除或注释掉，因为现在的网格布局更稳健。我们保留其他针对图标和星星的移动端样式。 */
+  .summary-hero-card {
+    /* 在网格布局下，不再需要固定的宽高。 */
+    /* width: 48px; */
+    /* height: 48px; */
+  }
+
+  .summary-color-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+  }
+
+  .summary-hero-stars {
+    display: block;
+    gap: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+  }
+}
+
+/* style.css: 模态框布局终极修复 */
+
+/* 1. 将模态框本身转换为 Flexbox 容器，实现垂直排列 */
+#summon-summary-modal {
+  /* 确保模态框自身能够居中并覆盖全屏，具体样式取决于你的整体布局，这里只给出核心部分 */
+  display: flex;
+  flex-direction: column;
+  /* 让子元素垂直堆叠 */
+  justify-content: space-between;
+  /* 顶部标题和底部按钮分列两端 */
+
+  /* 示例：如果你需要让模态框固定居中，可以使用以下属性 */
+  /* position: fixed; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* 确保模态框有最大高度，但不要限制内容容器的高度 */
+  max-height: 90vh;
+  /* 模态框的最大高度，留出顶部和底部空间 */
+}
+
+/* 2. 确保滚动容器占据模态框内所有可用空间 */
+#summon-summary-scroll-container {
+  flex-grow: 1;
+  /* 让它占据所有剩余空间 */
+  overflow-y: auto;
+  /* 确保它能滚动 */
+  -webkit-overflow-scrolling: touch;
+  /* 修复iOS平滑滚动 */
+
+  /* 移除之前固定的高度限制，让它动态计算 */
+  max-height: none;
+}
+
+/* 3. 在可滚动容器内部使用 Flexbox 或 Grid 布局 */
+/* 这里我们继续使用你想要的 Flexbox 布局 */
+#summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* 允许项目换行 */
+  gap: 8px;
+  /* 保持项目间距 */
+  align-content: flex-start;
+  /* 确保内容从顶部开始对齐 */
+
+  /* 确保 Flex 容器内部有足够的空间来计算内容，防止溢出 */
+  min-height: 0;
+  min-width: 0;
+}
+
+/* 4. 为每个卡片设置 Flexbox 宽度 */
+#summon-summary-modal.summon-result-view .summary-hero-card {
+  width: calc(20% - 6.4px);
+  /* 5列布局: (100% / 5) - gap */
+  aspect-ratio: 1;
+  position: relative;
+  /* 确保内部绝对定位元素正确显示 */
+  margin-bottom: 0;
+}
+
+/* ▼▼▼ iPad 专属修复 (Flexbox 布局) ▼▼▼ */
+/* 当UA检测到是iPad，且屏幕宽度小于1200px时应用此样式 */
+html.is-ipad #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+  display: flex;
+  /* 强制使用 Flexbox 布局 */
+  flex-wrap: wrap;
+  /* 允许项目换行 */
+  gap: 8px;
+  /* 保持项目间距 */
+
+  /* 移除Grid相关的属性，确保不冲突 */
+  grid-template-columns: unset;
+  transform: unset;
+}
+
+html.is-ipad #summon-summary-modal.summon-result-view .summary-hero-card {
+  /* 为 Flexbox 项目计算宽度，以实现5列布局 */
+  width: calc(20% - 6.4px);
+  /* 5列布局: (100% / 5) - gap。8px * 4 / 5 = 6.4px */
+  /* min-width: 48px;  // 可选，如果卡片依然被压缩，可以加上这个 */
+  /* min-height: 48px; // 可选 */
+}
+
+/* 确保iPad上也保留滚动条和最大高度 */
+html.is-ipad #summon-summary-modal #summon-summary-scroll-container {
+  max-height: 60vh;
+  /* 确保有最大高度 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

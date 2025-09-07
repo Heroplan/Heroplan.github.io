@@ -1786,12 +1786,9 @@ function showSummaryModal(results) {
 
         const detailsOverlay = document.createElement('div');
         detailsOverlay.className = 'summary-details-overlay';
-        const isMobile = window.innerWidth <= 900;
         let starsContent = '';
 
-        if (isMobile && hero.star) {
-            starsContent = `${hero.star}⭐`;
-        } else if (hero.star) {
+        if (hero.star) {
             let starsHTML = '';
             for (let i = 0; i < hero.star; i++) {
                 starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
@@ -2344,8 +2341,13 @@ function showSinglePullResultsModal(results) {
         const detailsOverlay = document.createElement('div');
         detailsOverlay.className = 'summary-details-overlay';
         let starsContent = '';
+
         if (hero.star) {
-            starsContent = `${hero.star}⭐`;
+            let starsHTML = '';
+            for (let i = 0; i < hero.star; i++) {
+                starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
+            }
+            starsContent = starsHTML;
         }
         const englishColor = (colorReverseMap[String(hero.color).toLowerCase()] || hero.color || 'default').toLowerCase();
         const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${englishColor}.webp">`;

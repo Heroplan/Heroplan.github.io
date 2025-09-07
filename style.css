@@ -6210,10 +6210,10 @@ body.modal-open {
   }
 }
 
-/* style.css: 模态框布局终极修复 */
-
+/* ▼▼▼ iPad 专属修复 (Flexbox 布局) ▼▼▼ */
+/* 当UA检测到是iPad时应用此样式 */
 /* 1. 将模态框本身转换为 Flexbox 容器，实现垂直排列 */
-#summon-summary-modal {
+html.is-ipad #summon-summary-modal {
   /* 确保模态框自身能够居中并覆盖全屏，具体样式取决于你的整体布局，这里只给出核心部分 */
   display: flex;
   flex-direction: column;
@@ -6233,7 +6233,7 @@ body.modal-open {
 }
 
 /* 2. 确保滚动容器占据模态框内所有可用空间 */
-#summon-summary-scroll-container {
+html.is-ipad #summon-summary-scroll-container {
   flex-grow: 1;
   /* 让它占据所有剩余空间 */
   overflow-y: auto;
@@ -6247,7 +6247,7 @@ body.modal-open {
 
 /* 3. 在可滚动容器内部使用 Flexbox 或 Grid 布局 */
 /* 这里我们继续使用你想要的 Flexbox 布局 */
-#summon-summary-modal.summon-result-view #summon-summary-scroll-container {
+html.is-ipad #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
   display: flex;
   flex-wrap: wrap;
   /* 允许项目换行 */
@@ -6262,7 +6262,7 @@ body.modal-open {
 }
 
 /* 4. 为每个卡片设置 Flexbox 宽度 */
-#summon-summary-modal.summon-result-view .summary-hero-card {
+html.is-ipad #summon-summary-modal.summon-result-view .summary-hero-card {
   width: calc(20% - 6.4px);
   /* 5列布局: (100% / 5) - gap */
   aspect-ratio: 1;
@@ -6271,8 +6271,6 @@ body.modal-open {
   margin-bottom: 0;
 }
 
-/* ▼▼▼ iPad 专属修复 (Flexbox 布局) ▼▼▼ */
-/* 当UA检测到是iPad，且屏幕宽度小于1200px时应用此样式 */
 html.is-ipad #summon-summary-modal.summon-result-view #summon-summary-scroll-container {
   display: flex;
   /* 强制使用 Flexbox 布局 */

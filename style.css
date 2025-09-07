@@ -3064,7 +3064,7 @@ select.custom-select-hidden {
   text-align: left
 }
 
-/* 交换/移除图标样式 (保持不变) */
+/* 交换/移除图标样式 */
 .hero-action-icon {
   position: absolute;
   top: 50%;
@@ -5672,9 +5672,9 @@ html:not(.dark-theme) .color-text-outlined {
   /* 确保组标题左对齐 */
 }
 
-/* --- 5星英雄动态半透明彩虹扫光效果 --- */
+/* --- 5星英雄动态半透明固定彩虹扫光效果 (优化性能) --- */
 
-/* 为包含跑马灯效果的父元素设置基础样式 (保持不变) */
+/* 为包含跑马灯效果的父元素设置基础样式 */
 .summary-hero-card.star-5-marquee,
 .hero-avatar-container.star-5-marquee {
   position: relative;
@@ -5693,9 +5693,6 @@ html:not(.dark-theme) .color-text-outlined {
   z-index: 3;
 
   /* 
-   * =======================================================
-   *                         核心修改
-   * =======================================================
    *
    * 增加 opacity 属性来设置整体的半透明效果。
    * 0.6 代表 60% 的不透明度。
@@ -5704,35 +5701,41 @@ html:not(.dark-theme) .color-text-outlined {
   */
   opacity: 0.6;
 
-  /* 彩虹色的线性渐变 (保持不变) */
+  /* 
+   *
+   * 调整为固定的7色彩虹渐变，并移除 background-size 的 300% 设置。
+   * 移除 background-position 动画，降低性能消耗。
+   * 
+   * 为了让7种颜色均匀分布在扫光条的宽度上，我们将每种颜色设置为扫光条宽度的约1/7。
+   * 例如，第一个颜色到 1/7 处，第二个颜色从 1/7 到 2/7 处，以此类推。
+   *
+   * =======================================================
+  */
   background: linear-gradient(90deg,
-      #ff0000,
-      /* Red */
-      #ff7f00,
-      /* Orange */
-      #ffff00,
-      /* Yellow */
-      #00ff00,
-      /* Green */
-      #0000ff,
-      /* Blue */
-      #8b00ff,
-      /* Violet */
-      #ff0000
-      /* Back to Red to make the loop seamless */
+      #ff0000 0%,
+      /* Red 0% - 14.28% */
+      #ff7f00 14.28%,
+      /* Orange 14.28% - 28.56% */
+      #ffff00 28.56%,
+      /* Yellow 28.56% - 42.84% */
+      #00ff00 42.84%,
+      /* Green 42.84% - 57.12% */
+      #0000ff 57.12%,
+      /* Blue 57.12% - 71.4% */
+      #8b00ff 71.4%,
+      /* Violet 71.4% - 85.68% */
+      #ff0000 85.68%
+      /* Red (for seamless transition at end, although not strictly needed here as it's not looping) */
     );
-  background-size: 300% 100%;
+  background-size: 100% 100%;
+  /* 确保渐变只在扫光条的宽度内显示一次 */
 
-  /* 倾斜光束 (保持不变) */
+  /* 倾斜光束 */
   transform: skewX(-25deg);
-
-  /* 两个动画 (保持不变) */
-  animation:
-    marquee-light-sweep 1.5s infinite ease-in-out,
-    rainbow-flow 2s linear infinite;
+  animation: marquee-light-sweep 1.5s infinite ease-in-out;
 }
 
-/* 定义【移动】动画的关键帧 (保持不变) */
+/* 定义【移动】动画的关键帧 */
 @keyframes marquee-light-sweep {
   0% {
     left: -100%;
@@ -5744,17 +5747,6 @@ html:not(.dark-theme) .color-text-outlined {
 
   100% {
     left: 120%;
-  }
-}
-
-/* 定义【背景流动】的动画 (保持不变) */
-@keyframes rainbow-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  100% {
-    background-position: 100% 50%;
   }
 }
 

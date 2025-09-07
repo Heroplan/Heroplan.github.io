@@ -6263,8 +6263,7 @@ html.is-ipad #summon-summary-modal.summon-result-view #summon-summary-scroll-con
 
 /* 4. 为每个卡片设置 Flexbox 宽度 */
 html.is-ipad #summon-summary-modal.summon-result-view .summary-hero-card {
-  width: calc(20% - 6.4px);
-  /* 5列布局: (100% / 5) - gap */
+  width: 60px;
   aspect-ratio: 1;
   position: relative;
   /* 确保内部绝对定位元素正确显示 */
@@ -6285,11 +6284,7 @@ html.is-ipad #summon-summary-modal.summon-result-view #summon-summary-scroll-con
 }
 
 html.is-ipad #summon-summary-modal.summon-result-view .summary-hero-card {
-  /* 为 Flexbox 项目计算宽度，以实现5列布局 */
-  width: calc(20% - 6.4px);
-  /* 5列布局: (100% / 5) - gap。8px * 4 / 5 = 6.4px */
-  /* min-width: 48px;  // 可选，如果卡片依然被压缩，可以加上这个 */
-  /* min-height: 48px; // 可选 */
+  width: 60px;
 }
 
 /* 确保iPad上也保留滚动条和最大高度 */

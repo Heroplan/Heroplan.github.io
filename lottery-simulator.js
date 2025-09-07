@@ -1053,7 +1053,7 @@ async function handleActivityClick(poolId) {
             const formatPercentage = (rawValue) => {
                 const percentageNum = parseFloat(rawValue) / 10;
                 const prefix = percentageNum < 10 ? '&nbsp;' : '';
-                return `${prefix}${percentageNum.toFixed(1)}`;
+                return `${prefix}${percentageNum.toFixed(2)}`;
             };
 
             const bucketTranslations = i18n[state.currentLang].lottery_bucket_translations || {};
@@ -1921,7 +1921,7 @@ function renderSummonHistory() {
             const formatPercentage = (count, total) => {
                 const percentageNum = total > 0 ? (count / total) * 100 : 0;
                 const prefix = percentageNum < 10 ? '&nbsp;' : '';
-                return `${prefix}${percentageNum.toFixed(1)}`;
+                return `${prefix}${percentageNum.toFixed(2)}`;
             };
 
             const infoIcon = document.createElement('div');

@@ -6288,7 +6288,7 @@ html.is-ipad #summon-summary-modal #summon-summary-scroll-container {
   color: var(--md-sys-color-tertiary-container);
   font-size: 15px;
   font-weight: bold;
-  /* ▼▼▼ 新增: 稍微柔和的文本描边效果 ▼▼▼ */
+  /* ▼▼▼ 稍微柔和的文本描边效果 ▼▼▼ */
   text-shadow:
     -1px -1px 2px rgba(0, 0, 0, 0.5),
     /* 左上角带一点模糊的黑色阴影 */
@@ -6298,7 +6298,6 @@ html.is-ipad #summon-summary-modal #summon-summary-scroll-container {
     /* 左下角带一点模糊的黑色阴影 */
     1px 1px 2px rgba(0, 0, 0, 0.5);
   /* 右下角带一点模糊的黑色阴影 */
-  /* 这里的 rgba(0, 0, 0, 0.8) 是带透明度的黑色，你可以调整颜色和透明度 */
   border-radius: 10%;
   display: flex;
   align-items: center;

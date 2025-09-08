@@ -390,6 +390,17 @@ function closeLbTalentHelpModal() {
     if (!uiElements.lbTalentHelpModal.classList.contains('hidden')) history.back();
 }
 
+/**
+ * 更新兑换码悬浮按钮上的数量。
+ */
+function updateRedeemCodeCount() {
+    const count = codes ? codes.length : 0;
+    const countElement = document.getElementById('redeem-code-count');
+    if (countElement) {
+        countElement.textContent = count;
+    }
+}
+
 function openRedeemCodesModal() {
     renderRedeemCodesModal(); // 动态生成内容
     uiElements.redeemCodesModal.classList.remove('hidden');

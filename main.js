@@ -472,6 +472,8 @@ function addEventListeners() {
     document.getElementById('close-redeem-codes-modal-btn').addEventListener('click', closeRedeemCodesModal);
     document.getElementById('redeem-codes-footer-close-btn').addEventListener('click', closeRedeemCodesModal);
     uiElements.redeemCodesModalOverlay.addEventListener('click', closeRedeemCodesModal);
+    // 更新兑换码数量
+    updateRedeemCodeCount();
 
     // --- 导入/导出事件 ---
     exportSettingsBtn.addEventListener('click', openExportModal);

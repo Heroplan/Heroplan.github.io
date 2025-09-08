@@ -6275,3 +6275,29 @@ html.is-ipad #summon-summary-modal #summon-summary-scroll-container {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+.header-buttons #show-redeem-codes-btn {
+  position: relative;
+  /* 确保徽章定位 */
+}
+
+#redeem-code-count {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  color: var(--md-sys-color-tertiary);
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(50%, -50%);
+  /* 调整位置使其悬浮在右上角 */
+  pointer-events: none;
+}
+
+/* 当徽章数量为0时隐藏 */
+#redeem-code-count.hidden {
+  display: none;
+}

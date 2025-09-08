@@ -84,25 +84,6 @@ header h1 a,
   transform: translatey(-40%)
 }
 
-/* 将第6个按钮（第二行的第1个）放入第2列 */
-.header-buttons> :nth-child(6) {
-  grid-column: 2;
-}
-
-/* 将第7个按钮放入第3列 */
-.header-buttons> :nth-child(7) {
-  grid-column: 3;
-}
-
-/* 将第8个按钮放入第4列 */
-.header-buttons> :nth-child(8) {
-  grid-column: 4;
-}
-
-/* 将第9个按钮（最后一个）放入第5列 */
-.header-buttons> :nth-child(9) {
-  grid-column: 5;
-}
 
 .header-info-container {
   background: var(--md-sys-color-surface-variant);

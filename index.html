@@ -59,7 +59,6 @@
     <link rel="preload" href="imgs/talents/node.webp" as="image">
     <link rel="preload" href="imgs/talents/node_master.webp" as="image">
     <link rel="preload" href="imgs/other/star.webp" as="image">
-
     <script>
         window.ENABLE_DEBUG_LOGGING = false;
         // 检测UA是否包含 "iPad" 字符串，并添加相应的类
@@ -168,6 +167,16 @@
 </head>
 
 <body class="js-loading">
+    
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+    kofiWidgetOverlay.draw('heroplan', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#794bc4',
+        'floating-chat.donateButton.text-color': '#fff'
+    });
+</script>
 
     <div id="page-loader-overlay">
         <div class="loader-spinner"></div>
@@ -218,6 +227,11 @@
                             <a href="#" class="lang-option" data-lang="en">English</a>
                         </div>
                     </div>
+                    <a id="github-btn" href="https://github.com/Heroplan/Heroplan.github.io" target="_blank" class="theme-toggle-btn"
+                        title="GitHub">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/github.svg" alt="GitHub"
+                            style="width: 24px; height: 24px; object-fit: contain;">
+                    </a>
                 </div>
             </div>
             <div class="header-info-container">
@@ -766,6 +780,15 @@
     <script src="./chat-simulator.js" defer></script>
     <script src="./import-export.js" defer></script>
     <script src="./main.js" defer></script>
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+        kofiWidgetOverlay.draw('heroplan', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': 'Support me',
+            'floating-chat.donateButton.background-color': '#794bc4',
+            'floating-chat.donateButton.text-color': '#fff'
+        });
+    </script>
 </body>
 <div id="animation-blocker-overlay" class="hidden"></div>
 

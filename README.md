@@ -1,3 +1,4 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J61KX9Q3)
 # Heroplan英雄资料库 🐉 (Heroplan Hero Database)
 
 **语言(Language):** [English](./README_EN.md) | **中文**

@@ -25,7 +25,17 @@ const state = {
         farming: { top: 0, left: 0 },
         chat: { top: 0, left: 0 }
     },
-    redeemedCodes: new Set(),
+    // ▼▼▼ 从localStorage加载已兑换的码 ▼▼▼
+    redeemedCodes: (() => {
+        try {
+            const savedCodes = localStorage.getItem('redeemedCodes');
+            // 如果localStorage中有数据，则解析并返回一个Set，否则返回一个新的空Set
+            return new Set(savedCodes ? JSON.parse(savedCodes) : []);
+        } catch (e) {
+            console.error("无法从 localStorage 加载兑换码:", e);
+            return new Set();
+        }
+    })(),
 
     // --- 队伍模拟器状态 ---
     teamSimulatorActive: false,     // 队伍模拟器是否激活

@@ -1081,6 +1081,13 @@ function renderRedeemCodesModal() {
             const code = redeemButton.dataset.code;
             if (code) {
                 state.redeemedCodes.add(code); // 将兑换码添加到会话状态中
+                // ▼▼▼ 将更新后的兑换码保存到localStorage ▼▼▼
+                try {
+                    // 将Set转换为数组，再转换为JSON字符串
+                    localStorage.setItem('redeemedCodes', JSON.stringify(Array.from(state.redeemedCodes)));
+                } catch (e) {
+                    console.error("无法保存兑换码到 localStorage:", e);
+                }
             }
             redeemButton.innerHTML = `${langDict.redeemBtn} ✅`; // 改变按钮文本
             redeemButton.classList.add('redeemed'); // 添加一个类，防止重复改变

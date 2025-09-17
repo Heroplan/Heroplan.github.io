@@ -407,7 +407,7 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
             if (pool.id === 'lottery_hero_lunar_new_year' || pool.id === 'lottery_hero_valentines' || pool.id === 'lottery_featured_event_festival') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 2;
             }
-            if (pool.id === 'lottery_season_atlantis') {
+            if (pool.id === 'lottery_season_atlantis') {// || pool.id === 'lottery_hero_halloween') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 4;
             }
         }

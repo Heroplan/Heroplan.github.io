@@ -5432,7 +5432,10 @@ html:not(.dark-theme) .color-text-outlined {
 #probability-modal {
   z-index: 7001
 }
-
+#modal-overlay,
+#modal {
+  z-index: 7002
+}
 /* --- 新增：抽奖概率弹窗内的规则开关样式 --- */
 .probability-toggle-rule {
   padding: 5px 10px;

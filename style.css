@@ -5433,7 +5433,9 @@ html:not(.dark-theme) .color-text-outlined {
   z-index: 7001
 }
 #modal-overlay,
-#modal {
+#modal,
+#image-modal-overlay,
+#image-modal {
   z-index: 7002
 }
 /* --- 新增：抽奖概率弹窗内的规则开关样式 --- */

@@ -5389,12 +5389,10 @@ html:not(.dark-theme) .color-text-outlined {
 
 /* ========== 模态框层级 (z-index) 统一修正 ========== */
 /* 基础弹窗层 (详情, 筛选器) */
-#modal-overlay,
 #filters-modal-overlay {
   z-index: 5000
 }
 
-#modal,
 #filters-modal {
   z-index: 5001
 }
@@ -5415,7 +5413,6 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 /* 最高层弹窗 (在所有之上，例如图片、导入/导出、抽奖总结) */
-#image-modal-overlay,
 #import-settings-modal-overlay,
 #export-settings-modal-overlay,
 #summon-summary-modal-overlay,
@@ -5424,7 +5421,6 @@ html:not(.dark-theme) .color-text-outlined {
   z-index: 7000
 }
 
-#image-modal,
 #import-settings-modal,
 #export-settings-modal,
 #summon-summary-modal,
@@ -5432,12 +5428,14 @@ html:not(.dark-theme) .color-text-outlined {
 #probability-modal {
   z-index: 7001
 }
+
 #modal-overlay,
 #modal,
 #image-modal-overlay,
 #image-modal {
   z-index: 7002
 }
+
 /* --- 新增：抽奖概率弹窗内的规则开关样式 --- */
 .probability-toggle-rule {
   padding: 5px 10px;

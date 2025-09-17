@@ -1495,20 +1495,24 @@ async function performSummon(count) {
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
                     const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
                     if (mysteryPool.length > 0) {
-                        let mysteryHero = null; // 先声明一个变量用于存放结果
+                        // 使用更清晰和健壮的排序逻辑
+                        let mysteryHero = mysteryPool.sort((a, b) => {
+                            const aHasDate = !!a['Release date'];
+                            const bHasDate = !!b['Release date'];
 
-                        // 判断是否为神话召唤
-                        if (poolConfig.productType === 'LegendsSummon') {
-                            // 如果是，则使用随机逻辑
-                            mysteryHero = mysteryPool[Math.floor(Math.random() * mysteryPool.length)];
-                        } else {
-                            // 否则，使用获取最新英雄的逻辑
-                            mysteryHero = mysteryPool.sort((a, b) => {
-                                if (!a['Release date']) return 1;
-                                if (!b['Release date']) return -1;
-                                return b['Release date'].localeCompare(a['Release date']);
-                            })[0];
-                        }
+                            // 规则1：如果 a 没有日期但 b 有，a 优先（排在前面）
+                            if (!aHasDate && bHasDate) {
+                                return -1;
+                            }
+                            // 规则2：如果 b 没有日期但 a 有，b 优先
+                            if (!bHasDate && aHasDate) {
+                                return 1;
+                            }
+
+                            // 规则3：如果两者都有日期，按日期降序排列（最新的在前面）
+                            // 确保日期是可比较的字符串或日期对象
+                            return String(b['Release date']).localeCompare(String(a['Release date']));
+                        })[0];
 
                         // 将最终选出的英雄添加到结果中
                         if (mysteryHero) {

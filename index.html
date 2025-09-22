@@ -61,9 +61,9 @@
     <link rel="preload" href="imgs/other/star.webp" as="image">
     <script>
         window.ENABLE_DEBUG_LOGGING = false;
-        // 检测UA是否包含 "iPad" 字符串，并添加相应的类
-        if (navigator.userAgent.includes('iPad')) {
-            document.documentElement.classList.add('is-ipad'); // 添加到 <html> 标签上更通用
+        // 检测UA是否包含 'iPad'| 'iPhone' 字符串，并添加相应的类
+        if (/ipad|iphone/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-ios'); // 添加到 <html> 标签上
         }
         (function () {
             try {

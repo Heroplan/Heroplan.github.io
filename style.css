@@ -278,7 +278,7 @@ html:not(.dark-theme) .moon-icon {
   padding: 1rem;
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
   overflow: hidden;
-  max-height: 1000px;
+  max-height: 1500px;
   opacity: 1
 }
 
@@ -850,7 +850,7 @@ input[type="number"] {
   /* 移除内边距，因为父元素已有 */
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
   overflow: hidden;
-  max-height: 1000px;
+  max-height: 1500px;
   /* 足够大的高度 */
   opacity: 1
 }
@@ -1992,7 +1992,7 @@ h1.hero-main-name.skill-type-tag:hover {
   }
 
   #filters-modal .filter-content.collapsed {
-    max-height: 1000px;
+    max-height: 1500px;
     opacity: 1;
     padding: 1rem;
     visibility: visible

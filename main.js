@@ -364,6 +364,7 @@ async function initializeApp() {
             if (toggleBtn) toggleBtn.classList.remove('expanded');
         }
     }
+    renderDonationList(); // 渲染捐赠者列表
     uiElements.pageLoader.classList.add('hidden');
     document.body.classList.remove('js-loading');
 }
@@ -959,7 +960,7 @@ function debounce(func, delay) {
  * 这个函数在应用启动时调用一次。
  */
 function populateOriginToFamiliesMap() {
-    console.log("[日志-映射生成] 开始生成 起源->家族 映射表...");
+    //console.log("[日志-映射生成] 开始生成 起源->家族 映射表...");
     const tempMap = {};
 
     state.allHeroes.forEach(hero => {
@@ -982,6 +983,56 @@ function populateOriginToFamiliesMap() {
     for (const origin in tempMap) {
         originToFamiliesMap[origin] = Array.from(tempMap[origin]);
     }
-    console.log("[日志-映射生成] 映射表生成完毕:", originToFamiliesMap);
+    //console.log("[日志-映射生成] 映射表生成完毕:", originToFamiliesMap);
 }
 
+/**
+ * 动态渲染捐赠者列表。
+ * 该函数根据列表内容长度智能调整滚动速度和名单总长度，以实现无缝、自然的滚动效果。
+ */
+function renderDonationList() {
+    const wrapper = document.querySelector('.donation-list-wrapper');
+    const container = document.getElementById('donation-list-box');
+
+    if (!wrapper || !container) {
+        console.error('找不到捐赠者列表的容器元素。');
+        return;
+    }
+
+    // 清空旧内容，先渲染一次原始名单以测量长度
+    container.innerHTML = '';
+    // 遍历字符串数组并创建元素
+    donationList.forEach(donorName => {
+        const donationItem = document.createElement('span');
+        donationItem.classList.add('donation-item');
+        donationItem.textContent = donorName;
+        container.appendChild(donationItem);
+    });
+
+    const originalListWidth = container.scrollWidth;
+    const wrapperWidth = wrapper.offsetWidth;
+
+    // 根据列表长度判断是否需要滚动
+    if (originalListWidth > wrapperWidth) {
+        // 列表本身已经够长，为了无缝循环，只复制一次即可
+        const donorsToRender = [...donationList, ...donationList];
+
+        container.innerHTML = ''; // 清空并重新渲染
+        donorsToRender.forEach(donorName => {
+            const donationItem = document.createElement('span');
+            donationItem.classList.add('donation-item');
+            donationItem.textContent = donorName;
+            container.appendChild(donationItem);
+        });
+
+        const totalWidth = container.scrollWidth;
+        const duration = totalWidth / 50; // 假设每秒滚动50像素
+        container.style.animationDuration = `${duration}s`;
+        container.style.animationName = 'scroll-left'; // 确保动画名正确
+    } else {
+        // 列表太短，无法滚动，为了不突兀，不进行任何复制和动画
+        container.style.animationDuration = '0s';
+        container.style.animationName = 'none'; // 移除动画
+        container.style.transform = 'translateX(0)'; // 确保位置正确
+    }
+}

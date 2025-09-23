@@ -37,6 +37,9 @@ const codes = [
     "FACEOFF79D3LURI", "COMBO5KYT"
 ];
 
+// --- 捐赠名单 ---
+const donationList = ["e2x8w7c2", "西了个瓜", "keke"];
+
 // --- 英雄属性映射表 (用于多语言转换和图标查找) ---
 
 // 职业名称 -> 英文标识符 (用于图片路径)

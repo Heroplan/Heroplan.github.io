@@ -6314,3 +6314,74 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
 #redeem-code-count.hidden {
   display: none;
 }
+
+/* 捐赠者名单样式 */
+.donation-list-container {
+  display: flex;
+  /* 使用 Flexbox 布局 */
+  align-items: center;
+  /* 垂直居中对齐 */
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 900px;
+  /* 保持最大宽度，防止超出屏幕 */
+  margin: 1rem auto 0 auto;
+  /* 居中显示 */
+}
+
+.donation-list-title {
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  flex-shrink: 0;
+  /* 确保标题不收缩，保留固定宽度 */
+  white-space: nowrap;
+  /* 防止标题换行 */
+  padding-right: 12px;
+}
+
+.donation-list-wrapper {
+  flex: 1;
+  /* 占据剩余的所有空间 */
+  overflow: hidden;
+  /* 隐藏超出容器的内容 */
+  position: relative;
+  height: 24px;
+  /* 设置固定高度，确保和内部元素对齐 */
+}
+
+.donation-list {
+  display: inline-block;
+  /* 确保所有名字都在一行 */
+  white-space: nowrap;
+  /* 防止名字换行 */
+  animation: scroll-left linear infinite;
+}
+
+.donation-item {
+  font-weight: 600;
+  color: var(--md-sys-color-error);
+  padding: 2px 2px;
+  border-radius: 6px;
+  background-color: var(--md-sys-color-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-right: 12px;
+  /* 增加名字之间的间距 */
+  display: inline-block;
+  /* 确保元素可以有 margin */
+}
+
+/* 定义从右向左的滚动动画 */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

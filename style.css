@@ -6364,9 +6364,6 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
 .donation-item {
   font-weight: 600;
   color: var(--md-sys-color-error);
-  padding: 2px 2px;
-  border-radius: 6px;
-  background-color: var(--md-sys-color-surface);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   margin-right: 12px;

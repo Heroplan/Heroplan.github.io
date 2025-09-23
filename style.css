@@ -6357,8 +6357,6 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
   display: inline-block;
   /* 确保所有名字都在一行 */
   white-space: nowrap;
-  /* 防止名字换行 */
-  animation: scroll-left linear infinite;
 }
 
 .donation-item {
@@ -6381,4 +6379,9 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* 用于触发动画的类 */
+#donation-list-box.is-scrolling {
+  animation: scroll-left linear infinite;
 }

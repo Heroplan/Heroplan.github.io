@@ -187,7 +187,7 @@ async function initializeApp() {
         document.body.classList.remove('js-loading');
         return;
     }
-    
+
 
     // 3. 数据后处理
     populateOriginToFamiliesMap();
@@ -364,9 +364,22 @@ async function initializeApp() {
             if (toggleBtn) toggleBtn.classList.remove('expanded');
         }
     }
-    renderDonationList(); // 渲染捐赠者列表
     uiElements.pageLoader.classList.add('hidden');
     document.body.classList.remove('js-loading');
+    // 渲染捐赠者列表
+    const shouldScroll = renderDonationList();
+    setTimeout(() => {
+    // 移除点击阻断层
+    const animationBlocker = document.getElementById('animation-blocker-overlay');
+    animationBlocker.classList.add('hidden');
+        // 启动动画
+        if (shouldScroll) {
+            const container = document.getElementById('donation-list-box');
+            if (container) {
+                container.classList.add('is-scrolling');
+            }
+        }
+    }, 1000);
 }
 
 /**
@@ -499,7 +512,7 @@ function addEventListeners() {
             clearTeamDisplay();
         }
     });
-    
+
     document.getElementById('save-team-btn').addEventListener('click', () => {
         const langDict = i18n[state.currentLang];
         if (!state.teamSlots.some(s => s !== null)) { alert(langDict.noHeroesInTeam); return; }
@@ -624,7 +637,7 @@ function addEventListeners() {
             applyFiltersAndRender();
         });
     }
-    
+
 
     // 为灵魂交换的“展示列表”按钮添加点击事件
     const showSoulExchangeBtn = document.getElementById('show-soul-exchange-btn');
@@ -727,7 +740,7 @@ function addEventListeners() {
             }
         });
     });
-    
+
 
 
     // --- 浏览器历史与窗口事件 ---
@@ -996,7 +1009,7 @@ function renderDonationList() {
 
     if (!wrapper || !container) {
         console.error('找不到捐赠者列表的容器元素。');
-        return;
+        return false; // 返回 false 表示未成功渲染，以便外部逻辑判断
     }
 
     // 清空旧内容，先渲染一次原始名单以测量长度
@@ -1014,7 +1027,7 @@ function renderDonationList() {
 
     // 根据列表长度判断是否需要滚动
     if (originalListWidth > wrapperWidth) {
-        // 列表本身已经够长，为了无缝循环，只复制一次即可
+        // 列表本身已经够长，为了无缝循环，复制一次即可
         const donorsToRender = [...donationList, ...donationList];
 
         container.innerHTML = ''; // 清空并重新渲染
@@ -1028,11 +1041,11 @@ function renderDonationList() {
         const totalWidth = container.scrollWidth;
         const duration = totalWidth / 50; // 假设每秒滚动50像素
         container.style.animationDuration = `${duration}s`;
-        container.style.animationName = 'scroll-left'; // 确保动画名正确
+
+        return true; // 返回 true 表示列表已准备好滚动
     } else {
-        // 列表太短，无法滚动，为了不突兀，不进行任何复制和动画
+        // 列表太短，不进行任何复制和动画
         container.style.animationDuration = '0s';
-        container.style.animationName = 'none'; // 移除动画
-        container.style.transform = 'translateX(0)'; // 确保位置正确
+        return false; // 返回 false 表示不需要滚动
     }
 }

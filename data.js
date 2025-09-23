@@ -38,7 +38,7 @@ const codes = [
 ];
 
 // --- 捐赠名单 ---
-const donationList = ["e2x8w7c2", "西了个瓜", "keke"];
+const donationList = ["e2x8w7c2", "西那个瓜", "keke", "芒果"];
 
 // --- 英雄属性映射表 (用于多语言转换和图标查找) ---
 

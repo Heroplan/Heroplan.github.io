@@ -100,6 +100,7 @@ function toggleTeamSimulator() {
 
     if (state.teamSimulatorActive) {
         headerInfoContainer.classList.add('hidden');
+        uiElements.donationlistcontainer.classList.add('hidden');
         if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden');
         if (showTeamSimulatorBtn) {
             showTeamSimulatorBtn.classList.add('simulator-exit-btn');
@@ -123,6 +124,7 @@ function toggleTeamSimulator() {
             showTeamSimulatorBtn.title = "队伍模拟器";
         }
         headerInfoContainer.classList.remove('hidden');
+        uiElements.donationlistcontainer.classList.remove('hidden');
         if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden');
         state.multiSelectFilters.filterScope = ['all'];
         updateFilterButtonUI('filterScope');

@@ -71,6 +71,7 @@ const uiElements = {
     // 其他
     pageLoader: document.getElementById('page-loader-overlay'),
     headerInfoContainer: document.querySelector('.header-info-container'),
+    donationlistcontainer:document.querySelector('.donation-list-container-wrapper'),
     teamDisplayGrid: document.getElementById('team-display-grid'),
     myTeamsTabBtn: document.getElementById('tab-my-teams'),
     sharedTeamsTabBtn: document.getElementById('tab-shared-teams'),

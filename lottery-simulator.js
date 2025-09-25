@@ -539,6 +539,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             return standardHeroColor === standardSelectedColor &&
                 hero.star === star &&
                 hero.costume_id === 0 &&
+                heroFamily !== 'classic' && // 新增条件：排除 classic 家族
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
     }

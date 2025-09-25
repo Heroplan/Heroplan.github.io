@@ -532,16 +532,35 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
 
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
-        return state.allHeroes.filter(hero => {
+        // 对于 SuperElementalSummon 的 listed 桶，直接查找所有英雄的最新版本（包括服装）
+        // 并且排除S1英雄
+        const eligibleHeroes = state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
             const standardHeroColor = colorReverseMap[hero.color];
             const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
             return standardHeroColor === standardSelectedColor &&
                 hero.star === star &&
-                hero.costume_id === 0 &&
-                heroFamily !== 'classic' && // 新增条件：排除 classic 家族
+                heroFamily !== 'classic' && // 排除 classic 家族
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
+
+        const uniqueLatestHeroes = new Map(); // 使用 Map 存储每个英文名的最新版本英雄
+        eligibleHeroes.forEach(hero => {
+            if (hero.english_name) {
+                const existingHero = uniqueLatestHeroes.get(hero.english_name);
+                // 如果当前英雄是服装，或者比现有英雄版本新，则更新
+                if (!existingHero || hero.costume_id > (existingHero.costume_id || 0) || (hero.costume_id === 0 && existingHero.costume_id !== 0 && !uniqueLatestHeroes.has(hero.english_name + '_costume'))) {
+                    // 简单地用 latestHeroVersionsMap 中的最新版本替换
+                    const latestVersion = state.latestHeroVersionsMap.get(hero.english_name);
+                    if (latestVersion) {
+                        uniqueLatestHeroes.set(hero.english_name, latestVersion);
+                    } else {
+                        uniqueLatestHeroes.set(hero.english_name, hero);
+                    }
+                }
+            }
+        });
+        return Array.from(uniqueLatestHeroes.values());
     }
 
     if (bucketType === 'listed') {

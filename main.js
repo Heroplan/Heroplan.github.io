@@ -245,7 +245,7 @@ async function initializeApp() {
     uiElements.filterInputs.defaultTalentSelect.value = getCookie('defaultTalent') || 'none';
     uiElements.filterInputs.defaultTalentStrategySelect.value = getCookie('defaultTalentStrategy') || 'atk-def-hp';
     uiElements.filterInputs.defaultManaPriorityCheckbox.checked = getCookie('defaultManaPriority') === 'true';
-    uiElements.filterInputs.showLbTalentDetailsCheckbox.checked = getCookie('showLbTalentDetails') !== 'true';
+    uiElements.filterInputs.showLbTalentDetailsCheckbox.checked = getCookie('showLbTalentDetails') !== 'false';
     if (uiElements.filterInputs.enableSkillQuickSearchCheckbox) {
         uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked = getCookie('enableSkillQuickSearch') !== 'false';
     }

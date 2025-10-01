@@ -591,6 +591,9 @@ function addEventListeners() {
 
     const handleDefaultSettingsChange = () => {
         // 保存所有相关的Cookie
+        initialTalentDisabled = uiElements.filterInputs.defaultTalentSelect.value === 'none';
+        uiElements.filterInputs.defaultTalentStrategySelect.disabled = initialTalentDisabled;
+        uiElements.filterInputs.defaultManaPriorityCheckbox.disabled = initialTalentDisabled;
         setCookie('defaultLB', filterInputs.defaultLimitBreakSelect.value, 365);
         setCookie('defaultTalent', filterInputs.defaultTalentSelect.value, 365);
         setCookie('defaultTalentStrategy', filterInputs.defaultTalentStrategySelect.value, 365);

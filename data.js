@@ -94,7 +94,7 @@ const sourceReverseMap = {
     "联盟 - 火枪手": "musketeer",
     "月活动 - 农历生肖": "lunaryear", "挑战 - 贝奥武夫": "beowulf", "联盟 - 飞蛾": "moth",
     "月活动 - 海滩派对": "beachparty", "月活动 - 卡勒瓦拉": "kalevala",
-    "高塔 - 忍者": "ninja", "月活动 - 莫洛维亚": "morlovia", "月活动 - Sanguine Summon": "halloween2025", "月活动 - 飞沙帝国": "sand", "三国召唤": "kingdom", "超级元素人": "superelemental",
+    "高塔 - 忍者": "ninja", "月活动 - 莫洛维亚": "morlovia", "月活动 - 血色盛宴": "halloween2025", "月活动 - 飞沙帝国": "sand", "三国召唤": "kingdom", "超级元素人": "superelemental",
     "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活动 - 冬日": "christmas", "月活动 - 春谷": "springvale",
     "挑战 - 石像鬼": "gargoyle", "S1 - 经典": "season1", "S2 - 亚特兰蒂斯": "season2",
     "S5 - 沙丘": "season5", "暗影召唤": "shadow", "盟约召唤": "covenant",
@@ -103,12 +103,12 @@ const sourceReverseMap = {
     "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon", "神话召唤 - 额外抽奖": "tavernoflegendssecret",
     "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "荒野召唤": "wilderness",
     "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "拟态兽召唤": "mimic", "Sanguine Summon": "halloween2025",
+    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "拟态兽召唤": "mimic",
     // 繁體中文
     "聯盟 - 火槍手": "musketeer",
     "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
     "月活動 - 海灘派對": "beachparty", "月活動 - 卡勒瓦拉": "kalevala",
-    "高塔 - 忍者": "ninja", "月活動 - 莫洛維亞": "morlovia", "月活動 - Sanguine Summon": "halloween2025", "月活動 - 飛沙帝國": "sand",
+    "高塔 - 忍者": "ninja", "月活動 - 莫洛維亞": "morlovia", "月活動 - 腥紅盛宴": "halloween2025", "月活動 - 飛沙帝國": "sand",
     "三國召喚": "kingdom", "超級元素": "superelemental",
     "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活動 - 冬季": "christmas", "月活動 - 斯普林維爾": "springvale",
     "挑戰 - 石像鬼": "gargoyle", "S1 - 經典": "season1", "S2 - 亞特蘭蒂斯": "season2",
@@ -117,12 +117,12 @@ const sourceReverseMap = {
     "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "傳奇召喚 - 月英": "hotm",
     "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon", "傳奇召喚 - 額外抽獎": "tavernoflegendssecret", "星界召喚": "astral", "野地召喚": "wilderness",
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "模仿怪召喚": "mimic", "Sanguine Summon": "halloween2025",
+    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "模仿怪召喚": "mimic", 
     // English
     "Alliance - Musketeers": "musketeer",
     "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
     "Monthly Event - Beach Party": "beachparty", "Monthly Event - Kalevala": "kalevala",
-    "Tower - Ninjas": "ninja", "Monthly Event - Morlovia": "morlovia", "Monthly Event - Sanguine Summon": "halloween2025", "Monthly Event - Sand Empire": "sand", "Three Kingdoms Summon": "kingdom", "Super Elementals": "superelemental",
+    "Tower - Ninjas": "ninja", "Monthly Event - Morlovia": "morlovia", "Monthly Event - The Sanguine Feast": "halloween2025", "Monthly Event - Sand Empire": "sand", "Three Kingdoms Summon": "kingdom", "Super Elementals": "superelemental",
     "Tower - Magic": "magic", "Tower - Styx": "styx", "Monthly Event - Winter": "christmas", "Monthly Event - Springvale": "springvale",
     "Challenge - Gargoyle": "gargoyle", "S1 - Classic": "season1", "S2 - Atlantis": "season2",
     "S5 - Dune": "season5", "Shadow Summon": "shadow", "Covenant Summon": "covenant",
@@ -131,7 +131,7 @@ const sourceReverseMap = {
     "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon", "Legends Summon - Extra Draw": "tavernoflegendssecret",
     "Astral Summon": "astral", "Wilderness Summon": "wilderness",
     "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
-    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Mimic Summon": "mimic", "Sanguine Summon": "halloween2025"
+    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Mimic Summon": "mimic"
 };
 
 // 英文标识符 -> 起源图标文件名

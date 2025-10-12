@@ -139,7 +139,7 @@ const sourceIconMap = {
     "musketeer": "alliance_quest.webp",
     "lunaryear": "s1.webp", "beowulf": "challenge.webp", "moth": "alliance_quest.webp",
     "beachparty": "s1.webp", "kalevala": "s1.webp",
-    "ninja": "tower.webp", "morlovia": "s1.webp", "halloween2025": "diamond.webp", "sand": "s1.webp",
+    "ninja": "tower.webp", "morlovia": "s1.webp", "halloween2025": "halloween_resource.webp", "sand": "s1.webp",
     "kingdom": "mercenary_war.webp", "superelemental": "elemental.webp",
     "magic": "tower.webp", "styx": "tower.webp", "christmas": "s1.webp",
     "springvale": "s1.webp",

@@ -1109,14 +1109,14 @@ async function handleActivityClick(poolId) {
                     legendaryBonusItems += `<li><span>${amountName}</span><span>${amountValue}</span></li>`;
                 }
             }
+            const hotmInfo = summonPoolDetails.hotm;
+            if (hotmInfo && hotmInfo.ChancePerMil) {
+                const percentage = (parseInt(hotmInfo.ChancePerMil, 10) / 10).toFixed(1);
+                const name = bonusTranslations.hotm || 'HOTM';
+                bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;
+            }
 
             if (poolConfig.hasMysteryHeroBonusRoll) {
-                const hotmInfo = summonPoolDetails.hotm;
-                if (hotmInfo && hotmInfo.ChancePerMil) {
-                    const percentage = (parseInt(hotmInfo.ChancePerMil, 10) / 10).toFixed(1);
-                    const name = bonusTranslations.hotm || 'HOTM';
-                    bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;
-                }
                 const mysteryInfo = poolConfig.productType === 'LegendsSummon'
                     ? summonPoolDetails.LegendsSummonMysteryHero
                     : summonPoolDetails.MysteryHero;
@@ -1180,10 +1180,10 @@ async function handleActivityClick(poolId) {
             }
             // 如果该奖池不包含神话/神秘英雄的额外抽取机会，则添加特别说明
             if (!poolConfig.hasMysteryHeroBonusRoll) {
-                const noHotmNoticeText = langDict.noHotmAndMysteryBonusNotice || '';
-                if (noHotmNoticeText) {
+                const noMysteryBonusNoticeText = langDict.noMysteryBonusNotice || '';
+                if (noMysteryBonusNoticeText) {
                     // 将“无法获得”的说明追加到 HTML 中
-                    specialNoticeHTML += `<p style="font-size: 0.7em; color: var(--md-sys-color-primary); margin: 10px 5px 0 5px; text-align: left;">* ${noHotmNoticeText}</p>`;
+                    specialNoticeHTML += `<p style="font-size: 0.7em; color: var(--md-sys-color-primary); margin: 10px 5px 0 5px; text-align: left;">* ${noMysteryBonusNoticeText}</p>`;
                 }
             }
 

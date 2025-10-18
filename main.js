@@ -19,14 +19,17 @@ function parseAndStoreDoTInfo(hero) {
     const keywordSets = [
         // --- 总伤害规则 (isPerTurn: false) ---
         { keywords: ['敌人', '回合', '共计', '伤害'], isPerTurn: false },
+        { keywords: ['敌人', '核心', '充能', '伤害'], isPerTurn: false },
         { keywords: ['目标', '回合', '共计', '伤害'], isPerTurn: false },
         { keywords: ['敵人', '回合', '共計', '傷害'], isPerTurn: false },
+        { keywords: ['敵人', '核心', '暴增', '傷害'], isPerTurn: false },
         { keywords: ['目標', '回合', '共計', '傷害'], isPerTurn: false },
         { keywords: ['敌人', '回合内', '伤害'], isPerTurn: false },
         { keywords: ['目标', '回合内', '伤害'], isPerTurn: false },
         { keywords: ['敵人', '回合内', '傷害'], isPerTurn: false },
         { keywords: ['目標', '回合内', '傷害'], isPerTurn: false },
         { keywords: ['enemies', 'damage', 'over', 'turn'], isPerTurn: false },
+        { keywords: ['enemies', 'charged', 'Core', 'damage'], isPerTurn: false },
         { keywords: ['target', 'damage', 'over', 'turn'], isPerTurn: false },
 
         // --- 每回合伤害规则 (isPerTurn: true) ---
@@ -62,7 +65,7 @@ function parseAndStoreDoTInfo(hero) {
 
             for (const numStr of numbers) {
                 const num = parseInt(numStr, 10);
-                if (num >= 100 && damage === null) {
+                if (num > 10 && damage === null) {
                     damage = num;
                 }
                 if (num > 0 && num <= 10 && turns === null) {

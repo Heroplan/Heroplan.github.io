@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2025-12-25';
 const purchaseCostumeDate = '2025-10-29';
 const soulExchange = {
-    Date: '2025-11-28',
+    Date: '2025-11-20',
     ten: [
         "gargoyle_uwe",
         "holy_god_aviana",
@@ -373,6 +373,7 @@ const skillTagReverseMap = {
     "攻擊-命中率↓": "攻击-命中率↓",
     "攻擊-疊加：攻擊力↓": "攻击-叠加：攻击力↓",
     "攻擊-枯萎：攻擊力↓": "攻击-衰退：攻击力↓",
+    "傷害-持續傷害：共振": "伤害-持续伤害：共振",
     "傷害-持續傷害：霜凍": "伤害-持续伤害：冰冻",
     "傷害-持續傷害：燃燒": "伤害-持续伤害：燃烧",
     "傷害-持續傷害：詛咒": "伤害-持续伤害：诅咒",
@@ -518,6 +519,7 @@ const skillTagReverseMap = {
     "Atk - Accuracy ↓": "攻击-命中率↓",
     "Atk - Stack : Atk ↓": "攻击-叠加：攻击力↓",
     "Atk - Wither : Atk↓": "攻击-衰退：攻击力↓",
+    "Dmg - DoT : Resonance": "伤害-持续伤害：共振",
     "Dmg - DoT : Frost": "伤害-持续伤害：冰冻",
     "Dmg - DoT : Burn": "伤害-持续伤害：燃烧",
     "Dmg - DoT : Curse": "伤害-持续伤害：诅咒",

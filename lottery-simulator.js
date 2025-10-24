@@ -1016,7 +1016,7 @@ async function handleActivityClick(poolId) {
     const portalContainer = document.getElementById('lottery-portal-container');
 
 
-    if (titleEl) titleEl.textContent = getPoolDisplayName(poolConfig);
+    if (titleEl) titleEl.innerHTML = getPoolDisplayName(poolConfig);
     // ▼▼▼ 检查是否为三国召唤，并处理其特殊规则 ▼▼▼
     if (poolId === 'lottery_mercenary_war_default') {
         const limitedPoolConfig = poolConfig.limitedPoolSummonConfiguration;
@@ -1933,7 +1933,7 @@ function renderSummonHistory() {
     } else {
         historyToRender = state.summonHistory.filter(group => group.poolName === currentPoolName);
         const totalPulls = historyToRender.reduce((sum, group) => sum + (group.count || 0), 0);
-        titleElement.textContent = langDict.summonHistoryTitleCurrent(currentPoolName, totalPulls);
+        titleElement.innerHTML = langDict.summonHistoryTitleCurrent(currentPoolName, totalPulls);
     }
 
     // 3. 【核心修正】生成与官方样式完全一致的 Tooltip

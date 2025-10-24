@@ -28,7 +28,7 @@ const lotteryTitles = {
         "lottery.title.mercenarywarsummon": "三国召唤",
         "lottery.title.monsterislandsummon": "怪兽岛召唤",
         "lottery.title.moths": "联盟任务召唤",
-        "lottery.title.pickupsummon": "节选召唤",
+        "lottery.title.pickupsummon": "节选召唤<br>(不再更新)",
         "lottery.title.lottery_season_atlantis": "亚特兰蒂斯召唤",
         "lottery.title.lottery_season_valhalla": "瓦尔哈拉召唤",
         "lottery.title.lottery_season_underwild": "蛮荒地界召唤",
@@ -97,7 +97,7 @@ const lotteryTitles = {
         "lottery.title.mercenarywarsummon": "三國召喚",
         "lottery.title.monsterislandsummon": "怪獸島召喚",
         "lottery.title.moths": "聯盟任務召喚",
-        "lottery.title.pickupsummon": "獲得召喚",
+        "lottery.title.pickupsummon": "獲得召喚<br>(不再更新)",
         "lottery.title.lottery_season_atlantis": "亞特蘭蒂斯召喚",
         "lottery.title.lottery_season_valhalla": "瓦爾哈拉召喚",
         "lottery.title.lottery_season_underwild": "地底荒野召喚",
@@ -166,7 +166,7 @@ const lotteryTitles = {
         "lottery.title.mercenarywarsummon": "3 Kingdoms Summon",
         "lottery.title.monsterislandsummon": "Monster Island Summon",
         "lottery.title.moths": "Alliance Quest Summon",
-        "lottery.title.pickupsummon": "Pick Up Summon",
+        "lottery.title.pickupsummon": "Pick Up Summon<br>(No More Update)",
         "lottery.title.lottery_season_atlantis": "Atlantis Summon",
         "lottery.title.lottery_season_valhalla": "Valhalla Summon",
         "lottery.title.lottery_season_underwild": "Underwild Summon",
@@ -933,9 +933,9 @@ function renderActivityList() {
             listItem.style.backgroundRepeat = 'no-repeat';
             listItem.style.color = '#fff';
             listItem.style.textShadow = '1px 1px 2px black';
-            listItem.textContent = displayName;
+            listItem.innerHTML = displayName;
         } else {
-            listItem.textContent = displayName + ' (No Banner)';
+            listItem.innerHTML = displayName + ' (No Banner)';
         }
         listItem.addEventListener('click', () => handleActivityClick(pool.id));
         listContainer.appendChild(listItem);

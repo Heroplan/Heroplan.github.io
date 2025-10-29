@@ -30,7 +30,7 @@ const TalentTree = (() => {
         "Druid": "druid", "德鲁伊": "druid", "德魯伊": "druid",
         "Fighter": "fighter", "战士": "fighter", "戰士": "fighter",
         "Monk": "monk", "僧侣": "monk", "僧侶": "monk",
-        "Paladin": "paladin", "圣骑士": "paladin", "聖騎士": "paladin",
+        "Paladin": "paladin", "圣骑士": "paladin", "騎士": "paladin",
         "Ranger": "ranger", "游侠": "ranger", "遊俠": "ranger",
         "Rogue": "rogue", "盗贼": "rogue", "盜賊": "rogue",
         "Sorcerer": "sorcerer", "术士": "sorcerer", "術士": "sorcerer",

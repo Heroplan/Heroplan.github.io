@@ -194,7 +194,7 @@ const iconMaps = {
 const wantedMissionData = [
     { season: 'S1', daily: '7-4', red: '4-1', green: ['7-5', '6-3'], blue: '8-7', purple: '7-4', yellow: ['10-6', '9-4'] },
     { season: 'S2', daily: ['4-3', '7-1'], red: ['3-8', '3-4'], green: '7-1', blue: ['8-10', '8-2'], purple: '21-10', yellow: ['13-1', '9-5'] },
-    { season: 'S3', daily: '9-8', red: '6-2', green: ['1-5', '4-8', '30-6'], blue: ['9-8', '9-2'], purple: '17-9', yellow: '8-6' },
+    { season: 'S3', daily: '9-8', red: '6-2', green: ['4-8', '30-6'], blue: ['9-8', '9-2'], purple: '17-9', yellow: '8-6' },
     { season: 'S4', daily: '6-10', red: ['32-2', '32-6'], green: '9-2', blue: ['8-2', '30-7'], purple: '14-8', yellow: '4-7' },
     { season: 'S5', daily: ['5-10', '6-10'], red: ['2-9', '2-1'], green: ['3-4', '10-8', '30-8'], blue: '22-2', purple: '5-10', yellow: ['16-8', '17-6'] },
     { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '4-22'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }

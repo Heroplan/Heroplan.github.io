@@ -383,6 +383,14 @@ async function initializeApp() {
             }
         }
     }, 1000);
+    // 检查赞助显示状态并相应处理
+    // 如果cookie不存在（默认显示赞助）或者cookie存在且值为false，则加载赞助脚本
+    if (!isDonateHidden()) {
+        loadDonateScript();
+    }
+
+    // 更新赞助按钮文本
+    updateDonateButton();
 }
 
 /**
@@ -746,6 +754,11 @@ function addEventListeners() {
             }
         });
     });
+    // 添加赞助按钮事件监听
+    const toggleDonateBtn = document.getElementById('toggle-donate-btn');
+    if (toggleDonateBtn) {
+        toggleDonateBtn.addEventListener('click', toggleDonate);
+    }
 
 
 
@@ -1053,5 +1066,88 @@ function renderDonationList() {
         // 列表太短，不进行任何复制和动画
         container.style.animationDuration = '0s';
         return false; // 返回 false 表示不需要滚动
+    }
+}
+
+/**
+ * 检查赞助是否被隐藏
+ */
+function isDonateHidden() {
+    const cookieValue = getCookie('hideDonate');
+    // 如果cookie不存在，默认显示赞助（不隐藏）
+    return cookieValue === 'true';
+}
+
+/**
+ * 切换赞助显示状态
+ */
+function toggleDonate() {
+    const currentlyHidden = isDonateHidden();
+    const newState = !currentlyHidden;
+    setCookie('hideDonate', newState.toString(), 365);
+
+    // 更新按钮文本
+    updateDonateButton();
+
+    // 控制赞助脚本的加载/移除
+    if (newState) {
+        removeDonateScript();
+    } else {
+        loadDonateScript();
+    }
+}
+
+/**
+ * 更新赞助按钮的显示文本
+ */
+function updateDonateButton() {
+    const button = document.getElementById('toggle-donate-btn');
+    if (button) {
+        const langDict = i18n[state.currentLang];
+        const isHidden = isDonateHidden();
+        button.textContent = isHidden ? langDict.showDonate : langDict.hideDonate;
+    }
+}
+
+/**
+ * 加载赞助脚本
+ */
+function loadDonateScript() {
+    // 检查是否已存在赞助脚本
+    if (document.querySelector('script[src*="overlay-widget.js"]')) {
+        return;
+    }
+
+    // 创建并加载脚本
+    const script = document.createElement('script');
+    script.src = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+    script.onload = function () {
+        if (typeof kofiWidgetOverlay !== 'undefined') {
+            kofiWidgetOverlay.draw('heroplan', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': '',
+                'floating-chat.donateButton.background-color': '#794bc4',
+                'floating-chat.donateButton.text-color': '#fff'
+            });
+        }
+    };
+    document.head.appendChild(script);
+}
+
+/**
+ * 移除赞助脚本和相关的DOM元素
+ */
+function removeDonateScript() {
+    // 移除脚本
+    const scripts = document.querySelectorAll('script[src*="overlay-widget.js"]');
+    scripts.forEach(script => script.remove());
+
+    // 移除Ko-fi创建的浮动聊天元素
+    const kofiElements = document.querySelectorAll('[id*="kofi"], .kofi-overlay, .floatingchat-container-wrap, .floatingchat-container-wrap-mobi');
+    kofiElements.forEach(element => element.remove());
+
+    // 清理全局变量（如果存在）
+    if (typeof kofiWidgetOverlay !== 'undefined') {
+        delete window.kofiWidgetOverlay;
     }
 }

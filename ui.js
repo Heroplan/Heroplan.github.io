@@ -14,6 +14,7 @@ const uiElements = {
     lbTalentHelpBtn: document.getElementById('lb-talent-help-btn'),
     exportSettingsBtn: document.getElementById('export-settings-btn'),
     importSettingsBtn: document.getElementById('import-settings-btn'),
+    toggleDonateBtn: document.getElementById('toggle-donate-btn'),
 
     // 视图切换按钮
     showWantedMissionBtn: document.getElementById('show-wanted-mission-btn'),

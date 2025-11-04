@@ -408,11 +408,27 @@ function renderDetailsInModal(hero, context = {}) {
     }
 
 
-    // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
+// 内部帮助函数，用于将技能/被动数组渲染为HTML列表
     const renderListAsHTML = (itemsArray, filterType = null) => {
         if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
+
+        // 定义一个正则表达式，用于匹配“纯星号标题行”
+        // (从头到尾只包含空格或星号)
+        const starHeaderPattern = /^[\s*]+$/;
+
         return itemsArray.map(item => {
             let cleanItem = String(item).trim();
+
+            // 在执行任何分割操作之前，检查它是否为“纯星号标题行”
+            if (cleanItem.includes('*') && starHeaderPattern.test(cleanItem)) {
+                // 如果是，移除所有内部空格（例如 "* * *" -> "***"）
+                // 并将其作为单个列表项返回，不进行分割。
+                const compactStars = cleanItem.replace(/\s/g, '');
+                return `<li>${compactStars}</li>`;
+            }
+
+            // --- 如果不是星号标题行，则执行原始逻辑 ---
+
             if (filterType) {
                 const mainDesc = cleanItem.split(' * ')[0].trim();
                 const displayHTML = cleanItem.replace(/ \* /g, '<br><i>') + '</i>';

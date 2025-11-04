@@ -134,7 +134,7 @@ function populateFilters() {
             const sortOrder = orderMap[key];
             if (sortOrder) {
                 values.sort((a, b) => {
-                    // ▼▼▼▼▼【核心修复】在排序时，使用回溯表将当前语言文本转回简体中文ID ▼▼▼▼▼
+                    // ▼▼▼▼▼ 在排序时，使用回溯表将当前语言文本转回简体中文ID ▼▼▼▼▼
                     const chineseKeyA = skillTagReverseMap[a] || a;
                     const chineseKeyB = skillTagReverseMap[b] || b;
 

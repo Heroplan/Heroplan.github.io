@@ -343,7 +343,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
 
     const toggleHistoryCheckbox = document.getElementById('toggle-history-view-checkbox');
     if (toggleHistoryCheckbox) {
-        toggleHistoryCheckbox.checked = state.showAllSummonHistory; 
+        toggleHistoryCheckbox.checked = state.showAllSummonHistory;
         toggleHistoryCheckbox.addEventListener('change', () => {
             state.showAllSummonHistory = toggleHistoryCheckbox.checked;
             renderSummonHistory();
@@ -972,7 +972,7 @@ async function handleActivityClick(poolId) {
         const elementalOverlay = document.getElementById('elemental-modal-overlay');
         elementalModal.classList.remove('hidden');
         elementalOverlay.classList.remove('hidden');
-        document.body.classList.add('modal-open'); 
+        document.body.classList.add('modal-open');
 
         const userChoice = await new Promise(resolve => {
             const elementalContainer = document.querySelector('.elemental-selection-container');
@@ -1445,7 +1445,7 @@ async function performSummon(count) {
             singlePullResults.push({ hero: drawnHero, bucket: isCostumeSummon ? 'costume' : (bucketString || 'unknown') });
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             // 检查是否满足触发“额外传奇英雄”的条件
-            if (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil) {
+            if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
 
                 // 1. 首先，确定本次奖励的完整候选英雄池
                 const isEventOnly = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly;
@@ -1566,7 +1566,7 @@ async function performSummon(count) {
                                     extraHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                                 }
                             } else if (extraBucketString) {
-                                const heroPool = getHeroPoolForBucket(extraBucketString, { ...poolConfig, masterPool: masterHeroPool }); 
+                                const heroPool = getHeroPoolForBucket(extraBucketString, { ...poolConfig, masterPool: masterHeroPool });
                                 if (heroPool.length > 0) extraHero = heroPool[Math.floor(Math.random() * heroPool.length)];
                             }
                             if (extraHero) {
@@ -1771,7 +1771,7 @@ function showSummaryModal(results) {
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
     if (!overlay || !summaryModal || !scrollContainer) {
         return;
-    } 
+    }
 
     const langDict = i18n[state.currentLang];
     const modalTitle = summaryModal.querySelector('h3');
@@ -2191,9 +2191,14 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
             allOriginalPulls.forEach(pull => {
                 if (pull && pull.length > 0) {
                     const primaryHero = pull[0].hero;
-                    if (primaryHero.star === 5 && primaryHero.family && associatedFamilies.includes(String(primaryHero.family).toLowerCase())) {
+                    if (poolConfig.productType === 'shadowsummon' && primaryHero.star === 5) {
                         triggerCount++;
+                    } else {
+                        if (primaryHero.star === 5 && primaryHero.family && associatedFamilies.includes(String(primaryHero.family).toLowerCase())) {
+                            triggerCount++;
+                        }
                     }
+
                 }
             });
         }

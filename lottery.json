@@ -70,8 +70,8 @@
     {
         "productType": "AllianceEventSummon",
         "id": "lottery_featured_alliance_quest_musketeers",
-        "banner": "event_lotterybanner_musketeer",
-        "lotterybg": "event_lotterybg_musketeer",
+        "banner": "event_lotterybanner_beautybeast",
+        "lotterybg": "event_lotterybg_beautybeast",
         "gemPrice": 300,
         "amount": 1,
         "uiPriority": 80,
@@ -1760,6 +1760,35 @@
         "gemPrice": 9400,
         "sourceProductId": "lottery_wilderness_default",
         "amount": 30
+    },
+    {
+        "productType": "TempleSummon",
+        "id": "lottery_temple_default",
+        "banner": "event_lotterybanner_temple",
+        "lotterybg": "event_lotterybg_temple",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 135,
+        "associatedEvent": "Temple",
+        "bucketWeights": [
+            568,
+            208,
+            16,
+            142,
+            57,
+            5,
+            4
+        ],
+        "bonusLegendaryHeroChancePerMil": 1000,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "TempleSummon",
+        "id": "lottery_temple_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_temple_default",
+        "amount": 10
     },
     {
         "productType": "MimicSummon",

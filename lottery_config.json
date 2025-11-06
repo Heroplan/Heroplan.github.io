@@ -271,6 +271,18 @@
             ],
             "featuredHeroNum": 4
         },
+        "TempleSummon": {
+            "bucketConfig": [
+                "heroes_s1_3",
+                "heroes_s1_4",
+                "heroes_s1_5",
+                "heroes_event_3",
+                "heroes_event_4",
+                "heroes_event_5",
+                "featuredHero"
+            ],
+            "featuredHeroNum": 2
+        },
         "MimicSummon": {
             "bucketConfig": [
                 "heroes_event_3",
@@ -314,18 +326,19 @@
         },
         "lottery_featured_alliance_quest_musketeers": {
             "featuredHeroes": [
-                "musketeer_rochefort",
-                "musketeer_cardinal_richelieu",
-                "musketeer_porthos"
+                "beauty_beast_the_beast",
+                "beauty_beast_rose_de_flo",
+                "musketeer_aramis_costume_boulanger"
             ],
             "AssociatedFamilies": [
+                "beauty_beast",
                 "musketeer"
             ]
         },
         "lottery_astralelves_default": {
             "featuredHeroes": [
-                "astral_demon_anatemah",
-                "astral_demon_xshahr"
+                "astral_dwarf_lemniss",
+                "astral_dwarf_ceris"
             ],
             "AssociatedFamilies": [
                 "astral_elves",
@@ -534,9 +547,9 @@
         },
         "lottery_mercenary_war_default": {
             "featuredHeroes": [
-                "outlaw_wu_yong",
-                "outlaw_sun_erniang",
-                "outlaw_wu_song"
+                "journey_tang_sanzang",
+                "journey_nineheaded_beast",
+                "kingdom_guan_yu_costume_dragon"
             ],
             "AssociatedFamilies": [
                 "kingdom",
@@ -548,16 +561,16 @@
                 "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
                 "requiredItemAmount": 100,
                 "heroes": [
-                  "kingdom_diaochan_costume_flowers",
-                  "kingdom_zhuge_liang_costume_crane",
+                  "kingdom_liu_bei_costume_nature",
+                  "journey_xie_zi_jing",
                   "kingdom_cao_cao_costume_ice",
-                  "journey_xiwangmu",
-                  "journey_nineheaded_beast",
-                  "journey_queen_guowang",
+                  "kingdom_lu_bu_costume_tiger_lord",
+                  "journey_xiong_shanjun",
                   "journey_erlang_shen",
                   "kingdom_sun_quan_costume_fire_bat",
-                  "kingdom_lu_bu_costume_tiger_lord",
-                  "kingdom_guan_yu_costume_dragon"
+                  "journey_nineheaded_beast",
+                  "kingdom_zhang_fei_costume_bear_slayer",
+                  "journey_tang_sanzang"
                 ]
             }
         },
@@ -671,9 +684,9 @@
         },
         "lottery_season_untold_tales2": {
             "featuredHeroes": [
-                "tales2_regin_costume_omen",
                 "tales2_ott_costume_herbalist",
-                "tales2_dularfulr"
+                "tales2_regin_costume_omen",
+                "tales2_motsognir"
             ],
             "AssociatedFamilies": [
                 "nidavellir",
@@ -876,11 +889,11 @@
         },
         "lottery_black_default": {
             "featuredHeroes": [
-                "beowulf_hrothgar",
-                "beowulf_wealhtheow"
+                "scoundrel_lane",
+                "scoundrel_duval"
             ],
             "AssociatedFamilies": [
-                "beowulf"
+                "scoundrel"
             ],
             "latestIncludedHeroAgeInDays": 730
         },
@@ -1051,6 +1064,15 @@
                 "faun_ascian",
                 "faun_bramble",
                 "wild_cat_ferni"
+            ]
+        },
+        "lottery_temple_default": {
+            "featuredHeroes": [
+                "mahayoddha_ustad_anand",
+                "mahayoddha_bonga"
+            ],
+            "AssociatedFamilies": [
+                "mahayoddha"
             ]
         },
         "lottery_mimic_default": {

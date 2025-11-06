@@ -61,12 +61,13 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_festival_b": "挑战节 II 召唤",
         "lottery.title.lottery_featured_event_masquerade": "众神狂欢节召唤",
         "lottery.title.lottery_featured_alliance_quest_castle": "骑士冲击召唤",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "英勇火枪手召唤",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "勇者与美人召唤",
         "lottery.title.lottery_featured_alliance_quest_moths": "飞蛾之夜召唤",
         "lottery.title.lottery_tower_ninja_default": "忍者高塔召唤",
         "lottery.title.lottery_tower_owl_default": "猫头鹰高塔召唤",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召唤",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召唤",
+        "lottery.title.templesummon": "神殿召唤",
         "lottery.title.mimicsummon": "拟态兽召唤",
     },
     "tc": {
@@ -130,12 +131,13 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_festival_b": "挑戰節 II 召喚",
         "lottery.title.lottery_featured_event_masquerade": "眾神嘉年華召唤",
         "lottery.title.lottery_featured_alliance_quest_castle": "騎士衝突召喚",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "英勇火槍手召唤",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "勇者與美人召唤",
         "lottery.title.lottery_featured_alliance_quest_moths": "飛蛾之夜召喚",
         "lottery.title.lottery_tower_ninja_default": "忍者高塔召喚",
         "lottery.title.lottery_tower_owl_default": "貓頭鷹高塔召喚",
         "lottery.title.lottery_tower_magic_default": "魔法高塔召喚",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召喚",
+        "lottery.title.templesummon": "神殿召喚",
         "lottery.title.mimicsummon": "模仿怪召喚",
     },
     "en": {
@@ -199,12 +201,13 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_festival_b": "Festival II Summon",
         "lottery.title.lottery_featured_event_masquerade": "Carnival of Gods Summon",
         "lottery.title.lottery_featured_alliance_quest_castle": "Clash of Knights Summon",
-        "lottery.title.lottery_featured_alliance_quest_musketeers": "Brave Musketeers Summon",
+        "lottery.title.lottery_featured_alliance_quest_musketeers": "The Brave & The Beautiful Summon",
         "lottery.title.lottery_featured_alliance_quest_moths": "Night of the Moth Summon",
         "lottery.title.lottery_tower_ninja_default": "Ninja Tower Summon",
         "lottery.title.lottery_tower_owl_default": "Owl Tower Summon",
         "lottery.title.lottery_tower_magic_default": "Magic Tower Summon",
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
+        "lottery.title.templesummon": "Temple Summon",
         "lottery.title.mimicsummon": "Mimic Summon",
     }
 };
@@ -584,7 +587,6 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         const listedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
         if (listedFamilies.length > 0) {
             baseHeroPool.forEach(hero => {
-                if (hero.isFeaturedOnly) return;
                 const heroFamily = String(hero.family || '').toLowerCase();
                 if (hero.star === star && listedFamilies.includes(heroFamily) && !state.globalExcludeFamilies.includes(heroFamily)) {
                     if (hero.english_name && !processedNames.has(hero.english_name)) {
@@ -604,9 +606,6 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     const initialPool = [];
 
     baseHeroPool.forEach(hero => {
-        if (hero.isFeaturedOnly) {
-            return;
-        }
         const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
         let matches = false;
 

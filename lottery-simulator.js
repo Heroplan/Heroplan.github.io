@@ -2187,24 +2187,36 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
         const successCount = bonusLegendaryResults.length;
         const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
         const allOriginalPulls = historyToRender.flatMap(group => group.groupedResults || []);
+
         if (allOriginalPulls.length > 0) {
             allOriginalPulls.forEach(pull => {
                 if (pull && pull.length > 0) {
                     const primaryHero = pull[0].hero;
-                    if (poolConfig.productType === 'shadowsummon' && primaryHero.star === 5) {
+                    if (poolConfig.productType.toLowerCase() === 'shadowsummon' && primaryHero.star === 5) {
                         triggerCount++;
                     } else {
                         if (primaryHero.star === 5 && primaryHero.family && associatedFamilies.includes(String(primaryHero.family).toLowerCase())) {
                             triggerCount++;
                         }
                     }
-
                 }
             });
         }
-        eventStats.bonusLegendary = { success: successCount, triggers: triggerCount };
-    }
 
+        // 关键修正：计算实际概率（除以额外奖励的抽取次数）
+        const bonusPullAmount = poolConfig.bonusLegendaryHeroPullAmount || 1;
+        const actualChancePerMil = poolConfig.bonusLegendaryHeroChancePerMil / bonusPullAmount;
+
+        // 修正触发次数计算：每个符合条件的触发有 bonusPullAmount 次机会
+        const totalTriggerOpportunities = triggerCount * bonusPullAmount;
+
+        eventStats.bonusLegendary = {
+            success: successCount,
+            triggers: totalTriggerOpportunities, // 使用修正后的总触发机会数
+            actualChancePerMil: actualChancePerMil, // 添加实际概率用于调试
+            bonusPullAmount: bonusPullAmount // 添加抽取次数用于调试
+        };
+    }
     // 4. 单次召唤总数统计
     if (poolConfig.additionalDrawWeights) {
         const allOriginalPulls = historyToRender.flatMap(group => group.groupedResults || []);

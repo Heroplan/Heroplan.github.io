@@ -678,8 +678,25 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         if (String(baseHero.family).toLowerCase() === 'classic') {
             return baseHero;
         }
-        const latestVersion = state.latestHeroVersionsMap.get(baseHero.english_name);
-        return latestVersion || baseHero;
+
+        // 在已经过筛选的 `baseHeroPool` (即 masterPoolForBuckets) 中，
+        // 查找此英雄的所有可用版本。
+        const allVersionsInPool = baseHeroPool.filter(h =>
+            h.english_name === baseHero.english_name
+        );
+
+        if (allVersionsInPool.length === 0) {
+            // 理论上不应发生，但作为保险
+            return baseHero;
+        }
+
+        // 从这些“可用”版本中，找到 costume_id 最大的（即最新的）
+        const latestVersionInPool = allVersionsInPool.reduce((latest, current) => {
+            return (current.costume_id > latest.costume_id) ? current : latest;
+        }, allVersionsInPool[0]); // 从找到的第一个版本开始比较
+
+        // 返回在当前奖池中允许的最新版本
+        return latestVersionInPool;
     });
 }
 
@@ -738,20 +755,37 @@ function getAllHeroesInPool(poolConfig) {
             if (heroFamily === 'classic') return true;
             const hotmInfo = summonPoolDetails.hotm;
             if (hotmInfo && heroFamily === String(hotmInfo.family).toLowerCase()) return false;
-            if (hero.star !== 5) return true;
 
-            // 解析英雄的发布日期
+            // --- 逻辑修改开始 ---
+
+            // 解析英雄的发布日期 (所有星级都需要)
             const releaseDateStr = hero['Release date'];
-            if (!releaseDateStr) return false;
+            if (!releaseDateStr) return false; // 没有发布日期的英雄不应被包含
             const heroParts = releaseDateStr.split('-');
             if (heroParts.length !== 3) return false;
             const heroReleaseDate = new Date(Date.UTC(parseInt(heroParts[0], 10), parseInt(heroParts[1], 10) - 1, parseInt(heroParts[2], 10)));
 
-            // 最终判断逻辑：英雄的发布日期必须在 [startDate, baseDate] 这个窗口内
-            const isAfterStartDate = startDate ? heroReleaseDate >= startDate : true; // 如果没有起始日期限制，则此条件为真
+            // 1. 检查“截止日期” (latestIncludedHeroDate)
+            // 这条规则适用于所有星级
             const isBeforeBaseDate = heroReleaseDate <= baseDate;
+            if (!isBeforeBaseDate) {
+                return false; // 无论几星，英雄太新了，排除
+            }
 
-            return isAfterStartDate && isBeforeBaseDate;
+            // 2. 检查“起始日期” (latestIncludedHeroAgeInDays)
+            // 这条规则只适用于 5 星英雄
+            if (hero.star === 5) {
+                // 对于 5 星英雄，必须同时满足“起始日期”
+                const isAfterStartDate = startDate ? heroReleaseDate >= startDate : true;
+                if (!isAfterStartDate) {
+                    return false; // 5星英雄太老了，排除
+                }
+            }
+            // 对于 3 星和 4 星英雄，我们跳过了“起始日期”检查
+            // 因为它已经通过了 isBeforeBaseDate 的检查，所以它应该被包含
+
+            // 3. 英雄通过了所有适用的规则
+            return true;
         });
     }
 

@@ -1042,6 +1042,27 @@ function renderDetailsInModal(hero, context = {}) {
 
                 if (imageModal && imageModalOverlay && imageModalContent) {
                     imageModalContent.src = avatarSrc;
+
+                    // 图片加载完成后计算自适应尺寸
+                    imageModalContent.onload = function () {
+                        const maxWidth = window.innerWidth * 0.85;  // 屏幕宽度的85%
+                        const maxHeight = window.innerHeight * 0.85; // 屏幕高度的85%
+
+                        const imgWidth = this.naturalWidth;
+                        const imgHeight = this.naturalHeight;
+
+                        // 计算自适应比例
+                        const widthRatio = maxWidth / imgWidth;
+                        const heightRatio = maxHeight / imgHeight;
+                        const scale = Math.min(widthRatio, heightRatio, 1); // 不超过原始尺寸
+
+                        // 应用计算后的尺寸
+                        this.style.width = (imgWidth * scale) + 'px';
+                        this.style.height = (imgHeight * scale) + 'px';
+                        this.style.maxWidth = 'none'; // 清除可能存在的max-width限制
+                        this.style.maxHeight = 'none'; // 清除可能存在的max-height限制
+                    };
+
                     imageModal.classList.add('show-hero-portrait');
                     imageModal.classList.remove('hidden');
                     imageModalOverlay.classList.remove('hidden');

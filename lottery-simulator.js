@@ -1892,7 +1892,7 @@ function showSummaryModal(results) {
         }
 
         // 检查是否为可查看详情的真实英雄
-        if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+        if (hero.type !== 'trainer' && hero.originalIndex !== undefined && hero['Release date']) {
             const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
             if (targetHero) {
                 card.classList.add('is-clickable');
@@ -1918,6 +1918,9 @@ function showSummaryModal(results) {
                     });
                 });
             }
+        } else {
+            // 对于没有发布日期的英雄，移除可点击样式
+            card.classList.remove('is-clickable');
         }
 
         scrollContainer.appendChild(card);
@@ -2463,12 +2466,15 @@ function showSinglePullResultsModal(results) {
             card.appendChild(exLabel);
         }
 
-        if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+        if (hero.type !== 'trainer' && hero.originalIndex !== undefined && hero['Release date']) {
             const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
             if (targetHero) {
                 card.classList.add('is-clickable');
                 card.addEventListener('click', () => openDetailsModal(targetHero));
             }
+        } else {
+            // 对于没有发布日期的英雄，移除可点击样式
+            card.classList.remove('is-clickable');
         }
         scrollContainer.appendChild(card);
     });

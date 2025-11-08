@@ -2115,7 +2115,7 @@ function renderSummonHistory() {
             avatarContainer.appendChild(avatar);
 
             // 检查是否为可查看详情的真实英雄
-            if (hero.type !== 'trainer' && hero.originalIndex !== undefined) {
+            if (hero.type !== 'trainer' && hero.originalIndex !== undefined && hero['Release date']) {
                 const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
                 if (targetHero) {
                     avatarContainer.classList.add('is-clickable');

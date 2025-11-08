@@ -422,7 +422,7 @@ function loadStaticCollapseStates() {
  * 绑定页面上所有主要的事件监听器。
  */
 function addEventListeners() {
-    // --- 为图片展示弹窗添加关闭事件 ---
+    // --- 新增：为图片展示弹窗添加关闭事件 ---
     const imageModal = document.getElementById('image-modal');
     const imageModalOverlay = document.getElementById('image-modal-overlay');
     const imageModalCloseBtn = document.getElementById('image-modal-close-btn');
@@ -434,7 +434,6 @@ function addEventListeners() {
             imageModal.classList.remove('show-hero-portrait');
         }
         if (imageModalOverlay) imageModalOverlay.classList.add('hidden');
-        document.body.classList.remove('modal-open');
     };
 
     if (imageModalOverlay) imageModalOverlay.addEventListener('click', closeImageModal);
@@ -918,19 +917,8 @@ function switchTeamTab(toShared) {
 function handlePopState(event) {
     // 1. 优先处理模态框的关闭
     if (state.modalStack.length > 0) {
-        // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
         const modalType = state.modalStack.pop();
-
-        // 特殊处理：当从抽奖结果弹窗打开英雄详情时
-        if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
-            // 执行回调函数（重新显示抽奖结果弹窗）
-            state.modalContext.onClose();
-            state.modalContext = {}; // 清理上下文
-            return;
-        }
-        let modal, overlay;
-
-        // 步骤 1: 检查是否为带有特殊回调的详情弹窗
+        // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
         if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
             // 先隐藏当前的详情弹窗
             uiElements.modal.classList.add('hidden');
@@ -938,34 +926,29 @@ function handlePopState(event) {
 
             // 执行回调（例如：重新显示抽奖结果弹窗）
             state.modalContext.onClose();
-
-        } else {
-            // 步骤 2: 如果不是特殊回调，则执行所有其他弹窗的标准关闭逻辑
-            switch (modalType) {
-                case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
-                case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
-                case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
-                case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
-                case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
-                case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
-                case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
-                case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
-                case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
-                case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
-            }
-            if (modal) modal.classList.add('hidden');
-            if (overlay) overlay.classList.add('hidden');
-
-            if (modal && modal.classList.contains('stacked-modal')) {
-                modal.classList.remove('stacked-modal');
-                if (overlay) overlay.classList.remove('stacked-modal-overlay');
-            }
+            state.modalContext = {}; // 清理上下文，避免重复执行
+            return; // 提前返回，不再执行后续的关闭逻辑
         }
-
-        // 步骤 3: 无论哪个弹窗被关闭，都统一在这里检查堆栈
-        if (state.modalStack.length === 0) {
-            document.body.classList.remove('modal-open');
+        let modal, overlay;
+        switch (modalType) {
+            case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
+            case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
+            case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
+            case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
+            case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
+            case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
+            case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
+            case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
+            case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
+            case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
         }
+        if (modal) modal.classList.add('hidden');
+        if (overlay) overlay.classList.add('hidden');
+        if (modal && modal.classList.contains('stacked-modal')) {
+            modal.classList.remove('stacked-modal');
+            if (overlay) overlay.classList.remove('stacked-modal-overlay');
+        }
+        if (state.modalStack.length === 0) document.body.classList.remove('modal-open');
         return;
     }
 

@@ -920,14 +920,6 @@ function handlePopState(event) {
     if (state.modalStack.length > 0) {
         // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
         const modalType = state.modalStack.pop();
-
-        // 特殊处理：当从抽奖结果弹窗打开英雄详情时
-        if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
-            // 执行回调函数（重新显示抽奖结果弹窗）
-            state.modalContext.onClose();
-            state.modalContext = {}; // 清理上下文
-            return;
-        }
         let modal, overlay;
 
         // 步骤 1: 检查是否为带有特殊回调的详情弹窗

@@ -305,8 +305,11 @@ function openDetailsModal(hero, context = {}) {
     uiElements.modalOverlay.classList.remove('hidden');
     document.body.classList.add('modal-open');
     uiElements.modal.scrollTop = 0;
-    history.pushState({ modal: 'details' }, null); // 添加历史记录
-    state.modalStack.push('details'); // 入栈
+    // 只有在没有特殊回调时才添加历史记录
+    if (!context.onClose) {
+        history.pushState({ modal: 'details' }, null);
+        state.modalStack.push('details');
+    }
 }
 
 function closeDetailsModal() {

@@ -338,7 +338,6 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         if (uiElements.summonSummaryModal && !uiElements.summonSummaryModal.classList.contains('hidden')) {
             history.back();
         }
-        document.body.classList.remove('modal-open');
     };
     document.getElementById('summary-close-btn').addEventListener('click', closeSummaryModal);
     if (uiElements.summonSummaryModalOverlay) {
@@ -372,6 +371,21 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
                 targetPanel.classList.add('active');
             }
         });
+    });
+    // ▼▼▼ 回车键事件屏蔽 ▼▼▼
+    document.addEventListener('keydown', function (event) {
+        // 只在抽奖模拟器激活时处理回车键
+        if (state.lotterySimulatorActive && event.key === 'Enter') {
+            // 阻止默认行为（防止表单提交等）
+            event.preventDefault();
+
+            // 检查是否在输入框等可编辑元素中
+            const activeElement = document.activeElement;
+            const isInputFocused = activeElement &&
+                (activeElement.tagName === 'INPUT' ||
+                    activeElement.tagName === 'TEXTAREA' ||
+                    activeElement.isContentEditable);
+        }
     });
 }
 
@@ -1880,22 +1894,22 @@ function showSummaryModal(results) {
             const targetHero = state.allHeroes.find(h => h.originalIndex === hero.originalIndex);
             if (targetHero) {
                 card.classList.add('is-clickable');
-                card.addEventListener('click', () => {
+                card.addEventListener('click', (event) => {
+                    event.stopPropagation();
+
                     // 先隐藏当前的总结弹窗
                     document.getElementById('summon-summary-modal').classList.add('hidden');
-                    document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
+                    document.getElementById('summon-summary-modal-overlay').classlist.add('hidden');
 
-                    // 打开英雄详情，并传入一个 onClose 回调函数
+                    // 打开英雄详情，并传入回调函数
                     openDetailsModal(targetHero, {
                         onClose: () => {
-                            // 当详情弹窗关闭时，这个函数会被调用
+                            // 当详情弹窗关闭时，重新显示总结弹窗
                             const summaryModal = document.getElementById('summon-summary-modal');
                             const summaryOverlay = document.getElementById('summon-summary-modal-overlay');
                             if (summaryModal && summaryOverlay) {
-                                // 重新显示总结弹窗
                                 summaryModal.classList.remove('hidden');
                                 summaryOverlay.classList.remove('hidden');
-                                // 确保页面依然处于模态框打开状态
                                 document.body.classList.add('modal-open');
                             }
                         }

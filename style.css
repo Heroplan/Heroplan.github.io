@@ -5332,7 +5332,7 @@ html:not(.dark-theme) .color-text-outlined {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   z-index: 1000
 }
 
@@ -6385,3 +6385,105 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
 #donation-list-box.is-scrolling {
   animation: scroll-left linear infinite;
 }
+
+/* 英雄立绘容器样式 */
+.hero-portrait-container {
+  position: relative;
+  display: inline-block;
+  overflow: visible !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 85vw;
+  max-height: 85vh;
+}
+
+/* 光效背景样式 */
+.rays-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.7;
+  pointer-events: none;
+  transition: filter 0.3s ease;
+  max-width: 85vw;
+  max-height: 85vh;
+}
+
+/* 英雄立绘样式 - 预加载状态 */
+.hero-portrait-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 85vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+/* 加载完成后的样式 */
+.hero-portrait-image.loaded {
+  opacity: 1 !important;
+}
+
+/* 光效动画 */
+.rays-background {
+  animation: rotate-rays 20s linear infinite;
+}
+
+@keyframes rotate-rays {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 模态框样式 */
+#image-modal.show-hero-portrait #image-modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 20px;
+  overflow: visible !important;
+}
+
+/* 添加加载中的旋转动画 */
+.hero-portrait-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--md-sys-color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-portrait-container.loading::before {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

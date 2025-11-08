@@ -1026,59 +1026,133 @@ function renderDetailsInModal(hero, context = {}) {
     const avatarContainer = modalContent.querySelector('.hero-avatar-container-modal');
 
     if (hero.heroId && avatarContainer && overlaysContainer) {
-        const avatarSrc = `imgs/avatar/${hero.heroId}.webp`;
+    const avatarSrc = `imgs/avatar/${hero.heroId}.webp`;
 
-        const imgCheck = new Image();
+    const imgCheck = new Image();
 
-        // 如果图片加载成功 (意味着立绘存在)
-        imgCheck.onload = () => {
-            avatarContainer.classList.add('is-clickable');
-            overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
+    // 如果图片加载成功 (意味着立绘存在)
+    imgCheck.onload = () => {
+        avatarContainer.classList.add('is-clickable');
+        overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
 
-            const openImageModal = () => {
-                const imageModal = document.getElementById('image-modal');
-                const imageModalOverlay = document.getElementById('image-modal-overlay');
-                const imageModalContent = document.getElementById('image-modal-content');
+        // 在英雄图标下半部分添加查看立绘提示图标
+        const viewAvatarIcon = document.createElement('img');
+        viewAvatarIcon.src = 'imgs/other/view_avatar.webp';
+        viewAvatarIcon.className = 'view-avatar-icon';
+        viewAvatarIcon.style.position = 'absolute';
+        viewAvatarIcon.style.bottom = '2px';
+        viewAvatarIcon.style.right = '2px';
+        viewAvatarIcon.style.zIndex = '5';
+        viewAvatarIcon.style.width = '16px';
+        viewAvatarIcon.style.height = '16px';
+        viewAvatarIcon.style.opacity = '0.8';
+        viewAvatarIcon.style.pointerEvents = 'none'; // 确保不干扰点击
+        viewAvatarIcon.style.userSelect = 'none'; // 防止用户选择
+        
+        // 将提示图标添加到头像容器
+        avatarContainer.appendChild(viewAvatarIcon);
 
-                if (imageModal && imageModalOverlay && imageModalContent) {
-                    imageModalContent.src = avatarSrc;
+        const openImageModal = () => {
+            const imageModal = document.getElementById('image-modal');
+            const imageModalOverlay = document.getElementById('image-modal-overlay');
+            const imageModalContent = document.getElementById('image-modal-content');
 
-                    // 图片加载完成后计算自适应尺寸
-                    imageModalContent.onload = function () {
-                        const maxWidth = window.innerWidth * 0.85;  // 屏幕宽度的85%
-                        const maxHeight = window.innerHeight * 0.85; // 屏幕高度的85%
+            if (imageModal && imageModalOverlay && imageModalContent) {
+                // 清空之前的内容
+                imageModalContent.innerHTML = '';
+                
+                // 创建英雄立绘容器
+                const portraitContainer = document.createElement('div');
+                portraitContainer.className = 'hero-portrait-container';
+                portraitContainer.style.position = 'relative';
+                portraitContainer.style.display = 'inline-block';
+                portraitContainer.style.maxWidth = '85vw';
+                portraitContainer.style.maxHeight = '85vh';
+                
+                // 创建光效图片（作为子元素）
+                const raysImage = document.createElement('img');
+                raysImage.src = 'imgs/other/circle_rays_new.webp';
+                raysImage.className = 'rays-background';
+                raysImage.style.position = 'absolute';
+                raysImage.style.top = '50%';
+                raysImage.style.left = '50%';
+                raysImage.style.transform = 'translate(-50%, -50%)';
+                raysImage.style.zIndex = '1';
+                raysImage.style.opacity = '0.7';
+                raysImage.style.pointerEvents = 'none';
+                raysImage.style.maxWidth = '85vw';
+                raysImage.style.maxHeight = '85vh';
+                
+                // 根据英雄颜色设置光效滤镜
+                const colorFilter = getColorFilterForHero(hero.color);
+                raysImage.style.filter = colorFilter;
+                
+                // 创建英雄立绘图片
+                const heroImage = document.createElement('img');
+                heroImage.src = avatarSrc;
+                heroImage.className = 'hero-portrait-image';
+                heroImage.style.position = 'relative';
+                heroImage.style.zIndex = '2';
+                heroImage.style.display = 'block';
+                // 先设置最大尺寸限制，防止闪烁
+                heroImage.style.maxWidth = '85vw';
+                heroImage.style.maxHeight = '85vh';
+                heroImage.style.width = 'auto';
+                heroImage.style.height = 'auto';
+                heroImage.style.opacity = '0'; // 初始隐藏，计算完成后再显示
+                
+                // 将光效和立绘添加到容器
+                portraitContainer.appendChild(raysImage);
+                portraitContainer.appendChild(heroImage);
+                imageModalContent.appendChild(portraitContainer);
 
-                        const imgWidth = this.naturalWidth;
-                        const imgHeight = this.naturalHeight;
+                // 图片加载完成后计算精确尺寸
+                heroImage.onload = function () {
+                    const maxWidth = window.innerWidth * 0.85;
+                    const maxHeight = window.innerHeight * 0.85;
 
-                        // 计算自适应比例
-                        const widthRatio = maxWidth / imgWidth;
-                        const heightRatio = maxHeight / imgHeight;
-                        const scale = Math.min(widthRatio, heightRatio, 1); // 不超过原始尺寸
+                    const imgWidth = this.naturalWidth;
+                    const imgHeight = this.naturalHeight;
 
-                        // 应用计算后的尺寸
-                        this.style.width = (imgWidth * scale) + 'px';
-                        this.style.height = (imgHeight * scale) + 'px';
-                        this.style.maxWidth = 'none'; // 清除可能存在的max-width限制
-                        this.style.maxHeight = 'none'; // 清除可能存在的max-height限制
-                    };
+                    // 计算自适应比例
+                    const widthRatio = maxWidth / imgWidth;
+                    const heightRatio = maxHeight / imgHeight;
+                    const scale = Math.min(widthRatio, heightRatio, 1);
 
-                    imageModal.classList.add('show-hero-portrait');
-                    imageModal.classList.remove('hidden');
-                    imageModalOverlay.classList.remove('hidden');
-                }
-            };
+                    // 应用计算后的尺寸
+                    const finalWidth = imgWidth * scale;
+                    const finalHeight = imgHeight * scale;
+                    
+                    // 设置精确尺寸
+                    this.style.width = finalWidth + 'px';
+                    this.style.height = finalHeight + 'px';
+                    
+                    // 设置光效图片的尺寸
+                    raysImage.style.width = (finalWidth * 1.5) + 'px';
+                    raysImage.style.height = (finalHeight * 1.5) + 'px';
+                    
+                    // 显示图片
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 1);
+                };
 
-            overlaysContainer.addEventListener('click', openImageModal);
+                imageModal.classList.add('show-hero-portrait');
+                imageModal.classList.remove('hidden');
+                imageModalOverlay.classList.remove('hidden');
+            }
         };
 
-        // 如果图片加载失败，确保覆盖层恢复不可点击状态
-        imgCheck.onerror = () => {
-            overlaysContainer.style.pointerEvents = 'none';
-        };
+        // 保持原有的点击事件绑定
+        overlaysContainer.addEventListener('click', openImageModal);
+    };
 
-        imgCheck.src = avatarSrc;
-    }
+    imgCheck.onerror = () => {
+        overlaysContainer.style.pointerEvents = 'none';
+    };
+
+    imgCheck.src = avatarSrc;
+}
 }
 
 /**
@@ -1131,4 +1205,22 @@ function renderRedeemCodesModal() {
             redeemButton.classList.add('redeemed'); // 添加一个类，防止重复改变
         }
     });
+}
+
+/**
+ * 根据英雄颜色获取对应的光效滤镜
+ * @param {string} color - 英雄颜色
+ * @returns {string} CSS滤镜字符串
+ */
+function getColorFilterForHero(color) {
+    const colorMap = {
+        'red': 'drop-shadow(0 0 20px #ff7a4c) brightness(1.2)',
+        'blue': 'drop-shadow(0 0 20px #41d8fe) brightness(1.2)',
+        'green': 'drop-shadow(0 0 20px #70e92f) brightness(1.2)',
+        'yellow': 'drop-shadow(0 0 20px #f2e33a) brightness(1.2)',
+        'purple': 'drop-shadow(0 0 20px #e290ff) brightness(1.2)'
+    };
+
+    const englishColor = (colorReverseMap[String(color).toLowerCase()] || color).toLowerCase();
+    return colorMap[englishColor] || colorMap['white']; // 默认使用白色光效
 }

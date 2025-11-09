@@ -29,14 +29,424 @@ const soulExchange = {
     show: false
 }
 
-
-const codes = [
-    "YEAROFTHEALLIANCE2025", "EPMCNAULTY5K", "FACEOFF7GFNFKKE", "FACEOFFKTUG9CP", "FACEOFFMVKVC2CD", "FACEOFF2F9X9B2W",
-    "FACEOFFRWT9TNHB", "FACEOFFRR6APKKM", "FACEOFF3WJSQDBK", "FACEOFF2G6PMV4R", "FACEOFFEK93GXEK", "FACEOFFEAP9BIWJ",
-    "FACEOFFED8D6D9R", "FACEOFFWACY3ZLR", "PSYCROWSIS1YT", "FACEOFFTTG6STTI", "FACEOFF44EXLEYH", "FACEOFFIZN6ZMVO",
-    "FACEOFF79D3LURI", "COMBO5KYT"
+const redeemcodes = [
+    {
+        "code": "FACEOFFRR6APKKM",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_rainbow.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF3WJSQDBK",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_dragon_rainbow_novice.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFRWT9TNHB",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 2
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF2G6PMV4R",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 3
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFEK93GXEK",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/costume_key.webp",
+                "num": 2
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_iron_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFEAP9BIWJ",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 2
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFED8D6D9R",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_rainbow.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFWACY3ZLR",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF7GFNFKKE",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_dragon_rainbow_novice.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFMVKVC2CD",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_ore_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF2F9X9B2W",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_ore_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFKTUG99CP",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/costume_key.webp",
+                "num": 2
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_iron_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFTTG6STTI",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 3
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF44EXLEYH",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_ore_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "FACEOFFIZN6ZMVO",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 3
+            }
+        ]
+    },
+    {
+        "code": "FACEOFF79D3LURI",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 30
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/s1.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "YEAROFTHEALLIANCE2025",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/titan_battle_giant_harpoon.webp",
+                "num": 20
+            },
+            {
+                "img": "imgs/reedcode_reward/tornado.webp",
+                "num": 25
+            }
+        ]
+    },
+    {
+        "code": "EPMCNAULTY5K",
+        "rewards": [
+            {
+                "img": "imgs/coins/s1.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_s1_coin.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "PSYCROWSIS1YT",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/red_lucky.webp",
+                "num": 10
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_silver_coin.webp",
+                "num": 10
+            },
+            {
+                "img": "imgs/reedcode_reward/dragonpass_icon_currency.webp",
+                "num": 300
+            }
+        ]
+    },
+    {
+        "code": "COMBO5KYT",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/tower.webp",
+                "num": 50
+            },
+            {
+                "img": "imgs/reedcode_reward/rainbow_epic_trainer.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_iron_500k.webp",
+                "num": 1
+            }
+        ]
+    }
 ];
-
 // --- 捐赠名单 ---
 const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇"];
 
@@ -152,7 +562,7 @@ const sourceIconMap = {
     "astral": "astralelves.webp",
     "wilderness": "wilderness.webp",
     "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
-    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "mimic.webp", "temple": "temple.webp", 
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "mimic.webp", "temple": "temple.webp",
 };
 
 // 颜色名称 -> 标准英文名

@@ -396,7 +396,7 @@ function closeLbTalentHelpModal() {
  * 更新兑换码悬浮按钮上的数量。
  */
 function updateRedeemCodeCount() {
-    const count = codes ? codes.length : 0;
+    const count = redeemcodes ? redeemcodes.length : 0;
     const countElement = document.getElementById('redeem-code-count');
     if (countElement) {
         countElement.textContent = count;

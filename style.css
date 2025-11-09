@@ -5992,7 +5992,7 @@ body.modal-open {
   flex-direction: column;
 }
 
-/* --- 兑换码模态框美化样式 (v4 - 移除复制按钮) --- */
+/* --- 兑换码模态框美化样式 --- */
 
 /* 标题居中 */
 #redeem-codes-modal .filters-modal-header h2 {
@@ -6003,74 +6003,183 @@ body.modal-open {
 
 /* 内容区域 */
 #redeem-codes-content {
-  padding: 0 2rem;
+  padding: 0 1rem;
+  /* 移动端减少内边距 */
   max-height: 60vh;
   overflow-y: auto;
 }
 
-/* 每一行兑换码 */
+/* 兑换码模态框升级样式 */
 .redeem-code-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  justify-content: space-between;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+  gap: 0.5rem;
+  min-height: 60px;
+  /* 确保最小高度，避免内容被压缩 */
 }
 
 .redeem-code-row:last-child {
   border-bottom: none;
 }
 
-/* 兑换码文本 */
-.code-text {
-  font-family: monospace;
-  font-size: 1.2em;
+.rewards-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.3rem;
+  overflow: hidden;
+  /* 防止内容溢出 */
+}
+
+.reward-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* 防止奖励项被压缩 */
+  min-width: 40px;
+  /* 最小宽度 */
+}
+
+.reward-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 4px;
+  background-color: var(--md-sys-color-surface-variant);
+  padding: 4px;transition: all 0.2s ease;
+}
+
+.reward-count {
+  font-size: 0.75rem;
   font-weight: bold;
   color: var(--md-sys-color-on-surface);
-  margin-right: 1.5rem;
-  word-break: break-all;
+  margin-top: 2px;
+  white-space: nowrap;
+  /* 防止数量文本换行 */
 }
 
-/* 按钮容器 */
 .redeem-code-actions {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
   flex-shrink: 0;
+  /* 防止按钮区域被压缩 */
+  min-width: 80px;
+  /* 最小宽度 */
 }
 
-/* 兑换按钮 */
-.redeem-btn {
-  flex-shrink: 0;
-  padding: 0.5rem 1rem;
-  min-width: 110px;
-  /* 为桌面端设置最小宽度 */
+.code-text {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--md-sys-color-on-surface);
+  word-break: break-all;
   text-align: center;
-  text-decoration: none;
-  justify-content: center;
-  /* 确保按钮内文本和图标居中 */
+  width: 100%;
+  line-height: 1.2;
 }
 
-/* ========== 移动端适配 ========== */
+.redeem-btn {
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  width: 100%;
+  min-width: 60px;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-size: 0.85rem;
+}
+
+.redeem-btn.redeemed {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* 移动端适配 - 重点优化 */
 @media (max-width: 768px) {
   #redeem-codes-content {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
+    /* 移动端进一步减少内边距 */
   }
 
   .redeem-code-row {
-    padding: 0.75rem 0;
+    flex-direction: row;
+    /* 确保水平排列 */
+    align-items: center;
+    padding: 0.6rem 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .rewards-container {
+    width: 70%;
+    /* 奖励占70%宽度 */
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    /* 防止换行 */
+    overflow-x: auto;
+    /* 如果奖励太多允许横向滚动 */
+    -webkit-overflow-scrolling: touch;
+    /* iOS平滑滚动 */
+  }
+
+  /* 奖励图标自适应缩放 */
+  .reward-item {
+    flex: 0 0 auto;
+    /* 不伸缩，不收缩，自动基础大小 */
+    min-width: 35px;
+    /* 更小的最小宽度 */
+  }
+
+  .reward-icon {
+    width: 30px;
+    /* 固定宽度 */
+    height: 30px;
+    /* 固定高度 */
+    max-width: none;
+    /* 覆盖之前的max-width */
+  }
+
+  .reward-count {
+    font-size: 0.7rem;
+    /* 更小的字体 */
+  }
+
+  .redeem-code-actions {
+    width: 28%;
+    /* 按钮区域占28% */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    /* 更小的最小宽度 */
   }
 
   .code-text {
-    font-size: 0.9em;
-    margin-right: 0.75rem;
+    font-size: 0.65rem;
+    /* 更小的字体 */
+    line-height: 1.1;
   }
 
   .redeem-btn {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8em;
-    min-width: 80px;
-    /* 为移动端设置一个较小的最小宽度 */
+    min-width: 50px;
+    /* 更小的最小宽度 */
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+    height: 28px;
   }
 }
+
 
 /* --- 新增：单抽结果专属模态框样式 --- */
 

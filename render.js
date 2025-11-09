@@ -1161,55 +1161,68 @@ function renderDetailsInModal(hero, context = {}) {
 }
 
 /**
- * 动态渲染可用的兑换码到模态框中。
+ * 渲染兑换码模态框内容（升级版）
  */
 function renderRedeemCodesModal() {
     const langDict = i18n[state.currentLang];
     const contentEl = document.getElementById('redeem-codes-content');
 
-    const html = codes.map(code => {
-        const isRedeemed = state.redeemedCodes.has(code);
+    contentEl.innerHTML = '';
+
+    redeemcodes.forEach(codeData => {
+        const isRedeemed = state.redeemedCodes.has(codeData.code);
         const buttonText = isRedeemed ? `${langDict.redeemBtn} ✅` : langDict.redeemBtn;
         const buttonClass = isRedeemed ? 'action-button redeem-btn redeemed' : 'action-button redeem-btn';
 
-        return `
+        // 创建奖励物品HTML
+        const rewardsHTML = codeData.rewards.map(reward => `
+            <div class="reward-item">
+                <img src="${reward.img}" alt="Reward Image" class="reward-icon">
+                <span class="reward-count">×${reward.num}</span>
+            </div>
+        `).join('');
+
+        const codeRowHTML = `
             <div class="redeem-code-row">
-                <span class="code-text">${code}</span>
+                <div class="rewards-container">
+                    ${rewardsHTML}
+                </div>
                 <div class="redeem-code-actions">
-                    <a href="https://www.empiresandpuzzles.com/redeem?code=${code}" 
+                <span class="code-text">${codeData.code}</span>
+                    <a href="https://www.empiresandpuzzles.com/redeem?code=${codeData.code}" 
                        target="_blank" 
                        rel="noopener noreferrer" 
                        class="${buttonClass}" 
-                       data-code="${code}">
+                       data-code="${codeData.code}">
                        ${buttonText}
                     </a>
                 </div>
             </div>
         `;
-    }).join('');
 
-    contentEl.innerHTML = html;
+        contentEl.innerHTML += codeRowHTML;
+    })
 
-    // 使用事件委托来处理所有兑换按钮的点击事件
+    // 添加事件监听器
     contentEl.addEventListener('click', function (event) {
         const redeemButton = event.target.closest('.redeem-btn');
-        // 检查是否点击了兑换按钮，并且该按钮还没有被点击过
-        if (redeemButton && !redeemButton.classList.contains('redeemed')) {
+        if (redeemButton) {
             const code = redeemButton.dataset.code;
             if (code) {
-                state.redeemedCodes.add(code); // 将兑换码添加到会话状态中
-                // ▼▼▼ 将更新后的兑换码保存到localStorage ▼▼▼
+                state.redeemedCodes.add(code);
                 try {
-                    // 将Set转换为数组，再转换为JSON字符串
                     localStorage.setItem('redeemedCodes', JSON.stringify(Array.from(state.redeemedCodes)));
                 } catch (e) {
                     console.error("无法保存兑换码到 localStorage:", e);
                 }
+                redeemButton.innerHTML = `${langDict.redeemBtn} ✅`;
+                redeemButton.classList.add('redeemed');
             }
-            redeemButton.innerHTML = `${langDict.redeemBtn} ✅`; // 改变按钮文本
-            redeemButton.classList.add('redeemed'); // 添加一个类，防止重复改变
         }
     });
+
+    // 更新兑换码数量显示
+    updateRedeemCodeCount();
 }
 
 /**

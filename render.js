@@ -1034,6 +1034,22 @@ function renderDetailsInModal(hero, context = {}) {
         imgCheck.onload = () => {
             avatarContainer.classList.add('is-clickable');
             overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
+            // 在英雄图标下半部分添加查看立绘提示图标
+            const viewAvatarIcon = document.createElement('img');
+            viewAvatarIcon.src = 'imgs/other/view_avatar.webp';
+            viewAvatarIcon.className = 'view-avatar-icon';
+            viewAvatarIcon.style.position = 'absolute';
+            viewAvatarIcon.style.top = '33px';
+            viewAvatarIcon.style.right = '9px';
+            viewAvatarIcon.style.zIndex = '5';
+            viewAvatarIcon.style.width = '32px';
+            viewAvatarIcon.style.height = '32px';
+            viewAvatarIcon.style.opacity = '1';
+            viewAvatarIcon.style.pointerEvents = 'none'; // 确保不干扰点击
+            viewAvatarIcon.style.userSelect = 'none'; // 防止用户选择
+
+            // 将提示图标添加到头像容器
+            avatarContainer.appendChild(viewAvatarIcon);
 
             const openImageModal = () => {
                 const imageModal = document.getElementById('image-modal');

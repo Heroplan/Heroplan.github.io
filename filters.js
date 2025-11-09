@@ -610,7 +610,21 @@ function applyFiltersAndRender() {
         }
 
         // 文本筛选
-        if (nameFilter && !hero.name.toLowerCase().includes(nameFilter)) return false;
+        // ▼▼▼ 名字筛选逻辑：空格作为"且"条件 ▼▼▼
+        if (nameFilter) {
+            const searchTerms = nameFilter.split(/\s+/).filter(term => term.length > 0);
+            let heroName = hero.name.toLowerCase();
+
+            // 如果搜索词包含空格，进行"且"匹配
+            if (searchTerms.length > 1) {
+                // 所有搜索词都必须出现在英雄名字中
+                const allTermsMatch = searchTerms.every(term => heroName.includes(term));
+                if (!allTermsMatch) return false;
+            } else if (searchTerms.length === 1) {
+                // 单个词进行普通包含匹配
+                if (!heroName.includes(searchTerms[0])) return false;
+            }
+        }
         if (effectsFilter && !matchesComplexQuery(hero.effects, effectsFilter)) return false;
         if (passivesFilter && !matchesComplexQuery(hero.passives, passivesFilter)) return false;
         if (skillTypeFilter) {

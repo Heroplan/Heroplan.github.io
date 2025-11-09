@@ -470,9 +470,10 @@ function renderDetailsInModal(hero, context = {}) {
     }
 
     // 现在，正确地使用所有三个变量来构建最终的HTML
+    // 使用英文名进行筛选，而不是当前语言显示的名字
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
-        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
+        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${hero.english_name || englishName || mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
         ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
     `;
 

@@ -5354,23 +5354,6 @@ html:not(.dark-theme) .color-text-outlined {
   display: block
 }
 
-#image-modal-close-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 30px;
-  height: 30px;
-  background: white;
-  border-radius: 50%;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
-}
-
 /* --- 【核心修正】仅用于英雄立绘展示的特定样式 --- */
 /* (这里的样式只会在点击英雄头像时生效) */
 #image-modal.show-hero-portrait {

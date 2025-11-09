@@ -1052,6 +1052,9 @@ function renderDetailsInModal(hero, context = {}) {
                     portraitContainer.style.maxWidth = '85vw';
                     portraitContainer.style.maxHeight = '85vh';
 
+                    // 添加点击关闭功能
+                    portraitContainer.addEventListener('click', closeHeroPortraitModal);
+
                     // 创建光效图片（作为子元素）
                     const raysImage = document.createElement('img');
                     raysImage.src = 'imgs/other/circle_rays_new.webp';
@@ -1077,12 +1080,14 @@ function renderDetailsInModal(hero, context = {}) {
                     heroImage.style.position = 'relative';
                     heroImage.style.zIndex = '2';
                     heroImage.style.display = 'block';
-                    // 先设置最大尺寸限制，防止闪烁
                     heroImage.style.maxWidth = '85vw';
                     heroImage.style.maxHeight = '85vh';
                     heroImage.style.width = 'auto';
                     heroImage.style.height = 'auto';
-                    heroImage.style.opacity = '0'; // 初始隐藏，计算完成后再显示
+                    heroImage.style.opacity = '0';
+
+                    // 立绘图片也要添加点击关闭功能
+                    heroImage.addEventListener('click', closeHeroPortraitModal);
 
                     // 将光效和立绘添加到容器
                     portraitContainer.appendChild(raysImage);
@@ -1097,33 +1102,33 @@ function renderDetailsInModal(hero, context = {}) {
                         const imgWidth = this.naturalWidth;
                         const imgHeight = this.naturalHeight;
 
-                        // 计算自适应比例
                         const widthRatio = maxWidth / imgWidth;
                         const heightRatio = maxHeight / imgHeight;
                         const scale = Math.min(widthRatio, heightRatio, 1);
 
-                        // 应用计算后的尺寸
                         const finalWidth = imgWidth * scale;
                         const finalHeight = imgHeight * scale;
 
-                        // 设置精确尺寸
                         this.style.width = finalWidth + 'px';
                         this.style.height = finalHeight + 'px';
 
-                        // 设置光效图片的尺寸
                         raysImage.style.width = (finalWidth * 1.5) + 'px';
                         raysImage.style.height = (finalHeight * 1.5) + 'px';
 
-                        // 淡入显示图片
                         setTimeout(() => {
                             this.style.opacity = '1';
                             this.style.transition = 'opacity 0.3s ease';
                         }, 10);
                     };
 
+                    // 显示立绘模态框并添加到堆栈
                     imageModal.classList.add('show-hero-portrait');
                     imageModal.classList.remove('hidden');
                     imageModalOverlay.classList.remove('hidden');
+
+                    // 关键修改：将立绘模态框加入到模态框堆栈
+                    history.pushState({ modal: 'heroPortrait' }, null);
+                    state.modalStack.push('heroPortrait');
                 }
             };
 

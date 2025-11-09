@@ -920,6 +920,10 @@ function handlePopState(event) {
     if (state.modalStack.length > 0) {
         // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
         const modalType = state.modalStack.pop();
+        if (modalType === 'heroPortrait') {
+            closeHeroPortraitModal();
+            return; // 立即返回，不执行后续逻辑
+        }
         let modal, overlay;
 
         // 步骤 1: 检查是否为带有特殊回调的详情弹窗

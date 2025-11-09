@@ -427,3 +427,31 @@ function scrollToTableTop() {
         });
     }
 }
+
+/**
+ * 关闭英雄立绘模态框
+ */
+function closeHeroPortraitModal() {
+    const imageModal = document.getElementById('image-modal');
+    const imageModalOverlay = document.getElementById('image-modal-overlay');
+
+    if (imageModal && !imageModal.classList.contains('hidden')) {
+        imageModal.classList.add('hidden');
+        imageModalOverlay.classList.add('hidden');
+
+        // 移除尺寸控制类
+        imageModal.classList.remove('show-hero-portrait');
+
+        // 从堆栈中移除立绘模态框状态
+        if (state.modalStack.length > 0 && state.modalStack[state.modalStack.length - 1] === 'heroPortrait') {
+            state.modalStack.pop();
+            // 更新 lastModal 变量
+            lastModal = state.modalStack.length > 0 ? state.modalStack[state.modalStack.length - 1] : null;
+        }
+
+        // 检查是否还有其他模态框打开
+        if (state.modalStack.length === 0) {
+            document.body.classList.remove('modal-open');
+        }
+    }
+}

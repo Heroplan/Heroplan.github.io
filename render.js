@@ -1103,7 +1103,7 @@ function renderDetailsInModal(hero, context = {}) {
                     heroImage.style.height = 'auto';
                     heroImage.style.opacity = '0';
 
-                    // 立绘图片也要添加点击关闭功能
+                    // 立绘图片添加点击关闭功能
                     heroImage.addEventListener('click', closeHeroPortraitModal);
 
                     // 将光效和立绘添加到容器
@@ -1143,7 +1143,7 @@ function renderDetailsInModal(hero, context = {}) {
                     imageModal.classList.remove('hidden');
                     imageModalOverlay.classList.remove('hidden');
 
-                    // 关键修改：将立绘模态框加入到模态框堆栈
+                    // 将立绘模态框加入到模态框堆栈
                     history.pushState({ modal: 'heroPortrait' }, null);
                     state.modalStack.push('heroPortrait');
                 }

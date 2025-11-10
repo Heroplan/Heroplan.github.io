@@ -425,20 +425,12 @@ function addEventListeners() {
     // --- 为图片展示弹窗添加关闭事件 ---
     const imageModal = document.getElementById('image-modal');
     const imageModalOverlay = document.getElementById('image-modal-overlay');
-    const imageModalCloseBtn = document.getElementById('image-modal-close-btn');
 
-    const closeImageModal = () => {
-        if (imageModal) {
-            imageModal.classList.add('hidden');
-            // 关闭时移除尺寸控制类，以免影响其他功能
-            imageModal.classList.remove('show-hero-portrait');
-        }
-        if (imageModalOverlay) imageModalOverlay.classList.add('hidden');
-        document.body.classList.remove('modal-open');
-    };
-
-    if (imageModalOverlay) imageModalOverlay.addEventListener('click', closeImageModal);
-    if (imageModalCloseBtn) imageModalCloseBtn.addEventListener('click', closeImageModal);
+    if (imageModalOverlay) {
+        imageModalOverlay.addEventListener('click', function (event) {
+            history.back();
+        });
+    }
     const {
         themeToggleButton, langSelectBtn, langOptions, openFiltersBtn, closeFiltersModalBtn, filtersModalOverlay,
         showWantedMissionBtn, showFarmingGuideBtn, showTeamSimulatorBtn,

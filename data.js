@@ -445,6 +445,19 @@ const redeemcodes = [
                 "num": 1
             }
         ]
+    },
+    {
+        "code": "OFFICEBREAKFAST",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 2
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_250k.webp",
+                "num": 2
+            }
+        ]
     }
 ];
 // --- 捐赠名单 ---

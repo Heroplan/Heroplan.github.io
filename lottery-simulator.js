@@ -1279,7 +1279,13 @@ async function handleActivityClick(poolId) {
                 // 添加战斗指南按钮 (A/B 路径逻辑)
                 let buttonPositionLeft = 48; // infoIcon.left (10) + infoIcon.width (30) + gap (8)
                 const buttonGap = 38; // width (30) + gap (8)
-                const basePath = `imgs/quest_event_guide/${poolConfig.id}`;
+                let basePath;
+                if (poolConfig.id === 'lottery_super_elemental' && state.selectedElementalColor) {
+                    // 特殊格式: lottery_super_elemental_颜色.webp
+                    basePath = `imgs/quest_event_guide/lottery_super_elemental_${state.selectedElementalColor}`;
+                } else {
+                    basePath = `imgs/quest_event_guide/${poolConfig.id}`;
+                }
 
                 // --- 辅助函数：用于检查文件是否存在 ---
                 const checkFileExists = async (url) => {

@@ -205,6 +205,61 @@
                     <a id="calendar-btn" href="calendar.webp" target="_blank" class="theme-toggle-btn">
                         <span>📅</span>
                     </a>
+                    
+                    <script>
+                        // 获取日历按钮元素
+                        const calendarBtn = document.getElementById('calendar-btn');
+
+                        // 设置长按时间阈值（毫秒）
+                        const longPressDuration = 500;
+                        let pressTimer;
+
+                        // 鼠标/触摸按下事件
+                        calendarBtn.addEventListener('mousedown', startPressTimer);
+                        calendarBtn.addEventListener('touchstart', startPressTimer);
+
+                        // 鼠标/触摸释放事件
+                        calendarBtn.addEventListener('mouseup', cancelPressTimer);
+                        calendarBtn.addEventListener('mouseleave', cancelPressTimer);
+                        calendarBtn.addEventListener('touchend', cancelPressTimer);
+                        calendarBtn.addEventListener('touchcancel', cancelPressTimer);
+
+                        function startPressTimer(e) {
+                            // 阻止默认行为（如触摸设备的上下文菜单）
+                            e.preventDefault();
+
+                            // 设置定时器
+                            pressTimer = setTimeout(() => {
+                                // 长按后修改href属性
+                                calendarBtn.href = 'calendar2.webp';
+
+                                // 模拟点击打开链接
+                                const newTab = window.open(calendarBtn.href, '_blank');
+
+                                // 如果不是触摸设备，可能需要手动聚焦新标签页
+                                if (newTab) {
+                                    newTab.focus();
+                                }
+
+                                // 短暂延迟后恢复原始链接
+                                setTimeout(() => {
+                                    calendarBtn.href = 'calendar.webp';
+                                }, 100);
+                            }, longPressDuration);
+                        }
+
+                        function cancelPressTimer() {
+                            // 清除定时器
+                            clearTimeout(pressTimer);
+                        }
+
+                        // 正常点击事件（防止长按后也触发点击）
+                        calendarBtn.addEventListener('click', function (e) {
+                            if (calendarBtn.href === 'calendar2.webp') {
+                                e.preventDefault();
+                            }
+                        });
+                    </script>
                     <button id="theme-toggle-btn" class="theme-toggle-btn">
                         <span class="sun-icon">☀️</span>
                         <span class="moon-icon">🌙</span>

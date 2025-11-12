@@ -207,58 +207,59 @@
                     </a>
                     
                     <script>
-                        // 获取日历按钮元素
                         const calendarBtn = document.getElementById('calendar-btn');
-
-                        // 设置长按时间阈值（毫秒）
-                        const longPressDuration = 500;
+                        const longPressDuration = 500; // 长按时间阈值（毫秒）
                         let pressTimer;
+                        let isLongPress = false; // 标记是否为长按
 
-                        // 鼠标/触摸按下事件
+                        // 触摸/鼠标按下事件
                         calendarBtn.addEventListener('mousedown', startPressTimer);
-                        calendarBtn.addEventListener('touchstart', startPressTimer);
+                        calendarBtn.addEventListener('touchstart', startPressTimer, { passive: false });
 
-                        // 鼠标/触摸释放事件
-                        calendarBtn.addEventListener('mouseup', cancelPressTimer);
-                        calendarBtn.addEventListener('mouseleave', cancelPressTimer);
-                        calendarBtn.addEventListener('touchend', cancelPressTimer);
-                        calendarBtn.addEventListener('touchcancel', cancelPressTimer);
+                        // 触摸/鼠标释放事件
+                        calendarBtn.addEventListener('mouseup', endPress);
+                        calendarBtn.addEventListener('mouseleave', endPress);
+                        calendarBtn.addEventListener('touchend', endPress);
+                        calendarBtn.addEventListener('touchcancel', endPress);
 
                         function startPressTimer(e) {
-                            // 阻止默认行为（如触摸设备的上下文菜单）
-                            e.preventDefault();
+                            // 如果是触摸事件，阻止默认行为（如上下文菜单）
+                            if (e.type === 'touchstart') {
+                                e.preventDefault();
+                            }
 
-                            // 设置定时器
+                            isLongPress = false;
                             pressTimer = setTimeout(() => {
-                                // 长按后修改href属性
-                                calendarBtn.href = 'calendar2.webp';
-
-                                // 模拟点击打开链接
-                                const newTab = window.open(calendarBtn.href, '_blank');
-
-                                // 如果不是触摸设备，可能需要手动聚焦新标签页
-                                if (newTab) {
-                                    newTab.focus();
-                                }
-
-                                // 短暂延迟后恢复原始链接
-                                setTimeout(() => {
-                                    calendarBtn.href = 'calendar.webp';
-                                }, 100);
+                                isLongPress = true;
+                                // 长按时打开calendar2.webp
+                                window.open('calendar2.webp', '_blank');
                             }, longPressDuration);
                         }
 
-                        function cancelPressTimer() {
-                            // 清除定时器
+                        function endPress(e) {
                             clearTimeout(pressTimer);
+
+                            // 如果是触摸结束事件且不是长按，执行点击操作
+                            if ((e.type === 'touchend' || e.type === 'mouseup') && !isLongPress) {
+                                // 允许默认的点击行为（打开calendar.webp）
+                                return true;
+                            }
+
+                            // 如果是长按，阻止默认的点击行为
+                            if (isLongPress) {
+                                if (e.type === 'touchend') {
+                                    e.preventDefault();
+                                }
+                            }
                         }
 
-                        // 正常点击事件（防止长按后也触发点击）
+                        // 防止在移动端点击时触发长按后的点击
                         calendarBtn.addEventListener('click', function (e) {
-                            if (calendarBtn.href === 'calendar2.webp') {
+                            if (isLongPress) {
                                 e.preventDefault();
+                                e.stopPropagation();
                             }
-                        });
+                        }, true);
                     </script>
                     <button id="theme-toggle-btn" class="theme-toggle-btn">
                         <span class="sun-icon">☀️</span>

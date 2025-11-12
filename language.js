@@ -283,6 +283,7 @@ const i18n = {
         summonHistoryTitle: "召唤历史记录",
         lotteryTabHistory: "历史记录",
         probabilityInfoTitle: "概率详情",
+        StageGuideTitle: "关卡指南",
         probabilityInfoIntro: "当前卡池的召唤概率:",
         lottery_bucket_translations: { 
             // 抽奖详情桶翻译
@@ -581,6 +582,7 @@ const i18n = {
         summonHistoryTitle: "召喚歷史",
         lotteryTabHistory: "歷史記錄",
         probabilityInfoTitle: "機率詳情",
+        StageGuideTitle: "關卡指南",
         probabilityInfoIntro: "當前卡池的召喚機率:", 
         lottery_bucket_translations: {
             // 抽獎詳情桶翻譯
@@ -877,6 +879,7 @@ const i18n = {
         summonHistoryTitle: "Summon History",
         lotteryTabHistory: "History",
         probabilityInfoTitle: "Probability Details",
+        StageGuideTitle: "Stage Guide",
         probabilityInfoIntro: "Summon probabilities for the current pool:",
         lottery_bucket_translations: {
             // Summon details bucket translations

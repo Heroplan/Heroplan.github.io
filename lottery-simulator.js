@@ -1115,6 +1115,8 @@ async function handleActivityClick(poolId) {
     }
     if (portalContainer) {
         portalContainer.querySelector('.probability-info-icon')?.remove();
+        // 移除所有旧的战斗指南按钮
+        portalContainer.querySelectorAll('.guide-button').forEach(btn => btn.remove());
         if (poolConfig.bucketConfig && poolConfig.bucketWeights) {
             const infoIcon = document.createElement('div');
             infoIcon.className = 'probability-info-icon';
@@ -1268,13 +1270,57 @@ async function handleActivityClick(poolId) {
                 }
             }, 0);
 
-            // 【核心修正】将图标添加到 .lottery-content-overlay 内部，
+            // 将图标添加到 .lottery-content-overlay 内部，
             // 而不是 portalContainer，以确保它们在同一个堆叠上下文中。
             const contentOverlay = portalContainer.querySelector('.lottery-content-overlay');
             if (contentOverlay) {
                 contentOverlay.appendChild(infoIcon);
+
+                // 添加战斗指南按钮 (A/B 路径逻辑)
+                let buttonPositionLeft = 48; // infoIcon.left (10) + infoIcon.width (30) + gap (8)
+                const buttonGap = 38; // width (30) + gap (8)
+                const basePath = `imgs/quest_event_guide/${poolConfig.id}`;
+
+                // --- 辅助函数：用于路径B的循环检查 ---
+                const checkAndLoop = (index, leftPos) => {
+                    if (index > 5) return; // 最多检查5个 (e.g., _1 到 _5)
+
+                    const path = `${basePath}_${index}.webp`;
+                    const button = createGuideButton(path, '⚔️');
+                    button.style.left = `${leftPos}px`;
+
+                    const checker = button.querySelector('img');
+
+                    checker.onload = () => {
+                        // 文件存在! 添加按钮
+                        contentOverlay.appendChild(button);
+                        // 检查下一个
+                        checkAndLoop(index + 1, leftPos + buttonGap);
+                    };
+
+                    checker.onerror = () => {
+                        // 文件不存在。停止循环。
+                    };
+                };
+
+                // --- 启动逻辑：首先检查基础文件 (路径A) ---
+                const baseGuidePath = `${basePath}.webp`;
+                const baseButton = createGuideButton(baseGuidePath, '⚔️');
+                baseButton.style.left = `${buttonPositionLeft}px`;
+                const baseChecker = baseButton.querySelector('img');
+
+                baseChecker.onload = () => {
+                    // 路径 A: 基础文件存在。添加它并停止。
+                    contentOverlay.appendChild(baseButton);
+                };
+
+                baseChecker.onerror = () => {
+                    // 路径 B: 基础文件不存在。启动循环检查 _1。
+                    checkAndLoop(1, buttonPositionLeft);
+                };
+
             } else {
-                portalContainer.appendChild(infoIcon); // Fallback in case structure changes
+                portalContainer.appendChild(infoIcon);
             }
         }
     }
@@ -2485,4 +2531,33 @@ function showSinglePullResultsModal(results) {
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'summonSummary' }, null);
     state.modalStack.push('summonSummary');
+}
+
+/**
+ * 创建一个战斗指南按钮, 并附加一个隐藏的图片用于检查文件是否存在。
+ * 如果图片加载失败 (404), 按钮将自动隐藏。
+ * @param {string} imagePath - 战斗指南图片的路径
+ * @param {string} buttonText - 按钮上显示的文本 (例如 "⚔️")
+ * @returns {HTMLElement} - 返回 <a> 按钮元素
+ */
+function createGuideButton(imagePath, buttonText) {
+    const button = document.createElement('a');
+    button.href = imagePath;
+    button.target = '_blank';
+    button.rel = 'noopener noreferrer';
+    button.className = 'guide-button'; // Styled in style.css
+    button.textContent = buttonText;
+    button.title = i18n[state.currentLang].StageGuideTitle || '关卡指南'; // Show filename on hover
+
+    // 创建一个隐藏的图片用于 404 检查
+    const checkerImg = document.createElement('img');
+    checkerImg.src = imagePath;
+    checkerImg.style.display = 'none';
+    checkerImg.onerror = () => {
+        button.style.display = 'none'; // 加载失败时隐藏按钮
+    };
+
+    button.appendChild(checkerImg);
+
+    return button;
 }

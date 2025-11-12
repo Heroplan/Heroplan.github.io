@@ -4548,10 +4548,10 @@ select.custom-select-hidden {
 }
 
 /* ========== 抽奖概率说明图标样式 ========== */
-.probability-info-icon {
+.probability-info-icon,
+.guide-button {
   position: absolute;
   top: 10px;
-  left: 10px;
   z-index: 3;
   /* 确保在内容层之上 */
   width: 30px;
@@ -4566,7 +4566,11 @@ select.custom-select-hidden {
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+.probability-info-icon {
+  left: 10px;
 }
 
 .probability-info-icon:hover {

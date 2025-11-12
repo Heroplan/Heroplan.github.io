@@ -72,29 +72,34 @@
         "id": "lottery_featured_alliance_quest_musketeers",
         "banner": "event_lotterybanner_beautybeast",
         "lotterybg": "event_lotterybg_beautybeast",
-        "gemPrice": 300,
+        "gemPrice": 350,
         "amount": 1,
-        "uiPriority": 80,
+        "uiPriority": 149,
         "advertisedHero": "musketeer_dartagnan",
         "associatedEvent": "AllianceQuestMusketeers",
+        "bonusChest": "alliance_quest_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
         "bucketWeights": [
-            473,
-            185,
+            643,
+            208,
             12,
-            237,
-            80,
+            67,
+            57,
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "includeCostumes": true
     },
     {
         "productType": "AllianceEventSummon",
         "id": "lottery_featured_alliance_quest_musketeers_bulk",
-        "banner": "event_lotterybanner_castle",
-        "gemPrice": 2600,
+        "gemPrice": 3000,
         "sourceProductId": "lottery_featured_alliance_quest_musketeers",
-        "amount": 10
+        "amount": 10,
+        "includeCostumes": true
     },
     {
         "productType": "AstralElvesSummon",

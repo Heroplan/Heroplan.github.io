@@ -227,6 +227,16 @@
                         calendarBtn.addEventListener('mouseleave', endPress);
                         calendarBtn.addEventListener('touchend', endPress);
                         calendarBtn.addEventListener('touchcancel', endPress);
+                        // 针对 Firefox 触发上下文菜单的关键修复
+                            calendarBtn.addEventListener('contextmenu', function (e) {
+                                // 阻止默认的上下文菜单弹出行为
+                                e.preventDefault();
+                                // 如果是长按逻辑已经执行，不需要再做其他事情
+                                if (isLongPress) {
+                                    return false;
+                                }
+                                // 对于短按，允许其他行为继续（虽然 click 已经被阻止，但确保没有菜单干扰）
+                            });
 
                         function startPressTimer(e) {
                             // 对于触摸事件，不需要在按下时立即阻止默认行为

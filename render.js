@@ -1023,140 +1023,146 @@ function renderDetailsInModal(hero, context = {}) {
         applyFiltersAndRender();
     });
 
-    // --- 新增逻辑：检查立绘是否存在并绑定点击事件 ---
+    // --- 检查立绘是否存在并绑定点击事件 ---
     const avatarContainer = modalContent.querySelector('.hero-avatar-container-modal');
 
     if (hero.heroId && avatarContainer && overlaysContainer) {
         const avatarSrc = `imgs/avatar/${hero.heroId}.webp`;
 
-        const imgCheck = new Image();
-
-        // 如果图片加载成功 (意味着立绘存在)
-        imgCheck.onload = () => {
-            avatarContainer.classList.add('is-clickable');
-            overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
-            // 在英雄图标下半部分添加查看立绘提示图标
-            const viewAvatarIcon = document.createElement('img');
-            viewAvatarIcon.src = 'imgs/other/view_avatar.webp';
-            viewAvatarIcon.className = 'view-avatar-icon';
-            viewAvatarIcon.style.position = 'absolute';
-            viewAvatarIcon.style.top = '33px';
-            viewAvatarIcon.style.right = '9px';
-            viewAvatarIcon.style.zIndex = '5';
-            viewAvatarIcon.style.width = '32px';
-            viewAvatarIcon.style.height = '32px';
-            viewAvatarIcon.style.opacity = '1';
-            viewAvatarIcon.style.pointerEvents = 'none'; // 确保不干扰点击
-            viewAvatarIcon.style.userSelect = 'none'; // 防止用户选择
-
-            // 将提示图标添加到头像容器
-            avatarContainer.appendChild(viewAvatarIcon);
-
-            const openImageModal = () => {
-                const imageModal = document.getElementById('image-modal');
-                const imageModalOverlay = document.getElementById('image-modal-overlay');
-                const imageModalContent = document.getElementById('image-modal-content');
-
-                if (imageModal && imageModalOverlay && imageModalContent) {
-                    // 清空之前的内容
-                    imageModalContent.innerHTML = '';
-
-                    // 创建英雄立绘容器
-                    const portraitContainer = document.createElement('div');
-                    portraitContainer.className = 'hero-portrait-container';
-                    portraitContainer.style.position = 'relative';
-                    portraitContainer.style.display = 'inline-block';
-                    portraitContainer.style.maxWidth = '85vw';
-                    portraitContainer.style.maxHeight = '85vh';
-
-                    // 添加点击关闭功能
-                    portraitContainer.addEventListener('click', closeHeroPortraitModal);
-
-                    // 创建光效图片（作为子元素）
-                    const raysImage = document.createElement('img');
-                    raysImage.src = 'imgs/other/circle_rays_new.webp';
-                    raysImage.className = 'rays-background';
-                    raysImage.style.position = 'absolute';
-                    raysImage.style.top = '50%';
-                    raysImage.style.left = '50%';
-                    raysImage.style.transform = 'translate(-50%, -50%)';
-                    raysImage.style.zIndex = '1';
-                    raysImage.style.opacity = '0.7';
-                    raysImage.style.pointerEvents = 'none';
-                    raysImage.style.maxWidth = '85vw';
-                    raysImage.style.maxHeight = '85vh';
-
-                    // 根据英雄颜色设置光效滤镜
-                    const colorFilter = getColorFilterForHero(hero.color);
-                    raysImage.style.filter = colorFilter;
-
-                    // 创建英雄立绘图片
-                    const heroImage = document.createElement('img');
-                    heroImage.src = avatarSrc;
-                    heroImage.className = 'hero-portrait-image';
-                    heroImage.style.position = 'relative';
-                    heroImage.style.zIndex = '2';
-                    heroImage.style.display = 'block';
-                    heroImage.style.maxWidth = '85vw';
-                    heroImage.style.maxHeight = '85vh';
-                    heroImage.style.width = 'auto';
-                    heroImage.style.height = 'auto';
-                    heroImage.style.opacity = '0';
-
-                    // 立绘图片添加点击关闭功能
-                    heroImage.addEventListener('click', closeHeroPortraitModal);
-
-                    // 将光效和立绘添加到容器
-                    portraitContainer.appendChild(raysImage);
-                    portraitContainer.appendChild(heroImage);
-                    imageModalContent.appendChild(portraitContainer);
-
-                    // 图片加载完成后计算精确尺寸
-                    heroImage.onload = function () {
-                        const maxWidth = window.innerWidth * 0.85;
-                        const maxHeight = window.innerHeight * 0.85;
-
-                        const imgWidth = this.naturalWidth;
-                        const imgHeight = this.naturalHeight;
-
-                        const widthRatio = maxWidth / imgWidth;
-                        const heightRatio = maxHeight / imgHeight;
-                        const scale = Math.min(widthRatio, heightRatio, 1);
-
-                        const finalWidth = imgWidth * scale;
-                        const finalHeight = imgHeight * scale;
-
-                        this.style.width = finalWidth + 'px';
-                        this.style.height = finalHeight + 'px';
-
-                        raysImage.style.width = (finalWidth * 1.5) + 'px';
-                        raysImage.style.height = (finalHeight * 1.5) + 'px';
-
-                        setTimeout(() => {
-                            this.style.opacity = '1';
-                            this.style.transition = 'opacity 0.3s ease';
-                        }, 10);
-                    };
-
-                    // 显示立绘模态框并添加到堆栈
-                    imageModal.classList.add('show-hero-portrait');
-                    imageModal.classList.remove('hidden');
-                    imageModalOverlay.classList.remove('hidden');
-
-                    // 将立绘模态框加入到模态框堆栈
-                    history.pushState({ modal: 'heroPortrait' }, null);
-                    state.modalStack.push('heroPortrait');
-                }
-            };
-
-            overlaysContainer.addEventListener('click', openImageModal);
+        // 检查文件是否存在
+        const checkAvatarExists = async () => {
+            try {
+                const response = await fetch(avatarSrc, { method: 'HEAD' });
+                return response.status === 200;
+            } catch (error) {
+                return false;
+            }
         };
 
-        imgCheck.onerror = () => {
-            overlaysContainer.style.pointerEvents = 'none';
-        };
+        checkAvatarExists().then(exists => {
+            if (exists) {
+                avatarContainer.classList.add('is-clickable');
+                overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击
 
-        imgCheck.src = avatarSrc;
+                // 在英雄图标下半部分添加查看立绘提示图标
+                const viewAvatarIcon = document.createElement('img');
+                viewAvatarIcon.src = 'imgs/other/view_avatar.webp';
+                viewAvatarIcon.className = 'view-avatar-icon';
+                viewAvatarIcon.style.position = 'absolute';
+                viewAvatarIcon.style.top = '33px';
+                viewAvatarIcon.style.right = '9px';
+                viewAvatarIcon.style.zIndex = '5';
+                viewAvatarIcon.style.width = '32px';
+                viewAvatarIcon.style.height = '32px';
+                viewAvatarIcon.style.opacity = '1';
+                viewAvatarIcon.style.pointerEvents = 'none'; // 确保不干扰点击
+                viewAvatarIcon.style.userSelect = 'none'; // 防止用户选择
+
+                // 将提示图标添加到头像容器
+                avatarContainer.appendChild(viewAvatarIcon);
+
+                const openImageModal = () => {
+                    const imageModal = document.getElementById('image-modal');
+                    const imageModalOverlay = document.getElementById('image-modal-overlay');
+                    const imageModalContent = document.getElementById('image-modal-content');
+
+                    if (imageModal && imageModalOverlay && imageModalContent) {
+                        // 清空之前的内容
+                        imageModalContent.innerHTML = '';
+
+                        // 创建英雄立绘容器
+                        const portraitContainer = document.createElement('div');
+                        portraitContainer.className = 'hero-portrait-container';
+                        portraitContainer.style.position = 'relative';
+                        portraitContainer.style.display = 'inline-block';
+                        portraitContainer.style.maxWidth = '85vw';
+                        portraitContainer.style.maxHeight = '85vh';
+
+                        // 添加点击关闭功能
+                        portraitContainer.addEventListener('click', closeHeroPortraitModal);
+
+                        // 创建光效图片（作为子元素）
+                        const raysImage = document.createElement('img');
+                        raysImage.src = 'imgs/other/circle_rays_new.webp';
+                        raysImage.className = 'rays-background';
+                        raysImage.style.position = 'absolute';
+                        raysImage.style.top = '50%';
+                        raysImage.style.left = '50%';
+                        raysImage.style.transform = 'translate(-50%, -50%)';
+                        raysImage.style.zIndex = '1';
+                        raysImage.style.opacity = '0.7';
+                        raysImage.style.pointerEvents = 'none';
+                        raysImage.style.maxWidth = '85vw';
+                        raysImage.style.maxHeight = '85vh';
+
+                        // 根据英雄颜色设置光效滤镜
+                        const colorFilter = getColorFilterForHero(hero.color);
+                        raysImage.style.filter = colorFilter;
+
+                        // 创建英雄立绘图片
+                        const heroImage = document.createElement('img');
+                        heroImage.src = avatarSrc;
+                        heroImage.className = 'hero-portrait-image';
+                        heroImage.style.position = 'relative';
+                        heroImage.style.zIndex = '2';
+                        heroImage.style.display = 'block';
+                        heroImage.style.maxWidth = '85vw';
+                        heroImage.style.maxHeight = '85vh';
+                        heroImage.style.width = 'auto';
+                        heroImage.style.height = 'auto';
+                        heroImage.style.opacity = '0';
+
+                        // 立绘图片添加点击关闭功能
+                        heroImage.addEventListener('click', closeHeroPortraitModal);
+
+                        // 将光效和立绘添加到容器
+                        portraitContainer.appendChild(raysImage);
+                        portraitContainer.appendChild(heroImage);
+                        imageModalContent.appendChild(portraitContainer);
+
+                        // 图片加载完成后计算精确尺寸
+                        heroImage.onload = function () {
+                            const maxWidth = window.innerWidth * 0.85;
+                            const maxHeight = window.innerHeight * 0.85;
+
+                            const imgWidth = this.naturalWidth;
+                            const imgHeight = this.naturalHeight;
+
+                            const widthRatio = maxWidth / imgWidth;
+                            const heightRatio = maxHeight / imgHeight;
+                            const scale = Math.min(widthRatio, heightRatio, 1);
+
+                            const finalWidth = imgWidth * scale;
+                            const finalHeight = imgHeight * scale;
+
+                            this.style.width = finalWidth + 'px';
+                            this.style.height = finalHeight + 'px';
+
+                            raysImage.style.width = (finalWidth * 1.5) + 'px';
+                            raysImage.style.height = (finalHeight * 1.5) + 'px';
+
+                            setTimeout(() => {
+                                this.style.opacity = '1';
+                                this.style.transition = 'opacity 0.3s ease';
+                            }, 10);
+                        };
+
+                        // 显示立绘模态框并添加到堆栈
+                        imageModal.classList.add('show-hero-portrait');
+                        imageModal.classList.remove('hidden');
+                        imageModalOverlay.classList.remove('hidden');
+
+                        // 将立绘模态框加入到模态框堆栈
+                        history.pushState({ modal: 'heroPortrait' }, null);
+                        state.modalStack.push('heroPortrait');
+                    }
+                };
+
+                overlaysContainer.addEventListener('click', openImageModal);
+            } else {
+                overlaysContainer.style.pointerEvents = 'none';
+            }
+        });
     }
 }
 

@@ -211,10 +211,16 @@
                         const longPressDuration = 500; // 长按时间阈值（毫秒）
                         let pressTimer;
                         let isLongPress = false; // 标记是否为长按
+                        let isMoved = false; // 标记触摸过程中手指是否移动（防止滑动也触发）
 
                         // 触摸/鼠标按下事件
                         calendarBtn.addEventListener('mousedown', startPressTimer);
-                        calendarBtn.addEventListener('touchstart', startPressTimer, { passive: false });
+                        calendarBtn.addEventListener('touchstart', startPressTimer, { passive: true });
+
+                        // 触摸移动事件 (可选：防止滑动触发)
+                        calendarBtn.addEventListener('touchmove', function () {
+                            isMoved = true;
+                        });
 
                         // 触摸/鼠标释放事件
                         calendarBtn.addEventListener('mouseup', endPress);
@@ -223,43 +229,61 @@
                         calendarBtn.addEventListener('touchcancel', endPress);
 
                         function startPressTimer(e) {
-                            // 如果是触摸事件，阻止默认行为（如上下文菜单）
-                            if (e.type === 'touchstart') {
-                                e.preventDefault();
+                            // 对于触摸事件，不需要在按下时立即阻止默认行为
+                            isLongPress = false;
+                            isMoved = false;
+
+                            // 清除任何现有的计时器
+                            if (pressTimer) {
+                                clearTimeout(pressTimer);
                             }
 
-                            isLongPress = false;
                             pressTimer = setTimeout(() => {
                                 isLongPress = true;
-                                // 长按时打开calendar2.webp
+                                // 长按时打开 calendar2.webp
                                 window.open('calendar2.webp', '_blank');
+
+                                // 长按逻辑执行后，清除计时器，并将 isLongPress 设为 true
+                                // 以便在 touchend/mouseup 中阻止短按默认行为。
+                                clearTimeout(pressTimer);
+                                pressTimer = null;
                             }, longPressDuration);
                         }
 
                         function endPress(e) {
-                            clearTimeout(pressTimer);
+                            const wasLongPress = isLongPress; // 记录是否为长按，因为下面会重置
 
-                            // 如果是触摸结束事件且不是长按，执行点击操作
-                            if ((e.type === 'touchend' || e.type === 'mouseup') && !isLongPress) {
-                                // 允许默认的点击行为（打开calendar.webp）
-                                return true;
+                            if (pressTimer) {
+                                clearTimeout(pressTimer);
+                                pressTimer = null;
                             }
 
-                            // 如果是长按，阻止默认的点击行为
-                            if (isLongPress) {
-                                if (e.type === 'touchend') {
-                                    e.preventDefault();
+                            // 如果是长按，或者触摸过程中有移动，则重置状态并退出
+                            if (wasLongPress || isMoved) {
+                                isLongPress = false; // 重置状态
+                                isMoved = false; // 重置状态
+
+                                // 如果是触摸事件（touchend）并且是长按，需要阻止默认行为（防止在某些设备上仍然触发 click）
+                                if (e.type === 'touchend' && wasLongPress) {
+                                    // 如果在 startPressTimer 中没有阻止，这里也不需要阻止，
+                                    // 因为长按逻辑已经手动执行了 window.open。
+                                    // 浏览器在长按执行后通常不会触发 click。
                                 }
+                                return;
                             }
-                        }
 
-                        // 防止在移动端点击时触发长按后的点击
-                        calendarBtn.addEventListener('click', function (e) {
-                            if (isLongPress) {
-                                e.preventDefault();
-                                e.stopPropagation();
+                            // 短按情况（!wasLongPress 且 !isMoved）
+                            // 对于鼠标事件，浏览器会正常触发 click。
+                            // 对于触摸事件，手动执行 a 标签的默认行为（如果 click 被阻止）
+                            if (e.type === 'touchend') {
+                                // 短按时打开 calendar.webp
+                                window.open(calendarBtn.href, calendarBtn.target || '_self');
                             }
-                        }, true);
+
+                            // 重置状态
+                            isLongPress = false;
+                            isMoved = false;
+                        }
                     </script>
                     <button id="theme-toggle-btn" class="theme-toggle-btn">
                         <span class="sun-icon">☀️</span>

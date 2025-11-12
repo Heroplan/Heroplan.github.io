@@ -141,18 +141,59 @@ function initAndShowFarmingGuideView() {
         thead.innerHTML = '<tr>' + headerKeys.map((key, index) => `<th data-col-index="${index}">${headers[key]}</th>`).join('') + '</tr>';
 
         let tbody = farmingGuideTable.querySelector('tbody') || farmingGuideTable.appendChild(document.createElement('tbody'));
-        tbody.innerHTML = farmingGuideData.map((row, rowIndex) => `<tr data-row-index="${rowIndex}">${headerKeys.map((key, colIndex) => {
-            let value = row[key] || '';
-            if (key === 'item') return `<td data-col-index="${colIndex}"><img src="imgs/farm/${value}.webp" alt="${value}" class="farm-item-image"></td>`;
-            return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
-        }).join('')}</tr>`).join('');
+        tbody.innerHTML = farmingGuideData.map((row, rowIndex) => {
+            const isSecondRow = rowIndex === 0; // 第二行（索引为0）
+
+            return `<tr data-row-index="${rowIndex}">${headerKeys.map((key, colIndex) => {
+                let value = row[key] || '';
+
+                if (key === 'item') {
+                    // 修复：恢复第一列物品图标的渲染
+                    if (value) {
+                        return `<td data-col-index="${colIndex}"><img src="imgs/farm/${value}.webp" alt="${value}" class="farm-item-image"></td>`;
+                        return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
+                    }
+                    return `<td data-col-index="${colIndex}"></td>`;
+                }
+
+                // 为第二行的非第一列添加点击事件
+                if (isSecondRow && key !== 'item') {
+                    const fileName = String(value).replace(/\n/g, '');
+                    return `<td data-col-index="${colIndex}" class="clickable-avatar-mission" data-filename="${fileName}" style="cursor: pointer; text-decoration: underline; color: blue;">${String(value).replace(/\n/g, '<br>')}</td>`;
+                }
+
+                return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
+            }).join('')}</tr>`;
+        }).join('');
+
+        // 添加点击事件监听器
+        tbody.addEventListener('click', event => {
+            if (farmingGuideView.classList.contains('hidden')) return;
+
+            const target = event.target.closest('.clickable-avatar-mission');
+            if (target) {
+                const fileName = target.dataset.filename;
+                if (fileName) {
+                    // 在新标签页打开对应的webp文件
+                    window.open(`imgs/avatar_mission/${fileName}.webp`, '_blank');
+                }
+                event.stopPropagation(); // 更可靠地阻止事件冒泡
+                return;
+            }
+
+            // 原有的高亮逻辑保持不变
+            const cell = event.target.closest('td');
+            if (cell) applyHighlight(cell);
+        });
 
         // 为表格单元格添加高亮事件
         const isMobile = window.innerWidth < 769;
         tbody.addEventListener(isMobile ? 'click' : 'mouseover', event => {
             if (farmingGuideView.classList.contains('hidden')) return;
             const cell = event.target.closest('td');
-            if (cell) applyHighlight(cell);
+            if (cell && !cell.classList.contains('clickable-avatar-mission')) {
+                applyHighlight(cell);
+            }
         });
         if (!isMobile) {
             tbody.addEventListener('mouseout', clearFarmGuideHighlight);

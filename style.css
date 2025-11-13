@@ -4376,47 +4376,64 @@ select.custom-select-hidden {
 #summon-actions-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  flex-shrink: 0
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 0.5rem;
+  flex-shrink: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .summon-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 8px;
   border: 2px solid #ffd700;
   background: linear-gradient(to bottom, #4a6c9b, #2a4a7b);
   color: white;
   font-weight: bold;
   cursor: pointer;
-  min-width: 110px
+  min-width: 90px;
+  /* 减小最小宽度 */
+  flex: 1;
+  /* 弹性伸缩 */
+  max-width: 120px;
+  /* 限制最大宽度 */
+  text-align: center;
+  transition: all 0.2s ease;
 }
 
 .summon-btn.hidden {
-  display: none
+  display: none;
 }
 
 .summon-btn .summon-amount {
-  font-size: 1rem
+  font-size: clamp(0.8rem, 2.5vw, 0.8rem);
+  /* 响应式字体 */
+  white-space: nowrap;
 }
 
 .summon-btn .summon-cost {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  margin-top: 0.2rem
+  margin-top: 0.2rem;
 }
 
 .summon-btn .summon-cost img {
-  width: 20px;
-  height: 20px
+  width: clamp(16px, 4vw, 20px);
+  /* 响应式图标 */
+  height: clamp(16px, 4vw, 20px);
+  flex-shrink: 0;
+  /* 防止图标被压缩 */
 }
 
 .summon-btn .gem-price {
-  font-size: 0.9rem
+  font-size: clamp(0.8rem, 2.5vw, 0.8rem);
+  /* 响应式字体 */
+  white-space: nowrap;
 }
 
 /* --- 抽奖历史记录面板 --- */
@@ -5181,14 +5198,22 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 .elemental-icon {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   cursor: pointer;
   border-radius: 0;
   border: 3px solid transparent;
   transition: all 0.2s ease-in-out
 }
-
+@media (max-width: 768px) {
+  .elemental-selection-container {
+    gap: 0.8rem;
+  }
+  .elemental-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
 .elemental-icon:hover {
   transform: scale(1.1);
   border-color: var(--md-sys-color-primary);

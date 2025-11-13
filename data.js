@@ -514,7 +514,7 @@ var originToFamiliesMap = {};
 // 英雄来源/活动名称 -> 英文标识符
 const sourceReverseMap = {
     // 简体中文
-    "联盟 - 火枪手": "musketeer",
+    "联盟 - 勇者与美人": "musketeer",
     "月活动 - 农历生肖": "lunaryear", "挑战 - 贝奥武夫": "beowulf", "联盟 - 飞蛾": "moth",
     "月活动 - 海滩派对": "beachparty", "月活动 - 卡勒瓦拉": "kalevala",
     "高塔 - 忍者": "ninja", "月活动 - 莫洛维亚": "morlovia", "月活动 - 血色盛宴": "halloween2025", "月活动 - 飞沙帝国": "sand", "三国召唤": "kingdom", "超级元素人": "superelemental",
@@ -528,7 +528,7 @@ const sourceReverseMap = {
     "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
     "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "拟态兽召唤": "mimic", "神殿召唤": "temple",
     // 繁體中文
-    "聯盟 - 火槍手": "musketeer",
+    "聯盟 - 勇者與美人": "musketeer",
     "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
     "月活動 - 海灘派對": "beachparty", "月活動 - 卡勒瓦拉": "kalevala",
     "高塔 - 忍者": "ninja", "月活動 - 莫洛維亞": "morlovia", "月活動 - 腥紅盛宴": "halloween2025", "月活動 - 飛沙帝國": "sand",
@@ -542,7 +542,7 @@ const sourceReverseMap = {
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
     "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "模仿怪召喚": "mimic", "神殿召喚": "temple",
     // English
-    "Alliance - Musketeers": "musketeer",
+    "Alliance - The Brave & The Beautiful": "musketeer",
     "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
     "Monthly Event - Beach Party": "beachparty", "Monthly Event - Kalevala": "kalevala",
     "Tower - Ninjas": "ninja", "Monthly Event - Morlovia": "morlovia", "Monthly Event - The Sanguine Feast": "halloween2025", "Monthly Event - Sand Empire": "sand", "Three Kingdoms Summon": "kingdom", "Super Elementals": "superelemental",

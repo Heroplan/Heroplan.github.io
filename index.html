@@ -181,7 +181,7 @@
                     <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
                         <img src="imgs/other/gift.webp" alt="Redeem Codes"
                             style="width: 24px; height: 24px; object-fit: contain;">
-                            <span id="redeem-code-count" class="badge"></span>
+                        <span id="redeem-code-count" class="badge"></span>
                     </button>
                     <button id="show-lottery-simulator-btn" class="theme-toggle-btn" title="抽奖模拟器">
                         <img src="imgs/lottery/icon/lottery.webp" alt="抽奖模拟器"
@@ -205,7 +205,7 @@
                     <a id="calendar-btn" href="calendar.webp" target="_blank" class="theme-toggle-btn">
                         <span>📅</span>
                     </a>
-                    
+
                     <script>
                         const calendarBtn = document.getElementById('calendar-btn');
                         const longPressDuration = 500; // 长按时间阈值（毫秒）
@@ -228,15 +228,15 @@
                         calendarBtn.addEventListener('touchend', endPress);
                         calendarBtn.addEventListener('touchcancel', endPress);
                         // 针对 Firefox 触发上下文菜单的关键修复
-                            calendarBtn.addEventListener('contextmenu', function (e) {
-                                // 阻止默认的上下文菜单弹出行为
-                                e.preventDefault();
-                                // 如果是长按逻辑已经执行，不需要再做其他事情
-                                if (isLongPress) {
-                                    return false;
-                                }
-                                // 对于短按，允许其他行为继续（虽然 click 已经被阻止，但确保没有菜单干扰）
-                            });
+                        calendarBtn.addEventListener('contextmenu', function (e) {
+                            // 阻止默认的上下文菜单弹出行为
+                            e.preventDefault();
+                            // 如果是长按逻辑已经执行，不需要再做其他事情
+                            if (isLongPress) {
+                                return false;
+                            }
+                            // 对于短按，允许其他行为继续（虽然 click 已经被阻止，但确保没有菜单干扰）
+                        });
 
                         function startPressTimer(e) {
                             // 对于触摸事件，不需要在按下时立即阻止默认行为
@@ -309,10 +309,10 @@
                             <a href="#" class="lang-option" data-lang="en">English</a>
                         </div>
                     </div>
-                    <a id="github-btn" href="https://github.com/Heroplan/Heroplan.github.io" target="_blank" class="theme-toggle-btn"
-                        title="GitHub">
-                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/github.svg" alt="GitHub"
-                            style="width: 24px; height: 24px; object-fit: contain;">
+                    <a id="github-btn" href="https://github.com/Heroplan/Heroplan.github.io" target="_blank"
+                        class="theme-toggle-btn" title="GitHub">
+                        <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/refs/heads/develop/icons/github.svg"
+                            alt="GitHub" style="width: 24px; height: 24px; object-fit: contain;">
                     </a>
                 </div>
             </div>

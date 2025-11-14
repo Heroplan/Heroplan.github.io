@@ -4076,7 +4076,7 @@ select.custom-select-hidden {
   z-index: 4
 }
 
-/* 左下角: 被动技能容器 (位置不变) */
+/* 左下角: 被动技能容器 (不变) */
 .hero-avatar-passives-container {
   position: absolute;
   bottom: 5px;
@@ -4087,14 +4087,44 @@ select.custom-select-hidden {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px
+  gap: 3px;
 }
 
-/* 被动技能图标本身样式 (不变) */
+/* 单个被动技能的包裹容器 */
+/* 作用: 提供一个 30x30 的相对定位基准 */
+.hero-avatar-passive-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+/* 修改: 基础图标 (盾牌 或 普通技能) */
+/* 作用: 作为 Z-index 1 的底层 (30x30) */
 .hero-avatar-passive-icon {
   width: 30px;
   height: 30px;
-  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7))
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7));
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* 叠加的小图标 */
+.hero-avatar-passive-overlay-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 2;
+
+  /* --- 居中对齐并上移 1px --- */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 1px));
+
+  /* 阴影，保持视觉统一 */
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7));
 }
 
 /* --- 新增：英雄详情页头像 Aether Power 图标样式 (含动态显示/定位) --- */

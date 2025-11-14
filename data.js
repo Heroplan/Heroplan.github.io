@@ -1159,7 +1159,7 @@ const PassiveSkillIconCollection = {
     "health_boost_on_ally_cleanse": "passive_healthboost_on_ally_cleanse",
     "mana_on_bleed": "passive_mana_on_bleed",
     "summon_on_dot": "passive_summon_on_dot",
-    "league_resist_debuffs_manareduction_dispels": "passive_league",
+    "league_featured_family_resist": "passive_league",
     "insanity_damage_reduction": "passive_insanity_damage_reduction",
     "possession_on_special": "status_chaos",
     "repeat_special_once": "passive_repeat_special_once",
@@ -1305,5 +1305,13 @@ const PassiveSkillIconCollection = {
     "mimic_aether_purple": "passive_mimic_training_hero_purple",
     "mimic_aether_yellow": "passive_mimic_training_hero_yellow",
     "resist_bleed_with_health_boost_and_mana": "passive_resist_bleed_with_health_boost_and_mana",
-    "summon_seedling_parasite_per_turn_shared_veggie": "passive_seedling_summoner"
+    "summon_seedling_parasite_per_turn_shared_veggie": "passive_seedling_summoner",
+    "reduce_revival_health_all_enemies": "passive_revive_with_less_health",
+    "convert_incoming_damage_to_heal": "passive_convert_incoming_damage_to_heal",
+    "debuffs_to_buffs_on_special_cast_magic_carpet": "passive_transform_ailment",
+    "buffs_to_debuffs_on_special_cast_magic_carpet": "passive_transform_buff",
+    "cheat_death": "passive_cheat_death",
+    "frost_on_minion_damage_done": "status_frost_on_minion_damage",
+    "ransack": "passive_thiefs_opportunity",
+    "damage_all_enemies_on_cover_or_special_damage_received_costume": "passive_damage_all_enemies_on_cover_or_special_damage_received"
 };

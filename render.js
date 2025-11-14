@@ -395,9 +395,38 @@ function renderDetailsInModal(hero, context = {}) {
         const passiveIconsHtml = allPassiveSkills.map(skillKey => {
             const iconName = PassiveSkillIconCollection[skillKey];
             if (iconName) {
-                const iconPath = `imgs/passive_icon/${iconName}.webp`;
                 const skillTitle = i18n[state.currentLang][skillKey] || skillKey;
-                return `<img src="${iconPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}" onerror="this.style.display='none'">`;
+
+                // 这是“原本”的图标路径 (例如 resist_fire 的火焰图标)
+                const originalIconPath = `imgs/passive_icon/${iconName}.webp`;
+
+                let baseIconHtml = '';    // 底层图标 (30x30)
+                let overlayIconHtml = ''; // 顶层叠加图标 (18x18)
+
+                if (skillKey.startsWith('resist_')) {
+                    // --- Resist 技能 ---
+                    const shieldPath = 'imgs/passive_icon/resist_shield.webp';
+
+                    // 基础层是盾牌
+                    baseIconHtml = `<img src="${shieldPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}">`;
+
+                    // 叠加层是 "原本" 的图标 (缩小)
+                    // 注意: alt="" 是故意的，避免屏幕阅读器重复播报，title 保留悬停提示
+                    overlayIconHtml = `<img src="${originalIconPath}" class="hero-avatar-passive-overlay-icon" alt="" title="${skillTitle}" onerror="this.style.display='none'">`;
+
+                } else {
+                    // --- 普通技能 ---
+                    // 基础层就是 "原本" 的图标
+                    baseIconHtml = `<img src="${originalIconPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}" onerror="this.style.display='none'">`;
+                }
+
+                // 总是返回一个包裹容器，用于正确定位
+                return `
+                <div class="hero-avatar-passive-wrapper">
+                    ${baseIconHtml}
+                    ${overlayIconHtml}
+                </div>
+            `;
             }
             return '';
         }).join('');
@@ -1085,11 +1114,11 @@ function renderDetailsInModal(hero, context = {}) {
                         const raysImage = document.createElement('img');// 可以定义不同家族对应的光效范围
                         const getRaysRangeForFamily = (family) => {
                             const ranges = {
-                                'magic_carpet': { min: 29, max: 30 },
+                                'magic_carpet': { min: 46, max: 47 },
                                 // 其他家族的特殊范围
-                                // 'other_family': { min: 31, max: 35 },
+                                // 'other_family': { min: 48, max: 50 },
                             };
-                            return ranges[family] || { min: 1, max: 28 }; // 默认1-29
+                            return ranges[family] || { min: 1, max: 45 };
                         };
 
                         // 使用方式：

@@ -1111,7 +1111,9 @@ function renderDetailsInModal(hero, context = {}) {
                         portraitContainer.addEventListener('click', closeHeroPortraitModal);
 
                         // 创建光效图片（作为子元素）
-                        const raysImage = document.createElement('img');// 可以定义不同家族对应的光效范围
+                        const raysImage = document.createElement('img');
+                        /*
+                        // 可以定义不同家族对应的光效范围
                         const getRaysRangeForFamily = (family) => {
                             const ranges = {
                                 'magic_carpet': { min: 46, max: 47 },
@@ -1120,11 +1122,13 @@ function renderDetailsInModal(hero, context = {}) {
                             };
                             return ranges[family] || { min: 1, max: 45 };
                         };
-
-                        // 使用方式：
+                        
                         const range = getRaysRangeForFamily(hero.family);
                         const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-                        raysImage.src = `imgs/other/circle_rays/${randomRaysNumber}.webp`;
+                        */
+
+                        const randomRaysNumber = Math.floor(Math.random() * 45) + 1;
+                        raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
                         raysImage.className = 'rays-background';
                         raysImage.style.position = 'absolute';
                         raysImage.style.top = '50%';

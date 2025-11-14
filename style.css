@@ -5346,7 +5346,6 @@ html:not(.dark-theme) .color-text-outlined {
 
 /* --- 为英雄立绘展示调整图片模态框的尺寸 --- */
 #image-modal.show-hero-portrait #image-modal-content {
-  max-width: 500px;
   width: auto;
   height: auto;
   max-height: 85vh;
@@ -5393,8 +5392,6 @@ html:not(.dark-theme) .color-text-outlined {
 }
 
 #image-modal.show-hero-portrait #image-modal-content {
-  /* 这是您期望的“放大”效果 */
-  max-width: 500px;
   width: auto;
   height: auto
 }

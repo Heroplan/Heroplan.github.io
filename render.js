@@ -1082,22 +1082,35 @@ function renderDetailsInModal(hero, context = {}) {
                         portraitContainer.addEventListener('click', closeHeroPortraitModal);
 
                         // 创建光效图片（作为子元素）
-                        const raysImage = document.createElement('img');
-                        raysImage.src = 'imgs/other/circle_rays_new.webp';
+                        const raysImage = document.createElement('img');// 可以定义不同家族对应的光效范围
+                        const getRaysRangeForFamily = (family) => {
+                            const ranges = {
+                                'magic_carpet': { min: 29, max: 30 },
+                                // 其他家族的特殊范围
+                                // 'other_family': { min: 31, max: 35 },
+                            };
+                            return ranges[family] || { min: 1, max: 28 }; // 默认1-29
+                        };
+
+                        // 使用方式：
+                        const range = getRaysRangeForFamily(hero.family);
+                        const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+                        raysImage.src = `imgs/other/circle_rays/${randomRaysNumber}.webp`;
                         raysImage.className = 'rays-background';
                         raysImage.style.position = 'absolute';
                         raysImage.style.top = '50%';
                         raysImage.style.left = '50%';
                         raysImage.style.transform = 'translate(-50%, -50%)';
                         raysImage.style.zIndex = '1';
-                        raysImage.style.opacity = '0.7';
+                        raysImage.style.opacity = '1';
                         raysImage.style.pointerEvents = 'none';
                         raysImage.style.maxWidth = '85vw';
                         raysImage.style.maxHeight = '85vh';
 
                         // 根据英雄颜色设置光效滤镜
                         const colorFilter = getColorFilterForHero(hero.color);
-                        raysImage.style.filter = colorFilter;
+                        const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
+                        raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
 
                         // 创建英雄立绘图片
                         const heroImage = document.createElement('img');
@@ -1138,8 +1151,8 @@ function renderDetailsInModal(hero, context = {}) {
                             this.style.width = finalWidth + 'px';
                             this.style.height = finalHeight + 'px';
 
-                            raysImage.style.width = (finalWidth * 1.5) + 'px';
-                            raysImage.style.height = (finalHeight * 1.5) + 'px';
+                            raysImage.style.width = finalWidth + 'px';
+                            raysImage.style.height = finalHeight + 'px';
 
                             setTimeout(() => {
                                 this.style.opacity = '1';

@@ -480,3 +480,13 @@ function formatLocalDate(dateString) {
         return dateString; // 如果发生错误，返回原始字符串
     }
 }
+
+
+function getHighlightSkillTermsSetting() {
+    const saved = getCookie('highlightSkillTerms');
+    return saved !== null ? saved === 'true' : true; // 默认启用
+}
+
+function setHighlightSkillTermsSetting(value) {
+    setCookie('highlightSkillTerms', value.toString(), 365);
+}

@@ -340,7 +340,9 @@ const i18n = {
         "w3kLimitedPoolTitle": "查看三国限定奖池",
         "showRedeemCodesTitle": "查看可用兑换码",
         "redeemCodesModalTitle": "可用兑换码",
-        "redeemBtn": '兑换',
+        "redeemBtn": '兑换', 
+        highlightSkillTermsLabel: "高亮技能词条:",
+        highlightSkillTermsToggle: "启用"
 
 
     },
@@ -639,6 +641,8 @@ const i18n = {
         "showRedeemCodesTitle": "查看可用兌換碼",
         "redeemCodesModalTitle": "可用兌換碼",
         "redeemBtn": '兌換',
+        highlightSkillTermsLabel: "高亮技能詞條:",
+        highlightSkillTermsToggle: "啟用"
 
     },
     en: {
@@ -936,5 +940,7 @@ const i18n = {
         "showRedeemCodesTitle": "View Redeem Codes",
         "redeemCodesModalTitle": "Available Redeem Codes",
         "redeemBtn": 'Redeem',
+        highlightSkillTermsLabel: "Highlight Skill Terms:",
+        highlightSkillTermsToggle: "Enable"
     }
 }; 

@@ -6635,3 +6635,27 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
   }
 }
 
+/* 添加响应式布局 */
+@media (max-width: 768px) {
+  .filter-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-item label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .filter-item {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .filter-item label {
+    width: 140px;
+    min-width: 140px;
+    margin-bottom: 0;
+  }
+}

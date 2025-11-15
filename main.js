@@ -392,6 +392,16 @@ async function initializeApp() {
 
     // 更新赞助按钮文本
     updateDonateButton();
+
+    // 设置高亮技能词条的初始值
+    const highlightSkillTermsCheckbox = document.getElementById('highlight-skill-terms-checkbox');
+    if (highlightSkillTermsCheckbox) {
+        highlightSkillTermsCheckbox.checked = getHighlightSkillTermsSetting();
+        highlightSkillTermsCheckbox.addEventListener('change', () => {
+            setHighlightSkillTermsSetting(highlightSkillTermsCheckbox.checked);
+            applyFiltersAndRender(); // 重新渲染以应用更改
+        });
+    }
 }
 
 /**

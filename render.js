@@ -11,7 +11,7 @@ function getSkinInfo(hero) {
     const name = hero.name || '';
     if (!name) return { skinIdentifier: null, baseName: name };
 
-    // ▼▼▼▼▼ 新增逻辑开始：专门处理拟态兽的颜色后缀 ▼▼▼▼▼
+    // ▼▼▼▼▼ 专门处理拟态兽的颜色后缀 ▼▼▼▼▼
     const isMimic = name.includes('Mimic') || name.includes('拟态兽') || name.includes('模仿怪');
     if (isMimic) {
         const afterParenthesesIndex = name.lastIndexOf(')');
@@ -25,7 +25,6 @@ function getSkinInfo(hero) {
             }
         }
     }
-    // ▲▲▲▲▲ 新增逻辑结束 ▲▲▲▲▲
 
     const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
     const skinMatch = name.match(skinPattern);
@@ -441,6 +440,7 @@ function renderDetailsInModal(hero, context = {}) {
     const renderListAsHTML = (itemsArray, filterType = null) => {
         if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
 
+
         // 定义一个正则表达式，用于匹配“纯星号标题行”
         // (从头到尾只包含空格或星号)
         const starHeaderPattern = /^[\s*]+$/;
@@ -454,6 +454,9 @@ function renderDetailsInModal(hero, context = {}) {
             'blue': '#26d0faff'   // 冰雪系 (蓝)
         };
         const specialColor = '#4A90E2'; // [#!] 谦逊等词条使用的颜色
+        
+        // 检查是否启用了高亮技能词条
+        const shouldHighlight = getHighlightSkillTermsSetting();
 
         return itemsArray.map(item => {
             let cleanItem = String(item).trim();
@@ -465,33 +468,42 @@ function renderDetailsInModal(hero, context = {}) {
             }
 
             // --- 文本美化处理 ---
+            if (shouldHighlight) {
 
-            // 步骤 1: 首先处理数字高亮，确保它在纯文本上运行
-            const numberRegex = /([+-]?\d+[%]?)/g;
+                // 步骤 1: 首先处理数字高亮，确保它在纯文本上运行
+                const numberRegex = /([+-]?\d+[%]?)/g;
 
-            // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
-            cleanItem = cleanItem.replace(numberRegex, (match) => {
+                // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
+                cleanItem = cleanItem.replace(numberRegex, (match) => {
 
-                // 判断匹配到的字符串是否以 '-' 开头
-                if (match.startsWith('-')) {
-                    // 如果是负数，使用红色
-                    return `<span style="color: #ef3838ff;">${match}</span>`;
-                } else {
-                    // 否则，使用原有的蓝色
-                    return `<span style="color: ${specialColor};">${match}</span>`;
-                }
-            });
+                    // 判断匹配到的字符串是否以 '-' 开头
+                    if (match.startsWith('-')) {
+                        // 如果是负数，使用红色
+                        return `<span style="color: #ef3838ff;">${match}</span>`;
+                    } else {
+                        // 否则，使用原有的蓝色
+                        return `<span style="color: ${specialColor};">${match}</span>`;
+                    }
+                });
 
-            // 步骤 2: 处理元素词条 (例如 [##elementred]燃烧伤害[#])
-            cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {
-                const color = colorNameMap[colorName] || '#FFFFFF';
-                return `<span style="color: ${color}; ">${text}</span>`;
-            });
+                // 步骤 2: 处理元素词条 (例如 [##elementred]燃烧伤害[#])
+                cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {
+                    const color = colorNameMap[colorName] || '#FFFFFF';
+                    return `<span style="color: ${color}; ">${text}</span>`;
+                });
 
-            // 步骤 3: 处理特殊词条 (例如 [#!]谦逊[#])
-            cleanItem = cleanItem.replace(/\[#!\](.*?)\[#\]/g, (match, text) => {
-                return `<span style="color: ${specialColor};">${text}</span>`;
-            });
+                // 步骤 3: 处理特殊词条 (例如 [#!]谦逊[#])
+                cleanItem = cleanItem.replace(/\[#!\](.*?)\[#\]/g, (match, text) => {
+                    return `<span style="color: ${specialColor};">${text}</span>`;
+                });
+            } else {
+                // 如果不启用高亮，移除所有标记符号，只保留纯文本内容
+                cleanItem = cleanItem
+                    // 移除元素标记：[##elementred]文本[#] → 文本
+                    .replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, '$2')
+                    // 移除特殊标记：[#!]文本[#] → 文本
+                    .replace(/\[#!\](.*?)\[#\]/g, '$1');
+            }
 
 
             // --- 原始的HTML结构化逻辑 ---

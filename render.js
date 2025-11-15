@@ -464,16 +464,26 @@ function renderDetailsInModal(hero, context = {}) {
                 return `<li>${compactStars}</li>`;
             }
 
-            // --- 文本美化处理 (已修正执行顺序) ---
+            // --- 文本美化处理 ---
 
             // 步骤 1: (修正) 首先处理数字高亮，确保它在纯文本上运行
             // 仅在被动技能和家族奖励中高亮数字
             if (filterType === 'passives' || filterType === null) {
                 const numberRegex = /([+-]?\d+[%]?)/g;
-                const styleString = `color: ${specialColor}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;`;
 
+                // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
                 cleanItem = cleanItem.replace(numberRegex, (match) => {
-                    return `<span style="${styleString}">${match}</span>`;
+                    // 定义通用的描边样式
+                    const textShadow = 'text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;';
+
+                    // 判断匹配到的字符串是否以 '-' 开头
+                    if (match.startsWith('-')) {
+                        // 如果是负数，使用红色
+                        return `<span style="color: #ef3838ff; ${textShadow}">${match}</span>`;
+                    } else {
+                        // 否则，使用原有的蓝色
+                        return `<span style="color: ${specialColor}; ${textShadow}">${match}</span>`;
+                    }
                 });
             }
 

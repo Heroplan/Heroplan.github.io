@@ -466,26 +466,23 @@ function renderDetailsInModal(hero, context = {}) {
 
             // --- 文本美化处理 ---
 
-            // 步骤 1: (修正) 首先处理数字高亮，确保它在纯文本上运行
-            // 仅在被动技能和家族奖励中高亮数字
-            if (filterType === 'passives' || filterType === null) {
-                const numberRegex = /([+-]?\d+[%]?)/g;
+            // 步骤 1: 首先处理数字高亮，确保它在纯文本上运行
+            const numberRegex = /([+-]?\d+[%]?)/g;
 
-                // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
-                cleanItem = cleanItem.replace(numberRegex, (match) => {
-                    // 定义通用的描边样式
-                    const textShadow = 'text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;';
+            // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
+            cleanItem = cleanItem.replace(numberRegex, (match) => {
+                // 定义通用的描边样式
+                const textShadow = 'text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;';
 
-                    // 判断匹配到的字符串是否以 '-' 开头
-                    if (match.startsWith('-')) {
-                        // 如果是负数，使用红色
-                        return `<span style="color: #ef3838ff; ${textShadow}">${match}</span>`;
-                    } else {
-                        // 否则，使用原有的蓝色
-                        return `<span style="color: ${specialColor}; ${textShadow}">${match}</span>`;
-                    }
-                });
-            }
+                // 判断匹配到的字符串是否以 '-' 开头
+                if (match.startsWith('-')) {
+                    // 如果是负数，使用红色
+                    return `<span style="color: #ef3838ff; ${textShadow}">${match}</span>`;
+                } else {
+                    // 否则，使用原有的蓝色
+                    return `<span style="color: ${specialColor}; ${textShadow}">${match}</span>`;
+                }
+            });
 
             // 步骤 2: 处理元素词条 (例如 [##elementred]燃烧伤害[#])
             cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {

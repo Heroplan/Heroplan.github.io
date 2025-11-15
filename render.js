@@ -437,7 +437,7 @@ function renderDetailsInModal(hero, context = {}) {
     }
 
 
-// 内部帮助函数，用于将技能/被动数组渲染为HTML列表
+    // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
     const renderListAsHTML = (itemsArray, filterType = null) => {
         if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
 
@@ -445,21 +445,53 @@ function renderDetailsInModal(hero, context = {}) {
         // (从头到尾只包含空格或星号)
         const starHeaderPattern = /^[\s*]+$/;
 
+        // ▼▼▼ 定义颜色映射表 ▼▼▼
+        const colorNameMap = {
+            'purple': '#ca4bf8ff', // 暗黑系 (紫)
+            'green': '#70e92f',  // 自然系 (绿)
+            'red': '#ef3838ff',    // 烈火系 (红)
+            'yellow': '#f2e33a', // 神圣系 (黄)
+            'blue': '#26d0faff'   // 冰雪系 (蓝)
+        };
+        const specialColor = '#4A90E2'; // [#!] 谦逊等词条使用的颜色
+
         return itemsArray.map(item => {
             let cleanItem = String(item).trim();
 
             // 在执行任何分割操作之前，检查它是否为“纯星号标题行”
             if (cleanItem.includes('*') && starHeaderPattern.test(cleanItem)) {
-                // 如果是，移除所有内部空格（例如 "* * *" -> "***"）
-                // 并将其作为单个列表项返回，不进行分割。
                 const compactStars = cleanItem.replace(/\s/g, '');
                 return `<li>${compactStars}</li>`;
             }
 
-            // --- 如果不是星号标题行，则执行原始逻辑 ---
+            // --- 文本美化处理 (已修正执行顺序) ---
 
+            // 步骤 1: (修正) 首先处理数字高亮，确保它在纯文本上运行
+            // 仅在被动技能和家族奖励中高亮数字
+            if (filterType === 'passives' || filterType === null) {
+                const numberRegex = /([+-]?\d+[%]?)/g;
+                const styleString = `color: ${specialColor}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;`;
+
+                cleanItem = cleanItem.replace(numberRegex, (match) => {
+                    return `<span style="${styleString}">${match}</span>`;
+                });
+            }
+
+            // 步骤 2: 处理元素词条 (例如 [##elementred]燃烧伤害[#])
+            cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {
+                const color = colorNameMap[colorName] || '#FFFFFF';
+                return `<span style="color: ${color}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">${text}</span>`;
+            });
+
+            // 步骤 3: 处理特殊词条 (例如 [#!]谦逊[#])
+            cleanItem = cleanItem.replace(/\[#!\](.*?)\[#\]/g, (match, text) => {
+                return `<span style="color: ${specialColor}; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">${text}</span>`;
+            });
+
+
+            // --- 原始的HTML结构化逻辑 ---
             if (filterType) {
-                const mainDesc = cleanItem.split(' * ')[0].trim();
+                const mainDesc = String(item).trim().split(' * ')[0].trim();
                 const displayHTML = cleanItem.replace(/ \* /g, '<br><i>') + '</i>';
                 return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${displayHTML}</li>`;
             }
@@ -1029,6 +1061,11 @@ function renderDetailsInModal(hero, context = {}) {
             state.multiSelectFilters[filterType] = [filterValue];
             updateFilterButtonUI(filterType);
         } else if (uiElements.filterInputs[filterType]) {
+            // 在生成通用搜索词之后，精准移除5个元素的关键字。
+            // 使用正则表达式匹配这些单词，并用空字符串替换它们。
+            // \b 是单词边界，确保我们不会错误地替换包含这些词的更长的词。
+            // i 是不区分大小写标志。
+            const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue)\b/gi;
             switch (filterType) {
                 case 'types':
                     // 如果点击的是技能“类别”，则使用方括号[]进行完全匹配
@@ -1038,11 +1075,13 @@ function renderDetailsInModal(hero, context = {}) {
                 case 'passives':
                     // 如果点击的是技能或被动“描述”，则使用圆括号()进行单句匹配
                     filterValue = generateGeneralSearchTerm(filterValue);
+                    filterValue = filterValue.replace(elementKeywordsRegex, '').trim(); // 移除后调用 trim() 清理多余空格
                     uiElements.filterInputs[filterType].value = `(${filterValue})`;
                     break;
                 default:
                     // 其他类型（如英雄名）保持通用搜索
                     filterValue = generateGeneralSearchTerm(filterValue);
+                    filterValue = filterValue.replace(elementKeywordsRegex, '').trim(); // 移除后调用 trim() 清理多余空格
                     uiElements.filterInputs[filterType].value = filterValue;
                     break;
             }

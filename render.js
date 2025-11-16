@@ -1527,6 +1527,11 @@ function renderDetailsInModal(hero, context = {}) {
         let filterValue = target.dataset.filterValue;
         if (!filterType || filterValue === undefined) return;
 
+        // 禁用“家族奖励”快速搜索功能
+        if (filterType === 'familyBonus') {
+            return;
+        }
+
         // “一键搜索”复选框的逻辑保持不变
         const isQuickSearchEnabled = uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked;
         if (['effects', 'passives'].includes(filterType) && !isQuickSearchEnabled) {

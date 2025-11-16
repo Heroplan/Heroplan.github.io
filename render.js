@@ -605,6 +605,41 @@ function getHighlightingTools(lang, type) {
 function applyKeywordHighlighting(text, lang, filterType) {
     if (!text || typeof text !== 'string') return text;
 
+    let textToProcess = text;
+    let highlightedPrefix = '';
+
+    // --- 如果 filterType 是 'effects' 或 'passives' ---
+    if (filterType === 'effects' || filterType === 'passives') {
+        const lines = text.split('\n');
+        const firstLine = lines[0];
+
+        // 检查是否满足条件
+        if (firstLine) {
+            // 1. 根据 lang 变量确定长度限制
+            //    - lang.startsWith('en')
+            const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 20;
+
+            // 2. 在判断中使用这个动态的长度限制
+            const hasColon = (firstLine.endsWith(':') || firstLine.endsWith('：')) && firstLine.length < lengthLimit;
+            // 如果满足条件，则处理并更新待处理的文本
+            if (hasColon) {
+
+                // 将整行用 [#!] 包裹
+                highlightedPrefix = `[#!]${lines}[#]`;
+                textToProcess = lines.slice(1).join('\n');
+
+                if (textToProcess) {
+                    highlightedPrefix += '\n';
+                }
+            }
+        }
+    }
+
+    // 如果经过上面的处理后，没有剩余文本需要高亮，则直接返回前缀
+    if (!textToProcess) {
+        return highlightedPrefix;
+    }
+
     // 1. 获取预编译的工具
     const { regex, protectionValues, replacer } = getHighlightingTools(lang, filterType);
 
@@ -865,16 +900,35 @@ function renderDetailsInModal(hero, context = {}) {
 
 
             // --- HTML结构化逻辑 ---
-            if (filterType) {
-                const mainDesc = String(item).trim().split(' * ')[0].trim();
-                const displayHTML = cleanItem.replace(/ \* /g, '<br><i>') + '</i>';
-                return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${displayHTML}</li>`;
-            }
+
+            // 首先统一处理包含 ' * ' 的情况
             if (cleanItem.includes(' * ')) {
                 const parts = cleanItem.split(' * ');
-                return `<li>${parts[0].trim()}<br><i>${parts.slice(1).join('</i><br><i>')}</i></li>`;
+
+                // 将第一部分作为主标题，后续所有部分都用 <i> 标签包裹，并用 <br> 连接。
+                // 这个 .map() 和 .join() 的组合可以确保每个<i>标签都正确闭合。
+                const displayHTML = parts[0].trim() +
+                    '<br><i>' +
+                    parts.slice(1).map(p => p.trim()).join('</i><br><i>') +
+                    '</i>';
+
+                if (filterType) {
+                    // 如果有 filterType，使用原始 item 来获取数据属性，然后渲染上面生成好的 displayHTML
+                    const mainDesc = String(item).trim().split(' * ')[0].trim();
+                    return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${displayHTML}</li>`;
+                } else {
+                    // 如果没有 filterType，直接渲染
+                    return `<li>${displayHTML}</li>`;
+                }
+            } else {
+                // 如果 cleanItem 中不包含 ' * '，则按原样处理
+                if (filterType) {
+                    const mainDesc = String(item).trim();
+                    return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${cleanItem}</li>`;
+                } else {
+                    return `<li>${cleanItem}</li>`;
+                }
             }
-            return `<li>${cleanItem}</li>`;
         }).join('');
     };
 

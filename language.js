@@ -342,7 +342,10 @@ const i18n = {
         "redeemCodesModalTitle": "可用兑换码",
         "redeemBtn": '兑换', 
         highlightSkillTermsLabel: "高亮技能词条:",
-        highlightSkillTermsToggle: "启用"
+        highlightSkillTermsToggle: "启用",
+        showSkillTypesInDetailsLabel: "详情页显示技能类别:",
+        showSkillTypesInTeamLabel: "队伍模拟器显示技能类别:",
+        showSkillTypesToggle: "启用",
 
 
     },
@@ -642,7 +645,10 @@ const i18n = {
         "redeemCodesModalTitle": "可用兌換碼",
         "redeemBtn": '兌換',
         highlightSkillTermsLabel: "高亮技能詞條:",
-        highlightSkillTermsToggle: "啟用"
+        highlightSkillTermsToggle: "啟用",
+        showSkillTypesInDetailsLabel: "詳情頁顯示技能類別:",
+        showSkillTypesInTeamLabel: "隊伍模擬器顯示技能類別:",
+        showSkillTypesToggle: "啟用",
 
     },
     en: {
@@ -941,6 +947,9 @@ const i18n = {
         "redeemCodesModalTitle": "Available Redeem Codes",
         "redeemBtn": 'Redeem',
         highlightSkillTermsLabel: "Highlight Skill Terms:",
-        highlightSkillTermsToggle: "Enable"
+        highlightSkillTermsToggle: "Enable",
+        showSkillTypesInDetailsLabel: "Show skill types in details:",
+        showSkillTypesInTeamLabel: "Show skill types in team simulator:",
+        showSkillTypesToggle: "Enable",
     }
 }; 

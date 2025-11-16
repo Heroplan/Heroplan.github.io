@@ -313,6 +313,339 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
     });
 }
 
+// --- 关键词高亮逻辑 ---
+
+/**
+ * 用于关键词高亮的字典，按语言和数据类型分离。
+ */
+const highlightDictionaries = {
+    en: {
+        // 英文通用字典
+        common: {
+            'Otherwise:': '[#!]Otherwise:[#]',
+            'Dark': '[##elementpurple]Dark[#]',
+            'Nature': '[##elementgreen]Nature[#]',
+            'Fire': '[##elementred]Fire[#]',
+            'Holy': '[##elementyellow]Holy[#]',
+            'Ice': '[##elementblue]Ice[#]',
+            'Mindless Attack': '[##elementred]Mindless Attack[#]',
+            'Mindless Heal': '[##elementred]Mindless Heal[#]',
+            'Stack (Max: 10):': '[#!]Stack (Max: 10):[#]',
+            'stacks': '[##elementred]stacks[#]',
+            'stack': '[##elementred]stack[#]',
+            'Soul Bound': '[##elementred]Soul Bound[#]',
+            'Greed': '[##elementred]Greed[#]',
+            'Deep Sleep': '[##elementred]Deep Sleep[#]',
+            'falls asleep': '[##elementred]falls asleep[#]',
+            'asleep': '[##elementred]asleep[#]',
+            'Wither': '[##elementred]Wither[#]',
+            'Mana generation': '[#!]Mana generation[#]',
+            'mana generation': '[#!]mana generation[#]',
+            'Mana': '[#!]Mana[#]',
+            'mana': '[#!]mana[#]',
+            'accuracy': '[##elementyellow]accuracy[#]',
+            'never misses': '[##elementyellow]never misses[#]',
+            'Growth': '[##elementgreen]Growth[#]',
+            'Growth Boon': '[##elementgreen]Growth Boon[#]',
+            'critical': '[##elementred]critical[#]',
+            'immune to new status ailments': '[#!]immune to new status ailments[#]',
+            'immune to new status effect buffs': '[##elementred]immune to new status effect buffs[#]',
+            'dodge': '[#!]dodge[#]',
+            'bypasses': '[#!]bypasses[#]',
+            'Taunt': '[##elementred]Taunt[#]',
+            'silenced': '[##elementred]silenced[#]',
+            'Safely cleanses': '[##elementgreen]Safely cleanses[#]',
+            'safely cleanses': '[##elementgreen]safely cleanses[#]',
+            'safely cleanse': '[##elementgreen]safely cleanse[#]',
+            'Safely dispels': '[##elementgreen]Safely dispels[#]',
+            'safely dispels': '[##elementgreen]safely dispels[#]',
+            'safely dispel': '[##elementgreen]safely dispel[#]',
+            'Cleanses': '[##elementgreen]Cleanses[#]',
+            'Dispels': '[#!]Dispels[#]',
+            'revived': '[##elementgreen]revived[#]',
+            'revive': '[##elementgreen]revive[#]',
+            'drop any received damage': '[##elementyellow]drop any received damage[#]',
+            'reduce all received damage': '[##elementyellow]reduce all received damage[#]',
+            'Full Removal': '[#!]Full Removal[#]',
+            'can\'t be dispelled': '[#!]can\'t be dispelled[#]',
+            'uncleansable': '[##elementred]uncleansable[#]',
+            'Paralyzed': '[##elementred]Paralyzed[#]',
+            'Curse damage': '[#!]Curse damage[#]',
+            'Poison damage': '[##elementpurple]Poison damage[#]',
+            'Corrosive Poison': '[##elementpurple]Corrosive Poison[#]',
+            'Burn damage': '[##elementred]Burn damage[#]',
+            'Corrosive Burn': '[##elementred]Corrosive Burn[#]',
+            'Surge Bleed damage': '[##elementred]Surge Bleed damage[#]',
+            'Bleed damage': '[##elementred]Bleed damage[#]',
+            'Sand damage': '[##elementyellow]Sand damage[#]',
+            'Water damage': '[##elementblue]Water damage[#]',
+            'Frost damage': '[##elementblue]Frost damage[#]',
+            'Corrosive Frost': '[##elementblue]Corrosive Frost[#]',
+        },
+        // 英文 effects 专属字典
+        effects: {
+            // 在这里添加 'en' effects 专属词条
+        },
+        // 英文 passives 专属字典
+        passives: {
+            // 在这里添加 'en' passives 专属词条
+        },
+        // 英文 familyBonus 专属字典
+        familyBonus: {
+            // 在这里添加 'en' familyBonus 专属词条
+        }
+    },
+    zh: { // 包含简体 (cn) 和繁体 (tc)
+        // 中文通用字典
+        common: {
+            '否则：': '[#!]否则：[#]',
+            '否則：': '[#!]否則：[#]',
+            '暗黑系': '[##elementpurple]暗黑系[#]',
+            '自然系': '[##elementgreen]自然系[#]',
+            '烈火系': '[##elementred]烈火系[#]',
+            '神圣系': '[##elementyellow]神圣系[#]',
+            '神聖系': '[##elementyellow]神聖系[#]',
+            '冰雪系': '[##elementblue]冰雪系[#]',
+            '暗黑': '[##elementpurple]暗黑[#]',
+            '自然': '[##elementgreen]自然[#]',
+            '烈火': '[##elementred]烈火[#]',
+            '神圣': '[##elementyellow]神圣[#]',
+            '神聖': '[##elementyellow]神聖[#]',
+            '冰雪': '[##elementblue]冰雪[#]',
+            '冰霜': '[##elementblue]冰霜[#]',
+            '莽夫乱拳': '[##elementred]莽夫乱拳[#]',
+            '莽夫亂拳': '[##elementred]莽夫亂拳[#]',
+            '盲目治疗': '[##elementred]盲目治疗[#]',
+            '莽夫治療': '[##elementred]莽夫治療[#]',
+            '无限回合': '[#!]无限回合[#]',
+            '叠加（最多 10 层）：': '[#!]叠加（最多 10 层）：[#]',
+            '疊加（上限： 10 ）：': '[#!]疊加（上限： 10 ）：[#]',
+            '叠加': '[##elementred]叠加[#]',
+            '疊加': '[##elementred]疊加[#]',
+            '缚魂': '[##elementred]缚魂[#]',
+            '靈魂绑定': '[##elementred]靈魂绑定[#]',
+            '贪婪': '[##elementred]贪婪[#]',
+            '貪婪': '[##elementred]貪婪[#]',
+            '沉睡': '[##elementred]沉睡[#]',
+            '深眠': '[##elementred]深眠[#]',
+            '深沉睡眠': '[##elementred]深沉睡眠[#]',
+            '衰退': '[##elementred]衰退[#]',
+            '枯萎': '[##elementred]枯萎[#]',
+            '法力': '[#!]法力[#]',
+            '法力生成': '[#!]法力生成[#]',
+            '法力產出': '[#!]法力產出[#]',
+            '精准度': '[##elementyellow]精准度[#]',
+            '精準度': '[##elementyellow]精準度[#]',
+            '必定命中': '[##elementyellow]必定命中[#]',
+            '成长恩赐': '[##elementgreen]成长恩赐[#]',
+            '成長恩惠': '[##elementgreen]成長恩惠[#]',
+            '成长': '[##elementgreen]成长[#]',
+            '成長': '[##elementgreen]成長[#]',
+            '暴击几率': '[##elementred]暴击几率[#]',
+            '暴擊率': '[##elementred]暴擊率[#]',
+            '暴击': '[##elementred]暴击[#]',
+            '暴擊': '[##elementred]暴擊[#]',
+            '状态异常免疫': '[#!]状态异常免疫[#]',
+            '狀態異常免疫': '[#!]狀態異常免疫[#]',
+            '增益状态效果免疫': '[##elementred]增益状态效果免疫[#]',
+            '免疫新的狀態效果增益': '[##elementred]免疫新的狀態效果增益[#]',
+            '闪避': '[#!]闪避[#]',
+            '閃避': '[#!]閃避[#]',
+            '无视防御增益': '[#!]无视防御增益[#]',
+            '無視防禦增益': '[#!]無視防禦增益[#]',
+            '嘲讽': '[##elementred]嘲讽[#]',
+            '嘲諷': '[##elementred]嘲諷[#]',
+            '沉默': '[##elementred]沉默[#]',
+            '安全净化': '[##elementgreen]安全净化[#]',
+            '安全淨化': '[##elementgreen]安全淨化[#]',
+            '安全驱散': '[##elementgreen]安全驱散[#]',
+            '安全驅散': '[##elementgreen]安全驅散[#]',
+            '净化': '[##elementgreen]净化[#]',
+            '淨化': '[##elementgreen]淨化[#]',
+            '驱散': '[#!]驱散[#]',
+            '驅散': '[#!]驅散[#]',
+            '复活': '[##elementgreen]复活[#]',
+            '復活': '[##elementgreen]復活[#]',
+            '伤害减少': '[##elementyellow]伤害减少[#]',
+            '傷害減少': '[##elementyellow]傷害減少[#]',
+            '伤害降低': '[##elementyellow]伤害降低[#]',
+            '傷害降低': '[##elementyellow]傷害降低[#]',
+            '完全移除': '[#!]完全移除[#]',
+            '完整移除': '[#!]完整移除[#]',
+            '无法驱散': '[#!]无法驱散[#]',
+            '無法驅散': '[#!]無法驅散[#]',
+            '无法净化': '[##elementred]无法净化[#]',
+            '無法淨化': '[##elementred]無法淨化[#]',
+            '麻木': '[##elementred]麻木[#]',
+            '麻痺': '[##elementred]麻痺[#]',
+            '诅咒伤害': '[#!]诅咒伤害[#]',
+            '詛咒傷害': '[#!]詛咒傷害[#]',
+            '剧毒伤害': '[##elementpurple]剧毒伤害[#]',
+            '劇毒傷害': '[##elementpurple]劇毒傷害[#]',
+            '腐蚀剧毒': '[##elementpurple]腐蚀剧毒[#]',
+            '腐蝕劇毒': '[##elementpurple]腐蝕劇毒[#]',
+            '燃烧伤害': '[##elementred]燃烧伤害[#]',
+            '燃燒傷害': '[##elementred]燃燒傷害[#]',
+            '腐蚀燃烧': '[##elementred]腐蚀燃烧[#]',
+            '腐蝕燃燒': '[##elementred]腐蝕燃燒[#]',
+            '奔涌流血伤害': '[##elementred]奔涌流血伤害[#]',
+            '重傷流血傷害': '[##elementred]重傷流血傷害[#]',
+            '流血伤害': '[##elementred]流血伤害[#]',
+            '流血傷害': '[##elementred]流血傷害[#]',
+            '沙系伤害': '[##elementyellow]沙系伤害[#]',
+            '沙系傷害': '[##elementyellow]沙系伤害[#]',
+            '水系伤害': '[##elementblue]水系伤害[#]',
+            '水系傷害': '[##elementblue]水系傷害[#]',
+            '冰冻伤害': '[##elementblue]冰冻伤害[#]',
+            '冰霜傷害': '[##elementblue]冰霜傷害[#]',
+            '腐蚀冰冻': '[##elementblue]腐蚀冰冻[#]',
+            '腐蝕冰霜': '[##elementblue]腐蝕冰霜[#]',
+        },
+        // 中文 effects 专属字典
+        effects: {
+            // 在这里添加 'zh' effects 专属词条
+        },
+        // 中文 passives 专属字典
+        passives: {
+            '剧毒': '[##elementpurple]剧毒[#]',
+            '劇毒': '[##elementpurple]劇毒[#]',
+            '燃烧': '[##elementred]燃烧[#]',
+            '燃焼': '[##elementred]燃焼[#]',
+            '流血': '[##elementred]流血[#]',
+            '沙系': '[##elementyellow]沙系[#]',
+            '水系': '[##elementblue]水系[#]',
+            '冰冻': '[##elementblue]冰冻[#]',
+            '冰霜': '[##elementblue]冰霜[#]',
+        },
+        // 中文 familyBonus 专属字典
+        familyBonus: {
+            // 在这里添加 'zh' familyBonus 专属词条
+        }
+    }
+};
+
+/**
+ * 用于预编译高亮工具（正则表达式、替换器等）的缓存。
+ * (Memoization)
+ */
+const highlightingToolsCache = {};
+
+/**
+ * 转义字符串中的正则表达式特殊字符。
+ * @param {string} str 要转义的字符串。
+ * @returns {string} 转义后的字符串。
+ */
+function escapeRegExp(str) {
+    // $& 表示整个匹配到的字符串
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * 获取或创建用于高亮的已编译工具（正则表达式、保护列表）。
+ * 这是为了性能而进行的“记忆化”处理。
+ * @param {string} lang - 'en' 或 'zh' (来自 state.currentLang)
+ * @param {string} type - 'effects', 'passives', 'familyBonus', 或 'common' (null)。
+ * @returns {{regex: RegExp, protectionValues: string[], replacer: function}}
+ */
+function getHighlightingTools(lang, type) {
+    // 统一将 'zh-CN', 'zh-TW' 等处理为 'zh'
+    const langKey = (lang === 'en') ? 'en' : 'zh';
+    const typeKey = type || 'common';
+    const cacheKey = `${langKey}_${typeKey}`;
+
+    // 1. 检查缓存
+    if (highlightingToolsCache[cacheKey]) {
+        return highlightingToolsCache[cacheKey];
+    }
+
+    // --- 2. 构建工具 ---
+    const langDicts = highlightDictionaries[langKey];
+    if (!langDicts) {
+        // 如果没有该语言的字典，缓存一个空操作
+        return (highlightingToolsCache[cacheKey] = { regex: null, protectionValues: [], replacer: null });
+    }
+
+    const commonDict = langDicts.common || {};
+    const specificDict = (typeKey !== 'common' && langDicts[typeKey]) ? langDicts[typeKey] : {};
+
+    // 专属字典会覆盖通用字典中的相同键
+    const combinedDict = { ...commonDict, ...specificDict };
+
+    if (Object.keys(combinedDict).length === 0) {
+        // 如果没有替换规则，缓存一个空操作
+        return (highlightingToolsCache[cacheKey] = { regex: null, protectionValues: [], replacer: null });
+    }
+
+    // 按键的长度降序排序 (例如，优先匹配 "Corrosive Fire" 而不是 "Fire")
+    const allKeys = Object.keys(combinedDict).sort((a, b) => b.length - a.length);
+
+    // 创建正则表达式
+    const regexPattern = allKeys.map(escapeRegExp).join('|');
+    const regex = new RegExp(regexPattern, 'g');
+
+    // 获取所有唯一的 *值* 用于保护步骤 (例如 "[##elementred]Fire[#]")
+    const protectionValues = [...new Set(Object.values(combinedDict))].sort((a, b) => b.length - a.length);
+
+    // 替换函数 (replacer)
+    const replacer = (match) => combinedDict[match];
+
+    // 3. 存入缓存并返回
+    highlightingToolsCache[cacheKey] = { regex, protectionValues, replacer };
+    return highlightingToolsCache[cacheKey];
+}
+
+/**
+ * 对文本字符串应用关键词高亮
+ * @param {string} text - 原始文本 (例如，技能描述)。
+ * @param {string} lang - 当前语言 ('en', 'zh-CN', 'zh-TW' 等)。
+ * @param {string} filterType - 'effects', 'passives', 'familyBonus', 或 null。
+ * @returns {string} - 添加了高亮标签的文本。
+ */
+function applyKeywordHighlighting(text, lang, filterType) {
+    if (!text || typeof text !== 'string') return text;
+
+    // 1. 获取预编译的工具
+    const { regex, protectionValues, replacer } = getHighlightingTools(lang, filterType);
+
+    // 如果没有规则，直接返回原文
+    if (!regex) {
+        return text;
+    }
+
+    let tempText = text;
+    const protectionMap = {};
+    let placeholderCount = 0;
+
+    // 步骤 1: 保护文本中已存在的、符合格式的值
+    for (const value of protectionValues) {
+        // 使用 while 循环，因为 .replace(string, string) 只替换第一个匹配项
+        while (tempText.includes(value)) {
+            const placeholder = `__KEYWORD_PROTECT_${placeholderCount}__`;
+            // .replace() 只替换第一个，所以 while 循环是安全的
+            tempText = tempText.replace(value, placeholder);
+            protectionMap[placeholder] = value;
+            placeholderCount++;
+        }
+    }
+
+    // 步骤 2: 应用替换
+    // .replace(regex, function) 会替换所有匹配项
+    let replacedText = tempText.replace(regex, replacer);
+
+    // 步骤 3: 恢复被保护的值
+    // 按占位符长度降序排序，防止 `__P_1__` 错误地替换 `__P_10__` 的一部分
+    const sortedPlaceholders = Object.keys(protectionMap).sort((a, b) => b.length - a.length);
+    for (const placeholder of sortedPlaceholders) {
+        // 同样使用 while 循环，以防同一个占位符需要恢复多次
+        while (replacedText.includes(placeholder)) {
+            replacedText = replacedText.replace(placeholder, protectionMap[placeholder]);
+        }
+    }
+
+    return replacedText;
+}
+
+
 /**
  * 在模态框中渲染英雄的详细信息。
  * @param {object} hero - 英雄对象。
@@ -325,7 +658,7 @@ function renderDetailsInModal(hero, context = {}) {
     const { modalContent, filterInputs } = uiElements;
     const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
     const avatarGlowClass = getColorGlowClass(hero.color);
-    // 新增：为详情框头像准备变量
+    // 为详情框头像准备变量
     const modalGradientBg = getHeroColorLightGradient(hero.color);
     const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
 
@@ -339,26 +672,26 @@ function renderDetailsInModal(hero, context = {}) {
         starsHTML += '</div>';
     }
 
-    // 新增：根据 costume_id 生成服装图标HTML
+    // 根据 costume_id 生成服装图标HTML
     let costumeIconHTML = '';
     if (hero.costume_id && hero.costume_id !== 0) {
         costumeIconHTML = '<img src="imgs/costume/c1.webp" class="hero-avatar-costume-icon" alt="costume">';
     }
 
-    // 新增：根据 family 生成家族图标HTML
+    // 根据 family 生成家族图标HTML
     let familyIconHTML = '';
     if (hero.family) {
         const familyIconSrc = `imgs/family/${String(hero.family).toLowerCase()}.webp`;
         familyIconHTML = `<img src="${familyIconSrc}" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
     }
 
-    // 新增：根据 class 生成职业图标HTML
+    // 根据 class 生成职业图标HTML
     let classIconHTML = '';
     if (hero.class) {
         const englishClass = (classReverseMap[hero.class] || hero.class).toLowerCase();
         classIconHTML = `<img src="imgs/classes/${englishClass}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
     }
-    // --- 新增逻辑：生成被动技能图标(包含两种来源) ---
+    // --- 生成被动技能图标(包含两种来源) ---
     let passiveSkillsHtml = '';
 
     const basePassives = hero.passiveSkills || [];
@@ -370,7 +703,7 @@ function renderDetailsInModal(hero, context = {}) {
         ...[...costumePassives].reverse() // 使用 ... 创建副本再倒序，避免修改原始数据
     ];
 
-    // --- 新增：生成头像上的 Aether Power 叠加图标 ---
+    // --- 生成头像上的 Aether Power 叠加图标 ---
     let aetherPowerIconHTML = '';
     // 检查英雄是否有 AetherPower 属性
     if (hero.AetherPower) {
@@ -454,14 +787,16 @@ function renderDetailsInModal(hero, context = {}) {
             'blue': '#26d0faff'   // 冰雪系 (蓝)
         };
         const specialColor = '#4A90E2'; // [#!] 谦逊等词条使用的颜色
-        
+
         // 检查是否启用了高亮技能词条
         const shouldHighlight = getHighlightSkillTermsSetting();
 
         return itemsArray.map(item => {
+
             let cleanItem = String(item).trim();
 
             // 在执行任何分割操作之前，检查它是否为“纯星号标题行”
+            // 这一步必须在添加任何标签 *之前* 完成
             if (cleanItem.includes('*') && starHeaderPattern.test(cleanItem)) {
                 const compactStars = cleanItem.replace(/\s/g, '');
                 return `<li>${compactStars}</li>`;
@@ -470,43 +805,65 @@ function renderDetailsInModal(hero, context = {}) {
             // --- 文本美化处理 ---
             if (shouldHighlight) {
 
-                // 步骤 1: 首先处理数字高亮，确保它在纯文本上运行
+                // 只有在用户启用高亮时，才执行“添加标签”的步骤
+                cleanItem = applyKeywordHighlighting(cleanItem, state.currentLang, filterType);
+
+                // 步骤 1: 首先处理数字高亮
                 const numberRegex = /([+-]?\d+[%]?)/g;
 
-                // ▼▼▼ 在 .replace 的回调函数中加入条件判断 ▼▼▼
-                cleanItem = cleanItem.replace(numberRegex, (match) => {
+                // 1. 替换回调函数现在接收所有参数 (match, p1, offset, fullString)
+                //    - match: 匹配到的完整字符串 (例如 "-700")
+                //    - offset: 匹配开始的位置索引
+                //    - fullString: 整个被搜索的字符串
+                // 2. 增加了对 "范围" 的检查，防止 "300 -700" 中的 "-700" 被标红
+                //
+                cleanItem = cleanItem.replace(numberRegex, (match, p1, offset, fullString) => {
 
                     // 判断匹配到的字符串是否以 '-' 开头
                     if (match.startsWith('-')) {
-                        // 如果是负数，使用红色
+                        // 如果是负数，检查它是否是一个范围的一部分
+
+                        let precedingCharIndex = offset - 1;
+
+                        // 1. 向后跳过所有空格 (例如 "300 -700" 中的空格)
+                        while (precedingCharIndex >= 0 && fullString[precedingCharIndex] === ' ') {
+                            precedingCharIndex--;
+                        }
+
+                        // 2. 检查跳过空格后的第一个非空字符
+                        const precedingChar = fullString[precedingCharIndex];
+
+                        // 3. 如果该字符是数字 (e.g., "300 -700" 中的 '0')
+                        //    那么它是一个范围，不应该标红。
+                        if (precedingChar >= '0' && precedingChar <= '9') {
+                            // 这是范围的后半部分，使用标准蓝色
+                            return `<span style="color: ${specialColor};">${match}</span>`;
+                        }
+
+                        // 如果不是范围（例如，前面是空格、字母、或字符串开头），
+                        // 那么它是一个真正的负值 (e.g., "-30% 攻击")，应该标红
                         return `<span style="color: #ef3838ff;">${match}</span>`;
+
                     } else {
-                        // 否则，使用原有的蓝色
+                        // 否则 (正数)，使用原有的蓝色
                         return `<span style="color: ${specialColor};">${match}</span>`;
                     }
                 });
 
-                // 步骤 2: 处理元素词条 (例如 [##elementred]燃烧伤害[#])
+                // 步骤 2: 处理元素词条 (将 [##...] 标签转换为 <span> HTML)
                 cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {
                     const color = colorNameMap[colorName] || '#FFFFFF';
                     return `<span style="color: ${color}; ">${text}</span>`;
                 });
 
-                // 步骤 3: 处理特殊词条 (例如 [#!]谦逊[#])
+                // 步骤 3: 处理特殊词条 (将 [#!...] 标签转换为 <span> HTML)
                 cleanItem = cleanItem.replace(/\[#!\](.*?)\[#\]/g, (match, text) => {
                     return `<span style="color: ${specialColor};">${text}</span>`;
                 });
-            } else {
-                // 如果不启用高亮，移除所有标记符号，只保留纯文本内容
-                cleanItem = cleanItem
-                    // 移除元素标记：[##elementred]文本[#] → 文本
-                    .replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, '$2')
-                    // 移除特殊标记：[#!]文本[#] → 文本
-                    .replace(/\[#!\](.*?)\[#\]/g, '$1');
             }
 
 
-            // --- 原始的HTML结构化逻辑 ---
+            // --- HTML结构化逻辑 ---
             if (filterType) {
                 const mainDesc = String(item).trim().split(' * ')[0].trim();
                 const displayHTML = cleanItem.replace(/ \* /g, '<br><i>') + '</i>';
@@ -558,24 +915,29 @@ function renderDetailsInModal(hero, context = {}) {
     const source = filterInputs.skillTypeSource.value;
     const uniqueSkillTypes = getSkillTagsForHero(hero, source);
     let heroTypesContent = '';
+    // 检查是否显示技能类别
+    const showSkillTypesInDetails = getCookie('showSkillTypesInDetails') !== 'false';
 
-    if (uniqueSkillTypes.length > 0) {
-        const tagsHTML = uniqueSkillTypes.map(type => {
-            let innerHTML = type; // 默认只显示文字
+    // 在技能类别部分添加条件渲染
+    if (showSkillTypesInDetails) {
+        if (uniqueSkillTypes.length > 0) {
+            const tagsHTML = uniqueSkillTypes.map(type => {
+                let innerHTML = type; // 默认只显示文字
 
-            // 如果来源是 bbcamp，则添加图标
-            if (source === 'bbcamp') {
-                const iconSrc = getIconForFilter('skillTag_base', type);
-                // 这里我们复用 option-icon class，因为它已经定义了合适的尺寸
-                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
-                innerHTML = `${iconHTML}${type}`;
-            }
+                // 如果来源是 bbcamp，则添加图标
+                if (source === 'bbcamp') {
+                    const iconSrc = getIconForFilter('skillTag_base', type);
+                    // 这里我们复用 option-icon class，因为它已经定义了合适的尺寸
+                    const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+                    innerHTML = `${iconHTML}${type}`;
+                }
 
-            return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${innerHTML}</span>`;
-        }).join('');
-        heroTypesContent = `<div class="skill-types-container">${tagsHTML}</div>`;
-    } else {
-        heroTypesContent = `<span class="skill-value">${langDict.none}</span>`;
+                return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${innerHTML}</span>`;
+            }).join('');
+            heroTypesContent = `<div class="skill-types-container">${tagsHTML}</div>`;
+        } else {
+            heroTypesContent = `<span class="skill-value">${langDict.none}</span>`;
+        }
     }
 
     const familyBonus = (state.families_bonus.find(f => f.name.toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || [];
@@ -633,6 +995,12 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.specialId) {
         specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.webp" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
     }
+
+    // 技能类别部分 - 根据设置决定是否显示
+    const skillTypesSection = showSkillTypesInDetails ? `
+    <p class="uniform-style">${langDict.modalSkillType}</p>
+    ${heroTypesContent}
+  ` : '';
 
     const detailsHTML = `
         <div class="details-header">
@@ -699,12 +1067,11 @@ function renderDetailsInModal(hero, context = {}) {
                         <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}">${hero.speed || langDict.none}</span></p>
                     </div>
                 </div>
-                <p class="uniform-style">${langDict.modalSkillType}</p>
-                ${heroTypesContent}
+                ${skillTypesSection}
             </div>
             <div id="modal-skill-effects-section" class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
             <div class="skill-category-block"><p id="modal-passives-section" class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
-            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus)}</ul></div>` : ''}
+            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul></div>` : ''}
         </div>
         <div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>
     `;

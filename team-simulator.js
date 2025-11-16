@@ -231,6 +231,9 @@ function renderTeamDisplay() {
     const teamDisplayGrid = document.getElementById('team-display-grid');
     if (!teamDisplayGrid) return;
 
+    // 检查是否显示技能类别
+    const showSkillTypesInTeam = getCookie('showSkillTypesInTeam') !== 'false';
+
     for (let i = 0; i < 5; i++) {
         const slot = state.teamSlots[i];
         const hero = slot ? slot.hero : null;
@@ -252,7 +255,7 @@ function renderTeamDisplay() {
             heroSlot.classList.add('filled');
             heroSlot.dataset.instanceId = slot.instanceId;
 
-            // ▼▼▼【修改】使用新的HTML结构来添加背景色▼▼▼
+            // ▼▼▼使用新的HTML结构来添加背景色▼▼▼
             const avatarContainer = document.createElement('div');
             avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.color)}`;
             avatarContainer.style.width = '60px';
@@ -270,9 +273,12 @@ function renderTeamDisplay() {
             avatarContainer.appendChild(avatarBackground);
             avatarContainer.appendChild(avatar);
             heroSlot.appendChild(avatarContainer);
-            // ▲▲▲【修改结束】▲▲▲
-
-            infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div><div class="team-hero-skills">${getSkillTypesText(hero) || i18n[state.currentLang].none}</div>`;
+            // 根据设置决定是否显示技能文本
+            if (showSkillTypesInTeam) {
+                infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div><div class="team-hero-skills">${getSkillTypesText(hero) || i18n[state.currentLang].none}</div>`;
+            } else {
+                infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div>`;
+            }
             infoSlot.dataset.instanceId = slot.instanceId;
             infoSlot.style.display = 'block';
 
@@ -312,7 +318,10 @@ function updateTeamTags() {
     const tagCounts = {};
     let teamHasHeroes = state.teamSlots.some(s => s && s.hero);
 
-    if (!teamHasHeroes) {
+    // 检查是否显示技能类别
+    const showSkillTypesInTeam = getCookie('showSkillTypesInTeam') !== 'false';
+
+    if (!teamHasHeroes || !showSkillTypesInTeam) {
         summaryContainer.innerHTML = '';
         summaryContainer.style.display = 'none';
         return;

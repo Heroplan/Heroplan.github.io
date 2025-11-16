@@ -402,6 +402,35 @@ async function initializeApp() {
             applyFiltersAndRender(); // 重新渲染以应用更改
         });
     }
+
+    // 初始化技能类别显示设置
+    const showSkillTypesInDetailsCheckbox = document.getElementById('show-skill-types-in-details-checkbox');
+    const showSkillTypesInTeamCheckbox = document.getElementById('show-skill-types-in-team-checkbox');
+
+    if (showSkillTypesInDetailsCheckbox) {
+        showSkillTypesInDetailsCheckbox.checked = getCookie('showSkillTypesInDetails') !== 'false';
+        showSkillTypesInDetailsCheckbox.addEventListener('change', function () {
+            setCookie('showSkillTypesInDetails', this.checked, 365);
+            // 如果当前正在显示详情页，则需要重新渲染
+            if (!uiElements.modal.classList.contains('hidden')) {
+                const currentHero = state.modalContext.hero;
+                if (currentHero) {
+                    renderDetailsInModal(currentHero, state.modalContext);
+                }
+            }
+        });
+    }
+
+    if (showSkillTypesInTeamCheckbox) {
+        showSkillTypesInTeamCheckbox.checked = getCookie('showSkillTypesInTeam') !== 'false';
+        showSkillTypesInTeamCheckbox.addEventListener('change', function () {
+            setCookie('showSkillTypesInTeam', this.checked, 365);
+            // 重新渲染队伍模拟器
+            if (state.teamSimulatorActive) {
+                renderTeamDisplay();
+            }
+        });
+    }
 }
 
 /**

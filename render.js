@@ -322,7 +322,6 @@ const highlightDictionaries = {
     en: {
         // 英文通用字典
         common: {
-            'Otherwise:': '[#!]Otherwise:[#]',
             'Dark': '[##elementpurple]Dark[#]',
             'Nature': '[##elementgreen]Nature[#]',
             'Fire': '[##elementred]Fire[#]',
@@ -399,8 +398,6 @@ const highlightDictionaries = {
     zh: { // 包含简体 (cn) 和繁体 (tc)
         // 中文通用字典
         common: {
-            '否则：': '[#!]否则：[#]',
-            '否則：': '[#!]否則：[#]',
             '暗黑系': '[##elementpurple]暗黑系[#]',
             '自然系': '[##elementgreen]自然系[#]',
             '烈火系': '[##elementred]烈火系[#]',
@@ -617,7 +614,7 @@ function applyKeywordHighlighting(text, lang, filterType) {
         if (firstLine) {
             // 1. 根据 lang 变量确定长度限制
             //    - lang.startsWith('en')
-            const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 20;
+            const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 30;
 
             // 2. 在判断中使用这个动态的长度限制
             const hasColon = (firstLine.endsWith(':') || firstLine.endsWith('：')) && firstLine.length < lengthLimit;

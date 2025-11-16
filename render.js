@@ -368,6 +368,7 @@ const highlightDictionaries = {
             'reduce all received damage': '[##elementyellow]reduce all received damage[#]',
             'Full Removal': '[#!]Full Removal[#]',
             'can\'t be dispelled': '[#!]can\'t be dispelled[#]',
+            'can\’t be dispelled': '[#!]can\’t be dispelled[#]',
             'uncleansable': '[##elementred]uncleansable[#]',
             'Paralyzed': '[##elementred]Paralyzed[#]',
             'Curse damage': '[#!]Curse damage[#]',

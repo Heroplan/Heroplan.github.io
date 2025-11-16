@@ -783,10 +783,10 @@ function renderDetailsInModal(hero, context = {}) {
             'purple': '#ca4bf8ff', // 暗黑系 (紫)
             'green': '#70e92f',  // 自然系 (绿)
             'red': '#ef3838ff',    // 烈火系 (红)
-            'yellow': '#f2e33a', // 神圣系 (黄)
+            'yellow': '#c2b52dff', // 神圣系 (黄)
             'blue': '#26d0faff'   // 冰雪系 (蓝)
         };
-        const specialColor = '#4A90E2'; // [#!] 谦逊等词条使用的颜色
+        const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
 
         // 检查是否启用了高亮技能词条
         const shouldHighlight = getHighlightSkillTermsSetting();

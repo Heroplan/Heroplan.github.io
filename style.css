@@ -3682,8 +3682,7 @@ select.custom-select-hidden {
 
 /* --- 動態DoT數值的高亮樣式 --- */
 .dynamic-value {
-  color: var(--md-sys-color-tertiary);
-  /* 使用主題中的第三色，或您喜歡的其他顏色 */
+  color: #D14545;
   font-weight: 700;
   /* 加粗顯示 */
   padding: 1px 4px;

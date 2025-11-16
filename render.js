@@ -158,11 +158,10 @@ function renderTable(heroes) {
                 const elementSuffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableElementSuffixes.join('|')})(?:\\))?$`, 'i');
                 displayName = displayName.replace(elementSuffixRegex, '').trim();
 
-                // ▼▼▼ 新增逻辑：移除服装后缀 ▼▼▼
+                // ▼▼▼ 移除服装后缀 ▼▼▼
                 // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
                 const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|glass|toon|玻璃|卡通|皮肤|皮膚)(?:\]|\))?\s*$/i;
                 displayName = displayName.replace(costumeSuffixRegex, '').trim();
-                // ▲▲▲ 新增逻辑结束 ▲▲▲
 
                 content = displayName || '';
             } else if (key === 'class' && hero[key]) {
@@ -752,7 +751,7 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.AetherPower) {
         const framePath = 'imgs/Aether Power/frame.webp';
 
-        // 【核心修正】使用您已有的 aetherPowerReverseMap 和逻辑来获取正确的图标文件名
+        // 使用已有的 aetherPowerReverseMap 和逻辑来获取正确的图标文件名
         const iconFileName = (aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower)
             .toLowerCase()
 
@@ -966,7 +965,7 @@ function renderDetailsInModal(hero, context = {}) {
         }
     }
 
-    // 现在，正确地使用所有三个变量来构建最终的HTML
+    // 使用所有三个变量来构建最终的HTML
     // 使用英文名进行筛选，而不是当前语言显示的名字
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
@@ -1158,7 +1157,7 @@ function renderDetailsInModal(hero, context = {}) {
         modalHeroImg.addEventListener('error', showOverlays);
     }
 
-    // 新增：滚动到指定区域的按钮事件监听
+    // 滚动到指定区域的按钮事件监听
     const scrollToSection = (sectionId) => {
         const section = modalContent.querySelector(`#${sectionId}`);
         const header = modalContent.querySelector('.details-header');
@@ -1180,7 +1179,7 @@ function renderDetailsInModal(hero, context = {}) {
     document.getElementById('scroll-to-passives-btn')?.addEventListener('click', () => scrollToSection('modal-passives-section'));
     document.getElementById('scroll-to-family-btn')?.addEventListener('click', () => scrollToSection('modal-family-bonus-section'));
 
-    // 新增：为标题添加返回顶部功能
+    // 为标题添加返回顶部功能
     document.getElementById('modal-title-h2')?.addEventListener('click', () => {
         uiElements.modal.scrollTo({
             top: 0,
@@ -1246,13 +1245,46 @@ function renderDetailsInModal(hero, context = {}) {
         });
     }
 
-    // 天赋系统相关逻辑
+    // ▼▼▼ 将头像容器的 CSS 类切换逻辑移至外部，确保始终执行 ▼▼▼
+    const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
+    if (avatarContainerModal) {
+        // 根据全局设置，判断是否为 LB2 状态并切换 .is-lb2 类
+        avatarContainerModal.classList.toggle('is-lb2', settingsToUse.lb === 'lb2');
+
+        // 根据全局设置，判断是否有天赋节点并切换 .has-talents 类
+        const initialNodeCount = parseInt(settingsToUse.talent.replace('talent', ''), 10) || 0;
+        avatarContainerModal.classList.toggle('has-talents', initialNodeCount > 0);
+    }
+
+    // ▼▼▼ 始终根据全局默认设置，渲染初始段位信息 ▼▼▼
+    const rankContainer = document.getElementById('modal-rank-container');
+    if (rankContainer) {
+        // 1. 从全局筛选器获取默认设置
+        const defaultLbSetting = uiElements.filterInputs.defaultLimitBreakSelect.value;
+        const defaultTalentSetting = uiElements.filterInputs.defaultTalentSelect.value;
+
+        // 2. 根据默认天赋设置，近似计算初始天赋节点数
+        const initialNodeCount = parseInt(defaultTalentSetting.replace('talent', ''), 10) || 0;
+
+        // 3. 生成并插入HTML
+        const rankHtml = generateRankHtml(hero, defaultLbSetting, defaultTalentSetting, initialNodeCount);
+        if (rankHtml) {
+            rankContainer.innerHTML = rankHtml;
+            // 首次渲染时添加入场动画
+            const rankContainerInner = rankContainer.querySelector('.hero-avatar-rank-container');
+            if (rankContainerInner) {
+                rankContainerInner.classList.add('animate-rank-in');
+            }
+        }
+    }
+
+    // 天赋系统相关逻辑 (如果启用)
     if (filterInputs.showLbTalentDetailsCheckbox.checked) {
         const modalLbSelect = document.getElementById('modal-limit-break-select');
         const modalTalentSelect = document.getElementById('modal-talent-select');
         const modalStrategySelect = document.getElementById('modal-talent-strategy-select');
         const modalManaCheckbox = document.getElementById('modal-mana-priority-checkbox');
-        // 新增：用于在内存中缓存天赋树计算出的最新加成状态
+        // 用于在内存中缓存天赋树计算出的最新加成状态
         let currentTalentBonuses = { attack_flat: 0, attack_percent: 0, defense_flat: 0, defense_percent: 0, health_flat: 0, health_percent: 0, mana_percent: 0, healing_percent: 0, crit_percent: 0 };
         let currentNodeCount = 0;
 
@@ -1280,6 +1312,7 @@ function renderDetailsInModal(hero, context = {}) {
             rankContainer.innerHTML = newHtml;
 
             // 仅在容器之前为空、现在有内容时，才触发一次动画
+            // 由于现在总是预先渲染，hadContent 几乎总是 true，所以这个动画逻辑主要由上面的初始渲染代码触发。
             if (!hadContent && hasNewContent) {
                 const newRankContainerInner = rankContainer.querySelector('.hero-avatar-rank-container');
                 if (newRankContainerInner) {
@@ -1369,7 +1402,7 @@ function renderDetailsInModal(hero, context = {}) {
             updateCommonUI(bonuses, nodeCount);
         };
 
-        // 新增：一个通用的UI更新函数
+        // 一个通用的UI更新函数
         const updateCommonUI = (bonuses, nodeCount) => {
             const settings = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
             _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount);
@@ -1390,12 +1423,12 @@ function renderDetailsInModal(hero, context = {}) {
             updateRankDisplay(nodeCount);
         };
 
-        // 新增：仅用于“突破设置”的处理器，它不会触碰天赋树
+        // 仅用于“突破设置”的处理器，它不会触碰天赋树
         const handleStatUpdateOnly = () => {
             updateCommonUI(currentTalentBonuses, currentNodeCount);
         };
 
-        // 新增：仅用于天赋相关设置的处理器，它会刷新天赋树
+        // 仅用于天赋相关设置的处理器，它会刷新天赋树
         const handleTreeAndStatUpdate = () => {
             const newTalentLevel = modalTalentSelect.value;
             const isDisabled = (newTalentLevel === 'none');
@@ -1418,7 +1451,7 @@ function renderDetailsInModal(hero, context = {}) {
             TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
         }
 
-        // 2. 然后，用你保存的正确设置，强制覆盖下拉菜单的值
+        // 2. 然后，保存的正确设置，强制覆盖下拉菜单的值
         modalLbSelect.value = settingsToUse.lb;
         modalTalentSelect.value = settingsToUse.talent;
         modalStrategySelect.value = settingsToUse.strategy;

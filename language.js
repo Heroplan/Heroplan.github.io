@@ -752,7 +752,7 @@ const i18n = {
         healthPriority2: "Health > Attack > Defense",
         manaPriorityLabel: "Mana Node:",
         manaPriorityToggle: "Prioritize",
-        showLbTalentDetailsLabel: "Details Page LB/Talent Settings:",
+        showLbTalentDetailsLabel: "LB/Talent Settings in detail:",
         showLbTalentDetailsToggle: "Show",
         modalTalentSettingsTitle: "Limit Break & Talent Settings",
         customTalentTitle: "Custom Talents",
@@ -948,8 +948,8 @@ const i18n = {
         "redeemBtn": 'Redeem',
         highlightSkillTermsLabel: "Highlight Skill Terms:",
         highlightSkillTermsToggle: "Enable",
-        showSkillTypesInDetailsLabel: "Show skill types in details:",
-        showSkillTypesInTeamLabel: "Show skill types in team simulator:",
+        showSkillTypesInDetailsLabel: "Skill types in details:",
+        showSkillTypesInTeamLabel: "Skill types in team:",
         showSkillTypesToggle: "Enable",
     }
 }; 

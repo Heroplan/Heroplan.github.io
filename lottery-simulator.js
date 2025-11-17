@@ -1162,7 +1162,7 @@ async function handleActivityClick(poolId) {
                 }
             }
             const hotmInfo = summonPoolDetails.hotm;
-            if (hotmInfo && hotmInfo.ChancePerMil) {
+            if (hotmInfo && hotmInfo.ChancePerMil && poolConfig.hasMysteryHeroBonusRoll) {
                 const percentage = (parseInt(hotmInfo.ChancePerMil, 10) / 10).toFixed(1);
                 const name = bonusTranslations.hotm || 'HOTM';
                 bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;

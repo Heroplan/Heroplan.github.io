@@ -70,6 +70,15 @@ function initializeImportModalListeners() {
     });
 }
 
+// 导入导出使用的Cookie键名
+const otherSettingKeys = [
+    'theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy',
+    'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch',
+    'skillTypeSource', 'showEventNameState', 'chatPreviewHeight',
+    'teamDisplayCollapsed', 'collapseStates',
+    'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed', 'highlightSkillTerms',
+    'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam'
+];
 /**
  * 打开导出设置模态框，并根据可导出的数据动态生成内容。
  */
@@ -80,14 +89,6 @@ function openExportModal() {
     if (!modal || !overlay || !content) return;
 
     const langDict = i18n[state.currentLang];
-    // 【修正】在此处加入新的Cookie键名
-    const otherSettingKeys = [
-        'theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy',
-        'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch',
-        'skillTypeSource', 'showEventNameState', 'chatPreviewHeight',
-        'teamDisplayCollapsed', 'collapseStates',
-        'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed'
-    ];
 
     // 检查有哪些数据可以导出
     const dataSources = {
@@ -170,14 +171,6 @@ function openImportModal() {
  */
 function handleGenerateExportCode() {
     const langDict = i18n[state.currentLang];
-    // 在此处也加入新的Cookie键名，确保与 openExportModal 一致
-    const otherSettingKeys = [
-        'theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy',
-        'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch',
-        'skillTypeSource', 'showEventNameState', 'chatPreviewHeight',
-        'teamDisplayCollapsed', 'collapseStates',
-        'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed'
-    ];
     const dataSources = {
         heroFavorites: { storage: 'localStorage' },
         savedTeams: { storage: 'cookie' },
@@ -302,7 +295,6 @@ function handleImportConfirm() {
 
     const mode = document.querySelector('input[name="import-mode"]:checked').value;
     const counters = { favorites: 0, teams: 0, colors: 0 };
-    const otherSettingKeys = ['theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy', 'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch', 'skillTypeSource', 'showEventNameState', 'chatPreviewHeight', 'teamDisplayCollapsed', 'collapseStates'];
 
     const selectedKeys = new Set();
     document.querySelectorAll('.import-item-checkbox:checked').forEach(cb => selectedKeys.add(cb.dataset.key));

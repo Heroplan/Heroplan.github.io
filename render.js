@@ -358,7 +358,7 @@ const highlightDictionaries = {
             'safely cleanse': '[##elementgreen]safely cleanse[#]',
             'Safely dispels': '[##elementgreen]Safely dispels[#]',
             'safely dispels': '[##elementgreen]safely dispels[#]',
-            'safely dispel': '[##elementgreen]safely dispel[#]', 
+            'safely dispel': '[##elementgreen]safely dispel[#]',
             'cleanable': '[#!]cleanable[#]',
             'Cleanses': '[##elementgreen]Cleanses[#]',
             'undispellable': '[##elementgreen]undispellable[#]',
@@ -434,7 +434,7 @@ const highlightDictionaries = {
             '枯萎': '[##elementred]枯萎[#]',
             '蔓延': '[##elementred]蔓延[#]',
             '擴散': '[##elementred]擴散[#]',
-            '法力': '[#!]法力[#]', 
+            '法力': '[#!]法力[#]',
             '法力生成': '[#!]法力生成[#]',
             '法力產出': '[#!]法力產出[#]',
             '精准度': '[##elementyellow]精准度[#]',
@@ -614,29 +614,67 @@ function applyKeywordHighlighting(text, lang, filterType) {
     let textToProcess = text;
     let highlightedPrefix = '';
 
-    // --- 如果 filterType 是 'effects' 或 'passives' ---
-    if (filterType === 'effects' || filterType === 'passives') {
-        const lines = text.split('\n');
-        const firstLine = lines[0];
+    // --- 如果 filterType 是 'effects' 或 'passives'，则进行特殊预处理 ---
+    if ((filterType === 'effects' || filterType === 'passives') && !text.startsWith('-') ) {
 
-        // 检查是否满足条件
-        if (firstLine) {
-            // 1. 根据 lang 变量确定长度限制
-            //    - lang.startsWith('en')
-            const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 30;
+        const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 30;
+        const hasColon = (text.endsWith(':') || text.endsWith('：')) && text.length < lengthLimit;
 
-            // 2. 在判断中使用这个动态的长度限制
-            const hasColon = (firstLine.endsWith(':') || firstLine.endsWith('：')) && firstLine.length < lengthLimit;
-            // 如果满足条件，则处理并更新待处理的文本
-            if (hasColon) {
+        // --- 组合规则：同时满足 hasColon 且是 passives 的特殊情况 ---
+        if (hasColon && filterType === 'passives') {
 
-                // 将整行用 [#!] 包裹
-                highlightedPrefix = `[#!]${lines}[#]`;
-                textToProcess = lines.slice(1).join('\n');
+            // 1. 找到第一个冒号，分离出标题
+            const colonIndex = text.indexOf(':');
+            const wideColonIndex = text.indexOf('：');
+            let finalColonIndex = -1;
 
-                if (textToProcess) {
-                    highlightedPrefix += '\n';
-                }
+            if (colonIndex > -1 && wideColonIndex > -1) {
+                finalColonIndex = Math.min(colonIndex, wideColonIndex);
+            } else {
+                finalColonIndex = colonIndex > -1 ? colonIndex : wideColonIndex;
+            }
+
+            if (finalColonIndex > -1) {
+                const partToHighlight = text.substring(0, finalColonIndex + 1);
+                const restOfText = text.substring(finalColonIndex + 1);
+
+                // 2. [内层高亮] 先对标题应用 passive 高亮
+                const passiveHighlightedTitle = `[##elementpassive]${partToHighlight}[#]`;
+
+                // 3. [外层高亮] 再将拼接后的完整文本用 [#!] 包裹
+                highlightedPrefix = `[#!]${passiveHighlightedTitle}${restOfText}[#]`;
+
+                // 4. 停止后续所有处理
+                textToProcess = '';
+            } else {
+                // 这是一个理论上的边缘情况，如果找不到冒号，则按普通 hasColon 处理
+                highlightedPrefix = `[#!]${text}[#]`;
+                textToProcess = '';
+            }
+        }
+        // --- 单独规则：只满足 hasColon (通常是 effects) ---
+        else if (hasColon) {
+            highlightedPrefix = `[#!]${text}[#]`;
+            textToProcess = '';
+        }
+        // --- 单独规则：只满足是 passives (通常是长文本) ---
+        else if (filterType === 'passives') {
+            const colonIndex = text.indexOf(':');
+            const wideColonIndex = text.indexOf('：');
+            let finalColonIndex = -1;
+
+            if (colonIndex > -1 && wideColonIndex > -1) {
+                finalColonIndex = Math.min(colonIndex, wideColonIndex);
+            } else {
+                finalColonIndex = colonIndex > -1 ? colonIndex : wideColonIndex;
+            }
+
+            if (finalColonIndex > -1) {
+                const partToHighlight = text.substring(0, finalColonIndex + 1);
+                const restOfText = text.substring(finalColonIndex + 1);
+
+                // 仅应用 yellow 高亮，并让文本继续后续处理
+                textToProcess = `[##elementpassive]${partToHighlight}[#]${restOfText}`;
             }
         }
     }
@@ -654,7 +692,7 @@ function applyKeywordHighlighting(text, lang, filterType) {
         return text;
     }
 
-    let tempText = text;
+    let tempText = textToProcess;
     const protectionMap = {};
     let placeholderCount = 0;
 
@@ -826,7 +864,8 @@ function renderDetailsInModal(hero, context = {}) {
             'green': '#70e92f',  // 自然系 (绿)
             'red': '#ef3838ff',    // 烈火系 (红)
             'yellow': '#c2b52dff', // 神圣系 (黄)
-            'blue': '#26d0faff'   // 冰雪系 (蓝)
+            'blue': '#26d0faff',   // 冰雪系 (蓝)
+            'passive': '#ff7800ff'   // 被动天赋 (橙)
         };
         const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
 
@@ -893,15 +932,26 @@ function renderDetailsInModal(hero, context = {}) {
                 });
 
                 // 步骤 2: 处理元素词条 (将 [##...] 标签转换为 <span> HTML)
-                cleanItem = cleanItem.replace(/\[##element(purple|green|red|yellow|blue)\](.*?)\[#\]/g, (match, colorName, text) => {
-                    const color = colorNameMap[colorName] || '#FFFFFF';
-                    return `<span style="color: ${color}; ">${text}</span>`;
-                });
+                // 定义只匹配“最内层”标签的正则表达式。
+                // 关键在于 [^\[\]]*，它匹配任何不包含 '[' 或 ']' 的内容。
+                const innermostElementPattern = /\[##element(purple|green|red|yellow|blue|passive)\]([^\[\]]*)\[#\]/;
+                const innermostSpecialPattern = /\[#!\]([^\[\]]*)\[#\]/;
 
-                // 步骤 3: 处理特殊词条 (将 [#!...] 标签转换为 <span> HTML)
-                cleanItem = cleanItem.replace(/\[#!\](.*?)\[#\]/g, (match, text) => {
-                    return `<span style="color: ${specialColor};">${text}</span>`;
-                });
+                // 只要字符串中还存在任何一个最内层标签，就持续循环。
+                while (innermostElementPattern.test(cleanItem) || innermostSpecialPattern.test(cleanItem)) {
+
+                    // 每次循环都先处理 element 标签
+                    cleanItem = cleanItem.replace(innermostElementPattern, (match, colorName, text) => {
+                        const color = colorNameMap[colorName] || '#FFFFFF';
+                        // 将最内层的标签替换为HTML，这样外层标签的内容就变成了 "...<span>...</span>..."
+                        return `<span style="color: ${color};">${text}</span>`;
+                    });
+
+                    // 然后处理 special 标签
+                    cleanItem = cleanItem.replace(innermostSpecialPattern, (match, text) => {
+                        return `<span style="color: ${specialColor};">${text}</span>`;
+                    });
+                }
             }
 
 
@@ -1541,7 +1591,7 @@ function renderDetailsInModal(hero, context = {}) {
         resetAllFilters();
 
         if (state.multiSelectFilters.hasOwnProperty(filterType)) {
-            // 处理非文本输入的筛选器（如：颜色、职业、星级等），这部分逻辑不变
+            // 处理非文本输入的筛选器（如：颜色、职业、星级等）
             state.multiSelectFilters[filterType] = [filterValue];
             updateFilterButtonUI(filterType);
         } else if (uiElements.filterInputs[filterType]) {
@@ -1549,7 +1599,7 @@ function renderDetailsInModal(hero, context = {}) {
             // 使用正则表达式匹配这些单词，并用空字符串替换它们。
             // \b 是单词边界，确保我们不会错误地替换包含这些词的更长的词。
             // i 是不区分大小写标志。
-            const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue)\b/gi;
+            const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue|elementpassive)\b/gi;
             switch (filterType) {
                 case 'types':
                     // 如果点击的是技能“类别”，则使用方括号[]进行完全匹配

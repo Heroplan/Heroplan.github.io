@@ -284,7 +284,8 @@ const wantedMissionData = [
     { season: 'S3', daily: '9-8', red: '6-2', green: ['4-8', '30-6'], blue: ['9-8', '9-2'], purple: '17-9', yellow: '8-6' },
     { season: 'S4', daily: '6-10', red: ['32-2', '32-6'], green: '9-2', blue: ['8-2', '30-7'], purple: '14-8', yellow: '4-7' },
     { season: 'S5', daily: ['5-10', '6-10'], red: ['2-9', '2-1'], green: ['3-4', '10-8', '30-8'], blue: '22-2', purple: '5-10', yellow: ['16-8', '17-6'] },
-    { season: 'S6', daily: '1-26', red: '1-24', green: ['1-11', '4-22'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] }
+    { season: 'S6\nUT1', daily: '1-26', red: '1-24', green: ['1-11', '4-22'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] },
+    { season: 'S7\nUT2', daily: '1-28', red: '1-28', green: ['1-12'], blue: '2-20', purple: '1-3', yellow: ['1-21'] }
 ];
 
 // 材料出处指南数据

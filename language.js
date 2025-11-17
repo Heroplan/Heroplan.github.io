@@ -675,7 +675,7 @@ const i18n = {
         cnSkill_buffLabel: "Buffs:",
         cnSkill_debuffLabel: "Debuffs:",
         enableSkillQuickSearchToggle: "Enable", filterBy: "Filter by:", all: "All", hero: "Hero", skin: "Costume", favorites: "Favorites",
-        heroAcademyEventLabel: "Hero Academy 10 List:", oneClickMaxEventLabel: "Hero Coach:", purchaseCostumeEventLabel: "Visiting Outfitter:",
+        heroAcademyEventLabel: "Hero Academy 10:", oneClickMaxEventLabel: "Hero Coach:", purchaseCostumeEventLabel: "Visiting Outfitter:",
         "soulExchangeEventLabel": "Soul Exchange:",
         "showListBtnLabel": "Show List",
         "soulExchangeModalTitle": "Soul Exchange List",

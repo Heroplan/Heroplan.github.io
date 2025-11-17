@@ -223,6 +223,7 @@ async function initializeApp() {
         defaultManaPriorityCheckbox: document.getElementById('default-mana-priority-checkbox'),
         showLbTalentDetailsCheckbox: document.getElementById('show-lb-talent-details-checkbox'),
         enableSkillQuickSearchCheckbox: document.getElementById('enable-skill-quick-search-checkbox'),
+        filterHeroAcademyBtn: document.getElementById('filter-hero-academy-btn'),
         filterHero730Btn: document.getElementById('filter-hero-730-btn'),
         filterCostume548Btn: document.getElementById('filter-costume-548-btn'),
     });
@@ -274,6 +275,7 @@ async function initializeApp() {
 
     // 6. 根据URL参数执行特殊操作
     history.replaceState({ view: 'list' }, '');
+    document.getElementById('hero-academy-date-display').textContent = formatLocalDate(new Date().toISOString().split('T')[0]);
     document.getElementById('one-click-max-date-display').textContent = formatLocalDate(oneClickMaxDate);
     document.getElementById('purchase-costume-date-display').textContent = formatLocalDate(purchaseCostumeDate);
     // 初始化灵魂交换行
@@ -665,6 +667,14 @@ function addEventListeners() {
         });
     }
     // 为一键日期筛选按钮专门添加点击事件监听器
+    if (filterInputs.filterHeroAcademyBtn) {
+        filterInputs.filterHeroAcademyBtn.addEventListener('click', () => {
+            resetAllFilters(); // 重置所有筛选条件
+            state.temporaryAcademyFilter = true; // 激活英雄学院筛选模式
+            applyFiltersAndRender(); // 应用筛选并重新渲染
+        });
+    }
+    
     if (filterInputs.filterHero730Btn) {
         filterInputs.filterHero730Btn.addEventListener('click', () => {
             resetAllFilters();

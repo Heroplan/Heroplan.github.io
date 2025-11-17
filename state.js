@@ -16,6 +16,7 @@ const state = {
     // --- 临时筛选状态 ---
     temporaryFavorites: null, // 用于临时存储分享链接中的收藏列表
     temporaryDateFilter: null,  // 用于临时存储日期筛选条件
+    temporaryAcademyFilter: false,
 
     // --- UI与交互状态 ---
     modalStack: [], // 用于管理模态框的堆栈，支持浏览器后退关闭

@@ -278,6 +278,7 @@ function resetAllFilters() {
     }
     state.temporaryFavorites = null;
     state.temporaryDateFilter = null;
+    state.temporaryAcademyFilter = false;
 }
 
 
@@ -659,34 +660,47 @@ function applyFiltersAndRender() {
         if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
         if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
 
-        // 临时日期筛选
-        if (state.temporaryDateFilter) {
+        // --- 统一处理临时日期和英雄学院筛选 ---
+        if (state.temporaryDateFilter || state.temporaryAcademyFilter) {
             const releaseDateStr = hero['Release date'];
-            if (!releaseDateStr) return false;
+            if (!releaseDateStr) return false; // 两种筛选都需要发布日期
 
-            // --- 手动解析英雄的发布日期 ---
+            // --- 解析英雄的发布日期 ---
             const heroParts = releaseDateStr.split('-');
-            if (heroParts.length !== 3) return false; // 如果格式不符则排除
+            if (heroParts.length !== 3) return false;
             const heroYear = parseInt(heroParts[0], 10);
-            const heroMonth = parseInt(heroParts[1], 10) - 1; // JS月份从0开始
+            const heroMonth = parseInt(heroParts[1], 10) - 1;
             const heroDay = parseInt(heroParts[2], 10);
             const releaseDate = new Date(heroYear, heroMonth, heroDay);
-
-            // --- 手动解析基础日期 ---
-            const baseParts = state.temporaryDateFilter.base.split('-');
-            if (baseParts.length !== 3) return false;
-            const baseYear = parseInt(baseParts[0], 10);
-            const baseMonth = parseInt(baseParts[1], 10) - 1;
-            const baseDay = parseInt(baseParts[2], 10);
-            const baseDate = new Date(baseYear, baseMonth, baseDay);
-
-            // 确保移除时间部分以进行纯粹的日期比较
             releaseDate.setHours(0, 0, 0, 0);
-            baseDate.setHours(0, 0, 0, 0);
 
-            // --- 计算日期差异并筛选 ---
-            const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
-            if (diffDays < state.temporaryDateFilter.days) return false;
+            // --- 根据不同的筛选模式执行逻辑 ---
+            if (state.temporaryAcademyFilter) {
+                if (hero.star !== 5) return false;
+                const baseDate = new Date();
+                baseDate.setHours(0, 0, 0, 0);
+                const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
+
+                const isHero = hero.costume_id === 0;
+                const isSkin = hero.costume_id !== 0;
+
+                // 因为范围筛选已经执行过，所以这里只需要判断当前英雄是否满足其对应的日期条件即可
+                if (isHero && diffDays < 730) return false; // 英雄不满足条件
+                if (isSkin && diffDays < 365) return false; // 皮肤不满足条件
+
+            } else if (state.temporaryDateFilter) {
+                // 这是处理“一键满级”和“购买服装”的原有逻辑
+                const baseParts = state.temporaryDateFilter.base.split('-');
+                if (baseParts.length !== 3) return false;
+                const baseYear = parseInt(baseParts[0], 10);
+                const baseMonth = parseInt(baseParts[1], 10) - 1;
+                const baseDay = parseInt(baseParts[2], 10);
+                const baseDate = new Date(baseYear, baseMonth, baseDay);
+                baseDate.setHours(0, 0, 0, 0);
+
+                const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
+                if (diffDays < state.temporaryDateFilter.days) return false;
+            }
         }
 
         return true;

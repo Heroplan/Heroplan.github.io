@@ -1187,8 +1187,7 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
 .class-icon,
 .costume-icon,
 .aether-power-icon,
-.source-icon,
-.event-icon {
+.source-icon {
   height: 1.2em;
   width: 1.2em;
   object-fit: contain;
@@ -1197,7 +1196,15 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
   margin-right: 2px;
   /* 图标与右侧文字的间距 */
 }
-
+.event-icon {
+  height: 2em;
+  width: 2em;
+  object-fit: contain;
+  vertical-align: -0.8em;
+  /* 微调垂直对齐以更好地匹配文本 */
+  margin-right: 2px;
+  /* 图标与右侧文字的间距 */
+}
 .color-icon {
   height: 1.8em;
   width: 1.8em;

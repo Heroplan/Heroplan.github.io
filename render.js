@@ -328,7 +328,8 @@ const highlightDictionaries = {
             'Ice': '[##elementblue]Ice[#]',
             'Mindless Attack': '[##elementred]Mindless Attack[#]',
             'Mindless Heal': '[##elementred]Mindless Heal[#]',
-            'Stack (Max: 10):': '[#!]Stack (Max: 10):[#]',
+            'Stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
+            'stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
             'stacks': '[##elementred]stacks[#]',
             'stack': '[##elementred]stack[#]',
             'Soul Bound': '[##elementred]Soul Bound[#]',
@@ -419,8 +420,8 @@ const highlightDictionaries = {
             '盲目治疗': '[##elementred]盲目治疗[#]',
             '莽夫治療': '[##elementred]莽夫治療[#]',
             '无限回合': '[#!]无限回合[#]',
-            '叠加（最多： 10 层 ）：': '[#!]叠加（最多： 10 层 ）：[#]',
-            '疊加（最大值： 10 ）：': '[#!]疊加（最大值： 10 ）：[#]',
+            '叠加（最多： 10 层 ）': '[##elementred]叠加（最多： 10 层 ）[#]',
+            '疊加（最大值： 10 ）': '[##elementred]疊加（最大值： 10 ）[#]',
             '叠加': '[##elementred]叠加[#]',
             '疊加': '[##elementred]疊加[#]',
             '缚魂': '[##elementred]缚魂[#]',
@@ -638,8 +639,8 @@ function applyKeywordHighlighting(text, lang, filterType) {
                 const partToHighlight = text.substring(0, finalColonIndex + 1);
                 const restOfText = text.substring(finalColonIndex + 1);
 
-                // 2. [内层高亮] 先对标题应用 passive 高亮
-                const passiveHighlightedTitle = `[##elementpassive]${partToHighlight}[#]`;
+                // 2. [内层高亮] 先对标题应用 orange 高亮
+                const passiveHighlightedTitle = `[##elementorange]${partToHighlight}[#]`;
 
                 // 3. [外层高亮] 再将拼接后的完整文本用 [#!] 包裹
                 highlightedPrefix = `[#!]${passiveHighlightedTitle}${restOfText}[#]`;
@@ -656,6 +657,65 @@ function applyKeywordHighlighting(text, lang, filterType) {
         else if (hasColon) {
             highlightedPrefix = `[#!]${text}[#]`;
             textToProcess = '';
+        }
+        // ★★★ 专属规则：只针对 effects，处理括号内容 ★★★
+        else if (filterType === 'effects') {
+            const textToModify = text.trim();
+            let modified = false;
+
+            // 1. 条件检查：只处理以括号（或括号+句号）结尾的字符串
+            if (textToModify.match(/[）)](?:\.|。)?$/)) {
+                let parenLevel = 0;
+                let matchStartIndex = -1;
+
+                // 2. 从后向前遍历字符串，寻找配对的开括号
+                for (let i = textToModify.length - 1; i >= 0; i--) {
+                    const char = textToModify[i];
+                    if (char === ')' || char === '）') parenLevel++;
+                    else if (char === '(' || char === '（') parenLevel--;
+
+                    if (parenLevel === 0) {
+                        matchStartIndex = i;
+                        break;
+                    }
+                }
+
+                // 3. 如果成功找到了配对的括号
+                if (matchStartIndex > -1) {
+                    const precedingText = text.substring(0, matchStartIndex);
+                    const openParen = text[matchStartIndex];
+                    const remainingBlock = text.substring(matchStartIndex + 1);
+
+                    const lastChar = remainingBlock.slice(-1);
+                    let closeParen = '';
+                    let content = '';
+                    let trailingPeriod = '';
+
+                    if (lastChar === '.' || lastChar === '。') {
+                        trailingPeriod = lastChar;
+                        closeParen = remainingBlock.slice(-2, -1);
+                        content = remainingBlock.slice(0, -2);
+                    } else {
+                        closeParen = lastChar;
+                        content = remainingBlock.slice(0, -1);
+                    }
+
+                    // 4. 构造最终的替换字符串，使用我们发明的 [!!underline!!] 自定义标记
+                    textToProcess = precedingText.replace(/\s*$/, '') +
+                        `[!!underline!!]` + // 自定义下划线块的开始标记
+                        `[##elementorange]*${openParen}[#]` +
+                        content +
+                        `[##elementorange]${closeParen}[#]` +
+                        trailingPeriod +
+                        `[!!]`; // 自定义下划线块的结束标记
+
+                    modified = true;
+                }
+            }
+
+            if (!modified) {
+                textToProcess = text;
+            }
         }
         // --- 单独规则：只满足是 passives (通常是长文本) ---
         else if (filterType === 'passives') {
@@ -674,7 +734,7 @@ function applyKeywordHighlighting(text, lang, filterType) {
                 const restOfText = text.substring(finalColonIndex + 1);
 
                 // 仅应用 yellow 高亮，并让文本继续后续处理
-                textToProcess = `[##elementpassive]${partToHighlight}[#]${restOfText}`;
+                textToProcess = `[##elementorange]${partToHighlight}[#]${restOfText}`;
             }
         }
     }
@@ -865,7 +925,7 @@ function renderDetailsInModal(hero, context = {}) {
             'red': '#ef3838ff',    // 烈火系 (红)
             'yellow': '#c2b52dff', // 神圣系 (黄)
             'blue': '#26d0faff',   // 冰雪系 (蓝)
-            'passive': '#ff7800ff'   // 被动天赋 (橙)
+            'orange': '#ff7800ff'   // 被动天赋 (橙)
         };
         const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
 
@@ -889,7 +949,7 @@ function renderDetailsInModal(hero, context = {}) {
                 // 只有在用户启用高亮时，才执行“添加标签”的步骤
                 cleanItem = applyKeywordHighlighting(cleanItem, state.currentLang, filterType);
 
-                // 步骤 1: 首先处理数字高亮
+                // 处理数字高亮
                 const numberRegex = /([+-]?\d+[%]?)/g;
 
                 // 1. 替换回调函数现在接收所有参数 (match, p1, offset, fullString)
@@ -930,11 +990,20 @@ function renderDetailsInModal(hero, context = {}) {
                         return `<span style="color: ${specialColor};">${match}</span>`;
                     }
                 });
+                // ★★★ 步骤 1: 首先处理最外层的自定义“下划线”标记 ★★★
+                // 使用 .replace(/.../gs, ...) 来确保可以正确处理包含换行的内容
+                cleanItem = cleanItem.replace(/\[!!underline!!\](.*?)\[!!\]/gs, (match, innerText) => {
+                    // 将其转换为带 <br> 和虚线 span 的 HTML
+                    // 在 text-decoration 样式中，直接添加 orange 颜色
+                    const orangeColor = colorNameMap.orange;
+                    // text-decoration: underline(下划线) dashed(虚线) orangeColor(颜色)
+                    return `<br><span style="text-decoration: underline dashed ${orangeColor};">${innerText}</span>`;
+                });
 
                 // 步骤 2: 处理元素词条 (将 [##...] 标签转换为 <span> HTML)
                 // 定义只匹配“最内层”标签的正则表达式。
                 // 关键在于 [^\[\]]*，它匹配任何不包含 '[' 或 ']' 的内容。
-                const innermostElementPattern = /\[##element(purple|green|red|yellow|blue|passive)\]([^\[\]]*)\[#\]/;
+                const innermostElementPattern = /\[##element(purple|green|red|yellow|blue|orange)\]([^\[\]]*)\[#\]/;
                 const innermostSpecialPattern = /\[#!\]([^\[\]]*)\[#\]/;
 
                 // 只要字符串中还存在任何一个最内层标签，就持续循环。
@@ -1599,7 +1668,7 @@ function renderDetailsInModal(hero, context = {}) {
             // 使用正则表达式匹配这些单词，并用空字符串替换它们。
             // \b 是单词边界，确保我们不会错误地替换包含这些词的更长的词。
             // i 是不区分大小写标志。
-            const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue|elementpassive)\b/gi;
+            const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue|elementorange)\b/gi;
             switch (filterType) {
                 case 'types':
                     // 如果点击的是技能“类别”，则使用方括号[]进行完全匹配

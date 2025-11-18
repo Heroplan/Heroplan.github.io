@@ -667,9 +667,13 @@ function applyKeywordHighlighting(text, lang, filterType) {
             highlightedPrefix = `[#!]${text}[#]`;
             textToProcess = '';
         }
-        // ★★★ 专属规则：只针对 effects，处理括号内容 ★★★
+        // ★★★ 专属规则：只针对 effects，处理注释用的括号内容 ★★★
         else if (filterType === 'effects') {
-            const textToModify = text.trim();
+            let textToModify = text.trim();
+            // 新增规则：如果以).或）。结尾，先移除最后的句点
+            if (textToModify.endsWith(').') || textToModify.endsWith('）。')) {
+                textToModify = textToModify.slice(0, -1); // 移除最后的句点
+            }
             let modified = false;
 
             // 1. 条件检查：只处理以括号（或括号+句号）结尾的字符串

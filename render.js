@@ -943,7 +943,7 @@ function renderDetailsInModal(hero, context = {}) {
         const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
 
         // 检查是否启用了高亮技能词条
-        const shouldHighlight = getCookie('showSkillTypesInDetails') !== 'false';
+        const shouldHighlight = getCookie('highlightSkillTerms') !== 'false';
 
         return itemsArray.map(item => {
 

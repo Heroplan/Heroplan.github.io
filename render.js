@@ -1765,6 +1765,131 @@ function renderDetailsInModal(hero, context = {}) {
                         // 添加点击关闭功能
                         portraitContainer.addEventListener('click', closeHeroPortraitModal);
 
+
+                        // 定义获取背景后缀的函数
+                        const getBackgrounSuffix = (family, costumeId) => {
+                            // 优先处理 classic 家族
+                            if (family === 'classic') {
+                                // 定义 costume_id 对应的后缀
+                                sourceReverseMap[hero.source].toLowerCase()
+                                const classicMap = {
+                                    0: '',
+                                    1: '',
+                                    2: 'alt',
+                                    3: 'cute',
+                                    4: 'stainedglass'
+                                };
+                                if (costumeId === 0) {
+                                    return colorReverseMap[hero.color].toLowerCase();
+                                }
+                                if (hero.star === 3) {
+                                    costumeId = costumeId + 1
+                                }
+                                if (costumeId === 1) {
+                                    return colorReverseMap[hero.color].toLowerCase();
+                                } else if (costumeId === 2 || costumeId === 3) {
+                                    return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
+                                } else if (costumeId === 4) {
+                                    return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
+                                }
+
+                                // 如果找不到对应的ID，默认返回各颜色背景
+                                return colorReverseMap[hero.color].toLowerCase();
+                            }
+
+                            // 处理家族映射数组
+                            // 键是家族ID，值是文件名后缀
+                            const familyToBgMap = {
+                                // Astral 系列
+                                'abyss': 's4',
+                                'tales1_goodies': 'tales1',
+                                'tales1_baddies': 'tales1',
+                                'nidavellir': 'tales2',
+                                'myrkheim': 'tales2',
+                                'astral_elves': 'astral',
+                                'astral_dwarfs': 'astral',
+                                'astral_demons': 'astral',
+                                'investigator': 'shadow',
+                                'cultist': 'shadow',
+                                'forsaken': 'shadow',
+                                'institute': 'shadow',
+                                'garrison': 'garrison_guard',
+                                'super_elemental': 'elemental',
+                                'wolf': 'castle',
+                                'raven': 'castle',
+                                'stag': 'castle',
+                                'bear': 'castle',
+                                'plainshunter': 'monsterisland',
+                                'abysshunter': 'monsterisland',
+                                'junglehunter': 'monsterisland',
+                                'zodiac': 'lunar',
+                                'cupid': 'valentines',
+                                'easter': 'spring',
+                                'sand': 'beachparty',
+                                'halloween': 'vampires',
+                                'fleur_de_sang': 'fleurdesang',
+                                'winter': 'christmas',
+                                'opera': 'ballerina',
+                                'knight': 'knights',
+                                'fable': 'fables',
+
+                                // 如果家族名本身就是文件名后缀，直接用 default 处理
+                            };
+
+                            // 如果在映射表中找到了，返回映射值；否则直接使用 family 字段
+                            if (hero.family.includes('hotm') || hero.family === 'mystery') {
+                                return colorReverseMap[hero.color].toLowerCase();
+                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season2') {
+                                if (hero.family === 'japanese') {
+                                    return "s2oriental";
+                                } else {
+                                    return "s2" + family;
+                                }
+                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season3') {
+                                if (hero.family === 'jotunheim' || hero.family === 'niflheim') {
+                                    return "s3stronghold";
+                                } else if (hero.family === 'midgard' || hero.family === 'alfheim') {
+                                    return "s3mountains";
+                                } else {
+                                    return "s3menacing";
+                                }
+                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season5') {
+                                return "s5" + family;
+                            } else {
+                                return familyToBgMap[family] || family;
+                            }
+                        };
+
+                        const bgSuffix = getBackgrounSuffix(hero.family, hero.costume_id);
+
+                        // 创建最底层背景图片元素
+                        const cardBgImage = document.createElement('img');
+                        cardBgImage.src = `imgs/herocard/herocard_${bgSuffix}.webp`;
+                        cardBgImage.className = 'hero-card-bg';
+                        cardBgImage.style.position = 'absolute';
+                        cardBgImage.style.top = '50%';
+                        cardBgImage.style.left = '50%';
+                        cardBgImage.style.transform = 'translate(-50%, -50%)';
+                        cardBgImage.style.zIndex = '0'; // 最底层
+                        cardBgImage.style.opacity = '1';
+                        cardBgImage.style.pointerEvents = 'none';
+                        cardBgImage.style.maxWidth = '110vw';
+                        cardBgImage.style.maxHeight = '110vh';
+                        cardBgImage.style.borderRadius = '20%';
+
+                        // --- 调整渐变范围 ---
+                        // 原理：
+                        // closest-side: 以最近的边为半径
+                        // black 90%: 从中心到 90% 的区域是完全清晰的
+                        // transparent 100%: 从 90% 到 100% 逐渐变透明
+                        // 调节 90% 这个数值：数值越大，清晰范围越大，边缘越硬；数值越小，虚化越柔和
+                        const maskStyle = 'radial-gradient(closest-side, black 90%, transparent 100%)';
+
+                        // 应用遮罩
+                        cardBgImage.style.maskImage = maskStyle;
+                        cardBgImage.style.setProperty('-webkit-mask-image', maskStyle);
+
+
                         // 创建光效图片（作为子元素）
                         const raysImage = document.createElement('img');
                         /*
@@ -1792,12 +1917,12 @@ function renderDetailsInModal(hero, context = {}) {
                         raysImage.style.zIndex = '1';
                         raysImage.style.opacity = '1';
                         raysImage.style.pointerEvents = 'none';
-                        raysImage.style.maxWidth = '85vw';
-                        raysImage.style.maxHeight = '85vh';
+                        raysImage.style.maxWidth = '110vw';
+                        raysImage.style.maxHeight = '110vh';
 
                         // 根据英雄颜色设置光效滤镜
                         const colorFilter = getColorFilterForHero(hero.color);
-                        const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
+                        const brightnessLevel = 1; // 1 为默认亮度，值越大，亮度越高
                         raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
 
                         // 创建英雄立绘图片
@@ -1807,6 +1932,7 @@ function renderDetailsInModal(hero, context = {}) {
                         heroImage.style.position = 'relative';
                         heroImage.style.zIndex = '2';
                         heroImage.style.display = 'block';
+                        heroImage.style.transform = 'translateY(8%)';
                         heroImage.style.maxWidth = '85vw';
                         heroImage.style.maxHeight = '85vh';
                         heroImage.style.width = 'auto';
@@ -1817,7 +1943,8 @@ function renderDetailsInModal(hero, context = {}) {
                         heroImage.addEventListener('click', closeHeroPortraitModal);
 
                         // 将光效和立绘添加到容器
-                        portraitContainer.appendChild(raysImage);
+                        portraitContainer.appendChild(cardBgImage);
+                        //portraitContainer.appendChild(raysImage);
                         portraitContainer.appendChild(heroImage);
                         imageModalContent.appendChild(portraitContainer);
 

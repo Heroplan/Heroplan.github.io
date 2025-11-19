@@ -1885,9 +1885,10 @@ function renderDetailsInModal(hero, context = {}) {
                         cardBgImage.style.setProperty('-webkit-mask-image', maskStyle);
 
 
+
+                        /*
                         // 创建光效图片（作为子元素）
                         const raysImage = document.createElement('img');
-                        /*
                         // 可以定义不同家族对应的光效范围
                         const getRaysRangeForFamily = (family) => {
                             const ranges = {
@@ -1897,11 +1898,8 @@ function renderDetailsInModal(hero, context = {}) {
                             };
                             return ranges[family] || { min: 1, max: 45 };
                         };
-                        
                         const range = getRaysRangeForFamily(hero.family);
                         const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-                        */
-
                         const randomRaysNumber = Math.floor(Math.random() * 45) + 1;
                         raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
                         raysImage.className = 'rays-background';
@@ -1919,6 +1917,7 @@ function renderDetailsInModal(hero, context = {}) {
                         const colorFilter = getColorFilterForHero(hero.color);
                         const brightnessLevel = 1; // 1 为默认亮度，值越大，亮度越高
                         raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
+                        */
 
                         // 创建英雄立绘图片
                         const heroImage = document.createElement('img');
@@ -1961,8 +1960,8 @@ function renderDetailsInModal(hero, context = {}) {
                             this.style.width = finalWidth + 'px';
                             this.style.height = finalHeight + 'px';
 
-                            raysImage.style.width = finalWidth + 'px';
-                            raysImage.style.height = finalHeight + 'px';
+                            //raysImage.style.width = finalWidth + 'px';
+                            //raysImage.style.height = finalHeight + 'px';
 
                             setTimeout(() => {
                                 this.style.opacity = '1';

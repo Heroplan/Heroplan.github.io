@@ -1773,21 +1773,15 @@ function renderDetailsInModal(hero, context = {}) {
                                 // 定义 costume_id 对应的后缀
                                 sourceReverseMap[hero.source].toLowerCase()
                                 const classicMap = {
-                                    0: '',
-                                    1: '',
-                                    2: 'alt',
                                     3: 'cute',
                                     4: 'stainedglass'
                                 };
-                                if (costumeId === 0) {
-                                    return colorReverseMap[hero.color].toLowerCase();
-                                }
                                 if (hero.star === 3) {
                                     costumeId = costumeId + 1
                                 }
-                                if (costumeId === 1) {
+                                if (costumeId <= 2) {
                                     return colorReverseMap[hero.color].toLowerCase();
-                                } else if (costumeId === 2 || costumeId === 3) {
+                                } else if (costumeId === 3) {
                                     return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
                                 } else if (costumeId === 4) {
                                     return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
@@ -1838,7 +1832,7 @@ function renderDetailsInModal(hero, context = {}) {
 
                             // 如果在映射表中找到了，返回映射值；否则直接使用 family 字段
                             if (hero.family.includes('hotm') || hero.family === 'mystery') {
-                                return colorReverseMap[hero.color].toLowerCase();
+                                return (colorReverseMap[hero.color].toLowerCase() + "_alt");
                             } else if (sourceReverseMap[hero.source].toLowerCase() === 'season2') {
                                 if (hero.family === 'japanese') {
                                     return "s2oriental";

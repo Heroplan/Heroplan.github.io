@@ -943,7 +943,7 @@ function renderDetailsInModal(hero, context = {}) {
         const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
 
         // 检查是否启用了高亮技能词条
-        const shouldHighlight = getHighlightSkillTermsSetting();
+        const shouldHighlight = getCookie('showSkillTypesInDetails') !== 'false';
 
         return itemsArray.map(item => {
 
@@ -1893,38 +1893,44 @@ function renderDetailsInModal(hero, context = {}) {
 
 
 
-                        /*
-                        // 创建光效图片（作为子元素）
+                        // 检查是否立绘光效
+                        const showCircleRay = getCookie('showCircleRay') !== 'false';
                         const raysImage = document.createElement('img');
-                        // 可以定义不同家族对应的光效范围
-                        const getRaysRangeForFamily = (family) => {
-                            const ranges = {
-                                'magic_carpet': { min: 46, max: 47 },
-                                // 其他家族的特殊范围
-                                // 'other_family': { min: 48, max: 50 },
+                        if (showCircleRay) {
+                            // 创建光效图片（作为子元素）
+                            /*
+                            // 可以定义不同家族对应的光效范围
+                            const getRaysRangeForFamily = (family) => {
+                                const ranges = {
+                                    'magic_carpet': { min: 46, max: 47 },
+                                    // 其他家族的特殊范围
+                                    // 'other_family': { min: 48, max: 50 },
+                                };
+                                return ranges[family] || { min: 1, max: 45 };
                             };
-                            return ranges[family] || { min: 1, max: 45 };
-                        };
-                        const range = getRaysRangeForFamily(hero.family);
-                        const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-                        const randomRaysNumber = Math.floor(Math.random() * 45) + 1;
-                        raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
-                        raysImage.className = 'rays-background';
-                        raysImage.style.position = 'absolute';
-                        raysImage.style.top = '50%';
-                        raysImage.style.left = '50%';
-                        raysImage.style.transform = 'translate(-50%, -50%)';
-                        raysImage.style.zIndex = '1';
-                        raysImage.style.opacity = '1';
-                        raysImage.style.pointerEvents = 'none';
-                        raysImage.style.maxWidth = '110vw';
-                        raysImage.style.maxHeight = '110vh';
+                            const range = getRaysRangeForFamily(hero.family);
+                            const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+                            */
+                            const randomRaysNumber = Math.floor(Math.random() * 45) + 1;
+                            raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
+                            raysImage.className = 'rays-background';
+                            raysImage.style.position = 'absolute';
+                            raysImage.style.top = '60%';
+                            raysImage.style.left = '50%';
+                            raysImage.style.transform = 'translate(-50%, -50%)';
+                            raysImage.style.zIndex = '1';
+                            raysImage.style.opacity = '1';
+                            raysImage.style.pointerEvents = 'none';
+                            raysImage.style.maxWidth = '110vw';
+                            raysImage.style.maxHeight = '110vh';
 
-                        // 根据英雄颜色设置光效滤镜
-                        const colorFilter = getColorFilterForHero(hero.color);
-                        const brightnessLevel = 1; // 1 为默认亮度，值越大，亮度越高
-                        raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
-                        */
+                            // 根据英雄颜色设置光效滤镜
+                            const colorFilter = getColorFilterForHero(hero.color);
+                            const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
+                            raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
+                            portraitContainer.appendChild(raysImage);
+
+                        }
 
                         // 创建英雄立绘图片
                         const heroImage = document.createElement('img');
@@ -1945,7 +1951,6 @@ function renderDetailsInModal(hero, context = {}) {
 
                         // 将光效和立绘添加到容器
                         portraitContainer.appendChild(cardBgImage);
-                        //portraitContainer.appendChild(raysImage);
                         portraitContainer.appendChild(heroImage);
                         imageModalContent.appendChild(portraitContainer);
 
@@ -1967,8 +1972,10 @@ function renderDetailsInModal(hero, context = {}) {
                             this.style.width = finalWidth + 'px';
                             this.style.height = finalHeight + 'px';
 
-                            //raysImage.style.width = finalWidth + 'px';
-                            //raysImage.style.height = finalHeight + 'px';
+                            if (showCircleRay) {
+                                raysImage.style.width = finalWidth + 'px';
+                                raysImage.style.height = finalHeight + 'px';
+                            }
 
                             setTimeout(() => {
                                 this.style.opacity = '1';

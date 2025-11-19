@@ -346,6 +346,8 @@ const i18n = {
         showSkillTypesInDetailsLabel: "详情页显示技能类别:",
         showSkillTypesInTeamLabel: "队伍模拟器显示技能类别:",
         showSkillTypesToggle: "启用",
+        showCircleRayLabel: "英雄立绘中显示元素光效:",
+        showCircleRayToggle: "启用",
 
 
     },
@@ -649,6 +651,8 @@ const i18n = {
         showSkillTypesInDetailsLabel: "詳情頁顯示技能類別:",
         showSkillTypesInTeamLabel: "隊伍模擬器顯示技能類別:",
         showSkillTypesToggle: "啟用",
+        showCircleRayLabel: "英雄立繪中顯示元素光效:",
+        showCircleRayToggle: "啟用",
 
     },
     en: {
@@ -951,5 +955,7 @@ const i18n = {
         showSkillTypesInDetailsLabel: "Skill types in details:",
         showSkillTypesInTeamLabel: "Skill types in team:",
         showSkillTypesToggle: "Enable",
+        showCircleRayLabel: "Show rays in Hero Avatar:",
+        showCircleRayToggle: "Enable",
     }
 }; 

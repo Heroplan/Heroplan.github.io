@@ -398,9 +398,9 @@ async function initializeApp() {
     // 设置高亮技能词条的初始值
     const highlightSkillTermsCheckbox = document.getElementById('highlight-skill-terms-checkbox');
     if (highlightSkillTermsCheckbox) {
-        highlightSkillTermsCheckbox.checked = getHighlightSkillTermsSetting();
+        highlightSkillTermsCheckbox.checked = getCookie('highlightSkillTerms') !== 'false'; 
         highlightSkillTermsCheckbox.addEventListener('change', () => {
-            setHighlightSkillTermsSetting(highlightSkillTermsCheckbox.checked);
+            setCookie('highlightSkillTerms', highlightSkillTermsCheckbox.checked, 365);
             applyFiltersAndRender(); // 重新渲染以应用更改
         });
     }
@@ -412,7 +412,7 @@ async function initializeApp() {
     if (showSkillTypesInDetailsCheckbox) {
         showSkillTypesInDetailsCheckbox.checked = getCookie('showSkillTypesInDetails') !== 'false';
         showSkillTypesInDetailsCheckbox.addEventListener('change', function () {
-            setCookie('showSkillTypesInDetails', this.checked, 365);
+            setCookie('showSkillTypesInDetails', showSkillTypesInDetailsCheckbox.checked, 365);
             // 如果当前正在显示详情页，则需要重新渲染
             if (!uiElements.modal.classList.contains('hidden')) {
                 const currentHero = state.modalContext.hero;
@@ -426,11 +426,20 @@ async function initializeApp() {
     if (showSkillTypesInTeamCheckbox) {
         showSkillTypesInTeamCheckbox.checked = getCookie('showSkillTypesInTeam') !== 'false';
         showSkillTypesInTeamCheckbox.addEventListener('change', function () {
-            setCookie('showSkillTypesInTeam', this.checked, 365);
+            setCookie('showSkillTypesInTeam', showSkillTypesInTeamCheckbox.checked, 365);
             // 重新渲染队伍模拟器
             if (state.teamSimulatorActive) {
                 renderTeamDisplay();
             }
+        });
+    }
+
+    // 设置立绘中光效的初始值
+    const showCircleRayCheckbox = document.getElementById('show-circle-ray-checkbox');
+    if (showCircleRayCheckbox) {
+        showCircleRayCheckbox.checked = getCookie('showCircleRay') !== 'false';
+        showCircleRayCheckbox.addEventListener('change', () => {
+            setCookie('showCircleRay', showCircleRayCheckbox.checked, 365);
         });
     }
 }
@@ -788,7 +797,7 @@ function addEventListeners() {
                 const toggleBtn = header.querySelector('.panel-toggle-btn');
                 if (toggleBtn) toggleBtn.classList.toggle('expanded', !isCollapsing);
 
-                // 【新增】根据面板类型，写入对应的Cookie
+                // 根据面板类型，写入对应的Cookie
                 const cookieName = panel.classList.contains('chat-panel-colors')
                     ? 'chatPanelColorsCollapsed'
                     : 'chatPanelEmojisCollapsed';

@@ -1819,7 +1819,7 @@ function renderDetailsInModal(hero, context = {}) {
                                 'zodiac': 'lunar',
                                 'cupid': 'valentines',
                                 'easter': 'spring',
-                                'sand': 'beachparty',
+                                'sand': 'summer',
                                 'halloween': 'vampires',
                                 'fleur_de_sang': 'fleurdesang',
                                 'winter': 'christmas',
@@ -1849,6 +1849,14 @@ function renderDetailsInModal(hero, context = {}) {
                                 }
                             } else if (sourceReverseMap[hero.source].toLowerCase() === 'season5') {
                                 return "s5" + family;
+                            } else if (hero.family === 'gargoyle') {
+                                if (hero.passiveSkills.includes('gargoyle_soft_skin')) {
+                                    return "fluffygargoyle";
+                                } else {
+                                    return "gargoyle";
+                                }
+                            } else if ((hero.family === 'mimic') || (hero.family === 'trainer')) {
+                                return "mimic_training_" + colorReverseMap[hero.color].toLowerCase();
                             } else {
                                 return familyToBgMap[family] || family;
                             }

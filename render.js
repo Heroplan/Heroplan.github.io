@@ -1878,12 +1878,7 @@ function renderDetailsInModal(hero, context = {}) {
                         cardBgImage.style.borderRadius = '20%';
 
                         // --- 调整渐变范围 ---
-                        // 原理：
-                        // closest-side: 以最近的边为半径
-                        // black 90%: 从中心到 90% 的区域是完全清晰的
-                        // transparent 100%: 从 90% 到 100% 逐渐变透明
-                        // 调节 90% 这个数值：数值越大，清晰范围越大，边缘越硬；数值越小，虚化越柔和
-                        const maskStyle = 'radial-gradient(closest-side, black 90%, transparent 100%)';
+                        const maskStyle = 'radial-gradient(circle at center, black 50%, rgba(0,0,0,0.3) 80%, transparent 100%)';
 
                         // 应用遮罩
                         cardBgImage.style.maskImage = maskStyle;

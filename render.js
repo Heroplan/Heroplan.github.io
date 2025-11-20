@@ -625,13 +625,13 @@ function applyKeywordHighlighting(text, lang, filterType) {
     let highlightedPrefix = '';
 
     // --- 如果 filterType 是 'effects' 或 'passives'，则进行特殊预处理 ---
-    if ((filterType === 'effects' || filterType === 'passives')) {
+    if ((filterType === 'effects' || filterType === 'passives' || filterType === 'familyBonus')) {
 
         const lengthLimit = (lang && lang.startsWith('en')) ? 75 : 30;
         const hasColon = (text.endsWith(':') || text.endsWith('：')) && text.length < lengthLimit;
 
-        // --- 组合规则：同时满足 hasColon 且是 passives 的特殊情况 ---
-        if (hasColon && filterType === 'passives') {
+        // --- 组合规则：同时满足 hasColon 且是 passives 或 familyBonus 的特殊情况 ---
+        if (hasColon && (filterType === 'passives' || filterType === 'familyBonus')) {
 
             // 1. 找到第一个冒号，分离出标题
             const colonIndex = text.indexOf(':');

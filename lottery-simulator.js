@@ -1631,6 +1631,7 @@ async function performSummon(count) {
                         let mysteryHero = mysteryPool.sort((a, b) => {
                             const aHasDate = !!a['Release date'];
                             const bHasDate = !!b['Release date'];
+                            // 排除低星
                             if (a.star !== b.star) {
                                 return b.star - a.star;
                             }

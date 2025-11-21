@@ -607,7 +607,10 @@
                     <div id="standard-filters-content" class="filter-content">
                         <div class="filter-item">
                             <label for="name-input" data-lang-key="nameLabel">名称:</label>
-                            <input type="text" id="name-input">
+                            <div class="autocomplete-container">
+                                <input type="text" id="name-input" autocomplete="off">
+                                <div id="name-autocomplete-list" class="autocomplete-list hidden"></div>
+                            </div>
                         </div>
                         <div id="standard-filters-container" class="filter-buttons-container">
                         </div>

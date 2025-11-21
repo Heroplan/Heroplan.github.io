@@ -296,8 +296,8 @@ html:not(.dark-theme) .moon-icon {
 }
 
 .filter-item label {
-  width: 200px;
-  min-width: 140px;
+  width: 70px;
+  min-width: 70px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6641,3 +6641,281 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
   }
 }
 
+/* 自动完成样式 - 基于MD3配色方案 */
+.autocomplete-container {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px var(--md-sys-color-shadow);
+}
+
+.autocomplete-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--md-sys-color-on-surface);
+  min-height: 40px;
+}
+
+.autocomplete-item:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  transform: translateY(-1px);
+}
+
+.autocomplete-item.selected {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-left: 3px solid var(--md-sys-color-primary);
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.autocomplete-item:first-child {
+  border-radius: 0;
+}
+
+.autocomplete-highlight {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--md-sys-color-tertiary);
+}
+
+/* 搜索输入框的焦点状态与候选列表联动 */
+#name-input:focus {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+}
+
+#name-input:focus+.autocomplete-list {
+  border-color: var(--md-sys-color-primary);
+  border-top-color: var(--md-sys-color-outline);
+}
+
+/* 滚动条样式 - 匹配MD3设计 */
+.autocomplete-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.autocomplete-list::-webkit-scrollbar-track {
+  background: var(--md-sys-color-surface-variant);
+  border-radius: 3px;
+}
+
+.autocomplete-list::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline);
+  border-radius: 3px;
+}
+
+.autocomplete-list::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-primary);
+}
+
+/* 空状态提示 */
+.autocomplete-empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--md-sys-color-on-surface-variant);
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* 加载状态 */
+.autocomplete-loading {
+  padding: 16px;
+  text-align: center;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.autocomplete-loading::after {
+  content: "...";
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+
+  0%,
+  20% {
+    content: ".";
+  }
+
+  40% {
+    content: "..";
+  }
+
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .autocomplete-list {
+    max-height: 150px;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .autocomplete-item {
+    padding: 10px 12px;
+    font-size: 16px;
+    /* 移动端字体稍大 */
+  }
+}
+
+/* 暗色主题微调 */
+html.dark-theme .autocomplete-list {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-theme .autocomplete-item:hover {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+html.dark-theme .autocomplete-item.selected {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* 英雄头像样式 */
+.autocomplete-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  margin-right: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.autocomplete-text {
+  flex: 1;
+  min-width: 0;
+  /* 防止文本溢出 */
+}
+
+.match-position-hint {
+  font-size: 0.8em;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-left: 4px;
+  font-style: italic;
+}
+
+/* 英雄颜色主题的候选提示变体 - 修改为头像底色 */
+.autocomplete-item.hero-red .autocomplete-avatar {
+  background-color: var(--hero-color-red);
+  box-shadow: 0 0 0 2px var(--hero-color-red);
+}
+
+.autocomplete-item.hero-blue .autocomplete-avatar {
+  background-color: var(--hero-color-blue);
+  box-shadow: 0 0 0 2px var(--hero-color-blue);
+}
+
+.autocomplete-item.hero-green .autocomplete-avatar {
+  background-color: var(--hero-color-green);
+  box-shadow: 0 0 0 2px var(--hero-color-green);
+}
+
+.autocomplete-item.hero-yellow .autocomplete-avatar {
+  background-color: var(--hero-color-yellow);
+  box-shadow: 0 0 0 2px var(--hero-color-yellow);
+}
+
+.autocomplete-item.hero-purple .autocomplete-avatar {
+  background-color: var(--hero-color-purple);
+  box-shadow: 0 0 0 2px var(--hero-color-purple);
+}
+
+/* 头像加载失败时的默认样式 */
+.autocomplete-avatar[src=""],
+.autocomplete-avatar:not([src]) {
+  background-color: var(--md-sys-color-outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.autocomplete-avatar[src=""]::after,
+.autocomplete-avatar:not([src])::after {
+  content: "?";
+}
+
+/* 头像容器样式 */
+.autocomplete-avatar-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .autocomplete-avatar {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  .autocomplete-avatar-container {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  .autocomplete-item {
+    padding: 6px 10px;
+    min-height: 36px;
+  }
+
+  .match-position-hint {
+    font-size: 0.7em;
+    margin-left: 6px;
+  }
+}
+
+/* 头像悬停效果 */
+.autocomplete-item:hover .autocomplete-avatar {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* 选中状态的头像效果 */
+.autocomplete-item.selected .autocomplete-avatar {
+  box-shadow: 0 0 0 3px var(--md-sys-color-primary);
+}
+
+/* 头像底色与边框的过渡效果 */
+.autocomplete-avatar {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

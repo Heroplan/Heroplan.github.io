@@ -208,6 +208,9 @@ function populateFilters() {
         setCookie('showEventNameState', showEventNameCheckbox.checked.toString(), 365);
         applyFiltersAndRender();
     });
+    setTimeout(() => {
+        initializeNameAutocomplete();
+    }, 100);
 }
 
 /**
@@ -795,4 +798,251 @@ function applyFiltersAndRender() {
 
     // 6. 渲染最终结果
     renderTable(state.filteredHeroes);
+}
+
+/**
+ * 初始化名字搜索的候选提示功能
+ */
+function initializeNameAutocomplete() {
+    const nameInput = document.getElementById('name-input');
+    const autocompleteList = document.getElementById('name-autocomplete-list');
+
+    if (!nameInput || !autocompleteList) return;
+
+    let currentFocus = -1;
+    let currentSuggestions = [];
+    let isComposing = false;
+
+    // 输入法事件处理
+    nameInput.addEventListener('compositionstart', function () {
+        isComposing = true;
+    });
+
+    nameInput.addEventListener('compositionend', function () {
+        isComposing = false;
+        // 输入法结束后立即更新候选列表
+        const value = this.value;
+        if (value.length > 0) {
+            updateAutocompleteSuggestions(value);
+        }
+    });
+
+    // 输入事件处理
+    nameInput.addEventListener('input', function (e) {
+        if (isComposing) return;
+
+        const value = this.value;
+        currentFocus = -1;
+
+        if (value.length < 1) {
+            closeAutocompleteList();
+            return;
+        }
+
+        updateAutocompleteSuggestions(value);
+    });
+
+    // 键盘导航
+    nameInput.addEventListener('keydown', function (e) {
+        // 空格键特殊处理
+        if (e.key === ' ' || e.code === 'Space') {
+            // 延迟处理，确保输入法已完成转换
+            setTimeout(() => {
+                const value = this.value;
+                if (value.length > 0) {
+                    updateAutocompleteSuggestions(value);
+                }
+            }, 500);
+            return;
+        }
+
+        if (!autocompleteList.classList.contains('hidden')) {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentFocus = (currentFocus + 1) % currentSuggestions.length;
+                updateSelectedItem();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentFocus = (currentFocus - 1 + currentSuggestions.length) % currentSuggestions.length;
+                updateSelectedItem();
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    selectAutocompleteItem(currentFocus);
+                } else {
+                    applyFiltersAndRender();
+                }
+            } else if (e.key === 'Escape') {
+                closeAutocompleteList();
+            }
+        }
+    });
+
+    // 点击外部关闭候选列表
+    document.addEventListener('click', function (e) {
+        if (!autocompleteList.contains(e.target) && e.target !== nameInput) {
+            closeAutocompleteList();
+        }
+    });
+
+    // 更新候选建议
+    function updateAutocompleteSuggestions(searchTerm) {
+        currentSuggestions = getHeroNameSuggestions(searchTerm);
+        showAutocompleteSuggestions(currentSuggestions, searchTerm);
+    }
+
+    // 更新选中项样式
+    function updateSelectedItem() {
+        const items = autocompleteList.querySelectorAll('.autocomplete-item');
+        items.forEach((item, index) => {
+            item.classList.toggle('selected', index === currentFocus);
+        });
+
+        if (currentFocus > -1 && items[currentFocus]) {
+            items[currentFocus].scrollIntoView({ block: 'nearest' });
+        }
+    }
+
+    // 选择候选项
+    function selectAutocompleteItem(index) {
+        if (currentSuggestions[index]) {
+            const selected = currentSuggestions[index];
+            nameInput.value = typeof selected === 'object' ? selected.name : selected;
+            closeAutocompleteList();
+            applyFiltersAndRender();
+        }
+    }
+
+    // 显示候选建议（添加英雄头像）
+    function showAutocompleteSuggestions(suggestions, searchTerm) {
+        const autocompleteList = document.getElementById('name-autocomplete-list');
+
+        if (suggestions.length === 0) {
+            autocompleteList.innerHTML = '<div class="autocomplete-empty">无匹配结果</div>';
+            autocompleteList.classList.remove('hidden');
+            return;
+        }
+
+        autocompleteList.innerHTML = '';
+        suggestions.forEach((suggestion, index) => {
+            const item = document.createElement('div');
+            const displayName = suggestion.name;
+            const colorClass = suggestion.color ? 'hero-' + suggestion.color : '';
+            const heroId = suggestion.heroId;
+
+            // 获取头像路径
+            const avatarPath = heroId ? `imgs/hero_icon/${heroId}.webp` : null;
+
+            item.className = `autocomplete-item ${colorClass}`;
+
+            // 构建包含头像的HTML
+            let itemHTML = '';
+
+            if (avatarPath) {
+                itemHTML += `<img src="${avatarPath}" alt="${displayName}" class="autocomplete-avatar" onerror="this.style.display='none'">`;
+            }
+
+            itemHTML += `<div class="autocomplete-text">${highlightText(displayName, searchTerm)}</div>`;
+
+            item.innerHTML = itemHTML;
+
+            item.addEventListener('click', () => {
+                nameInput.value = displayName;
+                closeAutocompleteList();
+                applyFiltersAndRender();
+            });
+            autocompleteList.appendChild(item);
+        });
+
+        autocompleteList.classList.remove('hidden');
+    }
+
+    // 高亮匹配文本（支持任意位置匹配）
+    function highlightText(text, searchTerm) {
+        if (!text || !searchTerm || searchTerm.length === 0) return text;
+
+        const textLower = text.toLowerCase();
+        const searchLower = searchTerm.toLowerCase();
+        const matchIndex = textLower.indexOf(searchLower);
+
+        if (matchIndex === -1) return text; // 没有匹配
+
+        // 高亮匹配的部分
+        const beforeMatch = text.substring(0, matchIndex);
+        const matchText = text.substring(matchIndex, matchIndex + searchTerm.length);
+        const afterMatch = text.substring(matchIndex + searchTerm.length);
+
+        return `${beforeMatch}<span class="autocomplete-highlight">${matchText}</span>${afterMatch}`;
+    }
+
+    // 转义正则表达式特殊字符
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // 关闭候选列表
+    function closeAutocompleteList() {
+        autocompleteList.classList.add('hidden');
+        currentFocus = -1;
+    }
+}
+
+/**
+ * 获取英雄名字候选建议（支持任意位置匹配）
+ */
+function getHeroNameSuggestions(searchTerm) {
+    // 确保有可搜索的数据
+    if (!state.filteredHeroes || state.filteredHeroes.length === 0) {
+        console.warn('没有英雄数据可搜索');
+        return [];
+    }
+
+    const searchLower = searchTerm.toLowerCase().trim();
+    if (searchLower.length === 0) return [];
+
+    const suggestions = [];
+    const seenNames = new Set();
+
+    state.filteredHeroes.forEach(hero => {
+        const name = hero.name;
+        if (!name) return;
+
+        const nameLower = name.toLowerCase();
+
+        // 检查名字中是否包含搜索词（任意位置匹配）
+        if (nameLower.includes(searchLower)) {
+            if (!seenNames.has(name)) {
+                seenNames.add(name);
+                suggestions.push({
+                    name: name,
+                    heroId: hero.heroId,
+                    color: hero.color ? (colorReverseMap[hero.color] ? colorReverseMap[hero.color].toLowerCase() : '') : '',
+                    matchIndex: nameLower.indexOf(searchLower)
+                });
+            }
+        }
+    });
+
+    // 改进排序逻辑
+    const sortedSuggestions = suggestions.sort((a, b) => {
+        // 1. 完全匹配的排在前面
+        const aExactMatch = a.name.toLowerCase() === searchLower;
+        const bExactMatch = b.name.toLowerCase() === searchLower;
+
+        if (aExactMatch && !bExactMatch) return -1;
+        if (!aExactMatch && bExactMatch) return 1;
+
+        // 2. 匹配位置靠前的排在前面
+        if (a.matchIndex !== b.matchIndex) return a.matchIndex - b.matchIndex;
+
+        // 3. 匹配词长度更长的排在前面
+        const aMatchLength = a.name.length;
+        const bMatchLength = b.name.length;
+        if (aMatchLength !== bMatchLength) return aMatchLength - bMatchLength;
+
+        // 4. 最后按字母顺序排序
+        return a.name.localeCompare(b.name);
+    });
+
+    return sortedSuggestions.slice(0, 99);
 }

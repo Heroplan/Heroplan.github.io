@@ -306,6 +306,11 @@ html:not(.dark-theme) .moon-icon {
   margin-right: 0.5rem
 }
 
+.filter-item label[for="name-input"] {
+  width: 70px;
+  min-width: 70px;
+}
+
 .filter-item .input-with-help {
   display: flex;
   flex-grow: 1;

@@ -807,8 +807,26 @@ function initializeNameAutocomplete() {
     const nameInput = document.getElementById('name-input');
     const autocompleteList = document.getElementById('name-autocomplete-list');
     const clearButton = document.getElementById('clear-input'); // 获取清除按钮
+    const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
 
     if (!nameInput || !autocompleteList) return;
+
+    // 从 Cookie 中读取保存的语言设置
+    const savedLang = getCookie('search_lang');
+    if (savedLang) {
+        langSelector.value = savedLang;
+    }
+
+    // 监听语言选择变化
+    if (langSelector) {
+        langSelector.addEventListener('change', function () {
+            const selectedLang = this.value;
+            setCookie('search_lang', selectedLang, 365);
+            nameInput.value = ''; // 切换语言时清空输入
+            nameInput.focus();
+            updateClearButtonVisibility();
+        });
+    }
 
     let currentFocus = -1;
     let currentSuggestions = [];
@@ -869,21 +887,6 @@ function initializeNameAutocomplete() {
 
     // 键盘导航
     nameInput.addEventListener('keydown', function (e) {
-        // 空格键特殊处理
-        if (e.key === ' ' || e.code === 'Space' || e.key === 'Backspace' || e.code === 'Backspace') {
-            // 延迟处理，确保输入法已完成转换
-            setTimeout(() => {
-                const value = this.value;
-                if (value.length > 0) {
-                    // 更新清除按钮可见性
-                    updateClearButtonVisibility();
-                    updateAutocompleteSuggestions(value);
-                } else {
-                    closeAutocompleteList();
-                }
-            }, 500);
-            return;
-        }
 
         if (!autocompleteList.classList.contains('hidden')) {
             if (e.key === 'ArrowDown') {
@@ -916,7 +919,9 @@ function initializeNameAutocomplete() {
 
     // 更新候选建议
     function updateAutocompleteSuggestions(searchTerm) {
-        currentSuggestions = getHeroNameSuggestions(searchTerm);
+        // 传入当前选择的搜索语言
+        const searchLang = langSelector ? langSelector.value : 'current';
+        currentSuggestions = getHeroNameSuggestions(searchTerm, searchLang);
         showAutocompleteSuggestions(currentSuggestions, searchTerm);
     }
 
@@ -977,7 +982,7 @@ function initializeNameAutocomplete() {
             item.innerHTML = itemHTML;
 
             item.addEventListener('click', () => {
-                nameInput.value = displayName;
+                nameInput.value = suggestion.english_name;
                 closeAutocompleteList();
                 applyFiltersAndRender();
             });
@@ -1021,11 +1026,12 @@ function initializeNameAutocomplete() {
 
 /**
  * 获取英雄名字候选建议（支持任意位置匹配）
+ * @param {string} searchTerm - 用户输入的搜索词
+ * @param {string} searchLang - 当前选择的搜索语言 ('current', 'ja', 'tc' 等)
  */
-function getHeroNameSuggestions(searchTerm) {
+function getHeroNameSuggestions(searchTerm, searchLang) {
     // 确保有可搜索的数据
     if (!state.filteredHeroes || state.filteredHeroes.length === 0) {
-        console.warn('没有英雄数据可搜索');
         return [];
     }
 
@@ -1033,20 +1039,40 @@ function getHeroNameSuggestions(searchTerm) {
     if (searchLower.length === 0) return [];
 
     const suggestions = [];
-    const seenNames = new Set();
+    const seenIds = new Set(); // 使用 ID 去重更安全
 
     state.filteredHeroes.forEach(hero => {
-        const name = hero.name;
-        if (!name) return;
+        // 1. 确定要用来搜索的名字
+        let nameToSearch = hero.name; // 默认为当前 UI 语言的名字
+        let displayName = hero.name;  // 列表显示的名字
 
-        const nameLower = name.toLowerCase();
+        // 如果选择了特定语言，且数据已加载
+        if (searchLang !== 'current' && window.searchNameData && window.searchNameData[searchLang]) {
+            // 通过 heroId 查找对应语言的名字
+            // 注意：heroId 需要与 JSON 中的 key (例如 astral_cosmicspeaker) 匹配
+            // 假设 hero.heroId 就是那个 key (或者你需要某种转换)
+            const localizedName = window.searchNameData[searchLang][hero.heroId];
+            if (localizedName) {
+                nameToSearch = localizedName;
+                displayName = localizedName; // 搜索列表里显示日语/繁体名字
+            }
+        }
 
-        // 检查名字中是否包含搜索词（任意位置匹配）
+        if (!nameToSearch) return;
+
+        const nameLower = nameToSearch.toLowerCase();
+
+        // 检查名字中是否包含搜索词
         if (nameLower.includes(searchLower)) {
-            if (!seenNames.has(name)) {
-                seenNames.add(name);
+            // 只有当这个英雄ID没出现过时才添加 (避免同ID不同皮肤造成的重复，视需求而定)
+            // 如果你想搜出特定皮肤，可以把 key 设为 hero.heroId + hero.costume_id
+            const uniqueKey = hero.heroId + '_' + hero.costume_id;
+
+            if (!seenIds.has(uniqueKey)) {
+                seenIds.add(uniqueKey);
                 suggestions.push({
-                    name: name,
+                    name: displayName,          // 显示在下拉列表的名字 (例如: 宇宙音響)
+                    english_name: hero.english_name, // 核心：填充到输入框的英文名 (例如: Astral Comicspeaker)
                     heroId: hero.heroId,
                     color: hero.color ? (colorReverseMap[hero.color] ? colorReverseMap[hero.color].toLowerCase() : '') : '',
                     matchIndex: nameLower.indexOf(searchLower)

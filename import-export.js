@@ -77,7 +77,8 @@ const otherSettingKeys = [
     'skillTypeSource', 'showEventNameState', 'chatPreviewHeight',
     'teamDisplayCollapsed', 'collapseStates',
     'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed', 'highlightSkillTerms',
-    'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam', 'showCircleRay'
+    'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam', 'showCircleRay',
+    'search_lang'
 ];
 /**
  * 打开导出设置模态框，并根据可导出的数据动态生成内容。

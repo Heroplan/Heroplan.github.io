@@ -6954,3 +6954,26 @@ html.dark-theme .autocomplete-item.selected {
 .clear-button:active {
   transform: translateY(-50%) scale(0.9);
 }
+
+.autocomplete-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 5px;
+  /* 间距 */
+}
+
+/* 语言选择器样式 */
+.search-lang-select {
+  width: 8px;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  height: 40px;
+  /* 确保与输入框高度一致 */
+}
+
+#name-input {
+  flex-grow: 1;
+  /* 输入框占据剩余空间 */
+}

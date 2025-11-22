@@ -945,7 +945,7 @@ function initializeNameAutocomplete() {
     function selectAutocompleteItem(index) {
         if (currentSuggestions[index]) {
             const selected = currentSuggestions[index];
-            nameInput.value = typeof selected === 'object' ? selected.name : selected;
+            nameInput.value = selected.name;
             closeAutocompleteList();
             applyFiltersAndRender();
         }

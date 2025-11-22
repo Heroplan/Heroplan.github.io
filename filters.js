@@ -806,12 +806,35 @@ function applyFiltersAndRender() {
 function initializeNameAutocomplete() {
     const nameInput = document.getElementById('name-input');
     const autocompleteList = document.getElementById('name-autocomplete-list');
+    const clearButton = document.getElementById('clear-input'); // 获取清除按钮
 
     if (!nameInput || !autocompleteList) return;
 
     let currentFocus = -1;
     let currentSuggestions = [];
     let isComposing = false;
+
+    // 清除按钮点击事件
+    if (clearButton) {
+        clearButton.addEventListener('click', function () {
+            nameInput.value = '';
+            nameInput.focus();
+            closeAutocompleteList();
+            updateClearButtonVisibility();
+            applyFiltersAndRender(); // 重新应用筛选（显示所有英雄）
+        });
+    }
+
+    // 更新清除按钮可见性
+    function updateClearButtonVisibility() {
+        if (!clearButton) return;
+
+        if (nameInput.value.length > 0) {
+            clearButton.classList.remove('hidden');
+        } else {
+            clearButton.classList.add('hidden');
+        }
+    }
 
     // 输入法事件处理
     nameInput.addEventListener('compositionstart', function () {
@@ -833,6 +856,8 @@ function initializeNameAutocomplete() {
 
         const value = this.value;
         currentFocus = -1;
+        // 更新清除按钮可见性
+        updateClearButtonVisibility();
 
         if (value.length < 1) {
             closeAutocompleteList();
@@ -845,12 +870,16 @@ function initializeNameAutocomplete() {
     // 键盘导航
     nameInput.addEventListener('keydown', function (e) {
         // 空格键特殊处理
-        if (e.key === ' ' || e.code === 'Space') {
+        if (e.key === ' ' || e.code === 'Space' || e.key === 'Backspace' || e.code === 'Backspace') {
             // 延迟处理，确保输入法已完成转换
             setTimeout(() => {
                 const value = this.value;
                 if (value.length > 0) {
+                    // 更新清除按钮可见性
+                    updateClearButtonVisibility();
                     updateAutocompleteSuggestions(value);
+                } else {
+                    closeAutocompleteList();
                 }
             }, 500);
             return;
@@ -916,9 +945,10 @@ function initializeNameAutocomplete() {
     // 显示候选建议（添加英雄头像）
     function showAutocompleteSuggestions(suggestions, searchTerm) {
         const autocompleteList = document.getElementById('name-autocomplete-list');
+        const langDict = i18n[state.currentLang];
 
         if (suggestions.length === 0) {
-            autocompleteList.innerHTML = '<div class="autocomplete-empty">无匹配结果</div>';
+            autocompleteList.innerHTML = `<div class="autocomplete-empty">${langDict.noMatchingResults || '无匹配结果'}</div>`;
             autocompleteList.classList.remove('hidden');
             return;
         }
@@ -985,6 +1015,8 @@ function initializeNameAutocomplete() {
         autocompleteList.classList.add('hidden');
         currentFocus = -1;
     }
+    // 更新清除按钮可见性
+    updateClearButtonVisibility();
 }
 
 /**

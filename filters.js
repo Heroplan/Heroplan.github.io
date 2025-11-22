@@ -820,7 +820,7 @@ function initializeNameAutocomplete() {
     // 监听语言选择变化
     if (langSelector) {
         langSelector.addEventListener('change', function () {
-
+            const selectedLang = this.value;
             setCookie('search_lang', selectedLang, 365);
             location.reload();
             /*

@@ -810,13 +810,50 @@ function initializeNameAutocomplete() {
     const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
 
     if (!nameInput || !autocompleteList) return;
+    let previousLang = langSelector.value;
+
+    langSelector.addEventListener('focus', function () {
+        // 每次点开下拉框时，记住当前的值
+        previousLang = this.value;
+    });
 
     // 监听语言选择变化
     if (langSelector) {
         langSelector.addEventListener('change', function () {
+            const warningMessages = {
+                'ja': "警告: ヒーロー名の表示言語を切り替えると、ヒーローの共有、お気に入り、チームのインポート/エクスポートなどの機能は、同じ言語設定の場合にのみ有効になります。続けますか？",
+                'ko': "경고: 영웅 이름 표시 언어를 변경하면 영웅 공유, 즐겨찾기, 팀 가져오기/내보내기 등의 기능은 동일한 언어로 설정된 경우에만 작동합니다. 계속하시겠습니까?",
+                'ru': "Внимание: После смены языка отображения имен героев, такие функции как обмен героями, избранное и импорт/экспорт команд будут работать только при установке того же языка. Продолжить?",
+                'ar': "تحذير: بعد تغيير لغة عرض أسماء الأبطال، ستعمل ميزات مثل مشاركة الأبطال والمفضلات واستيراد/تصدير الفرق فقط عند ضبطها على نفس اللغة. هل تريد الاستمرار؟",
+                'da': "Advarsel: Efter skift af sprog for heltenavne vil funktioner som deling af helte, favoritter og holdimport/eksport kun fungere, når samme sprog er indstillet. Vil du fortsætte?",
+                'nl': "Waarschuwing: Na het wijzigen van de weergavetaal voor heldennamen, werken functies zoals helden delen, favorieten en team import/export alleen wanneer dezelfde taal is ingesteld. Doorgaan?",
+                'fi': "Varoitus: Kun vaihdat sankarinimien näyttökielen, toiminnot kuten sankarien jakaminen, suosikit ja tiimien tuonti/vienti toimivat vain, jos sama kieli on asetettu. Haluatko jatkaa?",
+                'fr': "Attention : Après avoir changé la langue d'affichage des noms de héros, les fonctionnalités telles que le partage, les favoris et l'import/export d'équipes ne fonctionneront que si la même langue est définie. Continuer ?",
+                'de': "Warnung: Nach dem Wechsel der Anzeigesprache für Heldennamen funktionieren Funktionen wie das Teilen von Helden, Favoriten sowie Import/Export von Teams nur, wenn die gleiche Sprache eingestellt ist. Fortfahren?",
+                'id': "Peringatan: Setelah mengganti bahasa tampilan nama hero, fitur seperti berbagi hero, favorit, dan impor/ekspor tim hanya akan berfungsi jika disetel ke bahasa yang sama. Lanjutkan?",
+                'it': "Attenzione: Dopo aver cambiato la lingua di visualizzazione dei nomi degli eroi, funzionalità come la condivisione, i preferiti e l'importazione/esportazione delle squadre funzioneranno solo se impostate sulla stessa lingua. Continuare?",
+                'no': "Advarsel: Etter å ha byttet visningsspråk for heltenavn, vil funksjoner som deling av helter, favoritter og lagimport/eksport kun fungere når samme språk er innstilt. Fortsette?",
+                'pl': "Ostrzeżenie: Po zmianie języka wyświetlania nazw bohaterów, funkcje takie jak udostępnianie, ulubione oraz import/eksport drużyn będą działać tylko przy ustawieniu tego samego języka. Kontynuować?",
+                'pt': "Aviso: Após alterar o idioma de exibição dos nomes dos heróis, recursos como compartilhamento, favoritos e importação/exportação de equipes funcionarão apenas quando definidos para o mesmo idioma. Continuar?",
+                'es': "Advertencia: Después de cambiar el idioma de visualización de los nombres de héroes, funciones como compartir, favoritos e importación/exportación de equipos solo funcionarán cuando se configure el mismo idioma. ¿Continuar?",
+                'sv': "Varning: Efter att ha bytt visningsspråk för hjältnamn kommer funktioner som delning av hjältar, favoriter och lagimport/export endast att fungera när samma språk är inställt. Fortsätta?",
+                'tr': "Uyarı: Kahraman ismi görüntüleme dilini değiştirdikten sonra, kahraman paylaşma, favoriler ve takım içe/dışa aktarma gibi özellikler yalnızca aynı dil ayarlandığında çalışacaktır. Devam edilsin mi?",
+                'en': "Warning: After switching the hero name display language, features like sharing heroes, favoriting heroes, and team import/export will only work when set to the same language. Continue?" // 默认英语备份
+            };
             const selectedLang = this.value;
-            setCookie('search_lang', selectedLang, 365);
-            location.reload();
+            // 获取对应语言的提示，如果没有找到则默认显示英语
+            const msg = warningMessages[selectedLang] || warningMessages['en'];
+
+            // 弹出确认框
+            if (confirm(msg)) {
+                // 用户点击“确定”
+                setCookie('search_lang', selectedLang, 365);
+                location.reload();
+            } else {
+                // 用户点击“取消”
+                // 将下拉框的值重置回之前的语言，防止UI显示错误
+                this.value = previousLang;
+            }
         });
     }
 

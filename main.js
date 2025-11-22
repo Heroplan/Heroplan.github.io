@@ -1220,7 +1220,8 @@ function removeDonateScript() {
 window.searchNameData = {};
 
 // 加载全语言英雄名称
-async function loadExtraNameData() {
+async function loadExtraNameData(lang) {
+    /*
     const langs = ['en', 'cn', 'tc', 'ja', 'ko', 'ru', 'ar', 'da', 'nl',  'fi', 'fr', 'de', 'id', 'it',  'no', 'pl', 'pt',  'es', 'sv', 'tr']; // 你生成的 json 后缀列表
     for (const lang of langs) {
         try {
@@ -1230,4 +1231,8 @@ async function loadExtraNameData() {
             console.error(`Failed to load name data for ${lang}`, e);
         }
     }
+        */
+
+    const response = await fetch(`langs_json/heroes_name_${lang}.json`); // 路径需对应实际位置
+    window.searchNameData[lang] = await response.json();
 }

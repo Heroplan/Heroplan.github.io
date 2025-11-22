@@ -308,6 +308,11 @@ async function loadData(lang) {
         }
 
         state.allHeroes = data.allHeroes;
+
+        state.allHeroes.forEach((hero, index) => {
+            hero.originalIndex = index;
+            hero.english_name = extractEnglishName(hero, state.currentLang);
+        });
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
         // 如果 savedLang 不为 cn、tc、en，则使用 window.searchNameData 进行名称替换

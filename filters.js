@@ -820,6 +820,10 @@ function initializeNameAutocomplete() {
     // 监听语言选择变化
     if (langSelector) {
         langSelector.addEventListener('change', function () {
+
+            setCookie('search_lang', selectedLang, 365);
+            location.reload();
+            /*
             const warningMessages = {
                 'ja': "警告: ヒーロー名の表示言語を切り替えると、ヒーローの共有、お気に入り、チームのインポート/エクスポートなどの機能は、同じ言語設定の場合にのみ有効になります。続けますか？",
                 'ko': "경고: 영웅 이름 표시 언어를 변경하면 영웅 공유, 즐겨찾기, 팀 가져오기/내보내기 등의 기능은 동일한 언어로 설정된 경우에만 작동합니다. 계속하시겠습니까?",
@@ -854,6 +858,7 @@ function initializeNameAutocomplete() {
                 // 将下拉框的值重置回之前的语言，防止UI显示错误
                 this.value = previousLang;
             }
+                */
         });
     }
 

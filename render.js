@@ -69,9 +69,11 @@ function getCostumeIconName(hero) {
  */
 function getFormattedHeroNameHTML(hero) {
     if (!hero) return '';
+    const skinInfo = getSkinInfo(hero);
+    let content = skinInfo.baseName;
     const iconName = getCostumeIconName(hero);
     if (iconName) {
-        content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title=""/>`;
+        content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
     }
     return content;
 }

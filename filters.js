@@ -872,20 +872,8 @@ function initializeNameAutocomplete() {
             nameInput.value = '';
             nameInput.focus();
             closeAutocompleteList();
-            updateClearButtonVisibility();
             applyFiltersAndRender(); // 重新应用筛选（显示所有英雄）
         });
-    }
-
-    // 更新清除按钮可见性
-    function updateClearButtonVisibility() {
-        if (!clearButton) return;
-
-        if (nameInput.value.length > 0) {
-            clearButton.classList.remove('hidden');
-        } else {
-            clearButton.classList.add('hidden');
-        }
     }
 
     // 输入法事件处理
@@ -908,8 +896,6 @@ function initializeNameAutocomplete() {
 
         const value = this.value;
         currentFocus = -1;
-        // 更新清除按钮可见性
-        updateClearButtonVisibility();
 
         if (value.length < 1) {
             closeAutocompleteList();
@@ -921,6 +907,18 @@ function initializeNameAutocomplete() {
 
     // 键盘导航
     nameInput.addEventListener('keydown', function (e) {
+        if (e.key === ' ' || e.code === 'Space' || e.key === 'Backspace' || e.code === 'Backspace') {
+            // 延迟处理，确保输入法已完成转换
+            setTimeout(() => {
+                const value = this.value;
+                if (value.length > 0) {
+                    updateAutocompleteSuggestions(value);
+                } else {
+                    closeAutocompleteList();
+                }
+            }, 500);
+            return;
+        }
 
         if (!autocompleteList.classList.contains('hidden')) {
             if (e.key === 'ArrowDown') {
@@ -1016,7 +1014,8 @@ function initializeNameAutocomplete() {
             item.innerHTML = itemHTML;
 
             item.addEventListener('click', () => {
-                nameInput.value = suggestion.english_name;
+                const searchLang = langSelector ? langSelector.value : 'current';
+                nameInput.value = searchLang !== 'current' ? suggestion.name : suggestion.english_name;
                 closeAutocompleteList();
                 applyFiltersAndRender();
             });
@@ -1054,8 +1053,6 @@ function initializeNameAutocomplete() {
         autocompleteList.classList.add('hidden');
         currentFocus = -1;
     }
-    // 更新清除按钮可见性
-    updateClearButtonVisibility();
 }
 
 /**

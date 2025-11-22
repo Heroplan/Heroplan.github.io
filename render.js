@@ -46,16 +46,20 @@ function getSkinInfo(hero) {
  * @param {string} skinIdentifier - 皮肤标识符 (e.g., 'C1', 'Toon')。
  * @returns {string|null} 图标文件名或null。
  */
-function getCostumeIconName(skinIdentifier) {
-    if (!skinIdentifier) return null;
-    const lowerSkin = String(skinIdentifier).toLowerCase();
-    if (lowerSkin.startsWith('c')) {
-        const match = lowerSkin.match(/^c\d+/);
-        if (match) return match[0];
+function getCostumeIconName(hero) {
+    if (!hero || hero.costume_id === 0) return '';
+    let costumeId = hero.costume_id;
+    if (hero.star === 3 && costumeId > 1) {
+        costumeId = costumeId + 1;
     }
-    if (lowerSkin.includes('glass') || lowerSkin.includes('玻璃')) return 'glass';
-    if (lowerSkin.includes('toon') || lowerSkin.includes('卡通')) return 'toon';
-    return null;
+
+    const classicMap = {
+        1: 'c1',
+        2: 'c2',
+        3: 'toon',
+        4: 'glass'
+    };
+    return classicMap[costumeId] || 'c1';
 }
 
 /**
@@ -65,13 +69,9 @@ function getCostumeIconName(skinIdentifier) {
  */
 function getFormattedHeroNameHTML(hero) {
     if (!hero) return '';
-    const skinInfo = getSkinInfo(hero);
-    let content = skinInfo.baseName;
-    if (skinInfo.skinIdentifier) {
-        const iconName = getCostumeIconName(skinInfo.skinIdentifier);
-        if (iconName) {
-            content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>${content}`;
-        }
+    const iconName = getCostumeIconName(hero);
+    if (iconName) {
+        content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title=""/>`;
     }
     return content;
 }
@@ -225,14 +225,11 @@ function renderTable(heroes) {
 
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
                 let costumeIconHtml = '';
-                const skinInfo = getSkinInfo(hero);
-                if (skinInfo.skinIdentifier) {
-                    const iconName = getCostumeIconName(skinInfo.skinIdentifier);
+                const iconName = getCostumeIconName(hero);
                     if (iconName) {
                         // 使用一个新的、专门用于头像的CSS类
-                        costumeIconHtml = `<img src="imgs/costume/c1.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
+                        costumeIconHtml = `<img src="imgs/costume/c1.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
                     }
-                }
 
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
@@ -1234,7 +1231,7 @@ function renderDetailsInModal(hero, context = {}) {
             <div class="details-top-right">
                 <div class="details-info-line">
                     ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
-                    ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(heroSkin)}.webp" class="costume-icon"/></span>` : ''}
+                    ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
                     ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
                     ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}
                     ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}"><img src="imgs/coins/${sourceIconMap[sourceReverseMap[hero.source]]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}

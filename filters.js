@@ -818,8 +818,16 @@ function initializeNameAutocomplete() {
             setCookie('search_lang', selectedLang, 365);
             nameInput.value = ''; // 切换语言时清空输入
             nameInput.focus();
-            applyCustomLanguageNames(selectedLang);
-            applyFiltersAndRender();
+            if (selectedLang === 'current') {
+                loadData(state.currentLang);
+                // 延迟处理，确保已完成加载
+                setTimeout(() => {
+                    applyFiltersAndRender();
+                }, 500);
+            } else {
+                applyCustomLanguageNames(selectedLang);
+                applyFiltersAndRender();
+            }
             updateClearButtonVisibility();
         });
     }

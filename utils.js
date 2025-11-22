@@ -310,10 +310,9 @@ async function loadData(lang) {
         state.allHeroes = data.allHeroes;
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
-
+        await loadExtraNameData();
         // 如果 savedLang 不为 cn、tc、en，则使用 window.searchNameData 进行名称替换
-        if (savedLang && savedLang !== 'cn' && savedLang !== 'tc' && savedLang !== 'en') {
-            await loadExtraNameData();
+        if (savedLang && savedLang !== 'cn' && savedLang !== 'tc' && savedLang !== 'en' && savedLang !== 'current') {
             applyCustomLanguageNames(savedLang);
         }
 

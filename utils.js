@@ -248,11 +248,54 @@ function extractEnglishName(hero) {
 }
 
 /**
+ * 应用自定义语言名称到英雄数据
+ * @param {string} langCode - 语言代码
+ */
+function applyCustomLanguageNames(langCode) {
+    if (!window.searchNameData || !window.searchNameData[langCode]) {
+        console.warn(`未找到 ${langCode} 语言的数据`);
+        return;
+    }
+
+    const langData = window.searchNameData[langCode];
+    let updatedCount = 0;
+
+    state.allHeroes.forEach(hero => {
+        if (!hero.heroId) return;
+
+        // 使用部分匹配模式查找对应的翻译
+        // 查找所有以 hero.heroId 开头的键
+        const matchingKeys = Object.keys(langData).filter(key =>
+            hero.heroId.startsWith(key)
+        );
+
+        if (matchingKeys.length > 0) {
+            // 选择最长的匹配（最具体的匹配）
+            const bestMatch = matchingKeys.reduce((longest, current) =>
+                current.length > longest.length ? current : longest
+            );
+
+            // 应用翻译
+            hero.name = langData[bestMatch];
+            updatedCount++;
+        }
+    });
+
+    console.log(`已将 ${updatedCount} 个英雄名称更新为 ${langCode} 语言`);
+}
+
+/**
  * 从服务器加载核心数据 (英雄、家族等)。
  * @param {string} lang - 要加载的语言版本 ('cn', 'tc', 'en')。
  * @returns {Promise<boolean>} 数据是否加载成功。
  */
 async function loadData(lang) {
+    // 从 Cookie 中读取保存的语言设置
+    const savedLang = getCookie('search_lang');
+    if (savedLang) {
+        const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
+        langSelector.value = savedLang;
+    }
     try {
         const response = await fetch(`./data_${lang}.json?v=${new Date().getTime()}`);
         if (!response.ok) {
@@ -267,6 +310,12 @@ async function loadData(lang) {
         state.allHeroes = data.allHeroes;
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
+
+        // 如果 savedLang 不为 cn、tc、en，则使用 window.searchNameData 进行名称替换
+        if (savedLang && savedLang !== 'cn' && savedLang !== 'tc' && savedLang !== 'en') {
+            await loadExtraNameData();
+            applyCustomLanguageNames(savedLang);
+        }
 
         return true;
     } catch (error) {

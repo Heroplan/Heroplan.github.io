@@ -442,7 +442,6 @@ async function initializeApp() {
             setCookie('showCircleRay', showCircleRayCheckbox.checked, 365);
         });
     }
-    loadExtraNameData();
 }
 
 /**

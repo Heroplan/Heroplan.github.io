@@ -811,12 +811,6 @@ function initializeNameAutocomplete() {
 
     if (!nameInput || !autocompleteList) return;
 
-    // 从 Cookie 中读取保存的语言设置
-    const savedLang = getCookie('search_lang');
-    if (savedLang) {
-        langSelector.value = savedLang;
-    }
-
     // 监听语言选择变化
     if (langSelector) {
         langSelector.addEventListener('change', function () {
@@ -824,6 +818,8 @@ function initializeNameAutocomplete() {
             setCookie('search_lang', selectedLang, 365);
             nameInput.value = ''; // 切换语言时清空输入
             nameInput.focus();
+            applyCustomLanguageNames(selectedLang);
+            applyFiltersAndRender();
             updateClearButtonVisibility();
         });
     }

@@ -64,7 +64,7 @@ function toggleFavorite(hero) {
 const skillTagOrder_base = ["治疗：复活", "治疗：即时", "治疗：提高生命", "治疗：持续", "治疗：特殊", "治疗：伤害量", "攻击：单体", "攻击：随机", "攻击-额外攻击", "攻击：数量变化", "攻击：两侧", "攻击：邻近轻伤", "攻击：范围", "攻击-连锁", "攻击：全体", "伤害：持续伤害"];
 const skillTagOrder_special = ["法力-削减法力", "法力-法力偷取", "法力-摧毁小兵获得法力", "法力-法力恢复", "法力-法力恢复（击杀）", "法力-面板：法力生成", , "攻击-偷取小兵", "攻击-回溯/偷取技能", "攻击-摧毁小兵", "攻击-无视闪避", "攻击-穿透/绕过", "攻击-穿透小兵", "攻击-赌博/随机效果", "攻击-面板：攻击力", "攻击-面板：暴击", "伤害-伤害↑：冰霜", "伤害-伤害↑：暗黑", "伤害-伤害↑：火焰", "伤害-伤害↑：神圣", "伤害-伤害↑：自然", "伤害-条件触发", "伤害-移除小兵造成伤害", "伤害-面板：提高伤害", "伤害-额外伤害", "治疗-自我恢复/提高生命", "治疗-通过伤害治疗", "治疗-通过小兵治疗", "召唤-小兵", "召唤-恶魔", "召唤-摧毁恶魔", "召唤-超级小兵", "召唤-超级恶魔", "状态-偷取增益", "状态-减少状态异常回合", "状态-减少增益回合", "状态-替换为增益", "状态-替换为负面效果", "状态-增益重新分配", "状态-负面效果重新分配", "状态-重置/增加增益回合", "状态-重置负面效果回合"];
 const skillTagOrder_buff = ["状态-驱散增益", "状态-阻止增益驱散", "状态-免疫状态异常", "状态-阻止负面效果", "状态-反弹负面效果", "法力-法力生成↑", "法力-法力恢复", "法力-叠加：法力生成↑", "攻击-技能攻击力↑", "攻击-攻击力↑", "攻击-成长：攻击力↑", "攻击-叠加：攻击力↑", "攻击-暴击率↑", "攻击-穿透/绕过", "防御-拟态", "防御-闪避", "防御-伤害减免", "防御-伤害分担", "防御-防御力↑", "防御-成长：防御力↑", "防御-叠加：防御力↑", "防御-防御↑：特殊技能", "防御-反击/反弹", "防御-反击/反弹：冰霜", "防御-反击/反弹：暗黑", "防御-反击/反弹：火焰", "防御-反击/反弹：神圣", "防御-反击/反弹：自然", "防御-防御↑：冰霜", "防御-防御↑：暗黑", "防御-防御↑：火焰", "防御-防御↑：神圣", "防御-防御↑：自然", "防御-嘲讽", "治疗-自我复活", "治疗-自我恢复", "治疗-治疗量↑", "治疗-叠加：生命恢复", "治疗-阻止最大生命值↓", "状态-潜行/幽灵形态", "状态-阻止恶魔"];
-const skillTagOrder_debuff = ["状态-净化状态异常", "状态-阻止净化", "状态-增益无效化", "状态-反弹增益", "法力-法力偷取", "法力-法力生成↓/阻止", "法力-叠加：法力生成↓", "法力-混乱/沉默/睡眠", "法力-麻痹", "攻击-攻击力↓", "攻击-衰退：攻击力↓", "攻击-叠加：攻击力↓", "攻击-命中率↓", "伤害-叠加：持续伤害", "伤害-持续伤害：冰冻", "伤害-持续伤害：毒", "伤害-持续伤害：水", "伤害-持续伤害：沙", "伤害-持续伤害：流血", "伤害-持续伤害：燃烧", "伤害-持续伤害：生命偷取", "伤害-持续伤害：诅咒", "伤害-持续伤害：共振", "防御-受到伤害↑", "防御-叠加：受到伤害↑", "防御-防御力↓", "防御-衰退：防御力↓", "防御-叠加：防御力↓", "防御-防御↓：特殊技能", "防御-防御↓：冰霜", "防御-防御↓：暗黑", "防御-防御↓：火焰", "防御-防御↓：神圣", "防御-防御↓：自然", "防御-改变颜色/位置", "治疗-偷取治疗", "治疗-最大生命值↓", "治疗-治疗量↓", "治疗-阻止复活", "治疗-阻止治疗", "状态-吞噬粘物", "状态-天赋技能无效化", "状态-狂乱", "状态-自我减益", "状态-重置负面效果回合", "状态-阻止小兵","状态-小兵腐化"];
+const skillTagOrder_debuff = ["状态-净化状态异常", "状态-阻止净化", "状态-增益无效化", "状态-反弹增益", "法力-法力偷取", "法力-法力生成↓/阻止", "法力-叠加：法力生成↓", "法力-混乱/沉默/睡眠", "法力-麻痹", "攻击-攻击力↓", "攻击-衰退：攻击力↓", "攻击-叠加：攻击力↓", "攻击-命中率↓", "伤害-叠加：持续伤害", "伤害-持续伤害：冰冻", "伤害-持续伤害：毒", "伤害-持续伤害：水", "伤害-持续伤害：沙", "伤害-持续伤害：流血", "伤害-持续伤害：燃烧", "伤害-持续伤害：生命偷取", "伤害-持续伤害：诅咒", "伤害-持续伤害：共振", "防御-受到伤害↑", "防御-叠加：受到伤害↑", "防御-防御力↓", "防御-衰退：防御力↓", "防御-叠加：防御力↓", "防御-防御↓：特殊技能", "防御-防御↓：冰霜", "防御-防御↓：暗黑", "防御-防御↓：火焰", "防御-防御↓：神圣", "防御-防御↓：自然", "防御-改变颜色/位置", "治疗-偷取治疗", "治疗-最大生命值↓", "治疗-治疗量↓", "治疗-阻止复活", "治疗-阻止治疗", "状态-吞噬粘物", "状态-天赋技能无效化", "状态-狂乱", "状态-自我减益", "状态-重置负面效果回合", "状态-阻止小兵", "状态-小兵腐化"];
 
 /**
  * 填充所有筛选器按钮和选项。
@@ -822,43 +822,17 @@ function initializeNameAutocomplete() {
         langSelector.addEventListener('change', function () {
             const selectedLang = this.value;
             setCookie('search_lang', selectedLang, 365);
-            location.reload();
-            /*
-            const warningMessages = {
-                'ja': "警告: ヒーロー名の表示言語を切り替えると、ヒーローの共有、お気に入り、チームのインポート/エクスポートなどの機能は、同じ言語設定の場合にのみ有効になります。続けますか？",
-                'ko': "경고: 영웅 이름 표시 언어를 변경하면 영웅 공유, 즐겨찾기, 팀 가져오기/내보내기 등의 기능은 동일한 언어로 설정된 경우에만 작동합니다. 계속하시겠습니까?",
-                'ru': "Внимание: После смены языка отображения имен героев, такие функции как обмен героями, избранное и импорт/экспорт команд будут работать только при установке того же языка. Продолжить?",
-                'ar': "تحذير: بعد تغيير لغة عرض أسماء الأبطال، ستعمل ميزات مثل مشاركة الأبطال والمفضلات واستيراد/تصدير الفرق فقط عند ضبطها على نفس اللغة. هل تريد الاستمرار؟",
-                'da': "Advarsel: Efter skift af sprog for heltenavne vil funktioner som deling af helte, favoritter og holdimport/eksport kun fungere, når samme sprog er indstillet. Vil du fortsætte?",
-                'nl': "Waarschuwing: Na het wijzigen van de weergavetaal voor heldennamen, werken functies zoals helden delen, favorieten en team import/export alleen wanneer dezelfde taal is ingesteld. Doorgaan?",
-                'fi': "Varoitus: Kun vaihdat sankarinimien näyttökielen, toiminnot kuten sankarien jakaminen, suosikit ja tiimien tuonti/vienti toimivat vain, jos sama kieli on asetettu. Haluatko jatkaa?",
-                'fr': "Attention : Après avoir changé la langue d'affichage des noms de héros, les fonctionnalités telles que le partage, les favoris et l'import/export d'équipes ne fonctionneront que si la même langue est définie. Continuer ?",
-                'de': "Warnung: Nach dem Wechsel der Anzeigesprache für Heldennamen funktionieren Funktionen wie das Teilen von Helden, Favoriten sowie Import/Export von Teams nur, wenn die gleiche Sprache eingestellt ist. Fortfahren?",
-                'id': "Peringatan: Setelah mengganti bahasa tampilan nama hero, fitur seperti berbagi hero, favorit, dan impor/ekspor tim hanya akan berfungsi jika disetel ke bahasa yang sama. Lanjutkan?",
-                'it': "Attenzione: Dopo aver cambiato la lingua di visualizzazione dei nomi degli eroi, funzionalità come la condivisione, i preferiti e l'importazione/esportazione delle squadre funzioneranno solo se impostate sulla stessa lingua. Continuare?",
-                'no': "Advarsel: Etter å ha byttet visningsspråk for heltenavn, vil funksjoner som deling av helter, favoritter og lagimport/eksport kun fungere når samme språk er innstilt. Fortsette?",
-                'pl': "Ostrzeżenie: Po zmianie języka wyświetlania nazw bohaterów, funkcje takie jak udostępnianie, ulubione oraz import/eksport drużyn będą działać tylko przy ustawieniu tego samego języka. Kontynuować?",
-                'pt': "Aviso: Após alterar o idioma de exibição dos nomes dos heróis, recursos como compartilhamento, favoritos e importação/exportação de equipes funcionarão apenas quando definidos para o mesmo idioma. Continuar?",
-                'es': "Advertencia: Después de cambiar el idioma de visualización de los nombres de héroes, funciones como compartir, favoritos e importación/exportación de equipos solo funcionarán cuando se configure el mismo idioma. ¿Continuar?",
-                'sv': "Varning: Efter att ha bytt visningsspråk för hjältnamn kommer funktioner som delning av hjältar, favoriter och lagimport/export endast att fungera när samma språk är inställt. Fortsätta?",
-                'tr': "Uyarı: Kahraman ismi görüntüleme dilini değiştirdikten sonra, kahraman paylaşma, favoriler ve takım içe/dışa aktarma gibi özellikler yalnızca aynı dil ayarlandığında çalışacaktır. Devam edilsin mi?",
-                'en': "Warning: After switching the hero name display language, features like sharing heroes, favoriting heroes, and team import/export will only work when set to the same language. Continue?" // 默认英语备份
-            };
-            const selectedLang = this.value;
-            // 获取对应语言的提示，如果没有找到则默认显示英语
-            const msg = warningMessages[selectedLang] || warningMessages['en'];
-
-            // 弹出确认框
-            if (confirm(msg)) {
-                // 用户点击“确定”
-                setCookie('search_lang', selectedLang, 365);
-                location.reload();
+            if (loadData(state.currentLang)) {
+                nameInput.value = ''; // 切换语言时清空输入
+                nameInput.focus();
+                // 延迟处理，确保已完成加载
+                setTimeout(() => {
+                    applyFiltersAndRender();
+                }, 1000);
             } else {
-                // 用户点击“取消”
-                // 将下拉框的值重置回之前的语言，防止UI显示错误
-                this.value = previousLang;
+                location.reload();
+                //this.value = previousLang;
             }
-                */
         });
     }
 

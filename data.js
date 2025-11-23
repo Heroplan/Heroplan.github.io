@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2025-12-25';
 const purchaseCostumeDate = '2026-01-29';
 const soulExchange = {
-    Date: '2025-11-20',
+    Date: '2026-02-20',
     ten: [
         "ballerina_phantom_of_the_opera",
         "bard_ogima",
@@ -26,7 +26,7 @@ const soulExchange = {
         "s5_hetepheres_costume_spa",
         "gargoyle_mena"
     ],
-    show: true
+    show: false
 }
 
 const redeemcodes = [

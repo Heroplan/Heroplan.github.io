@@ -315,7 +315,7 @@ async function loadData(lang) {
         });
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
-        // 如果 savedLang 不为 cn、tc、en，则使用 window.searchNameData 进行名称替换
+        // 如果 savedLang 不为 current，则使用 window.searchNameData 进行名称替换
         if (savedLang && savedLang !== 'current') {
             await loadExtraNameData(savedLang);
             applyCustomLanguageNames(savedLang);

@@ -83,50 +83,79 @@ const uiElements = {
  * @param {string} lang - 语言代码 ('cn', 'tc', 'en')。
  */
 function applyLanguage(lang) {
+    // 1. 设置 HTML 语言属性
     if (lang === 'cn') document.documentElement.lang = 'zh-CN';
     else if (lang === 'tc') document.documentElement.lang = 'zh-TW';
     else document.documentElement.lang = 'en';
 
     document.body.setAttribute('data-lang', lang);
+
+    // 2. 更新状态和页面标题
     state.currentLang = lang;
     const langDict = i18n[lang] || i18n.cn;
     document.title = langDict.pageTitle;
 
+    // 3. 通用文本/属性更新逻辑
     document.querySelectorAll('[data-lang-key]').forEach(el => {
         const key = el.getAttribute('data-lang-key');
+
+        // 3.1 特殊处理 H1 里的链接
         if (key === 'headerTitle' && el.tagName === 'H1') {
             const link = el.querySelector('a');
             if (link) link.textContent = langDict[key];
-        } else {
-            const translation = langDict[key];
-            if (typeof translation === 'function') { }
-            else if (translation !== undefined) {
-                if (el.tagName === 'OPTION') el.textContent = translation;
-                else el.innerHTML = translation;
+            return; // 处理完直接跳过后续逻辑
+        }
+
+        const translation = langDict[key];
+
+        // 3.2 正常的翻译应用逻辑
+        if (translation !== undefined && typeof translation !== 'function') {
+
+            if (el.tagName === 'SELECT') {
+                // 如果是 Select 标签，我们通常是想修改它的 title 提示，而不是内容
+                // 如果修改 innerHTML 会导致下拉选项消失
+                el.setAttribute('title', translation);
+            }
+            else if (el.tagName === 'OPTION') {
+                // Option 标签修改文本
+                el.textContent = translation;
+            }
+            else {
+                // 其他标签 (div, span, label, p) 使用 innerHTML 支持富文本
+                el.innerHTML = translation;
             }
         }
     });
 
+    // 4. 处理 Placeholder (输入框占位符)
     document.querySelectorAll('[data-lang-key-placeholder]').forEach(el => {
         const key = el.getAttribute('data-lang-key-placeholder');
         if (langDict[key]) el.placeholder = langDict[key];
     });
 
+    // 5. 处理特定 ID 的 Title (工具栏按钮等)
     const titles = {
-        'theme-toggle-btn': 'toggleThemeTitle', 'lang-select-btn': 'toggleLanguageTitle',
-        'show-wanted-mission-btn': 'showWantedMissionTitle', 'open-filters-btn': 'openFiltersTitle',
-        'calendar-btn': 'calendarTitle', 'close-filters-modal-btn': 'closeBtnTitle',
-        'advanced-filter-help-btn': 'filterSyntaxTitle', 'skill-type-help-btn': 'skillTypeSourceHelpTitle', 'show-lottery-simulator-btn': 'showLotterySimulatorTitle',
+        'theme-toggle-btn': 'toggleThemeTitle',
+        'lang-select-btn': 'toggleLanguageTitle',
+        'show-wanted-mission-btn': 'showWantedMissionTitle',
+        'open-filters-btn': 'openFiltersTitle',
+        'calendar-btn': 'calendarTitle',
+        'close-filters-modal-btn': 'closeBtnTitle',
+        'advanced-filter-help-btn': 'filterSyntaxTitle',
+        'skill-type-help-btn': 'skillTypeSourceHelpTitle',
+        'show-lottery-simulator-btn': 'showLotterySimulatorTitle',
         'show-team-simulator-btn': 'showTeamSimulatorTitle',
         'show-chat-simulator-btn': 'showChatSimulatorTitle',
         'show-farming-guide-btn': 'showFarmingGuideTitle',
         'show-redeem-codes-btn': 'showRedeemCodesTitle'
     };
+
     for (const id in titles) {
         const element = document.getElementById(id);
         if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
     }
 
+    // 6. 处理 Meta Description
     const metaDesc = document.getElementById('meta-description');
     if (metaDesc && langDict.metaDescription) metaDesc.setAttribute('content', langDict.metaDescription);
 }

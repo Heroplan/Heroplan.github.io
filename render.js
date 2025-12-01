@@ -377,6 +377,7 @@ const highlightDictionaries = {
             'can\'t be dispelled': '[##elementgreen]can\'t be dispelled[#]',
             'can\’t be dispelled': '[##elementgreen]can\’t be dispelled[#]',
             'uncleansable': '[##elementred]uncleansable[#]',
+            'can\'t be cleansed': '[##elementred]can\'t be cleansed[#]',
             'Paralyzed': '[##elementred]Paralyzed[#]',
             'Curse damage': '[#!]Curse damage[#]',
             'Poison damage': '[##elementpurple]Poison damage[#]',

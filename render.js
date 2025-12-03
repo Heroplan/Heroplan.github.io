@@ -1777,7 +1777,8 @@ function renderDetailsInModal(hero, context = {}) {
                                 sourceReverseMap[hero.source].toLowerCase()
                                 const classicMap = {
                                     3: 'cute',
-                                    4: 'stainedglass'
+                                    4: 'stainedglass',
+                                    5: 'stylish'
                                 };
                                 if (hero.star === 3) {
                                     costumeId = costumeId + 1
@@ -1786,7 +1787,7 @@ function renderDetailsInModal(hero, context = {}) {
                                     return colorReverseMap[hero.color].toLowerCase();
                                 } else if (costumeId === 3) {
                                     return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
-                                } else if (costumeId === 4) {
+                                } else if (costumeId >= 4) {
                                     return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
                                 }
 
@@ -1828,6 +1829,8 @@ function renderDetailsInModal(hero, context = {}) {
                                 'opera': 'ballerina',
                                 'knight': 'knights',
                                 'fable': 'fables',
+                                'shady_scoundrels': 'scoundrel',
+                                
 
                                 // 如果家族名本身就是文件名后缀，直接用 default 处理
                             };

@@ -3692,11 +3692,11 @@ select.custom-select-hidden {
   opacity: 1
 }
 
-/* --- 動態DoT數值的高亮樣式 --- */
+/* --- 动态DoT数值的高亮样式 --- */
 .dynamic-value {
-  color: #D14545;
+  color: #ff7800ff;
   font-weight: 700;
-  /* 加粗顯示 */
+  /* 加粗显示 */
   padding: 1px 4px;
   border-radius: 4px;
   transition: color 0.2s, background-color 0.2s

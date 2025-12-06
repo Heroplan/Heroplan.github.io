@@ -291,7 +291,21 @@ function applyCustomLanguageNames(langCode) {
  */
 async function loadData(lang) {
     // 从 Cookie 中读取保存的语言设置
-    const savedLang = getCookie('search_lang');
+    let savedLang = getCookie('search_lang');
+    // 定义支持的语言数组
+    const langs = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
+
+    // 获取用户语言
+    const userLang = navigator.language || navigator.userLanguage;
+    const userLangShort = userLang.split('-')[0].toLowerCase(); // 获取语言代码的主部分
+
+    // 如果没有搜索语言,且 lang 为 'en'，且用户语言在 langs 中
+    if (!savedLang && lang === 'en' && langs.includes(userLangShort)) {
+        // 将新的 savedLang 保存回 cookie
+        savedLang = userLangShort;
+        setCookie('search_lang', userLangShort, 365);
+    }
+
     if (savedLang) {
         const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
         langSelector.value = savedLang;

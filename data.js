@@ -239,7 +239,7 @@ const sourceIconMap = {
     "astral": "astralelves.webp",
     "wilderness": "wilderness.webp",
     "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
-    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "bazaar.webp", "temple": "temple.webp", "titanhunter": "titanhunter.webp",
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "bazaar.webp", "temple": "temple.webp", "titanhunter": "diamond.webp",
 };
 
 // 颜色名称 -> 标准英文名

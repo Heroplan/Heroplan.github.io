@@ -550,6 +550,17 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     if (!starMatch) return [];
     const star = parseInt(starMatch[1], 10);
 
+    // ▼▼▼ 提前处理 bucketRules ▼▼▼
+    // 必须在遍历英雄之前，将 bucketRules 中指定的家族添加到 explicitlyIncludedFamilies。
+    // 这样做的目的是为了让这些家族（例如 mimic）能够通过后续的 (!isGloballyExcluded || isExplicitlyIncluded) 检查。
+    // 否则，因为 mimic 在全局排除列表中，它们会被直接过滤掉。
+    if (poolConfig.bucketRules && Array.isArray(poolConfig.bucketRules)) {
+        const rule = poolConfig.bucketRules.find(r => r.includedRarities && r.includedRarities.includes(star));
+        if (rule && rule.includedFamilies) {
+            rule.includedFamilies.forEach(f => explicitlyIncludedFamilies.add(String(f).toLowerCase()));
+        }
+    }
+
     let bucketType = 'unknown';
     if (bucketString.startsWith('heroes_event_')) bucketType = 'event';
     else if (bucketString.startsWith('heroes_listed_')) bucketType = 'listed';
@@ -635,6 +646,8 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             // Log for exemption is kept for debugging
         }
 
+        // 因为我们在前面将 mimic 加入了 explicitlyIncludedFamilies，
+        // 所以 (!isGloballyExcluded || isExplicitlyIncluded) 现在对 mimic 家族返回 true。
         if (hero.star === star && (!isGloballyExcluded || isExplicitlyIncluded)) {
             switch (bucketType) {
                 case 's1':
@@ -644,8 +657,21 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                     matches = (heroFamily !== 'classic');
                     break;
                 case 'event':
-                    // 直接使用我们在这函数开头就计算好的、包含了所有明确家族的列表
+                    // 直接使用包含了 bucketRules 中家族的 explicitlyIncludedFamilies 列表
                     let eventFamilies = Array.from(explicitlyIncludedFamilies);
+
+                    // 如果存在 bucketRules，我们实际上希望严格遵守规则中的家族列表，
+                    // 而不是包含所有 AssociatedFamilies。
+                    // 之前的逻辑已经将规则家族添加到了 explicitlyIncludedFamilies 以通过外层检查。
+                    // 如果使用了规则，matches 应该只匹配规则内的家族。
+                    if (poolConfig.bucketRules && Array.isArray(poolConfig.bucketRules)) {
+                        const rule = poolConfig.bucketRules.find(r => r.includedRarities && r.includedRarities.includes(star));
+                        if (rule && rule.includedFamilies) {
+                            // 覆盖 eventFamilies，仅使用规则指定的家族
+                            eventFamilies = rule.includedFamilies.map(f => f.toLowerCase());
+                        }
+                    }
+
                     // ▼▼▼ 如果奖池允许训练师，则将'trainer'家族视为活动家族 ▼▼▼
                     if (poolConfig.allowsTrainerCharacter) {
                         eventFamilies.push('trainer');
@@ -829,6 +855,16 @@ function getAllHeroesInPool(poolConfig) {
         allPossibleHeroes.push(...heroesFromFeaturedList);
     }
 
+    // ▼▼▼ 确保 entitiesToChooseFrom 中的英雄总是被包含在主奖池中 ▼▼▼
+    // 这些实体可能因为 bucketRules 或日期规则被主流程排除，
+    // 但如果它们在 entitiesToChooseFrom 列表中，它们必须作为可选项出现（供精选卡槽选择）。
+    if (poolConfig.entitiesToChooseFrom && Array.isArray(poolConfig.entitiesToChooseFrom)) {
+        const choosableEntities = poolConfig.entitiesToChooseFrom
+            .map(heroId => state.heroesByIdMap.get(heroId))
+            .filter(Boolean);
+        allPossibleHeroes.push(...choosableEntities);
+    }
+
     if (poolConfig.bucketConfig) {
         poolConfig.bucketConfig.forEach(bucketString => {
             if (!bucketString) {
@@ -917,7 +953,7 @@ function getAllHeroesInPool(poolConfig) {
         allPossibleHeroes.push(...olderHeroes);
     }
 
-    // ▼▼▼ 新增逻辑：处理 allowsTrainerCharacter ▼▼▼
+    // ▼▼▼ 处理 allowsTrainerCharacter ▼▼▼
     if (poolConfig.allowsTrainerCharacter) {
         //console.log(`[日志-训练师] 检测到 allowsTrainerCharacter 规则，正在添加训练师英雄...`);
         const stars = [3, 4]; // 包含3、4星

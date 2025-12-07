@@ -367,9 +367,9 @@
         },
         "lottery_featured_event_beowulf": {
             "featuredHeroes": [
-              "beowulf_weland",
-              "beowulf_beowulf",
-              "beowulf_wiglaf"
+                "beowulf_weland",
+                "beowulf_beowulf",
+                "beowulf_wiglaf"
             ],
             "AssociatedFamilies": [
                 "beowulf"
@@ -390,9 +390,9 @@
         },
         "lottery_featured_event_festival_b": {
             "featuredHeroes": [
-              "bard_lyria",
-              "villain_dark_lord_costume_astronomer",
-              "bard_dunnar_hart"
+                "bard_lyria",
+                "villain_dark_lord_costume_astronomer",
+                "bard_dunnar_hart"
             ],
             "AssociatedFamilies": [
                 "villains",
@@ -572,24 +572,24 @@
                 "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
                 "requiredItemAmount": 100,
                 "heroes": [
-                  "kingdom_liu_bei_costume_nature",
-                  "journey_xie_zi_jing",
-                  "kingdom_cao_cao_costume_ice",
-                  "kingdom_lu_bu_costume_tiger_lord",
-                  "journey_xiong_shanjun",
-                  "journey_erlang_shen",
-                  "kingdom_sun_quan_costume_fire_bat",
-                  "journey_nineheaded_beast",
-                  "kingdom_zhang_fei_costume_bear_slayer",
-                  "journey_tang_sanzang"
+                    "kingdom_liu_bei_costume_nature",
+                    "journey_xie_zi_jing",
+                    "kingdom_cao_cao_costume_ice",
+                    "kingdom_lu_bu_costume_tiger_lord",
+                    "journey_xiong_shanjun",
+                    "journey_erlang_shen",
+                    "kingdom_sun_quan_costume_fire_bat",
+                    "journey_nineheaded_beast",
+                    "kingdom_zhang_fei_costume_bear_slayer",
+                    "journey_tang_sanzang"
                 ]
             }
         },
         "lottery_monster_island_default": {
             "featuredHeroes": [
-              "monster_hunter_njal",
-              "monster_hunter_sorcha",
-              "monster_hunter_revna"
+                "monster_hunter_njal",
+                "monster_hunter_sorcha",
+                "monster_hunter_revna"
             ],
             "AssociatedFamilies": [
                 "plains_hunter",
@@ -599,9 +599,9 @@
         },
         "lottery_featured_alliance_quest_moths": {
             "featuredHeroes": [
-              "moth_furgeant",
-              "moth_gardered",
-              "moth_pepperbleu"
+                "moth_furgeant",
+                "moth_gardered",
+                "moth_pepperbleu"
             ],
             "AssociatedFamilies": [
                 "moths"
@@ -609,8 +609,8 @@
         },
         "lottery_pickup_default": {
             "featuredHeroes": [
-              "garrison_flamehide",
-              "garrison_iarlaith"
+                "garrison_flamehide",
+                "garrison_iarlaith"
             ],
             "includedHeroes": [
                 "s2_ariel",
@@ -1090,18 +1090,8 @@
             ]
         },
         "lottery_mimic_default": {
-            "includedOrigins": [
-                "Season2",
-                "Season3",
-                "Mimic"
-            ],
             "allowsTrainerCharacter": true,
             "entitiesToChooseFrom": [
-                "mimic_emblem_purple",
-                "mimic_emblem_yellow",
-                "mimic_emblem_green",
-                "mimic_emblem_blue",
-                "mimic_emblem_red",
                 "mimic_ascension_item_purple",
                 "mimic_ascension_item_yellow",
                 "mimic_ascension_item_green",
@@ -1112,6 +1102,30 @@
                 "mimic_training_hero_green",
                 "mimic_training_hero_blue",
                 "mimic_training_hero_red"
+            ],
+            "bucketRules": [
+                {
+                    "includedRarities": [
+                        3,
+                        4
+                    ],
+                    "includedFamilies": [
+                        "magic",
+                        "mimic"
+                    ]
+                },
+                {
+                    "includedRarities": [
+                        5
+                    ],
+                    "includedFamilies": [
+                        "magic"
+                    ]
+                }
+            ],
+            "trainerCharacterRarities": [
+                3,
+                4
             ]
         },
         "lottery_titan_hunter_default": {

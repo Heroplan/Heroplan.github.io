@@ -190,7 +190,7 @@ const sourceReverseMap = {
     "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon", "神话召唤 - 额外抽奖": "tavernoflegendssecret",
     "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "荒野召唤": "wilderness",
     "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "拟态兽召唤": "mimic", "神殿召唤": "temple",
+    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "市集召唤": "mimic", "神殿召唤": "temple", "泰坦猎手召唤": "titanhunter",
     // 繁體中文
     "聯盟 - 勇者與美人": "musketeer",
     "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
@@ -204,7 +204,7 @@ const sourceReverseMap = {
     "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "傳奇召喚 - 月英": "hotm",
     "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon", "傳奇召喚 - 額外抽獎": "tavernoflegendssecret", "星界召喚": "astral", "野地召喚": "wilderness",
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "模仿怪召喚": "mimic", "神殿召喚": "temple",
+    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "市場召喚": "mimic", "神殿召喚": "temple", "泰坦獵人召喚": "titanhunter",
     // English
     "Alliance - The Brave & The Beautiful": "musketeer",
     "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
@@ -218,7 +218,7 @@ const sourceReverseMap = {
     "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon", "Legends Summon - Extra Draw": "tavernoflegendssecret",
     "Astral Summon": "astral", "Wilderness Summon": "wilderness",
     "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
-    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Mimic Summon": "mimic", "Temple Summon": "temple"
+    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Bazaar Summon": "mimic", "Temple Summon": "temple", "Titan Hunter Summon": "titanhunter"
 };
 
 // 英文标识符 -> 起源图标文件名
@@ -239,7 +239,7 @@ const sourceIconMap = {
     "astral": "astralelves.webp",
     "wilderness": "wilderness.webp",
     "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
-    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "mimic.webp", "temple": "temple.webp",
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "bazaar.webp", "temple": "temple.webp", "titanhunter": "titanhunter.webp",
 };
 
 // 颜色名称 -> 标准英文名
@@ -812,7 +812,6 @@ const PassiveSkillIconCollection = {
     "toon_resist_debuffs_manareduction_dispels": "passive_cute",
     "cute_costume_resist_dispels": "NULL_SPRITE",
     "mana_on_dispel_buff_satori": "passive_mana_on_dispel_buff",
-    "mana_debuff_protection": "mana_debuff_protection",
     "iterate_passive_effects_on_special": "iterate_passive_effects_on_special",
     "guaranteed_passive_effects_on_special": "guaranteed_passive_effects_on_special",
     "gargoyle_soft_skin": "passive_gargoyle_soft",
@@ -942,7 +941,7 @@ const PassiveSkillIconCollection = {
     "summon_seedling_fiend_on_enemy_minion_summon": "passive_seedling_summoner",
     "mana_on_own_familiar_death_construct": "passive_mana_on_miniondeath",
     "hp_on_own_familiar_death_construct": "passive_heal_on_miniondeath",
-    "resist_special_blocking_with_health_boost_and_mana": "status_silence",
+    "resist_special_blocking_with_health_boost_and_mana": "passive_resist_boost_special_blocking",
     "dodge_enemy_damage_special_apex": "passive_dodge_enemy_damage_special_apex",
     "stat_modifier_apex_HP": "passive_stat_modifier_apex_hp",
     "stat_modifier_apex_DEF": "passive_stat_modifier_apex_def",
@@ -977,6 +976,26 @@ const PassiveSkillIconCollection = {
     "buffs_to_debuffs_on_special_cast_magic_carpet": "passive_transform_buff",
     "cheat_death": "passive_cheat_death",
     "frost_on_minion_damage_done": "status_frost_on_minion_damage",
+    "titan_hunter_hunting_flare_on_special_cast": "passive_mark_of_the_titan",
     "ransack": "passive_thiefs_opportunity",
-    "damage_all_enemies_on_cover_or_special_damage_received_costume": "passive_damage_all_enemies_on_cover_or_special_damage_received"
+    "damage_all_enemies_on_cover_or_special_damage_received_costume": "passive_damage_all_enemies_on_cover_or_special_damage_received",
+    "stylish": "passive_stylish",
+    "tile_enhancement_red_on_special_titan_hunter_parent": "status_tile_enhancment_titan_hunter_red",
+    "critical_chance_red_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_red",
+    "accuracy_down_red_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_red",
+    "tile_enhancement_green_on_special_titan_hunter_parent": "status_tile_enhancment_titan_hunter_green",
+    "critical_chance_green_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_green",
+    "accuracy_down_green_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_green",
+    "tile_enhancement_blue_on_special_titan_hunter_parent": "status_tile_enhancment_titan_hunter_blue",
+    "critical_chance_blue_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_blue",
+    "accuracy_down_blue_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_blue",
+    "tile_enhancement_yellow_on_special_titan_hunter_parent": "status_tile_enhancment_titan_hunter_yellow",
+    "critical_chance_yellow_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_yellow",
+    "accuracy_down_yellow_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_yellow",
+    "tile_enhancement_purple_on_special_titan_hunter_parent": "status_tile_enhancment_titan_hunter_purple",
+    "critical_chance_purple_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_purple",
+    "accuracy_down_purple_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_purple",
+    "summon_seedling_parasite_per_turn_shared_with_delay_veggie": "passive_seedling_summoner",
+    "resist_all_mana_debuffs_and_reductions": "status_mana_resist",
+    "mana_generation_modifier_all_enemies_more_sources": "passive_mana_generation_modifier"
 };

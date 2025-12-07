@@ -291,6 +291,15 @@
                 "featuredHero"
             ],
             "featuredHeroNum": 3
+        },
+        "TitanHunterSummon": {
+            "bucketConfig": [
+                "heroes_listed_3",
+                "heroes_listed_4",
+                "heroes_listed_5",
+                "featuredHero"
+            ],
+            "featuredHeroNum": 2
         }
     },
     "SummonPool": {
@@ -337,8 +346,8 @@
         },
         "lottery_astralelves_default": {
             "featuredHeroes": [
-                "astral_demon_salome",
-                "astral_demon_anatemah"
+                "astral_demon_turundh",
+                "astral_demon_paimon"
             ],
             "AssociatedFamilies": [
                 "astral_elves",
@@ -418,8 +427,8 @@
                 "classic"
             ],
             "featuredHeroes": [
-                "royal_knight_commander_costume_glass",
-                "magitech_sniper_costume_glass"
+                "forest_female_elf_costume_glass",
+                "exalted_warrior_costume_glass"
             ]
         },
         "lottery_covenant_default": {
@@ -428,12 +437,12 @@
                 "construct1"
             ],
             "featuredHeroes": [
-                "tales2_regin_costume_omen",
-                "goblin_soursting",
-                "outlaw_ruan_xiaoqi",
-                "moth_gardered",
-                "outlaw_wu_song",
-                "musketeer_aramis_costume_boulanger"
+                "construct_sizzleomatic",
+                "construct_halwinter",
+                "construct_ironheart",
+                "slime_zestique",
+                "slime_sludgus",
+                "slime_labblub"
             ],
             "advertisedHero": "fox_riverfang",
             "includedHeroes": [
@@ -518,7 +527,9 @@
                 "construct_skarn",
                 "construct_gwynn",
                 "fox_foxglove",
-                "fox_nettletail"
+                "fox_nettletail",
+                "construct_hotspin",
+                "construct_ironvein"
             ]
         },
         "lottery_goblin_default": {
@@ -547,9 +558,9 @@
         },
         "lottery_mercenary_war_default": {
             "featuredHeroes": [
-                "journey_tang_sanzang",
-                "journey_nineheaded_beast",
-                "kingdom_guan_yu_costume_dragon"
+                "outlaw_lin_chong",
+                "outlaw_wu_song",
+                "outlaw_lu_zhishen"
             ],
             "AssociatedFamilies": [
                 "kingdom",
@@ -576,9 +587,9 @@
         },
         "lottery_monster_island_default": {
             "featuredHeroes": [
+              "monster_hunter_njal",
               "monster_hunter_sorcha",
-              "monster_hunter_revna",
-              "monster_hunter_sigyn"
+              "monster_hunter_revna"
             ],
             "AssociatedFamilies": [
                 "plains_hunter",
@@ -659,9 +670,9 @@
         },
         "lottery_season_season5": {
             "featuredHeroes": [
-                "s5_tetisheri_costume_molten",
-                "s5_horus_costume_golden",
-                "s5_anubis_costume_dancefloor"
+                "s5_meresankh_costume_disco",
+                "s5_maat_costume_river",
+                "s5_hathor_costume_starlit"
             ],
             "AssociatedFamilies": [
                 "sun",
@@ -808,9 +819,9 @@
         },
         "lottery_hero_christmas": {
             "featuredHeroes": [
-                "christmas_albin",
-                "christmas_ottilia",
-                "christmas_mr_pengi_costume_snowboarder"
+                "christmas_noel",
+                "christmas_florencia",
+                "christmas_ginger_costume_gift_wrapper"
             ],
             "AssociatedFamilies": [
                 "winter"
@@ -824,9 +835,9 @@
                 "institute"
             ],
             "featuredHeroes": [
-                "institute_ellery",
-                "institute_emilie",
-                "forsaken_demhalar"
+                "institute_wilcox",
+                "shadow_hysteria",
+                "institute_ellery"
             ],
             "includedHeroes": [
                 "castle_bear_bearnadette",
@@ -859,7 +870,7 @@
                 "s4_zila_lei_costume_dancer",
                 "fables_hansel_costume_vampire_hunter",
                 "slayer_cillian",
-                "musketeer_felton",
+                "musketeer_felton_costume_pirate",
                 "knights_treevil",
                 "halloween_goopy",
                 "pirate_vodnik",
@@ -912,8 +923,8 @@
         },
         "lottery_super_elemental": {
             "featuredHeroes_red": [
-                "slime_zestique",
-                "slime_charmione"
+                "slime_chingiriko",
+                "slime_zestique"
             ],
             "featuredHeroes_purple": [
                 "slime_sliposi",
@@ -925,10 +936,10 @@
             ],
             "featuredHeroes_green": [
                 "elemental_xandrella_costume_idol",
-                "slime_fungustine"
+                "slime_bulklug"
             ],
             "featuredHeroes_blue": [
-                "elemental_zengar_costume_farmer",
+                "slime_boboosang",
                 "slime_gloozmer"
             ],
             "AssociatedFamilies": [
@@ -963,9 +974,9 @@
                 "magic_carpet"
             ],
             "featuredHeroes": [
-                "magic_carpet_amelia",
-                "magic_ulius_costume_buccaneer",
-                "magic_carpet_shareef"
+                "magic_carpet_jwala",
+                "magic_telonius_costume_brew",
+                "magic_carpet_ragrim"
             ]
         },
         "lottery_tower_styx_default": {
@@ -985,10 +996,10 @@
                 "wildcat1"
             ],
             "featuredHeroes": [
-                "wild_cat_thaffer",
                 "wild_cat_vernix",
-                "moth_furgeant",
-                "wild_cat_marnes"
+                "wild_cat_marnes",
+                "magic_carpet_amelia",
+                "astral_demon_salome"
             ],
             "advertisedHero": "wild_cat_stravia",
             "includedHeroes": [
@@ -1071,8 +1082,8 @@
         },
         "lottery_temple_default": {
             "featuredHeroes": [
-                "mahayoddha_ustad_anand",
-                "mahayoddha_bonga"
+                "mahayoddha_devyani",
+                "mahayoddha_ustad_anand"
             ],
             "AssociatedFamilies": [
                 "mahayoddha"
@@ -1101,6 +1112,49 @@
                 "mimic_training_hero_green",
                 "mimic_training_hero_blue",
                 "mimic_training_hero_red"
+            ]
+        },
+        "lottery_titan_hunter_default": {
+            "featuredHeroes": [
+                "titan_hunter_adelitza",
+                "elemental_gastille"
+            ],
+            "includedHeroes": [
+                "faun_isidore",
+                "s4_phileas_fogg_costume_engineer",
+                "ice_god_athena_costume_wargoddess",
+                "easter_jasper_costume_fisherman",
+                "goblin_darkfeather",
+                "tales1_gestalt_costume_pearls",
+                "ballerina_daroga",
+                "ice_god_perseus_costume_frozen",
+                "guardian_elephant",
+                "elemental_farrah",
+                "elemental_ash",
+                "ballerina_armand",
+                "goblin_grimsteel",
+                "astral_dwarf_haumri",
+                "wonderland_tweedles",
+                "s2_rugged_fisherman_costume_sake_master",
+                "castle_raven_franz",
+                "s3_jott",
+                "guardian_jackal_assassin_costume_bones",
+                "tales1_sharkhai_costume_butcher",
+                "kingdom_sun_shangxiang",
+                "s3_almur_costume_lord",
+                "tales2_dain",
+                "monster_hunter_bogart",
+                "magic_sergei",
+                "tales1_bagreg_costume_scout",
+                "astral_dwarf_chires",
+                "s3_nordri_costume_explorer",
+                "beachparty_dolrak",
+                "knights_treevil",
+                "christmas_buster",
+                "bard_zarel",
+                "ballerina_swan_maiden",
+                "shadow_cthuwu",
+                "s2_fiji_mermaid_costume_hunter"
             ]
         }
     }

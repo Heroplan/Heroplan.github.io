@@ -68,7 +68,8 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_magic_default": "魔法高塔召唤",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召唤",
         "lottery.title.templesummon": "神殿召唤",
-        "lottery.title.mimicsummon": "拟态兽召唤",
+        "lottery.title.mimicsummon": "市集召唤",
+        "lottery.title.titanhuntersummon": "泰坦猎手召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -138,7 +139,8 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_magic_default": "魔法高塔召喚",
         "lottery.title.lottery_tower_styx_default": "冥河高塔召喚",
         "lottery.title.templesummon": "神殿召喚",
-        "lottery.title.mimicsummon": "模仿怪召喚",
+        "lottery.title.mimicsummon": "市場召喚",
+        "lottery.title.titanhuntersummon": "泰坦獵人召喚",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -208,7 +210,8 @@ const lotteryTitles = {
         "lottery.title.lottery_tower_magic_default": "Magic Tower Summon",
         "lottery.title.lottery_tower_styx_default": "Styx Tower Summon",
         "lottery.title.templesummon": "Temple Summon",
-        "lottery.title.mimicsummon": "Mimic Summon",
+        "lottery.title.mimicsummon": "Bazaar Summon",
+        "lottery.title.titanhuntersummon": "Titan Hunter Summon",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域

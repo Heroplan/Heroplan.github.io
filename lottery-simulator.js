@@ -568,21 +568,42 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     else if (bucketString.startsWith('heroes_s1_')) bucketType = 's1';
     else if (bucketString.startsWith('heroes_extraAssociatedFamilies_')) bucketType = 'extraAssociatedFamilies';
 
+    // ▼▼▼ SuperElementalSummon 对 listed 桶的特殊处理 ▼▼▼
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         // 对于 SuperElementalSummon 的 listed 桶，直接查找所有英雄的最新版本（包括服装）
         // 并且排除S1英雄
         const eligibleHeroes = state.allHeroes.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
-            const standardHeroColor = colorReverseMap[hero.color];
-            const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
-            return standardHeroColor === standardSelectedColor &&
-                hero.star === star &&
+            // 颜色检查逻辑
+            const rawTargetColor = state.selectedElementalColor ? state.selectedElementalColor.toLowerCase() : '';
+            const targetStd = colorReverseMap[rawTargetColor] || rawTargetColor;
+
+            const rawHeroColor = hero.color ? String(hero.color).toLowerCase() : '';
+            if (!rawHeroColor) return false; // 没有颜色的英雄直接排除
+
+            const heroStd = colorReverseMap[rawHeroColor] || rawHeroColor;
+
+            // 如果颜色不匹配，直接排除
+            if (heroStd !== targetStd) {
+                return false;
+            }
+
+            // 2. 其他常规检查
+            return hero.star === star &&
                 heroFamily !== 'classic' && // 排除 classic 家族
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
 
         const uniqueLatestHeroes = new Map(); // 使用 Map 存储每个英文名的最新版本英雄
         eligibleHeroes.forEach(hero => {
+            // 特殊处理：Mimic 和 Trainer 不需要 english_name 也可以进入
+            const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
+            if (heroFamily === 'mimic' || heroFamily === 'trainer') {
+                // 使用 heroId 作为唯一键，避免被覆盖
+                uniqueLatestHeroes.set(hero.heroId, hero);
+                return;
+            }
+
             if (hero.english_name) {
                 const existingHero = uniqueLatestHeroes.get(hero.english_name);
                 // 如果当前英雄是服装，或者比现有英雄版本新，则更新
@@ -693,6 +714,24 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                     const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
                     matches = extraFamilies.includes(heroFamily);
                     break;
+            }
+        }
+
+        // ▼▼▼ SuperElementalSummon 通用颜色检查 ▼▼▼
+        // 将颜色检查移出 switch，确保无论英雄是通过 event, ex_s1, 还是其他方式选中的，
+        // 只要是在元素人召唤中，都必须匹配选定的颜色。
+        if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+            const rawTargetColor = state.selectedElementalColor.toLowerCase();
+            const targetStd = colorReverseMap[rawTargetColor] || rawTargetColor;
+
+            const rawHeroColor = hero.color ? String(hero.color).toLowerCase() : '';
+            if (!rawHeroColor) {
+                matches = false;
+            } else {
+                const heroStd = colorReverseMap[rawHeroColor] || rawHeroColor;
+                if (heroStd !== targetStd) {
+                    matches = false;
+                }
             }
         }
 

@@ -31,6 +31,10 @@ function parseAndStoreDoTInfo(hero) {
         { keywords: ['enemies', 'damage', 'over', 'turn'], isPerTurn: false },
         { keywords: ['enemies', 'charged', 'Core', 'damage'], isPerTurn: false },
         { keywords: ['target', 'damage', 'over', 'turn'], isPerTurn: false },
+        { keywords: ['法力满格', '自动', '伤害'], isPerTurn: false },
+        { keywords: ['法力滿格', '自動', '傷害'], isPerTurn: false },
+        
+        
 
         // --- 每回合伤害规则 (isPerTurn: true) ---
         { keywords: ['敌人', '回合', '每回合', '伤害'], isPerTurn: true },

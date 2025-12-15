@@ -45,7 +45,7 @@ const redeemcodes = [
     }
 ];
 // --- 捐赠名单 ---
-const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇"];
+const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu"];
 
 // --- 英雄属性映射表 (用于多语言转换和图标查找) ---
 

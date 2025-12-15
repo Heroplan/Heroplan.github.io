@@ -6545,6 +6545,37 @@ html.is-ios #summon-summary-modal #summon-summary-scroll-container {
   animation: scroll-left linear infinite;
 }
 
+.donation-item:nth-child(6n+1) {
+  color: hsl(0, 100%, 50%);
+}
+
+/* 红 */
+.donation-item:nth-child(6n+2) {
+  color: hsl(30, 100%, 50%);
+}
+
+/* 橙 */
+.donation-item:nth-child(6n+3) {
+  color: hsl(120, 100%, 50%);
+}
+
+/* 绿 */
+.donation-item:nth-child(6n+4) {
+  color: hsla(210, 100%, 50%);
+}
+
+/* 蓝 */
+.donation-item:nth-child(6n+5) {
+  color: hsl(270, 100%, 50%);
+}
+
+/* 靛 */
+.donation-item:nth-child(6n+6) {
+  color: hsl(300, 100%, 50%);
+}
+
+/* 紫 */
+
 /* 英雄立绘容器样式 */
 .hero-portrait-container {
   position: relative;

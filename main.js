@@ -389,7 +389,7 @@ async function initializeApp() {
                 container.classList.add('is-scrolling');
             }
         }
-    }, 1000);
+    }, 2000);
     // 检查赞助显示状态并相应处理
     // 如果cookie不存在（默认显示赞助）或者cookie存在且值为false，则加载赞助脚本
     if (!isDonateHidden()) {
@@ -1157,7 +1157,7 @@ function renderDonationList(sortedDonationList) {
     // 根据列表长度判断是否需要滚动
     if (originalListWidth > wrapperWidth) {
         // 列表本身已经够长，为了无缝循环，复制一次即可
-        const donorsToRender = [...donationList, ...donationList];
+        const donorsToRender = [...sortedDonationList, ...sortedDonationList];
 
         container.innerHTML = ''; // 清空并重新渲染
         donorsToRender.forEach(donorName => {

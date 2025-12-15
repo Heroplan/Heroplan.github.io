@@ -376,7 +376,8 @@ async function initializeApp() {
     uiElements.pageLoader.classList.add('hidden');
     document.body.classList.remove('js-loading');
     // 渲染捐赠者列表
-    const shouldScroll = renderDonationList();
+    const sortedDonationList = sortDonationListByLanguage(donationList);
+    const shouldScroll = renderDonationList(sortedDonationList);
     setTimeout(() => {
     // 移除点击阻断层
     const animationBlocker = document.getElementById('animation-blocker-overlay');
@@ -1086,10 +1087,52 @@ function populateOriginToFamiliesMap() {
 }
 
 /**
+ * 根据用户语言优先排序捐赠名单
+ * @param {Array} originalList - 原始捐赠名单
+ * @param {string} userLang - 用户语言偏好
+ * @returns {Array} 排序后的捐赠名单
+ */
+function sortDonationListByLanguage(originalList) {
+    // 从 Cookie 中读取保存的语言设置
+    let userLang = getCookie('search_lang');
+    if (userLang === 'current') {
+        userLang = state.currentLang;
+    }
+    
+    // 如果用户语言无效或不在映射中，返回原始顺序
+    if (!userLang || !langDonorsMap[userLang]) {
+        return [...originalList]; // 返回副本避免修改原数组[1](@ref)
+    }
+
+    // 获取当前语言的捐赠者
+    const langSpecificDonors = langDonorsMap[userLang];
+
+    // 分离捐赠者：当前语言的捐赠者和其他捐赠者
+    const currentLangDonors = [];
+    const otherDonors = [];
+
+    originalList.forEach(donor => {
+        if (langSpecificDonors.includes(donor)) {
+            currentLangDonors.push(donor);
+        } else {
+            otherDonors.push(donor);
+        }
+    });
+
+    // 按语言映射中的顺序排序当前语言捐赠者
+    const sortedCurrentLangDonors = langSpecificDonors.filter(donor =>
+        currentLangDonors.includes(donor)
+    );
+
+    // 合并数组：当前语言捐赠者在前，其他捐赠者保持原顺序在后
+    return [...sortedCurrentLangDonors, ...otherDonors];
+}
+
+/**
  * 动态渲染捐赠者列表。
  * 该函数根据列表内容长度智能调整滚动速度和名单总长度，以实现无缝、自然的滚动效果。
  */
-function renderDonationList() {
+function renderDonationList(sortedDonationList) {
     const wrapper = document.querySelector('.donation-list-wrapper');
     const container = document.getElementById('donation-list-box');
 
@@ -1101,7 +1144,7 @@ function renderDonationList() {
     // 清空旧内容，先渲染一次原始名单以测量长度
     container.innerHTML = '';
     // 遍历字符串数组并创建元素
-    donationList.forEach(donorName => {
+    sortedDonationList.forEach(donorName => {
         const donationItem = document.createElement('span');
         donationItem.classList.add('donation-item');
         donationItem.textContent = donorName;

@@ -45,7 +45,7 @@ const redeemcodes = [
     }
 ];
 // --- 捐赠名单 ---
-const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu"];
+const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu", "vabe"];
 // 语言到捐赠者的映射
 const langDonorsMap = {
     // 简体
@@ -53,7 +53,7 @@ const langDonorsMap = {
     // 繁体
     'tc': [],
     // 英语
-    'en': [],
+    'en': ["vabe"],
     // 日语
     'ja': [],
     // 韩语

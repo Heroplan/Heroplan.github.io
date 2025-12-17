@@ -14,24 +14,39 @@ function getSkinInfo(hero) {
     // ▼▼▼▼▼ 专门处理拟态兽的颜色后缀 ▼▼▼▼▼
     const isMimic = name.includes('Mimic') || name.includes('拟态兽') || name.includes('模仿怪');
     if (isMimic) {
-        const openBracketIndex = name.indexOf('(');
-        const closeBracketIndex = name.lastIndexOf(')');
+        const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
 
-        if (openBracketIndex !== -1 && closeBracketIndex !== -1 && closeBracketIndex > openBracketIndex) {
-            // 提取括号内的内容
-            const bracketContent = name.substring(openBracketIndex + 1, closeBracketIndex);
-            const parts = bracketContent.split(' ');
-
-            // 检查最后一个词是否是颜色后缀
+        // 英文处理：没有括号的情况
+        if (state.currentLang === 'en') {
+            const parts = name.split(' ');
             if (parts.length > 1) {
                 const lastWord = parts[parts.length - 1].toLowerCase();
-                const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
-
                 if (allowedSuffixes.includes(lastWord)) {
-                    // 移除括号内的颜色后缀
-                    const newBracketContent = parts.slice(0, -1).join(' ');
-                    const baseName = name.substring(0, openBracketIndex + 1) + newBracketContent + ')';
+                    // 移除最右边的元素后缀
+                    const baseName = parts.slice(0, -1).join(' ');
                     return { skinIdentifier: null, baseName: baseName.trim() };
+                }
+            }
+        }
+        // 中文处理：有括号的情况
+        else {
+            const openBracketIndex = name.indexOf('(');
+            const closeBracketIndex = name.lastIndexOf(')');
+
+            if (openBracketIndex !== -1 && closeBracketIndex !== -1 && closeBracketIndex > openBracketIndex) {
+                // 提取括号内的内容
+                const bracketContent = name.substring(openBracketIndex + 1, closeBracketIndex);
+                const parts = bracketContent.split(' ');
+
+                // 检查最后一个词是否是颜色后缀
+                if (parts.length > 1) {
+                    const lastWord = parts[parts.length - 1].toLowerCase();
+                    if (allowedSuffixes.includes(lastWord)) {
+                        // 移除括号内的颜色后缀
+                        const newBracketContent = parts.slice(0, -1).join(' ');
+                        const baseName = name.substring(0, openBracketIndex + 1) + newBracketContent + ')';
+                        return { skinIdentifier: null, baseName: baseName.trim() };
+                    }
                 }
             }
         }

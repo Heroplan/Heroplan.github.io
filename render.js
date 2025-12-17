@@ -14,14 +14,25 @@ function getSkinInfo(hero) {
     // ▼▼▼▼▼ 专门处理拟态兽的颜色后缀 ▼▼▼▼▼
     const isMimic = name.includes('Mimic') || name.includes('拟态兽') || name.includes('模仿怪');
     if (isMimic) {
-        const afterParenthesesIndex = name.lastIndexOf(')');
-        if (afterParenthesesIndex !== -1 && afterParenthesesIndex < name.length - 1) {
-            const potentialSuffix = name.substring(afterParenthesesIndex + 1).trim().toLowerCase();
-            const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
-            if (allowedSuffixes.includes(potentialSuffix)) {
-                // 如果是拟态兽且后面跟着有效的颜色后缀，则移除后缀进行显示
-                const baseName = name.substring(0, afterParenthesesIndex + 1).trim();
-                return { skinIdentifier: null, baseName: baseName };
+        const openBracketIndex = name.indexOf('(');
+        const closeBracketIndex = name.lastIndexOf(')');
+
+        if (openBracketIndex !== -1 && closeBracketIndex !== -1 && closeBracketIndex > openBracketIndex) {
+            // 提取括号内的内容
+            const bracketContent = name.substring(openBracketIndex + 1, closeBracketIndex);
+            const parts = bracketContent.split(' ');
+
+            // 检查最后一个词是否是颜色后缀
+            if (parts.length > 1) {
+                const lastWord = parts[parts.length - 1].toLowerCase();
+                const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
+
+                if (allowedSuffixes.includes(lastWord)) {
+                    // 移除括号内的颜色后缀
+                    const newBracketContent = parts.slice(0, -1).join(' ');
+                    const baseName = name.substring(0, openBracketIndex + 1) + newBracketContent + ')';
+                    return { skinIdentifier: null, baseName: baseName.trim() };
+                }
             }
         }
     }
@@ -155,10 +166,28 @@ function renderTable(heroes) {
             } else if (key === 'name') {
                 let displayName = hero.name;
 
-                // 第1步: 移除元素后缀 (现有逻辑)
+                // 第1步: 移除元素后缀
                 const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire', 'red', 'blue', 'green', 'yellow', 'purple'];
+                // 匹配元素后缀，但保留括号结构
                 const elementSuffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableElementSuffixes.join('|')})(?:\\))?$`, 'i');
-                displayName = displayName.replace(elementSuffixRegex, '').trim();
+
+                // 先检查是否需要处理
+                if (elementSuffixRegex.test(displayName)) {
+                    // 如果名字以右括号结尾，先特殊处理
+                    if (displayName.endsWith(')')) {
+                        // 找到最后一个右括号的位置
+                        const lastParenIndex = displayName.lastIndexOf(')');
+                        const beforeParen = displayName.substring(0, lastParenIndex);
+                        const afterParen = displayName.substring(lastParenIndex);
+
+                        // 只对括号前的内容应用替换
+                        const cleanedBeforeParen = beforeParen.replace(elementSuffixRegex, '').trim();
+                        displayName = cleanedBeforeParen + afterParen;
+                    } else {
+                        // 正常替换
+                        displayName = displayName.replace(elementSuffixRegex, '').trim();
+                    }
+                }
 
                 // ▼▼▼ 移除服装后缀 ▼▼▼
                 // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
@@ -1102,9 +1131,19 @@ function renderDetailsInModal(hero, context = {}) {
 
     const searchLang = getCookie('search_lang');
     const filterValue = searchLang !== 'current' ? hero.name : hero.english_name;
+
+    // 移除最右边的元素后缀
+    const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
+    const elementSuffixRegex = new RegExp(`\\s+(${ignorableElementSuffixes.join('|')})$`, 'i');
+    let cleanedFilterValue = filterValue;
+
+    // 检查是否需要移除后缀
+    if (elementSuffixRegex.test(filterValue)) {
+        cleanedFilterValue = filterValue.replace(elementSuffixRegex, '').trim();
+    }
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
-        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${filterValue || hero.name || englishName || mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
+        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${cleanedFilterValue || hero.name || englishName || mainHeroName.trim()}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
         ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
     `;
 

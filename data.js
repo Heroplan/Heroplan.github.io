@@ -57,7 +57,7 @@ const langDonorsMap = {
     // 日语
     'ja': [],
     // 韩语
-    'ko': ["kimyu"],
+    'ko': [],
     // 俄语
     'ru': [],
     // 阿拉伯语

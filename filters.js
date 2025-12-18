@@ -236,8 +236,20 @@ function getIconForFilter(filterType, optionValue) {
             const iconFilename = sourceIconMap[sourceKey];
             return iconFilename ? `imgs/coins/${iconFilename}` : null;
         case 'costume':
-            const iconName = getCostumeIconName(optionValue);
-            return iconName ? `imgs/costume/${iconName}.webp` : null;
+            // 名称到图标名的映射表
+            const NAME_TO_ICON_MAP = {
+                '英姿': 'stylish',
+                '玻璃': 'glass',
+                '卡通': 'toon',
+                'stylish': 'stylish',
+                'glass': 'glass',
+                'toon': 'toon',
+                'c1': 'c1',
+                'c2': 'c2'
+            };
+
+            const iconName = NAME_TO_ICON_MAP[optionValue.toLowerCase()];
+            return iconName ? `imgs/costume/${iconName}.webp` : `imgs/costume/c1.webp`;
         case 'skillTag_base':
         case 'skillTag_special':
         case 'skillTag_buff':

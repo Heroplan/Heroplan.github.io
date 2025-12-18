@@ -3959,12 +3959,12 @@ select.custom-select-hidden {
   text-shadow: 1px 1px 2px black, -1px -1px 2px black
 }
 
-/* --- 新增：表格中英雄头像左上角的服装图标样式 --- */
+/* --- 表格中英雄头像左下角的服装图标样式 --- */
 .table-avatar-costume-icon {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 12px;
+  height: 35%;
   z-index: 3;
   /* 确保图标在头像图片之上 */
 }

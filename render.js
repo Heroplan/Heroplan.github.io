@@ -57,7 +57,7 @@ function getSkinInfo(hero) {
 
     if (skinMatch && skinMatch[1] && hero.costume_id !== 0) {
         const potentialSkin = skinMatch[1].toLowerCase();
-        if (potentialSkin.match(/^c\d+$/) || ['glass', 'toon', '玻璃'].includes(potentialSkin) || potentialSkin.endsWith('卡通') || potentialSkin.endsWith('皮肤') || potentialSkin.endsWith('皮膚')) {
+        if (potentialSkin.match(/^c\d+$/) || ['glass', 'toon', 'stylish', '卡通', '玻璃', '英姿'].includes(potentialSkin)) {
             return {
                 skinIdentifier: skinMatch[1],
                 baseName: name.substring(0, name.length - skinMatch[0].length).trim()
@@ -83,7 +83,8 @@ function getCostumeIconName(hero) {
         1: 'c1',
         2: 'c2',
         3: 'toon',
-        4: 'glass'
+        4: 'glass',
+        5: 'stylish'
     };
     return classicMap[costumeId] || 'c1';
 }
@@ -206,7 +207,7 @@ function renderTable(heroes) {
 
                 // ▼▼▼ 移除服装后缀 ▼▼▼
                 // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
-                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|glass|toon|玻璃|卡通|皮肤|皮膚)(?:\]|\))?\s*$/i;
+                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|皮肤|皮膚)(?:\]|\))?\s*$/i;
                 displayName = displayName.replace(costumeSuffixRegex, '').trim();
 
                 content = displayName || '';
@@ -274,7 +275,7 @@ function renderTable(heroes) {
                 const iconName = getCostumeIconName(hero);
                     if (iconName) {
                         // 使用一个新的、专门用于头像的CSS类
-                        costumeIconHtml = `<img src="imgs/costume/c1.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
+                        costumeIconHtml = `<img src="imgs/costume/${iconName}.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
                     }
 
                 return `<td class="col-image">

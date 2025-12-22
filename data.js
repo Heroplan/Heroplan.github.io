@@ -42,6 +42,27 @@ const redeemcodes = [
                 "num": 25
             }
         ]
+    },
+    {
+        "code": "SUMMONSGREETINGS2025",
+        "rewards": [
+            {
+                "img": "imgs/coins/diamond.webp",
+                "num": 25
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 12
+            },
+            {
+                "img": "imgs/reedcode_reward/tornado.webp",
+                "num": 20
+            },
+            {
+                "img": "imgs/reedcode_reward/titan_battle_giant_harpoon.webp",
+                "num": 25
+            }
+        ]
     }
 ];
 // --- 捐赠名单 ---

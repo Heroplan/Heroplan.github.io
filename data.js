@@ -63,6 +63,52 @@ const redeemcodes = [
                 "num": 25
             }
         ]
+    },
+    {
+        "code": "XMAS2025",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/covenant.webp",
+                "num": 100
+            },
+            {
+                "img": "imgs/reedcode_reward/aethercrystals.webp",
+                "num": 10
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_ancient_coin.webp",
+                "num": 100
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            }
+        ]
+    },
+    {
+        "code": "Happy2026",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 5
+            },
+            {
+                "img": "imgs/coins/untoldtales.webp",
+                "num": 50
+            }
+        ]
     }
 ];
 // --- 捐赠名单 ---

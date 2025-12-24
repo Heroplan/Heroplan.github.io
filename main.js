@@ -969,74 +969,59 @@ function switchTeamTab(toShared) {
 
 /**
  * 处理浏览器后退/前进按钮的事件。
+ * 该函数现在能够区分“关闭模态框”和“从主视图返回”两种情况。
  */
 function handlePopState(event) {
-    // 1. 优先处理模态框的关闭
+    // 优先检查模态框堆栈。如果堆栈不为空，则后退操作旨在关闭模态框。
     if (state.modalStack.length > 0) {
-        // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
-        const modalType = state.modalStack.pop();
-        if (modalType === 'heroPortrait') {
-            closeHeroPortraitModal();
-            return; // 立即返回，不执行后续逻辑
-        }
-        let modal, overlay;
+        const modalType = state.modalStack.pop(); // 从堆栈中弹出模态框类型
 
-        // 步骤 1: 检查是否为带有特殊回调的详情弹窗
+        // --- 特殊情况：处理堆叠式模态框（例如，在抽奖结果上打开英雄详情）---
         if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
-            // 先隐藏当前的详情弹窗
             uiElements.modal.classList.add('hidden');
             uiElements.modalOverlay.classList.add('hidden');
-
-            // 执行回调（例如：重新显示抽奖结果弹窗）
-            state.modalContext.onClose();
-
-        } else {
-            // 步骤 2: 如果不是特殊回调，则执行所有其他弹窗的标准关闭逻辑
-            switch (modalType) {
-                case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
-                case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
-                case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
-                case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
-                case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
-                case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
-                case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
-                case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
-                case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
-                case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
-            }
-            if (modal) modal.classList.add('hidden');
-            if (overlay) overlay.classList.add('hidden');
-
-            if (modal && modal.classList.contains('stacked-modal')) {
-                modal.classList.remove('stacked-modal');
-                if (overlay) overlay.classList.remove('stacked-modal-overlay');
-            }
+            state.modalContext.onClose(); // 调用回调以恢复下层模态框
+            return; // `onClose` 已处理状态，直接返回
         }
 
-        // 步骤 3: 无论哪个弹窗被关闭，都统一在这里检查堆栈
+        // --- 标准模态框关闭逻辑 ---
+        let modal, overlay;
+        switch (modalType) {
+            case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
+            case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
+            case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
+            case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
+            case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
+            case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
+            case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
+            case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
+            case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
+            case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
+            case 'heroPortrait':
+                modal = document.getElementById('image-modal');
+                overlay = document.getElementById('image-modal-overlay');
+                if(modal) modal.classList.remove('show-hero-portrait');
+                break;
+        }
+
+        if (modal) modal.classList.add('hidden');
+        if (overlay) overlay.classList.add('hidden');
+
+        // 仅当最后一个模态框关闭时，才恢复页面滚动
         if (state.modalStack.length === 0) {
             document.body.classList.remove('modal-open');
         }
-        return;
+        return; // 已处理模态框关闭，结束函数
     }
 
-    // 2. 处理视图切换
-    const previousState = event.state || { view: 'list' };
-
-    // 检查是否应该返回到主列表视图
-    // 只有当历史状态明确为 'list' 时才执行
-    if (previousState.view === 'list') {
-
-        // 如果队伍模拟器当前是激活的，则调用 toggle 函数关闭它
-        // toggleTeamSimulator 内部会处理UI和状态，但不会再错误地操作历史记录
-        // 按照正确的顺序关闭激活的视图
-        if (state.teamSimulatorActive) {
-            toggleTeamSimulator();
-        } else if (state.lotterySimulatorActive) {
-            LotterySimulator.toggle();
-        } else if (uiElements.heroTableView.classList.contains('hidden')) {
-            showHeroListViewUI();
-        }
+    // --- 如果模态框堆栈为空，则后退操作旨在切换主视图 ---
+    if (state.teamSimulatorActive) {
+        toggleTeamSimulator();
+    } else if (state.lotterySimulatorActive) {
+        LotterySimulator.toggle();
+    } else {
+        // 作为备用，处理从其他特殊视图（如通缉任务）返回的情况
+        showHeroListViewUI();
     }
 }
 

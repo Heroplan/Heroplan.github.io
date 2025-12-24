@@ -536,6 +536,8 @@ const highlightDictionaries = {
             '完整移除': '[#!]完整移除[#]',
             '无法驱散': '[##elementgreen]无法驱散[#]',
             '無法驅散': '[##elementgreen]無法驅散[#]',
+            '不可净化': '[##elementred]不可净化[#]',
+            '不可淨化': '[##elementred]不可淨化[#]',
             '无法净化': '[##elementred]无法净化[#]',
             '無法淨化': '[##elementred]無法淨化[#]',
             '麻木': '[##elementred]麻木[#]',

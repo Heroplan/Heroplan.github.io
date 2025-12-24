@@ -341,7 +341,6 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         if (uiElements.summonSummaryModal && !uiElements.summonSummaryModal.classList.contains('hidden')) {
             history.back();
         }
-        document.body.classList.remove('modal-open');
     };
     document.getElementById('summary-close-btn').addEventListener('click', closeSummaryModal);
     if (uiElements.summonSummaryModalOverlay) {

@@ -969,74 +969,80 @@ function switchTeamTab(toShared) {
 
 /**
  * 处理浏览器后退/前进按钮的事件。
+ * 该函数现在能够区分“关闭模态框”和“从主视图返回”两种情况。
  */
 function handlePopState(event) {
-    // 1. 优先处理模态框的关闭
-    if (state.modalStack.length > 0) {
-        // ▼▼▼ 在隐藏模态框之前，检查是否存在特殊的回调操作 ▼▼▼
-        const modalType = state.modalStack.pop();
-        if (modalType === 'heroPortrait') {
-            closeHeroPortraitModal();
-            return; // 立即返回，不执行后续逻辑
-        }
-        let modal, overlay;
-
-        // 步骤 1: 检查是否为带有特殊回调的详情弹窗
-        if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
-            // 先隐藏当前的详情弹窗
-            uiElements.modal.classList.add('hidden');
-            uiElements.modalOverlay.classList.add('hidden');
-
-            // 执行回调（例如：重新显示抽奖结果弹窗）
-            state.modalContext.onClose();
-
-        } else {
-            // 步骤 2: 如果不是特殊回调，则执行所有其他弹窗的标准关闭逻辑
-            switch (modalType) {
-                case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
-                case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
-                case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
-                case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
-                case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
-                case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
-                case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
-                case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
-                case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
-                case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
-            }
-            if (modal) modal.classList.add('hidden');
-            if (overlay) overlay.classList.add('hidden');
-
-            if (modal && modal.classList.contains('stacked-modal')) {
-                modal.classList.remove('stacked-modal');
-                if (overlay) overlay.classList.remove('stacked-modal-overlay');
-            }
-        }
-
-        // 步骤 3: 无论哪个弹窗被关闭，都统一在这里检查堆栈
-        if (state.modalStack.length === 0) {
-            document.body.classList.remove('modal-open');
-        }
-        return;
-    }
-
-    // 2. 处理视图切换
+    // 检查 event.state 来确定要恢复到哪个状态。
+    // 如果没有 state，或者 state.view 是 'list'，则我们认为是返回主列表。
     const previousState = event.state || { view: 'list' };
 
-    // 检查是否应该返回到主列表视图
-    // 只有当历史状态明确为 'list' 时才执行
+    // --- 场景1: 从一个全屏视图返回到主列表视图 ---
     if (previousState.view === 'list') {
-
-        // 如果队伍模拟器当前是激活的，则调用 toggle 函数关闭它
-        // toggleTeamSimulator 内部会处理UI和状态，但不会再错误地操作历史记录
-        // 按照正确的顺序关闭激活的视图
+        // 按照正确的顺序检查并关闭当前激活的任何全屏视图
         if (state.teamSimulatorActive) {
             toggleTeamSimulator();
         } else if (state.lotterySimulatorActive) {
             LotterySimulator.toggle();
         } else if (uiElements.heroTableView.classList.contains('hidden')) {
+            // 如果以上模拟器都未激活，但英雄列表是隐藏的，
+            // 说明可能在其他特殊视图（如通缉任务），调用通用函数恢复主列表。
             showHeroListViewUI();
         }
+        return; // 处理完毕，直接返回
+    }
+
+    // --- 场景2: 关闭一个模态框 ---
+    // 如果历史状态不是返回 'list'，我们假定操作是为了关闭一个模态框。
+    // 检查模态框堆栈是否为空。
+    if (state.modalStack.length === 0) {
+        // 堆栈为空，但我们又不在主列表。这是一个异常情况。
+        // 作为保险，强制返回主列表视图。
+        showHeroListViewUI();
+        return;
+    }
+
+    // 从堆栈中弹出最近打开的模态框类型
+    const modalType = state.modalStack.pop();
+
+    // --- 特殊情况：处理堆叠式模态框（例如，从抽奖结果中打开英雄详情）---
+    // `onClose` 回调用于恢复底层的模态框。
+    if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
+        uiElements.modal.classList.add('hidden');
+        uiElements.modalOverlay.classList.add('hidden');
+
+        // 执行回调以恢复前一个模态框的状态（例如，重新显示抽奖结果）。
+        state.modalContext.onClose();
+        // `onClose` 函数会处理body类和模态框堆栈，所以这里直接返回。
+        return;
+    }
+
+    // --- 标准模态框关闭逻辑 ---
+    let modal, overlay;
+    switch (modalType) {
+        case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
+        case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
+        case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
+        case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
+        case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
+        case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
+        case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
+        case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
+        case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
+        case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
+        case 'heroPortrait':
+            modal = document.getElementById('image-modal');
+            overlay = document.getElementById('image-modal-overlay');
+            if(modal) modal.classList.remove('show-hero-portrait');
+            break;
+    }
+
+    if (modal) modal.classList.add('hidden');
+    if (overlay) overlay.classList.add('hidden');
+
+    // --- 最后一步：管理页面滚动 ---
+    // 仅当最后一个模态框关闭后，才移除 body 上的 'modal-open' 类。
+    if (state.modalStack.length === 0) {
+        document.body.classList.remove('modal-open');
     }
 }
 

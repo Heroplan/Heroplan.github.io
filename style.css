@@ -1201,6 +1201,7 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
   margin-right: 2px;
   /* 图标与右侧文字的间距 */
 }
+
 .event-icon {
   height: 2em;
   width: 2em;
@@ -1210,6 +1211,7 @@ html.dark-theme .default-stat-selectors .details-selector-item select {
   margin-right: 2px;
   /* 图标与右侧文字的间距 */
 }
+
 .color-icon {
   height: 1.8em;
   width: 1.8em;
@@ -4627,6 +4629,7 @@ select.custom-select-hidden {
   transition: background-color 0.2s;
   text-decoration: none;
 }
+
 .probability-info-icon {
   left: 10px;
 }
@@ -4859,8 +4862,12 @@ html:not(.dark-theme) .color-text-outlined {
 .summary-avatar-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  border-radius: inherit;
+  object-fit: cover;
+  /* 关键属性：裁剪图片以填满容器 */
+  object-position: center;
+  /* 图片居中显示 */
+  display: block;
+  /* 移除图片底部间隙 */
   position: absolute;
   top: 0;
   left: 0
@@ -5246,15 +5253,18 @@ html:not(.dark-theme) .color-text-outlined {
   border: 3px solid transparent;
   transition: all 0.2s ease-in-out
 }
+
 @media (max-width: 768px) {
   .elemental-selection-container {
     gap: 0.8rem;
   }
+
   .elemental-icon {
     width: 56px;
     height: 56px;
   }
 }
+
 .elemental-icon:hover {
   transform: scale(1.1);
   border-color: var(--md-sys-color-primary);
@@ -6118,7 +6128,8 @@ body.modal-open {
   object-fit: contain;
   border-radius: 4px;
   background-color: var(--md-sys-color-surface-variant);
-  padding: 4px;transition: all 0.2s ease;
+  padding: 4px;
+  transition: all 0.2s ease;
 }
 
 .reward-count {

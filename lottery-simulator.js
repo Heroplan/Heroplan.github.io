@@ -571,7 +571,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     if (poolConfig.productType === 'SuperElementalSummon' && bucketType === 'listed') {
         // 对于 SuperElementalSummon 的 listed 桶，直接查找所有英雄的最新版本（包括服装）
         // 并且排除S1英雄
-        const eligibleHeroes = state.allHeroes.filter(hero => {
+        const eligibleHeroes = baseHeroPool.filter(hero => {
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
             // 颜色检查逻辑
             const rawTargetColor = state.selectedElementalColor ? state.selectedElementalColor.toLowerCase() : '';

@@ -7019,3 +7019,21 @@ html.dark-theme .autocomplete-item.selected {
   flex-grow: 1;
   /* 输入框占据剩余空间 */
 }
+
+/* 表格技能图标样式 */
+.skill-icon {
+  width: 24px;
+  /* 图标宽度 */
+  height: 24px;
+  /* 图标高度 */
+  object-fit: contain;
+  /* 保持图标比例 */
+  vertical-align: middle;
+  /* 垂直对齐 */
+  transition: transform 0.2s ease;
+  /* 悬停动画效果 */
+  border-radius: 4px;
+  /* 轻微圆角 */
+  padding: 2px;
+  /* 内边距 */
+}

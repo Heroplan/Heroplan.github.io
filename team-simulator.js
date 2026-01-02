@@ -275,7 +275,25 @@ function renderTeamDisplay() {
             heroSlot.appendChild(avatarContainer);
             // 根据设置决定是否显示技能文本
             if (showSkillTypesInTeam) {
-                infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div><div class="team-hero-skills">${getSkillTypesText(hero) || i18n[state.currentLang].none}</div>`;
+                const tags = getSkillTagsForHero(hero, uiElements.filterInputs.skillTypeSource.value);
+                const tagsArray = Array.isArray(tags) ? tags : (typeof tags === 'string' ? tags.split(',').map(t => t.trim()) : []);
+
+                const iconsHtml = tagsArray.map(tag => {
+                    // 1. 使用回溯表找到简体中文键名
+                    const chineseKey = skillTagReverseMap[tag] || tag;
+
+                    // 2. 移除文件名中的斜杠等特殊字符
+                    const sanitizedFilename = chineseKey.replace(/\//g, '');
+
+                    // 3. 构建单个图标HTML
+                    return `<img src="imgs/skill/${sanitizedFilename}.webp" 
+                      class="skill-icon" 
+                      alt="${tag}" 
+                      title="${tag}">`;
+                }).join('');
+
+                infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div>
+                          <div class="team-hero-skills">${iconsHtml || (i18n[state.currentLang].none || 'None')}</div>`;
             } else {
                 infoSlot.innerHTML = `<div class="team-hero-name">${getFormattedHeroNameHTML(hero)}</div>`;
             }

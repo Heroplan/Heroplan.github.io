@@ -100,7 +100,7 @@ function getFormattedHeroNameHTML(hero) {
     let content = skinInfo.baseName;
     const iconName = getCostumeIconName(hero);
     if (iconName) {
-        content = `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
+        content = content + `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
     }
     return content;
 }
@@ -178,7 +178,53 @@ function renderTable(heroes) {
                 content = `${hero[key] || ''}⭐`;
             } else if (key === 'types') {
                 const source = uiElements.filterInputs.skillTypeSource.value;
-                content = getSkillTagsForHero(hero, source).join(', ');
+                if (source === 'bbcamp') {
+                    // 获取文本形式的技能标签
+                    const skillTags = getSkillTagsForHero(hero, source);
+
+                    // 处理不同类型的返回值
+                    let tagsArray = [];
+                    if (Array.isArray(skillTags)) {
+                        tagsArray = skillTags;
+                    } else if (typeof skillTags === 'string') {
+                        tagsArray = skillTags.split(',').map(tag => tag.trim());
+                    } else if (hero[key]) {
+                        // 直接从 hero[key] 获取数据
+                        const typesData = hero[key];
+                        if (Array.isArray(typesData)) {
+                            tagsArray = typesData;
+                        } else if (typeof typesData === 'string') {
+                            tagsArray = typesData.split(',').map(tag => tag.trim());
+                        }
+                    }
+
+                    // 过滤空值
+                    tagsArray = tagsArray.filter(tag => tag);
+
+                    if (tagsArray.length === 0) {
+                        return `<td class="col-types"></td>`;
+                    }
+
+                    let iconsHtml = '';
+                    tagsArray.forEach(tag => {
+                        // 1. 使用回溯表找到简体中文键名
+                        const chineseKey = skillTagReverseMap[tag] || tag;
+
+                        // 2. 移除文件名中的斜杠等特殊字符
+                        const sanitizedFilename = chineseKey.replace(/\//g, '');
+
+                        // 3. 构建单个图标HTML
+                        iconsHtml += `<img src="imgs/skill/${sanitizedFilename}.webp" 
+                          class="skill-icon" 
+                          alt="${tag}" 
+                          title="${tag}" />`;
+                    });
+
+                    // 4. 返回包含多个图标的单元格
+                    return `<td class="col-types">${iconsHtml}</td>`;
+                } else {
+                    content = getSkillTagsForHero(hero, source).join(', ')
+                }
             } else if (key === 'name') {
                 let displayName = hero.name;
 
@@ -273,10 +319,10 @@ function renderTable(heroes) {
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
                 let costumeIconHtml = '';
                 const iconName = getCostumeIconName(hero);
-                    if (iconName) {
-                        // 使用一个新的、专门用于头像的CSS类
-                        costumeIconHtml = `<img src="imgs/costume/${iconName}.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
-                    }
+                if (iconName) {
+                    // 使用一个新的、专门用于头像的CSS类
+                    costumeIconHtml = `<img src="imgs/costume/${iconName}.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
+                }
 
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
@@ -285,8 +331,7 @@ function renderTable(heroes) {
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
-            }
-            else {
+            } else {
                 content = hero[key] || '';
             }
 
@@ -1887,7 +1932,7 @@ function renderDetailsInModal(hero, context = {}) {
                                 'knight': 'knights',
                                 'fable': 'fables',
                                 'shady_scoundrels': 'scoundrel',
-                                
+
 
                                 // 如果家族名本身就是文件名后缀，直接用 default 处理
                             };

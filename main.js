@@ -203,7 +203,7 @@ async function initializeApp() {
         hero.originalIndex = index;
         parseAndStoreDoTInfo(hero);
         // ▼▼▼ 如果英雄没有发布日期，则添加特殊标记 ▼▼▼
-        if (!hero['Release date']) {
+        if (!hero['Release date'] && !hero.specialId) {
             hero.isFeaturedOnly = true;
         }
     });

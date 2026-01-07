@@ -1586,12 +1586,22 @@ async function performSummon(count) {
             const { bucketWeights, bucketConfig } = poolConfig;
             const bucketIndex = selectWeightedIndex(bucketWeights);
             bucketString = bucketConfig[bucketIndex];
-            const starMatch = bucketString.match(/_(\d+)$/);
             const isFeatured = bucketString === 'featuredHero';
-            const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
-            const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
-            if (heroPoolOfStar.length > 0) {
-                drawnHero = heroPoolOfStar[Math.floor(Math.random() * heroPoolOfStar.length)];
+
+            if (isFeatured && poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
+                // --- 如果中了精选，直接从配置的精选名单中随机抽取 ---
+                const featuredIds = poolConfig.featuredHeroes;
+                const randomHeroId = featuredIds[Math.floor(Math.random() * featuredIds.length)];
+                drawnHero = state.heroesByIdMap.get(randomHeroId);
+            } else {
+                // 非精选或者是没有配置精选列表时，走原有的星级随机逻辑
+                const starMatch = bucketString.match(/_(\d+)$/);
+                const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
+                const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
+
+                if (heroPoolOfStar.length > 0) {
+                    drawnHero = heroPoolOfStar[Math.floor(Math.random() * heroPoolOfStar.length)];
+                }
             }
             bucketString = 'costume';
         } else {

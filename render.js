@@ -1288,13 +1288,11 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
         </div>
     ` : '';
-
-    let specialSkillIconHTML = '';
-    if (hero.parent_specialId) {
-        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.parent_specialId}.webp" class="special-skill-icon" alt="${hero.parent_specialId} icon" onerror="this.style.display='none'">`;
-    } else if (hero.specialId) {
-        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.webp" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
-    }
+    
+    const specialId = hero.parent_specialId || hero.specialId;
+    const specialSkillIconHTML = specialId
+        ? `<img src="imgs/skill_icon/special_${specialId}.webp" class="special-skill-icon" alt="${specialId} icon" onerror="this.style.display='none'">`
+        : '';
 
     // 技能类别部分 - 根据设置决定是否显示
     const skillTypesSection = showSkillTypesInDetails ? `

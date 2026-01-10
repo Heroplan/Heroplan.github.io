@@ -1290,7 +1290,9 @@ function renderDetailsInModal(hero, context = {}) {
     ` : '';
 
     let specialSkillIconHTML = '';
-    if (hero.specialId) {
+    if (hero.parent_specialId) {
+        specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.parent_specialId}.webp" class="special-skill-icon" alt="${hero.parent_specialId} icon" onerror="this.style.display='none'">`;
+    } else if (hero.specialId) {
         specialSkillIconHTML = `<img src="imgs/skill_icon/special_${hero.specialId}.webp" class="special-skill-icon" alt="${hero.specialId} icon" onerror="this.style.display='none'">`;
     }
 

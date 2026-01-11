@@ -31,19 +31,6 @@ const soulExchange = {
 
 const redeemcodes = [
     {
-        "code": "YEAROFTHEALLIANCE2025",
-        "rewards": [
-            {
-                "img": "imgs/reedcode_reward/titan_battle_giant_harpoon.webp",
-                "num": 20
-            },
-            {
-                "img": "imgs/reedcode_reward/tornado.webp",
-                "num": 25
-            }
-        ]
-    },
-    {
         "code": "SUMMONSGREETINGS2025",
         "rewards": [
             {

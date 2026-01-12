@@ -96,6 +96,27 @@ const redeemcodes = [
                 "num": 50
             }
         ]
+    },
+    {
+        "code": "NAVI3KYT",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/currency.webp",
+                "num": 300
+            },
+            {
+                "img": "imgs/reedcode_reward/currency_giants.webp",
+                "num": 300
+            },
+            {
+                "img": "imgs/coins/red_lucky.webp",
+                "num": 50
+            },
+            {
+                "img": "imgs/coins/s1.webp",
+                "num": 1
+            }
+        ]
     }
 ];
 // --- 捐赠名单 ---

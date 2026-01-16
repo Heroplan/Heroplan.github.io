@@ -752,6 +752,9 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     });
 
     return initialPool.map(baseHero => {
+        if (poolConfig.productType === 'MimicSummon') {
+            return baseHero;
+        }
         // ▼▼▼ 如果是 "mimic" 或 "trainer" 家族，直接返回本身，不去查找“最新版本” ▼▼▼
         const baseHeroFamily = String(baseHero.family || '').toLowerCase();
         if (baseHeroFamily === 'mimic' || baseHeroFamily === 'trainer') {

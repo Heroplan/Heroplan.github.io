@@ -117,6 +117,27 @@ const redeemcodes = [
                 "num": 1
             }
         ]
+    },
+    {
+        "code": "SHAREDCOMPASSION",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/energy_alliance_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/titan_battle_giant_harpoon.webp",
+                "num": 10
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_dragon_rainbow_novice.webp",
+                "num": 5
+            }
+        ]
     }
 ];
 // --- 捐赠名单 ---

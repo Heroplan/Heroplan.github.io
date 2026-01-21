@@ -49,39 +49,79 @@ function parseAndStoreDoTInfo(hero) {
 
     hero.effects.forEach((effectText, index) => {
         const lowerEffectText = effectText.toLowerCase();
-
-        // 【排除规则】如果描述中包含 'immune' 'resisted'，则直接跳过此行
-        if (lowerEffectText.includes('immune') | lowerEffectText.includes('resisted') | lowerEffectText.includes('fiend') | lowerEffectText.includes('恶魔') | lowerEffectText.includes('惡魔') | lowerEffectText.includes('奔涌') | lowerEffectText.includes('surge') | lowerEffectText.includes('触发') | lowerEffectText.includes('觸發') | lowerEffectText.includes('trigger') | lowerEffectText.includes('刷新') | lowerEffectText.includes('refreshed') | lowerEffectText.includes('特殊技能') | lowerEffectText.includes('refreshed') | lowerEffectText.includes('increased damage') | lowerEffectText.includes('stored') | lowerEffectText.includes('allies') | lowerEffectText.includes('clawing damage') | lowerEffectText.includes('承受的')) {
-            
+        // 排除规则：修复逻辑或，保留所有排除项
+        const excludeWords = [
+            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
+            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
+            'increased damage', 'stored', 'allies', 'clawing damage', '承受的'
+        ];
+        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
+        if (isExcluded) {
             return;
-        } 
+        }
 
         // 检查当前技能描述行是否满足某一组关键词共存的条件
+        // ========== 共振专属规则 ==========
+        const hasResonance = effectText.includes('共振') || effectText.includes('Resonance') ;
+        if (hasResonance) {
+            // 步骤1：强力清洗文本——剔除括号/星号/全角符号，替换全角空格为半角
+            const cleanText = effectText
+                .replace(/\(.*?\)/g, '') // 剔除小括号及内容
+                .replace(/\*+/g, '') // 剔除星号
+                .replace(/[，。、：；！？“”‘’""'']/g, ' ') // 标点换空格
+                .replace(/\s+/g, ' ') // 多个空格合并为一个
+                .trim(); // 去除首尾空格
+
+            // 步骤2：提取所有数字——兼容全角/半角数字，强制转换为Number
+            const numberMatches = cleanText.match(/\d+/g) || [];
+            const allNums = numberMatches.map(num => Number(num)).filter(num => !isNaN(num));
+            if (allNums.length === 0) {
+                return;
+            }
+
+            // 步骤3：提取伤害值——>10的数值
+            const damageNums = allNums.filter(num => num > 10);
+            if (damageNums.length === 0) {
+                return;
+            }
+
+            // 步骤4：提取回合数——1-10的数值，去重，取第一个
+            const turnNums = [...new Set(allNums)].filter(num => num > 0 && num <= 10);
+            const turns = turnNums.length > 0 ? turnNums[0] : 1;
+
+            // 步骤5：遍历所有伤害值，逐个添加到结果
+            damageNums.forEach(damage => {
+                const totalBaseDamage = damage * turns; // 每回合伤害→总伤害
+                const coefficient = totalBaseDamage / hero.attack;
+                hero.dynamicDoTEffects.push({
+                    index: index,
+                    coefficient: coefficient,
+                    turns: turns,
+                    isPerTurn: true, // 共振为每回合伤害
+                    originalDamage: damage,
+                    type: 'resonance' // 标记共振类型
+                });
+            });
+            return; // 跳过原有规则，避免重复解析
+        }
+
+        // ========== 原有关键词匹配规则 ==========
         const matchedSet = keywordSets.find(set =>
             set.keywords.every(keyword => lowerEffectText.includes(keyword.toLowerCase()))
         );
-
         if (matchedSet) {
-            const numbers = effectText.match(/\d+/g);
-            if (!numbers || numbers.length < 2) return;
+            const numbers = effectText.match(/\d+/g) || [];
+            if (numbers.length < 2) return;
 
-            let damage = null;
-            let turns = null;
-
+            let damage = null, turns = null;
             for (const numStr of numbers) {
                 const num = parseInt(numStr, 10);
-                if (num > 10 && damage === null) {
-                    damage = num;
-                }
-                if (num > 0 && num <= 10 && turns === null) {
-                    turns = num;
-                }
+                if (num > 10 && damage === null) damage = num;
+                if (num > 0 && num <= 10 && turns === null) turns = num;
             }
-
             if (damage !== null && turns !== null) {
                 const totalBaseDamage = matchedSet.isPerTurn ? damage * turns : damage;
                 const coefficient = totalBaseDamage / hero.attack;
-
                 hero.dynamicDoTEffects.push({
                     index: index,
                     coefficient: coefficient,

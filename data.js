@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2026-03-26';
 const purchaseCostumeDate = '2026-01-22';
 const soulExchange = {
-    Date: '2026-02-20',
+    Date: '2026-02-26',
     ten: [
         "ballerina_phantom_of_the_opera",
         "bard_ogima",

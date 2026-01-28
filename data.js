@@ -138,7 +138,40 @@ const redeemcodes = [
                 "num": 5
             }
         ]
-    }
+    },
+    {
+        "code": "8K4YAMOTHA",
+        "rewards": [
+            {
+                "img": "imgs/coins/s1.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/loot_ticket.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_s1_coin.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/dragon_refill_food_500k.webp",
+                "num": 1
+            }
+        ]
+    },
 ];
 // --- 捐赠名单 ---
 const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu", "vabe"];

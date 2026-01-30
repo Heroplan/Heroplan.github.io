@@ -751,7 +751,7 @@ const skillTagReverseMap = {
 };
 
 const PassiveSkillIconCollection = {
-    "resist_accuracy_modifier_debuffs": "status_blind",
+    "resist_accuracy_modifier_debuffs": "status_blind_accuracy_down",
     "resist_defense_modifier_debuffs": "status_defense_down",
     "resist_attack_modifier_debuffs": "status_stun",
     "resist_mana_generation_modifier_debuffs": "status_dizzy",
@@ -1093,5 +1093,17 @@ const PassiveSkillIconCollection = {
     "accuracy_down_purple_tile_enhancement_on_special_titan_hunter": "status_tile_enhancment_titan_hunter_purple",
     "summon_seedling_parasite_per_turn_shared_with_delay_veggie": "passive_seedling_summoner",
     "resist_all_mana_debuffs_and_reductions": "status_mana_resist",
-    "mana_generation_modifier_all_enemies_more_sources": "passive_mana_generation_modifier"
+    "mana_generation_modifier_all_enemies_more_sources": "passive_mana_generation_modifier",
+    "received_strong_troop_damage_pve": "passive_troop_strong_element_defense",
+    "mimic_troop_red": "passive_mimic_training_hero_red",
+    "mimic_troop_blue": "passive_mimic_training_hero_blue",
+    "mimic_troop_green": "passive_mimic_training_hero_green",
+    "mimic_troop_yellow": "passive_mimic_training_hero_yellow",
+    "mimic_troop_purple": "passive_mimic_training_hero_purple",
+    "resist_special_blocking_with_health_boost_and_mana_pve": "passive_resist_boost_special_blocking",
+    "boosted_health_on_any_dancing_ally": "passive_boosted_health_on_any_dancing_ally",
+    "dealt_damage_modifier_on_any_dancing_ally": "passive_dealt_damage_modifier_on_any_dancing_ally",
+    "summon_seedling_parasite_with_delay": "passive_seedling_summoner",
+    "summon_seedling_parasite_per_turn_shared_with_delay_epic_veggie": "passive_seedling_summoner",
+    "summon_seedling_parasite_per_turn_shared_with_delay_rare_veggie": "passive_seedling_summoner"
 };

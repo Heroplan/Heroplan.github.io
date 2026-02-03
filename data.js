@@ -282,7 +282,7 @@ const sourceReverseMap = {
     "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon", "神话召唤 - 额外抽奖": "tavernoflegendssecret",
     "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "荒野召唤": "wilderness",
     "神话召唤": "tavernoflegends", "生日召唤": "birthday", "黑色星期五召唤": "blackfriday",
-    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "市集召唤": "mimic", "神殿召唤": "temple", "泰坦猎手召唤": "titanhunter",
+    "丰收召唤": "harvest", "怪兽岛召唤": "monsterisland", "挑战 - 歌剧之谜": "opera", "挑战节 I": "challengefestival1", "挑战节 II": "challengefestival2", "服装间": "costume", "市集召唤": "mimic", "神殿召唤": "temple", "泰坦猎手召唤": "titanhunter", "挑战 - 英勇植物召唤": "farmland",
     // 繁體中文
     "聯盟 - 勇者與美人": "musketeer",
     "月活動 - 農曆新年": "lunaryear", "挑戰 - 貝武夫": "beowulf", "聯盟 - 飛蛾": "moth",
@@ -296,7 +296,7 @@ const sourceReverseMap = {
     "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "傳奇召喚 - 月英": "hotm",
     "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon", "傳奇召喚 - 額外抽獎": "tavernoflegendssecret", "星界召喚": "astral", "野地召喚": "wilderness",
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
-    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "市場召喚": "mimic", "神殿召喚": "temple", "泰坦獵人召喚": "titanhunter",
+    "豐收召喚": "harvest", "怪獸島召喚": "monsterisland", "挑戰 - 歌劇秘辛": "opera", "挑戰節 I": "challengefestival1", "挑戰節 II": "challengefestival2", "服裝間": "costume", "市場召喚": "mimic", "神殿召喚": "temple", "泰坦獵人召喚": "titanhunter", "挑戰 - 警戒蔬菜召唤": "farmland",
     // English
     "Alliance - The Brave & The Beautiful": "musketeer",
     "Monthly Event - Lunar Year": "lunaryear", "Challenge - Beowulf": "beowulf", "Alliance - Moths": "moth",
@@ -310,7 +310,7 @@ const sourceReverseMap = {
     "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon", "Legends Summon - Extra Draw": "tavernoflegendssecret",
     "Astral Summon": "astral", "Wilderness Summon": "wilderness",
     "Legends Summon": "tavernoflegends", "Birthday Summon": "birthday", "Black Friday Summon": "blackfriday",
-    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Bazaar Summon": "mimic", "Temple Summon": "temple", "Titan Hunter Summon": "titanhunter"
+    "Harvest Summon": "harvest", "Monster Island Summon": "monsterisland", "Challenge - Secrets of the Opera": "opera", "Challenge Festival I": "challengefestival1", "Challenge Festival II": "challengefestival2", "Costume Quest": "costume", "Bazaar Summon": "mimic", "Temple Summon": "temple", "Titan Hunter Summon": "titanhunter", "Challenge - Vigilant Vegetables Summon": "farmland",
 };
 
 // 英文标识符 -> 起源图标文件名
@@ -331,7 +331,7 @@ const sourceIconMap = {
     "astral": "astralelves.webp",
     "wilderness": "wilderness.webp",
     "tavernoflegends": "hotm.webp", "tavernoflegendssecret": "hotm.webp", "birthday": "diamond.webp", "blackfriday": "diamond.webp",
-    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "bazaar.webp", "temple": "temple.webp", "titanhunter": "diamond.webp",
+    "harvest": "diamond.webp", "monsterisland": "monster_angular.webp", "opera": "challenge.webp", "challengefestival1": "challenge.webp", "challengefestival2": "challenge.webp", "costume": "costume_key.webp", "mimic": "bazaar.webp", "temple": "temple.webp", "titanhunter": "diamond.webp", "farmland": "challenge.webp",
 };
 
 // 颜色名称 -> 标准英文名

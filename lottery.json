@@ -207,6 +207,36 @@
     },
     {
         "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_masquerade",
+        "banner": "event_lotterybanner_masquerade",
+        "lotterybg": "event_lotterybg_masquerade",
+        "gemPrice": 300,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "masquerade_carmenta",
+        "associatedEvent": "RecurringMasquerade",
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_masquerade_bulk",
+        "gemPrice": 2600,
+        "sourceProductId": "lottery_featured_event_masquerade",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_gargoyles2",
         "banner": "event_lotterybanner_fluffygargoyles",
         "lotterybg": "event_lotterybg_fluffygargoyles",
@@ -232,40 +262,6 @@
         "id": "lottery_featured_event_gargoyles2_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_event_gargoyles2",
-        "amount": 10
-    },
-    {
-        "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_beowulf",
-        "banner": "event_lotterybanner_beowulfmeadhall",
-        "lotterybg": "event_lotterybg_beowulf",
-        "gemPrice": 350,
-        "amount": 1,
-        "uiPriority": 131,
-        "advertisedHero": "cultist_female_poisoner",
-        "associatedEvent": "RecurringBeowulf",
-        "bonusChest": "beowulf_chest",
-        "bonusChestRequirement": 5,
-        "bonusChestLimit": 25,
-        "bonusChestEnabled": true,
-        "bucketWeights": [
-            531,
-            198,
-            12,
-            100,
-            10,
-            79,
-            57,
-            3,
-            10
-        ],
-        "hasMysteryHeroBonusRoll": true
-    },
-    {
-        "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_beowulf_bulk",
-        "gemPrice": 3000,
-        "sourceProductId": "lottery_featured_event_beowulf",
         "amount": 10
     },
     {
@@ -341,14 +337,18 @@
     },
     {
         "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_masquerade",
-        "banner": "event_lotterybanner_masquerade",
-        "lotterybg": "event_lotterybg_masquerade",
-        "gemPrice": 300,
+        "id": "lottery_featured_event_beowulf",
+        "banner": "event_lotterybanner_beowulfmeadhall",
+        "lotterybg": "event_lotterybg_beowulf",
+        "gemPrice": 350,
         "amount": 1,
-        "uiPriority": 80,
-        "advertisedHero": "masquerade_carmenta",
-        "associatedEvent": "RecurringMasquerade",
+        "uiPriority": 131,
+        "advertisedHero": "cultist_female_poisoner",
+        "associatedEvent": "RecurringBeowulf",
+        "bonusChest": "beowulf_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
         "bucketWeights": [
             531,
             198,
@@ -364,9 +364,42 @@
     },
     {
         "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_masquerade_bulk",
-        "gemPrice": 2600,
-        "sourceProductId": "lottery_featured_event_masquerade",
+        "id": "lottery_featured_event_beowulf_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_featured_event_beowulf",
+        "amount": 10
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_farmland",
+        "banner": "event_lotterybanner_farmland",
+        "lotterybg": "event_lotterybg_farmland",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 170,
+        "associatedEvent": "RecurringFarmland",
+        "bonusChest": "beowulf_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_farmland_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_featured_event_farmland",
         "amount": 10
     },
     {
@@ -1123,6 +1156,45 @@
         "availableEventCostumesAreFeatured": false
     },
     {
+        "productType": "SeasonalPremiumSummon_Lunar_New_Year",
+        "id": "lottery_seasonal_premium_lunar_new_year_2026",
+        "banner": "event_lotterybanner_premium_lunar_new_year_2026",
+        "lotterybg": "event_lotterybg_premium_lunar_new_year_2026",
+        "gemPrice": 450,
+        "amount": 1,
+        "uiPriority": 137,
+        "bucketWeights": [
+            710,
+            265,
+            19,
+            6
+        ],
+        "seasonalEventId": "LunarNewYear2026",
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_lunar_new_year",
+        "powerGradeWeights": [
+            1000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "hasGuaranteedFeaturedBucketPowerGrade": true,
+        "guaranteedFeaturedBucketPowerGrade": "MaxAscension",
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "SeasonalPremiumSummon_Lunar_New_Year",
+        "id": "lottery_seasonal_premium_lunar_new_year_2026_bulk",
+        "gemPrice": 3900,
+        "sourceProductId": "lottery_seasonal_premium_lunar_new_year_2026",
+        "amount": 10,
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_lunar_new_year"
+    },
+    {
         "productType": "EpicHeroSummon",
         "id": "lottery_hero_valentines",
         "banner": "event_lotterybanner_valentines",
@@ -1848,38 +1920,5 @@
         "gemPrice": 7500,
         "sourceProductId": "lottery_titan_hunter_default",
         "amount": 30
-    },
-    {
-        "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_farmland",
-        "banner": "event_lotterybanner_farmland",
-        "lotterybg": "event_lotterybg_farmland",
-        "gemPrice": 350,
-        "amount": 1,
-        "uiPriority": 170,
-        "associatedEvent": "RecurringFarmland",
-        "bonusChest": "beowulf_chest",
-        "bonusChestRequirement": 5,
-        "bonusChestLimit": 25,
-        "bonusChestEnabled": true,
-        "bucketWeights": [
-            531,
-            198,
-            12,
-            100,
-            10,
-            79,
-            57,
-            3,
-            10
-        ],
-        "hasMysteryHeroBonusRoll": true
-    },
-    {
-        "productType": "ChallengeEventSummon",
-        "id": "lottery_featured_event_farmland_bulk",
-        "gemPrice": 3000,
-        "sourceProductId": "lottery_featured_event_farmland",
-        "amount": 10
     }
 ]

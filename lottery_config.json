@@ -224,6 +224,15 @@
             ],
             "featuredHeroNum": 3
         },
+        "SeasonalPremiumSummon_Lunar_New_Year": {
+            "bucketConfig": [
+                "heroes_listed_3",
+                "heroes_listed_4",
+                "heroes_listed_5",
+                "featuredHero"
+            ],
+            "featuredHeroNum": 3
+        },
         "ShadowSummon": {
             "bucketConfig": [
                 "heroes_listed_3",
@@ -719,11 +728,57 @@
         },
         "lottery_hero_lunar_new_year": {
             "featuredHeroes": [
-                "lunar_new_year_xiaoqing",
-                "lunar_new_year_baishu"
+                "lunar_new_year_hongyunxing",
+                "lunar_new_year_laohu_costume_golden"
             ],
             "AssociatedFamilies": [
                 "zodiac"
+            ]
+        },
+        "lottery_seasonal_premium_lunar_new_year_2026": {
+            "featuredHeroes": [
+                "fortune_wei_qi",
+                "fortune_bai_yan",
+                "fortune_yan_qing"
+            ],
+            "includedHeroes": [
+                "lunar_new_year_laohu_costume_golden",
+                "lunar_new_year_xiaotu_costume_golden",
+                "lunar_new_year_gongniu",
+                "lunar_new_year_qinglong",
+                "lunar_new_year_xiaoqing",
+                "lunar_new_year_baishu",
+                "kingdom_cao_cao_costume_ice",
+                "kingdom_lu_bu_costume_tiger_lord",
+                "kingdom_wang_yuanji_costume_artisan",
+                "kingdom_diaochan_costume_flowers",
+                "kingdom_liu_bei_costume_nature",
+                "kingdom_zhuge_liang_costume_crane",
+                "kingdom_sun_quan_costume_fire_bat",
+                "kingdom_sun_shangxiang",
+                "kingdom_xiahou_dun",
+                "kingdom_guan_yu_costume_dragon",
+                "kingdom_zhang_fei_costume_bear_slayer",
+                "kingdom_zhou_yu_costume_white_raven",
+                "kingdom_yao",
+                "kingdom_jing",
+                "kingdom_li",
+                "journey_erlang_shen",
+                "journey_xiong_shanjun",
+                "journey_nineheaded_beast",
+                "journey_heifeng_guai",
+                "journey_general_yin",
+                "journey_queen_guowang",
+                "journey_change",
+                "journey_sha_wujing",
+                "journey_xiwangmu",
+                "journey_xie_zi_jing",
+                "journey_tang_sanzang",
+                "lunar_new_year_hongyunxing",
+                "outlaw_gu_dasao",
+                "outlaw_liu_tang",
+                "fortune_ling_long",
+                "fortune_dragon_kids"
             ]
         },
         "lottery_hero_valentines": {

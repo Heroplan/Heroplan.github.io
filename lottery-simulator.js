@@ -70,6 +70,7 @@ const lotteryTitles = {
         "lottery.title.templesummon": "神殿召唤",
         "lottery.title.mimicsummon": "市集召唤",
         "lottery.title.titanhuntersummon": "泰坦猎手召唤",
+        "lottery.title.lottery_featured_event_farmland": "英勇植物召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -141,6 +142,7 @@ const lotteryTitles = {
         "lottery.title.templesummon": "神殿召喚",
         "lottery.title.mimicsummon": "市場召喚",
         "lottery.title.titanhuntersummon": "泰坦獵人召喚",
+        "lottery.title.lottery_featured_event_farmland": "警戒蔬菜召唤",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -212,6 +214,7 @@ const lotteryTitles = {
         "lottery.title.templesummon": "Temple Summon",
         "lottery.title.mimicsummon": "Bazaar Summon",
         "lottery.title.titanhuntersummon": "Titan Hunter Summon",
+        "lottery.title.lottery_featured_event_farmland": "Vigilant Vegetables Summon",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域

@@ -1828,25 +1828,58 @@
         "uiPriority": 138,
         "associatedEvent": "TitanHunter",
         "bucketWeights": [
-          710,
-          265,
-          15,
-          10
+            710,
+            265,
+            15,
+            10
         ],
         "hasMysteryHeroBonusRoll": true
-      },
-      {
+    },
+    {
         "productType": "TitanHunterSummon",
         "id": "lottery_titan_hunter_default_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_titan_hunter_default",
         "amount": 10
-      },
-      {
+    },
+    {
         "productType": "TitanHunterSummon",
         "id": "lottery_titan_hunter_default_30_bulk",
         "gemPrice": 7500,
         "sourceProductId": "lottery_titan_hunter_default",
         "amount": 30
-      }
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_farmland",
+        "banner": "event_lotterybanner_farmland",
+        "lotterybg": "event_lotterybg_farmland",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 170,
+        "associatedEvent": "RecurringFarmland",
+        "bonusChest": "beowulf_chest",
+        "bonusChestRequirement": 5,
+        "bonusChestLimit": 25,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            531,
+            198,
+            12,
+            100,
+            10,
+            79,
+            57,
+            3,
+            10
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ChallengeEventSummon",
+        "id": "lottery_featured_event_farmland_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_featured_event_farmland",
+        "amount": 10
+    }
 ]

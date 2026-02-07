@@ -172,6 +172,31 @@ const redeemcodes = [
             }
         ]
     },
+    {
+        "code": "ARCHON6KYT",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/profile_avatar.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/shadow.webp",
+                "num": 50
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_rainbow.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_500k.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_iron_500k.webp",
+                "num": 1
+            }
+        ]
+    },
 ];
 // --- 捐赠名单 ---
 const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu", "vabe"];

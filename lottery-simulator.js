@@ -1660,14 +1660,42 @@ async function performSummon(count) {
             singlePullResults.push({ hero: drawnHero, bucket: isCostumeSummon ? 'costume' : (bucketString || 'unknown') });
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             // 检查是否满足触发“额外传奇英雄”的条件
-            if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
+            let shouldTriggerBonusLegendary = false;
 
+            // 生日召唤的触发条件变为“任意5星”
+            if (poolConfig.id === 'lottery_black_7th_birthday' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) {
+                shouldTriggerBonusLegendary = true;
+            } else if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
+                shouldTriggerBonusLegendary = true;
+            }
+
+            if (shouldTriggerBonusLegendary) {
                 // 1. 首先，确定本次奖励的完整候选英雄池
                 const isEventOnly = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly;
                 let baseBonusPool;
-                if (isEventOnly) {
+
+                // *** 为 lottery_black_7th_birthday 活动应用特殊规则 ***
+                if (poolConfig.id === 'lottery_black_7th_birthday') {
+                    // 奖池：所有5星英雄，但排除精选英雄
+                    // 收集所有“精选”英雄的ID，包括配置中的featuredHeroes和用户手动设置的customFeaturedHeroes
+                    const featuredHeroIds = new Set();
+                    if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
+                        poolConfig.featuredHeroes.forEach(id => featuredHeroIds.add(id));
+                    }
+                    if (state.customFeaturedHeroes) {
+                        state.customFeaturedHeroes.forEach(hero => hero && hero.heroId && featuredHeroIds.add(hero.heroId));
+                    }
+
+                    baseBonusPool = masterHeroPool.filter(h =>
+                        h.star === 5 &&
+                        h.family && h.family !== 'classic' && // 非经典家族
+                        !featuredHeroIds.has(h.heroId) // 不在精选英雄列表中
+                    );
+                } else if (isEventOnly) {
+                    // 仅事件家族英雄
                     baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
                 } else {
+                    // 非经典家族的所有5星英雄
                     baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && h.family !== 'classic');
                 }
 

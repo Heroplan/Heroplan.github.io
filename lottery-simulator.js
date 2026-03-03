@@ -1130,19 +1130,29 @@ async function handleActivityClick(poolId) {
     const numSlots = poolConfig.featuredHeroNum || 0;
     let heroesForSlots = [];
 
+    // 仅从 featuredHeroes 列表中选取英雄进行初始填充
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+        // 对于超级元素召唤，处理动态的 featuredHeroes 列表
         const dynamicKey = `featuredHeroes_${state.selectedElementalColor}`;
         const heroIdList = poolConfig[dynamicKey];
         if (heroIdList && Array.isArray(heroIdList)) {
             heroesForSlots = heroIdList.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
     } else {
+        // 对于普通召唤，仅使用 featuredHeroes 列表（如果存在）
         if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
+            // 核心修改：直接使用 featuredHeroes 列表，不包含 entitiesToChooseFrom
             heroesForSlots = poolConfig.featuredHeroes.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
     }
 
-    state.customFeaturedHeroes = heroesForSlots.slice(0, numSlots);
+    // 初始化精选英雄数组：用 featuredHeroes 列表的英雄填充前部，剩余位置为 null
+    state.customFeaturedHeroes = [];
+    // 1. 填充来自 featuredHeroes 列表的英雄
+    for (let i = 0; i < heroesForSlots.length && i < numSlots; i++) {
+        state.customFeaturedHeroes.push(heroesForSlots[i]);
+    }
+    // 2. 将剩余卡槽填充为 null
     while (state.customFeaturedHeroes.length < numSlots) {
         state.customFeaturedHeroes.push(null);
     }

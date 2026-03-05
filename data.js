@@ -1063,7 +1063,7 @@ const PassiveSkillIconCollection = {
     "apex_resist_all": "passive_apex_resist_all",
     "attack_buff_on_damage_received_pve": "passive_attack_buff_on_damage_received",
     "revive_chance_nine_lives": "passive_revive_chance_nine_lives",
-    "resist_all_defense_effects": "passive_resist_defense_dodge_cattitude",
+    "resist_all_defense_effects": "passive_resist_defense_change",
     "mana_on_damage_received": "passive_mana_on_damage_received",
     "titan_resist_17": "passive_titan_resist_all",
     "mimic_training_hero_red": "passive_mimic_training_hero_red",
@@ -1182,5 +1182,17 @@ const PassiveSkillIconCollection = {
     "dealt_damage_modifier_on_any_dancing_ally": "passive_dealt_damage_modifier_on_any_dancing_ally",
     "summon_seedling_parasite_with_delay": "passive_seedling_summoner",
     "summon_seedling_parasite_per_turn_shared_with_delay_epic_veggie": "passive_seedling_summoner",
-    "summon_seedling_parasite_per_turn_shared_with_delay_rare_veggie": "passive_seedling_summoner"
+    "summon_seedling_parasite_per_turn_shared_with_delay_rare_veggie": "passive_seedling_summoner",
+    "stylish_rare": "passive_stylish",
+    "stylish_epic": "passive_stylish",
+    "stylish_legendary": "passive_stylish",
+    "resist_all_attack_effects": "passive_resist_attack_change",
+    "rodent_effects_on_ally_passive_skill": "passive_nibble",
+    "easter_defense_down_stack_on_special": "passive_defense_down_stack_on_special",
+    "easter_health_generation_stack_on_special": "passive_health_generation_stack_on_special",
+    "empowered_toon_resist_manareduction_dispels": "passive_cute_empowered",
+    "easter_health_generation_stack_on_special_epic": "passive_health_generation_stack_on_special",
+    "corrupt_minions_all_enemies": "status_minion_corruption",
+    "prevent_boosted_health": "passive_prevent_boosted_health",
+    "dishonorable_death": "passive_dishonorable_death"
 };

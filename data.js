@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2026-03-26';
 const purchaseCostumeDate = '2026-04-22';
 const soulExchange = {
-    Date: '2026-02-26',
+    Date: '2026-05-26',
     ten: [
         "ballerina_odile",
         "s5_meresankh_costume_disco",
@@ -26,7 +26,7 @@ const soulExchange = {
         "beowulf_hrothgar",
         "astral_dwarf_maegwyn"
     ],
-    show: true
+    show: false
 }
 
 const redeemcodes = [

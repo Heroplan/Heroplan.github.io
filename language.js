@@ -1,6 +1,6 @@
 // --- 多语言排序变量 ---
 const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '舞者', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
-const speedOrder_tc = ['充能', '魔法', '冥河', '飛速', '舞者', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
+const speedOrder_tc = ['衝鋒', '魔法', '冥河', '飛速', '舞者', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
 const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Dancer', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
 const colorOrder_cn = ['红', '绿', '蓝', '黄', '紫'];
 const colorOrder_tc = ['紅', '綠', '藍', '黃', '紫'];

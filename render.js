@@ -614,7 +614,7 @@ const highlightDictionaries = {
             '流血伤害': '[##elementred]流血伤害[#]',
             '流血傷害': '[##elementred]流血傷害[#]',
             '沙系伤害': '[##elementyellow]沙系伤害[#]',
-            '沙系傷害': '[##elementyellow]沙系伤害[#]',
+            '飛沙傷害': '[##elementyellow]飛沙傷害[#]',
             '水系伤害': '[##elementblue]水系伤害[#]',
             '水系傷害': '[##elementblue]水系傷害[#]',
             '冰冻伤害': '[##elementblue]冰冻伤害[#]',

@@ -381,7 +381,7 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
         if (!skillList || !skillList.children[dotInfo.index]) return;
 
         const liElement = skillList.children[dotInfo.index];
-        // 核心1：生成唯一ID，拼接subIndex（共振有subIndex，其他无）
+        // 核心1：生成唯一ID，拼接subIndex（多伤害有subIndex，其他无）
         const dynamicSpanId = `dot-value-${dotInfo.index}` + (dotInfo.subIndex !== undefined ? `-${dotInfo.subIndex}` : '');
         // 核心2：计算单回合/总伤害（原有逻辑不变）
         const newDisplayDamage = dotInfo.isPerTurn
@@ -391,14 +391,14 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
         let dynamicSpan = liElement.querySelector(`#${dynamicSpanId}`);
 
         if (!dynamicSpan) {
-            // 核心3：正则加g全局匹配，共振类型匹配所有originalDamage，非共振匹配单次
-            const regexFlag = dotInfo.type === 'resonance' ? 'g' : '';
+            // 核心3：正则加g全局匹配，多伤害类型匹配所有originalDamage，非多伤害匹配单次
+            const regexFlag = dotInfo.type === 'mulDamages' ? 'g' : '';
             const regex = new RegExp(`\\b${dotInfo.originalDamage}\\b`, regexFlag);
             // 替换：每次替换生成唯一id的span（利用replace的函数特性，按匹配次数生成）
             let replaceCount = 0;
             liElement.innerHTML = liElement.innerHTML.replace(regex, () => {
-                // 共振的多匹配，按替换次数匹配subIndex
-                const finalId = dotInfo.type === 'resonance'
+                // 多伤害的多匹配，按替换次数匹配subIndex
+                const finalId = dotInfo.type === 'mulDamages'
                     ? `dot-value-${dotInfo.index}-${dotInfo.subIndex}`
                     : dynamicSpanId;
                 replaceCount++;

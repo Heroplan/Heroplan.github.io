@@ -49,21 +49,11 @@ function parseAndStoreDoTInfo(hero) {
 
     hero.effects.forEach((effectText, index) => {
         const lowerEffectText = effectText.toLowerCase();
-        // 排除规则：修复逻辑或，保留所有排除项
-        const excludeWords = [
-            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
-            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
-            'increased damage', 'stored', 'allies', 'clawing damage', '承受的'
-        ];
-        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
-        if (isExcluded) {
-            return;
-        }
 
         // 检查当前技能描述行是否满足某一组关键词共存的条件
-        // ========== 共振专属规则 ==========
-        const hasResonance = effectText.includes('共振') || effectText.includes('Resonance') ;
-        if (hasResonance) {
+        // ========== 多伤害专属规则 ==========
+        const mulDamages = effectText.includes('共振') || effectText.includes('Resonance') || effectText.includes('Wild') || effectText.includes('荒野：');
+        if (mulDamages) {
             // 步骤1：强力清洗文本——剔除括号/星号/全角符号，替换全角空格为半角
             const cleanText = effectText
                 .replace(/\(.*?\)/g, '') // 剔除小括号及内容
@@ -73,7 +63,7 @@ function parseAndStoreDoTInfo(hero) {
                 .trim(); // 去除首尾空格
 
             // 步骤2：提取所有数字——兼容全角/半角数字，强制转换为Number
-            const numberMatches = cleanText.match(/\d+/g) || [];
+            const numberMatches = cleanText.match(/\b\d+\b(?!%)/g) || [];
             const allNums = numberMatches.map(num => Number(num)).filter(num => !isNaN(num));
             if (allNums.length === 0) {
                 return;
@@ -98,12 +88,23 @@ function parseAndStoreDoTInfo(hero) {
                     subIndex: subIndex,
                     coefficient: coefficient,
                     turns: turns,
-                    isPerTurn: true, // 共振为每回合伤害
+                    isPerTurn: true, // 多伤害为每回合伤害
                     originalDamage: damage,
-                    type: 'resonance' // 标记共振类型
+                    type: 'mulDamages' // 标记多伤害类型
                 });
             });
             return; // 跳过原有规则，避免重复解析
+        }
+
+        // 排除规则：修复逻辑或，保留所有排除项
+        const excludeWords = [
+            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
+            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
+            'increased damage', 'stored', 'allies', 'clawing damage', '承受的'
+        ];
+        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
+        if (isExcluded) {
+            return;
         }
 
         // ========== 原有关键词匹配规则 ==========

@@ -52,7 +52,7 @@ function parseAndStoreDoTInfo(hero) {
 
         // 检查当前技能描述行是否满足某一组关键词共存的条件
         // ========== 多伤害专属规则 ==========
-        const mulDamages = effectText.includes('共振') || effectText.includes('Resonance') || effectText.includes('Wild') || effectText.includes('荒野：');
+        const mulDamages = (effectText.includes('共振') || effectText.includes('Resonance') || effectText.includes('Wild') || effectText.includes('荒野：')) && (effectText.includes('敌人') || effectText.includes('敵人') || effectText.includes('damage'));
         if (mulDamages) {
             // 步骤1：强力清洗文本——剔除括号/星号/全角符号，替换全角空格为半角
             const cleanText = effectText
@@ -100,7 +100,7 @@ function parseAndStoreDoTInfo(hero) {
         const excludeWords = [
             'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
             '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
-            'increased damage', 'stored', 'allies', 'clawing damage', '承受的'
+            'increased damage', 'stored', 'allies', 'clawing damage', 'corruption', '承受的'
         ];
         const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
         if (isExcluded) {

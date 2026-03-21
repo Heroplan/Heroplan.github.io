@@ -176,6 +176,23 @@ const redeemcodes = [
             }
         ]
     },
+    {
+        "code": "ELENAAINOIGNISZEUS",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/time_skip_rare.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_250k.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/trainer_rainbow.webp",
+                "num": 3
+            }
+        ]
+    },
 ];
 // --- 捐赠名单 ---
 const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu", "vabe"];

@@ -4,7 +4,7 @@
 const oneClickMaxDate = '2026-06-26';
 const purchaseCostumeDate = '2026-04-22';
 const soulExchange = {
-    Date: '2026-05-26',
+    Date: '2026-05-28',
     ten: [
         "ballerina_odile",
         "s5_meresankh_costume_disco",
@@ -1144,5 +1144,37 @@ const PassiveSkillIconCollection = {
     "easter_health_generation_stack_on_special_epic": "passive_health_generation_stack_on_special",
     "corrupt_minions_all_enemies": "status_minion_corruption",
     "prevent_boosted_health": "passive_prevent_boosted_health",
-    "dishonorable_death": "passive_dishonorable_death"
+    "dishonorable_death": "passive_dishonorable_death",
+    "greater_healing": "passive_greater_healing_legendary_troop",
+    "outgoing_heal_modifier_legendary_troop": "NULL_SPRITE",
+    "max_health_reduction_immunity_legendary_troop": "NULL_SPRITE",
+    "enable_critical_special_hit_legendary_troop": "NULL_SPRITE",
+    "critical_advantage_modifier_legendary_troop": "NULL_SPRITE",
+    "critical_advantage": "passive_critical_advantage_legendary_troop",
+    "bleed_on_counter_attack": "status_bleed_on_counterattack",
+    "mimic_food_red": "passive_mimic_training_hero_red",
+    "mimic_food_green": "passive_mimic_training_hero_green",
+    "mimic_food_blue": "passive_mimic_training_hero_blue",
+    "mimic_food_yellow": "passive_mimic_training_hero_yellow",
+    "mimic_food_purple": "passive_mimic_training_hero_purple",
+    "resist_ailments_red": "passive_resist_ailment_red",
+    "resist_ailments_blue": "passive_resist_ailment_blue",
+    "resist_ailments_green": "passive_resist_ailment_green",
+    "resist_ailments_purple": "passive_resist_ailment_purple",
+    "resist_ailments_yellow": "passive_resist_ailment_yellow",
+    "dishonorable_death_rare": "passive_dishonorable_death",
+    "dishonorable_death_epic": "passive_dishonorable_death",
+    "lucky_legendary_troop": "passive_lucky_legendary_troop",
+    "resist_frost_with_health_boost_and_mana_costume": "passive_health_boost_and_mana_on_frost_resist_myrkheim",
+    "arctic_core_costume": "passive_arctic_core",
+    "vengeful_ghost_on_damage_received": "passive_vengeful_ghost",
+    "camouflage_on_special_cast": "passive_petal_veil",
+    "buff_sacrifice": "NULL_SPRITE",
+    "resist_water_with_health_boost_and_mana": "passive_resist_water_with_health_boost_and_mana",
+    "mesmerize_over_time_dryad": "passive_petal_rain",
+    "vengeful_ghost_on_damage_received_rare_and_epic": "passive_vengeful_ghost",
+    "reduce_growth_on_special": "passive_reduce_growth",
+    "dealt_damage_modifier_per_water_ailment_on_target": "passive_increase_damage_per_water_ailment_on_target",
+    "stop_chain_strikes": "passive_stop_chain",
+    "resist_all_stealing": "status_ransac"
 };

@@ -100,7 +100,8 @@ function parseAndStoreDoTInfo(hero) {
         const excludeWords = [
             'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
             '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
-            'increased damage', 'stored', 'allies', 'clawing damage', 'corruption', '承受的'
+            'increased damage', 'stored', 'allies', 'clawing damage', 'corruption', '承受的',
+            'healing'
         ];
         const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
         if (isExcluded) {

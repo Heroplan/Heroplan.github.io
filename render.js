@@ -75,8 +75,16 @@ function getSkinInfo(hero) {
 function getCostumeIconName(hero) {
     if (!hero || hero.costume_id === 0) return '';
     let costumeId = hero.costume_id;
-    if (hero.star === 3 && costumeId > 1) {
-        costumeId = costumeId + 1;
+    if (hero.family === 'classic') {
+        if (hero.star === 3 && costumeId > 1) {
+            costumeId = costumeId + 1;
+        }
+    }
+
+    if (hero.family != 'classic') {
+        if (costumeId === 2) {
+            costumeId = 3;
+        }
     }
 
     const classicMap = {

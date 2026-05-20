@@ -432,7 +432,7 @@ async function initializeApp() {
                 container.classList.add('is-scrolling');
             }
         }
-    }, 5000);
+    }, 500);
     // 检查赞助显示状态并相应处理
     // 如果cookie不存在（默认显示赞助）或者cookie存在且值为false，则加载赞助脚本
     if (!isDonateHidden()) {

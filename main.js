@@ -311,6 +311,7 @@ async function initializeApp() {
         // 否則 (新用戶)，將預設值設為 'bbcamp'
         uiElements.filterInputs.skillTypeSource.value = 'bbcamp';
     }
+    uiElements.filterInputs.skillTypeSource.value = 'bbcamp';
 
     // 加载静态元素的折叠状态
     loadStaticCollapseStates();

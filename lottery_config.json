@@ -86,35 +86,7 @@
         "heroes_event_5",
         "featuredHero"
       ],
-      "featuredHeroNum": 3,
-      "entitiesToChooseFrom": [
-        "champions_mistra",
-        "champions_satori",
-        "champions_nogu",
-        "champions_ramona",
-        "champions_norman",
-        "champions_lazara",
-        "forest_god_gregorion_costume_alchemist",
-        "dark_god_september_costume_engineer",
-        "witch_king_costume_cosmic",
-        "forest_god_zeline_costume_avian",
-        "forest_god_evelyn_costume_huntress",
-        "holy_god_musashi_costume_prisoner",
-        "holy_god_delilah_costume_guardian",
-        "fire_god_natalya_costume_seamstress",
-        "fire_god_zimkitha_costume_adventurer",
-        "fire_god_ares_costume_keymaster",
-        "ice_god_october_costume_farmer",
-        "dark_god_aeron_costume_periwig",
-        "ice_god_perseus_costume_frozen",
-        "dark_god_hel_costume_omen",
-        "ice_god_eskimo_costume_champion",
-        "holy_god_drake_lee_costume_serene",
-        "ice_god_athena_costume_wargoddess",
-        "dark_god_seshat_costume_revenant",
-        "fire_god_doom_costume_avenger",
-        "forest_god_oberon_costume_everoak"
-      ]
+      "featuredHeroNum": 3
     },
     "MercenaryWarSummon": {
       "bucketConfig": [
@@ -573,6 +545,28 @@
         "hotm2023",
         "hotm2024",
         "hotm2025"
+      ],
+      "entitiesToChooseFrom": [
+        "champions_mistra",
+        "champions_lazara",
+        "forest_god_gregorion_costume_alchemist",
+        "dark_god_september_costume_engineer",
+        "champions_nogu",
+        "witch_king_costume_cosmic",
+        "champions_norman",
+        "forest_god_zeline_costume_avian",
+        "champions_satori",
+        "holy_god_musashi_costume_prisoner",
+        "forest_god_evelyn_costume_huntress",
+        "holy_god_delilah_costume_guardian",
+        "fire_god_natalya_costume_seamstress",
+        "fire_god_zimkitha_costume_adventurer",
+        "dark_god_hel_costume_omen",
+        "ice_god_perseus_costume_frozen",
+        "ice_god_iris",
+        "ice_god_eskimo_costume_champion",
+        "dark_god_seshat_costume_revenant",
+        "holy_god_bai_yeong"
       ]
     },
     "lottery_mercenary_war_default": {
@@ -1244,16 +1238,16 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_aether_green",
-        "mimic_aether_blue",
-        "mimic_aether_purple",
-        "mimic_aether_yellow",
-        "mimic_aether_red",
-        "mimic_ascension_item_green",
         "mimic_ascension_item_blue",
+        "mimic_ascension_item_green",
         "mimic_ascension_item_purple",
+        "mimic_ascension_item_red",
         "mimic_ascension_item_yellow",
-        "mimic_ascension_item_red"
+        "mimic_training_hero_blue",
+        "mimic_training_hero_green",
+        "mimic_training_hero_purple",
+        "mimic_training_hero_red",
+        "mimic_training_hero_yellow"
       ],
       "bucketRules": [
         {

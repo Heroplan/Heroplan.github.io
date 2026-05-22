@@ -567,6 +567,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
     }
 
     let bucketType = 'unknown';
+    let isExtraAssociatedBucket = (bucketType === 'extraAssociatedFamilies');
     if (bucketString.startsWith('heroes_event_')) bucketType = 'event';
     else if (bucketString.startsWith('heroes_listed_')) bucketType = 'listed';
     else if (bucketString.startsWith('heroes_ex_s1_')) bucketType = 'ex_s1';
@@ -757,6 +758,9 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         }
     });
 
+    // 在 map 之前获取 extraAssociatedFamilies 数组（小写）
+    const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
+
     return initialPool.map(baseHero => {
         if (poolConfig.productType === 'MimicSummon') {
             return baseHero;
@@ -766,29 +770,33 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         if (baseHeroFamily === 'mimic' || baseHeroFamily === 'trainer') {
             return baseHero;
         }
-
-        if (String(baseHero.family).toLowerCase() === 'classic') {
+        if (baseHeroFamily === 'classic') {
             return baseHero;
         }
 
-        // 在已经过筛选的 `baseHeroPool` (即 masterPoolForBuckets) 中，
-        // 查找此英雄的所有可用版本。
-        const allVersionsInPool = baseHeroPool.filter(h =>
-            h.english_name === baseHero.english_name
-        );
+        const allVersionsInPool = baseHeroPool.filter(h => h.english_name === baseHero.english_name);
 
-        if (allVersionsInPool.length === 0) {
-            // 理论上不应发生，但作为保险
-            return baseHero;
+        // 判断该英雄的家族是否属于 extraAssociatedFamilies
+        const isExtraFamily = extraFamilies.includes(baseHeroFamily);
+
+        let selectedVersion;
+        if (isExtraFamily) {
+            // 限制：只允许 costume_id < 2 的版本，并取其中 costume_id 最大的
+            const allowedVersions = allVersionsInPool.filter(v => v.costume_id < 2);
+            if (allowedVersions.length === 0) {
+                selectedVersion = baseHero; // 降级，理论上不会发生
+            } else {
+                selectedVersion = allowedVersions.reduce((latest, current) => {
+                    return (current.costume_id > latest.costume_id) ? current : latest;
+                }, allowedVersions[0]);
+            }
+        } else {
+            // 原有逻辑：取最新版本（costume_id 最大）
+            selectedVersion = allVersionsInPool.reduce((latest, current) => {
+                return (current.costume_id > latest.costume_id) ? current : latest;
+            }, allVersionsInPool[0]);
         }
-
-        // 从这些“可用”版本中，找到 costume_id 最大的（即最新的）
-        const latestVersionInPool = allVersionsInPool.reduce((latest, current) => {
-            return (current.costume_id > latest.costume_id) ? current : latest;
-        }, allVersionsInPool[0]); // 从找到的第一个版本开始比较
-
-        // 返回在当前奖池中允许的最新版本
-        return latestVersionInPool;
+        return selectedVersion;
     });
 }
 

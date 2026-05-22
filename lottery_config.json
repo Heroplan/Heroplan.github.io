@@ -732,13 +732,14 @@
     "lottery_hero_lunar_new_year": {
       "featuredHeroes": [
         "lunar_new_year_hongyunxing",
-        "lunar_new_year_laohu_costume_golden"
+        "lunar_new_year_laohu_costume_golden",
+        "lunar_new_year_xiaotu_costume_golden"
       ],
       "AssociatedFamilies": [
         "zodiac"
       ]
     },
-    "lottery_seasonal_premium_lunar_new_year_2026": {
+    "lottery_seasonal_premium_lunar_new_year": {
       "featuredHeroes": [
         "fortune_wei_qi",
         "fortune_bai_yan",
@@ -786,8 +787,8 @@
     },
     "lottery_hero_valentines": {
       "featuredHeroes": [
-        "valentines_lempi",
         "valentines_vernon",
+        "valentines_lempi",
         "valentines_cupido_costume_flame"
       ],
       "AssociatedFamilies": [
@@ -806,15 +807,70 @@
     },
     "lottery_hero_beach_party": {
       "featuredHeroes": [
-        "beachparty_andy_jay",
-        "beachparty_serena",
-        "beachparty_flip_costume_donut"
+        "beachparty_bubo",
+        "beachparty_skiff",
+        "beachparty_misty_costume_rogue"
       ],
       "AssociatedFamilies": [
         "beachparty"
       ],
       "extraAssociatedFamilies": [
         "sand"
+      ]
+    },
+    "lottery_seasonal_premium_beach_party": {
+      "featuredHeroes": [
+        "shark_brokhai",
+        "shark_haikala",
+        "shark_sharpoon"
+      ],
+      "AssociatedFamilies": [
+        "beachparty"
+      ],
+      "extraAssociatedFamilies": [
+        "sand"
+      ],
+      "includedHeroes": [
+        "beachparty_bubo",
+        "beachparty_skiff",
+        "beachparty_andy_jay",
+        "beachparty_serena",
+        "beachparty_davey_wavey",
+        "beachparty_zenukwa",
+        "beachparty_mazoga",
+        "beachparty_dolrak_costume_tattoo",
+        "beachparty_itham_costume_skateboard",
+        "beachparty_misty_costume_rogue",
+        "beachparty_flip_costume_donut",
+        "beachparty_mortimer",
+        "sand_horse",
+        "sand_tower",
+        "sand_soldier",
+        "sand_vizier",
+        "sand_king_costume_lifeguard",
+        "sand_queen_costume_surfer",
+        "sand_roc_costume_juice",
+        "tales1_spartoi_costume_guard",
+        "tales1_medea_costume_goddess",
+        "tales1_domiventus_costume_supreme",
+        "tales1_atlanteia_costume_siren",
+        "tales1_persa_costume_jellyfish_noble",
+        "tales1_gestalt_costume_pearls",
+        "tales1_aqualith_costume_purple",
+        "tales1_gelert_costume_scavenger",
+        "tales1_ultrox_costume_ethereal",
+        "tales1_ceto_costume_queen",
+        "tales1_jaco_costume_alchemist",
+        "tales1_galapago_costume_quarry",
+        "tales1_lasalle_costume_jockey",
+        "tales1_ephyra_costume_reef",
+        "tales1_phorcys_costume_warrior_god",
+        "tales1_thalassa_costume_crystals",
+        "tales1_sharkhai_costume_butcher",
+        "tales1_mulgog_costume_bard",
+        "tales1_bagreg_costume_scout",
+        "shark_haamuhai",
+        "shark_sharby"
       ]
     },
     "lottery_hero_kalevala": {
@@ -829,8 +885,8 @@
     },
     "lottery_hero_halloween": {
       "featuredHeroes": [
-        "halloween_edwin_costume_mafia",
         "halloween_hortensia",
+        "halloween_edwin_costume_mafia",
         "halloween_alucard_costume_mafia"
       ],
       "AssociatedFamilies": [
@@ -881,7 +937,10 @@
         "halloween_goopy",
         "halloween_jack",
         "vampire_lord",
-        "fleur_eumachius"
+        "fleur_eumachius",
+        "halloween_vanda_costume_mafia",
+        "halloween_miriam_and_midnight",
+        "vampire_king_costume_mafia"
       ]
     },
     "lottery_hero_christmas": {
@@ -1044,9 +1103,9 @@
         "ronin"
       ],
       "featuredHeroes": [
-        "ronin_hiyori",
-        "ninja_cobalt_costume_tempest",
-        "ronin_kageyama_nagato"
+        "ronin_kitou_sayomi",
+        "ninja_garnet_costume_flame",
+        "ronin_hiyori"
       ],
       "Searchid": "TowerNinja"
     },

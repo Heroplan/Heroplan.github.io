@@ -52,7 +52,7 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_beach_party": "海滩派对召唤",
         "lottery.title.lottery_hero_kalevala": "卡勒瓦拉召唤",
         "lottery.title.lottery_hero_halloween": "万圣节召唤",
-        "lottery.title.seasonalpremiumsummon": "血色召唤",
+        "lottery.title.lottery_seasonal_premium_halloween": "血色召唤",
         "lottery.title.lottery_hero_christmas": "圣诞节召唤",
         "lottery.title.lottery_featured_event_opera": "歌剧之谜召唤",
         "lottery.title.lottery_featured_event_gargoyles2": "石像鬼圣所召唤",
@@ -72,6 +72,7 @@ const lotteryTitles = {
         "lottery.title.titanhuntersummon": "泰坦猎手召唤",
         "lottery.title.lottery_featured_event_farmland": "英勇植物召唤",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "幸运召唤",
+        "lottery.title.lottery_seasonal_premium_beach_party": "汐阳派对召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -125,7 +126,7 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_beach_party": "海灘派對召喚",
         "lottery.title.lottery_hero_kalevala": "卡勒瓦拉召喚",
         "lottery.title.lottery_hero_halloween": "萬聖節召喚",
-        "lottery.title.seasonalpremiumsummon": "腥紅召喚",
+        "lottery.title.lottery_seasonal_premium_halloween": "腥紅召喚",
         "lottery.title.lottery_hero_christmas": "聖誕節召喚",
         "lottery.title.lottery_featured_event_opera": "歌劇秘辛召喚",
         "lottery.title.lottery_featured_event_gargoyles2": "石像鬼聖殿召喚",
@@ -145,6 +146,7 @@ const lotteryTitles = {
         "lottery.title.titanhuntersummon": "泰坦獵人召喚",
         "lottery.title.lottery_featured_event_farmland": "警戒蔬菜召唤",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "鴻運召喚",
+        "lottery.title.lottery_seasonal_premium_beach_party": "日灣派對召唤",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -198,7 +200,7 @@ const lotteryTitles = {
         "lottery.title.lottery_hero_beach_party": "Beach Party Summon",
         "lottery.title.lottery_hero_kalevala": "Kalevala Summon",
         "lottery.title.lottery_hero_halloween": "Halloween Summon",
-        "lottery.title.seasonalpremiumsummon": "Sanguine Summon",
+        "lottery.title.lottery_seasonal_premium_halloween": "Sanguine Summon",
         "lottery.title.lottery_hero_christmas": "Christmas Summon",
         "lottery.title.lottery_featured_event_opera": "Secrets of the Opera Summon",
         "lottery.title.lottery_featured_event_gargoyles2": "Sanctuary of Gargoyles Summon",
@@ -218,6 +220,7 @@ const lotteryTitles = {
         "lottery.title.titanhuntersummon": "Titan Hunter Summon",
         "lottery.title.lottery_featured_event_farmland": "Vigilant Vegetables Summon",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "Fortune Summon",
+        "lottery.title.lottery_seasonal_premium_beach_party": "Sunbay Party Summon",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
@@ -435,7 +438,7 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
                 bulk30: bulk30 || null,
             };
 
-            if (pool.id === 'lottery_hero_lunar_new_year' || pool.id === 'lottery_featured_event_festival') {
+            if (pool.id === 'lottery_featured_event_festival') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 2;
             }
             if (pool.id === 'lottery_season_atlantis') {// || pool.id === 'lottery_hero_halloween') {
@@ -472,7 +475,7 @@ function selectWeightedIndex(weights) {
  */
 function getPoolDisplayName(poolConfig) {
     if (!poolConfig) return '';
-    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon'];
+    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon', 'SeasonalPremiumSummon'];
     let titleKey = '';
     if (poolConfig.productType && specialProductTypes.includes(poolConfig.productType)) {
         titleKey = `lottery.title.${poolConfig.id.toLowerCase()}`;

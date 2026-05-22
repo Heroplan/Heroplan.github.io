@@ -1309,9 +1309,9 @@
     },
     {
         "productType": "SeasonalPremiumSummon_Lunar_New_Year",
-        "id": "lottery_seasonal_premium_lunar_new_year_2026",
-        "banner": "event_lotterybanner_premium_lunar_new_year_2026",
-        "lotterybg": "event_lotterybg_premium_lunar_new_year_2026",
+        "id": "lottery_seasonal_premium_lunar_new_year",
+        "banner": "event_lotterybanner_premium_lunar_new_year",
+        "lotterybg": "event_lotterybg_premium_lunar_new_year",
         "gemPrice": 450,
         "amount": 1,
         "uiPriority": 137,
@@ -1340,9 +1340,9 @@
     },
     {
         "productType": "SeasonalPremiumSummon_Lunar_New_Year",
-        "id": "lottery_seasonal_premium_lunar_new_year_2026_bulk",
+        "id": "lottery_seasonal_premium_lunar_new_year_bulk",
         "gemPrice": 3900,
-        "sourceProductId": "lottery_seasonal_premium_lunar_new_year_2026",
+        "sourceProductId": "lottery_seasonal_premium_lunar_new_year",
         "amount": 10,
         "summonSpiritTokenId": "lottery_seasonal_summon_spirit_lunar_new_year"
     },
@@ -1443,34 +1443,30 @@
         "lotterybg": "event_lotterybg_beach_party",
         "gemPrice": 300,
         "amount": 1,
-        "uiPriority": 60,
-        "advertisedHero": "beachparty_andy_jay",
+        "uiPriority": 168,
         "associatedEvent": "BeachParty",
+        "perfectSummon": "seasonal_perfect_10",
+        "linkedOrigins": [
+            "BeachParty",
+            "Summer"
+        ],
         "bucketWeights": [
             568,
             208,
             9,
-            47,
-            19,
-            1,
+            0,
+            0,
+            0,
             0,
             0,
             13,
-            95,
-            38,
-            2
+            142,
+            57,
+            3
         ],
-        "perfectSummon": "seasonal_perfect_10",
-        "hasMysteryHeroBonusRoll": true,
-        "linkedOrigins": [
-            "Summer"
-        ],
-        "featuredNonCostumedHeroes": [
-            "beachparty_andy_jay",
-            "beachparty_serena",
-            "beachparty_flip_costume_donut"
-        ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "premiumSummonProductId": "lottery_seasonal_premium_beach_party",
+        "spiritGainFromSingleSummon": 10
     },
     {
         "productType": "EpicHeroSummon",
@@ -1478,12 +1474,34 @@
         "gemPrice": 2600,
         "sourceProductId": "lottery_hero_beach_party",
         "amount": 10,
-        "featuredNonCostumedHeroes": [
-            "beachparty_andy_jay",
-            "beachparty_serena",
-            "beachparty_flip_costume_donut"
+        "availableEventCostumesAreFeatured": false,
+        "premiumSummonProductId": "lottery_seasonal_premium_beach_party",
+        "spiritGainFromSingleSummon": 10
+    },
+    {
+        "productType": "SeasonalPremiumSummon",
+        "id": "lottery_seasonal_premium_beach_party",
+        "banner": "lottery_seasonal_premium_beach_party",
+        "lotterybg": "lottery_seasonal_premium_beach_party",
+        "gemPrice": 450,
+        "amount": 1,
+        "uiPriority": 137,
+        "bucketWeights": [
+            710,
+            265,
+            19,
+            6
         ],
-        "availableEventCostumesAreFeatured": false
+        "seasonalEventId": "BeachParty2026",
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_beach_party"
+    },
+    {
+        "productType": "SeasonalPremiumSummon",
+        "id": "lottery_seasonal_premium_beach_party_bulk",
+        "gemPrice": 3900,
+        "sourceProductId": "lottery_seasonal_premium_beach_party",
+        "amount": 10,
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_beach_party"
     },
     {
         "productType": "EpicHeroSummon",

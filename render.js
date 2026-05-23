@@ -688,8 +688,9 @@ function escapeRegExp(str) {
  * @returns {{regex: RegExp, protectionValues: string[], replacer: function}}
  */
 function getHighlightingTools(lang, type) {
-    // 统一将 'zh-CN', 'zh-TW' 等处理为 'zh'
-    const langKey = (lang === 'en') ? 'en' : 'zh';
+    // 统一将其它语言处理为 'en'
+    const isChinese = lang === 'cn' || lang === 'tc';
+    const langKey = isChinese ? 'zh' : 'en';
     const typeKey = type || 'common';
     const cacheKey = `${langKey}_${typeKey}`;
 

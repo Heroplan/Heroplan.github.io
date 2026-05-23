@@ -52,106 +52,6 @@ const redeemcodes = [
         ]
     },
     {
-        "code": "SHAREDCOMPASSION",
-        "rewards": [
-            {
-                "img": "imgs/reedcode_reward/energy_alliance_full.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/profile_avatar.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/titan_battle_giant_harpoon.webp",
-                "num": 10
-            },
-            {
-                "img": "imgs/reedcode_reward/trainer_dragon_rainbow_novice.webp",
-                "num": 5
-            }
-        ]
-    },
-    {
-        "code": "8K4YAMOTHA",
-        "rewards": [
-            {
-                "img": "imgs/coins/s1.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/energy_pve_full.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/refill_food_500k.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/loot_ticket.webp",
-                "num": 3
-            },
-            {
-                "img": "imgs/reedcode_reward/dragon_s1_coin.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/energy_dragon_pve_full.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/dragon_refill_food_500k.webp",
-                "num": 1
-            }
-        ]
-    },
-    {
-        "code": "ARCHON6KYT",
-        "rewards": [
-            {
-                "img": "imgs/reedcode_reward/profile_avatar.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/coins/shadow.webp",
-                "num": 50
-            },
-            {
-                "img": "imgs/reedcode_reward/trainer_rainbow.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/refill_food_500k.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/refill_iron_500k.webp",
-                "num": 1
-            }
-        ]
-    },
-    {
-        "code": "EMPIREOFTHEHORSE",
-        "rewards": [
-            {
-                "img": "imgs/coins/s1.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/energy_pve_full.webp",
-                "num": 1
-            },
-            {
-                "img": "imgs/reedcode_reward/tornado.webp",
-                "num": 8
-            },
-            {
-                "img": "imgs/reedcode_reward/super_mana_potion.webp",
-                "num": 8
-            }
-        ]
-    },
-    {
         "code": "SEEYOUNEXTTIME ",
         "rewards": [
             {
@@ -160,7 +60,7 @@ const redeemcodes = [
             },
             {
                 "img": "imgs/coins/mercenary_war.webp",
-                "num": 1
+                "num": 50
             },
             {
                 "img": "imgs/reedcode_reward/refill_food_500k.webp",

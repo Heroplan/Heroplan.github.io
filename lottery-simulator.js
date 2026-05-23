@@ -244,6 +244,19 @@ let lotteryTitleDict = {}; // 用于存储当前语言的标题字典
 let summonPoolDetails = {}; // 用于存储奖池的详细配置
 let bonusTranslations = {};
 
+/**
+ * 根据奖池配置返回允许的最大 costume_id
+ * @param {object} poolConfig - 奖池配置对象
+ * @returns {number} 允许的最大 costume_id（包含该值），默认 Infinity 表示无限制
+ */
+function getMaxAllowedCostumeId(poolConfig) {
+    const restrictedSeasonPools = ['lottery_season_atlantis', 'lottery_season_valhalla'];
+    if (restrictedSeasonPools.includes(poolConfig.id)) {
+        return 1;
+    }
+    return Infinity;
+}
+
 // --- 初始化与数据处理 ---
 
 /**
@@ -766,6 +779,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
     // 在 map 之前获取 extraAssociatedFamilies 数组（小写）
     const extraFamilies = (poolConfig.extraAssociatedFamilies || []).map(f => String(f).toLowerCase());
+    const maxCostumeId = getMaxAllowedCostumeId(poolConfig);
 
     return initialPool.map(baseHero => {
         if (poolConfig.productType === 'MimicSummon') {
@@ -787,20 +801,32 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
         let selectedVersion;
         if (isExtraFamily) {
-            // 限制：只允许 costume_id < 2 的版本，并取其中 costume_id 最大的
-            const allowedVersions = allVersionsInPool.filter(v => v.costume_id < 2);
+            // extraAssociatedFamilies 原本限制 costume_id < 2，现在同时应用赛季限制（取交集）
+            let allowedVersions = allVersionsInPool.filter(v => v.costume_id < 2);
+            if (maxCostumeId < Infinity) {
+                allowedVersions = allowedVersions.filter(v => v.costume_id <= maxCostumeId);
+            }
             if (allowedVersions.length === 0) {
-                selectedVersion = baseHero; // 降级，理论上不会发生
+                selectedVersion = baseHero;
             } else {
                 selectedVersion = allowedVersions.reduce((latest, current) => {
                     return (current.costume_id > latest.costume_id) ? current : latest;
                 }, allowedVersions[0]);
             }
         } else {
-            // 原有逻辑：取最新版本（costume_id 最大）
-            selectedVersion = allVersionsInPool.reduce((latest, current) => {
-                return (current.costume_id > latest.costume_id) ? current : latest;
-            }, allVersionsInPool[0]);
+            // 普通情况：先应用赛季限制（如果有限制），再取最新版本
+            let validVersions = allVersionsInPool;
+            if (maxCostumeId < Infinity) {
+                validVersions = validVersions.filter(v => v.costume_id <= maxCostumeId);
+            }
+            if (validVersions.length === 0) {
+                // 如果没有符合 costume_id 限制的版本，降级使用 baseHero（可能是旧版，但通常不会发生）
+                selectedVersion = baseHero;
+            } else {
+                selectedVersion = validVersions.reduce((latest, current) => {
+                    return (current.costume_id > latest.costume_id) ? current : latest;
+                }, validVersions[0]);
+            }
         }
         return selectedVersion;
     });
@@ -922,10 +948,12 @@ function getAllHeroesInPool(poolConfig) {
     }
 
     let allPossibleHeroes = [];
+    const maxCostumeId = getMaxAllowedCostumeId(poolConfig);
+    
     if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
         const heroesFromFeaturedList = poolConfig.featuredHeroes
             .map(heroId => state.heroesByIdMap.get(heroId))
-            .filter(Boolean);
+            .filter(hero => hero && hero.costume_id <= maxCostumeId); // 限制 costume_id
         allPossibleHeroes.push(...heroesFromFeaturedList);
     }
 
@@ -935,7 +963,7 @@ function getAllHeroesInPool(poolConfig) {
     if (poolConfig.entitiesToChooseFrom && Array.isArray(poolConfig.entitiesToChooseFrom)) {
         const choosableEntities = poolConfig.entitiesToChooseFrom
             .map(heroId => state.heroesByIdMap.get(heroId))
-            .filter(Boolean);
+            .filter(hero => hero && hero.costume_id <= maxCostumeId); // 限制 costume_id
         allPossibleHeroes.push(...choosableEntities);
     }
 

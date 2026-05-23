@@ -248,6 +248,8 @@ function getIconForFilter(filterType, optionValue) {
                 '英姿': 'stylish',
                 '玻璃': 'glass',
                 '卡通': 'toon',
+                '有型': 'stylish',
+                '公仔': 'toon',
                 'stylish': 'stylish',
                 'glass': 'glass',
                 'toon': 'toon',

@@ -52,17 +52,54 @@ function getSkinInfo(hero) {
         }
     }
 
-    const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-    const skinMatch = name.match(skinPattern);
+    if (hero.costume_id !== 0) {
+        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
+        const skinMatch = name.match(skinPattern);
+        let costumeId = hero.costume_id;
+        if (hero.family === 'classic') {
+            if (hero.star === 3 && costumeId > 1) {
+                costumeId = costumeId + 1;
+            }
+        }
 
-    if (skinMatch && skinMatch[1] && hero.costume_id !== 0) {
-        const potentialSkin = skinMatch[1].toLowerCase();
-        if (potentialSkin.match(/^c\d+$/) || ['glass', 'toon', 'stylish', '卡通', '玻璃', '英姿'].includes(potentialSkin)) {
-            return {
-                skinIdentifier: skinMatch[1],
-                baseName: name.substring(0, name.length - skinMatch[0].length).trim()
+        if (hero.family != 'classic') {
+            if (costumeId === 2) {
+                costumeId = 3;
+            }
+        }
+
+        let classicMap;
+        if (state.currentLang === 'cn') {
+            classicMap = {
+                1: 'C1',
+                2: 'C2',
+                3: '卡通',
+                4: '玻璃',
+                5: '英姿'
+            };
+        } else if (state.currentLang === 'tc') {
+            classicMap = {
+                1: 'C1',
+                2: 'C2',
+                3: '公仔',
+                4: '玻璃',
+                5: '有型'
+            };
+        } else {
+            classicMap = {
+                1: 'C1',
+                2: 'C2',
+                3: 'Toon',
+                4: 'Glass',
+                5: 'Stylish'
             };
         }
+        
+        let heroSkinIdentifier = classicMap[costumeId] || null;
+        return {
+            skinIdentifier: heroSkinIdentifier,
+            baseName: name.substring(0, name.length - skinMatch[0].length).trim()
+        };
     }
     return { skinIdentifier: null, baseName: name };
 }
@@ -86,7 +123,7 @@ function getCostumeIconName(hero) {
             costumeId = 3;
         }
     }
-
+    state.currentLang
     const classicMap = {
         1: 'c1',
         2: 'c2',

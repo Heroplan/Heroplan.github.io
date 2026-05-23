@@ -9,7 +9,7 @@ const lotteryTitles = {
         "lottery.title.astralelvessummon": "星体召唤",
         "lottery.title.lottery_black_default": "黑色星期五召唤",
         "lottery.title.challengeeventsummon": "活动召唤",
-        "lottery.title.costumesummon": "服装召唤",
+        "lottery.title.lottery_costume_default": "经典服装召唤",
         "lottery.title.covenantsummon": "盟约召唤",
         "lottery.title.dailysummon": "每日召唤",
         "lottery.title.elementaldragonsummon": "元素巨龙召唤",
@@ -73,6 +73,7 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_farmland": "英勇植物召唤",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "幸运召唤",
         "lottery.title.lottery_seasonal_premium_beach_party": "汐阳派对召唤",
+        "lottery.title.lottery_costume_wardrobe2": "华丽服装召唤",
     },
     "tc": {
         "lottery.title.lottery_black_7th_birthday": "生日召喚",
@@ -83,7 +84,7 @@ const lotteryTitles = {
         "lottery.title.astralelvessummon": "星界召喚",
         "lottery.title.lottery_black_default": "黑色星期五召喚",
         "lottery.title.challengeeventsummon": "活動召喚",
-        "lottery.title.costumesummon": "服裝召喚",
+        "lottery.title.lottery_costume_default": "經典時裝召喚",
         "lottery.title.covenantsummon": "聖約召喚",
         "lottery.title.dailysummon": "每日召喚",
         "lottery.title.elementaldragonsummon": "元素巨龍召喚",
@@ -147,6 +148,7 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_farmland": "警戒蔬菜召唤",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "鴻運召喚",
         "lottery.title.lottery_seasonal_premium_beach_party": "日灣派對召唤",
+        "lottery.title.lottery_costume_wardrobe2": "迷人時裝召喚",
     },
     "en": {
         "lottery.title.lottery_black_7th_birthday": "Birthday Summon",
@@ -157,7 +159,7 @@ const lotteryTitles = {
         "lottery.title.astralelvessummon": "Astral Summon",
         "lottery.title.lottery_black_default": "Black Friday Summon",
         "lottery.title.challengeeventsummon": "Event Summon",
-        "lottery.title.costumesummon": "Costume Summon",
+        "lottery.title.lottery_costume_default": "Classic Costume Summon",
         "lottery.title.covenantsummon": "Covenant Summon",
         "lottery.title.dailysummon": "Daily Summon",
         "lottery.title.elementaldragonsummon": "Elemental Dragon Summon",
@@ -221,6 +223,7 @@ const lotteryTitles = {
         "lottery.title.lottery_featured_event_farmland": "Vigilant Vegetables Summon",
         "lottery.title.seasonalpremiumsummon_lunar_new_year": "Fortune Summon",
         "lottery.title.lottery_seasonal_premium_beach_party": "Sunbay Party Summon",
+        "lottery.title.lottery_costume_wardrobe2": "Charming Costume Summon",
     }
 };
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
@@ -475,7 +478,7 @@ function selectWeightedIndex(weights) {
  */
 function getPoolDisplayName(poolConfig) {
     if (!poolConfig) return '';
-    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon', 'SeasonalPremiumSummon'];
+    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon', 'SeasonalPremiumSummon', 'CostumeSummon'];
     let titleKey = '';
     if (poolConfig.productType && specialProductTypes.includes(poolConfig.productType)) {
         titleKey = `lottery.title.${poolConfig.id.toLowerCase()}`;
@@ -893,13 +896,26 @@ function getAllHeroesInPool(poolConfig) {
     }
 
     if (poolConfig.productType === 'CostumeSummon') {
+        const associatedFamilies = (poolConfig.AssociatedFamilies && Array.isArray(poolConfig.AssociatedFamilies))
+            ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
+            : ['classic'];
+
+        const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
+
         const latestCostumes = new Map();
         state.allHeroes.forEach(hero => {
-            if (hero.family === 'classic' && hero.costume_id > 0) {
-                const existing = latestCostumes.get(hero.english_name);
-                if (!existing || hero.costume_id > existing.costume_id) {
-                    latestCostumes.set(hero.english_name, hero);
-                }
+            const heroFamily = String(hero.family || '').toLowerCase();
+            // 1. 家族匹配
+            if (!associatedFamilies.includes(heroFamily)) return;
+            // 2. 必须是服装（costume_id > 0）
+            if (hero.costume_id <= 0) return;
+            // 3. 如果是 wardrobe2 奖池，只保留 costume_id === 2
+            if (isWardrobe2 && hero.costume_id !== 2) return;
+
+            const existing = latestCostumes.get(hero.english_name);
+            // 保留同一英雄的最新服装（通常 costume_id 越大越新）
+            if (!existing || hero.costume_id > existing.costume_id) {
+                latestCostumes.set(hero.english_name, hero);
             }
         });
         return Array.from(latestCostumes.values());
@@ -1591,13 +1607,22 @@ async function performSummon(count) {
     let costumePool = [];
 
     if (isCostumeSummon) {
+        const associatedFamilies = (poolConfig.AssociatedFamilies && Array.isArray(poolConfig.AssociatedFamilies))
+            ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
+            : ['classic'];
+
+        const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
+
         const latestCostumes = new Map();
         state.allHeroes.forEach(hero => {
-            if (hero.family === 'classic' && hero.costume_id > 0) {
-                const existing = latestCostumes.get(hero.english_name);
-                if (!existing || hero.costume_id > existing.costume_id) {
-                    latestCostumes.set(hero.english_name, hero);
-                }
+            const heroFamily = String(hero.family || '').toLowerCase();
+            if (!associatedFamilies.includes(heroFamily)) return;
+            if (hero.costume_id <= 0) return;
+            if (isWardrobe2 && hero.costume_id !== 2) return;
+
+            const existing = latestCostumes.get(hero.english_name);
+            if (!existing || hero.costume_id > existing.costume_id) {
+                latestCostumes.set(hero.english_name, hero);
             }
         });
         costumePool = Array.from(latestCostumes.values());

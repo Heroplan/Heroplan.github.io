@@ -491,6 +491,62 @@
         ]
     },
     {
+        "productType": "CostumeSummon",
+        "id": "lottery_costume_wardrobe2",
+        "banner": "event_lotterybanner_costume_wardrobe2",
+        "lotterybg": "event_lotterybg_costume_wardrobe2",
+        "gemPrice": 350,
+        "amount": 1,
+        "uiPriority": 80,
+        "advertisedHero": "oriental_female_mystic_costume_scribe",
+        "bonusChest": "costume_ascension",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 9,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            12,
+            13
+        ],
+        "hasMysteryHeroBonusRoll": true,
+        "basicCostumeItemRarityWeights": [
+            0,
+            0,
+            710,
+            265,
+            12
+        ],
+        "featuredCostumeItemRarityWeights": [
+            0,
+            0,
+            0,
+            0,
+            13
+        ]
+    },
+    {
+        "productType": "CostumeSummon",
+        "id": "lottery_costume_wardrobe2_bulk",
+        "gemPrice": 3000,
+        "sourceProductId": "lottery_costume_wardrobe2",
+        "amount": 10,
+        "basicCostumeItemRarityWeights": [
+            0,
+            0,
+            710,
+            265,
+            12
+        ],
+        "featuredCostumeItemRarityWeights": [
+            0,
+            0,
+            0,
+            0,
+            13
+        ]
+    },
+    {
         "productType": "TitanHunterSummon",
         "id": "lottery_titan_hunter_default",
         "banner": "event_lotterybanner_titan_hunter_summon",
@@ -1481,8 +1537,8 @@
     {
         "productType": "SeasonalPremiumSummon",
         "id": "lottery_seasonal_premium_beach_party",
-        "banner": "lottery_seasonal_premium_beach_party",
-        "lotterybg": "lottery_seasonal_premium_beach_party",
+        "banner": "event_lotterybanner_premium_beach_party",
+        "lotterybg": "event_lotterybg_premium_beach_party",
         "gemPrice": 450,
         "amount": 1,
         "uiPriority": 137,

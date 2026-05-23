@@ -1630,9 +1630,11 @@ html:not(.dark-theme) .color-text-outlined {
   z-index: 1100;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  max-height: 300px;
   min-width: 150px
 }
+
 
 #lang-options.hidden {
   display: none !important
@@ -7003,6 +7005,8 @@ html.dark-theme .autocomplete-item.selected {
   align-items: center;
   gap: 5px;
   /* 间距 */
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 /* 语言选择器样式 */

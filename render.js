@@ -298,7 +298,7 @@ function renderTable(heroes) {
 
                 // ▼▼▼ 移除服装后缀 ▼▼▼
                 // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
-                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|皮肤|皮膚)(?:\]|\))?\s*$/i;
+                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|公仔|有型)(?:\]|\))?\s*$/i;
                 displayName = displayName.replace(costumeSuffixRegex, '').trim();
 
                 content = displayName || '';

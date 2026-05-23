@@ -311,6 +311,11 @@ async function loadData(lang) {
         langSelector.value = savedLang;
     }
     try {
+        // 新增：如果 lang 是 langs 中的某一项，则回退为 'en'
+        if (langs.includes(lang)) {
+            lang = 'en';
+        }
+        
         const response = await fetch(`./data_${lang}.json?v=${new Date().getTime()}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

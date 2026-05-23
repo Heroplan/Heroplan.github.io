@@ -129,6 +129,13 @@ function populateFilters() {
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';
         const sortOptions = state.currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
 
+        const langs = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
+        let lang = state.currentLang;
+        // 新增：如果 lang 是 langs 中的某一项（即非英语），则回退为 'en'
+        if (langs.includes(lang)) {
+            lang = 'en';
+        }
+
         if (key.startsWith('skillTag_')) {
             const orderMap = { skillTag_base: skillTagOrder_base, skillTag_special: skillTagOrder_special, skillTag_buff: skillTagOrder_buff, skillTag_debuff: skillTagOrder_debuff };
             const sortOrder = orderMap[key];
@@ -150,10 +157,10 @@ function populateFilters() {
                 });
             }
         } else if (key === 'speed') {
-            const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[state.currentLang];
+            const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[lang];
             if (speedOrder) values.sort((a, b) => speedOrder.indexOf(a) - speedOrder.indexOf(b));
         } else if (key === 'color') {
-            const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[state.currentLang];
+            const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[lang];
             if (colorOrder) values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
         } else if (key === 'family' || key === 'source') {
             values.sort((a, b) => {

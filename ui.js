@@ -84,9 +84,71 @@ const uiElements = {
  */
 function applyLanguage(lang) {
     // 1. 设置 HTML 语言属性
-    if (lang === 'cn') document.documentElement.lang = 'zh-CN';
-    else if (lang === 'tc') document.documentElement.lang = 'zh-TW';
-    else document.documentElement.lang = 'en';
+    switch (lang) {
+        case 'cn':
+            document.documentElement.lang = 'zh-CN';
+            break;
+        case 'tc':
+            document.documentElement.lang = 'zh-HK';
+            break;
+        case 'en':
+            document.documentElement.lang = 'en';
+            break;
+        case 'ja':
+            document.documentElement.lang = 'ja';
+            break;
+        case 'ko':
+            document.documentElement.lang = 'ko';
+            break;
+        case 'fr':
+            document.documentElement.lang = 'fr';
+            break;
+        case 'de':
+            document.documentElement.lang = 'de';
+            break;
+        case 'es':
+            document.documentElement.lang = 'es';
+            break;
+        case 'pt':
+            document.documentElement.lang = 'pt';
+            break;
+        case 'it':
+            document.documentElement.lang = 'it';
+            break;
+        case 'ru':
+            document.documentElement.lang = 'ru';
+            break;
+        case 'ar':
+            document.documentElement.lang = 'ar';
+            break;
+        case 'tr':
+            document.documentElement.lang = 'tr';
+            break;
+        case 'pl':
+            document.documentElement.lang = 'pl';
+            break;
+        case 'nl':
+            document.documentElement.lang = 'nl';
+            break;
+        case 'sv':
+            document.documentElement.lang = 'sv';
+            break;
+        case 'da':
+            document.documentElement.lang = 'da';
+            break;
+        case 'no':
+            document.documentElement.lang = 'no';
+            break;
+        case 'fi':
+            document.documentElement.lang = 'fi';
+            break;
+        case 'id':
+            document.documentElement.lang = 'id';
+            break;
+        default:
+            document.documentElement.lang = 'en';
+            break;
+    }
 
     document.body.setAttribute('data-lang', lang);
 

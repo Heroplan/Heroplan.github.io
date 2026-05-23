@@ -2,7 +2,7 @@
 
 // --- 硬编码日期 (用于特殊筛选) ---
 const oneClickMaxDate = '2026-05-22';
-const purchaseCostumeDate = '2026-07-22';
+const purchaseCostumeDate = '2026-06-22';
 const soulExchange = {
     Date: '2026-05-28',
     ten: [

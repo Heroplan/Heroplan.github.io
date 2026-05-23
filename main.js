@@ -217,18 +217,138 @@ async function initializeApp() {
     const zfavsFromUrl = urlParams.get('zfavs');
     const favsFromUrl = urlParams.get('favs');
     const sharedTeamsFromUrl = urlParams.get('sharedTeams');
+
+    // 强制使用一次自动获取显示语言
+    const languageUpdated = getCookie('languageUpdated');
+    if (languageUpdated != '1') {
+        setCookie('language', '', '');
+        setCookie('languageUpdated', '1', '1');
+    }
+
     const languageCookie = getCookie('language');
 
-    let langToUse = 'cn';
+    let langToUse = 'en';
+
+    // 1. 优先使用 Cookie
     if (languageCookie && i18n[languageCookie]) {
         langToUse = languageCookie;
-    } else if (langFromUrl && i18n[langFromUrl]) {
-        langToUse = langFromUrl;
-    } else {
-        const browserLang = navigator.language.toLowerCase();
-        if (browserLang.includes('en')) langToUse = 'en';
-        else if (browserLang.includes('zh-tw') || browserLang.includes('zh-hk')) langToUse = 'tc';
     }
+
+    // 2. 其次使用 URL 参数
+    else if (langFromUrl && i18n[langFromUrl]) {
+        langToUse = langFromUrl;
+    }
+
+    // 3. 最后根据浏览器语言自动判断
+    else {
+        const browserLang = navigator.language.toLowerCase();
+
+        // 中文
+        if (browserLang.startsWith('zh')) {
+            if (
+                browserLang.includes('tw') ||
+                browserLang.includes('hk') ||
+                browserLang.includes('mo') ||
+                browserLang.includes('hant')
+            ) {
+                langToUse = 'tc';
+            } else {
+                langToUse = 'cn';
+            }
+        }
+
+        // 英文
+        else if (browserLang.startsWith('en')) {
+            langToUse = 'en';
+        }
+
+        // 日语
+        else if (browserLang.startsWith('ja')) {
+            langToUse = 'ja';
+        }
+
+        // 韩语
+        else if (browserLang.startsWith('ko')) {
+            langToUse = 'ko';
+        }
+
+        // 法语
+        else if (browserLang.startsWith('fr')) {
+            langToUse = 'fr';
+        }
+
+        // 德语
+        else if (browserLang.startsWith('de')) {
+            langToUse = 'de';
+        }
+
+        // 西班牙语
+        else if (browserLang.startsWith('es')) {
+            langToUse = 'es';
+        }
+
+        // 葡萄牙语
+        else if (browserLang.startsWith('pt')) {
+            langToUse = 'pt';
+        }
+
+        // 意大利语
+        else if (browserLang.startsWith('it')) {
+            langToUse = 'it';
+        }
+
+        // 俄语
+        else if (browserLang.startsWith('ru')) {
+            langToUse = 'ru';
+        }
+
+        // 阿拉伯语
+        else if (browserLang.startsWith('ar')) {
+            langToUse = 'ar';
+        }
+
+        // 土耳其语
+        else if (browserLang.startsWith('tr')) {
+            langToUse = 'tr';
+        }
+
+        // 波兰语
+        else if (browserLang.startsWith('pl')) {
+            langToUse = 'pl';
+        }
+
+        // 荷兰语
+        else if (browserLang.startsWith('nl')) {
+            langToUse = 'nl';
+        }
+
+        // 瑞典语
+        else if (browserLang.startsWith('sv')) {
+            langToUse = 'sv';
+        }
+
+        // 丹麦语
+        else if (browserLang.startsWith('da')) {
+            langToUse = 'da';
+        }
+
+        // 挪威语
+        else if (browserLang.startsWith('no')) {
+            langToUse = 'no';
+        }
+
+        // 芬兰语
+        else if (browserLang.startsWith('fi')) {
+            langToUse = 'fi';
+        }
+
+        // 印尼语
+        else if (browserLang.startsWith('id')) {
+            langToUse = 'id';
+        }
+    }
+
+    // 应用语言
     applyLanguage(langToUse);
 
     // 2. 加载核心数据

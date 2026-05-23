@@ -327,7 +327,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
     }
 
 
-    lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.cn;
+    lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.en;
     bonusTranslations = (i18n[state.currentLang] || i18n.cn).lottery_bonus_translations || {};
     processSummonData(allPoolsConfig, summonTypesConfig);
     renderActivityList();

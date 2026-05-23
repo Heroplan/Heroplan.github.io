@@ -500,6 +500,12 @@ const highlightDictionaries = {
             'Water damage': '[##elementblue]Water damage[#]',
             'Frost damage': '[##elementblue]Frost damage[#]',
             'Corrosive Frost': '[##elementblue]Corrosive Frost[#]',
+            'Stubborn': '[##elementred]Stubborn[#]',
+            'Uproots': '[##elementgreen]Uproots[#]',
+            'Uproot': '[##elementgreen]Uproot[#]',
+            'Harvests': '[##elementred]Harvests[#]',
+            'Harvest': '[##elementred]Harvest[#]',
+            
         },
         // 英文 effects 专属字典
         effects: {
@@ -629,7 +635,12 @@ const highlightDictionaries = {
             '冰霜傷害': '[##elementblue]冰霜傷害[#]',
             '腐蚀冰冻': '[##elementblue]腐蚀冰冻[#]',
             '腐蝕冰霜': '[##elementblue]腐蝕冰霜[#]',
-        },
+            '顽固': '[##elementred]顽固[#]',
+            '根除': '[##elementgreen]根除[#]',
+            '收割': '[##elementred]收割[#]',
+            '拔除': '[##elementgreen]拔除[#]',
+            '豐收': '[##elementred]豐收[#]',
+        }, 
         // 中文 effects 专属字典
         effects: {
             // 在这里添加 'zh' effects 专属词条

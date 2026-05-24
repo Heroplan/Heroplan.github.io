@@ -229,10 +229,11 @@ async function initializeApp() {
     const searchLang = getCookie('search_lang');
     const searchLanguageUpdated = getCookie('searchLanguageUpdated');
 
+    // 强制使用一次自动设置搜索语言
     // 条件：language 不是 cn、tc、en，且 search_lang 为 'current' 或不存在（null/undefined/空字符串）
     if (language && !['cn', 'tc', 'en'].includes(language) && (!searchLang || searchLang === 'current')) {
         if (searchLanguageUpdated !== '1') {
-            // 清除 search_lang cookie（设为空，过期时间设为过去）
+            // 清除 search_lang cookie（设为与当前语言一致）
             setCookie('search_lang', language, 365);
             // 设置标记，表示已执行过更新
             setCookie('searchLanguageUpdated', '1', 365);

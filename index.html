@@ -1068,14 +1068,14 @@
     // 动态生成友情链接卡片
     (function () {
         const links = [
-            { name: "Heroplan.io", url: "https://heroplan.io" },
-            { name: "Heroplan Data", url: "https://github.com/cvl75/heroplan_data" },
-            { name: "The Raven's Cave", url: "http://www.theravenscave.com" },
-            { name: "Fandom", url: "https://empiresandpuzzles.fandom.com/wiki" },
-            { name: "BBCamp", url: "https://bbcamp.info" },
-            { name: "Empuzzled", url: "https://empuzzled.com" },
-            { name: "ep-poland", url: "https://ep-poland.pl/" },
-            { name: "Empires & Puzzles Discord", url: "https://discord.gg/empires-puzzles" }
+            { name: "Heroplan.io", url: "https://heroplan.io", desc: "The founding website of the Heroplan project" },
+            { name: "Heroplan Data", url: "https://github.com/cvl75/heroplan_data", desc: "Data source for the Heroplan project" },
+            { name: "The Raven's Cave", url: "http://www.theravenscave.com", desc: "An excellent website used for a long time" },
+            { name: "Fandom", url: "https://empiresandpuzzles.fandom.com/wiki", desc: "Fandom Wiki" },
+            { name: "BBCamp", url: "https://bbcamp.info", desc: "The website of the calendar creator" },
+            { name: "Empuzzled", url: "https://empuzzled.com", desc: "A comprehensive encyclopedia website" },
+            { name: "ep-poland", url: "https://ep-poland.pl/", desc: "The website of the Polish translator of this site" },
+            { name: "Empires & Puzzles Discord", url: "https://discord.gg/empires-puzzles", desc: "Official Discord" }
         ];
 
         const gridContainer = document.getElementById('dynamic-links-grid');
@@ -1088,6 +1088,9 @@
                 anchor.textContent = link.name;
                 anchor.target = '_blank';
                 anchor.rel = 'noopener noreferrer';
+                if (link.desc) {
+                    anchor.title = link.desc;
+                }
                 card.appendChild(anchor);
                 gridContainer.appendChild(card);
             });

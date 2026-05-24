@@ -541,7 +541,9 @@ const highlightDictionaries = {
             'Uproots': '[##elementgreen]Uproots[#]',
             'Uproot': '[##elementgreen]Uproot[#]',
             'Harvests': '[##elementred]Harvests[#]',
-            'Harvest': '[##elementred]Harvest[#]',
+            'Harvest': '[##elementred]Harvest[#]', 
+            'Special Skills': '[##elementblue]Special Skills[#]',
+            'Special Skill': '[##elementblue]Special Skill[#]',
             
         },
         // 英文 effects 专属字典
@@ -677,6 +679,7 @@ const highlightDictionaries = {
             '收割': '[##elementred]收割[#]',
             '拔除': '[##elementgreen]拔除[#]',
             '豐收': '[##elementred]豐收[#]',
+            '特殊技能': '[##elementblue]特殊技能[#]',
         }, 
         // 中文 effects 专属字典
         effects: {

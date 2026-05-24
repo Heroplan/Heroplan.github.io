@@ -8,53 +8,41 @@
  * @returns {{skinIdentifier: string|null, baseName: string}} 包含皮肤标识符和基础名称的对象。
  */
 function getSkinInfo(hero) {
-    const name = hero.name || '';
-    if (!name) return { skinIdentifier: null, baseName: name };
+    let name = hero.name || '';
 
-    // ▼▼▼▼▼ 专门处理拟态兽的颜色后缀 ▼▼▼▼▼
-    const isMimic = name.includes('Mimic') || name.includes('拟态兽') || name.includes('模仿怪');
-    if (isMimic) {
-        const allowedSuffixes = ['ice', 'nature', 'dark', 'holy', 'fire'];
+    const searchLang = getCookie('search_lang');
+    const langCode = state.currentLang;
+    // 条件：searchLang 是 current时,加载官方英雄名字数据
+    // searchLang 是自定义时,前面已经加载并应用,直接使用name即可
+    if (searchLang === 'current') {
 
-        // 英文处理：没有括号的情况
-        if (state.currentLang === 'en') {
-            const parts = name.split(' ');
-            if (parts.length > 1) {
-                const lastWord = parts[parts.length - 1].toLowerCase();
-                if (allowedSuffixes.includes(lastWord)) {
-                    // 移除最右边的元素后缀
-                    const baseName = parts.slice(0, -1).join(' ');
-                    return { skinIdentifier: null, baseName: baseName.trim() };
-                }
-            }
+        if (!window.searchNameData || !window.searchNameData[langCode]) {
+            console.warn(`未找到 ${langCode} 语言的数据`);
+            return { skinIdentifier: null, baseName: name };
         }
-        // 中文处理：有括号的情况
-        else {
-            const openBracketIndex = name.indexOf('(');
-            const closeBracketIndex = name.lastIndexOf(')');
 
-            if (openBracketIndex !== -1 && closeBracketIndex !== -1 && closeBracketIndex > openBracketIndex) {
-                // 提取括号内的内容
-                const bracketContent = name.substring(openBracketIndex + 1, closeBracketIndex);
-                const parts = bracketContent.split(' ');
+        const langData = window.searchNameData[langCode];
 
-                // 检查最后一个词是否是颜色后缀
-                if (parts.length > 1) {
-                    const lastWord = parts[parts.length - 1].toLowerCase();
-                    if (allowedSuffixes.includes(lastWord)) {
-                        // 移除括号内的颜色后缀
-                        const newBracketContent = parts.slice(0, -1).join(' ');
-                        const baseName = name.substring(0, openBracketIndex + 1) + newBracketContent + ')';
-                        return { skinIdentifier: null, baseName: baseName.trim() };
-                    }
-                }
-            }
+        if (!hero.heroId) return { skinIdentifier: null, baseName: name };
+
+        // 使用部分匹配模式查找对应的翻译
+        // 查找所有以 hero.heroId 开头的键
+        const matchingKeys = Object.keys(langData).filter(key =>
+            hero.heroId.startsWith(key)
+        );
+
+        if (matchingKeys.length > 0) {
+            // 选择最长的匹配（最具体的匹配）
+            const bestMatch = matchingKeys.reduce((longest, current) =>
+                current.length > longest.length ? current : longest
+            );
+
+            // 应用翻译
+            name = langData[bestMatch];
         }
     }
 
     if (hero.costume_id !== 0) {
-        const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-        const skinMatch = name.match(skinPattern);
         let costumeId = hero.costume_id;
         if (hero.family === 'classic') {
             if (hero.star === 3 && costumeId > 1) {
@@ -69,7 +57,7 @@ function getSkinInfo(hero) {
         }
 
         let classicMap;
-        if (state.currentLang === 'cn') {
+        if (langCode === 'cn') {
             classicMap = {
                 1: 'C1',
                 2: 'C2',
@@ -77,7 +65,7 @@ function getSkinInfo(hero) {
                 4: '玻璃',
                 5: '英姿'
             };
-        } else if (state.currentLang === 'tc') {
+        } else if (langCode === 'tc') {
             classicMap = {
                 1: 'C1',
                 2: 'C2',
@@ -96,10 +84,7 @@ function getSkinInfo(hero) {
         }
         
         let heroSkinIdentifier = classicMap[costumeId] || null;
-        return {
-            skinIdentifier: heroSkinIdentifier,
-            baseName: name.substring(0, name.length - skinMatch[0].length).trim()
-        };
+        return { skinIdentifier: heroSkinIdentifier, baseName: name };
     }
     return { skinIdentifier: null, baseName: name };
 }
@@ -1026,8 +1011,8 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.AetherPower) {
         const framePath = 'imgs/Aether Power/frame.webp';
 
-        // 使用已有的 aetherPowerReverseMap 和逻辑来获取正确的图标文件名
-        const iconFileName = (aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower)
+        // 使用已有的 aether_powerReverseMap 和逻辑来获取正确的图标文件名
+        const iconFileName = (aether_powerReverseMap[String(hero.AetherPower).toLowerCase()] || hero.AetherPower)
             .toLowerCase()
 
         const iconPath = `imgs/Aether Power/${iconFileName}.webp`;
@@ -1412,7 +1397,7 @@ function renderDetailsInModal(hero, context = {}) {
                 <div class="details-info-line">
                     ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
                     ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
-                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aetherPowerReverseMap[hero.AetherPower] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
+                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aether_powerReverseMap[hero.AetherPower.toLowerCase()] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
                     ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}
                     ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}"><img src="imgs/coins/${sourceIconMap[sourceReverseMap[hero.source]]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${formatLocalDate(hero['Release date'])}</span>` : ''}

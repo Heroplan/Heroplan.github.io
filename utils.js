@@ -339,6 +339,7 @@ function applyOtherLanguageValues(targetLang) {
     const colorTranslation = buildTranslationMap('color');
     const classTranslation = buildTranslationMap('class');
     const speedTranslation = buildTranslationMap('speed');
+    const aether_powerTranslation = buildTranslationMap('aether_power');
 
     state.allHeroes.forEach(hero => {
         if (colorTranslation && hero.color && colorTranslation[hero.color]) {
@@ -349,6 +350,9 @@ function applyOtherLanguageValues(targetLang) {
         }
         if (speedTranslation && hero.speed && speedTranslation[hero.speed]) {
             hero.speed = speedTranslation[hero.speed];
+        }
+        if (aether_powerTranslation && hero.AetherPower && aether_powerTranslation[hero.AetherPower]) {
+            hero.AetherPower = aether_powerTranslation[hero.AetherPower];
         }
     });
 }
@@ -406,11 +410,17 @@ async function loadData(lang) {
         state.family_values = data.family_values;
 
         // 如果 savedLang 不为 current，则使用 window.searchNameData 进行名称替换
-        if (savedLang && savedLang !== 'current') {
-            await loadExtraNameData(savedLang);
-            applyCustomLanguageNames(savedLang);
-            // 新增：使用 base_values_dict_other 替换颜色、职业、速度
-            applyOtherLanguageValues(savedLang);
+        if (savedLang) {
+            if (savedLang === 'current'){
+                savedLang = state.currentLang;
+                await loadExtraNameData(savedLang);
+
+            } else {
+                await loadExtraNameData(savedLang);
+                applyCustomLanguageNames(savedLang);
+                // 新增：使用 base_values_dict_other 替换颜色、职业、速度
+                applyOtherLanguageValues(savedLang);
+            }
         }
 
         return true;

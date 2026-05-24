@@ -334,7 +334,7 @@
             </div>
             <div class="header-info-container">
                 <div class="header-info-content">
-                    <span>
+                    <span style="display: none;">
                         <span data-lang-key="poweredBy"></span>
                         <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">
                             <strong style="color: var(--md-sys-color-primary);">Heroplan.io</strong>
@@ -350,7 +350,7 @@
                         <span data-lang-key="translatedBy"></span>
                         <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
                     </span>
-                    <span>
+                    <span style="display: none;">
                         <span data-lang-key="guideToempuzzled"></span>
                         <a href="https://empuzzled.com" target="_blank" rel="noopener noreferrer">
                             <strong style="color: var(--md-sys-color-primary);">https://empuzzled.com</strong>
@@ -975,16 +975,123 @@
     <script src="./chat-simulator.js" defer></script>
     <script src="./import-export.js" defer></script>
     <script src="./main.js" defer></script>
+    <!-- 友情链接分组框区域 -->
+    <div class="friendship-links">
+        <p data-lang-key="friendshipThanks">感谢以下网站：</p>
+        <div class="links-grid" id="dynamic-links-grid">
+        </div>
+    </div>
 </body>
 <div id="animation-blocker-overlay"></div>
 
+<style>
+/* 友情链接分组框样式 */
+.friendship-links {
+    text-align: center;
+    margin-top: 8px;
+    padding: 16px 12px 12px 12px;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.friendship-links p {
+    margin: 0 0 16px 0;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: var(--md-sys-color-error);
+}
+
+.links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.link-card {
+    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary-container);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    padding: 8px 20px;
+    transition: all 0.2s ease;
+}
+
+.link-card:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-card a {
+    color: inherit; /* 继承父级颜色，即 --md-sys-color-on-primary-container */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.link-card a:hover {
+    text-decoration: underline;
+}
+
+/* 移动端自适应 */
+@media (max-width: 600px) {
+    .link-card {
+        padding: 6px 16px;
+    }
+    .link-card a {
+        font-size: 0.85rem;
+        white-space: normal;
+        word-break: keep-all;
+    }
+    .links-grid {
+        gap: 12px;
+    }
+}
+</style>
+
+<!-- 页脚 HTML 结构 -->
 <footer>
     <div>
-        <p><span data-lang-key="footerGameName">《帝国与谜题》</span><span
-                style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span> <span
-                data-lang-key="footerPlatform">英雄数据查询平台</span></p>
-        <p class="footer-credit" data-lang-key="footerCredit">© 2025 heroplan.github.io | 非官方资料站</p>
+        <p>
+            <span data-lang-key="footerGameName">《帝国与谜题》</span>
+            <span style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span>
+            <span data-lang-key="footerPlatform">英雄数据查询平台</span>
+        </p>
+        <p class="footer-credit" data-lang-key="footerCredit">© 2025-2026 heroplan.github.io | 非官方资料站</p>
     </div>
+
 </footer>
 
+<script>
+    // 动态生成友情链接卡片
+    (function () {
+        const links = [
+            { name: "Heroplan.io", url: "https://heroplan.io" },
+            { name: "Heroplan Data", url: "https://github.com/cvl75/heroplan_data" },
+            { name: "The Raven's Cave", url: "http://www.theravenscave.com" },
+            { name: "Fandom", url: "https://empiresandpuzzles.fandom.com/wiki" },
+            { name: "BBCamp", url: "https://bbcamp.info" },
+            { name: "Empuzzled", url: "https://empuzzled.com" },
+            { name: "ep-poland", url: "https://ep-poland.pl/" },
+            { name: "Empires & Puzzles Discord", url: "https://discord.gg/empires-puzzles" }
+        ];
+
+        const gridContainer = document.getElementById('dynamic-links-grid');
+        if (gridContainer) {
+            links.forEach(link => {
+                const card = document.createElement('div');
+                card.className = 'link-card';
+                const anchor = document.createElement('a');
+                anchor.href = link.url;
+                anchor.textContent = link.name;
+                anchor.target = '_blank';
+                anchor.rel = 'noopener noreferrer';
+                card.appendChild(anchor);
+                gridContainer.appendChild(card);
+            });
+        }
+    })();
+</script>
 </html>

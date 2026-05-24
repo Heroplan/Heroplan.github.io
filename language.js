@@ -350,6 +350,7 @@ const i18n = {
         showSkillTypesToggle: "启用",
         showCircleRayLabel: "英雄立绘中显示元素光效:",
         showCircleRayToggle: "启用",
+        friendshipThanks: "感谢以下网站：",
 
 
     },
@@ -657,6 +658,7 @@ const i18n = {
         showSkillTypesToggle: "啟用",
         showCircleRayLabel: "英雄立繪中顯示元素光效:",
         showCircleRayToggle: "啟用",
+        friendshipThanks: "感謝以下網站：",
 
     },
     en: {
@@ -963,6 +965,7 @@ const i18n = {
         showSkillTypesToggle: "Enable",
         showCircleRayLabel: "Show rays in Hero Avatar:",
         showCircleRayToggle: "Enable",
+        friendshipThanks: "Thanks to the following websites:",
     },
     pl: {
         metaDescription: "Najlepsza baza bohaterów dla graczy Empires & Puzzles. Szybko wyszukuj i porównuj szczegółowe statystyki, umiejętności specjalne, bonusy rodzinne i przewodniki strategiczne dla wszystkich bohaterów.",
@@ -1277,6 +1280,7 @@ const i18n = {
         registerSuccess: "Rejestracja udana! Możesz się zalogować.",
         logoutSuccess: "Wylogowano pomyślnie.",
         authError: "Błąd: ",
+        friendshipThanks: "Dziękujemy następującym stronom internetowym:",
     },
     ar: {
         metaDescription: "Heroplan هو قاعدة البيانات النهائية لأبطال Empires & Puzzles. ابحث بسرعة وقارن بين جميع بيانات الأبطال التفصيلية والمهارات الخاصة والمكافآت العائلية ومعلومات الإستراتيجية.",
@@ -1568,6 +1572,7 @@ const i18n = {
         showSkillTypesToggle: "تمكين",
         showCircleRayLabel: "إظهار الأشعة في صورة البطل:",
         showCircleRayToggle: "تمكين",
+        friendshipThanks: "شكرًا للمواقع التالية:",
     },
     da: {
         metaDescription: "Heroplan er den ultimative heltedatabase for Empires & Puzzles-spillere. Søg hurtigt og sammenlign detaljerede statistikker, specielle evner, familiegoder og strategiguider for alle helte.",
@@ -1859,6 +1864,7 @@ const i18n = {
         showSkillTypesToggle: "Aktivér",
         showCircleRayLabel: "Vis stråler i helteavatar:",
         showCircleRayToggle: "Aktivér",
+        friendshipThanks: "Tak til følgende websteder:",
     },
     nl: {
         metaDescription: "Heroplan is de ultieme heldendatabase voor Empires & Puzzles-spelers. Zoek snel en vergelijk gedetailleerde statistieken, speciale vaardigheden, familiebonussen en strategiegidsen voor alle helden.",
@@ -2150,6 +2156,7 @@ const i18n = {
         showSkillTypesToggle: "Inschakelen",
         showCircleRayLabel: "Toon stralen in heldenavatar:",
         showCircleRayToggle: "Inschakelen",
+        friendshipThanks: "Dank aan de volgende websites:",
     },
     fi: {
         metaDescription: "Heroplan on lopullinen sankaritietokanta Empires & Puzzles -pelaajille. Etsi nopeasti ja vertaile kaikkien sankarien yksityiskohtaisia tilastoja, erikoistaitoja, perhebonuksia ja strategiaoppaita.",
@@ -2441,6 +2448,7 @@ const i18n = {
         showSkillTypesToggle: "Käytä",
         showCircleRayLabel: "Näytä säteet sankarin avatarissa:",
         showCircleRayToggle: "Käytä",
+        friendshipThanks: "Kiitos seuraaville verkkosivustoille:",
     },
     fr: {
         metaDescription: "Heroplan est la base de données ultime de héros pour les joueurs d'Empires & Puzzles. Recherchez et comparez rapidement toutes les données détaillées des héros, compétences spéciales, bonus familiaux et guides stratégiques.",
@@ -2732,6 +2740,7 @@ const i18n = {
         showSkillTypesToggle: "Activer",
         showCircleRayLabel: "Afficher les rayons dans l'avatar du héros :",
         showCircleRayToggle: "Activer",
+        friendshipThanks: "Merci aux sites suivants :",
     },
     de: {
         metaDescription: "Heroplan ist die ultimative Heldendatenbank für Empires & Puzzles-Spieler. Durchsuchen und vergleichen Sie schnell detaillierte Daten, Spezialfähigkeiten, Familienboni und Strategieleitfäden für alle Helden.",
@@ -3023,6 +3032,7 @@ const i18n = {
         showSkillTypesToggle: "Aktivieren",
         showCircleRayLabel: "Strahlen im Heldenavatar anzeigen:",
         showCircleRayToggle: "Aktivieren",
+        friendshipThanks: "Danke an die folgenden Websites:",
     },
     id: {
         metaDescription: "Heroplan adalah database pahlawan terbaik untuk pemain Empires & Puzzles. Cari dan bandingkan dengan cepat semua data rinci pahlawan, keterampilan khusus, bonus keluarga, dan panduan strategi.",
@@ -3314,6 +3324,7 @@ const i18n = {
         showSkillTypesToggle: "Aktifkan",
         showCircleRayLabel: "Tampilkan sinar di Avatar Pahlawan:",
         showCircleRayToggle: "Aktifkan",
+        friendshipThanks: "Terima kasih kepada situs web berikut:",
     },
     it: {
         metaDescription: "Heroplan è il database definitivo degli eroi per i giocatori di Empires & Puzzles. Cerca e confronta rapidamente tutti i dati dettagliati degli eroi, abilità speciali, bonus familiari e guide strategiche.",
@@ -3605,6 +3616,7 @@ const i18n = {
         showSkillTypesToggle: "Attiva",
         showCircleRayLabel: "Mostra raggi nell'avatar dell'eroe:",
         showCircleRayToggle: "Attiva",
+        friendshipThanks: "Grazie ai seguenti siti web:",
     },
     ru: {
         metaDescription: "Heroplan — это идеальная база данных героев для игроков Empires & Puzzles. Быстро ищите и сравнивайте подробные данные о всех героях, особые навыки, семейные бонусы и стратегические руководства.",
@@ -3896,6 +3908,7 @@ const i18n = {
         showSkillTypesToggle: "Включить",
         showCircleRayLabel: "Показывать лучи в аватаре героя:",
         showCircleRayToggle: "Включить",
+        friendshipThanks: "Спасибо следующим веб-сайтам:",
     },
     ja: {
         metaDescription: "Heroplanは、Empires & Puzzlesプレイヤーのための究極のヒーローデータベースです。すべてのヒーローの詳細データ、特殊スキル、ファミリーボーナス、攻略情報をすばやく検索および比較できます。",
@@ -4187,6 +4200,7 @@ const i18n = {
         showSkillTypesToggle: "有効化",
         showCircleRayLabel: "ヒーローアバターに光線を表示:",
         showCircleRayToggle: "有効化",
+        friendshipThanks: "以下のサイトに感謝します：",
     },
     ko: {
         metaDescription: "Heroplan은 Empires & Puzzles 플레이어를 위한 최고의 영웅 데이터베이스입니다. 모든 영웅의 상세 데이터, 특수 스킬, 가족 보너스 및 공략 정보를 빠르게 검색하고 비교하세요.",
@@ -4478,6 +4492,7 @@ const i18n = {
         showSkillTypesToggle: "활성화",
         showCircleRayLabel: "영웅 아바타에 광선 표시:",
         showCircleRayToggle: "활성화",
+        friendshipThanks: "다음 웹사이트에 감사드립니다:",
     },
     no: {
         metaDescription: "Heroplan er den ultimate heltedatabasen for Empires & Puzzles-spillere. Søk raskt og sammenlign detaljerte data, spesialferdigheter, familiebonuser og strategiguider for alle helter.",
@@ -4769,6 +4784,7 @@ const i18n = {
         showSkillTypesToggle: "Aktiver",
         showCircleRayLabel: "Vis stråler i helteavatar:",
         showCircleRayToggle: "Aktiver",
+        friendshipThanks: "Takk til følgende nettsteder:",
     },
     pt: {
         metaDescription: "Heroplan é a base de dados de heróis definitiva para jogadores de Empires & Puzzles. Pesquise e compare rapidamente todos os dados detalhados dos heróis, habilidades especiais, bônus de família e guias de estratégia.",
@@ -5060,6 +5076,7 @@ const i18n = {
         showSkillTypesToggle: "Ativar",
         showCircleRayLabel: "Mostrar raios no avatar do herói:",
         showCircleRayToggle: "Ativar",
+        friendshipThanks: "Obrigado aos seguintes sites:",
     },
     es: {
         metaDescription: "Heroplan es la base de datos definitiva de héroes para jugadores de Empires & Puzzles. Busca y compara rápidamente todos los datos detallados de los héroes, habilidades especiales, bonificaciones familiares y guías estratégicas.",
@@ -5351,6 +5368,7 @@ const i18n = {
         showSkillTypesToggle: "Activar",
         showCircleRayLabel: "Mostrar rayos en el avatar del héroe:",
         showCircleRayToggle: "Activar",
+        friendshipThanks: "Gracias a los siguientes sitios web:",
     },
     sv: {
         metaDescription: "Heroplan är den ultimata hjältedatabasen för spelare av Empires & Puzzles. Sök snabbt och jämför detaljerad data, speciella färdigheter, familjebonusar och strategiguider för alla hjältar.",
@@ -5642,6 +5660,7 @@ const i18n = {
         showSkillTypesToggle: "Aktivera",
         showCircleRayLabel: "Visa strålar i hjälteavatar:",
         showCircleRayToggle: "Aktivera",
+        friendshipThanks: "Tack till följande webbplatser:",
     },
     tr: {
         metaDescription: "Heroplan, Empires & Puzzles oyuncuları için nihai kahraman veritabanıdır. Tüm kahramanların ayrıntılı verilerini, özel becerilerini, aile bonuslarını ve strateji rehberlerini hızla arayın ve karşılaştırın.",
@@ -5933,5 +5952,6 @@ const i18n = {
         showSkillTypesToggle: "Etkinleştir",
         showCircleRayLabel: "Kahraman Avatarında Işınları Göster:",
         showCircleRayToggle: "Etkinleştir",
+        friendshipThanks: "Aşağıdaki web sitelerine teşekkürler:",
     }
 }; 

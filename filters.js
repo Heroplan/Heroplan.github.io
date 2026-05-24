@@ -73,7 +73,7 @@ const skillTagOrder_debuff = ["状态-净化状态异常", "状态-阻止净化"
 function populateFilters() {
     // 这部分构建映射的逻辑不变，请保留
     state.allHeroes.forEach(hero => {
-        const skillInfo = hero.cn_skill_info || hero.jp_skill_info;
+        const skillInfo = hero.cn_skill_info;
         if (Array.isArray(skillInfo)) {
             skillInfo.forEach(categoryObject => {
                 const categoryName = Object.keys(categoryObject)[0];
@@ -110,7 +110,7 @@ function populateFilters() {
             const targetDataKey = dataKeyMap[key];
             const skillSet = new Set();
             state.allHeroes.forEach(hero => {
-                const skillInfo = hero.cn_skill_info || hero.jp_skill_info;
+                const skillInfo = hero.cn_skill_info;
                 if (Array.isArray(skillInfo)) {
                     skillInfo.forEach(categoryObject => {
                         if (categoryObject[targetDataKey]) {
@@ -129,11 +129,9 @@ function populateFilters() {
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';
         const sortOptions = state.currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
 
-        const langs = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
-        let lang = state.currentLang;
-        // 新增：如果 lang 是 langs 中的某一项（即非英语），则回退为 'en'
-        if (langs.includes(lang)) {
-            lang = 'en';
+        let lang = getCookie('search_lang');
+        if (lang === 'current'){
+            lang = state.currentLang;
         }
 
         if (key.startsWith('skillTag_')) {
@@ -157,10 +155,10 @@ function populateFilters() {
                 });
             }
         } else if (key === 'speed') {
-            const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[lang];
+            const speedOrder = speedOrderMap[lang];
             if (speedOrder) values.sort((a, b) => speedOrder.indexOf(a) - speedOrder.indexOf(b));
         } else if (key === 'color') {
-            const colorOrder = { cn: colorOrder_cn, tc: colorOrder_tc, en: colorOrder_en }[lang];
+            const colorOrder = colorOrderMap[lang];
             if (colorOrder) values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
         } else if (key === 'family' || key === 'source') {
             values.sort((a, b) => {
@@ -229,7 +227,8 @@ function populateFilters() {
 function getIconForFilter(filterType, optionValue) {
     if (!optionValue) return null;
     switch (filterType) {
-        case 'color':
+        case 'color': 
+            return (iconMaps[filterType] && iconMaps[filterType][optionValue.toLowerCase()]) || null;
         case 'class':
             return (iconMaps[filterType] && iconMaps[filterType][optionValue]) || null;
         case 'aetherpower':
@@ -844,6 +843,7 @@ function initializeNameAutocomplete() {
             const selectedLang = this.value;
             setCookie('search_lang', selectedLang, 365);
             if (loadData(state.currentLang)) {
+                location.reload();
                 nameInput.value = ''; // 切换语言时清空输入
                 nameInput.focus();
                 // 延迟处理，确保已完成加载
@@ -1100,7 +1100,7 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
                     name: displayName,          // 显示在下拉列表的名字 (例如: 宇宙音響)
                     english_name: hero.english_name, // 核心：填充到输入框的英文名 (例如: Astral Comicspeaker)
                     heroId: hero.heroId,
-                    color: hero.color ? (colorReverseMap[hero.color] ? colorReverseMap[hero.color].toLowerCase() : '') : '',
+                    color: hero.color ? (colorReverseMap[hero.color.toLowerCase()] ? colorReverseMap[hero.color.toLowerCase()].toLowerCase() : '') : '',
                     matchIndex: nameLower.indexOf(searchLower)
                 });
             }

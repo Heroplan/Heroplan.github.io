@@ -369,9 +369,9 @@ function showSoulExchangeModal() {
 
     // ▼▼▼ 手动构建每个分组并在之间添加分隔线 ▼▼▼
     const allGroups = [
-        soulExchange.ten,
+        soulExchange.five,
         soulExchange.fifteen,
-        soulExchange.twenty
+        soulExchange.thirty
     ];
 
     allGroups.forEach((heroIds, index) => {

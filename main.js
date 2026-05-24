@@ -222,7 +222,21 @@ async function initializeApp() {
     const languageUpdated = getCookie('languageUpdated');
     if (languageUpdated != '1') {
         setCookie('language', '', '');
-        setCookie('languageUpdated', '1', '1');
+        setCookie('languageUpdated', '1', '365');
+    }
+    
+    const language = getCookie('language');
+    const searchLang = getCookie('search_lang');
+    const searchLanguageUpdated = getCookie('searchLanguageUpdated');
+
+    // 条件：language 不是 cn、tc、en，且 search_lang 为 'current' 或不存在（null/undefined/空字符串）
+    if (language && !['cn', 'tc', 'en'].includes(language) && (!searchLang || searchLang === 'current')) {
+        if (searchLanguageUpdated !== '1') {
+            // 清除 search_lang cookie（设为空，过期时间设为过去）
+            setCookie('search_lang', language, 365);
+            // 设置标记，表示已执行过更新
+            setCookie('searchLanguageUpdated', '1', 365);
+        }
     }
 
     const languageCookie = getCookie('language');

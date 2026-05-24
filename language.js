@@ -1,11 +1,774 @@
 // --- 多语言排序变量 ---
-const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '舞者', '快速', '潮汐', '中等', '杀手', '慢', '非常慢'];
-const speedOrder_tc = ['衝鋒', '魔法', '冥河', '飛速', '舞者', '快速', '潮汐', '中等', '殺手', '慢速', '非常慢'];
+const speedOrder_ar = ['شحنة', 'السحر', 'ستيكس', 'سريع جدًا', 'راقص', 'سريع', 'تقلب المد والجزر', 'متوسط', 'قاتل', 'بطيء', 'بطيء جداً'];
+const speedOrder_cn = ['充能', '魔法', '冥河', '飞速', '舞者', '快速', '潮汐变幻', '中等', '杀手', '慢', '很慢'];
+const speedOrder_tc = ['衝鋒', '魔法', '冥河', '非常快', '舞者', '快速', '暗流湧動', '平均', '殺手', '慢速', '非常慢'];
+const speedOrder_da = ['Angreb', 'Magi', 'Styx', 'Meget hurtig', 'Danser', 'Hurtig', 'Bølgegang', 'Gennemsnitlig', 'Dræber', 'Langsom', 'Meget langsom'];
+const speedOrder_nl = ['Lading', 'Magie', 'Styx', 'Zeer snel', 'Danser', 'Snel', 'Veranderende getijden', 'Gemiddeld', 'Slachter', 'Langzaam', 'Zeer langzaam'];
 const speedOrder_en = ['Charge', 'Magic', 'Styx', 'Very Fast', 'Dancer', 'Fast', 'Changing Tides', 'Average', 'Slayer', 'Slow', 'Very Slow'];
-const colorOrder_cn = ['红', '绿', '蓝', '黄', '紫'];
-const colorOrder_tc = ['紅', '綠', '藍', '黃', '紫'];
-const colorOrder_en = ['Red', 'Green', 'Blue', 'Yellow', 'Purple'];
+const speedOrder_fi = ['Lataus', 'Taika', 'Styks', 'Hyvin nopea', 'Tanssija', 'Nopea', 'Vaihtuvat vuorovedet', 'Keskiverto', 'Surmaaja', 'Hidas', 'Hyvin hidas'];
+const speedOrder_fr = ['Charge', 'Magique', 'Styx', 'Très rapide', 'Danseur', 'Rapide', 'Au gré des marées', 'Moyen', 'Tueur', 'Lent', 'Très lent'];
+const speedOrder_de = ['Aufladung', 'Magie', 'Styx', 'Sehr schnell', 'Tänzer', 'Schnell', 'Wechselnde Gezeiten', 'Mittel', 'Töter', 'Langsam', 'Sehr langsam'];
+const speedOrder_id = ['Daya', 'Sihir', 'Stiks', 'Sangat Cepat', 'Penari', 'Cepat', 'Pasang Berubah', 'Rata-rata', 'Pembunuh', 'Lambat', 'Sangat Lambat'];
+const speedOrder_it = ['Carica', 'Magia', 'Stige', 'Molto rapida', 'Danzatore', 'Rapido', 'Maree mutevoli', 'Medio', 'Assassini', 'Lento', 'Molto lento'];
+const speedOrder_ja = ['チャージ', 'マジック', 'ステュクス', '超速', '踊り手', '速', '潮流の変化', '普通', 'スレイヤー', '遅', '超低速'];
+const speedOrder_ko = ['충전', '매직', '스틱스', '매우 빠름', '댄서', '빠름', '격렬한 파도', '보통', '처단자', '느림', '매우 느림'];
+const speedOrder_no = ['Ladning', 'Magisk', 'Styx', 'Svært rask', 'Danser', 'Rask', 'Skiftende tidevann', 'Gjennomsnittlig', 'Slakter', 'Treg', 'Svært sakte'];
+const speedOrder_pl = ['Ładunek', 'Magia', 'Styks', 'Bardzo szybka', 'Tancerz', 'Szybka', 'Zmienny nurt', 'Średnio', 'Pogromca', 'Wolna', 'Bardzo wolna'];
+const speedOrder_pt = ['Carga', 'Mágica', 'Estige', 'Muito rápido', 'Dançarino', 'Rápido', 'Mudança de Maré', 'Médio', 'Matador', 'Lento', 'Muito lento'];
+const speedOrder_ru = ['Заряд', 'Волшебство', 'Стикс', 'Очень быстрый', 'Танцор', 'Быстрый', 'Приливные волны', 'Средний', 'Убийца', 'Медленный', 'Очень медленный'];
+const speedOrder_es = ['Carga', 'Magia', 'Estigia', 'Muy rápido', 'Bailarín', 'Rápido', 'Mareas cambiantes', 'Promedio', 'Asesinos', 'Lento', 'Muy lento'];
+const speedOrder_sv = ['Laddning', 'Magi', 'Styx', 'Väldigt snabb', 'Dansare', 'Snabb', 'Hela havet stormar', 'Standard', 'Dräpare', 'Långsam', 'Väldigt långsam'];
+const speedOrder_tr = ['Hücum', 'Büyü', 'Stiks', 'Çok Hızlı', 'Dansçı', 'Hızlı', 'Gelgit Hareketi', 'Ortalama', 'Katil', 'Yavaş', 'Çok Yavaş'];
 
+const speedOrderMap = {
+    'ar': speedOrder_ar,
+    'cn': speedOrder_cn,
+    'tc': speedOrder_tc,
+    'da': speedOrder_da,
+    'nl': speedOrder_nl,
+    'en': speedOrder_en,
+    'fi': speedOrder_fi,
+    'fr': speedOrder_fr,
+    'de': speedOrder_de,
+    'id': speedOrder_id,
+    'it': speedOrder_it,
+    'ja': speedOrder_ja,
+    'ko': speedOrder_ko,
+    'no': speedOrder_no,
+    'pl': speedOrder_pl,
+    'pt': speedOrder_pt,
+    'ru': speedOrder_ru,
+    'es': speedOrder_es,
+    'sv': speedOrder_sv,
+    'tr': speedOrder_tr
+};
+
+const colorOrder_ar = ['نار', 'طبيعة', 'ثلج', 'مقدّس', 'ظلام'];
+const colorOrder_cn = ['烈火', '自然', '冰雪', '神圣', '暗黑'];
+const colorOrder_tc = ['烈火', '自然', '冰雪', '神聖', '暗黑'];
+const colorOrder_da = ['Ild', 'Natur', 'Is', 'Hellig', 'Mørk'];
+const colorOrder_nl = ['Vuur', 'Natuur', 'IJs', 'Heilig', 'Duister'];
+const colorOrder_en = ['Fire', 'Nature', 'Ice', 'Holy', 'Dark'];
+const colorOrder_fi = ['Tuli', 'Luonto', 'Jää', 'Pyhä', 'Pimeys'];
+const colorOrder_fr = ['Feu', 'Nature', 'Glace', 'Sacré', 'Sombre'];
+const colorOrder_de = ['Feuer', 'Natur', 'Eis', 'Heilig', 'Finster'];
+const colorOrder_id = ['Api', 'Alam', 'Es', 'Suci', 'Gelap'];
+const colorOrder_it = ['Fuoco', 'Natura', 'Ghiaccio', 'Sacro', 'Oscurità'];
+const colorOrder_ja = ['炎', '自然', '氷', '聖', '闇'];
+const colorOrder_ko = ['불', '자연', '얼음', '신성', '암흑'];
+const colorOrder_no = ['Ild', 'Natur', 'Is', 'Hellig', 'Mørke'];
+const colorOrder_pl = ['Ogień', 'Natura', 'Lód', 'Świętość', 'Mrok'];
+const colorOrder_pt = ['Fogo', 'Natureza', 'Gelo', 'Sagrado', 'Trevas'];
+const colorOrder_ru = ['Огонь', 'Природа', 'Лед', 'Святыня', 'Тьма'];
+const colorOrder_es = ['Fuego', 'Naturaleza', 'Hielo', 'Sagrado', 'Oscuridad'];
+const colorOrder_sv = ['Eld', 'Natur', 'Is', 'Helig', 'Mörk'];
+const colorOrder_tr = ['Ateş', 'Doğa', 'Buz', 'Kutsal', 'Karanlık'];
+
+const colorOrderMap = {
+    'ar': colorOrder_ar,
+    'cn': colorOrder_cn,
+    'tc': colorOrder_tc,
+    'da': colorOrder_da,
+    'nl': colorOrder_nl,
+    'en': colorOrder_en,
+    'fi': colorOrder_fi,
+    'fr': colorOrder_fr,
+    'de': colorOrder_de,
+    'id': colorOrder_id,
+    'it': colorOrder_it,
+    'ja': colorOrder_ja,
+    'ko': colorOrder_ko,
+    'no': colorOrder_no,
+    'pl': colorOrder_pl,
+    'pt': colorOrder_pt,
+    'ru': colorOrder_ru,
+    'es': colorOrder_es,
+    'sv': colorOrder_sv,
+    'tr': colorOrder_tr
+};
+
+const base_values_dict_other = {
+    "ar": {
+        "color": {
+            "blue": "ثلج",
+            "green": "طبيعة",
+            "purple": "ظلام",
+            "red": "نار",
+            "yellow": "مقدّس"
+        },
+        "class": {
+            "barbarian": "بربريّ",
+            "cleric": "إكليركي",
+            "druid": "كاهن",
+            "fighter": "مقاتل",
+            "monk": "راهب",
+            "paladin": "بالادن",
+            "ranger": "حارس جوال",
+            "rogue": "محتال",
+            "sorcerer": "مشعوذ",
+            "wizard": "ساحر"
+        },
+        "speed": {
+            "average": "متوسط",
+            "changing_tides": "تقلب المد والجزر",
+            "charge_magic": "السحر",
+            "charge_ninja": "شحنة",
+            "dancer": "راقص",
+            "fast": "سريع",
+            "slayer": "قاتل",
+            "slow": "بطيء",
+            "styx": "ستيكس",
+            "very_fast": "سريع جدًا",
+            "very_slow": "بطيء جداً"
+        }
+    },
+    "cn": {
+        "color": {
+            "blue": "冰雪",
+            "green": "自然",
+            "purple": "暗黑",
+            "red": "烈火",
+            "yellow": "神圣"
+        },
+        "class": {
+            "barbarian": "野人",
+            "cleric": "牧师",
+            "druid": "德鲁伊",
+            "fighter": "战士",
+            "monk": "僧侣",
+            "paladin": "圣骑士",
+            "ranger": "游侠",
+            "rogue": "盗贼",
+            "sorcerer": "术士",
+            "wizard": "巫师"
+        },
+        "speed": {
+            "average": "中等",
+            "changing_tides": "潮汐变幻",
+            "charge_magic": "魔法",
+            "charge_ninja": "充能",
+            "dancer": "舞者",
+            "fast": "快速",
+            "slayer": "杀手",
+            "slow": "慢",
+            "styx": "冥河",
+            "very_fast": "飞速",
+            "very_slow": "很慢"
+        }
+    },
+    "tc": {
+        "color": {
+            "blue": "冰雪",
+            "green": "自然",
+            "purple": "暗黑",
+            "red": "烈火",
+            "yellow": "神聖"
+        },
+        "class": {
+            "barbarian": "野人",
+            "cleric": "牧師",
+            "druid": "德魯伊",
+            "fighter": "戰士",
+            "monk": "僧侶",
+            "paladin": "騎士",
+            "ranger": "遊俠",
+            "rogue": "盜賊",
+            "sorcerer": "術士",
+            "wizard": "巫師"
+        },
+        "speed": {
+            "average": "平均",
+            "changing_tides": "暗流湧動",
+            "charge_magic": "魔法",
+            "charge_ninja": "衝鋒",
+            "dancer": "舞者",
+            "fast": "快速",
+            "slayer": "殺手",
+            "slow": "慢速",
+            "styx": "冥河",
+            "very_fast": "非常快",
+            "very_slow": "非常慢"
+        }
+    },
+    "da": {
+        "color": {
+            "blue": "Is",
+            "green": "Natur",
+            "purple": "Mørk",
+            "red": "Ild",
+            "yellow": "Hellig"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Gejstlig",
+            "druid": "Druide",
+            "fighter": "Kriger",
+            "monk": "Munk",
+            "paladin": "Paladin",
+            "ranger": "Vandringsmand",
+            "rogue": "Rebel",
+            "sorcerer": "Heksemester",
+            "wizard": "Troldmand"
+        },
+        "speed": {
+            "average": "Gennemsnitlig",
+            "changing_tides": "Bølgegang",
+            "charge_magic": "Magi",
+            "charge_ninja": "Angreb",
+            "dancer": "Danser",
+            "fast": "Hurtig",
+            "slayer": "Dræber",
+            "slow": "Langsom",
+            "styx": "Styx",
+            "very_fast": "Meget hurtig",
+            "very_slow": "Meget langsom"
+        }
+    },
+    "nl": {
+        "color": {
+            "blue": "IJs",
+            "green": "Natuur",
+            "purple": "Duister",
+            "red": "Vuur",
+            "yellow": "Heilig"
+        },
+        "class": {
+            "barbarian": "Barbaar",
+            "cleric": "Priester",
+            "druid": "Druïde",
+            "fighter": "Krijger",
+            "monk": "Monnik",
+            "paladin": "Paladijn",
+            "ranger": "Boogschutter",
+            "rogue": "Dief",
+            "sorcerer": "Tovenaar",
+            "wizard": "Magiër"
+        },
+        "speed": {
+            "average": "Gemiddeld",
+            "changing_tides": "Veranderende getijden",
+            "charge_magic": "Magie",
+            "charge_ninja": "Lading",
+            "dancer": "Danser",
+            "fast": "Snel",
+            "slayer": "Slachter",
+            "slow": "Langzaam",
+            "styx": "Styx",
+            "very_fast": "Zeer snel",
+            "very_slow": "Zeer langzaam"
+        }
+    },
+    "en": {
+        "color": {
+            "blue": "Ice",
+            "green": "Nature",
+            "purple": "Dark",
+            "red": "Fire",
+            "yellow": "Holy"
+        },
+        "class": {
+            "barbarian": "Barbarian",
+            "cleric": "Cleric",
+            "druid": "Druid",
+            "fighter": "Fighter",
+            "monk": "Monk",
+            "paladin": "Paladin",
+            "ranger": "Ranger",
+            "rogue": "Rogue",
+            "sorcerer": "Sorcerer",
+            "wizard": "Wizard"
+        },
+        "speed": {
+            "average": "Average",
+            "changing_tides": "Changing Tides",
+            "charge_magic": "Magic",
+            "charge_ninja": "Charge",
+            "dancer": "Dancer",
+            "fast": "Fast",
+            "slayer": "Slayer",
+            "slow": "Slow",
+            "styx": "Styx",
+            "very_fast": "Very Fast",
+            "very_slow": "Very Slow"
+        }
+    },
+    "fi": {
+        "color": {
+            "blue": "Jää",
+            "green": "Luonto",
+            "purple": "Pimeys",
+            "red": "Tuli",
+            "yellow": "Pyhä"
+        },
+        "class": {
+            "barbarian": "Barbaari",
+            "cleric": "Pappi",
+            "druid": "Druidi",
+            "fighter": "Taistelija",
+            "monk": "Munkki",
+            "paladin": "Paladiini",
+            "ranger": "Samooja",
+            "rogue": "Vaeltaja",
+            "sorcerer": "Noita",
+            "wizard": "Velho"
+        },
+        "speed": {
+            "average": "Keskiverto",
+            "changing_tides": "Vaihtuvat vuorovedet",
+            "charge_magic": "Taika",
+            "charge_ninja": "Lataus",
+            "dancer": "Tanssija",
+            "fast": "Nopea",
+            "slayer": "Surmaaja",
+            "slow": "Hidas",
+            "styx": "Styks",
+            "very_fast": "Hyvin nopea",
+            "very_slow": "Hyvin hidas"
+        }
+    },
+    "fr": {
+        "color": {
+            "blue": "Glace",
+            "green": "Nature",
+            "purple": "Sombre",
+            "red": "Feu",
+            "yellow": "Sacré"
+        },
+        "class": {
+            "barbarian": "Barbare",
+            "cleric": "Ecclésiastique",
+            "druid": "Druide",
+            "fighter": "Combattant",
+            "monk": "Moine",
+            "paladin": "Paladin",
+            "ranger": "Ranger",
+            "rogue": "Voyou",
+            "sorcerer": "Sorcier",
+            "wizard": "Magicien"
+        },
+        "speed": {
+            "average": "Moyen",
+            "changing_tides": "Au gré des marées",
+            "charge_magic": "Magique",
+            "charge_ninja": "Charge",
+            "dancer": "Danseur",
+            "fast": "Rapide",
+            "slayer": "Tueur",
+            "slow": "Lent",
+            "styx": "Styx",
+            "very_fast": "Très rapide",
+            "very_slow": "Très lent"
+        }
+    },
+    "de": {
+        "color": {
+            "blue": "Eis",
+            "green": "Natur",
+            "purple": "Finster",
+            "red": "Feuer",
+            "yellow": "Heilig"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Kleriker",
+            "druid": "Druide",
+            "fighter": "Kämpfer",
+            "monk": "Mönch",
+            "paladin": "Paladin",
+            "ranger": "Waldläufer",
+            "rogue": "Schurke",
+            "sorcerer": "Zauberer",
+            "wizard": "Magier"
+        },
+        "speed": {
+            "average": "Mittel",
+            "changing_tides": "Wechselnde Gezeiten",
+            "charge_magic": "Magie",
+            "charge_ninja": "Aufladung",
+            "dancer": "Tänzer",
+            "fast": "Schnell",
+            "slayer": "Töter",
+            "slow": "Langsam",
+            "styx": "Styx",
+            "very_fast": "Sehr schnell",
+            "very_slow": "Sehr langsam"
+        }
+    },
+    "id": {
+        "color": {
+            "blue": "Es",
+            "green": "Alam",
+            "purple": "Gelap",
+            "red": "Api",
+            "yellow": "Suci"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Padri",
+            "druid": "Klenik",
+            "fighter": "Petarung",
+            "monk": "Petapa",
+            "paladin": "Kesatria",
+            "ranger": "Pamong",
+            "rogue": "Berandal",
+            "sorcerer": "Penyihir",
+            "wizard": "Dukun"
+        },
+        "speed": {
+            "average": "Rata-rata",
+            "changing_tides": "Pasang Berubah",
+            "charge_magic": "Sihir",
+            "charge_ninja": "Daya",
+            "dancer": "Penari",
+            "fast": "Cepat",
+            "slayer": "Pembunuh",
+            "slow": "Lambat",
+            "styx": "Stiks",
+            "very_fast": "Sangat Cepat",
+            "very_slow": "Sangat Lambat"
+        }
+    },
+    "it": {
+        "color": {
+            "blue": "Ghiaccio",
+            "green": "Natura",
+            "purple": "Oscurità",
+            "red": "Fuoco",
+            "yellow": "Sacro"
+        },
+        "class": {
+            "barbarian": "Barbaro",
+            "cleric": "Chierico",
+            "druid": "Druido",
+            "fighter": "Combattente",
+            "monk": "Monaco",
+            "paladin": "Paladino",
+            "ranger": "Ranger",
+            "rogue": "Furfante",
+            "sorcerer": "Incantatore",
+            "wizard": "Stregone"
+        },
+        "speed": {
+            "average": "Medio",
+            "changing_tides": "Maree mutevoli",
+            "charge_magic": "Magia",
+            "charge_ninja": "Carica",
+            "dancer": "Danzatore",
+            "fast": "Rapido",
+            "slayer": "Assassini",
+            "slow": "Lento",
+            "styx": "Stige",
+            "very_fast": "Molto rapida",
+            "very_slow": "Molto lento"
+        }
+    },
+    "ja": {
+        "color": {
+            "blue": "氷",
+            "green": "自然",
+            "purple": "闇",
+            "red": "炎",
+            "yellow": "聖"
+        },
+        "class": {
+            "barbarian": "バーバリアン",
+            "cleric": "牧師",
+            "druid": "ドルイド",
+            "fighter": "戦士",
+            "monk": "モンク",
+            "paladin": "パラディン",
+            "ranger": "レンジャー",
+            "rogue": "ローグ",
+            "sorcerer": "魔術師",
+            "wizard": "ウィザード"
+        },
+        "speed": {
+            "average": "普通",
+            "changing_tides": "潮流の変化",
+            "charge_magic": "マジック",
+            "charge_ninja": "チャージ",
+            "dancer": "踊り手",
+            "fast": "速",
+            "slayer": "スレイヤー",
+            "slow": "遅",
+            "styx": "ステュクス",
+            "very_fast": "超速",
+            "very_slow": "超低速"
+        }
+    },
+    "ko": {
+        "color": {
+            "blue": "얼음",
+            "green": "자연",
+            "purple": "암흑",
+            "red": "불",
+            "yellow": "신성"
+        },
+        "class": {
+            "barbarian": "야만전사",
+            "cleric": "성직자",
+            "druid": "드루이드",
+            "fighter": "전투사",
+            "monk": "수도승",
+            "paladin": "성전사",
+            "ranger": "레인저",
+            "rogue": "도적",
+            "sorcerer": "마술사",
+            "wizard": "마법사"
+        },
+        "speed": {
+            "average": "보통",
+            "changing_tides": "격렬한 파도",
+            "charge_magic": "매직",
+            "charge_ninja": "충전",
+            "dancer": "댄서",
+            "fast": "빠름",
+            "slayer": "처단자",
+            "slow": "느림",
+            "styx": "스틱스",
+            "very_fast": "매우 빠름",
+            "very_slow": "매우 느림"
+        }
+    },
+    "no": {
+        "color": {
+            "blue": "Is",
+            "green": "Natur",
+            "purple": "Mørke",
+            "red": "Ild",
+            "yellow": "Hellig"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Prest",
+            "druid": "Druide",
+            "fighter": "Kriger",
+            "monk": "Munk",
+            "paladin": "Ridder",
+            "ranger": "Skogvokter",
+            "rogue": "Tyv",
+            "sorcerer": "Magiker",
+            "wizard": "Trollmann"
+        },
+        "speed": {
+            "average": "Gjennomsnittlig",
+            "changing_tides": "Skiftende tidevann",
+            "charge_magic": "Magisk",
+            "charge_ninja": "Ladning",
+            "dancer": "Danser",
+            "fast": "Rask",
+            "slayer": "Slakter",
+            "slow": "Treg",
+            "styx": "Styx",
+            "very_fast": "Svært rask",
+            "very_slow": "Svært sakte"
+        }
+    },
+    "pl": {
+        "color": {
+            "blue": "Lód",
+            "green": "Natura",
+            "purple": "Mrok",
+            "red": "Ogień",
+            "yellow": "Świętość"
+        },
+        "class": {
+            "barbarian": "Barbarzyńca",
+            "cleric": "Kleryk",
+            "druid": "Druid",
+            "fighter": "Wojownik",
+            "monk": "Mnich",
+            "paladin": "Paladyn",
+            "ranger": "Strażnik lasu",
+            "rogue": "Łotrzyk",
+            "sorcerer": "Czarodziej",
+            "wizard": "Czarnoksiężnik"
+        },
+        "speed": {
+            "average": "Średnio",
+            "changing_tides": "Zmienny nurt",
+            "charge_magic": "Magia",
+            "charge_ninja": "Ładunek",
+            "dancer": "Tancerz",
+            "fast": "Szybka",
+            "slayer": "Pogromca",
+            "slow": "Wolna",
+            "styx": "Styks",
+            "very_fast": "Bardzo szybka",
+            "very_slow": "Bardzo wolna"
+        }
+    },
+    "pt": {
+        "color": {
+            "blue": "Gelo",
+            "green": "Natureza",
+            "purple": "Trevas",
+            "red": "Fogo",
+            "yellow": "Sagrado"
+        },
+        "class": {
+            "barbarian": "Bárbaro",
+            "cleric": "Clérigo",
+            "druid": "Druida",
+            "fighter": "Guerreiro",
+            "monk": "Monge",
+            "paladin": "Paladino",
+            "ranger": "Patrulheiro",
+            "rogue": "Ladino",
+            "sorcerer": "Feiticeiro",
+            "wizard": "Bruxo"
+        },
+        "speed": {
+            "average": "Médio",
+            "changing_tides": "Mudança de Maré",
+            "charge_magic": "Mágica",
+            "charge_ninja": "Carga",
+            "dancer": "Dançarino",
+            "fast": "Rápido",
+            "slayer": "Matador",
+            "slow": "Lento",
+            "styx": "Estige",
+            "very_fast": "Muito rápido",
+            "very_slow": "Muito lento"
+        }
+    },
+    "ru": {
+        "color": {
+            "blue": "Лед",
+            "green": "Природа",
+            "purple": "Тьма",
+            "red": "Огонь",
+            "yellow": "Святыня"
+        },
+        "class": {
+            "barbarian": "Варвар",
+            "cleric": "Церковник",
+            "druid": "Друид",
+            "fighter": "Боец",
+            "monk": "Монах",
+            "paladin": "Паладин",
+            "ranger": "Рейнджер",
+            "rogue": "Разбойник",
+            "sorcerer": "Колдун",
+            "wizard": "Маг"
+        },
+        "speed": {
+            "average": "Средний",
+            "changing_tides": "Приливные волны",
+            "charge_magic": "Волшебство",
+            "charge_ninja": "Заряд",
+            "dancer": "Танцор",
+            "fast": "Быстрый",
+            "slayer": "Убийца",
+            "slow": "Медленный",
+            "styx": "Стикс",
+            "very_fast": "Очень быстрый",
+            "very_slow": "Очень медленный"
+        }
+    },
+    "es": {
+        "color": {
+            "blue": "Hielo",
+            "green": "Naturaleza",
+            "purple": "Oscuridad",
+            "red": "Fuego",
+            "yellow": "Sagrado"
+        },
+        "class": {
+            "barbarian": "Bárbaro",
+            "cleric": "Clérigo",
+            "druid": "Druida",
+            "fighter": "Luchador",
+            "monk": "Monje",
+            "paladin": "Paladín",
+            "ranger": "Guardabosques",
+            "rogue": "Rebelde",
+            "sorcerer": "Hechicero",
+            "wizard": "Brujo"
+        },
+        "speed": {
+            "average": "Promedio",
+            "changing_tides": "Mareas cambiantes",
+            "charge_magic": "Magia",
+            "charge_ninja": "Carga",
+            "dancer": "Bailarín",
+            "fast": "Rápido",
+            "slayer": "Asesinos",
+            "slow": "Lento",
+            "styx": "Estigia",
+            "very_fast": "Muy rápido",
+            "very_slow": "Muy lento"
+        }
+    },
+    "sv": {
+        "color": {
+            "blue": "Is",
+            "green": "Natur",
+            "purple": "Mörk",
+            "red": "Eld",
+            "yellow": "Helig"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Präst",
+            "druid": "Druid",
+            "fighter": "Kämpe",
+            "monk": "Munk",
+            "paladin": "Paladin",
+            "ranger": "Skytt",
+            "rogue": "Tjuv",
+            "sorcerer": "Häxmästare",
+            "wizard": "Trollkarl"
+        },
+        "speed": {
+            "average": "Standard",
+            "changing_tides": "Hela havet stormar",
+            "charge_magic": "Magi",
+            "charge_ninja": "Laddning",
+            "dancer": "Dansare",
+            "fast": "Snabb",
+            "slayer": "Dräpare",
+            "slow": "Långsam",
+            "styx": "Styx",
+            "very_fast": "Väldigt snabb",
+            "very_slow": "Väldigt långsam"
+        }
+    },
+    "tr": {
+        "color": {
+            "blue": "Buz",
+            "green": "Doğa",
+            "purple": "Karanlık",
+            "red": "Ateş",
+            "yellow": "Kutsal"
+        },
+        "class": {
+            "barbarian": "Barbar",
+            "cleric": "Ruhban",
+            "druid": "Rahip",
+            "fighter": "Dövüşçü",
+            "monk": "Keşiş",
+            "paladin": "Paladin",
+            "ranger": "Bekçi",
+            "rogue": "Düzenbaz",
+            "sorcerer": "Büyücü",
+            "wizard": "Sihirbaz"
+        },
+        "speed": {
+            "average": "Ortalama",
+            "changing_tides": "Gelgit Hareketi",
+            "charge_magic": "Büyü",
+            "charge_ninja": "Hücum",
+            "dancer": "Dansçı",
+            "fast": "Hızlı",
+            "slayer": "Katil",
+            "slow": "Yavaş",
+            "styx": "Stiks",
+            "very_fast": "Çok Hızlı",
+            "very_slow": "Çok Yavaş"
+        }
+    }
+}
 
 // --- 技能类型翻译映射表 ---
 const skillTypeTranslations_cn = {
@@ -121,7 +884,7 @@ const i18n = {
         importFromFile: "从文件导入",
         shareFavorites: "分享收藏", openFavorites: "打开收藏", shareFavoritesCopied: "列表已复制!",
         footerGameName: "《帝国与谜题》", footerPlatform: "英雄数据查询平台",
-        footerCredit: "© 2025 heroplan.github.io | 非官方资料站",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | 非官方资料站",
         resultsCountTextFiltered: (count) => `已筛选 ${count} 位英雄`,
         resultsCountTextUnfiltered: (count) => `${count} 位英雄 (包含服装)`,
         resultsCountTextHeroOnly: (count) => `${count} 位英雄 (不含服装)`,
@@ -430,7 +1193,7 @@ const i18n = {
         importFromFile: "從檔案匯入",
         shareFavorites: "分享收藏", openFavorites: "打開收藏", shareFavoritesCopied: "列表已複製!",
         footerGameName: "《帝國與謎題》", footerPlatform: "英雄數據查詢平台",
-        footerCredit: "© 2025 heroplan.github.io | 非官方資料站",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | 非官方資料站",
         resultsCountTextFiltered: (count) => `已篩選 ${count} 位英雄`,
         resultsCountTextUnfiltered: (count) => `${count} 位英雄 (包含服裝)`,
         resultsCountTextHeroOnly: (count) => `${count} 位英雄 (不含服裝)`,
@@ -737,7 +1500,7 @@ const i18n = {
         importFromFile: "Import from File",
         shareFavorites: "Share Favorites", openFavorites: "Open Favorites", shareFavoritesCopied: "List Copied!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Hero Data Platform",
-        footerCredit: "© 2025 heroplan.github.io | Unofficial Fan Site",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Unofficial Fan Site",
         resultsCountTextFiltered: (count) => `filtered ${count} Heroes`,
         resultsCountTextUnfiltered: (count) => `${count} Heroes (Included Costumes)`,
         resultsCountTextHeroOnly: (count) => `${count} Heroes (Excluded Costumes)`,
@@ -1041,7 +1804,7 @@ const i18n = {
         importFromFile: "Importuj z Pliku",
         shareFavorites: "Udostępnij Ulubione", openFavorites: "Otwórz Ulubione", shareFavoritesCopied: "Lista Skopiowana!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Platforma Danych Bohaterów",
-        footerCredit: "© 2025 heroplan.github.io | Nieoficjalna strona fanowska",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Nieoficjalna strona fanowska",
         resultsCountTextFiltered: (count) => `odfiltrowano ${count} bohaterów`,
         resultsCountTextUnfiltered: (count) => `${count} Bohaterów (z kostiumami)`,
         resultsCountTextHeroOnly: (count) => `${count} Bohaterów (bez kostiumów)`,
@@ -1352,7 +2115,7 @@ const i18n = {
         importFromFile: "استيراد من ملف",
         shareFavorites: "مشاركة المفضلات", openFavorites: "فتح المفضلات", shareFavoritesCopied: "تم نسخ القائمة!",
         footerGameName: "Empires & Puzzles", footerPlatform: "منصة بيانات الأبطال",
-        footerCredit: "© 2025 heroplan.github.io | موقع غير رسمي للمعجبين",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | موقع غير رسمي للمعجبين",
         resultsCountTextFiltered: (count) => `تمت تصفية ${count} بطل`,
         resultsCountTextUnfiltered: (count) => `${count} بطل (بما في ذلك الأزياء)`,
         resultsCountTextHeroOnly: (count) => `${count} بطل (باستثناء الأزياء)`,
@@ -1644,7 +2407,7 @@ const i18n = {
         importFromFile: "Importér fra fil",
         shareFavorites: "Del favoritter", openFavorites: "Åbn favoritter", shareFavoritesCopied: "Listen er kopieret!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Heltedataplatform",
-        footerCredit: "© 2025 heroplan.github.io | Uofficiel fanside",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Uofficiel fanside",
         resultsCountTextFiltered: (count) => `filtrerede ${count} helte`,
         resultsCountTextUnfiltered: (count) => `${count} Helte (inklusive kostumer)`,
         resultsCountTextHeroOnly: (count) => `${count} Helte (eksklusive kostumer)`,
@@ -1936,7 +2699,7 @@ const i18n = {
         importFromFile: "Importeren uit bestand",
         shareFavorites: "Favorieten delen", openFavorites: "Favorieten openen", shareFavoritesCopied: "Lijst gekopieerd!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Heldengegevensplatform",
-        footerCredit: "© 2025 heroplan.github.io | Onofficiële fansite",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Onofficiële fansite",
         resultsCountTextFiltered: (count) => `${count} helden gefilterd`,
         resultsCountTextUnfiltered: (count) => `${count} Helden (inclusief kostuums)`,
         resultsCountTextHeroOnly: (count) => `${count} Helden (exclusief kostuums)`,
@@ -2228,7 +2991,7 @@ const i18n = {
         importFromFile: "Tuo tiedostosta",
         shareFavorites: "Jaa suosikit", openFavorites: "Avaa suosikit", shareFavoritesCopied: "Lista kopioitu!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Sankaritietoalusta",
-        footerCredit: "© 2025 heroplan.github.io | Epävirallinen fanisivusto",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Epävirallinen fanisivusto",
         resultsCountTextFiltered: (count) => `suodatettu ${count} sankaria`,
         resultsCountTextUnfiltered: (count) => `${count} Sankaria (asut mukaan lukien)`,
         resultsCountTextHeroOnly: (count) => `${count} Sankaria (asut pois lukien)`,
@@ -2520,7 +3283,7 @@ const i18n = {
         importFromFile: "Importer depuis un fichier",
         shareFavorites: "Partager les favoris", openFavorites: "Ouvrir les favoris", shareFavoritesCopied: "Liste copiée !",
         footerGameName: "Empires & Puzzles", footerPlatform: "Plateforme de données de héros",
-        footerCredit: "© 2025 heroplan.github.io | Site fan non officiel",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Site fan non officiel",
         resultsCountTextFiltered: (count) => `${count} héros filtrés`,
         resultsCountTextUnfiltered: (count) => `${count} Héros (costumes inclus)`,
         resultsCountTextHeroOnly: (count) => `${count} Héros (costumes exclus)`,
@@ -2812,7 +3575,7 @@ const i18n = {
         importFromFile: "Aus Datei importieren",
         shareFavorites: "Favoriten teilen", openFavorites: "Favoriten öffnen", shareFavoritesCopied: "Liste kopiert!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Helden-Datenplattform",
-        footerCredit: "© 2025 heroplan.github.io | Inoffizielle Fanseite",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Inoffizielle Fanseite",
         resultsCountTextFiltered: (count) => `${count} Helden gefiltert`,
         resultsCountTextUnfiltered: (count) => `${count} Helden (einschließlich Kostüme)`,
         resultsCountTextHeroOnly: (count) => `${count} Helden (ohne Kostüme)`,
@@ -3104,7 +3867,7 @@ const i18n = {
         importFromFile: "Impor dari File",
         shareFavorites: "Bagikan Favorit", openFavorites: "Buka Favorit", shareFavoritesCopied: "Daftar Tersalin!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Platform Data Pahlawan",
-        footerCredit: "© 2025 heroplan.github.io | Situs Penggemar Tidak Resmi",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Situs Penggemar Tidak Resmi",
         resultsCountTextFiltered: (count) => `memfilter ${count} pahlawan`,
         resultsCountTextUnfiltered: (count) => `${count} Pahlawan (termasuk Kostum)`,
         resultsCountTextHeroOnly: (count) => `${count} Pahlawan (tidak termasuk Kostum)`,
@@ -3396,7 +4159,7 @@ const i18n = {
         importFromFile: "Importa da file",
         shareFavorites: "Condividi preferiti", openFavorites: "Apri preferiti", shareFavoritesCopied: "Elenco copiato!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Piattaforma dati eroi",
-        footerCredit: "© 2025 heroplan.github.io | Sito fan non ufficiale",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Sito fan non ufficiale",
         resultsCountTextFiltered: (count) => `filtrati ${count} eroi`,
         resultsCountTextUnfiltered: (count) => `${count} Eroi (costumi inclusi)`,
         resultsCountTextHeroOnly: (count) => `${count} Eroi (costumi esclusi)`,
@@ -3688,7 +4451,7 @@ const i18n = {
         importFromFile: "Импорт из файла",
         shareFavorites: "Поделиться избранным", openFavorites: "Открыть избранное", shareFavoritesCopied: "Список скопирован!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Платформа данных героев",
-        footerCredit: "© 2025 heroplan.github.io | Неофициальный фанатский сайт",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Неофициальный фанатский сайт",
         resultsCountTextFiltered: (count) => `отфильтровано ${count} героев`,
         resultsCountTextUnfiltered: (count) => `${count} Героев (включая костюмы)`,
         resultsCountTextHeroOnly: (count) => `${count} Героев (без костюмов)`,
@@ -3980,7 +4743,7 @@ const i18n = {
         importFromFile: "ファイルからインポート",
         shareFavorites: "お気に入りを共有", openFavorites: "お気に入りを開く", shareFavoritesCopied: "リストがコピーされました!",
         footerGameName: "Empires & Puzzles", footerPlatform: "ヒーローデータプラットフォーム",
-        footerCredit: "© 2025 heroplan.github.io | 非公式ファンサイト",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | 非公式ファンサイト",
         resultsCountTextFiltered: (count) => `${count} 人のヒーローをフィルタリング`,
         resultsCountTextUnfiltered: (count) => `${count} 人のヒーロー（コスチュームを含む）`,
         resultsCountTextHeroOnly: (count) => `${count} 人のヒーロー（コスチュームを除く）`,
@@ -4272,7 +5035,7 @@ const i18n = {
         importFromFile: "파일에서 가져오기",
         shareFavorites: "즐겨찾기 공유", openFavorites: "즐겨찾기 열기", shareFavoritesCopied: "목록이 복사되었습니다!",
         footerGameName: "Empires & Puzzles", footerPlatform: "영웅 데이터 플랫폼",
-        footerCredit: "© 2025 heroplan.github.io | 비공식 팬 사이트",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | 비공식 팬 사이트",
         resultsCountTextFiltered: (count) => `${count}명의 영웅 필터링됨`,
         resultsCountTextUnfiltered: (count) => `${count}명의 영웅 (코스튬 포함)`,
         resultsCountTextHeroOnly: (count) => `${count}명의 영웅 (코스튬 제외)`,
@@ -4564,7 +5327,7 @@ const i18n = {
         importFromFile: "Importer fra fil",
         shareFavorites: "Del favoritter", openFavorites: "Åpne favoritter", shareFavoritesCopied: "Listen er kopiert!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Heltedataplattform",
-        footerCredit: "© 2025 heroplan.github.io | Uoffisiell fanside",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Uoffisiell fanside",
         resultsCountTextFiltered: (count) => `filtrerte ${count} helter`,
         resultsCountTextUnfiltered: (count) => `${count} Helter (inkludert kostymer)`,
         resultsCountTextHeroOnly: (count) => `${count} Helter (ekskludert kostymer)`,
@@ -4856,7 +5619,7 @@ const i18n = {
         importFromFile: "Importar de arquivo",
         shareFavorites: "Compartilhar favoritos", openFavorites: "Abrir favoritos", shareFavoritesCopied: "Lista copiada!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Plataforma de Dados de Heróis",
-        footerCredit: "© 2025 heroplan.github.io | Site de fãs não oficial",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Site de fãs não oficial",
         resultsCountTextFiltered: (count) => `${count} heróis filtrados`,
         resultsCountTextUnfiltered: (count) => `${count} Heróis (incluindo trajes)`,
         resultsCountTextHeroOnly: (count) => `${count} Heróis (excluindo trajes)`,
@@ -5148,7 +5911,7 @@ const i18n = {
         importFromFile: "Importar desde archivo",
         shareFavorites: "Compartir favoritos", openFavorites: "Abrir favoritos", shareFavoritesCopied: "¡Lista copiada!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Plataforma de Datos de Héroes",
-        footerCredit: "© 2025 heroplan.github.io | Sitio de fans no oficial",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Sitio de fans no oficial",
         resultsCountTextFiltered: (count) => `${count} héroes filtrados`,
         resultsCountTextUnfiltered: (count) => `${count} Héroes (incluyendo disfraces)`,
         resultsCountTextHeroOnly: (count) => `${count} Héroes (excluyendo disfraces)`,
@@ -5440,7 +6203,7 @@ const i18n = {
         importFromFile: "Importera från fil",
         shareFavorites: "Dela favoriter", openFavorites: "Öppna favoriter", shareFavoritesCopied: "Listan är kopierad!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Hjältedataplattform",
-        footerCredit: "© 2025 heroplan.github.io | Inofficiell fansajt",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Inofficiell fansajt",
         resultsCountTextFiltered: (count) => `filtrerade ${count} hjältar`,
         resultsCountTextUnfiltered: (count) => `${count} Hjältar (inklusive kostymer)`,
         resultsCountTextHeroOnly: (count) => `${count} Hjältar (exklusive kostymer)`,
@@ -5732,7 +6495,7 @@ const i18n = {
         importFromFile: "Dosyadan İçe Aktar",
         shareFavorites: "Favorileri Paylaş", openFavorites: "Favorileri Aç", shareFavoritesCopied: "Liste kopyalandı!",
         footerGameName: "Empires & Puzzles", footerPlatform: "Kahraman Veri Platformu",
-        footerCredit: "© 2025 heroplan.github.io | Resmi olmayan hayran sitesi",
+        footerCredit: "© 2025 - 2026 heroplan.github.io | Resmi olmayan hayran sitesi",
         resultsCountTextFiltered: (count) => `${count} kahraman filtrelendi`,
         resultsCountTextUnfiltered: (count) => `${count} Kahraman (kostümler dahil)`,
         resultsCountTextHeroOnly: (count) => `${count} Kahraman (kostümler hariç)`,

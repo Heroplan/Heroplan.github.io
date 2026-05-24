@@ -284,6 +284,75 @@ function applyCustomLanguageNames(langCode) {
     console.log(`已将 ${updatedCount} 个英雄名称更新为 ${langCode} 语言`);
 }
 
+// 辅助函数：使用 base_values_dict_other 替换英雄的颜色、职业、速度
+function applyOtherLanguageValues(targetLang) {
+    if (targetLang === 'current') {
+        return;
+    }
+    // 检查必要数据是否存在
+    if (typeof base_values_dict_other === 'undefined') {
+        console.warn('base_values_dict_other 未定义');
+        return;
+    }
+    if (!targetLang) {
+        console.warn('目标语言未指定');
+        return;
+    }
+
+    // 获取当前语言，决定源语言（基准语言）
+    const currentLang = state.currentLang;
+    let sourceLang;
+    if (currentLang === 'cn' || currentLang === 'tc' || currentLang === 'en') {
+        sourceLang = currentLang;
+    } else {
+        sourceLang = 'en';
+    }
+
+    // 如果源语言与目标语言相同，无需翻译
+    if (sourceLang === targetLang) {
+        console.log(`源语言与目标语言相同 (${sourceLang})，跳过替换`);
+        return;
+    }
+
+    const sourceMap = base_values_dict_other[sourceLang];
+    const targetMap = base_values_dict_other[targetLang];
+    if (!sourceMap || !targetMap) {
+        console.warn(`缺少源语言 ${sourceLang} 或目标语言 ${targetLang} 的映射数据`);
+        return;
+    }
+
+    // 辅助函数：构建 源语言显示文本 → 目标语言文本 的映射
+    function buildTranslationMap(category) {
+        const sourceCategory = sourceMap[category];
+        const targetCategory = targetMap[category];
+        if (!sourceCategory || !targetCategory) return null;
+        const translationMap = {};
+        for (const [internalKey, sourceText] of Object.entries(sourceCategory)) {
+            const targetText = targetCategory[internalKey];
+            if (targetText) {
+                translationMap[sourceText] = targetText;
+            }
+        }
+        return translationMap;
+    }
+
+    const colorTranslation = buildTranslationMap('color');
+    const classTranslation = buildTranslationMap('class');
+    const speedTranslation = buildTranslationMap('speed');
+
+    state.allHeroes.forEach(hero => {
+        if (colorTranslation && hero.color && colorTranslation[hero.color]) {
+            hero.color = colorTranslation[hero.color];
+        }
+        if (classTranslation && hero.class && classTranslation[hero.class]) {
+            hero.class = classTranslation[hero.class];
+        }
+        if (speedTranslation && hero.speed && speedTranslation[hero.speed]) {
+            hero.speed = speedTranslation[hero.speed];
+        }
+    });
+}
+
 /**
  * 从服务器加载核心数据 (英雄、家族等)。
  * @param {string} lang - 要加载的语言版本 ('cn', 'tc', 'en')。
@@ -310,12 +379,13 @@ async function loadData(lang) {
         const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
         langSelector.value = savedLang;
     }
+
     try {
         // 新增：如果 lang 是 langs 中的某一项，则回退为 'en'
         if (langs.includes(lang)) {
             lang = 'en';
         }
-        
+
         const response = await fetch(`./data_${lang}.json?v=${new Date().getTime()}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -334,10 +404,13 @@ async function loadData(lang) {
         });
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
+
         // 如果 savedLang 不为 current，则使用 window.searchNameData 进行名称替换
         if (savedLang && savedLang !== 'current') {
             await loadExtraNameData(savedLang);
             applyCustomLanguageNames(savedLang);
+            // 新增：使用 base_values_dict_other 替换颜色、职业、速度
+            applyOtherLanguageValues(savedLang);
         }
 
         return true;
@@ -361,13 +434,18 @@ async function loadData(lang) {
  * @returns {string} CSS类名 (如 'red-glow-border')。
  */
 const getColorGlowClass = (colorName) => {
-    const colorMap = {
-        '红': 'red', '紅': 'red', 'red': 'red', '蓝': 'blue', '藍': 'blue', 'blue': 'blue',
-        '绿': 'green', '綠': 'green', 'green': 'green', '黄': 'yellow', '黃': 'yellow', 'yellow': 'yellow',
-        '紫': 'purple', 'purple': 'purple', '白': 'white', 'white': 'white',
-        '黑': 'black', 'black': 'black',
-    };
-    const standardColor = colorMap[String(colorName).toLowerCase()];
+
+    let standardColor = null;
+
+    // 使用全局 colorReverseMap
+    if (typeof colorReverseMap !== 'undefined' && colorReverseMap !== null) {
+        const mapped = colorReverseMap[String(colorName).toLowerCase()];
+        if (mapped) {
+            // colorReverseMap 的值是首字母大写的英文，如 "Red"，转为小写
+            standardColor = mapped.toLowerCase();
+        }
+    }
+
     return standardColor ? `${standardColor}-glow-border` : '';
 };
 
@@ -378,13 +456,15 @@ const getColorGlowClass = (colorName) => {
  */
 const getColorHex = (colorName) => {
     const colorMap = {
-        '红': '#ff7a4c', '紅': '#ff7a4c', 'red': '#ff7a4c',
-        '蓝': '#41d8fe', '藍': '#41d8fe', 'blue': '#41d8fe',
-        '绿': '#70e92f', '綠': '#70e92f', 'green': '#70e92f',
-        '黄': '#f2e33a', '黃': '#f2e33a', 'yellow': '#f2e33a',
-        '紫': '#e290ff', 'purple': '#e290ff',
+        'red': '#ff7a4c',
+        'blue': '#41d8fe',
+        'green': '#70e92f',
+        'yellow': '#f2e33a',
+        'purple': '#e290ff',
     };
-    return colorMap[String(colorName).toLowerCase()] || 'inherit';
+    const mapped = colorReverseMap?.[String(colorName).toLowerCase()];
+    const key = mapped ? mapped.toLowerCase() : null;
+    return key && colorMap[key] ? colorMap[key] : 'inherit';
 };
 
 /**
@@ -394,18 +474,16 @@ const getColorHex = (colorName) => {
  */
 function getHeroColorLightGradient(colorName) {
     const colorMap = {
-        '红': { light: '#ef8b38', standard: '#660610' }, '紅': { light: '#ef8b38', standard: '#660610' }, 'red': { light: '#ef8b38', standard: '#660610' },
-        '蓝': { light: '#83e2f6', standard: '#113159' }, '藍': { light: '#83e2f6', standard: '#113159' }, 'blue': { light: '#83e2f6', standard: '#113159' },
-        '绿': { light: '#b4e48b', standard: '#175b07' }, '綠': { light: '#b4e48b', standard: '#175b07' }, 'green': { light: '#b4e48b', standard: '#175b07' },
-        '黄': { light: '#e6e402', standard: '#725404' }, '黃': { light: '#e6e402', standard: '#725404' }, 'yellow': { light: '#e6e402', standard: '#725404' },
-        '紫': { light: '#c177c3', standard: '#491b4c' }, 'purple': { light: '#c177c3', standard: '#491b4c' }
+        'red': { light: '#ef8b38', standard: '#660610' },
+        'blue': { light: '#83e2f6', standard: '#113159' },
+        'green': { light: '#b4e48b', standard: '#175b07' },
+        'yellow': { light: '#e6e402', standard: '#725404' },
+        'purple': { light: '#c177c3', standard: '#491b4c' }
     };
-    const colors = colorMap[String(colorName).toLowerCase()];
-    if (colors) {
-        // 从上方的标准色，渐变到下方的亮色
-        return `linear-gradient(to bottom, ${colors.standard} 0%, ${colors.light} 100%)`;
-    }
-    return 'none'; // 如果颜色未定义，则不显示背景
+    const mapped = colorReverseMap?.[String(colorName).toLowerCase()];
+    const key = mapped ? mapped.toLowerCase() : String(colorName).toLowerCase();
+    const colors = colorMap[key];
+    return colors ? `linear-gradient(to bottom, ${colors.standard} 0%, ${colors.light} 100%)` : 'none';
 }
 
 /**

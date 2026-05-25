@@ -1073,11 +1073,11 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
         let displayName = hero.name;  // 列表显示的名字
 
         // 如果选择了特定语言，且数据已加载
-        if (searchLang !== 'current' && window.searchNameData && window.searchNameData[searchLang]) {
+        if (searchLang !== 'current' && window.langData && window.langData?.name?.[searchLang]) {
             // 通过 heroId 查找对应语言的名字
             // 注意：heroId 需要与 JSON 中的 key (例如 astral_cosmicspeaker) 匹配
             // 假设 hero.heroId 就是那个 key (或者你需要某种转换)
-            const localizedName = window.searchNameData[searchLang][hero.heroId];
+            const localizedName = window.langData?.name?.[searchLang][hero.heroId];
             if (localizedName) {
                 nameToSearch = localizedName;
                 displayName = localizedName; // 搜索列表里显示日语/繁体名字

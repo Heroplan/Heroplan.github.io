@@ -218,8 +218,8 @@ function extractEnglishName(hero) {
         if (potentialSkin.match(/^c\d+$/) ||
             ['glass', 'toon', '玻璃'].includes(potentialSkin) ||
             potentialSkin.endsWith('卡通') ||
-            potentialSkin.endsWith('皮肤') ||
-            potentialSkin.endsWith('皮膚')) {
+            potentialSkin.endsWith('公仔') ||
+            potentialSkin.endsWith('有型')) {
             baseName = heroName.substring(0, heroName.length - skinMatch[0].length).trim();
         }
     }
@@ -446,7 +446,7 @@ async function loadData(lang) {
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
 
-        // 如果 savedLang 不为 current，则使用 window.searchNameData 进行名称替换
+        // 如果 savedLang 不为 current，则使用 window.langData 进行名称替换
         if (savedLang) {
             if (savedLang === 'current'){
                 savedLang = state.currentLang;
@@ -455,7 +455,7 @@ async function loadData(lang) {
             } else {
                 await loadExtraNameData(savedLang);
                 applyCustomLanguageNames(savedLang);
-                // 新增：使用 base_values_dict_other 替换颜色、职业、速度
+                // 新增：使用 base_values_dict_other 替换颜色、职业、速度等
                 applyOtherLanguageValues(savedLang);
             }
         }

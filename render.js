@@ -16,12 +16,11 @@ function getSkinInfo(hero) {
     // searchLang 是自定义时,前面已经加载并应用,直接使用name即可
     if (searchLang === 'current') {
 
-        if (!window.searchNameData || !window.searchNameData[langCode]) {
+        if (!window.langData?.name?.[langCode]) {
             console.warn(`未找到 ${langCode} 语言的数据`);
             return { skinIdentifier: null, baseName: name };
         }
-
-        const langData = window.searchNameData[langCode];
+        const langData = window.langData.name[langCode];
 
         if (!hero.heroId) return { skinIdentifier: null, baseName: name };
 

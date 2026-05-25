@@ -247,41 +247,78 @@ function extractEnglishName(hero) {
     return null;
 }
 
+
+// 全局变量存储不同类别的语言数据
+window.langData = {
+    name: {},      // heroes_name_
+    fancy_name: {}, // heroes_name_fancy_
+    skill: {}  // skill_name_
+};
+
+// 加载所有语言数据
+async function loadExtraNameData(lang) {
+    const [nameRes, fancyRes, skillRes] = await Promise.all([
+        fetch(`langs_json/heroes_name_${lang}.json`),
+        fetch(`langs_json/heroes_name_fancy_${lang}.json`),
+        fetch(`langs_json/skill_name_${lang}.json`)
+    ]);
+    window.langData.name[lang] = await nameRes.json();
+    window.langData.fancy_name[lang] = await fancyRes.json();
+    window.langData.skill[lang] = await skillRes.json();
+}
+
+// 应用英雄名称 (name)
+function applyHeroNames(langCode) {
+    const data = window.langData.name[langCode];
+    if (!data) return;
+    let count = 0;
+    state.allHeroes.forEach(hero => {
+        const key = Object.keys(data).find(k => hero.heroId.startsWith(k));
+        if (key) {
+            hero.name = data[key];
+            count++;
+        }
+    });
+    console.log(`更新了 ${count} 个英雄的 name`);
+}
+
+// 应用 fancy 名称
+function applyFancyNames(langCode) {
+    const data = window.langData.fancy_name[langCode];
+    if (!data) return;
+    let count = 0;
+    state.allHeroes.forEach(hero => {
+        const key = Object.keys(data).find(k => hero.heroId.startsWith(k));
+        if (key) {
+            hero.fancy_name = data[key];
+            count++;
+        }
+    });
+    console.log(`更新了 ${count} 个英雄的 fancy_name`);
+}
+
+// 应用技能名称
+function applySkillNames(langCode) {
+    const data = window.langData.skill[langCode];
+    if (!data) return;
+    let count = 0;
+    state.allHeroes.forEach(hero => {
+        if (hero.skill && data[hero.specialId]) {
+            hero.skill = data[hero.specialId];
+            count++;
+        }
+    });
+    console.log(`更新了 ${count} 个英雄的技能名称`);
+}
+
 /**
- * 应用自定义语言名称到英雄数据
+ * 应用自定义语言数据到英雄数据
  * @param {string} langCode - 语言代码
  */
 function applyCustomLanguageNames(langCode) {
-    if (!window.searchNameData || !window.searchNameData[langCode]) {
-        console.warn(`未找到 ${langCode} 语言的数据`);
-        return;
-    }
-
-    const langData = window.searchNameData[langCode];
-    let updatedCount = 0;
-
-    state.allHeroes.forEach(hero => {
-        if (!hero.heroId) return;
-
-        // 使用部分匹配模式查找对应的翻译
-        // 查找所有以 hero.heroId 开头的键
-        const matchingKeys = Object.keys(langData).filter(key =>
-            hero.heroId.startsWith(key)
-        );
-
-        if (matchingKeys.length > 0) {
-            // 选择最长的匹配（最具体的匹配）
-            const bestMatch = matchingKeys.reduce((longest, current) =>
-                current.length > longest.length ? current : longest
-            );
-
-            // 应用翻译
-            hero.name = langData[bestMatch];
-            updatedCount++;
-        }
-    });
-
-    console.log(`已将 ${updatedCount} 个英雄名称更新为 ${langCode} 语言`);
+    applyHeroNames(langCode);
+    applyFancyNames(langCode);
+    applySkillNames(langCode);
 }
 
 // 辅助函数：使用 base_values_dict_other 替换英雄的颜色、职业、速度

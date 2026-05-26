@@ -1221,29 +1221,8 @@ function renderDetailsInModal(hero, context = {}) {
     // --- 解析英雄名称 ---
     const skinInfo = getSkinInfo(hero);
     const heroSkin = skinInfo.skinIdentifier;
-    let mainHeroName = '';
-    let englishName = '';
-    let traditionalChineseName = '';
-
-    if (state.currentLang === 'en') {
-        mainHeroName = skinInfo.baseName;
-    } else {
-        const multiLangMatch = skinInfo.baseName.match(/^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/);
-        const singleAltLangMatch = skinInfo.baseName.match(/^(.*?)\s*\(([^)]+)\)/);
-
-        if (multiLangMatch) {
-            mainHeroName = multiLangMatch[1].trim();
-            traditionalChineseName = multiLangMatch[2].trim();
-            englishName = multiLangMatch[3].trim();
-        } else if (singleAltLangMatch && /[a-zA-Z]/.test(singleAltLangMatch[2])) {
-            mainHeroName = singleAltLangMatch[1].trim();
-            englishName = singleAltLangMatch[2].trim();
-            // 在这种情况下，没有独立的繁体中文名，所以 traditionalChineseName 保持为空字符串
-        } else {
-            // 如果两种正则都不匹配，则将整个基础名称作为主名称
-            mainHeroName = skinInfo.baseName;
-        }
-    }
+    const mainHeroName = skinInfo.baseName;
+    const englishName = hero.english_name;
 
     // 使用所有三个变量来构建最终的HTML
     // 使用英文名进行筛选，而不是当前语言显示的名字
@@ -1263,7 +1242,6 @@ function renderDetailsInModal(hero, context = {}) {
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
         <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${englishName || mainHeroName.trim() || cleanedFilterValue || hero.name}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
-        ${traditionalChineseName ? `<p class="hero-alt-name">${traditionalChineseName}</p>` : ''}
     `;
 
     const source = filterInputs.skillTypeSource.value;

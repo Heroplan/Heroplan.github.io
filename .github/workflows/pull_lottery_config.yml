@@ -3,7 +3,7 @@ name: Pull lottery_config from DataGen
 on:
   schedule:
     # 每天 UTC 7:02 = 北京时间 15:02
-    - cron: '2 7 * * *'
+    - cron: '10 7 * * *'
   workflow_dispatch:
 
 jobs:

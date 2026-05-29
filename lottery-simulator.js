@@ -977,20 +977,25 @@ function getAllHeroesInPool(poolConfig) {
                 const starMatch = bucketString.match(/_(\d+)$/);
                 if (starMatch) {
                     const star = parseInt(starMatch[1], 10);
+                    const isChinese = state.currentLang === 'cn' || state.currentLang === 'tc';
+
+                    // 定义颜色信息：中文名称、英文名称、id
                     const colors = [
-                        { name: '红', id: 'red' },
-                        { name: '蓝', id: 'blue' },
-                        { name: '绿', id: 'green' },
-                        { name: '黄', id: 'yellow' },
-                        { name: '紫', id: 'purple' }
+                        { cn: '烈火', en: 'Fire', id: 'fire' },
+                        { cn: '冰雪', en: 'Ice', id: 'ice' },
+                        { cn: '自然', en: 'Nature', id: 'nature' },
+                        { cn: '神圣', en: 'Holy', id: 'holy' },
+                        { cn: '暗黑', en: 'Dark', id: 'dark' }
                     ];
 
-                    // 为当前星级创建所有5种颜色的训练师，以供显示
-                    colors.forEach((color, index) => {
+                    // 为当前星级创建所有5种颜色的训练师
+                    colors.forEach((color,index) => {
+                        const colorName = isChinese ? color.cn : color.en;
+                        const heroType = isChinese ? '训练师英雄' : 'Trainer';
                         const trainerHero = {
-                            name: `${star}* ${color.name}训练师英雄`,
+                            name: `${star}* ${colorName} ${heroType}`,
                             star: star,
-                            color: color.name,
+                            color: color.id,
                             family: 'trainer',
                             source: 'trainer',
                             heroId: `trainer_${star}_${color.id}`,

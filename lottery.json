@@ -1831,6 +1831,27 @@
         "eventOffer": "superelemental_calendar"
     },
     {
+        "productType": "LeagueSummon",
+        "id": "lottery_league_default_bulk",
+        "gemPrice": 4500,
+        "sourceProductId": "lottery_league_default",
+        "amount": 10
+    },
+    {
+        "productType": "LeagueSummon",
+        "id": "lottery_league_default",
+        "banner": "event_lotterybanner_league",
+        "lotterybg": "event_lotterybg_league",
+        "bucketWeights": [
+            710,
+            265,
+            25
+        ],
+        "gemPrice": 500,
+        "amount": 1,
+        "uiPriority": 188
+    },
+    {
         "productType": "GoblinSummon",
         "id": "lottery_goblin_default",
         "banner": "event_lotterybanner_goblin",

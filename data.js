@@ -980,10 +980,10 @@ const sourceIconMap = {
 
 const iconMaps = {
     color: Object.fromEntries(
-        Object.keys(colorReverseMap).map(key => [key.toLowerCase(), `imgs/colors/${colorReverseMap[key]}.webp`])
+        Object.keys(colorReverseMap).map(key => [key.toLowerCase(), `imgs/colors/${colorReverseMap[key].toLowerCase()}.webp`])
     ),
     class: Object.fromEntries(
-        Object.keys(classReverseMap).map(key => [key.toLowerCase(), `imgs/classes/${classReverseMap[key]}.webp`])
+        Object.keys(classReverseMap).map(key => [key.toLowerCase(), `imgs/classes/${classReverseMap[key].toLowerCase()}.webp`])
     ),
     source: {
         ...Object.fromEntries(Object.keys(sourceReverseMap).map(key => {

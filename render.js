@@ -957,7 +957,7 @@ function renderDetailsInModal(hero, context = {}) {
     const { teamSlotIndex } = context;
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
-    const englishClassKey = (classReverseMap[hero.class] || '').toLowerCase();
+    const englishClassKey = (classReverseMap[hero.class] || hero.class).toLowerCase();
     const avatarGlowClass = getColorGlowClass(hero.color);
     // 为详情框头像准备变量
     const modalGradientBg = getHeroColorLightGradient(hero.color);

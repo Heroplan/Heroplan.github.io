@@ -230,7 +230,7 @@ function getIconForFilter(filterType, optionValue) {
         case 'color': 
             return (iconMaps[filterType] && iconMaps[filterType][optionValue.toLowerCase()]) || null;
         case 'class':
-            return (iconMaps[filterType] && iconMaps[filterType][optionValue]) || null;
+            return (iconMaps[filterType] && iconMaps[filterType][optionValue.toLowerCase()]) || null;
         case 'aetherpower':
             let englishName = (state.currentLang === 'en') ? optionValue : aether_powerReverseMap[optionValue];
             if (englishName) return `imgs/Aether Power/${englishName.trim().toLowerCase()}.webp`;

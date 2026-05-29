@@ -238,28 +238,6 @@
       ],
       "featuredHeroNum": 6
     },
-    "GoblinSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 2
-    },
-    "LegendsSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
     "AscensionSummon": {
       "bucketConfig": [
         "heroes_s1_3",
@@ -290,6 +268,28 @@
         "featuredHero"
       ],
       "featuredHeroNum": 2
+    },
+    "GoblinSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "LegendsSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
     }
   },
   "SummonPool": {
@@ -1398,6 +1398,26 @@
       ],
       "latestIncludedHeroDate": "2025-11-26"
     },
+    "lottery_ascension_default": {
+      "featuredHeroes": [
+        "castle_bear_bearnadette",
+        "astral_dwarf_quari",
+        "garrison_fergus",
+        "garrison_rosalind"
+      ]
+    },
+    "lottery_pickup_default": {
+      "featuredHeroes": [
+        "astral_melodymuse",
+        "astral_dwarf_gongoth"
+      ],
+      "includedHeroes": [
+        "s2_ariel",
+        "s3_odin",
+        "s4_xnolphod",
+        "s5_el_naddaha"
+      ]
+    },
     "lottery_goblin_default": {
       "featuredHeroes": [
         "goblin_soursting",
@@ -1442,26 +1462,6 @@
         "ice_god_eskimo_costume_champion",
         "dark_god_seshat_costume_revenant",
         "holy_god_bai_yeong"
-      ]
-    },
-    "lottery_ascension_default": {
-      "featuredHeroes": [
-        "castle_bear_bearnadette",
-        "astral_dwarf_quari",
-        "garrison_fergus",
-        "garrison_rosalind"
-      ]
-    },
-    "lottery_pickup_default": {
-      "featuredHeroes": [
-        "astral_melodymuse",
-        "astral_dwarf_gongoth"
-      ],
-      "includedHeroes": [
-        "s2_ariel",
-        "s3_odin",
-        "s4_xnolphod",
-        "s5_el_naddaha"
       ]
     }
   }

@@ -1372,7 +1372,7 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div class="details-top-right">
                 <div class="details-info-line">
-                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
+                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class].toLowerCase() || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
                     ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
                     ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aether_powerReverseMap[hero.AetherPower.toLowerCase()] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
                     ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}

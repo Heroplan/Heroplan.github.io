@@ -992,9 +992,9 @@ const iconMaps = {
             return iconFilename ? [key, `imgs/coins/${iconFilename}`] : [key, null];
         }).filter(entry => entry[1]))
     },
-    aetherpower: {
-        ...Object.fromEntries(Object.keys(aether_powerReverseMap).map(key => [key, `imgs/Aether Power/${aether_powerReverseMap[key]}.webp`]))
-    }
+    aetherpower: Object.fromEntries(
+        Object.keys(aether_powerReverseMap).map(key => [key.toLowerCase(), `imgs/Aether Power/${aether_powerReverseMap[key].toLowerCase()}.webp`])
+    ),
 };
 
 

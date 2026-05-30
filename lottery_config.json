@@ -11,37 +11,11 @@
       ],
       "featuredHeroNum": 5
     },
-    "AstralElvesSummon": {
+    "HarvestSummon": {
       "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 2
-    },
-    "ChallengeEventSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "trainer_3",
-        "trainer_4",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
-    "CostumeSummon": {
-      "bucketConfig": [
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
+        "heroes_ex_s1_3",
+        "heroes_ex_s1_4",
+        "heroes_ex_s1_5",
         "featuredHero"
       ],
       "featuredHeroNum": 2
@@ -57,36 +31,16 @@
       ],
       "featuredHeroNum": 6
     },
-    "GoblinSummon": {
+    "WildernessSummon": {
       "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
+        "heroes_listed_3",
+        "heroes_listed_4",
+        "heroes_listed_5",
+        "featuredHero",
+        "trainer_3",
+        "trainer_4"
       ],
-      "featuredHeroNum": 2
-    },
-    "HarvestSummon": {
-      "bucketConfig": [
-        "heroes_ex_s1_3",
-        "heroes_ex_s1_4",
-        "heroes_ex_s1_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 2
-    },
-    "LegendsSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
+      "featuredHeroNum": 4
     },
     "MercenaryWarSummon": {
       "bucketConfig": [
@@ -112,6 +66,69 @@
       ],
       "featuredHeroNum": 3
     },
+    "TempleSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "AstralElvesSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "ShadowSummon": {
+      "bucketConfig": [
+        "heroes_listed_3",
+        "heroes_listed_4",
+        "heroes_listed_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
+    },
+    "CostumeSummon": {
+      "bucketConfig": [
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "TitanHunterSummon": {
+      "bucketConfig": [
+        "heroes_listed_3",
+        "heroes_listed_4",
+        "heroes_listed_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "MimicSummon": {
+      "bucketConfig": [
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
+    },
     "AllianceEventSummon": {
       "bucketConfig": [
         "heroes_s1_3",
@@ -124,36 +141,31 @@
       ],
       "featuredHeroNum": 3
     },
-    "AscensionSummon": {
+    "TowerEventSummon": {
       "bucketConfig": [
         "heroes_s1_3",
         "heroes_s1_4",
-        "heroes_listed_5",
-        "featuredHero",
-        "trainer_3",
-        "trainer_4"
-      ],
-      "powerGradeWeights": [
-        0,
-        200,
-        200,
-        200,
-        0,
-        200,
-        0,
-        150,
-        50
-      ],
-      "featuredHeroNum": 4
-    },
-    "PickupSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_listed_5",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
         "featuredHero"
       ],
-      "featuredHeroNum": 2
+      "featuredHeroNum": 3
+    },
+    "ChallengeEventSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "trainer_3",
+        "trainer_4",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
     },
     "MapSeasonSummon": {
       "bucketConfig": [
@@ -187,15 +199,6 @@
       ],
       "featuredHeroNum": 3
     },
-    "SeasonalPremiumSummon": {
-      "bucketConfig": [
-        "heroes_listed_3",
-        "heroes_listed_4",
-        "heroes_listed_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
     "SeasonalPremiumSummon_Lunar_New_Year": {
       "bucketConfig": [
         "heroes_listed_3",
@@ -205,14 +208,11 @@
       ],
       "featuredHeroNum": 3
     },
-    "ShadowSummon": {
+    "SeasonalPremiumSummon": {
       "bucketConfig": [
         "heroes_listed_3",
         "heroes_listed_4",
         "heroes_listed_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
         "featuredHero"
       ],
       "featuredHeroNum": 3
@@ -229,59 +229,6 @@
       ],
       "featuredHeroNum": 2
     },
-    "TowerEventSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
-    "WildernessSummon": {
-      "bucketConfig": [
-        "heroes_listed_3",
-        "heroes_listed_4",
-        "heroes_listed_5",
-        "featuredHero",
-        "trainer_3",
-        "trainer_4"
-      ],
-      "featuredHeroNum": 4
-    },
-    "TempleSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 2
-    },
-    "MimicSummon": {
-      "bucketConfig": [
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
-    "TitanHunterSummon": {
-      "bucketConfig": [
-        "heroes_listed_3",
-        "heroes_listed_4",
-        "heroes_listed_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 2
-    },
     "LeagueSummon": {
       "bucketConfig": [
         "heroes_event_3",
@@ -290,6 +237,59 @@
         "featuredHero"
       ],
       "featuredHeroNum": 6
+    },
+    "AscensionSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_listed_5",
+        "featuredHero",
+        "trainer_3",
+        "trainer_4"
+      ],
+      "powerGradeWeights": [
+        0,
+        200,
+        200,
+        200,
+        0,
+        200,
+        0,
+        150,
+        50
+      ],
+      "featuredHeroNum": 4
+    },
+    "PickupSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_listed_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "GoblinSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
+    "LegendsSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
     }
   },
   "SummonPool": {
@@ -308,150 +308,72 @@
       "family": "mystery",
       "ChancePerMil": "1"
     },
-    "lottery_featured_alliance_quest_castle": {
+    "lottery_black_7th_birthday": {
       "featuredHeroes": [
-        "castle_wolf_quenell_costume_wood",
-        "castle_bear_bearnadette",
-        "castle_wolf_wolfgang_costume_treasure"
+        "rodent_embertail",
+        "rodent_sproutwhisker"
       ],
-      "AssociatedFamilies": [
-        "wolf",
-        "raven",
-        "stag",
-        "bear"
-      ]
-    },
-    "lottery_featured_alliance_quest_musketeers": {
-      "featuredHeroes": [
-        "beauty_beast_jacquespierre",
-        "musketeer_cardinal_richelieu_costume_ambassador",
-        "beauty_beast_pendulus_clonk"
-      ],
-      "AssociatedFamilies": [
-        "beauty_beast",
-        "musketeer"
-      ],
-      "Searchid": "AllianceQuestMusketeers"
-    },
-    "lottery_astralelves_default": {
-      "featuredHeroes": [
-        "astral_demon_carthizux",
+      "amountOfSelectableFeaturedSlots": 3,
+      "entitiesToChooseFrom": [
+        "astral_demon_salome",
+        "scoundrel_lane",
+        "mahayoddha_ustad_anand",
+        "vegetable_bartholomew",
+        "ronin_asakura_masao",
+        "wild_cat_catalina",
+        "vegetable_indigon",
+        "wild_cat_vernix",
+        "magic_carpet_kesha",
+        "wild_cat_thaffer",
+        "beowulf_freawaru",
+        "vegetable_broseph",
+        "mahayoddha_bonga",
+        "astral_demon_haradea",
+        "outlaw_shi_jin",
+        "wild_cat_imagus",
+        "mahayoddha_veer",
+        "astral_demon_ibelis",
+        "magic_carpet_shareef",
         "astral_demon_zondalath"
       ],
       "AssociatedFamilies": [
-        "astral_elves",
-        "astral_dwarfs",
-        "astral_demons"
-      ]
+        "rodent"
+      ],
+      "latestIncludedHeroDate": "2026-03-18",
+      "latestIncludedHeroAgeInDays": 730
     },
-    "lottery_featured_event_gargoyles2": {
+    "lottery_black_solstice_default": {
       "featuredHeroes": [
-        "gargoyle_vincent",
-        "gargoyle_guffa",
-        "gargoyle_hilda"
+        "dryad_cloveria",
+        "dryad_pansius"
       ],
       "AssociatedFamilies": [
-        "gargoyle"
-      ]
-    },
-    "lottery_featured_event_beowulf": {
-      "featuredHeroes": [
-        "beowulf_hygd",
-        "beowulf_hrothgar",
-        "beowulf_freawaru"
+        "mahayoddha"
       ],
-      "AssociatedFamilies": [
-        "beowulf"
-      ]
+      "latestIncludedHeroDate": "2026-06-16",
+      "latestIncludedHeroAgeInDays": 730
     },
-    "lottery_featured_event_festival": {
+    "lottery_harvest_default": {
       "featuredHeroes": [
-        "wonderland_hatter_costume_tea",
-        "wonderland_knave_of_hearts"
-      ],
-      "AssociatedFamilies": [
-        "knight",
-        "corellia",
-        "fable",
-        "guardian",
-        "wonderland"
-      ]
-    },
-    "lottery_featured_event_festival_b": {
-      "featuredHeroes": [
-        "bard_lyria",
-        "villain_dark_lord_costume_astronomer",
-        "bard_dunnar_hart"
-      ],
-      "AssociatedFamilies": [
-        "villains",
-        "circus",
-        "slayers",
-        "mighty_pet",
-        "bard"
-      ]
-    },
-    "lottery_featured_event_farmland": {
-      "featuredHeroes": [
-        "vegetable_melonius",
-        "vegetable_big_barry",
-        "vegetable_auberguy"
+        "vegetable_bartholomew",
+        "vegetable_elsbeth"
       ],
       "AssociatedFamilies": [
         "vegetable"
       ],
-      "Searchid": "RecurringFarmland"
+      "latestIncludedHeroDate": "2025-09-02",
+      "latestIncludedHeroAgeInDays": 730
     },
-    "lottery_featured_event_opera": {
+    "lottery_black_default": {
       "featuredHeroes": [
-        "ballerina_charlotta",
-        "ballerina_armand",
-        "ballerina_von_rothbart"
+        "scoundrel_lane",
+        "scoundrel_duval"
       ],
       "AssociatedFamilies": [
-        "opera"
-      ]
-    },
-    "lottery_featured_event_masquerade": {
-      "featuredHeroes": [
-        "masquerade_februus",
-        "masquerade_umbria",
-        "masquerade_jana"
+        "scoundrel"
       ],
-      "AssociatedFamilies": [
-        "masquerade"
-      ]
-    },
-    "lottery_costume_default": {
-      "AssociatedFamilies": [
-        "classic"
-      ],
-      "featuredHeroes": [
-        "tribal_chief_costume_stylish",
-        "nordic_male_lord_costume_stylish"
-      ]
-    },
-    "lottery_costume_wardrobe2": {
-      "AssociatedFamilies": [
-        "lagoon",
-        "japanese",
-        "atlantis",
-        "alfheim",
-        "asgard",
-        "helheim",
-        "jotunheim",
-        "midgard",
-        "muspelheim",
-        "niflheim",
-        "svartalfheim",
-        "vanaheim",
-        "hotm2017",
-        "hotm2018"
-      ],
-      "featuredHeroes": [
-        "s2_junglehunter_costume_cute",
-        "ice_god_athena_costume_cute"
-      ]
+      "latestIncludedHeroDate": "2025-11-24",
+      "latestIncludedHeroAgeInDays": 730
     },
     "lottery_covenant_default": {
       "AssociatedFamilies": [
@@ -554,50 +476,96 @@
         "construct_ironvein"
       ]
     },
-    "lottery_goblin_default": {
+    "lottery_wilderness_default": {
+      "AssociatedFamilies": [
+        "classic1",
+        "woodlandfaun1",
+        "wildcat1"
+      ],
       "featuredHeroes": [
-        "goblin_soursting",
-        "goblin_ratgrub"
+        "wild_cat_thaffer",
+        "vegetable_big_barry",
+        "mahayoddha_ajay",
+        "outlaw_xiang_chong"
       ],
-      "AssociatedFamilies": [
-        "goblin",
-        "garrison"
-      ]
-    },
-    "lottery_hotm_event_default": {
-      "AssociatedFamilies": [
-        "champions",
-        "hotm2017",
-        "hotm2018",
-        "hotm2019",
-        "hotm2020",
-        "hotm2021",
-        "hotm2022",
-        "hotm2023",
-        "hotm2024",
-        "hotm2025"
-      ],
-      "entitiesToChooseFrom": [
-        "champions_mistra",
-        "champions_lazara",
-        "forest_god_gregorion_costume_alchemist",
-        "dark_god_september_costume_engineer",
-        "champions_nogu",
-        "witch_king_costume_cosmic",
-        "champions_norman",
-        "forest_god_zeline_costume_avian",
-        "champions_satori",
-        "holy_god_musashi_costume_prisoner",
-        "forest_god_evelyn_costume_huntress",
-        "holy_god_delilah_costume_guardian",
-        "fire_god_natalya_costume_seamstress",
-        "fire_god_zimkitha_costume_adventurer",
-        "dark_god_hel_costume_omen",
-        "ice_god_perseus_costume_frozen",
-        "ice_god_iris",
-        "ice_god_eskimo_costume_champion",
-        "dark_god_seshat_costume_revenant",
-        "holy_god_bai_yeong"
+      "advertisedHero": "wild_cat_stravia",
+      "includedHeroes": [
+        "styx_dante",
+        "knights_bauchan",
+        "mighty_pet_rufus",
+        "monster_hunter_basil",
+        "journey_general_yin",
+        "wonderland_bear",
+        "magic_roxia",
+        "forest_friar",
+        "bard_zarel",
+        "s3_grevle",
+        "musketeer_planchet",
+        "pirate_vodnik",
+        "gargoyle_soroca",
+        "s3_nordri",
+        "s4_helo",
+        "faun_saskia",
+        "musketeer_felton",
+        "oriental_female_mage",
+        "oriental_panda_berserker",
+        "s5_aqeela",
+        "knights_treevil",
+        "s2_lantern_ghost",
+        "gargoyle_budatin",
+        "undead_running_skeleton",
+        "knights_sir_lancelot",
+        "bard_zhabog",
+        "ballerina_raul",
+        "magic_lucy",
+        "s2_demon_master",
+        "gargoyle_kalo",
+        "styx_brontes",
+        "fables_hansel",
+        "goblin_mage",
+        "tales1_mulgog",
+        "masquerade_fosco",
+        "dwarwen_brewmaster",
+        "bard_garyas",
+        "s5_azmia",
+        "oriental_falconer",
+        "s5_scoratek",
+        "s3_mist",
+        "mighty_pet_waddles",
+        "s2_proteus",
+        "mighty_pet_cupcake",
+        "castle_bear_koda",
+        "journey_heifeng_guai",
+        "owl_fulvia",
+        "faun_araminta",
+        "s4_xenda",
+        "faun_isidore",
+        "ninja_ekanite",
+        "faun_peregrine",
+        "ballerina_prince_siegfried",
+        "s5_maat",
+        "ninja_oniwakamaru",
+        "magic_camilla",
+        "faun_verity",
+        "guardian_hippo",
+        "faun_gideon",
+        "s5_cleopatra",
+        "s5_eset",
+        "bard_ogima",
+        "s5_bastet",
+        "mighty_pet_luna",
+        "faun_tamlin",
+        "musketeer_rochefort",
+        "faun_myrtle",
+        "faun_maud",
+        "faun_yolanda",
+        "faun_philomena",
+        "faun_ysabel",
+        "faun_jolyon",
+        "faun_ascian",
+        "faun_bramble",
+        "wild_cat_ferni",
+        "wild_cat_tunes"
       ]
     },
     "lottery_mercenary_war_default": {
@@ -642,6 +610,204 @@
         "abyss_hunter"
       ]
     },
+    "lottery_temple_default": {
+      "featuredHeroes": [
+        "mahayoddha_rudraditya",
+        "mahayoddha_bhairavi_devi"
+      ],
+      "AssociatedFamilies": [
+        "mahayoddha"
+      ]
+    },
+    "lottery_astralelves_default": {
+      "featuredHeroes": [
+        "astral_demon_carthizux",
+        "astral_demon_zondalath"
+      ],
+      "AssociatedFamilies": [
+        "astral_elves",
+        "astral_dwarfs",
+        "astral_demons"
+      ]
+    },
+    "lottery_shadow_default": {
+      "AssociatedFamilies": [
+        "investigator",
+        "cultist",
+        "forsaken",
+        "institute"
+      ],
+      "featuredHeroes": [
+        "forsaken_nyctalos",
+        "institute_professor_ambrose",
+        "forsaken_demhalar"
+      ],
+      "includedHeroes": [
+        "castle_bear_bearnadette",
+        "elemental_gastille",
+        "slime_mucktus",
+        "ballerina_firmin",
+        "masquerade_jana",
+        "fire_god_zidane",
+        "slayer_senan_costume_tentacles",
+        "s4_phileas_fogg_costume_engineer",
+        "musketeer_milady_de_winter_costume_herbalist",
+        "s3_norns_costume_puppeteers",
+        "elemental_zaria",
+        "masquerade_umbria",
+        "magic_cristobal_costume_emerald",
+        "masquerade_fortuna",
+        "s4_professor_lidenbrock_costume_jeweler",
+        "fire_god_reuben",
+        "s4_xnolphod_costume_jailer",
+        "masquerade_februus",
+        "pirate_commodore_finley_costume_bleak",
+        "holy_god_onatel",
+        "tales1_sharkhai_costume_butcher",
+        "guardian_jackal_assassin_costume_bones",
+        "masquerade_fosco",
+        "gargoyle_kalo",
+        "s3_shadereave",
+        "elemental_lexi",
+        "s4_griffin_costume_priest",
+        "s4_zila_lei_costume_dancer",
+        "fables_hansel_costume_vampire_hunter",
+        "slayer_cillian",
+        "musketeer_felton_costume_pirate",
+        "knights_treevil",
+        "halloween_goopy",
+        "pirate_vodnik",
+        "magic_kornel"
+      ]
+    },
+    "lottery_costume_default": {
+      "AssociatedFamilies": [
+        "classic"
+      ],
+      "featuredHeroes": [
+        "tribal_chief_costume_stylish",
+        "nordic_male_lord_costume_stylish"
+      ]
+    },
+    "lottery_costume_wardrobe2": {
+      "AssociatedFamilies": [
+        "lagoon",
+        "japanese",
+        "atlantis",
+        "alfheim",
+        "asgard",
+        "helheim",
+        "jotunheim",
+        "midgard",
+        "muspelheim",
+        "niflheim",
+        "svartalfheim",
+        "vanaheim",
+        "hotm2017",
+        "hotm2018"
+      ],
+      "featuredHeroes": [
+        "s2_junglehunter_costume_cute",
+        "ice_god_athena_costume_cute"
+      ]
+    },
+    "lottery_titan_hunter_default": {
+      "featuredHeroes": [
+        "titan_hunter_savanna",
+        "titan_hunter_avestalon"
+      ],
+      "AssociatedFamilies": [
+        "titan_hunter"
+      ],
+      "includedHeroes": [
+        "faun_isidore",
+        "s4_phileas_fogg_costume_engineer",
+        "ice_god_athena_costume_wargoddess",
+        "easter_jasper_costume_fisherman",
+        "goblin_darkfeather",
+        "tales1_gestalt_costume_pearls",
+        "ballerina_daroga",
+        "ice_god_perseus_costume_frozen",
+        "guardian_elephant",
+        "elemental_gastille",
+        "elemental_ash",
+        "ballerina_armand",
+        "goblin_grimsteel",
+        "astral_dwarf_haumri",
+        "elemental_farrah",
+        "s2_rugged_fisherman_costume_sake_master",
+        "castle_raven_franz",
+        "s3_jott",
+        "guardian_jackal_assassin_costume_bones",
+        "tales1_sharkhai_costume_butcher",
+        "kingdom_sun_shangxiang",
+        "s3_almur_costume_lord",
+        "tales2_dain",
+        "monster_hunter_bogart",
+        "magic_sergei",
+        "tales1_bagreg_costume_scout",
+        "astral_dwarf_chires",
+        "s3_nordri_costume_explorer",
+        "beachparty_dolrak",
+        "knights_treevil",
+        "christmas_buster",
+        "bard_zarel",
+        "ballerina_swan_maiden",
+        "shadow_cthuwu",
+        "s2_fiji_mermaid_costume_hunter"
+      ]
+    },
+    "lottery_mimic_default": {
+      "allowsTrainerCharacter": true,
+      "entitiesToChooseFrom": [
+        "mimic_ascension_item_blue",
+        "mimic_ascension_item_green",
+        "mimic_ascension_item_purple",
+        "mimic_ascension_item_red",
+        "mimic_ascension_item_yellow",
+        "mimic_training_hero_blue",
+        "mimic_training_hero_green",
+        "mimic_training_hero_purple",
+        "mimic_training_hero_red",
+        "mimic_training_hero_yellow"
+      ],
+      "bucketRules": [
+        {
+          "includedRarities": [
+            3,
+            4
+          ],
+          "includedFamilies": [
+            "magic",
+            "mimic"
+          ]
+        },
+        {
+          "includedRarities": [
+            5
+          ],
+          "includedFamilies": [
+            "magic"
+          ]
+        }
+      ],
+      "trainerCharacterRarities": [
+        3,
+        4
+      ]
+    },
+    "lottery_featured_alliance_quest_musketeers": {
+      "featuredHeroes": [
+        "beauty_beast_jacquespierre",
+        "musketeer_cardinal_richelieu_costume_ambassador",
+        "beauty_beast_pendulus_clonk"
+      ],
+      "AssociatedFamilies": [
+        "beauty_beast",
+        "musketeer"
+      ],
+      "Searchid": "AllianceQuestMusketeers"
+    },
     "lottery_featured_alliance_quest_moths": {
       "featuredHeroes": [
         "moth_furgeant",
@@ -652,24 +818,138 @@
         "moths"
       ]
     },
-    "lottery_pickup_default": {
+    "lottery_featured_alliance_quest_castle": {
       "featuredHeroes": [
-        "astral_melodymuse",
-        "astral_dwarf_gongoth"
+        "castle_wolf_quenell_costume_wood",
+        "castle_bear_bearnadette",
+        "castle_wolf_wolfgang_costume_treasure"
       ],
-      "includedHeroes": [
-        "s2_ariel",
-        "s3_odin",
-        "s4_xnolphod",
-        "s5_el_naddaha"
+      "AssociatedFamilies": [
+        "wolf",
+        "raven",
+        "stag",
+        "bear"
       ]
     },
-    "lottery_ascension_default": {
+    "lottery_tower_ninja_default": {
+      "AssociatedFamilies": [
+        "ninja",
+        "ronin"
+      ],
       "featuredHeroes": [
-        "castle_bear_bearnadette",
-        "astral_dwarf_quari",
-        "garrison_fergus",
-        "garrison_rosalind"
+        "ronin_kitou_sayomi",
+        "ninja_garnet_costume_flame",
+        "ronin_hiyori"
+      ],
+      "Searchid": "TowerNinja"
+    },
+    "lottery_tower_magic_default": {
+      "AssociatedFamilies": [
+        "magic",
+        "magic_carpet"
+      ],
+      "featuredHeroes": [
+        "magic_carpet_kesha",
+        "magic_jett_costume_eyes",
+        "magic_carpet_shareef"
+      ]
+    },
+    "lottery_tower_owl_default": {
+      "AssociatedFamilies": [
+        "owl"
+      ],
+      "featuredHeroes": [
+        "owl_fulvia",
+        "owl_relius",
+        "owl_timius"
+      ]
+    },
+    "lottery_tower_styx_default": {
+      "featuredHeroes": [
+        "styx_amphitrite",
+        "styx_charon",
+        "styx_erebus"
+      ],
+      "AssociatedFamilies": [
+        "styx"
+      ]
+    },
+    "lottery_featured_event_farmland": {
+      "featuredHeroes": [
+        "vegetable_melonius",
+        "vegetable_big_barry",
+        "vegetable_auberguy"
+      ],
+      "AssociatedFamilies": [
+        "vegetable"
+      ],
+      "Searchid": "RecurringFarmland"
+    },
+    "lottery_featured_event_beowulf": {
+      "featuredHeroes": [
+        "beowulf_hygd",
+        "beowulf_hrothgar",
+        "beowulf_freawaru"
+      ],
+      "AssociatedFamilies": [
+        "beowulf"
+      ]
+    },
+    "lottery_featured_event_festival": {
+      "featuredHeroes": [
+        "wonderland_hatter_costume_tea",
+        "wonderland_knave_of_hearts"
+      ],
+      "AssociatedFamilies": [
+        "knight",
+        "corellia",
+        "fable",
+        "guardian",
+        "wonderland"
+      ]
+    },
+    "lottery_featured_event_festival_b": {
+      "featuredHeroes": [
+        "bard_lyria",
+        "villain_dark_lord_costume_astronomer",
+        "bard_dunnar_hart"
+      ],
+      "AssociatedFamilies": [
+        "villains",
+        "circus",
+        "slayers",
+        "mighty_pet",
+        "bard"
+      ]
+    },
+    "lottery_featured_event_opera": {
+      "featuredHeroes": [
+        "ballerina_charlotta",
+        "ballerina_armand",
+        "ballerina_von_rothbart"
+      ],
+      "AssociatedFamilies": [
+        "opera"
+      ]
+    },
+    "lottery_featured_event_masquerade": {
+      "featuredHeroes": [
+        "masquerade_februus",
+        "masquerade_umbria",
+        "masquerade_jana"
+      ],
+      "AssociatedFamilies": [
+        "masquerade"
+      ]
+    },
+    "lottery_featured_event_gargoyles2": {
+      "featuredHeroes": [
+        "gargoyle_vincent",
+        "gargoyle_guffa",
+        "gargoyle_hilda"
+      ],
+      "AssociatedFamilies": [
+        "gargoyle"
       ]
     },
     "lottery_season_atlantis": {
@@ -972,123 +1252,6 @@
         "winter"
       ]
     },
-    "lottery_shadow_default": {
-      "AssociatedFamilies": [
-        "investigator",
-        "cultist",
-        "forsaken",
-        "institute"
-      ],
-      "featuredHeroes": [
-        "forsaken_nyctalos",
-        "institute_professor_ambrose",
-        "forsaken_demhalar"
-      ],
-      "includedHeroes": [
-        "castle_bear_bearnadette",
-        "elemental_gastille",
-        "slime_mucktus",
-        "ballerina_firmin",
-        "masquerade_jana",
-        "fire_god_zidane",
-        "slayer_senan_costume_tentacles",
-        "s4_phileas_fogg_costume_engineer",
-        "musketeer_milady_de_winter_costume_herbalist",
-        "s3_norns_costume_puppeteers",
-        "elemental_zaria",
-        "masquerade_umbria",
-        "magic_cristobal_costume_emerald",
-        "masquerade_fortuna",
-        "s4_professor_lidenbrock_costume_jeweler",
-        "fire_god_reuben",
-        "s4_xnolphod_costume_jailer",
-        "masquerade_februus",
-        "pirate_commodore_finley_costume_bleak",
-        "holy_god_onatel",
-        "tales1_sharkhai_costume_butcher",
-        "guardian_jackal_assassin_costume_bones",
-        "masquerade_fosco",
-        "gargoyle_kalo",
-        "s3_shadereave",
-        "elemental_lexi",
-        "s4_griffin_costume_priest",
-        "s4_zila_lei_costume_dancer",
-        "fables_hansel_costume_vampire_hunter",
-        "slayer_cillian",
-        "musketeer_felton_costume_pirate",
-        "knights_treevil",
-        "halloween_goopy",
-        "pirate_vodnik",
-        "magic_kornel"
-      ]
-    },
-    "lottery_harvest_default": {
-      "featuredHeroes": [
-        "vegetable_bartholomew",
-        "vegetable_elsbeth"
-      ],
-      "AssociatedFamilies": [
-        "vegetable"
-      ],
-      "latestIncludedHeroDate": "2025-09-02",
-      "latestIncludedHeroAgeInDays": 730
-    },
-    "lottery_black_solstice_default": {
-      "featuredHeroes": [
-        "dryad_cloveria",
-        "dryad_pansius"
-      ],
-      "AssociatedFamilies": [
-        "mahayoddha"
-      ],
-      "latestIncludedHeroDate": "2026-06-16",
-      "latestIncludedHeroAgeInDays": 730
-    },
-    "lottery_black_default": {
-      "featuredHeroes": [
-        "scoundrel_lane",
-        "scoundrel_duval"
-      ],
-      "AssociatedFamilies": [
-        "scoundrel"
-      ],
-      "latestIncludedHeroDate": "2025-11-24",
-      "latestIncludedHeroAgeInDays": 730
-    },
-    "lottery_black_7th_birthday": {
-      "featuredHeroes": [
-        "rodent_embertail",
-        "rodent_sproutwhisker"
-      ],
-      "amountOfSelectableFeaturedSlots": 3,
-      "entitiesToChooseFrom": [
-        "astral_demon_salome",
-        "scoundrel_lane",
-        "mahayoddha_ustad_anand",
-        "vegetable_bartholomew",
-        "ronin_asakura_masao",
-        "wild_cat_catalina",
-        "vegetable_indigon",
-        "wild_cat_vernix",
-        "magic_carpet_kesha",
-        "wild_cat_thaffer",
-        "beowulf_freawaru",
-        "vegetable_broseph",
-        "mahayoddha_bonga",
-        "astral_demon_haradea",
-        "outlaw_shi_jin",
-        "wild_cat_imagus",
-        "mahayoddha_veer",
-        "astral_demon_ibelis",
-        "magic_carpet_shareef",
-        "astral_demon_zondalath"
-      ],
-      "AssociatedFamilies": [
-        "rodent"
-      ],
-      "latestIncludedHeroDate": "2026-03-18",
-      "latestIncludedHeroAgeInDays": 730
-    },
     "lottery_super_elemental": {
       "featuredHeroes_red": [
         "elemental_ash",
@@ -1115,235 +1278,6 @@
         "slime"
       ],
       "latestIncludedNonEventHeroAgeInDays": 60
-    },
-    "lottery_tower_ninja_default": {
-      "AssociatedFamilies": [
-        "ninja",
-        "ronin"
-      ],
-      "featuredHeroes": [
-        "ronin_kitou_sayomi",
-        "ninja_garnet_costume_flame",
-        "ronin_hiyori"
-      ],
-      "Searchid": "TowerNinja"
-    },
-    "lottery_tower_owl_default": {
-      "AssociatedFamilies": [
-        "owl"
-      ],
-      "featuredHeroes": [
-        "owl_fulvia",
-        "owl_relius",
-        "owl_timius"
-      ]
-    },
-    "lottery_tower_magic_default": {
-      "AssociatedFamilies": [
-        "magic",
-        "magic_carpet"
-      ],
-      "featuredHeroes": [
-        "magic_carpet_kesha",
-        "magic_jett_costume_eyes",
-        "magic_carpet_shareef"
-      ]
-    },
-    "lottery_tower_styx_default": {
-      "featuredHeroes": [
-        "styx_amphitrite",
-        "styx_charon",
-        "styx_erebus"
-      ],
-      "AssociatedFamilies": [
-        "styx"
-      ]
-    },
-    "lottery_wilderness_default": {
-      "AssociatedFamilies": [
-        "classic1",
-        "woodlandfaun1",
-        "wildcat1"
-      ],
-      "featuredHeroes": [
-        "wild_cat_thaffer",
-        "vegetable_big_barry",
-        "mahayoddha_ajay",
-        "outlaw_xiang_chong"
-      ],
-      "advertisedHero": "wild_cat_stravia",
-      "includedHeroes": [
-        "styx_dante",
-        "knights_bauchan",
-        "mighty_pet_rufus",
-        "monster_hunter_basil",
-        "journey_general_yin",
-        "wonderland_bear",
-        "magic_roxia",
-        "forest_friar",
-        "bard_zarel",
-        "s3_grevle",
-        "musketeer_planchet",
-        "pirate_vodnik",
-        "gargoyle_soroca",
-        "s3_nordri",
-        "s4_helo",
-        "faun_saskia",
-        "musketeer_felton",
-        "oriental_female_mage",
-        "oriental_panda_berserker",
-        "s5_aqeela",
-        "knights_treevil",
-        "s2_lantern_ghost",
-        "gargoyle_budatin",
-        "undead_running_skeleton",
-        "knights_sir_lancelot",
-        "bard_zhabog",
-        "ballerina_raul",
-        "magic_lucy",
-        "s2_demon_master",
-        "gargoyle_kalo",
-        "styx_brontes",
-        "fables_hansel",
-        "goblin_mage",
-        "tales1_mulgog",
-        "masquerade_fosco",
-        "dwarwen_brewmaster",
-        "bard_garyas",
-        "s5_azmia",
-        "oriental_falconer",
-        "s5_scoratek",
-        "s3_mist",
-        "mighty_pet_waddles",
-        "s2_proteus",
-        "mighty_pet_cupcake",
-        "castle_bear_koda",
-        "journey_heifeng_guai",
-        "owl_fulvia",
-        "faun_araminta",
-        "s4_xenda",
-        "faun_isidore",
-        "ninja_ekanite",
-        "faun_peregrine",
-        "ballerina_prince_siegfried",
-        "s5_maat",
-        "ninja_oniwakamaru",
-        "magic_camilla",
-        "faun_verity",
-        "guardian_hippo",
-        "faun_gideon",
-        "s5_cleopatra",
-        "s5_eset",
-        "bard_ogima",
-        "s5_bastet",
-        "mighty_pet_luna",
-        "faun_tamlin",
-        "musketeer_rochefort",
-        "faun_myrtle",
-        "faun_maud",
-        "faun_yolanda",
-        "faun_philomena",
-        "faun_ysabel",
-        "faun_jolyon",
-        "faun_ascian",
-        "faun_bramble",
-        "wild_cat_ferni",
-        "wild_cat_tunes"
-      ]
-    },
-    "lottery_temple_default": {
-      "featuredHeroes": [
-        "mahayoddha_rudraditya",
-        "mahayoddha_bhairavi_devi"
-      ],
-      "AssociatedFamilies": [
-        "mahayoddha"
-      ]
-    },
-    "lottery_mimic_default": {
-      "allowsTrainerCharacter": true,
-      "entitiesToChooseFrom": [
-        "mimic_ascension_item_blue",
-        "mimic_ascension_item_green",
-        "mimic_ascension_item_purple",
-        "mimic_ascension_item_red",
-        "mimic_ascension_item_yellow",
-        "mimic_training_hero_blue",
-        "mimic_training_hero_green",
-        "mimic_training_hero_purple",
-        "mimic_training_hero_red",
-        "mimic_training_hero_yellow"
-      ],
-      "bucketRules": [
-        {
-          "includedRarities": [
-            3,
-            4
-          ],
-          "includedFamilies": [
-            "magic",
-            "mimic"
-          ]
-        },
-        {
-          "includedRarities": [
-            5
-          ],
-          "includedFamilies": [
-            "magic"
-          ]
-        }
-      ],
-      "trainerCharacterRarities": [
-        3,
-        4
-      ]
-    },
-    "lottery_titan_hunter_default": {
-      "featuredHeroes": [
-        "titan_hunter_savanna",
-        "titan_hunter_avestalon"
-      ],
-      "AssociatedFamilies": [
-        "titan_hunter"
-      ],
-      "includedHeroes": [
-        "faun_isidore",
-        "s4_phileas_fogg_costume_engineer",
-        "ice_god_athena_costume_wargoddess",
-        "easter_jasper_costume_fisherman",
-        "goblin_darkfeather",
-        "tales1_gestalt_costume_pearls",
-        "ballerina_daroga",
-        "ice_god_perseus_costume_frozen",
-        "guardian_elephant",
-        "elemental_gastille",
-        "elemental_ash",
-        "ballerina_armand",
-        "goblin_grimsteel",
-        "astral_dwarf_haumri",
-        "elemental_farrah",
-        "s2_rugged_fisherman_costume_sake_master",
-        "castle_raven_franz",
-        "s3_jott",
-        "guardian_jackal_assassin_costume_bones",
-        "tales1_sharkhai_costume_butcher",
-        "kingdom_sun_shangxiang",
-        "s3_almur_costume_lord",
-        "tales2_dain",
-        "monster_hunter_bogart",
-        "magic_sergei",
-        "tales1_bagreg_costume_scout",
-        "astral_dwarf_chires",
-        "s3_nordri_costume_explorer",
-        "beachparty_dolrak",
-        "knights_treevil",
-        "christmas_buster",
-        "bard_zarel",
-        "ballerina_swan_maiden",
-        "shadow_cthuwu",
-        "s2_fiji_mermaid_costume_hunter"
-      ]
     },
     "lottery_league_default": {
       "amountOfSelectableFeaturedSlots": 6,
@@ -1463,6 +1397,72 @@
         "hotm2024"
       ],
       "latestIncludedHeroDate": "2025-11-26"
+    },
+    "lottery_ascension_default": {
+      "featuredHeroes": [
+        "castle_bear_bearnadette",
+        "astral_dwarf_quari",
+        "garrison_fergus",
+        "garrison_rosalind"
+      ]
+    },
+    "lottery_pickup_default": {
+      "featuredHeroes": [
+        "slime_charmione",
+        "slime_magistine"
+      ],
+      "includedHeroes": [
+        "s2_ariel",
+        "s3_odin",
+        "s4_xnolphod",
+        "s5_el_naddaha"
+      ]
+    },
+    "lottery_goblin_default": {
+      "featuredHeroes": [
+        "goblin_soursting",
+        "goblin_ratgrub"
+      ],
+      "AssociatedFamilies": [
+        "goblin",
+        "garrison"
+      ]
+    },
+    "lottery_hotm_event_default": {
+      "AssociatedFamilies": [
+        "champions",
+        "hotm2017",
+        "hotm2018",
+        "hotm2019",
+        "hotm2020",
+        "hotm2021",
+        "hotm2022",
+        "hotm2023",
+        "hotm2024",
+        "hotm2025"
+      ],
+      "entitiesToChooseFrom": [
+        "champions_mistra",
+        "champions_lazara",
+        "forest_god_gregorion_costume_alchemist",
+        "dark_god_september_costume_engineer",
+        "champions_nogu",
+        "witch_king_costume_cosmic",
+        "champions_norman",
+        "forest_god_zeline_costume_avian",
+        "champions_satori",
+        "holy_god_musashi_costume_prisoner",
+        "forest_god_evelyn_costume_huntress",
+        "holy_god_delilah_costume_guardian",
+        "fire_god_natalya_costume_seamstress",
+        "fire_god_zimkitha_costume_adventurer",
+        "dark_god_hel_costume_omen",
+        "ice_god_perseus_costume_frozen",
+        "ice_god_iris",
+        "ice_god_eskimo_costume_champion",
+        "dark_god_seshat_costume_revenant",
+        "holy_god_bai_yeong"
+      ]
     }
   }
 }

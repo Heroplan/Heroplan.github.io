@@ -2,7 +2,7 @@ name: Pull lottery_config from DataGen
 
 on:
   schedule:
-    - cron: '10 4 * * *'
+    - cron: '10 5 * * *'
   workflow_dispatch:
 
 jobs:

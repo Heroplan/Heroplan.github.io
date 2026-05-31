@@ -1,10 +1,10 @@
 // data.js: 存放所有静态数据和常量映射表。
 
 // --- 硬编码日期 (用于特殊筛选) ---
-const oneClickMaxDate = '2026-05-22';
-const purchaseCostumeDate = '2026-06-22';
+const oneClickMaxDate = '2026-07-22';
+const purchaseCostumeDate = '2026-06-14';
 const soulExchange = {
-    Date: '2026-05-28',
+    Date: '2026-07-28',
     five: [
         "shadow_asketel",
         "astral_moonbell",
@@ -26,7 +26,7 @@ const soulExchange = {
         "fox_riverfang",
         "tales2_fafnir"
     ],
-    show: true
+    show: false
 }
 
 const redeemcodes = [

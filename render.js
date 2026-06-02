@@ -1228,20 +1228,11 @@ function renderDetailsInModal(hero, context = {}) {
     // 使用英文名进行筛选，而不是当前语言显示的名字
 
     const searchLang = getCookie('search_lang');
-    const filterValue = searchLang !== 'current' ? hero.name : hero.english_name;
-
-    // 移除最右边的元素后缀
-    const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
-    const elementSuffixRegex = new RegExp(`\\s+(${ignorableElementSuffixes.join('|')})$`, 'i');
-    let cleanedFilterValue = filterValue;
-
-    // 检查是否需要移除后缀
-    if (elementSuffixRegex.test(filterValue)) {
-        cleanedFilterValue = filterValue.replace(elementSuffixRegex, '').trim();
-    }
+    const filterValue = searchLang !== 'current' ? mainHeroName : englishName;
+    
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${englishName}</p>` : ''}
-        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${englishName || mainHeroName.trim() || cleanedFilterValue || hero.name}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
+        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${filterValue}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
     `;
 
     const source = filterInputs.skillTypeSource.value;

@@ -462,6 +462,34 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
             }
         }
     });
+
+    // ▼▼▼ 处理 lottery_pickup_default 动态 featuredHeroes ▼▼▼
+    if (lotteryPoolsData['lottery_pickup_default']) {
+        const pool = lotteryPoolsData['lottery_pickup_default'];
+        const featuredHeroesObj = pool.featuredHeroes;
+        if (featuredHeroesObj && typeof featuredHeroesObj === 'object' && !Array.isArray(featuredHeroesObj)) {
+            const now = new Date();
+            const utcYear = now.getUTCFullYear();
+            const utcMonth = now.getUTCMonth();
+            const utcDay = now.getUTCDate();
+            const utcHours = now.getUTCHours();
+
+            let targetDate = new Date(Date.UTC(utcYear, utcMonth, utcDay));
+            if (utcHours < 7) {
+                targetDate.setUTCDate(targetDate.getUTCDate() - 1);
+            }
+            const dateKey = targetDate.toISOString().split('T')[0];
+            const dailyHeroes = featuredHeroesObj[dateKey];
+            if (dailyHeroes && Array.isArray(dailyHeroes)) {
+                pool.featuredHeroes = dailyHeroes;
+                console.log(`[lottery_pickup_default] 使用日期 ${dateKey} 的英雄列表:`, dailyHeroes);
+            } else {
+                console.warn(`[lottery_pickup_default] 未找到日期 ${dateKey} 的英雄列表，使用空数组`);
+                pool.featuredHeroes = [];
+            }
+        }
+    }
+
     state.allSummonPools = lotteryPoolsData;
 }
 

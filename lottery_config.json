@@ -385,8 +385,8 @@
         "construct_tengo",
         "construct_arzen",
         "vegetable_broseph",
-        "outlaw_wu_song",
-        "magic_carpet_shareef"
+        "ghost_he_gui",
+        "astral_demon_ushal"
       ],
       "advertisedHero": "fox_riverfang",
       "includedHeroes": [
@@ -585,10 +585,10 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
-          "journey_change",
-          "kingdom_sun_quan_costume_fire_bat",
-          "journey_xiong_shanjun",
-          "kingdom_cao_cao_costume_ice",
+          "outlaw_song_jiang",
+          "outlaw_li_kui",
+          "outlaw_ruan_xiaoqi",
+          "outlaw_wu_song",
           "journey_sha_wujing",
           "journey_erlang_shen",
           "kingdom_guan_yu_costume_dragon",
@@ -612,8 +612,8 @@
     },
     "lottery_temple_default": {
       "featuredHeroes": [
-        "mahayoddha_bhairavi_devi",
-        "mahayoddha_veer"
+        "mahayoddha_rudraditya",
+        "mahayoddha_bhairavi_devi"
       ],
       "AssociatedFamilies": [
         "mahayoddha"
@@ -876,9 +876,9 @@
     },
     "lottery_featured_event_farmland": {
       "featuredHeroes": [
-        "vegetable_melonius",
-        "vegetable_big_barry",
-        "vegetable_auberguy"
+        "vegetable_indigon",
+        "vegetable_broseph",
+        "vegetable_elsbeth"
       ],
       "AssociatedFamilies": [
         "vegetable"
@@ -1406,10 +1406,128 @@
       ]
     },
     "lottery_pickup_default": {
-      "featuredHeroes": [
-        "shadow_atwood",
-        "s5_anubis_costume_dancefloor"
-      ],
+      "featuredHeroes": {
+        "2026-06-03": [
+          "shadow_atwood",
+          "s5_anubis_costume_dancefloor"
+        ],
+        "2026-06-04": [
+          "shadow_zavinia",
+          "shadow_gwendoline"
+        ],
+        "2026-06-05": [
+          "shadow_hysteria",
+          "bard_dunnar_hart"
+        ],
+        "2026-06-06": [
+          "magic_carpet_zazha",
+          "wild_cat_rajesh"
+        ],
+        "2026-06-07": [
+          "fox_whitefang",
+          "garrison_flamehide"
+        ],
+        "2026-06-08": [
+          "faun_bramble",
+          "elemental_gastille"
+        ],
+        "2026-06-09": [
+          "magic_carpet_elyssa",
+          "astral_dwarf_ixinn"
+        ],
+        "2026-06-10": [
+          "faun_isidore",
+          "s3_loki_male_costume_shapeshifter"
+        ],
+        "2026-06-11": [
+          "beowulf_wealhtheow",
+          "moth_grovevert"
+        ],
+        "2026-06-12": [
+          "shadow_dolores",
+          "bard_astrid"
+        ],
+        "2026-06-13": [
+          "bard_darkbeat",
+          "beowulf_ecgtheow"
+        ],
+        "2026-06-14": [
+          "ninja_oniwakamaru",
+          "garrison_iarlaith"
+        ],
+        "2026-06-15": [
+          "garrison_flamehide",
+          "garrison_archibald"
+        ],
+        "2026-06-16": [
+          "astral_dwarf_gongoth",
+          "moth_auricarc"
+        ],
+        "2026-06-17": [
+          "faun_bramble",
+          "moth_tealmoine"
+        ],
+        "2026-06-18": [
+          "s5_hathor_costume_starlit",
+          "construct_nautica"
+        ],
+        "2026-06-19": [
+          "beowulf_nithgaest",
+          "beowulf_modthryth"
+        ],
+        "2026-06-20": [
+          "slime_magistine",
+          "slime_slimgo"
+        ],
+        "2026-06-21": [
+          "ballerina_odile",
+          "guardian_gazelle_costume_bandalore"
+        ],
+        "2026-06-22": [
+          "astral_dwarf_quari",
+          "astral_lemonwood"
+        ],
+        "2026-06-23": [
+          "owl_verus",
+          "owl_timius"
+        ],
+        "2026-06-24": [
+          "ballerina_daroga",
+          "gargoyle_pophit"
+        ],
+        "2026-06-25": [
+          "moth_satinpimenter",
+          "moth_pepperbleu"
+        ],
+        "2026-06-26": [
+          "slime_goldrip",
+          "slime_sludgus"
+        ],
+        "2026-06-27": [
+          "garrison_maisie",
+          "monster_hunter_hurricane"
+        ],
+        "2026-06-28": [
+          "astral_dwarf_haumri",
+          "astral_dwarf_maegwyn"
+        ],
+        "2026-06-29": [
+          "goblin_grimsteel",
+          "garrison_iocantha"
+        ],
+        "2026-06-30": [
+          "halloween_chester",
+          "halloween_alucard_costume_mafia"
+        ],
+        "2026-07-01": [
+          "ballerina_von_rothbart",
+          "ballerina_armand"
+        ],
+        "2026-07-02": [
+          "garrison_kolya",
+          "garrison_dima"
+        ]
+      },
       "includedHeroes": [
         "s2_ariel",
         "s3_odin",

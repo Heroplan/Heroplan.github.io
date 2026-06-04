@@ -302,7 +302,7 @@
     },
     "MysteryHero": {
       "family": "mimic",
-      "ChancePerMil": "0"
+      "ChancePerMil": "15"
     },
     "LegendsSummonMysteryHero": {
       "family": "mystery",
@@ -350,7 +350,7 @@
       "AssociatedFamilies": [
         "mahayoddha"
       ],
-      "latestIncludedHeroDate": "2026-06-16",
+      "latestIncludedHeroDate": "2026-06-15",
       "latestIncludedHeroAgeInDays": 730
     },
     "lottery_harvest_default": {
@@ -1407,10 +1407,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-06-03": [
-          "shadow_atwood",
-          "s5_anubis_costume_dancefloor"
-        ],
         "2026-06-04": [
           "shadow_zavinia",
           "shadow_gwendoline"
@@ -1526,6 +1522,10 @@
         "2026-07-02": [
           "garrison_kolya",
           "garrison_dima"
+        ],
+        "2026-07-03": [
+          "gargoyle_mena",
+          "gargoyle_hilda"
         ]
       },
       "includedHeroes": [

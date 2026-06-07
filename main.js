@@ -33,6 +33,9 @@ function parseAndStoreDoTInfo(hero) {
         { keywords: ['target', 'damage', 'over', 'turn'], isPerTurn: false },
         { keywords: ['法力满格', '自动', '伤害'], isPerTurn: false },
         { keywords: ['法力滿格', '自動', '傷害'], isPerTurn: false },
+        { keywords: ['元素变化', '伤害'], isPerTurn: false },
+        { keywords: ['變更元素', '傷害'], isPerTurn: false },
+        { keywords: ['element change', 'damage'], isPerTurn: false },
         
         
 
@@ -42,7 +45,7 @@ function parseAndStoreDoTInfo(hero) {
         { keywords: ['敵人', '回合', '每回合', '傷害'], isPerTurn: true },
         { keywords: ['目標', '回合', '每回合', '傷害'], isPerTurn: true },
         { keywords: ['enemies', 'damage', 'for', 'turn'], isPerTurn: true },
-        { keywords: ['target', 'damage', 'for', 'turn'], isPerTurn: true }
+        { keywords: ['target', 'damage', 'for', 'turn'], isPerTurn: true },
     ];
 
     hero.dynamicDoTEffects = []; // 初始化存储结果的数组
@@ -114,7 +117,9 @@ function parseAndStoreDoTInfo(hero) {
         );
         if (matchedSet) {
             const numbers = effectText.match(/\d+/g) || [];
-            if (numbers.length < 2) return;
+            // 总伤害规则：至少1个数字；每回合规则：至少2个数字
+            if (matchedSet.isPerTurn && numbers.length < 2) return;
+            if (!matchedSet.isPerTurn && numbers.length < 1) return;
 
             let damage = null, turns = null;
             for (const numStr of numbers) {
@@ -122,17 +127,20 @@ function parseAndStoreDoTInfo(hero) {
                 if (num > 10 && damage === null) damage = num;
                 if (num > 0 && num <= 10 && turns === null) turns = num;
             }
-            if (damage !== null && turns !== null) {
-                const totalBaseDamage = matchedSet.isPerTurn ? damage * turns : damage;
-                const coefficient = totalBaseDamage / hero.attack;
-                hero.dynamicDoTEffects.push({
-                    index: index,
-                    coefficient: coefficient,
-                    turns: turns,
-                    isPerTurn: matchedSet.isPerTurn,
-                    originalDamage: damage
-                });
-            }
+            if (damage === null) return;
+
+            // 如果是总伤害规则且没有回合数，默认 turns = 1（不参与乘法即可）
+            if (!matchedSet.isPerTurn && turns === null) turns = 1;
+
+            const totalBaseDamage = matchedSet.isPerTurn ? damage * turns : damage;
+            const coefficient = totalBaseDamage / hero.attack;
+            hero.dynamicDoTEffects.push({
+                index: index,
+                coefficient: coefficient,
+                turns: turns,
+                isPerTurn: matchedSet.isPerTurn,
+                originalDamage: damage
+            });
         }
     });
 }

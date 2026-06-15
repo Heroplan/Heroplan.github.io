@@ -1133,8 +1133,18 @@ function getAllHeroesInPool(poolConfig) {
                 finalUniqueHeroes.set(hero.heroId, hero);
             }
         }
-    });
-    return Array.from(finalUniqueHeroes.values());
+    }); 
+
+    let resultHeroes = Array.from(finalUniqueHeroes.values());
+
+    // 针对至日奖池排除 costume_id 为 2, 5 的英雄
+    if (poolConfig.id === 'lottery_black_solstice_default') {
+        resultHeroes = resultHeroes.filter(hero => {
+            return hero.costume_id !== 2 && hero.costume_id !== 5;
+        });
+    }
+
+    return resultHeroes;
 }
 
 

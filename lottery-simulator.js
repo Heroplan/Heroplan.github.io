@@ -454,9 +454,10 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
                 bulk30: bulk30 || null,
             };
 
-            if (pool.id === 'lottery_featured_event_festival') {
+            if (pool.id === 'lottery_featured_event_festival' || pool.id === 'lottery_black_solstice_default') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 2;
             }
+
             if (pool.id === 'lottery_season_atlantis') {// || pool.id === 'lottery_hero_halloween') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 4;
             }

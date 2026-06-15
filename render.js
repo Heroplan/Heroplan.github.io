@@ -458,6 +458,7 @@ const highlightDictionaries = {
             'Ice': '[##elementblue]Ice[#]',
             'Mindless Attack': '[##elementred]Mindless Attack[#]',
             'Mindless Heal': '[##elementred]Mindless Heal[#]',
+            'Max stacks: 10': '[##elementred]Max stacks: 10[#]',
             'Stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
             'stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
             'stacks': '[##elementred]stacks[#]',

@@ -880,23 +880,86 @@ function applyKeywordHighlighting(text, lang, filterType) {
             }
         }
         // --- 单独规则：只满足是 passives (通常是长文本) ---
-        else if ((filterType === 'passives') && !text.startsWith('-')) {
-            const colonIndex = text.indexOf(':');
-            const wideColonIndex = text.indexOf('：');
-            let finalColonIndex = -1;
+        else if ((filterType === 'passives')) {
+            if (!text.startsWith('-')){
+                const colonIndex = text.indexOf(':');
+                const wideColonIndex = text.indexOf('：');
+                let finalColonIndex = -1;
 
-            if (colonIndex > -1 && wideColonIndex > -1) {
-                finalColonIndex = Math.min(colonIndex, wideColonIndex);
-            } else {
-                finalColonIndex = colonIndex > -1 ? colonIndex : wideColonIndex;
+                if (colonIndex > -1 && wideColonIndex > -1) {
+                    finalColonIndex = Math.min(colonIndex, wideColonIndex);
+                } else {
+                    finalColonIndex = colonIndex > -1 ? colonIndex : wideColonIndex;
+                }
+
+                if (finalColonIndex > -1) {
+                    const partToHighlight = text.substring(0, finalColonIndex + 1);
+                    const restOfText = text.substring(finalColonIndex + 1);
+                    textToProcess = `[##elementorange]${partToHighlight}[#]${restOfText}`;
+                    }
             }
 
-            if (finalColonIndex > -1) {
-                const partToHighlight = text.substring(0, finalColonIndex + 1);
-                const restOfText = text.substring(finalColonIndex + 1);
+            // ========= 括号注释处理（与 effects 逻辑一致） =========
+            if (textToProcess) {
+                let textToModify = textToProcess.trim();
 
-                // 仅应用 orange 高亮，并让文本继续后续处理
-                textToProcess = `[##elementorange]${partToHighlight}[#]${restOfText}`;
+                // 如果以).或）。结尾，先移除最后的句点
+                if (textToModify.endsWith(').') || textToModify.endsWith('）。')) {
+                    textToModify = textToModify.slice(0, -1);
+                }
+
+                let modified = false;
+
+                // 条件检查：只处理以括号（或括号+句号）结尾的字符串
+                if (textToModify.match(/[）)](?:\.|。)?$/)) {
+                    let parenLevel = 0;
+                    let matchStartIndex = -1;
+
+                    for (let i = textToModify.length - 1; i >= 0; i--) {
+                        const char = textToModify[i];
+                        if (char === ')' || char === '）') parenLevel++;
+                        else if (char === '(' || char === '（') parenLevel--;
+
+                        if (parenLevel === 0) {
+                            matchStartIndex = i;
+                            break;
+                        }
+                    }
+
+                    if (matchStartIndex > -1) {
+                        const precedingText = textToProcess.substring(0, matchStartIndex);
+                        const openParen = textToProcess[matchStartIndex];
+                        const remainingBlock = textToProcess.substring(matchStartIndex + 1);
+
+                        const lastChar = remainingBlock.slice(-1);
+                        let closeParen = '';
+                        let content = '';
+                        let trailingPeriod = '';
+
+                        if (lastChar === '.' || lastChar === '。') {
+                            trailingPeriod = lastChar;
+                            closeParen = remainingBlock.slice(-2, -1);
+                            content = remainingBlock.slice(0, -2);
+                        } else {
+                            closeParen = lastChar;
+                            content = remainingBlock.slice(0, -1);
+                        }
+
+                        textToProcess = precedingText.replace(/\s*$/, '') +
+                            `[!!underline!!]` +
+                            `[##elementorange]*${openParen}[#]` +
+                            content +
+                            `[##elementorange]${closeParen}[#]` +
+                            trailingPeriod +
+                            `[!!]`;
+
+                        modified = true;
+                    }
+                }
+
+                if (!modified) {
+                    textToProcess = textToProcess;
+                }
             }
         }
     }
@@ -1095,6 +1158,22 @@ function renderDetailsInModal(hero, context = {}) {
         const shouldHighlight = getCookie('highlightSkillTerms') !== 'false';
 
         return itemsArray.map(item => {
+            // ▼▼▼ 针对被动技能中以 * 开头的行，特殊渲染 ▼▼▼
+            if (filterType === 'passives') {
+                const rawItem = String(item);
+                const trimmedItem = rawItem.trim();
+                if (trimmedItem.startsWith('*')) {
+                    // 提取星号和后面的内容（保留原始空格）
+                    const starMatch = rawItem.match(/^(\s*\*)(.*)/);
+                    if (starMatch) {
+                        const star = starMatch[1];      // 包含前导空格和星号
+                        const content = starMatch[2];   // 星号后的内容（包括空格）
+                        const orangeColor = '#ff7800ff';
+                        // 返回带样式的列表项，不进行其他高亮处理
+                        return `<li style="text-decoration: underline dashed ${orangeColor};"><span style="color: ${orangeColor};">${star}</span>${content}</li>`;
+                    }
+                }
+            }
 
             let cleanItem = String(item).trim();
 

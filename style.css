@@ -4136,7 +4136,7 @@ select.custom-select-hidden {
   /* --- 居中对齐并上移 1px --- */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% - 1px));
+  transform: translate(-50%, calc(-50% - 3px));
 
   /* 阴影，保持视觉统一 */
   filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.7));

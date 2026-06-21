@@ -567,8 +567,8 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
+        "ghost_hua_pi_gui",
         "ghost_shu_jing",
-        "ghost_hei_wu_chang",
         "ghost_he_gui"
       ],
       "AssociatedFamilies": [
@@ -582,16 +582,16 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
+          "outlaw_sun_erniang",
           "outlaw_wu_song",
-          "outlaw_li_kui",
-          "outlaw_song_jiang",
           "outlaw_ruan_xiaoqi",
-          "journey_sha_wujing",
+          "outlaw_song_jiang",
+          "outlaw_li_kui",
           "journey_erlang_shen",
-          "kingdom_guan_yu_costume_dragon",
-          "journey_xiwangmu",
-          "journey_tang_sanzang",
-          "journey_xie_zi_jing"
+          "kingdom_sun_quan_costume_fire_bat",
+          "journey_nineheaded_beast",
+          "kingdom_zhang_fei_costume_bear_slayer",
+          "journey_tang_sanzang"
         ]
       }
     },
@@ -1404,10 +1404,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-06-20": [
-          "slime_magistine",
-          "slime_slimgo"
-        ],
         "2026-06-21": [
           "ballerina_odile",
           "guardian_gazelle_costume_bandalore"
@@ -1523,6 +1519,10 @@
         "2026-07-19": [
           "s5_hetepheres_costume_spa",
           "s5_cleopatra_costume_feline"
+        ],
+        "2026-07-20": [
+          "faun_ascian",
+          "astral_dwarf_vard"
         ]
       },
       "includedHeroes": [

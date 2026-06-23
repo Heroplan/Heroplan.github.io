@@ -813,7 +813,7 @@ function applyKeywordHighlighting(text, lang, filterType) {
         }
         // --- 单独规则：只满足 hasColon (通常是 effects) ---
         else if (hasColon) {
-            highlightedPrefix = `[#!]${text}[#]`;
+            highlightedPrefix = `[##elementorange]${text}[#]`;
             textToProcess = '';
         }
         // ★★★ 专属规则：只针对 effects，处理注释用的括号内容 ★★★

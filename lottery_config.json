@@ -42,18 +42,6 @@
       ],
       "featuredHeroNum": 4
     },
-    "GoblinSummon": {
-      "bucketConfig": [
-        "heroes_s1_3",
-        "heroes_s1_4",
-        "heroes_s1_5",
-        "heroes_event_3",
-        "heroes_event_4",
-        "heroes_event_5",
-        "featuredHero"
-      ],
-      "featuredHeroNum": 3
-    },
     "MercenaryWarSummon": {
       "bucketConfig": [
         "heroes_s1_3",
@@ -67,6 +55,18 @@
       "featuredHeroNum": 3
     },
     "MonsterIslandSummon": {
+      "bucketConfig": [
+        "heroes_s1_3",
+        "heroes_s1_4",
+        "heroes_s1_5",
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 3
+    },
+    "GoblinSummon": {
       "bucketConfig": [
         "heroes_s1_3",
         "heroes_s1_4",
@@ -565,18 +565,6 @@
         "wild_cat_tunes"
       ]
     },
-    "lottery_goblin_default": {
-      "featuredHeroes": [
-        "scoundrel_brin",
-        "scoundrel_tofana",
-        "goblin_darkfeather_costume_glowing"
-      ],
-      "AssociatedFamilies": [
-        "goblin",
-        "garrison",
-        "shady_scoundrels"
-      ]
-    },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
         "ghost_hua_pi_gui",
@@ -617,6 +605,18 @@
         "plains_hunter",
         "jungle_hunter",
         "abyss_hunter"
+      ]
+    },
+    "lottery_goblin_default": {
+      "featuredHeroes": [
+        "scoundrel_brin",
+        "scoundrel_tofana",
+        "goblin_darkfeather_costume_glowing"
+      ],
+      "AssociatedFamilies": [
+        "goblin",
+        "garrison",
+        "shady_scoundrels"
       ]
     },
     "lottery_temple_default": {

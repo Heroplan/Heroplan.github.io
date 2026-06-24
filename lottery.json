@@ -265,35 +265,6 @@
         "amount": 30
     },
     {
-        "productType": "GoblinSummon",
-        "id": "lottery_goblin_default",
-        "banner": "event_lotterybanner_goblin",
-        "lotterybg": "event_lotterybg_goblin",
-        "gemPrice": 400,
-        "amount": 1,
-        "uiPriority": 129,
-        "associatedEvent": "Goblin",
-        "bucketWeights": [
-            568,
-            208,
-            16,
-            142,
-            57,
-            5,
-            4
-        ],
-        "bonusLegendaryHeroChancePerMil": 1000,
-        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
-    },
-    {
-        "productType": "GoblinSummon",
-        "id": "lottery_goblin_default_bulk",
-        "gemPrice": 3400,
-        "sourceProductId": "lottery_goblin_default",
-        "amount": 10
-    },
-    {
         "productType": "MercenaryWarSummon",
         "id": "lottery_mercenary_war_default",
         "banner": "event_lotterybanner_mercenary_war",
@@ -370,6 +341,35 @@
         "gemPrice": 8400,
         "sourceProductId": "lottery_monster_island_default",
         "amount": 30
+    },
+    {
+        "productType": "GoblinSummon",
+        "id": "lottery_goblin_default",
+        "banner": "event_lotterybanner_goblin",
+        "lotterybg": "event_lotterybg_goblin",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 129,
+        "associatedEvent": "Goblin",
+        "bucketWeights": [
+            568,
+            208,
+            16,
+            142,
+            57,
+            5,
+            4
+        ],
+        "bonusLegendaryHeroChancePerMil": 1000,
+        "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "GoblinSummon",
+        "id": "lottery_goblin_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_goblin_default",
+        "amount": 10
     },
     {
         "productType": "TempleSummon",

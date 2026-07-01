@@ -424,6 +424,48 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
 function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
     summonPoolDetails = summonTypesConfig.SummonPool;
+
+    // ========== 新增：根据“次日 7:00 过期”规则禁用神秘英雄 ==========
+    const now = new Date(); // UTC 当前时间
+
+    /**
+     * 检查某个神秘英雄配置是否应被禁用（所有同家族英雄均已过期）
+     * @param {object} mysteryConfig - 如 summonPoolDetails.MysteryHero
+     */
+    const disableIfAllExpired = (mysteryConfig) => {
+        if (!mysteryConfig) return;
+        const family = String(mysteryConfig.family).toLowerCase();
+        // 获取所有同家族的英雄（从 state.allHeroes 中查找）
+        const allHeroesOfFamily = state.allHeroes.filter(h => String(h.family).toLowerCase() === family);
+        if (allHeroesOfFamily.length === 0) return; // 无英雄，保留原配置
+
+        // 检查是否存在至少一个未过期的英雄
+        const hasAvailable = allHeroesOfFamily.some(hero => {
+            const dateStr = hero['Release date'];
+            if (!dateStr) return true; // 无日期视为永久有效（如 Lottery_Only）
+
+            const parts = dateStr.split('-');
+            if (parts.length !== 3) return false;
+            // 解析发布日期（UTC 0:00）
+            const releaseDate = new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
+            // 过期时间 = 发布日期次日 07:00 UTC
+            const expiryDate = new Date(releaseDate);
+            expiryDate.setUTCDate(expiryDate.getUTCDate() + 1);
+            expiryDate.setUTCHours(7, 0, 0, 0);
+            return now < expiryDate; // 尚未过期
+        });
+
+        if (!hasAvailable) {
+            // 所有英雄均已过期，将概率置为 0
+            mysteryConfig.ChancePerMil = "0";
+            // 可选：添加一个调试日志
+            // console.log(`[MysteryHero] 家族 "${family}" 的所有英雄均已过期，概率已归零。`);
+        }
+    };
+
+    // 处理神秘英雄
+    disableIfAllExpired(summonPoolDetails.MysteryHero);
+
     state.globalExcludeFamilies = (summonPoolDetails.exclude_for_all || []).map(f => f.toLowerCase());
     state.latestHeroVersionsMap = new Map();
     state.heroesByIdMap = new Map();

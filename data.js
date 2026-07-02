@@ -110,6 +110,31 @@ const redeemcodes = [
             }
         ]
     },
+    {
+        "code": "FRIENDLYFIRE ",
+        "rewards": [
+            {
+                "img": "imgs/reedcode_reward/energy_friendly_matches.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/coins/s1.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/coins/elite_troop.webp",
+                "num": 3
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_iron_250k.webp",
+                "num": 1
+            },
+            {
+                "img": "imgs/reedcode_reward/refill_food_250k.webp",
+                "num": 1
+            },
+        ]
+    },
 ];
 // --- 捐赠名单 ---
 const donationList = ["西那个瓜", "e2x8w7c2", "l8o0v2e3", "keke", "不吃芒果", "KC", "风扬云散", "蘑菇", "北鸣潇潇", "kimyu", "vabe"];

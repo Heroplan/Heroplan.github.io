@@ -601,6 +601,8 @@ const highlightDictionaries = {
             '反彈': '[##elementred]反彈[#]',
             '反射': '[##elementred]反射[#]',
             '偷取': '[##elementred]偷取[#]',
+            '偷走': '[##elementred]偷走[#]',
+            '窃取': '[##elementred]窃取[#]',
             '竊取': '[##elementred]竊取[#]',
             '暴击几率': '[##elementred]暴击几率[#]',
             '暴擊率': '[##elementred]暴擊率[#]',

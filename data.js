@@ -1,33 +1,33 @@
 // data.js: 存放所有静态数据和常量映射表。
 
 // --- 硬编码日期 (用于特殊筛选) ---
-const oneClickMaxDate = '2026-07-07';
+const oneClickMaxDate = '2026-07-06';
 const purchaseCostumeDate = '2026-06-14';
 const soulExchange = {
-    Date: '2026-08-28',
-    five: [
-        "shadow_asketel",
-        "astral_moonbell",
-        "slime_charmione",
-        "tales1_atlanteia_costume_siren",
-        "garrison_theodosius"
-    ],
-    fifteen: [
-        "moth_mortewitch",
-        "garrison_frank_fangs_brimwell",
-        "s5_hathor_costume_starlit",
-        "beowulf_modthryth",
-        "slime_fungustine"
-    ],
-    thirty: [
-        "magic_carpet_agadh",
-        "bard_astrid",
-        "astral_dwarf_ceris",
-        "fox_riverfang",
-        "tales2_fafnir"
-    ],
-    show: false
-}
+  "Date": "2026-05-28",
+  "five": [
+    "shadow_asketel",
+    "astral_moonbell",
+    "slime_charmione",
+    "tales1_atlanteia_costume_siren",
+    "garrison_theodosius"
+  ],
+  "fifteen": [
+    "moth_mortewitch",
+    "garrison_frank_fangs_brimwell",
+    "s5_hathor_costume_starlit",
+    "beowulf_modthryth",
+    "slime_fungustine"
+  ],
+  "thirty": [
+    "magic_carpet_agadh",
+    "bard_astrid",
+    "astral_dwarf_ceris",
+    "fox_riverfang",
+    "tales2_fafnir"
+  ],
+  "show": false
+};
 
 const redeemcodes = [
     {

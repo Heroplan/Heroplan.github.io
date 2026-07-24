@@ -467,6 +467,7 @@ const highlightDictionaries = {
             'Greed': '[##elementred]Greed[#]',
             'Deep Sleep': '[##elementred]Deep Sleep[#]',
             'falls asleep': '[##elementred]falls asleep[#]',
+            'fall asleep': '[##elementred]fall asleep[#]',
             'asleep': '[##elementred]asleep[#]',
             'Wither': '[##elementred]Wither[#]',
             'spreads': '[##elementred]spreads[#]',

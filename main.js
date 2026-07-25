@@ -36,8 +36,8 @@ function parseAndStoreDoTInfo(hero) {
         { keywords: ['元素变化', '伤害'], isPerTurn: false },
         { keywords: ['變更元素', '傷害'], isPerTurn: false },
         { keywords: ['element change', 'damage'], isPerTurn: false },
-        
-        
+
+
 
         // --- 每回合伤害规则 (isPerTurn: true) ---
         { keywords: ['敌人', '回合', '每回合', '伤害'], isPerTurn: true },
@@ -104,7 +104,7 @@ function parseAndStoreDoTInfo(hero) {
             'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
             '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
             'increased damage', 'stored', 'allies', 'clawing damage', 'corruption', '承受的',
-            'healing','抵抗治疗'
+            'healing', '抵抗治疗'
         ];
         const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
         if (isExcluded) {
@@ -232,7 +232,7 @@ async function initializeApp() {
         setCookie('language', '', '');
         setCookie('languageUpdated', '1', '365');
     }
-    
+
     const language = getCookie('language');
     const searchLang = getCookie('search_lang');
     const searchLanguageUpdated = getCookie('searchLanguageUpdated');
@@ -379,6 +379,10 @@ async function initializeApp() {
     if (!dataLoaded) {
         uiElements.pageLoader.classList.add('hidden');
         document.body.classList.remove('js-loading');
+        const animationBlocker = document.getElementById('animation-blocker-overlay');
+        if (animationBlocker) {
+            animationBlocker.classList.add('hidden');
+        }
         return;
     }
 
@@ -560,23 +564,24 @@ async function initializeApp() {
             if (toggleBtn) toggleBtn.classList.remove('expanded');
         }
     }
+    // 同步移除加载遮罩、js-loading类和点击阻断层
     uiElements.pageLoader.classList.add('hidden');
     document.body.classList.remove('js-loading');
+    const animationBlocker = document.getElementById('animation-blocker-overlay');
+    if (animationBlocker) {
+        animationBlocker.classList.add('hidden');
+    }
+
     // 渲染捐赠者列表
     const sortedDonationList = sortDonationListByLanguage(donationList);
     const shouldScroll = renderDonationList(sortedDonationList);
-    setTimeout(() => {
-    // 移除点击阻断层
-    const animationBlocker = document.getElementById('animation-blocker-overlay');
-    animationBlocker.classList.add('hidden');
-        // 启动动画
-        if (shouldScroll) {
-            const container = document.getElementById('donation-list-box');
-            if (container) {
-                container.classList.add('is-scrolling');
-            }
+    // 启动捐赠列表滚动动画（无需阻断层）
+    if (shouldScroll) {
+        const container = document.getElementById('donation-list-box');
+        if (container) {
+            container.classList.add('is-scrolling');
         }
-    }, 2000);
+    }
     // 检查赞助显示状态并相应处理
     // 如果cookie不存在（默认显示赞助）或者cookie存在且值为false，则加载赞助脚本
     if (!isDonateHidden()) {
@@ -589,7 +594,7 @@ async function initializeApp() {
     // 设置高亮技能词条的初始值
     const highlightSkillTermsCheckbox = document.getElementById('highlight-skill-terms-checkbox');
     if (highlightSkillTermsCheckbox) {
-        highlightSkillTermsCheckbox.checked = getCookie('highlightSkillTerms') !== 'false'; 
+        highlightSkillTermsCheckbox.checked = getCookie('highlightSkillTerms') !== 'false';
         highlightSkillTermsCheckbox.addEventListener('change', () => {
             setCookie('highlightSkillTerms', highlightSkillTermsCheckbox.checked, 365);
             applyFiltersAndRender(); // 重新渲染以应用更改
@@ -874,7 +879,7 @@ function addEventListeners() {
             applyFiltersAndRender(); // 应用筛选并重新渲染
         });
     }
-    
+
     if (filterInputs.filterHero730Btn) {
         filterInputs.filterHero730Btn.addEventListener('click', () => {
             resetAllFilters();
@@ -1187,7 +1192,7 @@ function handlePopState(event) {
             case 'heroPortrait':
                 modal = document.getElementById('image-modal');
                 overlay = document.getElementById('image-modal-overlay');
-                if(modal) modal.classList.remove('show-hero-portrait');
+                if (modal) modal.classList.remove('show-hero-portrait');
                 break;
         }
 
@@ -1270,7 +1275,7 @@ function sortDonationListByLanguage(originalList) {
     if (userLang === 'current') {
         userLang = state.currentLang;
     }
-    
+
     // 如果用户语言无效或不在映射中，返回原始顺序
     if (!userLang || !langDonorsMap[userLang]) {
         return [...originalList]; // 返回副本避免修改原数组[1](@ref)

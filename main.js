@@ -503,8 +503,12 @@ async function initializeApp() {
                 }));
                 state.isViewingSharedTeams = true;
                 if (uiElements.sharedTeamsTabBtn) uiElements.sharedTeamsTabBtn.style.display = 'inline-flex';
-                toggleTeamSimulator();
+                uiElements.sharedTeamsTabBtn.classList.add('active');
+                if (uiElements.myTeamsTabBtn) {
+                    uiElements.myTeamsTabBtn.classList.remove('active');
+                }
             }
+            toggleTeamSimulator();
         } catch (e) {
             console.error("从URL处理分享的队伍失败", e);
             state.isViewingSharedTeams = false;

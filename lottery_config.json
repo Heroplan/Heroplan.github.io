@@ -567,9 +567,9 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
-        "outlaw_lu_zhishen",
-        "outlaw_ruan_xiaoqi",
-        "outlaw_li_kui"
+        "ghost_bai_wu_chang",
+        "ghost_hei_wu_chang",
+        "outlaw_shi_jin"
       ],
       "AssociatedFamilies": [
         "kingdom",
@@ -716,8 +716,8 @@
         "hotm2018"
       ],
       "featuredHeroes": [
-        "s2_fox_girl_costume_cute",
-        "forest_god_oberon_costume_cute"
+        "s2_ariel_costume_cute",
+        "s2_mercenary_woman_costume_cute"
       ]
     },
     "lottery_titan_hunter_default": {
@@ -769,16 +769,16 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_ascension_item_blue",
-        "mimic_ascension_item_green",
-        "mimic_ascension_item_purple",
-        "mimic_ascension_item_red",
-        "mimic_ascension_item_yellow",
         "mimic_aether_blue",
         "mimic_aether_green",
         "mimic_aether_purple",
         "mimic_aether_red",
-        "mimic_aether_yellow"
+        "mimic_aether_yellow",
+        "mimic_training_hero_blue",
+        "mimic_training_hero_green",
+        "mimic_training_hero_purple",
+        "mimic_training_hero_red",
+        "mimic_training_hero_yellow"
       ],
       "bucketRules": [
         {
@@ -976,9 +976,9 @@
     },
     "lottery_season_valhalla": {
       "featuredHeroes": [
-        "s3_ratatoskr_costume_architect",
-        "s3_fenrir_costume_guardian",
-        "s3_skadi_costume_ravager"
+        "s3_loki_female_costume_mother",
+        "s3_heimdall_costume_dreaded",
+        "s3_loki_male_costume_shapeshifter"
       ],
       "AssociatedFamilies": [
         "alfheim",
@@ -1029,9 +1029,9 @@
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
-        "tales2_andvari_costume_c1",
-        "tales2_regin_costume_omen",
-        "tales2_gandr_costume_guardian"
+        "tales2_thrivaldi_costume_void",
+        "tales2_hogne_costume_lunar",
+        "tales2_motsognir"
       ],
       "AssociatedFamilies": [
         "nidavellir",
@@ -1270,8 +1270,8 @@
         "slime_slaymire"
       ],
       "featuredHeroes_yellow": [
-        "elemental_grilka",
-        "elemental_ironmaw"
+        "elemental_ironmaw_costume_legion",
+        "slime_justico"
       ],
       "featuredHeroes_green": [
         "slime_achillea",
@@ -1377,22 +1377,14 @@
     },
     "lottery_ascension_default": {
       "featuredHeroes": [
-        "beowulf_hrothgar",
-        "beowulf_wealhtheow",
-        "shadow_rashan",
-        "elemental_ash"
+        "fox_sable",
+        "magic_carpet_elyssa",
+        "bard_astrid",
+        "tales2_dularfulr"
       ]
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-07-27": [
-          "moth_satinpimenter",
-          "construct_nautica"
-        ],
-        "2026-07-28": [
-          "shadow_omen",
-          "villain_dark_lord_costume_astronomer"
-        ],
         "2026-07-29": [
           "guardian_elephant",
           "faun_gideon"
@@ -1422,7 +1414,7 @@
           "fleur_guillemette"
         ],
         "2026-08-05": [
-          "tales1_domiventus_costume_supreme",
+          "shadow_rosanna",
           "astral_dwarf_sedille"
         ],
         "2026-08-06": [
@@ -1436,6 +1428,14 @@
         "2026-08-08": [
           "owl_lodius",
           "moth_pepperbleu"
+        ],
+        "2026-08-09": [
+          "guardian_gazelle_costume_bandalore",
+          "circus_eiora_and_fluffy_costume_dark"
+        ],
+        "2026-08-10": [
+          "s4_hulda_costume_nurse",
+          "castle_stag_lysanor"
         ]
       },
       "includedHeroes": [

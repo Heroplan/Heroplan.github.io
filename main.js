@@ -98,6 +98,46 @@ function parseAndStoreDoTInfo(hero) {
             });
             return; // 跳过原有规则，避免重复解析
         }
+        // ========== 新增：单数字每回合伤害规则（独立于原有规则） ==========
+        // 定义专门匹配“每回合伤害”的关键词组合（只需包含这些关键词即可）
+        const singleTurnKeywordSets = [
+            { keywords: ['幽灵', '回合', '伤害'], isPerTurn: true },
+            { keywords: ['幽靈', '回合', '傷害'], isPerTurn: true },
+            { keywords: ['ghost', 'damage', 'turn'], isPerTurn: true },
+            // 您可以按需增删
+        ];
+
+        // 检查当前描述是否匹配任意一组关键词（全部包含）
+        const matchedSingle = singleTurnKeywordSets.find(set =>
+            set.keywords.every(keyword => lowerEffectText.includes(keyword))
+        );
+
+        if (matchedSingle) {
+            // 提取所有数字
+            const numbers = effectText.match(/\d+/g) || [];
+            // 查找第一个大于10的数字作为伤害值
+            let damage = null;
+            for (const numStr of numbers) {
+                const num = parseInt(numStr, 10);
+                if (num > 10) {
+                    damage = num;
+                    break;
+                }
+            }
+            // 如果找到了伤害数字，则计算并记录，然后结束本次处理
+            if (damage !== null) {
+                const coefficient = damage / hero.attack;  // 总伤害 = 伤害 × 1（因为描述为每回合，未明确回合数）
+                hero.dynamicDoTEffects.push({
+                    index: index,
+                    coefficient: coefficient,
+                    turns: 1,                 // 默认持续 1 回合（您可以根据游戏机制调整）
+                    isPerTurn: true,
+                    originalDamage: damage,
+                    type: 'singleTurnDoT'     // 可选的标记，便于调试
+                });
+                return; // 处理完毕，跳过后续所有原有规则
+            }
+        }
 
         // 排除规则：修复逻辑或，保留所有排除项
         const excludeWords = [

@@ -352,8 +352,8 @@
     },
     "lottery_harvest_default": {
       "featuredHeroes": [
-        "vegetable_bartholomew",
-        "vegetable_elsbeth"
+        "harpy_kyrathis",
+        "harpy_jarrik"
       ],
       "AssociatedFamilies": [
         "vegetable"
@@ -378,12 +378,12 @@
         "construct1"
       ],
       "featuredHeroes": [
-        "scoundrel_brin",
-        "scoundrel_lane",
-        "ronin_tenzin_kiba",
-        "mahayoddha_ajay",
-        "mahayoddha_baji",
-        "ronin_mizuno_seiko"
+        "construct_niso",
+        "construct_sylosis",
+        "construct_dancrag",
+        "ghost_hua_pi_gui",
+        "astral_demon_madarika",
+        "tales2_hreidmarr_costume_trader"
       ],
       "advertisedHero": "fox_riverfang",
       "includedHeroes": [
@@ -567,9 +567,9 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
-        "ghost_bai_wu_chang",
-        "ghost_hei_wu_chang",
-        "ghost_hua_pi_gui"
+        "ghost_hua_pi_gui",
+        "ghost_shu_jing",
+        "ghost_bai_wu_chang"
       ],
       "AssociatedFamilies": [
         "kingdom",
@@ -582,15 +582,15 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
-          "outlaw_wu_yong",
           "outlaw_wu_song",
-          "outlaw_sun_erniang",
-          "outlaw_song_jiang",
+          "outlaw_wu_yong",
           "outlaw_li_kui",
+          "outlaw_song_jiang",
+          "outlaw_sun_erniang",
           "outlaw_ruan_xiaoqi",
-          "kingdom_guan_yu_costume_dragon",
-          "journey_xiwangmu",
-          "journey_tang_sanzang",
+          "kingdom_zhang_fei_costume_bear_slayer",
+          "outlaw_chao_gai",
+          "kingdom_sun_quan_costume_fire_bat",
           "journey_xie_zi_jing"
         ]
       }
@@ -621,8 +621,8 @@
     },
     "lottery_temple_default": {
       "featuredHeroes": [
-        "mahayoddha_avani",
-        "mahayoddha_devyani"
+        "mahayoddha_ajay",
+        "mahayoddha_bhima"
       ],
       "AssociatedFamilies": [
         "mahayoddha"
@@ -630,8 +630,8 @@
     },
     "lottery_astralelves_default": {
       "featuredHeroes": [
-        "astral_demon_zurrumurgh",
-        "astral_demon_ibelis"
+        "astral_demon_madarika",
+        "astral_demon_zondalath"
       ],
       "AssociatedFamilies": [
         "astral_elves",
@@ -694,8 +694,8 @@
         "classic"
       ],
       "featuredHeroes": [
-        "nomad_female_lord_costume_stylish",
-        "magitech_sniper_costume_stylish"
+        "nordic_ice_enchantress_costume_stylish",
+        "nomad_female_captain_costume_stylish"
       ]
     },
     "lottery_costume_wardrobe2": {
@@ -769,16 +769,16 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_aether_blue",
-        "mimic_aether_green",
-        "mimic_aether_purple",
-        "mimic_aether_red",
-        "mimic_aether_yellow",
-        "mimic_training_hero_blue",
-        "mimic_training_hero_green",
-        "mimic_training_hero_purple",
-        "mimic_training_hero_red",
-        "mimic_training_hero_yellow"
+        "mimic_ascension_item_blue",
+        "mimic_ascension_item_green",
+        "mimic_ascension_item_purple",
+        "mimic_ascension_item_red",
+        "mimic_ascension_item_yellow",
+        "mimic_food_blue",
+        "mimic_food_green",
+        "mimic_food_purple",
+        "mimic_food_red",
+        "mimic_food_yellow"
       ],
       "bucketRules": [
         {
@@ -846,9 +846,9 @@
         "ronin"
       ],
       "featuredHeroes": [
-        "ronin_tenzin_kiba",
-        "ronin_mizuno_seiko",
-        "ninja_zircon_costume_iron"
+        "ronin_tanaka_isako",
+        "ninja_topaz_costume_precise",
+        "ronin_kageyama_nagato"
       ],
       "Searchid": "TowerNinja"
     },
@@ -963,10 +963,10 @@
     },
     "lottery_season_atlantis": {
       "featuredHeroes": [
-        "s2_mercenary_woman_costume_dancer",
-        "ice_god_claeg",
-        "s2_hammerhead_hulk_costume_emerald",
-        "dark_god_cordelia"
+        "s2_noble_lady_costume_warrior",
+        "holy_god_may",
+        "s2_tethys_costume_steel",
+        "nature_god_coleston"
       ],
       "AssociatedFamilies": [
         "lagoon",
@@ -976,9 +976,9 @@
     },
     "lottery_season_valhalla": {
       "featuredHeroes": [
-        "s3_loki_female_costume_mother",
-        "s3_heimdall_costume_dreaded",
-        "s3_loki_male_costume_shapeshifter"
+        "s3_bera_costume_conjurer",
+        "s3_frigg_costume_clairvoyance",
+        "s3_freya_costume_witch"
       ],
       "AssociatedFamilies": [
         "alfheim",
@@ -1029,9 +1029,9 @@
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
-        "tales2_gandr_costume_guardian",
-        "tales2_dagr_costume_plague_shaman",
-        "tales2_dularfulr_costume_engineer"
+        "tales2_fafnir_costume_fallen",
+        "tales2_thrivaldi_costume_void",
+        "tales2_aethslegaur_costume_soul_seeker"
       ],
       "AssociatedFamilies": [
         "nidavellir",
@@ -1385,14 +1385,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-08-19": [
-          "astral_dwarf_salniss",
-          "astral_dwarf_quari"
-        ],
-        "2026-08-20": [
-          "wild_cat_lennart",
-          "wild_cat_leonie"
-        ],
         "2026-08-21": [
           "bard_lyria",
           "magic_becky_costume_gothic"
@@ -1408,6 +1400,34 @@
         "2026-08-24": [
           "slime_gooze",
           "slime_charmione"
+        ],
+        "2026-08-25": [
+          "wild_cat_rajesh",
+          "magic_carpet_naeem"
+        ],
+        "2026-08-26": [
+          "construct_glacivolt",
+          "halloween_alucard_costume_mafia"
+        ],
+        "2026-08-27": [
+          "construct_ironheart",
+          "shadow_asketel"
+        ],
+        "2026-08-28": [
+          "slime_mucktus",
+          "bard_balafon"
+        ],
+        "2026-08-29": [
+          "magic_milena_costume_ice",
+          "villain_toxicandra_costume_rose"
+        ],
+        "2026-08-30": [
+          "astral_lemonwood",
+          "owl_relius"
+        ],
+        "2026-08-31": [
+          "gargoyle_hilda",
+          "ballerina_von_rothbart"
         ]
       },
       "includedHeroes": [

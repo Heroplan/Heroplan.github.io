@@ -885,7 +885,7 @@ const sourceReverseMap = {
     "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活动 - 冬日": "christmas", "月活动 - 春谷": "springvale",
     "挑战 - 石像鬼": "gargoyle", "S1 - 经典": "season1", "S2 - 亚特兰蒂斯": "season2",
     "S5 - 沙丘": "season5", "暗影召唤": "shadow", "盟约召唤": "covenant",
-    "高塔 - 猫头鹰": "owltower", "联盟 - 骑士冲击": "knights", "S6 - 深海奥秘": "untoldtales1", "S7 - 烈焰与冰霜宝藏": "untoldtales2", "S3 - 瓦尔哈拉": "season3", "S4 - 蛮荒地界": "season4",
+    "高塔 - 猫头鹰": "owltower", "联盟 - 骑士冲击": "knights", "UT1 - 深海奥秘": "untoldtales1", "UT2 - 烈焰与冰霜宝藏": "untoldtales2", "S3 - 瓦尔哈拉": "season3", "S4 - 蛮荒地界": "season4",
     "至日召唤": "solstice", "挑战 - 众神狂欢节": "carnivalofgods", "神话召唤 - 月英": "hotm",
     "月活动 - 恋爱季节": "love", "哥布林召唤": "goblinvillage", "额外抽奖 - 秘密召唤": "secretsummon", "神话召唤 - 额外抽奖": "tavernoflegendssecret",
     "挑战节II - 吟游诗人": "festival", "星体召唤": "astral", "荒野召唤": "wilderness",
@@ -900,7 +900,7 @@ const sourceReverseMap = {
     "高塔 - 魔法": "magic", "高塔 - 冥河": "styx", "月活動 - 冬季": "christmas", "月活動 - 斯普林維爾": "springvale",
     "挑戰 - 石像鬼": "gargoyle", "S1 - 經典": "season1", "S2 - 亞特蘭蒂斯": "season2",
     "S5 - 沙丘": "season5", "暗影召喚": "shadow", "聖約召喚": "covenant",
-    "高塔 - 貓頭鷹": "owltower", "聯盟 - 騎士衝擊": "knights", "S6 - 深淵謎團": "untoldtales1", "S7 - 火焰與冰霜的寶藏": "untoldtales2", "S3 - 瓦爾哈拉": "season3", "S4 - 地底荒野": "season4",
+    "高塔 - 貓頭鷹": "owltower", "聯盟 - 騎士衝擊": "knights", "UT1 - 深淵謎團": "untoldtales1", "UT2 - 火焰與冰霜的寶藏": "untoldtales2", "S3 - 瓦爾哈拉": "season3", "S4 - 地底荒野": "season4",
     "至日召喚": "solstice", "挑戰 - 眾神狂歡節": "carnivalofgods", "傳奇召喚 - 月英": "hotm",
     "月活動 - 戀愛季節": "love", "哥布林召喚": "goblinvillage", "額外抽獎 - 秘密召喚": "secretsummon", "傳奇召喚 - 額外抽獎": "tavernoflegendssecret", "星界召喚": "astral", "野地召喚": "wilderness",
     "傳奇召喚": "tavernoflegends", "生日召喚": "birthday", "黑色星期五召喚": "blackfriday",
@@ -913,7 +913,7 @@ const sourceReverseMap = {
     "Tower - Magic": "magic", "Tower - Styx": "styx", "Monthly Event - Winter": "christmas", "Monthly Event - Springvale": "springvale",
     "Challenge - Gargoyle": "gargoyle", "S1 - Classic": "season1", "S2 - Atlantis": "season2",
     "S5 - Dune": "season5", "Shadow Summon": "shadow", "Covenant Summon": "covenant",
-    "Tower - Owls": "owltower", "Alliance - Knights Clash": "knights", "S6 - Mysteries of the Deep": "untoldtales1", "S7 - Treasures of Flame and Frost": "untoldtales2", "S3 - Valhalla": "season3", "S4 - Wilderness": "season4",
+    "Tower - Owls": "owltower", "Alliance - Knights Clash": "knights", "UT1 - Mysteries of the Deep": "untoldtales1", "UT2 - Treasures of Flame and Frost": "untoldtales2", "S3 - Valhalla": "season3", "S4 - Wilderness": "season4",
     "Solstice Summon": "solstice", "Challenge - Carnival of Gods": "carnivalofgods", "Legends Summon - Hero of the Month": "hotm",
     "Monthly Event - Love Season": "love", "Goblin Summon": "goblinvillage", "Extra Draw - Secret Summon": "secretsummon", "Legends Summon - Extra Draw": "tavernoflegendssecret",
     "Astral Summon": "astral", "Wilderness Summon": "wilderness",
@@ -971,13 +971,13 @@ const wantedMissionData = [
     { season: 'S3', daily: '9-8', red: '6-2', green: ['4-8', '30-6'], blue: ['9-8', '9-2'], purple: '17-9', yellow: '8-6' },
     { season: 'S4', daily: '6-10', red: ['32-2', '32-6'], green: '9-2', blue: ['8-2', '30-7'], purple: '14-8', yellow: '4-7' },
     { season: 'S5', daily: ['5-10', '6-10'], red: ['2-9', '2-1'], green: ['3-4', '10-8', '30-8'], blue: '22-2', purple: '5-10', yellow: ['16-8', '17-6'] },
-    { season: 'S6\nUT1', daily: '1-26', red: '1-24', green: ['1-11', '4-22'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] },
-    { season: 'S7\nUT2', daily: '1-28', red: ['1-27', '1-28'], green: ['1-12', '2-15'], blue: '2-20', purple: '1-3', yellow: ['1-21', '1-15'] }
+    { season: 'UT1', daily: '1-26', red: '1-24', green: ['1-11', '4-22'], blue: '3-13', purple: '1-28', yellow: ['2-6', '6-7'] },
+    { season: 'UT2', daily: '1-28', red: ['1-27', '1-28'], green: ['1-12', '2-15'], blue: '2-20', purple: '1-3', yellow: ['1-21', '1-15'] }
 ];
 
 // 材料出处指南数据
 const farmingGuideData = [
-    { item: "Profile_avatar", s1: "S2", s2: "S3", s3: "S4", s4: "S5", s5: "S6", s6: "S7" },
+    { item: "Profile_avatar", s1: "S2", s2: "S3", s3: "S4", s4: "S5", s5: "UT1", s6: "UT2" },
     { item: "Experience", s1: "23-11", s2: "24-10N\n9-10N E", s3: "22-6N\n21-10H", s4: "10-8N\n23-5H", s5: "10-8N\n10-9H", s6: "2-10N\n6-27H" },
     { item: "Food", s1: "17-1", s2: "27-9H\n27-9H E", s3: "22-6N\n36-1H", s4: "20-10N\n27-1H", s5: "10-8N\n8-10H", s6: "2-10N\n5-17H" },
     { item: "Iron", s1: "17-1", s2: "27-9H\n9-4N E", s3: "22-6N\n27-1H", s4: "22-2N\n15-6H", s5: "10-8N\n10-10H", s6: "2-18N\n6-23H" },
@@ -1796,5 +1796,13 @@ const PassiveSkillIconCollection = {
     "hinder_cleansing": "passive_hinder_cleansing",
     "dragon_damage_on_turn_start": "passive_crackling_hatchling",
     "dragon_low_health_mana_recovery_on_damage_received": "passive_surgeback",
-    "attack_buff_on_damage_received_low": "passive_attack_buff_on_damage_received"
+    "attack_buff_on_damage_received_low": "passive_attack_buff_on_damage_received",
+    "construct_core_charge_saver": "passive_energy_saver",
+    "defense_stack_on_enemy_special_if_enemy_faster_than_slow_champions": "passive_defense_up_stack_on_enemy_special",
+    "steal_mana_over_time_harpy": "passive_swoop_and_steal",
+    "legendary_reflector": "passive_legendary_reflector",
+    "mana_on_dispel_buff_attempt": "passive_mana_on_dispel_buff",
+    "health_boost_on_dispel_attempt": "health_boost_on_dispel",
+    "damage_reduction_stack_on_enemy_special_if_faster_than_slow": "passive_reduced_damage_stack_on_enemy_special",
+    "legendary_reversal": "passive_legendary_reversal"
 };

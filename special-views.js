@@ -134,7 +134,7 @@ function initAndShowFarmingGuideView() {
 
     // 只在首次点击时渲染表格
     if (farmingGuideTable.innerHTML.trim() === '') {
-        const headers = { item: '', s1: 'S1', s2: 'S2', s3: 'S3', s4: 'S4', s5: 'S5', s6: 'S6' };
+        const headers = { item: '', s1: 'S1', s2: 'S2', s3: 'S3', s4: 'S4', s5: 'S5', s6: 'UT1' };
         const headerKeys = Object.keys(headers);
 
         let thead = farmingGuideTable.querySelector('thead') || farmingGuideTable.appendChild(document.createElement('thead'));

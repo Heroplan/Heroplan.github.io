@@ -289,7 +289,7 @@
         "heroes_event_5",
         "featuredHero"
       ],
-      "featuredHeroNum": 3
+      "featuredHeroNum": 2
     }
   },
   "SummonPool": {
@@ -1424,6 +1424,7 @@
     "lottery_hotm_event_default": {
       "AssociatedFamilies": [
         "champions",
+        "fox",
         "hotm2017",
         "hotm2018",
         "hotm2019",
@@ -1432,29 +1433,12 @@
         "hotm2022",
         "hotm2023",
         "hotm2024",
-        "hotm2025"
+        "hotm2025",
+        "hotm2026"
       ],
-      "entitiesToChooseFrom": [
-        "champions_mistra",
-        "champions_lazara",
-        "forest_god_gregorion_costume_alchemist",
-        "dark_god_september_costume_engineer",
-        "champions_nogu",
-        "witch_king_costume_cosmic",
-        "champions_norman",
-        "forest_god_zeline_costume_avian",
-        "champions_satori",
-        "holy_god_musashi_costume_prisoner",
-        "forest_god_evelyn_costume_huntress",
-        "holy_god_delilah_costume_guardian",
-        "fire_god_natalya_costume_seamstress",
-        "fire_god_zimkitha_costume_adventurer",
-        "dark_god_hel_costume_omen",
-        "ice_god_perseus_costume_frozen",
-        "ice_god_iris",
-        "ice_god_eskimo_costume_champion",
-        "dark_god_seshat_costume_revenant",
-        "holy_god_bai_yeong"
+      "featuredHeroes": [
+        "champions_katzy",
+        "holy_god_onatel_costume_divine"
       ]
     }
   }

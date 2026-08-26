@@ -1898,7 +1898,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // “一键搜索”复选框的逻辑保持不变
         const isQuickSearchEnabled = uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked;
-        if (['effects'].includes(filterType)) {
+        if (['effects', 'passives'].includes(filterType) && !isQuickSearchEnabled) {
             return;
         }
 

@@ -1884,6 +1884,43 @@
         "hasMysteryHeroBonusRoll": true
     },
     {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default",
+        "banner": "event_lotterybanner_legends",
+        "lotterybg": "event_lotterybg_legends",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 40,
+        "associatedEvent": "HeroesOfTheMonthEvent",
+        "bonusChest": "legends_chest",
+        "bonusChestRequirement": 10,
+        "bonusChestLimit": 12,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            0,
+            19,
+            6
+        ],
+        "secretLegendaryHeroChancePerMil": 1,
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_hotm_event_default",
+        "amount": 10
+    },
+    {
+        "productType": "LegendsSummon",
+        "id": "lottery_hotm_event_default_30_bulk",
+        "gemPrice": 9400,
+        "sourceProductId": "lottery_hotm_event_default",
+        "amount": 30
+    },
+    {
         "productType": "AscensionSummon",
         "id": "lottery_ascension_default",
         "banner": "event_lotterybanner_ascension",
@@ -1976,43 +2013,6 @@
         "id": "lottery_pickup_default_30_bulk",
         "gemPrice": 7500,
         "sourceProductId": "lottery_pickup_default",
-        "amount": 30
-    },
-    {
-        "productType": "LegendsSummon",
-        "id": "lottery_hotm_event_default",
-        "banner": "event_lotterybanner_legends",
-        "lotterybg": "event_lotterybg_legends",
-        "gemPrice": 400,
-        "amount": 1,
-        "uiPriority": 40,
-        "associatedEvent": "HeroesOfTheMonthEvent",
-        "bonusChest": "legends_chest",
-        "bonusChestRequirement": 10,
-        "bonusChestLimit": 12,
-        "bonusChestEnabled": true,
-        "bucketWeights": [
-            710,
-            265,
-            0,
-            19,
-            6
-        ],
-        "secretLegendaryHeroChancePerMil": 1,
-        "hasMysteryHeroBonusRoll": true
-    },
-    {
-        "productType": "LegendsSummon",
-        "id": "lottery_hotm_event_default_bulk",
-        "gemPrice": 3400,
-        "sourceProductId": "lottery_hotm_event_default",
-        "amount": 10
-    },
-    {
-        "productType": "LegendsSummon",
-        "id": "lottery_hotm_event_default_30_bulk",
-        "gemPrice": 9400,
-        "sourceProductId": "lottery_hotm_event_default",
         "amount": 30
     }
 ]

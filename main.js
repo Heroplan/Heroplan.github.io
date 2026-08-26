@@ -488,7 +488,8 @@ async function initializeApp() {
     uiElements.filterInputs.defaultManaPriorityCheckbox.checked = getCookie('defaultManaPriority') === 'true';
     uiElements.filterInputs.showLbTalentDetailsCheckbox.checked = getCookie('showLbTalentDetails') !== 'false';
     if (uiElements.filterInputs.enableSkillQuickSearchCheckbox) {
-        uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked = getCookie('enableSkillQuickSearch') !== 'false';
+        uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked = false;
+        //uiElements.filterInputs.enableSkillQuickSearchCheckbox.checked = getCookie('enableSkillQuickSearch') !== 'false';
     }
     const initialTalentDisabled = uiElements.filterInputs.defaultTalentSelect.value === 'none';
     uiElements.filterInputs.defaultTalentStrategySelect.disabled = initialTalentDisabled;

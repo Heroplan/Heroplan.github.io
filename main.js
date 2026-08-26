@@ -463,18 +463,15 @@ async function initializeApp() {
 
     // ▼▼▼ 加载抽奖配置文件 ▼▼▼
     try {
-        const [poolsResponse, typesResponse, extraResponse] = await Promise.all([
+        const [poolsResponse, typesResponse] = await Promise.all([
             fetch('./lottery.json'),      // 读取 lottery.json
-            fetch('./lottery_config.json'), // 读取 lottery_config.json
-            fetch('./lottery_config_extra.json') // 读取 lottery_config_extra.json
+            fetch('./lottery_config.json') // 读取 lottery_config.json
         ]);
         const allPoolsConfig = await poolsResponse.json();
         const summonTypesConfig = await typesResponse.json();
-        const extraConfig = await extraResponse.json();
-        //console.log("[main.js] extraConfig 加载成功:", extraConfig);
 
         // 将组合后的标题字典传递给初始化函数
-        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig, extraConfig);
+        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig);
 
     } catch (error) {
         console.error("加载抽奖配置文件失败:", error);

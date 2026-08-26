@@ -1244,6 +1244,18 @@ function getAllHeroesInPool(poolConfig) {
         poolConfig.bucketConfig.forEach((bucketString, index) => {
             if (!bucketString) return;
             //console.log(`[getAllHeroesInPool] 处理桶 [${index}]: ${bucketString}`);
+
+            // 检查该桶的权重是否为 0（包括可能被 extra 覆盖的权重）
+            let weight = poolConfig.bucketWeights[index] || 0;
+            // 如果有 extra 规则，且 extra 中定义了 weight，则使用 extra 的 weight
+            const extraRules = poolConfig._extraBucketConfigs ? poolConfig._extraBucketConfigs.find(rule => rule.index === index) : null;
+            if (extraRules && extraRules.weight !== undefined) {
+                weight = extraRules.weight;
+            }
+            if (weight === 0) {
+                //console.log(`[getAllHeroesInPool] 桶 ${bucketString} 最终权重为 0，跳过添加`);
+                return;
+            }
             // trainer 桶：只添加权重大于 0 的
             if (bucketString.startsWith('trainer')) {
                 const weight = poolConfig.bucketWeights[index];

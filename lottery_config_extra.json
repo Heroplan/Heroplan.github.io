@@ -1,0 +1,1332 @@
+{
+  "lotteryIncludedEntryConfigs": [
+    {
+      "lotteryId": "lottery_mimic_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "magic",
+            "mimic"
+          ],
+          "includeTrainers": true
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "magic",
+            "mimic"
+          ],
+          "includeTrainers": true
+        },
+        {
+          "index": 2,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "magic"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 15,
+          "rarity": 5,
+          "includedCostume": "None",
+          "isFeatured": true,
+          "includedFamilies": [
+            "mimic"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_costume_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "Exclusive",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "Exclusive",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 12,
+          "rarity": 5,
+          "includedCostume": "Exclusive",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 13,
+          "rarity": 5,
+          "includedCostume": "Exclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "Season1"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_costume_wardrobe2",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "Exclusive",
+          "minParentCharacterCostumeCount": 2
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "Exclusive",
+          "minParentCharacterCostumeCount": 2
+        },
+        {
+          "index": 2,
+          "weight": 12,
+          "rarity": 5,
+          "includedCostume": "Exclusive",
+          "minParentCharacterCostumeCount": 2
+        },
+        {
+          "index": 3,
+          "weight": 13,
+          "rarity": 5,
+          "includedCostume": "Exclusive",
+          "isFeatured": true,
+          "minParentCharacterCostumeCount": 2
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_league_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 180
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 180
+        },
+        {
+          "index": 2,
+          "weight": 25,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "youngestCharacterAgeInDays": 180
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_black_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 697,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 36,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "oldestCharacterAgeInDays": 730
+        },
+        {
+          "index": 3,
+          "weight": 2,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_black_solstice_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 697,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 36,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "oldestCharacterAgeInDays": 730
+        },
+        {
+          "index": 3,
+          "weight": 2,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_black_7th_birthday",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 15,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "oldestCharacterAgeInDays": 730
+        },
+        {
+          "index": 3,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_ascension_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 15,
+          "rarity": 5,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 730,
+          "oldestCharacterAgeInDays": 1460
+        },
+        {
+          "index": 3,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "None",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_welcome_back_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 25,
+          "rarity": 5,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_welcome_back_medium",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 25,
+          "rarity": 5,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 180,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_welcome_back_long",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 365,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 25,
+          "rarity": 5,
+          "includedCostume": "None",
+          "youngestCharacterAgeInDays": 30,
+          "oldestCharacterAgeInDays": 90,
+          "excludedOrigins": [
+            "BlackSummon",
+            "SolsticeSummon",
+            "Harvest",
+            "7thBirthday"
+          ],
+          "excludedFamilies": [
+            "mimic"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_atlantis",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 196,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 514,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season2"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 146,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season2"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 3,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season2"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 13,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_valhalla",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 196,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 514,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season3"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 146,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season3"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season3"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "Season3"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_underwild",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 196,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 514,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season4"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 146,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season4"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season4"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "Season4"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_season5",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 196,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 514,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season5"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 146,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season5"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Season5"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "Season5"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_untold_tales1",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 296,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 121,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales1"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 57,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales1"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 4,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales1"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "UntoldTales1"
+          ]
+        },
+        {
+          "index": 7,
+          "weight": 293,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "atlantis"
+          ]
+        },
+        {
+          "index": 8,
+          "weight": 89,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "atlantis"
+          ]
+        },
+        {
+          "index": 9,
+          "weight": 2,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "atlantis"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_season_untold_tales2",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 296,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 119,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 121,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales2"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 57,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales2"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 4,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "UntoldTales2"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "UntoldTales2"
+          ]
+        },
+        {
+          "index": 7,
+          "weight": 293,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+          ]
+        },
+        {
+          "index": 8,
+          "weight": 89,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+          ]
+        },
+        {
+          "index": 9,
+          "weight": 2,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "jotunheim",
+            "muspelheim",
+            "svartalfheim"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_covenant_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "musketeer",
+            "gargoyle",
+            "classic",
+            "construct"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "musketeer",
+            "gargoyle",
+            "classic",
+            "construct"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 9,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "construct",
+            "wonderland",
+            "pirate"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 16,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_wilderness_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "journey",
+            "faun",
+            "owl",
+            "gargoyle",
+            "atlantis"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "journey",
+            "faun",
+            "owl",
+            "gargoyle",
+            "atlantis"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 15,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "magic",
+            "faun",
+            "owl",
+            "mighty_pet"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_thunderbolt_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 730
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 730
+        },
+        {
+          "index": 2,
+          "weight": 17,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "fox",
+            "moths",
+            "beowulf"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 8,
+          "rarity": 5,
+          "includedCostume": "None",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_goblin_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 568,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 208,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 16,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 142,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Goblin"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 57,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Goblin"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 3,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "Goblin"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "includedOrigins": [
+            "Goblin"
+          ]
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_hotm_event_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic",
+            "fox"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic",
+            "fox"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 0,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 19,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "champions",
+            "hotm2017",
+            "hotm2018",
+            "hotm2019",
+            "hotm2020",
+            "hotm2021",
+            "hotm2022",
+            "hotm2023",
+            "hotm2024",
+            "hotm2025",
+            "hotm2026",
+            "fox"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_hotm_event_reroll",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 0,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic",
+            "fox"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 0,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic",
+            "fox"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 0,
+          "rarity": 5,
+          "includedCostume": "None",
+          "includedFamilies": [
+            "classic"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 100,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedFamilies": [
+            "champions",
+            "hotm",
+            "fox"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 0,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_harvest_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "excludedFamilies": [
+            "classic"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "excludedFamilies": [
+            "classic"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 23,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "oldestCharacterAgeInDays": 730,
+          "excludedFamilies": [
+            "classic"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 2,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_hotm_event_reroll_extra",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 584,
+          "rarity": 1,
+          "includedCostume": "None",
+          "includeTrainers": true
+        },
+        {
+          "index": 1,
+          "weight": 300,
+          "rarity": 2,
+          "includedCostume": "None",
+          "includeTrainers": true
+        },
+        {
+          "index": 2,
+          "weight": 100,
+          "rarity": 3,
+          "includedCostume": "None",
+          "includeTrainers": true
+        },
+        {
+          "index": 3,
+          "weight": 10,
+          "rarity": 4,
+          "includedCostume": "None",
+          "includeTrainers": true
+        }
+      ]
+    }
+  ]
+}

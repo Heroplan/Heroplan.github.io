@@ -257,6 +257,30 @@ function getMaxAllowedCostumeId(poolConfig) {
     return Infinity;
 }
 
+/**
+ * 处理 lottery_config_extra.json 中的补充规则，建立 lotteryId -> bucketIncludedEntryConfigs 映射
+ * @param {object} extraConfigs - 从 lottery_config_extra.json 解析的对象
+ */
+function processExtraConfigs(extraConfigs) {
+    //console.log("[processExtraConfigs] 接收到的 extraConfigs:", extraConfigs);
+    extraBucketConfigsMap = {};
+    if (!extraConfigs || !extraConfigs.lotteryIncludedEntryConfigs) {
+        //console.warn("[processExtraConfigs] extraConfigs 缺少 lotteryIncludedEntryConfigs 字段");
+        return;
+    }
+    extraConfigs.lotteryIncludedEntryConfigs.forEach(entry => {
+        const lotteryId = entry.lotteryId;
+        if (!extraBucketConfigsMap[lotteryId]) {
+            extraBucketConfigsMap[lotteryId] = [];
+        }
+        const configs = entry.bucketIncludedEntryConfigs || [];
+        configs.sort((a, b) => a.index - b.index);
+        extraBucketConfigsMap[lotteryId] = configs;
+        //console.log(`[processExtraConfigs] 为 ${lotteryId} 添加 ${configs.length} 条规则`);
+    });
+    //console.log("[processExtraConfigs] 最终映射:", extraBucketConfigsMap);
+}
+
 // --- 初始化与数据处理 ---
 
 /**
@@ -264,13 +288,14 @@ function getMaxAllowedCostumeId(poolConfig) {
  * @param {Array} allPoolsConfig - 来自“全抽奖配置.json”的数据
  * @param {object} summonTypesConfig - 来自“奖池种类.json”的数据
  */
-function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
+function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConfigs) {
     state.showAllSummonHistory = false;
+    //console.log("[initializeLotterySimulator] 接收到的 extraConfigs:", extraConfigs);
     // ▼▼▼ 预加载动画资源 ▼▼▼
     const assetsToPreload = [
-        'sounds/ui_summon-additional-draws.ogg',      // 抽奖音效
-        'imgs/lottery/gate/lottery_animation_light.webp', // 核心光效图片
-        'imgs/lottery/gate/lottery_animation_bonus.webp'  // 奖励召唤图片
+        'sounds/ui_summon-additional-draws.ogg',
+        'imgs/lottery/gate/lottery_animation_light.webp',
+        'imgs/lottery/gate/lottery_animation_bonus.webp'
     ];
     preloadAssets(assetsToPreload);
     const soundToggleButton = document.getElementById('toggle-sound-btn');
@@ -315,20 +340,21 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
             animationToggleButton.textContent = icons[modeIndex];
             animationToggleButton.title = titles[state.lotteryAnimationMode];
         };
-        updateAnimationButtonUI(); // 调用函数以设置按钮的初始状态
+        updateAnimationButtonUI();
 
         animationToggleButton.addEventListener('click', () => {
             let currentIndex = modes.indexOf(state.lotteryAnimationMode);
-            currentIndex = (currentIndex + 1) % modes.length; // 循环切换到下一个模式
-            state.lotteryAnimationMode = modes[currentIndex]; // 更新全局状态
-            setCookie('lotteryAnimationMode', state.lotteryAnimationMode, 365); // 将新模式保存到Cookie
-            updateAnimationButtonUI(); // 更新按钮的显示
+            currentIndex = (currentIndex + 1) % modes.length;
+            state.lotteryAnimationMode = modes[currentIndex];
+            setCookie('lotteryAnimationMode', state.lotteryAnimationMode, 365);
+            updateAnimationButtonUI();
         });
     }
 
-
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.en;
     bonusTranslations = (i18n[state.currentLang] || i18n.cn).lottery_bonus_translations || {};
+    // 处理补充配置，建立映射
+    processExtraConfigs(extraConfigs);
     processSummonData(allPoolsConfig, summonTypesConfig);
     renderActivityList();
     loadHistoryFromLocalStorage();
@@ -361,7 +387,6 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         });
     }
 
-    // ▼▼▼ 为抽奖结果弹窗的关闭按钮和遮罩层添加返回事件监听 ▼▼▼
     const closeSummaryModal = () => {
         if (uiElements.summonSummaryModal && !uiElements.summonSummaryModal.classList.contains('hidden')) {
             history.back();
@@ -401,14 +426,9 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig) {
         });
     });
 
-    // ▼▼▼ 回车键事件屏蔽 ▼▼▼
     document.addEventListener('keydown', function (event) {
-        // 只在抽奖模拟器激活时处理回车键
         if (state.lotterySimulatorActive && event.key === 'Enter') {
-            // 阻止默认行为（防止表单提交等）
             event.preventDefault();
-
-            // 检查是否在输入框等可编辑元素中
             const activeElement = document.activeElement;
             const isInputFocused = activeElement &&
                 (activeElement.tagName === 'INPUT' ||
@@ -425,45 +445,28 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
     summonPoolDetails = summonTypesConfig.SummonPool;
 
-    // ========== 新增：根据“次日 7:00 过期”规则禁用神秘英雄 ==========
-    const now = new Date(); // UTC 当前时间
+    const now = new Date();
 
-    /**
-     * 检查某个神秘英雄配置是否应被禁用（所有同家族英雄均已过期）
-     * @param {object} mysteryConfig - 如 summonPoolDetails.MysteryHero
-     */
     const disableIfAllExpired = (mysteryConfig) => {
         if (!mysteryConfig) return;
         const family = String(mysteryConfig.family).toLowerCase();
-        // 获取所有同家族的英雄（从 state.allHeroes 中查找）
         const allHeroesOfFamily = state.allHeroes.filter(h => String(h.family).toLowerCase() === family);
-        if (allHeroesOfFamily.length === 0) return; // 无英雄，保留原配置
-
-        // 检查是否存在至少一个未过期的英雄
+        if (allHeroesOfFamily.length === 0) return;
         const hasAvailable = allHeroesOfFamily.some(hero => {
             const dateStr = hero['Release date'];
-            if (!dateStr) return true; // 无日期视为永久有效（如 Lottery_Only）
-
+            if (!dateStr) return true;
             const parts = dateStr.split('-');
             if (parts.length !== 3) return false;
-            // 解析发布日期（UTC 0:00）
             const releaseDate = new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
-            // 过期时间 = 发布日期次日 07:00 UTC
             const expiryDate = new Date(releaseDate);
             expiryDate.setUTCDate(expiryDate.getUTCDate() + 1);
             expiryDate.setUTCHours(7, 0, 0, 0);
-            return now < expiryDate; // 尚未过期
+            return now < expiryDate;
         });
-
         if (!hasAvailable) {
-            // 所有英雄均已过期，将概率置为 0
             mysteryConfig.ChancePerMil = "0";
-            // 可选：添加一个调试日志
-            // console.log(`[MysteryHero] 家族 "${family}" 的所有英雄均已过期，概率已归零。`);
         }
     };
-
-    // 处理神秘英雄
     disableIfAllExpired(summonPoolDetails.MysteryHero);
 
     state.globalExcludeFamilies = (summonPoolDetails.exclude_for_all || []).map(f => f.toLowerCase());
@@ -488,25 +491,28 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
             const bulk10 = allPoolsConfig.find(p => p.sourceProductId === pool.id && p.amount === 10);
             const bulk30 = allPoolsConfig.find(p => p.sourceProductId === pool.id && p.amount === 30);
 
+            // 获取 extra 配置
+            const extraConfigs = extraBucketConfigsMap[pool.id] || null;
+            //console.log(`[processSummonData] 奖池 ${pool.id} 的 extraConfigs:`, extraConfigs);
+
             lotteryPoolsData[pool.id] = {
                 ...pool,
                 ...details,
                 ...productType,
                 bulk10: bulk10 || null,
                 bulk30: bulk30 || null,
+                _extraBucketConfigs: extraConfigs, // 附加补充配置
             };
 
             if (pool.id === 'lottery_featured_event_festival' || pool.id === 'lottery_black_solstice_default') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 2;
             }
-
-            if (pool.id === 'lottery_season_atlantis') {// || pool.id === 'lottery_hero_halloween') {
+            if (pool.id === 'lottery_season_atlantis') {
                 lotteryPoolsData[pool.id].featuredHeroNum = 4;
             }
         }
     });
 
-    // ▼▼▼ 处理 lottery_pickup_default 动态 featuredHeroes ▼▼▼
     if (lotteryPoolsData['lottery_pickup_default']) {
         const pool = lotteryPoolsData['lottery_pickup_default'];
         const featuredHeroesObj = pool.featuredHeroes;
@@ -516,7 +522,6 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
             const utcMonth = now.getUTCMonth();
             const utcDay = now.getUTCDate();
             const utcHours = now.getUTCHours();
-
             let targetDate = new Date(Date.UTC(utcYear, utcMonth, utcDay));
             if (utcHours < 7) {
                 targetDate.setUTCDate(targetDate.getUTCDate() - 1);
@@ -525,9 +530,9 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
             const dailyHeroes = featuredHeroesObj[dateKey];
             if (dailyHeroes && Array.isArray(dailyHeroes)) {
                 pool.featuredHeroes = dailyHeroes;
-                console.log(`[lottery_pickup_default] 使用日期 ${dateKey} 的英雄列表:`, dailyHeroes);
+                //console.log(`[lottery_pickup_default] 使用日期 ${dateKey} 的英雄列表:`, dailyHeroes);
             } else {
-                console.warn(`[lottery_pickup_default] 未找到日期 ${dateKey} 的英雄列表，使用空数组`);
+                //console.warn(`[lottery_pickup_default] 未找到日期 ${dateKey} 的英雄列表，使用空数组`);
                 pool.featuredHeroes = [];
             }
         }
@@ -537,6 +542,282 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
 }
 
 // --- 核心逻辑辅助函数 ---
+
+/**
+ * 应用服装规则，确保只保留指定的服装版本
+ * @param {Array} heroes - 英雄数组
+ * @param {string} includedCostume - "None" | "Exclusive" | "NonExclusive"
+ * @param {object} poolConfig - 奖池配置（用于赛季限制）
+ * @returns {Array} 过滤后的英雄数组
+ */
+function applyCostumeRule(heroes, includedCostume, poolConfig) {
+    if (!includedCostume) {
+        return heroes;
+    }
+    const maxCostumeId = getMaxAllowedCostumeId(poolConfig);
+    let result;
+    switch (includedCostume) {
+        case "None":
+            // 只保留本体
+            result = heroes.filter(h => h.costume_id === 0);
+            break;
+        case "Exclusive": {
+            // 按英文名分组，保留最新服装（若存在），否则保留本体
+            const map = new Map();
+            heroes.forEach(h => {
+                if (h.costume_id > maxCostumeId) return;
+                const key = h.english_name;
+                const existing = map.get(key);
+                if (!existing) {
+                    map.set(key, h);
+                } else {
+                    // 如果当前是服装（>0）且已有记录是本体（0），则替换
+                    // 如果两者都是服装，取 costumed_id 大的
+                    // 如果当前是本体，已有是服装，则保留已有
+                    if (h.costume_id > 0) {
+                        if (existing.costume_id === 0 || h.costume_id > existing.costume_id) {
+                            map.set(key, h);
+                        }
+                    }
+                }
+            });
+            result = Array.from(map.values());
+            break;
+        }
+        case "NonExclusive": {
+            // 优先保留第一件服装（costume_id===1），若没有则保留本体（0）
+            const candidates = heroes.filter(h => h.costume_id <= 1 && h.costume_id <= maxCostumeId);
+            const map = new Map();
+            candidates.forEach(h => {
+                const key = h.english_name;
+                const existing = map.get(key);
+                if (!existing) {
+                    map.set(key, h);
+                } else {
+                    // 如果已有是本体（0），当前是服装（1），则替换
+                    if (h.costume_id === 1 && existing.costume_id === 0) {
+                        map.set(key, h);
+                    }
+                }
+            });
+            result = Array.from(map.values());
+            break;
+        }
+        default:
+            result = heroes;
+    }
+    return result;
+}
+
+/**
+ * 强制过滤掉发布日期晚于 baseDate 的英雄
+ * @param {Array} heroes - 英雄数组
+ * @param {Date} baseDate - 基准日期
+ * @returns {Array} 过滤后的数组
+ */
+function filterByDateCutoff(heroes, baseDate) {
+    if (!baseDate) return heroes;
+    return heroes.filter(h => {
+        const date = parseReleaseDate(h['Release date']);
+        if (!date) return false; // 无发布日期则排除
+        return date <= baseDate;
+    });
+}
+
+/** 根据年龄规则筛选英雄 */
+function filterByAge(heroes, baseDate, oldestDays, youngestDays) {
+    // oldestDays: 排除比 baseDate - oldestDays 更老的英雄（即只保留较新的）
+    // youngestDays: 排除比 baseDate - youngestDays 更新的英雄（即只保留较老的）
+    let filtered = heroes;
+    if (oldestDays !== undefined && oldestDays > 0) {
+        const cutoff = new Date(baseDate);
+        cutoff.setUTCDate(cutoff.getUTCDate() - oldestDays);
+        filtered = filtered.filter(h => {
+            const date = parseReleaseDate(h['Release date']);
+            return date && date >= cutoff;
+        });
+    }
+    if (youngestDays !== undefined && youngestDays > 0) {
+        const cutoff = new Date(baseDate);
+        cutoff.setUTCDate(cutoff.getUTCDate() - youngestDays);
+        filtered = filtered.filter(h => {
+            const date = parseReleaseDate(h['Release date']);
+            return date && date <= cutoff;
+        });
+    }
+    return filtered;
+}
+
+/** 解析发布日期 */
+function parseReleaseDate(dateStr) {
+    if (!dateStr) return null;
+    const parts = dateStr.split('-');
+    if (parts.length !== 3) return null;
+    return new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
+}
+
+/** 获取用于年龄规则的基准日期（优先 latestIncludedHeroDate，否则今日） */
+function getBaseDateForAgeRules(poolConfig) {
+    if (poolConfig.latestIncludedHeroDate) {
+        const parts = poolConfig.latestIncludedHeroDate.split('-');
+        if (parts.length === 3) {
+            return new Date(Date.UTC(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2])));
+        }
+    }
+    const now = new Date();
+    return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+}
+
+/** 创建训练师英雄（指定星级） */
+function createTrainerHeroes(star) {
+    const colors = [
+        { name: '红', id: 'red' },
+        { name: '蓝', id: 'blue' },
+        { name: '绿', id: 'green' },
+        { name: '黄', id: 'yellow' },
+        { name: '紫', id: 'purple' }
+    ];
+    const isChinese = state.currentLang === 'cn' || state.currentLang === 'tc';
+    return colors.map((color, idx) => ({
+        name: `${star}* ${isChinese ? color.name : color.id} ${isChinese ? '训练师英雄' : 'Trainer'}`,
+        star: star,
+        color: color.id,
+        family: 'trainer',
+        source: 'trainer',
+        heroId: `trainer_${star}_${color.id}`,
+        originalIndex: -1 * (2000 + star * 10 + idx),
+        displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
+        image: `imgs/hero_icon/trainer_rainbow.webp`
+    }));
+}
+
+/** 去重（基于 heroId） */
+function deduplicateHeroes(heroes) {
+    const map = new Map();
+    heroes.forEach(h => {
+        if (h && h.heroId) {
+            if (!map.has(h.heroId)) {
+                map.set(h.heroId, h);
+            }
+        }
+    });
+    return Array.from(map.values());
+}
+
+/**
+ * 根据补充规则和原 bucket 字符串，生成最终的英雄池。
+ * @param {string} bucketString - 如 "heroes_event_3"
+ * @param {number} bucketIndex - 该 bucket 在 bucketConfig 中的索引
+ * @param {object} poolConfig - 奖池配置（已附加 _extraBucketConfigs）
+ * @param {Array} masterHeroPool - 主英雄池（已预先筛选）
+ * @returns {Array} 符合条件的英雄数组
+ */
+
+/**
+ * 根据补充规则和原 bucket 字符串，生成最终的英雄池。
+ * @param {string} bucketString - 如 "heroes_event_3"
+ * @param {number} bucketIndex - 该 bucket 在 bucketConfig 中的索引
+ * @param {object} poolConfig - 奖池配置（已附加 _extraBucketConfigs）
+ * @returns {Array} 符合条件的英雄数组
+ */
+function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
+    //console.log(`[getHeroPoolForBucketWithExtra] 调用: ${bucketString}, index: ${bucketIndex}`);
+
+    const extraRules = poolConfig._extraBucketConfigs ? poolConfig._extraBucketConfigs.find(rule => rule.index === bucketIndex) : null;
+
+    let pool = [];
+
+    if (extraRules) {
+        // ★ 有 extra 规则：直接从全英雄池构建 ★
+        //console.log(`[getHeroPoolForBucketWithExtra] 使用 extra 规则直接从全英雄池构建:`, extraRules);
+        const targetStar = extraRules.rarity;
+        const baseHeroPool = state.allHeroes; // 全英雄池
+
+        // 1. 处理 includedFamilies
+        if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
+            const families = extraRules.includedFamilies.map(f => f.toLowerCase());
+            let candidates = baseHeroPool.filter(h => h.star === targetStar && families.includes(String(h.family).toLowerCase()));
+            pool = pool.concat(candidates);
+            //console.log(`[getHeroPoolForBucketWithExtra] 包含家族后: ${pool.length}`);
+        }
+        // 2. 处理 includedOrigins
+        if (extraRules.includedOrigins && extraRules.includedOrigins.length > 0) {
+            const origins = extraRules.includedOrigins.map(o => {
+                const lower = o.toLowerCase();
+                return sourceReverseMap[o] ? sourceReverseMap[o].toLowerCase() : lower;
+            });
+            let candidates = baseHeroPool.filter(h => {
+                if (!h.source) return false;
+                const heroSourceEng = sourceReverseMap[h.source] ? sourceReverseMap[h.source].toLowerCase() : h.source.toLowerCase();
+                return h.star === targetStar && origins.includes(heroSourceEng);
+            });
+            pool = pool.concat(candidates);
+            //console.log(`[getHeroPoolForBucketWithExtra] 包含来源后: ${pool.length}`);
+        }
+        // 3. 如果既没有 includedFamilies 也没有 includedOrigins，但 extraRules 存在，可能需要保留原逻辑？
+        // 但通常 extra 规则会指定至少一种，若都没有，则可能回退到原逻辑。为安全，若 pool 为空，则回退原逻辑。
+        if (pool.length === 0 && !extraRules.includedFamilies && !extraRules.includedOrigins) {
+            // 没有指定包含条件，可能只包含服装或年龄规则，使用原逻辑
+            pool = getHeroPoolForBucket(bucketString, poolConfig);
+        }
+
+        // 4. 排除来源（excludedOrigins）
+        if (extraRules.excludedOrigins && extraRules.excludedOrigins.length > 0) {
+            const exOrigins = extraRules.excludedOrigins.map(o => {
+                const lower = o.toLowerCase();
+                return sourceReverseMap[o] ? sourceReverseMap[o].toLowerCase() : lower;
+            });
+            pool = pool.filter(h => {
+                if (!h.source) return true;
+                const heroSourceEng = sourceReverseMap[h.source] ? sourceReverseMap[h.source].toLowerCase() : h.source.toLowerCase();
+                return !exOrigins.includes(heroSourceEng);
+            });
+            //console.log(`[getHeroPoolForBucketWithExtra] 排除来源后: ${pool.length}`);
+        }
+
+        // 5. 应用服装规则（includedCostume）
+        if (extraRules.includedCostume) {
+            pool = applyCostumeRule(pool, extraRules.includedCostume, poolConfig);
+            //console.log(`[getHeroPoolForBucketWithExtra] 应用服装规则后: ${pool.length}`);
+        }
+
+        // 6. 应用年龄规则（在包含/排除之后）
+        if (extraRules.oldestCharacterAgeInDays !== undefined || extraRules.youngestCharacterAgeInDays !== undefined) {
+            const baseDate = getBaseDateForAgeRules(poolConfig);
+            if (baseDate) {
+                pool = filterByAge(pool, baseDate, extraRules.oldestCharacterAgeInDays, extraRules.youngestCharacterAgeInDays);
+                //console.log(`[getHeroPoolForBucketWithExtra] 年龄过滤后: ${pool.length}`);
+            }
+        }
+
+        // 7. 强制截止过滤（对 extra 规则构建的池也生效）
+        if (poolConfig.latestIncludedHeroDate) {
+            const baseDate = getBaseDateForAgeRules(poolConfig);
+            if (baseDate) {
+                const before = pool.length;
+                pool = filterByDateCutoff(pool, baseDate);
+                //console.log(`[getHeroPoolForBucketWithExtra] 强制截止过滤 (baseDate=${baseDate.toISOString().split('T')[0]}): ${pool.length}/${before}`);
+            }
+        }
+    } else {
+        // 无 extra 规则，使用原逻辑
+        pool = getHeroPoolForBucket(bucketString, poolConfig);
+        // 但仍需应用强制截止过滤（如果有 latestIncludedHeroDate）
+        if (poolConfig.latestIncludedHeroDate) {
+            const baseDate = getBaseDateForAgeRules(poolConfig);
+            if (baseDate) {
+                const before = pool.length;
+                pool = filterByDateCutoff(pool, baseDate);
+                //console.log(`[getHeroPoolForBucketWithExtra] 强制截止过滤 (baseDate=${baseDate.toISOString().split('T')[0]}): ${pool.length}/${before}`);
+            }
+        }
+    }
+
+    // 去重
+    const result = deduplicateHeroes(pool);
+    //console.log(`[getHeroPoolForBucketWithExtra] 最终结果数: ${result.length}`);
+    return result;
+}
 
 /**
  * 根据权重数组，随机返回一个索引
@@ -911,146 +1192,69 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 function getAllHeroesInPool(poolConfig) {
     if (!poolConfig) return [];
 
-    // 根据 latestIncludedHeroAgeInDays 配置预筛选主英雄池
-    let masterPoolForBuckets = state.allHeroes;
-    // ▼▼▼ 处理 includedOrigins ▼▼▼
-    if (poolConfig.includedOrigins && Array.isArray(poolConfig.includedOrigins) && poolConfig.includedOrigins.length > 0) {
-        const allowedOrigins = poolConfig.includedOrigins.map(o => o.toLowerCase());
-        const originalCount = masterPoolForBuckets.length;
-        masterPoolForBuckets = masterPoolForBuckets.filter(hero => {
-            if (!hero.source) return false;
-            // 使用 sourceReverseMap 将英雄的本地化起源转回英文ID
-            const englishOrigin = sourceReverseMap[hero.source];
-            return englishOrigin.toLowerCase() && allowedOrigins.includes(englishOrigin.toLowerCase());
-        });
-    }
+    const masterPoolForBuckets = state.allHeroes;
+    //console.log(`[getAllHeroesInPool] 奖池: ${poolConfig.id}, 英雄总数: ${masterPoolForBuckets.length}`);
 
-    // ▼▼▼ 统一处理两种日期筛选规则 ▼▼▼
-    if (poolConfig.latestIncludedHeroDate || poolConfig.latestIncludedHeroAgeInDays > 0) {
-
-        // 步骤 1: 确定基准日期 (baseDate)，即时间窗口的“结束日期”
-        let baseDate;
-        if (poolConfig.latestIncludedHeroDate) {
-            //console.log(`[日志-日期筛选] 使用 latestIncludedHeroDate: ${poolConfig.latestIncludedHeroDate} 作为基准日期。`);
-            const parts = poolConfig.latestIncludedHeroDate.split('-');
-            if (parts.length === 3) {
-                baseDate = new Date(Date.UTC(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10)));
-            }
-        } else {
-            // 如果没有设置固定日期，则使用今天的日期作为基准
-            const now = new Date();
-            baseDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-        }
-
-        // 步骤 2: 根据基准日期和天数计算“起始日期” (startDate)
-        let startDate = null; // 如果为null，则代表没有起始日期限制
-        if (poolConfig.latestIncludedHeroAgeInDays > 0) {
-            const days = poolConfig.latestIncludedHeroAgeInDays;
-            //console.log(`[日志-日期筛选] 使用 latestIncludedHeroAgeInDays: ${days} 天。将从基准日期回溯。`);
-            startDate = new Date(baseDate.getTime());
-            startDate.setUTCDate(startDate.getUTCDate() - (days - 1)); // -1 是为了包含起始当天
-        }
-
-        // 步骤 3: 执行筛选
-        masterPoolForBuckets = masterPoolForBuckets.filter(hero => {
-            // 保留已有的豁免和排除规则
-            const heroFamily = String(hero.family || '').toLowerCase();
-            if (heroFamily === 'classic') return true;
-            const hotmInfo = summonPoolDetails.hotm;
-            if (hotmInfo && heroFamily === String(hotmInfo.family).toLowerCase()) return false;
-
-            // --- 逻辑修改开始 ---
-
-            // 解析英雄的发布日期 (所有星级都需要)
-            const releaseDateStr = hero['Release date'];
-            if (!releaseDateStr) return false; // 没有发布日期的英雄不应被包含
-            const heroParts = releaseDateStr.split('-');
-            if (heroParts.length !== 3) return false;
-            const heroReleaseDate = new Date(Date.UTC(parseInt(heroParts[0], 10), parseInt(heroParts[1], 10) - 1, parseInt(heroParts[2], 10)));
-
-            // 1. 检查“截止日期” (latestIncludedHeroDate)
-            // 这条规则适用于所有星级
-            const isBeforeBaseDate = heroReleaseDate <= baseDate;
-            if (!isBeforeBaseDate) {
-                return false; // 无论几星，英雄太新了，排除
-            }
-
-            // 2. 检查“起始日期” (latestIncludedHeroAgeInDays)
-            // 这条规则只适用于 5 星英雄
-            if (hero.star === 5) {
-                // 对于 5 星英雄，必须同时满足“起始日期”
-                const isAfterStartDate = startDate ? heroReleaseDate >= startDate : true;
-                if (!isAfterStartDate) {
-                    return false; // 5星英雄太老了，排除
-                }
-            }
-            // 对于 3 星和 4 星英雄，我们跳过了“起始日期”检查
-            // 因为它已经通过了 isBeforeBaseDate 的检查，所以它应该被包含
-
-            // 3. 英雄通过了所有适用的规则
-            return true;
-        });
-    }
-
+    // ---- 服装召唤特殊处理 ----
     if (poolConfig.productType === 'CostumeSummon') {
         const associatedFamilies = (poolConfig.AssociatedFamilies && Array.isArray(poolConfig.AssociatedFamilies))
             ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
             : ['classic'];
-
         const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
-
         const latestCostumes = new Map();
         state.allHeroes.forEach(hero => {
             const heroFamily = String(hero.family || '').toLowerCase();
-            // 1. 家族匹配
             if (!associatedFamilies.includes(heroFamily)) return;
-            // 2. 必须是服装（costume_id > 0）
             if (hero.costume_id <= 0) return;
-            // 3. 如果是 wardrobe2 奖池，只保留 costume_id === 2
             if (isWardrobe2 && hero.costume_id !== 2) return;
-
             const existing = latestCostumes.get(hero.english_name);
-            // 保留同一英雄的最新服装（通常 costume_id 越大越新）
             if (!existing || hero.costume_id > existing.costume_id) {
                 latestCostumes.set(hero.english_name, hero);
             }
         });
-        return Array.from(latestCostumes.values());
+        const result = Array.from(latestCostumes.values());
+        //console.log(`[getAllHeroesInPool] 服装召唤结果数: ${result.length}`);
+        return result;
     }
 
     let allPossibleHeroes = [];
     const maxCostumeId = getMaxAllowedCostumeId(poolConfig);
-    
+
+    // 精选英雄列表
     if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
         const heroesFromFeaturedList = poolConfig.featuredHeroes
             .map(heroId => state.heroesByIdMap.get(heroId))
-            .filter(hero => hero && hero.costume_id <= maxCostumeId); // 限制 costume_id
+            .filter(hero => hero && hero.costume_id <= maxCostumeId);
         allPossibleHeroes.push(...heroesFromFeaturedList);
+        //console.log(`[getAllHeroesInPool] 从 featuredHeroes 添加 ${heroesFromFeaturedList.length} 个`);
     }
 
-    // ▼▼▼ 确保 entitiesToChooseFrom 中的英雄总是被包含在主奖池中 ▼▼▼
-    // 这些实体可能因为 bucketRules 或日期规则被主流程排除，
-    // 但如果它们在 entitiesToChooseFrom 列表中，它们必须作为可选项出现（供精选卡槽选择）。
+    // entitiesToChooseFrom（用于精选卡槽选择）
     if (poolConfig.entitiesToChooseFrom && Array.isArray(poolConfig.entitiesToChooseFrom)) {
         const choosableEntities = poolConfig.entitiesToChooseFrom
             .map(heroId => state.heroesByIdMap.get(heroId))
-            .filter(hero => hero && hero.costume_id <= maxCostumeId); // 限制 costume_id
+            .filter(hero => hero && hero.costume_id <= maxCostumeId);
         allPossibleHeroes.push(...choosableEntities);
+        //console.log(`[getAllHeroesInPool] 从 entitiesToChooseFrom 添加 ${choosableEntities.length} 个`);
     }
 
+    // 遍历 bucketConfig
     if (poolConfig.bucketConfig) {
-        poolConfig.bucketConfig.forEach(bucketString => {
-            if (!bucketString) {
-                return;
-            }
-            // ▼▼▼ 处理 trainer_x 桶，使其显示所有颜色的训练师 ▼▼▼
+        //console.log(`[getAllHeroesInPool] bucketConfig:`, poolConfig.bucketConfig);
+        poolConfig.bucketConfig.forEach((bucketString, index) => {
+            if (!bucketString) return;
+            //console.log(`[getAllHeroesInPool] 处理桶 [${index}]: ${bucketString}`);
+            // trainer 桶：只添加权重大于 0 的
             if (bucketString.startsWith('trainer')) {
+                const weight = poolConfig.bucketWeights[index];
+                if (weight === 0) {
+                    //console.log(`[getAllHeroesInPool] 桶 ${bucketString} 权重为 0，跳过`);
+                    return;
+                }
                 const starMatch = bucketString.match(/_(\d+)$/);
                 if (starMatch) {
                     const star = parseInt(starMatch[1], 10);
                     const isChinese = state.currentLang === 'cn' || state.currentLang === 'tc';
-
-                    // 定义颜色信息：中文名称、英文名称、id
                     const colors = [
                         { cn: '烈火', en: 'Fire', id: 'fire' },
                         { cn: '冰雪', en: 'Ice', id: 'ice' },
@@ -1058,9 +1262,7 @@ function getAllHeroesInPool(poolConfig) {
                         { cn: '神圣', en: 'Holy', id: 'holy' },
                         { cn: '暗黑', en: 'Dark', id: 'dark' }
                     ];
-
-                    // 为当前星级创建所有5种颜色的训练师
-                    colors.forEach((color,index) => {
+                    colors.forEach((color, idx) => {
                         const colorName = isChinese ? color.cn : color.en;
                         const heroType = isChinese ? '训练师英雄' : 'Trainer';
                         const trainerHero = {
@@ -1070,54 +1272,36 @@ function getAllHeroesInPool(poolConfig) {
                             family: 'trainer',
                             source: 'trainer',
                             heroId: `trainer_${star}_${color.id}`,
-                            originalIndex: -1 * (2000 + star * 10 + index),
+                            originalIndex: -1 * (2000 + star * 10 + idx),
                             displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
                             image: `imgs/hero_icon/trainer_rainbow.webp`
                         };
                         allPossibleHeroes.push(trainerHero);
                     });
+                    //console.log(`[getAllHeroesInPool] 添加训练师桶 ${bucketString}`);
                 }
             } else if (bucketString === 'featuredHero') {
-                const featuredIds = [
-                    ...(poolConfig.featuredNonCostumedHeroes || []),
-                    poolConfig.advertisedHero
-                ].filter(Boolean);
-                let featuredHeroes = state.allHeroes.filter(h => featuredIds.includes(h.heroId));
-                if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                    featuredHeroes = featuredHeroes.filter(h => {
-                        const standardHeroColor = colorReverseMap[h.color];
-                        const standardSelectedColor = colorReverseMap[state.selectedElementalColor];
-                        return standardHeroColor === standardSelectedColor;
-                    });
-                }
-
+                //console.log(`[getAllHeroesInPool] 跳过 featuredHero 桶`);
             } else {
-                const heroesFromBucket = getHeroPoolForBucket(bucketString, { ...poolConfig, masterPool: masterPoolForBuckets });
+                // ★ 调用新函数，不再传入 masterPool ★
+                const heroesFromBucket = getHeroPoolForBucketWithExtra(bucketString, index, poolConfig);
+                //console.log(`[getAllHeroesInPool] 桶 ${bucketString} 返回英雄数: ${heroesFromBucket.length}`);
                 allPossibleHeroes.push(...heroesFromBucket);
             }
         });
     }
 
+    // 非精选传奇英雄（年龄限制）处理
     if (poolConfig.nonFeaturedLegendaryHeroesAgeInDays > 0) {
         const explicitlyIncludedFamilies = new Set();
         if (poolConfig.AssociatedFamilies) {
             poolConfig.AssociatedFamilies.forEach(f => explicitlyIncludedFamilies.add(String(f).toLowerCase()));
         }
-        if (poolConfig.includedOrigins) {
-            poolConfig.includedOrigins.forEach(origin => {
-                const originKey = origin.toLowerCase();
-                if (originToFamiliesMap[originKey]) {
-                    originToFamiliesMap[originKey].forEach(family => explicitlyIncludedFamilies.add(family));
-                }
-            });
-        }
         const days = poolConfig.nonFeaturedLegendaryHeroesAgeInDays;
         const cutoffDate = new Date();
         cutoffDate.setDate(new Date().getDate() - days);
         const olderHeroes = state.allHeroes.filter(hero => {
-            if (!hero['Release date']) {
-                return false;
-            }
+            if (!hero['Release date']) return false;
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
             const isGloballyExcluded = state.globalExcludeFamilies.includes(heroFamily);
             const isExplicitlyIncluded = explicitlyIncludedFamilies.has(heroFamily);
@@ -1129,12 +1313,12 @@ function getAllHeroesInPool(poolConfig) {
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
         allPossibleHeroes.push(...olderHeroes);
+        //console.log(`[getAllHeroesInPool] 添加 nonFeaturedLegendary 英雄 ${olderHeroes.length} 个`);
     }
 
-    // ▼▼▼ 处理 allowsTrainerCharacter ▼▼▼
+    // allowsTrainerCharacter 规则
     if (poolConfig.allowsTrainerCharacter) {
-        //console.log(`[日志-训练师] 检测到 allowsTrainerCharacter 规则，正在添加训练师英雄...`);
-        const stars = [3, 4]; // 包含3、4星
+        const stars = [3, 4];
         const colors = [
             { name: '红', id: 'red' },
             { name: '蓝', id: 'blue' },
@@ -1142,9 +1326,8 @@ function getAllHeroesInPool(poolConfig) {
             { name: '黄', id: 'yellow' },
             { name: '紫', id: 'purple' }
         ];
-
         stars.forEach(star => {
-            colors.forEach((color, index) => {
+            colors.forEach((color, idx) => {
                 const trainerHero = {
                     name: `${star}* ${color.name}训练师英雄`,
                     star: star,
@@ -1152,22 +1335,17 @@ function getAllHeroesInPool(poolConfig) {
                     family: 'trainer',
                     source: 'trainer',
                     heroId: `trainer_${star}_${color.id}`,
-                    // 使用负数作为originalIndex以避免与真实英雄冲突
-                    originalIndex: -1 * (1000 + star * 10 + index),
-                    // 提供一些基础属性以便显示和排序
-                    power: 0, attack: 0, defense: 0, health: 0,
+                    originalIndex: -1 * (1000 + star * 10 + idx),
                     displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
-                    // 为避免图片丢失，统一使用已有的彩虹训练师图片
                     image: `imgs/hero_icon/trainer_rainbow.webp`
                 };
                 allPossibleHeroes.push(trainerHero);
             });
         });
-        //console.log(`[日志-训练师] 已添加 ${stars.length * colors.length} 个训练师英雄。`);
+        //console.log(`[getAllHeroesInPool] 通过 allowsTrainerCharacter 添加训练师`);
     }
 
-    // --- 修正后的去重逻辑 ---
-    // 使用 heroId 作为键来确保每个英雄/服装的独一无二，防止错误地替换掉特定版本
+    // 去重
     const finalUniqueHeroes = new Map();
     allPossibleHeroes.forEach(hero => {
         if (hero && hero.heroId) {
@@ -1175,15 +1353,17 @@ function getAllHeroesInPool(poolConfig) {
                 finalUniqueHeroes.set(hero.heroId, hero);
             }
         }
-    }); 
+    });
 
     let resultHeroes = Array.from(finalUniqueHeroes.values());
+    //console.log(`[getAllHeroesInPool] 最终去重后英雄数: ${resultHeroes.length}`);
 
-    // 针对至日奖池排除 costume_id 为 2, 5 的英雄
+    // 特殊过滤
     if (poolConfig.id === 'lottery_black_solstice_default') {
         resultHeroes = resultHeroes.filter(hero => {
             return hero.costume_id !== 2 && hero.costume_id !== 5;
         });
+        //console.log(`[getAllHeroesInPool] 至日召唤过滤后: ${resultHeroes.length}`);
     }
 
     return resultHeroes;
@@ -1716,6 +1896,17 @@ async function performSummon(count) {
         return;
     }
 
+    // ★ 修改：获取权重时使用补充规则覆盖 ★
+    let bucketWeights = poolConfig.bucketWeights.slice(); // 复制
+    const extraRules = poolConfig._extraBucketConfigs;
+    if (extraRules && extraRules.length > 0) {
+        extraRules.forEach(rule => {
+            if (rule.weight !== undefined && rule.index !== undefined) {
+                bucketWeights[rule.index] = rule.weight;
+            }
+        });
+    }
+
     const masterHeroPool = getFilteredMasterPool();
     const isCostumeSummon = poolConfig.productType === 'CostumeSummon';
     let costumePool = [];
@@ -1743,7 +1934,6 @@ async function performSummon(count) {
         if (costumePool.length === 0) return;
     }
 
-
     const allGroupedResults = [];
 
     for (let k = 0; k < count; k++) {
@@ -1752,18 +1942,15 @@ async function performSummon(count) {
         let bucketString = 'unknown';
 
         if (isCostumeSummon) {
-            const { bucketWeights, bucketConfig } = poolConfig;
             const bucketIndex = selectWeightedIndex(bucketWeights);
-            bucketString = bucketConfig[bucketIndex];
+            bucketString = poolConfig.bucketConfig[bucketIndex];
             const isFeatured = bucketString === 'featuredHero';
 
             if (isFeatured && poolConfig.featuredHeroes && poolConfig.featuredHeroes.length > 0) {
-                // --- 如果中了精选，直接从配置的精选名单中随机抽取 ---
                 const featuredIds = poolConfig.featuredHeroes;
                 const randomHeroId = featuredIds[Math.floor(Math.random() * featuredIds.length)];
                 drawnHero = state.heroesByIdMap.get(randomHeroId);
             } else {
-                // 非精选或者是没有配置精选列表时，走原有的星级随机逻辑
                 const starMatch = bucketString.match(/_(\d+)$/);
                 const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
                 const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
@@ -1774,9 +1961,9 @@ async function performSummon(count) {
             }
             bucketString = 'costume';
         } else {
-            const { bucketWeights, bucketConfig } = poolConfig;
             const bucketIndex = selectWeightedIndex(bucketWeights);
-            bucketString = bucketConfig[bucketIndex];
+            bucketString = poolConfig.bucketConfig[bucketIndex];
+            // ★ 修改：使用新函数，传入 index ★
             if (bucketString && bucketString.startsWith('trainer')) {
                 const star = parseInt(bucketString.split('_')[1], 10);
                 const colors = ['红', '蓝', '绿', '黄', '紫'];
@@ -1787,11 +1974,12 @@ async function performSummon(count) {
                 if (validFeatured.length > 0) {
                     drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
                 } else {
-                    const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+                    const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
                     drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                 }
             } else if (bucketString) {
-                const heroPool = getHeroPoolForBucket(bucketString, { ...poolConfig, masterPool: masterHeroPool });
+                const bucketIndex = poolConfig.bucketConfig.indexOf(bucketString);
+                const heroPool = getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig, masterHeroPool);
                 if (heroPool.length > 0) {
                     drawnHero = heroPool[Math.floor(Math.random() * heroPool.length)];
                 }
@@ -1799,7 +1987,7 @@ async function performSummon(count) {
         }
 
         if (!drawnHero) {
-            const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+            const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
             if (fallbackPool.length > 0) {
                 drawnHero = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
                 bucketString = 'fallback_s1_3';
@@ -1808,11 +1996,9 @@ async function performSummon(count) {
 
         if (drawnHero) {
             singlePullResults.push({ hero: drawnHero, bucket: isCostumeSummon ? 'costume' : (bucketString || 'unknown') });
+            // 奖励传奇英雄逻辑（不变）
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
-            // 检查是否满足触发“额外传奇英雄”的条件
             let shouldTriggerBonusLegendary = false;
-
-            // 生日召唤的触发条件变为“任意5星”
             if (poolConfig.id === 'lottery_black_7th_birthday' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) {
                 shouldTriggerBonusLegendary = true;
             } else if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
@@ -1820,14 +2006,9 @@ async function performSummon(count) {
             }
 
             if (shouldTriggerBonusLegendary) {
-                // 1. 首先，确定本次奖励的完整候选英雄池
                 const isEventOnly = poolConfig.bonusLegendaryHeroPullTriggersOnEventHeroesOnly;
                 let baseBonusPool;
-
-                // *** 为 lottery_black_7th_birthday 活动应用特殊规则 ***
                 if (poolConfig.id === 'lottery_black_7th_birthday') {
-                    // 奖池：所有5星英雄，但排除精选英雄
-                    // 收集所有“精选”英雄的ID，包括配置中的featuredHeroes和用户手动设置的customFeaturedHeroes
                     const featuredHeroIds = new Set();
                     if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
                         poolConfig.featuredHeroes.forEach(id => featuredHeroIds.add(id));
@@ -1835,46 +2016,30 @@ async function performSummon(count) {
                     if (state.customFeaturedHeroes) {
                         state.customFeaturedHeroes.forEach(hero => hero && hero.heroId && featuredHeroIds.add(hero.heroId));
                     }
-
                     baseBonusPool = masterHeroPool.filter(h =>
                         h.star === 5 &&
-                        h.family && h.family !== 'classic' && // 非经典家族
-                        !featuredHeroIds.has(h.heroId) // 不在精选英雄列表中
+                        h.family && h.family !== 'classic' &&
+                        !featuredHeroIds.has(h.heroId)
                     );
                 } else if (isEventOnly) {
-                    // 仅事件家族英雄
                     baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
                 } else {
-                    // 非经典家族的所有5星英雄
                     baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && h.family !== 'classic');
                 }
 
-                // 2. 创建一个临时数组，用于记录在本次多重触发中已经获得的奖励英雄
                 const awardedBonusHeroesInThisPull = [];
-
-                // 3. 循环检查每一次可能的触发机会
                 for (let i = 0; i < (poolConfig.bonusLegendaryHeroPullAmount || 1); i++) {
-                    // 检查本次机会是否成功触发
                     if (Math.random() * 1000 < poolConfig.bonusLegendaryHeroChancePerMil) {
-
-                        // 4. 从候选池中，过滤掉“触发英雄”和“已获得的奖励英雄”
                         const availableBonusPool = baseBonusPool.filter(hero => {
                             const isNotTriggerHero = hero.heroId !== drawnHero.heroId;
                             const isNotAlreadyAwarded = !awardedBonusHeroesInThisPull.some(awarded => awarded.heroId === hero.heroId);
                             return isNotTriggerHero && isNotAlreadyAwarded;
                         });
-
-                        // 5. 如果还有可用的、不重复的英雄，则从中抽取一个
                         if (availableBonusPool.length > 0) {
                             const bonusHero = availableBonusPool[Math.floor(Math.random() * availableBonusPool.length)];
-
-                            // 将抽到的英雄添加到结果中
                             singlePullResults.push({ hero: bonusHero, bucket: 'bonusLegendary' });
-
-                            // 同时，将它记录到临时数组中，防止下一次循环抽到重复的
                             awardedBonusHeroesInThisPull.push(bonusHero);
                         }
-                        // 如果没有可用的不重复英雄了，则本次触发不产生任何结果。
                     }
                 }
             }
@@ -1884,22 +2049,11 @@ async function performSummon(count) {
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
                     const hotmPool = state.allHeroes.filter(h => String(h.family) === String(hotmInfo.family));
                     if (hotmPool.length > 0) {
-                        // ▼▼▼ 优先选择 Lottery_Only 的月度英雄 ▼▼▼
                         const latestHotm = hotmPool.sort((a, b) => {
                             const aIsLotteryOnly = !a['Release date'];
                             const bIsLotteryOnly = !b['Release date'];
-
-                            // 规则1: 如果 a 是 Lottery_Only 而 b 不是，a 优先 (视为“更新”)
-                            if (aIsLotteryOnly && !bIsLotteryOnly) {
-                                return -1;
-                            }
-                            // 规则2: 如果 b 是 Lottery_Only 而 a 不是，b 优先
-                            if (bIsLotteryOnly && !aIsLotteryOnly) {
-                                return 1;
-                            }
-
-                            // 规则3: 如果两者都是或都不是 Lottery_Only，则按常规日期排序
-                            // 为无日期的英雄提供一个极早的默认日期，以确保排序稳定性
+                            if (aIsLotteryOnly && !bIsLotteryOnly) return -1;
+                            if (bIsLotteryOnly && !aIsLotteryOnly) return 1;
                             const dateA = a['Release date'] ? new Date(a['Release date']) : new Date(0);
                             const dateB = b['Release date'] ? new Date(b['Release date']) : new Date(0);
                             return dateB - dateA;
@@ -1911,30 +2065,14 @@ async function performSummon(count) {
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
                     const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
                     if (mysteryPool.length > 0) {
-                        // 使用更清晰和健壮的排序逻辑
                         let mysteryHero = mysteryPool.sort((a, b) => {
                             const aHasDate = !!a['Release date'];
                             const bHasDate = !!b['Release date'];
-                            // 排除低星
-                            if (a.star !== b.star) {
-                                return b.star - a.star;
-                            }
-
-                            // 规则1：如果 a 没有日期但 b 有，a 优先（排在前面）
-                            if (!aHasDate && bHasDate) {
-                                return -1;
-                            }
-                            // 规则2：如果 b 没有日期但 a 有，b 优先
-                            if (!bHasDate && aHasDate) {
-                                return 1;
-                            }
-
-                            // 规则3：如果两者都有日期，按日期降序排列（最新的在前面）
-                            // 确保日期是可比较的字符串或日期对象
+                            if (a.star !== b.star) return b.star - a.star;
+                            if (!aHasDate && bHasDate) return -1;
+                            if (!bHasDate && aHasDate) return 1;
                             return String(b['Release date']).localeCompare(String(a['Release date']));
                         })[0];
-
-                        // 将最终选出的英雄添加到结果中
                         if (mysteryHero) {
                             singlePullResults.push({ hero: mysteryHero, bucket: 'mystery' });
                         }
@@ -1948,7 +2086,7 @@ async function performSummon(count) {
                 for (let i = 0; i < poolConfig.additionalDrawWeights.length; i++) {
                     if (random < poolConfig.additionalDrawWeights[i]) {
                         for (let j = 0; j < i; j++) {
-                            const extraBucketIndex = selectWeightedIndex(poolConfig.bucketWeights);
+                            const extraBucketIndex = selectWeightedIndex(bucketWeights);
                             const extraBucketString = poolConfig.bucketConfig[extraBucketIndex];
                             let extraHero = null;
                             if (extraBucketString && extraBucketString.startsWith('trainer')) {
@@ -1959,11 +2097,12 @@ async function performSummon(count) {
                                 if (validFeatured.length > 0) {
                                     extraHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
                                 } else {
-                                    const fallbackPool = getHeroPoolForBucket('heroes_s1_3', poolConfig);
+                                    const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
                                     extraHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                                 }
                             } else if (extraBucketString) {
-                                const heroPool = getHeroPoolForBucket(extraBucketString, { ...poolConfig, masterPool: masterHeroPool });
+                                const idx = poolConfig.bucketConfig.indexOf(extraBucketString);
+                                const heroPool = getHeroPoolForBucketWithExtra(extraBucketString, idx, poolConfig, masterHeroPool);
                                 if (heroPool.length > 0) extraHero = heroPool[Math.floor(Math.random() * heroPool.length)];
                             }
                             if (extraHero) {
@@ -1982,14 +2121,12 @@ async function performSummon(count) {
     const totalSummonedResults = allGroupedResults.flat();
     if (totalSummonedResults.length === 0) return;
 
-    // 步骤 1: 根据当前模式决定后续操作和历史记录更新时机
-    if (state.lotteryAnimationMode === 'silent') { // 对应 '⏭️' 模式 (静音/直接进历史)
-        updateSummonHistory(allGroupedResults, count); // 立刻更新历史
-        return; // 直接结束
-    }
-    if (state.lotteryAnimationMode === 'skip') { // 对应 '⏩' 模式 (跳过动画)
+    if (state.lotteryAnimationMode === 'silent') {
         updateSummonHistory(allGroupedResults, count);
-        // ▼▼▼ 根据结果数量决定调用哪个模态框 ▼▼▼
+        return;
+    }
+    if (state.lotteryAnimationMode === 'skip') {
+        updateSummonHistory(allGroupedResults, count);
         if (count === 1) {
             showSinglePullResultsModal(totalSummonedResults);
         } else {
@@ -1998,7 +2135,7 @@ async function performSummon(count) {
         return;
     }
 
-    // 步骤 2: 对于 'full' 模式 (播放完整动画)
+    // full 模式
     const animationViewport = document.getElementById('lottery-hero-display-area');
     const blockerOverlay = document.getElementById('animation-blocker-overlay');
     const buttonParentContainer = document.getElementById('lottery-simulator-wrapper');
@@ -2044,15 +2181,12 @@ async function performSummon(count) {
     if (buttonParentContainer.contains(skipButton)) {
         buttonParentContainer.removeChild(skipButton);
     }
-    // 步骤 3: 在动画播放完毕、显示结果弹窗前，才更新历史记录
     updateSummonHistory(allGroupedResults, count);
-    // ▼▼▼ 根据结果数量决定调用哪个模态框 ▼▼▼
     if (count === 1) {
         showSinglePullResultsModal(totalSummonedResults);
     } else {
         showSummaryModal(totalSummonedResults);
     }
-
 }
 
 

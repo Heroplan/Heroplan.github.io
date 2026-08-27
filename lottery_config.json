@@ -402,7 +402,7 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
-        "ghost_hua_pi_gui",
+        "ghost_chou_kou_gui",
         "ghost_shu_jing",
         "ghost_bai_wu_chang"
       ],
@@ -417,7 +417,7 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
-          "outlaw_wu_song",
+          "outlaw_lin_chong",
           "outlaw_wu_yong",
           "outlaw_li_kui",
           "outlaw_song_jiang",
@@ -444,9 +444,9 @@
     },
     "lottery_goblin_default": {
       "featuredHeroes": [
-        "scoundrel_sheppard",
-        "goblin_boom_and_fang_costume_poisonous",
-        "scoundrel_tofana"
+        "scoundrel_brin",
+        "scoundrel_tofana",
+        "goblin_darkfeather_costume_glowing"
       ],
       "AssociatedFamilies": [
         "goblin",
@@ -456,8 +456,8 @@
     },
     "lottery_temple_default": {
       "featuredHeroes": [
-        "mahayoddha_ajay",
-        "mahayoddha_bhima"
+        "mahayoddha_bhagirathi",
+        "mahayoddha_avani"
       ],
       "AssociatedFamilies": [
         "mahayoddha"
@@ -529,7 +529,7 @@
         "classic"
       ],
       "featuredHeroes": [
-        "nordic_ice_enchantress_costume_stylish",
+        "exalted_female_statue_costume_stylish",
         "nomad_female_captain_costume_stylish"
       ]
     },
@@ -1216,22 +1216,14 @@
     },
     "lottery_ascension_default": {
       "featuredHeroes": [
-        "castle_bear_bearnadette",
-        "garrison_fergus",
-        "shadow_zavinia",
-        "fox_nibbles"
+        "magic_carpet_agadh",
+        "owl_lodius",
+        "magic_ray",
+        "magic_vaishali"
       ]
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-08-25": [
-          "wild_cat_rajesh",
-          "magic_carpet_naeem"
-        ],
-        "2026-08-26": [
-          "ballerina_daroga",
-          "ballerina_odile"
-        ],
         "2026-08-27": [
           "gargoyle_mena",
           "gargoyle_garten"
@@ -1251,6 +1243,34 @@
         "2026-08-31": [
           "gargoyle_hilda",
           "ballerina_von_rothbart"
+        ],
+        "2026-09-01": [
+          "shadow_hunter",
+          "shadow_atwood"
+        ],
+        "2026-09-02": [
+          "s5_hathor_costume_starlit",
+          "faun_tamlin"
+        ],
+        "2026-09-03": [
+          "astral_melodymuse",
+          "astral_dwarf_maegwyn"
+        ],
+        "2026-09-04": [
+          "garrison_shimmerscale",
+          "construct_carta"
+        ],
+        "2026-09-05": [
+          "owl_cennius",
+          "ballerina_meg_giry"
+        ],
+        "2026-09-06": [
+          "monster_hunter_thura",
+          "monster_hunter_revna"
+        ],
+        "2026-09-07": [
+          "construct_nautica",
+          "christmas_mrs_claus_costume_fangirl"
         ]
       },
       "includedHeroes": [

@@ -4,29 +4,29 @@
 const oneClickMaxDate = '2026-07-06';
 const purchaseCostumeDate = '2026-08-10';
 const soulExchange = {
-  "Date": "2026-05-28",
+  "Date": "2026-08-29",
   "five": [
-    "shadow_asketel",
-    "astral_moonbell",
-    "slime_charmione",
-    "tales1_atlanteia_costume_siren",
-    "garrison_theodosius"
+    "elemental_griffex_costume_camera",
+    "moth_satinpimenter",
+    "shadow_rosanna",
+    "fox_whitefang",
+    "garrison_kolya"
   ],
   "fifteen": [
-    "moth_mortewitch",
-    "garrison_frank_fangs_brimwell",
-    "s5_hathor_costume_starlit",
-    "beowulf_modthryth",
-    "slime_fungustine"
+    "slime_slaymire",
+    "magic_carpet_zazha",
+    "outlaw_lu_zhishen",
+    "astral_dwarf_orcur",
+    "slime_verdigoo"
   ],
   "thirty": [
-    "magic_carpet_agadh",
-    "bard_astrid",
-    "astral_dwarf_ceris",
-    "fox_riverfang",
-    "tales2_fafnir"
+    "beowulf_hygd",
+    "outlaw_ruan_xiaoqi",
+    "institute_wilcox",
+    "magic_carpet_kesha",
+    "valentines_vernon"
   ],
-  "show": false
+  "show": true
 };
 
 const redeemcodes = [

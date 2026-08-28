@@ -2146,7 +2146,7 @@ function renderDetailsInModal(hero, context = {}) {
                             const range = getRaysRangeForFamily(hero.family);
                             const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
                             */
-                            const randomRaysNumber = Math.floor(Math.random() * 45) + 1;
+                            const randomRaysNumber = Math.floor(Math.random() * 89) + 1;
                             raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
                             raysImage.className = 'rays-background';
                             raysImage.style.position = 'absolute';

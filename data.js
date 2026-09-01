@@ -26,7 +26,7 @@ const soulExchange = {
     "magic_carpet_kesha",
     "valentines_vernon"
   ],
-  "show": true
+  "show": false
 };
 
 const redeemcodes = [

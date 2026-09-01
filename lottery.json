@@ -1869,6 +1869,41 @@
         "amount": 10
     },
     {
+        "productType": "ThunderboltSummon",
+        "id": "lottery_thunderbolt_default",
+        "banner": "event_lotterybanner_thunderbolt",
+        "lotterybg": "event_lotterybg_thunderbolt",
+        "gemPrice": 450,
+        "amount": 1,
+        "uiPriority": 200,
+        "associatedEvent": "ThunderboltSummon",
+        "bonusChest": "thunderbolt_chest",
+        "bonusChestRequirement": 30,
+        "bonusChestLimit": 5,
+        "bonusChestEnabled": true,
+        "bucketWeights": [
+            710,
+            265,
+            17,
+            8
+        ],
+        "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "ThunderboltSummon",
+        "id": "lottery_thunderbolt_default_bulk",
+        "gemPrice": 3900,
+        "sourceProductId": "lottery_thunderbolt_default",
+        "amount": 10
+    },
+    {
+        "productType": "ThunderboltSummon",
+        "id": "lottery_thunderbolt_default_30_bulk",
+        "gemPrice": 10800,
+        "sourceProductId": "lottery_thunderbolt_default",
+        "amount": 30
+    },
+    {
         "productType": "LeagueSummon",
         "id": "lottery_league_default",
         "banner": "event_lotterybanner_league",

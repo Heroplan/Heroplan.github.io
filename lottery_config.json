@@ -241,6 +241,15 @@
       ],
       "featuredHeroNum": 2
     },
+    "ThunderboltSummon": {
+      "bucketConfig": [
+        "heroes_ex_s1_3",
+        "heroes_ex_s1_4",
+        "heroes_ex_s1_5",
+        "featuredHero"
+      ],
+      "featuredHeroNum": 2
+    },
     "LeagueSummon": {
       "bucketConfig": [
         "heroes_event_3",
@@ -1105,6 +1114,13 @@
         "slime"
       ],
       "latestIncludedNonEventHeroAgeInDays": 60
+    },
+    "lottery_thunderbolt_default": {
+      "featuredHeroes": [
+        "dryad_cloveria",
+        "dryad_pansius"
+      ],
+      "latestIncludedHeroDate": "2026-08-31"
     },
     "lottery_league_default": {
       "amountOfSelectableFeaturedSlots": 6,

@@ -387,11 +387,11 @@
       ],
       "featuredHeroes": [
         "scoundrel_brin",
-        "ronin_hiyori",
-        "astral_demon_haradea",
-        "vegetable_chilazar",
+        "scoundrel_lane",
+        "forsaken_vermis",
         "ronin_kageyama_nagato",
-        "vegetable_pepo"
+        "musketeer_cardinal_richelieu_costume_ambassador",
+        "astral_demon_haradea"
       ],
       "advertisedHero": "fox_riverfang"
     },
@@ -474,8 +474,8 @@
     },
     "lottery_astralelves_default": {
       "featuredHeroes": [
-        "astral_demon_madarika",
-        "astral_demon_zondalath"
+        "astral_demon_ksorath",
+        "astral_demon_ushal"
       ],
       "AssociatedFamilies": [
         "astral_elves",
@@ -566,8 +566,8 @@
     },
     "lottery_titan_hunter_default": {
       "featuredHeroes": [
-        "titan_hunter_adelitza",
-        "titan_hunter_avestalon"
+        "titan_hunter_vendela",
+        "titan_hunter_borgholf"
       ],
       "AssociatedFamilies": [
         "titan_hunter"
@@ -613,16 +613,16 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_ascension_item_blue",
-        "mimic_ascension_item_green",
-        "mimic_ascension_item_purple",
-        "mimic_ascension_item_red",
-        "mimic_ascension_item_yellow",
-        "mimic_food_blue",
-        "mimic_food_green",
-        "mimic_food_purple",
-        "mimic_food_red",
-        "mimic_food_yellow"
+        "mimic_aether_blue",
+        "mimic_aether_green",
+        "mimic_aether_purple",
+        "mimic_aether_red",
+        "mimic_aether_yellow",
+        "mimic_troop_blue",
+        "mimic_troop_green",
+        "mimic_troop_purple",
+        "mimic_troop_red",
+        "mimic_troop_yellow"
       ],
       "bucketRules": [
         {
@@ -651,9 +651,9 @@
     },
     "lottery_featured_alliance_quest_musketeers": {
       "featuredHeroes": [
-        "beauty_beast_beauty",
-        "musketeer_queen_anne_costume_commander",
-        "beauty_beast_jacquespierre"
+        "beauty_beast_mirielle",
+        "beauty_beast_glamiera",
+        "beauty_beast_pendulus_clonk"
       ],
       "AssociatedFamilies": [
         "beauty_beast",
@@ -1102,8 +1102,8 @@
         "slime_justico"
       ],
       "featuredHeroes_green": [
-        "elemental_craum",
-        "elemental_desmond"
+        "elemental_desmond_costume_assassin",
+        "elemental_zuni_costume_mage"
       ],
       "featuredHeroes_blue": [
         "elemental_quinn_costume_alchemist",
@@ -1232,18 +1232,14 @@
     },
     "lottery_ascension_default": {
       "featuredHeroes": [
-        "fox_sable",
-        "wild_cat_imagus",
-        "construct_ironheart",
-        "institute_professor_morryster"
+        "ninja_chikao",
+        "ninja_iga",
+        "ninja_malum",
+        "ninja_sawano"
       ]
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-09-01": [
-          "shadow_hunter",
-          "shadow_atwood"
-        ],
         "2026-09-02": [
           "s5_hathor_costume_starlit",
           "faun_tamlin"
@@ -1267,6 +1263,34 @@
         "2026-09-07": [
           "construct_nautica",
           "christmas_mrs_claus_costume_fangirl"
+        ],
+        "2026-09-08": [
+          "owl_verus",
+          "goblin_grimsteel"
+        ],
+        "2026-09-09": [
+          "tales1_domiventus_costume_supreme",
+          "moth_limeboire"
+        ],
+        "2026-09-10": [
+          "ninja_umeko",
+          "shadow_abigail"
+        ],
+        "2026-09-11": [
+          "magic_carpet_lando",
+          "faun_philomena"
+        ],
+        "2026-09-12": [
+          "fox_spiff",
+          "shadow_penelope"
+        ],
+        "2026-09-13": [
+          "fox_ashen",
+          "faun_ysabel"
+        ],
+        "2026-09-14": [
+          "faun_maud",
+          "shadow_asketel"
         ]
       },
       "includedHeroes": [

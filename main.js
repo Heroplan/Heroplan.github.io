@@ -53,6 +53,18 @@ function parseAndStoreDoTInfo(hero) {
     hero.effects.forEach((effectText, index) => {
         const lowerEffectText = effectText.toLowerCase();
 
+        // 排除规则：修复逻辑或，保留所有排除项
+        const excludeWords = [
+            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
+            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
+            'stored', 'clawing damage', 'surge bleed', 'corruption', '承受的',
+            'healing', '抵抗治疗',
+        ];
+        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
+        if (isExcluded) {
+            return;
+        }
+
         // 检查当前技能描述行是否满足某一组关键词共存的条件
         // ========== 多伤害专属规则 ==========
         const mulDamages = (effectText.includes('共振') || effectText.includes('Resonance') || effectText.includes('Bleed damage') || effectText.includes('Curse damage') || effectText.includes('Wild') || effectText.includes('荒野：') || effectText.includes('所受伤害') || effectText.includes('诅咒伤害') || effectText.includes('詛咒傷害') || effectText.includes('流血伤害') || effectText.includes('流血傷害')) && (effectText.includes('敌人') || effectText.includes('敵人') || effectText.includes('damage'));
@@ -104,6 +116,8 @@ function parseAndStoreDoTInfo(hero) {
             { keywords: ['幽灵', '回合', '伤害'], isPerTurn: true },
             { keywords: ['幽靈', '回合', '傷害'], isPerTurn: true },
             { keywords: ['ghost', 'damage', 'turn'], isPerTurn: true },
+            { keywords: ['frost damage', 'damage', 'each turn'], isPerTurn: true },
+            
             // 您可以按需增删
         ];
 
@@ -114,7 +128,7 @@ function parseAndStoreDoTInfo(hero) {
 
         if (matchedSingle) {
             // 提取所有数字
-            const numbers = effectText.match(/\d+/g) || [];
+            const numbers = effectText.match(/\b\d+\b(?!%)/g) || [];
             // 查找第一个大于10的数字作为伤害值
             let damage = null;
             for (const numStr of numbers) {
@@ -139,24 +153,13 @@ function parseAndStoreDoTInfo(hero) {
             }
         }
 
-        // 排除规则：修复逻辑或，保留所有排除项
-        const excludeWords = [
-            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
-            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
-            'increased damage', 'stored', 'allies', 'clawing damage', 'corruption', '承受的',
-            'healing', '抵抗治疗'
-        ];
-        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
-        if (isExcluded) {
-            return;
-        }
 
         // ========== 原有关键词匹配规则 ==========
         const matchedSet = keywordSets.find(set =>
             set.keywords.every(keyword => lowerEffectText.includes(keyword.toLowerCase()))
         );
         if (matchedSet) {
-            const numbers = effectText.match(/\d+/g) || [];
+            const numbers = effectText.match(/\b\d+\b(?!%)/g) || [];
             // 总伤害规则：至少1个数字；每回合规则：至少2个数字
             if (matchedSet.isPerTurn && numbers.length < 2) return;
             if (!matchedSet.isPerTurn && numbers.length < 1) return;

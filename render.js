@@ -2416,10 +2416,11 @@ function getColorFilterForHero(color) {
 
 // ============================================================
 // 翻译工具（仅用于 effects 区域，无需密钥）
+// 翻译工具（逐条翻译，保留 * 等特殊字符）
 // ============================================================
 
 /**
- * 使用 MyMemory 免费翻译（无需密钥，每日1000次）
+ * 主翻译函数：先尝试 MyMemory，失败时切换到备选
  */
 async function translateText(text, targetLang, sourceLang = 'en') {
     if (!text || !text.trim()) return text;
@@ -2434,26 +2435,40 @@ async function translateText(text, targetLang, sourceLang = 'en') {
     const to = langMap[targetLang] || 'en';
     if (from === to) return text;
 
-    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+    // 尝试 MyMemory
     try {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
         const response = await fetch(url);
         const data = await response.json();
         if (data.responseData?.translatedText) {
-            return data.responseData.translatedText;
+            const translated = data.responseData.translatedText;
+            // 检测配额用尽警告
+            if (translated.includes('MYMEMORY WARNING') ||
+                translated.includes('USED ALL AVAILABLE FREE TRANSLATIONS') ||
+                translated.includes('VISIT HTTPS://MYMEMORYTRANSLATED.NET/DOC/USAGELIMITS.PHP')) {
+                console.warn('MyMemory 配额用尽，切换到备选翻译');
+                throw new Error('MyMemory quota exceeded');
+            }
+            if (translated === text && data.responseData.match < 0.5) {
+                console.warn('MyMemory 返回原文，切换到备选');
+                throw new Error('MyMemory returned original text');
+            }
+            return translated;
         }
-        throw new Error('翻译失败');
+        throw new Error('No translated text in response');
     } catch (e) {
-        console.warn('MyMemory失败，尝试LibreTranslate备选...');
-        return await translateTextLibre(text, targetLang, sourceLang);
+        console.warn('MyMemory失败，尝试备选翻译...', e.message);
+        return await translateTextFallback(text, targetLang, sourceLang);
     }
 }
 
 /**
- * 备选：LibreTranslate 公共API（无需密钥）
+ * 备选：Google Translate 非官方 API（支持 CORS，无需密钥）
  */
-async function translateTextLibre(text, targetLang, sourceLang = 'en') {
+async function translateTextGoogle(text, targetLang, sourceLang = 'en') {
+    if (!text || !text.trim()) return null;
     const langMap = {
-        'zh-CN': 'zh', 'zh-HK': 'zh', 'zh-TW': 'zh',
+        'zh-CN': 'zh-CN', 'zh-HK': 'zh-CN', 'zh-TW': 'zh-CN',
         'en': 'en', 'ja': 'ja', 'ko': 'ko', 'fr': 'fr', 'de': 'de',
         'es': 'es', 'pt': 'pt', 'it': 'it', 'ru': 'ru', 'ar': 'ar',
         'tr': 'tr', 'pl': 'pl', 'nl': 'nl', 'sv': 'sv', 'da': 'da',
@@ -2463,40 +2478,83 @@ async function translateTextLibre(text, targetLang, sourceLang = 'en') {
     const to = langMap[targetLang] || 'en';
     if (from === to) return text;
 
-    const url = 'https://libretranslate.com/translate';
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURIComponent(text)}`;
     try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                q: text,
-                source: from,
-                target: to,
-                format: 'text'
-            })
-        });
+        const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
         const data = await response.json();
-        return data.translatedText || text;
+        if (data && data[0] && data[0][0] && data[0][0][0]) {
+            return data[0][0][0];
+        }
+        throw new Error('无法解析翻译结果');
     } catch (e) {
-        console.error('所有翻译备选失败:', e);
-        return text;
+        console.warn('Google Translate 非官方 API 失败:', e.message);
+        return null;
     }
 }
 
+
 /**
- * 批量翻译 effects 列表
+ * 备选主函数：依次尝试 Google
+ */
+async function translateTextFallback(text, targetLang, sourceLang = 'en') {
+    if (!text || !text.trim()) return text;
+    let result = await translateTextGoogle(text, targetLang, sourceLang);
+    if (result !== null) return result;
+    console.error('所有备选翻译服务均失败，返回原文');
+    return text;
+}
+
+/**
+ * 翻译 effects 条目，保留括号注释的 * 标记和括号结构
  */
 async function translateEffectsItems(items, targetLang, onProgress) {
     if (!items || items.length === 0) return items;
     const total = items.length;
-    const promises = items.map(async (item, index) => {
+    const results = [];
+    for (let i = 0; i < total; i++) {
+        let item = items[i];
         if (!item || !item.trim()) {
-            if (onProgress) onProgress(index + 1, total);
-            return item;
+            results.push(item);
+            if (onProgress) onProgress(i + 1, total);
+            continue;
         }
-        const translated = await translateText(item, targetLang);
-        if (onProgress) onProgress(index + 1, total);
-        return translated;
-    });
-    return await Promise.all(promises);
+        // 尝试匹配主描述和括号注释（带 * 和括号）
+        // 模式：主描述 + 可能的换行/空格 + *(注释内容)
+        // 注意：原始文本中可能包含 <br> 或直接包含 "*(...)"，但我们的数组是纯文本，不含 HTML
+        // 所以检查是否存在 "*(...)" 模式
+        const match = item.match(/^(.*?)\s*\(\*(.*)\)\s*$/);
+        if (match) {
+            const mainText = match[1].trim();
+            const commentText = match[2].trim();
+            // 翻译主文本和注释文本（分别翻译）
+            try {
+                const translatedMain = await translateText(mainText, targetLang);
+                const translatedComment = await translateText(commentText, targetLang);
+                // 重新组合：主文本 + " *(" + 注释 + ")"
+                const finalItem = translatedMain + ' *(' + translatedComment + ')';
+                results.push(finalItem);
+            } catch (e) {
+                console.warn(`条目 "${item}" 翻译失败，保留原文`);
+                results.push(item);
+            }
+        } else {
+            // 没有括号注释，直接翻译整个条目
+            try {
+                const translated = await translateText(item, targetLang);
+                // 检查是否为空
+                if (!translated || !translated.trim()) {
+                    console.warn(`条目 "${item}" 翻译结果为空，保留原文`);
+                    results.push(item);
+                } else {
+                    results.push(translated);
+                }
+            } catch (e) {
+                console.warn(`条目 "${item}" 翻译失败，保留原文`);
+                results.push(item);
+            }
+        }
+        if (onProgress) onProgress(i + 1, total);
+    }
+    return results;
 }

@@ -1429,6 +1429,9 @@ function renderDetailsInModal(hero, context = {}) {
     ${heroTypesContent}
   ` : '';
 
+    // 判断是否显示翻译工具栏：仅当当前语言不是 cn、tc、en 时显示
+    const showTranslationToolbar = !['cn', 'tc', 'en'].includes(state.currentLang);
+
     const detailsHTML = `
         <div class="details-header">
             <div class="details-header-main">
@@ -1496,7 +1499,17 @@ function renderDetailsInModal(hero, context = {}) {
                 </div>
                 ${skillTypesSection}
             </div>
-            <div id="modal-skill-effects-section" class="skill-category-block"><p class="uniform-style">${langDict.modalSpecialSkill}</p><ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul></div>
+            <div id="modal-skill-effects-section" class="skill-category-block">
+                <p class="uniform-style">${langDict.modalSpecialSkill}</p>
+                ${showTranslationToolbar ? `
+                <div class="effects-translation-toolbar" style="display:flex; align-items:center; gap:10px; margin:8px 0 12px 0; flex-wrap:wrap; padding:6px 12px; background:transparent; border-bottom:1px solid var(--border-color, #ddd);">
+                    <span style="font-weight:600; font-size:0.9rem;">🌐 ${langDict.effectsTranslateLabel}</span>
+                    <button class="action-button effects-translate-btn" style="padding:4px 14px; font-size:0.85rem;">${langDict.effectsTranslateLabel}</button>
+                    <button class="action-button effects-reset-btn" style="padding:4px 14px; font-size:0.85rem; background:#888;">${langDict.effectsResetLabel}</button>
+                    <span class="effects-translate-status" style="font-size:0.8rem; color:var(--text-muted, #888); margin-left:auto;">${langDict.effectsOriginal}</span>
+                </div>` : ''}
+                <ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul>
+            </div>
             <div class="skill-category-block"><p id="modal-passives-section" class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
             ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul></div>` : ''}
         </div>
@@ -2237,6 +2250,85 @@ function renderDetailsInModal(hero, context = {}) {
             }
         });
     }
+
+    // ============================================================
+    // Effects 区域翻译功能绑定
+    // ============================================================
+
+    const effectsSection = modalContent.querySelector('#modal-skill-effects-section');
+    if (effectsSection) {
+        const toolbar = effectsSection.querySelector('.effects-translation-toolbar');
+        if (toolbar) {
+            const statusEl = toolbar.querySelector('.effects-translate-status');
+            const translateBtn = toolbar.querySelector('.effects-translate-btn');
+            const resetBtn = toolbar.querySelector('.effects-reset-btn');
+            let currentLang = null; // null 表示原文
+
+            // 保存原始 effects 数据（若尚未保存）
+            if (!hero._originalEffects) {
+                hero._originalEffects = hero.effects ? [...hero.effects] : [];
+            }
+
+            // 刷新 effects 列表
+            const refreshEffectsList = (data) => {
+                const list = effectsSection.querySelector('.skill-list');
+                if (list) {
+                    list.innerHTML = renderListAsHTML(data, 'effects');
+                }
+            };
+
+            // 执行翻译
+            const performTranslation = async (targetLang) => {
+                if (currentLang === targetLang) {
+                    if (statusEl) statusEl.textContent = '✅ ' + langDict.effectsComplete;
+                    return;
+                }
+                const sourceData = hero._originalEffects || [];
+                if (!sourceData.length) {
+                    if (statusEl) statusEl.textContent = '⚠️ ' + langDict.effectsNoContent;
+                    return;
+                }
+
+                if (statusEl) { statusEl.textContent = '⏳ ' + langDict.effectsTranslating; statusEl.style.color = '#ffa500'; }
+                translateBtn.disabled = true;
+                resetBtn.disabled = true;
+
+                try {
+                    const translated = await translateEffectsItems(sourceData, targetLang, (cur, total) => {
+                        if (statusEl) statusEl.textContent = `⏳ ${langDict.effectsTranslating} (${cur}/${total})...`;
+                    });
+                    refreshEffectsList(translated);
+                    currentLang = targetLang;
+                    if (statusEl) {
+                        statusEl.textContent = '✅ ' + langDict.effectsComplete;
+                        statusEl.style.color = '#4caf50';
+                    }
+                } catch (e) {
+                    console.error('翻译失败:', e);
+                    if (statusEl) { statusEl.textContent = '❌ ' + langDict.effectsFailed; statusEl.style.color = '#f44336'; }
+                } finally {
+                    translateBtn.disabled = false;
+                    resetBtn.disabled = false;
+                }
+            };
+
+            // 恢复原文
+            const resetTranslation = () => {
+                refreshEffectsList(hero._originalEffects || []);
+                currentLang = null;
+                if (statusEl) { statusEl.textContent = '📄 ' + langDict.effectsOriginal; statusEl.style.color = 'var(--text-muted, #888)'; }
+            };
+
+            // 绑定事件
+            translateBtn.addEventListener('click', () => {
+                const targetLang = document.documentElement.lang || 'en';
+                performTranslation(targetLang);
+            });
+            resetBtn.addEventListener('click', resetTranslation);
+            // 初始状态
+            if (statusEl) statusEl.textContent = '📄 ' + langDict.effectsOriginal;
+        }
+    }
 }
 
 /**
@@ -2320,4 +2412,91 @@ function getColorFilterForHero(color) {
 
     const englishColor = (colorReverseMap[String(color).toLowerCase()] || color).toLowerCase();
     return colorMap[englishColor] || colorMap['white']; // 默认使用白色光效
+}
+
+// ============================================================
+// 翻译工具（仅用于 effects 区域，无需密钥）
+// ============================================================
+
+/**
+ * 使用 MyMemory 免费翻译（无需密钥，每日1000次）
+ */
+async function translateText(text, targetLang, sourceLang = 'en') {
+    if (!text || !text.trim()) return text;
+    const langMap = {
+        'zh-CN': 'zh-CN', 'zh-HK': 'zh-CN', 'zh-TW': 'zh-CN',
+        'en': 'en', 'ja': 'ja', 'ko': 'ko', 'fr': 'fr', 'de': 'de',
+        'es': 'es', 'pt': 'pt', 'it': 'it', 'ru': 'ru', 'ar': 'ar',
+        'tr': 'tr', 'pl': 'pl', 'nl': 'nl', 'sv': 'sv', 'da': 'da',
+        'no': 'no', 'fi': 'fi', 'id': 'id'
+    };
+    const from = langMap[sourceLang] || 'en';
+    const to = langMap[targetLang] || 'en';
+    if (from === to) return text;
+
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.responseData?.translatedText) {
+            return data.responseData.translatedText;
+        }
+        throw new Error('翻译失败');
+    } catch (e) {
+        console.warn('MyMemory失败，尝试LibreTranslate备选...');
+        return await translateTextLibre(text, targetLang, sourceLang);
+    }
+}
+
+/**
+ * 备选：LibreTranslate 公共API（无需密钥）
+ */
+async function translateTextLibre(text, targetLang, sourceLang = 'en') {
+    const langMap = {
+        'zh-CN': 'zh', 'zh-HK': 'zh', 'zh-TW': 'zh',
+        'en': 'en', 'ja': 'ja', 'ko': 'ko', 'fr': 'fr', 'de': 'de',
+        'es': 'es', 'pt': 'pt', 'it': 'it', 'ru': 'ru', 'ar': 'ar',
+        'tr': 'tr', 'pl': 'pl', 'nl': 'nl', 'sv': 'sv', 'da': 'da',
+        'no': 'no', 'fi': 'fi', 'id': 'id'
+    };
+    const from = langMap[sourceLang] || 'en';
+    const to = langMap[targetLang] || 'en';
+    if (from === to) return text;
+
+    const url = 'https://libretranslate.com/translate';
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                q: text,
+                source: from,
+                target: to,
+                format: 'text'
+            })
+        });
+        const data = await response.json();
+        return data.translatedText || text;
+    } catch (e) {
+        console.error('所有翻译备选失败:', e);
+        return text;
+    }
+}
+
+/**
+ * 批量翻译 effects 列表
+ */
+async function translateEffectsItems(items, targetLang, onProgress) {
+    if (!items || items.length === 0) return items;
+    const total = items.length;
+    const promises = items.map(async (item, index) => {
+        if (!item || !item.trim()) {
+            if (onProgress) onProgress(index + 1, total);
+            return item;
+        }
+        const translated = await translateText(item, targetLang);
+        if (onProgress) onProgress(index + 1, total);
+        return translated;
+    });
+    return await Promise.all(promises);
 }

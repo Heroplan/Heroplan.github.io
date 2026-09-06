@@ -13,6 +13,35 @@ document.addEventListener('DOMContentLoaded', async function () {
  * @param {object} hero - 要处理的英雄对象。
  */
 function parseAndStoreDoTInfo(hero) {
+
+    // ========== 前置条件：必须包含的标签 ==========
+    // 定义允许的DoT标签（简体、繁体、英文）
+    const allowedDoTTags = ["伤害-持续伤害", "傷害-持續傷害", "Dmg - DoT", "法力-莽夫", "Mana - Mindless"];
+    // "伤害-条件触发", "傷害-條件觸發", "Dmg - Conditional Trigger"
+
+    // 检查 hero.cn_skill_info 是否存在且是数组
+    if (hero.cn_skill_info && Array.isArray(hero.cn_skill_info)) {
+        let hasDoT = false;
+        for (const categoryObj of hero.cn_skill_info) {
+            for (const categoryName in categoryObj) {
+                const tags = categoryObj[categoryName];
+                if (Array.isArray(tags)) {
+                    // 检查是否包含任一允许的DoT标签
+                    if (tags.some(tag => allowedDoTTags.includes(tag))) {
+                        hasDoT = true;
+                        break;
+                    }
+                }
+            }
+            if (hasDoT) break;
+        }
+        if (!hasDoT) {
+            return; // 没有允许的DoT标签，忽略该英雄
+        }
+    } else {
+        return; // 没有 cn_skill_info 或格式不对
+    }
+
     if (!hero.effects || !hero.attack || hero.attack === 0) return;
 
     // 定义包含新规则的关键词组合，并标记每条规则是“总伤害”还是“每回合伤害”
@@ -45,6 +74,7 @@ function parseAndStoreDoTInfo(hero) {
         { keywords: ['敵人', '回合', '每回合', '傷害'], isPerTurn: true },
         { keywords: ['目標', '回合', '每回合', '傷害'], isPerTurn: true },
         { keywords: ['enemies', 'damage', 'for', 'turn'], isPerTurn: true },
+        { keywords: ['enemy', 'damage', 'for', 'turn'], isPerTurn: true },
         { keywords: ['target', 'damage', 'for', 'turn'], isPerTurn: true },
     ];
 
@@ -55,8 +85,8 @@ function parseAndStoreDoTInfo(hero) {
 
         // 排除规则：修复逻辑或，保留所有排除项
         const excludeWords = [
-            'immune', 'resisted', 'fiend', '恶魔', '惡魔', '奔涌', 'surge',
-            '触发', '觸發', 'trigger', '刷新', 'refreshed', '特殊技能',
+            '奔涌', 'surge',
+            '触发', '觸發', 'trigger', '刷新', 'refreshed', 
             'stored', 'clawing damage', 'surge bleed', 'corruption', '承受的',
             'healing', '抵抗治疗',
         ];

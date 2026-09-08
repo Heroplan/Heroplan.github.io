@@ -356,7 +356,7 @@ function renderTable(heroes) {
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
-                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.webp'">
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/not_found.webp'">
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
@@ -1455,7 +1455,7 @@ function renderDetailsInModal(hero, context = {}) {
             <div class="details-top-left">
                 <div class="hero-avatar-container-modal ${avatarGlowClass}">
                     <div class="hero-avatar-background-modal" style="background: ${modalGradientBg};"></div>
-                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/heroes/not_found.webp'">
+                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/not_found.webp'">
                     
                     <div class="hero-avatar-overlays overlays-hidden">
                         ${starsHTML}

@@ -1,63 +1,246 @@
+// 收藏存储键
+const FAVORITES_KEY = 'favorites_binary';
+const LEGACY_FAVORITES_KEY = 'heroFavorites';
 
+// 内存缓存：避免重复解码
+const favoritesCache = {
+    loaded: false,
+    bitLen: 0,
+    bitmap: null // Uint8Array
+};
 
 /**
- * 从 localStorage 获取收藏列表。
- * @returns {string[]} 收藏的英雄标识符数组。
+ * 从 localStorage 加载位图到内存缓存（首次调用时执行，并触发旧数据迁移）。
+ */
+function loadFavoritesBitmap() {
+    if (favoritesCache.loaded) return favoritesCache;
+
+    try {
+        let binaryStr = localStorage.getItem(FAVORITES_KEY);
+
+        // --- 旧键迁移 ---
+        if (binaryStr === null) {
+            const legacy = localStorage.getItem(LEGACY_FAVORITES_KEY);
+            if (legacy !== null) {
+                try {
+                    const arr = JSON.parse(legacy);
+                    if (Array.isArray(arr)) {
+                        const indices = [];
+                        arr.forEach(fav => {
+                            const hero = state.allHeroes.find(
+                                h => `${h.english_name}-${h.costume_id}` === fav
+                            );
+                            if (hero) indices.push(hero.originalIndex);
+                        });
+
+                        if (indices.length > 0) {
+                            const maxIdx = Math.max(...indices);
+                            const bitLen = maxIdx + 1;
+                            const bitmap = new Uint8Array(Math.ceil(bitLen / 8));
+                            indices.forEach(i => {
+                                bitmap[Math.floor(i / 8)] |= (1 << (7 - (i % 8)));
+                            });
+                            favoritesCache.bitLen = bitLen;
+                            favoritesCache.bitmap = bitmap;
+                        } else {
+                            favoritesCache.bitLen = 0;
+                            favoritesCache.bitmap = new Uint8Array(0);
+                        }
+                        favoritesCache.loaded = true;
+                        saveFavoritesBitmap();
+                        localStorage.removeItem(LEGACY_FAVORITES_KEY);
+                        console.log('收藏已迁移到二进制格式');
+                        return favoritesCache;
+                    }
+                } catch (e) {
+                    console.error('迁移收藏失败', e);
+                }
+            }
+            // 全新用户
+            favoritesCache.bitLen = 0;
+            favoritesCache.bitmap = new Uint8Array(0);
+            favoritesCache.loaded = true;
+            return favoritesCache;
+        }
+
+        // --- 解析二进制数据 ---
+        if (binaryStr === '') {
+            favoritesCache.bitLen = 0;
+            favoritesCache.bitmap = new Uint8Array(0);
+        } else {
+            const buffer = base64UrlDecode(binaryStr);
+            const view = new DataView(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+
+            if (buffer.length < 9) throw new Error('数据长度不足');
+
+            const bitLen = view.getUint32(1, false);
+            const bitmapLength = Math.ceil(bitLen / 8);
+            const payloadLength = 1 + 4 + bitmapLength;
+
+            const storedCrc = view.getUint32(payloadLength, false);
+            const payload = new Uint8Array(buffer.buffer, buffer.byteOffset, payloadLength);
+            if (crc32(payload) !== storedCrc) {
+                console.warn('收藏位图 CRC 校验失败，按空处理');
+                favoritesCache.bitLen = 0;
+                favoritesCache.bitmap = new Uint8Array(0);
+            } else {
+                favoritesCache.bitLen = bitLen;
+                favoritesCache.bitmap = new Uint8Array(
+                    buffer.buffer, buffer.byteOffset + 5, bitmapLength
+                );
+            }
+        }
+    } catch (e) {
+        console.error('加载收藏位图失败', e);
+        favoritesCache.bitLen = 0;
+        favoritesCache.bitmap = new Uint8Array(0);
+    }
+
+    favoritesCache.loaded = true;
+    return favoritesCache;
+}
+
+/**
+ * 把内存缓存写回 localStorage。
+ */
+function saveFavoritesBitmap() {
+    if (!favoritesCache.loaded) return;
+
+    const { bitLen, bitmap } = favoritesCache;
+
+    if (bitLen === 0) {
+        localStorage.setItem(FAVORITES_KEY, '');
+        return;
+    }
+
+    const header = new Uint8Array(5);
+    header[0] = 1;
+    new DataView(header.buffer).setUint32(1, bitLen, false);
+
+    const payload = new Uint8Array(header.length + bitmap.length);
+    payload.set(header);
+    payload.set(bitmap, header.length);
+
+    const crc = crc32(payload);
+    const finalBuffer = new Uint8Array(payload.length + 4);
+    finalBuffer.set(payload);
+    new DataView(finalBuffer.buffer).setUint32(payload.length, crc, false);
+
+    localStorage.setItem(FAVORITES_KEY, base64UrlEncode(finalBuffer));
+}
+
+/**
+ * 使缓存失效（导入等外部修改 localStorage 后调用）。
+ */
+function invalidateFavoritesCache() {
+    favoritesCache.loaded = false;
+    favoritesCache.bitLen = 0;
+    favoritesCache.bitmap = null;
+}
+
+/**
+ * 返回收藏的字符串数组（保持旧接口）。
  */
 function getFavorites() {
-    try {
-        const favorites = localStorage.getItem('heroFavorites');
-        return favorites ? JSON.parse(favorites) : [];
-    } catch (e) {
-        console.error("从 localStorage 获取收藏夹失败", e);
-        return [];
+    const cache = loadFavoritesBitmap();
+    const favs = [];
+    for (let i = 0; i < cache.bitLen; i++) {
+        if (cache.bitmap[Math.floor(i / 8)] & (1 << (7 - (i % 8)))) {
+            const hero = state.allHeroes.find(h => h.originalIndex === i);
+            if (hero) favs.push(`${hero.english_name}-${hero.costume_id}`);
+        }
     }
+    return favs;
 }
 
 /**
- * 将收藏列表保存到 localStorage。
- * @param {string[]} favoritesArray - 要保存的收藏英雄数组。
+ * 保存收藏（保持旧接口：接收字符串数组）。
  */
 function saveFavorites(favoritesArray) {
-    try {
-        localStorage.setItem('heroFavorites', JSON.stringify(favoritesArray));
-    } catch (e) {
-        console.error("保存收藏夹到 localStorage 失败", e);
+    if (!favoritesArray || favoritesArray.length === 0) {
+        favoritesCache.loaded = true;
+        favoritesCache.bitLen = 0;
+        favoritesCache.bitmap = new Uint8Array(0);
+        localStorage.setItem(FAVORITES_KEY, '');
+        return;
     }
+
+    const indices = [];
+    favoritesArray.forEach(fav => {
+        const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === fav);
+        if (hero) indices.push(hero.originalIndex);
+    });
+
+    if (indices.length === 0) {
+        favoritesCache.loaded = true;
+        favoritesCache.bitLen = 0;
+        favoritesCache.bitmap = new Uint8Array(0);
+        localStorage.setItem(FAVORITES_KEY, '');
+        return;
+    }
+
+    const maxIdx = Math.max(...indices);
+    const bitLen = maxIdx + 1;
+    const bitmap = new Uint8Array(Math.ceil(bitLen / 8));
+    indices.forEach(i => {
+        bitmap[Math.floor(i / 8)] |= (1 << (7 - (i % 8)));
+    });
+
+    favoritesCache.loaded = true;
+    favoritesCache.bitLen = bitLen;
+    favoritesCache.bitmap = bitmap;
+    saveFavoritesBitmap();
 }
 
 /**
- * 检查一个英雄是否已被收藏。
- * @param {object} hero - 英雄对象。
- * @returns {boolean} 是否被收藏。
+ * 检查一个英雄是否已被收藏（直接查位，不解码整个位图）。
  */
 function isFavorite(hero) {
-    if (!hero.english_name) return false;
-    const favorites = getFavorites();
-    const identifier = `${hero.english_name}-${hero.costume_id}`;
-    return favorites.includes(identifier);
+    if (!hero || !hero.english_name) return false;
+    if (typeof hero.originalIndex !== 'number') return false;
+
+    const cache = loadFavoritesBitmap();
+    const i = hero.originalIndex;
+    if (i >= cache.bitLen) return false;
+    return (cache.bitmap[Math.floor(i / 8)] & (1 << (7 - (i % 8)))) !== 0;
 }
 
 /**
- * 切换一个英雄的收藏状态。
- * @param {object} hero - 英雄对象。
- * @returns {boolean} 切换后的收藏状态 (true 为已收藏)。
+ * 切换一个英雄的收藏状态（只翻转对应位，不重建整个位图）。
  */
 function toggleFavorite(hero) {
-    if (!hero.english_name) {
-        console.warn("无法收藏没有英文名的英雄:", hero.name);
+    if (!hero || !hero.english_name) {
+        console.warn("无法收藏没有英文名的英雄:", hero && hero.name);
         return false;
     }
-    let favorites = getFavorites();
-    const identifier = `${hero.english_name}-${hero.costume_id}`;
-    const index = favorites.indexOf(identifier);
-    if (index > -1) {
-        favorites.splice(index, 1);
-    } else {
-        favorites.push(identifier);
+    if (typeof hero.originalIndex !== 'number') return false;
+
+    const cache = loadFavoritesBitmap();
+    const i = hero.originalIndex;
+
+    // 若索引超出当前位图，按需扩展
+    if (i >= cache.bitLen) {
+        const newBitLen = i + 1;
+        const newBitmap = new Uint8Array(Math.ceil(newBitLen / 8));
+        if (cache.bitmap && cache.bitmap.length > 0) {
+            newBitmap.set(cache.bitmap);
+        }
+        cache.bitmap = newBitmap;
+        cache.bitLen = newBitLen;
     }
-    saveFavorites(favorites);
-    return index === -1;
+
+    const byteIdx = Math.floor(i / 8);
+    const mask = 1 << (7 - (i % 8));
+    const wasSet = (cache.bitmap[byteIdx] & mask) !== 0;
+
+    if (wasSet) {
+        cache.bitmap[byteIdx] &= ~mask;
+    } else {
+        cache.bitmap[byteIdx] |= mask;
+    }
+
+    saveFavoritesBitmap();
+    return !wasSet;
 }
 
 // ▼▼▼▼▼ 定义四个技能分类的排序规则 ▼▼▼▼▼

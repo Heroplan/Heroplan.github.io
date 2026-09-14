@@ -134,29 +134,58 @@ function toggleTeamSimulator() {
 }
 
 /**
- * 从 Cookie 中获取已保存的队伍列表。
+ * 从 localStorage 二进制读取已保存队伍，并兼容迁移旧 Cookie 数据。
  * @returns {Array} 队伍对象数组。
  */
 function getSavedTeams() {
+    const NEW_KEY = 'savedTeams_binary';
+
+    // 1. 优先读二进制存储
+    const binaryStr = localStorage.getItem(NEW_KEY);
+    if (binaryStr !== null) {
+        return binaryStr ? decodeTeamsFromBinary(binaryStr) : [];
+    }
+
+    // 2. 迁移旧 Cookie 数据
     try {
         const teamsJSON = getCookie('savedTeams');
-        return teamsJSON ? JSON.parse(teamsJSON) : [];
+        if (teamsJSON) {
+            const teams = JSON.parse(teamsJSON);
+            if (Array.isArray(teams)) {
+                if (teams.length > 0) {
+                    localStorage.setItem(NEW_KEY, encodeTeamsToBinary(teams));
+                } else {
+                    localStorage.setItem(NEW_KEY, '');
+                }
+                console.log('已存队伍已迁移到二进制格式');
+                // 清除旧 Cookie，避免重复迁移
+                setCookie('savedTeams', '', -1);
+                return teams;
+            }
+        }
     } catch (e) {
-        console.error("从Cookie解析已存队伍失败", e);
-        return [];
+        console.error("从Cookie迁移已存队伍失败", e);
     }
+
+    // 3. 全新用户：初始化为空
+    localStorage.setItem(NEW_KEY, '');
+    return [];
 }
 
 /**
- * 将队伍列表保存到 Cookie。
+ * 将队伍列表保存到 localStorage 二进制格式。
  * @param {Array} teams - 要保存的队伍对象数组。
  */
 function saveTeams(teams) {
+    const NEW_KEY = 'savedTeams_binary';
     try {
-        const teamsJSON = JSON.stringify(teams);
-        setCookie('savedTeams', teamsJSON, 365);
+        if (!teams || teams.length === 0) {
+            localStorage.setItem(NEW_KEY, '');
+            return;
+        }
+        localStorage.setItem(NEW_KEY, encodeTeamsToBinary(teams));
     } catch (e) {
-        console.error("保存队伍到Cookie失败", e);
+        console.error("保存队伍到 localStorage 失败", e);
     }
 }
 
@@ -549,4 +578,119 @@ function exitSwapMode() {
     state.swapModeActive = false;
     state.selectedForSwapIndex = -1;
     renderTeamDisplay();
+}
+
+// ==================== 队伍二进制编码/解码 ====================
+
+/**
+ * 将队伍数组编码为二进制 Base64 URL 字符串
+ * @param {Array} teams - [{ name, heroes: [heroId|null, ...] }]
+ * @returns {string}
+ */
+function encodeTeamsToBinary(teams) {
+    if (!teams || teams.length === 0) return '';
+
+    const encoder = new TextEncoder();
+    const parts = [];
+
+    // 版本号
+    parts.push(new Uint8Array([1]));
+
+    // 队伍数量（大端 2 字节）
+    const countBuf = new Uint8Array(2);
+    new DataView(countBuf.buffer).setUint16(0, teams.length, false);
+    parts.push(countBuf);
+
+    teams.forEach(team => {
+        const nameBytes = encoder.encode(team.name || '');
+        const nameLenBuf = new Uint8Array(2);
+        new DataView(nameLenBuf.buffer).setUint16(0, nameBytes.length, false);
+        parts.push(nameLenBuf);
+        parts.push(nameBytes);
+
+        // 固定 5 个英雄槽位
+        const heroes = team.heroes || [];
+        for (let i = 0; i < 5; i++) {
+            const heroId = heroes[i];
+            let index = 0;
+            if (heroId) {
+                const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === heroId);
+                if (hero) index = hero.originalIndex + 1; // +1 避免 0 与空位冲突
+            }
+            const indexBuf = new Uint8Array(2);
+            new DataView(indexBuf.buffer).setUint16(0, index, false);
+            parts.push(indexBuf);
+        }
+    });
+
+    // 合并所有部分
+    const totalLength = parts.reduce((sum, p) => sum + p.length, 0);
+    const payload = new Uint8Array(totalLength);
+    let offset = 0;
+    parts.forEach(p => { payload.set(p, offset); offset += p.length; });
+
+    // 追加 CRC32
+    const crc = crc32(payload);
+    const finalBuffer = new Uint8Array(payload.length + 4);
+    finalBuffer.set(payload);
+    new DataView(finalBuffer.buffer).setUint32(payload.length, crc, false);
+
+    return base64UrlEncode(finalBuffer);
+}
+
+/**
+ * 从二进制 Base64 URL 字符串解码为队伍数组
+ * @param {string} binaryStr
+ * @returns {Array} [{ name, heroes: [heroId|null, ...] }]
+ */
+function decodeTeamsFromBinary(binaryStr) {
+    if (!binaryStr) return [];
+
+    try {
+        const buffer = base64UrlDecode(binaryStr);
+        const view = new DataView(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+        let offset = 0;
+
+        const version = view.getUint8(offset); offset += 1;
+        const teamCount = view.getUint16(offset, false); offset += 2;
+
+        const payloadLength = buffer.length - 4;
+        const storedCrc = view.getUint32(payloadLength, false);
+        const payload = new Uint8Array(buffer.buffer, buffer.byteOffset, payloadLength);
+        const calculatedCrc = crc32(payload);
+        if (storedCrc !== calculatedCrc) {
+            console.warn('队伍二进制数据 CRC 校验失败');
+            return [];
+        }
+
+        const decoder = new TextDecoder();
+        const teams = [];
+
+        for (let t = 0; t < teamCount; t++) {
+            const nameLen = view.getUint16(offset, false); offset += 2;
+            const nameBytes = new Uint8Array(buffer.buffer, buffer.byteOffset + offset, nameLen);
+            const name = decoder.decode(nameBytes);
+            offset += nameLen;
+
+            const heroes = [];
+            for (let i = 0; i < 5; i++) {
+                const index = view.getUint16(offset, false); offset += 2;
+                if (index === 0) {
+                    heroes.push(null);
+                } else {
+                    const hero = state.allHeroes.find(h => h.originalIndex === index - 1);
+                    if (hero) {
+                        heroes.push(`${hero.english_name}-${hero.costume_id}`);
+                    } else {
+                        heroes.push(null);
+                    }
+                }
+            }
+            teams.push({ name, heroes });
+        }
+        return teams;
+    } catch (e) {
+        console.error('解码队伍二进制失败', e);
+        return [];
+    }
 }

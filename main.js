@@ -471,6 +471,34 @@ async function initializeApp() {
         }
     });
 
+    // ========== 迁移收藏到二进制存储，并重写收藏读写函数 ==========
+    (function migrateAndOverrideFavorites() {
+        const OLD_KEY = 'favorites';
+        const NEW_KEY = 'favorites_binary';
+
+        // 如果新键不存在，但旧键存在，则迁移
+        if (!localStorage.getItem(NEW_KEY)) {
+            const oldFavsJson = localStorage.getItem(OLD_KEY);
+            if (oldFavsJson) {
+                try {
+                    const oldFavs = JSON.parse(oldFavsJson);
+                    if (Array.isArray(oldFavs) && oldFavs.length > 0) {
+                        const binaryStr = encodeFavoritesToBinary(oldFavs);
+                        localStorage.setItem(NEW_KEY, binaryStr);
+                        console.log('已迁移收藏到二进制格式');
+                    }
+                } catch (e) {
+                    console.error('迁移收藏失败:', e);
+                }
+            }
+        }
+
+        // 只要新旧键同时存在且新键有效，就删旧键
+        if (localStorage.getItem(NEW_KEY) !== null && localStorage.getItem(OLD_KEY) !== null) {
+            localStorage.removeItem(OLD_KEY);
+        }
+    })();
+
     // 4. 初始化UI和筛选器
     populateFilters();
     Object.assign(uiElements.filterInputs, {
@@ -556,23 +584,64 @@ async function initializeApp() {
         showSoulExchangeBtn.disabled = !soulExchange.show;
     }
 
-    if (zfavsFromUrl || favsFromUrl) {
+    const bfavsFromUrl = urlParams.get('bfavs');
+
+    if (bfavsFromUrl) {
+        // 新二进制分享格式
+        try {
+            const favArray = decodeFavoritesFromBinary(bfavsFromUrl);
+            if (favArray && favArray.length > 0) {
+                state.temporaryFavorites = favArray;
+                state.multiSelectFilters.filterScope = ['favorites'];
+                updateFilterButtonUI('filterScope');
+            }
+        } catch (e) {
+            console.error("从URL处理二进制收藏夹失败", e);
+        }
+    } else if (zfavsFromUrl || favsFromUrl) {
+        // 旧格式兼容
         try {
             const compressed = zfavsFromUrl || favsFromUrl;
-            const favString = (zfavsFromUrl) ? LZString.decompressFromEncodedURIComponent(compressed) : decodeURIComponent(compressed);
+            const favString = (zfavsFromUrl)
+                ? LZString.decompressFromEncodedURIComponent(compressed)
+                : decodeURIComponent(compressed);
             if (favString) {
                 state.temporaryFavorites = favString.split(',');
                 state.multiSelectFilters.filterScope = ['favorites'];
                 updateFilterButtonUI('filterScope');
             }
-        } catch (e) { console.error("从URL处理收藏夹失败", e); }
+        } catch (e) {
+            console.error("从URL处理收藏夹失败", e);
+        }
     }
-    if (sharedTeamsFromUrl) {
+    const bsharedTeamsFromUrl = urlParams.get('bsharedTeams');
+    if (bsharedTeamsFromUrl) {
+        // 新二进制格式
+        try {
+            const sharedData = decodeTeamsFromBinary(bsharedTeamsFromUrl);
+            if (Array.isArray(sharedData) && sharedData.length > 0) {
+                state.sharedTeamsDataFromUrl = sharedData.map(team => ({
+                    name: team.name,
+                    heroes: team.heroes
+                }));
+                state.isViewingSharedTeams = true;
+                if (uiElements.sharedTeamsTabBtn) uiElements.sharedTeamsTabBtn.style.display = 'inline-flex';
+                uiElements.sharedTeamsTabBtn.classList.add('active');
+                if (uiElements.myTeamsTabBtn) {
+                    uiElements.myTeamsTabBtn.classList.remove('active');
+                }
+            }
+            toggleTeamSimulator();
+        } catch (e) {
+            console.error("从URL处理二进制分享的队伍失败", e);
+            state.isViewingSharedTeams = false;
+        }
+    } else if (sharedTeamsFromUrl) {
+        // 旧格式兼容
         try {
             const decompressedJSON = LZString.decompressFromEncodedURIComponent(sharedTeamsFromUrl);
             const sharedData = JSON.parse(decompressedJSON);
             if (Array.isArray(sharedData)) {
-                // 确保创建的对象具有 'name' 和 'heroes' 属性
                 state.sharedTeamsDataFromUrl = sharedData.map(team => ({
                     name: team.n,
                     heroes: team.h
@@ -859,16 +928,20 @@ function addEventListeners() {
         const teams = getSavedTeams();
         const langDict = i18n[state.currentLang];
         if (teams.length === 0) { alert(langDict.noTeamsToShare); return; }
-        const shareableData = teams.map(t => ({ n: t.name, h: t.heroes }));
-        const compressedData = LZString.compressToEncodedURIComponent(JSON.stringify(shareableData));
-        const url = `${window.location.origin}${window.location.pathname}?sharedTeams=${compressedData}&lang=${state.currentLang}`;
+
+        const binaryStr = encodeTeamsToBinary(teams);
+        const url = `${window.location.origin}${window.location.pathname}?bsharedTeams=${binaryStr}&lang=${state.currentLang}`;
+
         copyTextToClipboard(url).then(() => {
             const btn = document.getElementById('share-team-list-btn');
             const originalText = btn.innerText;
             btn.innerText = langDict.shareTeamListCopied;
             btn.disabled = true;
             setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 2000);
-        }).catch(err => { console.error('复制分享链接失败:', err); alert(langDict.copyLinkFailed); });
+        }).catch(err => {
+            console.error('复制分享链接失败:', err);
+            alert(langDict.copyLinkFailed);
+        });
     });
 
     // --- 筛选器面板按钮事件 ---
@@ -880,16 +953,26 @@ function addEventListeners() {
     });
     shareFavoritesBtn.addEventListener('click', () => {
         const favorites = getFavorites();
-        if (favorites.length === 0) { alert(i18n[state.currentLang].noFavoritesToShare); return; }
-        const favString = favorites.join(',');
-        const compressedFavs = LZString.compressToEncodedURIComponent(favString);
-        const url = `${window.location.origin}${window.location.pathname}?zfavs=${compressedFavs}&lang=${state.currentLang}`;
+        if (favorites.length === 0) {
+            alert(i18n[state.currentLang].noFavoritesToShare);
+            return;
+        }
+
+        const binaryStr = encodeFavoritesToBinary(favorites);
+        const url = `${window.location.origin}${window.location.pathname}?bfavs=${binaryStr}&lang=${state.currentLang}`;
+
         copyTextToClipboard(url).then(() => {
             const originalText = shareFavoritesBtn.innerText;
             shareFavoritesBtn.innerText = i18n[state.currentLang].shareFavoritesCopied;
             shareFavoritesBtn.disabled = true;
-            setTimeout(() => { shareFavoritesBtn.innerText = originalText; shareFavoritesBtn.disabled = false; }, 2000);
-        }).catch(err => { console.error('复制链接失败：', err); alert(i18n[state.currentLang].copyLinkFailed); });
+            setTimeout(() => {
+                shareFavoritesBtn.innerText = originalText;
+                shareFavoritesBtn.disabled = false;
+            }, 2000);
+        }).catch(err => {
+            console.error('复制链接失败：', err);
+            alert(i18n[state.currentLang].copyLinkFailed);
+        });
     });
     resetFiltersBtn.addEventListener('click', () => { resetAllFilters(); applyFiltersAndRender(); });
 
@@ -1517,5 +1600,131 @@ function removeDonateScript() {
     // 清理全局变量（如果存在）
     if (typeof kofiWidgetOverlay !== 'undefined') {
         delete window.kofiWidgetOverlay;
+    }
+}
+
+// ==================== 二进制收藏编码/解码 ====================
+
+function crc32(data) {
+    let crc = -1;
+    for (let i = 0; i < data.length; i++) {
+        crc ^= data[i];
+        for (let j = 0; j < 8; j++) {
+            crc = (crc >>> 1) ^ (0xEDB88320 & -(crc & 1));
+        }
+    }
+    return (crc ^ -1) >>> 0;
+}
+
+function base64UrlEncode(buffer) {
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    for (let i = 0; i < bytes.length; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+function base64UrlDecode(str) {
+    str = str.replace(/-/g, '+').replace(/_/g, '/');
+    while (str.length % 4) str += '=';
+    const binary = atob(str);
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) {
+        bytes[i] = binary.charCodeAt(i);
+    }
+    return bytes;
+}
+
+/**
+ * 将收藏数组（如 ['hero1-0', 'hero2-1']）编码为二进制 Base64 URL 字符串
+ */
+function encodeFavoritesToBinary(favoritesArray) {
+    if (!favoritesArray || favoritesArray.length === 0) return '';
+
+    const selectedIndices = [];
+    favoritesArray.forEach(fav => {
+        const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === fav);
+        if (hero) selectedIndices.push(hero.originalIndex);
+    });
+
+    if (selectedIndices.length === 0) return '';
+
+    const maxIndex = Math.max(...selectedIndices);
+    const bitLen = maxIndex + 1;
+    const bitmap = new Uint8Array(Math.ceil(bitLen / 8));
+
+    selectedIndices.forEach(i => {
+        bitmap[Math.floor(i / 8)] |= (1 << (7 - (i % 8)));
+    });
+
+    const version = 1;
+    const header = new Uint8Array(5);
+    header[0] = version;
+    new DataView(header.buffer).setUint32(1, bitLen, false); // 大端
+
+    const payload = new Uint8Array(header.length + bitmap.length);
+    payload.set(header);
+    payload.set(bitmap, header.length);
+
+    const crc = crc32(payload);
+    const finalBuffer = new Uint8Array(payload.length + 4);
+    finalBuffer.set(payload);
+    new DataView(finalBuffer.buffer).setUint32(payload.length, crc, false);
+
+    return base64UrlEncode(finalBuffer);
+}
+
+/**
+ * 从二进制 Base64 URL 字符串解码为收藏数组
+ */
+function decodeFavoritesFromBinary(binaryStr) {
+    if (!binaryStr) return [];
+
+    try {
+        const buffer = base64UrlDecode(binaryStr);
+        const view = new DataView(buffer.buffer, buffer.byteOffset, buffer.byteLength);
+
+        if (buffer.length < 9) return [];
+
+        const version = view.getUint8(0);
+        const bitLen = view.getUint32(1, false);
+        const bitmapLength = Math.ceil(bitLen / 8);
+        const expectedLength = 1 + 4 + bitmapLength + 4;
+
+        if (buffer.length !== expectedLength) {
+            console.warn('二进制收藏数据长度不匹配');
+            return [];
+        }
+
+        const payloadLength = 1 + 4 + bitmapLength;
+        const payload = new Uint8Array(buffer.buffer, buffer.byteOffset, payloadLength);
+        const storedCrc = view.getUint32(payloadLength, false);
+        const calculatedCrc = crc32(payload);
+
+        if (storedCrc !== calculatedCrc) {
+            console.warn('二进制收藏数据 CRC 校验失败');
+            return [];
+        }
+
+        const bitmap = new Uint8Array(buffer.buffer, buffer.byteOffset + 5, bitmapLength);
+        const selectedIndices = [];
+
+        for (let i = 0; i < bitLen; i++) {
+            if (bitmap[Math.floor(i / 8)] & (1 << (7 - (i % 8)))) {
+                selectedIndices.push(i);
+            }
+        }
+
+        const favorites = [];
+        selectedIndices.forEach(idx => {
+            const hero = state.allHeroes.find(h => h.originalIndex === idx);
+            if (hero) favorites.push(`${hero.english_name}-${hero.costume_id}`);
+        });
+
+        return favorites;
+    } catch (e) {
+        console.error('解码二进制收藏失败', e);
+        return [];
     }
 }

@@ -93,10 +93,28 @@ function openExportModal() {
 
     // 检查有哪些数据可以导出
     const dataSources = {
-        heroFavorites: { name: langDict.setting_heroFavorites, count: (localStorage.getItem('heroFavorites') ? JSON.parse(localStorage.getItem('heroFavorites')) : []).length, storage: 'localStorage' },
-        savedTeams: { name: langDict.setting_savedTeams, count: (getCookie('savedTeams') ? JSON.parse(getCookie('savedTeams')) : []).length, storage: 'cookie' },
-        favoriteColors: { name: langDict.setting_favoriteColors, count: (getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : []).length, storage: 'cookie' },
-        otherSettings: { name: langDict.setting_otherSettings, count: otherSettingKeys.filter(key => getCookie(key) !== null).length, storage: 'cookie' }
+        heroFavorites: {
+            name: langDict.setting_heroFavorites,
+            count: getFavorites().length,
+            storage: 'localStorage',
+            newKey: 'favorites_binary'
+        },
+        savedTeams: {
+            name: langDict.setting_savedTeams,
+            count: getSavedTeams().length,
+            storage: 'localStorage',
+            newKey: 'savedTeams_binary'
+        },
+        favoriteColors: {
+            name: langDict.setting_favoriteColors,
+            count: (getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : []).length,
+            storage: 'cookie'
+        },
+        otherSettings: {
+            name: langDict.setting_otherSettings,
+            count: otherSettingKeys.filter(key => getCookie(key) !== null).length,
+            storage: 'cookie'
+        }
     };
 
     if (!Object.values(dataSources).some(item => item.count > 0)) {
@@ -172,24 +190,26 @@ function openImportModal() {
  */
 function handleGenerateExportCode() {
     const langDict = i18n[state.currentLang];
-    const dataSources = {
-        heroFavorites: { storage: 'localStorage' },
-        savedTeams: { storage: 'cookie' },
-        favoriteColors: { storage: 'cookie' },
-        otherSettings: { storage: 'cookie' }
-    };
 
     const settingsToExport = {};
     document.querySelectorAll('.export-item-checkbox:checked').forEach(cb => {
         const key = cb.dataset.key;
+
         if (key === 'otherSettings') {
             otherSettingKeys.forEach(settingKey => {
                 const value = getCookie(settingKey);
                 if (value !== null) settingsToExport[settingKey] = value;
             });
-        } else {
-            const source = dataSources[key];
-            const value = source.storage === 'localStorage' ? localStorage.getItem(key) : getCookie(key);
+        } else if (key === 'heroFavorites') {
+            // 确保已迁移到新键（getFavorites 内部会触发迁移）
+            getFavorites();
+            settingsToExport[key] = localStorage.getItem('favorites_binary') || '';
+        } else if (key === 'savedTeams') {
+            // 确保已迁移到新键（getSavedTeams 内部会触发迁移）
+            getSavedTeams();
+            settingsToExport[key] = localStorage.getItem('savedTeams_binary') || '';
+        } else if (key === 'favoriteColors') {
+            const value = getCookie(key);
             if (value) settingsToExport[key] = value;
         }
     });
@@ -257,11 +277,39 @@ function handleAnalyzeImportCode() {
     }
 
     const { setting_heroFavorites, setting_savedTeams, setting_favoriteColors, setting_otherSettings } = langDict;
+    const decodeCount = (val, type) => {
+        if (!val) return 0;
+        if (val.startsWith('[')) {
+            try { return JSON.parse(val).length; } catch (e) { return 0; }
+        }
+        if (type === 'favorites') {
+            return val ? decodeFavoritesFromBinary(val).length : 0;
+        }
+        if (type === 'teams') {
+            return val ? decodeTeamsFromBinary(val).length : 0;
+        }
+        return 0;
+    };
+
     const dataSources = {
-        heroFavorites: { name: setting_heroFavorites, count: (state._tempImportedSettings.heroFavorites ? JSON.parse(state._tempImportedSettings.heroFavorites) : []).length },
-        savedTeams: { name: setting_savedTeams, count: (state._tempImportedSettings.savedTeams ? JSON.parse(state._tempImportedSettings.savedTeams) : []).length },
-        favoriteColors: { name: setting_favoriteColors, count: (state._tempImportedSettings.favoriteColors ? JSON.parse(state._tempImportedSettings.favoriteColors) : []).length },
-        otherSettings: { name: setting_otherSettings, count: Object.keys(state._tempImportedSettings).filter(k => k !== 'heroFavorites' && k !== 'savedTeams' && k !== 'favoriteColors').length }
+        heroFavorites: {
+            name: setting_heroFavorites,
+            count: decodeCount(state._tempImportedSettings.heroFavorites, 'favorites')
+        },
+        savedTeams: {
+            name: setting_savedTeams,
+            count: decodeCount(state._tempImportedSettings.savedTeams, 'teams')
+        },
+        favoriteColors: {
+            name: setting_favoriteColors,
+            count: (state._tempImportedSettings.favoriteColors ? JSON.parse(state._tempImportedSettings.favoriteColors) : []).length
+        },
+        otherSettings: {
+            name: setting_otherSettings,
+            count: Object.keys(state._tempImportedSettings).filter(k =>
+                k !== 'heroFavorites' && k !== 'savedTeams' && k !== 'favoriteColors'
+            ).length
+        }
     };
 
     if (!Object.values(dataSources).some(item => item.count > 0)) {
@@ -309,30 +357,59 @@ function handleImportConfirm() {
         const importedValueStr = state._tempImportedSettings[key];
 
         if (key === 'heroFavorites') {
+            const val = importedValueStr;
+
+            // 解析为收藏数组
+            let importedFavs;
+            if (val.startsWith('[')) {
+                importedFavs = JSON.parse(val); // 旧格式
+            } else {
+                importedFavs = val ? decodeFavoritesFromBinary(val) : []; // 新格式
+            }
+
             if (mode === 'append') {
                 const existing = getFavorites();
-                const imported = JSON.parse(importedValueStr);
                 const originalSize = new Set(existing).size;
-                const merged = new Set([...existing, ...imported]);
+                const merged = new Set([...existing, ...importedFavs]);
                 counters.favorites = merged.size - originalSize;
                 saveFavorites(Array.from(merged));
+                invalidateFavoritesCache();
             } else {
-                saveFavorites(JSON.parse(importedValueStr));
+                saveFavorites(importedFavs);
             }
-        } else if (key === 'savedTeams' || key === 'favoriteColors') {
+        } else if (key === 'savedTeams') {
+            const val = importedValueStr;
+
+            // 解析为队伍数组
+            let importedTeams;
+            if (val.startsWith('[')) {
+                importedTeams = JSON.parse(val); // 旧格式
+            } else {
+                importedTeams = val ? decodeTeamsFromBinary(val) : []; // 新格式
+            }
+
+            if (mode === 'append') {
+                const existing = getSavedTeams();
+                const existingNames = new Set(existing.map(t => t.name));
+                importedTeams.forEach(team => {
+                    if (team.name && !existingNames.has(team.name)) {
+                        existing.push(team);
+                        counters.teams++;
+                    }
+                });
+                saveTeams(existing);
+            } else {
+                saveTeams(importedTeams);
+            }
+        } else if (key === 'favoriteColors') {
+            // 保持原逻辑
             if (mode === 'append') {
                 const existing = getCookie(key) ? JSON.parse(getCookie(key)) : [];
                 const imported = JSON.parse(importedValueStr);
-                if (key === 'savedTeams') {
-                    const existingNames = new Set(existing.map(t => t.name));
-                    imported.forEach(team => { if (team.name && !existingNames.has(team.name)) { existing.push(team); counters.teams++; } });
-                    saveTeams(existing);
-                } else {
-                    const originalSize = new Set(existing).size;
-                    const merged = new Set([...existing, ...imported]);
-                    counters.colors = merged.size - originalSize;
-                    setCookie(key, JSON.stringify(Array.from(merged)), 365);
-                }
+                const originalSize = new Set(existing).size;
+                const merged = new Set([...existing, ...imported]);
+                counters.colors = merged.size - originalSize;
+                setCookie(key, JSON.stringify(Array.from(merged)), 365);
             } else {
                 setCookie(key, importedValueStr, 365);
             }

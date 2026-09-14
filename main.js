@@ -471,34 +471,6 @@ async function initializeApp() {
         }
     });
 
-    // ========== 迁移收藏到二进制存储，并重写收藏读写函数 ==========
-    (function migrateAndOverrideFavorites() {
-        const OLD_KEY = 'favorites';
-        const NEW_KEY = 'favorites_binary';
-
-        // 如果新键不存在，但旧键存在，则迁移
-        if (!localStorage.getItem(NEW_KEY)) {
-            const oldFavsJson = localStorage.getItem(OLD_KEY);
-            if (oldFavsJson) {
-                try {
-                    const oldFavs = JSON.parse(oldFavsJson);
-                    if (Array.isArray(oldFavs) && oldFavs.length > 0) {
-                        const binaryStr = encodeFavoritesToBinary(oldFavs);
-                        localStorage.setItem(NEW_KEY, binaryStr);
-                        console.log('已迁移收藏到二进制格式');
-                    }
-                } catch (e) {
-                    console.error('迁移收藏失败:', e);
-                }
-            }
-        }
-
-        // 只要新旧键同时存在且新键有效，就删旧键
-        if (localStorage.getItem(NEW_KEY) !== null && localStorage.getItem(OLD_KEY) !== null) {
-            localStorage.removeItem(OLD_KEY);
-        }
-    })();
-
     // 4. 初始化UI和筛选器
     populateFilters();
     Object.assign(uiElements.filterInputs, {

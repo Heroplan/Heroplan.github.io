@@ -453,8 +453,8 @@
     },
     "lottery_goblin_default": {
       "featuredHeroes": [
-        "scoundrel_brin",
-        "scoundrel_tofana",
+        "scoundrel_clim",
+        "goblin_kettle_costume_field_cook",
         "goblin_darkfeather_costume_glowing"
       ],
       "AssociatedFamilies": [
@@ -465,8 +465,8 @@
     },
     "lottery_temple_default": {
       "featuredHeroes": [
-        "mahayoddha_bhagirathi",
-        "mahayoddha_avani"
+        "mahayoddha_ajay",
+        "mahayoddha_bhima"
       ],
       "AssociatedFamilies": [
         "mahayoddha"
@@ -491,9 +491,9 @@
         "institute"
       ],
       "featuredHeroes": [
-        "institute_zenas",
-        "forsaken_vermis",
-        "institute_azureus"
+        "institute_azureus",
+        "institute_professor_ambrose",
+        "institute_zenas"
       ],
       "includedHeroes": [
         "castle_bear_bearnadette",
@@ -538,8 +538,8 @@
         "classic"
       ],
       "featuredHeroes": [
-        "exalted_female_statue_costume_stylish",
-        "nomad_female_captain_costume_stylish"
+        "nomad_female_lord_costume_stylish",
+        "nordic_ice_enchantress_costume_stylish"
       ]
     },
     "lottery_costume_wardrobe2": {
@@ -613,16 +613,21 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_aether_blue",
-        "mimic_aether_green",
-        "mimic_aether_purple",
-        "mimic_aether_red",
-        "mimic_aether_yellow",
-        "mimic_troop_blue",
-        "mimic_troop_green",
-        "mimic_troop_purple",
-        "mimic_troop_red",
-        "mimic_troop_yellow"
+        "mimic_ascension_item_blue",
+        "mimic_ascension_item_green",
+        "mimic_ascension_item_purple",
+        "mimic_ascension_item_red",
+        "mimic_ascension_item_yellow",
+        "mimic_emblem_blue",
+        "mimic_emblem_green",
+        "mimic_emblem_purple",
+        "mimic_emblem_red",
+        "mimic_emblem_yellow",
+        "mimic_food_blue",
+        "mimic_food_green",
+        "mimic_food_purple",
+        "mimic_food_red",
+        "mimic_food_yellow"
       ],
       "bucketRules": [
         {
@@ -690,9 +695,9 @@
         "ronin"
       ],
       "featuredHeroes": [
-        "ninja_azurite",
-        "ninja_ekanite",
-        "ronin_kageyama_nagato"
+        "ronin_ishida_aoga",
+        "ninja_peridot_costume_herbalist",
+        "ronin_tanaka_isako"
       ],
       "Searchid": "TowerNinja"
     },
@@ -866,9 +871,9 @@
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
-        "tales2_regin_costume_omen",
-        "tales2_ott_costume_herbalist",
-        "tales2_gandr_costume_guardian"
+        "tales2_fimafeng_costume_skater",
+        "tales2_fafnir_costume_fallen",
+        "tales2_dularfulr_costume_engineer"
       ]
     },
     "lottery_hero_lunar_new_year": {
@@ -1106,8 +1111,8 @@
         "elemental_zuni_costume_mage"
       ],
       "featuredHeroes_blue": [
-        "elemental_nylora",
-        "elemental_jolt"
+        "elemental_jolt_costume_mythic",
+        "elemental_quinn_costume_alchemist"
       ],
       "AssociatedFamilies": [
         "super_elemental",
@@ -1232,22 +1237,14 @@
     },
     "lottery_ascension_default": {
       "featuredHeroes": [
-        "ninja_chikao",
-        "ninja_iga",
-        "ninja_malum",
-        "ninja_sawano"
+        "faun_verity",
+        "faun_peregrine",
+        "shadow_hunter",
+        "shadow_atwood"
       ]
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-09-15": [
-          "wild_cat_thaffer",
-          "wild_cat_imagus"
-        ],
-        "2026-09-16": [
-          "shadow_salvatore",
-          "slime_gloozmer"
-        ],
         "2026-09-17": [
           "easter_viscount_cluckwood",
           "moth_auricarc"
@@ -1267,6 +1264,62 @@
         "2026-09-21": [
           "villain_toxicandra_costume_rose",
           "easter_sadie"
+        ],
+        "2026-09-22": [
+          "kingdom_diaochan_costume_flowers",
+          "garrison_rosalind"
+        ],
+        "2026-09-23": [
+          "gargoyle_hilda",
+          "s4_hulda_costume_nurse"
+        ],
+        "2026-09-24": [
+          "shadow_dolores",
+          "slime_sludgus"
+        ],
+        "2026-09-25": [
+          "gargoyle_pophit",
+          "gargoyle_garten"
+        ],
+        "2026-09-26": [
+          "shadow_omen",
+          "fox_rust"
+        ],
+        "2026-09-27": [
+          "ballerina_prince_siegfried",
+          "beachparty_mazoga"
+        ],
+        "2026-09-28": [
+          "slime_magistine",
+          "moth_tealmoine"
+        ],
+        "2026-09-29": [
+          "musketeer_milady_de_winter",
+          "champions_satori"
+        ],
+        "2026-09-30": [
+          "goblin_leafwizzle",
+          "owl_fulvia"
+        ],
+        "2026-10-01": [
+          "astral_hammerclang",
+          "goblin_rocket"
+        ],
+        "2026-10-02": [
+          "ballerina_odile",
+          "garrison_violet_potts"
+        ],
+        "2026-10-03": [
+          "owl_livia",
+          "castle_bear_armel"
+        ],
+        "2026-10-04": [
+          "christmas_florencia",
+          "christmas_noel"
+        ],
+        "2026-10-05": [
+          "s5_hathor_costume_starlit",
+          "s5_hetepheres_costume_spa"
         ]
       },
       "includedHeroes": [

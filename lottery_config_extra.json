@@ -1327,6 +1327,75 @@
           "includeTrainers": true
         }
       ]
+    },
+    {
+      "lotteryId": "lottery_super_elemental",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 643,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 60,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 208,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 60,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 19,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 60,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 67,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "SuperElemental"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 57,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "SuperElemental"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 1,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "SuperElemental"
+          ]
+        },
+        {
+          "index": 6,
+          "weight": 5,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true
+        }
+      ]
     }
   ]
 }

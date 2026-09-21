@@ -724,24 +724,20 @@ function deduplicateHeroes(heroes) {
  * @returns {Array} 符合条件的英雄数组
  */
 function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
-    //console.log(`[getHeroPoolForBucketWithExtra] 调用: ${bucketString}, index: ${bucketIndex}`);
-
     const extraRules = poolConfig._extraBucketConfigs ? poolConfig._extraBucketConfigs.find(rule => rule.index === bucketIndex) : null;
 
     let pool = [];
 
     if (extraRules) {
         // ★ 有 extra 规则：直接从全英雄池构建 ★
-        //console.log(`[getHeroPoolForBucketWithExtra] 使用 extra 规则直接从全英雄池构建:`, extraRules);
         const targetStar = extraRules.rarity;
-        const baseHeroPool = state.allHeroes; // 全英雄池
+        const baseHeroPool = state.allHeroes;
 
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
             const families = extraRules.includedFamilies.map(f => f.toLowerCase());
             let candidates = baseHeroPool.filter(h => h.star === targetStar && families.includes(String(h.family).toLowerCase()));
             pool = pool.concat(candidates);
-            //console.log(`[getHeroPoolForBucketWithExtra] 包含家族后: ${pool.length}`);
         }
         // 2. 处理 includedOrigins
         if (extraRules.includedOrigins && extraRules.includedOrigins.length > 0) {
@@ -755,16 +751,26 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
                 return h.star === targetStar && origins.includes(heroSourceEng);
             });
             pool = pool.concat(candidates);
-            //console.log(`[getHeroPoolForBucketWithExtra] 包含来源后: ${pool.length}`);
         }
-        // 3. 如果既没有 includedFamilies 也没有 includedOrigins，但 extraRules 存在，可能需要保留原逻辑？
-        // 但通常 extra 规则会指定至少一种，若都没有，则可能回退到原逻辑。为安全，若 pool 为空，则回退原逻辑。
+        // 3. 如果没有指定包含条件，但有 extra 规则，则回退到原逻辑作为基础
         if (pool.length === 0 && !extraRules.includedFamilies && !extraRules.includedOrigins) {
-            // 没有指定包含条件，可能只包含服装或年龄规则，使用原逻辑
             pool = getHeroPoolForBucket(bucketString, poolConfig);
         }
 
-        // 4. 排除来源（excludedOrigins）
+        // 4. ★ 新增：SuperElementalSummon 颜色过滤 ★
+        // 必须在服装、年龄等过滤之前先按颜色筛选，确保后续操作只针对当前元素
+        if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
+            const rawTargetColor = state.selectedElementalColor.toLowerCase();
+            const targetStd = colorReverseMap[rawTargetColor] || rawTargetColor;
+            pool = pool.filter(h => {
+                const rawHeroColor = h.color ? String(h.color).toLowerCase() : '';
+                if (!rawHeroColor) return false;
+                const heroStd = colorReverseMap[rawHeroColor] || rawHeroColor;
+                return heroStd === targetStd;
+            });
+        }
+
+        // 5. 排除来源（excludedOrigins）
         if (extraRules.excludedOrigins && extraRules.excludedOrigins.length > 0) {
             const exOrigins = extraRules.excludedOrigins.map(o => {
                 const lower = o.toLowerCase();
@@ -775,50 +781,42 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
                 const heroSourceEng = sourceReverseMap[h.source] ? sourceReverseMap[h.source].toLowerCase() : h.source.toLowerCase();
                 return !exOrigins.includes(heroSourceEng);
             });
-            //console.log(`[getHeroPoolForBucketWithExtra] 排除来源后: ${pool.length}`);
         }
 
-        // 5. 应用服装规则（includedCostume）
+        // 6. 应用服装规则（includedCostume）
         if (extraRules.includedCostume) {
             pool = applyCostumeRule(pool, extraRules.includedCostume, poolConfig);
-            //console.log(`[getHeroPoolForBucketWithExtra] 应用服装规则后: ${pool.length}`);
         }
 
-        // 6. 应用年龄规则（在包含/排除之后）
+        // 7. 应用年龄规则（在包含/排除之后）
         if (extraRules.oldestCharacterAgeInDays !== undefined || extraRules.youngestCharacterAgeInDays !== undefined) {
             const baseDate = getBaseDateForAgeRules(poolConfig);
             if (baseDate) {
                 pool = filterByAge(pool, baseDate, extraRules.oldestCharacterAgeInDays, extraRules.youngestCharacterAgeInDays);
-                //console.log(`[getHeroPoolForBucketWithExtra] 年龄过滤后: ${pool.length}`);
             }
         }
 
-        // 7. 强制截止过滤（对 extra 规则构建的池也生效）
+        // 8. 强制截止过滤（对 extra 规则构建的池也生效）
         if (poolConfig.latestIncludedHeroDate) {
             const baseDate = getBaseDateForAgeRules(poolConfig);
             if (baseDate) {
-                const before = pool.length;
                 pool = filterByDateCutoff(pool, baseDate);
-                //console.log(`[getHeroPoolForBucketWithExtra] 强制截止过滤 (baseDate=${baseDate.toISOString().split('T')[0]}): ${pool.length}/${before}`);
             }
         }
     } else {
-        // 无 extra 规则，使用原逻辑
+        // 无 extra 规则，使用原逻辑（原逻辑内部已包含 SuperElementalSummon 的颜色处理）
         pool = getHeroPoolForBucket(bucketString, poolConfig);
         // 但仍需应用强制截止过滤（如果有 latestIncludedHeroDate）
         if (poolConfig.latestIncludedHeroDate) {
             const baseDate = getBaseDateForAgeRules(poolConfig);
             if (baseDate) {
-                const before = pool.length;
                 pool = filterByDateCutoff(pool, baseDate);
-                //console.log(`[getHeroPoolForBucketWithExtra] 强制截止过滤 (baseDate=${baseDate.toISOString().split('T')[0]}): ${pool.length}/${before}`);
             }
         }
     }
 
     // 去重
     const result = deduplicateHeroes(pool);
-    //console.log(`[getHeroPoolForBucketWithExtra] 最终结果数: ${result.length}`);
     return result;
 }
 

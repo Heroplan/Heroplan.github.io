@@ -1987,7 +1987,18 @@ async function performSummon(count) {
                 if (validFeatured.length > 0) {
                     drawnHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
                 } else {
-                    const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
+                    // ★ 修改：合并 heroes_s1_3 和 heroes_ex_s1_3 作为 fallback 池 ★
+                    const fallbackPool1 = getHeroPoolForBucketWithExtra('heroes_s1_3', -1, poolConfig);
+                    const fallbackPool2 = getHeroPoolForBucketWithExtra('heroes_ex_s1_3', -1, poolConfig);
+                    const mergedFallback = [...fallbackPool1, ...fallbackPool2];
+                    const uniqueFallback = new Map();
+                    mergedFallback.forEach(h => {
+                        if (h && h.heroId && !uniqueFallback.has(h.heroId)) {
+                            uniqueFallback.set(h.heroId, h);
+                        }
+                    });
+                    const fallbackPool = Array.from(uniqueFallback.values());
+                    //console.log(`[抽奖调试] 奖池桶无有效英雄，使用 fallback 池 (heroes_s1_3 + heroes_ex_s1_3)，大小: ${fallbackPool.length}`);
                     drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                 }
             } else if (bucketString) {
@@ -2000,10 +2011,24 @@ async function performSummon(count) {
         }
 
         if (!drawnHero) {
-            const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
+            // ★ 修改：合并 heroes_s1_3 和 heroes_ex_s1_3 作为 fallback 池 ★
+            const fallbackPool1 = getHeroPoolForBucketWithExtra('heroes_s1_3', -1, poolConfig);
+            const fallbackPool2 = getHeroPoolForBucketWithExtra('heroes_ex_s1_3', -1, poolConfig);
+            const mergedFallback = [...fallbackPool1, ...fallbackPool2];
+            const uniqueFallback = new Map();
+            mergedFallback.forEach(h => {
+                if (h && h.heroId && !uniqueFallback.has(h.heroId)) {
+                    uniqueFallback.set(h.heroId, h);
+                }
+            });
+            const fallbackPool = Array.from(uniqueFallback.values());
+            // console.log(`[抽奖调试] 主抽取失败，使用 fallback 池 (heroes_s1_3 + heroes_ex_s1_3)，大小: ${fallbackPool.length}`);
             if (fallbackPool.length > 0) {
                 drawnHero = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
                 bucketString = 'fallback_s1_3';
+                // console.log(`[抽奖调试] fallback 抽到英雄: ${drawnHero.heroId || drawnHero.name}`);
+            } else {
+                // console.warn(`[抽奖调试] fallback 池也为空！本次抽奖无结果。`);
             }
         }
 
@@ -2110,8 +2135,19 @@ async function performSummon(count) {
                                 if (validFeatured.length > 0) {
                                     extraHero = validFeatured[Math.floor(Math.random() * validFeatured.length)];
                                 } else {
-                                    const fallbackPool = getHeroPoolForBucketWithExtra('heroes_s1_3', 0, poolConfig, masterHeroPool);
-                                    extraHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
+                                    // ★ 修改：合并 heroes_s1_3 和 heroes_ex_s1_3 作为 fallback 池 ★
+                                    const fallbackPool1 = getHeroPoolForBucketWithExtra('heroes_s1_3', -1, poolConfig);
+                                    const fallbackPool2 = getHeroPoolForBucketWithExtra('heroes_ex_s1_3', -1, poolConfig);
+                                    const mergedFallback = [...fallbackPool1, ...fallbackPool2];
+                                    const uniqueFallback = new Map();
+                                    mergedFallback.forEach(h => {
+                                        if (h && h.heroId && !uniqueFallback.has(h.heroId)) {
+                                            uniqueFallback.set(h.heroId, h);
+                                        }
+                                    });
+                                    const fallbackPool = Array.from(uniqueFallback.values());
+                                    // console.log(`[抽奖调试] 额外桶无有效英雄，使用 fallback 池 (heroes_s1_3 + heroes_ex_s1_3)，大小: ${fallbackPool.length}`);
+                                    drawnHero = fallbackPool.length > 0 ? fallbackPool[Math.floor(Math.random() * fallbackPool.length)] : null;
                                 }
                             } else if (extraBucketString) {
                                 const idx = poolConfig.bucketConfig.indexOf(extraBucketString);

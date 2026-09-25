@@ -639,7 +639,16 @@ async function initializeApp() {
     }
 
     if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
-        const targetHero = state.allHeroes.find(h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl);
+        // 1. 新格式：按 heroId 查找
+        let targetHero = state.allHeroes.find(h => h.heroId === viewHeroFromUrl);
+
+        // 2. 向后兼容：旧的 english_name-costume_id 格式
+        if (!targetHero) {
+            targetHero = state.allHeroes.find(
+                h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl
+            );
+        }
+
         if (targetHero) openDetailsModal(targetHero);
     }
 

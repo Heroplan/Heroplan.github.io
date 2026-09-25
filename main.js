@@ -1061,6 +1061,110 @@ function addEventListeners() {
         });
     }
 
+    // --- 灵魂交换图标长按：输入自定义英雄ID列表并展示列表 ---
+    const soulExchangeIcon = document.querySelector('img.event-icon[alt="Soul Exchange"]');
+    if (soulExchangeIcon) {
+        let soulExchangeLongPressTimer = null;
+        const SOUL_EXCHANGE_LONG_PRESS = 800; // 长按阈值（毫秒）
+
+        const startSoulExchangePress = () => {
+            if (soulExchangeLongPressTimer) clearTimeout(soulExchangeLongPressTimer);
+            soulExchangeLongPressTimer = setTimeout(() => {
+                soulExchangeLongPressTimer = null;
+
+                const defaultJSON = JSON.stringify(
+                    { five: [], fifteen: [], thirty: [] },
+                    null, 2
+                );
+
+                const input = window.prompt(
+                    '输入自定义英雄列表（JSON）：\n' +
+                    '结构对应灵魂交换的三个分组：\n' +
+                    '{ "five": [英雄ID...], "fifteen": [...], "thirty": [...] }\n' +
+                    '也可直接输入一个数组 [...]，将全部归入第一组。',
+                    defaultJSON
+                );
+                if (input === null) return; // 用户取消
+
+                // 解析输入，兼容两种格式：数组 或 带 five/fifteen/thirty 的对象
+                let customData;
+                try {
+                    const parsed = JSON.parse(input);
+                    if (Array.isArray(parsed)) {
+                        customData = {
+                            five: parsed.filter(v => typeof v === 'string' && v),
+                            fifteen: [],
+                            thirty: []
+                        };
+                    } else if (parsed && typeof parsed === 'object') {
+                        const pick = (v) => Array.isArray(v) ? v.filter(x => typeof x === 'string' && x) : [];
+                        customData = {
+                            five: pick(parsed.five),
+                            fifteen: pick(parsed.fifteen),
+                            thirty: pick(parsed.thirty)
+                        };
+                    } else {
+                        alert('格式错误：请提供 JSON 数组，或包含 five/fifteen/thirty 的对象。');
+                        return;
+                    }
+                } catch (err) {
+                    alert('JSON 解析失败：' + err.message);
+                    return;
+                }
+
+                const total = customData.five.length + customData.fifteen.length + customData.thirty.length;
+                if (total === 0) {
+                    alert('列表为空或没有有效的英雄ID。');
+                    return;
+                }
+
+                // 备份原 soulExchange 的三个分组
+                const backup = {
+                    five: soulExchange.five,
+                    fifteen: soulExchange.fifteen,
+                    thirty: soulExchange.thirty
+                };
+
+                // 临时替换为用户输入的数据
+                soulExchange.five = customData.five;
+                soulExchange.fifteen = customData.fifteen;
+                soulExchange.thirty = customData.thirty;
+
+                // 直接调用模态框函数（与“展示列表”按钮等效）
+                showSoulExchangeModal();
+
+                // showSoulExchangeModal 在构造 DOM 时是同步读取的，渲染完毕后即可恢复原数据
+                soulExchange.five = backup.five;
+                soulExchange.fifteen = backup.fifteen;
+                soulExchange.thirty = backup.thirty;
+
+            }, SOUL_EXCHANGE_LONG_PRESS);
+        };
+
+        const endSoulExchangePress = () => {
+            if (soulExchangeLongPressTimer) {
+                clearTimeout(soulExchangeLongPressTimer);
+                soulExchangeLongPressTimer = null;
+            }
+        };
+
+        // 鼠标事件
+        soulExchangeIcon.addEventListener('mousedown', startSoulExchangePress);
+        soulExchangeIcon.addEventListener('mouseup', endSoulExchangePress);
+        soulExchangeIcon.addEventListener('mouseleave', endSoulExchangePress);
+        // 触摸事件
+        soulExchangeIcon.addEventListener('touchstart', startSoulExchangePress, { passive: true });
+        soulExchangeIcon.addEventListener('touchend', endSoulExchangePress);
+        soulExchangeIcon.addEventListener('touchcancel', endSoulExchangePress);
+        // 阻止长按时的右键菜单（桌面 Firefox / 移动端 Safari）
+        soulExchangeIcon.addEventListener('contextmenu', (e) => e.preventDefault());
+        // 防止图片拖拽干扰长按
+        soulExchangeIcon.draggable = false;
+        soulExchangeIcon.style.userSelect = 'none';
+        soulExchangeIcon.style.webkitUserSelect = 'none';
+        soulExchangeIcon.style.webkitTouchCallout = 'none';
+    }
+
     // --- 静态折叠功能事件 ---
     document.querySelectorAll('#filters-modal .filter-header').forEach(header => {
         header.addEventListener('click', function (event) {

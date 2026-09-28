@@ -1024,6 +1024,327 @@ function applyKeywordHighlighting(text, lang, filterType) {
     return replacedText;
 }
 
+// ============================================================
+// 动态立绘（Sprite-based 精灵动画）模块
+// 移植自 WebView.html，立绘资源目录改为 imgs/animation/
+// ============================================================
+
+const HERO_ANIM_BASE = 'imgs/animation/';
+const HERO_ANIM_PAD = 20;           // 与 compose_hero.py 的 MESH_PAD 保持一致
+const HERO_ANIM_VIEW_RATIO = 0.85;  // 与静态立绘相同的可用空间比例（85vw/85vh）
+
+let _heroAnimationIndexCache = null;   // index.json 缓存
+let _activeAnimationPlayer = null;     // 当前激活的播放器实例
+
+/**
+ * 加载 imgs/animation/index.json。
+ * 结构约定：{ heroes: ["heroId1", "heroId2", ...] }
+ * 结果会被缓存，只请求一次。
+ */
+async function loadHeroAnimationIndex() {
+    if (_heroAnimationIndexCache !== null) return _heroAnimationIndexCache;
+    try {
+        const res = await fetch(HERO_ANIM_BASE + 'index.json', { cache: 'no-cache' });
+        if (!res.ok) {
+            console.warn('[立绘动画] index.json 不可用，使用静态立绘。');
+            _heroAnimationIndexCache = { heroes: [] };
+            return _heroAnimationIndexCache;
+        }
+        const data = await res.json();
+        _heroAnimationIndexCache = (data && Array.isArray(data.heroes)) ? data : { heroes: [] };
+        return _heroAnimationIndexCache;
+    } catch (e) {
+        console.warn('[立绘动画] index.json 加载失败，使用静态立绘：', e);
+        _heroAnimationIndexCache = { heroes: [] };
+        return _heroAnimationIndexCache;
+    }
+}
+
+/**
+ * 判断某个 heroId 是否在动态立绘索引中。
+ * 兼容字符串数组与对象数组两种写法。
+ */
+function heroHasAnimation(index, heroId) {
+    if (!index || !Array.isArray(index.heroes) || !heroId) return false;
+    return index.heroes.some(h => {
+        if (typeof h === 'string') return h === heroId;
+        if (h && typeof h === 'object') return h.id === heroId || h.heroId === heroId;
+        return false;
+    });
+}
+
+/**
+ * 释放当前激活的动画播放器。
+ */
+function disposeActiveAnimationPlayer() {
+    if (_activeAnimationPlayer) {
+        try {
+            _activeAnimationPlayer.pause();
+            _activeAnimationPlayer.dispose();
+        } catch (e) { /* noop */ }
+        _activeAnimationPlayer = null;
+    }
+}
+
+/**
+ * 创建并挂载动画播放器。
+ * @param {HTMLElement} container - 承载 canvas 的容器（通常就是 portraitContainer）
+ * @param {string} heroId - 英雄的 heroId
+ * @returns {Promise<{canvas: HTMLCanvasElement, pause: Function, dispose: Function}>}
+ */
+async function createHeroAnimationPlayer(container, heroId, options = {}) {
+    const { onCanvasResize } = options;
+    const base = HERO_ANIM_BASE + heroId + '/';
+
+    const getJSON = async (rel) => {
+        const url = base + rel;
+        const r = await fetch(url, { cache: 'no-cache' });
+        if (!r.ok) throw new Error(`HTTP ${r.status} → ${url}`);
+        return r.json();
+    };
+    const loadImage = (url) => new Promise((resolve, reject) => {
+        const im = new Image();
+        im.onload = () => resolve(im);
+        im.onerror = () => reject(new Error('图片加载失败: ' + url));
+        im.src = url;
+    });
+
+    const mf = await getJSON('manifest.json');
+    const images = {};
+    await Promise.all(Object.entries(mf.sprites).map(async ([key, rel]) => {
+        images[key] = await loadImage(base + rel);
+    }));
+
+    // ▼▼▼ canvas 挂到立绘位（外层容器内、z-index=2、和 heroImage 同款样式）▼▼▼
+    const cv = document.createElement('canvas');
+    cv.className = 'hero-portrait-image hero-animation-canvas';
+    Object.assign(cv.style, {
+        position: 'relative',
+        zIndex: '2',
+        display: 'block',
+        transform: 'translateY(8%)',
+        maxWidth: '85vw',
+        maxHeight: '85vh',
+        width: 'auto',
+        height: 'auto',
+        opacity: '0',
+    });
+    container.appendChild(cv);
+    const ctx = cv.getContext('2d');
+
+    const S = {
+        manifest: mf, images,
+        spriteMeta: mf.sprite_meta,
+        staticBounds: null,
+        anims: Array.isArray(mf.anim) ? mf.anim : (mf.anim ? [mf.anim] : []),
+        clipBounds: [],
+        animIdx: -1, frameIdx: 0,
+        playing: false, rafId: 0, lastT: 0, acc: 0,
+        disposed: false,
+    };
+
+    // ---------- 几何 ----------
+    function sourceToWorld(L, sm, img) {
+        const iw = img.naturalWidth, ih = img.naturalHeight;
+        const minx = sm.bounds[0], miny = sm.bounds[1];
+        const maxx = sm.bounds[2], maxy = sm.bounds[3];
+        const rect = sm.rect;
+        const sized = (Array.isArray(L.sized) && L.sized.length === 2) ? L.sized : rect;
+        const rw = sized[0], rh = sized[1];
+        const sw = rect[0], sh = rect[1];
+        const ppu = sm.ppu || 100;
+
+        let fx = rw / sw * ppu;
+        let fy = rh / sh * ppu;
+
+        const px = L.pivotX != null ? L.pivotX : 0.5;
+        const py = L.pivotY != null ? L.pivotY : 0.5;
+
+        const ma = L.matrix[0], mb = L.matrix[1], mtx = L.matrix[2];
+        const md = L.matrix[3], me = L.matrix[4], mty = L.matrix[5];
+
+        const du = (maxx - minx) / iw;
+        const dv = -(maxy - miny) / ih;
+
+        const itype = L.image_type | 0;
+        if (itype !== 0) {
+            const sasp = sw / sh, rasp = rw / rh;
+            if (L.preserve_aspect) {
+                if (sasp > rasp) fy = fx * sasp / rasp;
+                else fx = fy * rasp / sasp;
+            }
+            if (itype === 3) { const c = Math.max(fx, fy); fx = fy = c; }
+        } else if (L.preserve_aspect) {
+            const fit = Math.min(fx, fy); fx = fy = fit;
+        }
+
+        const renderW = sw * fx / ppu;
+        const renderH = sh * fy / ppu;
+        let pivotOffX = 0, pivotOffY = 0;
+        if (!(L.ignore_pivot_offset || itype !== 0)) {
+            pivotOffX = (0.5 - px) * renderW;
+            pivotOffY = (0.5 - py) * renderH;
+        }
+
+        const cx0 = fx * (minx + du * 0.5) + pivotOffX;
+        const cy0 = fy * (maxy + dv * 0.5) + pivotOffY;
+
+        return {
+            a: ma * fx * du, b: mb * fy * dv,
+            c: mtx + ma * cx0 + mb * cy0,
+            d: md * fx * du, e: me * fy * dv,
+            f: mty + md * cx0 + me * cy0,
+        };
+    }
+
+    function layerBounds(layers) {
+        let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+        for (const L of layers) {
+            const img = S.images[L.sprite], sm = S.spriteMeta[L.sprite];
+            if (!img || !sm) continue;
+            const m = sourceToWorld(L, sm, img);
+            const iw = img.naturalWidth, ih = img.naturalHeight;
+            for (const [x, y] of [[0, 0], [iw, 0], [iw, ih], [0, ih]]) {
+                const wx = m.a * x + m.b * y + m.c;
+                const wy = m.d * x + m.e * y + m.f;
+                if (wx < minX) minX = wx;
+                if (wx > maxX) maxX = wx;
+                if (wy < minY) minY = wy;
+                if (wy > maxY) maxY = wy;
+            }
+        }
+        return { minX, minY, maxX, maxY };
+    }
+
+    function unionBounds(a, b) {
+        if (!a) return b;
+        if (!b) return a;
+        return {
+            minX: Math.min(a.minX, b.minX), minY: Math.min(a.minY, b.minY),
+            maxX: Math.max(a.maxX, b.maxX), maxY: Math.max(a.maxY, b.maxY),
+        };
+    }
+
+    S.staticBounds = layerBounds(mf.static);
+    S.clipBounds = S.anims.map(a => {
+        let b = null;
+        for (const fr of (a.frames || [])) b = unionBounds(b, layerBounds(fr));
+        return b;
+    });
+
+    const currentLayers = () => (S.animIdx < 0 ? S.manifest.static : S.anims[S.animIdx]?.frames[S.frameIdx]);
+    const currentBounds = () => (S.animIdx < 0 ? S.staticBounds : (S.clipBounds[S.animIdx] || null));
+    const currentAnim = () => (S.animIdx < 0 ? null : S.anims[S.animIdx]);
+
+    // ---------- 渲染 ----------
+    function drawFrame(layers, bounds) {
+        if (!bounds || !isFinite(bounds.minX)) return;
+        const W = Math.max(1, Math.ceil(bounds.maxX - bounds.minX) + 2 * HERO_ANIM_PAD);
+        const H = Math.max(1, Math.ceil(bounds.maxY - bounds.minY) + 2 * HERO_ANIM_PAD);
+        if (cv.width !== W || cv.height !== H) { cv.width = W; cv.height = H; }
+
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, W, H);
+
+        for (const L of layers.slice().sort((a, b) => a.order - b.order)) {
+            const img = S.images[L.sprite], sm = S.spriteMeta[L.sprite];
+            if (!img || !sm) continue;
+            const m = sourceToWorld(L, sm, img);
+            const a = m.a, b = -m.d, c = m.b, d = -m.e;
+            const e = m.c - bounds.minX + HERO_ANIM_PAD;
+            const f = H - HERO_ANIM_PAD - (m.f - bounds.minY);
+            ctx.save();
+            ctx.globalAlpha = L.alpha != null ? L.alpha : 1;
+            ctx.setTransform(a, b, c, d, e, f);
+            ctx.drawImage(img, 0, 0);
+            ctx.restore();
+        }
+    }
+
+    // ▼▼▼ 和静态 heroImage 完全一致的空间约束：85vw × 85vh ▼▼▼
+    function fitCanvasToViewport() {
+        if (!cv.width || !cv.height) return;
+        const maxW = window.innerWidth * 0.85;
+        const maxH = window.innerHeight * 0.85;
+        const scale = Math.min(maxW / cv.width, maxH / cv.height, 1);
+        const finalW = Math.round(cv.width * scale);
+        const finalH = Math.round(cv.height * scale);
+        cv.style.width = finalW + 'px';
+        cv.style.height = finalH + 'px';
+        if (typeof onCanvasResize === 'function') onCanvasResize(finalW, finalH);
+    }
+
+    function play() {
+        if (S.playing || S.disposed) return;
+        const a = currentAnim();
+        if (!a) return;
+        S.playing = true;
+        S.lastT = performance.now();
+        S.acc = 0;
+        cancelAnimationFrame(S.rafId);
+        S.rafId = requestAnimationFrame(tick);
+    }
+    function pause() {
+        S.playing = false;
+        cancelAnimationFrame(S.rafId);
+    }
+    function tick(now) {
+        if (!S.playing || S.disposed) return;
+        const anim = currentAnim();
+        if (!anim) { pause(); return; }
+        const frameMs = 1000 / anim.fps;
+        S.acc += now - S.lastT;
+        S.lastT = now;
+        const n = anim.frames.length;
+        while (S.acc >= frameMs) {
+            S.acc -= frameMs;
+            S.frameIdx = (S.frameIdx + 1) % n;
+        }
+        drawFrame(anim.frames[S.frameIdx], currentBounds());
+        S.rafId = requestAnimationFrame(tick);
+    }
+
+    function selectClip(idx) {
+        idx = parseInt(idx, 10);
+        if (isNaN(idx)) idx = -1;
+        if (idx >= S.anims.length) idx = S.anims.length ? 0 : -1;
+        S.animIdx = idx;
+        S.frameIdx = 0;
+        const hasAnim = idx >= 0 && S.anims[idx];
+        pause();
+        drawFrame(currentLayers(), currentBounds());
+        fitCanvasToViewport();
+        if (hasAnim) play();
+    }
+
+    // 初始播放 default_clip
+    const defaultClip = (mf.default_clip !== undefined && mf.default_clip >= 0)
+        ? mf.default_clip
+        : (S.anims.length ? 0 : -1);
+    selectClip(defaultClip);
+
+    // 淡入（和静态 heroImage 一致）
+    setTimeout(() => {
+        if (S.disposed) return;
+        cv.style.opacity = '1';
+        cv.style.transition = 'opacity 0.3s ease';
+    }, 10);
+
+    const onResize = () => fitCanvasToViewport();
+    window.addEventListener('resize', onResize);
+
+    return {
+        canvas: cv,
+        pause,
+        dispose() {
+            S.disposed = true;
+            pause();
+            window.removeEventListener('resize', onResize);
+            if (cv.parentNode) cv.parentNode.removeChild(cv);
+        }
+    };
+}
+
 
 /**
  * 在模态框中渲染英雄的详细信息。
@@ -1995,199 +2316,235 @@ function renderDetailsInModal(hero, context = {}) {
                 // 将提示图标添加到头像容器
                 avatarContainer.appendChild(viewAvatarIcon);
 
-                const openImageModal = () => {
+                const openImageModal = async () => {
                     const imageModal = document.getElementById('image-modal');
                     const imageModalOverlay = document.getElementById('image-modal-overlay');
                     const imageModalContent = document.getElementById('image-modal-content');
 
-                    if (imageModal && imageModalOverlay && imageModalContent) {
-                        // 清空之前的内容
-                        imageModalContent.innerHTML = '';
+                    if (!imageModal || !imageModalOverlay || !imageModalContent) return;
 
-                        // 创建英雄立绘容器
-                        const portraitContainer = document.createElement('div');
-                        portraitContainer.className = 'hero-portrait-container';
-                        portraitContainer.style.position = 'relative';
-                        portraitContainer.style.display = 'inline-block';
-                        portraitContainer.style.maxWidth = '85vw';
-                        portraitContainer.style.maxHeight = '85vh';
+                    // 清空之前的内容
+                    imageModalContent.innerHTML = '';
 
-                        // 添加点击关闭功能
-                        portraitContainer.addEventListener('click', closeHeroPortraitModal);
+                    // ▼▼▼ 新增：释放上一次可能残留的动态立绘播放器 ▼▼▼
+                    disposeActiveAnimationPlayer();
 
+                    // ---------- 判断该英雄是否有动态立绘 ----------
+                    // 读取 imgs/animation/index.json，判断 heroId 是否在列表中
+                    // 有则走 canvas 精灵动画；无则回退到原来的静态立绘逻辑
+                    let hasAnimation = false;
+                    if (hero.heroId) {
+                        const animIndex = await loadHeroAnimationIndex();
+                        hasAnimation = heroHasAnimation(animIndex, hero.heroId);
+                    }
 
-                        // 定义获取背景后缀的函数
-                        const getBackgrounSuffix = (family, costumeId) => {
-                            // 优先处理 classic 家族
-                            if (family === 'classic') {
-                                // 定义 costume_id 对应的后缀
-                                sourceReverseMap[hero.source].toLowerCase()
-                                const classicMap = {
-                                    3: 'cute',
-                                    4: 'stainedglass',
-                                    5: 'stylish'
-                                };
-                                if (hero.star === 3) {
-                                    costumeId = costumeId + 1
-                                }
-                                if (costumeId <= 2) {
-                                    return colorReverseMap[hero.color].toLowerCase();
-                                } else if (costumeId === 3) {
-                                    return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
-                                } else if (costumeId >= 4) {
-                                    return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
-                                }
-
-                                // 如果找不到对应的ID，默认返回各颜色背景
+                    // ---------- 1. 搭好外层容器（背景卡 + 光效）----------
+                    // 定义获取背景后缀的函数
+                    const getBackgrounSuffix = (family, costumeId) => {
+                        // 优先处理 classic 家族
+                        if (family === 'classic') {
+                            // 定义 costume_id 对应的后缀
+                            const classicMap = {
+                                3: 'cute',
+                                4: 'stainedglass',
+                                5: 'stylish'
+                            };
+                            if (hero.star === 3) {
+                                costumeId = costumeId + 1
+                            }
+                            if (costumeId <= 2) {
                                 return colorReverseMap[hero.color].toLowerCase();
+                            } else if (costumeId === 3) {
+                                return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
+                            } else if (costumeId >= 4) {
+                                return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
                             }
 
-                            // 处理家族映射数组
-                            // 键是家族ID，值是文件名后缀
-                            const familyToBgMap = {
-                                // Astral 系列
-                                'abyss': 's4',
-                                'tales1_goodies': 'tales1',
-                                'tales1_baddies': 'tales1',
-                                'nidavellir': 'tales2',
-                                'myrkheim': 'tales2',
-                                'astral_elves': 'astral',
-                                'astral_dwarfs': 'astral',
-                                'astral_demons': 'astral',
-                                'investigator': 'shadow',
-                                'cultist': 'shadow',
-                                'forsaken': 'shadow',
-                                'institute': 'shadow',
-                                'garrison': 'garrison_guard',
-                                'super_elemental': 'elemental',
-                                'wolf': 'castle',
-                                'raven': 'castle',
-                                'stag': 'castle',
-                                'bear': 'castle',
-                                'plains_hunter': 'monsterisland',
-                                'abyss_hunter': 'monsterisland',
-                                'jungle_hunter': 'monsterisland',
-                                'zodiac': 'lunar',
-                                'cupid': 'valentines',
-                                'easter': 'spring',
-                                'halloween': 'vampires',
-                                'fleur_de_sang': 'fleurdesang',
-                                'winter': 'christmas',
-                                'opera': 'ballerina',
-                                'knight': 'knights',
-                                'fable': 'fables',
-                                'shady_scoundrels': 'scoundrel',
-
-
-                                // 如果家族名本身就是文件名后缀，直接用 default 处理
-                            };
-
-                            // 如果在映射表中找到了，返回映射值；否则直接使用 family 字段
-                            if (hero.family.includes('hotm') || hero.family === 'mystery') {
-                                return (colorReverseMap[hero.color].toLowerCase() + "_alt");
-                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season2') {
-                                if (hero.family === 'japanese') {
-                                    return "s2oriental";
-                                } else {
-                                    return "s2" + family;
-                                }
-                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season3') {
-                                if (hero.family === 'jotunheim' || hero.family === 'niflheim') {
-                                    return "s3stronghold";
-                                } else if (hero.family === 'midgard' || hero.family === 'alfheim') {
-                                    return "s3mountains";
-                                } else {
-                                    return "s3menacing";
-                                }
-                            } else if (sourceReverseMap[hero.source].toLowerCase() === 'season5') {
-                                return "s5" + family;
-                            } else if (hero.family === 'gargoyle') {
-                                if (hero.passiveSkills.includes('gargoyle_soft_skin')) {
-                                    return "fluffygargoyle";
-                                } else {
-                                    return "gargoyle";
-                                }
-                            } else if (hero.family === 'sand') {
-                                if (costumeId === 0) {
-                                    return "summer";
-                                } else {
-                                    return "beachparty";
-                                }
-                            } else if ((hero.family === 'mimic') || (hero.family === 'trainer')) {
-                                return "mimic_training_" + colorReverseMap[hero.color].toLowerCase();
-                            } else {
-                                return familyToBgMap[family] || family;
-                            }
-                        };
-
-                        const bgSuffix = getBackgrounSuffix(hero.family, hero.costume_id);
-
-                        // 创建最底层背景图片元素
-                        const cardBgImage = document.createElement('img');
-                        cardBgImage.src = `imgs/herocard/herocard_${bgSuffix}.webp`;
-                        cardBgImage.className = 'hero-card-bg';
-                        cardBgImage.style.position = 'absolute';
-                        cardBgImage.style.top = '50%';
-                        cardBgImage.style.left = '50%';
-                        cardBgImage.style.transform = 'translate(-50%, -50%)';
-                        cardBgImage.style.zIndex = '0'; // 最底层
-                        cardBgImage.style.opacity = '1';
-                        cardBgImage.style.pointerEvents = 'none';
-                        cardBgImage.style.maxWidth = '110vw';
-                        cardBgImage.style.maxHeight = '110vh';
-                        cardBgImage.style.borderRadius = '20%';
-
-                        // --- 调整渐变范围 ---
-                        const maskStyle = 'radial-gradient(circle at center, black 50%, rgba(0,0,0,0.3) 80%, transparent 100%)';
-
-                        // 应用遮罩
-                        cardBgImage.style.maskImage = maskStyle;
-                        cardBgImage.style.setProperty('-webkit-mask-image', maskStyle);
-
-
-
-                        // 检查是否立绘光效
-                        const showCircleRay = getCookie('showCircleRay') !== 'false';
-                        const raysImage = document.createElement('img');
-                        if (showCircleRay) {
-                            // 创建光效图片（作为子元素）
-                            /*
-                            // 可以定义不同家族对应的光效范围
-                            const getRaysRangeForFamily = (family) => {
-                                const ranges = {
-                                    'magic_carpet': { min: 46, max: 47 },
-                                    // 其他家族的特殊范围
-                                    // 'other_family': { min: 48, max: 50 },
-                                };
-                                return ranges[family] || { min: 1, max: 45 };
-                            };
-                            const range = getRaysRangeForFamily(hero.family);
-                            const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-                            */
-                            const randomRaysNumber = Math.floor(Math.random() * 89) + 1;
-                            raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
-                            raysImage.className = 'rays-background';
-                            raysImage.style.position = 'absolute';
-                            raysImage.style.top = '60%';
-                            raysImage.style.left = '50%';
-                            raysImage.style.transform = 'translate(-50%, -50%)';
-                            raysImage.style.zIndex = '1';
-                            raysImage.style.opacity = '1';
-                            raysImage.style.pointerEvents = 'none';
-                            raysImage.style.maxWidth = '110vw';
-                            raysImage.style.maxHeight = '110vh';
-
-                            // 根据英雄颜色设置光效滤镜
-                            const colorFilter = getColorFilterForHero(hero.color);
-                            const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
-                            raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
-                            portraitContainer.appendChild(raysImage);
-
+                            // 如果找不到对应的ID，默认返回各颜色背景
+                            return colorReverseMap[hero.color].toLowerCase();
                         }
 
+                        // 处理家族映射数组
+                        // 键是家族ID，值是文件名后缀
+                        const familyToBgMap = {
+                            // Astral 系列
+                            'abyss': 's4',
+                            'tales1_goodies': 'tales1',
+                            'tales1_baddies': 'tales1',
+                            'nidavellir': 'tales2',
+                            'myrkheim': 'tales2',
+                            'astral_elves': 'astral',
+                            'astral_dwarfs': 'astral',
+                            'astral_demons': 'astral',
+                            'investigator': 'shadow',
+                            'cultist': 'shadow',
+                            'forsaken': 'shadow',
+                            'institute': 'shadow',
+                            'garrison': 'garrison_guard',
+                            'super_elemental': 'elemental',
+                            'wolf': 'castle',
+                            'raven': 'castle',
+                            'stag': 'castle',
+                            'bear': 'castle',
+                            'plains_hunter': 'monsterisland',
+                            'abyss_hunter': 'monsterisland',
+                            'jungle_hunter': 'monsterisland',
+                            'zodiac': 'lunar',
+                            'cupid': 'valentines',
+                            'easter': 'spring',
+                            'halloween': 'vampires',
+                            'fleur_de_sang': 'fleurdesang',
+                            'winter': 'christmas',
+                            'opera': 'ballerina',
+                            'knight': 'knights',
+                            'fable': 'fables',
+                            'shady_scoundrels': 'scoundrel',
+                            // 如果家族名本身就是文件名后缀，直接用 default 处理
+                        };
+
+                        // 如果在映射表中找到了，返回映射值；否则直接使用 family 字段
+                        if (hero.family.includes('hotm') || hero.family === 'mystery') {
+                            return (colorReverseMap[hero.color].toLowerCase() + "_alt");
+                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season2') {
+                            if (hero.family === 'japanese') {
+                                return "s2oriental";
+                            } else {
+                                return "s2" + family;
+                            }
+                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season3') {
+                            if (hero.family === 'jotunheim' || hero.family === 'niflheim') {
+                                return "s3stronghold";
+                            } else if (hero.family === 'midgard' || hero.family === 'alfheim') {
+                                return "s3mountains";
+                            } else {
+                                return "s3menacing";
+                            }
+                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season5') {
+                            return "s5" + family;
+                        } else if (hero.family === 'gargoyle') {
+                            if (hero.passiveSkills.includes('gargoyle_soft_skin')) {
+                                return "fluffygargoyle";
+                            } else {
+                                return "gargoyle";
+                            }
+                        } else if (hero.family === 'sand') {
+                            if (costumeId === 0) {
+                                return "summer";
+                            } else {
+                                return "beachparty";
+                            }
+                        } else if ((hero.family === 'mimic') || (hero.family === 'trainer')) {
+                            return "mimic_training_" + colorReverseMap[hero.color].toLowerCase();
+                        } else {
+                            return familyToBgMap[family] || family;
+                        }
+                    };
+
+                    // 创建英雄立绘外层容器
+                    const portraitContainer = document.createElement('div');
+                    portraitContainer.className = 'hero-portrait-container';
+                    portraitContainer.style.position = 'relative';
+                    portraitContainer.style.display = 'inline-block';
+                    portraitContainer.style.maxWidth = '85vw';
+                    portraitContainer.style.maxHeight = '85vh';
+
+                    // 添加点击关闭功能
+                    portraitContainer.addEventListener('click', closeHeroPortraitModal);
+
+                    const bgSuffix = getBackgrounSuffix(hero.family, hero.costume_id);
+
+                    // 创建最底层背景图片元素
+                    const cardBgImage = document.createElement('img');
+                    cardBgImage.src = `imgs/herocard/herocard_${bgSuffix}.webp`;
+                    cardBgImage.className = 'hero-card-bg';
+                    cardBgImage.style.position = 'absolute';
+                    cardBgImage.style.top = '50%';
+                    cardBgImage.style.left = '50%';
+                    cardBgImage.style.transform = 'translate(-50%, -50%)';
+                    cardBgImage.style.zIndex = '0'; // 最底层
+                    cardBgImage.style.opacity = '1';
+                    cardBgImage.style.pointerEvents = 'none';
+                    cardBgImage.style.maxWidth = '110vw';
+                    cardBgImage.style.maxHeight = '110vh';
+                    cardBgImage.style.borderRadius = '20%';
+
+                    // --- 调整渐变范围 ---
+                    const maskStyle = 'radial-gradient(circle at center, black 50%, rgba(0,0,0,0.3) 80%, transparent 100%)';
+
+                    // 应用遮罩
+                    cardBgImage.style.maskImage = maskStyle;
+                    cardBgImage.style.setProperty('-webkit-mask-image', maskStyle);
+
+                    portraitContainer.appendChild(cardBgImage);
+
+                    // 检查是否立绘光效
+                    const showCircleRay = getCookie('showCircleRay') !== 'false';
+                    let raysImage = null;
+                    if (showCircleRay) {
+                        // 创建光效图片（作为子元素）
+                        /*
+                        // 可以定义不同家族对应的光效范围
+                        const getRaysRangeForFamily = (family) => {
+                            const ranges = {
+                                'magic_carpet': { min: 46, max: 47 },
+                                // 其他家族的特殊范围
+                                // 'other_family': { min: 48, max: 50 },
+                            };
+                            return ranges[family] || { min: 1, max: 45 };
+                        };
+                        const range = getRaysRangeForFamily(hero.family);
+                        const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
+                        */
+                        const randomRaysNumber = Math.floor(Math.random() * 89) + 1;
+                        raysImage = document.createElement('img');
+                        raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
+                        raysImage.className = 'rays-background';
+                        raysImage.style.position = 'absolute';
+                        raysImage.style.top = '60%';
+                        raysImage.style.left = '50%';
+                        raysImage.style.transform = 'translate(-50%, -50%)';
+                        raysImage.style.zIndex = '1';
+                        raysImage.style.opacity = '1';
+                        raysImage.style.pointerEvents = 'none';
+                        raysImage.style.maxWidth = '110vw';
+                        raysImage.style.maxHeight = '110vh';
+
+                        // 根据英雄颜色设置光效滤镜
+                        const colorFilter = getColorFilterForHero(hero.color);
+                        const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
+                        raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
+                        portraitContainer.appendChild(raysImage);
+                    }
+
+                    // ---------- 2. 立绘位：根据是否有动态立绘，选择 canvas 或 avatar 图片 ----------
+                    // 两者共用同一位置（z-index=2），尺寸规则也完全一致（85vw × 85vh）
+
+                    // ▼▼▼ 动态立绘路径（新增）▼▼▼
+                    if (hasAnimation) {
+                        try {
+                            _activeAnimationPlayer = await createHeroAnimationPlayer(portraitContainer, hero.heroId, {
+                                // 让 canvas 尺寸确定后，同步光效尺寸（与静态逻辑一致）
+                                onCanvasResize: (w, h) => {
+                                    if (raysImage) {
+                                        raysImage.style.width = w + 'px';
+                                        raysImage.style.height = h + 'px';
+                                    }
+                                }
+                            });
+                        } catch (e) {
+                            console.error('[立绘动画] 加载失败，回退到静态立绘：', e);
+                            // 清理可能残留的 canvas
+                            portraitContainer.querySelectorAll('canvas').forEach(c => c.remove());
+                            disposeActiveAnimationPlayer();
+                            hasAnimation = false;
+                        }
+                    }
+
+                    // ▼▼▼ 静态立绘路径（原有逻辑）▼▼▼
+                    if (!hasAnimation) {
                         // 创建英雄立绘图片
                         const heroImage = document.createElement('img');
-                        heroImage.src = avatarSrc;
+                        heroImage.src = `imgs/avatar/${hero.heroId}.webp`;
                         heroImage.className = 'hero-portrait-image';
                         heroImage.style.position = 'relative';
                         heroImage.style.zIndex = '2';
@@ -2202,10 +2559,8 @@ function renderDetailsInModal(hero, context = {}) {
                         // 立绘图片添加点击关闭功能
                         heroImage.addEventListener('click', closeHeroPortraitModal);
 
-                        // 将光效和立绘添加到容器
-                        portraitContainer.appendChild(cardBgImage);
+                        // 将立绘添加到容器
                         portraitContainer.appendChild(heroImage);
-                        imageModalContent.appendChild(portraitContainer);
 
                         // 图片加载完成后计算精确尺寸
                         heroImage.onload = function () {
@@ -2235,16 +2590,19 @@ function renderDetailsInModal(hero, context = {}) {
                                 this.style.transition = 'opacity 0.3s ease';
                             }, 10);
                         };
-
-                        // 显示立绘模态框并添加到堆栈
-                        imageModal.classList.add('show-hero-portrait');
-                        imageModal.classList.remove('hidden');
-                        imageModalOverlay.classList.remove('hidden');
-
-                        // 将立绘模态框加入到模态框堆栈
-                        history.pushState({ modal: 'heroPortrait' }, null);
-                        state.modalStack.push('heroPortrait');
                     }
+
+                    // ---------- 3. 将外层容器挂到模态框并显示 ----------
+                    imageModalContent.appendChild(portraitContainer);
+
+                    // 显示立绘模态框并添加到堆栈
+                    imageModal.classList.add('show-hero-portrait');
+                    imageModal.classList.remove('hidden');
+                    imageModalOverlay.classList.remove('hidden');
+
+                    // 将立绘模态框加入到模态框堆栈
+                    history.pushState({ modal: 'heroPortrait' }, null);
+                    state.modalStack.push('heroPortrait');
                 };
 
                 overlaysContainer.addEventListener('click', openImageModal);

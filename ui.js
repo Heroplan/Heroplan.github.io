@@ -533,6 +533,11 @@ function closeHeroPortraitModal() {
         // 移除尺寸控制类
         imageModal.classList.remove('show-hero-portrait');
 
+        // 释放动态立绘播放器
+        if (typeof disposeActiveAnimationPlayer === 'function') {
+            disposeActiveAnimationPlayer();
+        }
+
         // 从堆栈中移除立绘模态框状态
         if (state.modalStack.length > 0 && state.modalStack[state.modalStack.length - 1] === 'heroPortrait') {
             state.modalStack.pop();

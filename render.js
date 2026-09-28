@@ -1035,6 +1035,7 @@ const HERO_ANIM_VIEW_RATIO = 0.85;  // 与静态立绘相同的可用空间比�
 
 let _heroAnimationIndexCache = null;   // index.json 缓存
 let _activeAnimationPlayer = null;     // 当前激活的播放器实例
+let _portraitClickLock = false;        // 防止网络延迟期间重复点击打开多个立绘
 
 /**
  * 加载 imgs/animation/index.json。
@@ -2317,6 +2318,9 @@ function renderDetailsInModal(hero, context = {}) {
                 avatarContainer.appendChild(viewAvatarIcon);
 
                 const openImageModal = async () => {
+                    // 防止网络延迟期间重复点击
+                    if (_portraitClickLock) return;
+                    _portraitClickLock = true;
                     const imageModal = document.getElementById('image-modal');
                     const imageModalOverlay = document.getElementById('image-modal-overlay');
                     const imageModalContent = document.getElementById('image-modal-content');
@@ -2603,6 +2607,9 @@ function renderDetailsInModal(hero, context = {}) {
                     // 将立绘模态框加入到模态框堆栈
                     history.pushState({ modal: 'heroPortrait' }, null);
                     state.modalStack.push('heroPortrait');
+
+                    // 解锁，允许后续再次点击打开
+                    _portraitClickLock = false;
                 };
 
                 overlaysContainer.addEventListener('click', openImageModal);

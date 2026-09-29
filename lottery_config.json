@@ -386,12 +386,12 @@
         "construct1"
       ],
       "featuredHeroes": [
-        "construct_nepant",
-        "construct_niso",
-        "ghost_bai_wu_chang",
-        "mahayoddha_bhagirathi",
-        "mahayoddha_chitrangada",
-        "beauty_beast_rose_de_flo"
+        "ghost_he_gui",
+        "ghost_chou_kou_gui",
+        "musketeer_cardinal_richelieu_costume_ambassador",
+        "musketeer_queen_anne_costume_commander",
+        "vegetable_chilazar",
+        "vegetable_garlacteus"
       ],
       "advertisedHero": "fox_riverfang"
     },
@@ -411,7 +411,7 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
-        "ghost_chou_kou_gui",
+        "ghost_hua_pi_gui",
         "ghost_shu_jing",
         "ghost_bai_wu_chang"
       ],
@@ -426,16 +426,16 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
-          "outlaw_lin_chong",
           "outlaw_chao_gai",
-          "outlaw_li_kui",
           "outlaw_ruan_xiaoqi",
+          "kingdom_diaochan_costume_flowers",
           "outlaw_sun_erniang",
-          "kingdom_sun_quan_costume_fire_bat",
+          "outlaw_song_jiang",
           "kingdom_zhang_fei_costume_bear_slayer",
-          "journey_nineheaded_beast",
-          "kingdom_sun_quan_costume_fire_bat",
-          "journey_xie_zi_jing"
+          "journey_tang_sanzang",
+          "journey_xie_zi_jing",
+          "journey_tang_sanzang",
+          "kingdom_guan_yu_costume_dragon"
         ]
       }
     },
@@ -474,8 +474,8 @@
     },
     "lottery_astralelves_default": {
       "featuredHeroes": [
-        "astral_demon_ksorath",
-        "astral_demon_ushal"
+        "astral_demon_ushal",
+        "astral_demon_zondalath"
       ],
       "AssociatedFamilies": [
         "astral_elves",
@@ -864,9 +864,9 @@
     },
     "lottery_season_untold_tales1": {
       "featuredHeroes": [
-        "tales1_spartoi_costume_guard",
-        "tales1_gelert_costume_scavenger",
-        "tales1_ceto_costume_queen"
+        "tales1_medea_costume_goddess",
+        "tales1_galapago_costume_quarry",
+        "tales1_atlanteia_costume_siren"
       ]
     },
     "lottery_season_untold_tales2": {
@@ -1035,52 +1035,55 @@
     },
     "lottery_seasonal_premium_halloween": {
       "featuredHeroes": [
-        "fleur_guillemette",
-        "fleur_elyzabel",
-        "fleur_ludovico"
+        "fleur_chrysostom",
+        "fleur_bezian",
+        "fleur_elyzabel_costume_scout"
       ],
       "AssociatedFamilies": [
         "halloween1"
       ],
       "includedHeroes": [
-        "faun_bramble",
-        "faun_ascian",
-        "faun_tamlin",
-        "faun_yolanda",
-        "faun_verity",
-        "faun_jolyon",
+        "fleur_guillemette",
+        "fleur_ludovico",
+        "halloween_karlov",
+        "fleur_talesie",
+        "fleur_eumachius",
         "halloween_francine_costume_mafia",
-        "halloween_matilda",
+        "halloween_matilda_costume_mafia",
         "halloween_chester",
+        "halloween_vanda_costume_mafia",
+        "halloween_miriam_and_midnight",
+        "vampire_king_costume_mafia",
         "halloween_wayne",
         "halloween_amber",
         "halloween_alucard_costume_mafia",
         "halloween_lucinda",
         "halloween_edwin_costume_mafia",
         "halloween_hortensia",
+        "vampire_queen_costume_mafia",
+        "halloween_frank_costume_mafia",
+        "halloween_ana_belle_costume_mafia",
         "ballerina_von_rothbart",
-        "ballerina_odile",
-        "ballerina_meg_giry",
         "elemental_gastille",
-        "elemental_ignazio_costume_medic",
-        "fleur_talesie",
         "slayer_cillian",
         "faun_myrtle",
         "gargoyle_kalo",
         "gargoyle_bellerive",
-        "vampire_queen",
-        "halloween_frank_costume_mafia",
-        "halloween_ana_belle_costume_mafia",
         "ballerina_raul",
         "s4_griffin_costume_priest",
-        "construct_rustbeak",
         "halloween_goopy",
         "halloween_jack",
-        "vampire_lord",
-        "fleur_eumachius",
-        "halloween_vanda_costume_mafia",
-        "halloween_miriam_and_midnight",
-        "vampire_king_costume_mafia"
+        "vampire_lord_costume_mafia",
+        "faun_bramble",
+        "faun_ascian",
+        "faun_tamlin",
+        "faun_yolanda",
+        "faun_verity",
+        "faun_jolyon",
+        "elemental_ignazio_costume_medic",
+        "ballerina_odile",
+        "ballerina_meg_giry",
+        "construct_rustbeak"
       ]
     },
     "lottery_hero_christmas": {
@@ -1245,18 +1248,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-09-25": [
-          "gargoyle_pophit",
-          "gargoyle_garten"
-        ],
-        "2026-09-26": [
-          "shadow_omen",
-          "fox_rust"
-        ],
-        "2026-09-27": [
-          "ballerina_prince_siegfried",
-          "beachparty_mazoga"
-        ],
         "2026-09-28": [
           "slime_magistine",
           "moth_tealmoine"

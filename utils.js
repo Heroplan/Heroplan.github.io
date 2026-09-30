@@ -416,6 +416,14 @@ async function loadData(lang) {
         setCookie('search_lang', userLangShort, 365);
     }
 
+    if (!savedLang) {
+        // 即使没有 search_lang，也至少用当前语言的 langData 覆盖一次 hero.name
+        await loadExtraNameData(state.currentLang);
+        applyCustomLanguageNames(state.currentLang);
+        // 把 search_lang 视为 'current'
+        setCookie('search_lang', 'current', 365);
+    }
+
     if (savedLang) {
         const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
         langSelector.value = savedLang;

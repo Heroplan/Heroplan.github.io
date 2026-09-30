@@ -1784,6 +1784,12 @@ function renderDetailsInModal(hero, context = {}) {
     if (elementSuffixRegex.test(filterValue)) {
         cleanedFilterValue = filterValue.replace(elementSuffixRegex, '').trim();
     }
+
+    // 英文名的后缀清理（跟 filterValue 一样的处理）
+    let cleanedEnglishName = englishName || '';
+    if (elementSuffixRegex.test(cleanedEnglishName)) {
+        cleanedEnglishName = cleanedEnglishName.replace(elementSuffixRegex, '').trim();
+    }
     
     const nameBlockHTML = `
         ${englishName ? `<p class="hero-english-name">${cleanedFilterValue}</p>` : ''}

@@ -1277,17 +1277,116 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, W, H);
 
+        // order 与 Unity UI 兄弟绘制顺序一致
         for (const L of layers.slice().sort((a, b) => a.order - b.order)) {
             const img = S.images[L.sprite], sm = S.spriteMeta[L.sprite];
             if (!img || !sm) continue;
+
             const m = sourceToWorld(L, sm, img);
-            const a = m.a, b = -m.d, c = m.b, d = -m.e;
+
+            // 源像素 (x,y) -> 输出像素 (X,Y)：
+            //   X = m.a*x + m.b*y + (m.c - minX) + PAD
+            //   Y = -m.d*x - m.e*y + H - PAD - (m.f - minY)
+            // Canvas setTransform(a, b, c, d, e, f) 里的 (a,b,c,d,e,f) 与
+            // 上式一一对应：X = a*x + c*y + e ; Y = b*x + d*y + f
+            const a = m.a;
+            const b = -m.d;
+            const c = m.b;
+            const d = -m.e;
             const e = m.c - bounds.minX + HERO_ANIM_PAD;
             const f = H - HERO_ANIM_PAD - (m.f - bounds.minY);
+
             ctx.save();
             ctx.globalAlpha = L.alpha != null ? L.alpha : 1;
             ctx.setTransform(a, b, c, d, e, f);
-            ctx.drawImage(img, 0, 0);
+
+            // Image.Filled 填充裁剪：mimic_titan 火苗按 fill_amount 从
+            // 圆心展开（fill_method=4 Radial360；0/1 为横/竖线性）。
+            // 裁剪路径在 setTransform 后的本地（图片）坐标空间。
+            if (L.image_type === 3 && L.fill_amount != null && L.fill_amount < 1) {
+                const iw2 = img.width, ih2 = img.height;
+                const cx2 = iw2 / 2, cy2 = ih2 / 2;
+                const method = L.fill_method | 0;
+                const origin = L.fill_origin != null ? L.fill_origin : 0;
+                const cw = L.fill_clockwise ? true : false;
+                ctx.beginPath();
+                if (method === 0) {
+                    const wFrac = L.fill_amount * iw2;
+                    if (origin === 0) ctx.rect(0, 0, wFrac, ih2);
+                    else ctx.rect(iw2 - wFrac, 0, wFrac, ih2);
+                } else if (method === 1) {
+                    const hFrac = L.fill_amount * ih2;
+                    if (origin === 0) ctx.rect(0, ih2 - hFrac, iw2, hFrac);
+                    else ctx.rect(0, 0, iw2, hFrac);
+                } else {
+                    // Radial：origin 0底/1右/2顶/3左。Canvas y-down 角度
+                    // 0=右、正方向=视觉顺时针，与 Unity y-up 语义换算后：
+                    // cw=true 顺时针从 start 扫到 start+sweep。
+                    const full = method === 2 ? Math.PI / 2 : method === 3 ? Math.PI : 2 * Math.PI;
+                    const start = [Math.PI / 2, 0, -Math.PI / 2, Math.PI][origin];
+                    const sweep = L.fill_amount * full;
+                    ctx.moveTo(cx2, cy2);
+                    if (cw) ctx.arc(cx2, cy2, Math.hypot(cx2, cy2), start, start + sweep, false);
+                    else ctx.arc(cx2, cy2, Math.hypot(cx2, cy2), start, start - sweep, true);
+                    ctx.closePath();
+                }
+                ctx.clip();
+            }
+
+            // m_Color.r/g/b tint：Canvas 'multiply' 合成保持 alpha、RGB
+            // 乘 tint（fables 卡片 0.575~1 变暗）。仅分量 !=1 时开销。
+            let drawImg = img;
+            if (L.color && (L.color[0] !== 1 || L.color[1] !== 1 || L.color[2] !== 1)) {
+                const tc = document.createElement('canvas');
+                tc.width = img.width; tc.height = img.height;
+                const tctx = tc.getContext('2d');
+                tctx.drawImage(img, 0, 0);
+                tctx.globalCompositeOperation = 'multiply';
+                tctx.fillStyle = 'rgb(' + L.color.map(function (v) {
+                    return Math.round(Math.max(0, Math.min(1, v)) * 255);
+                }).join(',') + ')';
+                tctx.fillRect(0, 0, tc.width, tc.height);
+                drawImg = tc;
+            }
+            // HSVRangeHandler._hue/_saturation/_value：像素级 HSV 调整
+            // （口径与 compose_hero._apply_tint_fill 一致：hue 绝对替换、
+            // sat/val 乘原值，未驱动分量保留原色）。
+            if (L.hsv && L.hsv.some(function (v) { return v != null; })) {
+                const tc = document.createElement('canvas');
+                tc.width = img.width; tc.height = img.height;
+                const tctx = tc.getContext('2d');
+                tctx.drawImage(drawImg, 0, 0);
+                const id = tctx.getImageData(0, 0, tc.width, tc.height);
+                const px = id.data;
+                const hue = L.hsv[0] != null ? L.hsv[0] * 360 : null;
+                const sat = L.hsv[1], val = L.hsv[2];
+                for (let p = 0; p < px.length; p += 4) {
+                    let r = px[p] / 255, g = px[p + 1] / 255, b = px[p + 2] / 255;
+                    const mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+                    const d = mx - mn;
+                    let hh = d === 0 ? 0 : (
+                        mx === r ? (((g - b) / d) % 6)
+                            : mx === g ? ((b - r) / d + 2)
+                                : ((r - g) / d + 4)) * 60;
+                    let ss = mx === 0 ? 0 : d / mx;
+                    let vv = mx;
+                    if (hue != null) hh = hue;
+                    if (sat != null) ss *= sat;
+                    if (val != null) vv *= val;
+                    hh = ((hh % 360) + 360) % 360 / 60;
+                    const i = Math.floor(hh) % 6, f = hh - Math.floor(hh);
+                    const pp = vv * (1 - ss), q = vv * (1 - f * ss), t = vv * (1 - (1 - f) * ss);
+                    const r2 = i === 0 ? vv : i === 1 ? q : i === 2 ? pp : i === 3 ? pp : i === 4 ? t : vv;
+                    const g2 = i === 0 ? t : i === 1 ? vv : i === 2 ? vv : i === 3 ? q : i === 4 ? pp : pp;
+                    const b2 = i === 0 ? pp : i === 1 ? pp : i === 2 ? t : i === 3 ? vv : i === 4 ? vv : q;
+                    px[p] = Math.round(Math.max(0, Math.min(1, r2)) * 255);
+                    px[p + 1] = Math.round(Math.max(0, Math.min(1, g2)) * 255);
+                    px[p + 2] = Math.round(Math.max(0, Math.min(1, b2)) * 255);
+                }
+                tctx.putImageData(id, 0, 0);
+                drawImg = tc;
+            }
+            ctx.drawImage(drawImg, 0, 0);
             ctx.restore();
         }
     }

@@ -411,9 +411,9 @@
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
-        "ghost_hua_pi_gui",
-        "ghost_shu_jing",
-        "ghost_bai_wu_chang"
+        "ghost_xiwang_gui",
+        "ghost_chou_kou_gui",
+        "ghost_shu_jing"
       ],
       "AssociatedFamilies": [
         "kingdom",
@@ -426,16 +426,16 @@
         "requiredItemId": "lottery_3kw_limited_pool_summon_coin",
         "requiredItemAmount": 100,
         "heroes": [
-          "outlaw_chao_gai",
-          "outlaw_ruan_xiaoqi",
-          "kingdom_diaochan_costume_flowers",
-          "outlaw_sun_erniang",
+          "outlaw_hu_sanniang",
+          "outlaw_li_kui",
           "outlaw_song_jiang",
-          "kingdom_zhang_fei_costume_bear_slayer",
-          "journey_tang_sanzang",
-          "journey_xie_zi_jing",
-          "journey_tang_sanzang",
-          "kingdom_guan_yu_costume_dragon"
+          "outlaw_wu_yong",
+          "outlaw_sun_erniang",
+          "kingdom_diaochan_costume_flowers",
+          "journey_nineheaded_beast",
+          "kingdom_guan_yu_costume_dragon",
+          "kingdom_sun_quan_costume_fire_bat",
+          "kingdom_cao_cao_costume_ice"
         ]
       }
     },
@@ -474,8 +474,8 @@
     },
     "lottery_astralelves_default": {
       "featuredHeroes": [
-        "astral_demon_ushal",
-        "astral_demon_zondalath"
+        "astral_demon_gremory",
+        "astral_demon_ksorath"
       ],
       "AssociatedFamilies": [
         "astral_elves",
@@ -566,8 +566,8 @@
     },
     "lottery_titan_hunter_default": {
       "featuredHeroes": [
-        "titan_hunter_brachynd",
-        "titan_hunter_avestalon"
+        "titan_hunter_maar",
+        "titan_hunter_konradus"
       ],
       "AssociatedFamilies": [
         "titan_hunter"
@@ -656,9 +656,9 @@
     },
     "lottery_featured_alliance_quest_musketeers": {
       "featuredHeroes": [
-        "beauty_beast_beauty",
-        "musketeer_queen_anne_costume_commander",
-        "beauty_beast_jacquespierre"
+        "beauty_beast_henriette",
+        "musketeer_rochefort_costume_ratcatcher",
+        "beauty_beast_mirielle"
       ],
       "AssociatedFamilies": [
         "beauty_beast",
@@ -734,9 +734,9 @@
     },
     "lottery_featured_event_farmland": {
       "featuredHeroes": [
-        "vegetable_pyaza",
-        "vegetable_garlacteus",
-        "vegetable_broseph"
+        "vegetable_indigon",
+        "vegetable_broseph",
+        "vegetable_elsbeth"
       ],
       "AssociatedFamilies": [
         "vegetable"
@@ -871,9 +871,9 @@
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
-        "tales2_fimafeng_costume_skater",
-        "tales2_fafnir_costume_fallen",
-        "tales2_dularfulr_costume_engineer"
+        "tales2_regin_costume_omen",
+        "tales2_ott_costume_herbalist",
+        "tales2_gandr_costume_guardian"
       ]
     },
     "lottery_hero_lunar_new_year": {
@@ -1248,14 +1248,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-09-28": [
-          "slime_magistine",
-          "moth_tealmoine"
-        ],
-        "2026-09-29": [
-          "musketeer_milady_de_winter",
-          "champions_satori"
-        ],
         "2026-09-30": [
           "goblin_leafwizzle",
           "owl_fulvia"
@@ -1279,6 +1271,34 @@
         "2026-10-05": [
           "s5_hathor_costume_starlit",
           "s5_hetepheres_costume_spa"
+        ],
+        "2026-10-06": [
+          "elemental_doxan_costume_hacker",
+          "fire_god_maple"
+        ],
+        "2026-10-07": [
+          "kingdom_zhuge_liang_costume_crane",
+          "astral_dwarf_orcur"
+        ],
+        "2026-10-08": [
+          "guardian_elephant",
+          "faun_gideon"
+        ],
+        "2026-10-09": [
+          "bard_darkbeat",
+          "beowulf_ecgtheow"
+        ],
+        "2026-10-10": [
+          "nature_god_florenna",
+          "garrison_archibald"
+        ],
+        "2026-10-11": [
+          "castle_bear_humbert",
+          "gargoyle_guffa"
+        ],
+        "2026-10-12": [
+          "goblin_grimsteel",
+          "garrison_iocantha"
         ]
       },
       "includedHeroes": [

@@ -1087,6 +1087,53 @@ function disposeActiveAnimationPlayer() {
     }
 }
 
+// heroId -> Promise<{manifest, images}>
+// 详情页打开时就开始预加载，点击打开立绘时直接复用，避免二次请求
+const _heroAnimationPreloadCache = new Map();
+
+/**
+ * 预加载某个英雄的动态立绘资源（manifest + 所有 sprite）。
+ * 结果会被缓存；同一英雄重复调用只会加载一次。
+ * 加载失败时自动从缓存移除，方便下次重试。
+ * @param {string} heroId
+ * @returns {Promise<{manifest: object, images: Record<string, HTMLImageElement>}>}
+ */
+async function preloadHeroAnimation(heroId) {
+    if (_heroAnimationPreloadCache.has(heroId)) {
+        return _heroAnimationPreloadCache.get(heroId);
+    }
+
+    const promise = (async () => {
+        const base = HERO_ANIM_BASE + heroId + '/';
+
+        const getJSON = async (rel) => {
+            const r = await fetch(base + rel, { cache: 'no-cache' });
+            if (!r.ok) throw new Error(`HTTP ${r.status} → ${base + rel}`);
+            return r.json();
+        };
+        const loadImage = (url) => new Promise((resolve, reject) => {
+            const im = new Image();
+            im.onload = () => resolve(im);
+            im.onerror = () => reject(new Error('图片加载失败: ' + url));
+            im.src = url;
+        });
+
+        const manifest = await getJSON('manifest.json');
+        const images = {};
+        await Promise.all(Object.entries(manifest.sprites).map(async ([key, rel]) => {
+            images[key] = await loadImage(base + rel);
+        }));
+
+        return { manifest, images };
+    })();
+
+    _heroAnimationPreloadCache.set(heroId, promise);
+    // 失败时清掉缓存，下次可以重试
+    promise.catch(() => _heroAnimationPreloadCache.delete(heroId));
+
+    return promise;
+}
+
 /**
  * 创建并挂载动画播放器。
  * @param {HTMLElement} container - 承载 canvas 的容器（通常就是 portraitContainer）
@@ -1095,26 +1142,9 @@ function disposeActiveAnimationPlayer() {
  */
 async function createHeroAnimationPlayer(container, heroId, options = {}) {
     const { onCanvasResize } = options;
-    const base = HERO_ANIM_BASE + heroId + '/';
 
-    const getJSON = async (rel) => {
-        const url = base + rel;
-        const r = await fetch(url, { cache: 'no-cache' });
-        if (!r.ok) throw new Error(`HTTP ${r.status} → ${url}`);
-        return r.json();
-    };
-    const loadImage = (url) => new Promise((resolve, reject) => {
-        const im = new Image();
-        im.onload = () => resolve(im);
-        im.onerror = () => reject(new Error('图片加载失败: ' + url));
-        im.src = url;
-    });
-
-    const mf = await getJSON('manifest.json');
-    const images = {};
-    await Promise.all(Object.entries(mf.sprites).map(async ([key, rel]) => {
-        images[key] = await loadImage(base + rel);
-    }));
+    // ▼▼▼ 从预加载缓存取（没有则会触发加载）▼▼▼
+    const { manifest: mf, images } = await preloadHeroAnimation(heroId);
 
     // ▼▼▼ canvas 挂到立绘位（外层容器内、z-index=2、和 heroImage 同款样式）▼▼▼
     const cv = document.createElement('canvas');
@@ -2285,8 +2315,28 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.heroId && avatarContainer && overlaysContainer) {
         const avatarSrc = `imgs/avatar/${hero.heroId}.webp`;
 
-        // 检查文件是否存在
-        const checkAvatarExists = async () => {
+        /**
+         * 判定是否显示放大镜，并返回"点击时该走动态还是静态"。
+         * 优先级：
+         *   1. index.json 里有此 heroId → 预加载动态（成功则用动态，失败则回退）
+         *   2. 预加载失败或无动态 → 检查静态 avatar 是否存在
+         *   3. 都没有 → 隐藏放大镜
+         */
+        const checkPortraitAvailability = async () => {
+            // 1. 优先看动态立绘
+            if (hero.heroId) {
+                const animIndex = await loadHeroAnimationIndex();
+                if (heroHasAnimation(animIndex, hero.heroId)) {
+                    try {
+                        await preloadHeroAnimation(hero.heroId);   // ← 缓存动态
+                        return true;                                // 动态就绪
+                    } catch (e) {
+                        console.warn('[立绘动画] 预加载失败，尝试静态回退：', e);
+                    }
+                }
+            }
+
+            // 2. 动态不可用，检查静态 avatar
             try {
                 const response = await fetch(avatarSrc, { method: 'HEAD' });
                 return response.status === 200;
@@ -2295,7 +2345,7 @@ function renderDetailsInModal(hero, context = {}) {
             }
         };
 
-        checkAvatarExists().then(exists => {
+        checkPortraitAvailability().then(exists => {
             if (exists) {
                 avatarContainer.classList.add('is-clickable');
                 overlaysContainer.style.pointerEvents = 'auto'; // 让覆盖层可点击

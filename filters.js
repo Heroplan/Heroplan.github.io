@@ -815,19 +815,19 @@ function applyFiltersAndRender() {
         }
 
         // 文本筛选
-        // ▼▼▼ 名字筛选逻辑：空格作为"且"条件 ▼▼▼
+        // ▼▼▼ 名字筛选逻辑：空格作为"且"条件，同时匹配中文名和英文名 ▼▼▼
         if (nameFilter) {
             const searchTerms = nameFilter.split(/\s+/).filter(term => term.length > 0);
-            let heroName = hero.name.toLowerCase();
+            const haystack = (
+                (hero.name || '') + ' ' + (hero.english_name || '')
+            ).toLowerCase();
 
-            // 如果搜索词包含空格，进行"且"匹配
             if (searchTerms.length > 1) {
-                // 所有搜索词都必须出现在英雄名字中
-                const allTermsMatch = searchTerms.every(term => heroName.includes(term));
+                // 所有搜索词都必须出现在「名字 + 英文名」的合并串里
+                const allTermsMatch = searchTerms.every(term => haystack.includes(term));
                 if (!allTermsMatch) return false;
             } else if (searchTerms.length === 1) {
-                // 单个词进行普通包含匹配
-                if (!heroName.includes(searchTerms[0])) return false;
+                if (!haystack.includes(searchTerms[0])) return false;
             }
         }
         if (effectsFilter && !matchesComplexQuery(hero.effects, effectsFilter)) return false;
@@ -1149,7 +1149,7 @@ function initializeNameAutocomplete() {
     function selectAutocompleteItem(index) {
         if (currentSuggestions[index]) {
             const selected = currentSuggestions[index];
-            nameInput.value = selected.name;
+            nameInput.value = selected.fillValue || selected.name;
             closeAutocompleteList();
             applyFiltersAndRender();
         }
@@ -1190,8 +1190,7 @@ function initializeNameAutocomplete() {
             item.innerHTML = itemHTML;
 
             item.addEventListener('click', () => {
-                const searchLang = langSelector ? langSelector.value : 'current';
-                nameInput.value = searchLang !== 'current' ? suggestion.name : suggestion.english_name;
+                nameInput.value = suggestion.fillValue || suggestion.name;
                 closeAutocompleteList();
                 applyFiltersAndRender();
             });
@@ -1246,46 +1245,73 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
     if (searchLower.length === 0) return [];
 
     const suggestions = [];
-    const seenIds = new Set(); // 使用 ID 去重更安全
+    const seenIds = new Set();
+
+    // 元素后缀清理（与详情页 data-filter-value 一致）
+    const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
+    const elementSuffixRegex = new RegExp(`\\s+(${ignorableElementSuffixes.join('|')})$`, 'i');
 
     state.filteredHeroes.forEach(hero => {
-        // 1. 确定要用来搜索的名字
-        let nameToSearch = hero.name; // 默认为当前 UI 语言的名字
-        let displayName = hero.name;  // 列表显示的名字
+        // 1. 确定要用来搜索/显示的名字
+        let nameToSearch = hero.name;
+        let displayName = hero.name;
 
-        // 如果选择了特定语言，且数据已加载
-        if (searchLang !== 'current' && window.langData && window.langData?.name?.[searchLang]) {
-            // 通过 heroId 查找对应语言的名字
-            // 注意：heroId 需要与 JSON 中的 key (例如 astral_cosmicspeaker) 匹配
-            // 假设 hero.heroId 就是那个 key (或者你需要某种转换)
-            const localizedName = window.langData?.name?.[searchLang][hero.heroId];
-            if (localizedName) {
-                nameToSearch = localizedName;
-                displayName = localizedName; // 搜索列表里显示日语/繁体名字
+        if (searchLang !== 'current' && window.langData?.name?.[searchLang] && hero.heroId) {
+            // 最长前缀匹配（与 getSkinInfo 保持一致）
+            const langDict = window.langData.name[searchLang];
+            const matchingKeys = Object.keys(langDict).filter(k => hero.heroId.startsWith(k));
+            if (matchingKeys.length > 0) {
+                const bestMatch = matchingKeys.reduce((a, b) =>
+                    a.length > b.length ? a : b
+                );
+                nameToSearch = langDict[bestMatch];
+                displayName = langDict[bestMatch];
             }
         }
 
         if (!nameToSearch) return;
 
+        // ▼▼▼ 新增：同时拿中文名和英文名做匹配 ▼▼▼
         const nameLower = nameToSearch.toLowerCase();
+        const englishLower = (hero.english_name || '').toLowerCase();
 
-        // 检查名字中是否包含搜索词
-        if (nameLower.includes(searchLower)) {
-            // 只有当这个英雄ID没出现过时才添加 (避免同ID不同皮肤造成的重复，视需求而定)
-            // 如果你想搜出特定皮肤，可以把 key 设为 hero.heroId + hero.costume_id
-            const uniqueKey = hero.heroId + '_' + hero.costume_id;
+        const idxName = nameLower.indexOf(searchLower);
+        const idxEn = englishLower.indexOf(searchLower);
 
-            if (!seenIds.has(uniqueKey)) {
-                seenIds.add(uniqueKey);
-                suggestions.push({
-                    name: displayName,          // 显示在下拉列表的名字 (例如: 宇宙音響)
-                    english_name: hero.english_name, // 核心：填充到输入框的英文名 (例如: Astral Comicspeaker)
-                    heroId: hero.heroId,
-                    color: hero.color ? (colorReverseMap[hero.color.toLowerCase()] ? colorReverseMap[hero.color.toLowerCase()].toLowerCase() : '') : '',
-                    matchIndex: nameLower.indexOf(searchLower)
-                });
-            }
+        let matchIndex = -1;
+        if (idxName !== -1) matchIndex = idxName;              // 中文名命中，位置原样
+        else if (idxEn !== -1) matchIndex = 1000 + idxEn;      // 英文名命中，加偏移让其排后
+
+        if (matchIndex === -1) return;
+        // ▲▲▲
+
+        const uniqueKey = hero.heroId + '_' + hero.costume_id;
+        if (seenIds.has(uniqueKey)) return;
+        seenIds.add(uniqueKey);
+
+        // 计算 fillValue（与详情页 data-filter-value 一致）
+        const skinInfo = getSkinInfo(hero);
+        let fillValue = (skinInfo.baseName || hero.name || '').trim();
+
+        // 兜底：如果还带 "(Kalo)" 这种括号，且主体是 CJK，就截掉括号部分
+        if (/\([^)]*\)\s*$/.test(fillValue) &&
+            /[\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]/.test(fillValue)) {
+            fillValue = fillValue.replace(/\s*\([^)]*\)\s*$/, '').trim();
         }
+
+        // 去元素后缀
+        if (elementSuffixRegex.test(fillValue)) {
+            fillValue = fillValue.replace(elementSuffixRegex, '').trim();
+        }
+
+        suggestions.push({
+            name: displayName,
+            english_name: hero.english_name,
+            fillValue: fillValue,
+            heroId: hero.heroId,
+            color: hero.color ? (colorReverseMap[hero.color.toLowerCase()] ? colorReverseMap[hero.color.toLowerCase()].toLowerCase() : '') : '',
+            matchIndex: matchIndex
+        });
     });
 
     // 改进排序逻辑
@@ -1301,9 +1327,9 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
         if (a.matchIndex !== b.matchIndex) return a.matchIndex - b.matchIndex;
 
         // 3. 匹配词长度更长的排在前面
-        const aMatchLength = a.name.length;
-        const bMatchLength = b.name.length;
-        if (aMatchLength !== bMatchLength) return aMatchLength - bMatchLength;
+        const aLen = a.name.length;
+        const bLen = b.name.length;
+        if (aLen !== bLen) return aLen - bLen;
 
         // 4. 最后按字母顺序排序
         return a.name.localeCompare(b.name);

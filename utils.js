@@ -273,9 +273,11 @@ function applyHeroNames(langCode) {
     if (!data) return;
     let count = 0;
     state.allHeroes.forEach(hero => {
-        const key = Object.keys(data).find(k => hero.heroId.startsWith(k));
-        if (key) {
-            hero.name = data[key];
+        if (!hero.heroId) return;
+        const keys = Object.keys(data).filter(k => hero.heroId.startsWith(k));
+        if (keys.length) {
+            const best = keys.reduce((a, b) => a.length > b.length ? a : b);
+            hero.name = data[best];
             count++;
         }
     });
@@ -416,10 +418,10 @@ async function loadData(lang) {
         setCookie('search_lang', userLangShort, 365);
     }
 
+    // 即使没有 search_lang，也至少用当前语言的 langData 覆盖一次 hero.name
+    // 把 savedLang 变量本身也赋成 'current'，否则后续 if (savedLang) 分支不会执行
     if (!savedLang) {
-        // 即使没有 search_lang，也至少用当前语言的 langData 覆盖一次 hero.name
-        await loadExtraNameData(state.currentLang);
-        applyCustomLanguageNames(state.currentLang);
+        savedLang = 'current';
         // 把 search_lang 视为 'current'
         setCookie('search_lang', 'current', 365);
     }
@@ -430,7 +432,7 @@ async function loadData(lang) {
     }
 
     try {
-        // 新增：如果 lang 是 langs 中的某一项，则回退为 'en'
+        // 如果 lang 是 langs 中的某一项，则回退为 'en'
         if (langs.includes(lang)) {
             lang = 'en';
         }
@@ -445,27 +447,48 @@ async function loadData(lang) {
             throw new Error("一个或多个数据键在JSON文件中缺失。");
         }
 
+        // 无条件加载英文名映射（不受 search_lang 影响）
+        if (!window.langData.name['en']) {
+            try {
+                const enRes = await fetch(`langs_json/heroes_name_en.json?v=${new Date().getTime()}`);
+                window.langData.name['en'] = await enRes.json();
+            } catch (e) {
+                console.warn('[loadData] 加载英文名映射失败，将回退到 extractEnglishName:', e);
+            }
+        }
+        const englishNameData = window.langData.name['en'] || {};
+
         state.allHeroes = data.allHeroes;
 
         state.allHeroes.forEach((hero, index) => {
             hero.originalIndex = index;
-            hero.english_name = extractEnglishName(hero, state.currentLang);
+            // 优先从英文名映射取，匹配用「最长前缀」（与 getSkinInfo 一致）
+            let enName = '';
+            if (hero.heroId) {
+                const keys = Object.keys(englishNameData).filter(k => hero.heroId.startsWith(k));
+                if (keys.length) {
+                    const best = keys.reduce((a, b) => a.length > b.length ? a : b);
+                    enName = englishNameData[best];
+                }
+            } 
+            hero.english_name = enName || extractEnglishName(hero, state.currentLang);
+            if (hero.heroId === 'ninja_peridot_costume_herbalist') {
+                console.log('[en 匹配]', hero.heroId, '| enName =', enName, '| final =', hero.english_name);
+            }
+            
         });
         state.families_bonus = data.families_bonus;
         state.family_values = data.family_values;
 
         // 如果 savedLang 不为 current，则使用 window.langData 进行名称替换
-        if (savedLang) {
-            if (savedLang === 'current'){
-                savedLang = state.currentLang;
-                await loadExtraNameData(savedLang);
-
-            } else {
-                await loadExtraNameData(savedLang);
-                applyCustomLanguageNames(savedLang);
-                // 新增：使用 base_values_dict_other 替换颜色、职业、速度等
-                applyOtherLanguageValues(savedLang);
-            }
+        // 这里必须放在 state.allHeroes 赋值之后，否则 applyCustomLanguageNames 空跑
+        if (savedLang === 'current') {
+            await loadExtraNameData(state.currentLang);
+        } else {
+            await loadExtraNameData(savedLang);
+            applyCustomLanguageNames(savedLang);
+            // 使用 base_values_dict_other 替换颜色、职业、速度等
+            applyOtherLanguageValues(savedLang);
         }
 
         return true;

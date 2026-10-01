@@ -1770,10 +1770,8 @@ function renderDetailsInModal(hero, context = {}) {
     const englishName = hero.english_name;
 
     // 使用所有三个变量来构建最终的HTML
-    // 使用英文名进行筛选，而不是当前语言显示的名字
-
-    const searchLang = getCookie('search_lang');
-    const filterValue = searchLang !== 'current' ? mainHeroName : englishName;
+    // ▼ 统一使用主英雄名作为筛选填充值 ▼
+    const filterValue = mainHeroName;
 
     // 移除最右边的元素后缀
     const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
@@ -1792,7 +1790,7 @@ function renderDetailsInModal(hero, context = {}) {
     }
     
     const nameBlockHTML = `
-        ${englishName ? `<p class="hero-english-name">${cleanedFilterValue}</p>` : ''}
+        ${englishName ? `<p class="hero-english-name">${cleanedEnglishName}</p>` : ''}
         <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${cleanedFilterValue}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
     `;
 

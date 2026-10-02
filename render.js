@@ -1475,6 +1475,50 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
     };
 }
 
+/**
+ * 显示一个轻量的复制提示（toast）。
+ */
+function showCopyToast(message) {
+    let toast = document.getElementById('copy-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'copy-toast';
+        Object.assign(toast.style, {
+            position: 'fixed',
+            left: '50%',
+            bottom: '12%',
+            transform: 'translateX(-50%) translateY(10px)',
+            background: 'rgba(20, 20, 20, 0.88)',
+            color: '#fff',
+            padding: '10px 20px',
+            borderRadius: '999px',
+            fontSize: '0.9rem',
+            lineHeight: '1.2',
+            zIndex: '99999',
+            pointerEvents: 'none',
+            opacity: '0',
+            transition: 'opacity 0.25s ease, transform 0.25s ease',
+            whiteSpace: 'nowrap',
+            maxWidth: '90vw',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+        });
+        document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+
+    requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+    });
+
+    clearTimeout(toast._hideTimer);
+    toast._hideTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(10px)';
+    }, 1600);
+}
 
 /**
  * 在模态框中渲染英雄的详细信息。
@@ -2020,6 +2064,85 @@ function renderDetailsInModal(hero, context = {}) {
             behavior: 'smooth'
         });
     });
+
+    // ============================================================
+    // 长按标题 → 复制英雄 ID
+    // ============================================================
+    const detailsTitleEl = document.getElementById('modal-title-h2');
+    if (detailsTitleEl && hero.heroId) {
+        const LONG_PRESS_DURATION = 600; // 长按判定时长（毫秒）
+
+        let longPressTimer = null;
+        let longPressFired = false;
+        let resetFiredTimer = null;
+
+        const clearLongPressTimer = () => {
+            if (longPressTimer) {
+                clearTimeout(longPressTimer);
+                longPressTimer = null;
+            }
+        };
+
+        // 避免长按选中文字 / 弹出系统菜单
+        detailsTitleEl.style.userSelect = 'none';
+        detailsTitleEl.style.webkitUserSelect = 'none';
+        detailsTitleEl.style.webkitTouchCallout = 'none';
+        detailsTitleEl.style.touchAction = 'manipulation';
+
+        detailsTitleEl.addEventListener('pointerdown', (e) => {
+            // 只响应鼠标左键（触摸 / 笔一律响应）
+            if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+            longPressFired = false;
+            clearTimeout(resetFiredTimer);
+            clearLongPressTimer();
+
+            longPressTimer = setTimeout(async () => {
+                longPressTimer = null;
+                longPressFired = true;
+
+                // 兜底：若随后的 click 未触发（移动端长按常见），
+                // 800ms 后自动复位，避免误吞下一次正常点击
+                resetFiredTimer = setTimeout(() => { longPressFired = false; }, 800);
+
+                const copiedLabel = langDict.heroIdCopied ||
+                    ((state.currentLang === 'cn' || state.currentLang === 'tc')
+                        ? '已复制英雄ID'
+                        : 'Hero ID copied');
+
+                try {
+                    await copyTextToClipboard(String(hero.heroId));
+                    showCopyToast(`✅ ${copiedLabel}: ${hero.heroId}`);
+                } catch (err) {
+                    console.error('复制英雄ID失败:', err);
+                    showCopyToast('❌ Copy failed');
+                }
+            }, LONG_PRESS_DURATION);
+        });
+
+        detailsTitleEl.addEventListener('pointerup', clearLongPressTimer);
+        detailsTitleEl.addEventListener('pointerleave', clearLongPressTimer);
+        detailsTitleEl.addEventListener('pointercancel', clearLongPressTimer);
+
+        // 阻止移动端长按弹出"保存图片 / 复制"等系统菜单
+        detailsTitleEl.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // 长按已触发时，拦截随后的 click，避免触发原本绑在
+        // #modal-title-h2 上的"滚动回顶部"逻辑。
+        // 注意：#modal-title-h2 自身已有 click 处理器，同元素上的捕获
+        // 监听器不保证先执行，所以在父元素 .details-header-main 捕获阶段拦截。
+        const headerMain = modalContent.querySelector('.details-header-main');
+        if (headerMain) {
+            headerMain.addEventListener('click', (e) => {
+                if (longPressFired && e.target.closest('#modal-title-h2')) {
+                    longPressFired = false;
+                    clearTimeout(resetFiredTimer);
+                    e.stopPropagation();
+                    e.preventDefault();
+                }
+            }, true);
+        }
+    }
 
 
     // 统一处理所有可折叠区块及其状态记忆

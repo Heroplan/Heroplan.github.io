@@ -1521,6 +1521,35 @@ function showCopyToast(message) {
 }
 
 /**
+ * 安全地把任意 hero.color 值转成英文小写颜色 key（'red'/'blue'/'green'/'yellow'/'purple'）。
+ * 兼容：英文、中文简体、中文繁体、大小写、未知值（兜底 'red'，绝不返回 undefined）。
+ */
+function getSafeColorKey(colorValue) {
+    const FALLBACK = 'red';
+    const VALID = ['red', 'blue', 'green', 'yellow', 'purple'];
+
+    if (colorValue === null || colorValue === undefined) return FALLBACK;
+    const raw = String(colorValue).trim();
+    if (!raw) return FALLBACK;
+
+    // 1) 通过 colorReverseMap 反查（兼容中文、繁体、大小写）
+    if (typeof colorReverseMap !== 'undefined' && colorReverseMap) {
+        const mapped = colorReverseMap[raw.toLowerCase()];
+        if (mapped && VALID.includes(String(mapped).toLowerCase())) {
+            return String(mapped).toLowerCase();
+        }
+    }
+
+    // 2) 本身就是英文（'Red' / 'red' / 'RED'）
+    const lower = raw.toLowerCase();
+    if (VALID.includes(lower)) return lower;
+
+    // 3) 完全无法识别 —— 打印一次方便定位，但不要崩
+    console.warn('[getSafeColorKey] 未识别的颜色值:', colorValue);
+    return FALLBACK;
+}
+
+/**
  * 在模态框中渲染英雄的详细信息。
  * @param {object} hero - 英雄对象。
  * @param {object} context - 上下文对象，主要用于队伍模拟器。
@@ -2621,33 +2650,31 @@ function renderDetailsInModal(hero, context = {}) {
                     // ---------- 1. 搭好外层容器（背景卡 + 光效）----------
                     // 定义获取背景后缀的函数
                     const getBackgrounSuffix = (family, costumeId) => {
+                        // ✅ 只在这里算一次，全程复用，杜绝任何裸调用
+                        const colorKey = getSafeColorKey(hero.color);
+
                         // 优先处理 classic 家族
                         if (family === 'classic') {
-                            // 定义 costume_id 对应的后缀
                             const classicMap = {
                                 3: 'cute',
                                 4: 'stainedglass',
                                 5: 'stylish'
                             };
                             if (hero.star === 3) {
-                                costumeId = costumeId + 1
+                                costumeId = costumeId + 1;
                             }
                             if (costumeId <= 2) {
-                                return colorReverseMap[hero.color].toLowerCase();
+                                return colorKey;
                             } else if (costumeId === 3) {
-                                return colorReverseMap[hero.color].toLowerCase() + "_" + classicMap[costumeId];
+                                return colorKey + "_" + classicMap[costumeId];
                             } else if (costumeId >= 4) {
-                                return classicMap[costumeId] + "_" + colorReverseMap[hero.color].toLowerCase();
+                                return classicMap[costumeId] + "_" + colorKey;
                             }
-
-                            // 如果找不到对应的ID，默认返回各颜色背景
-                            return colorReverseMap[hero.color].toLowerCase();
+                            return colorKey;
                         }
 
-                        // 处理家族映射数组
-                        // 键是家族ID，值是文件名后缀
+                        // 家族 → 背景后缀映射
                         const familyToBgMap = {
-                            // Astral 系列
                             'abyss': 's4',
                             'tales1_goodies': 'tales1',
                             'tales1_baddies': 'tales1',
@@ -2679,19 +2706,22 @@ function renderDetailsInModal(hero, context = {}) {
                             'knight': 'knights',
                             'fable': 'fables',
                             'shady_scoundrels': 'scoundrel',
-                            // 如果家族名本身就是文件名后缀，直接用 default 处理
                         };
 
-                        // 如果在映射表中找到了，返回映射值；否则直接使用 family 字段
-                        if (hero.family.includes('hotm') || hero.family === 'mystery') {
-                            return (colorReverseMap[hero.color].toLowerCase() + "_alt");
-                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season2') {
+                        // ✅ sourceReverseMap 也可能拿不到，改成安全取值
+                        const srcKey = (typeof sourceReverseMap !== 'undefined' && sourceReverseMap && hero.source)
+                            ? String(sourceReverseMap[hero.source]).toLowerCase()
+                            : '';
+
+                        if (hero.family && (hero.family.includes('hotm') || hero.family === 'mystery')) {
+                            return colorKey + "_alt";
+                        } else if (srcKey === 'season2') {
                             if (hero.family === 'japanese') {
                                 return "s2oriental";
                             } else {
                                 return "s2" + family;
                             }
-                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season3') {
+                        } else if (srcKey === 'season3') {
                             if (hero.family === 'jotunheim' || hero.family === 'niflheim') {
                                 return "s3stronghold";
                             } else if (hero.family === 'midgard' || hero.family === 'alfheim') {
@@ -2699,10 +2729,10 @@ function renderDetailsInModal(hero, context = {}) {
                             } else {
                                 return "s3menacing";
                             }
-                        } else if (sourceReverseMap[hero.source].toLowerCase() === 'season5') {
+                        } else if (srcKey === 'season5') {
                             return "s5" + family;
                         } else if (hero.family === 'gargoyle') {
-                            if (hero.passiveSkills.includes('gargoyle_soft_skin')) {
+                            if (hero.passiveSkills && hero.passiveSkills.includes('gargoyle_soft_skin')) {
                                 return "fluffygargoyle";
                             } else {
                                 return "gargoyle";
@@ -2713,8 +2743,8 @@ function renderDetailsInModal(hero, context = {}) {
                             } else {
                                 return "beachparty";
                             }
-                        } else if ((hero.family === 'mimic') || (hero.family === 'trainer')) {
-                            return "mimic_training_" + colorReverseMap[hero.color].toLowerCase();
+                        } else if (hero.family === 'mimic' || hero.family === 'trainer') {
+                            return "mimic_training_" + colorKey;
                         } else {
                             return familyToBgMap[family] || family;
                         }

@@ -386,12 +386,12 @@
         "construct1"
       ],
       "featuredHeroes": [
-        "ghost_he_gui",
-        "ghost_chou_kou_gui",
-        "musketeer_cardinal_richelieu_costume_ambassador",
-        "musketeer_queen_anne_costume_commander",
+        "construct_sylosis",
         "vegetable_chilazar",
-        "vegetable_garlacteus"
+        "astral_demon_madarika",
+        "astral_demon_zhakiturion",
+        "elemental_desmond_costume_assassin",
+        "champions_horace"
       ],
       "advertisedHero": "fox_riverfang"
     },
@@ -465,8 +465,8 @@
     },
     "lottery_temple_default": {
       "featuredHeroes": [
-        "mahayoddha_ajay",
-        "mahayoddha_bhima"
+        "mahayoddha_sangeeta",
+        "mahayoddha_bhagirathi"
       ],
       "AssociatedFamilies": [
         "mahayoddha"
@@ -491,9 +491,9 @@
         "institute"
       ],
       "featuredHeroes": [
-        "institute_azureus",
-        "institute_professor_ambrose",
-        "institute_zenas"
+        "institute_zenas",
+        "forsaken_vermis",
+        "institute_azureus"
       ],
       "includedHeroes": [
         "castle_bear_bearnadette",
@@ -560,8 +560,8 @@
         "hotm2018"
       ],
       "featuredHeroes": [
-        "s2_tethys_costume_cute",
-        "forest_god_oberon_costume_cute"
+        "s3_heimdall_costume_cute",
+        "forest_god_zeline_costume_cute"
       ]
     },
     "lottery_titan_hunter_default": {
@@ -613,21 +613,21 @@
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
       "entitiesToChooseFrom": [
-        "mimic_ascension_item_blue",
-        "mimic_ascension_item_green",
-        "mimic_ascension_item_purple",
-        "mimic_ascension_item_red",
-        "mimic_ascension_item_yellow",
-        "mimic_emblem_blue",
-        "mimic_emblem_green",
-        "mimic_emblem_purple",
-        "mimic_emblem_red",
-        "mimic_emblem_yellow",
+        "mimic_iron_blue",
+        "mimic_iron_green",
+        "mimic_iron_purple",
+        "mimic_iron_red",
+        "mimic_iron_yellow",
         "mimic_food_blue",
         "mimic_food_green",
         "mimic_food_purple",
         "mimic_food_red",
-        "mimic_food_yellow"
+        "mimic_food_yellow",
+        "mimic_ascension_item_blue",
+        "mimic_ascension_item_green",
+        "mimic_ascension_item_purple",
+        "mimic_ascension_item_red",
+        "mimic_ascension_item_yellow"
       ],
       "bucketRules": [
         {
@@ -825,9 +825,9 @@
     },
     "lottery_season_valhalla": {
       "featuredHeroes": [
-        "s3_alfrike_costume_hatter",
-        "s3_tyr_costume_savage",
-        "s3_sif_costume_golden"
+        "s3_loki_fish_costume_dapper",
+        "s3_baldur_costume_fiery",
+        "s3_thor_costume_conduit"
       ],
       "AssociatedFamilies": [
         "alfheim",
@@ -871,7 +871,7 @@
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
-        "tales2_regin_costume_omen",
+        "tales2_motsognir_costume_holy",
         "tales2_ott_costume_herbalist",
         "tales2_gandr_costume_guardian"
       ]
@@ -1248,14 +1248,6 @@
     },
     "lottery_pickup_default": {
       "featuredHeroes": {
-        "2026-10-06": [
-          "elemental_doxan_costume_hacker",
-          "fire_god_maple"
-        ],
-        "2026-10-07": [
-          "kingdom_zhuge_liang_costume_crane",
-          "astral_dwarf_orcur"
-        ],
         "2026-10-08": [
           "guardian_elephant",
           "faun_gideon"
@@ -1275,6 +1267,34 @@
         "2026-10-12": [
           "goblin_grimsteel",
           "garrison_iocantha"
+        ],
+        "2026-10-13": [
+          "christmas_mrs_claus_costume_fangirl",
+          "castle_stag_cecilia"
+        ],
+        "2026-10-14": [
+          "fox_ashen",
+          "shadow_wulfstan"
+        ],
+        "2026-10-15": [
+          "shadow_penelope",
+          "astral_dwarf_quari"
+        ],
+        "2026-10-16": [
+          "slime_knightus",
+          "bard_bonzo"
+        ],
+        "2026-10-17": [
+          "goblin_grimsteel",
+          "beachparty_davey_wavey"
+        ],
+        "2026-10-18": [
+          "easter_timothy",
+          "ballerina_daroga"
+        ],
+        "2026-10-19": [
+          "shadow_omen",
+          "elemental_gastille"
         ]
       },
       "includedHeroes": [

@@ -96,7 +96,8 @@
                 { selector: 'link[href="style.css"]', attribute: 'href' },
                 { selector: 'link[href="talent-tree.css"]', attribute: 'href' },
                 { selector: 'script[src="./talent-tree.js"]', attribute: 'src' },
-                { selector: 'script[src="./language.js"]', attribute: 'src' },
+                { selector: 'script[src="./i18n_funcs.js"]', attribute: 'src' },
+                { selector: 'script[src="./langs.js"]', attribute: 'src' },
                 { selector: 'script[src="./data.js"]', attribute: 'src' },
                 { selector: 'script[src="./utils.js"]', attribute: 'src' },
                 { selector: 'script[src="./state.js"]', attribute: 'src' },
@@ -112,10 +113,7 @@
                 { selector: 'script[src="./lottery.json"]', attribute: 'src' },
                 { selector: 'script[src="./lottery_config.json"]', attribute: 'src' },
                 { selector: 'script[src="./lottery_config_extra.json"]', attribute: 'src' },
-                { selector: 'script[src="./data_cn.json"]', attribute: 'src' },
-                { selector: 'script[src="./data_tc.json"]', attribute: 'src' },
-                { selector: 'script[src="./data_en.json"]', attribute: 'src' },
-            ];
+                                                            ];
 
             // 延迟执行，确保DOM元素已加载
             document.addEventListener('DOMContentLoaded', function () {
@@ -154,6 +152,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+        /* 书写方向：**首屏之前**就把 `<html dir>` 定下来，避免阿拉伯语用户先看到 LTR 再翻转。
+           （ui.js::applyLanguage 后面还会再设一次，两处口径一致：RTL 语言见 RTL_LANGS。） */
+        (function () {
+            var RTL = ['ar', 'he', 'fa', 'ur', 'yi'];
+            var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
+            var lang = m ? decodeURIComponent(m[1]) : '';
+            if (!lang) {
+                var bl = (navigator.language || '').toLowerCase().slice(0, 2);
+                if (RTL.indexOf(bl) >= 0) lang = bl;
+            }
+            document.documentElement.setAttribute('dir', RTL.indexOf(lang) >= 0 ? 'rtl' : 'ltr');
+        })();
+    </script>
+
     <title>帝国与谜题英雄资料库 | Heroplan</title>
     <meta id="meta-description" name="description"
         content="Heroplan是為《帝國與謎題 / 帝国与谜题》(Empires & Puzzles)玩家打造的終極英雄資料庫(资料库)。快速查詢(查询)和比較(比较)所有英雄的詳細數據(详细数据)、特殊技能、家族加成和攻略信息。The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.">
@@ -163,9 +176,9 @@
     <link rel="canonical" href="https://heroplan.github.io/" />
     <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
         onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="talent-tree.css">
+    <link rel="stylesheet" href="theme.css?v=20261010d">
+    <link rel="stylesheet" href="style.css?v=20261010d">
+    <link rel="stylesheet" href="talent-tree.css?v=20261010d">
 </head>
 
 <body class="js-loading">
@@ -960,21 +973,22 @@
         <button id="open-filters-btn">🔍</button>
     </div>
 
-    <script src="./language.js" defer></script>
-    <script src="./lz-string.min.js" defer></script>
-    <script src="./talent-tree.js" defer></script>
-    <script src="./data.js" defer></script>
-    <script src="./utils.js" defer></script>
-    <script src="./state.js" defer></script>
-    <script src="./ui.js" defer></script>
-    <script src="./filters.js" defer></script>
-    <script src="./render.js" defer></script>
-    <script src="./special-views.js" defer></script>
-    <script src="./lottery-simulator.js" defer></script>
-    <script src="./team-simulator.js" defer></script>
-    <script src="./chat-simulator.js" defer></script>
-    <script src="./import-export.js" defer></script>
-    <script src="./main.js" defer></script>
+    <script src="./i18n_funcs.js?v=20261010d" defer></script>
+    <script src="./langs.js?v=20261010d" defer></script>
+    <script src="./lz-string.min.js?v=20261010d" defer></script>
+    <script src="./talent-tree.js?v=20261010d" defer></script>
+    <script src="./data.js?v=20261010d" defer></script>
+    <script src="./utils.js?v=20261010d" defer></script>
+    <script src="./state.js?v=20261010d" defer></script>
+    <script src="./ui.js?v=20261010d" defer></script>
+    <script src="./filters.js?v=20261010d" defer></script>
+    <script src="./render.js?v=20261010d" defer></script>
+    <script src="./special-views.js?v=20261010d" defer></script>
+    <script src="./lottery-simulator.js?v=20261010d" defer></script>
+    <script src="./team-simulator.js?v=20261010d" defer></script>
+    <script src="./chat-simulator.js?v=20261010d" defer></script>
+    <script src="./import-export.js?v=20261010d" defer></script>
+    <script src="./main.js?v=20261010d" defer></script>
     <!-- 友情链接分组框区域 -->
     <div class="friendship-links">
         <p data-lang-key="friendshipThanks">感谢以下网站：</p>

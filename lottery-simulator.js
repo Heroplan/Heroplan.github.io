@@ -302,7 +302,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
     ];
     preloadAssets(assetsToPreload);
     const soundToggleButton = document.getElementById('toggle-sound-btn');
-    const langDict = i18n[state.currentLang] || i18n.cn;
+    const langDict = i18n[state.currentLang] || {};
 
     if (soundToggleButton) {
         state.soundEnabled = getCookie('lotterySoundEnabled') !== 'false';
@@ -330,9 +330,9 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
         const modes = ['full', 'skip', 'silent'];
         const icons = ['▶️', '⏩', '⏭️'];
         const getTitles = () => ({
-            full: (i18n[state.currentLang] || i18n.cn).playMode_full || 'Play Full Animation',
-            skip: (i18n[state.currentLang] || i18n.cn).playMode_skip || 'Skip Animation',
-            silent: (i18n[state.currentLang] || i18n.cn).playMode_silent || 'Direct to History'
+            full: (i18n[state.currentLang] || {}).playMode_full || 'Play Full Animation',
+            skip: (i18n[state.currentLang] || {}).playMode_skip || 'Skip Animation',
+            silent: (i18n[state.currentLang] || {}).playMode_silent || 'Direct to History'
         });
 
         state.lotteryAnimationMode = getCookie('lotteryAnimationMode') || 'full';
@@ -355,7 +355,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
     }
 
     lotteryTitleDict = lotteryTitles[state.currentLang] || lotteryTitles.en;
-    bonusTranslations = (i18n[state.currentLang] || i18n.cn).lottery_bonus_translations || {};
+    bonusTranslations = (i18n[state.currentLang] || {}).lottery_bonus_translations || {};
     // 处理补充配置，建立映射
     processExtraConfigs(extraConfigs);
     processSummonData(allPoolsConfig, summonTypesConfig);
@@ -370,7 +370,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
     const clearHistoryBtn = document.getElementById('clear-history-btn');
     if (clearHistoryBtn) {
         clearHistoryBtn.addEventListener('click', () => {
-            const langDict = i18n[state.currentLang];
+            const langDict = i18n[state.currentLang] || {};
             if (state.summonHistory.length === 0) return;
 
             if (state.showAllSummonHistory) {
@@ -444,6 +444,20 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
 /**
  * 将两个JSON文件的数据整合为一个更易于使用的结构
  */
+/**
+ * 抽奖模拟器里可用的英雄池：**排除 `hidden`**。
+ *
+ * `hidden` = `data/hero_order.json` 的隐藏名单（`trainer_*` / `guestip*` / 2200 未发布）
+ *          ∪ **`hero.excluded`（id 命中 `utils.js::EXCLUDED_ID_KEYWORDS`，如 `_temp1`）**（用户 2026-10-10）。
+ *
+ * ⚠ 抽奖模式原本会**绕过**列表的隐藏过滤（`filters.js` 里 `state.lotterySimulatorActive` 那条豁免），
+ *   所以这里必须单独排一次 —— 否则被排除的英雄仍会出现在奖池里。
+ * 所有"**构造奖池**"的地方都要用它；按 id / originalIndex **查单个英雄**的地方仍用 `state.allHeroes`。
+ */
+function getSimHeroPool() {
+    return (state.allHeroes || []).filter(h => h && !h.hidden && !h.excluded);
+}
+
 function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
     summonPoolDetails = summonTypesConfig.SummonPool;
@@ -453,7 +467,7 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
     const disableIfAllExpired = (mysteryConfig) => {
         if (!mysteryConfig) return;
         const family = String(mysteryConfig.family).toLowerCase();
-        const allHeroesOfFamily = state.allHeroes.filter(h => String(h.family).toLowerCase() === family);
+        const allHeroesOfFamily = getSimHeroPool().filter(h => String(h.family).toLowerCase() === family);
         if (allHeroesOfFamily.length === 0) return;
         const hasAvailable = allHeroesOfFamily.some(hero => {
             const dateStr = hero['Release date'];
@@ -476,7 +490,7 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
     state.latestHeroVersionsMap = new Map();
     state.heroesByIdMap = new Map();
     state.allHeroes.forEach(hero => {
-        if (hero.english_name) {
+        if (hero.english_name && !hero.hidden && !hero.excluded) {   // 被排除的英雄不进「最新版本」表 ⇒ 不会进奖池
             const existing = state.latestHeroVersionsMap.get(hero.english_name);
             if (!existing || hero.costume_id > existing.costume_id) {
                 state.latestHeroVersionsMap.set(hero.english_name, hero);
@@ -731,7 +745,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
     if (extraRules) {
         // ★ 有 extra 规则：直接从全英雄池构建 ★
         const targetStar = extraRules.rarity;
-        const baseHeroPool = state.allHeroes;
+        const baseHeroPool = getSimHeroPool();
 
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
@@ -908,7 +922,7 @@ function getFilteredMasterPool() {
  * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
-    const baseHeroPool = poolConfig.masterPool || state.allHeroes;
+    const baseHeroPool = poolConfig.masterPool || getSimHeroPool();
 
     const explicitlyIncludedFamilies = new Set();
     if (poolConfig.AssociatedFamilies) {
@@ -1122,7 +1136,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             const heroName = hero.english_name;
             if (heroName && !processedHeroNames.has(heroName)) {
                 processedHeroNames.add(heroName);
-                const baseVersion = state.allHeroes.find(h => h.english_name === heroName && h.costume_id === 0);
+                const baseVersion = getSimHeroPool().find(h => h.english_name === heroName && h.costume_id === 0);
                 if (baseVersion) {
                     initialPool.push(baseVersion);
                 }
@@ -1193,7 +1207,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 function getAllHeroesInPool(poolConfig) {
     if (!poolConfig) return [];
 
-    const masterPoolForBuckets = state.allHeroes;
+    const masterPoolForBuckets = getSimHeroPool();
     //console.log(`[getAllHeroesInPool] 奖池: ${poolConfig.id}, 英雄总数: ${masterPoolForBuckets.length}`);
 
     // ---- 服装召唤特殊处理 ----
@@ -1203,7 +1217,7 @@ function getAllHeroesInPool(poolConfig) {
             : ['classic'];
         const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
         const latestCostumes = new Map();
-        state.allHeroes.forEach(hero => {
+        getSimHeroPool().forEach(hero => {
             const heroFamily = String(hero.family || '').toLowerCase();
             if (!associatedFamilies.includes(heroFamily)) return;
             if (hero.costume_id <= 0) return;
@@ -1313,7 +1327,7 @@ function getAllHeroesInPool(poolConfig) {
         const days = poolConfig.nonFeaturedLegendaryHeroesAgeInDays;
         const cutoffDate = new Date();
         cutoffDate.setDate(new Date().getDate() - days);
-        const olderHeroes = state.allHeroes.filter(hero => {
+        const olderHeroes = getSimHeroPool().filter(hero => {
             if (!hero['Release date']) return false;
             const heroFamily = hero.family ? String(hero.family).toLowerCase() : '';
             const isGloballyExcluded = state.globalExcludeFamilies.includes(heroFamily);
@@ -1520,7 +1534,7 @@ async function handleActivityClick(poolId) {
                 const w3kButton = document.createElement('button');
                 w3kButton.id = 'w3k-limited-pool-btn';
                 w3kButton.className = 'theme-toggle-btn';
-                w3kButton.title = (i18n[state.currentLang] || i18n.cn).w3kLimitedPoolTitle;
+                w3kButton.title = (i18n[state.currentLang] || {}).w3kLimitedPoolTitle;
                 w3kButton.innerHTML = `<img src="imgs/coins/red_lucky.webp" style="width: 28px; height: 28px;">`;
                 w3kButton.style.marginTop = '1px'; // 添加上边距
 
@@ -1633,7 +1647,7 @@ async function handleActivityClick(poolId) {
             }
 
             let specialNoticeHTML = '';
-            const langDict = i18n[state.currentLang];
+            const langDict = i18n[state.currentLang] || {};
             let noticeText = '';
             if (poolConfig.latestIncludedHeroAgeInDays > 0) {
                 // 检查是否存在这条新规则
@@ -1901,7 +1915,7 @@ function removeHeroFromFeaturedSlot(slotIndex) {
 async function performSummon(count) {
     const poolConfig = state.currentSummonData;
     if (poolConfig.featuredHeroNum > 0 && !state.customFeaturedHeroes.some(h => h !== null)) {
-        const langDict = i18n[state.currentLang];
+        const langDict = i18n[state.currentLang] || {};
         alert(langDict.featuredHeroRequired);
         return;
     }
@@ -1932,7 +1946,7 @@ async function performSummon(count) {
         const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
 
         const latestCostumes = new Map();
-        state.allHeroes.forEach(hero => {
+        getSimHeroPool().forEach(hero => {
             const heroFamily = String(hero.family || '').toLowerCase();
             if (!associatedFamilies.includes(heroFamily)) return;
             if (hero.costume_id <= 0) return;
@@ -2085,23 +2099,25 @@ async function performSummon(count) {
             if (poolConfig.hasMysteryHeroBonusRoll) {
                 const hotmInfo = summonPoolDetails.hotm;
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
-                    const hotmPool = state.allHeroes.filter(h => String(h.family) === String(hotmInfo.family));
+                    // 月英（HOTM）额外奖励：**只产出"最新已发布"的那一只**（用户 2026-10-10）。
+                    // 旧实现把「没有发布日期」的排在**最前** ⇒ 会抽出尚未发布的月英；
+                    // 现在先按 `isFavoritable`（= 已过发布日期）过滤，再取发布日期最大的。
+                    const _hotmFam = String(hotmInfo.family || '');
+                    const _isHotmFam = (f) => String(f) === _hotmFam
+                        || (/^hotm/i.test(_hotmFam) && /^hotm/i.test(String(f)));
+                    const hotmPool = getSimHeroPool().filter(h =>
+                        _isHotmFam(h.family)
+                        && (typeof isFavoritable !== 'function' || isFavoritable(h)));
                     if (hotmPool.length > 0) {
-                        const latestHotm = hotmPool.sort((a, b) => {
-                            const aIsLotteryOnly = !a['Release date'];
-                            const bIsLotteryOnly = !b['Release date'];
-                            if (aIsLotteryOnly && !bIsLotteryOnly) return -1;
-                            if (bIsLotteryOnly && !aIsLotteryOnly) return 1;
-                            const dateA = a['Release date'] ? new Date(a['Release date']) : new Date(0);
-                            const dateB = b['Release date'] ? new Date(b['Release date']) : new Date(0);
-                            return dateB - dateA;
-                        })[0];
+                        // `Release date` 是 `YYYY-MM-DD` 字符串 ⇒ 字典序即时间序
+                        const latestHotm = hotmPool.reduce((best, h) =>
+                            (!best || String(h['Release date'] || '') > String(best['Release date'] || '')) ? h : best, null);
                         singlePullResults.push({ hero: latestHotm, bucket: 'hotm' });
                     }
                 }
                 let mysteryInfo = poolConfig.productType === 'LegendsSummon' ? summonPoolDetails.LegendsSummonMysteryHero : summonPoolDetails.MysteryHero;
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
-                    const mysteryPool = state.allHeroes.filter(h => String(h.family) === String(mysteryInfo.family));
+                    const mysteryPool = getSimHeroPool().filter(h => String(h.family) === String(mysteryInfo.family));
                     if (mysteryPool.length > 0) {
                         let mysteryHero = mysteryPool.sort((a, b) => {
                             const aHasDate = !!a['Release date'];
@@ -2353,7 +2369,7 @@ function showSummaryModal(results) {
         return;
     }
 
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const modalTitle = summaryModal.querySelector('h3');
     if (modalTitle) {
         modalTitle.textContent = langDict.summonResultsTitle;
@@ -2507,7 +2523,7 @@ function renderSummonHistory() {
     if (existingIcon) headerElement.removeChild(existingIcon);
 
     // 2. 筛选历史并设置标题 (逻辑不变)
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const currentPoolName = getPoolDisplayName(state.currentSummonData);
     let historyToRender;
     if (state.showAllSummonHistory) {
@@ -2831,7 +2847,7 @@ function toggleLotterySimulator() {
 
     const wrapper = document.getElementById('lottery-simulator-wrapper');
     const button = document.getElementById('show-lottery-simulator-btn');
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     if (isActive) {
         if (state.teamSimulatorActive) {
@@ -2930,7 +2946,7 @@ function showSinglePullResultsModal(results) {
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
     if (!overlay || !summaryModal || !scrollContainer) return;
 
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const modalTitle = summaryModal.querySelector('h3');
     if (modalTitle) {
         modalTitle.textContent = langDict.summonResultsTitle;

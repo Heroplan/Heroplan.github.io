@@ -150,12 +150,24 @@ function applyLanguage(lang) {
             break;
     }
 
+    // 1.5 书写方向：RTL 语言（阿拉伯语等）⇒ `<html dir="rtl">`，其余 `ltr`。
+    //     20 种语言里只有 `ar` 是 RTL；多列几个常见 RTL 码以防以后加语言。
+    //     ⚠ 只设 `dir` 不够：CSS 里写死的 `padding-left` / `margin-left` / `border-left` / `left:`
+    //       等**物理属性不会自动镜像** ⇒ style.css 末尾有一整段 `html[dir="rtl"]` 覆盖。
+    const RTL_LANGS = ['ar', 'he', 'fa', 'ur', 'yi'];
+    const dir = RTL_LANGS.indexOf(lang) >= 0 ? 'rtl' : 'ltr';
+    document.documentElement.dir = dir;
+    document.documentElement.setAttribute('dir', dir);
+    document.body.setAttribute('data-dir', dir);
+
     document.body.setAttribute('data-lang', lang);
 
     // 2. 更新状态和页面标题
     state.currentLang = lang;
-    const langDict = i18n[lang] || i18n.cn;
-    document.title = langDict.pageTitle;
+    // i18n 由 langs.js 的 Lang.loadAll() 异步载入 ⇒ 首次调用（数据加载前）可能还没有字典：
+    // 这里容错成空对象，只设状态；loadData 完成后 main.js 会再调一次把文案真正套上。
+    const langDict = i18n[lang] || i18n.cn || {};
+    if (langDict.pageTitle) document.title = langDict.pageTitle;
 
     // 3. 通用文本/属性更新逻辑
     document.querySelectorAll('[data-lang-key]').forEach(el => {
@@ -266,7 +278,7 @@ function adjustStickyHeaders() {
  * 更新结果区域头部的文本信息（如英雄数量）。
  */
 function updateResultsHeader() {
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const count = state.filteredHeroes.length;
     const filtersAreActive = areFiltersActive();
     const onlyFavoritesIsActive = isOnlySpecificScopeFilterActive('favorites');
@@ -334,7 +346,7 @@ function updateFilterButtonUI(filterType) {
 
     const selectedValues = state.multiSelectFilters[filterType] || [];
     const selectedCount = selectedValues.length;
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     const labelKey = filterType.startsWith('skillTag_')
         ? filterType.replace('skillTag_', 'cnSkill_') + 'Label'
@@ -420,7 +432,7 @@ function closeFiltersModal() {
  * 渲染帮助类型模态框的通用函数。
  */
 function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const introHTML = introKey ? `<p>${langDict[introKey]}</p>` : '';
     const listHTML = listKeys.map(key => langDict[key] || '').join('');
     modalElement.innerHTML = `

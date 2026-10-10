@@ -205,7 +205,7 @@ function addChatSimulatorEventListeners() {
                 if (!chatSimulatorInput.value) return;
                 copyTextToClipboard(chatSimulatorInput.value).then(() => {
                     const originalText = chatSimulatorCopyBtn.innerText;
-                    const langDict = i18n[state.currentLang];
+                    const langDict = i18n[state.currentLang] || {};
                     chatSimulatorCopyBtn.innerText = langDict.chatCopied || 'Copied!';
                     chatSimulatorCopyBtn.disabled = true;
                     setTimeout(() => {

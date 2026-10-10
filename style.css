@@ -3706,6 +3706,12 @@ select.custom-select-hidden {
   transition: color 0.2s, background-color 0.2s
 }
 
+/* 动态值外层已橙色加粗 ⇒ 内层"数值高亮"的蓝 span 继承颜色，别把它盖掉
+   （`[#Dynamic]` 标记 → `<span class="dynamic-value">`，数值高亮会再套一层 span） */
+#modal .skill-list li .dynamic-value span {
+  color: inherit
+}
+
 /* --- 模态框粘性头部和滚动按钮样式 --- */
 #modal .details-header {
   position: -webkit-sticky;
@@ -7039,3 +7045,275 @@ html.dark-theme .autocomplete-item.selected {
   padding: 2px;
   /* 内边距 */
 }
+/* 未发布英雄：收藏按钮锁定（到发布日期 UTC 07:00 自动解锁，见 filters.js isFavoritable） */
+.favorite-btn.favorite-locked,
+.favorite-btn:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+/* `[*]` 子行：**留在同一个 <li> 内**，缩进显示，`*` 保留在行首但不着色（用户 2026-10-10） */
+#modal .skill-list li .skill-subline {
+    display: inline-block;
+    padding-left: 1.4em;
+    color: var(--md-sys-color-on-surface);
+}
+
+/* 括号注释块（用户 2026-10-10）：
+   · 去掉前后括号，只留橙色 `*` + 着色虚线下划线；
+   · 整块比主词条**多缩进**；
+   · 块内的 `[*]` 子词条也要保持虚线 —— `.skill-subline` 是 `inline-block`，
+     `text-decoration` **不会**自动传到它身上，必须显式 `inherit`。 */
+#modal .skill-list li .paren-note {
+    display: inline-block;
+    padding-left: 1.4em;
+    text-decoration: underline dashed #ff7800ff;
+}
+
+/* 括号注释块跟在 `[*]` 子行后面时（子行本来就有 1.4em 缩进）⇒ **再多缩进一级**，
+   否则和上文一样深、看不出层级（用户 2026-10-10，`beauty_beast_henriette`）。 */
+#modal .skill-list li .paren-note.paren-note-sub {
+    padding-left: 2.8em;
+}
+
+#modal .skill-list li .paren-note .paren-mark {
+    color: #ff7800ff;
+}
+
+#modal .skill-list li .paren-note .skill-subline {
+    text-decoration: inherit;
+}
+
+/* 详情页「被动技能 / 家族奖励」的大图标（用户 2026-10-10）：
+   图标尺寸 = **标题那一行的高度**（`.big-skill-name` 1.35rem × line-height 1.3 = 1.755rem）
+   —— 用户先反馈"太大"（60→40），再要求"和标题一样高度"⇒ 1.75rem；
+   `resist_*` 被动是「盾牌底 + 原图标」两层叠加。 */
+#modal .big-skill-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+#modal .big-passive-icon-wrap {
+    position: relative;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+#modal .big-passive-icon-wrap .big-passive-overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* 大图标右边的名字（被动名 / 家族名）—— 用户要求"标题文字加大" */
+#modal .skill-header-container .big-skill-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--md-sys-color-on-surface);
+    margin: 0;
+}
+
+/* 被动名可点 ⇒ 一键快速搜索该被动（`data-filter-type="passives"`，走既有的 skill-type-tag 点击逻辑） */
+#modal .skill-header-container .big-skill-name.skill-type-tag {
+    cursor: pointer;
+}
+
+#modal .skill-header-container .big-skill-name.skill-type-tag:hover {
+    color: var(--md-sys-color-primary);
+    text-decoration: underline;
+}
+
+/* 被动技能段：每个被动块（图标行 + 词条）之间留出间距 */
+#modal-passives-section .skill-header-container + .skill-list {
+    margin-bottom: 1rem;
+}
+
+/* 「服装奖励」选择器（用户 2026-10-10）：原生 <select> 的 <option> 放不了图片
+   ⇒ 用一排小按钮，每个 = **服装图标 + 服装名**；「无」是纯文字。默认选中最多套。 */
+#modal .costume-bonus-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#modal .costume-bonus-picker .costume-opt {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--md-sys-color-on-surface);
+    cursor: pointer;
+}
+
+#modal .costume-bonus-picker .costume-opt img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+#modal .costume-bonus-picker .costume-opt.selected {
+    border-color: var(--md-sys-color-primary);
+    background: var(--md-sys-color-primary-container);
+    font-weight: 600;
+}
+
+
+/* ============================================================================
+   RTL（从右到左）—— 阿拉伯语等
+   `html[dir="rtl"]` 由 `ui.js::applyLanguage` 按语言设置（20 种语言里只有 `ar`）。
+   ⚠ `dir="rtl"` 只会翻转 **flex / 表格列序 / 文字对齐** 这些**逻辑**方向；
+     CSS 里写死的 `padding-left` / `margin-left` / `border-left` 这类**物理属性不会自动镜像**
+     ⇒ 这里逐条覆盖（列表见 `_tools` 里那次 `grep` 的结果）。
+   ============================================================================ */
+
+/* 详情页技能列表：左侧竖线 + 缩进整体镜像到右边 */
+html[dir="rtl"] #modal .skill-list {
+    padding-left: 0;
+    padding-right: 10px;
+    border-left: none;
+    border-right: 3px solid var(--md-sys-color-primary-container);
+}
+
+html[dir="rtl"] #modal .skill-list li {
+    padding: 0.5rem 1rem 0.5rem 0;
+}
+
+html[dir="rtl"] #modal .skill-list li .skill-subline {
+    padding-left: 0;
+    padding-right: 1.4em;
+}
+
+html[dir="rtl"] #modal .skill-list li .paren-note {
+    padding-left: 0;
+    padding-right: 1.4em;
+}
+
+html[dir="rtl"] #modal .skill-list li .paren-note.paren-note-sub {
+    padding-right: 2.8em;
+}
+
+/* 详情页头部按钮：原本靠 `margin-right` 拉开间距 */
+html[dir="rtl"] #modal .favorite-btn,
+html[dir="rtl"] #modal .share-btn {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+/* 标题靠左、按钮靠右 ⇒ RTL 下要反过来 */
+html[dir="rtl"] .details-header-main h2 {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .uniform-style .skill-value.skill-type-tag {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+html[dir="rtl"] .reset-tag {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+/* 图标与文字的间距 */
+html[dir="rtl"] .source-icon,
+html[dir="rtl"] .event-icon,
+html[dir="rtl"] .color-icon,
+html[dir="rtl"] .class-icon,
+html[dir="rtl"] .costume-icon,
+html[dir="rtl"] .family-icon,
+html[dir="rtl"] .aether-power-icon {
+    margin-right: 0;
+    margin-left: 2px;
+}
+
+html[dir="rtl"] .collapse-arrow {
+    margin-right: 0;
+    margin-left: 0.75rem;
+}
+
+/* 列表表格表头 */
+html[dir="rtl"] .manual-table th {
+    padding-right: 0;
+    padding-left: 1.2em;
+}
+
+html[dir="rtl"] .manual-table th:not(.sortable) {
+    padding-right: 0;
+    padding-left: 12px;
+}
+
+html[dir="rtl"] .filter-item label {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+/* 技能类型说明弹窗 */
+html[dir="rtl"] #skill-type-help-modal li {
+    padding: 0.8rem 1rem 0.8rem 0;
+    border-left: none;
+    border-right: 3px solid var(--md-sys-color-primary-container);
+}
+
+/* 队伍模拟器 / 兑换码 / 搜索自动补全 等零散处 */
+html[dir="rtl"] .team-tag-item .tag-count { margin-left: 0; margin-right: 4px; }
+html[dir="rtl"] .import-team-btn,
+html[dir="rtl"] .remove-team-btn { margin-left: 0; margin-right: 10px; }
+html[dir="rtl"] .saved-team-name { margin-right: 0; margin-left: auto; padding-right: 0; padding-left: 10px; }
+html[dir="rtl"] .history-view-toggle { margin-left: 0; margin-right: auto; }
+html[dir="rtl"] .history-probability-icon { margin-right: 0; margin-left: 10px; }
+html[dir="rtl"] .match-position-hint { margin-left: 0; margin-right: 4px; }
+html[dir="rtl"] .autocomplete-avatar,
+html[dir="rtl"] .autocomplete-avatar-container { margin-right: 0; margin-left: 10px; }
+html[dir="rtl"] .donation-list-title { padding-right: 0; padding-left: 12px; }
+html[dir="rtl"] .donation-item { margin-right: 0; margin-left: 12px; }
+html[dir="rtl"] .autocomplete-item.selected {
+    border-left: none;
+    border-right: 3px solid var(--md-sys-color-primary);
+}
+html[dir="rtl"] .details-core-settings-group .details-selector-item { margin-left: 0; }
+html[dir="rtl"] #redeem-codes-modal .filters-modal-header h2 { padding-left: 0; padding-right: 36px; }
+html[dir="rtl"] .action-button-right {
+    border-left: 1px solid var(--md-sys-color-outline);
+    border-right: none;
+}
+html[dir="rtl"] .chat-favorite-btn { border-left: 1px solid var(--md-sys-color-outline); }
+html[dir="rtl"] .date-display-box {
+    border-right: 1px solid var(--md-sys-color-outline);
+    border-left: none;
+}
+html[dir="rtl"] .manual-table.farming-guide-table td {
+    border-right: none;
+    border-left: 1px solid var(--md-sys-color-outline);
+}
+html[dir="rtl"] .manual-table.farming-guide-table td.sticky-left,
+html[dir="rtl"] .manual-table.farming-guide-table th.sticky-left {
+    border-right: none;
+    border-left: 1px solid var(--md-sys-color-outline) !important;
+}
+
+/* 阿拉伯语字形：优先用系统里带阿拉伯字形的字体栈 */
+html[dir="rtl"] body {
+    font-family: "Segoe UI", "Noto Sans Arabic", "Tahoma", system-ui, -apple-system, sans-serif;
+}
+
+/* RTL：绝对定位的 UI 部件（头像上的徽章属于图片装饰，保持物理角不动） */
+html[dir="rtl"] .details-header-buttons { right: auto; left: 1rem; }
+html[dir="rtl"] .manual-table th .sort-indicator { right: auto; left: 5px; }
+html[dir="rtl"] .table-avatar-costume-icon { left: auto; right: 0; }

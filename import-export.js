@@ -89,7 +89,7 @@ function openExportModal() {
     const content = document.getElementById('export-settings-modal-content');
     if (!modal || !overlay || !content) return;
 
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     // 检查有哪些数据可以导出
     const dataSources = {
@@ -166,7 +166,7 @@ function openImportModal() {
     if (!modal) return;
 
     state._tempImportedSettings = null; // 清空临时数据
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     content.innerHTML = `
         <div class="multi-select-header"><h3>${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn">✖</button></div>
@@ -189,7 +189,7 @@ function openImportModal() {
  * 处理“生成导出代码”按钮的点击事件。
  */
 function handleGenerateExportCode() {
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     const settingsToExport = {};
     document.querySelectorAll('.export-item-checkbox:checked').forEach(cb => {
@@ -264,7 +264,7 @@ function handleFileImport(fileInput) {
 function handleAnalyzeImportCode() {
     const compressedString = document.getElementById('import-settings-textarea').value.trim();
     if (!compressedString) return;
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     try {
         const jsonString = LZString.decompressFromEncodedURIComponent(compressedString);
@@ -336,7 +336,7 @@ function handleAnalyzeImportCode() {
  * 处理“确认导入”按钮的点击事件。
  */
 function handleImportConfirm() {
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     if (!state._tempImportedSettings) {
         alert(langDict.importError);
         return;

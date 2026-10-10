@@ -1,5 +1,19 @@
 // 收藏存储键
 const FAVORITES_KEY = 'favorites_binary';
+
+/**
+ * 参与「英雄列表 / 筛选器选项」的英雄。
+ * 默认排除**隐藏英雄**（`trainer_*` / `guestip*` / 未发布 2200；名单见 data/hero_order.json 的 hidden），
+ * 用户 2026-10-10：隐藏项不展示、不参与排序与筛选。
+ * `state.showHiddenHeroes = true` 时全部返回（供后续开关使用）。
+ *
+ * ⚠ 另有 **`hero.excluded`**（id 命中 `utils.js::EXCLUDED_ID_KEYWORDS`，如 `_temp`）——
+ *   那是"任何情况下都不展示"的硬排除，**不受 `showHiddenHeroes` 影响**。
+ */
+function listHeroes() {
+    const base = state.showHiddenHeroes ? state.allHeroes : state.allHeroes.filter(h => !h.hidden);
+    return base.filter(h => !h.excluded);
+}
 const LEGACY_FAVORITES_KEY = 'heroFavorites';
 
 // 内存缓存：避免重复解码
@@ -193,6 +207,26 @@ function saveFavorites(favoritesArray) {
 }
 
 /**
+ * 收藏解锁判定（用户 2026-10-10 口径）：
+ *   发布时间 = 官方配置的 `canBeReceivedDate`（形如 `2026-10-19 07:00:00`，**UTC**），
+ *   到点之前**禁止收藏**，到点（当天 UTC 07:00）自动解锁。
+ *   —— 数据源：`data/characters.json` 的 `canBeReceivedDate`（`loadData` 会挂到 `hero.releaseDate`）。
+ *   兼容旧字段 `Release date`（仅日期、无时间）⇒ 按当天 UTC 00:00 处理。
+ *   解析一律按 UTC（`YYYY-MM-DD HH:mm:ss` → `YYYY-MM-DDTHH:mm:ssZ`），避免本地时区把日期挪一天。
+ */
+function isFavoritable(hero) {
+    const raw = hero && (hero.releaseDate || hero['Release date']);
+    if (!raw) return true;                       // 无发布日期 ⇒ 视为已发布
+    let s = String(raw).trim();
+    if (!s) return true;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(s) && !/[Zz]|[+-]\d\d:?\d\d$/.test(s)) {
+        s = s.replace(' ', 'T') + 'Z';           // 无时区标记 ⇒ 按 UTC
+    }
+    const t = Date.parse(s);
+    return isNaN(t) ? true : Date.now() >= t;
+}
+
+/**
  * 检查一个英雄是否已被收藏（直接查位，不解码整个位图）。
  */
 function isFavorite(hero) {
@@ -211,6 +245,11 @@ function isFavorite(hero) {
 function toggleFavorite(hero) {
     if (!hero || !hero.english_name) {
         console.warn("无法收藏没有英文名的英雄:", hero && hero.name);
+        return false;
+    }
+    // 未到发布时间（UTC 07:00）⇒ 禁止收藏（用户 2026-10-10 口径）
+    if (!isFavoritable(hero)) {
+        console.warn("该英雄尚未发布，暂不可收藏:", hero.heroId, hero.releaseDate);
         return false;
     }
     if (typeof hero.originalIndex !== 'number') return false;
@@ -255,18 +294,12 @@ const skillTagOrder_debuff = ["状态-净化状态异常", "状态-根除", "状
  */
 function populateFilters() {
     // 这部分构建映射的逻辑不变，请保留
-    state.allHeroes.forEach(hero => {
-        const skillInfo = hero.cn_skill_info;
-        if (Array.isArray(skillInfo)) {
-            skillInfo.forEach(categoryObject => {
-                const categoryName = Object.keys(categoryObject)[0];
-                const tags = categoryObject[categoryName];
-                if (Array.isArray(tags)) {
-                    tags.forEach(tag => {
-                        if (!state.skillTagToCategoryMap[tag]) {
-                            state.skillTagToCategoryMap[tag] = categoryName;
-                        }
-                    });
+    listHeroes().forEach(hero => {
+        const skillInfo = heroSkillTypes(hero);       // 新数据 {分类:[标签]}；旧数据自动归一
+        for (const categoryName in skillInfo) {
+            (skillInfo[categoryName] || []).forEach(tag => {
+                if (!state.skillTagToCategoryMap[tag]) {
+                    state.skillTagToCategoryMap[tag] = categoryName;
                 }
             });
         }
@@ -277,7 +310,7 @@ function populateFilters() {
         'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'
     ];
 
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
     const allFilterKeys = filtersToConvert;
 
     allFilterKeys.forEach(key => {
@@ -287,25 +320,19 @@ function populateFilters() {
         if (key === 'filterScope') {
             values = ['all', 'hero', 'skin', 'favorites'];
         } else if (key === 'costume') {
-            values = [...new Set(state.allHeroes.map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
+            values = [...new Set(listHeroes().map(h => getSkinInfo(h).skinIdentifier).filter(Boolean))];
         } else if (key.startsWith('skillTag_')) {
             const dataKeyMap = { skillTag_base: '基础技能', skillTag_special: '特殊效果', skillTag_buff: '增益效果', skillTag_debuff: '负面效果' };
             const targetDataKey = dataKeyMap[key];
             const skillSet = new Set();
-            state.allHeroes.forEach(hero => {
-                const skillInfo = hero.cn_skill_info;
-                if (Array.isArray(skillInfo)) {
-                    skillInfo.forEach(categoryObject => {
-                        if (categoryObject[targetDataKey]) {
-                            categoryObject[targetDataKey].forEach(tag => skillSet.add(tag));
-                        }
-                    });
-                }
+            listHeroes().forEach(hero => {
+                const skillInfo = heroSkillTypes(hero);
+                (skillInfo[targetDataKey] || []).forEach(tag => skillSet.add(tag));
             });
             values = [...skillSet];
         } else {
             const heroDataKey = key === 'aetherpower' ? 'AetherPower' : key;
-            values = [...new Set(state.allHeroes.map(h => h[heroDataKey]).filter(v => v != null && v !== '').map(String))];
+            values = [...new Set(listHeroes().map(h => h[heroDataKey]).filter(v => v != null && v !== '').map(String))];
         }
 
         // --- 步骤 2: 根据 key 的类型，应用唯一的、正确的排序逻辑 ---
@@ -337,12 +364,20 @@ function populateFilters() {
                     return a.localeCompare(b, locale, sortOptions);
                 });
             }
-        } else if (key === 'speed') {
-            const speedOrder = speedOrderMap[lang];
-            if (speedOrder) values.sort((a, b) => speedOrder.indexOf(a) - speedOrder.indexOf(b));
-        } else if (key === 'color') {
-            const colorOrder = colorOrderMap[lang];
-            if (colorOrder) values.sort((a, b) => colorOrder.indexOf(a) - colorOrder.indexOf(b));
+        } else if (key === 'speed' || key === 'color' || key === 'class' || key === 'aetherpower') {
+            // 「先排序后翻译」：用语言无关的 ID 顺序（langs_json/sort_order.json），
+            // 不再依赖 language.js 的 speedOrder_<码> / colorOrder_<码> 数组。
+            const _tbl = { speed: 'speed', color: 'color', class: 'class', aetherpower: 'aether_power' }[key];
+            const _idKey = { speed: 'speedId', color: 'colorId', class: 'classId', aetherpower: 'aetherPowerId' }[key];
+            const _ord = {};
+            listHeroes().forEach(h => {
+                const id = h[_idKey];
+                if (id && !(id in _ord)) _ord[id] = Lang.orderIndex(_tbl, id);
+            });
+            values.sort((a, b) => {
+                const ia = _ord[Lang.idOf(_tbl, a)], ib = _ord[Lang.idOf(_tbl, b)];
+                return (ia === undefined ? 9999 : ia) - (ib === undefined ? 9999 : ib);
+            });
         } else if (key === 'family' || key === 'source') {
             values.sort((a, b) => {
                 // 使用 getDisplayName 获取将要显示的文本来进行排序
@@ -495,7 +530,7 @@ function openMultiSelectModal(filterType, title) {
     const modal = uiElements.multiSelectModal;
     const overlay = uiElements.multiSelectModalOverlay;
     const modalContent = modal.querySelector('#multi-select-modal-content');
-    const langDict = i18n[state.currentLang];
+    const langDict = i18n[state.currentLang] || {};
 
     // ▼▼▼▼▼ 【修正】使用 state. 前缀访问全局状态 ▼▼▼▼▼
     const options = state.availableOptions[filterType];
@@ -511,8 +546,16 @@ function openMultiSelectModal(filterType, title) {
         // --- 核心修复：为所有选项查找对应的翻译文本 ---
         let displayText = langDict[optionValue] || optionValue;
 
+        // 技能类型标签：CN 键 → 当前语言文本（`langs_json/skill_types_<码>.json`，169 条）
+        if (filterType.startsWith('skillTag_')) {
+            displayText = (typeof Lang !== 'undefined') ? Lang.t('skill_types', optionValue) : optionValue;
+        }
+        // 服装类型：`getSkinInfo` 返回的标识 → 当前语言名（`langs_json/costume_type_<码>.json`）
+        else if (filterType === 'costume') {
+            displayText = (typeof localizeCostumeType === 'function') ? localizeCostumeType(optionValue) : optionValue;
+        }
         // 对于“家族”和“起源”，如果关闭了“显示活动名称”，还需要特殊处理
-        if (filterType === 'family' || filterType === 'source') {
+        else if (filterType === 'family' || filterType === 'source') {
             displayText = getDisplayName(optionValue, filterType);
         }
         // 对于“筛选范围”，使用独立的语言key
@@ -749,6 +792,20 @@ function calculateHeroStats(hero, settings) {
     };
     if (lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
     else if (lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+
+    // ── 服装奖励（用户 2026-10-10）──
+    // 详情页传 `settings.costume`（"突破与天赋设置"里的「服装奖励」下拉，默认最多套）；
+    // **列表不传** ⇒ 用该英雄自身的服装顺序 `hero.costumeListSets`
+    //   —— 即"英雄发布当时"的属性（旧数据 638/638 逐字段吻合）。
+    const _costumeSets = (settings && settings.costume !== undefined && settings.costume !== null)
+        ? settings.costume : (hero.costumeListSets || 0);
+    const _cb = (typeof costumeBonusEntry === 'function') ? costumeBonusEntry(hero, _costumeSets) : null;
+    if (_cb) {
+        baseStats.attack = applyStatPerMil(baseStats.attack, _cb.attackBonusPerMil);
+        baseStats.defense = applyStatPerMil(baseStats.defense, _cb.defenseBonusPerMil);
+        baseStats.health = applyStatPerMil(baseStats.health, _cb.healthBonusPerMil);
+    }
+
     let finalStats = { attack: baseStats.attack, defense: baseStats.defense, health: baseStats.health };
     if (talent !== 'none' && hero.class && typeof TalentTree !== 'undefined') {
         const talentBonuses = TalentTree.getBonusesForPath(hero.class, strategy, manaPriority, talent);
@@ -801,6 +858,14 @@ function applyFiltersAndRender() {
 
     // 3. 执行筛选
     state.filteredHeroes = baseHeroes.filter(hero => {
+        // **硬排除**（id 命中 `EXCLUDED_ID_KEYWORDS`，如 `_temp`）：任何情况下都不展示，
+        // 不受 `showHiddenHeroes` / 抽奖模式影响（用户 2026-10-10）。
+        if (hero.excluded) return false;
+        // 默认隐藏的英雄（`trainer_*` / `guestip*` / 发布日期 2200 未发布）**不进英雄列表、不参与排序**
+        // （用户 2026-10-10；名单见 `data/hero_order.json` 的 `hidden`）。
+        // `state.showHiddenHeroes = true` 时展示 —— 供后续"切换展示 2200 英雄"的开关使用。
+        // 抽奖模拟器模式除外：那里 trainer 是有意保留的（见下面的既有分支）。
+        if (hero.hidden && !state.showHiddenHeroes && !state.lotterySimulatorActive) return false;
         // 如果是抽奖模拟器模式，并且当前英雄是训练师，则无条件保留，不进行任何筛选。
         if (state.lotterySimulatorActive && String(hero.family).toLowerCase() === 'trainer') {
             return true;
@@ -818,8 +883,9 @@ function applyFiltersAndRender() {
         // ▼▼▼ 名字筛选逻辑：空格作为"且"条件，同时匹配中文名和英文名 ▼▼▼
         if (nameFilter) {
             const searchTerms = nameFilter.split(/\s+/).filter(term => term.length > 0);
+            // 名字搜索：同时匹配「当前语言名 / 英文名 / 英雄ID」（用户 2026-10-10）
             const haystack = (
-                (hero.name || '') + ' ' + (hero.english_name || '')
+                (hero.name || '') + ' ' + (hero.english_name || '') + ' ' + (hero.heroId || '')
             ).toLowerCase();
 
             if (searchTerms.length > 1) {
@@ -831,7 +897,8 @@ function applyFiltersAndRender() {
             }
         }
         if (effectsFilter && !matchesComplexQuery(hero.effects, effectsFilter)) return false;
-        if (passivesFilter && !matchesComplexQuery(hero.passives, passivesFilter)) return false;
+        // 被动：搜「正文 + 标题」（`passivesSearchPool` 由 utils.js 组装；老数据没有则退回正文）
+        if (passivesFilter && !matchesComplexQuery(hero.passivesSearchPool || hero.passives, passivesFilter)) return false;
         if (skillTypeFilter) {
             const skillTypesToSearch = getSkillTagsForHero(hero, skillTypeSource);
             if (!matchesComplexQuery(skillTypesToSearch, skillTypeFilter)) return false;
@@ -847,7 +914,7 @@ function applyFiltersAndRender() {
         }
 
         // 新的技能标签筛选逻辑
-        const heroAllSkillTags = new Set(hero.cn_skill_info?.flatMap(category => Object.values(category)[0]) || []);
+        const heroAllSkillTags = new Set(heroSkillTags(hero));
         const skillTagKeys = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
         for (const key of skillTagKeys) {
             const selections = state.multiSelectFilters[key];
@@ -975,8 +1042,9 @@ function applyFiltersAndRender() {
 
         // 执行比较
         if (key === 'speed') {
-            const speedOrder = { cn: speedOrder_cn, tc: speedOrder_tc, en: speedOrder_en }[state.currentLang];
-            comparison = speedOrder.indexOf(String(valA)) - speedOrder.indexOf(String(valB));
+            // 先排序后翻译：按语言无关的 ID 顺序（sort_order.json）
+            comparison = Lang.orderIndex('speed', Lang.idOf('speed', String(valA)))
+                       - Lang.orderIndex('speed', Lang.idOf('speed', String(valB)));
         } else if (typeof valA === 'number' || valA instanceof Date) {
             comparison = (Number(valA) || 0) - (Number(valB) || 0);
         } else {
@@ -1158,7 +1226,7 @@ function initializeNameAutocomplete() {
     // 显示候选建议（添加英雄头像）
     function showAutocompleteSuggestions(suggestions, searchTerm) {
         const autocompleteList = document.getElementById('name-autocomplete-list');
-        const langDict = i18n[state.currentLang];
+        const langDict = i18n[state.currentLang] || {};
 
         if (suggestions.length === 0) {
             autocompleteList.innerHTML = `<div class="autocomplete-empty">${langDict.noMatchingResults || '无匹配结果'}</div>`;
@@ -1271,16 +1339,19 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
 
         if (!nameToSearch) return;
 
-        // ▼▼▼ 新增：同时拿中文名和英文名做匹配 ▼▼▼
+        // ▼▼▼ 同时拿「当前语言名 / 英文名 / 英雄ID」做匹配（ID 由用户 2026-10-10 追加）▼▼▼
         const nameLower = nameToSearch.toLowerCase();
         const englishLower = (hero.english_name || '').toLowerCase();
+        const idLower = (hero.heroId || '').toLowerCase();
 
         const idxName = nameLower.indexOf(searchLower);
         const idxEn = englishLower.indexOf(searchLower);
+        const idxId = idLower.indexOf(searchLower);
 
         let matchIndex = -1;
-        if (idxName !== -1) matchIndex = idxName;              // 中文名命中，位置原样
+        if (idxName !== -1) matchIndex = idxName;              // 当前语言名命中，位置原样
         else if (idxEn !== -1) matchIndex = 1000 + idxEn;      // 英文名命中，加偏移让其排后
+        else if (idxId !== -1) matchIndex = 2000 + idxId;      // 英雄ID命中，再排后
 
         if (matchIndex === -1) return;
         // ▲▲▲

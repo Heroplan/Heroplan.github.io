@@ -236,17 +236,20 @@ function renderTable(heroes) {
 
                     let iconsHtml = '';
                     tagsArray.forEach(tag => {
-                        // 1. 使用回溯表找到简体中文键名
+                        // 1. 使用回溯表找到简体中文键名（图标文件名按 CN 键取）
                         const chineseKey = skillTagReverseMap[tag] || tag;
 
                         // 2. 移除文件名中的斜杠等特殊字符
                         const sanitizedFilename = chineseKey.replace(/\//g, '');
 
-                        // 3. 构建单个图标HTML
+                        // 3. 悬浮提示用当前语言文本（`skill_types_<码>.json`）
+                        const tagLabel = (typeof Lang !== 'undefined') ? Lang.t('skill_types', chineseKey) : tag;
+
+                        // 4. 构建单个图标HTML
                         iconsHtml += `<img src="imgs/skill/${sanitizedFilename}.webp" 
                           class="skill-icon" 
-                          alt="${tag}" 
-                          title="${tag}" />`;
+                          alt="${tagLabel}" 
+                          title="${tagLabel}" />`;
                     });
 
                     // 4. 返回包含多个图标的单元格
@@ -285,7 +288,11 @@ function renderTable(heroes) {
                 const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|公仔|有型)(?:\]|\))?\s*$/i;
                 displayName = displayName.replace(costumeSuffixRegex, '').trim();
 
-                content = displayName || '';
+                // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别（用户 2026-10-10）；
+                // 详情页不加（见 renderDetailsInModal 的 nameBlockHTML）。英文界面下两者相同 ⇒ 自动不重复。
+                const _enSuffix = (hero.english_name && hero.english_name !== displayName)
+                    ? ` (${hero.english_name})` : '';
+                content = `${displayName || ''}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
                 const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();
                 content = `<img src="imgs/classes/${englishClass}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
@@ -398,47 +405,40 @@ function generateGeneralSearchTerm(text) {
 }
 
 /**
- * 根据英雄当前的攻击力，更新模态框中所有DoT技能的伤害数值。
+ * 根据英雄当前的攻击力，更新模态框中所有动态伤害的数值。
+ *
+ * 只认渲染侧打的 `<span class="dynamic-value">`（由 `[#Dynamic]` 标记转换而来，见 `_renderOneCore`）。
+ * 对齐方式 = **文档顺序**：`parseAndStoreDoTInfo` 按 `hero.effects` 顺序扫标记，
+ * `renderListAsHTML` 也按同样顺序吐 span ⇒ 第 k 个 span ↔ 第 k 个标记
+ * （⚠ 不能用"词条下标 = `<li>` 下标"：以 `[*]` 开头的词条行会并进上一条 `<li>`，下标会错位）。
  * @param {object} hero - 英雄对象。
  * @param {number} currentAttack - 英雄当前计算后的攻击力。
  */
 function updateDynamicDoTDisplay(hero, currentAttack) {
-    if (!hero.dynamicDoTEffects || hero.dynamicDoTEffects.length === 0) return;
+    if (!hero.dynamicDoTEffects || hero.dynamicDoTEffects.length === 0 || !currentAttack) return;
 
-    hero.dynamicDoTEffects.forEach(dotInfo => {
-        const skillList = document.querySelector('#modal .skill-category-block .skill-list');
-        if (!skillList || !skillList.children[dotInfo.index]) return;
+    // 记下本次用的攻击力：翻译工具栏等**重渲染 effects 列表**的地方要用它再刷一遍
+    hero._lastDynamicAttack = currentAttack;
 
-        const liElement = skillList.children[dotInfo.index];
-        // 核心1：生成唯一ID，拼接subIndex（多伤害有subIndex，其他无）
-        const dynamicSpanId = `dot-value-${dotInfo.index}` + (dotInfo.subIndex !== undefined ? `-${dotInfo.subIndex}` : '');
-        // 核心2：计算单回合/总伤害（原有逻辑不变）
-        const newDisplayDamage = dotInfo.isPerTurn
-            ? Math.round((dotInfo.coefficient * currentAttack) / dotInfo.turns)
+    // 只取「特殊技能」那一段的列表（被动/家族奖励段也有 .skill-list，不能用宽松选择器）
+    const skillList = document.querySelector('#modal-skill-effects-section .skill-list');
+    if (!skillList) return;
+
+    const spans = skillList.querySelectorAll('.dynamic-value');
+    hero.dynamicDoTEffects.forEach((dotInfo, k) => {
+        const span = spans[k];
+        if (!span) return;
+        // 数值高亮会再套一层 <span style="color:…"> ⇒ 改写**最内层**，免得把颜色 span 一起抹掉
+        const target = span.querySelector('span') || span;
+        // **按游戏口径重算**（生成器 `dot()` 的公式）：`int(攻击力 × ‰ / 1000) × 回合`。
+        // 导出值 v0 是在**参考攻击力** A0（= L80 × 服装奖励"最多套"）下算出来的
+        // ⇒ 等效「‰×回合」可直接反推 `K = v0 × 1000 / A0`（在 A0 处严格成立），
+        //   于是 `int(攻击力 × K / 1000)` 就是 `int(攻击力 × v0 / A0)`。
+        // 取不到 v0/A0 时退回"系数 × 攻击力"的近似式（不会更差）。
+        const v0 = dotInfo.originalDamage, A0 = dotInfo.refAttack;
+        target.textContent = (A0 && v0)
+            ? Math.floor(currentAttack * v0 / A0)
             : Math.round(dotInfo.coefficient * currentAttack);
-
-        let dynamicSpan = liElement.querySelector(`#${dynamicSpanId}`);
-
-        if (!dynamicSpan) {
-            // 核心3：正则加g全局匹配，多伤害类型匹配所有originalDamage，非多伤害匹配单次
-            const regexFlag = dotInfo.type === 'mulDamages' ? 'g' : '';
-            const regex = new RegExp(`\\b${dotInfo.originalDamage}\\b`, regexFlag);
-            // 替换：每次替换生成唯一id的span（利用replace的函数特性，按匹配次数生成）
-            let replaceCount = 0;
-            liElement.innerHTML = liElement.innerHTML.replace(regex, () => {
-                // 多伤害的多匹配，按替换次数匹配subIndex
-                const finalId = dotInfo.type === 'mulDamages'
-                    ? `dot-value-${dotInfo.index}-${dotInfo.subIndex}`
-                    : dynamicSpanId;
-                replaceCount++;
-                return `<span id="${finalId}" class="dynamic-value">${newDisplayDamage}</span>`;
-            });
-            // 替换后获取当前subIndex的span
-            dynamicSpan = liElement.querySelector(`#${dynamicSpanId}`);
-        } else {
-            // 已有span，直接更新数值
-            dynamicSpan.textContent = newDisplayDamage;
-        }
     });
 }
 
@@ -781,7 +781,7 @@ function getHighlightingTools(lang, type) {
  * @param {string} filterType - 'effects', 'passives', 'familyBonus', 或 null。
  * @returns {string} - 添加了高亮标签的文本。
  */
-function applyKeywordHighlighting(text, lang, filterType) {
+function applyKeywordHighlighting(text, lang, filterType, noParen) {
     if (!text || typeof text !== 'string') return text;
 
     let textToProcess = text;
@@ -831,7 +831,9 @@ function applyKeywordHighlighting(text, lang, filterType) {
             textToProcess = '';
         }
         // ★★★ 专属规则：只针对 effects，处理注释用的括号内容 ★★★
-        else if (filterType === 'effects') {
+        //   `noParen=true`：调用方（`renderListAsHTML`）已经在**整条**范围内处理了最外层括号
+        //   ⇒ 这里绝不能再按"单行"去认括号，否则内层括号会被误当成注释（用户 2026-10-10）。
+        else if (filterType === 'effects' && !noParen) {
             let textToModify = text.trim();
             // 新增规则：如果以).或）。结尾，先移除最后的句点
             if (textToModify.endsWith(').') || textToModify.endsWith('）。')) {
@@ -913,8 +915,8 @@ function applyKeywordHighlighting(text, lang, filterType) {
                     }
             }
 
-            // ========= 括号注释处理（与 effects 逻辑一致） =========
-            if (textToProcess) {
+            // ========= 括号注释处理（与 effects 逻辑一致；`noParen` 时由调用方整条处理） =========
+            if (textToProcess && !noParen) {
                 let textToModify = textToProcess.trim();
 
                 // 如果以).或）。结尾，先移除最后的句点
@@ -1597,13 +1599,19 @@ function renderDetailsInModal(hero, context = {}) {
     // --- 生成被动技能图标(包含两种来源) ---
     let passiveSkillsHtml = '';
 
-    const basePassives = hero.passiveSkills || [];
-    const costumePassives = hero.costumeBonusPassiveSkillIds || [];
+    // `hero.passiveSkills` 在新数据里是 `[{id,title,text}]`（旧数据是纯字符串数组）⇒ 统一取 `id`
+    //   当图标 key（旧实现直接拿对象去查表 ⇒ 恒 undefined，头像被动图标一直不显示）。
+    const _pid = (x) => (x && typeof x === 'object') ? (x.id || '') : String(x || '');
+    const basePassives = (hero.passiveSkills || []).map(_pid).filter(Boolean);
+    const costumePassives = (hero.costumeBonusPassiveSkillIds || []).map(_pid).filter(Boolean);
 
-    // 将 数组倒序后，再与合并
+    // ⚠ **不要再倒序**（用户 2026-10-10）：导出侧已取消逆序、按官方配置数组原序输出
+    //   （`passive_desc_gen.ORDER_MODE = 'config'`）⇒ 网站**原样使用**即可。
+    //   这里的 `[...].reverse()` 是当年为"对冲导出侧的逆序"加的补偿，导出改原序后它会
+    //   把头像被动图标又翻回去，与详情页被动段（原样渲染导出顺序）**互相打架** ⇒ 已移除。
     const allPassiveSkills = [
-        ...[...basePassives].reverse(),
-        ...[...costumePassives].reverse() // 使用 ... 创建副本再倒序，避免修改原始数据
+        ...basePassives,
+        ...costumePassives
     ];
 
     // --- 生成头像上的 Aether Power 叠加图标 ---
@@ -1673,7 +1681,11 @@ function renderDetailsInModal(hero, context = {}) {
 
 
     // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
-    const renderListAsHTML = (itemsArray, filterType = null) => {
+    // `opts.clickable === false` ⇒ 词条**不带** `.skill-type-tag`（不可点筛选）。
+    //   被动段用它：用户 2026-10-10「把被动的点击词条改为点击技能标题」——
+    //   词条只负责展示，点标题才触发一键快速搜索。
+    const renderListAsHTML = (itemsArray, filterType = null, opts = null) => {
+        const clickable = !(opts && opts.clickable === false);
         if (!itemsArray || !Array.isArray(itemsArray) || itemsArray.length === 0) return `<li>${langDict.none}</li>`;
 
 
@@ -1695,8 +1707,20 @@ function renderDetailsInModal(hero, context = {}) {
         // 检查是否启用了高亮技能词条
         const shouldHighlight = getCookie('highlightSkillTerms') !== 'false';
 
-        return itemsArray.map(item => {
-            // ▼▼▼ 针对被动技能中以 * 开头的行，特殊渲染 ▼▼▼
+        // 过滤/悬浮提示用的"纯文本"：把 `[#Dynamic]…[#]` 注记剥成裸数值
+        // （否则标记会漏进 `data-filter-value` / `title`，用户 2026-10-10 报的动态伤害场景）。
+        // `[*]` 也要从筛选值/提示里去掉（否则 `data-filter-value` 会带出 `[*]보드의…` 这种残留）
+        const _plainItem = (s) => String(s)
+            .replace(/\[#Dynamic\]([^\[\]]*)\[#\]/g, (m, v) => v)
+            .replace(/\[\*\]/g, '')
+            .trim();
+
+        // `[*]` = **子行标记**（缩进 + 保留未着色的 `*`，见下方外层组装）；行首 `*` 才是"括号补充说明"的虚线标记。
+        // `opts.noParen=true` ⇒ 括号注释由外层 `_renderEntryInner` 在**整条**范围内统一处理，
+        //   这里不再按单行认括号（否则内层括号会被误判，用户 2026-10-10）。
+        const _renderOneCore = (item, opts) => {
+            const noParen = !!(opts && opts.noParen);
+            // ▼▼▼ 行首 `*`：括号补充说明行（橙色 * + 虚线下划线）▼▼▼
             if (filterType === 'passives') {
                 const rawItem = String(item);
                 const trimmedItem = rawItem.trim();
@@ -1722,11 +1746,14 @@ function renderDetailsInModal(hero, context = {}) {
                 return `<li>${compactStars}</li>`;
             }
 
+            // ▼▼▼ `[#Dynamic]…[#]` 注记：**在数值高亮之后**才换成 `<span class="dynamic-value">` ▼▼▼
+            //   （见下面 "HTML结构化逻辑" 之前那一段；放早了会被数值高亮套一层蓝色 inline 样式）
+
             // --- 文本美化处理 ---
             if (shouldHighlight) {
 
                 // 只有在用户启用高亮时，才执行“添加标签”的步骤
-                cleanItem = applyKeywordHighlighting(cleanItem, state.currentLang, filterType);
+                cleanItem = applyKeywordHighlighting(cleanItem, state.currentLang, filterType, noParen);
 
                 // 处理数字高亮
                 const numberRegex = /([+-]?\d+[%]?)/g;
@@ -1803,6 +1830,23 @@ function renderDetailsInModal(hero, context = {}) {
             }
 
 
+            // ▼▼▼ `[#Dynamic]…[#]` 注记 → `<span class="dynamic-value">` ▼▼▼
+            //   ⚠ **必须放在数值高亮之后**：数值高亮会在标记里面再套一层
+            //   `<span style="color:#2d81e2ff">`（inline 样式压过任何 CSS 选择器），
+            //   动态值就会变成"普通蓝色数字"（用户 2026-10-10 报的）。
+            //   这里把标记换成 span 时**顺手剥掉内层 span**，让 `.dynamic-value` 自己的橙色加粗生效；
+            //   数值**前后的空格留在 span 外面**，否则改写 textContent 时会把空格一起吃掉。
+            //   放在高亮开关之外：它不是"高亮"，无论开关都必须换掉。
+            cleanItem = cleanItem.replace(/\[#Dynamic\]([\s\S]*?)\[#\]/g, (m, v) => {
+                const lead = (v.match(/^\s*/) || [''])[0];
+                const trail = (v.match(/\s*$/) || [''])[0];
+                // 标记内容 = `值` 或 `值|‰|回合`（后者是生成器带出来的**游戏公式参数**，
+                // `main.js` 直接从 `hero.effects` 解析，DOM 里只放展示值）
+                const fields = v.trim().replace(/<\/?span[^>]*>/g, '').split('|');
+                return `${lead}<span class="dynamic-value">${fields[0].trim()}</span>${trail}`;
+            });
+
+
             // --- HTML结构化逻辑 ---
 
             // 首先统一处理包含 ' * ' 的情况
@@ -1816,24 +1860,192 @@ function renderDetailsInModal(hero, context = {}) {
                     parts.slice(1).map(p => p.trim()).join('</i><br><i>') +
                     '</i>';
 
-                if (filterType) {
+                if (filterType && clickable) {
                     // 如果有 filterType，使用原始 item 来获取数据属性，然后渲染上面生成好的 displayHTML
-                    const mainDesc = String(item).trim().split(' * ')[0].trim();
+                    const mainDesc = _plainItem(String(item).trim().split(' * ')[0].trim());
                     return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${displayHTML}</li>`;
                 } else {
-                    // 如果没有 filterType，直接渲染
+                    // 没有 filterType（或明确要求不可点），直接渲染
                     return `<li>${displayHTML}</li>`;
                 }
             } else {
                 // 如果 cleanItem 中不包含 ' * '，则按原样处理
-                if (filterType) {
-                    const mainDesc = String(item).trim();
+                if (filterType && clickable) {
+                    const mainDesc = _plainItem(String(item).trim());
                     return `<li class="skill-type-tag" data-filter-type="${filterType}" data-filter-value="${mainDesc}" title="${langDict.filterBy} ${mainDesc}">${cleanItem}</li>`;
                 } else {
                     return `<li>${cleanItem}</li>`;
                 }
             }
-        }).join('');
+        };
+
+        // 我们导出的词条把「子行」并入同一字符串（`\n` + `[*]`）⇒ 先按行拆开、再逐行渲染：
+        //   · `[*]` 行渲染成「橙色 *」的子行（与被动里 `*` 开头行的样式一致）；
+        //   · 括号 `(...)` 仍留在同一行内（同词条）；
+        //   · 顺带修掉「`[##elementorange]…[#]` 内含 `[*]`」导致高亮正则 `[^\[\]]*` 匹配失败、
+        //     颜色标记裸露成 `[##elementorange]…` 的问题（用户 2026-10-10 报的 construct_bonechill_costume_bedrock）。
+        // 我们导出的词条里，子行有两种承载方式：
+        //   ① 并入同一字符串（`\n` + `[*]`）—— 如 passiveSkills[].text；
+        //   ② 拆成**数组的独立元素**且以 `[*]` 开头 —— 如 familyBonus。
+        // 两种都要**留在同一个 <li> 里**（用户 2026-10-10）：主行照常渲染，子行用 `<br>` 接在后面，
+        // 加 `.skill-subline` 缩进，`*` 保留在行首但**不着色**。
+        // 子行的正文**必须走完整处理链**（关键字着色 + 数值高亮 + 标记转 HTML），
+        // 否则会出现「子行不着色 / 数值不高亮」（用户 2026-10-10 titan_hunter_borgholf）。
+        // 做法：复用 `_renderOneCore` 拿到 <li>，抽出内层 HTML 再包进 .skill-subline。
+        const _splitLi = (li) => {
+            const m = String(li).match(/^(<li[^>]*>)([\s\S]*)(<\/li>)\s*$/);
+            return m ? { open: m[1], inner: m[2], close: m[3] } : { open: '<li>', inner: String(li), close: '</li>' };
+        };
+        const _appendSubs = (li, subs) => subs ? li.replace(/<\/li>\s*$/, subs + '</li>') : li;
+
+        // ── 括号注释块（用户 2026-10-10：「括号只适用最外层，内层的括号不作为换行注释解析」）──
+        //   规则：从左往右找第一个**配对完整**的括号；只有当它的闭括号是**本行最后一个字符**
+        //   （允许后面跟 `.` / `。`）时才算注释块，否则算普通正文、继续往后找。
+        //   ⇒ `被…获得血莲标记。 (来自…（最高：10）。\n[*]…\n[*]…。)` 里**外层** `(来自…）` 才是注释块，
+        //     内层的 `（最高：10）` 原样留在正文；`使所有盟友（包括自己）获得增益。` 这种行内括号完全不受影响。
+        //   ⚠ 注释块**可以跨行**（旧实现按单行找配对，会把内层括号误判成注释，就是用户报的那个 bug）。
+        const _matchParen = (s, start) => {
+            let depth = 0;
+            for (let i = start; i < s.length; i++) {
+                const c = s[i];
+                if (c === '(' || c === '（') depth++;
+                else if (c === ')' || c === '）') { depth--; if (depth === 0) return i; }
+            }
+            return -1;
+        };
+        const _isLineTail = (s, i) => {
+            for (let k = i + 1; k < s.length; k++) {
+                const c = s[k];
+                if (c === '\n') return true;
+                if (c === '.' || c === '。' || c === ' ' || c === '\t' || c === '\r') continue;
+                return false;
+            }
+            return true;
+        };
+        // 一条词条 → [{kind:'text',text}, {kind:'paren',text,tail}]（保持原顺序）
+        const _splitAnnotations = (s) => {
+            const parts = [];
+            let seg = '', i = 0;
+            while (i < s.length) {
+                const c = s[i];
+                if (c === '(' || c === '（') {
+                    const m = _matchParen(s, i);
+                    if (m > -1 && _isLineTail(s, m)) {
+                        if (seg) { parts.push({ kind: 'text', text: seg }); seg = ''; }
+                        let end = m + 1, tail = '';
+                        while (end < s.length && (s[end] === '.' || s[end] === '。')) { tail += s[end]; end++; }
+                        parts.push({ kind: 'paren', text: s.slice(i + 1, m), tail });
+                        i = end;
+                        continue;
+                    }
+                }
+                seg += c; i++;
+            }
+            if (seg) parts.push({ kind: 'text', text: seg });
+            return parts;
+        };
+
+        // 一条词条 → `{open, inner}`：`open` = 主行的 `<li …>` 开标签（没有主行时为 null）。
+        // 全部内容留在**同一个 <li>** 里：主行照常，`[*]` 行 = `.skill-subline` 子行，括号注释块 = 虚线块。
+        // 用户 2026-10-10 的三条排版口径：
+        //   ① 括号注释块**去掉前后括号**，只留橙色 `*` + 着色虚线下划线；
+        //   ② 注释块**比主词条多缩进**（`.paren-note{padding-left}`），块内子词条**也保持虚线**
+        //      （`.skill-subline` 是 inline-block，`text-decoration` 不会自动传下去 ⇒ 显式 inherit）；
+        //   ③ 词条**开头不产生空行**（整条都是 `[*]` 子行时，第一行不再补 `<br>`）。
+        const _renderEntryInner = (raw, forceSub) => {
+            // `forceSub=true` ⇒ 这段内容要**接到已有 `<li>` 后面** ⇒ 第一行也要补 `<br>`（否则会和上文黏在一起）
+            let open = null, inner = '', headDone = false, hasContent = !!forceSub;
+            // 上一条产出的是不是 `[*]` 子行 —— 括号注释块要**比它再多缩进一级**
+            //   （用户 2026-10-10：谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
+            let lastWasSub = false;
+            const _one = (line) => {
+                const isSub = forceSub || line.startsWith('[*]');
+                const txt = line.startsWith('[*]') ? line.slice(3).trim() : line;
+                const sp = _splitLi(_renderOneCore(txt, { noParen: true }));
+                return { isSub, inner: sp.inner, open: sp.open };
+            };
+            // 子行：**只有前面已有内容时才补 `<br>`**，否则词条会以一条无意义空行开头。
+            // 空内容（例如整行只有 `[*]`，后面紧跟括号注释块）⇒ 不产出空子行。
+            // `openTag` 只在"整条都是子行"时用来继承首行 `<li …>` 的属性（`data-filter-type` 等）。
+            const _pushSub = (h, openTag) => {
+                if (!h) return;
+                if (!hasContent && openTag) open = openTag;
+                inner += (hasContent ? '<br>' : '') + `<span class="skill-subline">* ${h}</span>`;
+                hasContent = true;
+                lastWasSub = true;
+            };
+            _splitAnnotations(String(raw)).forEach(p => {
+                if (p.kind === 'text') {
+                    p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach(l => {
+                        const r = _one(l);
+                        if (!headDone && !r.isSub) { headDone = true; open = r.open; inner += r.inner; hasContent = true; lastWasSub = false; }
+                        else { headDone = true; _pushSub(r.inner, r.open); }
+                    });
+                    return;
+                }
+                // 括号注释块：去掉 `(` `)`，整块套虚线 + 左侧多缩进；块内 `[*]` 仍是缩进子行（同样保持虚线）
+                const hadContent = hasContent;
+                let body = '', bodyHas = false;
+                p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach((l, i) => {
+                    const r = _one(l);
+                    if (i === 0) {                          // 第一行接着 `*` 同行显示
+                        if (!headDone && !hadContent) { headDone = true; open = r.open; }
+                        body += r.inner;
+                    } else {                                // 其余行 = 注释块内的缩进子行
+                        headDone = true;
+                        body += (bodyHas ? '<br>' : '') + `<span class="skill-subline">* ${r.inner}</span>`;
+                    }
+                    bodyHas = true;
+                });
+                inner += (hadContent ? '<br>' : '')
+                    + `<span class="paren-note${lastWasSub ? ' paren-note-sub' : ''}">`
+                    + `<span class="paren-mark">*</span>${body}${p.tail}</span>`;
+                hasContent = true;
+            });
+            return { open, inner };
+        };
+
+        // `[*]` 数组元素要不要并进上一条 `<li>` —— **按列表类型分**（用户 2026-10-10）：
+        //   · `familyBonus`：`[*]` 是「奖励表头」下的子项 ⇒ **并进上一条**（用户点名要求）；
+        //   · `effects`（`skills[].lines`）：**每个数组元素各自成一个 `<li>`**
+        //     —— 旧站就是这么拍的（`谦逊低于 40 时：` / `[*]对目标…` … 共 7 条扁平行），
+        //     用户 2026-10-10：「谦逊这种选择性的技能被直接当成 2 个大组别元素了，需要修复回按词条分组元素」。
+        //   · `passives` 传进来的是单元素数组（子行在字符串内用 `\n[*]`）⇒ 这里不涉及。
+        const _mergeSubItems = (filterType === 'familyBonus');
+        // 「整条只有括号注释」的元素（如 `[*](头目、泰坦和神话泰坦不受此状态效果影响。)`）：
+        //   它**归属于上一行词条**（数据里就是那行的括注）⇒ 必须并进上一条 `<li>`，
+        //   不能单独成一个网页元素（用户 2026-10-10）。
+        const _isPureParen = (s) => {
+            const parts = _splitAnnotations(String(s).replace(/^\s*\[\*\]\s*/, ''));
+            return parts.length > 0 && parts.every(p => p.kind === 'paren');
+        };
+
+        // ── 官方 `[*]` 是**行内 token**（`…持续 2 回合。 [*]每回合结束时…` / `([*]安全地偷取…`），
+        //   而本站只按「**行首** `[*]`」识别子行 ⇒ 渲染前先归一到行首。
+        //   生成器侧已归一（`skill_desc_gen.norm_sublines`），这里是**防御层**：
+        //   旧档 / 手工数据 / 其它来源也不会把 `[*]` 裸露给用户
+        //   （2026-10-10 实测 ar 87 / tc 44 / ja 40 / fr 7 行内 `[*]` 裸露）。
+        //   ⚠ 必须放在 `_isPureParen` / `_renderEntryInner` **之前**（两者都按行首判据工作）。
+        const _normBullets = (s) => String(s)
+            .replace(/[ \t\u00a0]*\[\*\][ \t\u00a0]*/g, '\n[*]')
+            .replace(/\n{2,}/g, '\n')
+            .replace(/^\n+|\n+$/g, '');
+
+        return itemsArray.reduce((acc, item) => {
+            const raw = _normBullets(item);
+            if (!raw.replace(/^\s+/, '')) return acc;
+            // ② 并进上一条 <li>：familyBonus 的所有 `[*]` 子项；以及**任何**列表里"整条只有括号"的元素
+            const _merge = acc.length && ((_mergeSubItems && /^\s*\[\*\]/.test(raw)) || _isPureParen(raw));
+            if (_merge) {
+                acc[acc.length - 1] = _appendSubs(acc[acc.length - 1],
+                    _renderEntryInner(raw, true).inner);
+                return acc;
+            }
+            // ① 其余情况：整条自成一个 <li>（首行作主行，其余 `[*]` 行作缩进子行；括号注释块可跨行）
+            const r = _renderEntryInner(raw, false);
+            acc.push(`${r.open || '<li>'}${r.inner}</li>`);
+            return acc;
+        }, []).join('');
     };
 
     // --- 解析英雄名称 ---
@@ -1876,18 +2088,22 @@ function renderDetailsInModal(hero, context = {}) {
     // 在技能类别部分添加条件渲染
     if (showSkillTypesInDetails) {
         if (uniqueSkillTypes.length > 0) {
+            // 技能类型标签：显示用**当前语言文本**（`langs_json/skill_types_<码>.json`）；
+            // `data-filter-value` 仍是**简体中文键**（筛选与 `getSkillTagsForHero` 的 CN 输出比对）。
+            const _stLabel = (cn) => (typeof Lang !== 'undefined') ? Lang.t('skill_types', cn) : cn;
             const tagsHTML = uniqueSkillTypes.map(type => {
-                let innerHTML = type; // 默认只显示文字
+                const label = _stLabel(type);
+                let innerHTML = label; // 默认只显示文字
 
-                // 如果来源是 bbcamp，则添加图标
+                // 如果来源是 bbcamp，则添加图标（图标文件名按 **CN 键** 取，不能跟着翻译走）
                 if (source === 'bbcamp') {
                     const iconSrc = getIconForFilter('skillTag_base', type);
                     // 这里我们复用 option-icon class，因为它已经定义了合适的尺寸
                     const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
-                    innerHTML = `${iconHTML}${type}`;
+                    innerHTML = `${iconHTML}${label}`;
                 }
 
-                return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${type}">${innerHTML}</span>`;
+                return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${label}">${innerHTML}</span>`;
             }).join('');
             heroTypesContent = `<div class="skill-types-container">${tagsHTML}</div>`;
         } else {
@@ -1895,7 +2111,113 @@ function renderDetailsInModal(hero, context = {}) {
         }
     }
 
-    const familyBonus = (state.families_bonus.find(f => f.name.toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || [];
+    // 家族奖励：新数据直接挂在英雄上（`data/heroes_skills_<码>.json` 的 familyBonus）；
+    // 旧数据走 state.families_bonus（按家族名匹配）—— 保留作兜底。
+    const familyBonus = (hero.familyBonus && hero.familyBonus.length)
+        ? hero.familyBonus
+        : ((state.families_bonus.find(f => String(f.name || '').toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || []);
+
+    // 被动技能 / 家族奖励的**大图标**（用户 2026-10-10：
+    //   「被动奖励和家族奖励要大图标展示，右边渲染被动名，下一元素是被动词条」；
+    //   后续又反馈「图标太大、标题文字要加大」⇒ 图标 40px、名字 `.big-skill-name`）。
+    //   图标名走 `PassiveSkillIconCollection`（data.js）；`resist_*` 仍是「盾牌底 + 原图标」两层。
+    //   没有图标定义 / `NULL_SPRITE` 占位 ⇒ 返回 ''（调用方只剩名字，不留破图）。
+    const bigPassiveIconHTML = (key) => {
+        if (!key) return '';
+        const coll = (typeof PassiveSkillIconCollection !== 'undefined') ? PassiveSkillIconCollection : null;
+        const iconName = coll ? coll[key] : null;
+        if (!iconName || iconName === 'NULL_SPRITE') return '';
+        const src = `imgs/passive_icon/${iconName}.webp`;
+        if (String(key).startsWith('resist_')) {
+            return `<span class="big-passive-icon-wrap">`
+                + `<img src="imgs/passive_icon/resist_shield.webp" class="big-skill-icon" alt="${key}">`
+                + `<img src="${src}" class="big-passive-overlay-icon" alt="" onerror="this.style.display='none'">`
+                + `</span>`;
+        }
+        return `<img src="${src}" class="big-skill-icon" alt="${key}" onerror="this.style.display='none'">`;
+    };
+
+    // ── 被动技能段：每个被动 = 大图标 + 被动名（同一行），下一元素是该被动的词条 ──
+    // 新数据 `hero.passiveSkills = [{id,title,text}]`；旧形状（纯文本数组）走 `hero.passives` 兜底。
+    const _passiveItems = (hero.passiveSkills && hero.passiveSkills.length)
+        ? hero.passiveSkills.filter(p => p && (p.text || p.id))
+        : (hero.passives || []).map(t => ({ id: '', title: '', text: t }));
+    const passivesSectionHTML = `<div id="modal-passives-section" class="skill-category-block">
+        <p class="uniform-style">${langDict.modalPassiveSkill}</p>
+        ${_passiveItems.length ? _passiveItems.map(p => {
+            const _title = p.title || p.id || '';
+            // 被动名可点 ⇒ **一键快速搜索该被动**（复用既有的 `.skill-type-tag` 点击逻辑；
+            // 没有标题的旧数据就不挂，免得点出一空筛选，用户 2026-10-10）
+            const _nameAttrs = p.title
+                ? ` class="uniform-style big-skill-name skill-type-tag" data-filter-type="passives" data-filter-value="${p.title}" title="${langDict.filterBy} ${p.title}"`
+                : ' class="uniform-style big-skill-name"';
+            return `
+            <div class="skill-header-container">
+                ${bigPassiveIconHTML(p.id)}
+                <div class="skill-name-speed-block"><p${_nameAttrs}>${_title}</p></div>
+            </div>
+            <ul class="skill-list">${renderListAsHTML([p.text], 'passives', { clickable: false })}</ul>`;
+        }).join('')
+        : `<ul class="skill-list"><li>${langDict.none}</li></ul>`}
+    </div>`;
+
+    // ── 家族奖励段：**原标题保持原样**（用户 2026-10-10：图标和标题是"额外添加"不是"替代"），
+    //    标题下面再加一行「大图标 + 家族名」，下一元素是家族奖励词条 ──
+    //    大图标旁的家族名走**官方 `family_title` 表**（`langs_json/family_title_<码>.json`，
+    //    如 `asgard → 阿斯加德王国`），不是 `family` 表里的分组短名（`S3 - 阿斯加德`）；
+    //    表外家族（123 条之外）回退 `getDisplayName`（用户 2026-10-10）。
+    const _familyTitleTable = (typeof Lang !== 'undefined') ? Lang.get('family_title') : {};
+    const familyTitleName = (hero.family && _familyTitleTable[hero.family])
+        || getDisplayName(hero.family, 'family');
+    const familyBonusSectionHTML = familyBonus.length > 0 ? `
+        <div id="modal-family-bonus-section" class="skill-category-block">
+            <p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p>
+            <div class="skill-header-container">
+                <img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="big-skill-icon" alt="${hero.family}" onerror="this.style.display='none'">
+                <div class="skill-name-speed-block"><p class="uniform-style big-skill-name">${familyTitleName}</p></div>
+            </div>
+            <ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul>
+        </div>` : '';
+
+    // ── 「服装奖励」下拉（用户 2026-10-10）──
+    // 只有带服装奖励表的英雄（688/702 个服装）才显示；**默认 = 最多套**。
+    // 选项 = 「无」+ 每一套对应的**服装图标 + 服装名**（`C1/C2/卡通/玻璃/英姿`，按当前语言）。
+    // ⚠ 原生 `<select>` 的 `<option>` 放不了图片 ⇒ 用一排小按钮当选择器（用户 2026-10-10）。
+    // ⚠ 这只影响**详情页**显示；列表属性仍按"该英雄自身的服装顺序"算（见 filters.js::calculateHeroStats）。
+    const _costumeSkinOf = (k) => {
+        let cid = k;
+        if (hero.family === 'classic') { if (hero.star === 3 && cid > 1) cid += 1; }
+        if (hero.family !== 'classic') { if (cid === 2) cid = 3; }
+        // 档位 → 服装类型键（与 `getSkinInfo` / `getCostumeIconName` 同一套映射）；
+        // 类型名走 `langs_json/costume_type_<码>.json`（20 语言，见 _tools/_costume_names.py 的推导）
+        const keys = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };
+        const icons = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };
+        const key = keys[cid] || 'c1';
+        const name = (typeof Lang !== 'undefined') ? Lang.t('costume_type', key) : key;
+        return { name: name, icon: icons[cid] || 'c1' };
+    };
+    const costumePickerHTML = (() => {
+        if (!hero.costumeBonusLevels) return '';
+        const N = hero.costumeMaxSets || 1;
+        let out = `<button type="button" class="costume-opt" data-value="0">${langDict.costumeSetsNone}</button>`;
+        for (let k = 1; k <= N; k++) {
+            const sk = _costumeSkinOf(k);
+            out += `<button type="button" class="costume-opt${k === N ? ' selected' : ''}" data-value="${k}" title="${sk.name}">`
+                + `<img src="imgs/costume/${sk.icon}.webp" alt="" onerror="this.style.display='none'"><span>${sk.name}</span></button>`;
+        }
+        return `<div class="details-selector-item"><label data-lang-key="costumeBonusSetting">${langDict.costumeBonusSetting}</label>`
+            + `<div class="costume-bonus-picker" id="modal-costume-picker">${out}</div></div>`;
+    })();
+
+    // 读当前选中的服装档位：选择器不存在（无服装奖励表 / 未开天赋面板）⇒ 默认最多套
+    const readCostumeSets = () => {
+        const el = document.getElementById('modal-costume-picker');
+        if (el) {
+            const s = el.querySelector('.costume-opt.selected');
+            return s ? (parseInt(s.dataset.value, 10) || 0) : 0;
+        }
+        return hero.costumeMaxSets || 0;
+    };
 
     const talentSystemHTML = filterInputs.showLbTalentDetailsCheckbox.checked ? `
         <div id="modal-talent-system-wrapper">
@@ -1910,6 +2232,7 @@ function renderDetailsInModal(hero, context = {}) {
                         <div class="details-selector-item"><label for="modal-talent-select" data-lang-key="talentSetting">${langDict.talentSetting}</label><select id="modal-talent-select"><option value="none" data-lang-key="noTalent">${langDict.noTalent}</option><option value="talent20" data-lang-key="talent20">${langDict.talent20}</option><option value="talent25" data-lang-key="talent25">${langDict.talent25}</option></select></div>
                         <div class="details-selector-item"><label for="modal-talent-strategy-select" data-lang-key="prioritySetting">${langDict.prioritySetting}</label><select id="modal-talent-strategy-select"><option value="atk-def-hp" data-lang-key="attackPriority">${langDict.attackPriority}</option><option value="atk-hp-def" data-lang-key="attackPriority2">${langDict.attackPriority2}</option><option value="def-hp-atk" data-lang-key="defensePriority">${langDict.defensePriority}</option><option value="hp-def-atk" data-lang-key="healthPriority">${langDict.healthPriority}</option><option value="def-atk-hp" data-lang-key="defensePriority2">${langDict.defensePriority2}</option><option value="hp-atk-def" data-lang-key="healthPriority2">${langDict.healthPriority2}</option></select></div>
                         <div class="details-selector-item"><label for="modal-mana-priority-checkbox" data-lang-key="manaPriorityLabel">${langDict.manaPriorityLabel}</label><div class="checkbox-container"><input type="checkbox" id="modal-mana-priority-checkbox"><label for="modal-mana-priority-checkbox" class="checkbox-label" data-lang-key="manaPriorityToggle">${langDict.manaPriorityToggle}</label></div></div>
+                        ${costumePickerHTML}
                     </div>
                 </div>
             </div>
@@ -1957,8 +2280,6 @@ function renderDetailsInModal(hero, context = {}) {
     ${heroTypesContent}
   ` : '';
 
-    // 判断是否显示翻译工具栏：仅当当前语言不是 cn、tc、en 时显示
-    const showTranslationToolbar = !['cn', 'tc', 'en'].includes(state.currentLang);
 
     const detailsHTML = `
         <div class="details-header">
@@ -2029,17 +2350,10 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div id="modal-skill-effects-section" class="skill-category-block">
                 <p class="uniform-style">${langDict.modalSpecialSkill}</p>
-                ${showTranslationToolbar ? `
-                <div class="effects-translation-toolbar" style="display:flex; align-items:center; gap:10px; margin:8px 0 12px 0; flex-wrap:wrap; padding:6px 12px; background:transparent; border-bottom:1px solid var(--border-color, #ddd);">
-                    <span style="font-weight:600; font-size:0.9rem;">🌐 ${langDict.effectsTranslateLabel}</span>
-                    <button class="action-button effects-translate-btn" style="padding:4px 14px; font-size:0.85rem;">${langDict.effectsTranslateLabel}</button>
-                    <button class="action-button effects-reset-btn" style="padding:4px 14px; font-size:0.85rem; background:#888;">${langDict.effectsResetLabel}</button>
-                    <span class="effects-translate-status" style="font-size:0.8rem; color:var(--text-muted, #888); margin-left:auto;">${langDict.effectsOriginal}</span>
-                </div>` : ''}
                 <ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul>
             </div>
-            <div class="skill-category-block"><p id="modal-passives-section" class="uniform-style">${langDict.modalPassiveSkill}</p><ul class="skill-list">${renderListAsHTML(hero.passives, 'passives')}</ul></div>
-            ${familyBonus.length > 0 ? `<div id="modal-family-bonus-section" class="skill-category-block"><p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p><ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul></div>` : ''}
+            ${passivesSectionHTML}
+            ${familyBonusSectionHTML}
         </div>
         <div class="modal-footer"><button class="close-bottom-btn" id="hide-details-bottom-btn">${langDict.detailsCloseBtn}</button></div>
     `;
@@ -2208,7 +2522,10 @@ function renderDetailsInModal(hero, context = {}) {
         lb: filterInputs.defaultLimitBreakSelect.value,
         talent: filterInputs.defaultTalentSelect.value,
         strategy: filterInputs.defaultTalentStrategySelect.value,
-        manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
+        manaPriority: filterInputs.defaultManaPriorityCheckbox.checked,
+        // 服装奖励：读选择器（默认已选中「最多套」）；
+        // 没有选择器（无服装奖励表 / 未开天赋面板）⇒ 直接用最多套（无表时 costumeBonusEntry 返回 null，等于不加）
+        costume: readCostumeSets()
     };
 
     // 2. 无论天赋详情UI是否显示，都根据全局设置计算英雄的最终属性。
@@ -2323,6 +2640,13 @@ function renderDetailsInModal(hero, context = {}) {
             let baseStats = { power: hero.power || 0, attack: hero.attack || 0, defense: hero.defense || 0, health: hero.health || 0 };
             if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+            // 服装奖励（「服装奖励」下拉；默认最多套）
+            const _cb = costumeBonusEntry(hero, settings.costume);
+            if (_cb) {
+                baseStats.attack = applyStatPerMil(baseStats.attack, _cb.attackBonusPerMil);
+                baseStats.defense = applyStatPerMil(baseStats.defense, _cb.defenseBonusPerMil);
+                baseStats.health = applyStatPerMil(baseStats.health, _cb.healthBonusPerMil);
+            }
             let finalStats = { ...baseStats };
             if (nodeCount > 0 && bonuses) {
                 finalStats.attack += bonuses.attack_flat + Math.floor(baseStats.attack * (bonuses.attack_percent / 100));
@@ -2390,12 +2714,23 @@ function renderDetailsInModal(hero, context = {}) {
 
         // 一个通用的UI更新函数
         const updateCommonUI = (bonuses, nodeCount) => {
-            const settings = { lb: modalLbSelect.value, talent: modalTalentSelect.value };
+            const settings = {
+                lb: modalLbSelect.value,
+                talent: modalTalentSelect.value,
+                costume: readCostumeSets()
+            };
             _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount);
 
             let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
             if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
             else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+            // 天赋百分比是相对"含服装奖励"的属性算的 ⇒ 这里也要先套上服装奖励
+            const _cb2 = costumeBonusEntry(hero, settings.costume);
+            if (_cb2) {
+                baseStats.attack = applyStatPerMil(baseStats.attack, _cb2.attackBonusPerMil);
+                baseStats.defense = applyStatPerMil(baseStats.defense, _cb2.defenseBonusPerMil);
+                baseStats.health = applyStatPerMil(baseStats.health, _cb2.healthBonusPerMil);
+            }
             _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
             const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
             if (avatarContainerModal) {
@@ -2449,9 +2784,30 @@ function renderDetailsInModal(hero, context = {}) {
         modalTalentSelect.addEventListener('change', handleTreeAndStatUpdate);
         modalStrategySelect.addEventListener('change', handleTreeAndStatUpdate);
         modalManaCheckbox.addEventListener('change', handleTreeAndStatUpdate);
+        // 「服装奖励」选择器：点一个档位就选中它（只影响属性数值 ⇒ 走"不触碰天赋树"的那条路）
+        const costumePicker = document.getElementById('modal-costume-picker');
+        if (costumePicker) {
+            costumePicker.addEventListener('click', (ev) => {
+                const btn = ev.target.closest('.costume-opt');
+                if (!btn) return;
+                costumePicker.querySelectorAll('.costume-opt').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                handleStatUpdateOnly();
+            });
+        }
 
         // 4. 最后，调用一次 handleTreeAndStatUpdate 来确保天赋树的显示和段位图标都与正确的设置同步
         handleTreeAndStatUpdate();
+    } else {
+        // 没开"突破与天赋详情"面板 ⇒ 属性栏原来直接显示 `hero.displayStats`（那是**列表口径** =
+        // 该英雄自身的服装顺序）；这里改用 `initialStats`（含「服装奖励」下拉的档位），保持与详情页一致。
+        const grid = modalContent.querySelectorAll('.details-stats-grid > div p');
+        if (grid.length >= 4) {
+            grid[0].innerHTML = `💪 ${initialStats.power || 0}`;
+            grid[1].innerHTML = `⚔️ ${initialStats.attack || 0}`;
+            grid[2].innerHTML = `🛡️ ${initialStats.defense || 0}`;
+            grid[3].innerHTML = `❤️ ${initialStats.health || 0}`;
+        }
     }
 
     document.getElementById('hide-details-btn').addEventListener('click', closeDetailsModal);
@@ -2459,6 +2815,7 @@ function renderDetailsInModal(hero, context = {}) {
 
     const favoriteBtn = document.getElementById('favorite-hero-btn');
     if (favoriteBtn) {
+        const canFav = isFavoritable(hero);      // 未到发布时间(UTC 07:00) ⇒ 禁止收藏
         const updateFavoriteButton = () => {
             if (isFavorite(hero)) {
                 favoriteBtn.textContent = '★';
@@ -2468,7 +2825,14 @@ function renderDetailsInModal(hero, context = {}) {
                 favoriteBtn.classList.remove('favorited');
             }
         };
+        if (!canFav) {
+            favoriteBtn.disabled = true;
+            favoriteBtn.classList.add('favorite-locked');
+            favoriteBtn.title = (langDict.favoriteLockedTitle || '尚未发布，暂不可收藏')
+                + (hero.releaseDate ? ` (${hero.releaseDate})` : '');
+        }
         favoriteBtn.addEventListener('click', () => {
+            if (!isFavoritable(hero)) return;
             toggleFavorite(hero);
             updateFavoriteButton();
             const tableStar = document.querySelector(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`);
@@ -2925,84 +3289,7 @@ function renderDetailsInModal(hero, context = {}) {
         });
     }
 
-    // ============================================================
-    // Effects 区域翻译功能绑定
-    // ============================================================
 
-    const effectsSection = modalContent.querySelector('#modal-skill-effects-section');
-    if (effectsSection) {
-        const toolbar = effectsSection.querySelector('.effects-translation-toolbar');
-        if (toolbar) {
-            const statusEl = toolbar.querySelector('.effects-translate-status');
-            const translateBtn = toolbar.querySelector('.effects-translate-btn');
-            const resetBtn = toolbar.querySelector('.effects-reset-btn');
-            let currentLang = null; // null 表示原文
-
-            // 保存原始 effects 数据（若尚未保存）
-            if (!hero._originalEffects) {
-                hero._originalEffects = hero.effects ? [...hero.effects] : [];
-            }
-
-            // 刷新 effects 列表
-            const refreshEffectsList = (data) => {
-                const list = effectsSection.querySelector('.skill-list');
-                if (list) {
-                    list.innerHTML = renderListAsHTML(data, 'effects');
-                }
-            };
-
-            // 执行翻译
-            const performTranslation = async (targetLang) => {
-                if (currentLang === targetLang) {
-                    if (statusEl) statusEl.textContent = '✅ ' + langDict.effectsComplete;
-                    return;
-                }
-                const sourceData = hero._originalEffects || [];
-                if (!sourceData.length) {
-                    if (statusEl) statusEl.textContent = '⚠️ ' + langDict.effectsNoContent;
-                    return;
-                }
-
-                if (statusEl) { statusEl.textContent = '⏳ ' + langDict.effectsTranslating; statusEl.style.color = '#ffa500'; }
-                translateBtn.disabled = true;
-                resetBtn.disabled = true;
-
-                try {
-                    const translated = await translateEffectsItems(sourceData, targetLang, (cur, total) => {
-                        if (statusEl) statusEl.textContent = `⏳ ${langDict.effectsTranslating} (${cur}/${total})...`;
-                    });
-                    refreshEffectsList(translated);
-                    currentLang = targetLang;
-                    if (statusEl) {
-                        statusEl.textContent = '✅ ' + langDict.effectsComplete;
-                        statusEl.style.color = '#4caf50';
-                    }
-                } catch (e) {
-                    console.error('翻译失败:', e);
-                    if (statusEl) { statusEl.textContent = '❌ ' + langDict.effectsFailed; statusEl.style.color = '#f44336'; }
-                } finally {
-                    translateBtn.disabled = false;
-                    resetBtn.disabled = false;
-                }
-            };
-
-            // 恢复原文
-            const resetTranslation = () => {
-                refreshEffectsList(hero._originalEffects || []);
-                currentLang = null;
-                if (statusEl) { statusEl.textContent = '📄 ' + langDict.effectsOriginal; statusEl.style.color = 'var(--text-muted, #888)'; }
-            };
-
-            // 绑定事件
-            translateBtn.addEventListener('click', () => {
-                const targetLang = document.documentElement.lang || 'en';
-                performTranslation(targetLang);
-            });
-            resetBtn.addEventListener('click', resetTranslation);
-            // 初始状态
-            if (statusEl) statusEl.textContent = '📄 ' + langDict.effectsOriginal;
-        }
-    }
 }
 
 /**
@@ -3086,149 +3373,4 @@ function getColorFilterForHero(color) {
 
     const englishColor = (colorReverseMap[String(color).toLowerCase()] || color).toLowerCase();
     return colorMap[englishColor] || colorMap['white']; // 默认使用白色光效
-}
-
-// ============================================================
-// 翻译工具（仅用于 effects 区域，无需密钥）
-// 翻译工具（逐条翻译，保留 * 等特殊字符）
-// ============================================================
-
-/**
- * 主翻译函数：先尝试 MyMemory，失败时切换到备选
- */
-async function translateText(text, targetLang, sourceLang = 'en') {
-    if (!text || !text.trim()) return text;
-    const langMap = {
-        'zh-CN': 'zh-CN', 'zh-HK': 'zh-CN', 'zh-TW': 'zh-CN',
-        'en': 'en', 'ja': 'ja', 'ko': 'ko', 'fr': 'fr', 'de': 'de',
-        'es': 'es', 'pt': 'pt', 'it': 'it', 'ru': 'ru', 'ar': 'ar',
-        'tr': 'tr', 'pl': 'pl', 'nl': 'nl', 'sv': 'sv', 'da': 'da',
-        'no': 'no', 'fi': 'fi', 'id': 'id'
-    };
-    const from = langMap[sourceLang] || 'en';
-    const to = langMap[targetLang] || 'en';
-    if (from === to) return text;
-
-    // 尝试 MyMemory
-    try {
-        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        if (data.responseData?.translatedText) {
-            const translated = data.responseData.translatedText;
-            // 检测配额用尽警告
-            if (translated.includes('MYMEMORY WARNING') ||
-                translated.includes('USED ALL AVAILABLE FREE TRANSLATIONS') ||
-                translated.includes('VISIT HTTPS://MYMEMORYTRANSLATED.NET/DOC/USAGELIMITS.PHP')) {
-                console.warn('MyMemory 配额用尽，切换到备选翻译');
-                throw new Error('MyMemory quota exceeded');
-            }
-            if (translated === text && data.responseData.match < 0.5) {
-                console.warn('MyMemory 返回原文，切换到备选');
-                throw new Error('MyMemory returned original text');
-            }
-            return translated;
-        }
-        throw new Error('No translated text in response');
-    } catch (e) {
-        console.warn('MyMemory失败，尝试备选翻译...', e.message);
-        return await translateTextFallback(text, targetLang, sourceLang);
-    }
-}
-
-/**
- * 备选：Google Translate 非官方 API（支持 CORS，无需密钥）
- */
-async function translateTextGoogle(text, targetLang, sourceLang = 'en') {
-    if (!text || !text.trim()) return null;
-    const langMap = {
-        'zh-CN': 'zh-CN', 'zh-HK': 'zh-CN', 'zh-TW': 'zh-CN',
-        'en': 'en', 'ja': 'ja', 'ko': 'ko', 'fr': 'fr', 'de': 'de',
-        'es': 'es', 'pt': 'pt', 'it': 'it', 'ru': 'ru', 'ar': 'ar',
-        'tr': 'tr', 'pl': 'pl', 'nl': 'nl', 'sv': 'sv', 'da': 'da',
-        'no': 'no', 'fi': 'fi', 'id': 'id'
-    };
-    const from = langMap[sourceLang] || 'en';
-    const to = langMap[targetLang] || 'en';
-    if (from === to) return text;
-
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${from}&tl=${to}&dt=t&q=${encodeURIComponent(text)}`;
-    try {
-        const response = await fetch(url, { signal: AbortSignal.timeout(8000) });
-        if (!response.ok) throw new Error('HTTP ' + response.status);
-        const data = await response.json();
-        if (data && data[0] && data[0][0] && data[0][0][0]) {
-            return data[0][0][0];
-        }
-        throw new Error('无法解析翻译结果');
-    } catch (e) {
-        console.warn('Google Translate 非官方 API 失败:', e.message);
-        return null;
-    }
-}
-
-
-/**
- * 备选主函数：依次尝试 Google
- */
-async function translateTextFallback(text, targetLang, sourceLang = 'en') {
-    if (!text || !text.trim()) return text;
-    let result = await translateTextGoogle(text, targetLang, sourceLang);
-    if (result !== null) return result;
-    console.error('所有备选翻译服务均失败，返回原文');
-    return text;
-}
-
-/**
- * 翻译 effects 条目，保留括号注释的 * 标记和括号结构
- */
-async function translateEffectsItems(items, targetLang, onProgress) {
-    if (!items || items.length === 0) return items;
-    const total = items.length;
-    const results = [];
-    for (let i = 0; i < total; i++) {
-        let item = items[i];
-        if (!item || !item.trim()) {
-            results.push(item);
-            if (onProgress) onProgress(i + 1, total);
-            continue;
-        }
-        // 尝试匹配主描述和括号注释（带 * 和括号）
-        // 模式：主描述 + 可能的换行/空格 + *(注释内容)
-        // 注意：原始文本中可能包含 <br> 或直接包含 "*(...)"，但我们的数组是纯文本，不含 HTML
-        // 所以检查是否存在 "*(...)" 模式
-        const match = item.match(/^(.*?)\s*\(\*(.*)\)\s*$/);
-        if (match) {
-            const mainText = match[1].trim();
-            const commentText = match[2].trim();
-            // 翻译主文本和注释文本（分别翻译）
-            try {
-                const translatedMain = await translateText(mainText, targetLang);
-                const translatedComment = await translateText(commentText, targetLang);
-                // 重新组合：主文本 + " *(" + 注释 + ")"
-                const finalItem = translatedMain + ' *(' + translatedComment + ')';
-                results.push(finalItem);
-            } catch (e) {
-                console.warn(`条目 "${item}" 翻译失败，保留原文`);
-                results.push(item);
-            }
-        } else {
-            // 没有括号注释，直接翻译整个条目
-            try {
-                const translated = await translateText(item, targetLang);
-                // 检查是否为空
-                if (!translated || !translated.trim()) {
-                    console.warn(`条目 "${item}" 翻译结果为空，保留原文`);
-                    results.push(item);
-                } else {
-                    results.push(translated);
-                }
-            } catch (e) {
-                console.warn(`条目 "${item}" 翻译失败，保留原文`);
-                results.push(item);
-            }
-        }
-        if (onProgress) onProgress(i + 1, total);
-    }
-    return results;
 }

@@ -8,211 +8,46 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 /**
- * 解析单个英雄的技能描述，找出所有符合新规则的DoT（持续伤害）效果，
- * 并计算其伤害系数，同时排除包含'heal'的英文描述。
+ * 从词条里的 `[#Dynamic]…[#]` 标记找出所有「攻击力参与计算」的伤害数值，并算好系数。
+ *
+ * 用户 2026-10-10：**完全抛弃**旧站那一套「技能标签门控 + 关键词组合 + 排除词」的启发式识别，
+ * 只认生成器打的 `[#Dynamic]` 标记（`skill_desc_gen` 的 `lang_markup.mark_dynamic`）——
+ * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是「80 级攻击力」下的展示值
+ * ⇒ `系数 = 标记值 / hero.attack`；详情页切 LB / 服装加成时按 `系数 × 当前攻击力` 重算。
+ * 渲染侧 `_renderOneCore` 会把标记换成 `<span class="dynamic-value">`（见 render.js），
+ * 这里只负责"找 + 算系数"，两边按**出现顺序**一一对应（`index` = 词条下标，`subIndex` = 条内第几个）。
  * @param {object} hero - 要处理的英雄对象。
  */
 function parseAndStoreDoTInfo(hero) {
+    hero.dynamicDoTEffects = [];
+    if (!hero.effects || !hero.attack) return;
 
-    // ========== 前置条件：必须包含的标签 ==========
-    // 定义允许的DoT标签（简体、繁体、英文）
-    const allowedDoTTags = ["伤害-持续伤害", "傷害-持續傷害", "Dmg - DoT", "法力-莽夫", "Mana - Mindless"];
-    // "伤害-条件触发", "傷害-條件觸發", "Dmg - Conditional Trigger"
+    // ⚠ 系数基准必须是**生成器算这些数值时用的那个攻击力**：
+    //   生成器对"攻击缩放型伤害"用的是 `hero_attack_at_max` = **L80 × 服装奖励（最多套满阶）**
+    //   （见 passive_desc_gen.hero_attack_at_max / costume_bonus_level 的默认档）。
+    //   用裸 `hero.attack` 会让系数偏大 ⇒ 一开服装奖励数值就整体飘高。
+    const _refCb = (typeof costumeBonusEntry === 'function')
+        ? costumeBonusEntry(hero, hero.costumeMaxSets || 0) : null;
+    const refAttack = (_refCb && typeof applyStatPerMil === 'function')
+        ? applyStatPerMil(hero.attack, _refCb.attackBonusPerMil) : hero.attack;
+    if (!refAttack) return;
 
-    // 检查 hero.cn_skill_info 是否存在且是数组
-    if (hero.cn_skill_info && Array.isArray(hero.cn_skill_info)) {
-        let hasDoT = false;
-        for (const categoryObj of hero.cn_skill_info) {
-            for (const categoryName in categoryObj) {
-                const tags = categoryObj[categoryName];
-                if (Array.isArray(tags)) {
-                    // 检查是否包含任一允许的DoT标签
-                    if (tags.some(tag => allowedDoTTags.includes(tag))) {
-                        hasDoT = true;
-                        break;
-                    }
-                }
-            }
-            if (hasDoT) break;
-        }
-        if (!hasDoT) {
-            return; // 没有允许的DoT标签，忽略该英雄
-        }
-    } else {
-        return; // 没有 cn_skill_info 或格式不对
-    }
-
-    if (!hero.effects || !hero.attack || hero.attack === 0) return;
-
-    // 定义包含新规则的关键词组合，并标记每条规则是“总伤害”还是“每回合伤害”
-    const keywordSets = [
-        // --- 总伤害规则 (isPerTurn: false) ---
-        { keywords: ['敌人', '回合', '共计', '伤害'], isPerTurn: false },
-        { keywords: ['敌人', '核心', '充能', '伤害'], isPerTurn: false },
-        { keywords: ['目标', '回合', '共计', '伤害'], isPerTurn: false },
-        { keywords: ['敵人', '回合', '共計', '傷害'], isPerTurn: false },
-        { keywords: ['敵人', '核心', '暴增', '傷害'], isPerTurn: false },
-        { keywords: ['目標', '回合', '共計', '傷害'], isPerTurn: false },
-        { keywords: ['敌人', '回合内', '伤害'], isPerTurn: false },
-        { keywords: ['目标', '回合内', '伤害'], isPerTurn: false },
-        { keywords: ['敵人', '回合內', '傷害'], isPerTurn: false },
-        { keywords: ['目標', '回合內', '傷害'], isPerTurn: false },
-        { keywords: ['enemies', 'damage', 'over', 'turn'], isPerTurn: false },
-        { keywords: ['enemies', 'charged', 'Core', 'damage'], isPerTurn: false },
-        { keywords: ['target', 'damage', 'over', 'turn'], isPerTurn: false },
-        { keywords: ['法力满格', '自动', '伤害'], isPerTurn: false },
-        { keywords: ['法力滿格', '自動', '傷害'], isPerTurn: false },
-        { keywords: ['元素变化', '伤害'], isPerTurn: false },
-        { keywords: ['變更元素', '傷害'], isPerTurn: false },
-        { keywords: ['element change', 'damage'], isPerTurn: false },
-
-
-
-        // --- 每回合伤害规则 (isPerTurn: true) ---
-        { keywords: ['敌人', '回合', '每回合', '伤害'], isPerTurn: true },
-        { keywords: ['目标', '回合', '每回合', '伤害'], isPerTurn: true },
-        { keywords: ['敵人', '回合', '每回合', '傷害'], isPerTurn: true },
-        { keywords: ['目標', '回合', '每回合', '傷害'], isPerTurn: true },
-        { keywords: ['enemies', 'damage', 'for', 'turn'], isPerTurn: true },
-        { keywords: ['enemy', 'damage', 'for', 'turn'], isPerTurn: true },
-        { keywords: ['target', 'damage', 'for', 'turn'], isPerTurn: true },
-    ];
-
-    hero.dynamicDoTEffects = []; // 初始化存储结果的数组
-
-    hero.effects.forEach((effectText, index) => {
-        const lowerEffectText = effectText.toLowerCase();
-
-        // 排除规则：修复逻辑或，保留所有排除项
-        const excludeWords = [
-            '奔涌', 'surge',
-            '触发', '觸發', 'trigger', '刷新', 'refreshed', 
-            'stored', 'clawing damage', 'surge bleed', 'corruption', '承受的',
-            'healing', '抵抗治疗',
-        ];
-        const isExcluded = excludeWords.some(word => lowerEffectText.includes(word));
-        if (isExcluded) {
-            return;
-        }
-
-        // 检查当前技能描述行是否满足某一组关键词共存的条件
-        // ========== 多伤害专属规则 ==========
-        const mulDamages = (effectText.includes('共振') || effectText.includes('Resonance') || effectText.includes('Bleed damage') || effectText.includes('Curse damage') || effectText.includes('Wild') || effectText.includes('荒野：') || effectText.includes('所受伤害') || effectText.includes('诅咒伤害') || effectText.includes('詛咒傷害') || effectText.includes('流血伤害') || effectText.includes('流血傷害')) && (effectText.includes('敌人') || effectText.includes('敵人') || effectText.includes('damage'));
-        if (mulDamages) {
-            // 步骤1：强力清洗文本——剔除括号/星号/全角符号，替换全角空格为半角
-            const cleanText = effectText
-                .replace(/\(.*?\)/g, '') // 剔除小括号及内容
-                .replace(/\*+/g, '') // 剔除星号
-                .replace(/[，。、：；！？“”‘’""'']/g, ' ') // 标点换空格
-                .replace(/\s+/g, ' ') // 多个空格合并为一个
-                .trim(); // 去除首尾空格
-
-            // 步骤2：提取所有数字——兼容全角/半角数字，强制转换为Number
-            const numberMatches = cleanText.match(/\b\d+\b(?!%)/g) || [];
-            const allNums = numberMatches.map(num => Number(num)).filter(num => !isNaN(num));
-            if (allNums.length === 0) {
-                return;
-            }
-
-            // 步骤3：提取伤害值——>10的数值
-            const damageNums = allNums.filter(num => num > 10);
-            if (damageNums.length === 0) {
-                return;
-            }
-
-            // 步骤4：提取回合数——1-10的数值，去重，取第一个
-            const turnNums = [...new Set(allNums)].filter(num => num > 0 && num <= 10);
-            const turns = turnNums.length > 0 ? turnNums[0] : 1;
-
-            // 步骤5：遍历所有伤害值，逐个添加到结果
-            damageNums.forEach((damage, subIndex) => {
-                const totalBaseDamage = damage * turns; // 每回合伤害→总伤害
-                const coefficient = totalBaseDamage / hero.attack;
-                hero.dynamicDoTEffects.push({
-                    index: index,
-                    subIndex: subIndex,
-                    coefficient: coefficient,
-                    turns: turns,
-                    isPerTurn: true, // 多伤害为每回合伤害
-                    originalDamage: damage,
-                    type: 'mulDamages' // 标记多伤害类型
-                });
-            });
-            return; // 跳过原有规则，避免重复解析
-        }
-        // ========== 新增：单数字每回合伤害规则（独立于原有规则） ==========
-        // 定义专门匹配“每回合伤害”的关键词组合（只需包含这些关键词即可）
-        const singleTurnKeywordSets = [
-            { keywords: ['幽灵', '回合', '伤害'], isPerTurn: true },
-            { keywords: ['幽靈', '回合', '傷害'], isPerTurn: true },
-            { keywords: ['ghost', 'damage', 'turn'], isPerTurn: true },
-            { keywords: ['frost damage', 'damage', 'each turn'], isPerTurn: true },
-            
-            // 您可以按需增删
-        ];
-
-        // 检查当前描述是否匹配任意一组关键词（全部包含）
-        const matchedSingle = singleTurnKeywordSets.find(set =>
-            set.keywords.every(keyword => lowerEffectText.includes(keyword))
-        );
-
-        if (matchedSingle) {
-            // 提取所有数字
-            const numbers = effectText.match(/\b\d+\b(?!%)/g) || [];
-            // 查找第一个大于10的数字作为伤害值
-            let damage = null;
-            for (const numStr of numbers) {
-                const num = parseInt(numStr, 10);
-                if (num > 10) {
-                    damage = num;
-                    break;
-                }
-            }
-            // 如果找到了伤害数字，则计算并记录，然后结束本次处理
-            if (damage !== null) {
-                const coefficient = damage / hero.attack;  // 总伤害 = 伤害 × 1（因为描述为每回合，未明确回合数）
-                hero.dynamicDoTEffects.push({
-                    index: index,
-                    coefficient: coefficient,
-                    turns: 1,                 // 默认持续 1 回合（您可以根据游戏机制调整）
-                    isPerTurn: true,
-                    originalDamage: damage,
-                    type: 'singleTurnDoT'     // 可选的标记，便于调试
-                });
-                return; // 处理完毕，跳过后续所有原有规则
-            }
-        }
-
-
-        // ========== 原有关键词匹配规则 ==========
-        const matchedSet = keywordSets.find(set =>
-            set.keywords.every(keyword => lowerEffectText.includes(keyword.toLowerCase()))
-        );
-        if (matchedSet) {
-            const numbers = effectText.match(/\b\d+\b(?!%)/g) || [];
-            // 总伤害规则：至少1个数字；每回合规则：至少2个数字
-            if (matchedSet.isPerTurn && numbers.length < 2) return;
-            if (!matchedSet.isPerTurn && numbers.length < 1) return;
-
-            let damage = null, turns = null;
-            for (const numStr of numbers) {
-                const num = parseInt(numStr, 10);
-                if (num > 10 && damage === null) damage = num;
-                if (num > 0 && num <= 10 && turns === null) turns = num;
-            }
-            if (damage === null) return;
-
-            // 如果是总伤害规则且没有回合数，默认 turns = 1（不参与乘法即可）
-            if (!matchedSet.isPerTurn && turns === null) turns = 1;
-
-            const totalBaseDamage = matchedSet.isPerTurn ? damage * turns : damage;
-            const coefficient = totalBaseDamage / hero.attack;
+    // 标记内容 = `值`（生成器 `lang_markup.mark_dynamic` 打的就是纯数值）。
+    const DYNAMIC_RE = /\[#Dynamic\]\s*([^\[\]]*?)\s*\[#\]/g;
+    hero.effects.forEach((text, index) => {
+        if (typeof text !== 'string' || text.indexOf('[#Dynamic]') < 0) return;
+        DYNAMIC_RE.lastIndex = 0;
+        let m, sub = 0;
+        while ((m = DYNAMIC_RE.exec(text)) !== null) {
+            const subIndex = sub++;
+            const value = parseFloat(String(m[1]).split('|')[0]);
+            if (!isFinite(value)) continue;
             hero.dynamicDoTEffects.push({
                 index: index,
-                coefficient: coefficient,
-                turns: turns,
-                isPerTurn: matchedSet.isPerTurn,
-                originalDamage: damage
+                subIndex: subIndex,
+                originalDamage: value,
+                refAttack: refAttack,          // 导出这些数值时用的攻击力（L80 × 服装奖励最多套）
+                coefficient: value / refAttack
             });
         }
     });
@@ -325,13 +160,18 @@ async function initializeApp() {
 
     let langToUse = 'en';
 
+    // ⚠ 这里**不能**用 `i18n[码]` 判存在：`i18n` 要等 `loadAll()`（在 `loadData` 里）才填，
+    //    此刻还是 `langs.js` 预初始化出来的空对象 ⇒ Cookie / URL 的语言**永远被判为无效**
+    //    （重构回归：旧 `language.js` 在加载时就填好了 20 种语言）。改用 `Lang.LANGS` 白名单。
+    const _knownLang = (c) => !!c && (typeof Lang !== 'undefined') && Lang.LANGS.indexOf(c) >= 0;
+
     // 1. 优先使用 Cookie
-    if (languageCookie && i18n[languageCookie]) {
+    if (_knownLang(languageCookie)) {
         langToUse = languageCookie;
     }
 
     // 2. 其次使用 URL 参数
-    else if (langFromUrl && i18n[langFromUrl]) {
+    else if (_knownLang(langFromUrl)) {
         langToUse = langFromUrl;
     }
 
@@ -459,6 +299,9 @@ async function initializeApp() {
         return;
     }
 
+
+    // 2.5 i18n 已随 loadData 载入 ⇒ 再套一次文案（首次调用只设了 state.currentLang）
+    applyLanguage(state.currentLang);
 
     // 3. 数据后处理
     populateOriginToFamiliesMap();

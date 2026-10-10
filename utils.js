@@ -99,10 +99,33 @@ function getDisplayName(value, type) {
     return translatedValue;
 }
 
-// 为 Nynaeve 技能类型创建反向查找表
-// 这些表将中文标签映射回其原始的英文键，以便进行排序
-const nynaeveCnToEnMap = Object.fromEntries(Object.entries(skillTypeTranslations_cn).map(([en, cn]) => [cn, en]));
-const nynaeveTcToEnMap = Object.fromEntries(Object.entries(skillTypeTranslations_tc).map(([en, tc]) => [tc, en]));
+// 服装类型名「标识 → 类型键」（`getSkinInfo` 会按语言返回 CN/EN 两套标识，这里都收）
+const _COSTUME_TYPE_KEY = {
+    'C1': 'c1', 'C2': 'c2',
+    '卡通': 'toon', '公仔': 'toon', 'Toon': 'toon',
+    '玻璃': 'glass', 'Glass': 'glass',
+    '英姿': 'stylish', '有型': 'stylish', 'Stylish': 'stylish'
+};
+
+/**
+ * 服装类型名 → **当前语言**的名字（`langs_json/costume_type_<码>.json`）。
+ * 认不出就原样返回（不臆造）。
+ */
+function localizeCostumeType(name) {
+    const k = _COSTUME_TYPE_KEY[name];
+    return (k && typeof Lang !== 'undefined') ? Lang.t('costume_type', k) : name;
+}
+
+// 技能类型「当前语言文本 → 简体中文键」的反查表（排序用；原 language.js 的 skillTypeTranslations_* 已弃用）。
+// 直接由 langs_json/skill_types_<码>.json 反向构造。
+function _skillTypeReverseMap(lang) {
+    const m = (typeof Lang !== 'undefined') ? Lang.get('skill_types') : {};
+    const out = {};
+    for (const cnKey in m) { const v = m[cnKey]; if (v && v !== cnKey) out[v] = cnKey; }
+    return out;
+}
+let nynaeveCnToEnMap = {};
+let nynaeveTcToEnMap = {};
 /**
  * 根据来源和自定义排序规则，获取英雄的技能标签数组。
  * @param {object} hero - 英雄对象。
@@ -167,7 +190,7 @@ function getSkillTagsForHero(hero, source) {
         return tags;
     };
 
-    const cnTags = hero.cn_skill_info?.flatMap(cat => Object.values(cat)[0]) || [];
+    const cnTags = heroSkillTags(hero);
     const nynaeveTags = hero.skill_types || [];
     const heroplanTags = hero.types || [];
 
@@ -323,174 +346,345 @@ function applyCustomLanguageNames(langCode) {
     applySkillNames(langCode);
 }
 
-// 辅助函数：使用 base_values_dict_other 替换英雄的颜色、职业、速度
-function applyOtherLanguageValues(targetLang) {
-    if (targetLang === 'current') {
-        return;
-    }
-    // 检查必要数据是否存在
-    if (typeof base_values_dict_other === 'undefined') {
-        console.warn('base_values_dict_other 未定义');
-        return;
-    }
-    if (!targetLang) {
-        console.warn('目标语言未指定');
-        return;
-    }
-
-    // 获取当前语言，决定源语言（基准语言）
-    const currentLang = state.currentLang;
-    let sourceLang;
-    if (currentLang === 'cn' || currentLang === 'tc' || currentLang === 'en') {
-        sourceLang = currentLang;
-    } else {
-        sourceLang = 'en';
-    }
-
-    // 如果源语言与目标语言相同，无需翻译
-    if (sourceLang === targetLang) {
-        console.log(`源语言与目标语言相同 (${sourceLang})，跳过替换`);
-        return;
-    }
-
-    const sourceMap = base_values_dict_other[sourceLang];
-    const targetMap = base_values_dict_other[targetLang];
-    if (!sourceMap || !targetMap) {
-        console.warn(`缺少源语言 ${sourceLang} 或目标语言 ${targetLang} 的映射数据`);
-        return;
-    }
-
-    // 辅助函数：构建 源语言显示文本 → 目标语言文本 的映射
-    function buildTranslationMap(category) {
-        const sourceCategory = sourceMap[category];
-        const targetCategory = targetMap[category];
-        if (!sourceCategory || !targetCategory) return null;
-        const translationMap = {};
-        for (const [internalKey, sourceText] of Object.entries(sourceCategory)) {
-            const targetText = targetCategory[internalKey];
-            if (targetText) {
-                translationMap[sourceText] = targetText;
-            }
-        }
-        return translationMap;
-    }
-
-    const colorTranslation = buildTranslationMap('color');
-    const classTranslation = buildTranslationMap('class');
-    const speedTranslation = buildTranslationMap('speed');
-    const aether_powerTranslation = buildTranslationMap('aether_power');
-
-    state.allHeroes.forEach(hero => {
-        if (colorTranslation && hero.color && colorTranslation[hero.color]) {
-            hero.color = colorTranslation[hero.color];
-        }
-        if (classTranslation && hero.class && classTranslation[hero.class]) {
-            hero.class = classTranslation[hero.class];
-        }
-        if (speedTranslation && hero.speed && speedTranslation[hero.speed]) {
-            hero.speed = speedTranslation[hero.speed];
-        }
-        if (aether_powerTranslation && hero.AetherPower && aether_powerTranslation[hero.AetherPower]) {
-            hero.AetherPower = aether_powerTranslation[hero.AetherPower];
-        }
-    });
-}
-
 /**
  * 从服务器加载核心数据 (英雄、家族等)。
  * @param {string} lang - 要加载的语言版本 ('cn', 'tc', 'en')。
  * @returns {Promise<boolean>} 数据是否加载成功。
  */
+/** 稀有度参数（满级/突破成长） */
+const RARITY_PARAMS = {
+    5: { m1: 4, m2: 265, lb1: 20, lb2: 40 }, 4: { m1: 5, m2: 225, lb1: 23, lb2: 46 },
+    3: { m1: 6, m2: 123, lb1: 29, lb2: 58 }, 2: { m1: 7, m2: 93, lb1: 0, lb2: 0 },
+    1: { m1: 8, m2: 31, lb1: 0, lb2: 0 }
+};
+const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
+
+/** 单个属性：基础 → 80 级 → LB1 → LB2（每步整除截断，与游戏一致） */
+function _statLadder(base, rarity) {
+    const p = RARITY_PARAMS[rarity] || { m1: 0, m2: 0, lb1: 0, lb2: 0 };
+    const lv80 = Math.trunc(base + (base * p.m1 / 1000 * p.m2));
+    const lb1 = Math.trunc(lv80 + (base * p.lb1 / 1000 * 8));
+    const lb2 = Math.trunc(lb1 + (base * p.lb2 / 1000 * 8));
+    return [lv80, lb1, lb2];
+}
+
+/**
+ * 英雄三档属性（80 级 / LB1 / LB2）+ 战力。
+ * 口径与旧数据一致（实测本体英雄 1309/1309 逐字段复现）：
+ *   power = starBase[star] + int(atk*0.35 + def*0.28 + hp*0.14) + (8-1)*5
+ */
+function computeHeroStats(c) {
+    const r = c.rarity;
+    const [a0, a1, a2] = _statLadder(c.baseAttack || 0, r);
+    const [d0, d1, d2] = _statLadder(c.baseDefense || 0, r);
+    const [h0, h1, h2] = _statLadder(c.baseHealth || 0, r);
+    const pw = (a, d, h) => STAR_BASE_POWER[r] !== undefined
+        ? STAR_BASE_POWER[r] + Math.floor(a * 0.35 + d * 0.28 + h * 0.14) + 35
+        : Math.floor(a * 0.35 + d * 0.28 + h * 0.14) + 35;
+    return {
+        attack: a0, defense: d0, health: h0, power: pw(a0, d0, h0),
+        lb1: { attack: a1, defense: d1, health: h1, power: pw(a1, d1, h1) },
+        lb2: { attack: a2, defense: d2, health: h2, power: pw(a2, d2, h2) }
+    };
+}
+
+/**
+ * 服装奖励条目：取「`sets` 套、满阶」那一档。
+ * 表按「每套 `stages` 阶连续」排布 ⇒ `idx = sets×stages - 1`（越界钳到末档）。
+ * `sets <= 0` / 该英雄没有服装奖励表 ⇒ `null`（= 不施加服装奖励）。
+ */
+function costumeBonusEntry(hero, sets) {
+    if (!hero || !hero.costumeBonusLevels || !sets || sets <= 0) return null;
+    const bl = hero.costumeBonusLevels, st = hero.costumeStages || 4;
+    const idx = Math.min(sets * st - 1, bl.length - 1);
+    return (idx >= 0) ? bl[idx] : null;
+}
+
+/** 官方 `apply_stat_per_mil`：`stat × (1000+‰) / 1000`，**整除截断**（不是浮点乘完再 round）。 */
+function applyStatPerMil(v, perMil) {
+    return perMil ? Math.floor((v || 0) * (1000 + perMil) / 1000) : (v || 0);
+}
+
+/**
+ * 技能类型（统一成新格式 `{分类: [标签…]}`）。
+ * 新数据 `hero.skill_types` 就是这个形状（`data/heroes_skill_types.json`）；
+ * 旧数据 `hero.cn_skill_info` 是 `[{分类:[标签]}, …]` ⇒ 这里统一，调用方不必再判格式。
+ */
+function heroSkillTypes(hero) {
+    if (!hero) return {};
+    const st = hero.skill_types;
+    if (st && !Array.isArray(st)) return st;
+    const src = st || hero.cn_skill_info;
+    const out = {};
+    if (Array.isArray(src)) {
+        src.forEach(cat => { for (const k in cat) out[k] = (out[k] || []).concat(cat[k] || []); });
+    }
+    return out;
+}
+
+/** 技能类型标签的扁平数组 */
+function heroSkillTags(hero) {
+    return Object.values(heroSkillTypes(hero)).flat().filter(Boolean);
+}
+
+/**
+ * 取词（**最长前缀匹配**）：服装英雄没有自己的名字条目 ⇒ 回退到其本体条目
+ * （与旧实现 `getSkinInfo`/`applyHeroNames` 一致；例 `nordic_chained_werewolf_costume_raccoon` → `nordic_chained_werewolf`）。
+ */
+function _tPrefix(table, id) {
+    if (!id) return '';
+    const m = Lang.get(table);
+    if (m[id] !== undefined) return m[id];
+    let best = '', bestLen = -1;
+    for (const k in m) {
+        if (k.length > bestLen && id.startsWith(k)) { best = k; bestLen = k.length; }
+    }
+    return best ? m[best] : id;
+}
+
+/** 服装槽位（图标/皮肤标识用）：toon=3 glass=4 stylish=5，其余按同父英雄的发布顺序 1/2 */
+function _costumeSlot(heroId, ord) {
+    // 槽位 = **同父英雄下按发布日期编的序号**（1/2/3…）。
+    // ⚠ 不要再按 id 里的 `toon`/`glass`/`stylish` 关键字覆写：`getSkinInfo` / `getCostumeIconName`
+    //   还会对「classic 3★」再做一次 `+1` 映射，两处叠加会把 `stylish` 顶到 6
+    //   ⇒ 查不到 → 回退成 `C1`（用户 2026-10-10 报的 `dwarven_smasher_costume_stylish`）。
+    //   实测：序号法 + 那次 +1 与"按 id 关键字"在 240 个带类型名的服装里 **238 个一致**，
+    //   不一致的 2 个（`*_costume_cute` 排在第 1 位）旧站也是按序号出的。
+    return ord;
+}
+
+/**
+ * 英雄 id 命中这些关键字 ⇒ **不进列表**（用户 2026-10-10：排除 `_temp1`）。
+ * 与 `data/hero_order.json` 的 `hidden` 名单**分开**：那是可切换的"隐藏"，
+ * 这里是**硬排除**（`hero.excluded`），任何情况下都不展示（含抽奖奖池）。
+ * 消费点：`filters.js::listHeroes()` / `applyFiltersAndRender()`、`lottery-simulator.js::getSimHeroPool()`。
+ * 想加/减关键字就改这里。
+ * ⚠ 别写成 `_temp`：那会把 `oriental_female_templar*`、`ninja_cobalt_costume_tempest`
+ *   这些正常英雄一起排掉（`_templar` / `_tempest` 里都含 `_temp`）。
+ */
+const EXCLUDED_ID_KEYWORDS = ['_temp1'];
+
+/**
+ * 该英雄是否被"id 关键字"排除。
+ */
+function isExcludedById(heroId) {
+    const s = String(heroId || '');
+    return EXCLUDED_ID_KEYWORDS.some(k => k && s.indexOf(k) >= 0);
+}
+
+/**
+ * 从服务器加载核心数据。
+ *
+ * 数据源（全部来自官方配置 + 我们导出的词条，**不再用 data_{cn,en,tc}.json**）：
+ *   data/hero_order.json         英雄序号表（收藏位图按此下标）+ hidden 列表
+ *   data/characters.json         官方英雄配置（id/rarity/基础三维/element/family/manaSpeedId/classType/aetherGift…）
+ *   data/heroes_skills_<码>.json 我们导出的词条（familyBonus / passiveSkills / skills[].lines）
+ *   data/heroes_skill_types.json 技能类型标签（简体中文键）
+ *   data/source_info.json        source → 家族 关系
+ *   langs_json/*_<码>.json       各语言词表 + i18n + sort_order
+ * 语言：整页重载 ⇒ 启动时 await 一次即可。
+ * @param {string} lang - 当前语言码（cn/tc/en/…）。
+ */
 async function loadData(lang) {
-    // 从 Cookie 中读取保存的语言设置
+    // ---- 「额外名称语言」(search_lang)：只影响名字，不影响数据本身 ----
     let savedLang = getCookie('search_lang');
-    // 定义支持的语言数组
-    const langs = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
-
-    // 获取用户语言
-    const userLang = navigator.language || navigator.userLanguage;
-    const userLangShort = userLang.split('-')[0].toLowerCase(); // 获取语言代码的主部分
-
-    // 如果没有搜索语言,且 lang 为 'en'，且用户语言在 langs 中
-    if (!savedLang && lang === 'en' && langs.includes(userLangShort)) {
-        // 将新的 savedLang 保存回 cookie
-        savedLang = userLangShort;
-        setCookie('search_lang', userLangShort, 365);
+    const EXTRA_LANGS = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
+    const userLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
+    if (!savedLang && lang === 'en' && EXTRA_LANGS.includes(userLang)) {
+        savedLang = userLang;
+        setCookie('search_lang', savedLang, 365);
     }
-
-    // 即使没有 search_lang，也至少用当前语言的 langData 覆盖一次 hero.name
-    // 把 savedLang 变量本身也赋成 'current'，否则后续 if (savedLang) 分支不会执行
-    if (!savedLang) {
-        savedLang = 'current';
-        // 把 search_lang 视为 'current'
-        setCookie('search_lang', 'current', 365);
-    }
-
-    if (savedLang) {
-        const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
-        langSelector.value = savedLang;
-    }
+    if (!savedLang) { savedLang = 'current'; setCookie('search_lang', 'current', 365); }
+    const langSelector = document.getElementById('search-lang-selector');
+    if (langSelector) langSelector.value = savedLang;
 
     try {
-        // 如果 lang 是 langs 中的某一项，则回退为 'en'
-        if (langs.includes(lang)) {
-            lang = 'en';
-        }
+        // ① 语言表（i18n + 各词表 + 排序表）
+        await Lang.loadAll(lang);
+        nynaeveCnToEnMap = _skillTypeReverseMap(lang);
 
-        const response = await fetch(`./data_${lang}.json?v=${new Date().getTime()}`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        // ② 数据
+        const [orderRes, charsRes, typesRes, srcRes, skillsRes, enNameRes, costumeRes] = await Promise.all([
+            fetch(`data/hero_order.json?v=${Date.now()}`),
+            fetch(`data/characters.json?v=${Date.now()}`),
+            fetch(`data/heroes_skill_types.json?v=${Date.now()}`),
+            fetch(`data/source_info.json?v=${Date.now()}`),
+            fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`),
+            fetch(`langs_json/heroes_name_en.json?v=${Date.now()}`).catch(() => null),
+            fetch(`data/costume_bonuses.json?v=${Date.now()}`).catch(() => null)
+        ]);
+        const orderDoc = await orderRes.json();
+        const charsDoc = await charsRes.json();
+        const typesDoc = await typesRes.json();
+        const srcDoc = await srcRes.json();
+        const skills = await skillsRes.json();
+        const enNames = enNameRes ? await enNameRes.json() : {};
+        const costumeBonuses = costumeRes ? await costumeRes.json() : {};
+        window.langData.name['en'] = enNames;
 
-        if (!data.allHeroes || !data.families_bonus || !data.family_values) {
-            throw new Error("一个或多个数据键在JSON文件中缺失。");
-        }
-
-        // 无条件加载英文名映射（不受 search_lang 影响）
-        if (!window.langData.name['en']) {
-            try {
-                const enRes = await fetch(`langs_json/heroes_name_en.json?v=${new Date().getTime()}`);
-                window.langData.name['en'] = await enRes.json();
-            } catch (e) {
-                console.warn('[loadData] 加载英文名映射失败，将回退到 extractEnglishName:', e);
-            }
-        }
-        const englishNameData = window.langData.name['en'] || {};
-
-        state.allHeroes = data.allHeroes;
-
-        state.allHeroes.forEach((hero, index) => {
-            hero.originalIndex = index;
-            // 优先从英文名映射取，匹配用「最长前缀」（与 getSkinInfo 一致）
-            let enName = '';
-            if (hero.heroId) {
-                const keys = Object.keys(englishNameData).filter(k => hero.heroId.startsWith(k));
-                if (keys.length) {
-                    const best = keys.reduce((a, b) => a.length > b.length ? a : b);
-                    enName = englishNameData[best];
+        // ②.5 兼容既有调用点：data.js 里的 *ReverseMap 是「本地化文本 → 标准英文/ID」，
+        //      但只覆盖部分语言（colorReverseMap 84 条、无日文）。新数据存的是 ID ⇒
+        //      这里把**当前语言**的显示文本补进反查表 ⇒ 头像辉光 / 来源图标 / 导入导出等旧调用点零改动。
+        (function augmentReverseMaps() {
+            const add = (map, table, valFn) => {
+                if (typeof map === 'undefined' || !map) return;
+                const m = Lang.get(table);
+                for (const id in m) {
+                    const txt = m[id];
+                    if (txt && map[txt] === undefined) map[txt] = valFn(id);
                 }
-            } 
-            hero.english_name = enName || extractEnglishName(hero, state.currentLang);
-            if (hero.heroId === 'ninja_peridot_costume_herbalist') {
-                console.log('[en 匹配]', hero.heroId, '| enName =', enName, '| final =', hero.english_name);
+            };
+            add(typeof colorReverseMap !== 'undefined' ? colorReverseMap : null, 'color', id => id);
+            add(typeof classReverseMap !== 'undefined' ? classReverseMap : null, 'class',
+                id => id.charAt(0).toUpperCase() + id.slice(1));
+            add(typeof aether_powerReverseMap !== 'undefined' ? aether_powerReverseMap : null, 'aether_power', id => id);
+            add(typeof sourceReverseMap !== 'undefined' ? sourceReverseMap : null, 'source', id => id);
+            // 技能类型标签：skillTagReverseMap 只覆盖简/繁（其它语言缺）⇒ 用当前语言表补上
+            if (typeof skillTagReverseMap !== 'undefined' && skillTagReverseMap) {
+                const st = Lang.get('skill_types');
+                for (const cnKey in st) {
+                    const txt = st[cnKey];
+                    if (txt && skillTagReverseMap[txt] === undefined) skillTagReverseMap[txt] = cnKey;
+                }
             }
-            
-        });
-        state.families_bonus = data.families_bonus;
-        state.family_values = data.family_values;
+        })();
 
-        // 如果 savedLang 不为 current，则使用 window.langData 进行名称替换
-        // 这里必须放在 state.allHeroes 赋值之后，否则 applyCustomLanguageNames 空跑
+        // ③ family → source
+        const fam2src = {};
+        for (const sid in srcDoc) {
+            for (const f of (srcDoc[sid] || [])) if (!(f in fam2src)) fam2src[f] = sid;
+        }
+        fam2src['classic'] = 'season1';
+
+        // ④ 组装（严格按 hero_order 的下标顺序；表外的新英雄追加到末尾）
+        const order = orderDoc.order || [];
+        const hiddenSet = new Set(orderDoc.hidden || []);
+        const heroes = charsDoc.charactersConfig.heroes || [];
+        const byId = {};
+        heroes.forEach(h => { byId[h.id] = h; });
+        const seen = new Set(order);
+        const ids = order.filter(x => byId[x]).concat(heroes.map(h => h.id).filter(x => !seen.has(x)));
+
+        // 服装槽位：同父英雄下按发布日期顺序编 1/2…
+        const costumeOrd = {};
+        heroes.filter(h => h.parentHeroId).sort((a, b) =>
+            String(a.canBeReceivedDate || '').localeCompare(String(b.canBeReceivedDate || '')) ||
+            a.id.localeCompare(b.id)
+        ).forEach(h => {
+            const p = h.parentHeroId;
+            costumeOrd[p] = (costumeOrd[p] || 0) + 1;
+            costumeOrd[h.id] = costumeOrd[p];
+        });
+
+        const list = [];
+        const familyValues = {};
+        // 有服装的本体英雄 id 集合（用户 2026-10-10：本体也要显示「服装奖励」选择器）
+        const _parentIds = new Set();
+        heroes.forEach(h => { if (h.parentHeroId) _parentIds.add(h.parentHeroId); });
+        ids.forEach((hid, idx) => {
+            const c = byId[hid];
+            if (!c) return;
+            const st = (skills[hid] && skills[hid][0]) || {};
+            const s = computeHeroStats(c);
+            const colorId = String(c.element || '').toLowerCase();
+            const classId = String(c.classType || '').toLowerCase();
+            const speedId = c.manaSpeedId || '';
+            const aetherId = c.aetherGift || '';
+            // 家族 id 归一化：`zodiac_dragon` / `zodiac_rat` … **一律并入 `zodiac`**
+            //（用户 2026-10-10：它们本来就是同一个"农历生肖"家族下的生肖变体）
+            const famId = (c.family || '').startsWith('zodiac') ? 'zodiac' : (c.family || '');
+            const srcId = fam2src[famId] || '';
+            const isCostume = !!c.parentHeroId;
+            // ── 服装奖励（`data/costume_bonuses.json`）──
+            // 只有**服装英雄**（有 parentHeroId）才有；规则取**父英雄**的 `costumeBonusesId`
+            //   （与生成器 `passive_desc_gen._costume_rule_of` 同口径）。
+            // 表按「每套 stages 阶连续」排布 ⇒ 套数 = len//stages，stages = 3(≤3★) / 4(≥4★)。
+            // `costumeListSets` = **该英雄自身的服装顺序**（同父英雄下按发布日期编 1/2/…）——
+            //   列表属性用它才能复现"英雄发布当时"的属性（旧数据 638/638 逐字段吻合）；
+            //   详情页则用"服装奖励"下拉选的值（默认最多套）。
+            const _cbRarity = c.rarity || 5;
+            const _cbStages = (_cbRarity >= 4) ? 4 : 3;
+            let _cbLevels = null, _cbMax = 0;
+            // 取表用的 id：**服装英雄看父英雄**；**本体英雄看自己** —— 用户 2026-10-10：
+            //   "只要本体存在服装，本体英雄也显示切换服装加成的图标"（`_parentIds` 见上面）。
+            if (isCostume || _parentIds.has(hid)) {
+                const _owner = isCostume ? (byId[c.parentHeroId] || {}) : c;
+                const _rule = costumeBonuses[_owner.costumeBonusesId];
+                const _sb = (_rule && Array.isArray(_rule.statBonuses)) ? _rule.statBonuses : null;
+                const _bl = (_sb && _cbRarity <= _sb.length) ? ((_sb[_cbRarity - 1] || {}).bonusLevels) : null;
+                if (Array.isArray(_bl) && _bl.length) {
+                    _cbLevels = _bl;
+                    _cbMax = Math.max(1, Math.floor(_bl.length / _cbStages));
+                }
+            }
+            // ⚠ **列表口径只有服装英雄吃服装奖励**（本体不吃）—— 与旧数据一致；
+            //   本体英雄的 `_cbLevels` 只给详情页的「服装奖励」选择器用。
+            const _cbListSets = (isCostume && _cbLevels) ? Math.min(costumeOrd[hid] || 1, _cbMax) : 0;
+            const hero = {
+                heroId: hid,
+                specialId: c.specialId || '',
+                // 服装英雄自带的 specialId 基本没有图标（实测 702 个服装只有 7 个有，且都是通用 `tackle`）
+                // ⇒ 技能图标回退到**本体英雄**的 specialId（用户 2026-10-10：服装英雄的技能图标用父英雄的）。
+                parent_specialId: isCostume ? ((byId[c.parentHeroId] || {}).specialId || '') : '',
+                star: c.rarity,
+                family: famId,
+                parentHeroId: c.parentHeroId || null,
+                costume_id: isCostume ? _costumeSlot(hid, costumeOrd[hid] || 1) : 0,
+                costumeBonusLevels: _cbLevels,
+                costumeStages: _cbStages,
+                costumeMaxSets: _cbMax,
+                costumeListSets: _cbListSets,
+                sourceId: srcId,
+                source: Lang.t('source', srcId),
+                colorId: colorId, color: Lang.t('color', colorId),
+                classId: classId, class: Lang.t('class', classId),
+                speedId: speedId, speed: Lang.t('speed', speedId),
+                aetherPowerId: aetherId, AetherPower: Lang.t('aether_power', aetherId),
+                name: _tPrefix('heroes_name', hid),
+                fancy_name: _tPrefix('heroes_name_fancy', hid),
+                skill: Lang.t('skill_name', c.specialId || ''),
+                'Release date': (c.canBeReceivedDate || '').slice(0, 10),
+                releaseDate: c.canBeReceivedDate || '',
+                effects: (st.skills && st.skills[0] && st.skills[0].lines) || [],
+                passives: (st.passiveSkills || []).map(x => x.text).filter(Boolean),
+                passiveSkills: st.passiveSkills || [],
+                // 被动筛选的文本池 = **正文 + 标题**（用户 2026-10-10：被动搜索也要能搜到标题；
+                // 详情页点被动名"一键快速搜索"用的就是这个池子）
+                passivesSearchPool: (st.passiveSkills || []).reduce((a, x) => {
+                    if (x && x.text) a.push(x.text);
+                    if (x && x.title) a.push(x.title);
+                    return a;
+                }, []),
+                familyBonus: st.familyBonus || [],
+                skill_types: typesDoc[hid] || {},
+                originalIndex: idx,
+                // `hidden` = hero_order 的隐藏名单（`showHiddenHeroes` 可切回来）；
+                // `excluded` = **id 关键字排除**（`EXCLUDED_ID_KEYWORDS`）—— 任何情况下都不展示。
+                hidden: hiddenSet.has(hid),
+                excluded: isExcludedById(hid),
+                attack: s.attack, defense: s.defense, health: s.health, power: s.power,
+                lb1: s.lb1, lb2: s.lb2
+            };
+            // 英文名（收藏/分享/图标等沿用；最长前缀匹配，与旧实现一致）
+            let en = '';
+            const keys = Object.keys(enNames).filter(k => hid.startsWith(k));
+            if (keys.length) en = enNames[keys.reduce((a, b) => a.length > b.length ? a : b)];
+            hero.english_name = en || hid;
+            list.push(hero);
+            if (!(hero.family in familyValues)) familyValues[hero.family] = Lang.t('family', hero.family);
+        });
+
+        state.allHeroes = list;
+        state.families_bonus = [];            // 家族加成改由每个英雄的 familyBonus 提供
+        state.family_values = familyValues;   // getDisplayName(family/source) 用
+
+        // ⑤ 「额外名称语言」：名字/技能名改用另一语言（数据本身不变）
         if (savedLang === 'current') {
-            await loadExtraNameData(state.currentLang);
+            await loadExtraNameData(lang);
         } else {
             await loadExtraNameData(savedLang);
             applyCustomLanguageNames(savedLang);
-            // 使用 base_values_dict_other 替换颜色、职业、速度等
-            applyOtherLanguageValues(savedLang);
         }
-
         return true;
     } catch (error) {
         console.error("加载或解析数据文件失败:", error);
@@ -499,9 +693,7 @@ async function loadData(lang) {
             resultsWrapper.innerHTML = `<p style='color: var(--md-sys-color-error); font-weight: bold;'>错误：加载数据失败。请检查控制台获取详细信息。</p>`;
         }
         const pageLoader = document.getElementById('page-loader-overlay');
-        if (pageLoader) {
-            pageLoader.classList.add('hidden');
-        }
+        if (pageLoader) pageLoader.classList.add('hidden');
         return false;
     }
 }

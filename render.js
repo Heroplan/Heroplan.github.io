@@ -2179,15 +2179,23 @@ function renderDetailsInModal(hero, context = {}) {
     //    大图标旁的家族名走**官方 `family_title` 表**（`langs_json/family_title_<码>.json`，
     //    如 `asgard → 阿斯加德王国`），不是 `family` 表里的分组短名（`S3 - 阿斯加德`）；
     //    表外家族（123 条之外）回退 `getDisplayName`（用户 2026-10-10）。
+    //    ⚠ 2026-10-10 二次调整（用户）：
+    //      ① 「家族奖励」那行的**家族名隐藏**（原来"小图标 + 家族名"和下面的大图标行重复，
+    //         `langDict.modalFamilyBonus('')` ⇒ 只留标题，模板已支持空家族名）；
+    //      ② 大图标那行的**家族名标题改为可点** ⇒ **一键筛选该家族**
+    //         （复用 `.skill-type-tag` 的点击逻辑，见 `modalContent.addEventListener('click')`）。
     const _familyTitleTable = (typeof Lang !== 'undefined') ? Lang.get('family_title') : {};
     const familyTitleName = (hero.family && _familyTitleTable[hero.family])
         || getDisplayName(hero.family, 'family');
+    const familyTitleTag = hero.family
+        ? ` class="uniform-style big-skill-name skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}" title="${langDict.filterBy} ${familyTitleName}"`
+        : ' class="uniform-style big-skill-name"';
     const familyBonusSectionHTML = familyBonus.length > 0 ? `
         <div id="modal-family-bonus-section" class="skill-category-block">
-            <p class="uniform-style">${langDict.modalFamilyBonus(`<span class="skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>`)}</p>
+            <p class="uniform-style">${langDict.modalFamilyBonus('')}</p>
             <div class="skill-header-container">
                 <img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="big-skill-icon" alt="${hero.family}" onerror="this.style.display='none'">
-                <div class="skill-name-speed-block"><p class="uniform-style big-skill-name">${familyTitleName}</p></div>
+                <div class="skill-name-speed-block"><p${familyTitleTag}>${familyTitleName}</p></div>
             </div>
             <ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul>
         </div>` : '';

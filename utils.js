@@ -486,17 +486,9 @@ function isExcludedById(heroId) {
  * @param {string} lang - 当前语言码（cn/tc/en/…）。
  */
 async function loadData(lang) {
-    // ---- 「额外名称语言」(search_lang)：只影响名字，不影响数据本身 ----
-    let savedLang = getCookie('search_lang');
-    const EXTRA_LANGS = ['ja', 'ko', 'ru', 'ar', 'da', 'nl', 'fi', 'fr', 'de', 'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
-    const userLang = (navigator.language || navigator.userLanguage || '').split('-')[0].toLowerCase();
-    if (!savedLang && lang === 'en' && EXTRA_LANGS.includes(userLang)) {
-        savedLang = userLang;
-        setCookie('search_lang', savedLang, 365);
-    }
-    if (!savedLang) { savedLang = 'current'; setCookie('search_lang', 'current', 365); }
-    const langSelector = document.getElementById('search-lang-selector');
-    if (langSelector) langSelector.value = savedLang;
+    // ⚠ 2026-10-10 用户口径：**搜索语言选择已废弃** —— 不论 cookie 如何一律按 `current`
+    //   （= 当前界面语言）处理 ⇒ `search_lang` cookie 与选择器同步整块移除。
+    const savedLang = 'current';
 
     try {
         // ① 语言表（i18n + 各词表 + 排序表）

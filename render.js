@@ -10,11 +10,9 @@
 function getSkinInfo(hero) {
     let name = hero.name || '';
 
-    const searchLang = getCookie('search_lang');
     const langCode = state.currentLang;
-    // 条件：searchLang 是 current时,加载官方英雄名字数据
-    // searchLang 是自定义时,前面已经加载并应用,直接使用name即可
-    if (searchLang === 'current') {
+    // ⚠ 2026-10-10 用户口径：搜索语言选择已废弃 ⇒ 一律走 `current` 分支（用当前语言的官方名字）。
+    {
 
         if (!window.langData?.name?.[langCode]) {
             console.warn(`未找到 ${langCode} 语言的数据`);
@@ -1712,7 +1710,7 @@ function renderDetailsInModal(hero, context = {}) {
         // `[*]` 也要从筛选值/提示里去掉（否则 `data-filter-value` 会带出 `[*]보드의…` 这种残留）
         const _plainItem = (s) => String(s)
             .replace(/\[#Dynamic\]([^\[\]]*)\[#\]/g, (m, v) => v)
-            .replace(/\[\*\]/g, '')
+            .replace(/\[\*+\]/g, '')
             .trim();
 
         // `[*]` = **子行标记**（缩进 + 保留未着色的 `*`，见下方外层组装）；行首 `*` 才是"括号补充说明"的虚线标记。
@@ -1958,19 +1956,25 @@ function renderDetailsInModal(hero, context = {}) {
             // 上一条产出的是不是 `[*]` 子行 —— 括号注释块要**比它再多缩进一级**
             //   （用户 2026-10-10：谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
             let lastWasSub = false;
+            // 层级标记 = `[` + N 个 `*` + `]`（用户 2026-10-10：`[*]` 一级 / `[**]` 二级 …）。
+            // 这样"子词条 / 说明词条 / 新词条"各有各的深度，不再全挤成 `[*]`。
+            const _LVL_RE = /^\[(\*+)\]\s*/;
+            const _subCls = (lvl) => 'skill-subline' + (lvl > 1 ? (' skill-subline-l' + lvl) : '');
             const _one = (line) => {
-                const isSub = forceSub || line.startsWith('[*]');
-                const txt = line.startsWith('[*]') ? line.slice(3).trim() : line;
+                const m = line.match(_LVL_RE);
+                const lvl = m ? m[1].length : 0;
+                const isSub = forceSub || lvl > 0;
+                const txt = m ? line.slice(m[0].length).trim() : line;
                 const sp = _splitLi(_renderOneCore(txt, { noParen: true }));
-                return { isSub, inner: sp.inner, open: sp.open };
+                return { isSub, lvl, inner: sp.inner, open: sp.open };
             };
             // 子行：**只有前面已有内容时才补 `<br>`**，否则词条会以一条无意义空行开头。
             // 空内容（例如整行只有 `[*]`，后面紧跟括号注释块）⇒ 不产出空子行。
             // `openTag` 只在"整条都是子行"时用来继承首行 `<li …>` 的属性（`data-filter-type` 等）。
-            const _pushSub = (h, openTag) => {
+            const _pushSub = (h, openTag, lvl) => {
                 if (!h) return;
                 if (!hasContent && openTag) open = openTag;
-                inner += (hasContent ? '<br>' : '') + `<span class="skill-subline">* ${h}</span>`;
+                inner += (hasContent ? '<br>' : '') + `<span class="${_subCls(lvl || 1)}">* ${h}</span>`;
                 hasContent = true;
                 lastWasSub = true;
             };
@@ -1979,27 +1983,36 @@ function renderDetailsInModal(hero, context = {}) {
                     p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach(l => {
                         const r = _one(l);
                         if (!headDone && !r.isSub) { headDone = true; open = r.open; inner += r.inner; hasContent = true; lastWasSub = false; }
-                        else { headDone = true; _pushSub(r.inner, r.open); }
+                        else { headDone = true; _pushSub(r.inner, r.open, r.lvl); }
                     });
                     return;
                 }
-                // 括号注释块：去掉 `(` `)`，整块套虚线 + 左侧多缩进；块内 `[*]` 仍是缩进子行（同样保持虚线）
+                // 括号注释块：去掉 `(` `)`，整块套虚线 + 左侧多缩进。
+                // ⚠ 2026-10-10 用户口径（`ghost_xiwang_gui`「2 个额外说明合并为一个括号了 但缩进却不一样
+                //   应该为同一级别」）：块内各行**缩进必须一致** —— 原来第 2 行起套 `.skill-subline`
+                //   （+1.4em）比第 1 行深，看着像两级。现在除首行外只加 `<br>` + `* ` 项目符，
+                //   **不再加缩进类**；虚线由 `.paren-note` 直接继承（也省掉 `.paren-note .skill-subline`
+                //   那条 inherit 规则的作用）。
                 const hadContent = hasContent;
                 let body = '', bodyHas = false;
                 p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach((l, i) => {
                     const r = _one(l);
+                    // 行头 = `.paren-mark` 的 `*` + **一个空格**（用户 2026-10-10：「补上」）
+                    //   —— 首行原来直接 `*内容`（无空格），与续行 `* 内容`、与 `[*]` 子行的
+                    //   `* ${h}` 都不一致；现在块内**所有行**统一成 `* 内容`。
+                    const _head = `<span class="paren-mark">*</span> `;
                     if (i === 0) {                          // 第一行接着 `*` 同行显示
                         if (!headDone && !hadContent) { headDone = true; open = r.open; }
-                        body += r.inner;
-                    } else {                                // 其余行 = 注释块内的缩进子行
+                        body += (r.inner ? _head + r.inner : '');
+                    } else {                                // 其余行 = 同一缩进层级的续行
                         headDone = true;
-                        body += (bodyHas ? '<br>' : '') + `<span class="skill-subline">* ${r.inner}</span>`;
+                        body += (bodyHas ? '<br>' : '') + _head + r.inner;
                     }
                     bodyHas = true;
                 });
                 inner += (hadContent ? '<br>' : '')
                     + `<span class="paren-note${lastWasSub ? ' paren-note-sub' : ''}">`
-                    + `<span class="paren-mark">*</span>${body}${p.tail}</span>`;
+                    + (body ? '' : `<span class="paren-mark">*</span>`) + body + p.tail + '</span>';
                 hasContent = true;
             });
             return { open, inner };
@@ -2016,7 +2029,7 @@ function renderDetailsInModal(hero, context = {}) {
         //   它**归属于上一行词条**（数据里就是那行的括注）⇒ 必须并进上一条 `<li>`，
         //   不能单独成一个网页元素（用户 2026-10-10）。
         const _isPureParen = (s) => {
-            const parts = _splitAnnotations(String(s).replace(/^\s*\[\*\]\s*/, ''));
+            const parts = _splitAnnotations(String(s).replace(/^\s*\[\*+\]\s*/, ''));
             return parts.length > 0 && parts.every(p => p.kind === 'paren');
         };
 
@@ -2027,7 +2040,7 @@ function renderDetailsInModal(hero, context = {}) {
         //   （2026-10-10 实测 ar 87 / tc 44 / ja 40 / fr 7 行内 `[*]` 裸露）。
         //   ⚠ 必须放在 `_isPureParen` / `_renderEntryInner` **之前**（两者都按行首判据工作）。
         const _normBullets = (s) => String(s)
-            .replace(/[ \t\u00a0]*\[\*\][ \t\u00a0]*/g, '\n[*]')
+            .replace(/[ \t\u00a0]*(\[\*+\])[ \t\u00a0]*/g, '\n$1')
             .replace(/\n{2,}/g, '\n')
             .replace(/^\n+|\n+$/g, '');
 
@@ -2035,7 +2048,7 @@ function renderDetailsInModal(hero, context = {}) {
             const raw = _normBullets(item);
             if (!raw.replace(/^\s+/, '')) return acc;
             // ② 并进上一条 <li>：familyBonus 的所有 `[*]` 子项；以及**任何**列表里"整条只有括号"的元素
-            const _merge = acc.length && ((_mergeSubItems && /^\s*\[\*\]/.test(raw)) || _isPureParen(raw));
+            const _merge = acc.length && ((_mergeSubItems && /^\s*\[\*+\]/.test(raw)) || _isPureParen(raw));
             if (_merge) {
                 acc[acc.length - 1] = _appendSubs(acc[acc.length - 1],
                     _renderEntryInner(raw, true).inner);

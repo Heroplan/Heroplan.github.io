@@ -339,10 +339,8 @@ function populateFilters() {
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';
         const sortOptions = state.currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
 
-        let lang = getCookie('search_lang');
-        if (lang === 'current'){
-            lang = state.currentLang;
-        }
+        // 搜索语言已废弃 ⇒ 排序一律按当前界面语言
+        const lang = state.currentLang;
 
         if (key.startsWith('skillTag_')) {
             const orderMap = { skillTag_base: skillTagOrder_base, skillTag_special: skillTagOrder_special, skillTag_buff: skillTagOrder_buff, skillTag_debuff: skillTagOrder_debuff };
@@ -1076,35 +1074,10 @@ function initializeNameAutocomplete() {
     const nameInput = document.getElementById('name-input');
     const autocompleteList = document.getElementById('name-autocomplete-list');
     const clearButton = document.getElementById('clear-input'); // 获取清除按钮
-    const langSelector = document.getElementById('search-lang-selector'); // 获取新按钮
+    // ⚠ 2026-10-10 用户口径：**搜索语言选择已废弃** —— 不论 cookie 如何，一律按 `current`
+    //   （= 当前界面语言）处理 ⇒ 选择器元素与监听逻辑一并移除。
 
     if (!nameInput || !autocompleteList) return;
-    let previousLang = langSelector.value;
-
-    langSelector.addEventListener('focus', function () {
-        // 每次点开下拉框时，记住当前的值
-        previousLang = this.value;
-    });
-
-    // 监听语言选择变化
-    if (langSelector) {
-        langSelector.addEventListener('change', function () {
-            const selectedLang = this.value;
-            setCookie('search_lang', selectedLang, 365);
-            if (loadData(state.currentLang)) {
-                location.reload();
-                nameInput.value = ''; // 切换语言时清空输入
-                nameInput.focus();
-                // 延迟处理，确保已完成加载
-                setTimeout(() => {
-                    applyFiltersAndRender();
-                }, 1000);
-            } else {
-                location.reload();
-                //this.value = previousLang;
-            }
-        });
-    }
 
     let currentFocus = -1;
     let currentSuggestions = [];
@@ -1195,9 +1168,8 @@ function initializeNameAutocomplete() {
 
     // 更新候选建议
     function updateAutocompleteSuggestions(searchTerm) {
-        // 传入当前选择的搜索语言
-        const searchLang = langSelector ? langSelector.value : 'current';
-        currentSuggestions = getHeroNameSuggestions(searchTerm, searchLang);
+        // 搜索语言已废弃 ⇒ 一律用当前界面语言
+        currentSuggestions = getHeroNameSuggestions(searchTerm, 'current');
         showAutocompleteSuggestions(currentSuggestions, searchTerm);
     }
 

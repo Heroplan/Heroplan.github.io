@@ -7014,15 +7014,6 @@ html.dark-theme .autocomplete-item.selected {
 }
 
 /* 语言选择器样式 */
-.search-lang-select {
-  width: 8px;
-  background-color: var(--md-sys-color-surface);
-  color: var(--md-sys-color-on-surface);
-  cursor: pointer;
-  height: 40px;
-  /* 确保与输入框高度一致 */
-}
-
 #name-input {
   flex-grow: 1;
   /* 输入框占据剩余空间 */
@@ -7059,6 +7050,12 @@ html.dark-theme .autocomplete-item.selected {
     padding-left: 1.4em;
     color: var(--md-sys-color-on-surface);
 }
+
+/* 层级子行（用户 2026-10-10：「子词条 / 说明词条 / 新词条换行都是 `[*]` 有点混淆」）：
+   标记语法 = `[` + N 个 `*` + `]`，N 即层级 —— `[*]` 一级 1.4em / `[**]` 二级 2.8em /
+   `[***]` 三级 4.2em，**每级再深 1.4em**，从属关系一眼可辨。 */
+#modal .skill-list li .skill-subline-l2 { padding-left: 2.8em; }
+#modal .skill-list li .skill-subline-l3 { padding-left: 4.2em; }
 
 /* 括号注释块（用户 2026-10-10）：
    · 去掉前后括号，只留橙色 `*` + 着色虚线下划线；
@@ -7197,6 +7194,17 @@ html[dir="rtl"] #modal .skill-list li {
 html[dir="rtl"] #modal .skill-list li .skill-subline {
     padding-left: 0;
     padding-right: 1.4em;
+}
+
+/* RTL 下层级子行同样镜像（`[**]` 2.8em / `[***]` 4.2em） */
+html[dir="rtl"] #modal .skill-list li .skill-subline-l2 {
+    padding-left: 0;
+    padding-right: 2.8em;
+}
+
+html[dir="rtl"] #modal .skill-list li .skill-subline-l3 {
+    padding-left: 0;
+    padding-right: 4.2em;
 }
 
 html[dir="rtl"] #modal .skill-list li .paren-note {

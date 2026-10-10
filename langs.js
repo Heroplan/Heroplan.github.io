@@ -26,7 +26,8 @@
 
     // 单语言表（文件名前缀）
     var TABLES = ['heroes_name', 'heroes_name_fancy', 'skill_name', 'class', 'color', 'speed',
-                  'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type'];
+                  'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type',
+                  'lottery_title'];
 
     var _cache = {};        // 文件名 -> object（fetch 缓存，键含 .json）
     var _tables = {};       // 表名 -> object（**当前语言**的表，键不含 .json）

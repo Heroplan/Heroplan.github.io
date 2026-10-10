@@ -142,19 +142,8 @@ async function initializeApp() {
     }
 
     const language = getCookie('language');
-    const searchLang = getCookie('search_lang');
-    const searchLanguageUpdated = getCookie('searchLanguageUpdated');
-
-    // 强制使用一次自动设置搜索语言
-    // 条件：language 不是 cn、tc、en，且 search_lang 为 'current' 或不存在（null/undefined/空字符串）
-    if (language && !['cn', 'tc', 'en'].includes(language) && (!searchLang || searchLang === 'current')) {
-        if (searchLanguageUpdated !== '1') {
-            // 清除 search_lang cookie（设为与当前语言一致）
-            setCookie('search_lang', language, 365);
-            // 设置标记，表示已执行过更新
-            setCookie('searchLanguageUpdated', '1', 365);
-        }
-    }
+    // ⚠ 2026-10-10 用户口径：**搜索语言选择已废弃** ⇒ 不再读写 `search_lang` /
+    //   `searchLanguageUpdated`，一律按当前界面语言处理（相关迁移逻辑整块移除）。
 
     const languageCookie = getCookie('language');
 
@@ -1361,11 +1350,8 @@ function populateOriginToFamiliesMap() {
  * @returns {Array} 排序后的捐赠名单
  */
 function sortDonationListByLanguage(originalList) {
-    // 从 Cookie 中读取保存的语言设置
-    let userLang = getCookie('search_lang');
-    if (userLang === 'current') {
-        userLang = state.currentLang;
-    }
+    // 搜索语言已废弃 ⇒ 一律用当前界面语言
+    const userLang = state.currentLang;
 
     // 如果用户语言无效或不在映射中，返回原始顺序
     if (!userLang || !langDonorsMap[userLang]) {

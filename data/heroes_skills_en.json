@@ -21735,8 +21735,8 @@
      "lines": [
       "All enemies receive [#Dynamic] 330 [#] Poison damage over 3 turns.",
       "Summons a Muffin Fiend for all enemies. The Fiend damages the enemy with 38% attack every turn.\n[*] The Muffin Fiend absorbs healing and disappears when it has absorbed health equal to 35% of its target's max health.\n[*] Each hit from the Muffin Fiend has the following effects:",
-      "The target takes 50% increased damage from status ailments and negative stacks for 3 turns.",
-      "There is a 25% chance to refresh the duration of the status ailment with the least turns remaining."
+      "[**]The target takes 50% increased damage from status ailments and negative stacks for 3 turns.",
+      "[**]There is a 25% chance to refresh the duration of the status ailment with the least turns remaining."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "All enemies receive [#Dynamic] 498 [#] Poison damage over 3 turns. The caster and all their allies absorb 20% of dealt Poison damage as health.",
       "Summons a Muffin Fiend for all enemies. The Fiend damages the enemy with 55% attack every turn.\n[*] The Muffin Fiend absorbs healing and disappears when it has absorbed health equal to 40% of its target's max health.\n[*] Each hit from the Muffin Fiend has the following effects:",
-      "The target takes 55% increased damage from status ailments and negative stacks for 3 turns.",
-      "There is a 30% chance to refresh the duration of the status ailment with the least turns remaining."
+      "[**]The target takes 55% increased damage from status ailments and negative stacks for 3 turns.",
+      "[**]There is a 30% chance to refresh the duration of the status ailment with the least turns remaining."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Growth: The caster and nearby allies get 450 attack and 450 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons an Aberration Mega Minion with 45% HP and 180% attack inherited from the caster.\n[*]Each hit from an Aberration Mega Minion gives the target the following status ailment:",
-      "The target receives [#Dynamic] 552 [#] Toxin damage over 3 turns. Damage is increased against targets with boosted health, Minions or a Mega Minion. (The Toxin damage is increased by 100% against targets with boosted health.\n[*]The Toxin damage is increased by 33% per Minion or Mega Minion owned by target.\n[*] Maximum increased damage is 199%.)",
-      "Inflicts 10 Insanity on the target.",
+      "[**]The target receives [#Dynamic] 552 [#] Toxin damage over 3 turns. Damage is increased against targets with boosted health, Minions or a Mega Minion. (The Toxin damage is increased by 100% against targets with boosted health.\n[***]The Toxin damage is increased by 33% per Minion or Mega Minion owned by target.\n[***]Maximum increased damage is 199%.)",
+      "[**]Inflicts 10 Insanity on the target.",
       "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Boosts health of all allies by 550. Boosted health can exceed max HP.",
       "Summons a Magical Sword Minion for the caster and nearby allies with 14% HP and 15% attack inherited from the caster.\n[*]Each hit from a Magical Sword Minion gives the target the following status ailment:",
-      "-24% mana generation for 3 turns. This effect can't be cleansed. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
+      "[**] -24% mana generation for 3 turns. This effect can't be cleansed. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "Special Skill has a different effect when charged with 100% / 200% mana:",
       "[*]x 1 Mana Charge:",
       "[**]Summons a Butterfly Minion for each ally with 14% HP and 20% attack inherited from the caster.\n[***]Each hit from a Butterfly Minion gives the target the following status ailment:",
-      "[**] 20% increase to all received damage for 3 turns.",
+      "[****] 20% increase to all received damage for 3 turns.",
       "[*]x 2 Mana Charge:",
       "[**]Summons a Butterfly Fiend for all enemies. The Fiend damages its target with 43% attack every turn.\n[***]The Butterfly Fiend absorbs healing. It disappears after absorbing a healing amount equal to 50% of its target's max health.",
       "[**]When summoned, the Butterfly Fiend gives -50% accuracy for its target for as long as the target has Butterfly Fiends. This effect can't be cleansed. (Chance to miss also applies to offensive Special Skills.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Summons a Harpoon Sentry Minion for each ally with 12% HP and 20% attack inherited from the caster.\n[*] Each hit from a Harpoon Sentry Minion reduces the mana of the target by -5% and gives the target the following status ailments:",
-      "The target gets -30% defense against Special Skills for 2 turns.",
-      "The target is immune to new status effect buffs for 2 turns."
+      "[**]The target gets -30% defense against Special Skills for 2 turns.",
+      "[**]The target is immune to new status effect buffs for 2 turns."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Summons a Moth Minion for each ally. The Moth Minion inherits 20% HP and 20% attack from the caster.\n[*]Each hit from a Moth Minion gives the target the following status ailments:",
-      "The target receives [#Dynamic] 180 [#] Poison damage over 3 turns.",
-      "The target resists new Minions for 3 turns."
+      "[**]The target receives [#Dynamic] 180 [#] Poison damage over 3 turns.",
+      "[**]The target resists new Minions for 3 turns."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Summons a Moth Minion for each ally. The Moth Minion inherits 30% HP and 30% attack from the caster.\n[*]Each hit from a Moth Minion gives the target the following status ailments:",
-      "The target receives [#Dynamic] 120 [#] Poison damage over 3 turns.",
-      "The target resists new Minions for 3 turns."
+      "[**]The target receives [#Dynamic] 120 [#] Poison damage over 3 turns.",
+      "[**]The target resists new Minions for 3 turns."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Summons a Bee Minion for each ally. The Bee Minion inherits 15% HP and 17% attack from the caster.\n[*]Each hit from a Bee Minion gives the target the following status ailments:",
-      "The target receives [#Dynamic] 32 [#] Poison damage over 2 turns.",
-      "The target resists new Minions for 4 turns."
+      "[**]The target receives [#Dynamic] 32 [#] Poison damage over 2 turns.",
+      "[**]The target resists new Minions for 4 turns."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Summons a Bee Minion for each ally. The Bee Minion inherits 18% HP and 15% attack from the caster.\n[*]Each hit from a Bee Minion gives the target the following status ailments:",
-      "The target receives [#Dynamic] 48 [#] Poison damage over 3 turns.",
-      "The target is immune to new status effect buffs for 2 turns."
+      "[**]The target receives [#Dynamic] 48 [#] Poison damage over 3 turns.",
+      "[**]The target is immune to new status effect buffs for 2 turns."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "All allies get 54% defense against Dark for 3 turns.",
       "Summons a Bee Minion for each ally. The Bee Minion inherits 20% HP and 20% attack from the caster.\n[*]Each hit from a Bee Minion gives the target the following status ailments:",
-      "The target receives [#Dynamic] 50 [#] Poison damage over 2 turns.",
-      "The target resists new Minions for 4 turns."
+      "[**]The target receives [#Dynamic] 50 [#] Poison damage over 2 turns.",
+      "[**]The target resists new Minions for 4 turns."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Deals 260% damage to all enemies.",
       "Summons a Xulu Minion for each ally with 15% HP and 20% attack inherited from the caster.\n[*] Each hit from a Xulu Minion gives the target the following status ailment:",
-      "The target receives [#Dynamic] 344 [#] Bleed damage over 4 turns.",
-      "Inflicts 5 Insanity on the target.",
+      "[**]The target receives [#Dynamic] 344 [#] Bleed damage over 4 turns.",
+      "[**]Inflicts 5 Insanity on the target.",
       "Casting this Special Skill inflicts 50 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]

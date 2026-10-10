@@ -21735,8 +21735,8 @@
      "lines": [
       "Alle Gegner erleiden [#Dynamic] 330 [#] Giftschaden über 3 Züge.",
       "Beschwört einen Muffin-Feind für alle Gegner. Der Feind greift den Gegner mit 38% Angriff bei jedem Zug an.\n[*]Der Muffin-Feind absorbiert Heilung und verschwindet, wenn er Leben in Höhe von 35% des max. Lebens des Ziels aufgenommen hat.\n[*] Jeder Treffer des Muffin-Feinds hat die folgenden Effekte:",
-      "Das Ziel erleidet um 50% erhöhten Schaden von negativen Statusänderungen und negativen Stapeln für 3 Züge.",
-      "Es besteht eine Chance von 25%, die Dauer der negativen Statusänderung mit den wenigsten verbleibenden Zügen zurückzusetzen."
+      "[**]Das Ziel erleidet um 50% erhöhten Schaden von negativen Statusänderungen und negativen Stapeln für 3 Züge.",
+      "[**]Es besteht eine Chance von 25%, die Dauer der negativen Statusänderung mit den wenigsten verbleibenden Zügen zurückzusetzen."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Alle Gegner erleiden [#Dynamic] 498 [#] Giftschaden über 3 Züge. Der Wirker und alle seine Verbündeten absorbieren 20% des zugefügten Giftschadens als Leben.",
       "Beschwört einen Muffin-Feind für alle Gegner. Der Feind greift den Gegner mit 55% Angriff bei jedem Zug an.\n[*]Der Muffin-Feind absorbiert Heilung und verschwindet, wenn er Leben in Höhe von 40% des max. Lebens des Ziels aufgenommen hat.\n[*] Jeder Treffer des Muffin-Feinds hat die folgenden Effekte:",
-      "Das Ziel erleidet um 55% erhöhten Schaden von negativen Statusänderungen und negativen Stapeln für 3 Züge.",
-      "Es besteht eine Chance von 30%, die Dauer der negativen Statusänderung mit den wenigsten verbleibenden Zügen zurückzusetzen."
+      "[**]Das Ziel erleidet um 55% erhöhten Schaden von negativen Statusänderungen und negativen Stapeln für 3 Züge.",
+      "[**]Es besteht eine Chance von 30%, die Dauer der negativen Statusänderung mit den wenigsten verbleibenden Zügen zurückzusetzen."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Wachstum: Der Wirker und alle Verbündeten in der Nähe erhalten 450 Angriff und 450 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)",
       "Beschwört einen Abweichungs-Mega-Lakaien mit 45% LP und 180% Angriff vom Wirker.\n[*]Jeder Treffer eines Abweichungs-Mega-Lakaien verleiht dem Ziel folgende negative Statusänderung:",
-      "Das Ziel erleidet 3 Züge lang [#Dynamic] 552 [#] Toxinschaden. Der Schaden ist für Ziele mit verstärktem Leben, Lakaien oder Mega-Lakaien erhöht. (Der Toxinschaden wird gegen Ziele mit verstärktem Leben um 100% erhöht.\n[*]Der Toxinschaden wird pro Lakai oder Mega-Lakai des Ziels um 33% erhöht.\n[*] Der Schaden wird maximal um 199% erhöht.)",
-      "Verursacht 10 Wahnsinn beim Ziel.",
+      "[**]Das Ziel erleidet 3 Züge lang [#Dynamic] 552 [#] Toxinschaden. Der Schaden ist für Ziele mit verstärktem Leben, Lakaien oder Mega-Lakaien erhöht. (Der Toxinschaden wird gegen Ziele mit verstärktem Leben um 100% erhöht.\n[***]Der Toxinschaden wird pro Lakai oder Mega-Lakai des Ziels um 33% erhöht.\n[***]Der Schaden wird maximal um 199% erhöht.)",
+      "[**]Verursacht 10 Wahnsinn beim Ziel.",
       "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Verstärkt das Leben aller Verbündeten um 550. Verstärktes Leben kann die max. LP übersteigen.",
       "Beschwört einen Magisches-Schwert-Lakaien für den Wirker und Verbündete in der Nähe mit 14% LP und 15% Angriff vom Wirker.\n[*]Jeder Treffer eines Magisches-Schwert-Lakaien verleiht dem Ziel folgende negative Statusänderung:",
-      "-24% Manaregeneration für 3 Züge. Dieser Effekt kann nicht gereinigt werden. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)"
+      "[**] -24% Manaregeneration für 3 Züge. Dieser Effekt kann nicht gereinigt werden. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200% Mana aufgeladen ist:",
       "[*] 1 x Manaaufladung:",
       "[**]Beschwört für jeden Verbündeten einen Schmetterlingslakai mit 14% LP und 20% Angriff, die er vom Wirker bekommt.\n[***]Jeder Treffer eines Schmetterlingslakais gibt dem Ziel den folgenden Statuseffekt:",
-      "[**]Der gesamte erlittene Schaden wird für 3 Züge um 20% erhöht.",
+      "[****]Der gesamte erlittene Schaden wird für 3 Züge um 20% erhöht.",
       "[*] 2 x Manaaufladung:",
       "[**]Beschwört einen Schmetterlingsfeind für alle Gegner. Der Feind greift sein Ziel mit 43% Angriff bei jedem Zug an.\n[***]Der Schmetterlingsfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 50% des max. Lebens des Ziels aufgenommen hat.",
       "[**]Der Schmetterlingsfeind gewährt -50% Genauigkeit, solange sein Ziel Schmetterlingsfeinde besitzt. Dieser Effekt kann nicht gereinigt werden. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Beschwört für jeden Verbündeten einen Harpunenwächter-Lakai mit 12% LP und 20% Angriff, die er vom Wirker bekommt.\n[*] Jeder Treffer eines Harpunenwächter-Lakais verringert das Mana des Ziels um -5% und gibt dem Ziel die folgenden Statusänderungen:",
-      "Das Ziel erhält -30% Verteidigung gegen Spezialfähigkeiten für 2 Züge.",
-      "Das Ziel ist für 2 Runden immun gegen neue Statuseffekt-Boni."
+      "[**]Das Ziel erhält -30% Verteidigung gegen Spezialfähigkeiten für 2 Züge.",
+      "[**]Das Ziel ist für 2 Runden immun gegen neue Statuseffekt-Boni."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Beschwört einen Mottenlakaien für jeden Verbündeten. Der Mottenlakai erhält 20% LP und 20% Angriff vom Wirker.\n[*]Jeder Treffer eines Mottenlakaien verleiht dem Ziel folgende negative Statusänderungen:",
-      "Das Ziel erleidet [#Dynamic] 180 [#] Giftschaden über 3 Züge.",
-      "Das Ziel kann für 3 Runden neuen Lakaien widerstehen."
+      "[**]Das Ziel erleidet [#Dynamic] 180 [#] Giftschaden über 3 Züge.",
+      "[**]Das Ziel kann für 3 Runden neuen Lakaien widerstehen."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Beschwört einen Mottenlakaien für jeden Verbündeten. Der Mottenlakai erhält 30% LP und 30% Angriff vom Wirker.\n[*]Jeder Treffer eines Mottenlakaien verleiht dem Ziel folgende negative Statusänderungen:",
-      "Das Ziel erleidet [#Dynamic] 120 [#] Giftschaden über 3 Züge.",
-      "Das Ziel kann für 3 Runden neuen Lakaien widerstehen."
+      "[**]Das Ziel erleidet [#Dynamic] 120 [#] Giftschaden über 3 Züge.",
+      "[**]Das Ziel kann für 3 Runden neuen Lakaien widerstehen."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Beschwört einen Bienenlakaien für jeden Verbündeten. Der Bienenlakai erhält 15% LP und 17% Angriff vom Wirker.\n[*]Jeder Treffer eines Bienenlakaien verleiht dem Ziel folgende negative Statusänderungen:",
-      "Das Ziel erleidet [#Dynamic] 32 [#] Giftschaden über 2 Züge.",
-      "Das Ziel kann für 4 Runden neuen Lakaien widerstehen."
+      "[**]Das Ziel erleidet [#Dynamic] 32 [#] Giftschaden über 2 Züge.",
+      "[**]Das Ziel kann für 4 Runden neuen Lakaien widerstehen."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Beschwört einen Bienenlakaien für jeden Verbündeten. Der Bienenlakai erhält 18% LP und 15% Angriff vom Wirker.\n[*]Jeder Treffer eines Bienenlakaien verleiht dem Ziel folgende negative Statusänderungen:",
-      "Das Ziel erleidet [#Dynamic] 48 [#] Giftschaden über 3 Züge.",
-      "Das Ziel ist für 2 Runden immun gegen neue Statuseffekt-Boni."
+      "[**]Das Ziel erleidet [#Dynamic] 48 [#] Giftschaden über 3 Züge.",
+      "[**]Das Ziel ist für 2 Runden immun gegen neue Statuseffekt-Boni."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Alle Verbündeten erhalten 54% Verteidigung gegen Schatten für 3 Züge.",
       "Beschwört einen Bienenlakaien für jeden Verbündeten. Der Bienenlakai erhält 20% LP und 20% Angriff vom Wirker.\n[*]Jeder Treffer eines Bienenlakaien verleiht dem Ziel folgende negative Statusänderungen:",
-      "Das Ziel erleidet [#Dynamic] 50 [#] Giftschaden über 2 Züge.",
-      "Das Ziel kann für 4 Runden neuen Lakaien widerstehen."
+      "[**]Das Ziel erleidet [#Dynamic] 50 [#] Giftschaden über 2 Züge.",
+      "[**]Das Ziel kann für 4 Runden neuen Lakaien widerstehen."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Verursacht 260% Schaden bei allen Gegnern.",
       "Beschwört für jeden Verbündeten einen Xulu-Lakai mit 15% LP und 20% Angriff, die er vom Wirker übernimmt.\n[*] Jeder Treffer eines Xulu-Lakais gibt dem Ziel die folgende Statusänderung:",
-      "Das Ziel erleidet [#Dynamic] 344 [#] Blutungsschaden über 4 Züge.",
-      "Verursacht 5 Wahnsinn beim Ziel.",
+      "[**]Das Ziel erleidet [#Dynamic] 344 [#] Blutungsschaden über 4 Züge.",
+      "[**]Verursacht 5 Wahnsinn beim Ziel.",
       "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]

@@ -21735,8 +21735,8 @@
      "lines": [
       "Tous les ennemis reçoivent [#Dynamic] 330 [#] dégâts de poison sur 3 tours.",
       "Invoque un démon muffin pour tous les ennemis. Il inflige des dégâts à l'ennemi à hauteur de 38% d'attaque chaque tour.\n[*]Le démon muffin absorbe les soins et disparaît après avoir absorbé 35% de la santé maximum de la cible.\n[*] Chaque coup du démon muffin a les effets suivants:",
-      "Le cible subit 50% de dégâts supplémentaires des effets et cumuls négatifs pendant 3 tours.",
-      "La durée de l'effet négatif auquel il reste le moins de tours a 25% de chances d'être réinitialisée."
+      "[**]Le cible subit 50% de dégâts supplémentaires des effets et cumuls négatifs pendant 3 tours.",
+      "[**]La durée de l'effet négatif auquel il reste le moins de tours a 25% de chances d'être réinitialisée."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Tous les ennemis reçoivent [#Dynamic] 498 [#] points de dégâts de poison en 3 tours. Le lanceur et ses alliés se soignent à hauteur de 20% des dégâts de poison.",
       "Invoque un démon muffin pour tous les ennemis. Il inflige des dégâts à l'ennemi à hauteur de 55% d'attaque chaque tour.\n[*]Le démon muffin absorbe les soins et disparaît après avoir absorbé 40% de la santé maximum de la cible.\n[*] Chaque coup du démon muffin a les effets suivants:",
-      "Le cible subit 55% de dégâts supplémentaires des effets et cumuls négatifs pendant 3 tours.",
-      "La durée de l'effet négatif auquel il reste le moins de tours a 30% de chances d'être réinitialisée."
+      "[**]Le cible subit 55% de dégâts supplémentaires des effets et cumuls négatifs pendant 3 tours.",
+      "[**]La durée de l'effet négatif auquel il reste le moins de tours a 30% de chances d'être réinitialisée."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Croissance: le lanceur et les alliés proches reçoivent 450 points d'attaque et 450 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un méga sbire aberration avec 45% de PV et 180% d'attaque hérités du lanceur.\n[*]Chaque coup d'un méga sbire aberration donne l'effet négatif suivant à la cible:",
-      "La cible reçoit [#Dynamic] 552 [#] points de dégâts de toxines en 3 tours. Les dégâts sont plus importants sur les cibles dont la santé est boostée ou qui possèdent des sbires ou des méga sbires. (Les dégâts de toxines augmentent de 100% pour les cibles dont la santé est boostée.\n[*]Les dégâts de toxines augmentent de 33% pour chaque sbire ou méga sbire possédé par la cible.\n[*] L'augmentation maximale est de 199%.)",
-      "Inflige 10 point(s) de folie à la cible.",
+      "[**]La cible reçoit [#Dynamic] 552 [#] points de dégâts de toxines en 3 tours. Les dégâts sont plus importants sur les cibles dont la santé est boostée ou qui possèdent des sbires ou des méga sbires. (Les dégâts de toxines augmentent de 100% pour les cibles dont la santé est boostée.\n[***]Les dégâts de toxines augmentent de 33% pour chaque sbire ou méga sbire possédé par la cible.\n[***]L'augmentation maximale est de 199%.)",
+      "[**]Inflige 10 point(s) de folie à la cible.",
       "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Booste la santé de tous les alliés de 550. Le maximum de PV peut être dépassé.",
       "Invoque un sbire épée magique pour l'utilisateur et les alliés proches avec 14% de PV et 15% d'attaque hérités du lanceur.\n[*]Chaque coup d'un sbire épée magique donne l'effet négatif suivant à la cible:",
-      "-24% de génération de mana pour 3 tours. Cet effet ne peut pas être purifié. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
+      "[**] -24% de génération de mana pour 3 tours. Cet effet ne peut pas être purifié. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% de mana:",
       "[*]Charge de mana x 1:",
       "[**]Invoque un sbire papillon pour chaque allié avec 14% de PV et 20% d'attaque hérités du lanceur.\n[***]Chaque coup d'un sbire papillon donne l'effet négatif suivant à la cible:",
-      "[**]Tous les dégâts subis sont augmentés de 20% pendant 3 tours.",
+      "[****]Tous les dégâts subis sont augmentés de 20% pendant 3 tours.",
       "[*]Charge de mana x 2:",
       "[**]Invoque un démon papillon pour tous les ennemis. Il inflige des dégâts à sa cible à hauteur de 43% d'attaque à chaque tour.\n[***]Le démon papillon absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 50% de la santé maximum de sa cible.",
       "[**]Lorsqu'il est invoqué, le papillon démon octroie -50% de précision à sa cible tant qu'il est actif. Cet effet ne peut pas être purifié. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Invoque un sbire sentinelle à harpon pour chaque allié avec 12% de PV et 20% d'attaque hérités du lanceur.\n[*] Chaque coup du sbire réduit le mana de la cible de -5% et lui inflige les effets négatifs suivants:",
-      "La cible reçoit -30% de défense contre les compétences spéciales pendant 2 tours.",
-      "La cible est immunisée contre les nouveaux bonus d'effets appliqués pendant 2 tours."
+      "[**]La cible reçoit -30% de défense contre les compétences spéciales pendant 2 tours.",
+      "[**]La cible est immunisée contre les nouveaux bonus d'effets appliqués pendant 2 tours."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Invoque un sbire papillon de nuit pour chaque allié. Le sbire papillon de nuit hérite de 20% des PV et 20% de l'attaque du lanceur.\n[*]Chaque coup d'un sbire papillon de nuit donne les effets négatifs suivants à la cible:",
-      "La cible reçoit [#Dynamic] 180 [#] de dégâts de poison sur 3 tours.",
-      "La cible résiste aux nouveaux sbires pendant 3 tours."
+      "[**]La cible reçoit [#Dynamic] 180 [#] de dégâts de poison sur 3 tours.",
+      "[**]La cible résiste aux nouveaux sbires pendant 3 tours."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Invoque un sbire papillon de nuit pour chaque allié. Le sbire papillon de nuit hérite de 30% des PV et 30% de l'attaque du lanceur.\n[*]Chaque coup d'un sbire papillon de nuit donne les effets négatifs suivants à la cible:",
-      "La cible reçoit [#Dynamic] 120 [#] de dégâts de poison sur 3 tours.",
-      "La cible résiste aux nouveaux sbires pendant 3 tours."
+      "[**]La cible reçoit [#Dynamic] 120 [#] de dégâts de poison sur 3 tours.",
+      "[**]La cible résiste aux nouveaux sbires pendant 3 tours."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Invoque un sbire abeille pour chaque allié. Le sbire abeille hérite de 15% de PV et 17% d'attaque du lanceur.\n[*]Chaque coup d'un sbire abeille donne les effets négatifs suivants à la cible:",
-      "La cible reçoit [#Dynamic] 32 [#] de dégâts de poison sur 2 tours.",
-      "La cible résiste aux nouveaux sbires pendant 4 tours."
+      "[**]La cible reçoit [#Dynamic] 32 [#] de dégâts de poison sur 2 tours.",
+      "[**]La cible résiste aux nouveaux sbires pendant 4 tours."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Invoque un sbire abeille pour chaque allié. Le sbire abeille hérite de 18% de PV et 15% d'attaque du lanceur.\n[*]Chaque coup d'un sbire abeille donne les effets négatifs suivants à la cible:",
-      "La cible reçoit [#Dynamic] 48 [#] de dégâts de poison sur 3 tours.",
-      "La cible est immunisée contre les nouveaux bonus d'effets appliqués pendant 2 tours."
+      "[**]La cible reçoit [#Dynamic] 48 [#] de dégâts de poison sur 3 tours.",
+      "[**]La cible est immunisée contre les nouveaux bonus d'effets appliqués pendant 2 tours."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Tous les alliés reçoivent 54% de défense contre l'élément sombre pour 3 tours.",
       "Invoque un sbire abeille pour chaque allié. Le sbire abeille hérite de 20% de PV et 20% d'attaque du lanceur.\n[*]Chaque coup d'un sbire abeille donne les effets négatifs suivants à la cible:",
-      "La cible reçoit [#Dynamic] 50 [#] de dégâts de poison sur 2 tours.",
-      "La cible résiste aux nouveaux sbires pendant 4 tours."
+      "[**]La cible reçoit [#Dynamic] 50 [#] de dégâts de poison sur 2 tours.",
+      "[**]La cible résiste aux nouveaux sbires pendant 4 tours."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Inflige 260% de dégâts à tous les ennemis.",
       "Invoque un sbire Xulu pour chaque allié avec 15% de PV et 20% d'attaque hérités du lanceur.\n[*] Chaque coup d'un sbire Xulu donne l'effet négatif suivant à la cible:",
-      "La cible reçoit [#Dynamic] 344 [#] points de dégâts des saignement sur 4 tours.",
-      "Inflige 5 point(s) de folie à la cible.",
+      "[**]La cible reçoit [#Dynamic] 344 [#] points de dégâts des saignement sur 4 tours.",
+      "[**]Inflige 5 point(s) de folie à la cible.",
       "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]

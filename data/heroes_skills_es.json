@@ -21735,8 +21735,8 @@
      "lines": [
       "Todos los enemigos reciben [#Dynamic] 330 [#] de daño de veneno durante 3 turnos.",
       "Invoca un demonio magdalena para todos los enemigos que daña al enemigo con un 38% de ataque cada turno.\n[*] El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 35% de la vitalidad máxima del objetivo.\n[*] Cada golpe del demonio tiene los siguientes efectos:",
-      "El objetivo recibe un 50% más de daño de los estados alterados y acumulaciones negativas durante 3 turnos.",
-      "Hay un 25% de probabilidad de que se restablezca la duración del estado alterado al que le queden menos turnos."
+      "[**]El objetivo recibe un 50% más de daño de los estados alterados y acumulaciones negativas durante 3 turnos.",
+      "[**]Hay un 25% de probabilidad de que se restablezca la duración del estado alterado al que le queden menos turnos."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Todos los enemigos reciben [#Dynamic] 498 [#] de daño de veneno durante 3 turnos. El héroe y todos los aliados absorben un 20% del daño de veneno infligido como vitalidad.",
       "Invoca un demonio magdalena para todos los enemigos que daña al enemigo con un 55% de ataque cada turno.\n[*] El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 40% de la vitalidad máxima del objetivo.\n[*] Cada golpe del demonio tiene los siguientes efectos:",
-      "El objetivo recibe un 55% más de daño de los estados alterados y las acumulaciones negativas durante 3 turnos.",
-      "Hay un 30% de probabilidad de que se restablezca la duración del estado alterado al que le queden menos turnos."
+      "[**]El objetivo recibe un 55% más de daño de los estados alterados y las acumulaciones negativas durante 3 turnos.",
+      "[**]Hay un 30% de probabilidad de que se restablezca la duración del estado alterado al que le queden menos turnos."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Crecimiento: El héroe y los aliados cercanos obtienen 450 de ataque y 450 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz aberrante con un 45% de VIT y un 180% de ataque heredados del héroe.\n[*]Cada golpe de un megasecuaz aberrante otorga al objetivo el siguiente estado alterado:",
-      "El objetivo recibe [#Dynamic] 552 [#] de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[*] El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[*] El daño puede aumentar hasta un máximo del 199%.)",
-      "Inflige 10 de demencia al objetivo.",
+      "[**]El objetivo recibe [#Dynamic] 552 [#] de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[***]El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[***]El daño puede aumentar hasta un máximo del 199%.)",
+      "[**]Inflige 10 de demencia al objetivo.",
       "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Potencia la vitalidad de todos los aliados en 550. La vitalidad potenciada puede exceder la VIT máxima.",
       "Invoca un secuaz espada mágica para el héroe y los aliados cercanos. El secuaz espada mágica hereda un 14% de VIT y un 15% de ataque del héroe.\n[*]Cada golpe de un secuaz espada mágica otorga al objetivo el siguiente estado alterado:",
-      "-24% de regeneración de maná durante 3 turnos. Este efecto no se puede purificar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
+      "[**] -24% de regeneración de maná durante 3 turnos. Este efecto no se puede purificar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200% de maná:",
       "[*]x 1 de carga de maná:",
       "[**]Invoca un secuaz mariposa para todos los aliados. El secuaz mariposa hereda un 14% de VIT y un 20% de ataque del héroe.\n[***]Cada golpe de un secuaz mariposa otorga al objetivo el siguiente estado alterado:",
-      "[**]Todo el daño recibido aumenta un 20% durante 3 turnos.",
+      "[****]Todo el daño recibido aumenta un 20% durante 3 turnos.",
       "[*]x 2 de carga de maná:",
       "[**]Invoca un demonio mariposa para todos los enemigos que daña al objetivo con un 43% de ataque cada turno.\n[***]El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 50% de la vitalidad máxima de su objetivo.",
       "[**]Al invocarse, mientras lo tenga, el demonio mariposa otorga un -50% de precisión a su objetivo. Este efecto no se puede purificar. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Invoca un secuaz centinela con arpón para todos los aliados. El secuaz hereda un 12% de VIT y un 20% de ataque del héroe.\n[*] Cada golpe de un secuaz centinela con arpón reduce un -5% el maná del objetivo y le otorga los siguientes estados alterados:",
-      "El objetivo recibe un -30% de defensa contra habilidades especiales durante 2 turnos.",
-      "El objetivo es inmune a las nuevas bendiciones de estado durante 2 turnos."
+      "[**]El objetivo recibe un -30% de defensa contra habilidades especiales durante 2 turnos.",
+      "[**]El objetivo es inmune a las nuevas bendiciones de estado durante 2 turnos."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Invoca un secuaz polilla para cada aliado. El secuaz polilla hereda un 20% de VIT y un 20% de ataque del héroe.\n[*]Cada golpe de un secuaz polilla otorga al objetivo los siguientes estados alterados:",
-      "El objetivo recibe [#Dynamic] 180 [#] de daño de veneno durante 3 turnos.",
-      "El objetivo resiste a los nuevos secuaces durante 3 turnos."
+      "[**]El objetivo recibe [#Dynamic] 180 [#] de daño de veneno durante 3 turnos.",
+      "[**]El objetivo resiste a los nuevos secuaces durante 3 turnos."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Invoca un secuaz polilla para cada aliado. El secuaz polilla hereda un 30% de VIT y un 30% de ataque del héroe.\n[*]Cada golpe de un secuaz polilla otorga al objetivo los siguientes estados alterados:",
-      "El objetivo recibe [#Dynamic] 120 [#] de daño de veneno durante 3 turnos.",
-      "El objetivo resiste a los nuevos secuaces durante 3 turnos."
+      "[**]El objetivo recibe [#Dynamic] 120 [#] de daño de veneno durante 3 turnos.",
+      "[**]El objetivo resiste a los nuevos secuaces durante 3 turnos."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Invoca un secuaz abeja para cada aliado. El secuaz abeja hereda un 15% de VIT y un 17% de ataque del héroe.\n[*]Cada golpe de un secuaz abeja otorga al objetivo los siguientes estados alterados:",
-      "El objetivo recibe [#Dynamic] 32 [#] de daño de veneno durante 2 turnos.",
-      "El objetivo resiste a los nuevos secuaces durante 4 turnos."
+      "[**]El objetivo recibe [#Dynamic] 32 [#] de daño de veneno durante 2 turnos.",
+      "[**]El objetivo resiste a los nuevos secuaces durante 4 turnos."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Invoca un secuaz abeja para cada aliado. El secuaz abeja hereda un 18% de VIT y un 15% de ataque del héroe.\n[*]Cada golpe de un secuaz abeja otorga al objetivo los siguientes estados alterados:",
-      "El objetivo recibe [#Dynamic] 48 [#] de daño de veneno durante 3 turnos.",
-      "El objetivo es inmune a las nuevas bendiciones de estado durante 2 turnos."
+      "[**]El objetivo recibe [#Dynamic] 48 [#] de daño de veneno durante 3 turnos.",
+      "[**]El objetivo es inmune a las nuevas bendiciones de estado durante 2 turnos."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Todos los aliados reciben un 54% de defensa contra oscuridad durante 3 turnos.",
       "Invoca un secuaz abeja para cada aliado. El secuaz abeja hereda un 20% de VIT y un 20% de ataque del héroe.\n[*]Cada golpe de un secuaz abeja otorga al objetivo los siguientes estados alterados:",
-      "El objetivo recibe [#Dynamic] 50 [#] de daño de veneno durante 2 turnos.",
-      "El objetivo resiste a los nuevos secuaces durante 4 turnos."
+      "[**]El objetivo recibe [#Dynamic] 50 [#] de daño de veneno durante 2 turnos.",
+      "[**]El objetivo resiste a los nuevos secuaces durante 4 turnos."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Causa un 260% de daño a todos los enemigos.",
       "Invoca un secuaz xulu para todos los aliados. El secuaz xulu hereda un 15% de VIT y un 20% de ataque del héroe.\n[*] Cada golpe de un secuaz xulu otorga al objetivo el siguiente estado alterado:",
-      "El objetivo recibe [#Dynamic] 344 [#] de daño de sangrado durante 4 turnos.",
-      "Inflige 5 de demencia al objetivo.",
+      "[**]El objetivo recibe [#Dynamic] 344 [#] de daño de sangrado durante 4 turnos.",
+      "[**]Inflige 5 de demencia al objetivo.",
       "Usar esta habilidad especial inflige 50 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]

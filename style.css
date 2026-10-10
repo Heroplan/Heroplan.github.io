@@ -7053,9 +7053,12 @@ html.dark-theme .autocomplete-item.selected {
 
 /* 层级子行（用户 2026-10-10：「子词条 / 说明词条 / 新词条换行都是 `[*]` 有点混淆」）：
    标记语法 = `[` + N 个 `*` + `]`，N 即层级 —— `[*]` 一级 1.4em / `[**]` 二级 2.8em /
-   `[***]` 三级 4.2em，**每级再深 1.4em**，从属关系一眼可辨。 */
+   `[***]` 三级 4.2em / `[****]` 四级 5.6em，**每级再深 1.4em**，从属关系一眼可辨。
+   ⚠ 四级是 2026-10-10 补的：召唤物"…以下状态异常："列表嵌在 `[***]` 行下时会产生 `[****]`
+   （实测 `magic_motega` 20 行 / `magic_ulius`），不写规则会退回一级的 1.4em、比三级还浅。 */
 #modal .skill-list li .skill-subline-l2 { padding-left: 2.8em; }
 #modal .skill-list li .skill-subline-l3 { padding-left: 4.2em; }
+#modal .skill-list li .skill-subline-l4 { padding-left: 5.6em; }
 
 /* 括号注释块（用户 2026-10-10）：
    · 去掉前后括号，只留橙色 `*` + 着色虚线下划线；
@@ -7196,7 +7199,7 @@ html[dir="rtl"] #modal .skill-list li .skill-subline {
     padding-right: 1.4em;
 }
 
-/* RTL 下层级子行同样镜像（`[**]` 2.8em / `[***]` 4.2em） */
+/* RTL 下层级子行同样镜像（`[**]` 2.8em / `[***]` 4.2em / `[****]` 5.6em） */
 html[dir="rtl"] #modal .skill-list li .skill-subline-l2 {
     padding-left: 0;
     padding-right: 2.8em;
@@ -7205,6 +7208,11 @@ html[dir="rtl"] #modal .skill-list li .skill-subline-l2 {
 html[dir="rtl"] #modal .skill-list li .skill-subline-l3 {
     padding-left: 0;
     padding-right: 4.2em;
+}
+
+html[dir="rtl"] #modal .skill-list li .skill-subline-l4 {
+    padding-left: 0;
+    padding-right: 5.6em;
 }
 
 html[dir="rtl"] #modal .skill-list li .paren-note {

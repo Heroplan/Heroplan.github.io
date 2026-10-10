@@ -21735,8 +21735,8 @@
      "lines": [
       "Todos os inimigos recebem [#Dynamic] 330 [#] de dano de veneno por 3 turnos.",
       "Convoca um demônio Bolinho para todos os inimigos. O demônio causa dano ao inimigo com 38% de ataque a cada turno.\n[*] O demônio Bolinho absorve a cura e desaparece depois de absorver vida equivalente a 35% do limite de vida do alvo.\n[*] Cada acerto do demônio Bolinho tem os seguintes efeitos:",
-      "O alvo recebe 50% mais dano de males de status por e acumulações negativas por 3 turnos.",
-      "Tem 25% de chance de reiniciar o temporizador de duração do mal de status com menos turnos restantes."
+      "[**]O alvo recebe 50% mais dano de males de status por e acumulações negativas por 3 turnos.",
+      "[**]Tem 25% de chance de reiniciar o temporizador de duração do mal de status com menos turnos restantes."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Todos os inimigos recebem [#Dynamic] 498 [#] de dano de veneno por 3 turnos. O invocador e todos os aliados absorvem 20% do dano de veneno como vida.",
       "Convoca um demônio Bolinho para todos os inimigos. O demônio causa dano ao inimigo com 55% de ataque a cada turno.\n[*] O demônio Bolinho absorve a cura e desaparece depois de absorver vida equivalente a 40% do limite de vida do alvo.\n[*] Cada acerto do demônio Bolinho tem os seguintes efeitos:",
-      "O alvo recebe 55% mais dano de acumulações negativas e males de status por 3 turnos.",
-      "Tem 30% de chance de reiniciar o temporizador de duração do mal de status com menos turnos restantes."
+      "[**]O alvo recebe 55% mais dano de acumulações negativas e males de status por 3 turnos.",
+      "[**]Tem 30% de chance de reiniciar o temporizador de duração do mal de status com menos turnos restantes."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Crescimento: o invocador e os aliados próximos recebem 450 de ataque e 450 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Aberração. O ajudante herda 45% de PV e 180% de ataque do invocador.\n[*]Cada ataque de um mega-ajudante Aberração dá ao alvo o seguinte mal de status:",
-      "O alvo recebe [#Dynamic] 552 [#] de dano de Toxina ao longo de 3 turnos. O dano aumenta contra alvos com vida reforçada, ajudantes ou um mega-ajudante. (O dano de Toxina aumenta em 100% contra alvos com vida reforçada.\n[*] O dano de Toxina aumenta em 33% por ajudante ou mega-ajudante do alvo.\n[*] O dano aumenta até o limite de 199%.)",
-      "Aplica 10 Insanidade ao alvo.",
+      "[**]O alvo recebe [#Dynamic] 552 [#] de dano de Toxina ao longo de 3 turnos. O dano aumenta contra alvos com vida reforçada, ajudantes ou um mega-ajudante. (O dano de Toxina aumenta em 100% contra alvos com vida reforçada.\n[***]O dano de Toxina aumenta em 33% por ajudante ou mega-ajudante do alvo.\n[***]O dano aumenta até o limite de 199%.)",
+      "[**]Aplica 10 Insanidade ao alvo.",
       "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Aumenta a vida de todos os aliados em 550. A vida reforçada pode exceder o limite de PV.",
       "Convoca uma Espada Mágica ajudante para o invocador e os aliados próximos. A ajudante herda 14% de PV e 15% de ataque do invocador.\n[*]Cada ataque de uma Espada Mágica ajudante dá ao alvo o seguinte mal de status:",
-      "-24% de geração de mana por 3 turnos. Este efeito não pode ser expurgado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
+      "[**] -24% de geração de mana por 3 turnos. Este efeito não pode ser expurgado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% de mana:",
       "[*]x 1 carga de mana:",
       "[**]Convoca um ajudante Borboleta para cada aliado. O ajudante herda 14% de PV e 20% de ataque do invocador.\n[***]Cada acerto de um ajudante Borboleta dá ao alvo o seguinte mal de status:",
-      "[**] 20% de aumento em todo o dano recebido por 3 turnos.",
+      "[****] 20% de aumento em todo o dano recebido por 3 turnos.",
       "[*]x 2 carga de mana:",
       "[**]Convoca um demônio Borboleta para todos os inimigos. O demônio causa dano ao alvo com 43% de ataque a cada turno.\n[***]O demônio Borboleta absorve a cura e desaparece depois de absorver cura equivalente a 50% do limite de vida do alvo.",
       "[**]Quando convocado, o demônio Borboleta dá -50% de precisão ao alvo enquanto o alvo tem demônios borboleta. Este efeito não pode ser expurgado. (A chance de errar também se aplica às habilidades especiais ofensivas.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Convoca um ajudante Sentinela de Arpão para cada aliado. O ajudante herda 12% de PV e 20% de ataque do invocador.\n[*] Cada acerto de um ajudante Sentinela de Arpão reduz o mana do alvo em -5% e dá ao alvo os seguintes males de status:",
-      "O alvo ganha -30% de defesa contra habilidades especiais por 2 turnos.",
-      "O alvo fica imune a novos reforços de efeito de status por 2 turnos."
+      "[**]O alvo ganha -30% de defesa contra habilidades especiais por 2 turnos.",
+      "[**]O alvo fica imune a novos reforços de efeito de status por 2 turnos."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Convoca um ajudante Mariposa para cada aliado. O ajudante Mariposa herda 20% de PV e 20% de ataque do invocador.\n[*]Cada ataque de um ajudante Mariposa dá ao alvo os seguintes males de status:",
-      "O alvo recebe [#Dynamic] 180 [#] de dano de veneno por 3 turnos.",
-      "O alvo resiste a novos ajudantes por 3 turnos."
+      "[**]O alvo recebe [#Dynamic] 180 [#] de dano de veneno por 3 turnos.",
+      "[**]O alvo resiste a novos ajudantes por 3 turnos."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Convoca um ajudante Mariposa para cada aliado. O ajudante Mariposa herda 30% de PV e 30% de ataque do invocador.\n[*]Cada ataque de um ajudante Mariposa dá ao alvo os seguintes males de status:",
-      "O alvo recebe [#Dynamic] 120 [#] de dano de veneno por 3 turnos.",
-      "O alvo resiste a novos ajudantes por 3 turnos."
+      "[**]O alvo recebe [#Dynamic] 120 [#] de dano de veneno por 3 turnos.",
+      "[**]O alvo resiste a novos ajudantes por 3 turnos."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Convoca um ajudante Abelha para cada aliado. O ajudante Abelha herda 15% de PV e 17% de ataque do invocador.\n[*]Cada ataque de um ajudante Abelha dá ao alvo os seguintes males de status:",
-      "O alvo recebe [#Dynamic] 32 [#] de dano de veneno por 2 turnos.",
-      "O alvo resiste a novos ajudantes por 4 turnos."
+      "[**]O alvo recebe [#Dynamic] 32 [#] de dano de veneno por 2 turnos.",
+      "[**]O alvo resiste a novos ajudantes por 4 turnos."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Convoca um ajudante Abelha para cada aliado. O ajudante Abelha herda 18% de PV e 15% de ataque do invocador.\n[*]Cada ataque de um ajudante Abelha dá ao alvo os seguintes males de status:",
-      "O alvo recebe [#Dynamic] 48 [#] de dano de veneno por 3 turnos.",
-      "O alvo fica imune a novos reforços de efeito de status por 2 turnos."
+      "[**]O alvo recebe [#Dynamic] 48 [#] de dano de veneno por 3 turnos.",
+      "[**]O alvo fica imune a novos reforços de efeito de status por 2 turnos."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Todos os aliados ganham 54% de defesa contra Trevas por 3 turnos.",
       "Convoca um ajudante Abelha para cada aliado. O ajudante Abelha herda 20% de PV e 20% de ataque do invocador.\n[*]Cada ataque de um ajudante Abelha dá ao alvo os seguintes males de status:",
-      "O alvo recebe [#Dynamic] 50 [#] de dano de veneno por 2 turnos.",
-      "O alvo resiste a novos ajudantes por 4 turnos."
+      "[**]O alvo recebe [#Dynamic] 50 [#] de dano de veneno por 2 turnos.",
+      "[**]O alvo resiste a novos ajudantes por 4 turnos."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Causa 260% de dano a todos os inimigos.",
       "Convoca um ajudante Xulu para cada aliado. O ajudante herda 15% de PV e 20% de ataque do invocador.\n[*] Cada acerto de um ajudante Xulu dá ao alvo o seguinte mal de status:",
-      "O alvo recebe [#Dynamic] 344 [#] de dano de Sangramento por 4 turnos.",
-      "Aplica 5 Insanidade ao alvo.",
+      "[**]O alvo recebe [#Dynamic] 344 [#] de dano de Sangramento por 4 turnos.",
+      "[**]Aplica 5 Insanidade ao alvo.",
       "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]

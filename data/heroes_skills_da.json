@@ -21735,8 +21735,8 @@
      "lines": [
       "Alle fjender får [#Dynamic] 330 [#] giftskade i 3 runder.",
       "Hidkalder en muffin-djævel til alle fjender. Djævlen skader fjenden med 38% angreb i hver runde.\n[*]Muffin-djævlen optager helbredelse og forsvinder, når den har optaget helbred, der svarer til 35% af målets maksimale helbred.\n[*] Hver træffer fra muffin-djævlen har følgende effekter:",
-      "Målet tager 50% mere skade fra statuslidelser og negative kumulative effekter i 3 runder.",
-      "Der er 25% chance for at forny varigheden for den statuslidelse, der er færrest runder tilbage af."
+      "[**]Målet tager 50% mere skade fra statuslidelser og negative kumulative effekter i 3 runder.",
+      "[**]Der er 25% chance for at forny varigheden for den statuslidelse, der er færrest runder tilbage af."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Alle fjender får [#Dynamic] 498 [#] giftskade over 3 runder. Kasteren og alle deres allierede absorberer 20% af den påførte giftskade som helbred.",
       "Hidkalder en muffin-djævel til alle fjender. Djævlen skader fjenden med 55% angreb i hver runde.\n[*]Muffin-djævlen optager helbredelse og forsvinder, når den har optaget helbred, der svarer til 40% af målets maksimale helbred.\n[*] Hver træffer fra muffin-djævlen har følgende effekter:",
-      "Målet tager 55% mere skade fra statuslidelser og negative kumulative effekter i 3 runder.",
-      "Der er 30% chance for at forny varigheden for den statuslidelse, der er færrest runder tilbage af."
+      "[**]Målet tager 55% mere skade fra statuslidelser og negative kumulative effekter i 3 runder.",
+      "[**]Der er 30% chance for at forny varigheden for den statuslidelse, der er færrest runder tilbage af."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Vækst: Kasteren og allierede i nærheden får 450 angreb og 450 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en vildfarne kæmpehåndlanger 45% HP og 180% nedarvet fra kasteren.\n[*]Hver træffer fra en vildfaren kæmpehåndlanger giver målet følgende statuslidelser:",
-      "Målet modtager [#Dynamic] 552 [#] giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[*]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[*] Den maksimale øgede skade er 199%.)",
-      "Påfører 10 vanvid på målet.",
+      "[**]Målet modtager [#Dynamic] 552 [#] giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[***]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[***]Den maksimale øgede skade er 199%.)",
+      "[**]Påfører 10 vanvid på målet.",
       "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Forstærker alle allieredes helbred med 550. Forstærket helbred kan overstige maks. HP.",
       "Hidkalder en magisk sværd-håndlanger for kasteren og allierede i nærheden med 14% HP og 15% nedarvet fra kasteren.\n[*]Hver træffer fra en magisk sværd-håndlanger giver målet følgende statuslidelser:",
-      "-24% managendannelse i 3 runder. Denne effekt kan ikke ryddes. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
+      "[**] -24% managendannelse i 3 runder. Denne effekt kan ikke ryddes. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "Særlige evner har en anden effekt, når mana er på 100%/ 200%:",
       "[*]x 1 manaangreb:",
       "[**]Hidkalder en sommerfugle-håndlanger for hver allieret med 14% HP og 20% nedarvet fra kasteren.\n[***]Hver træffer fra en sommerfugle-håndlanger giver målet følgende statuslidelser:",
-      "[**] 20% forøgelse til al modtaget skade i 3 runder.",
+      "[****] 20% forøgelse til al modtaget skade i 3 runder.",
       "[*]x 2 manaangreb:",
       "[**]Hidkalder en sommerfugledjævel til alle fjender. Djævlen skader sit mål med 43% angreb i hver runde.\n[***]Sommerfugledjævlen optager helbredelse. Den forsvinder igen, når den har optaget den mængde helbred, der svarer til 50% af sit måls maksimale helbred.",
       "[**]Når den hidkaldes, giver sommerfugledjævelen -50% præcision til sit mål, så længe målet har sommerfugledjævle. Effekten kan ikke ryddes. (Chancen for at ramme ved siden af gælder for offensive særlige evner.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Hidkalder en harpunvagt-håndlanger for hver allieret med 12% HP og 20% nedarvet fra kasteren.\n[*] Hver træffer fra en harpunvagt-håndlanger reducerer målets mana med -5% og giver det følgende statuslidelser:",
-      "Målet får -30% forsvar mod særlige evner i 2 runder.",
-      "Målet er immun over for nye statuseffekt-buffere i 2 runder."
+      "[**]Målet får -30% forsvar mod særlige evner i 2 runder.",
+      "[**]Målet er immun over for nye statuseffekt-buffere i 2 runder."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Hidkalder en natsværmer-håndlanger til hver allieret. Natsværmer-håndlangeren arver 20% HP og 20% angreb fra kasteren.\n[*]Hver træffer fra en natsværmer-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 180 [#] giftskade i 3 runder.",
-      "Målet modstår nye håndlangere i 3 runder."
+      "[**]Målet får [#Dynamic] 180 [#] giftskade i 3 runder.",
+      "[**]Målet modstår nye håndlangere i 3 runder."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Hidkalder en natsværmer-håndlanger til hver allieret. Natsværmer-håndlangeren arver 30% HP og 30% angreb fra kasteren.\n[*]Hver træffer fra en natsværmer-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 120 [#] giftskade i 3 runder.",
-      "Målet modstår nye håndlangere i 3 runder."
+      "[**]Målet får [#Dynamic] 120 [#] giftskade i 3 runder.",
+      "[**]Målet modstår nye håndlangere i 3 runder."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Hidkalder en bi-håndlanger for hver allieret. Bi-håndlangeren arver 15% HP og 17% angreb fra kasteren.\n[*]Hver træffer fra en bi-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 32 [#] giftskade i 2 runder.",
-      "Målet modstår nye håndlangere i 4 runder."
+      "[**]Målet får [#Dynamic] 32 [#] giftskade i 2 runder.",
+      "[**]Målet modstår nye håndlangere i 4 runder."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Hidkalder en bi-håndlanger for hver allieret. Bi-håndlangeren arver 18% HP og 15% angreb fra kasteren.\n[*]Hver træffer fra en bi-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 48 [#] giftskade i 3 runder.",
-      "Målet er immun over for nye statuseffekt-buffere i 2 runder."
+      "[**]Målet får [#Dynamic] 48 [#] giftskade i 3 runder.",
+      "[**]Målet er immun over for nye statuseffekt-buffere i 2 runder."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Alle allierede får 54% forsvar mod mørke i 3 runder.",
       "Hidkalder en bi-håndlanger for hver allieret. Bi-håndlangeren arver 20% HP og 20% angreb fra kasteren.\n[*]Hver træffer fra en bi-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 50 [#] giftskade i 2 runder.",
-      "Målet modstår nye håndlangere i 4 runder."
+      "[**]Målet får [#Dynamic] 50 [#] giftskade i 2 runder.",
+      "[**]Målet modstår nye håndlangere i 4 runder."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Giver 260% i skade til alle fjender.",
       "Hidkalder en Xulu-håndlanger for hver allieret med 15% HP og 20% nedarvet fra kasteren.\n[*] Hver træffer fra en Xulu-håndlanger giver målet følgende statuslidelser:",
-      "Målet får [#Dynamic] 344 [#] bløderskade i 4 runder.",
-      "Påfører 5 vanvid på målet.",
+      "[**]Målet får [#Dynamic] 344 [#] bløderskade i 4 runder.",
+      "[**]Påfører 5 vanvid på målet.",
       "Denne specialevne forvolder 50 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]

@@ -21735,8 +21735,8 @@
      "lines": [
       "All fiender får [#Dynamic] 330 [#] giftskada under 3 rundor.",
       "Åkallar ett muffinsodjur för målet och fiender i närheten. Det skadar fienden med 38% attack i varje runda.\n[*]Muffinsodjuret absorberar läkning och försvinner när det absorberat den mängd hälsa som motsvarar 35% av målets maximala hälsa.\n[*] Varje träff från muffinsodjuret har följande effekter:",
-      "Målet tar 50% mer skada från negativa statuseffekter och negativa staplar i 3 rundor.",
-      "Det är 25% sannolihet att den negativa statuseffekten med minst antal rundor kvar uppdateras."
+      "[**]Målet tar 50% mer skada från negativa statuseffekter och negativa staplar i 3 rundor.",
+      "[**]Det är 25% sannolihet att den negativa statuseffekten med minst antal rundor kvar uppdateras."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Alla fiender tar [#Dynamic] 498 [#] giftskada under 3 rundor. Användaren och alla allierade absorberar 20% av den gjorda giftskadan som hälsa.",
       "Åkallar ett muffinsodjur för målet och fiender i närheten. Det skadar fienden med 55% attack i varje runda.\n[*]Muffinsodjuret absorberar läkning och försvinner när det absorberat den mängd hälsa som motsvarar 40% av målets maximala hälsa.\n[*] Varje träff från muffinsodjuret har följande effekter:",
-      "Målet tar 55% mer skada från negativa statuseffekter och negativa staplar i 3 rundor.",
-      "Det är 30% sannolihet att den negativa statuseffekten med minst antal rundor kvar uppdateras."
+      "[**]Målet tar 55% mer skada från negativa statuseffekter och negativa staplar i 3 rundor.",
+      "[**]Det är 30% sannolihet att den negativa statuseffekten med minst antal rundor kvar uppdateras."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Tillväxt: Användaren och allierade i närheten får 450 attack och 450 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
       "Åkallar en monstrummegaundersåte med 45% hälsa och 180% attack som ärvs från anfallaren.\n[*]Varje träff från en monstrummegaundersåte ger målet följande negativa statuseffekt:",
-      "Målet tar [#Dynamic] 552 [#] giftskada i 3 rundor. Skadan ökas mot mål med boostad hälsa, undersåtar eller megaundersåtar. (Giftskadan stiger med 100% mot mål med ökad hälsa.\n[*]Giftskadan ökar med 33% för varje undersåte eller megaundersåte som ägs av målet.\n[*] Den maximala ökade skadan är 199%.)",
-      "Ger 10 vansinne till målet.",
+      "[**]Målet tar [#Dynamic] 552 [#] giftskada i 3 rundor. Skadan ökas mot mål med boostad hälsa, undersåtar eller megaundersåtar. (Giftskadan stiger med 100% mot mål med ökad hälsa.\n[***]Giftskadan ökar med 33% för varje undersåte eller megaundersåte som ägs av målet.\n[***]Den maximala ökade skadan är 199%.)",
+      "[**]Ger 10 vansinne till målet.",
       "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Ökar alla allierades hälsa med 550. Hälsan kan komma att överstiga maxhälsan.",
       "Åkallar en magisk svärdsundersåte till anfallaren och allierade i närheten med 14% HP och 15% attack ärvd från anfallaren.\n[*]Varje träff från en magisk svärdsundersåte ger målet följande negativa statuseffekt:",
-      "-24% manaskapande under 3 rundor. Denna effekt kan ej renas. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
+      "[**] -24% manaskapande under 3 rundor. Denna effekt kan ej renas. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "Specialförmågan har olika effekter när den laddas med 100%/ 200% mana:",
       "[*] 1 st manaladdningar",
       "[**]Åkallar en fjärilsundersåte till varje allierad med 14% hälsa och 20% attack ärvd från anfallaren.\n[***]Varje träff från en fjärilsundersåte ger målet följande negativa statuseffekt:",
-      "[**] 20% mer skada i 3 rundor.",
+      "[****] 20% mer skada i 3 rundor.",
       "[*] 2 st manaladdningar",
       "[**]Åkallar ett fjärilsodjur mot alla fiender. Odjuret skadar sitt mål med 43% attack i varje runda.\n[***]Fjärilsodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 50% av målets maximala hälsa.",
       "[**]När fjärilsodjuret åkallas ger det -50% träffsäkerhet till målet så länge målet har fjärilsodjur. Effekten kan inte renas. (Chansen att missa gäller även offensiva specialförmågor.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Åkallar en harpunväktarundersåte till varje allierad med 12% hälsa och 20% attack ärvd från anfallaren.\n[*] Varje träff från en harpunväktarundersåte minskar målets mana med -5% och ger målet följande negativa statuseffekter:",
-      "Målet får -30% försvar mot specialförmågor under 2 rundor.",
-      "Målet är immunt mot nya bonusar med statuseffekter under 2 rundor."
+      "[**]Målet får -30% försvar mot specialförmågor under 2 rundor.",
+      "[**]Målet är immunt mot nya bonusar med statuseffekter under 2 rundor."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Åkallar en malundersåte till varje allierad. Malundersåten ärver 20% HP och 20% attack från anfallaren.\n[*]Varje träff från en malundersåte ger målet följande statuseffekter:",
-      "Målet tar [#Dynamic] 180 [#] giftskada under 3 rundor.",
-      "Målet står emot nya undersåtar under 3 rundor."
+      "[**]Målet tar [#Dynamic] 180 [#] giftskada under 3 rundor.",
+      "[**]Målet står emot nya undersåtar under 3 rundor."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Åkallar en malundersåte till varje allierad. Malundersåten ärver 30% HP och 30% attack från anfallaren.\n[*]Varje träff från en malundersåte ger målet följande statuseffekter:",
-      "Målet tar [#Dynamic] 120 [#] giftskada under 3 rundor.",
-      "Målet står emot nya undersåtar under 3 rundor."
+      "[**]Målet tar [#Dynamic] 120 [#] giftskada under 3 rundor.",
+      "[**]Målet står emot nya undersåtar under 3 rundor."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Åkallar en biundersåte till varje allierad. Biundersåten ärver 15% HP och 17% attack från anfallaren.\n[*]Varje träff från en biundersåte ger målet följande statuseffekter:",
-      "Målet tar [#Dynamic] 32 [#] giftskada under 2 rundor.",
-      "Målet står emot nya undersåtar under 4 rundor."
+      "[**]Målet tar [#Dynamic] 32 [#] giftskada under 2 rundor.",
+      "[**]Målet står emot nya undersåtar under 4 rundor."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Åkallar en biundersåte till varje allierad. Biundersåten ärver 18% HP och 15% attack från anfallaren.\n[*]Varje träff från en biundersåte ger målet följande statuseffekter:",
-      "Målet tar [#Dynamic] 48 [#] giftskada under 3 rundor.",
-      "Målet är immunt mot nya bonusar med statuseffekter under 2 rundor."
+      "[**]Målet tar [#Dynamic] 48 [#] giftskada under 3 rundor.",
+      "[**]Målet är immunt mot nya bonusar med statuseffekter under 2 rundor."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Alla allierade får 54% försvar mot mörker i 3 rundor.",
       "Åkallar en biundersåte till varje allierad. Biundersåten ärver 20% HP och 20% attack från anfallaren.\n[*]Varje träff från en biundersåte ger målet följande statuseffekter:",
-      "Målet tar [#Dynamic] 50 [#] giftskada under 2 rundor.",
-      "Målet står emot nya undersåtar under 4 rundor."
+      "[**]Målet tar [#Dynamic] 50 [#] giftskada under 2 rundor.",
+      "[**]Målet står emot nya undersåtar under 4 rundor."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Alla fiender tar 260% skada.",
       "Åkallar en Xulu-undersåte till varje allierad med 15% hälsa och 20% attack ärvd från anfallaren.\n[*]Varje träff från en Xulu-undersåte ger målet följande negativa statuseffekt:",
-      "Målet får [#Dynamic] 344 [#] blödningsskada under 4 rundor.",
-      "Ger 5 vansinne till målet.",
+      "[**]Målet får [#Dynamic] 344 [#] blödningsskada under 4 rundor.",
+      "[**]Ger 5 vansinne till målet.",
       "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]

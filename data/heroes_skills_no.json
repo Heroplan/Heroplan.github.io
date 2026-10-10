@@ -21735,8 +21735,8 @@
      "lines": [
       "Alle fiender tar [#Dynamic] 330 [#] giftskade over 3 runder.",
       "Påkaller en muffinsdjevel for alle fiender. Djevelen skader fienden med 38% angrep hver runde.\n[*]Muffinsdjevelen absorberer helbredelse og forsvinner når den har absorbert helse tilsvarende 35% av målets maks helse.\n[*] Hvert treff fra muffinsdjevelen har følgende effekter:",
-      "Målet tar 50% mer skade fra statuslidelser og negative stabler i 3 runder.",
-      "25% sjanse for å oppdatere varigheten av statuslidelsen med færrest turer igjen."
+      "[**]Målet tar 50% mer skade fra statuslidelser og negative stabler i 3 runder.",
+      "[**] 25% sjanse for å oppdatere varigheten av statuslidelsen med færrest turer igjen."
      ]
     }
    ]
@@ -21764,8 +21764,8 @@
      "lines": [
       "Alle fiender tar [#Dynamic] 498 [#] giftskade over 3 runder. Brukeren og alle allierte absorberer 20% av påført giftskade som helse.",
       "Påkaller en muffinsdjevel for alle fiender. Djevelen skader fienden med 55% angrep hver runde.\n[*]Muffinsdjevelen absorberer helbredelse og forsvinner når den har absorbert helse tilsvarende 40% av målets maks helse.\n[*] Hvert treff fra muffinsdjevelen har følgende effekter:",
-      "Målet tar 55% mer skade fra statuslidelser og negative stabler i 3 runder.",
-      "30% sjanse for å oppdatere varigheten av statuslidelsen med færrest turer igjen."
+      "[**]Målet tar 55% mer skade fra statuslidelser og negative stabler i 3 runder.",
+      "[**] 30% sjanse for å oppdatere varigheten av statuslidelsen med færrest turer igjen."
      ]
     }
    ]
@@ -23811,8 +23811,8 @@
      "lines": [
       "Vekst: Brukeren og allierte i nærheten får 450 angrep og 450 forsvar så lenge kampen varer. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)",
       "Påkaller en avviker-megaundersått med 45% HP og 180% angrep nedarvet fra brukeren.\n[*]Hvert treff fra en avviker-megaundersått påfører målet følgende statuslidelse:",
-      "Målet tar [#Dynamic] 552 [#] giftskade over 3 runder. Skade økes mot mål med økt helse, undersåtter eller en megaundersått. (Giftskaden økes med 100% mot målene med økt helse.\n[*]Giftskade økes med 33% per undersått eller megaundersått eid av målet.\n[*] Maksimal økt skade er 199%.)",
-      "Påfører målet 10 galskap.",
+      "[**]Målet tar [#Dynamic] 552 [#] giftskade over 3 runder. Skade økes mot mål med økt helse, undersåtter eller en megaundersått. (Giftskaden økes med 100% mot målene med økt helse.\n[***]Giftskade økes med 33% per undersått eller megaundersått eid av målet.\n[***]Maksimal økt skade er 199%.)",
+      "[**]Påfører målet 10 galskap.",
       "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
@@ -26038,7 +26038,7 @@
      "lines": [
       "Øker helsen til alle allierte med 550. Økt helse kan overskride maks HP.",
       "Fremkaller en magisk sverd-undersått for brukeren og allierte i nærheten, med 14% HP og 15% angrep nedarvet fra brukeren.\n[*]Hvert treff fra en magisk sverd-undersått påfører målet følgende statuslidelse:",
-      "-24% mana-generering i 3 runder. Denne effekten kan ikke renses bort. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
+      "[**] -24% mana-generering i 3 runder. Denne effekten kan ikke renses bort. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
     }
    ]
@@ -27961,7 +27961,7 @@
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% mana:",
       "[*]x 1 manaladning",
       "[**]Fremkaller en sommerfugl-undersått for hver alliert med 14% HP og 20% angrep nedarvet fra brukeren.\n[***]Hvert treff fra en sommerfugl-undersått påfører målet følgende statuslidelse:",
-      "[**] 20% økning av all mottatt skade i 3 runder.",
+      "[****] 20% økning av all mottatt skade i 3 runder.",
       "[*]x 2 manaladning",
       "[**]Påkaller en sommerfugldjevel for alle fiender. Djevelen skader målet sitt med 43% angrep hver runde.\n[***]Sommerfugldjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 50% av målets maksimale helse.",
       "[**]Når fremkalt gir sommerfugldjevelen målet -50% treffsikkerhet så lenge målet har sommerfugldjevler. Denne effekten kan ikke renses bort. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)"
@@ -32407,8 +32407,8 @@
      "id": "harpoon_sentry",
      "lines": [
       "Fremkaller en harpunvakt-undersått for hver alliert med 12% HP og 20% angrep nedarvet fra brukeren.\n[*] Hvert treff fra en harpunvakt-undersått reduserer manaen til målet med -5% og påfører målet følgende statuslidelser:",
-      "Målet får -30% forsvar mot spesialferdigheter i 2 runder.",
-      "Målet er immunt mot nye statuseffektøkninger for 2 runder."
+      "[**]Målet får -30% forsvar mot spesialferdigheter i 2 runder.",
+      "[**]Målet er immunt mot nye statuseffektøkninger for 2 runder."
      ]
     }
    ]
@@ -44410,8 +44410,8 @@
      "id": "disir_of_dusk",
      "lines": [
       "Fremkaller en møll-undersått for hver alliert. Møll-undersåtten nedarver 20% HP og 20% angrep fra brukeren.\n[*]Hvert treff fra en møll-undersått påfører målet følgende statuslidelser:",
-      "Målet tar [#Dynamic] 180 [#] giftskade over 3 runder.",
-      "Målet motstår nye undersåtter i 3 runder."
+      "[**]Målet tar [#Dynamic] 180 [#] giftskade over 3 runder.",
+      "[**]Målet motstår nye undersåtter i 3 runder."
      ]
     }
    ]
@@ -44430,8 +44430,8 @@
      "id": "disir_of_dreams",
      "lines": [
       "Fremkaller en møll-undersått for hver alliert. Møll-undersåtten nedarver 30% HP og 30% angrep fra brukeren.\n[*]Hvert treff fra en møll-undersått påfører målet følgende statuslidelser:",
-      "Målet tar [#Dynamic] 120 [#] giftskade over 3 runder.",
-      "Målet motstår nye undersåtter i 3 runder."
+      "[**]Målet tar [#Dynamic] 120 [#] giftskade over 3 runder.",
+      "[**]Målet motstår nye undersåtter i 3 runder."
      ]
     }
    ]
@@ -45049,8 +45049,8 @@
      "id": "bee_bravado",
      "lines": [
       "Fremkaller en bie-undersått for hver alliert. Bie-undersåtten nedarver 15% HP og 17% angrep fra brukeren.\n[*]Hvert treff fra en bie-undersått påfører målet følgende statuslidelser:",
-      "Målet tar [#Dynamic] 32 [#] giftskade over 2 runder.",
-      "Målet motstår nye undersåtter i 4 runder."
+      "[**]Målet tar [#Dynamic] 32 [#] giftskade over 2 runder.",
+      "[**]Målet motstår nye undersåtter i 4 runder."
      ]
     }
    ]
@@ -45069,8 +45069,8 @@
      "id": "bee_bombast",
      "lines": [
       "Fremkaller en bie-undersått for hver alliert. Bie-undersåtten nedarver 18% HP og 15% angrep fra brukeren.\n[*]Hvert treff fra en bie-undersått påfører målet følgende statuslidelser:",
-      "Målet tar [#Dynamic] 48 [#] giftskade over 3 runder.",
-      "Målet er immunt mot nye statuseffektøkninger for 2 runder."
+      "[**]Målet tar [#Dynamic] 48 [#] giftskade over 3 runder.",
+      "[**]Målet er immunt mot nye statuseffektøkninger for 2 runder."
      ]
     }
    ]
@@ -45096,8 +45096,8 @@
      "lines": [
       "Alle allierte får 54% forsvar mot mørke i 3 runder.",
       "Fremkaller en bie-undersått for hver alliert. Bie-undersåtten nedarver 20% HP og 20% angrep fra brukeren.\n[*]Hvert treff fra en bie-undersått påfører målet følgende statuslidelser:",
-      "Målet tar [#Dynamic] 50 [#] giftskade over 2 runder.",
-      "Målet motstår nye undersåtter i 4 runder."
+      "[**]Målet tar [#Dynamic] 50 [#] giftskade over 2 runder.",
+      "[**]Målet motstår nye undersåtter i 4 runder."
      ]
     }
    ]
@@ -50317,8 +50317,8 @@
      "lines": [
       "Påfører 260% skade på alle fiender.",
       "Fremkaller en Xulu-undersått for hver alliert med 15% HP og 20% angrep nedarvet fra brukeren.\n[*] Hvert treff fra en Xulu-undersått påfører målet følgende statuslidelse:",
-      "Målet tar [#Dynamic] 344 [#] blødeskade gjennom 4 runder.",
-      "Påfører målet 5 galskap.",
+      "[**]Målet tar [#Dynamic] 344 [#] blødeskade gjennom 4 runder.",
+      "[**]Påfører målet 5 galskap.",
       "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]

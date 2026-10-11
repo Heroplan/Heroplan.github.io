@@ -11,7 +11,7 @@ const state = {
     multiSelectFilters: {}, // 存储多选筛选器的当前选中值
     availableOptions: {}, // 缓存每个筛选器的所有可用选项
     currentLang: 'cn',  // 当前语言
-    // 是否展示「默认隐藏」的英雄（trainer_/guestip/未发布 2200；名单见 data/hero_order.json 的 hidden）
+    // 是否展示「默认隐藏」的英雄（判据见 utils.js::isHiddenHero：2200 年 / id 含 trainer|guestip|temp1）
     // 默认 false；后续"切换展示 2200 英雄"的开关只需改这个值并重新 applyFiltersAndRender()。
     showHiddenHeroes: false,
     currentSort: { key: 'Release date', direction: 'desc' }, // 当前表格排序规则

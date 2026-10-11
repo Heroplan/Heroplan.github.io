@@ -576,6 +576,8 @@ const highlightDictionaries = {
             '疊加 +2 （最大值： 10 ）': '[##elementred]疊加 +2 （最大值： 10 ）[#]',
             '叠加': '[##elementred]叠加[#]',
             '疊加': '[##elementred]疊加[#]',
+            '无法': '[##elementred]无法[#]',
+            '無法': '[##elementred]無法[#]',
             '阻止': '[##elementred]阻止[#]',
             '缚魂': '[##elementred]缚魂[#]',
             '靈魂绑定': '[##elementred]靈魂绑定[#]',
@@ -625,6 +627,14 @@ const highlightDictionaries = {
             '安全淨化': '[##elementgreen]安全淨化[#]',
             '安全驱散': '[##elementgreen]安全驱散[#]',
             '安全驅散': '[##elementgreen]安全驅散[#]',
+            '可净化': '[##elementgreen]可净化[#]',
+            '可淨化': '[##elementgreen]可淨化[#]',
+            '净化': '[##elementgreen]净化[#]',
+            '淨化': '[##elementgreen]淨化[#]',
+            '可驱散': '[#!]可驱散[#]',
+            '可驅散': '[#!]可驅散[#]',
+            '驱散': '[#!]驱散[#]',
+            '驅散': '[#!]驅散[#]',
             '复活': '[##elementgreen]复活[#]',
             '復活': '[##elementgreen]復活[#]',
             '伤害减少': '[##elementyellow]伤害减少[#]',
@@ -640,16 +650,6 @@ const highlightDictionaries = {
             '不可淨化': '[##elementred]不可淨化[#]',
             '无法净化': '[##elementred]无法净化[#]',
             '無法淨化': '[##elementred]無法淨化[#]',
-            '可净化': '[##elementgreen]可净化[#]',
-            '可淨化': '[##elementgreen]可淨化[#]',
-            '净化': '[##elementgreen]净化[#]',
-            '淨化': '[##elementgreen]淨化[#]',
-            '可驱散': '[#!]可驱散[#]',
-            '可驅散': '[#!]可驅散[#]',
-            '驱散': '[#!]驱散[#]',
-            '驅散': '[#!]驅散[#]',
-            '无法': '[##elementred]无法[#]',
-            '無法': '[##elementred]無法[#]',
             '麻木': '[##elementred]麻木[#]',
             '麻痺': '[##elementred]麻痺[#]',
             '诅咒伤害': '[#!]诅咒伤害[#]',
@@ -1946,19 +1946,30 @@ function renderDetailsInModal(hero, context = {}) {
             return parts;
         };
 
-        // 一条词条 → `{open, inner}`：`open` = 主行的 `<li …>` 开标签（没有主行时为 null）。
+        // 一条词条 → `{open, inner, lastLvl}`：`open` = 主行的 `<li …>` 开标签（没有主行时为 null）；
+        // `lastLvl` = 本段**最后出现的行层级**（主词条 = 0、`[*]` = 1 …）—— 供"并进上一条 `<li>`"
+        // 的场景（`forceSub=true`）把上一条的层级续进来，否则括号块的缩进会退回一级。
         // 全部内容留在**同一个 <li>** 里：主行照常，`[*]` 行 = `.skill-subline` 子行，括号注释块 = 虚线块。
         // 用户 2026-10-10 的三条排版口径：
         //   ① 括号注释块**去掉前后括号**，只留橙色 `*` + 着色虚线下划线；
-        //   ② 注释块**比主词条多缩进**（`.paren-note{padding-left}`），块内子词条**也保持虚线**
-        //      （`.skill-subline` 是 inline-block，`text-decoration` 不会自动传下去 ⇒ 显式 inherit）；
+        //   ② 注释块**比它所说明的那一行多缩进一级**（`.paren-note` 的 padding 由内联给出）；
         //   ③ 词条**开头不产生空行**（整条都是 `[*]` 子行时，第一行不再补 `<br>`）。
-        const _renderEntryInner = (raw, forceSub) => {
+        const _renderEntryInner = (raw, forceSub, startLvl) => {
             // `forceSub=true` ⇒ 这段内容要**接到已有 `<li>` 后面** ⇒ 第一行也要补 `<br>`（否则会和上文黏在一起）
             let open = null, inner = '', headDone = false, hasContent = !!forceSub;
             // 上一条产出的是不是 `[*]` 子行 —— 括号注释块要**比它再多缩进一级**
             //   （用户 2026-10-10：谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
-            let lastWasSub = false;
+            let lastWasSub = !!startLvl;
+            // 上一条产出行的**层级**（主词条 = 0、`[*]` = 1、`[**]` = 2 …）。
+            // 括号注释块的缩进 = 本层级 + 1 级（每级 1.4em）—— 2026-10-11 用户口径：
+            //   「`ninja_peridot_costume_herbalist` 最后那句明明着色和下划线了，为什么没有比主词条多缩进」
+            //   「`goblin_kettle_costume_field_cook` 成长为主词条，下面的都着色了但缩进都是一样的」。
+            //   旧实现把缩进**写死两档**（`.paren-note` 1.4em / `.paren-note-sub` 2.8em），
+            //   只覆盖"宿主是主词条"和"宿主是 `[*]`"两种；层级化之后宿主是 `[**]` 时括号块
+            //   仍是 2.8em ⇒ 与宿主**平齐**，从属关系看不出来。
+            //   `forceSub=true` 时由调用方传入**上一条 `<li>` 的末尾层级**（`startLvl`），
+            //   否则"整条只有括号、并入上一条"的元素（如 `[*](…括号说明…)`）会退回一级。
+            let lastLvl = startLvl || 0;
             // 层级标记 = `[` + N 个 `*` + `]`（用户 2026-10-10：`[*]` 一级 / `[**]` 二级 …）。
             // 这样"子词条 / 说明词条 / 新词条"各有各的深度，不再全挤成 `[*]`。
             const _LVL_RE = /^\[(\*+)\]\s*/;
@@ -1980,12 +1991,13 @@ function renderDetailsInModal(hero, context = {}) {
                 inner += (hasContent ? '<br>' : '') + `<span class="${_subCls(lvl || 1)}">* ${h}</span>`;
                 hasContent = true;
                 lastWasSub = true;
+                lastLvl = lvl || 1;
             };
             _splitAnnotations(String(raw)).forEach(p => {
                 if (p.kind === 'text') {
                     p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach(l => {
                         const r = _one(l);
-                        if (!headDone && !r.isSub) { headDone = true; open = r.open; inner += r.inner; hasContent = true; lastWasSub = false; }
+                        if (!headDone && !r.isSub) { headDone = true; open = r.open; inner += r.inner; hasContent = true; lastWasSub = false; lastLvl = 0; }
                         else { headDone = true; _pushSub(r.inner, r.open, r.lvl); }
                     });
                     return;
@@ -2013,12 +2025,16 @@ function renderDetailsInModal(hero, context = {}) {
                     }
                     bodyHas = true;
                 });
+                // 缩进 = **宿主行层级 + 1 级**（1.4em / 级）⇒ 括号块永远比它说明的那一行深一级。
+                // 用 `padding-inline-start` 内联（逻辑属性，LTR/RTL 自动镜像；内联优先级高于
+                // CSS 里的 `.paren-note{padding-left}` / `html[dir="rtl"]` 镜像规则，故不必再改 CSS）。
+                const _pad = ((lastLvl || 0) + 1) * 1.4;
                 inner += (hadContent ? '<br>' : '')
-                    + `<span class="paren-note${lastWasSub ? ' paren-note-sub' : ''}">`
+                    + `<span class="paren-note${lastWasSub ? ' paren-note-sub' : ''}" style="padding-inline-start:${_pad}em">`
                     + (body ? '' : `<span class="paren-mark">*</span>`) + body + p.tail + '</span>';
                 hasContent = true;
             });
-            return { open, inner };
+            return { open, inner, lastLvl };
         };
 
         // `[*]` 数组元素要不要并进上一条 `<li>` —— **按列表类型分**（用户 2026-10-10）：
@@ -2047,19 +2063,23 @@ function renderDetailsInModal(hero, context = {}) {
             .replace(/\n{2,}/g, '\n')
             .replace(/^\n+|\n+$/g, '');
 
+        // 上一条 `<li>` 内**最后出现的行层级** —— `forceSub` 追加时续进去，括号块的缩进才跟得住
+        let lastLiLvl = 0;
         return itemsArray.reduce((acc, item) => {
             const raw = _normBullets(item);
             if (!raw.replace(/^\s+/, '')) return acc;
             // ② 并进上一条 <li>：familyBonus 的所有 `[*]` 子项；以及**任何**列表里"整条只有括号"的元素
             const _merge = acc.length && ((_mergeSubItems && /^\s*\[\*+\]/.test(raw)) || _isPureParen(raw));
             if (_merge) {
-                acc[acc.length - 1] = _appendSubs(acc[acc.length - 1],
-                    _renderEntryInner(raw, true).inner);
+                const _r = _renderEntryInner(raw, true, lastLiLvl);
+                acc[acc.length - 1] = _appendSubs(acc[acc.length - 1], _r.inner);
+                lastLiLvl = _r.lastLvl;
                 return acc;
             }
             // ① 其余情况：整条自成一个 <li>（首行作主行，其余 `[*]` 行作缩进子行；括号注释块可跨行）
             const r = _renderEntryInner(raw, false);
             acc.push(`${r.open || '<li>'}${r.inner}</li>`);
+            lastLiLvl = r.lastLvl;
             return acc;
         }, []).join('');
     };

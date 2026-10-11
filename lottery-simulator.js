@@ -222,7 +222,7 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
 /**
  * 抽奖模拟器里可用的英雄池：**排除 `hidden`**。
  *
- * `hidden` = `data/hero_order.json` 的隐藏名单（`trainer_*` / `guestip*` / 2200 未发布）
+ * `hidden` = `utils.js::isHiddenHero()` 运行时判定（2200 年 / id 含 trainer|guestip|temp1）
  *          ∪ **`hero.excluded`（id 命中 `utils.js::EXCLUDED_ID_KEYWORDS`，如 `_temp1`）**（用户 2026-10-10）。
  *
  * ⚠ 抽奖模式原本会**绕过**列表的隐藏过滤（`filters.js` 里 `state.lotterySimulatorActive` 那条豁免），

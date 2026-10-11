@@ -455,7 +455,7 @@ function _costumeSlot(heroId, ord) {
 
 /**
  * 英雄 id 命中这些关键字 ⇒ **不进列表**（用户 2026-10-10：排除 `_temp1`）。
- * 与 `data/hero_order.json` 的 `hidden` 名单**分开**：那是可切换的"隐藏"，
+ * 与"默认隐藏"**分开**：那是 `isHiddenHero()` 运行时判定的可切换隐藏，
  * 这里是**硬排除**（`hero.excluded`），任何情况下都不展示（含抽奖奖池）。
  * 消费点：`filters.js::listHeroes()` / `applyFiltersAndRender()`、`lottery-simulator.js::getSimHeroPool()`。
  * 想加/减关键字就改这里。
@@ -473,10 +473,55 @@ function isExcludedById(heroId) {
 }
 
 /**
+ * 「默认隐藏」判据（用户 2026-10-11：**不再落盘**，改为运行时动态判定）。
+ * 命中 ⇒ `hero.hidden = true` ⇒ 默认不进列表（`state.showHiddenHeroes` 可切回来）。
+ *
+ * 以前是 `data/hero_order.json` 里写死的 `hidden` 名单，缺点是每次配置更新都要重算一遍、
+ * 且容易和"固定段"口径打架；现在规则就这一处，改关键字改这里即可。
+ *
+ * 判据（两条取并集）：
+ *   ① id 含 `trainer` / `guestip` / `temp1`
+ *   ② 发布日期（`canBeReceivedDate`）是 **2200 年** —— 官方"未发布"哨兵
+ * ⚠ 隐藏必须是**标记**而不是从数组删除：`mahayoddha_sangeeta` 这类 2200 英雄**落在固定段内**，
+ *   真删会让其后下标全部前移 ⇒ 收藏位图错位。
+ * ⚠ 与 `isExcludedById`（`_temp1`，硬排除，任何情况都不展示含抽奖奖池）**是两套机制**。
+ */
+const HIDDEN_ID_KEYWORDS = ['trainer', 'guestip', 'temp1'];
+const HIDDEN_YEAR_PREFIX = '2200';
+
+function isHiddenHero(hero) {
+    if (!hero) return false;
+    const id = String(hero.id || '').toLowerCase();
+    if (HIDDEN_ID_KEYWORDS.some(k => id.indexOf(k) >= 0)) return true;
+    return String(hero.canBeReceivedDate || '').slice(0, 4) === HIDDEN_YEAR_PREFIX;
+}
+
+/**
+ * 字符串比较：一律按**码点**序，不用 `localeCompare`
+ * （后者受语言环境影响，排序结果会随界面语言漂移 ⇒ 序号不稳定 ⇒ 收藏错位）。
+ */
+function _cmpStr(a, b) {
+    const x = String(a || ''), y = String(b || '');
+    return x > y ? 1 : (x < y ? -1 : 0);
+}
+
+/**
+ * 自动段（固定段以外的英雄）排序键：【发布日期 → 战力(低→高) → 英雄ID】。
+ * 与 `data/hero_order.json` 的生成脚本 `_tools/_hero_order.py` 自检口径一致。
+ */
+function _cmpAutoOrder(ha, hb) {
+    if (!ha || !hb) return 0;
+    return _cmpStr(ha.canBeReceivedDate, hb.canBeReceivedDate)
+        || (computeHeroStats(ha).power - computeHeroStats(hb).power)
+        || _cmpStr(ha.id, hb.id);
+}
+
+/**
  * 从服务器加载核心数据。
  *
  * 数据源（全部来自官方配置 + 我们导出的词条，**不再用 data_{cn,en,tc}.json**）：
- *   data/hero_order.json         英雄序号表（收藏位图按此下标）+ hidden 列表
+ *   data/hero_order.json         英雄序号表**只存固定段 1953**（收藏位图按此下标）；
+ *                                其余序号由本函数运行时按【日期→战力→id】追加，hidden 动态判定
  *   data/characters.json         官方英雄配置（id/rarity/基础三维/element/family/manaSpeedId/classType/aetherGift…）
  *   data/heroes_skills_<码>.json 我们导出的词条（familyBonus / passiveSkills / skills[].lines）
  *   data/heroes_skill_types.json 技能类型标签（简体中文键）
@@ -550,12 +595,15 @@ async function loadData(lang) {
 
         // ④ 组装（严格按 hero_order 的下标顺序；表外的新英雄追加到末尾）
         const order = orderDoc.order || [];
-        const hiddenSet = new Set(orderDoc.hidden || []);
         const heroes = charsDoc.charactersConfig.heroes || [];
         const byId = {};
         heroes.forEach(h => { byId[h.id] = h; });
         const seen = new Set(order);
-        const ids = order.filter(x => byId[x]).concat(heroes.map(h => h.id).filter(x => !seen.has(x)));
+        // 固定段以外的英雄：**运行时**按【日期 → 战力(低→高) → 英雄ID】升序追加
+        // （用户 2026-10-11：配置里只保留固定段 1953，后续序号自动算，不再落盘）
+        const restIds = heroes.map(h => h.id).filter(x => !seen.has(x));
+        restIds.sort((a, b) => _cmpAutoOrder(byId[a], byId[b]));
+        const ids = order.filter(x => byId[x]).concat(restIds);
 
         // 服装槽位：同父英雄下按发布日期顺序编 1/2…
         const costumeOrd = {};
@@ -650,9 +698,9 @@ async function loadData(lang) {
                 familyBonus: st.familyBonus || [],
                 skill_types: typesDoc[hid] || {},
                 originalIndex: idx,
-                // `hidden` = hero_order 的隐藏名单（`showHiddenHeroes` 可切回来）；
-                // `excluded` = **id 关键字排除**（`EXCLUDED_ID_KEYWORDS`）—— 任何情况下都不展示。
-                hidden: hiddenSet.has(hid),
+                // `hidden` = **运行时动态判定**（`isHiddenHero`：2200 年 / trainer|guestip|temp1），
+                //   `showHiddenHeroes` 可切回来；`excluded` = **id 关键字硬排除**——任何情况下都不展示。
+                hidden: isHiddenHero(c),
                 excluded: isExcludedById(hid),
                 attack: s.attack, defense: s.defense, health: s.health, power: s.power,
                 lb1: s.lb1, lb2: s.lb2

@@ -7060,21 +7060,24 @@ html.dark-theme .autocomplete-item.selected {
 #modal .skill-list li .skill-subline-l3 { padding-left: 4.2em; }
 #modal .skill-list li .skill-subline-l4 { padding-left: 5.6em; }
 
-/* 括号注释块（用户 2026-10-10）：
+/* 括号注释块（用户 2026-10-10 / 2026-10-11）：
    · 去掉前后括号，只留橙色 `*` + 着色虚线下划线；
-   · 整块比主词条**多缩进**；
+   · 整块比**它所说明的那一行**多缩进一级；
    · 块内的 `[*]` 子词条也要保持虚线 —— `.skill-subline` 是 `inline-block`，
-     `text-decoration` **不会**自动传到它身上，必须显式 `inherit`。 */
+     `text-decoration` **不会**自动传到它身上，必须显式 `inherit`。
+   ⚠ 缩进值**不再由 CSS 写死两档**：`render.js` 按"宿主行层级 + 1 级"给出内联
+     `padding-inline-start`（逻辑属性，LTR/RTL 自动镜像）。下面两条只是**无内联时的兜底**，
+     且内联声明优先级更高。历史：写死 1.4em / 2.8em 时，宿主是 `[**]` 的括号块与宿主平齐
+     （用户 2026-10-11：`ninja_peridot_costume_herbalist` / `goblin_kettle_costume_field_cook`）。 */
 #modal .skill-list li .paren-note {
     display: inline-block;
-    padding-left: 1.4em;
+    padding-inline-start: 1.4em;
     text-decoration: underline dashed #ff7800ff;
 }
 
-/* 括号注释块跟在 `[*]` 子行后面时（子行本来就有 1.4em 缩进）⇒ **再多缩进一级**，
-   否则和上文一样深、看不出层级（用户 2026-10-10，`beauty_beast_henriette`）。 */
+/* 括号注释块跟在 `[*]` 子行后面时的兜底值（真实值见上，由内联给出） */
 #modal .skill-list li .paren-note.paren-note-sub {
-    padding-left: 2.8em;
+    padding-inline-start: 2.8em;
 }
 
 #modal .skill-list li .paren-note .paren-mark {
@@ -7215,14 +7218,8 @@ html[dir="rtl"] #modal .skill-list li .skill-subline-l4 {
     padding-right: 5.6em;
 }
 
-html[dir="rtl"] #modal .skill-list li .paren-note {
-    padding-left: 0;
-    padding-right: 1.4em;
-}
-
-html[dir="rtl"] #modal .skill-list li .paren-note.paren-note-sub {
-    padding-right: 2.8em;
-}
+/* RTL 下括号注释块**不需要**镜像规则 —— 缩进用逻辑属性 `padding-inline-start`
+   （CSS 兜底 + render.js 内联都用的它），浏览器自动镜像。 */
 
 /* 详情页头部按钮：原本靠 `margin-right` 拉开间距 */
 html[dir="rtl"] #modal .favorite-btn,

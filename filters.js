@@ -3,7 +3,7 @@ const FAVORITES_KEY = 'favorites_binary';
 
 /**
  * 参与「英雄列表 / 筛选器选项」的英雄。
- * 默认排除**隐藏英雄**（`trainer_*` / `guestip*` / 未发布 2200；名单见 data/hero_order.json 的 hidden），
+ * 默认排除**隐藏英雄**（判据见 `utils.js::isHiddenHero`：2200 年 / id 含 trainer|guestip|temp1，运行时动态判定），
  * 用户 2026-10-10：隐藏项不展示、不参与排序与筛选。
  * `state.showHiddenHeroes = true` 时全部返回（供后续开关使用）。
  *
@@ -860,7 +860,7 @@ function applyFiltersAndRender() {
         // 不受 `showHiddenHeroes` / 抽奖模式影响（用户 2026-10-10）。
         if (hero.excluded) return false;
         // 默认隐藏的英雄（`trainer_*` / `guestip*` / 发布日期 2200 未发布）**不进英雄列表、不参与排序**
-        // （用户 2026-10-10；名单见 `data/hero_order.json` 的 `hidden`）。
+        // （用户 2026-10-10；判据见 `utils.js::isHiddenHero`，2026-10-11 起运行时动态判定）。
         // `state.showHiddenHeroes = true` 时展示 —— 供后续"切换展示 2200 英雄"的开关使用。
         // 抽奖模拟器模式除外：那里 trainer 是有意保留的（见下面的既有分支）。
         if (hero.hidden && !state.showHiddenHeroes && !state.lotterySimulatorActive) return false;

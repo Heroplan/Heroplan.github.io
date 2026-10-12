@@ -51,8 +51,6 @@ const uiElements = {
     closeFiltersModalBtn: document.getElementById('close-filters-modal-btn'),
     helpModal: document.getElementById('help-modal'),
     helpModalOverlay: document.getElementById('help-modal-overlay'),
-    skillTypeHelpModal: document.getElementById('skill-type-help-modal'),
-    skillTypeHelpModalOverlay: document.getElementById('skill-type-help-modal-overlay'),
     lbTalentHelpModal: document.getElementById('lb-talent-help-modal'),
     lbTalentHelpModalOverlay: document.getElementById('lb-talent-help-modal-overlay'),
     multiSelectModal: document.getElementById('multi-select-modal'),
@@ -78,6 +76,17 @@ const uiElements = {
     sharedTeamsTabBtn: document.getElementById('tab-shared-teams'),
 };
 
+/** 站点语言码 → `og:locale`（Open Graph 用下划线形式）。 */
+const OG_LOCALE = {
+    cn: 'zh_CN', tc: 'zh_TW', en: 'en_US', ja: 'ja_JP', ko: 'ko_KR', fr: 'fr_FR',
+    de: 'de_DE', es: 'es_ES', pt: 'pt_PT', it: 'it_IT', ru: 'ru_RU', ar: 'ar_SA',
+    tr: 'tr_TR', pl: 'pl_PL', nl: 'nl_NL', sv: 'sv_SE', da: 'da_DK', no: 'nb_NO',
+    fi: 'fi_FI', id: 'id_ID'
+};
+
+/** SEO 站点根（canonical / og:url / hreflang 都基于它）。 */
+const SEO_ORIGIN = 'https://heroplan.github.io/';
+
 /**
  * 应用指定的语言到整个页面。
  * @param {string} lang - 语言代码 ('cn', 'tc', 'en')。
@@ -85,11 +94,13 @@ const uiElements = {
 function applyLanguage(lang) {
     // 1. 设置 HTML 语言属性
     switch (lang) {
+        // 中文按**书写系统**声明（与 index.html 的 hreflang `zh-Hans`/`zh-Hant` 一致）：
+        // `zh-Hans` 覆盖所有简体用户，`zh-Hant` 覆盖港/澳/台等所有繁体用户，比 `zh-CN`/`zh-HK` 更准确。
         case 'cn':
-            document.documentElement.lang = 'zh-CN';
+            document.documentElement.lang = 'zh-Hans';
             break;
         case 'tc':
-            document.documentElement.lang = 'zh-HK';
+            document.documentElement.lang = 'zh-Hant';
             break;
         case 'en':
             document.documentElement.lang = 'en';
@@ -216,7 +227,6 @@ function applyLanguage(lang) {
         'calendar-btn': 'calendarTitle',
         'close-filters-modal-btn': 'closeBtnTitle',
         'advanced-filter-help-btn': 'filterSyntaxTitle',
-        'skill-type-help-btn': 'skillTypeSourceHelpTitle',
         'show-lottery-simulator-btn': 'showLotterySimulatorTitle',
         'show-team-simulator-btn': 'showTeamSimulatorTitle',
         'show-chat-simulator-btn': 'showChatSimulatorTitle',
@@ -229,9 +239,31 @@ function applyLanguage(lang) {
         if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
     }
 
-    // 6. 处理 Meta Description
+    // 6. SEO：Meta Description + canonical + Open Graph / Twitter
+    //
+    // ⚠ 多语言 SEO 的关键：20 个语言版本用 `?lang=<码>` 区分
+    //   （见 index.html 里的 `rel="alternate" hreflang`），每个语言版本必须
+    //   **把 canonical 指向自身**；若一律指向站点根，Google 会把 20 个版本判成
+    //   同一页面、hreflang 注解随之失效。
+    //   ⚠ 依赖 JS 执行（爬虫需渲染）。title/description 同理。
     const metaDesc = document.getElementById('meta-description');
     if (metaDesc && langDict.metaDescription) metaDesc.setAttribute('content', langDict.metaDescription);
+
+    const _setAttr = (id, attr, val) => {
+        const el = document.getElementById(id);
+        if (el && val) el.setAttribute(attr, val);
+    };
+    const canonicalUrl = SEO_ORIGIN + '?lang=' + lang;
+    const seoTitle = langDict.pageTitle || document.title;
+    const seoDesc = langDict.metaDescription || '';
+
+    _setAttr('canonical-link', 'href', canonicalUrl);
+    _setAttr('og-url', 'content', canonicalUrl);
+    _setAttr('og-title', 'content', seoTitle);
+    _setAttr('og-description', 'content', seoDesc);
+    _setAttr('og-locale', 'content', OG_LOCALE[lang] || lang);
+    _setAttr('tw-title', 'content', seoTitle);
+    _setAttr('tw-description', 'content', seoDesc);
 }
 
 /**
@@ -370,36 +402,6 @@ function updateFilterButtonUI(filterType) {
     }
 }
 
-/**
- * 在页面加载时，读取所有保存了折叠状态的Cookie，并应用到对应的UI元素上。
- */
-function loadCollapseStates() {
-    // 查找所有带 data-cookie 属性的折叠按钮
-    const toggleButtons = document.querySelectorAll('[data-cookie]');
-
-    toggleButtons.forEach(button => {
-        const cookieName = button.dataset.cookie;
-        const savedState = getCookie(cookieName);
-
-        const targetId = button.dataset.target;
-        const contentElement = document.getElementById(targetId);
-
-        if (contentElement && savedState) {
-            // 根据Cookie的值来设置是否折叠
-            const shouldCollapse = (savedState === 'collapsed');
-            contentElement.classList.toggle('collapsed', shouldCollapse);
-            button.classList.toggle('expanded', !shouldCollapse);
-        }
-    });
-
-    // 单独处理队伍模拟器的折叠状态
-    const teamDisplayWrapper = document.getElementById('team-simulator-wrapper');
-    const teamDisplayCookie = getCookie('teamDisplayCollapsed');
-    if (teamDisplayWrapper && teamDisplayCookie === 'true' && window.innerWidth <= 900) {
-        teamDisplayWrapper.classList.add('collapsed');
-    }
-}
-
 // --- 模态框管理 ---
 function openDetailsModal(hero, context = {}) {
     state.modalContext = context; // 在打开模态框时存储上下文
@@ -445,7 +447,6 @@ function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
     `;
     document.getElementById(`close-${modalElement.id}-btn`).addEventListener('click', () => {
         if (modalElement === uiElements.helpModal) closeHelpModal();
-        if (modalElement === uiElements.skillTypeHelpModal) closeSkillTypeHelpModal();
         if (modalElement === uiElements.lbTalentHelpModal) closeLbTalentHelpModal();
     });
 }
@@ -465,23 +466,8 @@ function closeHelpModal() {
     if (!uiElements.helpModal.classList.contains('hidden')) history.back();
 }
 
-function openSkillTypeHelpModal() {
-    renderHelpModalContent(uiElements.skillTypeHelpModal, 'skillTypeHelpTitle', null, ['skillTypeHelpContent']);
-    uiElements.skillTypeHelpModal.classList.add('stacked-modal');
-    uiElements.skillTypeHelpModalOverlay.classList.add('stacked-modal-overlay');
-    uiElements.skillTypeHelpModal.classList.remove('hidden');
-    uiElements.skillTypeHelpModalOverlay.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    history.pushState({ modal: 'skillTypeHelp' }, null);
-    state.modalStack.push('skillTypeHelp');
-}
-
-function closeSkillTypeHelpModal() {
-    if (!uiElements.skillTypeHelpModal.classList.contains('hidden')) history.back();
-}
-
 function openLbTalentHelpModal() {
-    renderHelpModalContent(uiElements.lbTalentHelpModal, 'lbTalentHelpTitle', null, ['lbTalentHelpLine1', 'lbTalentHelpLine2']);
+    renderHelpModalContent(uiElements.lbTalentHelpModal, 'lbTalentHelpTitle', null, ['lbTalentHelpLine2']);
     uiElements.lbTalentHelpModal.classList.add('stacked-modal');
     uiElements.lbTalentHelpModalOverlay.classList.add('stacked-modal-overlay');
     uiElements.lbTalentHelpModal.classList.remove('hidden');

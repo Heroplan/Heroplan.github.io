@@ -310,7 +310,7 @@ function showSoulExchangeModal() {
     // ▼▼▼ 辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
     const createSoulExchangeCard = (hero, options = {}) => {
         const card = document.createElement('div');
-        card.className = `summary-hero-card ${getColorGlowClass(hero.color)}`;
+        card.className = `summary-hero-card ${getColorGlowClass(hero.colorId)}`;
         card.title = hero.name;
 
         if (hero.star === 5) {
@@ -319,7 +319,7 @@ function showSoulExchangeModal() {
 
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
-        avatar.style.background = getHeroColorLightGradient(hero.color);
+        avatar.style.background = getHeroColorLightGradient(hero.colorId);
 
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
@@ -339,8 +339,8 @@ function showSoulExchangeModal() {
             ? `<div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>`
             : '';
 
-        const englishColor = (colorReverseMap[String(hero.color).toLowerCase()] || hero.color || 'default').toLowerCase();
-        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${englishColor}.webp">`;
+        const colorIcon = String(hero.colorId || 'default').toLowerCase();
+        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${colorIcon}.webp">`;
 
         detailsOverlay.innerHTML = `${colorIconHTML}${starsHTML}`;
 

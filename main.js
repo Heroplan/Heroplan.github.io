@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 /**
  * 从词条里的 `[#Dynamic]…[#]` 标记找出所有「攻击力参与计算」的伤害数值，并算好系数。
  *
- * 用户 2026-10-10：**完全抛弃**旧站那一套「技能标签门控 + 关键词组合 + 排除词」的启发式识别，
+ * **完全抛弃**旧站那一套「技能标签门控 + 关键词组合 + 排除词」的启发式识别，
  * 只认生成器打的 `[#Dynamic]` 标记（`skill_desc_gen` 的 `lang_markup.mark_dynamic`）——
  * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是「80 级攻击力」下的展示值
  * ⇒ `系数 = 标记值 / hero.attack`；详情页切 LB / 服装加成时按 `系数 × 当前攻击力` 重算。
@@ -130,6 +130,9 @@ async function initializeApp() {
     const urlParams = new URLSearchParams(window.location.search);
     const viewHeroFromUrl = urlParams.get('view');
     const langFromUrl = urlParams.get('lang');
+    // `hl` = Google 的"界面语言"参数（事实标准，外部链接/工具常用）。
+    // 本站**自己的**参数是 `lang`；这里把 `hl` 当别名兜底（见下面的优先级链）。
+    const hlFromUrl = urlParams.get('hl');
     const zfavsFromUrl = urlParams.get('zfavs');
     const favsFromUrl = urlParams.get('favs');
     const sharedTeamsFromUrl = urlParams.get('sharedTeams');
@@ -142,7 +145,7 @@ async function initializeApp() {
     }
 
     const language = getCookie('language');
-    // ⚠ 2026-10-10 用户口径：**搜索语言选择已废弃** ⇒ 不再读写 `search_lang` /
+    // ⚠ **搜索语言选择已废弃** ⇒ 不再读写 `search_lang` /
     //   `searchLanguageUpdated`，一律按当前界面语言处理（相关迁移逻辑整块移除）。
 
     const languageCookie = getCookie('language');
@@ -153,6 +156,13 @@ async function initializeApp() {
     //    此刻还是 `langs.js` 预初始化出来的空对象 ⇒ Cookie / URL 的语言**永远被判为无效**
     //    （重构回归：旧 `language.js` 在加载时就填好了 20 种语言）。改用 `Lang.LANGS` 白名单。
     const _knownLang = (c) => !!c && (typeof Lang !== 'undefined') && Lang.LANGS.indexOf(c) >= 0;
+    // 外部语言标签归一化：`zh-Hant` → `tc`、`ja-JP` → `ja`；
+    // **站点不支持的语言返回 null**（如 `hl=he` 希伯来语）⇒ 自然回落到下一级。
+    const _normLang = (c) => (typeof Lang !== 'undefined' && Lang.normalizeCode)
+        ? Lang.normalizeCode(c) : (_knownLang(c) ? c : null);
+
+    // URL 参数：`lang`（本站口径）优先，`hl`（Google 界面语言参数）兜底。
+    const urlLang = _normLang(langFromUrl) || _normLang(hlFromUrl);
 
     // 1. 优先使用 Cookie
     if (_knownLang(languageCookie)) {
@@ -160,8 +170,8 @@ async function initializeApp() {
     }
 
     // 2. 其次使用 URL 参数
-    else if (_knownLang(langFromUrl)) {
-        langToUse = langFromUrl;
+    else if (urlLang) {
+        langToUse = urlLang;
     }
 
     // 3. 最后根据浏览器语言自动判断
@@ -314,7 +324,6 @@ async function initializeApp() {
         attack: document.getElementById('attack-input'),
         defense: document.getElementById('defense-input'),
         health: document.getElementById('health-input'),
-        skillTypeSource: document.getElementById('skill-type-source-select'),
         defaultLimitBreakSelect: document.getElementById('default-limit-break-select'),
         defaultTalentSelect: document.getElementById('default-talent-select'),
         defaultTalentStrategySelect: document.getElementById('default-talent-strategy-select'),
@@ -358,16 +367,6 @@ async function initializeApp() {
     const initialTalentDisabled = uiElements.filterInputs.defaultTalentSelect.value === 'none';
     uiElements.filterInputs.defaultTalentStrategySelect.disabled = initialTalentDisabled;
     uiElements.filterInputs.defaultManaPriorityCheckbox.disabled = initialTalentDisabled;
-    const savedSkillSource = getCookie('skillTypeSource');
-    if (savedSkillSource && uiElements.filterInputs.skillTypeSource) {
-        // 如果有已保存的偏好，則使用它
-        uiElements.filterInputs.skillTypeSource.value = savedSkillSource;
-    } else if (uiElements.filterInputs.skillTypeSource) {
-        // 否則 (新用戶)，將預設值設為 'bbcamp'
-        uiElements.filterInputs.skillTypeSource.value = 'bbcamp';
-    }
-    uiElements.filterInputs.skillTypeSource.value = 'bbcamp';
-
     // 加载静态元素的折叠状态
     loadStaticCollapseStates();
     loadFilterCollapseStates();
@@ -645,7 +644,7 @@ function addEventListeners() {
         showWantedMissionBtn, showFarmingGuideBtn, showTeamSimulatorBtn,
         heroTable, teamDisplayGrid, myTeamsTabBtn, sharedTeamsTabBtn,
         openFavoritesBtn, shareFavoritesBtn, resetFiltersBtn,
-        modalOverlay, advancedFilterHelpBtn, helpModalOverlay, skillTypeHelpBtn, skillTypeHelpModalOverlay,
+        modalOverlay, advancedFilterHelpBtn, helpModalOverlay,
         lbTalentHelpBtn, lbTalentHelpModalOverlay,
         exportSettingsBtn, importSettingsBtn, multiSelectModalOverlay, showRedeemCodesBtn
     } = uiElements;
@@ -692,8 +691,6 @@ function addEventListeners() {
     multiSelectModalOverlay.addEventListener('click', () => { if (uiElements.multiSelectModal && !uiElements.multiSelectModal.classList.contains('hidden')) history.back(); });
     advancedFilterHelpBtn.addEventListener('click', openHelpModal);
     helpModalOverlay.addEventListener('click', closeHelpModal);
-    skillTypeHelpBtn.addEventListener('click', openSkillTypeHelpModal);
-    skillTypeHelpModalOverlay.addEventListener('click', closeSkillTypeHelpModal);
     lbTalentHelpBtn.addEventListener('click', openLbTalentHelpModal);
     lbTalentHelpModalOverlay.addEventListener('click', closeLbTalentHelpModal);
     document.getElementById('close-redeem-codes-modal-btn').addEventListener('click', closeRedeemCodesModal);
@@ -799,14 +796,6 @@ function addEventListeners() {
             filterInputs[key].addEventListener('input', debouncedRender);
         }
     });
-
-    // 2. 为普通的下拉框绑定事件
-    if (filterInputs.skillTypeSource) {
-        filterInputs.skillTypeSource.addEventListener('change', () => {
-            setCookie('skillTypeSource', filterInputs.skillTypeSource.value, 365);
-            applyFiltersAndRender();
-        });
-    }
 
     // 3. 为“默认突破/天赋设置”的整个组绑定统一的处理器
     const defaultSettingsControls = [
@@ -1262,7 +1251,6 @@ function handlePopState(event) {
             case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
             case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
             case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
-            case 'skillTypeHelp': modal = uiElements.skillTypeHelpModal; overlay = uiElements.skillTypeHelpModalOverlay; break;
             case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
             case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
             case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
@@ -1322,10 +1310,8 @@ function populateOriginToFamiliesMap() {
 
     state.allHeroes.forEach(hero => {
         if (hero.source && hero.family) {
-            // 使用 sourceReverseMap 将本地化的起源名称转为标准的英文ID
-            const englishOrigin = sourceReverseMap[hero.source];
-            if (englishOrigin) {
-                const originKey = englishOrigin.toLowerCase();
+            if (hero.sourceId) {
+                const originKey = String(hero.sourceId).toLowerCase();
                 const familyKey = String(hero.family).toLowerCase();
 
                 if (!tempMap[originKey]) {

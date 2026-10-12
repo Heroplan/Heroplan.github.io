@@ -74,7 +74,7 @@ function initializeImportModalListeners() {
 const otherSettingKeys = [
     'theme', 'language', 'defaultLB', 'defaultTalent', 'defaultTalentStrategy',
     'defaultManaPriority', 'showLbTalentDetails', 'enableSkillQuickSearch',
-    'skillTypeSource', 'showEventNameState', 'chatPreviewHeight',
+    'showEventNameState', 'chatPreviewHeight',
     'teamDisplayCollapsed', 'collapseStates',
     'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed', 'highlightSkillTerms',
     'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam', 'showCircleRay'

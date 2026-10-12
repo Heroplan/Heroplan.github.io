@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<!-- 静态默认 = 简体中文（按**书写系统**声明，与 hreflang `zh-Hans` 一致）；
+     ui.js::applyLanguage 会按当前语言改写 `lang`（cn→zh-Hans / tc→zh-Hant）。 -->
+<html lang="zh-Hans">
 
 <head>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -154,26 +156,92 @@
 
     <script>
         /* 书写方向：**首屏之前**就把 `<html dir>` 定下来，避免阿拉伯语用户先看到 LTR 再翻转。
-           （ui.js::applyLanguage 后面还会再设一次，两处口径一致：RTL 语言见 RTL_LANGS。） */
+           （ui.js::applyLanguage 后面还会再设一次，两处口径一致：RTL 语言见 RTL_LANGS。）
+
+           优先级与 main.js 一致：cookie → URL（`lang` 优先，`hl` 兜底）→ 浏览器语言。
+           ⚠ 只按**站点支持的**语言判方向 —— 20 种语言里只有 `ar` 是 RTL。
+             旧实现把 `he`/`fa`/`ur` 也当 RTL，但站点会把这些回落成英文 ⇒
+             **英文内容配 RTL 版式是错的**，故改为"不支持就不动方向"。
+           ⚠ 这里的 SUPPORTED/ALIAS 是 langs.js::normalizeCode 的**首屏内联副本**
+             （首屏不能等 langs.js 加载）。改动语言列表时**两处都要改**。 */
         (function () {
-            var RTL = ['ar', 'he', 'fa', 'ur', 'yi'];
-            var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
-            var lang = m ? decodeURIComponent(m[1]) : '';
-            if (!lang) {
-                var bl = (navigator.language || '').toLowerCase().slice(0, 2);
-                if (RTL.indexOf(bl) >= 0) lang = bl;
+            var SUPPORTED = 'cn tc en ja ko fr de es pt it ru ar tr pl nl sv da no fi id'.split(' ');
+            var ALIAS = {
+                'zh-hans': 'cn', 'zh-cn': 'cn', 'zh-sg': 'cn', 'zh-my': 'cn',
+                'zh-hant': 'tc', 'zh-tw': 'tc', 'zh-hk': 'tc', 'zh-mo': 'tc',
+                'in': 'id', 'nb': 'no', 'nn': 'no', 'pt-br': 'pt', 'pt-pt': 'pt'
+            };
+            function norm(v) {
+                if (!v) return '';
+                v = String(v).trim().toLowerCase();
+                if (SUPPORTED.indexOf(v) >= 0) return v;
+                if (ALIAS[v]) return ALIAS[v];
+                var b = v.split('-')[0];
+                return SUPPORTED.indexOf(b) >= 0 ? b : '';
             }
-            document.documentElement.setAttribute('dir', RTL.indexOf(lang) >= 0 ? 'rtl' : 'ltr');
+            var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
+            var q = new URLSearchParams(location.search);
+            var lang = norm(m ? decodeURIComponent(m[1]) : '')
+                || norm(q.get('lang')) || norm(q.get('hl'))
+                || norm(navigator.language);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
         })();
     </script>
 
-    <title>帝国与谜题英雄资料库 | Heroplan</title>
+    <!-- ══════════════════════════════════════════════════════════════════════
+         SEO（静态兜底 = 简体中文；其余 19 种语言由 ui.js::applyLanguage 用
+         `i18n_<码>.json` 的 pageTitle / metaDescription 动态替换 <title> 与
+         <meta id="meta-description">）。
+         ⚠ 改文案请改 `_tools/_seo_text.py`（20 语言单一数据源）后跑 `--apply`，
+           不要只改这里——否则 20 种语言会不一致。
+         ══════════════════════════════════════════════════════════════════════ -->
+    <title>帝国与谜题英雄资料库 | 全英雄数据 · 立绘 · 未来英雄 | Heroplan</title>
     <meta id="meta-description" name="description"
-        content="Heroplan是為《帝國與謎題 / 帝国与谜题》(Empires & Puzzles)玩家打造的終極英雄資料庫(资料库)。快速查詢(查询)和比較(比较)所有英雄的詳細數據(详细数据)、特殊技能、家族加成和攻略信息。The ultimate hero database for Empires & Puzzles players. Quickly search and compare detailed stats, special skills, family bonuses, and strategy guides for all heroes.">
+        content="Heroplan 是《帝国与谜题》全语言英雄资料库：支持 20 种游戏内语言查询全英雄的属性、技能、家族与服装，提供全英雄立绘与动态立绘、未来英雄预览、高级技能筛选、属性计算器及抽奖/队伍/聊天模拟器。">
     <meta name="keywords"
-        content="帝国与谜题, 帝國與謎題, Empires & Puzzles, 英雄, 攻略, 英雄资料, 英雄資料, 英雄数据, 英雄數據, Heroplan, 资料, 資料, 数据, 數據, Juno, 天赋模拟器, 天賦模擬器">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://heroplan.github.io/" />
+        content="帝国与谜题, 帝國與謎題, Empires & Puzzles, 英雄资料库, 英雄数据库, 英雄数据, 全语言, 英雄立绘, 立绘, 动态立绘, 未来英雄, 未发布英雄, 英雄技能, 特殊技能, 被动技能, 家族加成, 服装, 属性计算器, 战力计算, 天赋模拟器, 极限突破, 抽奖模拟器, 队伍模拟器, 聊天模拟器, 材料出处, 通缉任务, 活动日历, 兑换码, 攻略, Heroplan, Juno">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Heroplan">
+
+    <!-- 语言版本互指（20 种游戏内语言 + x-default）。
+         ⚠ 语言用 `?lang=<码>` 传递（见 main.js 的 `urlParams.get('lang')`）；
+           每个语言版本在运行时把 canonical 指向自身（ui.js::applyLanguage），
+           否则 hreflang 会被判成"同一页面"而失效。 -->
+    <link rel="alternate" hreflang="zh-Hans" href="https://heroplan.github.io/?lang=cn">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroplan.github.io/?lang=tc">
+    <link rel="alternate" hreflang="en" href="https://heroplan.github.io/?lang=en">
+    <link rel="alternate" hreflang="ja" href="https://heroplan.github.io/?lang=ja">
+    <link rel="alternate" hreflang="ko" href="https://heroplan.github.io/?lang=ko">
+    <link rel="alternate" hreflang="fr" href="https://heroplan.github.io/?lang=fr">
+    <link rel="alternate" hreflang="de" href="https://heroplan.github.io/?lang=de">
+    <link rel="alternate" hreflang="es" href="https://heroplan.github.io/?lang=es">
+    <link rel="alternate" hreflang="pt" href="https://heroplan.github.io/?lang=pt">
+    <link rel="alternate" hreflang="it" href="https://heroplan.github.io/?lang=it">
+    <link rel="alternate" hreflang="ru" href="https://heroplan.github.io/?lang=ru">
+    <link rel="alternate" hreflang="ar" href="https://heroplan.github.io/?lang=ar">
+    <link rel="alternate" hreflang="tr" href="https://heroplan.github.io/?lang=tr">
+    <link rel="alternate" hreflang="pl" href="https://heroplan.github.io/?lang=pl">
+    <link rel="alternate" hreflang="nl" href="https://heroplan.github.io/?lang=nl">
+    <link rel="alternate" hreflang="sv" href="https://heroplan.github.io/?lang=sv">
+    <link rel="alternate" hreflang="da" href="https://heroplan.github.io/?lang=da">
+    <link rel="alternate" hreflang="no" href="https://heroplan.github.io/?lang=no">
+    <link rel="alternate" hreflang="fi" href="https://heroplan.github.io/?lang=fi">
+    <link rel="alternate" hreflang="id" href="https://heroplan.github.io/?lang=id">
+    <link rel="alternate" hreflang="x-default" href="https://heroplan.github.io/">
+    <link rel="canonical" id="canonical-link" href="https://heroplan.github.io/" />
+
+    <!-- Open Graph / Twitter（默认简中；运行时按当前语言更新，见 ui.js::applyLanguage） -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Heroplan">
+    <meta property="og:locale" id="og-locale" content="zh_CN">
+    <meta property="og:title" id="og-title" content="帝国与谜题英雄资料库 | 全英雄数据 · 立绘 · 未来英雄 | Heroplan">
+    <meta property="og:description" id="og-description"
+        content="Heroplan 是《帝国与谜题》全语言英雄资料库：支持 20 种游戏内语言查询全英雄的属性、技能、家族与服装，提供全英雄立绘与动态立绘、未来英雄预览、高级技能筛选、属性计算器及抽奖/队伍/聊天模拟器。">
+    <meta property="og:url" id="og-url" content="https://heroplan.github.io/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" id="tw-title" content="帝国与谜题英雄资料库 | Heroplan">
+    <meta name="twitter:description" id="tw-description"
+        content="Heroplan 是《帝国与谜题》全语言英雄资料库：20 种游戏内语言、全英雄立绘、未来英雄预览与多种玩家工具。">
     <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
         onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
     <link rel="stylesheet" href="theme.css?v=20261010h">
@@ -348,13 +416,6 @@
             </div>
             <div class="header-info-container">
                 <div class="header-info-content">
-                    <span style="display: none;">
-                        <span data-lang-key="poweredBy"></span>
-                        <a href="https://heroplan.io/" target="_blank" rel="noopener noreferrer">
-                            <strong style="color: var(--md-sys-color-primary);">Heroplan.io</strong>
-                        </a>
-                        <span data-lang-key="driven"></span>
-                    </span>
                     <span>
                         <span data-lang-key="sponsoredBy"></span>
                         <strong style="color: var(--md-sys-color-error);">SilverMan 奈托 诸子百家-jj</strong>
@@ -363,12 +424,6 @@
                     <span>
                         <span data-lang-key="translatedBy"></span>
                         <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
-                    </span>
-                    <span style="display: none;">
-                        <span data-lang-key="guideToempuzzled"></span>
-                        <a href="https://empuzzled.com" target="_blank" rel="noopener noreferrer">
-                            <strong style="color: var(--md-sys-color-primary);">https://empuzzled.com</strong>
-                        </a>
                     </span>
                 </div>
             </div>
@@ -385,16 +440,15 @@
         </header>
 
         <section class="seo-text-hidden">
-            <h2 data-lang-key="seoHeading">《帝国与谜题》一站式英雄资料库与玩家工具箱</h2>
+            <h2 data-lang-key="seoHeading">《帝国与谜题》全语言英雄资料库 · 立绘展示 · 未来英雄预览 · 玩家工具箱</h2>
             <p data-lang-key="seoPara1">
-                欢迎使用由 <strong>Heroplan.io</strong> 驱动的《帝国与谜题》(Empires & Puzzles)
-                终极英雄资料与攻略平台。我们提供最新、最全面的<strong>英雄数据</strong>，包括星级、颜色、法速、职业、家族、起源及所有<strong>服装</strong>信息。
+                <strong>Heroplan</strong> 收录《帝国与谜题》(Empires &amp; Puzzles) 的<strong>全部英雄</strong>，并<strong>完整支持游戏内 20 种语言</strong>——简体中文、繁體中文、English、日本語、한국어、Français、Deutsch、Español、Português、Italiano、Русский、العربية、Türkçe、Polski、Nederlands、Svenska、Dansk、Norsk、Suomi、Indonesia。切换语言即可用母语查看英雄名称、特殊技能与被动技能全文。每位英雄都提供星级、元素、法速、职业、家族、起源、服装，以及 80 级 / LB1 / LB2 三档攻击、防御、生命与战力。所有英雄数据均由游戏<strong>官方配置文件</strong>解析生成。
             </p>
             <p data-lang-key="seoPara2">
-                本站的独特之处在于其强大的交互功能：使用我们强大的筛选系统，您不仅能按名称、来源等基本属性查找英雄，更能通过<strong>特殊技能文本</strong>、<strong>被动技能描述</strong>及精细的技能分类进行高级检索。独一无二的<strong>属性计算器</strong>，允许您实时查看英雄在不同极限突破（LB1/LB2）和天赋（+20/+25）等级下的确切战力、攻击、防御及生命值，为您的英雄成长规划提供数据支持。
+                本站提供<strong>全英雄立绘展示</strong>：在英雄详情页可查看高清静态立绘，并对支持的角色播放游戏内<strong>动态立绘动画</strong>。另有<strong>未来英雄预览</strong>——按官方发布日期列出尚未上线的英雄，方便你提前规划资源（收藏会锁定到该英雄正式发布）。检索方面，除名称、星级、元素、法速、职业、家族、起源等常规条件外，还支持按<strong>特殊技能文本</strong>、<strong>被动技能文本</strong>与技能分类做复合查询；<strong>属性计算器</strong>可实时换算不同极限突破（LB1/LB2）与天赋（+20/+25）等级下的确切数值。
             </p>
             <p data-lang-key="seoPara3">
-                除了英雄数据库，我们还集成了多种实用工具来提升您的游戏体验：使用创新的【<strong>聊天模拟器</strong>】，您可以轻松制作带自定义颜色和游戏表情的聊天内容并一键复制；查阅我们详尽的【<strong>材料出处指南</strong>】和【<strong>通缉任务</strong>】速查表，高效定位资源，优化您的游戏攻略。您可以收藏您喜爱的英雄组合，并通过链接将您的<strong>收藏列表</strong>分享给盟友。平台完整支持简/繁中文和英文，并提供日/夜间模式切换功能。
+                此外还集成了多种实用工具：【<strong>抽奖模拟器</strong>】复现卡池概率与召唤记录；【<strong>队伍模拟器</strong>】搭配阵容并分享给盟友；【<strong>聊天模拟器</strong>】制作带自定义颜色与游戏表情的聊天文本；【<strong>材料出处指南</strong>】与【<strong>通缉任务</strong>】速查表快速定位掉落关卡；【<strong>活动日历</strong>】与【<strong>兑换码</strong>】随时掌握限时内容。你可以收藏英雄组合并通过链接分享，支持导出/导入配置，并提供日间/夜间主题。
             </p>
         </section>
         <div id="team-simulator-wrapper" class="hidden">
@@ -664,18 +718,6 @@
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
                     <div id="advanced-filters-content" class="filter-content">
-                        <div class="filter-item" style="display: none;">
-                            <label for="skill-type-source-select" data-lang-key="skillTypeSourceLabel">技能类别来源:</label>
-                            <div class="input-with-help">
-                                <select id="skill-type-source-select">
-                                    <option value="both" data-lang-key="sourceBoth">全部</option>
-                                    <option value="heroplan" data-lang-key="sourceHeroplan">Heroplan.io</option>
-                                    <option value="nynaeve" data-lang-key="sourceNynaeve">By nynaeve</option>
-                                    <option value="bbcamp" data-lang-key="sourceBbcamp">bbcamp.info</option>
-                                </select>
-                                <button id="skill-type-help-btn" class="help-btn">?</button>
-                            </div>
-                        </div>
                         <div class="filter-item">
                             <label for="type-input" data-lang-key="skillTypeLabel">特殊技能类别:</label>
                             <input type="text" id="type-input" data-lang-key-placeholder="skillTypePlaceholder"
@@ -888,8 +930,6 @@
 
     <div id="help-modal-overlay" class="hidden"></div>
     <div id="help-modal" class="hidden"></div>
-    <div id="skill-type-help-modal-overlay" class="hidden"></div>
-    <div id="skill-type-help-modal" class="hidden"></div>
     <div id="lb-talent-help-modal-overlay" class="hidden"></div>
     <div id="lb-talent-help-modal" class="hidden"></div>
     <div id="multi-select-modal-overlay" class="hidden"></div>
@@ -1059,13 +1099,12 @@
     // 动态生成友情链接卡片
     (function () {
         const links = [
-            { name: "Heroplan.io", url: "https://heroplan.io", desc: "The founding website of the Heroplan project" },
+            { name: "Heroplan.io (R.I.P.)", url: "https://heroplan.io", desc: "The founding website of the Heroplan project — now offline" },
             { name: "Heroplan Data", url: "https://github.com/cvl75/heroplan_data", desc: "Data source for the Heroplan project" },
             { name: "The Raven's Cave", url: "http://www.theravenscave.com", desc: "An excellent website used for a long time" },
             { name: "Fandom", url: "https://empiresandpuzzles.fandom.com/wiki", desc: "Fandom Wiki" },
             { name: "BBCamp", url: "https://bbcamp.info", desc: "The website of the calendar creator" },
             { name: "Empuzzled", url: "https://empuzzled.com", desc: "A comprehensive encyclopedia website" },
-            { name: "ep-poland", url: "https://ep-poland.pl/", desc: "The website of the Polish translator of this site" },
             { name: "Empires & Puzzles Discord", url: "https://discord.gg/empires-puzzles", desc: "Official Discord" }
         ];
 

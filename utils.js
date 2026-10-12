@@ -83,6 +83,13 @@ function copyTextToClipboard(text) {
  */
 function getDisplayName(value, type) {
     const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
+    // 来源（source）：选项值是规范 ID ⇒ 直接过字典拿到当前语言全名
+    if (type === 'source' && typeof Lang !== 'undefined') {
+        const full = Lang.t('source', String(value)) || String(value);
+        if (!showEventNameCheckbox || showEventNameCheckbox.checked) return full;
+        const parts = full.split(' - ');
+        return parts.length > 1 ? parts.slice(1).join(' - ').trim() : full;
+    }
     // 如果复选框不存在或已选中，直接返回翻译后的值
     if (!showEventNameCheckbox || showEventNameCheckbox.checked) {
         return state.family_values[String(value).toLowerCase()] || value;
@@ -99,68 +106,26 @@ function getDisplayName(value, type) {
     return translatedValue;
 }
 
-// 服装类型名「标识 → 类型键」（`getSkinInfo` 会按语言返回 CN/EN 两套标识，这里都收）
-const _COSTUME_TYPE_KEY = {
-    'C1': 'c1', 'C2': 'c2',
-    '卡通': 'toon', '公仔': 'toon', 'Toon': 'toon',
-    '玻璃': 'glass', 'Glass': 'glass',
-    '英姿': 'stylish', '有型': 'stylish', 'Stylish': 'stylish'
-};
-
 /**
- * 服装类型名 → **当前语言**的名字（`langs_json/costume_type_<码>.json`）。
- * 认不出就原样返回（不臆造）。
- */
-function localizeCostumeType(name) {
-    const k = _COSTUME_TYPE_KEY[name];
-    return (k && typeof Lang !== 'undefined') ? Lang.t('costume_type', k) : name;
-}
-
-// 技能类型「当前语言文本 → 简体中文键」的反查表（排序用；原 language.js 的 skillTypeTranslations_* 已弃用）。
-// 直接由 langs_json/skill_types_<码>.json 反向构造。
-function _skillTypeReverseMap(lang) {
-    const m = (typeof Lang !== 'undefined') ? Lang.get('skill_types') : {};
-    const out = {};
-    for (const cnKey in m) { const v = m[cnKey]; if (v && v !== cnKey) out[v] = cnKey; }
-    return out;
-}
-let nynaeveCnToEnMap = {};
-let nynaeveTcToEnMap = {};
-/**
- * 根据来源和自定义排序规则，获取英雄的技能标签数组。
+ * 取某个英雄的**技能标签**（已按固定优先级 + 自定义顺序排好）。
+ *
+ * 数据源唯一：`data/heroes_skill_types.json`。
  * @param {object} hero - 英雄对象。
- * @param {string} source - 来源 ('heroplan', 'nynaeve', 'bbcamp', 'both')。
  * @returns {string[]} - 排序后的技能标签数组。
  */
-function getSkillTagsForHero(hero, source) {
+function getSkillTagsForHero(hero) {
     if (!hero) return [];
 
-    // 根据当前语言获取对应的 Nynaeve 反向查找表
-    const nynaeveReverseMap = state.currentLang === 'cn' ? nynaeveCnToEnMap :
-        state.currentLang === 'tc' ? nynaeveTcToEnMap : null;
-
-    // 为 Nynaeve 标签定义统一的排序函数
-    const sortNynaeveTags = (tags) => {
-        tags.sort((a, b) => {
-            // 在排序前，将中文标签转换回英文键
-            const englishA = nynaeveReverseMap ? (nynaeveReverseMap[a] || a) : a;
-            const englishB = nynaeveReverseMap ? (nynaeveReverseMap[b] || b) : b;
-
-            const indexA = nynaeveSkillTypeOrder.indexOf(englishA);
-            const indexB = nynaeveSkillTypeOrder.indexOf(englishB);
-
-            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            if (indexA !== -1) return -1;
-            if (indexB !== -1) return 1;
-            return a.localeCompare(b);
-        });
-        return tags;
-    };
-
-    // 为 bbcamp 标签定义统一的排序函数
-    const sortBbcampTags = (tags) => {
+    // 排序规则：先按分类优先级（基础技能 → 特殊效果 → 增益效果 → 负面效果），
+    // 同分类内按 sort_order.json 里的自定义顺序，最后按当前语言字典序。
+    const sortSkillTags = (tags) => {
         const priorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
-        const orderArrays = { "基础技能": skillTagOrder_base, "特殊效果": skillTagOrder_special, "增益效果": skillTagOrder_buff, "负面效果": skillTagOrder_debuff };
+        const orderArrays = {
+        "基础技能": Lang.sortOrder('skillTag_base'),
+        "特殊效果": Lang.sortOrder('skillTag_special'),
+        "增益效果": Lang.sortOrder('skillTag_buff'),
+        "负面效果": Lang.sortOrder('skillTag_debuff')
+        };
 
         tags.sort((a, b) => {
             const categoryA = state.skillTagToCategoryMap[a];
@@ -176,8 +141,8 @@ function getSkillTagsForHero(hero, source) {
             if (priorityIndexA !== -1) {
                 const sortOrder = orderArrays[categoryA];
                 if (sortOrder) {
-                    const chineseKeyA = skillTagReverseMap[a] || a;
-                    const chineseKeyB = skillTagReverseMap[b] || b;
+                    const chineseKeyA = a;   // 标签本来就是 CN 键
+                    const chineseKeyB = b;
                     const indexA = sortOrder.indexOf(chineseKeyA);
                     const indexB = sortOrder.indexOf(chineseKeyB);
                     if (indexA !== -1 && indexB !== -1) return indexA - indexB;
@@ -190,84 +155,7 @@ function getSkillTagsForHero(hero, source) {
         return tags;
     };
 
-    const cnTags = heroSkillTags(hero);
-    const nynaeveTags = hero.skill_types || [];
-    const heroplanTags = hero.types || [];
-
-    if (source === 'both') {
-        const sortedCnTags = sortBbcampTags([...cnTags]);
-        const sortedNynaeveTags = sortNynaeveTags([...nynaeveTags]);
-        const sortedHeroplanTags = [...heroplanTags].sort((a, b) => a.localeCompare(b));
-
-        const combinedTags = [...sortedCnTags, ...sortedNynaeveTags, ...sortedHeroplanTags];
-        return Array.from(new Set(combinedTags)).filter(Boolean);
-    }
-
-    let tags = [];
-    switch (source) {
-        case 'heroplan':
-            tags = [...heroplanTags].sort((a, b) => a.localeCompare(b));
-            break;
-        case 'nynaeve':
-            tags = sortNynaeveTags([...nynaeveTags]);
-            break;
-        case 'bbcamp':
-        default:
-            tags = sortBbcampTags([...cnTags]);
-            break;
-    }
-
-    return tags.filter(Boolean);
-}
-
-/**
- * 从多语言混合的英雄名称中提取英文名 (v3 - 详情页权威规则版)
- * @param {object} hero - 英雄对象。
- * @returns {string|null} 提取出的英文名。
- */
-function extractEnglishName(hero) {
-    if (!hero || !hero.name) return null;
-
-    let heroName = hero.name;
-
-    // --- 步骤 1: 提取详情页 getSkinInfo 函数的逻辑，用于分离出基础名称 ---
-    // 这个逻辑会先尝试移除名称末尾的皮肤标识（如 C1, 玻璃, 卡通等）
-    const skinPattern = /\s*(?:\[|\()?(C\d+|\S+?)(?:\]|\))?\s*$/;
-    const skinMatch = heroName.match(skinPattern);
-    let baseName = heroName; // 默认为完整名称
-
-    if (skinMatch && skinMatch[1]) {
-        const potentialSkin = skinMatch[1].toLowerCase();
-        if (potentialSkin.match(/^c\d+$/) ||
-            ['glass', 'toon', '玻璃'].includes(potentialSkin) ||
-            potentialSkin.endsWith('卡通') ||
-            potentialSkin.endsWith('公仔') ||
-            potentialSkin.endsWith('有型')) {
-            baseName = heroName.substring(0, heroName.length - skinMatch[0].length).trim();
-        }
-    }
-
-    // --- 步骤 2: 应用详情页的括号解析规则到处理过的 baseName 上 ---
-    // 这是你确认过的“100%准确”的逻辑
-    const singleAltLangNamePattern = /^(.*?)\s*\(([^)]+)\)/;
-    const singleAltLangMatch = baseName.match(singleAltLangNamePattern);
-
-    if (singleAltLangMatch && singleAltLangMatch[2] && /[a-zA-Z]/.test(singleAltLangMatch[2]) && !/[\u4e00-\u9fa5]/.test(singleAltLangMatch[2])) {
-        return singleAltLangMatch[2].trim();
-    }
-
-    // 如果上述规则不匹配（例如纯英文名），我们提供一个备用方案
-    const multiLangMatch = baseName.match(/^(.*?)\s+([^\s\(]+)\s+\((.*?)\)$/);
-    if (multiLangMatch && multiLangMatch[3] && /[a-zA-Z]/.test(multiLangMatch[3])) {
-        return multiLangMatch[3].trim();
-    }
-
-    // 最后的备用方案，适用于没有括号的纯英文名
-    if (!/\(/.test(baseName)) {
-        return baseName;
-    }
-
-    return null;
+    return sortSkillTags([...heroSkillTags(hero)]).filter(Boolean);
 }
 
 
@@ -447,14 +335,14 @@ function _costumeSlot(heroId, ord) {
     // 槽位 = **同父英雄下按发布日期编的序号**（1/2/3…）。
     // ⚠ 不要再按 id 里的 `toon`/`glass`/`stylish` 关键字覆写：`getSkinInfo` / `getCostumeIconName`
     //   还会对「classic 3★」再做一次 `+1` 映射，两处叠加会把 `stylish` 顶到 6
-    //   ⇒ 查不到 → 回退成 `C1`（用户 2026-10-10 报的 `dwarven_smasher_costume_stylish`）。
+    //   ⇒ 查不到 → 回退成 `C1`（`dwarven_smasher_costume_stylish`）。
     //   实测：序号法 + 那次 +1 与"按 id 关键字"在 240 个带类型名的服装里 **238 个一致**，
     //   不一致的 2 个（`*_costume_cute` 排在第 1 位）旧站也是按序号出的。
     return ord;
 }
 
 /**
- * 英雄 id 命中这些关键字 ⇒ **不进列表**（用户 2026-10-10：排除 `_temp1`）。
+ * 英雄 id 命中这些关键字（如 `_temp1`）⇒ **不进列表**。
  * 与"默认隐藏"**分开**：那是 `isHiddenHero()` 运行时判定的可切换隐藏，
  * 这里是**硬排除**（`hero.excluded`），任何情况下都不展示（含抽奖奖池）。
  * 消费点：`filters.js::listHeroes()` / `applyFiltersAndRender()`、`lottery-simulator.js::getSimHeroPool()`。
@@ -473,7 +361,7 @@ function isExcludedById(heroId) {
 }
 
 /**
- * 「默认隐藏」判据（用户 2026-10-11：**不再落盘**，改为运行时动态判定）。
+ * 「默认隐藏」判据（运行时动态判定，不落盘）。
  * 命中 ⇒ `hero.hidden = true` ⇒ 默认不进列表（`state.showHiddenHeroes` 可切回来）。
  *
  * 以前是 `data/hero_order.json` 里写死的 `hidden` 名单，缺点是每次配置更新都要重算一遍、
@@ -531,14 +419,13 @@ function _cmpAutoOrder(ha, hb) {
  * @param {string} lang - 当前语言码（cn/tc/en/…）。
  */
 async function loadData(lang) {
-    // ⚠ 2026-10-10 用户口径：**搜索语言选择已废弃** —— 不论 cookie 如何一律按 `current`
+    // ⚠ **搜索语言选择已废弃** —— 不论 cookie 如何一律按 `current`
     //   （= 当前界面语言）处理 ⇒ `search_lang` cookie 与选择器同步整块移除。
     const savedLang = 'current';
 
     try {
         // ① 语言表（i18n + 各词表 + 排序表）
         await Lang.loadAll(lang);
-        nynaeveCnToEnMap = _skillTypeReverseMap(lang);
 
         // ② 数据
         const [orderRes, charsRes, typesRes, srcRes, skillsRes, enNameRes, costumeRes] = await Promise.all([
@@ -559,9 +446,7 @@ async function loadData(lang) {
         const costumeBonuses = costumeRes ? await costumeRes.json() : {};
         window.langData.name['en'] = enNames;
 
-        // ②.5 兼容既有调用点：data.js 里的 *ReverseMap 是「本地化文本 → 标准英文/ID」，
-        //      但只覆盖部分语言（colorReverseMap 84 条、无日文）。新数据存的是 ID ⇒
-        //      这里把**当前语言**的显示文本补进反查表 ⇒ 头像辉光 / 来源图标 / 导入导出等旧调用点零改动。
+        // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {
             const add = (map, table, valFn) => {
                 if (typeof map === 'undefined' || !map) return;
@@ -571,19 +456,6 @@ async function loadData(lang) {
                     if (txt && map[txt] === undefined) map[txt] = valFn(id);
                 }
             };
-            add(typeof colorReverseMap !== 'undefined' ? colorReverseMap : null, 'color', id => id);
-            add(typeof classReverseMap !== 'undefined' ? classReverseMap : null, 'class',
-                id => id.charAt(0).toUpperCase() + id.slice(1));
-            add(typeof aether_powerReverseMap !== 'undefined' ? aether_powerReverseMap : null, 'aether_power', id => id);
-            add(typeof sourceReverseMap !== 'undefined' ? sourceReverseMap : null, 'source', id => id);
-            // 技能类型标签：skillTagReverseMap 只覆盖简/繁（其它语言缺）⇒ 用当前语言表补上
-            if (typeof skillTagReverseMap !== 'undefined' && skillTagReverseMap) {
-                const st = Lang.get('skill_types');
-                for (const cnKey in st) {
-                    const txt = st[cnKey];
-                    if (txt && skillTagReverseMap[txt] === undefined) skillTagReverseMap[txt] = cnKey;
-                }
-            }
         })();
 
         // ③ family → source
@@ -600,7 +472,7 @@ async function loadData(lang) {
         heroes.forEach(h => { byId[h.id] = h; });
         const seen = new Set(order);
         // 固定段以外的英雄：**运行时**按【日期 → 战力(低→高) → 英雄ID】升序追加
-        // （用户 2026-10-11：配置里只保留固定段 1953，后续序号自动算，不再落盘）
+        // （配置里只保留固定段 1953，后续序号自动算，不再落盘）
         const restIds = heroes.map(h => h.id).filter(x => !seen.has(x));
         restIds.sort((a, b) => _cmpAutoOrder(byId[a], byId[b]));
         const ids = order.filter(x => byId[x]).concat(restIds);
@@ -618,7 +490,7 @@ async function loadData(lang) {
 
         const list = [];
         const familyValues = {};
-        // 有服装的本体英雄 id 集合（用户 2026-10-10：本体也要显示「服装奖励」选择器）
+        // 有服装的本体英雄 id 集合（本体也要显示「服装奖励」选择器）
         const _parentIds = new Set();
         heroes.forEach(h => { if (h.parentHeroId) _parentIds.add(h.parentHeroId); });
         ids.forEach((hid, idx) => {
@@ -631,7 +503,7 @@ async function loadData(lang) {
             const speedId = c.manaSpeedId || '';
             const aetherId = c.aetherGift || '';
             // 家族 id 归一化：`zodiac_dragon` / `zodiac_rat` … **一律并入 `zodiac`**
-            //（用户 2026-10-10：它们本来就是同一个"农历生肖"家族下的生肖变体）
+            //（它们本来就是同一个"农历生肖"家族下的生肖变体）
             const famId = (c.family || '').startsWith('zodiac') ? 'zodiac' : (c.family || '');
             const srcId = fam2src[famId] || '';
             const isCostume = !!c.parentHeroId;
@@ -645,7 +517,7 @@ async function loadData(lang) {
             const _cbRarity = c.rarity || 5;
             const _cbStages = (_cbRarity >= 4) ? 4 : 3;
             let _cbLevels = null, _cbMax = 0;
-            // 取表用的 id：**服装英雄看父英雄**；**本体英雄看自己** —— 用户 2026-10-10：
+            // 取表用的 id：**服装英雄看父英雄**；**本体英雄看自己** —— 
             //   "只要本体存在服装，本体英雄也显示切换服装加成的图标"（`_parentIds` 见上面）。
             if (isCostume || _parentIds.has(hid)) {
                 const _owner = isCostume ? (byId[c.parentHeroId] || {}) : c;
@@ -664,7 +536,7 @@ async function loadData(lang) {
                 heroId: hid,
                 specialId: c.specialId || '',
                 // 服装英雄自带的 specialId 基本没有图标（实测 702 个服装只有 7 个有，且都是通用 `tackle`）
-                // ⇒ 技能图标回退到**本体英雄**的 specialId（用户 2026-10-10：服装英雄的技能图标用父英雄的）。
+                // ⇒ 技能图标回退到**本体英雄**的 specialId（服装英雄的技能图标用父英雄的）。
                 parent_specialId: isCostume ? ((byId[c.parentHeroId] || {}).specialId || '') : '',
                 star: c.rarity,
                 family: famId,
@@ -688,7 +560,7 @@ async function loadData(lang) {
                 effects: (st.skills && st.skills[0] && st.skills[0].lines) || [],
                 passives: (st.passiveSkills || []).map(x => x.text).filter(Boolean),
                 passiveSkills: st.passiveSkills || [],
-                // 被动筛选的文本池 = **正文 + 标题**（用户 2026-10-10：被动搜索也要能搜到标题；
+                // 被动筛选的文本池 = **正文 + 标题**（被动搜索也要能搜到标题；
                 // 详情页点被动名"一键快速搜索"用的就是这个池子）
                 passivesSearchPool: (st.passiveSkills || []).reduce((a, x) => {
                     if (x && x.text) a.push(x.text);
@@ -743,20 +615,9 @@ async function loadData(lang) {
  * @param {string} colorName - 颜色名称 (如 '红', 'blue')。
  * @returns {string} CSS类名 (如 'red-glow-border')。
  */
-const getColorGlowClass = (colorName) => {
-
-    let standardColor = null;
-
-    // 使用全局 colorReverseMap
-    if (typeof colorReverseMap !== 'undefined' && colorReverseMap !== null) {
-        const mapped = colorReverseMap[String(colorName).toLowerCase()];
-        if (mapped) {
-            // colorReverseMap 的值是首字母大写的英文，如 "Red"，转为小写
-            standardColor = mapped.toLowerCase();
-        }
-    }
-
-    return standardColor ? `${standardColor}-glow-border` : '';
+// 入参就是**颜色规范 ID**（red/blue/green/yellow/purple）
+const getColorGlowClass = (colorId) => {
+    return colorId ? `${colorId}-glow-border` : '';
 };
 
 /**
@@ -772,9 +633,8 @@ const getColorHex = (colorName) => {
         'yellow': '#f2e33a',
         'purple': '#e290ff',
     };
-    const mapped = colorReverseMap?.[String(colorName).toLowerCase()];
-    const key = mapped ? mapped.toLowerCase() : null;
-    return key && colorMap[key] ? colorMap[key] : 'inherit';
+    const key = String(colorName || '').toLowerCase();
+    return colorMap[key] ? colorMap[key] : 'inherit';
 };
 
 /**
@@ -790,8 +650,7 @@ function getHeroColorLightGradient(colorName) {
         'yellow': { light: '#e6e402', standard: '#725404' },
         'purple': { light: '#c177c3', standard: '#491b4c' }
     };
-    const mapped = colorReverseMap?.[String(colorName).toLowerCase()];
-    const key = mapped ? mapped.toLowerCase() : String(colorName).toLowerCase();
+    const key = String(colorName || '').toLowerCase();
     const colors = colorMap[key];
     return colors ? `linear-gradient(to bottom, ${colors.standard} 0%, ${colors.light} 100%)` : 'none';
 }

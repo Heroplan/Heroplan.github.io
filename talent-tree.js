@@ -24,19 +24,6 @@ const TalentTree = (() => {
         'sorcerer': { name: '术士', key: 'sorcerer', data: { '1_1': { text: '术士天赋', type: 'mandatory' }, '2_1': { text: '防御 +18', type: 'choice' }, '2_2': { text: '生命 +36', type: 'choice' }, '3_1': { text: '生命 +36', type: 'choice' }, '3_2': { text: '攻击 +15', type: 'choice' }, '4_1': { text: '术士天赋', type: 'mandatory' }, '5_1': { text: '攻击 +15', type: 'choice' }, '5_2': { text: '防御 +18', type: 'choice' }, '6_1': { text: '生命 +36', type: 'choice' }, '6_2': { text: '攻击 +15', type: 'choice' }, '7_1': { text: '术士天赋', type: 'mandatory' }, '8_1': { text: '治疗 +2%', type: 'choice' }, '8_2': { text: '暴击 +2%', type: 'choice' }, '9_1': { text: '防御 +18', type: 'choice' }, '9_2': { text: '攻击 +15', type: 'choice' }, '10_1': { text: '生命 +3%', type: 'mandatory' }, '11_1': { text: '生命 +36', type: 'choice' }, '11_2': { text: '防御 +18', type: 'choice' }, '12_1': { text: '术士天赋', type: 'mandatory' }, '13_1': { text: '防御 +18', type: 'choice' }, '13_2': { text: '攻击 +15', type: 'choice' }, '14_1': { text: '攻击 +15', type: 'choice' }, '14_2': { text: '生命 +36', type: 'choice' }, '15_1': { text: '术士天赋', type: 'mandatory' }, '16_1': { text: '生命 +36', type: 'choice' }, '16_2': { text: '攻击 +15', type: 'choice' }, '17_1': { text: '防御 +18', type: 'choice' }, '17_2': { text: '生命 +36', type: 'choice' }, '18_1': { text: '防御 +18', type: 'mandatory' }, '19_1': { text: '攻击 +3%', type: 'choice' }, '19_2': { text: '防御 +3%', type: 'choice' }, '20_1': { text: '法力 +4%', type: 'mandatory' }, ...masterTalentData, '26_1': { text: '术士终极天赋', type: 'mandatory' } } },
         'wizard': { name: '巫师', key: 'wizard', data: { '1_1': { text: '巫师天赋', type: 'mandatory' }, '2_1': { text: '攻击 +15', type: 'choice' }, '2_2': { text: '防御 +18', type: 'choice' }, '3_1': { text: '防御 +18', type: 'choice' }, '3_2': { text: '生命 +36', type: 'choice' }, '4_1': { text: '巫师天赋', type: 'mandatory' }, '5_1': { text: '生命 +36', type: 'choice' }, '5_2': { text: '攻击 +15', type: 'choice' }, '6_1': { text: '防御 +18', type: 'choice' }, '6_2': { text: '生命 +36', type: 'choice' }, '7_1': { text: '巫师天赋', type: 'mandatory' }, '8_1': { text: '生命 +3%', type: 'choice' }, '8_2': { text: '防御 +3%', type: 'choice' }, '9_1': { text: '攻击 +15', type: 'choice' }, '9_2': { text: '生命 +36', type: 'choice' }, '10_1': { text: '暴击 +2%', type: 'mandatory' }, '11_1': { text: '防御 +18', type: 'choice' }, '11_2': { text: '攻击 +15', type: 'choice' }, '12_1': { text: '巫师天赋', type: 'mandatory' }, '13_1': { text: '攻击 +15', type: 'choice' }, '13_2': { text: '生命 +36', type: 'choice' }, '14_1': { text: '生命 +36', type: 'choice' }, '14_2': { text: '防御 +18', type: 'choice' }, '15_1': { text: '巫师天赋', type: 'mandatory' }, '16_1': { text: '防御 +18', type: 'choice' }, '16_2': { text: '生命 +36', type: 'choice' }, '17_1': { text: '攻击 +15', type: 'choice' }, '17_2': { text: '防御 +18', type: 'choice' }, '18_1': { text: '攻击 +15', type: 'mandatory' }, '19_1': { text: '治疗 +2%', type: 'choice' }, '19_2': { text: '法力 +2%', type: 'choice' }, '20_1': { text: '攻击 +4%', type: 'mandatory' }, ...masterTalentData, '26_1': { text: '巫师终极天赋', type: 'mandatory' } } }
     };
-    const classReverseMap = {
-        "Barbarian": "barbarian", "野蛮人": "barbarian", "野人": "barbarian",
-        "Cleric": "cleric", "牧师": "cleric", "牧師": "cleric",
-        "Druid": "druid", "德鲁伊": "druid", "德魯伊": "druid",
-        "Fighter": "fighter", "战士": "fighter", "戰士": "fighter",
-        "Monk": "monk", "僧侣": "monk", "僧侶": "monk",
-        "Paladin": "paladin", "圣骑士": "paladin", "騎士": "paladin",
-        "Ranger": "ranger", "游侠": "ranger", "遊俠": "ranger",
-        "Rogue": "rogue", "盗贼": "rogue", "盜賊": "rogue",
-        "Sorcerer": "sorcerer", "术士": "sorcerer", "術士": "sorcerer",
-        "Wizard": "wizard", "巫师": "wizard", "巫師": "wizard"
-    };
-
     let talentData = {};
     let selectedNodes = new Set();
     let currentContainer = null;
@@ -547,7 +534,7 @@ const TalentTree = (() => {
             // 【修正】保存传入的翻译字典
             talentTermsDict = termsDict || {};
 
-            const classKey = classReverseMap[heroClassName] || 'ranger';
+            const classKey = heroClassName || 'ranger';
             _setupTalentData(classKey);
             _createTreeHTML();
             this.setPath(settings.strategy, settings.manaPriority);
@@ -571,7 +558,7 @@ const TalentTree = (() => {
             _updateUI();
         },
         getBonusesForPath: function (heroClassName, strategy, manaPriority) {
-            const classKey = classReverseMap[heroClassName] || 'ranger';
+            const classKey = heroClassName || 'ranger';
             _setupTalentData(classKey);
             _applyAutoPath(strategy, manaPriority);
             return _calculateBonuses();

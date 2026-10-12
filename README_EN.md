@@ -1,56 +1,96 @@
 # Heroplan Hero Database 🐉
 
+**Language:** **English** | [中文](./README.md)
+
+**Live demo:** [https://heroplan.github.io](https://heroplan.github.io)
+
 ---
 
 ## 🚀 Introduction
 
-Welcome to the **Heroplan Hero Database**! This is an all-in-one, multi-functional information platform designed for players of *Empires & Puzzles*. It provides an intuitive, static HTML interface to help you quickly browse, search, and filter heroes, and integrates practical guides for wanted missions and farming locations.
+**Heroplan** is an all-in-one hero database and toolkit for *Empires & Puzzles* players.
+It is a pure static front-end — no backend, no setup, just open it in a browser.
 
-Whether you're looking for a specific hero or need to find the best stage to farm materials, this tool has you covered. No complex backend setup is required—all you need is a web browser.
+Four things define the project:
 
-This project is powered by data from [Heroplan.io](https://heroplan.io/). A huge thank you to the E&P community for their continuous updates to hero data! The enhanced Chinese version is crafted by Juno, aiming to provide a more user-friendly experience for Chinese-speaking players.
+1. **All-language hero data** — full support for **all 20 in-game languages**;
+2. **Complete hero portrait gallery** — high-resolution static art plus in-game animated portraits;
+3. **Upcoming hero preview** — not-yet-released heroes listed by official release date;
+4. **A full player toolkit** — stat calculator, summon / team / chat simulators, farming guide, wanted missions, event calendar, redeem codes and more.
+
+All hero data is produced by **Juno**, parsed directly from the game's **official configuration files** — no third-party data sources.
 
 ---
 
 ## ✨ Key Features
 
-* **Live Demo**: [https://heroplan.github.io](https://heroplan.github.io)
+### 1. All-language hero data (20 languages)
 
-* **Comprehensive Hero Database**:
-    * **Multi-Dimensional Filtering**: Filter heroes by **Name**, **Stars, Color, Speed, Class, Family, Origin**, and more.
-    * **Advanced Skill Search**: Supports complex queries on **Special Skill Categories**, **Skill Text**, and **Passive Skill Text** using `AND`, `OR`, `NOT` logic.
-    * **Stat Filtering**: Set minimum values for **Power, Attack, Defense, and Health** to find heroes that meet your stat requirements.
-    * **Favorites System**: Save your favorite heroes and share your list with others via a single link.
+Supported languages: **简体中文, 繁體中文, English, 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский, العربية, Türkçe, Polski, Nederlands, Svenska, Dansk, Norsk, Suomi, Indonesia**.
 
-* **Practical In-Game Guides**:
-    * **Wanted Mission Guide**: A built-in table recommending the best stages in Seasons 1-6 for quickly filling elemental wanted chests (Red, Green, Blue, Purple, Yellow).
-    * **Farming Locations Guide**: A detailed table listing the optimal stages for farming ascension and crafting materials, featuring cross-highlighting on hover (desktop) and tap (mobile) for easy lookup.
+Switch language and **hero names, special skills, passive skills, families and sources** are all shown in that language (including right-to-left layout for Arabic).
+Every hero includes:
 
-* **One-Click Event Filters**:
-    * Pre-configured dates for "Hero Coach" and "Visiting Outfitter" events allow you to filter for eligible heroes or costumes with a single click.
+* rarity, element, mana speed, class, family, origin and costumes;
+* **attack, defense, health and power** at level **80 / LB1 / LB2**.
 
-* **Multi-Language & Theming**:
-    * One-click switching between **Simplified Chinese, Traditional Chinese, and English**.
-    * **Light/Dark mode** support to protect your eyes during late-night sessions.
+All hero data is parsed from the **official game configuration files**.
 
-* **Lightweight & Efficient**:
-    * A pure front-end implementation ensures fast loading times and low resource consumption, perfectly optimized for both desktop and mobile devices.
+### 2. Complete hero portrait gallery
+
+* **Static portraits** — high-resolution art on every hero's detail page;
+* **Animated portraits** — in-game sprite animations for supported characters.
+
+### 3. Upcoming hero preview
+
+* Lists **not-yet-released** heroes by their official release date, so you can plan resources and summon budgets ahead;
+* Upcoming heroes are **fully viewable**, but **favoriting stays locked until the hero actually goes live** (so unreleased heroes never pollute your favourites planning).
+
+### 4. Hero database & advanced search
+
+* **Multi-dimensional filtering**: name, rarity, element, mana speed, class, family, origin, costume, and more;
+* **Advanced skill search**: compound queries over **special skill text**, **passive skill text** and **skill category tags**, with `AND / OR / NOT` logic;
+* **Stat filtering**: set minimum power, attack, defense or health to narrow the list;
+* **One-click event filters**: built-in dates for the "Hero Coach" and "Visiting Outfitter" events to instantly filter eligible heroes or costumes;
+* **Favorites**: save hero line-ups and share them with your alliance via a single link; export / import your setup.
+
+### 5. Stat calculator
+
+Instantly converts exact attack, defense, health and power across **limit breaks (LB1 / LB2)**, **talents (+20 / +25)** and **costume bonuses**,
+with configurable **talent priority** (different attack / defense / health orders). A **class talent tree** view is also included.
+
+### 6. Player toolkit
+
+| Tool | Description |
+|---|---|
+| **Summon simulator** | Reproduces pool odds and summon history, with probability details |
+| **Team simulator** | Build line-ups, save teams and share them with your alliance |
+| **Chat simulator** | Compose chat text with custom colours and in-game emojis, copy in one click |
+| **Farming guide** | Best drop stages for ascension / crafting materials (hover-highlight on desktop, tap on mobile) |
+| **Wanted mission guide** | Best speed-farm stages in Seasons 1–6 for each elemental wanted chest (red / green / blue / purple / yellow) |
+| **Event calendar** | Current events and their schedule |
+| **Redeem codes** | All currently valid redeem codes in one place |
+| **Stage guide** | Quick reference for stage drops and rewards |
+
+### 7. Other
+
+* **Languages & theming**: one-click switching between 20 languages; light / dark themes;
+* **Lightweight**: pure front-end, fast loading, low resource usage, optimised for desktop and mobile.
 
 ---
 
 ## 🤝 Contribution & Feedback
 
-If you have any suggestions, feature requests, or encounter any bugs, please feel free to submit them via GitHub Issues. We highly value your feedback to help us improve this tool!
+Suggestions, feature requests and bug reports are welcome via GitHub Issues. Your feedback genuinely helps.
 
 ---
 
 ## 📜 License
 
-This project is released under the [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE).
+Released under the [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE).
 
 ---
 
 ## 🙏 Acknowledgements
 
-* [Heroplan.io](https://heroplan.io/) and its team for providing the invaluable hero data.
-* The entire *Empires & Puzzles* player community.
+* The *Empires & Puzzles* player community for their support and feedback.

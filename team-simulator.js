@@ -66,20 +66,7 @@ function adjustTeamDisplayHeight() {
  */
 function getSkillTypesArray(hero) {
     if (!hero) return [];
-    // ▼▼▼▼▼【保持】此處邏輯正確，它會調用 utils.js 中已修復的 getSkillTagsForHero 函數 ▼▼▼▼▼
-    const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
-    return getSkillTagsForHero(hero, skillTypeSource);
-}
-
-/**
- * 获取用于显示的格式化、已排序的技能类型文本，用于英雄信息卡 (修改为调用中央函数)。
- * @param {object} hero - 英雄对象。
- * @returns {string} 逗号分隔的技能类型字符串。
- */
-function getSkillTypesText(hero) {
-    if (!hero) return '';
-    const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
-    return getSkillTagsForHero(hero, skillTypeSource).join(', ');
+    return getSkillTagsForHero(hero);
 }
 
 
@@ -286,13 +273,13 @@ function renderTeamDisplay() {
 
             // ▼▼▼使用新的HTML结构来添加背景色▼▼▼
             const avatarContainer = document.createElement('div');
-            avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.color)}`;
+            avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.colorId)}`;
             avatarContainer.style.width = '60px';
             avatarContainer.style.height = '60px';
 
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
-            avatarBackground.style.background = getHeroColorLightGradient(hero.color);
+            avatarBackground.style.background = getHeroColorLightGradient(hero.colorId);
 
             const avatar = document.createElement('img');
             avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
@@ -304,12 +291,11 @@ function renderTeamDisplay() {
             heroSlot.appendChild(avatarContainer);
             // 根据设置决定是否显示技能文本
             if (showSkillTypesInTeam) {
-                const tags = getSkillTagsForHero(hero, uiElements.filterInputs.skillTypeSource.value);
+                const tags = getSkillTagsForHero(hero);
                 const tagsArray = Array.isArray(tags) ? tags : (typeof tags === 'string' ? tags.split(',').map(t => t.trim()) : []);
 
                 const iconsHtml = tagsArray.map(tag => {
-                    // 1. 使用回溯表找到简体中文键名
-                    const chineseKey = skillTagReverseMap[tag] || tag;
+                    const chineseKey = tag;   // 标签本来就是 CN 键
 
                     // 2. 移除文件名中的斜杠等特殊字符
                     const sanitizedFilename = chineseKey.replace(/\//g, '');
@@ -385,23 +371,27 @@ function updateTeamTags() {
 
     const uniqueTags = Object.keys(tagCounts);
 
-    // 【保留】完整的、正確的排序邏輯
-    const nynaeveReverseMap = state.currentLang === 'cn' ? nynaeveCnToEnMap : (state.currentLang === 'tc' ? nynaeveTcToEnMap : null);
-    const bbcampPriorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
-    const bbcampOrderArrays = { "基础技能": skillTagOrder_base, "特殊效果": skillTagOrder_special, "增益效果": skillTagOrder_buff, "负面效果": skillTagOrder_debuff };
+    // 技能标签排序：先按分类优先级，同分类内按 sort_order.json 的自定义顺序，最后按语言字典序
+    const priorityCategories = ["基础技能", "特殊效果", "增益效果", "负面效果"];
+    const orderArrays = {
+        "基础技能": Lang.sortOrder('skillTag_base'),
+        "特殊效果": Lang.sortOrder('skillTag_special'),
+        "增益效果": Lang.sortOrder('skillTag_buff'),
+        "负面效果": Lang.sortOrder('skillTag_debuff')
+    };
 
     uniqueTags.sort((a, b) => {
-        const categoryA_bbcamp = state.skillTagToCategoryMap[skillTagReverseMap[a] || a];
-        const categoryB_bbcamp = state.skillTagToCategoryMap[skillTagReverseMap[b] || b];
-        const priorityA_bbcamp = categoryA_bbcamp ? bbcampPriorityCategories.indexOf(categoryA_bbcamp) : -1;
-        const priorityB_bbcamp = categoryB_bbcamp ? bbcampPriorityCategories.indexOf(categoryB_bbcamp) : -1;
+        const categoryA = state.skillTagToCategoryMap[a];
+        const categoryB = state.skillTagToCategoryMap[b];
+        const priorityA = categoryA ? priorityCategories.indexOf(categoryA) : -1;
+        const priorityB = categoryB ? priorityCategories.indexOf(categoryB) : -1;
 
-        if (priorityA_bbcamp !== -1 || priorityB_bbcamp !== -1) {
-            if (priorityA_bbcamp !== priorityB_bbcamp) return priorityA_bbcamp - priorityB_bbcamp;
-            const sortOrder = bbcampOrderArrays[categoryA_bbcamp];
+        if (priorityA !== -1 || priorityB !== -1) {
+            if (priorityA !== priorityB) return priorityA - priorityB;
+            const sortOrder = orderArrays[categoryA];
             if (sortOrder) {
-                const keyA = skillTagReverseMap[a] || a;
-                const keyB = skillTagReverseMap[b] || b;
+                const keyA = a;
+                const keyB = b;
                 const indexA = sortOrder.indexOf(keyA);
                 const indexB = sortOrder.indexOf(keyB);
                 if (indexA !== -1 || indexB !== -1) {
@@ -411,24 +401,12 @@ function updateTeamTags() {
             }
         }
 
-        const englishA_nynaeve = nynaeveReverseMap ? (nynaeveReverseMap[a] || a) : a;
-        const englishB_nynaeve = nynaeveReverseMap ? (nynaeveReverseMap[b] || b) : b;
-        const indexA_nynaeve = nynaeveSkillTypeOrder.indexOf(englishA_nynaeve);
-        const indexB_nynaeve = nynaeveSkillTypeOrder.indexOf(englishB_nynaeve);
-
-        if (indexA_nynaeve !== -1 || indexB_nynaeve !== -1) {
-            if (indexA_nynaeve === indexB_nynaeve) return 0;
-            return indexA_nynaeve !== -1 ? (indexB_nynaeve !== -1 ? indexA_nynaeve - indexB_nynaeve : -1) : 1;
-        }
-
         return a.localeCompare(b);
     });
 
     const sortedTags = uniqueTags;
 
     // --- 【核心修正】条件渲染逻辑 ---
-    const skillTypeSource = uiElements.filterInputs.skillTypeSource.value;
-
     if (sortedTags.length === 0) {
         summaryContainer.innerHTML = `<div class="no-tags-message">${i18n[state.currentLang].noTeamTags}</div>`;
     } else {
@@ -436,18 +414,11 @@ function updateTeamTags() {
             const count = tagCounts[tag];
             const countHTML = count > 1 ? `<span class="tag-count">x${count}</span>` : '';
 
-            // 仅当来源为 'bbcamp' 时，才加入图标
-            if (skillTypeSource === 'bbcamp') {
-                // 使用一个代表性的类型（如'skillTag_base'）来调用getIconForFilter，因为图标查找逻辑只依赖于tag值本身
-                const iconSrc = getIconForFilter('skillTag_base', tag);
-                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+            // 图标查找只依赖 tag 值本身，用一个代表性类型（skillTag_base）取图标
+            const iconSrc = getIconForFilter('skillTag_base', tag);
+            const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
 
-                // 修正了 class 语法的错误
-                return `<span class="team-tag-item">${iconHTML}${tag}${countHTML}</span>`;
-            } else {
-                // 对于其他所有来源，使用原始的纯文本样式
-                return `<span class="team-tag-item">${tag}${countHTML}</span>`;
-            }
+            return `<span class="team-tag-item">${iconHTML}${tag}${countHTML}</span>`;
         }).join('');
     }
 }
@@ -496,8 +467,8 @@ function renderSavedTeams(teams, isSharedView = false) {
             if (hero) {
                 const imageSrc = `imgs/hero_icon/${hero.heroId}.webp`;
                 return `
-                    <div class="saved-team-avatar-container ${getColorGlowClass(hero.color)}" title="${hero.name}">
-                        <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.color)};"></div>
+                    <div class="saved-team-avatar-container ${getColorGlowClass(hero.colorId)}" title="${hero.name}">
+                        <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.colorId)};"></div>
                         <img src="${imageSrc}" class="saved-team-avatar-image" alt="${hero.name}">
                     </div>
                 `;

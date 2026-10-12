@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Heroplan 站点地图。
+  · 站点根 = 语言自动识别的入口（对应 index.html 里的 hreflang="x-default"）。
+  · 其余 20 条 = 各语言版本的规范地址（`?lang=<码>`），与 index.html 的
+    `rel="alternate" hreflang` 一一对应（hreflang 以 HTML head 为准，此处不重复声明）。
+  · ⚠ 加/减语言时三处要同步：index.html 的 hreflang、langs.js 的 LANGS、本文件。
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://heroplan.github.io/</loc>
-    <lastmod>2025-06-28</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=cn</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=tc</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=en</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=ja</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=ko</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=fr</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=de</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=es</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=pt</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=it</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=ru</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=ar</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=tr</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=pl</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=nl</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=sv</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=da</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=no</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=fi</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://heroplan.github.io/?lang=id</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

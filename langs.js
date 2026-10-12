@@ -1,6 +1,6 @@
 /* langs.js —— 新的语言/数据访问层（Heroplan_v2）
  *
- * 设计口径（用户 2026-10-10 定）：
+ * 设计口径（定）：
  *   ① 数据里一律存 **ID**（color/class/speed/aetherGift/family/source/specialId…），
  *      显示时才查 `langs_json/<表>_<码>.json` 翻译；
  *   ② **先排序后翻译** —— 排序用语言无关的 `langs_json/sort_order.json`（ID 顺序），
@@ -28,6 +28,35 @@
     var TABLES = ['heroes_name', 'heroes_name_fancy', 'skill_name', 'class', 'color', 'speed',
                   'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type',
                   'lottery_title'];
+
+    // ── 外部语言标签 → 站点语言码 ────────────────────────────────────────
+    // 用途：`?hl=<标签>` 别名（`hl` 是 Google 的"界面语言"参数，属于事实标准；
+    // 见 main.js 的 URL 参数解析）。也用于浏览器 `navigator.language` 之外的通用标签。
+    // ⚠ **站点不支持的语言一律返回 `null`**（例如 `he` 希伯来语、`iw` 旧码）——
+    //   调用方据此回落到 cookie / 浏览器语言，**不要**臆造一个不存在的语言码。
+    var ALIAS = {
+        // 中文：按**书写系统**优先（与 index.html 的 hreflang 用 zh-Hans / zh-Hant 一致）
+        'zh-hans': 'cn', 'zh-cn': 'cn', 'zh-sg': 'cn', 'zh-my': 'cn',
+        'zh-hant': 'tc', 'zh-tw': 'tc', 'zh-hk': 'tc', 'zh-mo': 'tc',
+        'in': 'id',                 // 印尼语的旧代码（Google 仍可能发这个）
+        'nb': 'no', 'nn': 'no',     // 挪威语的两种书面形式 → 站点统一用 no
+        'pt-br': 'pt', 'pt-pt': 'pt',
+        'he': null, 'iw': null      // 希伯来语：站点无此语言 ⇒ 明确返回 null
+    };
+
+    /**
+     * 把外部语言标签归一化成站点语言码；不支持则返回 `null`。
+     * `'zh-Hant'` → `'tc'`；`'ja-JP'` → `'ja'`；`'he'` → `null`。
+     */
+    function normalizeCode(tag) {
+        if (!tag) return null;
+        var t = String(tag).trim().toLowerCase();
+        if (!t) return null;
+        if (LANGS.indexOf(t) >= 0) return t;                                  // 直接命中站点码
+        if (Object.prototype.hasOwnProperty.call(ALIAS, t)) return ALIAS[t];  // 显式别名（含 null）
+        var base = t.split('-')[0];                                           // 只取主语言子标签
+        return (base && LANGS.indexOf(base) >= 0) ? base : null;
+    }
 
     var _cache = {};        // 文件名 -> object（fetch 缓存，键含 .json）
     var _tables = {};       // 表名 -> object（**当前语言**的表，键不含 .json）
@@ -64,7 +93,6 @@
             global.i18n = {};
             global.i18n[lang] = _i18n;
             global.Lang.i18nDict = _i18n;
-            global.Lang.sortOrder = _sortOrder;
             return true;
         });
     }
@@ -90,16 +118,21 @@
         return fallback !== undefined ? fallback : key;
     }
 
-    /** 语言无关排序键：sort_order.<表> 里的下标（找不到给一个很大的值） */
+    /** 语言无关排序表：sort_order.<表>（完整数组；找不到给空数组） */
+    function sortOrder(table) {
+        return (_sortOrder && _sortOrder[table]) || [];
+    }
+
+    /** 语言无关排序键：sort_order.<表> 里的下标（找不到给 9999） */
     function orderIndex(table, id) {
-        var arr = (_sortOrder && _sortOrder[table]) || [];
-        var i = arr.indexOf(id);
+        var i = sortOrder(table).indexOf(id);
         return i === -1 ? 9999 : i;
     }
 
     global.Lang = {
         LANGS: LANGS, TABLES: TABLES,
         loadAll: loadAll, t: t, idOf: idOf, i18n: i18n, orderIndex: orderIndex,
+        normalizeCode: normalizeCode, sortOrder: sortOrder, orderIndex: orderIndex,
         get: function (table) { return _tables[table] || {}; },
         lang: function () { return _lang; }
     };

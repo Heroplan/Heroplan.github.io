@@ -11,7 +11,7 @@ function getSkinInfo(hero) {
     let name = hero.name || '';
 
     const langCode = state.currentLang;
-    // ⚠ 2026-10-10 用户口径：搜索语言选择已废弃 ⇒ 一律走 `current` 分支（用当前语言的官方名字）。
+    // ⚠ 搜索语言选择已废弃 ⇒ 一律走 `current` 分支（用当前语言的官方名字）。
     {
 
         if (!window.langData?.name?.[langCode]) {
@@ -204,57 +204,51 @@ function renderTable(heroes) {
             } else if (key === 'star') {
                 content = `${hero[key] || ''}⭐`;
             } else if (key === 'types') {
-                const source = uiElements.filterInputs.skillTypeSource.value;
-                if (source === 'bbcamp') {
-                    // 获取文本形式的技能标签
-                    const skillTags = getSkillTagsForHero(hero, source);
+                // 技能标签列：渲染成图标
+                const skillTags = getSkillTagsForHero(hero);
 
-                    // 处理不同类型的返回值
-                    let tagsArray = [];
-                    if (Array.isArray(skillTags)) {
-                        tagsArray = skillTags;
-                    } else if (typeof skillTags === 'string') {
-                        tagsArray = skillTags.split(',').map(tag => tag.trim());
-                    } else if (hero[key]) {
-                        // 直接从 hero[key] 获取数据
-                        const typesData = hero[key];
-                        if (Array.isArray(typesData)) {
-                            tagsArray = typesData;
-                        } else if (typeof typesData === 'string') {
-                            tagsArray = typesData.split(',').map(tag => tag.trim());
-                        }
+                // 处理不同类型的返回值
+                let tagsArray = [];
+                if (Array.isArray(skillTags)) {
+                    tagsArray = skillTags;
+                } else if (typeof skillTags === 'string') {
+                    tagsArray = skillTags.split(',').map(tag => tag.trim());
+                } else if (hero[key]) {
+                    // 直接从 hero[key] 获取数据
+                    const typesData = hero[key];
+                    if (Array.isArray(typesData)) {
+                        tagsArray = typesData;
+                    } else if (typeof typesData === 'string') {
+                        tagsArray = typesData.split(',').map(tag => tag.trim());
                     }
-
-                    // 过滤空值
-                    tagsArray = tagsArray.filter(tag => tag);
-
-                    if (tagsArray.length === 0) {
-                        return `<td class="col-types"></td>`;
-                    }
-
-                    let iconsHtml = '';
-                    tagsArray.forEach(tag => {
-                        // 1. 使用回溯表找到简体中文键名（图标文件名按 CN 键取）
-                        const chineseKey = skillTagReverseMap[tag] || tag;
-
-                        // 2. 移除文件名中的斜杠等特殊字符
-                        const sanitizedFilename = chineseKey.replace(/\//g, '');
-
-                        // 3. 悬浮提示用当前语言文本（`skill_types_<码>.json`）
-                        const tagLabel = (typeof Lang !== 'undefined') ? Lang.t('skill_types', chineseKey) : tag;
-
-                        // 4. 构建单个图标HTML
-                        iconsHtml += `<img src="imgs/skill/${sanitizedFilename}.webp" 
-                          class="skill-icon" 
-                          alt="${tagLabel}" 
-                          title="${tagLabel}" />`;
-                    });
-
-                    // 4. 返回包含多个图标的单元格
-                    return `<td class="col-types">${iconsHtml}</td>`;
-                } else {
-                    content = getSkillTagsForHero(hero, source).join(', ')
                 }
+
+                // 过滤空值
+                tagsArray = tagsArray.filter(tag => tag);
+
+                if (tagsArray.length === 0) {
+                    return `<td class="col-types"></td>`;
+                }
+
+                let iconsHtml = '';
+                tagsArray.forEach(tag => {
+                    const chineseKey = tag;   // 标签本来就是 CN 键
+
+                    // 2. 移除文件名中的斜杠等特殊字符
+                    const sanitizedFilename = chineseKey.replace(/\//g, '');
+
+                    // 3. 悬浮提示用当前语言文本（`skill_types_<码>.json`）
+                    const tagLabel = (typeof Lang !== 'undefined') ? Lang.t('skill_types', chineseKey) : tag;
+
+                    // 4. 构建单个图标HTML
+                    iconsHtml += `<img src="imgs/skill/${sanitizedFilename}.webp" 
+                      class="skill-icon" 
+                      alt="${tagLabel}" 
+                      title="${tagLabel}" />`;
+                });
+
+                // 4. 返回包含多个图标的单元格
+                return `<td class="col-types">${iconsHtml}</td>`;
             } else if (key === 'name') {
                 let displayName = hero.name;
 
@@ -286,17 +280,17 @@ function renderTable(heroes) {
                 const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|公仔|有型)(?:\]|\))?\s*$/i;
                 displayName = displayName.replace(costumeSuffixRegex, '').trim();
 
-                // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别（用户 2026-10-10）；
+                // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别；
                 // 详情页不加（见 renderDetailsInModal 的 nameBlockHTML）。英文界面下两者相同 ⇒ 自动不重复。
                 const _enSuffix = (hero.english_name && hero.english_name !== displayName)
                     ? ` (${hero.english_name})` : '';
                 content = `${displayName || ''}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
-                const englishClass = (classReverseMap[hero[key]] || hero[key]).toLowerCase();
-                content = `<img src="imgs/classes/${englishClass}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
+                const classIcon = String(hero.classId || hero[key]).toLowerCase();
+                content = `<img src="imgs/classes/${classIcon}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
             } else if (key === 'color' && hero[key]) {
-                const englishColor = (colorReverseMap[String(hero[key]).toLowerCase()] || hero[key]).toLowerCase();
-                return `<td class="col-color"><img src="imgs/colors/${englishColor}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
+                const colorIcon = String(hero.colorId || hero[key]).toLowerCase();
+                return `<td class="col-color"><img src="imgs/colors/${colorIcon}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
                 let icon;
                 let cssClass = '';
@@ -337,7 +331,7 @@ function renderTable(heroes) {
                 }
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
-                const gradientBg = getHeroColorLightGradient(hero.color);
+                const gradientBg = getHeroColorLightGradient(hero.colorId);
                 let imageSrc; // 先声明变量
 
                 // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
@@ -348,7 +342,7 @@ function renderTable(heroes) {
                     // 对于所有其他英雄，保留原始逻辑
                     imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
                 }
-                const heroColorClass = getColorGlowClass(hero.color);
+                const heroColorClass = getColorGlowClass(hero.colorId);
 
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
                 let costumeIconHtml = '';
@@ -833,7 +827,7 @@ function applyKeywordHighlighting(text, lang, filterType, noParen) {
         }
         // ★★★ 专属规则：只针对 effects，处理注释用的括号内容 ★★★
         //   `noParen=true`：调用方（`renderListAsHTML`）已经在**整条**范围内处理了最外层括号
-        //   ⇒ 这里绝不能再按"单行"去认括号，否则内层括号会被误当成注释（用户 2026-10-10）。
+        //   ⇒ 这里绝不能再按"单行"去认括号，否则内层括号会被误当成注释。
         else if (filterType === 'effects' && !noParen) {
             let textToModify = text.trim();
             // 新增规则：如果以).或）。结尾，先移除最后的句点
@@ -1034,7 +1028,6 @@ function applyKeywordHighlighting(text, lang, filterType, noParen) {
 
 const HERO_ANIM_BASE = 'imgs/animation/';
 const HERO_ANIM_PAD = 20;           // 与 compose_hero.py 的 MESH_PAD 保持一致
-const HERO_ANIM_VIEW_RATIO = 0.85;  // 与静态立绘相同的可用空间比例（85vw/85vh）
 
 let _heroAnimationIndexCache = null;   // index.json 缓存
 let _activeAnimationPlayer = null;     // 当前激活的播放器实例
@@ -1535,9 +1528,9 @@ function getSafeColorKey(colorValue) {
     const raw = String(colorValue).trim();
     if (!raw) return FALLBACK;
 
-    // 1) 通过 colorReverseMap 反查（兼容中文、繁体、大小写）
-    if (typeof colorReverseMap !== 'undefined' && colorReverseMap) {
-        const mapped = colorReverseMap[raw.toLowerCase()];
+    // 入参 raw 已是颜色规范 ID
+    if (true) {
+        const mapped = ['red','blue','green','yellow','purple'].includes(raw.toLowerCase()) ? raw.toLowerCase() : null;
         if (mapped && VALID.includes(String(mapped).toLowerCase())) {
             return String(mapped).toLowerCase();
         }
@@ -1562,10 +1555,10 @@ function renderDetailsInModal(hero, context = {}) {
     const { teamSlotIndex } = context;
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
-    const englishClassKey = (classReverseMap[hero.class] || hero.class).toLowerCase();
-    const avatarGlowClass = getColorGlowClass(hero.color);
+    const classIcon = String(hero.classId || hero.class).toLowerCase();
+    const avatarGlowClass = getColorGlowClass(hero.colorId);
     // 为详情框头像准备变量
-    const modalGradientBg = getHeroColorLightGradient(hero.color);
+    const modalGradientBg = getHeroColorLightGradient(hero.colorId);
     const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
 
     // 根据星级生成星星的HTML
@@ -1594,8 +1587,8 @@ function renderDetailsInModal(hero, context = {}) {
     // 根据 class 生成职业图标HTML
     let classIconHTML = '';
     if (hero.class) {
-        const englishClass = (classReverseMap[hero.class] || hero.class).toLowerCase();
-        classIconHTML = `<img src="imgs/classes/${englishClass}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
+        const classIcon = String(hero.classId || hero.class).toLowerCase();
+        classIconHTML = `<img src="imgs/classes/${classIcon}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
     }
     // --- 生成被动技能图标(包含两种来源) ---
     let passiveSkillsHtml = '';
@@ -1606,7 +1599,7 @@ function renderDetailsInModal(hero, context = {}) {
     const basePassives = (hero.passiveSkills || []).map(_pid).filter(Boolean);
     const costumePassives = (hero.costumeBonusPassiveSkillIds || []).map(_pid).filter(Boolean);
 
-    // ⚠ **不要再倒序**（用户 2026-10-10）：导出侧已取消逆序、按官方配置数组原序输出
+    // ⚠ **不要再倒序**：导出侧已取消逆序、按官方配置数组原序输出
     //   （`passive_desc_gen.ORDER_MODE = 'config'`）⇒ 网站**原样使用**即可。
     //   这里的 `[...].reverse()` 是当年为"对冲导出侧的逆序"加的补偿，导出改原序后它会
     //   把头像被动图标又翻回去，与详情页被动段（原样渲染导出顺序）**互相打架** ⇒ 已移除。
@@ -1621,9 +1614,7 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.AetherPower) {
         const framePath = 'imgs/Aether Power/frame.webp';
 
-        // 使用已有的 aether_powerReverseMap 和逻辑来获取正确的图标文件名
-        const iconFileName = (aether_powerReverseMap[String(hero.AetherPower).toLowerCase()] || hero.AetherPower)
-            .toLowerCase()
+        const iconFileName = String(hero.aetherPowerId || hero.AetherPower).toLowerCase()
 
         const iconPath = `imgs/Aether Power/${iconFileName}.webp`;
 
@@ -1683,7 +1674,7 @@ function renderDetailsInModal(hero, context = {}) {
 
     // 内部帮助函数，用于将技能/被动数组渲染为HTML列表
     // `opts.clickable === false` ⇒ 词条**不带** `.skill-type-tag`（不可点筛选）。
-    //   被动段用它：用户 2026-10-10「把被动的点击词条改为点击技能标题」——
+    //   被动段用它：把被动的点击词条改为点击技能标题 ——
     //   词条只负责展示，点标题才触发一键快速搜索。
     const renderListAsHTML = (itemsArray, filterType = null, opts = null) => {
         const clickable = !(opts && opts.clickable === false);
@@ -1709,7 +1700,7 @@ function renderDetailsInModal(hero, context = {}) {
         const shouldHighlight = getCookie('highlightSkillTerms') !== 'false';
 
         // 过滤/悬浮提示用的"纯文本"：把 `[#Dynamic]…[#]` 注记剥成裸数值
-        // （否则标记会漏进 `data-filter-value` / `title`，用户 2026-10-10 报的动态伤害场景）。
+        // （否则标记会漏进 `data-filter-value` / `title`，动态伤害场景）。
         // `[*]` 也要从筛选值/提示里去掉（否则 `data-filter-value` 会带出 `[*]보드의…` 这种残留）
         const _plainItem = (s) => String(s)
             .replace(/\[#Dynamic\]([^\[\]]*)\[#\]/g, (m, v) => v)
@@ -1718,7 +1709,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // `[*]` = **子行标记**（缩进 + 保留未着色的 `*`，见下方外层组装）；行首 `*` 才是"括号补充说明"的虚线标记。
         // `opts.noParen=true` ⇒ 括号注释由外层 `_renderEntryInner` 在**整条**范围内统一处理，
-        //   这里不再按单行认括号（否则内层括号会被误判，用户 2026-10-10）。
+        //   这里不再按单行认括号（否则内层括号会被误判）。
         const _renderOneCore = (item, opts) => {
             const noParen = !!(opts && opts.noParen);
             // ▼▼▼ 行首 `*`：括号补充说明行（橙色 * + 虚线下划线）▼▼▼
@@ -1834,7 +1825,7 @@ function renderDetailsInModal(hero, context = {}) {
             // ▼▼▼ `[#Dynamic]…[#]` 注记 → `<span class="dynamic-value">` ▼▼▼
             //   ⚠ **必须放在数值高亮之后**：数值高亮会在标记里面再套一层
             //   `<span style="color:#2d81e2ff">`（inline 样式压过任何 CSS 选择器），
-            //   动态值就会变成"普通蓝色数字"（用户 2026-10-10 报的）。
+            //   动态值就会变成"普通蓝色数字"。
             //   这里把标记换成 span 时**顺手剥掉内层 span**，让 `.dynamic-value` 自己的橙色加粗生效；
             //   数值**前后的空格留在 span 外面**，否则改写 textContent 时会把空格一起吃掉。
             //   放在高亮开关之外：它不是"高亮"，无论开关都必须换掉。
@@ -1884,14 +1875,14 @@ function renderDetailsInModal(hero, context = {}) {
         //   · `[*]` 行渲染成「橙色 *」的子行（与被动里 `*` 开头行的样式一致）；
         //   · 括号 `(...)` 仍留在同一行内（同词条）；
         //   · 顺带修掉「`[##elementorange]…[#]` 内含 `[*]`」导致高亮正则 `[^\[\]]*` 匹配失败、
-        //     颜色标记裸露成 `[##elementorange]…` 的问题（用户 2026-10-10 报的 construct_bonechill_costume_bedrock）。
+        //     颜色标记裸露成 `[##elementorange]…` 的问题（construct_bonechill_costume_bedrock）。
         // 我们导出的词条里，子行有两种承载方式：
         //   ① 并入同一字符串（`\n` + `[*]`）—— 如 passiveSkills[].text；
         //   ② 拆成**数组的独立元素**且以 `[*]` 开头 —— 如 familyBonus。
-        // 两种都要**留在同一个 <li> 里**（用户 2026-10-10）：主行照常渲染，子行用 `<br>` 接在后面，
+        // 两种都要**留在同一个 <li> 里**：主行照常渲染，子行用 `<br>` 接在后面，
         // 加 `.skill-subline` 缩进，`*` 保留在行首但**不着色**。
         // 子行的正文**必须走完整处理链**（关键字着色 + 数值高亮 + 标记转 HTML），
-        // 否则会出现「子行不着色 / 数值不高亮」（用户 2026-10-10 titan_hunter_borgholf）。
+        // 否则会出现「子行不着色 / 数值不高亮」（titan_hunter_borgholf）。
         // 做法：复用 `_renderOneCore` 拿到 <li>，抽出内层 HTML 再包进 .skill-subline。
         const _splitLi = (li) => {
             const m = String(li).match(/^(<li[^>]*>)([\s\S]*)(<\/li>)\s*$/);
@@ -1899,7 +1890,7 @@ function renderDetailsInModal(hero, context = {}) {
         };
         const _appendSubs = (li, subs) => subs ? li.replace(/<\/li>\s*$/, subs + '</li>') : li;
 
-        // ── 括号注释块（用户 2026-10-10：「括号只适用最外层，内层的括号不作为换行注释解析」）──
+        // ── 括号注释块（「括号只适用最外层，内层的括号不作为换行注释解析」）──
         //   规则：从左往右找第一个**配对完整**的括号；只有当它的闭括号是**本行最后一个字符**
         //   （允许后面跟 `.` / `。`）时才算注释块，否则算普通正文、继续往后找。
         //   ⇒ `被…获得血莲标记。 (来自…（最高：10）。\n[*]…\n[*]…。)` 里**外层** `(来自…）` 才是注释块，
@@ -1950,7 +1941,7 @@ function renderDetailsInModal(hero, context = {}) {
         // `lastLvl` = 本段**最后出现的行层级**（主词条 = 0、`[*]` = 1 …）—— 供"并进上一条 `<li>`"
         // 的场景（`forceSub=true`）把上一条的层级续进来，否则括号块的缩进会退回一级。
         // 全部内容留在**同一个 <li>** 里：主行照常，`[*]` 行 = `.skill-subline` 子行，括号注释块 = 虚线块。
-        // 用户 2026-10-10 的三条排版口径：
+        // 三条排版口径：
         //   ① 括号注释块**去掉前后括号**，只留橙色 `*` + 着色虚线下划线；
         //   ② 注释块**比它所说明的那一行多缩进一级**（`.paren-note` 的 padding 由内联给出）；
         //   ③ 词条**开头不产生空行**（整条都是 `[*]` 子行时，第一行不再补 `<br>`）。
@@ -1958,10 +1949,10 @@ function renderDetailsInModal(hero, context = {}) {
             // `forceSub=true` ⇒ 这段内容要**接到已有 `<li>` 后面** ⇒ 第一行也要补 `<br>`（否则会和上文黏在一起）
             let open = null, inner = '', headDone = false, hasContent = !!forceSub;
             // 上一条产出的是不是 `[*]` 子行 —— 括号注释块要**比它再多缩进一级**
-            //   （用户 2026-10-10：谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
+            //   （谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
             let lastWasSub = !!startLvl;
             // 上一条产出行的**层级**（主词条 = 0、`[*]` = 1、`[**]` = 2 …）。
-            // 括号注释块的缩进 = 本层级 + 1 级（每级 1.4em）—— 2026-10-11 用户口径：
+            // 括号注释块的缩进 = 本层级 + 1 级（每级 1.4em）—— 
             //   「`ninja_peridot_costume_herbalist` 最后那句明明着色和下划线了，为什么没有比主词条多缩进」
             //   「`goblin_kettle_costume_field_cook` 成长为主词条，下面的都着色了但缩进都是一样的」。
             //   旧实现把缩进**写死两档**（`.paren-note` 1.4em / `.paren-note-sub` 2.8em），
@@ -1970,7 +1961,7 @@ function renderDetailsInModal(hero, context = {}) {
             //   `forceSub=true` 时由调用方传入**上一条 `<li>` 的末尾层级**（`startLvl`），
             //   否则"整条只有括号、并入上一条"的元素（如 `[*](…括号说明…)`）会退回一级。
             let lastLvl = startLvl || 0;
-            // 层级标记 = `[` + N 个 `*` + `]`（用户 2026-10-10：`[*]` 一级 / `[**]` 二级 …）。
+            // 层级标记 = `[` + N 个 `*` + `]`（`[*]` 一级 / `[**]` 二级 …）。
             // 这样"子词条 / 说明词条 / 新词条"各有各的深度，不再全挤成 `[*]`。
             const _LVL_RE = /^\[(\*+)\]\s*/;
             const _subCls = (lvl) => 'skill-subline' + (lvl > 1 ? (' skill-subline-l' + lvl) : '');
@@ -2003,7 +1994,7 @@ function renderDetailsInModal(hero, context = {}) {
                     return;
                 }
                 // 括号注释块：去掉 `(` `)`，整块套虚线 + 左侧多缩进。
-                // ⚠ 2026-10-10 用户口径（`ghost_xiwang_gui`「2 个额外说明合并为一个括号了 但缩进却不一样
+                // ⚠ （`ghost_xiwang_gui`「2 个额外说明合并为一个括号了 但缩进却不一样
                 //   应该为同一级别」）：块内各行**缩进必须一致** —— 原来第 2 行起套 `.skill-subline`
                 //   （+1.4em）比第 1 行深，看着像两级。现在除首行外只加 `<br>` + `* ` 项目符，
                 //   **不再加缩进类**；虚线由 `.paren-note` 直接继承（也省掉 `.paren-note .skill-subline`
@@ -2012,7 +2003,7 @@ function renderDetailsInModal(hero, context = {}) {
                 let body = '', bodyHas = false;
                 p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach((l, i) => {
                     const r = _one(l);
-                    // 行头 = `.paren-mark` 的 `*` + **一个空格**（用户 2026-10-10：「补上」）
+                    // 行头 = `.paren-mark` 的 `*` + **一个空格**（「补上」）
                     //   —— 首行原来直接 `*内容`（无空格），与续行 `* 内容`、与 `[*]` 子行的
                     //   `* ${h}` 都不一致；现在块内**所有行**统一成 `* 内容`。
                     const _head = `<span class="paren-mark">*</span> `;
@@ -2037,16 +2028,16 @@ function renderDetailsInModal(hero, context = {}) {
             return { open, inner, lastLvl };
         };
 
-        // `[*]` 数组元素要不要并进上一条 `<li>` —— **按列表类型分**（用户 2026-10-10）：
+        // `[*]` 数组元素要不要并进上一条 `<li>` —— **按列表类型分**：
         //   · `familyBonus`：`[*]` 是「奖励表头」下的子项 ⇒ **并进上一条**（用户点名要求）；
         //   · `effects`（`skills[].lines`）：**每个数组元素各自成一个 `<li>`**
         //     —— 旧站就是这么拍的（`谦逊低于 40 时：` / `[*]对目标…` … 共 7 条扁平行），
-        //     用户 2026-10-10：「谦逊这种选择性的技能被直接当成 2 个大组别元素了，需要修复回按词条分组元素」。
+        //     谦逊这种选择性的技能要按词条分组元素，不能被当成 2 个大组别元素。
         //   · `passives` 传进来的是单元素数组（子行在字符串内用 `\n[*]`）⇒ 这里不涉及。
         const _mergeSubItems = (filterType === 'familyBonus');
         // 「整条只有括号注释」的元素（如 `[*](头目、泰坦和神话泰坦不受此状态效果影响。)`）：
         //   它**归属于上一行词条**（数据里就是那行的括注）⇒ 必须并进上一条 `<li>`，
-        //   不能单独成一个网页元素（用户 2026-10-10）。
+        //   不能单独成一个网页元素。
         const _isPureParen = (s) => {
             const parts = _splitAnnotations(String(s).replace(/^\s*\[\*+\]\s*/, ''));
             return parts.length > 0 && parts.every(p => p.kind === 'paren');
@@ -2056,7 +2047,6 @@ function renderDetailsInModal(hero, context = {}) {
         //   而本站只按「**行首** `[*]`」识别子行 ⇒ 渲染前先归一到行首。
         //   生成器侧已归一（`skill_desc_gen.norm_sublines`），这里是**防御层**：
         //   旧档 / 手工数据 / 其它来源也不会把 `[*]` 裸露给用户
-        //   （2026-10-10 实测 ar 87 / tc 44 / ja 40 / fr 7 行内 `[*]` 裸露）。
         //   ⚠ 必须放在 `_isPureParen` / `_renderEntryInner` **之前**（两者都按行首判据工作）。
         const _normBullets = (s) => String(s)
             .replace(/[ \t\u00a0]*(\[\*+\])[ \t\u00a0]*/g, '\n$1')
@@ -2086,13 +2076,12 @@ function renderDetailsInModal(hero, context = {}) {
 
     // --- 解析英雄名称 ---
     const skinInfo = getSkinInfo(hero);
-    const heroSkin = skinInfo.skinIdentifier;
-    const mainHeroName = skinInfo.baseName;
-    const englishName = hero.english_name;
+    const displayName = skinInfo.baseName;      // 当前语言显示名
+    const identityName = hero.english_name;      // 跨语言稳定身份键
 
     // 使用所有三个变量来构建最终的HTML
     // ▼ 统一使用主英雄名作为筛选填充值 ▼
-    const filterValue = mainHeroName;
+    const filterValue = displayName;
 
     // 移除最右边的元素后缀
     const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
@@ -2105,18 +2094,17 @@ function renderDetailsInModal(hero, context = {}) {
     }
 
     // 英文名的后缀清理（跟 filterValue 一样的处理）
-    let cleanedEnglishName = englishName || '';
-    if (elementSuffixRegex.test(cleanedEnglishName)) {
-        cleanedEnglishName = cleanedEnglishName.replace(elementSuffixRegex, '').trim();
+    let cleanedIdentityName = identityName || '';
+    if (elementSuffixRegex.test(cleanedIdentityName)) {
+        cleanedIdentityName = cleanedIdentityName.replace(elementSuffixRegex, '').trim();
     }
     
     const nameBlockHTML = `
-        ${englishName ? `<p class="hero-english-name">${cleanedEnglishName}</p>` : ''}
-        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${cleanedFilterValue}" title="${langDict.filterBy} '${mainHeroName.trim()}'">${mainHeroName}</h1>
+        ${identityName ? `<p class="hero-english-name">${cleanedIdentityName}</p>` : ''}
+        <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${cleanedFilterValue}" title="${langDict.filterBy} '${displayName.trim()}'">${displayName}</h1>
     `;
 
-    const source = filterInputs.skillTypeSource.value;
-    const uniqueSkillTypes = getSkillTagsForHero(hero, source);
+    const uniqueSkillTypes = getSkillTagsForHero(hero);
     let heroTypesContent = '';
     // 检查是否显示技能类别
     const showSkillTypesInDetails = getCookie('showSkillTypesInDetails') !== 'false';
@@ -2129,15 +2117,11 @@ function renderDetailsInModal(hero, context = {}) {
             const _stLabel = (cn) => (typeof Lang !== 'undefined') ? Lang.t('skill_types', cn) : cn;
             const tagsHTML = uniqueSkillTypes.map(type => {
                 const label = _stLabel(type);
-                let innerHTML = label; // 默认只显示文字
-
-                // 如果来源是 bbcamp，则添加图标（图标文件名按 **CN 键** 取，不能跟着翻译走）
-                if (source === 'bbcamp') {
-                    const iconSrc = getIconForFilter('skillTag_base', type);
-                    // 这里我们复用 option-icon class，因为它已经定义了合适的尺寸
-                    const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
-                    innerHTML = `${iconHTML}${label}`;
-                }
+                // 图标文件名按 **CN 键** 取（不能跟着翻译走）；图标查找只依赖 tag 值本身
+                const iconSrc = getIconForFilter('skillTag_base', type);
+                // 复用 option-icon class（已定义合适尺寸）
+                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+                const innerHTML = `${iconHTML}${label}`;
 
                 return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${label}">${innerHTML}</span>`;
             }).join('');
@@ -2153,7 +2137,7 @@ function renderDetailsInModal(hero, context = {}) {
         ? hero.familyBonus
         : ((state.families_bonus.find(f => String(f.name || '').toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || []);
 
-    // 被动技能 / 家族奖励的**大图标**（用户 2026-10-10：
+    // 被动技能 / 家族奖励的**大图标**（
     //   「被动奖励和家族奖励要大图标展示，右边渲染被动名，下一元素是被动词条」；
     //   后续又反馈「图标太大、标题文字要加大」⇒ 图标 40px、名字 `.big-skill-name`）。
     //   图标名走 `PassiveSkillIconCollection`（data.js）；`resist_*` 仍是「盾牌底 + 原图标」两层。
@@ -2183,7 +2167,7 @@ function renderDetailsInModal(hero, context = {}) {
         ${_passiveItems.length ? _passiveItems.map(p => {
             const _title = p.title || p.id || '';
             // 被动名可点 ⇒ **一键快速搜索该被动**（复用既有的 `.skill-type-tag` 点击逻辑；
-            // 没有标题的旧数据就不挂，免得点出一空筛选，用户 2026-10-10）
+            // 没有标题的旧数据就不挂，免得点出一空筛选）
             const _nameAttrs = p.title
                 ? ` class="uniform-style big-skill-name skill-type-tag" data-filter-type="passives" data-filter-value="${p.title}" title="${langDict.filterBy} ${p.title}"`
                 : ' class="uniform-style big-skill-name"';
@@ -2197,12 +2181,12 @@ function renderDetailsInModal(hero, context = {}) {
         : `<ul class="skill-list"><li>${langDict.none}</li></ul>`}
     </div>`;
 
-    // ── 家族奖励段：**原标题保持原样**（用户 2026-10-10：图标和标题是"额外添加"不是"替代"），
+    // ── 家族奖励段：**原标题保持原样**（图标和标题是"额外添加"不是"替代"），
     //    标题下面再加一行「大图标 + 家族名」，下一元素是家族奖励词条 ──
     //    大图标旁的家族名走**官方 `family_title` 表**（`langs_json/family_title_<码>.json`，
     //    如 `asgard → 阿斯加德王国`），不是 `family` 表里的分组短名（`S3 - 阿斯加德`）；
-    //    表外家族（123 条之外）回退 `getDisplayName`（用户 2026-10-10）。
-    //    ⚠ 2026-10-10 二次调整（用户）：
+    //    表外家族（123 条之外）回退 `getDisplayName`。
+    //    ⚠ 二次调整：
     //      ① 「家族奖励」那行的**家族名隐藏**（原来"小图标 + 家族名"和下面的大图标行重复，
     //         `langDict.modalFamilyBonus('')` ⇒ 只留标题，模板已支持空家族名）；
     //      ② 大图标那行的**家族名标题改为可点** ⇒ **一键筛选该家族**
@@ -2223,10 +2207,10 @@ function renderDetailsInModal(hero, context = {}) {
             <ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul>
         </div>` : '';
 
-    // ── 「服装奖励」下拉（用户 2026-10-10）──
+    // ── 「服装奖励」下拉──
     // 只有带服装奖励表的英雄（688/702 个服装）才显示；**默认 = 最多套**。
     // 选项 = 「无」+ 每一套对应的**服装图标 + 服装名**（`C1/C2/卡通/玻璃/英姿`，按当前语言）。
-    // ⚠ 原生 `<select>` 的 `<option>` 放不了图片 ⇒ 用一排小按钮当选择器（用户 2026-10-10）。
+    // ⚠ 原生 `<select>` 的 `<option>` 放不了图片 ⇒ 用一排小按钮当选择器。
     // ⚠ 这只影响**详情页**显示；列表属性仍按"该英雄自身的服装顺序"算（见 filters.js::calculateHeroStats）。
     const _costumeSkinOf = (k) => {
         let cid = k;
@@ -2296,10 +2280,10 @@ function renderDetailsInModal(hero, context = {}) {
                         <div id="modal-talent-bonus-display"></div>
                         <hr class="divider">
                         <div id="modal-talent-cost-display">
-                            <div class="cost-item"><img src="imgs/emblems/${englishClassKey}.webp" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
+                            <div class="cost-item"><img src="imgs/emblems/${classIcon}.webp" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
                             <div class="cost-item"><img src="imgs/farm/Food.webp" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
                             <div class="cost-item"><img src="imgs/farm/Iron.webp" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
-                            <div class="cost-item"><img src="imgs/emblems/master_${englishClassKey}.webp" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
+                            <div class="cost-item"><img src="imgs/emblems/master_${classIcon}.webp" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
                         </div>
                     </div>
                     <div id="talent-tree-panel" class="mobile-tab-content">
@@ -2363,11 +2347,11 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div class="details-top-right">
                 <div class="details-info-line">
-                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.class}"><img src="imgs/classes/${(classReverseMap[hero.class] || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
-                    ${heroSkin ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${heroSkin}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
-                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.AetherPower}">⏫<img src="imgs/Aether Power/${(aether_powerReverseMap[hero.AetherPower.toLowerCase()] || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
+                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.classId}"><img src="imgs/classes/${String(hero.classId || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
+                    ${getCostumeIconName(hero) ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${getCostumeIconName(hero)}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
+                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.aetherPowerId}">⏫<img src="imgs/Aether Power/${String(hero.aetherPowerId || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
                     ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}
-                    ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.source}"><img src="imgs/coins/${sourceIconMap[sourceReverseMap[hero.source]]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
+                    ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.sourceId}"><img src="imgs/coins/${sourceIconMap[hero.sourceId]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${formatLocalDate(hero['Release date'])}</span>` : ''}
                 </div>
                 <h3 id="modal-core-stats-header">${langDict.modalCoreStats}</h3>
@@ -2813,7 +2797,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // 1. 先初始化天赋树 (即使它会错误地设置下拉菜单)
         if (typeof TalentTree !== 'undefined' && hero.class) {
-            TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.class, settingsToUse, talentChangeCallback, langDict.talentTerms);
+            TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.classId, settingsToUse, talentChangeCallback, langDict.talentTerms);
         }
 
         // 2. 然后，保存的正确设置，强制覆盖下拉菜单的值
@@ -3059,7 +3043,7 @@ function renderDetailsInModal(hero, context = {}) {
                     // 定义获取背景后缀的函数
                     const getBackgrounSuffix = (family, costumeId) => {
                         // ✅ 只在这里算一次，全程复用，杜绝任何裸调用
-                        const colorKey = getSafeColorKey(hero.color);
+                        const colorKey = getSafeColorKey(hero.colorId);
 
                         // 优先处理 classic 家族
                         if (family === 'classic') {
@@ -3116,10 +3100,7 @@ function renderDetailsInModal(hero, context = {}) {
                             'shady_scoundrels': 'scoundrel',
                         };
 
-                        // ✅ sourceReverseMap 也可能拿不到，改成安全取值
-                        const srcKey = (typeof sourceReverseMap !== 'undefined' && sourceReverseMap && hero.source)
-                            ? String(sourceReverseMap[hero.source]).toLowerCase()
-                            : '';
+                        const srcKey = String(hero.sourceId || '').toLowerCase();
 
                         if (hero.family && (hero.family.includes('hotm') || hero.family === 'mystery')) {
                             return colorKey + "_alt";
@@ -3228,7 +3209,7 @@ function renderDetailsInModal(hero, context = {}) {
                         raysImage.style.maxHeight = '110vh';
 
                         // 根据英雄颜色设置光效滤镜
-                        const colorFilter = getColorFilterForHero(hero.color);
+                        const colorFilter = getColorFilterForHero(hero.colorId);
                         const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
                         raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
                         portraitContainer.appendChild(raysImage);
@@ -3415,6 +3396,6 @@ function getColorFilterForHero(color) {
         'purple': 'drop-shadow(0 0 20px #e290ff) brightness(1.2)'
     };
 
-    const englishColor = (colorReverseMap[String(color).toLowerCase()] || color).toLowerCase();
-    return colorMap[englishColor] || colorMap['white']; // 默认使用白色光效
+    const colorKey = String(color || '').toLowerCase();
+    return colorMap[colorKey] || colorMap['white']; // 默认使用白色光效
 }

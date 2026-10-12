@@ -330,6 +330,30 @@ function _tPrefix(table, id) {
     return best ? m[best] : id;
 }
 
+/**
+ * 英雄的**规范身份键**（收藏 / 分享 / 队伍存储等一切持久化标识）。
+ * ⚠ **不要**用 `${english_name}-${costume_id}` 当身份键：`english_name` 会回退到
+ *   **父英雄名**（见 `_tPrefix`），而元素变体英雄（如 `mimic_aether_blue/green/…`）
+ *   英文名相同且 `costume_id` 均为 0 ⇒ 键完全相同 ⇒ 收藏 1 个会命中一整组
+ *   （曾实测 10 组 / 72 个英雄）。
+ */
+function heroIdentity(hero) {
+    if (!hero) return '';
+    if (hero.heroId) return hero.heroId;
+    return `${hero.english_name}-${hero.costume_id}`;
+}
+
+/**
+ * 由身份键解析回英雄对象：**优先精确匹配 `heroId`**，
+ * 再兼容旧格式 `english_name-costume_id`（同名组多命中 ⇒ 取第一个）。
+ */
+function resolveHeroByIdentity(identity) {
+    if (!identity) return null;
+    const byId = state.allHeroes.find(h => h.heroId === identity);
+    if (byId) return byId;
+    return state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === identity) || null;
+}
+
 /** 服装槽位（图标/皮肤标识用）：toon=3 glass=4 stylish=5，其余按同父英雄的发布顺序 1/2 */
 function _costumeSlot(heroId, ord) {
     // 槽位 = **同父英雄下按发布日期编的序号**（1/2/3…）。

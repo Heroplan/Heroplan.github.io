@@ -423,3 +423,70 @@ function handleImportConfirm() {
     alert(langDict.importSettingsSuccess(mode, counters));
     window.location.reload(); // 刷新页面以应用所有设置
 }
+/**
+ * 初始化「打开游戏英雄列表」：按钮 → 触发隐藏的 .eva1 文件选择框。
+ * 在 `main.js` 的 `initializeApp` 里调用一次。
+ */
+function initializeOpenGameHeroes() {
+    const btn = uiElements.openGameHeroesBtn;
+    const input = uiElements.eva1ImporterInput;
+    if (!btn || !input) return;
+    btn.addEventListener('click', () => input.click());
+    input.addEventListener('change', () => {
+        const file = input.files && input.files[0];
+        if (file) handleEva1File(file);
+        input.value = null;   // 重置：允许再次选择同名文件
+    });
+}
+
+/**
+ * 读取并解析玩家选择的 `.eva1` 存档，然后应用「只列已拥有英雄」的过滤。
+ * @param {File} file - 玩家的 .eva1 存档文件。
+ */
+function handleEva1File(file) {
+    const langDict = i18n[state.currentLang] || {};
+    if (typeof Eva1Parser === 'undefined' || typeof Eva1Parser.parseEva1 !== 'function') {
+        alert(langDict.gameHeroesParserMissing || '解析模块未加载，请刷新页面后重试。');
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        try {
+            const parsed = Eva1Parser.parseEva1(e.target.result);
+            applyOwnedHeroesFilter(parsed);
+        } catch (err) {
+            console.error('[eva1] 解析失败', err);
+            alert(langDict.gameHeroesParseFailed || '无法解析该存档文件，请确认选择的是游戏的 .eva1 存档。');
+        }
+    };
+    reader.onerror = () => alert(langDict.gameHeroesReadFailed || '读取文件失败，请重试。');
+    reader.readAsArrayBuffer(file);
+}
+
+/**
+ * 应用「游戏英雄列表」过滤：把解析出的已拥有 ID 存进 `state.temporaryOwnedHeroes`，
+ * 关闭搜索页，然后重渲染（只列存档内英雄、排除 1~2 星）。
+ *
+ * ⚠ 顺序：必须**先** `resetAllFilters()`（它会清 `temporaryOwnedHeroes`），**再**赋值 ⇒
+ *   顺序反了会静默失效。
+ * @param {{ownedIds: string[]}} parsed - `Eva1Parser.parseEva1` 的返回值。
+ */
+function applyOwnedHeroesFilter(parsed) {
+    if (!parsed || !parsed.ownedIds) return;
+    const langDict = i18n[state.currentLang] || {};
+
+    resetAllFilters();
+    state.temporaryOwnedHeroes = new Set(parsed.ownedIds);
+
+    // 关闭搜索页（复用既有模态框出栈逻辑）
+    if (typeof closeFiltersModal === 'function') closeFiltersModal();
+
+    applyFiltersAndRender();
+
+    const total = parsed.ownedIds.length;
+    const shown = state.filteredHeroes.length;
+    const low = total - shown;
+    if (typeof langDict.gameHeroesLoaded === 'function') {
+        alert(langDict.gameHeroesLoaded(shown, total, low));
+    }
+}

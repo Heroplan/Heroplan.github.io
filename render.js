@@ -2875,10 +2875,8 @@ function renderDetailsInModal(hero, context = {}) {
     const shareBtn = document.getElementById('share-hero-btn');
     if (shareBtn) {
         shareBtn.addEventListener('click', () => {
-            // 优先使用 heroId，若不存在则回退到旧格式（保险）
-            const identifier = hero.heroId
-                ? hero.heroId
-                : `${hero.english_name}-${hero.costume_id}`;
+            // 身份键 = 规范 heroId（见 utils.js::heroIdentity）
+            const identifier = heroIdentity(hero);
             const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}&lang=${state.currentLang}`;
             copyTextToClipboard(url).then(() => {
                 const originalText = shareBtn.innerHTML;

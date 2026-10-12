@@ -8,6 +8,8 @@ const uiElements = {
     openFiltersBtn: document.getElementById('open-filters-btn'),
     shareFavoritesBtn: document.getElementById('share-favorites-btn'),
     openFavoritesBtn: document.getElementById('open-favorites-btn'),
+    openGameHeroesBtn: document.getElementById('open-game-heroes-btn'),
+    eva1ImporterInput: document.getElementById('eva1-importer-input'),
     resetFiltersBtn: document.getElementById('reset-filters-btn'),
     advancedFilterHelpBtn: document.getElementById('advanced-filter-help-btn'),
     skillTypeHelpBtn: document.getElementById('skill-type-help-btn'),
@@ -322,7 +324,11 @@ function updateResultsHeader() {
         let message = '';
         let showResetButton = false;
 
-        if (onlyFavoritesIsActive) {
+        if (state.temporaryOwnedHeroes) {
+            // 「打开游戏英雄列表」：页头显示「游戏英雄列表共 N 位英雄」+ 重置 tag
+            message = langDict.gameHeroesListCount(count);
+            showResetButton = true;
+        } else if (onlyFavoritesIsActive) {
             message = (count > 0) ? langDict.favoritesListCount(count) : langDict.favoritesListEmpty;
             showResetButton = true;
         } else if (onlyHeroIsActive) {

@@ -4,6 +4,10 @@
  * 共 300 个键 × 20 语言。 */
 window.I18N_FUNCS = {
   "cn": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `已载入游戏英雄列表：显示 ${shown} 位（存档共 ${total} 项，其中 ${lowStar} 项为 1~2 星已隐藏）。`
+            : `已载入游戏英雄列表：显示 ${shown} 位（存档共 ${total} 项）。`,
+    gameHeroesListCount: (n) => `游戏英雄列表共 ${n} 位英雄`,
     "importSettingsSuccess": (mode, counts) => { // 【新增】用于设置导入的成功提示
             if (mode === 'overwrite') {
                 return '设置已成功覆盖导入！页面即将刷新以应用更改。';
@@ -35,6 +39,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* 仅包含 ${days} 天内发布的英雄和服装`
   },
   "tc": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `已載入遊戲英雄列表：顯示 ${shown} 位（存檔共 ${total} 項，其中 ${lowStar} 項為 1~2 星已隱藏）。`
+            : `已載入遊戲英雄列表：顯示 ${shown} 位（存檔共 ${total} 項）。`,
+    gameHeroesListCount: (n) => `遊戲英雄列表共 ${n} 位英雄`,
     "importSettingsSuccess": (mode, counts) => { // 【新增】
             if (mode === 'overwrite') {
                 return '設定已成功覆蓋導入！頁面即將刷新以應用更改。';
@@ -66,6 +74,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* 僅包含 ${days} 天內發佈的英雄和服裝`
   },
   "en": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Game hero list loaded: showing ${shown} (save has ${total} entries, ${lowStar} hidden as 1–2★).`
+            : `Game hero list loaded: showing ${shown} of ${total} entries.`,
+    gameHeroesListCount: (n) => `Game hero list: ${n} heroes`,
     "importSettingsSuccess": (mode, counts) => { // 【新增】
             if (mode === 'overwrite') {
                 return 'Settings have been successfully overwritten! The page will now reload to apply changes.';
@@ -97,6 +109,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Only includes heroes and costumes released within ${days} days`
   },
   "pl": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Lista bohaterów gry wczytana: wyświetlono ${shown} (zapis ma ${total} pozycji, ${lowStar} ukryto jako 1–2★).`
+            : `Lista bohaterów gry wczytana: wyświetlono ${shown} z ${total} pozycji.`,
+    gameHeroesListCount: (n) => `Lista bohaterów gry: ${n} bohaterów`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') {
                 return 'Ustawienia zostały pomyślnie nadpisane! Strona zostanie teraz odświeżona, aby zastosować zmiany.';
@@ -127,6 +143,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Obejmuje tylko bohaterów i kostiumy wydane w ciągu ostatnich ${days} dni`
   },
   "ar": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `تم تحميل قائمة أبطال اللعبة: يتم عرض ${shown} (يحتوي الحفظ على ${total} عنصرًا، و${lowStar} مخفية لأنها 1–2★).`
+            : `تم تحميل قائمة أبطال اللعبة: يتم عرض ${shown} من ${total} عنصرًا.`,
+    gameHeroesListCount: (n) => `قائمة أبطال اللعبة: ${n}`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'تم استبدال الإعدادات بنجاح! سيتم إعادة تحميل الصفحة لتطبيق التغييرات.';
             const messages = [];
@@ -152,6 +172,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* يشمل فقط الأبطال والأزياء التي تم إصدارها خلال ${days} يومًا`
   },
   "da": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Spillets helteliste er indlæst: viser ${shown} (gemt fil har ${total} poster, ${lowStar} skjult som 1–2★).`
+            : `Spillets helteliste er indlæst: viser ${shown} af ${total} poster.`,
+    gameHeroesListCount: (n) => `Spillets helteliste: ${n} helte`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Indstillinger er blevet overskrevet! Siden vil genindlæse for at anvende ændringer.';
             const messages = [];
@@ -177,6 +201,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inkluderer kun helte og kostumer udgivet inden for ${days} dage`
   },
   "nl": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Heldenlijst van het spel geladen: ${shown} weergegeven (save bevat ${total} items, ${lowStar} verborgen als 1–2★).`
+            : `Heldenlijst van het spel geladen: ${shown} van ${total} items weergegeven.`,
+    gameHeroesListCount: (n) => `Heldenlijst van het spel: ${n} helden`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Instellingen zijn succesvol overschreven! De pagina wordt vernieuwd om wijzigingen toe te passen.';
             const messages = [];
@@ -202,6 +230,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inclusief alleen helden en kostuums uitgebracht binnen ${days} dagen`
   },
   "fi": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Pelin sankarilista ladattu: näytetään ${shown} (tallennuksessa ${total} kohdetta, ${lowStar} piilotettu 1–2★).`
+            : `Pelin sankarilista ladattu: näytetään ${shown}/${total} kohdetta.`,
+    gameHeroesListCount: (n) => `Pelin sankarilista: ${n} sankaria`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Asetukset on korvattu onnistuneesti! Sivu päivitetään muutosten soveltamiseksi.';
             const messages = [];
@@ -227,6 +259,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Sisältää vain sankarit ja asut, jotka on julkaistu ${days} päivän sisällä`
   },
   "fr": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Liste des héros du jeu chargée : ${shown} affichés (sauvegarde : ${total} entrées, ${lowStar} masquées car 1–2★).`
+            : `Liste des héros du jeu chargée : ${shown} sur ${total} entrées.`,
+    gameHeroesListCount: (n) => `Liste des héros du jeu : ${n} héros`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Les paramètres ont été écrasés avec succès ! La page va se rafraîchir pour appliquer les modifications.';
             const messages = [];
@@ -252,6 +288,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inclut uniquement les héros et costumes publiés au cours des ${days} derniers jours`
   },
   "de": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Heldenliste des Spiels geladen: ${shown} angezeigt (Speicher hat ${total} Einträge, ${lowStar} als 1–2★ verborgen).`
+            : `Heldenliste des Spiels geladen: ${shown} von ${total} Einträgen.`,
+    gameHeroesListCount: (n) => `Heldenliste des Spiels: ${n} Helden`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Einstellungen wurden erfolgreich überschrieben! Die Seite wird neu geladen, um Änderungen zu übernehmen.';
             const messages = [];
@@ -277,6 +317,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Enthält nur Helden und Kostüme, die innerhalb von ${days} Tagen veröffentlicht wurden`
   },
   "id": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Daftar pahlawan game dimuat: menampilkan ${shown} (simpanan berisi ${total} entri, ${lowStar} disembunyikan sebagai 1–2★).`
+            : `Daftar pahlawan game dimuat: menampilkan ${shown} dari ${total} entri.`,
+    gameHeroesListCount: (n) => `Daftar pahlawan game: ${n} pahlawan`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Pengaturan berhasil ditimpa! Halaman akan dimuat ulang untuk menerapkan perubahan.';
             const messages = [];
@@ -302,6 +346,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Hanya mencakup pahlawan dan kostum yang dirilis dalam ${days} hari`
   },
   "it": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Elenco eroi del gioco caricato: ${shown} mostrati (salvataggio con ${total} voci, ${lowStar} nascoste come 1–2★).`
+            : `Elenco eroi del gioco caricato: ${shown} di ${total} voci.`,
+    gameHeroesListCount: (n) => `Elenco eroi del gioco: ${n} eroi`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Impostazioni sovrascritte con successo! La pagina verrà ricaricata per applicare le modifiche.';
             const messages = [];
@@ -327,6 +375,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Include solo eroi e costumi rilasciati negli ultimi ${days} giorni`
   },
   "ru": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Список героев игры загружен: показано ${shown} (в сохранении ${total} записей, ${lowStar} скрыто как 1–2★).`
+            : `Список героев игры загружен: показано ${shown} из ${total} записей.`,
+    gameHeroesListCount: (n) => `Список героев игры: ${n}`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Настройки успешно перезаписаны! Страница будет перезагружена для применения изменений.';
             const messages = [];
@@ -352,6 +404,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Включает только героев и костюмы, выпущенные в течение ${days} дней`
   },
   "ja": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `ゲームの英雄リストを読み込みました：${shown} 体を表示（セーブ内 ${total} 件、うち ${lowStar} 件は 1〜2★ のため非表示）。`
+            : `ゲームの英雄リストを読み込みました：${shown} 体を表示（セーブ内 ${total} 件）。`,
+    gameHeroesListCount: (n) => `ゲーム英雄リスト：${n} 体`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return '設定が正常に上書きされました！変更を適用するためにページがリロードされます。';
             const messages = [];
@@ -377,6 +433,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* ${days} 日以内にリリースされたヒーローとコスチュームのみを含みます`
   },
   "ko": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `게임 영웅 목록을 불러왔습니다: ${shown}명 표시 (저장 파일 ${total}개, 1~2★ ${lowStar}개 숨김).`
+            : `게임 영웅 목록을 불러왔습니다: ${total}개 중 ${shown}명 표시.`,
+    gameHeroesListCount: (n) => `게임 영웅 목록: ${n}명`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return '설정이 성공적으로 덮어쓰기되었습니다! 변경 사항을 적용하려면 페이지를 새로 고칩니다.';
             const messages = [];
@@ -402,6 +462,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* ${days}일 이내에 출시된 영웅과 코스튬만 포함됩니다`
   },
   "no": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Spillets helteliste lastet: viser ${shown} (lagringen har ${total} oppføringer, ${lowStar} skjult som 1–2★).`
+            : `Spillets helteliste lastet: viser ${shown} av ${total} oppføringer.`,
+    gameHeroesListCount: (n) => `Spillets helteliste: ${n} helter`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Innstillinger er blitt overskrevet! Siden vil lastes inn på nytt for å bruke endringene.';
             const messages = [];
@@ -427,6 +491,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inkluderer bare helter og kostymer utgitt i løpet av ${days} dager`
   },
   "pt": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Lista de heróis do jogo carregada: exibindo ${shown} (save tem ${total} entradas, ${lowStar} ocultadas como 1–2★).`
+            : `Lista de heróis do jogo carregada: exibindo ${shown} de ${total} entradas.`,
+    gameHeroesListCount: (n) => `Lista de heróis do jogo: ${n} heróis`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'As configurações foram substituídas com sucesso! A página será recarregada para aplicar as alterações.';
             const messages = [];
@@ -452,6 +520,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inclui apenas heróis e trajes lançados nos últimos ${days} dias`
   },
   "es": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Lista de héroes del juego cargada: mostrando ${shown} (el guardado tiene ${total} entradas, ${lowStar} ocultas por ser 1–2★).`
+            : `Lista de héroes del juego cargada: mostrando ${shown} de ${total} entradas.`,
+    gameHeroesListCount: (n) => `Lista de héroes del juego: ${n} héroes`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return '¡La configuración se ha sobrescrito correctamente! La página se recargará para aplicar los cambios.';
             const messages = [];
@@ -477,6 +549,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Incluye solo héroes y disfraces lanzados en los últimos ${days} días`
   },
   "sv": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Spelets hjältelista har laddats: visar ${shown} (sparfilen har ${total} poster, ${lowStar} dolda som 1–2★).`
+            : `Spelets hjältelista har laddats: visar ${shown} av ${total} poster.`,
+    gameHeroesListCount: (n) => `Spelets hjältelista: ${n} hjältar`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Inställningarna har skrivits över! Sidan kommer att laddas om för att tillämpa ändringarna.';
             const messages = [];
@@ -502,6 +578,10 @@ window.I18N_FUNCS = {
     "latestHeroAgeNotice": (days) => `* Inkluderar endast hjältar och kostymer som släppts inom ${days} dagar`
   },
   "tr": {
+    gameHeroesLoaded: (shown, total, lowStar) => lowStar > 0
+            ? `Oyun kahraman listesi yüklendi: ${shown} gösteriliyor (kayıtta ${total} öğe, ${lowStar} tanesi 1–2★ olarak gizlendi).`
+            : `Oyun kahraman listesi yüklendi: ${total} öğeden ${shown} tanesi gösteriliyor.`,
+    gameHeroesListCount: (n) => `Oyun kahraman listesi: ${n} kahraman`,
     "importSettingsSuccess": (mode, counts) => {
             if (mode === 'overwrite') return 'Ayarlar başarıyla üzerine yazıldı! Değişiklikleri uygulamak için sayfa yenilenecek.';
             const messages = [];

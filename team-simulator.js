@@ -199,7 +199,7 @@ function displayTeamInSimulator(teamToShow) {
 
     teamToShow.heroes.forEach((heroIdentifier, index) => {
         if (heroIdentifier && index < 5) {
-            const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === heroIdentifier);
+            const hero = resolveHeroByIdentity(heroIdentifier);
             if (hero) {
                 newTeamSlots[index] = {
                     instanceId: state.teamMemberInstanceCounter++,
@@ -463,7 +463,7 @@ function renderSavedTeams(teams, isSharedView = false) {
         // ▼▼▼【修改】使用新的HTML结构来添加背景色▼▼▼
         let avatarsHTML = team.heroes.map(id => {
             if (!id) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline); width: 36px; height: 36px; display: inline-block;"></div>`;
-            const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === id);
+            const hero = resolveHeroByIdentity(id);
             if (hero) {
                 const imageSrc = `imgs/hero_icon/${hero.heroId}.webp`;
                 return `
@@ -585,7 +585,7 @@ function encodeTeamsToBinary(teams) {
             const heroId = heroes[i];
             let index = 0;
             if (heroId) {
-                const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === heroId);
+                const hero = resolveHeroByIdentity(heroId);
                 if (hero) index = hero.originalIndex + 1; // +1 避免 0 与空位冲突
             }
             const indexBuf = new Uint8Array(2);
@@ -651,7 +651,7 @@ function decodeTeamsFromBinary(binaryStr) {
                 } else {
                     const hero = state.allHeroes.find(h => h.originalIndex === index - 1);
                     if (hero) {
-                        heroes.push(`${hero.english_name}-${hero.costume_id}`);
+                        heroes.push(heroIdentity(hero));
                     } else {
                         heroes.push(null);
                     }

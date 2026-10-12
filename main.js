@@ -704,6 +704,7 @@ function addEventListeners() {
     importSettingsBtn.addEventListener('click', openImportModal);
     initializeExportModalListeners();
     initializeImportModalListeners();
+    initializeOpenGameHeroes();
 
     // --- 英雄列表表格交互事件 ---
     heroTable.querySelector('tbody').addEventListener('click', handleTableBodyClick);
@@ -728,7 +729,7 @@ function addEventListeners() {
         if (!state.teamSlots.some(s => s !== null)) { alert(langDict.noHeroesInTeam); return; }
         const teamName = prompt(langDict.promptTeamName);
         if (!teamName || !teamName.trim()) { if (teamName !== null) alert(langDict.teamNameRequired); return; }
-        const newTeam = { name: teamName.trim(), heroes: state.teamSlots.map(s => s ? `${s.hero.english_name}-${s.hero.costume_id}` : null) };
+        const newTeam = { name: teamName.trim(), heroes: state.teamSlots.map(s => s ? heroIdentity(s.hero) : null) };
         const teams = getSavedTeams();
         teams.push(newTeam);
         saveTeams(teams);
@@ -1151,9 +1152,9 @@ function handleTableHeaderClick(event) {
         if (window.confirm(message)) {
             let currentFavoritesSet = new Set(getFavorites());
             if (shouldFavoriteAll) {
-                heroesToProcess.forEach(hero => currentFavoritesSet.add(`${hero.english_name}-${hero.costume_id}`));
+                heroesToProcess.forEach(hero => currentFavoritesSet.add(heroIdentity(hero)));
             } else {
-                heroesToProcess.forEach(hero => currentFavoritesSet.delete(`${hero.english_name}-${hero.costume_id}`));
+                heroesToProcess.forEach(hero => currentFavoritesSet.delete(heroIdentity(hero)));
             }
             saveFavorites(Array.from(currentFavoritesSet));
             applyFiltersAndRender();
@@ -1544,7 +1545,7 @@ function encodeFavoritesToBinary(favoritesArray) {
 
     const selectedIndices = [];
     favoritesArray.forEach(fav => {
-        const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === fav);
+        const hero = resolveHeroByIdentity(fav);
         if (hero) selectedIndices.push(hero.originalIndex);
     });
 
@@ -1619,7 +1620,7 @@ function decodeFavoritesFromBinary(binaryStr) {
         const favorites = [];
         selectedIndices.forEach(idx => {
             const hero = state.allHeroes.find(h => h.originalIndex === idx);
-            if (hero) favorites.push(`${hero.english_name}-${hero.costume_id}`);
+            if (hero) favorites.push(heroIdentity(hero));
         });
 
         return favorites;

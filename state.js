@@ -18,6 +18,7 @@ const state = {
 
     // --- 临时筛选状态 ---
     temporaryFavorites: null, // 用于临时存储分享链接中的收藏列表
+    temporaryOwnedHeroes: null, // 「打开游戏英雄列表」：存档里已拥有的规范 heroId 集合（Set<string> 或 null）
     temporaryDateFilter: null,  // 用于临时存储日期筛选条件
     temporaryAcademyFilter: false,
 

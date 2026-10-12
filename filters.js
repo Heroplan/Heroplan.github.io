@@ -41,9 +41,7 @@ function loadFavoritesBitmap() {
                     if (Array.isArray(arr)) {
                         const indices = [];
                         arr.forEach(fav => {
-                            const hero = state.allHeroes.find(
-                                h => `${h.english_name}-${h.costume_id}` === fav
-                            );
+                            const hero = resolveHeroByIdentity(fav);
                             if (hero) indices.push(hero.originalIndex);
                         });
 
@@ -153,7 +151,41 @@ function invalidateFavoritesCache() {
 }
 
 /**
- * 返回收藏的字符串数组（保持旧接口）。
+ * 本地收藏的**下标集合**：直接读位图下标，不经过「位图→身份键→再解析」的往返。
+ */
+function favoritesIndexSet() {
+    const cache = loadFavoritesBitmap();
+    const out = new Set();
+    for (let i = 0; i < cache.bitLen; i++) {
+        if (cache.bitmap[Math.floor(i / 8)] & (1 << (7 - (i % 8)))) out.add(i);
+    }
+    return out;
+}
+
+/**
+ * 把**身份键数组**（如分享链接的 `temporaryFavorites`）一次性解析成下标集合。
+ * 反查索引只建一次（`byId` + `byLegacy`）⇒ O(n + m)。
+ */
+function favoritesIndexOf(identityList) {
+    const out = new Set();
+    if (!identityList || identityList.length === 0) return out;
+    const byId = new Map();
+    const byLegacy = new Map();
+    for (const h of state.allHeroes) {
+        if (!byId.has(h.heroId)) byId.set(h.heroId, h.originalIndex);
+        const legacy = `${h.english_name}-${h.costume_id}`;
+        if (!byLegacy.has(legacy)) byLegacy.set(legacy, h.originalIndex);
+    }
+    for (const key of identityList) {
+        let idx = byId.get(key);
+        if (idx === undefined) idx = byLegacy.get(key);
+        if (idx !== undefined) out.add(idx);
+    }
+    return out;
+}
+
+/**
+ * 返回收藏的字符串数组（保持旧接口）；元素为**规范身份键**（`heroIdentity`）。
  */
 function getFavorites() {
     const cache = loadFavoritesBitmap();
@@ -161,7 +193,7 @@ function getFavorites() {
     for (let i = 0; i < cache.bitLen; i++) {
         if (cache.bitmap[Math.floor(i / 8)] & (1 << (7 - (i % 8)))) {
             const hero = state.allHeroes.find(h => h.originalIndex === i);
-            if (hero) favs.push(`${hero.english_name}-${hero.costume_id}`);
+            if (hero) favs.push(heroIdentity(hero));
         }
     }
     return favs;
@@ -181,7 +213,7 @@ function saveFavorites(favoritesArray) {
 
     const indices = [];
     favoritesArray.forEach(fav => {
-        const hero = state.allHeroes.find(h => `${h.english_name}-${h.costume_id}` === fav);
+        const hero = resolveHeroByIdentity(fav);
         if (hero) indices.push(hero.originalIndex);
     });
 
@@ -499,6 +531,7 @@ function resetAllFilters() {
     state.temporaryFavorites = null;
     state.temporaryDateFilter = null;
     state.temporaryAcademyFilter = false;
+    state.temporaryOwnedHeroes = null;
 }
 
 /**
@@ -722,7 +755,8 @@ function areFiltersActive() {
     }
 
     // 检查临时筛选
-    if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null) {
+    if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null
+        || state.temporaryOwnedHeroes !== null) {
         return true;
     }
 
@@ -833,6 +867,13 @@ function applyFiltersAndRender() {
     };
 
     // 3. 执行筛选
+    // 「收藏」范围判据**预计算**成下标集合（否则在回调里逐英雄重建 ⇒ O(n²×m)，曾慢 7~13×）。
+    let favoriteIndexSet = null;
+    if (filterScope === 'favorites') {
+        favoriteIndexSet = state.temporaryFavorites
+            ? favoritesIndexOf(state.temporaryFavorites)
+            : favoritesIndexSet();
+    }
     state.filteredHeroes = baseHeroes.filter(hero => {
         // **硬排除**（id 命中 `EXCLUDED_ID_KEYWORDS`，如 `_temp`）：任何情况下都不展示，
         // 不受 `showHiddenHeroes` / 抽奖模式影响。
@@ -849,10 +890,14 @@ function applyFiltersAndRender() {
         // 范围筛选
         if (filterScope === 'hero' && hero.costume_id !== 0) return false;
         if (filterScope === 'skin' && hero.costume_id === 0) return false;
+        // 「打开游戏英雄列表」：只列存档里已拥有的英雄，并排除 1~2 星
+        // （存档键与站点 heroId 完全同名 ⇒ 直接 Set.has，零映射）。
+        if (state.temporaryOwnedHeroes) {
+            if (!state.temporaryOwnedHeroes.has(hero.heroId)) return false;
+            if (Number(hero.star) <= 2) return false;
+        }
         if (filterScope === 'favorites') {
-            const favoritesList = state.temporaryFavorites || getFavorites();
-            const heroIdentifier = `${hero.english_name}-${hero.costume_id}`;
-            if (!favoritesList.includes(heroIdentifier)) return false;
+            if (!favoriteIndexSet || !favoriteIndexSet.has(hero.originalIndex)) return false;
         }
 
         // 文本筛选

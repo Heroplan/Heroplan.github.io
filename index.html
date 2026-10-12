@@ -918,6 +918,7 @@
             </div>
         </div>
         <div class="filter-actions">
+            <button id="open-game-heroes-btn" class="action-button" data-lang-key="openGameHeroes">打开游戏英雄列表</button>
             <button id="export-settings-btn" class="action-button" data-lang-key="exportSettings">导出设置</button>
             <button id="import-settings-btn" class="action-button" data-lang-key="importSettings">导入设置</button>
             <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
@@ -995,6 +996,7 @@
     <script src="./lz-string.min.js?v=20261010h" defer></script>
     <script src="./talent-tree.js?v=20261010h" defer></script>
     <script src="./data.js?v=20261010h" defer></script>
+    <script src="./eva1-parser.js?v=20261010h" defer></script>
     <script src="./utils.js?v=20261010h" defer></script>
     <script src="./state.js?v=20261010h" defer></script>
     <script src="./ui.js?v=20261010h" defer></script>
@@ -1006,6 +1008,8 @@
     <script src="./chat-simulator.js?v=20261010h" defer></script>
     <script src="./import-export.js?v=20261010h" defer></script>
     <script src="./main.js?v=20261010h" defer></script>
+    <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
+    <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->
     <div class="friendship-links">
         <p data-lang-key="friendshipThanks">感谢以下网站：</p>

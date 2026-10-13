@@ -421,7 +421,7 @@
      "lines": [
       "Påfør 630% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 3 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det [#Dynamic] 483 [#] skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 3 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 483 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ],
@@ -487,7 +487,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 316 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 316 [#]vannskade over 2 runder."
     }
    ],
    "stats": {
@@ -506,7 +506,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 126 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 126 [#]vannskade over 2 runder."
     }
    ]
   }
@@ -522,7 +522,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 194 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 194 [#]vannskade over 2 runder."
     }
    ]
   }
@@ -548,7 +548,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 160 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 160 [#]vannskade over 2 runder."
     }
    ],
    "stats": {
@@ -567,7 +567,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 212 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 212 [#]vannskade over 2 runder."
     }
    ]
   }
@@ -593,7 +593,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid på spesial",
-     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta [#Dynamic] 328 [#] vannskade over 2 runder."
+     "text": "Når denne figuren bruker spesialferdigheten sin, vil alle fiender ta[#Dynamic] 328 [#]vannskade over 2 runder."
     }
    ],
    "stats": {
@@ -1355,7 +1355,7 @@
      "id": "drawn_to_the_depths_mayhem",
      "lines": [
       "Gjør 350% skade på målet og fiender i nærheten og påfører dem 35 galskap.",
-      "Målet og fiender i nærheten tar [#Dynamic] 654 [#] vannkade over 3 runder. Alle allierte absorberer 50% av påført vannskade som økt helse.",
+      "Målet og fiender i nærheten tar[#Dynamic] 654 [#]vannkade over 3 runder. Alle allierte absorberer 50% av påført vannskade som økt helse.",
       "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
@@ -1502,7 +1502,7 @@
      "id": "frenzied_rend_mayhem",
      "lines": [
       "Gjør 280% skade på målet og fiender i nærheten og påfører dem 15 galskap.",
-      "Målet og fiender i nærheten tar [#Dynamic] 51 [#]–[#Dynamic] 156 [#] økt forbannelsesskade hver runde i 4 runder. (Den første gangen påføres [#Dynamic] 51 [#] skade. Skaden øker med 45% hver runde, opptil [#Dynamic] 156 [#] skade per runde.)",
+      "Målet og fiender i nærheten tar[#Dynamic] 51 [#]–[#Dynamic] 156 [#]økt forbannelsesskade hver runde i 4 runder. (Den første gangen påføres[#Dynamic] 51 [#]skade. Skaden øker med 45% hver runde, opptil[#Dynamic] 156 [#]skade per runde.)",
       "Bruk av denne spesialferdigheten påfører brukeren 60 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
@@ -1621,7 +1621,7 @@
      "id": "drain_strike_mayhem",
      "lines": [
       "Påfører 435% skade på målet og fiender i nærheten.",
-      "Målet og fiender i nærheten tar [#Dynamic] 708 [#] blødeskade over 4 runder. Brukeren og alle dens allierte absorberer 50% av påført blødeskade som økt helse",
+      "Målet og fiender i nærheten tar[#Dynamic] 708 [#]blødeskade over 4 runder. Brukeren og alle dens allierte absorberer 50% av påført blødeskade som økt helse",
       "Målet og fiender i nærheten er immun mot nye statuseffektøkninger. Denne effekten varer frem til 3 økninger har blitt motstått."
      ]
     }
@@ -1640,7 +1640,7 @@
       "Fjerner statustilstand-økninger fra alle fiender på en trygg måte. (Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statustilstand-økningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.)",
       "Alle fiender er immune mot nye statuseffektøkninger i? runder.",
       "Påkaller en sverdvokter-megaundersått med 35% HP og 300% angrep nedarvet fra brukeren.",
-      "Målet som treffes av sverdvakt-megaundersåtten, tar [#Dynamic] 447 [#] blødeskade over 3 runder. Denne effekten sprer seg til fiender i nærheten."
+      "Målet som treffes av sverdvakt-megaundersåtten, tar[#Dynamic] 447 [#]blødeskade over 3 runder. Denne effekten sprer seg til fiender i nærheten."
      ]
     }
    ],
@@ -1679,7 +1679,7 @@
      "lines": [
       "Fjerner økninger fra alle fiender.",
       "Påfør 565% skade på målet.",
-      "Målet tar [#Dynamic] 1875 [#] vannskade over 3 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Målet tar[#Dynamic] 1875 [#]vannskade over 3 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 250% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
@@ -2065,7 +2065,7 @@
      "lines": [
       "Vekst: Brukeren og allierte i nærheten får 540 angrep og 540 forsvar så lenge kampen varer. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)",
       "Påkaller en avviker-megaundersått med 45% HP og 180% angrep nedarvet fra brukeren.\n[*]Hvert treff fra en avviker-megaundersått påfører målet følgende statuslidelse:",
-      "[**]Målet tar [#Dynamic] 552 [#] giftskade over 3 runder. Skade økes mot mål med økt helse, undersåtter eller en megaundersått. (Giftskaden økes med 100% mot målene med økt helse.\n[***]Giftskade økes med 33% per undersått eller megaundersått eid av målet.\n[***]Maksimal økt skade er 199%.)",
+      "[**]Målet tar[#Dynamic] 552 [#]giftskade over 3 runder. Skade økes mot mål med økt helse, undersåtter eller en megaundersått. (Giftskaden økes med 100% mot målene med økt helse.\n[***]Giftskade økes med 33% per undersått eller megaundersått eid av målet.\n[***]Maksimal økt skade er 199%.)",
       "[**]Påfører målet 10 galskap.",
       "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
@@ -2096,7 +2096,7 @@
      "id": "endless_maze_mayhem",
      "lines": [
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 5 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det [#Dynamic] 261 [#] skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
+      "Målet går over til avgrunnsspøkelse-form i 5 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 261 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
       "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
@@ -2306,7 +2306,7 @@
      "lines": [
       "Påfører 450% skade på fiendene på kanten av fiendens formasjon. Dersom kun er én fiende, dobles skaden.",
       "Bruker full fjerning på fiendene på kanten av fiendens formasjon. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Fiendene på kanten av fiendens formasjon går over til avgrunnsspøkelse-form i 4 runder.\n[*] Når målene er i avgrunnsspøkelse-form, tar de [#Dynamic] 313 [#] skade hver runde. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.) Mot hellig-figurer varer denne statuseffekten 2 runder lenger. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Fiendene på kanten av fiendens formasjon går over til avgrunnsspøkelse-form i 4 runder.\n[*] Når målene er i avgrunnsspøkelse-form, tar de[#Dynamic] 313 [#]skade hver runde. Denne effekten er sta. Mot hellig-figurer varer denne statuseffekten 2 runder lenger. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ],
@@ -2323,7 +2323,7 @@
      "lines": [
       "Påfører 270% skade på alle fiender.",
       "Visne: Alle fiender får -240 angrep og -240 forsvar. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)",
-      "Alle fiender tar [#Dynamic] 405 [#] brannskade over 3 runder. Brukeren absorberer 50% av påført brannskade som økt helse. Mot is-figurer kan ikke denne effekten renses bort og varer 2 runder lenger."
+      "Alle fiender tar[#Dynamic] 405 [#]brannskade over 3 runder. Brukeren absorberer 50% av påført brannskade som økt helse. Mot is-figurer kan ikke denne effekten renses bort og varer 2 runder lenger."
      ]
     }
    ],
@@ -2375,7 +2375,7 @@
      "lines": [
       "Påfører 350% skade på alle fiender.",
       "Varigheten til statuslidelser tilbakestilles for alle fiender.",
-      "Alle fiender utsettes for etsende brenning i 4 runder. Etsende brenning gjør [#Dynamic] 448 [#] brannskade og senker målets forsvar med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått."
+      "Alle fiender utsettes for etsende brenning i 4 runder. Etsende brenning gjør[#Dynamic] 448 [#]brannskade og senker målets forsvar med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått."
      ]
     }
    ],
@@ -2410,7 +2410,7 @@
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% mana:",
       "[*]x 1 manaladning",
       "[**]Alle fiender tar 55% mer skade fra statuslidelser og negative stabler i 3 runder.",
-      "[**]Alle fiender tar [#Dynamic] 387 [#] giftskade over 3 runder. Brukeren absorberer 10% av påført giftskade som helse.",
+      "[**]Alle fiender tar[#Dynamic] 387 [#]giftskade over 3 runder. Brukeren absorberer 10% av påført giftskade som helse.",
       "[*]x 2 manaladning",
       "[**]Få tilbake 75% helse for brukeren og allierte i nærheten.",
       "[**]Brukeren og allierte i nærheten er immune mot nye statuslidelser og får tilbake 350 helse for hver forsøkte statuslidelse. Denne effekten varer frem til 4 lidelser har blitt motstått."
@@ -2943,7 +2943,7 @@
       "Denne spesialferdigheten har en sjanse til å påføre kritiske treff. (Sjansen for å påføre et kritisk treff er basert på heltens generelle sjanse for kritisk treff når skaden blir gjort.\n[*]Kritiske treff forårsaket av denne spesialferdigheten:\n[*]Påfør 50% mer skade.\n[*]Fjern vekst-effekter.Kritiske treff reduserer fiendens maksimale helse. Denne effekten er sterkere mot økt helse.)",
       "Påfører 420% skade på fienden.",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Immun mot normale angrep, angrep med spesialferdigheter, passive ferdigheter som påfører skade, statuseffekter og stabler; inkludert vekst og visne. Kan ikke få mana.\n[*]Etter 2 runder:\n[*]Alle allierte får 40% fulltreffersjanse i 2 runder. Denne effekten kan ikke fjernes. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Denne brukeren skifter til spøkelsesform i 2 runder. Denne effekten er sta.\n[*] Når spøkelsesformen utløper:\n[*] Alle allierte får 40% kritisk sjanse i 2 runder. Denne effekten er ufjernbar. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ],
@@ -3011,7 +3011,7 @@
      "id": "wild_splinter_mayhem",
      "lines": [
       "Påfører 280% skade på målet og fiender i nærheten.",
-      "Vill: I 3 runder tar målet og fiender i nærheten [#Dynamic] 125 [#] eller [#Dynamic] 375 [#] blødningsskade per runde.",
+      "Vill: I 3 runder tar målet og fiender i nærheten[#Dynamic] 125 [#]eller[#Dynamic] 375 [#]blødningsskade per runde.",
       "(Vill legger til en sjanse hver runde for at denne effekten blir kraftigere.\n[*]Denne Vill-effekten har en 50% sjanse til å påføre 200% ekstra skade den runden. Når ekstra skade påføres, reduserer effekten også fiendenes maksimale helse, og den er sterkere mot økt helse.)",
       "Brukeren får 45% sjanse til å dukke unna spesialferdigheter som gjør skade, i 3 runder."
      ]
@@ -3029,7 +3029,7 @@
      "id": "blazing_matchstick_mayhem",
      "lines": [
       "Påfører 390% skade på målet og fiender i nærheten.",
-      "Vill: I 3 runder tar målet og fiender i nærheten [#Dynamic] 179 [#] eller [#Dynamic] 537 [#] brannskade per runde.",
+      "Vill: I 3 runder tar målet og fiender i nærheten[#Dynamic] 179 [#]eller[#Dynamic] 537 [#]brannskade per runde.",
       "(Vill legger til en sjanse hver runde for at denne effekten blir kraftigere.\n[*]Denne Vill-effekten har en 50% sjanse til å påføre 200% ekstra skade den runden. Når ekstra skade påføres, reduserer effekten også fiendenes maksimale helse, og den er sterkere mot økt helse.)",
       "Brukeren og allierte i nærheten får 35% mana-generering i 3 runder. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
@@ -3047,7 +3047,7 @@
      "id": "plummeting_arrow_mayhem",
      "lines": [
       "Påfør 500% skade på målet.",
-      "Vill: I 2 runder tar målet [#Dynamic] 363 [#] eller [#Dynamic] 1089 [#] blødningsskade per runde.",
+      "Vill: I 2 runder tar målet[#Dynamic] 363 [#]eller[#Dynamic] 1089 [#]blødningsskade per runde.",
       "(Vill legger til en sjanse hver runde for at denne effekten blir kraftigere.\n[*]Denne Vill-effekten har en 50% sjanse til å påføre 200% ekstra skade den runden. Når ekstra skade påføres, reduserer effekten også fiendenes maksimale helse, og den er sterkere mot økt helse.)",
       "Hvis målet beseires de neste 2 rundene, vil alle fienders mana reduseres med -10%."
      ]
@@ -3239,7 +3239,7 @@
      "lines": [
       "Påfør 158% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det [#Dynamic] 88 [#] skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 88 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ],
@@ -3256,7 +3256,7 @@
      "lines": [
       "Påfør 150% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det [#Dynamic] 140 [#] skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 140 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ],
@@ -3510,7 +3510,7 @@
      "lines": [
       "Påfører 250% skade på alle fiender.",
       "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
-      "Alle fiender tar [#Dynamic] 728 [#] giftskade over 4 runder. Brukeren og alle allierte absorberer 30% av påført giftskade som økt helse.",
+      "Alle fiender tar[#Dynamic] 728 [#]giftskade over 4 runder. Brukeren og alle allierte absorberer 30% av påført giftskade som økt helse.",
       "Brukeren og allierte i nærheten går i et bakhold. Skade påført av brukeren og allierte i nærheten økes med 40%, og skade mottatt av denne reduseres med -30%.",
       "(Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1200 skade.)"
      ]
@@ -3721,12 +3721,12 @@
       "[*] 1.:",
       "[**]Stjeler alle fjernbare økninger fra målet, og fordeler dem tilfeldig til allierte.",
       "[**]Påfører 450% skade på fienden.",
-      "[**]Målet utsettes for spredende etsende gift i 4 runder. Den spredendeetsende giften gjør [#Dynamic] 232 [#] giftskade og senker målets mana-generering med -12% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått. Effekten sprer seg til fiender i nærheten.",
+      "[**]Målet utsettes for spredende etsende gift i 4 runder. Den spredendeetsende giften gjør[#Dynamic] 232 [#]giftskade og senker målets mana-generering med -12% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått. Effekten sprer seg til fiender i nærheten.",
       "[**](Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
       "[*] 2.:",
       "[**]Stjeler alle fjernbare økninger fra målet, og fordeler dem tilfeldig til allierte.",
       "[**]Påfører 515% skade på fienden.",
-      "[**]Målet utsettes for spredende etsende gift i 4 runder. Den spredendeetsende giften gjør [#Dynamic] 429 [#] giftskade og senker målets mana-generering med -25% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått. Effekten sprer seg til fiender i nærheten.",
+      "[**]Målet utsettes for spredende etsende gift i 4 runder. Den spredendeetsende giften gjør[#Dynamic] 429 [#]giftskade og senker målets mana-generering med -25% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått. Effekten sprer seg til fiender i nærheten.",
       "[**](Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
     }
@@ -3752,7 +3752,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 312 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 312 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3786,7 +3786,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 341 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 341 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3810,7 +3810,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 309 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 309 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3831,7 +3831,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 334 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 334 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3852,7 +3852,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 343 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 343 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3873,7 +3873,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 377 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 377 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3894,7 +3894,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 153 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 153 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3915,7 +3915,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 169 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 169 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3936,7 +3936,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 330 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 330 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3957,7 +3957,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 364 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 364 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3978,7 +3978,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 193 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 193 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3999,7 +3999,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 212 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 212 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4020,7 +4020,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 308 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 308 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4052,7 +4052,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 337 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 337 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4076,7 +4076,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 337 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 337 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4097,7 +4097,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 370 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 370 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4129,7 +4129,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 338 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 338 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4164,7 +4164,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 371 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 371 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4188,7 +4188,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 193 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 193 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4209,7 +4209,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 212 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 212 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4230,7 +4230,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 315 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 315 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4251,7 +4251,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 346 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 346 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4272,7 +4272,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 147 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 147 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4293,7 +4293,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 162 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 162 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4314,7 +4314,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 315 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 315 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4335,7 +4335,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 346 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 346 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4356,7 +4356,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 312 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 312 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4377,7 +4377,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 343 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 343 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4398,7 +4398,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 316 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 316 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4419,7 +4419,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 345 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 345 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4440,7 +4440,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 305 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 305 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4461,7 +4461,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 331 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 331 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4482,7 +4482,7 @@
     {
      "id": "molten_core",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 319 [#] brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 319 [#]brannskade og senker målets forsvar med -12% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4513,7 +4513,7 @@
     {
      "id": "molten_core_costume",
      "title": "Moltenkjerne",
-     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen [#Dynamic] 352 [#] brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en moltenkjerne.\n[*]Moltenkjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende brann i 3 runder. Med en fulladet moltenkjerne påfører den etsende brannen[#Dynamic] 352 [#]brannskade og senker målets forsvar med -13% hver runde. Påfører ekstra skade mot helter med undersåtter eller megaundersåtter.\n[*] Brannskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4537,7 +4537,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 209 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 209 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4558,7 +4558,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 228 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 228 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4579,7 +4579,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 346 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 346 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4600,7 +4600,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 377 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 377 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4621,7 +4621,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 331 [#] frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 331 [#]frostskade og senker målets angrep med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4642,7 +4642,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kjerne",
-     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten [#Dynamic] 365 [#] frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
+     "text": "Denne figuren har en arktisk kjerne.\n[*]Den arktiske kjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende frost i 3 runder. Med en fulladet arktisk kjerne påfører den etsende frosten[#Dynamic] 365 [#]frostskade og senker målets angrep med -16% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Frostskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4810,7 +4810,7 @@
      "lines": [
       "Påfører 450% skade på målet og alle natur-fiender.",
       "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
-      "Målet og alle natur-fiender tar [#Dynamic] 765 [#] brannskade gjennom 3 runder.",
+      "Målet og alle natur-fiender tar[#Dynamic] 765 [#]brannskade gjennom 3 runder.",
       "Stabel (Maks: 10): Brukeren får 30% angrep. (Fjerning reduserer positive stabler med 1.)"
      ]
     }

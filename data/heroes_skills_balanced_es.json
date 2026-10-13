@@ -421,7 +421,7 @@
      "lines": [
       "Causa un 630% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 3 turnos. Este efecto es obstinado.\n[*] El objetivo recibe [#Dynamic] 483 [#] de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 3 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 483 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ],
@@ -487,7 +487,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 316 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 316 [#]de daño de agua durante 2 turnos."
     }
    ],
    "stats": {
@@ -506,7 +506,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 126 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 126 [#]de daño de agua durante 2 turnos."
     }
    ]
   }
@@ -522,7 +522,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 194 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 194 [#]de daño de agua durante 2 turnos."
     }
    ]
   }
@@ -548,7 +548,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 160 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 160 [#]de daño de agua durante 2 turnos."
     }
    ],
    "stats": {
@@ -567,7 +567,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 212 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 212 [#]de daño de agua durante 2 turnos."
     }
    ]
   }
@@ -593,7 +593,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Daño con el tiempo con habilidad especial",
-     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben [#Dynamic] 328 [#] de daño de agua durante 2 turnos."
+     "text": "Cuando este personaje lanza su habilidad especial, todos los enemigos reciben[#Dynamic] 328 [#]de daño de agua durante 2 turnos."
     }
    ],
    "stats": {
@@ -1355,7 +1355,7 @@
      "id": "drawn_to_the_depths_mayhem",
      "lines": [
       "Inflige un 350% de daño y 35 de demencia al objetivo y los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos reciben [#Dynamic] 654 [#] de daño de agua durante 3 turnos. Todos los aliados absorben un 50% del daño de agua infligido como vitalidad potenciada.",
+      "El objetivo y los enemigos cercanos reciben[#Dynamic] 654 [#]de daño de agua durante 3 turnos. Todos los aliados absorben un 50% del daño de agua infligido como vitalidad potenciada.",
       "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
@@ -1502,7 +1502,7 @@
      "id": "frenzied_rend_mayhem",
      "lines": [
       "Inflige un 280% de daño y 15 de demencia al objetivo y los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos reciben [#Dynamic] 51 [#]-[#Dynamic] 156 [#] de daño de maldición creciente cada turno durante 4 turnos. (En el primer turno, se inflige [#Dynamic] 51 [#] de daño. El daño aumenta un 45% cada turno hasta un máximo de [#Dynamic] 156 [#] de daño por turno.)",
+      "El objetivo y los enemigos cercanos reciben[#Dynamic] 51 [#]-[#Dynamic] 156 [#]de daño de maldición creciente cada turno durante 4 turnos. (En el primer turno, se inflige[#Dynamic] 51 [#]de daño. El daño aumenta un 45% cada turno hasta un máximo de[#Dynamic] 156 [#]de daño por turno.)",
       "Usar esta habilidad especial inflige 60 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
@@ -1621,7 +1621,7 @@
      "id": "drain_strike_mayhem",
      "lines": [
       "Causa un 435% de daño al objetivo y a los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos reciben [#Dynamic] 708 [#] de daño de sangrado durante 4 turnos. El héroe y todos los aliados absorben un 50% del daño de sangrado infligido como vitalidad potenciada.",
+      "El objetivo y los enemigos cercanos reciben[#Dynamic] 708 [#]de daño de sangrado durante 4 turnos. El héroe y todos los aliados absorben un 50% del daño de sangrado infligido como vitalidad potenciada.",
       "El objetivo y los enemigos cercanos son inmunes a las nuevas bendiciones de efecto de estado. Este efecto dura hasta que hayan resistido 3 bendiciones."
      ]
     }
@@ -1640,7 +1640,7 @@
       "Descarta de forma segura las bendiciones de estado de todos los enemigos. (El descarte seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de la bendición de estado eliminada. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.)",
       "Todos los enemigos son inmunes a las nuevas bendiciones de estado durante? turnos.",
       "Invoca un megasecuaz guardia espadachín con un 35% de VIT y un 300% de ataque heredados del héroe.",
-      "El objetivo al que golpea el megasecuaz guardia espadachín recibe [#Dynamic] 447 [#] de daño de sangrado durante 3 turnos. El efecto se propaga a los enemigos cercanos."
+      "El objetivo al que golpea el megasecuaz guardia espadachín recibe[#Dynamic] 447 [#]de daño de sangrado durante 3 turnos. El efecto se propaga a los enemigos cercanos."
      ]
     }
    ],
@@ -1679,7 +1679,7 @@
      "lines": [
       "Descarta las bendiciones de todos los enemigos.",
       "Causa un 565% de daño al objetivo.",
-      "El objetivo recibe [#Dynamic] 1875 [#] de daño de agua durante 3 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
+      "El objetivo recibe[#Dynamic] 1875 [#]de daño de agua durante 3 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
@@ -2065,7 +2065,7 @@
      "lines": [
       "Crecimiento: El héroe y los aliados cercanos obtienen 540 de ataque y 540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz aberrante con un 45% de VIT y un 180% de ataque heredados del héroe.\n[*]Cada golpe de un megasecuaz aberrante otorga al objetivo el siguiente estado alterado:",
-      "[**]El objetivo recibe [#Dynamic] 552 [#] de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[***]El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[***]El daño puede aumentar hasta un máximo del 199%.)",
+      "[**]El objetivo recibe[#Dynamic] 552 [#]de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[***]El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[***]El daño puede aumentar hasta un máximo del 199%.)",
       "[**]Inflige 10 de demencia al objetivo.",
       "Usar esta habilidad especial inflige 50 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
@@ -2096,7 +2096,7 @@
      "id": "endless_maze_mayhem",
      "lines": [
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 5 turnos. Este efecto es obstinado.\n[*] El objetivo recibe [#Dynamic] 261 [#] de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)",
+      "El objetivo cambia a la forma de fantasma del abismo durante 5 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 261 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)",
       "Usar esta habilidad especial inflige 50 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
@@ -2306,7 +2306,7 @@
      "lines": [
       "Causa un 450% de daño a los enemigos en los márgenes de la formación enemiga. Si solo queda un enemigo, el daño se duplica.",
       "Lanza Eliminación completa a los enemigos en los márgenes de la formación enemiga. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "Los enemigos en los bordes de la formación enemiga pasan a la forma de fantasma abisal durante 4 turnos.\n[*] Mientras están en la forma de fantasma abisal, los objetivos reciben [#Dynamic] 313 [#] de daño cada turno. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.) Este efecto de estado dura 2 turnos más en personajes sagrados. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "Los enemigos en los bordes de la formación enemiga pasan a la forma de fantasma abisal durante 4 turnos.\n[*] Mientras están en la forma de fantasma abisal, los objetivos reciben[#Dynamic] 313 [#]de daño cada turno. Este efecto es obstinado. Este efecto de estado dura 2 turnos más en personajes sagrados. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ],
@@ -2323,7 +2323,7 @@
      "lines": [
       "Causa un 270% de daño a todos los enemigos.",
       "Merma: Todos los enemigos obtienen -240 de ataque y -240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
-      "Todos los enemigos reciben [#Dynamic] 405 [#] de daño de quemadura durante 3 turnos. El héroe absorbe un 50% del daño de quemadura infligido como vitalidad potenciada. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes de hielo."
+      "Todos los enemigos reciben[#Dynamic] 405 [#]de daño de quemadura durante 3 turnos. El héroe absorbe un 50% del daño de quemadura infligido como vitalidad potenciada. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes de hielo."
      ]
     }
    ],
@@ -2375,7 +2375,7 @@
      "lines": [
       "Causa un 350% de daño a todos los enemigos.",
       "Se reinicia la duración de los estados alterados de todos los enemigos.",
-      "Todos los enemigos reciben una quemadura corrosiva durante 4 turnos. Esta inflige [#Dynamic] 448 [#] de daño de quemadura y reduce la defensa del objetivo en un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz."
+      "Todos los enemigos reciben una quemadura corrosiva durante 4 turnos. Esta inflige[#Dynamic] 448 [#]de daño de quemadura y reduce la defensa del objetivo en un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz."
      ]
     }
    ],
@@ -2410,7 +2410,7 @@
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200% de maná:",
       "[*]x 1 de carga de maná:",
       "[**]Todos los enemigos reciben un 55% más de daño de los estados alterados y las acumulaciones negativas durante 3 turnos.",
-      "[**]Todos los enemigos reciben [#Dynamic] 387 [#] de daño de veneno durante 3 turnos. El héroe absorbe un 10% del daño de veneno infligido como vitalidad.",
+      "[**]Todos los enemigos reciben[#Dynamic] 387 [#]de daño de veneno durante 3 turnos. El héroe absorbe un 10% del daño de veneno infligido como vitalidad.",
       "[*]x 2 de carga de maná:",
       "[**]Recupera un 75% de vitalidad para el héroe y los aliados cercanos.",
       "[**]El héroe y los aliados cercanos son inmunes a los nuevos estados alterados y recuperan 350 de vitalidad por cada intento de estado alterado. Este efecto dura hasta que hayan resistido 4 estados alterados."
@@ -2943,7 +2943,7 @@
       "Esta habilidad especial tiene una posibilidad de asestar golpes críticos. (La posibilidad de asestar un golpe crítico se basa en la probabilidad de crítico general del héroe cuando se inflige el daño.\n[*]Los golpes críticos asestados por esta habilidad especial:\n[*] Inflige un 50% más de daño.\n[*] Elimina los efectos del crecimiento.Los golpes críticos reducen la vitalidad máxima del enemigo. Este efecto es más fuerte contra la vitalidad potenciada.)",
       "Inflige un 420% de daño al objetivo.",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "Es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño, como crecimiento y merma. No puede obtener maná.\n[*]Pasados 2 turnos:\n[*] Todos los aliados obtienen un 40% de probabilidad de crítico durante 2 turnos. Este efecto no se puede descartar. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma fantasma durante 2 turnos. Este efecto es obstinado.\n[*] Cuando la forma termina:\n[*] Todos los aliados obtienen un 40% de probabilidad de crítico durante 2 turnos. Este efecto no se puede descartar. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ],
@@ -3011,7 +3011,7 @@
      "id": "wild_splinter_mayhem",
      "lines": [
       "Causa un 280% de daño al objetivo y a los enemigos cercanos.",
-      "Salvaje: Durante 3 turnos, el objetivo y los enemigos cercanos reciben [#Dynamic] 125 [#] o [#Dynamic] 375 [#] de daño de sangrado cada turno.",
+      "Salvaje: Durante 3 turnos, el objetivo y los enemigos cercanos reciben[#Dynamic] 125 [#]o[#Dynamic] 375 [#]de daño de sangrado cada turno.",
       "(Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de infligir un 200% de daño extra ese turno. Cuando se inflige daño extra, el efecto también reduce la vitalidad máxima de los enemigos y es más potente contra la vitalidad potenciada.)",
       "El héroe obtiene un 45% de probabilidad de esquivar las habilidades especiales que infligen daño durante 3 turnos."
      ]
@@ -3029,7 +3029,7 @@
      "id": "blazing_matchstick_mayhem",
      "lines": [
       "Causa un 390% de daño al objetivo y a los enemigos cercanos.",
-      "Salvaje: Durante 3 turnos, el objetivo y los enemigos cercanos reciben [#Dynamic] 179 [#] o [#Dynamic] 537 [#] de daño de quemadura cada turno.",
+      "Salvaje: Durante 3 turnos, el objetivo y los enemigos cercanos reciben[#Dynamic] 179 [#]o[#Dynamic] 537 [#]de daño de quemadura cada turno.",
       "(Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de infligir un 200% de daño extra ese turno. Cuando se inflige daño extra, el efecto también reduce la vitalidad máxima de los enemigos y es más potente contra la vitalidad potenciada.)",
       "El héroe y los aliados cercanos reciben un 35% de regeneración de maná durante 3 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
@@ -3047,7 +3047,7 @@
      "id": "plummeting_arrow_mayhem",
      "lines": [
       "Causa un 500% de daño al objetivo.",
-      "Salvaje: Durante 2 turnos, el objetivo recibe [#Dynamic] 363 [#] o [#Dynamic] 1089 [#] de daño de sangrado cada turno.",
+      "Salvaje: Durante 2 turnos, el objetivo recibe[#Dynamic] 363 [#]o[#Dynamic] 1089 [#]de daño de sangrado cada turno.",
       "(Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de infligir un 200% de daño extra ese turno. Cuando se inflige daño extra, el efecto también reduce la vitalidad máxima de los enemigos y es más potente contra la vitalidad potenciada.)",
       "Si el objetivo cae derrotado en los siguientes 2 turnos, el maná de todos los enemigos se reduce un -10%."
      ]
@@ -3239,7 +3239,7 @@
      "lines": [
       "Causa un 158% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe [#Dynamic] 88 [#] de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 88 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ],
@@ -3256,7 +3256,7 @@
      "lines": [
       "Causa un 150% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe [#Dynamic] 140 [#] de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 140 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ],
@@ -3510,7 +3510,7 @@
      "lines": [
       "Causa un 250% de daño a todos los enemigos.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "Todos los enemigos reciben [#Dynamic] 728 [#] de daño de veneno durante 4 turnos. El héroe y todos los aliados absorben un 30% del daño de veneno infligido como vitalidad potenciada.",
+      "Todos los enemigos reciben[#Dynamic] 728 [#]de daño de veneno durante 4 turnos. El héroe y todos los aliados absorben un 30% del daño de veneno infligido como vitalidad potenciada.",
       "El héroe y los aliados cercanos hacen una emboscada. El daño que infligen aumenta al 40% y el que reciben se reduce un -30%.",
       "(Cuando el personaje hace una emboscada, se eliminan todos los estados alterados.\n[*] El personaje no puede obtener nuevas alteraciones ni efectos de merma mientras esté tendiendo una emboscada.\n[*] Este efecto no se puede descartar.\n[*] La emboscada termina cuando el personaje recibe 1200 de daño.)"
      ]
@@ -3721,12 +3721,12 @@
       "[*] 1.º:",
       "[**]Roba todas las bendiciones descartables del objetivo y las distribuye aleatoriamente entre los aliados.",
       "[**]Inflige un 450% de daño al objetivo.",
-      "[**]El objetivo recibe veneno corrosivo propagador durante 4 turnos. Este inflige [#Dynamic] 232 [#] de daño de veneno y reduce la regeneración de maná del objetivo en un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz. El efecto se propaga a los enemigos cercanos.",
+      "[**]El objetivo recibe veneno corrosivo propagador durante 4 turnos. Este inflige[#Dynamic] 232 [#]de daño de veneno y reduce la regeneración de maná del objetivo en un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz. El efecto se propaga a los enemigos cercanos.",
       "[**](Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
       "[*] 2.º:",
       "[**]Roba todas las bendiciones descartables del objetivo y las distribuye aleatoriamente entre los aliados.",
       "[**]Inflige un 515% de daño al objetivo.",
-      "[**]El objetivo recibe veneno corrosivo propagador durante 4 turnos. Este inflige [#Dynamic] 429 [#] de daño de veneno y reduce la regeneración de maná del objetivo en un -25% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz. El efecto se propaga a los enemigos cercanos.",
+      "[**]El objetivo recibe veneno corrosivo propagador durante 4 turnos. Este inflige[#Dynamic] 429 [#]de daño de veneno y reduce la regeneración de maná del objetivo en un -25% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz. El efecto se propaga a los enemigos cercanos.",
       "[**](Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
@@ -3752,7 +3752,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 312 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 312 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3786,7 +3786,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 341 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 341 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3810,7 +3810,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 309 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 309 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3831,7 +3831,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 334 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 334 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3852,7 +3852,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 343 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 343 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3873,7 +3873,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 377 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 377 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3894,7 +3894,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 153 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 153 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3915,7 +3915,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 169 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 169 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3936,7 +3936,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 330 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 330 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3957,7 +3957,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 364 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 364 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3978,7 +3978,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 193 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 193 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3999,7 +3999,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 212 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 212 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4020,7 +4020,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 308 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 308 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4052,7 +4052,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 337 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 337 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4076,7 +4076,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 337 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 337 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4097,7 +4097,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 370 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 370 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4129,7 +4129,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 338 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 338 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4164,7 +4164,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 371 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 371 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4188,7 +4188,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 193 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 193 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4209,7 +4209,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 212 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 212 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4230,7 +4230,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 315 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 315 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4251,7 +4251,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 346 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 346 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4272,7 +4272,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 147 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 147 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4293,7 +4293,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 162 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 162 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4314,7 +4314,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 315 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 315 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4335,7 +4335,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 346 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 346 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4356,7 +4356,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 312 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 312 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4377,7 +4377,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 343 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 343 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4398,7 +4398,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 316 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 316 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4419,7 +4419,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 345 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 345 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4440,7 +4440,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 305 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 305 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4461,7 +4461,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 331 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 331 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4482,7 +4482,7 @@
     {
      "id": "molten_core",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 319 [#] de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 319 [#]de daño de quemadura y reduce la defensa del objetivo un -12% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4513,7 +4513,7 @@
     {
      "id": "molten_core_costume",
      "title": "Núcleo fundido",
-     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige [#Dynamic] 352 [#] de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo fundido.\n[*]El núcleo fundido se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren quemadura corrosiva durante 3 turnos. Con un núcleo fundido cargado al máximo, la quemadura corrosiva inflige[#Dynamic] 352 [#]de daño de quemadura y reduce la defensa del objetivo un -13% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de quemadura aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4537,7 +4537,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 209 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 209 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4558,7 +4558,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 228 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 228 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4579,7 +4579,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 346 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 346 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4600,7 +4600,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 377 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 377 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4621,7 +4621,7 @@
     {
      "id": "arctic_core",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 331 [#] de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 331 [#]de daño de escarcha y reduce el ataque del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4642,7 +4642,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Núcleo ártico",
-     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige [#Dynamic] 365 [#] de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
+     "text": "Este personaje tiene un núcleo ártico.\n[*]El núcleo ártico se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren escarcha corrosiva durante 3 turnos. Con un núcleo ártico cargado al máximo, la escarcha corrosiva inflige[#Dynamic] 365 [#]de daño de escarcha y reduce el ataque del objetivo un -16% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de escarcha aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4810,7 +4810,7 @@
      "lines": [
       "Inflige un 450% de daño al objetivo y a todos los enemigos de naturaleza.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "El objetivo y todos los enemigos de naturaleza reciben [#Dynamic] 765 [#] de daño de quemadura durante 3 turnos.",
+      "El objetivo y todos los enemigos de naturaleza reciben[#Dynamic] 765 [#]de daño de quemadura durante 3 turnos.",
       "Acumulación (máx.: 10): El héroe obtiene un 30% de ataque. (Descarte reduce las acumulaciones positivas en 1.)"
      ]
     }

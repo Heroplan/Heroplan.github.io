@@ -421,7 +421,7 @@
      "lines": [
       "Skadar målet med 630%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 3 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet [#Dynamic] 483 [#] skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 3 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 483 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ],
@@ -487,7 +487,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 316 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 316 [#]vattenskada i 2 rundor."
     }
    ],
    "stats": {
@@ -506,7 +506,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 126 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 126 [#]vattenskada i 2 rundor."
     }
    ]
   }
@@ -522,7 +522,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 194 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 194 [#]vattenskada i 2 rundor."
     }
    ]
   }
@@ -548,7 +548,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 160 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 160 [#]vattenskada i 2 rundor."
     }
    ],
    "stats": {
@@ -567,7 +567,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 212 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 212 [#]vattenskada i 2 rundor."
     }
    ]
   }
@@ -593,7 +593,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skada över tid vid specialförmåga",
-     "text": "När den här karaktären använder sin specialförmåga tar alla fiender [#Dynamic] 328 [#] vattenskada i 2 rundor."
+     "text": "När den här karaktären använder sin specialförmåga tar alla fiender[#Dynamic] 328 [#]vattenskada i 2 rundor."
     }
    ],
    "stats": {
@@ -1355,7 +1355,7 @@
      "id": "drawn_to_the_depths_mayhem",
      "lines": [
       "Gör 350% skada mot målet och fiender i närheten och ger dem 35 vansinne.",
-      "Målet och fiender i närheten tar [#Dynamic] 654 [#] vattenskada över 3 rundor. Alla allierade absorberar 50% av den gjorda vattenskadan som boostad hälsa.",
+      "Målet och fiender i närheten tar[#Dynamic] 654 [#]vattenskada över 3 rundor. Alla allierade absorberar 50% av den gjorda vattenskadan som boostad hälsa.",
       "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
@@ -1502,7 +1502,7 @@
      "id": "frenzied_rend_mayhem",
      "lines": [
       "Gör 280% skada mot målet och fiender i närheten och ger dem 15 vansinne.",
-      "Målet och fiender i närheten tar [#Dynamic] 51 [#]–[#Dynamic] 156 [#] stigande förbannelseskada varje runda i 4 rundor. (Den första rundan gör effekten [#Dynamic] 51 [#] skada. Skadan stiger med 45% varje runda, upp till [#Dynamic] 156 [#] skada per runda.)",
+      "Målet och fiender i närheten tar[#Dynamic] 51 [#]–[#Dynamic] 156 [#]stigande förbannelseskada varje runda i 4 rundor. (Den första rundan gör effekten[#Dynamic] 51 [#]skada. Skadan stiger med 45% varje runda, upp till[#Dynamic] 156 [#]skada per runda.)",
       "Att kasta den här specialförmågan ger 60 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
@@ -1621,7 +1621,7 @@
      "id": "drain_strike_mayhem",
      "lines": [
       "Skadar målet och fiender i närheten med 435%.",
-      "Målet och fiender i närheten får [#Dynamic] 708 [#] blödningsskada under 4 rundor. Användaren och alla dess allierade absorberar 50% av gjord blödningsskada som boostad hälsa.",
+      "Målet och fiender i närheten får[#Dynamic] 708 [#]blödningsskada under 4 rundor. Användaren och alla dess allierade absorberar 50% av gjord blödningsskada som boostad hälsa.",
       "Målet och fiender i närheten är immuna mot nya positiva statuseffekter. Den här effekten varar till dess att 3 bonusar har motståtts."
      ]
     }
@@ -1640,7 +1640,7 @@
       "Tar, på säkert manér, bort statuseffektsbonusar från alla fiender. (Säkert avbrott ignorerar sekundära effekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.)",
       "Alla fiender är immuna mot nya bonusar med statuseffekter under? rundor.",
       "Åkallar megaundersåten Svärdsvakt med 35% hälsa och 300% attack som ärvs från anfallaren.",
-      "Målet som träffas av megaundersåten Svärdsvakt tar [#Dynamic] 447 [#] blödningsskada under 3 rundor. Effekten sprids till fiender i närheten."
+      "Målet som träffas av megaundersåten Svärdsvakt tar[#Dynamic] 447 [#]blödningsskada under 3 rundor. Effekten sprids till fiender i närheten."
      ]
     }
    ],
@@ -1679,7 +1679,7 @@
      "lines": [
       "Tar bort bonusar från alla fiender.",
       "Skadar målet med 565%.",
-      "Målet får [#Dynamic] 1875 [#] vattenskada under 3 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Målet får[#Dynamic] 1875 [#]vattenskada under 3 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
@@ -2065,7 +2065,7 @@
      "lines": [
       "Tillväxt: Användaren och allierade i närheten får 540 attack och 540 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
       "Åkallar en monstrummegaundersåte med 45% hälsa och 180% attack som ärvs från anfallaren.\n[*]Varje träff från en monstrummegaundersåte ger målet följande negativa statuseffekt:",
-      "[**]Målet tar [#Dynamic] 552 [#] giftskada i 3 rundor. Skadan ökas mot mål med boostad hälsa, undersåtar eller megaundersåtar. (Giftskadan stiger med 100% mot mål med ökad hälsa.\n[***]Giftskadan ökar med 33% för varje undersåte eller megaundersåte som ägs av målet.\n[***]Den maximala ökade skadan är 199%.)",
+      "[**]Målet tar[#Dynamic] 552 [#]giftskada i 3 rundor. Skadan ökas mot mål med boostad hälsa, undersåtar eller megaundersåtar. (Giftskadan stiger med 100% mot mål med ökad hälsa.\n[***]Giftskadan ökar med 33% för varje undersåte eller megaundersåte som ägs av målet.\n[***]Den maximala ökade skadan är 199%.)",
       "[**]Ger 10 vansinne till målet.",
       "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
@@ -2096,7 +2096,7 @@
      "id": "endless_maze_mayhem",
      "lines": [
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 5 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet [#Dynamic] 261 [#] skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
+      "Målet antar avgrundsspökeform i 5 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 261 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
       "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
@@ -2306,7 +2306,7 @@
      "lines": [
       "Gör 450% skada mot fiender vid kanten av fiendeformationen. Om det bara finns en fiende så dubblas skadan.",
       "Använder fullständig borttagning på fienderna i utkanten av fiendeformationen. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Fiender i utkanten av fiendeformationen antar avgrundsspökform i 4 rundor.\n[*] I avgrundsspökform tar målet [#Dynamic] 313 [#] skada varje runda. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.) Den här statuseffekten varar 2 rundor längre mot heliga karaktärer. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Fiender i utkanten av fiendeformationen antar avgrundsspökform i 4 rundor.\n[*] I avgrundsspökform tar målet[#Dynamic] 313 [#]skada varje runda. Den här effekten är envis. Den här statuseffekten varar 2 rundor längre mot heliga karaktärer. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ],
@@ -2323,7 +2323,7 @@
      "lines": [
       "Alla fiender tar 270% skada.",
       "Vittra: Alla fiender får -240 attack och -240 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
-      "Alla fiender tar [#Dynamic] 405 [#] eldskada över 3 rundor. Användaren absorberar 50% av den gjorda eldskadan som ökad hälsa. Den här statuseffekten kan inte renas från iskaraktärer och varar 2 rundor längre mot dem."
+      "Alla fiender tar[#Dynamic] 405 [#]eldskada över 3 rundor. Användaren absorberar 50% av den gjorda eldskadan som ökad hälsa. Den här statuseffekten kan inte renas från iskaraktärer och varar 2 rundor längre mot dem."
      ]
     }
    ],
@@ -2375,7 +2375,7 @@
      "lines": [
       "Alla fiender tar 350% skada.",
       "De negativa statuseffekternas varaktighet nollställs för alla fiender.",
-      "Alla fiender drabbas av nedbrytande eld under 4 rundor. Elden gör [#Dynamic] 448 [#] eldskada och sänker målets försvar med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte."
+      "Alla fiender drabbas av nedbrytande eld under 4 rundor. Elden gör[#Dynamic] 448 [#]eldskada och sänker målets försvar med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte."
      ]
     }
    ],
@@ -2410,7 +2410,7 @@
       "Specialförmågan har olika effekter när den laddas med 100%/ 200% mana:",
       "[*] 1 st manaladdningar",
       "[**]Alla fiender tar 55% mer skada från negativa statuseffekter och negativa staplar i 3 rundor.",
-      "[**]Alla fiender tar [#Dynamic] 387 [#] giftskada under 3 rundor. Användaren absorberar 10% av den gjorda giftskadan som hälsa.",
+      "[**]Alla fiender tar[#Dynamic] 387 [#]giftskada under 3 rundor. Användaren absorberar 10% av den gjorda giftskadan som hälsa.",
       "[*] 2 st manaladdningar",
       "[**]Återger 75% hälsa till anfallaren och allierade i närheten.",
       "[**]Användaren och allierade i närheten är immuna mot nya negativa statuseffekter och återfår 350 hälsa för varje försök till negativ statuseffekt. Den här effekten varar till dess att 4 negativa statuseffekter har motståtts."
@@ -2943,7 +2943,7 @@
       "Den här specialförmågan har chansen att få in kritiska träffar. (Chansen att få in en kritisk träff baseras på hjältens totala kritiska chans när skadan utdelas.\n[*]Kritiska träffar från den här specialförmågan:\n[*]Gör 50% mer skada.\n[*]Ta bort tillväxteffekter.Kritiska träffar minskar fienders maxhälsa. Effekten är starkare mot ökad hälsa.)",
       "Gör 420% skada mot målet.",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Immun mot vanliga attacker, specialattacker, statuseffekter och staplar; vittring och tillväxt. Kan inte skapa mana.\n[*]Efter 2 rundor:\n[*]Alla allierade får 40% kritisk träffchans i 2 rundor. Effekten kan inte avbrytas (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar spökform under 2 rundor. Den här effekten är envis.\n[*] När spökformen upphör:\n[*] Alla allierade får 40% kritisk chans i 2 rundor. Effekten kan inte avbrytas. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ],
@@ -3011,7 +3011,7 @@
      "id": "wild_splinter_mayhem",
      "lines": [
       "Skadar målet och fiender i närheten med 280%.",
-      "Vild: Målet och fiender i närheten tar [#Dynamic] 125 [#] eller [#Dynamic] 375 [#] blödningsskada i 3 rundor.",
+      "Vild: Målet och fiender i närheten tar[#Dynamic] 125 [#]eller[#Dynamic] 375 [#]blödningsskada i 3 rundor.",
       "(Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att göra 200% extra skada den rundan. När extra skada görs minskar effekten även fienders maxhälsa och är starkare mot ökad hälsa.)",
       "Användaren får 45% chans att undvika specialförmågor som gör skada under 3 rundor."
      ]
@@ -3029,7 +3029,7 @@
      "id": "blazing_matchstick_mayhem",
      "lines": [
       "Skadar målet och fiender i närheten med 390%.",
-      "Vild: Målet och fiender i närheten tar [#Dynamic] 179 [#] eller [#Dynamic] 537 [#] eldskada i 3 rundor.",
+      "Vild: Målet och fiender i närheten tar[#Dynamic] 179 [#]eller[#Dynamic] 537 [#]eldskada i 3 rundor.",
       "(Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att göra 200% extra skada den rundan. När extra skada görs minskar effekten även fienders maxhälsa och är starkare mot ökad hälsa.)",
       "Anfallaren och allierade i närheten genererar 35% mana under 3 rundor. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
@@ -3047,7 +3047,7 @@
      "id": "plummeting_arrow_mayhem",
      "lines": [
       "Skadar målet med 500%.",
-      "Vild: Målet tar [#Dynamic] 363 [#] eller [#Dynamic] 1089 [#] blödningsskada i 2 rundor.",
+      "Vild: Målet tar[#Dynamic] 363 [#]eller[#Dynamic] 1089 [#]blödningsskada i 2 rundor.",
       "(Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att göra 200% extra skada den rundan. När extra skada görs minskar effekten även fienders maxhälsa och är starkare mot ökad hälsa.)",
       "Om målet besegras under de kommande 2 rundorna förlorar alla fiender -10% mana."
      ]
@@ -3239,7 +3239,7 @@
      "lines": [
       "Skadar målet med 158%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet [#Dynamic] 88 [#] skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 88 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ],
@@ -3256,7 +3256,7 @@
      "lines": [
       "Skadar målet med 150%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet [#Dynamic] 140 [#] skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 140 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ],
@@ -3510,7 +3510,7 @@
      "lines": [
       "Alla fiender tar 250% skada.",
       "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
-      "Alla fiender tar [#Dynamic] 728 [#] giftskada över 4 rundor. Användaren och alla allierade absorberar 30% av den gjorda giftskadan som ökad hälsa.",
+      "Alla fiender tar[#Dynamic] 728 [#]giftskada över 4 rundor. Användaren och alla allierade absorberar 30% av den gjorda giftskadan som ökad hälsa.",
       "Användaren och allierade i närheten lägger sig i bakhåll. Användaren och allierade i närheten gör 40% mer skada och tar -30% mindre skada.",
       "(När karaktären lägger sig i bakhåll tas alla negativa statuseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1200 skada.)"
      ]
@@ -3721,12 +3721,12 @@
       "[*] 1:a:",
       "[**]Stjäl alla bonusar som kan avbrytas från målet och fördelar dem slumpmässigt på allierade.",
       "[**]Gör 450% skada mot målet.",
-      "[**]Målet drabbas av nedbrytande gift som srprider sig under 4 rundor. Det spridande giftet gör [#Dynamic] 232 [#] giftskada och sänker målets manaskapande med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte. Effekten sprider sig till fiender i närheten.",
+      "[**]Målet drabbas av nedbrytande gift som srprider sig under 4 rundor. Det spridande giftet gör[#Dynamic] 232 [#]giftskada och sänker målets manaskapande med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte. Effekten sprider sig till fiender i närheten.",
       "[**](Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)",
       "[*] 2:a:",
       "[**]Stjäl alla bonusar som kan avbrytas från målet och fördelar dem slumpmässigt på allierade.",
       "[**]Gör 515% skada mot målet.",
-      "[**]Målet drabbas av nedbrytande gift som srprider sig under 4 rundor. Det spridande giftet gör [#Dynamic] 429 [#] giftskada och sänker målets manaskapande med -25% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte. Effekten sprider sig till fiender i närheten.",
+      "[**]Målet drabbas av nedbrytande gift som srprider sig under 4 rundor. Det spridande giftet gör[#Dynamic] 429 [#]giftskada och sänker målets manaskapande med -25% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte. Effekten sprider sig till fiender i närheten.",
       "[**](Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
     }
@@ -3752,7 +3752,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 312 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 312 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3786,7 +3786,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 341 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 341 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3810,7 +3810,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 309 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 309 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3831,7 +3831,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 334 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 334 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3852,7 +3852,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 343 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 343 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3873,7 +3873,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 377 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 377 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3894,7 +3894,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 153 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 153 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3915,7 +3915,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 169 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 169 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3936,7 +3936,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 330 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 330 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3957,7 +3957,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 364 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 364 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3978,7 +3978,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 193 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 193 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3999,7 +3999,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 212 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 212 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4020,7 +4020,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 308 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 308 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4052,7 +4052,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 337 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 337 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4076,7 +4076,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 337 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 337 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4097,7 +4097,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 370 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 370 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4129,7 +4129,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 338 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 338 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4164,7 +4164,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 371 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 371 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4188,7 +4188,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 193 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 193 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4209,7 +4209,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 212 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 212 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4230,7 +4230,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 315 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 315 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4251,7 +4251,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 346 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 346 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4272,7 +4272,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 147 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 147 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4293,7 +4293,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 162 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 162 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4314,7 +4314,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 315 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 315 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4335,7 +4335,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 346 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 346 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4356,7 +4356,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 312 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 312 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4377,7 +4377,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 343 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 343 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4398,7 +4398,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 316 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 316 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4419,7 +4419,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 345 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 345 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4440,7 +4440,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 305 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 305 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4461,7 +4461,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 331 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 331 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4482,7 +4482,7 @@
     {
      "id": "molten_core",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 319 [#] eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 319 [#]eldskada och sänker målets försvar med -12% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4513,7 +4513,7 @@
     {
      "id": "molten_core_costume",
      "title": "Smält kärna",
-     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden [#Dynamic] 352 [#] eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en smält kärna.\n[*]Den smälta kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande eld i 3 rundor. Med en fulladdad smält kärna gör elden[#Dynamic] 352 [#]eldskada och sänker målets försvar med -13% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Eldskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4537,7 +4537,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 209 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 209 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4558,7 +4558,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 228 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 228 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4579,7 +4579,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 346 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 346 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4600,7 +4600,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 377 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 377 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4621,7 +4621,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 331 [#] frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 331 [#]frostskada och sänker målets attack med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4642,7 +4642,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kärna",
-     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten [#Dynamic] 365 [#] frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
+     "text": "Den här karaktären har en arktisk kärna.\n[*]Den arktiska kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande frost i 3 rundor. Med en fulladdad arktisk kärna gör frosten[#Dynamic] 365 [#]frostskada och sänker målets attack med -16% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Frostskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4810,7 +4810,7 @@
      "lines": [
       "Skadar målet och alla naturfiender med 450%.",
       "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
-      "Målet och alla naturfiender tar [#Dynamic] 765 [#] eldskada under 3 rundor.",
+      "Målet och alla naturfiender tar[#Dynamic] 765 [#]eldskada under 3 rundor.",
       "Stapel (max: 10): Användaren får 30% attack. (Avbrytningar minskar positiva staplar med 1.)"
      ]
     }

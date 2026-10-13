@@ -421,7 +421,7 @@
      "lines": [
       "Giver 630% skade til målet.",
       "Kaster fuld fjernelse på målet. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Målet tager form som Dybets spøgelse i 3 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet [#Dynamic] 483 [#] skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
+      "Målet tager form som Dybets spøgelse i 3 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet[#Dynamic] 483 [#]skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
      ]
     }
    ],
@@ -487,7 +487,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 316 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 316 [#]vandskade i 2 runder."
     }
    ],
    "stats": {
@@ -506,7 +506,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 126 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 126 [#]vandskade i 2 runder."
     }
    ]
   }
@@ -522,7 +522,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 194 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 194 [#]vandskade i 2 runder."
     }
    ]
   }
@@ -548,7 +548,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 160 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 160 [#]vandskade i 2 runder."
     }
    ],
    "stats": {
@@ -567,7 +567,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 212 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 212 [#]vandskade i 2 runder."
     }
    ]
   }
@@ -593,7 +593,7 @@
     {
      "id": "underwater_on_special_beach",
      "title": "Skade over tid ved særlig evne",
-     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender [#Dynamic] 328 [#] vandskade i 2 runder."
+     "text": "Når denne figur kaster sin særlige egenskab, modtager alle fjender[#Dynamic] 328 [#]vandskade i 2 runder."
     }
    ],
    "stats": {
@@ -1355,7 +1355,7 @@
      "id": "drawn_to_the_depths_mayhem",
      "lines": [
       "Giver 350% i skade til målet og fjender i nærheden og påfører dem 35 vanvid.",
-      "Målet og fjender i nærheden får [#Dynamic] 654 [#] vandskade i 3 runder. Alle allierede absorberer 50% af den påførte vandskade som boostet helbred.",
+      "Målet og fjender i nærheden får[#Dynamic] 654 [#]vandskade i 3 runder. Alle allierede absorberer 50% af den påførte vandskade som boostet helbred.",
       "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
@@ -1502,7 +1502,7 @@
      "id": "frenzied_rend_mayhem",
      "lines": [
       "Giver 280% i skade til målet og fjender i nærheden og påfører dem 15 vanvid.",
-      "Målet og fjender i nærheden rammes af [#Dynamic] 51 [#]-[#Dynamic] 156 [#] intensiverende forbandet skade i 4 runder. (I den første runde bliver [#Dynamic] 51 [#] skade forvoldt. Skaden øges med 45% i hver runde, op til [#Dynamic] 156 [#] skade pr. runde.)",
+      "Målet og fjender i nærheden rammes af[#Dynamic] 51 [#]-[#Dynamic] 156 [#]intensiverende forbandet skade i 4 runder. (I den første runde bliver[#Dynamic] 51 [#]skade forvoldt. Skaden øges med 45% i hver runde, op til[#Dynamic] 156 [#]skade pr. runde.)",
       "Denne specialevne forvolder 60 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
@@ -1621,7 +1621,7 @@
      "id": "drain_strike_mayhem",
      "lines": [
       "Giver 435% skade til målet og fjender i nærheden.",
-      "Målet og fjender i nærheden får [#Dynamic] 708 [#] bløderskade over 4 runder. Kasteren og alle dennes allierede absorberer 50% af den påførte bløderskade som forstærket helbred.",
+      "Målet og fjender i nærheden får[#Dynamic] 708 [#]bløderskade over 4 runder. Kasteren og alle dennes allierede absorberer 50% af den påførte bløderskade som forstærket helbred.",
       "Målet og fjender i nærheden er immune over for nye statuseffektbuffere. Denne effekt varer indtil 3 buffere er blevet modstået."
      ]
     }
@@ -1640,7 +1640,7 @@
       "Afviser sikkert statuseffekt-buffere fra alle fjender. (Sikker fjernelse tilsidesætter sekundære effekter, for eksempel skade ved fjernelse, fra den fjernede statuseffekt-buffere. Eksterne effekter som passive færdigheder og familieeffekter kan stadig være aktive.)",
       "Alle fjender er immune over for nye statuseffekt-buffere i? runder.",
       "Hidkalder en Megasværdvogter med 35% HP og 300% angreb, der er arvet fra kasteren.",
-      "Hvis målet rammes af en sværvogter-kæmpehåndlanger, får det [#Dynamic] 447 [#] bløderskade i løbet af 3 runder. Effekten spreder sig til fjender i nærheden."
+      "Hvis målet rammes af en sværvogter-kæmpehåndlanger, får det[#Dynamic] 447 [#]bløderskade i løbet af 3 runder. Effekten spreder sig til fjender i nærheden."
      ]
     }
    ],
@@ -1679,7 +1679,7 @@
      "lines": [
       "Ophæver buffere fra alle fjender.",
       "Giver 565% skade til målet.",
-      "Målet får [#Dynamic] 1875 [#] vandskade i 3 runder. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
+      "Målet får[#Dynamic] 1875 [#]vandskade i 3 runder. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
       "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
@@ -2065,7 +2065,7 @@
      "lines": [
       "Vækst: Kasteren og allierede i nærheden får 540 angreb og 540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en vildfarne kæmpehåndlanger 45% HP og 180% nedarvet fra kasteren.\n[*]Hver træffer fra en vildfaren kæmpehåndlanger giver målet følgende statuslidelser:",
-      "[**]Målet modtager [#Dynamic] 552 [#] giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[***]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[***]Den maksimale øgede skade er 199%.)",
+      "[**]Målet modtager[#Dynamic] 552 [#]giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[***]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[***]Den maksimale øgede skade er 199%.)",
       "[**]Påfører 10 vanvid på målet.",
       "Denne specialevne forvolder 50 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
@@ -2096,7 +2096,7 @@
      "id": "endless_maze_mayhem",
      "lines": [
       "Kaster fuld fjernelse på målet. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Målet tager form som Dybets spøgelse i 5 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet [#Dynamic] 261 [#] skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
+      "Målet tager form som Dybets spøgelse i 5 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet[#Dynamic] 261 [#]skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
       "Denne specialevne forvolder 50 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
@@ -2306,7 +2306,7 @@
      "lines": [
       "Giver 450% skade imod fjenderne yderst i fjendeformationen. Hvis der kun er en enkelt fjende, fordobles skaden.",
       "Kaster fuld fjernelse på fjenderne i udkanten af fjendens formation. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Fjender i udkanten af fjendeformationen tager form som Dybets spøgelse i 4 runder.\n[*] Som Dybets spøgelse tager målene [#Dynamic] 313 [#] skade i hver runde. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.) Mod hellige figurer varer denne effekt i yderligere 2 runder. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
+      "Fjender i udkanten af fjendeformationen tager form som Dybets spøgelse i 4 runder.\n[*] Som Dybets spøgelse tager målene[#Dynamic] 313 [#]skade i hver runde. Denne effekt er stædig. Mod hellige figurer varer denne effekt i yderligere 2 runder. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
      ]
     }
    ],
@@ -2323,7 +2323,7 @@
      "lines": [
       "Giver 270% i skade til alle fjender.",
       "Visne: Alle fjender får -240 angreb og -240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
-      "Alle fjender får [#Dynamic] 405 [#] ildskade i 3 runder. Kasteren absorberer 50% af den påførte ildskade som boostet helbred. Mod is-figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
+      "Alle fjender får[#Dynamic] 405 [#]ildskade i 3 runder. Kasteren absorberer 50% af den påførte ildskade som boostet helbred. Mod is-figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
      ]
     }
    ],
@@ -2375,7 +2375,7 @@
      "lines": [
       "Giver 350% i skade til alle fjender.",
       "Varigheden af statuslidelser nulstilles for alle fjender.",
-      "Alle fjender rammes af ætsende flammer i 4 runder. De ætsende flammer giver [#Dynamic] 448 [#] brandskade og sænker målets forsvar med -16% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger."
+      "Alle fjender rammes af ætsende flammer i 4 runder. De ætsende flammer giver[#Dynamic] 448 [#]brandskade og sænker målets forsvar med -16% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger."
      ]
     }
    ],
@@ -2410,7 +2410,7 @@
       "Særlige evner har en anden effekt, når mana er på 100%/ 200%:",
       "[*]x 1 manaangreb:",
       "[**]Alle fjender får 55% forøget skade fra statuslidelser og negative kumulative effekter i 3 runder.",
-      "[**]Alle fjender får [#Dynamic] 387 [#] giftskade over 3 runder. Kasteren absorberer 10% af den påførte giftskade som helbred.",
+      "[**]Alle fjender får[#Dynamic] 387 [#]giftskade over 3 runder. Kasteren absorberer 10% af den påførte giftskade som helbred.",
       "[*]x 2 manaangreb:",
       "[**]Gendanner 75% helbred til kasteren og allierede i nærheden.",
       "[**]Kasteren og allierede i nærheden er immune over for nye statuslidelser og gendanner 350 helbred for hvert statuslidelse-forsøg. Denne effekt varer indtil 4 lidelser er blevet modstået."
@@ -2943,7 +2943,7 @@
       "Denne særlige egenskab har en chance for at give kritiske træffere. (Sandsynligheden for at uddele en kritisk træffer er baseret på heltens samlede kritiske sandsynlighed, når skaden uddeles.\n[*]Kritiske træffere forårsaget af denne særlige evne:\n[*]Gør 50% mere skade.\n[*]Fjern vækst-effekter.Kritiske træffere reducerer fjenders maksimale helbred. Denne effekt er stærkere mod boostet helbred.)",
       "Giver 420% skade til målet.",
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Immun over for normale angreb, angreb med særlige evner, passive skadegivere, statuseffekter og stakke, heriblandt vækst og visne. Kan ikke få mana.\n[*]Efter 2 runder:\n[*]Alle allierede får 40% kritisk chance i 2 runder. Denne effekt kan ikke ophæves. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+      "Kasteren tager form som spøgelse i 2 runder. Denne effekt er stædig.\n[*] Når spøgelsesformen er forbi:\n[*] Alle allierede får 40% kritisk chance i 2 runder. Denne effekt kan ikke ophæves. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
     }
    ],
@@ -3011,7 +3011,7 @@
      "id": "wild_splinter_mayhem",
      "lines": [
       "Giver 280% skade til målet og fjender i nærheden.",
-      "Vild: I 3 runder får målet og fjender i nærheden [#Dynamic] 125 [#] eller [#Dynamic] 375 [#] blodskade i hver runde.",
+      "Vild: I 3 runder får målet og fjender i nærheden[#Dynamic] 125 [#]eller[#Dynamic] 375 [#]blodskade i hver runde.",
       "(Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at forvolde 200% ekstra skade i den runde. Når ekstra skade forvoldes, reducerer effekten også fjendens maks. helbred og er stærkere mod boostet helbred.)",
       "Kasteren får 45% chance for at undvige særlige evner, der påfører skade, i 3 runder."
      ]
@@ -3029,7 +3029,7 @@
      "id": "blazing_matchstick_mayhem",
      "lines": [
       "Giver 390% skade til målet og fjender i nærheden.",
-      "Vild: I 3 runder får målet og fjender i nærheden [#Dynamic] 179 [#] eller [#Dynamic] 537 [#] brandskade hver runde.",
+      "Vild: I 3 runder får målet og fjender i nærheden[#Dynamic] 179 [#]eller[#Dynamic] 537 [#]brandskade hver runde.",
       "(Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at forvolde 200% ekstra skade i den runde. Når ekstra skade forvoldes, reducerer effekten også fjendens maks. helbred og er stærkere mod boostet helbred.)",
       "Kasteren og allierede i nærheden får 35% generering af mana i 3 runder. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
@@ -3047,7 +3047,7 @@
      "id": "plummeting_arrow_mayhem",
      "lines": [
       "Giver 500% skade til målet.",
-      "Vild: I 2 runder får målet [#Dynamic] 363 [#] eller [#Dynamic] 1089 [#] blodskade i hver runde.",
+      "Vild: I 2 runder får målet[#Dynamic] 363 [#]eller[#Dynamic] 1089 [#]blodskade i hver runde.",
       "(Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at forvolde 200% ekstra skade i den runde. Når ekstra skade forvoldes, reducerer effekten også fjendens maks. helbred og er stærkere mod boostet helbred.)",
       "Hvis målet besejres i løbet af de næste 2 runder, reduceres manaen for alle fjender med -10%."
      ]
@@ -3239,7 +3239,7 @@
      "lines": [
       "Giver 158% skade til målet.",
       "Kaster fuld fjernelse på målet. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Målet tager form som Dybets spøgelse i 4 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet [#Dynamic] 88 [#] skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
+      "Målet tager form som Dybets spøgelse i 4 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet[#Dynamic] 88 [#]skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
      ]
     }
    ],
@@ -3256,7 +3256,7 @@
      "lines": [
       "Giver 150% skade til målet.",
       "Kaster fuld fjernelse på målet. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Målet tager form som Dybets spøgelse i 4 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet [#Dynamic] 140 [#] skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
+      "Målet tager form som Dybets spøgelse i 4 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet[#Dynamic] 140 [#]skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
      ]
     }
    ],
@@ -3510,7 +3510,7 @@
      "lines": [
       "Giver 250% i skade til alle fjender.",
       "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
-      "Alle fjender modtager [#Dynamic] 728 [#] giftskade i 4 runder. Kasteren og alle deres allierede absorberer 30% af den påførte giftskade som forbedret helbred.",
+      "Alle fjender modtager[#Dynamic] 728 [#]giftskade i 4 runder. Kasteren og alle deres allierede absorberer 30% af den påførte giftskade som forbedret helbred.",
       "Kasteren og allierede i nærheden går i baghold. Skade forvoldt af kasteren og allierede i nærheden forøges med 40%, og modtaget skade reduceres med -30%.",
       "(Når figuren går i baghold, fjernes alle eksisterende statuslidelser.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har taget 1200 skade.)"
      ]
@@ -3721,12 +3721,12 @@
       "[*] 1.:",
       "[**]Stjæler alle ophævelsesbuffere fra målet og fordeler dem tilfældigt blandt de allierede.",
       "[**]Giver 450% skade til målet.",
-      "[**]Målet rammes af voksende ætsende gift i 4 runder. Den voksende ætsende gift giver [#Dynamic] 232 [#] giftskade og sænker målets managendannelse med -12% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger. Effekten spreder sig til fjender i nærheden.",
+      "[**]Målet rammes af voksende ætsende gift i 4 runder. Den voksende ætsende gift giver[#Dynamic] 232 [#]giftskade og sænker målets managendannelse med -12% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger. Effekten spreder sig til fjender i nærheden.",
       "[**](Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)",
       "[*] 2.:",
       "[**]Stjæler alle ophævelsesbuffere fra målet og fordeler dem tilfældigt blandt de allierede.",
       "[**]Giver 515% skade til målet.",
-      "[**]Målet rammes af voksende ætsende gift i 4 runder. Den voksende ætsende gift giver [#Dynamic] 429 [#] giftskade og sænker målets managendannelse med -25% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger. Effekten spreder sig til fjender i nærheden.",
+      "[**]Målet rammes af voksende ætsende gift i 4 runder. Den voksende ætsende gift giver[#Dynamic] 429 [#]giftskade og sænker målets managendannelse med -25% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger. Effekten spreder sig til fjender i nærheden.",
       "[**](Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
@@ -3752,7 +3752,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 312 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 312 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3786,7 +3786,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 341 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 341 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3810,7 +3810,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 309 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 309 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3831,7 +3831,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 334 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 334 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3852,7 +3852,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 343 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 343 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3873,7 +3873,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 377 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 377 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3894,7 +3894,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 153 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 153 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3915,7 +3915,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 169 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 169 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -3936,7 +3936,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 330 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 330 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -3957,7 +3957,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 364 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 364 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -3978,7 +3978,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 193 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 193 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -3999,7 +3999,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 212 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 212 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4020,7 +4020,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 308 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 308 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4052,7 +4052,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 337 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 337 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4076,7 +4076,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 337 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 337 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4097,7 +4097,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 370 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 370 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4129,7 +4129,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 338 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 338 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4164,7 +4164,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 371 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 371 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4188,7 +4188,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 193 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 193 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4209,7 +4209,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 212 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 212 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4230,7 +4230,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 315 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 315 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4251,7 +4251,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 346 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 346 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4272,7 +4272,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 147 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 147 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4293,7 +4293,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 162 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 162 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4314,7 +4314,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 315 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 315 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4335,7 +4335,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 346 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 346 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4356,7 +4356,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 312 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 312 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4377,7 +4377,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 343 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 343 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4398,7 +4398,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 316 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 316 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4419,7 +4419,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 345 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 345 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4440,7 +4440,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 305 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 305 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4461,7 +4461,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 331 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 331 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4482,7 +4482,7 @@
     {
      "id": "molten_core",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 319 [#] brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 319 [#]brandskade og sænker målets forsvar med -12% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_mayhem",
@@ -4513,7 +4513,7 @@
     {
      "id": "molten_core_costume",
      "title": "Lavakerne",
-     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand [#Dynamic] 352 [#] brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en lavakerne.\n[*]Lavakernen aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende brand i 3 runder. Med en fuldt opladt lavakerne, forvolder den ætsende brand[#Dynamic] 352 [#]brandskade og sænker målets forsvar med -13% i hver runde. Giver ekstra skade mod helte, der har håndlangere eller kæmpehåndlangere.\n[*] Forbrændingsskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_burn_with_mana_costume_mayhem",
@@ -4537,7 +4537,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 209 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 209 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4558,7 +4558,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 228 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 228 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4579,7 +4579,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 346 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 346 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4600,7 +4600,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 377 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 377 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4621,7 +4621,7 @@
     {
      "id": "arctic_core",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 331 [#] frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 331 [#]frostskade og sænker målets angreb med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_mayhem",
@@ -4642,7 +4642,7 @@
     {
      "id": "arctic_core_costume",
      "title": "Arktisk kerne",
-     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost [#Dynamic] 365 [#] frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
+     "text": "Denne figur har en arktisk kerne.\n[*]Den arktiske kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende frost i 3 runder. Med en fuldt opladt arktisk kerne, forvolder den ætsende frost[#Dynamic] 365 [#]frostskade og sænker målets angreb med -16% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Frostskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres."
     },
     {
      "id": "resist_frost_with_mana_costume_mayhem",
@@ -4810,7 +4810,7 @@
      "lines": [
       "Gør 450% skade på målet og alle natur-fjender.",
       "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
-      "Målet og alle natur-helte får [#Dynamic] 765 [#] brandskade i løbet af 3 runder.",
+      "Målet og alle natur-helte får[#Dynamic] 765 [#]brandskade i løbet af 3 runder.",
       "Kumulativ (Maks.: 10): Kasteren får 30% angreb. (Ophæver positive kumulative effekter med 1.)"
      ]
     }

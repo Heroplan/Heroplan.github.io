@@ -288,12 +288,102 @@ function toggleTheme() {
 }
 
 /**
- * 切换并保存语言，然后刷新页面。
+ * 同步 URL 的 `?lang=`（canonical 自指 / hreflang / 分享链接都依赖它）。
+ * ⚠ 不重载的前提下必须自己改，否则刷新或分享出去的还是旧语言。
+ */
+function syncLanguageUrl(lang) {
+    try {
+        const u = new URL(window.location.href);
+        u.searchParams.set('lang', lang);
+        history.replaceState(null, '', u.toString());
+    } catch (e) { /* URL 同步失败不影响切换本身 */ }
+}
+
+/**
+ * 重刷筛选器标签：`populateFilters()` 会**清空** `multiSelectFilters` ⇒ 先存后还，再刷按钮态。
+ * ⚠ 筛选值存的都是规范 ID（`colorId`/`classId`/…）⇒ 语言无关，可以原样还原。
+ */
+function refreshFiltersAfterLanguageChange() {
+    const saved = JSON.parse(JSON.stringify(state.multiSelectFilters || {}));
+    populateFilters();
+    Object.keys(saved).forEach(k => { state.multiSelectFilters[k] = saved[k]; });
+    Object.keys(state.multiSelectFilters).forEach(k => {
+        if (typeof updateFilterButtonUI === 'function') updateFilterButtonUI(k);
+    });
+}
+
+/**
+ * 重渲染当前子视图（通缉令 /  Farming / 队伍模拟器）。
+ * 列表视图由 `applyFiltersAndRender()` 负责，这里只管"非列表"的那几个。
+ */
+function refreshActiveViewAfterLanguageChange() {
+    const vis = el => el && !el.classList.contains('hidden');
+    try {
+        // 抽奖池标题/加成文案是**按语言缓存**的字典 ⇒ 无条件重取（很便宜），
+        // 否则用户切完语言再进抽奖模拟器会看到旧标题。
+        if (typeof refreshLotteryTranslations === 'function') refreshLotteryTranslations();
+        if (vis(uiElements.wantedMissionView) && typeof initAndShowWantedMissionView === 'function') {
+            initAndShowWantedMissionView();
+        } else if (vis(uiElements.farmingGuideView) && typeof initAndShowFarmingGuideView === 'function') {
+            initAndShowFarmingGuideView();
+        } else if (vis(uiElements.teamSimulatorWrapper)) {
+            if (typeof renderTeamDisplay === 'function') renderTeamDisplay();
+            if (typeof renderSavedTeams === 'function') renderSavedTeams(getSavedTeams());
+            if (typeof updateTeamTags === 'function') updateTeamTags();
+        } else if (vis(uiElements.lotterySimulatorWrapper)) {
+            // 抽奖模拟器：先重取按语言缓存的字典（标题/加成文案），再调三个**纯渲染**函数
+            // （不重新 initialize，避免重置抽奖状态）。
+            if (typeof refreshLotteryTranslations === 'function') refreshLotteryTranslations();
+            if (typeof renderActivityList === 'function') renderActivityList();
+            if (typeof renderFeaturedHeroes === 'function') renderFeaturedHeroes();
+            if (typeof renderSummonHistory === 'function') renderSummonHistory();
+        } else if (vis(uiElements.chatSimulatorView) && typeof updateChatPreview === 'function') {
+            updateChatPreview();
+        }
+    } catch (e) {
+        console.warn('[lang] 子视图刷新失败（已忽略）：', e);
+    }
+}
+
+/**
+ * 切换并保存语言（**无缝**：不整页重载）。
+ *
+ * 新架构（数据存 ID + 显示时才过字典 + 排序表语言无关）已经具备不重载切换的条件，
+ * 但切换时必须**显式补做**旧实现由 reload 免费拿到的几件事：
+ *   ① 重取按语言分片的数据并重建英雄显示字段（`reloadLanguageData`）；
+ *   ② `applyLanguage()` 刷 DOM 文案 / `<html lang>` / RTL / title / meta / canonical；
+ *   ③ `history.replaceState` 同步 `?lang=`；
+ *   ④ 重刷筛选器标签并保住已选条件；
+ *   ⑤ 重渲染列表与当前子视图。
+ *
+ * ⚠ 任一步失败 ⇒ 回退到整页重载，避免停留在"半切换"的错乱状态。
  * @param {string} lang - 新的语言代码。
  */
-function changeLanguage(lang) {
+async function changeLanguage(lang) {
+    if (!lang || lang === state.currentLang) return;
+    if (state._switchingLang) return;          // 连点保护
+    state._switchingLang = true;
+
     setCookie('language', lang, 365);
-    window.location.reload();
+    const loader = document.getElementById('page-loader-overlay');
+    if (loader) loader.classList.remove('hidden');
+
+    try {
+        await reloadLanguageData(lang);
+        applyLanguage(lang);
+        syncLanguageUrl(lang);
+        refreshFiltersAfterLanguageChange();
+        applyFiltersAndRender();
+        refreshActiveViewAfterLanguageChange();
+    } catch (err) {
+        console.error('[lang] 无缝切换失败，回退整页重载：', err);
+        window.location.reload();
+        return;
+    } finally {
+        state._switchingLang = false;
+    }
+
+    if (loader) loader.classList.add('hidden');
 }
 
 /**
@@ -349,8 +439,9 @@ function updateResultsHeader() {
         messageSpan.innerHTML = message;
         uiElements.resultsCountEl.appendChild(messageSpan);
 
-        // --- 新增逻辑开始 ---
-        // 仅在未应用任何筛选时显示“查看最新”按钮
+        // --- 查看最新 按钮逻辑 ---
+        // 仅在未应用任何筛选时显示「查看最新」按钮；一旦有筛选（含英雄学院10列表临时筛选）
+        // 「查看最新」不再显示，header 改由上面的 showResetButton 分支呈现「重置」tag。
         if (!filtersAreActive) {
             const latestBtn = document.createElement('span');
             latestBtn.id = 'view-latest-btn';
@@ -359,7 +450,7 @@ function updateResultsHeader() {
             latestBtn.title = langDict.viewLatest;
             uiElements.resultsCountEl.appendChild(latestBtn);
         }
-        // --- 新增逻辑结束 ---
+        // --- 查看最新 按钮逻辑结束 ---
 
         if (showResetButton) {
             const resetTag = document.createElement('span');

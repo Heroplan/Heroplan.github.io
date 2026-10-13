@@ -21,6 +21,19 @@ let summonPoolDetails = {}; // 用于存储奖池的详细配置
 let bonusTranslations = {};
 
 /**
+ * 重新取抽奖模拟器里**按语言缓存**的两个字典。
+ *
+ * ⚠ 为什么必须有它：`Lang.loadAll()` 切换语言时会**重建** `_tables` 对象
+ *   （`langs.js` 里 `_tables = {}` 再逐个填）⇒ `initializeLotterySimulator` 一次性捕获的
+ *   `lotteryTitleDict` / `bonusTranslations` 会**一直指着旧语言的对象**，
+ *   表现为"切了语言但抽奖池标题不变"。切换语言后必须调这里重新取。
+ */
+function refreshLotteryTranslations() {
+    lotteryTitleDict = (typeof Lang !== 'undefined' && Lang.get('lottery_title')) || {};
+    bonusTranslations = (i18n[state.currentLang] || {}).lottery_bonus_translations || {};
+}
+
+/**
  * 根据奖池配置返回允许的最大 costume_id
  * @param {object} poolConfig - 奖池配置对象
  * @returns {number} 允许的最大 costume_id（包含该值），默认 Infinity 表示无限制
@@ -129,14 +142,15 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
 
     // 抽奖池标题：由 `langs.js` 从 `langs_json/lottery_title_<码>.json` 载入（20 语言齐全，
     //   生成时已对缺项做过英文回落 ⇒ 这里不再需要 `|| lotteryTitles.en`）。
-    lotteryTitleDict = (typeof Lang !== 'undefined' && Lang.get('lottery_title')) || {};
-    bonusTranslations = (i18n[state.currentLang] || {}).lottery_bonus_translations || {};
+    refreshLotteryTranslations();
     // 处理补充配置，建立映射
     processExtraConfigs(extraConfigs);
     processSummonData(allPoolsConfig, summonTypesConfig);
     renderActivityList();
     loadHistoryFromLocalStorage();
     renderSummonHistory();
+    // 旧版记录（只有本地化标题）异步溯源补上稳定标识；完成后自行重渲染。
+    migrateLegacyHistoryPoolKeys();
 
     document.getElementById('single-summon-btn')?.addEventListener('click', () => performSummon(1));
     document.getElementById('ten-summon-btn')?.addEventListener('click', () => performSummon(10));
@@ -156,8 +170,10 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
                 }
             } else {
                 const currentPoolName = getPoolDisplayName(state.currentSummonData);
+                const currentPoolKey = getPoolTitleKey(state.currentSummonData);
                 if (confirm(langDict.confirmClearCurrentHistory || `确定要清空【${currentPoolName}】的召唤记录吗？`)) {
-                    state.summonHistory = state.summonHistory.filter(group => group.poolName !== currentPoolName);
+                    state.summonHistory = state.summonHistory.filter(
+                        group => !isCurrentPoolHistoryGroup(group, currentPoolKey, currentPoolName));
                     saveHistoryToLocalStorage();
                     renderSummonHistory();
                 }
@@ -600,19 +616,92 @@ function selectWeightedIndex(weights) {
  * @param {object} poolConfig - 奖池配置对象
  * @returns {string} - 显示的标题
  */
+/**
+ * 奖池的**稳定标识**（= `lottery_title_<码>.json` 里的键）。
+ *
+ * ⚠ 这是**跨语言不变**的归组依据：召唤历史按它归组/筛选/清除。
+ *   旧实现用「当前语言的标题」当标识 ⇒ 切换语言后旧记录全部对不上（历史"消失"）。
+ * @param {object} poolConfig - 奖池配置对象
+ * @returns {string} - 形如 `lottery.title.xxx`；无法判定时返回 ''
+ */
+function getPoolTitleKey(poolConfig) {
+    if (!poolConfig || !poolConfig.productType) return '';
+    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon', 'SeasonalPremiumSummon', 'CostumeSummon'];
+    return specialProductTypes.includes(poolConfig.productType)
+        ? `lottery.title.${poolConfig.id.toLowerCase()}`
+        : `lottery.title.${poolConfig.productType.toLowerCase()}`;
+}
+
+/**
+ * 获取奖池的本地化标题
+ * @param {object} poolConfig - 奖池配置对象
+ * @returns {string} - 显示的标题
+ */
 function getPoolDisplayName(poolConfig) {
     if (!poolConfig) return '';
-    const specialProductTypes = ['BlackSummon', 'EpicHeroSummon', 'ChallengeEventSummon', 'MapSeasonSummon', 'AllianceEventSummon', 'TowerEventSummon', 'SeasonalPremiumSummon', 'CostumeSummon'];
-    let titleKey = '';
-    if (poolConfig.productType && specialProductTypes.includes(poolConfig.productType)) {
-        titleKey = `lottery.title.${poolConfig.id.toLowerCase()}`;
-    } else if (poolConfig.productType) {
-        titleKey = `lottery.title.${poolConfig.productType.toLowerCase()}`;
-    }
+    const titleKey = getPoolTitleKey(poolConfig);
     if (titleKey && lotteryTitleDict[titleKey]) {
         return lotteryTitleDict[titleKey];
     }
     return poolConfig.id.replace('lottery_', '').replace(/_/g, ' ');
+}
+
+/**
+ * 历史分组是否属于**当前奖池**。
+ * · 新记录带 `poolKey`（稳定标识）⇒ 直接比 key；
+ * · 旧记录只有 `poolName`（当时的本地化标题）⇒ 退回按标题比（迁移完成后也会带上 `poolKey`）。
+ */
+function isCurrentPoolHistoryGroup(group, currentPoolKey, currentPoolName) {
+    if (!group) return false;
+    if (group.poolKey) return !!currentPoolKey && group.poolKey === currentPoolKey;
+    return !!currentPoolName && group.poolName === currentPoolName;
+}
+
+// 旧记录迁移用：任意语言的奖池标题 → 稳定标识（`poolKey`）
+const _legacyPoolTitleToKey = {};
+let _legacyPoolKeyMigrating = false;
+
+/**
+ * 把**旧版历史记录**（只有本地化 `poolName`、没有 `poolKey`）溯源成稳定标识并回写。
+ *
+ * 做法：一次性拉取 **20 语言** 的 `lottery_title_<码>.json`，建「标题 → poolKey」反查表，
+ * 再按旧记录里的标题找回它的 poolKey（无论当时用的是哪种语言）⇒ 写回并持久化，
+ * 此后与新版记录完全一致。
+ * ⚠ 仅在确实存在旧记录时才触发（正常用户零额外请求）；单语言失败忽略。
+ */
+async function migrateLegacyHistoryPoolKeys() {
+    if (_legacyPoolKeyMigrating) return;
+    const legacy = (state.summonHistory || []).filter(g => g && !g.poolKey);
+    if (legacy.length === 0) return;
+    _legacyPoolKeyMigrating = true;
+    try {
+        if (Object.keys(_legacyPoolTitleToKey).length === 0) {
+            const langs = (typeof Lang !== 'undefined' && Lang.LANGS) || ['cn', 'en'];
+            await Promise.all(langs.map(async (lg) => {
+                try {
+                    const r = await fetch(`langs_json/lottery_title_${lg}.json`);
+                    if (!r.ok) return;
+                    const d = await r.json();
+                    for (const k in d) {
+                        const v = d[k];
+                        if (v && _legacyPoolTitleToKey[v] === undefined) _legacyPoolTitleToKey[v] = k;
+                    }
+                } catch (e) { /* 单语言失败忽略 */ }
+            }));
+        }
+        let changed = 0;
+        (state.summonHistory || []).forEach(g => {
+            if (!g || g.poolKey || !g.poolName) return;
+            const k = _legacyPoolTitleToKey[g.poolName];
+            if (k) { g.poolKey = k; changed++; }
+        });
+        if (changed) {
+            saveHistoryToLocalStorage();
+            renderSummonHistory();
+        }
+    } finally {
+        _legacyPoolKeyMigrating = false;
+    }
 }
 
 /**
@@ -2205,12 +2294,13 @@ function showSummaryModal(results) {
  */
 function updateSummonHistory(groupedResults, count) {
     if (groupedResults.length > 0) {
-        const currentPoolName = getPoolDisplayName(state.currentSummonData);
+        // `poolKey` = 跨语言稳定的归组标识；`poolName` 保留（旧版兼容 + 兜底显示）
         state.summonHistory.unshift({
             count: count,
             results: groupedResults.flat(),
             groupedResults: groupedResults,
-            poolName: currentPoolName
+            poolKey: getPoolTitleKey(state.currentSummonData),
+            poolName: getPoolDisplayName(state.currentSummonData)
         });
 
         if (state.summonHistory.length > 1000) {
@@ -2237,12 +2327,15 @@ function renderSummonHistory() {
     // 2. 筛选历史并设置标题 (逻辑不变)
     const langDict = i18n[state.currentLang] || {};
     const currentPoolName = getPoolDisplayName(state.currentSummonData);
+    const currentPoolKey = getPoolTitleKey(state.currentSummonData);
     let historyToRender;
     if (state.showAllSummonHistory) {
         historyToRender = state.summonHistory;
         titleElement.textContent = langDict.summonHistoryTitleAll || '全部召唤历史记录';
     } else {
-        historyToRender = state.summonHistory.filter(group => group.poolName === currentPoolName);
+        // 按**稳定标识**归组（旧记录按标题兜底）⇒ 切换语言后历史不再"消失"
+        historyToRender = state.summonHistory.filter(
+            group => isCurrentPoolHistoryGroup(group, currentPoolKey, currentPoolName));
         const totalPulls = historyToRender.reduce((sum, group) => sum + (group.count || 0), 0);
         titleElement.innerHTML = langDict.summonHistoryTitleCurrent(currentPoolName, totalPulls);
     }
@@ -2344,7 +2437,11 @@ function renderSummonHistory() {
         groupContainer.className = 'summon-history-group';
         const header = document.createElement('h5');
         const summonTypeTitle = `${langDict.summonOnce || '召唤'} x${group.count}`;
-        header.textContent = group.poolName ? `${group.poolName} - ${summonTypeTitle}` : summonTypeTitle;
+        // 分组标题**按当前语言**从稳定标识取（旧记录回落当时存的 `poolName`）
+        const groupTitle = group.poolKey
+            ? (lotteryTitleDict[group.poolKey] || group.poolName || '')
+            : (group.poolName || '');
+        header.textContent = groupTitle ? `${groupTitle} - ${summonTypeTitle}` : summonTypeTitle;
         const avatarsContainer = document.createElement('div');
         avatarsContainer.className = 'summon-history-avatars';
         resultsToRender.forEach(result => {

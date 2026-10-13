@@ -756,7 +756,7 @@ function areFiltersActive() {
 
     // 检查临时筛选
     if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null
-        || state.temporaryOwnedHeroes !== null) {
+        || state.temporaryOwnedHeroes !== null || state.temporaryAcademyFilter) {
         return true;
     }
 
@@ -1092,8 +1092,16 @@ function applyFiltersAndRender() {
 
 /**
  * 初始化名字搜索的候选提示功能
+ *
+ * ⚠⚠ **只允许挂一次监听器**：`populateFilters()` 结尾会 `setTimeout(() => initializeNameAutocomplete(), 100)`，
+ *   而 `populateFilters()` 会被重复调用（切语言、重刷筛选…）⇒ 每次都给 `#name-input` /
+ *   `#clear-input` / `document` **再叠一层监听器**。表现：点一次 ✕ 会渲染 N 次
+ *   （实测 2/3/4 次 × ~800ms；用户会话里累积到 ~14 次 ⇒ 卡 11 秒）。
+ *   这些元素都是 index.html 里的静态节点，不会被重建 ⇒ 挂一次永远有效。
  */
+let _nameAutocompleteReady = false;
 function initializeNameAutocomplete() {
+    if (_nameAutocompleteReady) return;
     const nameInput = document.getElementById('name-input');
     const autocompleteList = document.getElementById('name-autocomplete-list');
     const clearButton = document.getElementById('clear-input'); // 获取清除按钮
@@ -1101,6 +1109,7 @@ function initializeNameAutocomplete() {
     //   （= 当前界面语言）处理 ⇒ 选择器元素与监听逻辑一并移除。
 
     if (!nameInput || !autocompleteList) return;
+    _nameAutocompleteReady = true;      // 静态节点 ⇒ 挂一次即可，后续调用直接跳过
 
     let currentFocus = -1;
     let currentSuggestions = [];
@@ -1192,7 +1201,7 @@ function initializeNameAutocomplete() {
     // 更新候选建议
     function updateAutocompleteSuggestions(searchTerm) {
         // 搜索语言已废弃 ⇒ 一律用当前界面语言
-        currentSuggestions = getHeroNameSuggestions(searchTerm, 'current');
+        currentSuggestions = getHeroNameSuggestions(searchTerm);
         showAutocompleteSuggestions(currentSuggestions, searchTerm);
     }
 
@@ -1295,10 +1304,13 @@ function initializeNameAutocomplete() {
 
 /**
  * 获取英雄名字候选建议（支持任意位置匹配）
+ *
+ * ⚠ 旧的 `searchLang`（额外名称语言）参数已废弃 —— 名字一律用**当前界面语言**，
+ *   相关的「按另一语言字典重取名字」分支与「元素后缀清理」都已移除
+ *   （后缀清理在现有名字字典里 20 语言零命中，见 `_tools/_chk_name_suffix.js`）。
  * @param {string} searchTerm - 用户输入的搜索词
- * @param {string} searchLang - 当前选择的搜索语言 ('current', 'ja', 'tc' 等)
  */
-function getHeroNameSuggestions(searchTerm, searchLang) {
+function getHeroNameSuggestions(searchTerm) {
     // 确保有可搜索的数据
     if (!state.filteredHeroes || state.filteredHeroes.length === 0) {
         return [];
@@ -1310,27 +1322,10 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
     const suggestions = [];
     const seenIds = new Set();
 
-    // 元素后缀清理（与详情页 data-filter-value 一致）
-    const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
-    const elementSuffixRegex = new RegExp(`\\s+(${ignorableElementSuffixes.join('|')})$`, 'i');
-
     state.filteredHeroes.forEach(hero => {
-        // 1. 确定要用来搜索/显示的名字
-        let nameToSearch = hero.name;
-        let displayName = hero.name;
-
-        if (searchLang !== 'current' && window.langData?.name?.[searchLang] && hero.heroId) {
-            // 最长前缀匹配（与 getSkinInfo 保持一致）
-            const langDict = window.langData.name[searchLang];
-            const matchingKeys = Object.keys(langDict).filter(k => hero.heroId.startsWith(k));
-            if (matchingKeys.length > 0) {
-                const bestMatch = matchingKeys.reduce((a, b) =>
-                    a.length > b.length ? a : b
-                );
-                nameToSearch = langDict[bestMatch];
-                displayName = langDict[bestMatch];
-            }
-        }
+        // 1. 用来搜索/显示的名字 = 当前语言名
+        const nameToSearch = hero.name;
+        const displayName = hero.name;
 
         if (!nameToSearch) return;
 
@@ -1356,18 +1351,12 @@ function getHeroNameSuggestions(searchTerm, searchLang) {
         seenIds.add(uniqueKey);
 
         // 计算 fillValue（与详情页 data-filter-value 一致）
-        const skinInfo = getSkinInfo(hero);
-        let fillValue = (skinInfo.baseName || hero.name || '').trim();
+        let fillValue = (hero.name || '').trim();
 
         // 兜底：如果还带 "(Kalo)" 这种括号，且主体是 CJK，就截掉括号部分
         if (/\([^)]*\)\s*$/.test(fillValue) &&
             /[\u4e00-\u9fa5\u3040-\u30ff\uac00-\ud7af]/.test(fillValue)) {
             fillValue = fillValue.replace(/\s*\([^)]*\)\s*$/, '').trim();
-        }
-
-        // 去元素后缀
-        if (elementSuffixRegex.test(fillValue)) {
-            fillValue = fillValue.replace(elementSuffixRegex, '').trim();
         }
 
         suggestions.push({

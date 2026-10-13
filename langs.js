@@ -5,7 +5,8 @@
  *      显示时才查 `langs_json/<表>_<码>.json` 翻译；
  *   ② **先排序后翻译** —— 排序用语言无关的 `langs_json/sort_order.json`（ID 顺序），
  *      不再需要 language.js 里 20×speedOrder / 20×colorOrder 那些硬编码数组；
- *   ③ i18n 拆到 `langs_json/i18n_<码>.json`；页面**切换语言时整页重载** ⇒ 只需在启动时 await 一次；
+ *   ③ i18n 拆到 `langs_json/i18n_<码>.json`；切语言时 `loadAll()` 再调一次即可（**无需整页重载**，
+ *      见 `ui.js::changeLanguage`；表按文件缓存 ⇒ 切回已加载过的语言是纯内存操作）；
  *   ④ 不再需要任何"回溯表"（base_values_dict_other 那类"文本→文本"映射）。
  *
  * 用法：
@@ -73,7 +74,7 @@
             .then(function (j) { _cache[p] = j; return j; });
     }
 
-    /** 载入某语言的全部表 + i18n + 排序表（切换语言时整页重载 ⇒ 只调一次） */
+    /** 载入某语言的全部表 + i18n + 排序表（启动时调一次；**切换语言时再调一次**即可无缝切换） */
     function loadAll(lang) {
         _lang = lang;
         var jobs = TABLES.map(function (t) { return getJSON(t + '_' + lang + '.json').catch(function () { return {}; }); });

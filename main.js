@@ -664,6 +664,8 @@ function addEventListeners() {
         const target = e.target.closest('.lang-option');
         if (target) {
             const newLang = target.getAttribute('data-lang');
+            // 无缝切换 ⇒ 下拉框不会因重载消失，这里**显式收起**
+            if (langOptions) langOptions.classList.add('hidden');
             if (newLang && newLang !== state.currentLang) changeLanguage(newLang);
         }
     });

@@ -2,89 +2,13 @@
 
 
 
-/**
- * 从英雄名称中分离出皮肤信息和基础名称。
- * @param {object} hero - 英雄对象。
- * @returns {{skinIdentifier: string|null, baseName: string}} 包含皮肤标识符和基础名称的对象。
- */
-function getSkinInfo(hero) {
-    let name = hero.name || '';
-
-    const langCode = state.currentLang;
-    // ⚠ 搜索语言选择已废弃 ⇒ 一律走 `current` 分支（用当前语言的官方名字）。
-    {
-
-        if (!window.langData?.name?.[langCode]) {
-            console.warn(`未找到 ${langCode} 语言的数据`);
-            return { skinIdentifier: null, baseName: name };
-        }
-        const langData = window.langData.name[langCode];
-
-        if (!hero.heroId) return { skinIdentifier: null, baseName: name };
-
-        // 使用部分匹配模式查找对应的翻译
-        // 查找所有以 hero.heroId 开头的键
-        const matchingKeys = Object.keys(langData).filter(key =>
-            hero.heroId.startsWith(key)
-        );
-
-        if (matchingKeys.length > 0) {
-            // 选择最长的匹配（最具体的匹配）
-            const bestMatch = matchingKeys.reduce((longest, current) =>
-                current.length > longest.length ? current : longest
-            );
-
-            // 应用翻译
-            name = langData[bestMatch];
-        }
-    }
-
-    if (hero.costume_id !== 0) {
-        let costumeId = hero.costume_id;
-        if (hero.family === 'classic') {
-            if (hero.star === 3 && costumeId > 1) {
-                costumeId = costumeId + 1;
-            }
-        }
-
-        if (hero.family != 'classic') {
-            if (costumeId === 2) {
-                costumeId = 3;
-            }
-        }
-
-        let classicMap;
-        if (langCode === 'cn') {
-            classicMap = {
-                1: 'C1',
-                2: 'C2',
-                3: '卡通',
-                4: '玻璃',
-                5: '英姿'
-            };
-        } else if (langCode === 'tc') {
-            classicMap = {
-                1: 'C1',
-                2: 'C2',
-                3: '公仔',
-                4: '玻璃',
-                5: '有型'
-            };
-        } else {
-            classicMap = {
-                1: 'C1',
-                2: 'C2',
-                3: 'Toon',
-                4: 'Glass',
-                5: 'Stylish'
-            };
-        }
-        
-        let heroSkinIdentifier = classicMap[costumeId] || null;
-        return { skinIdentifier: heroSkinIdentifier, baseName: name };
-    }
-    return { skinIdentifier: null, baseName: name };
-}
+// ⚠ 旧的 `getSkinInfo(hero)` 已删除：它的两个返回值都是**重复推导** ——
+//   · `baseName`：用 `window.langData.name[码]` 做最长前缀匹配 ⇒ 与 `hero.name`
+//     （`loadData`/`reloadLanguageData` 里 `_tPrefix('heroes_name', heroId)`）**逐条相同**
+//     （实测 20 语言 × 2121 英雄零不一致）；
+//   · `skinIdentifier`：硬编码 `classicMap`，**只覆盖 cn/tc**，其余 18 语言回落英文
+//     （如 `ja` 出 "Toon" 而非 "アニメ風"）⇒ 改为查 `costume_type_<码>.json` 字典
+//     （`Lang.t('costume_type', getCostumeIconName(hero))`），顺带修掉该本地化缺陷。
 
 /**
  * 根据皮肤标识符获取对应的图标文件名。
@@ -123,11 +47,12 @@ function getCostumeIconName(hero) {
  */
 function getFormattedHeroNameHTML(hero) {
     if (!hero) return '';
-    const skinInfo = getSkinInfo(hero);
-    let content = skinInfo.baseName;
+    let content = hero.name || '';
     const iconName = getCostumeIconName(hero);
     if (iconName) {
-        content = content + `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinInfo.skinIdentifier}"/>`;
+        // 服装类型标签走 `costume_type_<码>.json` 字典（全 20 语言齐全）。
+        const skinLabel = (typeof Lang !== 'undefined') ? Lang.t('costume_type', iconName) : iconName;
+        content = content + `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinLabel}"/>`;
     }
     return content;
 }
@@ -250,41 +175,16 @@ function renderTable(heroes) {
                 // 4. 返回包含多个图标的单元格
                 return `<td class="col-types">${iconsHtml}</td>`;
             } else if (key === 'name') {
-                let displayName = hero.name;
-
-                // 第1步: 移除元素后缀
-                const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire', 'red', 'blue', 'green', 'yellow', 'purple'];
-                // 匹配元素后缀，但保留括号结构
-                const elementSuffixRegex = new RegExp(`\\s+(?:\\()?(${ignorableElementSuffixes.join('|')})(?:\\))?$`, 'i');
-
-                // 先检查是否需要处理
-                if (elementSuffixRegex.test(displayName)) {
-                    // 如果名字以右括号结尾，先特殊处理
-                    if (displayName.endsWith(')')) {
-                        // 找到最后一个右括号的位置
-                        const lastParenIndex = displayName.lastIndexOf(')');
-                        const beforeParen = displayName.substring(0, lastParenIndex);
-                        const afterParen = displayName.substring(lastParenIndex);
-
-                        // 只对括号前的内容应用替换
-                        const cleanedBeforeParen = beforeParen.replace(elementSuffixRegex, '').trim();
-                        displayName = cleanedBeforeParen + afterParen;
-                    } else {
-                        // 正常替换
-                        displayName = displayName.replace(elementSuffixRegex, '').trim();
-                    }
-                }
-
-                // ▼▼▼ 移除服装后缀 ▼▼▼
-                // 第2步: 移除 C1, C2, 玻璃, 卡通等服装后缀
-                const costumeSuffixRegex = /\s*(?:\[|\()?(C\d+|stylish|glass|toon|玻璃|卡通|英姿|公仔|有型)(?:\]|\))?\s*$/i;
-                displayName = displayName.replace(costumeSuffixRegex, '').trim();
+                // 名字直接用字典值。旧站在这里做「元素后缀 / 服装后缀」清洗，但现在的名字
+                // 全部来自 `langs_json/heroes_name_<码>.json`，**本身就不带这些后缀**
+                // （实测 20 语言 × 全部条目零命中）⇒ 整段清洗逻辑已移除。
+                const displayName = hero.name || '';
 
                 // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别；
                 // 详情页不加（见 renderDetailsInModal 的 nameBlockHTML）。英文界面下两者相同 ⇒ 自动不重复。
                 const _enSuffix = (hero.english_name && hero.english_name !== displayName)
                     ? ` (${hero.english_name})` : '';
-                content = `${displayName || ''}${_enSuffix}`;
+                content = `${displayName}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
                 const classIcon = String(hero.classId || hero[key]).toLowerCase();
                 content = `<img src="imgs/classes/${classIcon}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
@@ -2075,30 +1975,16 @@ function renderDetailsInModal(hero, context = {}) {
     };
 
     // --- 解析英雄名称 ---
-    const skinInfo = getSkinInfo(hero);
-    const displayName = skinInfo.baseName;      // 当前语言显示名
+    const displayName = hero.name;              // 当前语言显示名（= `_tPrefix('heroes_name', heroId)`）
     const identityName = hero.english_name;      // 跨语言稳定身份键
 
     // 使用所有三个变量来构建最终的HTML
     // ▼ 统一使用主英雄名作为筛选填充值 ▼
-    const filterValue = displayName;
+    // 旧站会在这里去掉名字末尾的「元素后缀」（dark/holy/ice/nature/fire）；但现有名字字典
+    // （含英文名 1384 条）里该正则**零命中** ⇒ 清理逻辑已移除，直接用原名。
+    const cleanedFilterValue = displayName;
+    const cleanedIdentityName = identityName || '';
 
-    // 移除最右边的元素后缀
-    const ignorableElementSuffixes = ['dark', 'holy', 'ice', 'nature', 'fire'];
-    const elementSuffixRegex = new RegExp(`\\s+(${ignorableElementSuffixes.join('|')})$`, 'i');
-    let cleanedFilterValue = filterValue;
-
-    // 检查是否需要移除后缀
-    if (elementSuffixRegex.test(filterValue)) {
-        cleanedFilterValue = filterValue.replace(elementSuffixRegex, '').trim();
-    }
-
-    // 英文名的后缀清理（跟 filterValue 一样的处理）
-    let cleanedIdentityName = identityName || '';
-    if (elementSuffixRegex.test(cleanedIdentityName)) {
-        cleanedIdentityName = cleanedIdentityName.replace(elementSuffixRegex, '').trim();
-    }
-    
     const nameBlockHTML = `
         ${identityName ? `<p class="hero-english-name">${cleanedIdentityName}</p>` : ''}
         <h1 class="hero-main-name skill-type-tag" data-filter-type="name" data-filter-value="${cleanedFilterValue}" title="${langDict.filterBy} '${displayName.trim()}'">${displayName}</h1>
@@ -2216,7 +2102,7 @@ function renderDetailsInModal(hero, context = {}) {
         let cid = k;
         if (hero.family === 'classic') { if (hero.star === 3 && cid > 1) cid += 1; }
         if (hero.family !== 'classic') { if (cid === 2) cid = 3; }
-        // 档位 → 服装类型键（与 `getSkinInfo` / `getCostumeIconName` 同一套映射）；
+        // 档位 → 服装类型键（与 `getCostumeIconName` 同一套映射）；
         // 类型名走 `langs_json/costume_type_<码>.json`（20 语言，见 _tools/_costume_names.py 的推导）
         const keys = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };
         const icons = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };

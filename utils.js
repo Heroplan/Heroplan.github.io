@@ -116,6 +116,11 @@ function getDisplayName(value, type) {
 function getSkillTagsForHero(hero) {
     if (!hero) return [];
 
+    // 缓存：列表每渲染一次就要对全部英雄各算一遍（1973 次），代价明显。
+    // ⚠ 结果里最后一步 `localeCompare` 只区分 cn / 非 cn ⇒ 按这两个"语言族"分键缓存即可。
+    const ck = '_skillTagsCache_' + (state.currentLang === 'cn' ? 'cn' : 'other');
+    if (hero[ck]) return hero[ck];
+
     // 排序规则：先按分类优先级（基础技能 → 特殊效果 → 增益效果 → 负面效果），
     // 同分类内按 sort_order.json 里的自定义顺序，最后按当前语言字典序。
     const sortSkillTags = (tags) => {
@@ -155,83 +160,70 @@ function getSkillTagsForHero(hero) {
         return tags;
     };
 
-    return sortSkillTags([...heroSkillTags(hero)]).filter(Boolean);
+    const out = sortSkillTags([...heroSkillTags(hero)]).filter(Boolean);
+    hero[ck] = out;
+    return out;
 }
 
 
-// 全局变量存储不同类别的语言数据
-window.langData = {
-    name: {},      // heroes_name_
-    fancy_name: {}, // heroes_name_fancy_
-    skill: {}  // skill_name_
-};
-
-// 加载所有语言数据
-async function loadExtraNameData(lang) {
-    const [nameRes, fancyRes, skillRes] = await Promise.all([
-        fetch(`langs_json/heroes_name_${lang}.json`),
-        fetch(`langs_json/heroes_name_fancy_${lang}.json`),
-        fetch(`langs_json/skill_name_${lang}.json`)
-    ]);
-    window.langData.name[lang] = await nameRes.json();
-    window.langData.fancy_name[lang] = await fancyRes.json();
-    window.langData.skill[lang] = await skillRes.json();
-}
-
-// 应用英雄名称 (name)
-function applyHeroNames(langCode) {
-    const data = window.langData.name[langCode];
-    if (!data) return;
-    let count = 0;
-    state.allHeroes.forEach(hero => {
-        if (!hero.heroId) return;
-        const keys = Object.keys(data).filter(k => hero.heroId.startsWith(k));
-        if (keys.length) {
-            const best = keys.reduce((a, b) => a.length > b.length ? a : b);
-            hero.name = data[best];
-            count++;
-        }
-    });
-    console.log(`更新了 ${count} 个英雄的 name`);
-}
-
-// 应用 fancy 名称
-function applyFancyNames(langCode) {
-    const data = window.langData.fancy_name[langCode];
-    if (!data) return;
-    let count = 0;
-    state.allHeroes.forEach(hero => {
-        const key = Object.keys(data).find(k => hero.heroId.startsWith(k));
-        if (key) {
-            hero.fancy_name = data[key];
-            count++;
-        }
-    });
-    console.log(`更新了 ${count} 个英雄的 fancy_name`);
-}
-
-// 应用技能名称
-function applySkillNames(langCode) {
-    const data = window.langData.skill[langCode];
-    if (!data) return;
-    let count = 0;
-    state.allHeroes.forEach(hero => {
-        if (hero.skill && data[hero.specialId]) {
-            hero.skill = data[hero.specialId];
-            count++;
-        }
-    });
-    console.log(`更新了 ${count} 个英雄的技能名称`);
-}
+// ⚠ 已删除的「额外名称语言」整条链（原「搜索语言」功能的残留）：
+//   · `window.langData` + `loadExtraNameData()` —— 最后一个读取方 `render.js::getSkinInfo`
+//     已随本次清理删除 ⇒ 零读取方。且它拉的 3 个文件（`heroes_name_*` / `heroes_name_fancy_*` /
+//     `skill_name_*`）**`Lang.loadAll()` 本来就拉**（都在 `TABLES` 里）⇒ 属重复请求。
+//   · `applyHeroNames` / `applyFancyNames` / `applySkillNames` / `applyCustomLanguageNames`
+//     —— 只能由已废弃的 `savedLang !== 'current'` 分支到达 ⇒ 不可达。
+//   名字 / fancy 名 / 技能名的翻译统一由 `Lang.loadAll()` + `_tPrefix()` 负责
+//   （见 `loadData` / `reloadLanguageData`）。
 
 /**
- * 应用自定义语言数据到英雄数据
- * @param {string} langCode - 语言代码
+ * **无缝切换语言**：重新载入「按语言分片」的数据，并重建英雄对象上所有语言相关字段。
+ *
+ * ⚠ 为什么需要它：`loadData()` 在启动时把两类内容**按语言固化**了 ——
+ *   ① 词表（`Lang.loadAll` 的 13 张表 + i18n）；
+ *   ② 技能文本 `data/heroes_skills_<lang>.json`（`effects`/`passives`/`passiveSkills`/
+ *      `passivesSearchPool`/`familyBonus`）；
+ *   ③ hero 对象上用 `Lang.t()` 写死的显示字段（name/fancy_name/skill/color/class/
+ *      speed/source/AetherPower）与 `state.family_values`。
+ *   旧实现靠**整页重载**重跑 loadData；无缝切换必须在这里等价重刷，否则列表/详情仍是旧语言。
+ *
+ * 只改**显示字段**，不动任何 ID（`heroId`/`colorId`/`classId`/`speedId`/`sourceId`/`aetherPowerId`），
+ * 与 `loadData` 的口径完全一致（含最长前缀回退 `_tPrefix`）。
+ * @param {string} lang 目标语言码
  */
-function applyCustomLanguageNames(langCode) {
-    applyHeroNames(langCode);
-    applyFancyNames(langCode);
-    applySkillNames(langCode);
+async function reloadLanguageData(lang) {
+    await Lang.loadAll(lang);
+    const res = await fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`);
+    if (!res.ok) throw new Error('heroes_skills HTTP ' + res.status);
+    const skills = await res.json();
+
+    const familyValues = {};
+    (state.allHeroes || []).forEach(hero => {
+        const hid = hero.heroId;
+        const st = (skills[hid] && skills[hid][0]) || {};
+        // ── 显示字段（与 loadData 同口径）──
+        hero.name = _tPrefix('heroes_name', hid);
+        hero.fancy_name = _tPrefix('heroes_name_fancy', hid);
+        hero.skill = Lang.t('skill_name', hero.specialId || '');
+        hero.color = Lang.t('color', hero.colorId);
+        hero.class = Lang.t('class', hero.classId);
+        hero.speed = Lang.t('speed', hero.speedId);
+        hero.source = Lang.t('source', hero.sourceId);
+        hero.AetherPower = Lang.t('aether_power', hero.aetherPowerId);
+        // ── 技能文本（按语言分片）──
+        hero.effects = (st.skills && st.skills[0] && st.skills[0].lines) || [];
+        hero.passiveSkills = st.passiveSkills || [];
+        hero.passives = (st.passiveSkills || []).map(x => x.text).filter(Boolean);
+        hero.passivesSearchPool = (st.passiveSkills || []).reduce((a, x) => {
+            if (x && x.text) a.push(x.text);
+            if (x && x.title) a.push(x.title);
+            return a;
+        }, []);
+        hero.familyBonus = st.familyBonus || [];
+        if (hero.family != null && !(hero.family in familyValues)) {
+            familyValues[hero.family] = Lang.t('family', hero.family);
+        }
+    });
+    state.family_values = familyValues;
 }
 
 /**
@@ -317,7 +309,7 @@ function heroSkillTags(hero) {
 
 /**
  * 取词（**最长前缀匹配**）：服装英雄没有自己的名字条目 ⇒ 回退到其本体条目
- * （与旧实现 `getSkinInfo`/`applyHeroNames` 一致；例 `nordic_chained_werewolf_costume_raccoon` → `nordic_chained_werewolf`）。
+ * （例 `nordic_chained_werewolf_costume_raccoon` → `nordic_chained_werewolf`）。
  */
 function _tPrefix(table, id) {
     if (!id) return '';
@@ -357,7 +349,7 @@ function resolveHeroByIdentity(identity) {
 /** 服装槽位（图标/皮肤标识用）：toon=3 glass=4 stylish=5，其余按同父英雄的发布顺序 1/2 */
 function _costumeSlot(heroId, ord) {
     // 槽位 = **同父英雄下按发布日期编的序号**（1/2/3…）。
-    // ⚠ 不要再按 id 里的 `toon`/`glass`/`stylish` 关键字覆写：`getSkinInfo` / `getCostumeIconName`
+    // ⚠ 不要再按 id 里的 `toon`/`glass`/`stylish` 关键字覆写：`getCostumeIconName`
     //   还会对「classic 3★」再做一次 `+1` 映射，两处叠加会把 `stylish` 顶到 6
     //   ⇒ 查不到 → 回退成 `C1`（`dwarven_smasher_costume_stylish`）。
     //   实测：序号法 + 那次 +1 与"按 id 关键字"在 240 个带类型名的服装里 **238 个一致**，
@@ -443,10 +435,7 @@ function _cmpAutoOrder(ha, hb) {
  * @param {string} lang - 当前语言码（cn/tc/en/…）。
  */
 async function loadData(lang) {
-    // ⚠ **搜索语言选择已废弃** —— 不论 cookie 如何一律按 `current`
-    //   （= 当前界面语言）处理 ⇒ `search_lang` cookie 与选择器同步整块移除。
-    const savedLang = 'current';
-
+    // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。
     try {
         // ① 语言表（i18n + 各词表 + 排序表）
         await Lang.loadAll(lang);
@@ -466,9 +455,8 @@ async function loadData(lang) {
         const typesDoc = await typesRes.json();
         const srcDoc = await srcRes.json();
         const skills = await skillsRes.json();
-        const enNames = enNameRes ? await enNameRes.json() : {};
+        const enNames = enNameRes ? await enNameRes.json() : {};   // 供 `hero.english_name` 用
         const costumeBonuses = costumeRes ? await costumeRes.json() : {};
-        window.langData.name['en'] = enNames;
 
         // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {
@@ -613,14 +601,6 @@ async function loadData(lang) {
         state.allHeroes = list;
         state.families_bonus = [];            // 家族加成改由每个英雄的 familyBonus 提供
         state.family_values = familyValues;   // getDisplayName(family/source) 用
-
-        // ⑤ 「额外名称语言」：名字/技能名改用另一语言（数据本身不变）
-        if (savedLang === 'current') {
-            await loadExtraNameData(lang);
-        } else {
-            await loadExtraNameData(savedLang);
-            applyCustomLanguageNames(savedLang);
-        }
         return true;
     } catch (error) {
         console.error("加载或解析数据文件失败:", error);

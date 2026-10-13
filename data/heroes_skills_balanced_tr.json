@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
+      "Tüm müttefikler, 5 tur boyunca% 50 saldırı alır. Saldırı, en fazla% 70 olmak üzere her turda% 5 artar.",
+      "Tüm müttefikler 5 tur boyunca 1270 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Her yenilen müttefik% 50 şansla% 15 SP ile dirilir.",
+      "Her müttefik için eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
+      "Tüm müttefikler 4 tur boyunca 612 SP yeniler"
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Tüm müttefikler için% 45 sağlık yeniler.",
-      "Yenilen her müttefikin,% 40 SP ile diriltilmesi için% 25 şans bulunur.\n[*]Panodaki her Doğa kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır.",
+      "Yenilen her müttefikin,% 40 SP ile diriltilmesi için% 25 şans bulunur.\n[*]Panodaki her Doğa kalkanı, toplamda% 49 şans olmak üzere diriltilme şansını% 3 artırır.",
       "Tüm müttefikler yeni durum engellerine bağışıklık kazanır. Bu efekt, 3 engele direnilene kadar sürer."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Tüm düşmanlara% 210 hasar verir.\n[*]Panodaki her Kutsal kalkan başına% 20 ek hasar verir, toplamda maksimum% 450 hasar olabilir.",
+      "Yenilen her müttefikin,% 40 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Tüm düşmanlara% 260 hasar verir.\n[*]Panodaki her Kutsal kalkan başına% 25 ek hasar verir, toplamda maksimum% 560 hasar olabilir.",
+      "Yenilen her müttefikin,% 45 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır.",
+      "Karanlığa ekstra hasar verir."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Saldırı sonucunda yenilen her düşman için tüm düşmanların manasını% -25 azaltır.",
       "İstif +2 (Maks.: 10): Eylemci her turda% 16 saldırı alır. (Dağıtma, olumlu istifleri 1 azaltır.)",
       "Element Bağlantısı 6 tur boyunca tüm Ateş müttefiklerine% 5 sağlık yenilemesi sağlar. Bu efekt bozulamaz."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Her yenilen müttefik% 50 şansla% 30 SP ile dirilir.",
+      "Tüm müttefikler 4 tur boyunca 1424 SP yeniler Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer.",
+      "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 5 mana alır. Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer.",
+      "Element Bağlantısı tüm Doğa müttefiklerine 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz. Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Özel Yetenek uygulandıktan sonra eylemcinin manasını% 15 artırır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "Rastgele 5 düşmana% 500 hasar verir.",
+      "Vurulan tüm düşmanlar, 5 tur boyunca manaları doluyken Akılsız Şifa uygulamak zorunda kalırlar.\n[*]Akılsız Şifa\n[*]Rakip tarafta kalan SP'si en düşük olan karakterin sağlığını% 60 yeniler."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
+      "Tüm müttefikler 4 tur boyunca 1080 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
+      "Tüm düşmanlar 4 tur boyunca Özel Yetenekler karşıtı% -50 savunma alır. Karanlık karakterlerine karşı bu durum efekti arındırılamaz olur ve 2 tur daha uzun sürer."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Tüm müttefiklerin tüm Canavarlarını yok eder ve Mega Canavarlara hasar verir.",
       "Kalan SP'si en düşük olan müttefikin sağlığını% 65 yeniler. Diğer tüm müttefiklerin sağlığını% 45 yeniler.",
       "Büyüme: Tüm müttefikler 300 saldırı ve 300 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilirler.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Özel Yetenek% 100 /% 200 mana ile doldurulduğunda farklı bir efekt verir:",
+      "[*] 1 kat Mana Hücumu:",
+      "[**]Hedef ve yakındaki düşmanlar 2 tur boyunca[#Dynamic] 222 [#]Yakma hasarı alır. Eylemci, verilen Yakma hasarının% 10 kadarını sağlık olarak emer.",
+      "[**]Eylemci, sonraki 2 tur sırasında yenilirse bir sonraki turun başında% 40 sağlık ile dirilir. Eylemci yenildiğinde tüm durum efektleri ve istifler kaldırılır.",
+      "[*] 2 kat Mana Hücumu:",
+      "[**]Her yenilen müttefik% 50 şansla% 44 SP ile dirilir.",
+      "[**]Tüm müttefikler 3 tur boyunca 795 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
+      "[**]Tüm müttefikler 3 boyunca alınan tüm hasarları% -60 oranında azaltır."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Eylemci 6 tur boyunca, düşmanların eylemci tarafındaki müttefiklerin Özel Yetenekler kullanmasını engelleyen Alay Etme özelliğini alır. (Alay, tüm düşmanların Alayı olmayan müttefiklerine Özel Yetenek uygulamasını önler.)",
+      "Eylemci 6 tur boyunca 1692 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
+      "Tüm müttefikler 6 tur boyunca% 65 savunma alır.",
+      "Sonraki 6 tur boyunca tüm müttefikler turun sonunda% 6 mana alır."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*] 3 kat Mana Hücumu:",
       "[**]Tüm müttefiklerin sağlığını 2000 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
       "[**]Tüm müttefikler yeni durum engellerine bağışıklık kazanır ve denenen her durum engeli için 550 sağlık yeniler. Bu efekt, 3 engele direnilene kadar sürer."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Özel Yetenek% 100 /% 200 /% 300 mana ile doldurulduğunda farklı bir efekt verir:",
+      "[*] 1 kat Mana Hücumu:",
+      "[**]Hedefin tüm Hizmetkarlarını yok eder. Bu efekt Mega Hizmetkarlara hasar verir.",
+      "[**]Hedefe% 410 hasar verir.",
+      "[**]Hedef, 2 tur boyunca Özel Yeteneğe sahip yeni Hizmetkarlar çağıramaz ve çağırmaya çalıştığı her Hizmetkar için 100 hasar alır.",
+      "[**]Tüm müttefikler, yok edilen her Hizmetkar için% 5 mana alır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "[*] 2 kat Mana Hücumu:",
+      "[**]Hedefin ve yakındaki düşmanların tüm Hizmetkarlarını yok eder. Bu efekt Mega Hizmetkarlara hasar verir.",
+      "[**]Hedefe ve civardaki düşmanlara% 420 hasar verir.",
+      "[**]Hedef ve yakındaki düşmanlar, 3 tur boyunca Özel Yeteneğe sahip yeni Hizmetkarlar çağıramaz ve çağırmaya çalıştığı her Hizmetkar için 200 hasar alır.",
+      "[**]Tüm müttefikler, yok edilen her Hizmetkar için% 5 mana alır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "[*] 3 kat Mana Hücumu:",
+      "[**]Tüm düşmanların tüm Hizmetkarlarını yok eder ve Mega Hizmetkarlara hasar verir.",
+      "[**]Tüm düşmanlara% 430 hasar verir.",
+      "[**]Hiçbir düşman, 4 tur boyunca Özel Yeteneğe sahip yeni Hizmetkarlar çağıramaz ve tüm düşmanlar çağırmaya çalıştığı her Hizmetkar için 500 hasar alır.",
+      "[**]Tüm müttefikler, yok edilen her Hizmetkar için% 5 mana alır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Joker: 4 tur boyunca tüm müttefikler her tur 350 SP yeniler veya 1050 güçlendirilmiş sağlık alır.",
       "(Joker her tur bu efekte daha fazla güçlü olma şansı ekler.\n[*]Bu Joker efekti, o turda% 50 şansla% 200 ekstra SP iyileştirir. Ekstra SP iyileştirildiğinde efekt güçlendirilmiş sağlık verir.)",
-      "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 10 mana alır.",
+      "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 7 mana alır.",
       "Tüm müttefikler 4 tur boyunca% 55 savunma alır."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Hedefe% 650 hasar verir.",
       "[**]Saldırı, vurulan herhangi bir düşmana bitişik olan tüm düşmanlara etki eder.",
       "[**]Büyüme: Tüm müttefikler 750 saldırı ve 750 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[***]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[***]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[***]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[***]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilirler.\n[***]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[***]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Özel Yetenek% 100 /% 200 /% 300 mana ile doldurulduğunda farklı bir efekt verir:",
+      "[*] 1 kat Mana Hücumu:",
+      "[**]Tüm müttefikler için% 15 sağlık yeniler.",
+      "[**]Her yenilen müttefik% 30 şansla% 30 SP ile dirilir.",
+      "[**]Sonraki 2 tur boyunca tüm müttefikler turun sonunda% 10 mana alır.",
+      "[*] 2 kat Mana Hücumu:",
+      "[**]Tüm müttefikler için% 35 sağlık yeniler.",
+      "[**]Her yenilen müttefik% 40 şansla% 40 SP ile dirilir.",
+      "[**]Tüm müttefiklerden 1 durum engelini arındırır. (Durum engelleri, alındıkları sırayla arındırılır. İlk önce son eklenen durum engelleri arındırılır.)",
+      "[**]Sonraki 3 tur boyunca tüm müttefikler turun sonunda% 10 mana alır.",
+      "[*] 3 kat Mana Hücumu:",
+      "[**]Tüm müttefikler için% 55 sağlık yeniler.",
+      "[**]Her yenilen müttefik% 50 şansla% 60 SP ile dirilir.",
+      "[**]Tüm müttefiklerden durum engellerini arındırır.",
+      "[**]Sonraki 5 tur boyunca tüm müttefikler turun sonunda% 15 mana alır."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Yakındaki müttefiklerin mana değerini% 30 artırır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
       "Büyüme: Yakındaki müttefikler 360 saldırı ve 360 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilirler.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)",
       "Eylemciden devralınan% 50 SP'ye ve% 40 saldırıya sahip bir Balçık Mega Hizmetkarı çağırır."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Özel Yetenek% 100 /% 200 /% 300 mana ile doldurulduğunda farklı bir efekt verir:",
+      "[*] 1 kat Mana Hücumu:",
+      "[**]Tüm müttefiklerin sağlığını 450 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
+      "[*] 2 kat Mana Hücumu:",
+      "[**]Her yenilen müttefik% 50 şansla% 10 SP ile dirilir.",
+      "[**]Tüm müttefikler 3 tur boyunca 609 SP yeniler",
+      "[*] 3 kat Mana Hücumu:",
+      "[**]Tüm müttefiklerin sağlığını 700 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 27 SP ile dirilir.",
+      "[**]Tüm müttefikler 4 tur boyunca 952 SP yeniler"
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Tüm düşmanlara Ateş Fırtınası Darbesiyle saldırarak en fazla 2500 hasar verir. Hedef Doğa elementindense% 40 daha fazla hasar verir.",
+      "Tüm düşmanların mana değerini% 35 düşürür.",
+      "Özel Yetenek uygulandıktan sonra eylemcinin manasını% 15 artırır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "Her turun sonunda tüm düşmanlardan en yeni bozulabilir buff'ı çalar ve 5 tur boyunca onları müttefikleri arasında rastgele dağıtır."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
-     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 80 şansla% 50 sağlık ve% 80 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+     "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
     }
    ]
   }

@@ -888,6 +888,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 20% di HP.",
+      "Tutti gli alleati ricevono il 50% di Attacco per 5 turni. L'Attacco aumenta del 5% a ogni turno, fino a un massimo del 70%.",
+      "Tutti gli alleati ottengono 1270 punti Salute in più nel corso di 5 turni. La Salute potenziata può superare gli HP massimi."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -917,6 +931,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 15% di HP.",
+      "Chiama un servitore elfo per ogni alleato con il 10% di HP e il 10% di Attacco ereditati dall'evocatore.",
+      "Tutti gli alleati recuperano 612 HP nel corso di 4 turni."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -940,7 +968,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Fa recuperare il 45% di Salute a tutti gli alleati.",
-      "Ogni alleato sconfitto ha il 25% di probabilità di essere rianimato con il 40% di HP.\n[*]Ogni scudo di tipo Natura sul campo di battaglia aumenta del 5% le probabilità di essere rianimati, fino a un 65% di probabilità totale.",
+      "Ogni alleato sconfitto ha il 25% di probabilità di essere rianimato con il 40% di HP.\n[*]Ogni scudo di tipo Natura sul campo di battaglia aumenta del 3% le probabilità di essere rianimati, fino a un 49% di probabilità totale.",
       "Tutti gli alleati sono immuni dai nuovi disturbi. Questo effetto dura finché non hanno resistito a 3 disturbi."
      ]
     }
@@ -1224,6 +1252,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Infligge un 210% di danni a tutti i nemici.\n[*]Infligge un 20% di danni aggiuntivi per ogni scudo Sacro sul campo di battaglia, fino a un 450% massimo di danni totali.",
+      "Ogni alleato sconfitto ha il 20% di probabilità di essere rianimato con il 40% di HP.\n[*]Ogni scudo di tipo Sacro sul campo di battaglia aumenta del 5% le probabilità di essere rianimati, fino a un 65% di probabilità totale."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Infligge un 260% di danni a tutti i nemici.\n[*]Infligge un 25% di danni aggiuntivi per ogni scudo Sacro sul campo di battaglia, fino a un 560% massimo di danni totali.",
+      "Ogni alleato sconfitto ha il 20% di probabilità di essere rianimato con il 45% di HP.\n[*]Ogni scudo di tipo Sacro sul campo di battaglia aumenta del 5% le probabilità di essere rianimati, fino a un 65% di probabilità totale.",
+      "Infligge danni extra contro Oscurità."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1235,6 +1290,21 @@
       "Per ogni nemico sconfitto dall'attacco, riduce del -25% il mana di tutti i nemici.",
       "Iterazione +2 (max: 10): l'evocatore ottiene il 16% di Attacco. (L'annullamento riduce di 1 le iterazioni positive.)",
       "Collegamento elementale fa recuperare 5% Salute a tutti gli alleati Fuoco per 6 turni. Questo effetto non può essere annullato."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 30% di HP.",
+      "Tutti gli alleati recuperano 1424 HP nel corso di 4 turni. Questo effetto di stato non può essere annullato e dura 2 turni in più sui personaggi di tipo Natura.",
+      "Per i prossimi 4 turni, tutti gli alleati ricevono il 5% di mana alla fine del turno. Questo effetto di stato non può essere annullato e dura 2 turni in più sui personaggi di tipo Natura.",
+      "Collegamento elementale fornisce a tutti gli alleati Natura 15% Attacco e 15% Difesa per 6 turni. Questo effetto non può essere annullato. Questo effetto di stato non può essere annullato e dura 2 turni in più sui personaggi di tipo Natura."
      ]
     }
    ]
@@ -1608,6 +1678,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Dopo il lancio dell'Abilità speciale, aumenta del 15% il mana dell'evocatore. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
+      "Infligge il 500% dei danni a 5 nemici casuali.",
+      "Per 5 turni, tutti i nemici colpiti sono costretti a lanciare Guarigione senza pensieri quando hanno il mana pieno.\n[*]Guarigione senza pensieri\n[*]Fa recuperare il 60% di Salute al personaggio nel lato avversario con il valore inferiore di HP rimasti."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2155,6 +2235,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 20% di HP.",
+      "Tutti gli alleati ottengono 1080 punti Salute in più nel corso di 4 turni. La Salute potenziata può superare gli HP massimi.",
+      "Tutti i nemici ricevono -50% Difesa dalle Abilità speciali per 4 turni. Contro i personaggi di tipo Oscurità, questo effetto di stato diventa non rimovibile e dura 2 turni in più."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2207,6 +2301,25 @@
       "Distrugge tutti i demoni di tutti gli alleati e infligge danni a tutti i demoni Mega.",
       "Fa recuperare il 65% di Salute all'alleato con il valore inferiore di HP rimasti. Tutti gli altri alleati recuperano il 45% di Salute.",
       "Crescita: tutti gli alleati ottengono 300 di Attacco e 300 di Difesa. (Avvizzimento e Crescita modificano i punteggi delle abilità dei personaggi. L'effetto rimane anche se il personaggio viene sconfitto.\n[*]Ulteriori effetti di Avvizzimento e Crescita modificano ulteriormente i punteggi delle abilità.\n[*]Avvizzimento e Crescita non possono essere rimossi con annullamenti e rimozioni.\n[*]Limiti dei punteggi delle abilità modificati.\n[*]Minimo 30% e massimo 170% dei loro valori originali.\n[*]Altri buff e debuff vengono applicati ai punteggi delle abilità modificati.\n[*]Questo effetto è meno efficace se attivato da mostri e boss.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% di mana:",
+      "[*]Carica di mana x 1:",
+      "[**]Il bersaglio e i nemici vicini subiscono[#Dynamic] 222 [#]danni da ustione nel corso di 2 turni. L'evocatore assorbe il 10% di danni da ustione inflitti come Salute.",
+      "[**]Se l'evocatore viene sconfitto nei prossimi 2 turni, viene rianimato all'inizio del suo turno successivo con il 40% di Salute. Tutti gli effetti di stato e le iterazioni vengono rimossi al momento della sconfitta.",
+      "[*]Carica di mana x 2:",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 44% di HP.",
+      "[**]Tutti gli alleati ottengono 795 punti Salute in più nel corso di 3 turni. La Salute potenziata può superare gli HP massimi.",
+      "[**]Tutti gli alleati riducono tutti i danni subiti del -60% per 3 turni."
      ]
     }
    ]
@@ -2583,6 +2696,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "L'evocatore ottiene Deridi, che impedisce ai nemici di usare le Abilità speciali sui suoi alleati per 6 turni. (Deridi impedisce a tutti i nemici di usare le Abilità speciali sugli alleati che non hanno Deridi.)",
+      "L'evocatore ottiene 1692 punti Salute in più nel corso di 6 turni. La Salute potenziata può superare gli HP massimi.",
+      "Tutti gli alleati ricevono 65% Difesa per 6 turni.",
+      "Per i prossimi 6 turni, tutti gli alleati ricevono il 6% di mana alla fine del turno."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2697,6 +2821,33 @@
       "[*]Carica di mana x 3:",
       "[**]Aumenta di 2000 la Salute di tutti gli alleati. La Salute potenziata può superare gli HP massimi.",
       "[**]Tutti gli alleati sono immuni dai nuovi disturbi e recuperano 550 di Salute per ogni nuovo disturbo che i nemici tentano di applicare. Questo effetto dura finché non hanno resistito a 3 disturbi."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% / 300% di mana:",
+      "[*]Carica di mana x 1:",
+      "[**]Distrugge tutti i servitori del bersaglio. Questo effetto infligge danni ai servitori Mega.",
+      "[**]Infligge 410% di danni al bersaglio.",
+      "[**]Il bersaglio non può chiamare nuovi servitori con l'Abilità speciale e subisce 100 danni per ogni servitore che tenta di chiamare per 2 turni.",
+      "[**]Tutti gli alleati ottengono il 5% di mana per ogni servitore distrutto. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
+      "[*]Carica di mana x 2:",
+      "[**]Distrugge tutti i servitori del bersaglio e dei nemici vicini. Questo effetto infligge danni ai servitori Mega.",
+      "[**]Infligge 420% di danni al bersaglio e ai nemici vicini.",
+      "[**]Il bersaglio e i nemici vicini non possono chiamare nuovi servitori con l'Abilità speciale e subiscono 200 danni per ogni servitore che tentano di chiamare per 3 turni.",
+      "[**]Tutti gli alleati ottengono il 5% di mana per ogni servitore distrutto. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
+      "[*]Carica di mana x 3:",
+      "[**]Distrugge tutti i servitori di tutti i nemici e danneggia i Mega servitori.",
+      "[**]Infligge 430% di danni a tutti i nemici.",
+      "[**]I nemici non possono chiamare nuovi servitori con l'Abilità speciale e subiscono 500 danni per ogni servitore che tentano di chiamare per 4 turni.",
+      "[**]Tutti gli alleati ottengono il 5% di mana per ogni servitore distrutto. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)"
      ]
     }
    ]
@@ -2854,7 +3005,7 @@
      "lines": [
       "Selvaggio: per 4 turni, tutti gli alleati rigenerano 350 HP oppure ricevono 1050 Salute potenziata a ogni turno.",
       "(Selvaggio aggiunge una probabilità a ogni turno che questo effetto sia più potente.\n[*]L'effetto Selvaggio ha una probabilità del 50% di curare il 200% di HP extra in quel turno. Quando cura HP extra, l'effetto conferisce Salute potenziata.)",
-      "Per i prossimi 4 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno.",
+      "Per i prossimi 4 turni, tutti gli alleati ricevono il 7% di mana alla fine del turno.",
       "Tutti gli alleati ricevono 55% Difesa per 4 turni."
      ]
     }
@@ -2880,6 +3031,32 @@
       "[**]Infligge 650% di danni al bersaglio.",
       "[**]L'attacco si propaga a tutti i nemici vicini a quello colpito.",
       "[**]Crescita: tutti gli alleati ottengono 750 di Attacco e 750 di Difesa. (Avvizzimento e Crescita modificano i punteggi delle abilità dei personaggi. L'effetto rimane anche se il personaggio viene sconfitto.\n[***]Ulteriori effetti di Avvizzimento e Crescita modificano ulteriormente i punteggi delle abilità.\n[***]Avvizzimento e Crescita non possono essere rimossi con annullamenti e rimozioni.\n[***]Limiti dei punteggi delle abilità modificati.\n[***]Minimo 30% e massimo 170% dei loro valori originali.\n[***]Altri buff e debuff vengono applicati ai punteggi delle abilità modificati.\n[***]Questo effetto è meno efficace se attivato da mostri e boss.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% / 300% di mana:",
+      "[*]Carica di mana x 1:",
+      "[**]Fa recuperare il 15% di Salute a tutti gli alleati.",
+      "[**]Ogni alleato sconfitto ha il 30% di probabilità di rinascere col 30% di HP.",
+      "[**]Per i prossimi 2 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno.",
+      "[*]Carica di mana x 2:",
+      "[**]Fa recuperare il 35% di Salute a tutti gli alleati.",
+      "[**]Ogni alleato sconfitto ha il 40% di probabilità di rinascere col 40% di HP.",
+      "[**]Rimuove 1 disturbo da tutti gli alleati. (I disturbi vengono rimossi nell'ordine in cui sono stati ricevuti. I disturbi più recenti vengono rimossi per primi.)",
+      "[**]Per i prossimi 3 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno.",
+      "[*]Carica di mana x 3:",
+      "[**]Fa recuperare il 55% di Salute a tutti gli alleati.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 60% di HP.",
+      "[**]Rimuove i disturbi di tutti gli alleati.",
+      "[**]Per i prossimi 5 turni, tutti gli alleati ricevono il 15% di mana alla fine del turno."
      ]
     }
    ]
@@ -3368,6 +3545,27 @@
       "Aumenta del 30% il mana degli alleati vicini. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
       "Crescita: gli alleati vicini ottengono 360 di Attacco e 360 di Difesa. (Avvizzimento e Crescita modificano i punteggi delle abilità dei personaggi. L'effetto rimane anche se il personaggio viene sconfitto.\n[*]Ulteriori effetti di Avvizzimento e Crescita modificano ulteriormente i punteggi delle abilità.\n[*]Avvizzimento e Crescita non possono essere rimossi con annullamenti e rimozioni.\n[*]Limiti dei punteggi delle abilità modificati.\n[*]Minimo 30% e massimo 170% dei loro valori originali.\n[*]Altri buff e debuff vengono applicati ai punteggi delle abilità modificati.\n[*]Questo effetto è meno efficace se attivato da mostri e boss.)",
       "Chiama un servitore Mega slime con il 50% di HP e il 40% di Attacco ereditati dall'evocatore."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% / 300% di mana:",
+      "[*]Carica di mana x 1:",
+      "[**]Aumenta di 450 la Salute di tutti gli alleati. La Salute potenziata può superare gli HP massimi.",
+      "[*]Carica di mana x 2:",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 10% di HP.",
+      "[**]Tutti gli alleati recuperano 609 HP nel corso di 3 turni.",
+      "[*]Carica di mana x 3:",
+      "[**]Aumenta di 700 la Salute di tutti gli alleati. La Salute potenziata può superare gli HP massimi.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 27% di HP.",
+      "[**]Tutti gli alleati recuperano 952 HP nel corso di 4 turni."
      ]
     }
    ]
@@ -4040,6 +4238,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Attacca tutti i nemici con Colpo Firestorm, infliggendo fino a 2500 danni. Infligge il 40% di danni extra se il bersaglio è di elemento Natura.",
+      "Riduce del 35% il mana di tutti i nemici.",
+      "Dopo il lancio dell'Abilità speciale, aumenta del 15% il mana dell'evocatore. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
+      "Al termine di ogni turno, ruba l'ultima magia benefica annullabile da tutti i nemici e la distribuisce casualmente tra gli alleati per 5 turni."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4718,7 +4927,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4734,7 +4943,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4750,7 +4959,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4766,7 +4975,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4793,7 +5002,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4809,7 +5018,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4825,7 +5034,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4841,7 +5050,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4857,7 +5066,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4873,7 +5082,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4889,7 +5098,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4915,7 +5124,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4931,7 +5140,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4947,7 +5156,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4963,7 +5172,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -4979,7 +5188,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -5006,7 +5215,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -5022,7 +5231,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -5038,7 +5247,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }
@@ -5064,7 +5273,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nove vite",
-     "text": "[*] Quando viene sconfitto, questo personaggio ha il 80% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 80% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
+     "text": "[*] Quando viene sconfitto, questo personaggio ha il 100% di probabilità di rianimarsi all'inizio del suo prossimo turno con il 50% di Salute e il 40% di mana.\n[*] Si attiva fino a un massimo di 9 volte. Le probabilità di rianimazione si riducono a ogni attivazione."
     }
    ]
   }

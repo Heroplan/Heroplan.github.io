@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 20% PŻ.",
+      "Wszyscy sojusznicy otrzymują 50% do ataku na czas 5 tur. Atak zwiększa się o 5% w każdej turze, maksymalnie do 70%.",
+      "Wszyscy sojusznicy regenerują 1270 wzmocnionego zdrowia przez 5 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 15% PŻ.",
+      "Przywołuje elfiego pomocnika za każdego sojusznika z 10% PŻ i 10% ataku przejętymi od bohatera.",
+      "Wszyscy sojusznicy regenerują 612 PŻ przez 4 tur(y)."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Regeneruje 45% zdrowia wszystkich sojuszników.",
-      "Każdy pokonany sojusznik ma 25% szans na ożywienie z 40% PŻ.\n[*]Każda tarcza natury na planszy zwiększa szansę ożywienia o 5% , maks. do 65%.",
+      "Każdy pokonany sojusznik ma 25% szans na ożywienie z 40% PŻ.\n[*]Każda tarcza natury na planszy zwiększa szansę ożywienia o 3% , maks. do 49%.",
       "Wszyscy sojusznicy są odporni na nowe dolegliwości ze statusu. Efekt trwa aż do odparcia łącznie 3 dolegliwości."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Zadaje 210% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowo 20% obrażeń za każdą tarczę światłości na planszy, łącznie do 450% obrażeń.",
+      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 40% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Zadaje 260% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowo 25% obrażeń za każdą tarczę światłości na planszy, łącznie do 560% obrażeń.",
+      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 45% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%.",
+      "Zadaje dodatkowe obrażenia przeciwko mrokowi."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Za każdego wroga pokonanego atakiem zmniejsza manę wszystkich wrogów o -25%.",
       "Kumulacja +2 (maks.: 10): inicjator otrzymuje 16% siły ataku. (Odczarowanie zmniejsza liczbę pozytywnych kumulacji o 1.)",
       "Spoiwo żywiołów regeneruje 5% zdrowia u wszystkich sojuszników ognia przez 6 tur(y). Efekt nie może być odwołany czarami."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 30% PŻ.",
+      "Wszyscy sojusznicy regenerują 1424 PŻ przez 4 tur(y). Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury.",
+      "Podczas następnych 4 tur wszyscy sojusznicy otrzymują 5% many na końcu tury. Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury.",
+      "Spoiwo żywiołów daje wszystkim sojusznikom natury 15% do ataku i 15% do obrony przez 6 tur(y). Efekt nie może być odwołany czarami. Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Po rzuceniu umiejętności specjalnej zwiększa manę rzucającego o 15%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "Zadaje 500% obrażeń 5 losowym wrogom.",
+      "Przez 5 tur(y) wszyscy trafieni wrogowie zostają zmuszeni do użycia bezmyślnego leczenia, gdy mają pełną manę.\n[*]Bezmyślne leczenie\n[*]Przywraca 60% zdrowia postaci w przeciwnej drużynie, której pozostało najmniej PŻ."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 20% PŻ.",
+      "Wszyscy sojusznicy regenerują 1080 wzmocnionego zdrowia przez 4 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "Wszyscy wrogowie otrzymują -50% do obrony przeciwko umiejętnościom specjalnym przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Niszczy wszystkie potwory wszystkich sojuszników i zadaje obrażenia mega potworom.",
       "Przywraca 65% zdrowia sojusznikowi, któremu pozostało najmniej PŻ. Wszyscy pozostali sojusznicy odzyskują 45% zdrowia.",
       "Wzrost: wszyscy sojusznicy otrzymują 300 do ataku i 300 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% many:",
+      "[*]Ładunek many x 1:",
+      "[**]Cel oraz pobliscy wrogowie odnoszą[#Dynamic] 222 [#]pkt. obrażeń od oparzeń przez okres 2 tur. Rzucający pochłania 10% zadanych obrażeń od oparzeń w postaci PŻ.",
+      "[**]Jeśli rzucający zostanie pokonany w trakcie kolejnych 2 tur, zostanie wskrzeszony na początku kolejnej tury z 40% zdrowia. W razie pokonania rzucającego wszystkie efekty statusu i kumulacji zostaną anulowane.",
+      "[*]Ładunek many x 2:",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 44% PŻ.",
+      "[**]Wszyscy sojusznicy regenerują 795 wzmocnionego zdrowia przez 3 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "[**]Wszyscy sojusznicy odnoszą -60% mniej obrażeń przez 3 tur(y)."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Bohater zyskuje efekt Prowokacji, który uniemożliwia wrogom używanie umiejętności specjalnych na sojusznikach bohatera przez 6 tur(y). (Prowokacja sprawia, że żaden z wrogów nie może użyć umiejętności specjalnej na sojusznikach, którzy nie są pod wpływem Prowokacji.)",
+      "Bohater regeneruje 1692 wzmocnionego zdrowia przez 6 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "Wszyscy sojusznicy otrzymują 65% do obrony przez 6 tur(y).",
+      "Podczas następnych 6 tur wszyscy sojusznicy otrzymują 6% many na końcu tury."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]Ładunek many x 3:",
       "[**]Wzmacnia zdrowie wszystkich sojuszników o 2000. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
       "[**]Wszyscy sojusznicy są odporni na nowe dolegliwości ze statusu i odzyskują 550 pkt. zdrowia za każdą próbę nałożenia dolegliwości ze statusu. Efekt trwa aż do odparcia łącznie 3 dolegliwości."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
+      "[*]Ładunek many x 1:",
+      "[**]Niszczy wszystkich pomocników celu. Ten efekt zadaje obrażenia mega pomocnikom.",
+      "[**]Zadaje 410% obrażeń celowi.",
+      "[**]Cel nie może wezwać nowych pomocników z umiejętnością specjalną i otrzymuje 100 obrażeń za każdą próbę wezwania pomocnika przez okres 2 tur.",
+      "[**]Wszyscy sojusznicy otrzymują 5% many za każdego zabitego pomocnika. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "[*]Ładunek many x 2:",
+      "[**]Niszczy wszystkich pomocników celu i pobliskich wrogów. Ten efekt zadaje obrażenia mega pomocnikom.",
+      "[**]Zadaje 420% obrażeń celowi i pobliskim wrogom.",
+      "[**]Cel i pobliscy wrogowie nie mogą wezwać nowych pomocników z umiejętnością specjalną i otrzymują 200 obrażeń za każdą próbę wezwania pomocnika przez okres 3 tur.",
+      "[**]Wszyscy sojusznicy otrzymują 5% many za każdego zabitego pomocnika. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "[*]Ładunek many x 3:",
+      "[**]Niszczy wszystkich pomocników wszystkich wrogów i zadaje obrażenia mega pomocnikom.",
+      "[**]Zadaje 430% obrażeń wszystkim przeciwnikom.",
+      "[**]Wszyscy wrogowie nie mogą wezwać nowych pomocników z umiejętnością specjalną i otrzymują 500 obrażeń za każdą próbę wezwania pomocnika przez okres 4 tur.",
+      "[**]Wszyscy sojusznicy otrzymują 5% many za każdego zabitego pomocnika. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Dzicz: Przez 4 tur(y) wszyscy sojusznicy regenerują 350 PŻ lub otrzymują 1050 pkt. wzmocnionego zdrowia co turę.",
       "(Dzicz co turę zapewnia szansę, że ten efekt będzie potężniejszy.\n[*]Ten efekt Dziczy ma 50% szans na uleczenie 200% dodatkowych PŻ. Po uleczeniu dodatkowych PŻ, efekt zapewnia wzmocnione zdrowie.)",
-      "Podczas następnych 4 tur wszyscy sojusznicy otrzymują 10% many na końcu tury.",
+      "Podczas następnych 4 tur wszyscy sojusznicy otrzymują 7% many na końcu tury.",
       "Wszyscy sojusznicy otrzymują 55% do obrony przez 4 tur(y)."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Zadaje 650% obrażeń celowi.",
       "[**]Atak przechodzi kolejno po wszystkich wrogach sąsiadujących z trafionymi nieprzyjaciółmi.",
       "[**]Wzrost: wszyscy sojusznicy otrzymują 750 do ataku i 750 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[***]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[***]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[***]Limity zmodyfikowanej siły umiejętności.\n[***]Min. 30% i maks. 170% pierwotnych wartości.\n[***]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[***]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
+      "[*]Ładunek many x 1:",
+      "[**]Regeneruje 15% zdrowia wszystkich sojuszników.",
+      "[**]Każdy pokonany sojusznik ma 30% szans na wskrzeszenie z 30% PŻ.",
+      "[**]Podczas następnych 2 tur wszyscy sojusznicy otrzymują 10% many na końcu tury.",
+      "[*]Ładunek many x 2:",
+      "[**]Regeneruje 35% zdrowia wszystkich sojuszników.",
+      "[**]Każdy pokonany sojusznik ma 40% szans na wskrzeszenie z 40% PŻ.",
+      "[**]Oczyszcza status wszystkich sojuszników z 1 dolegliwości. (Oczyszcza status z dolegliwości w kolejności ich otrzymania. W pierwszej kolejności oczyszczane są ostatnio otrzymane dolegliwości ze statusu.)",
+      "[**]Podczas następnych 3 tur wszyscy sojusznicy otrzymują 10% many na końcu tury.",
+      "[*]Ładunek many x 3:",
+      "[**]Regeneruje 55% zdrowia wszystkich sojuszników.",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 60% PŻ.",
+      "[**]Oczyszcza status wszystkich sojuszników z dolegliwości.",
+      "[**]Podczas następnych 5 tur wszyscy sojusznicy otrzymują 15% many na końcu tury."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Zwiększa manę pobliskich sojuszników o 30%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
       "Wzrost: pobliscy sojusznicy otrzymują 360 do ataku i 360 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)",
       "Wzywa śluzowego mega pomocnika z 50% PŻ i 40% ataku przejętymi od rzucającego."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
+      "[*]Ładunek many x 1:",
+      "[**]Wzmacnia zdrowie wszystkich sojuszników o 450. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "[*]Ładunek many x 2:",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 10% PŻ.",
+      "[**]Wszyscy sojusznicy regenerują 609 PŻ przez 3 tur(y).",
+      "[*]Ładunek many x 3:",
+      "[**]Wzmacnia zdrowie wszystkich sojuszników o 700. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 27% PŻ.",
+      "[**]Wszyscy sojusznicy regenerują 952 PŻ przez 4 tur(y)."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Atakuje wszystkich wrogów ciosem burzy ognia, zadając do 2500 pkt. obrażeń. Zadaje o 40% więcej obrażeń celom natury.",
+      "Zmniejsza manę wszystkich wrogów o 35%.",
+      "Po rzuceniu umiejętności specjalnej zwiększa manę rzucającego o 15%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "Na końcu każdej tury kradnie wszystkim wrogom ostatnie odwoływalne wzmocnienie i losowo rozprowadza je na wszystkich sojuszników na 5 tur(y)."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
-     "text": "[*]Po pokonaniu ta postać ma 80% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 80% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+     "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
     }
    ]
   }

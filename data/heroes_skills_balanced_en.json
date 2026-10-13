@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Each defeated ally has a 50% chance to get revived with 20% HP.",
+      "All allies get 50% attack for 5 turns. The attack increases by 5% each turn, up to 70%.",
+      "All allies regenerate 1270 boosted health over 5 turns. Boosted health can exceed max HP."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Each defeated ally has a 50% chance to get revived with 15% HP.",
+      "Summons an Elf Minion for each ally with 10% HP and 10% attack inherited from the caster.",
+      "All allies regenerate 612 HP over 4 turns."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Recovers 45% health for all allies.",
-      "Each defeated ally has a 25% chance to be revived with 40% HP.\n[*]Each Nature shield on the board increases the chance to be revived by 5% , up to 65% chance in total.",
+      "Each defeated ally has a 25% chance to be revived with 40% HP.\n[*]Each Nature shield on the board increases the chance to be revived by 3% , up to 49% chance in total.",
       "All allies are immune to new status ailments. This effect lasts until 3 ailments have been resisted."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Deals 210% damage to all enemies.\n[*]Deals additional 20% damage per each Holy shield on the board, up to 450% damage in total.",
+      "Each defeated ally has a 20% chance to be revived with 40% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Deals 260% damage to all enemies.\n[*]Deals additional 25% damage per each Holy shield on the board, up to 560% damage in total.",
+      "Each defeated ally has a 20% chance to be revived with 45% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total.",
+      "Deals extra damage against Dark."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "For each enemy defeated by the attack, reduces the mana of all enemies by -25%.",
       "Stack +2 (Max: 10): The caster gets 16% attack. (Dispelling reduces positive stacks by 1.)",
       "Element Link recovers 5% health for all Fire allies for 6 turns. This effect can't be dispelled."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Each defeated ally has a 50% chance to get revived with 30% HP.",
+      "All allies regenerate 1424 HP over 4 turns. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
+      "For the next 4 turns, all allies receive 5% mana at the end of the turn. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
+      "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled. This status effect is undispellable and lasts 2 turns longer on Nature characters."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "After the Special Skill has been cast, increases the mana of the caster by 15%. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "Deals 500% damage to 5 random enemies.",
+      "For 5 turns, all hit enemies are forced to cast Mindless Heal when at full mana.\n[*]Mindless Heal\n[*]Recovers 60% health for the character on the opposing side with the lowest remaining HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Each defeated ally has a 50% chance to get revived with 20% HP.",
+      "All allies regenerate 1080 boosted health over 4 turns. Boosted health can exceed max HP.",
+      "All enemies get -50% defense against Special Skills for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Destroys all Fiends from all allies and damages all Mega Fiends.",
       "Recovers 65% health for the ally with the lowest remaining HP. All other allies recover 45% health.",
       "Growth: All allies get 300 attack and 300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Special Skill has a different effect when charged with 100% / 200% mana:",
+      "[*]x 1 Mana Charge:",
+      "[**]The target and nearby enemies receive[#Dynamic] 222 [#]Burn damage over 2 turns. The caster absorbs 10% of dealt Burn damage as health.",
+      "[**]If the caster is defeated during the next 2 turns, they are resurrected in the beginning of their next turn with 40% health. All status effects and stacks are removed when the caster is defeated.",
+      "[*]x 2 Mana Charge:",
+      "[**]Each defeated ally has a 50% chance to get revived with 44% HP.",
+      "[**]All allies regenerate 795 boosted health over 3 turns. Boosted health can exceed max HP.",
+      "[**]All allies reduce all received damage by -60% for 3 turns."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 6 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
+      "The caster regenerates 1692 boosted health over 6 turns. Boosted health can exceed max HP.",
+      "All allies get 65% defense for 6 turns.",
+      "For the next 6 turns, all allies receive 6% mana at the end of the turn."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 Mana Charge:",
       "[**]Boosts health of all allies by 2000. Boosted health can exceed max HP.",
       "[**]All allies are immune to new status ailments, and recover 550 health for each attempted status ailment. This effect lasts until 3 ailments have been resisted."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
+      "[*]x 1 Mana Charge:",
+      "[**]Destroys all Minions from the target. This effect damages Mega Minions.",
+      "[**]Deals 410% damage to the target.",
+      "[**]The target can't summon new Minions with Special Skill and receives 100 damage for each Minion they attempt to summon for 2 turns.",
+      "[**]All allies get 5% mana for each destroyed Minion. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "[*]x 2 Mana Charge:",
+      "[**]Destroys all Minions from the target and nearby enemies. This effect damages Mega Minions.",
+      "[**]Deals 420% damage to the target and nearby enemies.",
+      "[**]The target and nearby enemies can't summon new Minions with Special Skill and receives 200 damage for each Minion they attempt to summon for 3 turns.",
+      "[**]All allies get 5% mana for each destroyed Minion. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "[*]x 3 Mana Charge:",
+      "[**]Destroys all Minions from all enemies and damages Mega Minions.",
+      "[**]Deals 430% damage to all enemies.",
+      "[**]All enemies can't summon new Minions with Special Skill and receives 500 damage for each Minion they attempt to summon for 4 turns.",
+      "[**]All allies get 5% mana for each destroyed Minion. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Wild: For 4 turns, all allies either regenerate 350 HP or receive 1050 boosted health each turn.",
       "(Wild adds a chance each turn for this effect to be more powerful.\n[*]This Wild effect has a 50% chance to heal extra 200% HP that turn. When extra HP is healed the effect gives boosted health.)",
-      "For the next 4 turns, all allies receive 10% mana at the end of the turn.",
+      "For the next 4 turns, all allies receive 7% mana at the end of the turn.",
       "All allies get 55% defense for 4 turns."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Deals 650% damage to the target.",
       "[**]The attack chains through all the enemies who are adjacent to any hit enemy.",
       "[**]Growth: All allies get 750 attack and 750 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
+      "[*]x 1 Mana Charge:",
+      "[**]Recovers 15% health for all allies.",
+      "[**]Each defeated ally has a 30% chance to get revived with 30% HP.",
+      "[**]For the next 2 turns, all allies receive 10% mana at the end of the turn.",
+      "[*]x 2 Mana Charge:",
+      "[**]Recovers 35% health for all allies.",
+      "[**]Each defeated ally has a 40% chance to get revived with 40% HP.",
+      "[**]Cleanses 1 status ailment from all allies. (Status ailments are cleansed in the order they have been received. The latest status ailments are cleansed first.)",
+      "[**]For the next 3 turns, all allies receive 10% mana at the end of the turn.",
+      "[*]x 3 Mana Charge:",
+      "[**]Recovers 55% health for all allies.",
+      "[**]Each defeated ally has a 50% chance to get revived with 60% HP.",
+      "[**]Cleanses status ailments from all allies.",
+      "[**]For the next 5 turns, all allies receive 15% mana at the end of the turn."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Increases the mana of nearby allies by 30%. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
       "Growth: Nearby allies get 360 attack and 360 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a Slime Mega Minion with 50% HP and 40% attack inherited from the caster."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
+      "[*]x 1 Mana Charge:",
+      "[**]Boosts health of all allies by 450. Boosted health can exceed max HP.",
+      "[*]x 2 Mana Charge:",
+      "[**]Each defeated ally has a 50% chance to get revived with 10% HP.",
+      "[**]All allies regenerate 609 HP over 3 turns.",
+      "[*]x 3 Mana Charge:",
+      "[**]Boosts health of all allies by 700. Boosted health can exceed max HP.",
+      "[**]Each defeated ally has a 50% chance to get revived with 27% HP.",
+      "[**]All allies regenerate 952 HP over 4 turns."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Attacks all enemies with Firestorm Strike, dealing up to 2500 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Reduces the mana of all enemies by 35%.",
+      "After the Special Skill has been cast, increases the mana of the caster by 15%. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "At the end of each turn, steals the latest dispellable buff from all enemies and distributes them randomly among allies for 5 turns."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
-     "text": "[*]When defeated, this character has 80% chance to revive at the beginning of their next turn with 50% health and 80% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+     "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
     }
    ]
   }

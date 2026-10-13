@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
+      "Kaikki liittolaiset saavat 50% hyökkäystä 5 vuoron ajaksi. Hyökkäys nousee 5% joka vuorolla, yhteensä enintään 70%.",
+      "Kaikki liittolaiset saavat 1270 tehostettua terveyttä 5 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 15% terveyttä tullessaan elvytetyksi.",
+      "Kutsuu jokaista liittolaista kohden tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
+      "Kaikki liittolaiset saavat 612 terveyspistettä 4 vuoron aikana."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Palauttaa 45% liittolaisten terveyttä.",
-      "Jokaisella kukistetulla liittolaisella on 25%:n mahdollisuus elpyä ja saada 40% terveyttä.\n[*]Jokainen laudalla oleva luontokilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%.",
+      "Jokaisella kukistetulla liittolaisella on 25%:n mahdollisuus elpyä ja saada 40% terveyttä.\n[*]Jokainen laudalla oleva luontokilpi nostaa elpymismahdollisuutta 3%. Mahdollisuus voi olla kaikkiaan enintään 49%.",
       "Kaikki liittolaiset ovat immuuneja uusille vaivoille. Vaikutus kestää, kunnes 3 vaivaa on vastustettu."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Tuottaa 210% vauriota kaikille vihollisille.\n[*] Tuottaa 20% lisävauriota jokaisesta laudalla olevasta pyhästä kilvestä. Yhteisvaurio on enintään 450%.",
+      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 40% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Tuottaa 260% vauriota kaikille vihollisille.\n[*] Tuottaa 25% lisävauriota jokaisesta laudalla olevasta pyhästä kilvestä. Yhteisvaurio on enintään 560%.",
+      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 45% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%.",
+      "Tuottaa lisävauriota pimeyttä vastaan."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Vähentää kaikkien vihollisten manaa -25% jokaista hyökkäyksen kukistamaa vihollista kohti.",
       "Kasauma +2 (maksimi: 10): Loitsija saa 16% hyökkäystä. (Häivytys poistaa 1 positiivista kasaumaa.)",
       "Elementtiyhteys palauttaa 5% terveyttä kaikille tulen liittolaisille 6 vuoron ajan. Vaikutusta ei voi häivyttää."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi.",
+      "Kaikki liittolaiset saavat 1424 terveyspistettä 4 vuoron aikana. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla.",
+      "Kaikki liittolaiset saavat 5% manaa vuoron lopussa 4 vuoron ajan. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla.",
+      "Elementtiyhteys antaa kaikille luonnon liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Lisää loitsijan manaa 15% erikoistaidon loitsimisen jälkeen. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "Tuottaa 500% vauriota 5 satunnaiselle viholliselle.",
+      "Kaikki osutut viholliset joutuvat loitsimaan mieletöntä parannusta 5 vuoron ajan, kun heidän manansa on täynnä.\n[*]Mieletön parannus\n[*]Palauttaa 60% terveyttä vastapuolen hahmolle, jolla on vähiten terveyttä jäljellä."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
+      "Kaikki liittolaiset saavat 1080 tehostettua terveyttä 4 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "Kaikki viholliset saavat -50% puolustusta erikoistaitoja vastaan 4 vuoron ajaksi. Kun vastassa on pimeyden hahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Tuhoaa kaikki riiviöt kaikilta liittolaisilta ja vaurioittaa kaikkia megariiviöitä.",
       "Palauttaa 65% terveyttä liittolaiselle, jolla on vähiten terveyttä jäljellä. Kaikki muut liittolaiset saavat 45% terveyttä.",
       "Kasvu: Kaikki liittolaiset saavat 300 hyökkäystä ja 300 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100% vai 200% manaa:",
+      "[*]x 1 manalataus:",
+      "[**]Kohde ja lähellä olevat viholliset kärsivät[#Dynamic] 222 [#]palovauriota 2 vuoron aikana. Loitsija imee 10% tuotetusta palovauriosta terveytenä.",
+      "[**]Jos loitsija kukistuu seuraavan 2 vuoron aikana, hän palaa kuolleista seuraavan vuoronsa alussa ja hänellä on 40% terveyttä. Kaikki tilaefektit ja kasaumat poistuvat loitsijan kukistuessa.",
+      "[*]x 2 manalataus:",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 44% terveyttä tullessaan elvytetyksi.",
+      "[**]Kaikki liittolaiset saavat 795 tehostettua terveyttä 3 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "[**]Kaikkien liittolaisten saama vaurio vähentyy -60% 3 vuoron ajan."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 6 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
+      "Loitsija saa 1692 tehostettua terveyttä 6 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "Kaikki liittolaiset saavat 65% puolustusta 6 vuoron ajaksi.",
+      "Kaikki liittolaiset saavat 6% manaa vuoron lopussa 6 vuoron ajan."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 manalataus:",
       "[**]Lisää 2000 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
       "[**]Kaikki liittolaiset ovat immuuneja uusille vaivoille ja saavat 550 terveyttä jokaisesta yritetystä vaivasta. Vaikutus kestää, kunnes 3 vaivaa on vastustettu."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
+      "[*]x 1 manalataus:",
+      "[**]Tuhoaa kaikki käskyläiset kohteelta ja vaurioittaa megakäskyläisiä.",
+      "[**]Tuottaa 410% vauriota kohteelle.",
+      "[**]Kohde ei voi kutsua uusia käskyläisiä erikoistaidolla ja saa 100 vauriota jokaisesta käskyläisestä, jonka se yrittää kutsua. Vaikutukset kestävät 2 vuoron ajan.",
+      "[**]Kaikki liittolaiset saavat 5% manaa jokaisesta tuhotusta käskyläisestä. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "[*]x 2 manalataus:",
+      "[**]Tuhoaa kaikki käskyläiset kohteelta ja lähellä olevilta vihollisilta ja vaurioittaa megakäskyläisiä.",
+      "[**]Tuottaa 420% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "[**]Kohde ja lähellä olevat viholliset eivät voi kutsua uusia käskyläisiä erikoistaidolla ja kärsivät 200 vauriota jokaisesta käskyläisestä, jonka ne yrittävät kutsua. Vaikutukset kestävät 3 vuoron ajan.",
+      "[**]Kaikki liittolaiset saavat 5% manaa jokaisesta tuhotusta käskyläisestä. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "[*]x 3 manalataus:",
+      "[**]Tuhoaa kaikki käskyläiset kaikilta vihollisilta ja vaurioittaa megakäskyläisiä.",
+      "[**]Tuottaa 430% vauriota kaikille vihollisille.",
+      "[**]Viholliset eivät voi kutsua uusia käskyläisiä erikoistaidolla ja kärsivät 500 vauriota jokaisesta käskyläisestä, jonka ne yrittävät kutsua. Vaikutukset kestävät 4 vuoron ajan.",
+      "[**]Kaikki liittolaiset saavat 5% manaa jokaisesta tuhotusta käskyläisestä. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Jokeri: Kaikki liittolaiset saavat 4 vuoron ajan joka vuorolla joko 350 terveyttä takaisin tai 1050 tehostettua terveyttä.",
       "(Jokeri antaa joka vuorolla mahdollisuuden, että tästä efektistä tulee voimakkaampi.\n[*]Tällä jokeriefektillä on 50%:n mahdollisuus parantaa 200% lisäterveyttä sillä vuorolla. Kun lisäterveyttä parannetaan, efekti antaa tehostettua terveyttä.)",
-      "Kaikki liittolaiset saavat 10% manaa vuoron lopussa 4 vuoron ajan.",
+      "Kaikki liittolaiset saavat 7% manaa vuoron lopussa 4 vuoron ajan.",
       "Kaikki liittolaiset saavat 55% puolustusta 4 vuoron ajaksi."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Tuottaa 650% vauriota kohteelle.",
       "[**]Hyökkäys läpäisee ketjussa kaikki osutun vihollisen vieressä olleet viholliset.",
       "[**]Kasvu: Kaikki liittolaiset saavat 750 hyökkäystä ja 750 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[***]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[***]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[***]Ominaisuuksien muokkauksen rajat.\n[***]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[***]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[***]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
+      "[*]x 1 manalataus:",
+      "[**]Palauttaa 15% liittolaisten terveyttä.",
+      "[**]Jokaisella kukistuneella liittolaisella on 30%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi.",
+      "[**]Kaikki liittolaiset saavat 10% manaa vuoron lopussa 2 vuoron ajan.",
+      "[*]x 2 manalataus:",
+      "[**]Palauttaa 35% liittolaisten terveyttä.",
+      "[**]Jokaisella kukistuneella liittolaisella on 40%:n mahdollisuus saada 40% terveyttä tullessaan elvytetyksi.",
+      "[**]Puhdistaa 1 vaivan kaikilta liittolaisilta. (Vaivat puhdistetaan saamisjärjestyksessä, viimeisimmät ensin.)",
+      "[**]Kaikki liittolaiset saavat 10% manaa vuoron lopussa 3 vuoron ajan.",
+      "[*]x 3 manalataus:",
+      "[**]Palauttaa 55% liittolaisten terveyttä.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 60% terveyttä tullessaan elvytetyksi.",
+      "[**]Puhdistaa vaivat kaikilta liittolaisilta.",
+      "[**]Kaikki liittolaiset saavat 15% manaa vuoron lopussa 5 vuoron ajan."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Lisää lähellä olevien liittolaisten manaa 30%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
       "Kasvu: Lähellä olevat liittolaiset saavat 360 hyökkäystä ja 360 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)",
       "Kutsuu lima-megakäskyläisen, joka perii loitsijalta 50% terveyttä ja 40% hyökkäystä."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
+      "[*]x 1 manalataus:",
+      "[**]Lisää 450 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "[*]x 2 manalataus:",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 10% terveyttä tullessaan elvytetyksi.",
+      "[**]Kaikki liittolaiset saavat 609 terveyspistettä 3 vuoron aikana.",
+      "[*]x 3 manalataus:",
+      "[**]Lisää 700 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 27% terveyttä tullessaan elvytetyksi.",
+      "[**]Kaikki liittolaiset saavat 952 terveyspistettä 4 vuoron aikana."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Iskee kaikkia vihollisia tulimyrskyiskulla, joka tuottaa enintään 2500 vauriota. Tuottaa 40% enemmän vauriota, jos kohteen elementti on luonto.",
+      "Vähentää kaikkien vihollisten manaa 35%.",
+      "Lisää loitsijan manaa 15% erikoistaidon loitsimisen jälkeen. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "Varastaa 5 vuoron ajan jokaisen vuoron lopussa uusimman häivytettävän tehosteen kaikilta vihollisilta ja jakaa ne sattumanvaraisesti liittolaisille."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
-     "text": "[*]Kukistuessaan tällä hahmolla on 80%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 80% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+     "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
     }
    ]
   }

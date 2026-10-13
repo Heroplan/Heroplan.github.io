@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
+      "Alle allierede i nærheden får 50% angreb i 5 runder. Angrebet stiger med 5% i hver runde, op til 70%.",
+      "Alle allierede gendanner 1270 boostet helbred i løbet af 5 runder. Boostet helbred kan overstige maks. HP."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 15% HP.",
+      "Hidkalder en elverhåndlanger til hver allieret med 10% HP og 10% angreb, nedarvet fra kasteren.",
+      "Alle allierede regenererer 612 HP i 4 runder."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Gendanner 45% helbred for alle allierede.",
-      "Hver besjret allieret har 25% chance for at blive genoplivet med 40% HP.\n[*]Hvert naturskjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt.",
+      "Hver besjret allieret har 25% chance for at blive genoplivet med 40% HP.\n[*]Hvert naturskjold på brættet øger chancen for at blive genoplivet med 3%, op til 49% chance i alt.",
       "Alle allierede er immune over for nye statuslidelser. Denne effekt varer indtil 3 lidelser er blevet modstået."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Påfører 210% skade til alle fjender.\n[*]Påfører yderligere 20% skade per hellig skjold på brættet, op til 450% skade i alt.",
+      "Hver besjret allieret har 20% chance for at blive genoplivet med 40% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Påfører 260% skade til alle fjender.\n[*]Påfører yderligere 25% skade per hellig skjold på brættet, op til 560% skade i alt.",
+      "Hver besjret allieret har 20% chance for at blive genoplivet med 45% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt.",
+      "Giver ekstra skade mod mørk."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "For hver fjende, der besejres af angrebet, reduceres alle fjenders mana med -25%.",
       "Kumulativ +2 (Maks.: 10): Kasteren får 16% angreb. (Ophæver positive kumulative effekter med 1.)",
       "Elementlink gendanner 5% helbred for alle ild allierede i 6 runder. Denne effekt kan ikke ophæves."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 30% HP.",
+      "Alle allierede regenererer 1424 HP i 4 runder. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
+      "I de næste 4 ture får alle allierede bortset fra kasteren 5% mana i slutningen af runden. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
+      "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Efter den særlige færdighed er blevet brugt øges kasterens mana med 15%. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "Forvolder 500% skade mod 5 tilfældige fjender.",
+      "I 5 ture bliver alle ramte fjender tvunget til at kaste tankeløs helberedelse, når de har fuld mana.\n[*]Tankeløs helbredelse\n[*]Gendanner 60% helbred for figuren på modstandernes side med laveste HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
+      "Alle allierede gendanner 1080 boostet helbred i løbet af 4 runder. Boostet helbred kan overstige maks. HP.",
+      "Alle fjender får -50% forsvar mod særlige evner i 4 runder. Mod mørke figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
       "Gendanner 65% helbred for den allierede med laveste HP. Alle andre alllierede gendanner 45% helbred.",
       "Vækst: Alle allierede får 300 angreb og 300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Særlige evner har en anden effekt, når mana er på 100%/ 200%:",
+      "[*]x 1 manaangreb:",
+      "[**]Målet og fjender i nærheden får[#Dynamic] 222 [#]brandskade over 2 runder. Kasteren absorberer 10% af den påførte brandskade som helbred.",
+      "[**]Hvis kasteren besejres i løbet af de næste 2 runder, bliver de genoplivet i starten af deres næste runde med 40% helbred. Alle statuseffekter og kumulative værdier fjernes, når kasteren besejres.",
+      "[*]x 2 manaangreb:",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 44% HP.",
+      "[**]Alle allierede gendanner 795 boostet helbred i løbet af 3 runder. Boostet helbred kan overstige maks. HP.",
+      "[**]Alle allierede reducerer alt modtaget skade med -60% i 3 runder."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Kasteren får hån, der forhindrer fjender fra at bruge særlig evneer på kasterens allierede i 6 runder. (Hån forhindrer alle fjender i at bruge særlige evner på allierede, der ikke har hån.)",
+      "Kasteren gendanner 1692 boostet helbred i løbet af 6 runder. Boostet helbred kan overstige maks. HP.",
+      "Alle allierede får 65% forsvar i 6 runder.",
+      "I de næste 6 ture får alle allierede bortset fra kasteren 6% mana i slutningen af runden."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 manaangreb:",
       "[**]Forstærker alle allieredes helbred med 2000. Forstærket helbred kan overstige maks. HP.",
       "[**]Alle allierede er immune over for nye statuslidelser og gendanner 550 helbred for hvert statuslidelse-forsøg. Denne effekt varer indtil 3 lidelser er blevet modstået."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
+      "[*]x 1 manaangreb:",
+      "[**]Ødelægger alle håndlangere fra målet. Denne effekt skader kæmpedjævle.",
+      "[**]Giver 410% skade til målet.",
+      "[**]Målet kan ikke hidkalde nye håndlangere med særlige evner og tager 100 i skade for hver håndlager, de forsøger at hidkalde i 2 runder.",
+      "[**]Alle allierede får 5% mana for hver ødelagt håndlanger. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "[*]x 2 manaangreb:",
+      "[**]Ødelægger alle håndlangere fra målet og fjender i nærheden. Denne effekt skader kæmpedjævle.",
+      "[**]Giver 420% skade til målet og fjender i nærheden.",
+      "[**]Målet og fjender i nærheden kan ikke hidkalde nye håndlangere med særlige evner og tager 200 skade for hver håndlanger, de forsøger at hidkalde i 3 runder.",
+      "[**]Alle allierede får 5% mana for hver ødelagt håndlanger. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "[*]x 3 manaangreb:",
+      "[**]Ødelægger alle håndlangere fra alle fjender og skader alle kæmpehåndlangere.",
+      "[**]Giver 430% i skade til alle fjender.",
+      "[**]Alle fjender kan ikke hidkalde nye håndlangere med særlige evner og tager 500 skade for hver håndlanger, de forsøger at hidkalde i 4 runder.",
+      "[**]Alle allierede får 5% mana for hver ødelagt håndlanger. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Vild: I 4 runder regenererer alle allierede enten 350 HP eller får 1050 boostet helbred i hver runde.",
       "(Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at helbrede 200% HP i den runde. Når ekstra HP helbredes, giver effekten boostet helbred.)",
-      "I de næste 4 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden.",
+      "I de næste 4 ture får alle allierede bortset fra kasteren 7% mana i slutningen af runden.",
       "Alle allierede får 55% forsvar i 4 runder."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Giver 650% skade til målet.",
       "[**]Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
       "[**]Vækst: Alle allierede får 750 angreb og 750 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
+      "[*]x 1 manaangreb:",
+      "[**]Gendanner 15% helbred for alle allierede.",
+      "[**]Hver besejret allieret har en 30% chance for at blive genoplivet med 30% HP.",
+      "[**]I de næste 2 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden.",
+      "[*]x 2 manaangreb:",
+      "[**]Gendanner 35% helbred for alle allierede.",
+      "[**]Hver besejret allieret har en 40% chance for at blive genoplivet med 40% HP.",
+      "[**]Rydder 1 statuslidelse fra alle allierede. (Statuslidelser ryddes i samme rækkefølge, som de er kommet. Den seneste statuslidelse ryddes først.)",
+      "[**]I de næste 3 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden.",
+      "[*]x 3 manaangreb:",
+      "[**]Gendanner 55% helbred for alle allierede.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 60% HP.",
+      "[**]Rydder statuslidelser fra alle allierede.",
+      "[**]I de næste 5 ture får alle allierede bortset fra kasteren 15% mana i slutningen af runden."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Øger mana hos allierede i nærheden med 30%. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
       "Vækst: Allierede i nærheden får 360 angreb og 360 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en slim-megahåndlanger med 50% HP og 40% angreb, der er arvet fra kasteren."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
+      "[*]x 1 manaangreb:",
+      "[**]Forstærker alle allieredes helbred med 450. Forstærket helbred kan overstige maks. HP.",
+      "[*]x 2 manaangreb:",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 10% HP.",
+      "[**]Alle allierede regenererer 609 HP i 3 runder.",
+      "[*]x 3 manaangreb:",
+      "[**]Forstærker alle allieredes helbred med 700. Forstærket helbred kan overstige maks. HP.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 27% HP.",
+      "[**]Alle allierede regenererer 952 HP i 4 runder."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 2500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Reducerer mana hos alle fjender med 35%.",
+      "Efter den særlige færdighed er blevet brugt øges kasterens mana med 15%. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "Stjæler i slutningen af hver runde den seneste ophævelige buffer fra alle fjender og fordeler dem tilfældigt blandt allierede i 5 runder."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
-     "text": "[*]Når denne figur besejres, har den 80% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 80% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+     "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
     }
    ]
   }

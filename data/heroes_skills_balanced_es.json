@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
+      "Todos los aliados obtienen un 50% de ataque durante 5 turnos. El ataque aumenta un 5% en cada turno hasta un máximo del 70%.",
+      "Todos los aliados regeneran 1270 de vitalidad potenciada durante 5 turnos. La vitalidad potenciada puede exceder la VIT máxima."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 15% de VIT.",
+      "Invoca un secuaz elfo para todos los aliados con un 10% de VIT y un 10% de ataque heredados del héroe.",
+      "Todos los aliados recuperan 612 VIT durante 4 turnos."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Recupera un 45% de vitalidad para todos los aliados.",
-      "Cada aliado derrotado tiene una probabilidad del 25% de revivir con un 40% de VIT.\n[*] Cada escudo de naturaleza del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%.",
+      "Cada aliado derrotado tiene una probabilidad del 25% de revivir con un 40% de VIT.\n[*] Cada escudo de naturaleza del tablero aumenta un 3% la probabilidad de revivir hasta un máximo de 49%.",
       "Todos los aliados son inmunes a los nuevos estados alterados. Este efecto dura hasta que hayan resistido 3 estados alterados."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Causa un 210% de daño a todos los enemigos.\n[*] Causa un 20% de daño adicional por cada escudo sagrado en el tablero, hasta un 450% de daño en total.",
+      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 40% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Causa un 260% de daño a todos los enemigos.\n[*] Causa un 25% de daño adicional por cada escudo sagrado en el tablero, hasta un 560% de daño en total.",
+      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 45% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%.",
+      "Causa daño adicional contra oscuro."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Por cada enemigo derrotado por el ataque, reduce el maná de todos los enemigos en un -25%.",
       "Acumulación +2 (máx.: 10): El héroe obtiene un 16% de ataque. (Descarte reduce las acumulaciones positivas en 1.)",
       "Enlace de elemento recupera un 5% de VIT para los aliados de fuego durante 6 turnos. Este efecto no se puede descartar."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 30% de VIT.",
+      "Todos los aliados recuperan 1424 VIT durante 4 turnos. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
+      "Durante los siguientes 4 turnos, todos los aliados reciben un 5% de maná al final del turno. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
+      "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Tras lanzarse la habilidad especial, aumenta el maná del héroe en un 15%. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "Inflige 500% de daño a 5 enemigos aleatorios.",
+      "Durante 5 turnos, todos los enemigos golpeados se ven obligados a lanzar Curación inconsciente cuando su maná está a tope.\n[*]Curación inconsciente\n[*]Devuelve un 60% de vitalidad al personaje del bando contrario al que le quede menos VIT."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
+      "Todos los aliados regeneran 1080 de vitalidad potenciada durante 4 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
+      "Todos los enemigos reciben un -50% de defensa contra habilidades especiales durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
       "Devuelve un 65% de vitalidad al aliado al que le quede menos VIT. Los demás aliados recuperan un 45% de vitalidad.",
       "Crecimiento: Todos los aliados obtienen 300 de ataque y 300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200% de maná:",
+      "[*]x 1 de carga de maná:",
+      "[**]El objetivo y los enemigos cercanos reciben[#Dynamic] 222 [#]de daño de quemadura durante 2 turnos. El héroe absorbe un 10% del daño de quemadura infligido como vitalidad.",
+      "[**]Si el héroe cae derrotado durante los siguientes 2 turnos, resucita al principio de su siguiente turno con un 40% de vitalidad. Todos los efectos de estado y acumulaciones se eliminan cuando el héroe cae derrotado.",
+      "[*]x 2 de carga de maná:",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 44% de VIT.",
+      "[**]Todos los aliados regeneran 795 de vitalidad potenciada durante 3 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
+      "[**]Todos los aliados reducen todo el daño recibido en un -60% durante 3 turnos."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 6 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
+      "El héroe regenera 1692 de vitalidad potenciada durante 6 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
+      "Todos los aliados reciben un 65% de defensa durante 6 turnos.",
+      "Durante los siguientes 6 turnos, todos los aliados reciben un 6% de maná al final del turno."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 de carga de maná:",
       "[**]Potencia la vitalidad de todos los aliados en 2000. La vitalidad potenciada puede exceder la VIT máxima.",
       "[**]Todos los aliados son inmunes a los nuevos estados alterados y recuperan 550 de vitalidad por cada intento de estado alterado. Este efecto dura hasta que hayan resistido 3 estados alterados."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
+      "[*]x 1 de carga de maná:",
+      "[**]Destruye a todos los secuaces del objetivo. Este efecto inflige daño a los megasecuaces.",
+      "[**]Causa un 410% de daño al objetivo.",
+      "[**]El objetivo no puede invocar nuevos secuaces con su habilidad especial y recibe 100 de daño por cada secuaz que intente invocar durante 2 turnos.",
+      "[**]Todos los aliados obtienen un 5% de maná por cada secuaz destruido. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "[*]x 2 de carga de maná:",
+      "[**]Destruye a todos los secuaces del objetivo y de los enemigos cercanos. Este efecto inflige daño a los megasecuaces.",
+      "[**]Causa un 420% de daño al objetivo y a los enemigos cercanos.",
+      "[**]El objetivo y los enemigos cercanos no pueden invocar nuevos secuaces con su habilidad especial y reciben 200 de daño por cada secuaz que intente invocar durante 3 turnos.",
+      "[**]Todos los aliados obtienen un 5% de maná por cada secuaz destruido. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "[*]x 3 de carga de maná:",
+      "[**]Destruye a todos los secuaces de todos los enemigos e inflige daño a los megasecuaces.",
+      "[**]Causa un 430% de daño a todos los enemigos.",
+      "[**]Ningún enemigo puede invocar nuevos secuaces con su habilidad especial y recibe 500 de daño por cada secuaz que intente invocar durante 4 turnos.",
+      "[**]Todos los aliados obtienen un 5% de maná por cada secuaz destruido. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Salvaje: Durante 4 turnos, todos los aliados regeneran 350 de VIT o reciben 1050 de vitalidad potenciada cada turno.",
       "(Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de curar un 200% de VIT ese turno. Cuando se cura VIT extra, el efecto otorga vitalidad potenciada.)",
-      "Durante los siguientes 4 turnos, todos los aliados reciben un 10% de maná al final del turno.",
+      "Durante los siguientes 4 turnos, todos los aliados reciben un 7% de maná al final del turno.",
       "Todos los aliados reciben un 55% de defensa durante 4 turnos."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Causa un 650% de daño al objetivo.",
       "[**]El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
       "[**]Crecimiento: Todos los aliados obtienen 750 de ataque y 750 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
+      "[*]x 1 de carga de maná:",
+      "[**]Recupera un 15% de vitalidad para todos los aliados.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 30% de revivir con un 30% de VIT.",
+      "[**]Durante los siguientes 2 turnos, todos los aliados reciben un 10% de maná al final del turno.",
+      "[*]x 2 de carga de maná:",
+      "[**]Recupera un 35% de vitalidad para todos los aliados.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 40% de VIT.",
+      "[**]Purifica 1 estado alterado de todos los aliados. (Los estados alterados se purifican en el orden en el que se han recibido; los más recientes se purifican primero.)",
+      "[**]Durante los siguientes 3 turnos, todos los aliados reciben un 10% de maná al final del turno.",
+      "[*]x 3 de carga de maná:",
+      "[**]Recupera un 55% de vitalidad para todos los aliados.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 60% de VIT.",
+      "[**]Purifica los estados alterados de todos los aliados.",
+      "[**]Durante los siguientes 5 turnos, todos los aliados reciben un 15% de maná al final del turno."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Aumenta el maná de los aliados cercanos en un 30%. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
       "Crecimiento: Los aliados cercanos obtienen 360 de ataque y 360 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz viscoso con un 50% de VIT y un 40% de ataque heredados del héroe."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
+      "[*]x 1 de carga de maná:",
+      "[**]Potencia la vitalidad de todos los aliados en 450. La vitalidad potenciada puede exceder la VIT máxima.",
+      "[*]x 2 de carga de maná:",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 10% de VIT.",
+      "[**]Todos los aliados recuperan 609 VIT durante 3 turnos.",
+      "[*]x 3 de carga de maná:",
+      "[**]Potencia la vitalidad de todos los aliados en 700. La vitalidad potenciada puede exceder la VIT máxima.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 27% de VIT.",
+      "[**]Todos los aliados recuperan 952 VIT durante 4 turnos."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2500 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Reduce el maná de todos los enemigos en un 35%.",
+      "Tras lanzarse la habilidad especial, aumenta el maná del héroe en un 15%. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "Al final de cada turno, roba la última bendición descartable de todos los enemigos y las distribuye aleatoriamente entre los aliados durante 5 turnos."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
-     "text": "[*] Cuando cae derrotado, este personaje tiene un 80% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 80% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+     "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
     }
    ]
   }

@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 20% gezondheid.",
+      "Alle bondgenoten krijgen 5 beurten lang 50% aanvalskracht. De aanvalskracht stijgt elke beurt met 5% , tot maximaal 70%.",
+      "Alle bondgenoten regenereren 1270 verhoogde gezondheid gedurende 5 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 15% gezondheid.",
+      "Roept een elfvolgeling aan voor elke bondgenoot. De elfvolgeling erft 10% gezondheid en 10% aanvalskracht van de spreukspreker.",
+      "Alle bondgenoten genezen 612 HP over 4 beurten."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Alle bondgenoten genezen 45%.",
-      "Elke verslagen bondgenoot heeft een kans van 25% om te worden teruggebracht met 40% gezondheid.\n[*]\n[*]Alle natuurschilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal.",
+      "Elke verslagen bondgenoot heeft een kans van 25% om te worden teruggebracht met 40% gezondheid.\n[*]\n[*]Alle natuurschilden op het bord vergroten de kans om te worden teruggebracht met 3% , tot maximaal 49% in totaal.",
       "Alle bondgenoten zijn immuun voor nieuwe statusaandoeningen. Dit effect blijft van kracht totdat er 3 aandoeningen zijn weerstaan."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Alle vijanden lijden 210% schade.\n[*] Doet 20% extra schade voor elk heilig schild op het bord, tot maximaal 450% extra schade.",
+      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 40% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Alle vijanden lijden 260% schade.\n[*] Doet 25% extra schade voor elk heilig schild op het bord, tot maximaal 560% extra schade.",
+      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 45% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal.",
+      "Extra schadelijk tegen Duisternis."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Vermindert voor iedere door de aanval verslagen vijand de mana van alle vijanden met -25%.",
       "Cumulatief +2 (max. 10): de spreukspreker krijgt 16% aanvalskracht. (Verwijdering vermindert positieve cumulatieve effecten met 1.)",
       "Elementenlink herstelt 6 beurten lang 5% gezondheid van alle Vuur-bondgenoten. Dit effect kan niet ongedaan worden gemaakt."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 30% gezondheid.",
+      "Alle bondgenoten genezen 1424 HP over 4 beurten. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages.",
+      "De volgende 4 beurten krijgen alle bondgenoten 5% mana aan het eind van de beurt. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages.",
+      "Elementenlink geeft alle Natuur-bondgenoten 6 beurten lang 15% aanval en 15% verdediging. Dit effect kan niet ongedaan worden gemaakt. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Nadat de speciale vaardigheid is toegepast, stijgt de mana van de spreukspreker met 15%. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "Brengt 500% schade toe aan 5 willekeurige vijanden.",
+      "Alle getroffen vijanden moeten 5 beurten lang hersenloze genezing gebruiken als hun mana vol is.\n[*]Hersenloze genezing\n[*]Herstelt 60% HP van het personage van de tegenstander met de laagste resterende HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 20% gezondheid.",
+      "Alle bondgenoten regenereren 1080 verhoogde gezondheid gedurende 4 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "Alle vijanden hebben 4 beurten lang -50% verdediging tegen Speciale vaardigheden. Dit statuseffect is niet-zuiverbaar en duurt 2 beurten langer tegen duistere personages."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Vernietigt alle demonen van alle bondgenoten en brengt schade toe aan alle megademonen.",
       "Herstelt 65% HP van de bondgenoot met de laagste resterende HP. Alle andere bondgenoten herstellen 45% HP.",
       "Groei: alle bondgenoten krijgen 300 aanval en 300 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Speciale vaardigheid heeft een ander effect als deze is opgeladen met 100% / 200% mana:",
+      "[*]x 1 manalading:",
+      "[**]Het doelwit en vijanden in de buurt wordt gedurende 2 beurten[#Dynamic] 222 [#]vuurschade toegebracht. De spreukspreker absorbeert 10% van de toegebrachte vuurschade als gezondheid.",
+      "[**]Als de spreukspreker binnen de volgende 2 beurten wordt verslagen, wordt deze aan het begin van de volgende beurt teruggebracht met 40% gezondheid. Alle statuseffecten en cumulatieve effecten worden verwijderd als de spreukspreker wordt verslagen.",
+      "[*]x 2 manalading:",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 44% gezondheid.",
+      "[**]Alle bondgenoten regenereren 795 verhoogde gezondheid gedurende 3 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "[**]Alle bondgenoten ontvangen 3 beurten lang -60% minder schade."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "De spreukspreker krijgt het effect Uitlokken wat 6 beurten lang voorkomt dat vijanden hun Speciale vaardigheden op de bondgenoten van de spreukspreker kunnen richten. (Uitlokking voorkomt dat alle vijanden speciale vaardigheden gebruiken op bondgenoten die geen uitlokking hebben.)",
+      "De spreukspreker regenereert 1692 verhoogde gezondheid gedurende 6 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "Alle bondgenoten hebben 6 beurten lang 65% verdedigende kracht.",
+      "De volgende 6 beurten krijgen alle bondgenoten 6% mana aan het eind van de beurt."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 manalading:",
       "[**]Verhoogt de gezondheid van alle bondgenoten met 2000. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
       "[**]Alle bondgenoten zijn immuun voor nieuwe statusaandoeningen en herstellen 550 gezondheid voor elke poging om een statusaandoening toe te passen. Dit effect blijft van kracht totdat er 3 aandoeningen zijn weerstaan."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Speciale vaardigheid heeft een ander effect als deze is opgeladen met 100% / 200% / 300% mana:",
+      "[*]x 1 manalading:",
+      "[**]Vernietigt alle volgelingen van het doelwit. Dit effect brengt schade toe aan megavolgelingen.",
+      "[**]Het doelwit lijdt 410% schade.",
+      "[**]Het doelwit kan geen nieuwe volgelingen met speciale vaardigheid aanroepen met en ontvangt gedurende 2 beurten 100 schade voor elke volgeling die ze proberen aan te roepen.",
+      "[**]Alle bondgenoten krijgen 5% mana voor iedere vernietigde volgeling. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "[*]x 2 manalading:",
+      "[**]Vernietigt alle volgelingen van het doelwit en vijanden in de buurt. Dit effect brengt schade toe aan megavolgelingen.",
+      "[**]Het doelwit en vijanden in de buurt lijden 420% schade.",
+      "[**]Het doelwit en vijanden in de buurt kunnen geen nieuwe volgelingen met speciale vaardigheid aanroepen en ontvangen 3 beurten lang 200 schade voor elke volgeling die ze proberen aan te roepen.",
+      "[**]Alle bondgenoten krijgen 5% mana voor iedere vernietigde volgeling. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "[*]x 3 manalading:",
+      "[**]Vernietigt alle volgelingen van alle vijanden en brengt schade toe aan megavolgelingen.",
+      "[**]Alle vijanden lijden 430% schade.",
+      "[**]Alle vijanden kunnen geen nieuwe volgelingen met speciale vaardigheid aanroepen en ontvangen 4 beurten lang 500 schade voor elke volgeling die ze proberen aan te roepen.",
+      "[**]Alle bondgenoten krijgen 5% mana voor iedere vernietigde volgeling. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Wild: gedurende 4 beurten hergenereren alle bondgenoten 350 gezondheid of krijgen ze elke beurt 1050 verhoogde gezondheid.",
       "(Wild voegt elke beurt een kans toe dat dit effect krachtiger wordt.\n[*]Dit wilde effect heeft een kans van 50% om 200% extra te genezen tijdens die beurt. Bij extra genezing, geeft het effect verhoogde gezondheid.)",
-      "De volgende 4 beurten krijgen alle bondgenoten 10% mana aan het eind van de beurt.",
+      "De volgende 4 beurten krijgen alle bondgenoten 7% mana aan het eind van de beurt.",
       "Alle bondgenoten hebben 4 beurten lang 55% verdedigende kracht."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Het doelwit lijdt 650% schade.",
       "[**]De aanvalsketen raakt alle vijanden die naast een geraakte vijand staan.",
       "[**]Groei: alle bondgenoten krijgen 750 aanval en 750 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[***]Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[***]Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[***]Limieten voor aangepaste vaardigheidsscores.\n[***] 30% en 170% van hun oorspronkelijke waarden.\n[***]Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[***]Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Speciale vaardigheid heeft een ander effect als deze is opgeladen met 100% / 200% / 300% mana:",
+      "[*]x 1 manalading:",
+      "[**]Alle bondgenoten genezen 15%.",
+      "[**]Elke verslagen bondgenoot maakt 30% kans om terug te keren met 30% gezondheid.",
+      "[**]De volgende 2 beurten krijgen alle bondgenoten 10% mana aan het eind van de beurt.",
+      "[*]x 2 manalading:",
+      "[**]Alle bondgenoten genezen 35%.",
+      "[**]Elke verslagen bondgenoot maakt 40% kans om terug te keren met 40% gezondheid.",
+      "[**]Zuivert 1 statuseffect van alle bondgenoten. (Statuseffecten worden gezuiverd in de volgorde waarin ze zijn ontvangen. De nieuwste statuseffecten worden als eerste gezuiverd.)",
+      "[**]De volgende 3 beurten krijgen alle bondgenoten 10% mana aan het eind van de beurt.",
+      "[*]x 3 manalading:",
+      "[**]Alle bondgenoten genezen 55%.",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 60% gezondheid.",
+      "[**]Zuivert de statuseffecten van alle bondgenoten.",
+      "[**]De volgende 5 beurten krijgen alle bondgenoten 15% mana aan het eind van de beurt."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Verhoogt de mana van bondgenoten in de buurt met 30%. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
       "Groei: bondgenoten in de buurt krijgen 360 aanval en 360 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)",
       "Roept een slijmmegavolgeling aan die 50% van de gezondheid en 40% van de aanvalskracht erft van de spreukspreker."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Speciale vaardigheid heeft een ander effect als deze is opgeladen met 100% / 200% / 300% mana:",
+      "[*]x 1 manalading:",
+      "[**]Verhoogt de gezondheid van alle bondgenoten met 450. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "[*]x 2 manalading:",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 10% gezondheid.",
+      "[**]Alle bondgenoten genezen 609 HP over 3 beurten.",
+      "[*]x 3 manalading:",
+      "[**]Verhoogt de gezondheid van alle bondgenoten met 700. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 27% gezondheid.",
+      "[**]Alle bondgenoten genezen 952 HP over 4 beurten."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Valt alle vijanden aan met vuurstormaanval en brengt maximaal 2500 schade toe. Brengt 40% meer schade toe als het doelwit van het element natuur is.",
+      "Vermindert de mana van alle vijanden met 35%.",
+      "Nadat de speciale vaardigheid is toegepast, stijgt de mana van de spreukspreker met 15%. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "Steelt 5 beurten lang aan het eind van iedere beurt de nieuwste verwijderbare oppepper van alle vijanden en verdeelt deze willekeurig onder bondgenoten."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
-     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 80% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 80% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+     "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
     }
    ]
   }

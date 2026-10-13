@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 20%.",
+      "Semua sekutu mendapat 50% serangan selama 5 giliran. Serangan naik 5% setiap giliran, hingga 70%.",
+      "Semua sekutu meregenerasi 1270 kesehatan yang ditingkatkan selama 5 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 15%.",
+      "Memanggil Antek Elf untuk tiap sekutu dengan 10% HP dan 10% serangan yang diwarisi dari perapal.",
+      "Semua sekutu meregenerasi 612 HP selama 4 giliran."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 45%.",
-      "Setiap sekutu yang kalah berpeluang 25% untuk dibangkitkan dengan 40% HP.\n[*]Setiap perisai Alam yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%.",
+      "Setiap sekutu yang kalah berpeluang 25% untuk dibangkitkan dengan 40% HP.\n[*]Setiap perisai Alam yang dipakai akan menambah peluang untuk dibangkitkan sebesar 3% , hingga total peluangnya 49%.",
       "Semua sekutu kebal terhadap status pelemahan baru. Efek ini bertahan sampai 3 pelemahan telah ditampik."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Menimbulkan kerusakan 210% kepada semua musuh.\n[*]Menimbulkan kerusakan tambahan 20% per perisai Suci yang dipakai, sampai total kerusakan 450%.",
+      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 40% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Menimbulkan kerusakan 260% kepada semua musuh.\n[*]Menimbulkan kerusakan tambahan 25% per perisai Suci yang dipakai, sampai total kerusakan 560%.",
+      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 45% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%.",
+      "Kerusakan ekstra terhadap elemen Gelap."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Untuk setiap musuh yang dikalahkan oleh serangan, mengurangi mana semua musuh sebesar -25%.",
       "Tumpukan +2 (Maks: 10): Perapal mendapat serangan 16%. (Pengenyahan mengurangi tumpukan positif sebanyak 1.)",
       "Dinamika Elemen memulihkan 5% kesehatan semua sekutu Api selama 6 giliran. Efek ini tidak bisa dienyahkan."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 30%.",
+      "Semua sekutu meregenerasi 1424 HP selama 4 giliran. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam.",
+      "Semua sekutu menerima 5% mana di akhir giliran selama 4 giliran. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam.",
+      "Dinamika Elemen memberi semua sekutu Alam 15% serangan dan 15% pertahanan selama 6 giliran. Efek ini tidak bisa dienyahkan. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Setelah Keahlian Khusus dirapal, mana perapal bertambah 15%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "Menimbulkan kerusakan 500% ke 5 musuh acak.",
+      "Selama 5 giliran, semua musuh yang terkena dipaksa untuk merapal Penyembuhan Awur saat mana penuh.\n[*]Penyembuhan Awur\n[*]Memulihkan 60% kesehatan karakter di pihak lawan dengan sisa HP terendah."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 20%.",
+      "Semua sekutu meregenerasi 1080 kesehatan yang ditingkatkan selama 4 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal",
+      "Pertahanan semua musuh terhadap Keahlian Khusus naik -50% selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
       "Memulihkan 65% kesehatan untuk sekutu dengan sisa HP terendah. Memulihkan 45% kesehatan untuk sekutu yang lain.",
       "Bertumbuh: Semua sekutu mendapat 300 serangan dan 300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200%:",
+      "[*]x 1 Daya Mana:",
+      "[**]Sasaran dan musuh terdekat menerima[#Dynamic] 222 [#]kerusakan Terbakar selama 2 giliran. Perapal menyerap 10% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
+      "[**]Jika perapal kalah selama 2 giliran berikutnya, dia dibangkitkan pada awal giliran yang berikutnya dengan kesehatan 40%. Segala efek status dan tumpukan dihapus saat perapal kalah.",
+      "[*]x 2 Daya Mana:",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 44%.",
+      "[**]Semua sekutu meregenerasi 795 kesehatan yang ditingkatkan selama 3 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal",
+      "[**]Semua kerusakan yang diterima semua sekutu berkurang -60% selama 3 giliran."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Perapal mendapat Cela yang membuat musuh tidak bisa menggunakan Keahlian Khusus pada sekutu perapal selama 6 giliran. (Ejek mencegah semua musuh agar tidak menggunakan Keahlian Khusus pada sekutu mereka yang tidak memiliki Ejek.)",
+      "Perapal meregenerasi 1692 kesehatan yang ditingkatkan selama 6 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal.",
+      "Semua sekutu mendapat 65% pertahanan selama 6 giliran.",
+      "Semua sekutu menerima 6% mana di akhir giliran selama 6 giliran."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 Daya Mana:",
       "[**]Meningkatkan kesehatan semua sekutu sebesar 2000. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
       "[**]Semua sekutu kebal terhadap status pelemahan baru, dan memulihkan 550 kesehatan untuk setiap upaya status pelemahan. Efek ini bertahan sampai 3 pelemahan telah ditampik."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
+      "[*]x 1 Daya Mana:",
+      "[**]Membinasakan semua Antek dari sasaran. Efek ini merusak Antek Mega.",
+      "[**]Menimbulkan kerusakan 410% pada sasaran.",
+      "[**]Sasaran tidak bisa memanggil Antek baru dengan Keahlian Khusus dan menerima 100 kerusakan untuk setiap Antek yang dicoba dipanggil selama 2 giliran.",
+      "[**]Semua sekutu mendapat 5% mana untuk setiap Antek yang hancur. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "[*]x 2 Daya Mana:",
+      "[**]Membinasakan semua Antek dari sasaran dan musuh terdekat. Efek ini merusak Antek Mega.",
+      "[**]Menimbulkan kerusakan 420% pada sasaran dan musuh terdekat.",
+      "[**]Sasaran dan musuh terdekat tidak bisa memanggil Antek baru dengan Keahlian Khusus dan menerima 200 kerusakan untuk setiap Antek yang dicoba dipanggil selama 3 giliran.",
+      "[**]Semua sekutu mendapat 5% mana untuk setiap Antek yang hancur. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "[*]x 3 Daya Mana:",
+      "[**]Membinasakan semua Antek dari semua musuh dan merusak Antek Mega.",
+      "[**]Menimbulkan kerusakan 430% pada semua musuh.",
+      "[**]Semua musuh tidak bisa memanggil Antek baru dengan Keahlian Khusus dan menerima 500 kerusakan untuk setiap Antek yang dicoba dipanggil selama 4 giliran.",
+      "[**]Semua sekutu mendapat 5% mana untuk setiap Antek yang hancur. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Liar: Selama 4 giliran, semua sekutu meregenerasi 350 HP atau menerima 1050 peningkatan kesehatan di setiap giliran.",
       "(Liar menambahkan peluang di setiap giliran untuk membuat efek ini lebih kuat.\n[*]Efek Liar ini berpeluang 50% untuk menyembuhkan 200% HP tambahan pada giliran itu. Saat HP tambahan disembuhkan, efeknya memberikan peningkatan kesehatan.)",
-      "Semua sekutu menerima 10% mana di akhir giliran selama 4 giliran.",
+      "Semua sekutu menerima 7% mana di akhir giliran selama 4 giliran.",
       "Semua sekutu mendapat 55% pertahanan selama 4 giliran."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Menimbulkan kerusakan 650% pada sasaran.",
       "[**]Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
       "[**]Bertumbuh: Semua sekutu mendapat 750 serangan dan 750 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
+      "[*]x 1 Daya Mana:",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 15%.",
+      "[**]Tiap sekutu yang kalah berpeluang 30% dibangkitkan dengan HP 30%.",
+      "[**]Semua sekutu menerima 10% mana di akhir giliran selama 2 giliran.",
+      "[*]x 2 Daya Mana:",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 35%.",
+      "[**]Tiap sekutu yang kalah berpeluang 40% dibangkitkan dengan HP 40%.",
+      "[**]Membersihkan 1 status pelemahan dari semua sekutu. (Status pelemahan dibersihkan sesuai urutan diterima. Status pelemahan terbaru dibersihkan terlebih dahulu.)",
+      "[**]Semua sekutu menerima 10% mana di akhir giliran selama 3 giliran.",
+      "[*]x 3 Daya Mana:",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 55%.",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 60%.",
+      "[**]Membersihkan status pelemahan dari semua sekutu.",
+      "[**]Semua sekutu menerima 15% mana di akhir giliran selama 5 giliran."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Mana sekutu terdekat bertambah 30%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
       "Bertumbuh: Sekutu terdekat mendapat 360 serangan dan 360 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Mega Lendir dengan 50% HP dan 40% serangan yang diwarisi dari perapal."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
+      "[*]x 1 Daya Mana:",
+      "[**]Meningkatkan kesehatan semua sekutu sebesar 450. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
+      "[*]x 2 Daya Mana:",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 10%.",
+      "[**]Semua sekutu meregenerasi 609 HP selama 3 giliran.",
+      "[*]x 3 Daya Mana:",
+      "[**]Meningkatkan kesehatan semua sekutu sebesar 700. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 27%.",
+      "[**]Semua sekutu meregenerasi 952 HP selama 4 giliran."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Mana semua musuh berkurang 35%.",
+      "Setelah Keahlian Khusus dirapal, mana perapal bertambah 15%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "Di akhir tiap giliran, mencuri genjotan terbaru yang bisa dienyahkan dari semua musuh dan secara acak membagikannya di antara sekutu selama 5 giliran."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
-     "text": "[*]Saat kalah, karakter ini berpeluang 80% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 80%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+     "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
     }
    ]
   }

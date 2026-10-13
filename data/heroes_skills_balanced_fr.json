@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 20% de PV.",
+      "Tous les alliés reçoivent 50% d'attaque pendant 5 tours. L'attaque augmente de 5% à chaque tour, jusqu'à 70%.",
+      "La santé de tous les alliés est boostée de 1270 sur 5 tours. Le maximum de PV peut être dépassé."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 15% de PV.",
+      "Invoque un sbire lutin pour chaque allié avec 10% de PV et 10% d'attaque hérités du lanceur.",
+      "Tous les alliés récupèrent 612 PV sur 4 tours."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Restaure 45% de la santé de tous les alliés.",
-      "Chaque allié vaincu a 25% de chances d'être ranimé avec 40% de PV.\n[*]Chaque bouclier de nature sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%.",
+      "Chaque allié vaincu a 25% de chances d'être ranimé avec 40% de PV.\n[*]Chaque bouclier de nature sur le plateau augmente la probabilité de 3%, jusqu'à un maximum de 49%.",
       "Tous les alliés sont immunisés contre les nouveaux effets négatifs. L'effet dure jusqu'à ce que 3 effets aient été annulés."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Inflige 210% de dégâts à tous les ennemis.\n[*]Inflige 20% de dégâts supplémentaires pour chaque bouclier de type Sacré sur le plateau, jusqu'à un total 450% de dégâts.",
+      "Chaque allié vaincu a 20% de chances d'être ranimé avec 40% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Inflige 260% de dégâts à tous les ennemis.\n[*]Inflige 25% de dégâts supplémentaires pour chaque bouclier de type Sacré sur le plateau, jusqu'à un total 560% de dégâts.",
+      "Chaque allié vaincu a 20% de chances d'être ranimé avec 45% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%.",
+      "Inflige des dégâts supplémentaires contre l'élément sombre."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Pour chaque ennemi vaincu par l'attaque, le mana de tous les ennemis diminue de -25%.",
       "Cumul +2 (max: 10): Le lanceur reçoit 16% d'attaque. (La dissipation réduit les cumuls positifs de 1.)",
       "Lien élémentaire redonne 5% de santé à tous les alliés feu pendant 6 tours. Cet effet ne peut pas être dissipé."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 30% de PV.",
+      "Tous les alliés récupèrent 1424 PV sur 4 tours. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature.",
+      "Pendant les 4 tours suivants, tous les alliés reçoivent 5% de mana à la fin du tour. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature.",
+      "Lien élémentaire donne à tous les alliés Nature 15% d'attaque et 15% de défense pour 6 tours. Cet effet ne peut pas être dissipé. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Après l'utilisation de la compétence spéciale, augmente le mana du lanceur de 15%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "Inflige 500% de dégâts à 5 ennemis aléatoires.",
+      "Pendant 5 tours, tous les ennemis touchés sont obligés d'utiliser Soin inconscient lorsque leur mana est au maximum.\n[*]Soin inconscient\n[*]Rend 60% de PV au personnage du côté opposé à qui il reste le moins de PV."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 20% de PV.",
+      "La santé de tous les alliés est boostée de 1080 sur 4 tours. Le maximum de PV peut être dépassé.",
+      "Tous les ennemis reçoivent -50% de défense contre les compétences spéciales pour 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Détruit tous les démons des alliés et inflige des dégâts à tous les méga démons.",
       "Rend 65% de PV à l'allié à qui il reste le moins de PV, et 45% de PV aux autres.",
       "Croissance: tous les alliés reçoivent 300 points d'attaque et 300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% de mana:",
+      "[*]Charge de mana x 1:",
+      "[**]La cible et les ennemis proches reçoivent[#Dynamic] 222 [#]points de dégâts de brûlure en 2 tours. Le lanceur absorbe et se soigne à hauteur de 10% des dégâts de brûlure.",
+      "[**]Si le lanceur est vaincu durant les prochains 2 tours, il sera ressuscité au début de son prochain tour avec 40% de santé. Tous les effets appliqués et cumuls sont retirés lorsque le lanceur est vaincu.",
+      "[*]Charge de mana x 2:",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 44% de PV.",
+      "[**]La santé de tous les alliés est boostée de 795 sur 3 tours. Le maximum de PV peut être dépassé.",
+      "[**]Tous les alliés réduisent les dégâts reçus de -60% pendant 3 tours."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 6 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
+      "La santé du lanceur est boostée de 1692 sur 6 tours. Le maximum de PV peut être dépassé.",
+      "Tous les alliés reçoivent 65% de défense pour 6 tours.",
+      "Pendant les 6 tours suivants, tous les alliés reçoivent 6% de mana à la fin du tour."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]Charge de mana x 3:",
       "[**]Booste la santé de tous les alliés de 2000. Le maximum de PV peut être dépassé.",
       "[**]Tous les alliés sont immunisés contre les nouveaux effets négatifs et récupèrent 550 PV pour chaque tentative d'application d'effet. L'effet dure jusqu'à ce que 3 effets aient été annulés."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
+      "[*]Charge de mana x 1:",
+      "[**]Détruit tous les sbires de la cible. Cet effet inflige des dégâts aux méga sbires.",
+      "[**]Inflige 410% de dégâts à la cible.",
+      "[**]La cible ne peut pas invoquer de nouveaux sbires avec ses compétences spéciales, et elle reçoit 100 dégâts pour chaque sbire qu'elle tente d'invoquer pendant 2 tours.",
+      "[**]Tous les alliés reçoivent 5% de mana pour chaque sbire éliminé. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "[*]Charge de mana x 2:",
+      "[**]Détruit tous les sbires de la cible et des ennemis proches. Cet effet inflige des dégâts aux méga sbires.",
+      "[**]Inflige 420% de dégâts à la cible et aux ennemis proches.",
+      "[**]La cible et les ennemis proches ne peuvent pas invoquer de nouveaux sbires avec leurs compétences spéciales, et ils subissent 200 dégâts pour chaque sbire qu'ils tentent d'invoquer pendant 3 tours.",
+      "[**]Tous les alliés reçoivent 5% de mana pour chaque sbire éliminé. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "[*]Charge de mana x 3:",
+      "[**]Détruit tous les sbires de tous les ennemis et inflige des dégâts à tous leurs méga sbires.",
+      "[**]Inflige 430% de dégâts à tous les ennemis.",
+      "[**]Tous les ennemis ne peuvent pas invoquer de nouveaux sbires avec leurs compétences spéciales, et ils subissent 500 dégâts pour chaque sbire qu'ils tentent d'invoquer pendant 4 tours.",
+      "[**]Tous les alliés reçoivent 5% de mana pour chaque sbire éliminé. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Sauvage: pendant 4 tours, tous les alliés récupèrent 350 PV ou 1050 de santé boostée à chaque tour.",
       "(Sauvage augmente chaque tour les chances que cet effet soit plus puissant.\n[*]Cet effet Sauvage a 50% de chances de rendre 200% de PV supplémentaires pendant ce tour. Lorsque des PV supplémentaires sont soignés, l'effet octroie de la santé boostée.)",
-      "Pendant les 4 tours suivants, tous les alliés reçoivent 10% de mana à la fin du tour.",
+      "Pendant les 4 tours suivants, tous les alliés reçoivent 7% de mana à la fin du tour.",
       "Tous les alliés reçoivent 55% de défense pour 4 tours."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Inflige 650% de dégâts à la cible.",
       "[**]L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
       "[**]Croissance: tous les alliés reçoivent 750 points d'attaque et 750 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
+      "[*]Charge de mana x 1:",
+      "[**]Restaure 15% de la santé de tous les alliés.",
+      "[**]Chaque allié vaincu a 30% de chances de revenir à la vie avec 30% de PV.",
+      "[**]Pendant les 2 tours suivants, tous les alliés reçoivent 10% de mana à la fin du tour.",
+      "[*]Charge de mana x 2:",
+      "[**]Restaure 35% de la santé de tous les alliés.",
+      "[**]Chaque allié vaincu a 40% de chances de revenir à la vie avec 40% de PV.",
+      "[**]Purifie 1 effet négatif pour tous les alliés. (Les effets négatifs sont purifiés selon l'ordre dans lequel ils ont été reçus, en commençant par les plus récents.)",
+      "[**]Pendant les 3 tours suivants, tous les alliés reçoivent 10% de mana à la fin du tour.",
+      "[*]Charge de mana x 3:",
+      "[**]Restaure 55% de la santé de tous les alliés.",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 60% de PV.",
+      "[**]Purifie les effets négatifs de tous les alliés.",
+      "[**]Pendant les 5 tours suivants, tous les alliés reçoivent 15% de mana à la fin du tour."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Augmente le mana des alliés proches de 30%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
       "Croissance: les alliés proches reçoivent 360 points d'attaque et 360 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un méga sbire gluant avec 50% de PV et 40% d'attaque hérités du lanceur."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
+      "[*]Charge de mana x 1:",
+      "[**]Booste la santé de tous les alliés de 450. Le maximum de PV peut être dépassé.",
+      "[*]Charge de mana x 2:",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 10% de PV.",
+      "[**]Tous les alliés récupèrent 609 PV sur 3 tours.",
+      "[*]Charge de mana x 3:",
+      "[**]Booste la santé de tous les alliés de 700. Le maximum de PV peut être dépassé.",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 27% de PV.",
+      "[**]Tous les alliés récupèrent 952 PV sur 4 tours."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Réduit le mana de tous les ennemis de 35%.",
+      "Après l'utilisation de la compétence spéciale, augmente le mana du lanceur de 15%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "Pendant 5 tours, à la fin de chaque tour, vole le bonus dissipable le plus récent de chaque ennemi et les redistribue aux aléatoirement aux alliés."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
-     "text": "[*]Lorsqu'il est vaincu, ce personnage a 80% de chances de ressusciter au début du tour suivant avec 50% de santé et 80% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+     "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
     }
    ]
   }

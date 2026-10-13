@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
+      "Alla allierade får 50% attack i 5 rundor. Attacken ökar med 5% per runda, upp till 70%.",
+      "Alla allierade regenererar 1270 ökad hälsa i 5 rundor. Hälsan kan komma att överstiga maxhälsan."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Varje besegrad allierad har 50% chans återupplivas med 15% hälsa.",
+      "Åkallar en tomteundersåte till varje allierad, med 10% hälsa och 10% attack som ärvs från anfallaren.",
+      "Alla allierade återfår 612 hälsa under 4 rundor."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Alla allierade återfår 45% hälsa.",
-      "Varje besegrad allierad har 25% chans att återupplivas med 40% hälsa.\n[*]Varje natursköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans.",
+      "Varje besegrad allierad har 25% chans att återupplivas med 40% hälsa.\n[*]Varje natursköld på brädet ökar chansen att återupplivas med 3%, upp till totalt 49% chans.",
       "Alla allierade är immuna mot nya negativa statuseffekter. Den här effekten varar till dess att 3 negativa statuseffekter har motståtts."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Gör 210% skada mot alla fiender.\n[*]Gör ytterligare 20% skada för varje helig sköld på brädet, upp till totalt 450% skada.",
+      "Varje besegrad allierad har 20% chans att återupplivas med 40% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Gör 260% skada mot alla fiender.\n[*]Gör ytterligare 25% skada för varje helig sköld på brädet, upp till totalt 560% skada.",
+      "Varje besegrad allierad har 20% chans att återupplivas med 45% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans.",
+      "Gör extra skada mot mörker."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Minskar alla fienders mana med -25% för varje fiende som besegras av attacken.",
       "Stapel +2 (max: 10): Användaren får 16% attack. (Avbrytningar minskar positiva staplar med 1.)",
       "Elementlänk ger 5% hälsa till alla eldallierade i 6 rundor. Denna effekt kan ej avbrytas."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Varje besegrad allierad har 50% chans återupplivas med 30% hälsa.",
+      "Alla allierade återfår 1424 hälsa under 4 rundor. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer.",
+      "De kommande 4 rundorna får alla allierade 5% mana i slutet av sin runda. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer.",
+      "Elementlänk ger alla naturallierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Ökar kastarens mana med 15% efter att specialförmågan har använts. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "Åsamkar 500% skada till 5 slumpmässiga fiender.",
+      "Alla fiender som träffas tvingas kasta vettlös läkning när de har full mana i 5 rundor.\n[*]Vettlös läkning\n[*]Återställer 60% hälsa för karaktären på motståndarsidan som har minst HP kvar."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
+      "Alla allierade regenererar 1080 ökad hälsa i 4 rundor. Hälsan kan komma att överstiga maxhälsan.",
+      "Alla fiender får -50% försvar mot specialförmågor under 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Förstör alla allierades odjur och skadar alla megaodjur.",
       "Återställer 65% hälsa för den allierade som har minst HP kvar. Alla andra allierade får tillbaka 45% hälsa.",
       "Tillväxt: Alla allierade får 300 attack och 300 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Specialförmågan har olika effekter när den laddas med 100%/ 200% mana:",
+      "[*] 1 st manaladdningar",
+      "[**]Målet och fiender i närheten får[#Dynamic] 222 [#]eldskada under 2 rundor. Användaren absorberar 10% av gjord eldskada som hälsa.",
+      "[**]Om användaren dör under de följande 2 rundorna återupplivas användaren i början av nästkommande runda med 40% hälsa. Alla statuseffekter och staplar tas bort när användaren besegras.",
+      "[*] 2 st manaladdningar",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 44% hälsa.",
+      "[**]Alla allierade regenererar 795 ökad hälsa i 3 rundor. Hälsan kan komma att överstiga maxhälsan.",
+      "[**]Alla allierade minskar all tagen skada med -60% i 3 rundor."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 6 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
+      "Kastaren regenererar 1692 ökad hälsa i 6 rundor. Hälsan kan komma att överstiga maxhälsan.",
+      "Alla allierade får 65% försvar i 6 rundor.",
+      "De kommande 6 rundorna får alla allierade 6% mana i slutet av sin runda."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*] 3 st manaladdningar",
       "[**]Ökar alla allierades hälsa med 2000. Hälsan kan komma att överstiga maxhälsan.",
       "[**]Alla allierade är immuna mot nya negativa statuseffekter och återfår 550 hälsa för varje försök till negativ statuseffekt. Den här effekten varar till dess att 3 negativa statuseffekter har motståtts."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
+      "[*] 1 st manaladdningar",
+      "[**]Förstör alla undersåtar som tillhör målet. Den här effekten skadar megaundersåtar.",
+      "[**]Skadar målet med 410%.",
+      "[**]Målet kan inte åkalla nya undersåtar med specialförmågor och tar 100 skada för varje ny undersåte det försöker att åkalla under 2 rundor.",
+      "[**]Alla allierade får 5% mana för varje undersåte som förgörs. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "[*] 2 st manaladdningar",
+      "[**]Förstör alla undersåtar som tillhör målet och fiender i närheten. Den här effekten skadar megaundersåtar.",
+      "[**]Skadar målet och fiender i närheten med 420%.",
+      "[**]Målet och fiender i närheten kan inte åkalla nya undersåtar med specialförmågor och får 200 skada för varje undersåte de försöker åkalla i 3 rundor.",
+      "[**]Alla allierade får 5% mana för varje undersåte som förgörs. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "[*] 3 st manaladdningar",
+      "[**]Förstör alla fienders undersåtar och skadar megaundersåtar.",
+      "[**]Alla fiender tar 430% skada.",
+      "[**]Inga fiender kan åkalla nya undersåtar med specialförmågor och får 500 skada för varje undersåte de försöker åkalla i 4 rundor.",
+      "[**]Alla allierade får 5% mana för varje undersåte som förgörs. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Vild: Alla allierade återfår 350 hälsa eller får 1050 ökad hälsa i 4 rundor.",
       "(Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att läka 200% extra hälsa den rundan. När extra hälsa läks ger effekten ökad hälsa.)",
-      "De kommande 4 rundorna får alla allierade 10% mana i slutet av sin runda.",
+      "De kommande 4 rundorna får alla allierade 7% mana i slutet av sin runda.",
       "Alla allierade får 55% försvar i 4 rundor."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Skadar målet med 650%.",
       "[**]Attacken länkas vidare till alla fiender bredvid de som träffas.",
       "[**]Tillväxt: Alla allierade får 750 attack och 750 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[***]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[***]Vittring och tillväxt kan inte avbrytas eller rensas.\n[***]Gränser för modifierade förmågepoäng.\n[***]Minst 30% och högst 170% av ursprungsvärdena.\n[***]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[***]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
+      "[*] 1 st manaladdningar",
+      "[**]Alla allierade återfår 15% hälsa.",
+      "[**]Varje besegrad allierad har 30% chans återupplivas med 30% hälsa.",
+      "[**]De kommande 2 rundorna får alla allierade 10% mana i slutet av sin runda.",
+      "[*] 2 st manaladdningar",
+      "[**]Alla allierade återfår 35% hälsa.",
+      "[**]Varje besegrad allierad har 40% chans återupplivas med 40% hälsa.",
+      "[**]Renar 1 negativ statuseffekt från alla allierade. (Negativa statuseffekter rensas bort i den ordning de fåtts. De senaste statuseffekterna rensas bort först.)",
+      "[**]De kommande 3 rundorna får alla allierade 10% mana i slutet av sin runda.",
+      "[*] 3 st manaladdningar",
+      "[**]Alla allierade återfår 55% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 60% hälsa.",
+      "[**]Rensar negativa statuseffekter från alla allierade.",
+      "[**]De kommande 5 rundorna får alla allierade 15% mana i slutet av sin runda."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Ökar allierade i närhetens mana med 30%. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
       "Tillväxt: Allierade i närheten får 360 attack och 360 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
       "Åkallar en slemmegaundersåte med 50% hälsa och 40% attack som ärvs från anfallaren."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
+      "[*] 1 st manaladdningar",
+      "[**]Ökar alla allierades hälsa med 450. Hälsan kan komma att överstiga maxhälsan.",
+      "[*] 2 st manaladdningar",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 10% hälsa.",
+      "[**]Alla allierade återfår 609 hälsa under 3 rundor.",
+      "[*] 3 st manaladdningar",
+      "[**]Ökar alla allierades hälsa med 700. Hälsan kan komma att överstiga maxhälsan.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 27% hälsa.",
+      "[**]Alla allierade återfår 952 hälsa under 4 rundor."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Angriper alla fiender med eldstormsslag och gör upp till 2500 skada. Gör 40% mer skada om måltavlan har elementet natur.",
+      "Minskar alla fienders mana med 35%.",
+      "Ökar kastarens mana med 15% efter att specialförmågan har använts. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "Stjäl den senaste bonusen som kan avbrytas från alla fiender vid slutet av varje runda och fördelar dem slumpmässigt bland allierade i 5 rundor."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
-     "text": "[*]När karaktären besegras har den 80% chans att återupplivas i början av sin nästa runda med 50% hälsa och 80% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+     "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
     }
    ]
   }

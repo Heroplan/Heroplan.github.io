@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 20% LP wiederbelebt zu werden.",
+      "Alle Verbündeten erhalten 50% Angriff für 5 Züge. Der Angriff erhöht sich um 5% mit jedem Zug, bis zu 70%.",
+      "Alle Verbündeten stellen 1270 verstärktes Leben für 5 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 15% LP wiederbelebt zu werden.",
+      "Beschwört für jeden Verbündeten einen Elflakaien mit 10% LP und 10% Angriff des Wirkers.",
+      "Alle Verbündeten regenerieren 612 LP für 4 Züge."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Heilt alle Verbündeten um 45%.",
-      "Jeder besiegte Verbündete kann mit einer Chance von 25% mit 40% LP wiederbelebt werden.\n[*]Jeder Naturschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%.",
+      "Jeder besiegte Verbündete kann mit einer Chance von 25% mit 40% LP wiederbelebt werden.\n[*]Jeder Naturschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 3%, bis zu insgesamt 49%.",
       "Alle Verbündeten sind immun gegen neue Statusveränderungen. Dieser Effekt hält so lange an, bis 3 Statusveränderungen abgewehrt wurden."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Fügt allen Gegnern 210% Schaden zu.\n[*]Fügt zusätzlich 20% Schaden zu für jeden heiligen Schild auf dem Feld, bis zu 450% Schaden insgesamt.",
+      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 40% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Fügt allen Gegnern 260% Schaden zu.\n[*]Fügt zusätzlich 25% Schaden zu für jeden heiligen Schild auf dem Feld, bis zu 560% Schaden insgesamt.",
+      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 45% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%.",
+      "Fügt Schatten zusätzlichen Schaden zu."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Für jeden durch den Angriff besiegten Gegner wird das Mana aller Gegner um -25% reduziert.",
       "Stapel +2 (Max.: 10): Der Wirker erhält 16% Angriff. (Bannen verringert die positiven Stapel um 1.)",
       "Elementare Verbindung stellt 5% Leben für alle Feuer-Verbündeten für 6 Züge wieder her. Der Effekt kann nicht gebannt werden."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 30% LP wiederbelebt zu werden.",
+      "Alle Verbündeten regenerieren 1424 LP für 4 Züge. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an.",
+      "Für die nächsten 4 Runden erhalten alle Verbündeten am Ende der Runde 5% Mana. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an.",
+      "Elementare Verbindung verleiht allen Natur-Verbündeten 15% Angriff und 15% Verteidigung für 6 Züge. Der Effekt kann nicht gebannt werden. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Nachdem die Spezialfähigkeit gewirkt wurde, erhöht sich das Mana des Wirkers um 15%. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "Verursacht 500% Schaden an 5 zufälligen Gegnern.",
+      "Alle getroffenen Gegner werden 5 Züge lang gezwungen, Gedankenlose Heilung zu wirken, wenn ihr Mana voll ist.\n[*]Gedankenlose Heilung\n[*]Stellt 60% Leben für den Charakter der gegnerischen Seite mit den niedrigsten LP her."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 20% LP wiederbelebt zu werden.",
+      "Alle Verbündeten stellen 1080 verstärktes Leben für 4 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten.",
+      "Alle Gegner erhalten -50% Verteidigung gegen Spezialfähigkeiten für 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Vernichtet alle Feinde von allen Verbündeten und fügt allen Mega-Feinden Schaden zu.",
       "Stellt 65% Leben für den Verbündeten mit den niedrigsten LP her. Alle anderen Verbündeten stellen 45% Leben wieder her.",
       "Wachstum: Alle Verbündeten erhalten 300 Angriff und 300 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200% Mana aufgeladen ist:",
+      "[*] 1 x Manaaufladung:",
+      "[**]Das Ziel und nahe Gegner erleiden[#Dynamic] 222 [#]Brandschaden über 2 Züge. Der Wirker absorbiert 10% des zugefügten Brandschadens als Leben.",
+      "[**]Wenn während der nächsten 2 Züge der Wirker besiegt wird, wird er zu Beginn der nächsten Runde mit 40% Leben wiederbelebt. Alle Statuseffekte und Stapel werden entfernt, wenn der Wirker besiegt wird.",
+      "[*] 2 x Manaaufladung:",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 44% LP wiederbelebt zu werden.",
+      "[**]Alle Verbündeten stellen 795 verstärktes Leben für 3 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten.",
+      "[**]Für alle Verbündeten wird der erlittene Schaden für 3 Züge um -60% reduziert."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "Der Wirker erhält Verspotten, was 6 Züge lang verhindert, dass die Gegner Spezialfähigkeiten bei den Verbündeten des Wirkers einsetzen können. (Verspotten hindert alle Gegner daran, Spezialfähigkeiten auf ihre Verbündeten anzuwenden, die nicht Verspotten haben.)",
+      "Der Wirker stellt 1692 verstärktes Leben für 6 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten.",
+      "Alle Verbündeten erhalten 65% Verteidigung für 6 Züge.",
+      "Für die nächsten 6 Runden erhalten alle Verbündeten am Ende der Runde 6% Mana."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*] 3 x Manaaufladung:",
       "[**]Verstärkt das Leben aller Verbündeten um 2000. Verstärktes Leben kann die max. LP übersteigen.",
       "[**]Alle Verbündeten sind immun gegen neue Statusveränderungen und erhalten 550 Leben für jede versuchte Statusveränderung zurück. Dieser Effekt hält so lange an, bis 3 Statusveränderungen abgewehrt wurden."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200%/ 300% Mana aufgeladen ist:",
+      "[*] 1 x Manaaufladung:",
+      "[**]Zerstört alle Lakaien vom Ziel. Dieser Effekt fügt Mega-Lakaien Schaden zu.",
+      "[**]Fügt dem Ziel 410% Schaden zu.",
+      "[**]Das Ziel kann mit einer Spezialfähigkeit keine neuen Lakaien beschwören und erleidet für jeden Lakaien, den es zu beschwören versucht, 100 Schaden für 2 Züge.",
+      "[**]Alle Verbündeten erhalten 5% Mana für jeden zerstörten Lakaien. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "[*] 2 x Manaaufladung:",
+      "[**]Zerstört alle Lakaien vom Ziel und nahen Gegnern. Dieser Effekt fügt Mega-Lakaien Schaden zu.",
+      "[**]Fügt dem Ziel und nahen Gegnern 420% Schaden zu.",
+      "[**]Das Ziel und Gegner in der Nähe können mit einer Spezialfähigkeit keine neuen Lakaien beschwören und erleiden 3 Züge lang für jeden Lakaien, den sie zu beschwören versuchen, 200 Schaden.",
+      "[**]Alle Verbündeten erhalten 5% Mana für jeden zerstörten Lakaien. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "[*] 3 x Manaaufladung:",
+      "[**]Zerstört alle Lakaien von allen Gegnern und fügt Mega-Lakaien Schaden zu.",
+      "[**]Verursacht 430% Schaden bei allen Gegnern.",
+      "[**]Alle Gegner können mit einer Spezialfähigkeit keine neuen Lakaien beschwören und erleiden 4 Züge lang für jeden Lakaien, den sie zu beschwören versuchen, 500 Schaden.",
+      "[**]Alle Verbündeten erhalten 5% Mana für jeden zerstörten Lakaien. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Wild: Für 4 Runden regenerieren alle Verbündeten 350 LP oder erhalten jede Runde 1050 verstärktes Leben.",
       "(Wild fügt jede Runde eine Chance hinzu, dass dieser Effekt mächtiger wird.\n[*]Dieser Wild-Effekt hat eine Chance von 50%, 200% zusätzliche LP in dieser Runde zu heilen. Wenn zusätzliche LP geheilt werden, gewährt der Effekt verstärktes Leben.)",
-      "Für die nächsten 4 Runden erhalten alle Verbündeten am Ende der Runde 10% Mana.",
+      "Für die nächsten 4 Runden erhalten alle Verbündeten am Ende der Runde 7% Mana.",
       "Alle Verbündeten erhalten 55% Verteidigung für 4 Züge."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Fügt dem Ziel 650% Schaden zu.",
       "[**]Der Angriff geht durch alle Gegner hindurch, die sich direkt neben einem getroffenen Gegner befinden.",
       "[**]Wachstum: Alle Verbündeten erhalten 750 Angriff und 750 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[***]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[***]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[***]Limits für modifizierte Fähigkeitspunkte.\n[***]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[***]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[***]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200%/ 300% Mana aufgeladen ist:",
+      "[*] 1 x Manaaufladung:",
+      "[**]Heilt alle Verbündeten um 15%.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 30%, mit 30% LP wiederbelebt zu werden.",
+      "[**]Für die nächsten 2 Runden erhalten alle Verbündeten am Ende der Runde 10% Mana.",
+      "[*] 2 x Manaaufladung:",
+      "[**]Heilt alle Verbündeten um 35%.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 40%, mit 40% LP wiederbelebt zu werden.",
+      "[**]Reinigt 1 negative Statusänderung von allen Verbündeten. (Negative Statusänderungen werden in der Reihenfolge gereinigt, in der sie erhalten wurden. Die neuesten Statusänderungen werden zuerst gereinigt.)",
+      "[**]Für die nächsten 3 Runden erhalten alle Verbündeten am Ende der Runde 10% Mana.",
+      "[*] 3 x Manaaufladung:",
+      "[**]Heilt alle Verbündeten um 55%.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 60% LP wiederbelebt zu werden.",
+      "[**]Reinigt negative Statusänderungen von allen Verbündeten.",
+      "[**]Für die nächsten 5 Runden erhalten alle Verbündeten am Ende der Runde 15% Mana."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Erhöht das Mana naher Verbündeter um 30%. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
       "Wachstum: Verbündete in der Nähe erhalten 360 Angriff und 360 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)",
       "Beschwört einen Schleim-Megalakaien mit 50% LP und 40% Angriff des Wirkers."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200%/ 300% Mana aufgeladen ist:",
+      "[*] 1 x Manaaufladung:",
+      "[**]Verstärkt das Leben aller Verbündeten um 450. Verstärktes Leben kann die max. LP übersteigen.",
+      "[*] 2 x Manaaufladung:",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 10% LP wiederbelebt zu werden.",
+      "[**]Alle Verbündeten regenerieren 609 LP für 3 Züge.",
+      "[*] 3 x Manaaufladung:",
+      "[**]Verstärkt das Leben aller Verbündeten um 700. Verstärktes Leben kann die max. LP übersteigen.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 27% LP wiederbelebt zu werden.",
+      "[**]Alle Verbündeten regenerieren 952 LP für 4 Züge."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Greift alle Gegner mit dem Firestorm-Schlag an und verursacht dabei bis zu 2500 Schaden. Verursacht 40% mehr Schaden, wenn das Ziel das Element Natur hat.",
+      "Reduziert das Mana aller Gegner um 35%.",
+      "Nachdem die Spezialfähigkeit gewirkt wurde, erhöht sich das Mana des Wirkers um 15%. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "Entzieht am Ende jedes Zuges allen Gegnern die neueste aufhebbare Stärkung und verteilt sie zufällig auf die Verbündeten für 5 Züge."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
-     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 80%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 80% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+     "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
     }
    ]
   }

@@ -882,6 +882,20 @@
    ]
   }
  ],
+ "castle_stag_lysanor": [
+  {
+   "skills": [
+    {
+     "id": "sapphire_eyes_mayhem",
+     "lines": [
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
+      "Todos os aliados recebem 50% de ataque por 5 turnos. O ataque aumenta em 5% a cada turno, até o limite de 70%.",
+      "Todos os aliados recuperam 1270 de vida reforçada ao longo de 5 turnos. A vida reforçada pode exceder o limite de PV."
+     ]
+    }
+   ]
+  }
+ ],
  "christmas_ginger": [
   {
    "skills": [
@@ -911,6 +925,20 @@
    ]
   }
  ],
+ "christmas_mrs_claus_costume_fangirl": [
+  {
+   "skills": [
+    {
+     "id": "hyper_porridge_mayhem",
+     "lines": [
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 15% de PV.",
+      "Convoca um ajudante Elfo para cada aliado. O ajudante herda 10% de PV e 10% de ataque do invocador.",
+      "Todos os aliados regeneram 612 PV por 4 turnos."
+     ]
+    }
+   ]
+  }
+ ],
  "construct_arzen": [
   {
    "passiveSkills": [
@@ -934,7 +962,7 @@
      "id": "ancient_technology_mayhem",
      "lines": [
       "Restaura 45% da vida de todos os aliados.",
-      "Cada aliado derrotado tem 25% de chance de reviver com 40% de PV.\n[*] Cada escudo de Natureza no tabuleiro aumenta em 5% a chance de reviver, até 65% no total.",
+      "Cada aliado derrotado tem 25% de chance de reviver com 40% de PV.\n[*] Cada escudo de Natureza no tabuleiro aumenta em 3% a chance de reviver, até 49% no total.",
       "Todos os aliados ficam imunes a novos males de status. Este efeito dura até que 3 males sejam resistidos."
      ]
     }
@@ -1218,6 +1246,33 @@
    ]
   }
  ],
+ "elemental_zandria": [
+  {
+   "skills": [
+    {
+     "id": "unwavering_devotion_mayhem",
+     "lines": [
+      "Causa 210% de dano a todos os inimigos.\n[*] Causa mais 20% de dano por cada escudo de Luz no tabuleiro, até 450% de dano no total.",
+      "Cada aliado derrotado tem 20% de chance de reviver com 40% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total."
+     ]
+    }
+   ]
+  }
+ ],
+ "elemental_zandria_costume_planet": [
+  {
+   "skills": [
+    {
+     "id": "cosmic_devotion_mayhem",
+     "lines": [
+      "Causa 260% de dano a todos os inimigos.\n[*] Causa mais 25% de dano por cada escudo de Luz no tabuleiro, até 560% de dano no total.",
+      "Cada aliado derrotado tem 20% de chance de reviver com 45% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total.",
+      "Causa dano extra contra Trevas."
+     ]
+    }
+   ]
+  }
+ ],
  "fire_god_zerfain": [
   {
    "skills": [
@@ -1229,6 +1284,21 @@
       "Para cada inimigo derrotado pelo ataque, reduz o mana de todos os inimigos em -25%.",
       "Acumulação +2 (máx.: 10): o invocador recebe 16% do ataque. (A dissipação remove 1 acumulação positiva.)",
       "Vínculo elemental recupera 5% de vida de todos os aliados de fogo por 6 turnos. Este efeito não pode ser dissipado."
+     ]
+    }
+   ]
+  }
+ ],
+ "forest_god_oberon_costume_cute": [
+  {
+   "skills": [
+    {
+     "id": "toonsummers_dream_mayhem",
+     "lines": [
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 30% de PV.",
+      "Todos os aliados regeneram 1424 PV por 4 turnos. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza.",
+      "Durante os 4 turnos seguintes, todos os aliados recebem 5% de mana ao fim do turno. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza.",
+      "Vinculo elemental dá a todos os aliados de natureza 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza."
      ]
     }
    ]
@@ -1602,6 +1672,16 @@
  ],
  "ghost_hua_pi_gui": [
   {
+   "skills": [
+    {
+     "id": "surrender_your_heart_mayhem",
+     "lines": [
+      "Depois que a habilidade especial é lançada, aumenta o mana do invocador em 15%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "Causa 500% de dano a 5 inimigos aleatórios.",
+      "Por 5 turnos, todos os inimigos atingidos são forçados a lançar Cura Aleatória quando o mana está cheio.\n[*]Cura Aleatória\n[*]Recupera 60% de vida para o inimigo com menos PV restantes."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
@@ -2149,6 +2229,20 @@
    ]
   }
  ],
+ "kalevala_mother_lemminkainen": [
+  {
+   "skills": [
+    {
+     "id": "mending_stitches_mayhem",
+     "lines": [
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
+      "Todos os aliados recuperam 1080 de vida reforçada ao longo de 4 turnos. A vida reforçada pode exceder o limite de PV.",
+      "Todos os inimigos ganham -50% de defesa contra habilidades especiais por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos."
+     ]
+    }
+   ]
+  }
+ ],
  "magic_carpet_amelia": [
   {
    "skills": [
@@ -2201,6 +2295,25 @@
       "Destrói todos os demônios de todos os aliados e causa dano a todos os megademônios.",
       "Recupera 65% de vida para o aliado com menos PV restantes. Todos os outros aliados recuperam 45% de vida.",
       "Crescimento: todos os aliados recebem 300 de ataque e 300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "magic_nadezhda_costume_postmaster": [
+  {
+   "skills": [
+    {
+     "id": "parcel_of_the_dragon_familiar_mayhem",
+     "lines": [
+      "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% de mana:",
+      "[*]x 1 carga de mana:",
+      "[**]O alvo e os inimigos próximos recebem[#Dynamic] 222 [#]de dano de queimadura por 2 turnos. O invocador absorve 10% do dano de queimadura como vida.",
+      "[**]Se derrotado durante os próximos 2 turnos, o invocador ressuscita no começo do turno seguinte com 40% de vida. Todos os efeitos de status e acumulações são removidos quando o invocador é derrotado.",
+      "[*]x 2 carga de mana:",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 44% de PV.",
+      "[**]Todos os aliados recuperam 795 de vida reforçada ao longo de 3 turnos. A vida reforçada pode exceder o limite de PV.",
+      "[**]Todos os aliados reduzem todo o dano recebido em -60% por 3 turnos."
      ]
     }
    ]
@@ -2577,6 +2690,17 @@
  ],
  "musketeer_queen_anne_costume_commander": [
   {
+   "skills": [
+    {
+     "id": "leading_by_example_mayhem",
+     "lines": [
+      "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 6 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
+      "O invocador recupera 1692 de vida reforçada ao longo de 6 turnos. A vida reforçada pode exceder o limite de PV.",
+      "Todos os aliados ganham 65% de defesa por 6 turnos.",
+      "Durante os 6 turnos seguintes, todos os aliados recebem 6% de mana ao fim do turno."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
@@ -2691,6 +2815,33 @@
       "[*]x 3 carga de mana:",
       "[**]Aumenta a vida de todos os aliados em 2000. A vida reforçada pode exceder o limite de PV.",
       "[**]Todos os aliados ficam imunes a novos males de status e recuperam 550 de vida por cada mal de status não aplicado. Este efeito dura até que 3 males sejam resistidos."
+     ]
+    }
+   ]
+  }
+ ],
+ "ninja_topaz_costume_precise": [
+  {
+   "skills": [
+    {
+     "id": "precise_needles_mayhem",
+     "lines": [
+      "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
+      "[*]x 1 carga de mana:",
+      "[**]Destrói todos os ajudantes do alvo. Este efeito causa dano a mega-ajudantes.",
+      "[**]Causa 410% de dano ao alvo.",
+      "[**]O alvo não pode invocar novos ajudantes com a habilidade especial e recebe 100 de dano por cada tentativa de invocar um ajudante por 2 turnos.",
+      "[**]Todos os aliados recebem 5% de mana por cada ajudante destruído. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "[*]x 2 carga de mana:",
+      "[**]Destrói todos os ajudantes do alvo e dos inimigos próximos. Este efeito causa dano a mega-ajudantes.",
+      "[**]Causa 420% de dano ao alvo e inimigos próximos.",
+      "[**]O alvo e os inimigos próximos não podem invocar novos ajudantes com a habilidade especial e recebem 200 de dano por cada tentativa de invocar um ajudante por 3 turnos.",
+      "[**]Todos os aliados recebem 5% de mana por cada ajudante destruído. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "[*]x 3 carga de mana:",
+      "[**]Destrói todos os ajudantes de todos os inimigos e causa dano aos mega-ajudantes.",
+      "[**]Causa 430% de dano a todos os inimigos.",
+      "[**]Os inimigos não podem invocar novos ajudantes com a habilidade especial e recebem 500 de dano por cada tentativa de invocar um ajudante por 4 turnos.",
+      "[**]Todos os aliados recebem 5% de mana por cada ajudante destruído. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)"
      ]
     }
    ]
@@ -2848,7 +2999,7 @@
      "lines": [
       "Selvagem: por 4 turnos, todos os aliados recuperam 350 PV ou recebem 1050 de vida reforçada a cada turno.",
       "(A cada turno, Selvagem tem a chance de tornar o efeito mais poderoso.\n[*] Este efeito Selvagem tem 50% de chance de restaurar mais 200% PV nesse turno. Ao restaurar mais PV, o efeito dá vida reforçada.)",
-      "Durante os 4 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno.",
+      "Durante os 4 turnos seguintes, todos os aliados recebem 7% de mana ao fim do turno.",
       "Todos os aliados ganham 55% de defesa por 4 turnos."
      ]
     }
@@ -2874,6 +3025,32 @@
       "[**]Causa 650% de dano ao alvo.",
       "[**]O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
       "[**]Crescimento: todos os aliados recebem 750 de ataque e 750 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+     ]
+    }
+   ]
+  }
+ ],
+ "ronin_hiyori": [
+  {
+   "skills": [
+    {
+     "id": "sensu_of_immortality_mayhem",
+     "lines": [
+      "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
+      "[*]x 1 carga de mana:",
+      "[**]Restaura 15% da vida de todos os aliados.",
+      "[**]Cada aliado derrotado tem 30% de chance de ser revivido com 30% de PV.",
+      "[**]Durante os 2 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno.",
+      "[*]x 2 carga de mana:",
+      "[**]Restaura 35% da vida de todos os aliados.",
+      "[**]Cada aliado derrotado tem 40% de chance de ser revivido com 40% de PV.",
+      "[**]Expurga 1 mal de status de todos os aliados. (Os males de status são expurgados na ordem em que foram recebidos. Os males de status mais recentes são expurgados primeiro.)",
+      "[**]Durante os 3 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno.",
+      "[*]x 3 carga de mana:",
+      "[**]Restaura 55% da vida de todos os aliados.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 60% de PV.",
+      "[**]Expurga os males de status de todos os aliados.",
+      "[**]Durante os 5 turnos seguintes, todos os aliados recebem 15% de mana ao fim do turno."
      ]
     }
    ]
@@ -3362,6 +3539,27 @@
       "Aumenta o mana de todos os aliados próximos em 30%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
       "Crescimento: os aliados próximos recebem 360 de ataque e 360 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Gosma com 50% de PV e 40% de ataque herdados do invocador."
+     ]
+    }
+   ]
+  }
+ ],
+ "styx_charon": [
+  {
+   "skills": [
+    {
+     "id": "boat_ride_from_the_beyond_mayhem",
+     "lines": [
+      "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
+      "[*]x 1 carga de mana:",
+      "[**]Aumenta a vida de todos os aliados em 450. A vida reforçada pode exceder o limite de PV.",
+      "[*]x 2 carga de mana:",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 10% de PV.",
+      "[**]Todos os aliados regeneram 609 PV por 3 turnos.",
+      "[*]x 3 carga de mana:",
+      "[**]Aumenta a vida de todos os aliados em 700. A vida reforçada pode exceder o limite de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 27% de PV.",
+      "[**]Todos os aliados regeneram 952 PV por 4 turnos."
      ]
     }
    ]
@@ -4034,6 +4232,17 @@
  ],
  "tales2_hreidmarr_costume_trader": [
   {
+   "skills": [
+    {
+     "id": "dwarven_traders_deal_mayhem",
+     "lines": [
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2500 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Reduz o mana de todos os inimigos 35%.",
+      "Depois que a habilidade especial é lançada, aumenta o mana do invocador em 15%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "Ao fim de cada turno, rouba o reforço dissipável mais recente de todos os inimigos e o distribui aleatoriamente entre os aliados por 5 turnos."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "molten_core_costume",
@@ -4712,7 +4921,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4728,7 +4937,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4744,7 +4953,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4760,7 +4969,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4787,7 +4996,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4803,7 +5012,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4819,7 +5028,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4835,7 +5044,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4851,7 +5060,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4867,7 +5076,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4883,7 +5092,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4909,7 +5118,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4925,7 +5134,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4941,7 +5150,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4957,7 +5166,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -4973,7 +5182,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -5000,7 +5209,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -5016,7 +5225,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -5032,7 +5241,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }
@@ -5058,7 +5267,7 @@
     {
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
-     "text": "[*] Quando é derrotado, este personagem tem 80% de chance de reviver no início do turno seguinte com 50% de vida e 80% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+     "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
     }
    ]
   }

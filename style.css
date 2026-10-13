@@ -1769,6 +1769,22 @@ h1.hero-main-name.skill-type-tag:hover {
   line-height: 20px
 }
 
+/* 「查看平衡数据英雄」这类**只有筛选按钮、没有左侧显示框**的区块：
+   `.action-button-right` 默认是 `border-left:none` + 左直角，那套规则是给
+   「`.date-display-box`（左半）+ 按钮（右半）」**拼接**用的 ⇒ 单独放按钮时
+   左边既缺边框也缺圆角。这里用 `:only-child` 只在"父元素里只有这一个子元素"时
+   补成四角完整的独立控件，不影响任何带显示框的既有区块。 */
+.input-with-right-button > .action-button-right:only-child {
+  border-left: 1px solid var(--md-sys-color-outline);
+  border-radius: 6px
+}
+
+html[dir="rtl"] .input-with-right-button > .action-button-right:only-child {
+  border-left: none;
+  border-right: 1px solid var(--md-sys-color-outline);
+  border-radius: 6px
+}
+
 /* ========== 响应式设计 ========== */
 @media (max-width: 768px) {
   .main-container {

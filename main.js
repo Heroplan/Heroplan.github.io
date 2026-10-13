@@ -331,6 +331,7 @@ async function initializeApp() {
         showLbTalentDetailsCheckbox: document.getElementById('show-lb-talent-details-checkbox'),
         enableSkillQuickSearchCheckbox: document.getElementById('enable-skill-quick-search-checkbox'),
         filterHeroAcademyBtn: document.getElementById('filter-hero-academy-btn'),
+        filterBalanceHeroesBtn: document.getElementById('filter-balance-heroes-btn'),
         filterHero730Btn: document.getElementById('filter-hero-730-btn'),
         filterCostume548Btn: document.getElementById('filter-costume-548-btn'),
     });
@@ -839,6 +840,15 @@ function addEventListeners() {
             setCookie('showLbTalentDetails', filterInputs.showLbTalentDetailsCheckbox.checked.toString(), 365);
         });
     }
+    // 「查看平衡数据英雄」：只列存在平衡数据（第二表有差异）的英雄
+    if (filterInputs.filterBalanceHeroesBtn) {
+        filterInputs.filterBalanceHeroesBtn.addEventListener('click', () => {
+            resetAllFilters();
+            state.temporaryBalancedHeroes = true;
+            applyFiltersAndRender();
+        });
+    }
+
     // 为一键日期筛选按钮专门添加点击事件监听器
     if (filterInputs.filterHeroAcademyBtn) {
         filterInputs.filterHeroAcademyBtn.addEventListener('click', () => {

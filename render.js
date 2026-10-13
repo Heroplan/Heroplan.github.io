@@ -58,6 +58,125 @@ function getFormattedHeroNameHTML(hero) {
 }
 
 /**
+ * 「平衡数据」切换（官方第二表）——**按节独立切换**。
+ *
+ * 数据口径：`hero._balanced` 是**差异档**解析来的（见 `utils.js::balancedFieldsFrom`），
+ *   **键存在 = 该节与常规不同 = 该节要显示按钮**；`hero._normalSnapshot` 存常规版用于切回。
+ * ⚠ `passiveSkills` 是对象数组、`effects` 是字符串数组，两者**分别**切换、互不牵连。
+ */
+const BALANCED_SECTIONS = ['effects', 'passiveSkills', 'familyBonus', 'stats'];
+// 属性节的字段（切换三围时要整体换掉，战力 power 与 lb1/lb2 一并重算）
+const BALANCED_STAT_KEYS = ['attack', 'defense', 'health', 'power', 'lb1', 'lb2'];
+
+/** 记录"常规版"基线（必须在字段还是常规值时调用）。 */
+function ensureBalancedSnapshot(hero) {
+    if (!hero) return;
+    const snap = { effects: hero.effects, passiveSkills: hero.passiveSkills, familyBonus: hero.familyBonus };
+    BALANCED_STAT_KEYS.forEach(k => { snap[k] = hero[k]; });
+    hero._normalSnapshot = snap;
+}
+
+/**
+ * 按平衡三围重算属性。优先用 `hero._balancedDef`（`characters_balanced.json` 的第二表**完整定义**）；
+ * 没有该档时退回"常规基底 + 差异字段合并"（`computeHeroStats` 只用 rarity/baseAttack/baseDefense/baseHealth）。
+ */
+function applyBalancedStats(hero) {
+    if (typeof computeHeroStats !== 'function') return;
+    const def = hero._balancedDef
+        || (hero._balanced && hero._balanced.stats && hero._baseStats
+            ? Object.assign({}, hero._baseStats, hero._balanced.stats) : null);
+    if (!def) return;
+    const s = computeHeroStats(def);
+    hero.attack = s.attack; hero.defense = s.defense; hero.health = s.health; hero.power = s.power;
+    hero.lb1 = s.lb1; hero.lb2 = s.lb2;
+}
+
+/** 恢复常规属性（从基线快照）。 */
+function restoreNormalStats(hero) {
+    const snap = hero._normalSnapshot;
+    if (!snap) return;
+    BALANCED_STAT_KEYS.forEach(k => { if (snap[k] !== undefined) hero[k] = snap[k]; });
+}
+
+/**
+ * 重算列表/详情页展示用的 `displayStats`（改了三围后必须重算，否则显示的还是旧值）。
+ * ⚠ `filters.js::applyFiltersAndRender` 里的 `defaultSettings` 是**函数内局部变量**取不到；
+ *   这里的口径是**逐字段等价**：从筛选面板的"默认"选择器现场读同样的值。
+ */
+function refreshBalancedDisplayStats(hero) {
+    const fi = uiElements && uiElements.filterInputs;
+    if (typeof calculateHeroStats !== 'function' || !fi || !fi.defaultLimitBreakSelect) return;
+    hero.displayStats = calculateHeroStats(hero, {
+        lb: fi.defaultLimitBreakSelect.value,
+        talent: fi.defaultTalentSelect.value,
+        strategy: fi.defaultTalentStrategySelect.value,
+        manaPriority: fi.defaultManaPriorityCheckbox.checked
+    });
+}
+
+/** 按各节开关把 hero 字段指向平衡版 / 常规版。 */
+function applyBalancedSections(hero) {
+    const b = hero && hero._balanced;
+    if (!b) return;
+    const on = hero._balancedOn || (hero._balancedOn = {});
+    const snap = hero._normalSnapshot;
+    if (!snap) return;
+    ['effects', 'passiveSkills', 'familyBonus'].forEach(k => {
+        hero[k] = (on[k] && (k in b)) ? b[k] : snap[k];
+    });
+    if ('stats' in b && on.stats) applyBalancedStats(hero);
+    else restoreNormalStats(hero);
+    refreshBalancedDisplayStats(hero);
+}
+
+/**
+ * 切换**某一节**的平衡数据（再点恢复）。只影响该节，其它节不动。
+ * @param {object} hero
+ * @param {'effects'|'passiveSkills'|'familyBonus'} section
+ */
+function toggleBalancedData(hero, section) {
+    const b = hero && hero._balanced;
+    if (!b || !(section in b)) return;
+    if (!hero._normalSnapshot) ensureBalancedSnapshot(hero);
+    hero._balancedOn = hero._balancedOn || {};
+    hero._balancedOn[section] = !hero._balancedOn[section];
+    applyBalancedSections(hero);
+    // ⚠ 动态数值(`[#Dynamic]`→`<span class="dynamic-value">`)是按 `hero.effects` **解析**、且以
+    //   `hero.attack` 为基准算系数的 ⇒ 换技能文本**或换三围**都必须重算，否则数值还是旧的。
+    if (typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
+    if (typeof renderDetailsInModal === 'function') renderDetailsInModal(hero);
+}
+
+/**
+ * 平衡档的 `stats` 里是否含**三围**字段（baseAttack/baseDefense/baseHealth）。
+ * ⚠ 只改魔力速度/元素/稀有度等的英雄，三围算出来是一样的 ⇒ 属性区不给按钮（点了没可见变化）。
+ */
+function hasBalancedBaseStats(hero) {
+    // ① 差异档里直接带三围字段
+    const b = hero && hero._balanced && hero._balanced.stats;
+    if (b && ('baseAttack' in b || 'baseDefense' in b || 'baseHealth' in b)) return true;
+    // ② 有第二表完整定义时，逐字段比对（覆盖"只改三围、技能文本没变"的英雄）
+    const d = hero && hero._balancedDef, n = hero && hero._baseStats;
+    if (d && n) {
+        return d.baseAttack !== n.baseAttack || d.baseDefense !== n.baseDefense
+            || d.baseHealth !== n.baseHealth;
+    }
+    return false;
+}
+
+/** 某节标题旁的「切换平衡数据」按钮 HTML；该节无平衡数据则返回空串。 */
+function balancedToggleHTML(hero, section) {
+    const b = hero && hero._balanced;
+    if (!b || !(section in b)) return '';
+    if (section === 'stats' && !hasBalancedBaseStats(hero)) return '';
+    const on = !!(hero._balancedOn && hero._balancedOn[section]);
+    const d = (typeof i18n !== 'undefined') ? (i18n[state.currentLang] || {}) : {};
+    const label = on ? (d.balancedRestore || 'Restore Default') : (d.balancedToggle || 'Balanced Data');
+    return ' <span class="balanced-toggle reset-tag" id="toggle-balanced-btn-' + section
+        + '" data-section="' + section + '" title="' + label + '">' + label + '</span>';
+}
+
+/**
  * 渲染主列表的英雄表格。
  * @param {object[]} heroes - 要渲染的英雄对象数组。
  */
@@ -1453,6 +1572,9 @@ function getSafeColorKey(colorValue) {
 function renderDetailsInModal(hero, context = {}) {
 
     const { teamSlotIndex } = context;
+    // 兜底：`displayStats` 平时由 `applyFiltersAndRender` 预计算，但从队伍模拟器/分享链接等
+    //   入口打开详情时该英雄可能不在 `filteredHeroes` 里 ⇒ 这里懒算一次，避免模板读 undefined 崩溃。
+    if (hero && !hero.displayStats) refreshBalancedDisplayStats(hero);
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
     const classIcon = String(hero.classId || hero.class).toLowerCase();
@@ -2049,7 +2171,7 @@ function renderDetailsInModal(hero, context = {}) {
         ? hero.passiveSkills.filter(p => p && (p.text || p.id))
         : (hero.passives || []).map(t => ({ id: '', title: '', text: t }));
     const passivesSectionHTML = `<div id="modal-passives-section" class="skill-category-block">
-        <p class="uniform-style">${langDict.modalPassiveSkill}</p>
+        <p class="uniform-style">${langDict.modalPassiveSkill}${balancedToggleHTML(hero, 'passiveSkills')}</p>
         ${_passiveItems.length ? _passiveItems.map(p => {
             const _title = p.title || p.id || '';
             // 被动名可点 ⇒ **一键快速搜索该被动**（复用既有的 `.skill-type-tag` 点击逻辑；
@@ -2240,7 +2362,7 @@ function renderDetailsInModal(hero, context = {}) {
                     ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.sourceId}"><img src="imgs/coins/${sourceIconMap[hero.sourceId]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${formatLocalDate(hero['Release date'])}</span>` : ''}
                 </div>
-                <h3 id="modal-core-stats-header">${langDict.modalCoreStats}</h3>
+                <h3 id="modal-core-stats-header">${langDict.modalCoreStats}${balancedToggleHTML(hero, 'stats')}</h3>
                 <div class="details-stats-grid">
                     <div><p class="metric-value-style">💪 ${hero.displayStats.power || 0}</p></div>
                     <div><p class="metric-value-style">⚔️ ${hero.displayStats.attack || 0}</p></div>
@@ -2263,7 +2385,7 @@ function renderDetailsInModal(hero, context = {}) {
                 ${skillTypesSection}
             </div>
             <div id="modal-skill-effects-section" class="skill-category-block">
-                <p class="uniform-style">${langDict.modalSpecialSkill}</p>
+                <p class="uniform-style">${langDict.modalSpecialSkill}${balancedToggleHTML(hero, 'effects')}</p>
                 <ul class="skill-list">${renderListAsHTML(hero.effects, 'effects')}</ul>
             </div>
             ${passivesSectionHTML}
@@ -2273,6 +2395,11 @@ function renderDetailsInModal(hero, context = {}) {
     `;
 
     modalContent.innerHTML = detailsHTML;
+
+    // 「切换平衡数据」按钮：每个按钮只切自己那一节（`data-section`）
+    (modalContent.querySelectorAll ? modalContent.querySelectorAll('.balanced-toggle') : []).forEach(el => {
+        el.addEventListener('click', () => toggleBalancedData(hero, el.getAttribute('data-section')));
+    });
 
     // --- JS逻辑部分 ---
     const modalHeroImg = document.getElementById('modal-hero-avatar-img');

@@ -176,6 +176,33 @@ function getSkillTagsForHero(hero) {
 //   （见 `loadData` / `reloadLanguageData`）。
 
 /**
+ * 从「平衡数据」档取出某英雄的**平衡版**技能三件套。
+ *
+ * 档格式与常规 `heroes_skills_<码>.json` 完全相同（`{hid:[{familyBonus,passiveSkills,skills}]}`），
+ * 但它是**差异档**：只包含第二表有定义、且**与常规不同**的节（生成器 `--site-export-balanced`
+ * 逐节比对后过滤）。⇒ **键存在与否就是"该节要不要显示切换按钮"的判据**：
+ *   · 有 `skills`        ⇒ 「✨ 技能效果:」旁加按钮
+ *   · 有 `passiveSkills` ⇒ 「🧿 被动技能:」旁加按钮
+ *   · 三节都与常规相同   ⇒ 该英雄整个不在档里 ⇒ 不加按钮
+ * @param {object|null} balSkills 平衡档（缺失传 null）
+ * @param {string} hid 规范英雄 ID
+ * @returns {{effects?:Array,passiveSkills?:Array,familyBonus?:Array}|null} 无平衡数据返回 null
+ */
+function balancedFieldsFrom(balSkills, hid) {
+    const b = balSkills && balSkills[hid] && balSkills[hid][0];
+    if (!b) return null;
+    const out = {};
+    // ⚠ 只放**档里真正存在**的节（用 in 判断，空数组也算"有差异"）
+    if ('skills' in b) out.effects = (b.skills && b.skills[0] && b.skills[0].lines) || [];
+    if ('passiveSkills' in b) out.passiveSkills = b.passiveSkills || [];
+    if ('familyBonus' in b) out.familyBonus = b.familyBonus || [];
+    // 属性（三围等）：第二表可能**只改属性**而技能文本完全相同（如 vegetable_cauliver），
+    //   这类英雄在档里只有 `stats` 一节 ⇒ 是"要不要在属性区显示按钮"的判据。
+    if ('stats' in b) out.stats = b.stats;
+    return Object.keys(out).length ? out : null;
+}
+
+/**
  * **无缝切换语言**：重新载入「按语言分片」的数据，并重建英雄对象上所有语言相关字段。
  *
  * ⚠ 为什么需要它：`loadData()` 在启动时把两类内容**按语言固化**了 ——
@@ -195,6 +222,11 @@ async function reloadLanguageData(lang) {
     const res = await fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`);
     if (!res.ok) throw new Error('heroes_skills HTTP ' + res.status);
     const skills = await res.json();
+    // 平衡数据档：与常规档**同步重载**（否则切语言后按钮切换的还是旧语言的平衡文本）。
+    // ⚠ 该档可能不存在（生成器未跑 --site-export-balanced）⇒ 缺失时降级为 null，不算失败。
+    const balRes = await fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`)
+        .catch(() => null);
+    const balSkills = (balRes && balRes.ok) ? await balRes.json() : null;
 
     const familyValues = {};
     (state.allHeroes || []).forEach(hero => {
@@ -219,6 +251,16 @@ async function reloadLanguageData(lang) {
             return a;
         }, []);
         hero.familyBonus = st.familyBonus || [];
+        // 平衡数据（差异档）：键存在与否 = 该节要不要显示「切换平衡数据」按钮
+        hero._balanced = balancedFieldsFrom(balSkills, hid);
+        // ⚠ 常规基线**随语言重建**（旧基线是上一语言的文本，必须作废）；
+        //   若该英雄此前切到了平衡版，这里按原开关重新套用到新语言的平衡文本上。
+        hero._normalSnapshot = {
+            effects: hero.effects, passiveSkills: hero.passiveSkills, familyBonus: hero.familyBonus,
+            attack: hero.attack, defense: hero.defense, health: hero.health,
+            power: hero.power, lb1: hero.lb1, lb2: hero.lb2
+        };
+        if (typeof applyBalancedSections === 'function') applyBalancedSections(hero);
         if (hero.family != null && !(hero.family in familyValues)) {
             familyValues[hero.family] = Lang.t('family', hero.family);
         }
@@ -441,14 +483,19 @@ async function loadData(lang) {
         await Lang.loadAll(lang);
 
         // ② 数据
-        const [orderRes, charsRes, typesRes, srcRes, skillsRes, enNameRes, costumeRes] = await Promise.all([
+        const [orderRes, charsRes, typesRes, srcRes, skillsRes, enNameRes, costumeRes, balRes, charBalRes] = await Promise.all([
             fetch(`data/hero_order.json?v=${Date.now()}`),
             fetch(`data/characters.json?v=${Date.now()}`),
             fetch(`data/heroes_skill_types.json?v=${Date.now()}`),
             fetch(`data/source_info.json?v=${Date.now()}`),
             fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`),
             fetch(`langs_json/heroes_name_en.json?v=${Date.now()}`).catch(() => null),
-            fetch(`data/costume_bonuses.json?v=${Date.now()}`).catch(() => null)
+            fetch(`data/costume_bonuses.json?v=${Date.now()}`).catch(() => null),
+            // 平衡数据（官方第二表）：**可能没有这份档**（生成器未跑 --site-export-balanced）
+            //   ⇒ 允许 404，缺失时全站无 `_balanced`，其余功能不受影响。
+            fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`).catch(() => null),
+            // 平衡版角色定义（第二表完整定义，语言无关）：按完整定义重算三围用；同样允许缺失。
+            fetch(`data/characters_balanced.json?v=${Date.now()}`).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
         const charsDoc = await charsRes.json();
@@ -457,6 +504,10 @@ async function loadData(lang) {
         const skills = await skillsRes.json();
         const enNames = enNameRes ? await enNameRes.json() : {};   // 供 `hero.english_name` 用
         const costumeBonuses = costumeRes ? await costumeRes.json() : {};
+        // ⚠ 404 不会 reject（fetch 只在网络错误时 reject）⇒ 必须看 `.ok`，否则会把错误页当 JSON 解析而抛错
+        const balSkills = (balRes && balRes.ok) ? await balRes.json() : null;
+        // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）—— 切三围时按**完整定义**算，不必拼差异字段
+        const charBal = (charBalRes && charBalRes.ok) ? await charBalRes.json() : null;
 
         // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {
@@ -580,6 +631,15 @@ async function loadData(lang) {
                     return a;
                 }, []),
                 familyBonus: st.familyBonus || [],
+                // 平衡数据（官方第二表）——**差异档**：只含与常规不同的节；无平衡数据为 null
+                _balanced: balancedFieldsFrom(balSkills, hid),
+                // 第二表完整定义（若有）：切"平衡属性"时按它算三围/战力，比"差异字段拼基底"更稳
+                _balancedDef: (charBal && charBal.heroes && charBal.heroes[hid]) || undefined,
+                // 三围基底：切换"平衡属性"时与 `_balanced.stats` 合并后重算（computeHeroStats 只用这 4 个字段）
+                _baseStats: {
+                    rarity: c.rarity, baseAttack: c.baseAttack,
+                    baseDefense: c.baseDefense, baseHealth: c.baseHealth
+                },
                 skill_types: typesDoc[hid] || {},
                 originalIndex: idx,
                 // `hidden` = **运行时动态判定**（`isHiddenHero`：2200 年 / trainer|guestip|temp1），
@@ -594,6 +654,13 @@ async function loadData(lang) {
             const keys = Object.keys(enNames).filter(k => hid.startsWith(k));
             if (keys.length) en = enNames[keys.reduce((a, b) => a.length > b.length ? a : b)];
             hero.english_name = en || hid;
+            // 平衡数据：开关初始全关 + 记下"常规版"基线（切换时按节取 `_balanced` / 这里的值）
+            hero._balancedOn = {};
+            hero._normalSnapshot = {
+                effects: hero.effects, passiveSkills: hero.passiveSkills, familyBonus: hero.familyBonus,
+                attack: hero.attack, defense: hero.defense, health: hero.health,
+                power: hero.power, lb1: hero.lb1, lb2: hero.lb2
+            };
             list.push(hero);
             if (!(hero.family in familyValues)) familyValues[hero.family] = Lang.t('family', hero.family);
         });

@@ -532,6 +532,7 @@ function resetAllFilters() {
     state.temporaryDateFilter = null;
     state.temporaryAcademyFilter = false;
     state.temporaryOwnedHeroes = null;
+    state.temporaryBalancedHeroes = false;
 }
 
 /**
@@ -756,7 +757,8 @@ function areFiltersActive() {
 
     // 检查临时筛选
     if (state.temporaryDateFilter !== null || state.temporaryFavorites !== null
-        || state.temporaryOwnedHeroes !== null || state.temporaryAcademyFilter) {
+        || state.temporaryOwnedHeroes !== null || state.temporaryAcademyFilter
+        || state.temporaryBalancedHeroes) {
         return true;
     }
 
@@ -951,6 +953,9 @@ function applyFiltersAndRender() {
         if (attackFilter > 0 && calculatedStats.attack < attackFilter) return false;
         if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
         if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
+
+        // --- 「查看平衡数据英雄」：只保留**存在平衡数据**的英雄（`hero._balanced` 非空）---
+        if (state.temporaryBalancedHeroes && !hero._balanced) return false;
 
         // --- 统一处理临时日期和英雄学院筛选 ---
         if (state.temporaryDateFilter || state.temporaryAcademyFilter) {

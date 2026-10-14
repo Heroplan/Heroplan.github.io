@@ -1057,8 +1057,13 @@ function applyFiltersAndRender() {
             valA = a.displayStats[key];
             valB = b.displayStats[key];
         } else if (key === 'Release date') {
-            valA = new Date(a[key] || '1970-01-01'); // 为没有日期的英雄提供一个很早的默认值
-            valB = new Date(b[key] || '1970-01-01');
+            // ⚠⚠ 用**完整**的 `releaseDate`（= `canBeReceivedDate`，含时分秒），
+            //   **不要**用 `hero['Release date']` —— 后者是站点派生字段，
+            //   `utils.js:621` 取的是 `.slice(0, 10)`（只到日），同日不同发布时间的英雄会丢序。
+            //   站点其它处（`utils.js:460/546` 的默认发布日期排序）一律用完整值 ⇒ 此处与之对齐。
+            //   ⚠ 两个字段都是 `YYYY-MM-DD[ HH:MM:SS]` 定长格式 ⇒ 字典序 = 时间序，可直接 `<`/`>` 比较。
+            valA = a.releaseDate || a['Release date'] || '1970-01-01';
+            valB = b.releaseDate || b['Release date'] || '1970-01-01';
         } else {
             valA = a[key];
             valB = b[key];
@@ -1071,6 +1076,10 @@ function applyFiltersAndRender() {
             // 先排序后翻译：按语言无关的 ID 顺序（sort_order.json）
             comparison = Lang.orderIndex('speed', Lang.idOf('speed', String(valA)))
                        - Lang.orderIndex('speed', Lang.idOf('speed', String(valB)));
+        } else if (key === 'Release date') {
+            // 发布日期：`YYYY-MM-DD HH:MM:SS` 定长格式 ⇒ 字典序即时间序。
+            // 用 `<`/`>` 而非 `localeCompare`（后者按语言规则比较，既慢又不必要）。
+            comparison = valA < valB ? -1 : (valA > valB ? 1 : 0);
         } else if (typeof valA === 'number' || valA instanceof Date) {
             comparison = (Number(valA) || 0) - (Number(valB) || 0);
         } else {

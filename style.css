@@ -454,6 +454,21 @@ input[type="number"] {
   table-layout: fixed
 }
 
+/* ── 英雄列表渲染优化（2026-10-14）─────────────────────────────────────────
+   规模：2121 行 × 12 列 ⇒ 约 **2.5 万个 td** + **9 千个 img**（其中技能图标 7 千）。
+   每次「查看最新 / 点击表头排序 / 改筛选」都会 `tbody.innerHTML = ...` **全量重建**，
+   浏览器要为整张表做布局 + 绘制（用户实测点击后卡顿约 1 秒；而 JS 侧排序仅 8ms，
+   瓶颈全在渲染阶段）。
+   `content-visibility: auto` 让浏览器**跳过视口外行**的布局与绘制（2121 行里通常只有
+   十几行可见 ⇒ 渲染量降到约 1%）；`contain-intrinsic-size` 提供占位高度，保证滚动条
+   长度稳定、不跳动（52px ≈ td padding 6×2 + 头像约 40px）。
+   ⚠ 只加在英雄列表上：另两张表（`wanted-mission-table` / `farming-guide-table`）行数少，
+   无需承担 `content-visibility` 的兼容性风险。 */
+#hero-table tbody tr {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 52px
+}
+
 .manual-table thead {
   position: sticky;
   z-index: 10

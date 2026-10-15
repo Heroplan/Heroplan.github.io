@@ -350,7 +350,8 @@ html:not(.dark-theme) .moon-icon {
         margin-bottom: 0
     }
 
-    /* 日期框按内容宽，按钮吃掉本列剩余 ⇒ 各行按钮等宽且右对齐 */
+    /* 日期框按内容宽，按钮吃掉本列剩余 ⇒ 各行按钮右对齐；
+       但第二列宽度=卡片宽−最宽标签，标签短时会把按钮/胶囊拉得过长 ⇒ 统一给上限 */
     .horizontal-filter-group .date-display-box {
         flex: 0 0 auto
     }
@@ -359,10 +360,15 @@ html:not(.dark-theme) .moon-icon {
         flex: 1 1 auto
     }
 
-    /* `.filter-item label` 自带 margin-right:0.5rem，这条也会命中行内的开关胶囊，
-       导致胶囊右边缘比按钮短 8px ⇒ 这里归零，让两列的右边缘对齐 */
-    .filter-item .checkbox-container .checkbox-label {
-        margin-right: 0
+    .filter-item .checkbox-label,
+    .filter-item .action-button-right {
+        max-width: 50%
+    }
+
+    /* 封顶后剩下的空白留在左侧，控件贴右边缘（日期框与按钮之间不留空隙） */
+    .filter-item .checkbox-container,
+    .filter-item .input-with-right-button {
+        justify-content: flex-end
     }
 }
 
@@ -3075,6 +3081,71 @@ body.lottery-mode-active #quick-search-bar {
   border: none;
   cursor: pointer;
   padding: 5px
+}
+
+/* 标题旁的选项筛选框（家族 / 起源 / 四类技能标签这些选项很多的筛选器才有） */
+.multi-select-search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  gap: 6px;
+  margin-inline: 0.75rem
+}
+
+.multi-select-search-box label {
+  font-size: 0.9em;
+  color: var(--md-sys-color-on-surface-variant);
+  white-space: nowrap
+}
+
+.multi-select-search {
+  width: min(220px, 50%);
+  height: 32px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  background-color: var(--md-sys-color-background);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 6px;
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9em
+}
+
+.multi-select-search:focus {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px
+}
+
+/* 与筛选输入框联动：不匹配的选项直接不显示（特异度高于 .multi-select-option） */
+.multi-select-option.option-hidden {
+  display: none
+}
+
+.multi-select-empty {
+  text-align: center;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.9em;
+  padding: 0.75rem
+}
+
+@media (max-width: 768px) {
+  .multi-select-header {
+    flex-wrap: wrap;
+    row-gap: 8px
+  }
+
+  .multi-select-search-box {
+    order: 3;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    margin-inline: 0
+  }
+
+  .multi-select-search {
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none
+  }
 }
 
 .multi-select-options-grid {

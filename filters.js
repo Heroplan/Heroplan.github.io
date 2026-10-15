@@ -580,9 +580,16 @@ function openMultiSelectModal(filterType, title) {
 
     }).join('');
 
+    // 选项很多的筛选类型 ⇒ 标题旁给一个即时缩小范围的筛选输入框
+    const SEARCHABLE_FILTER_TYPES = ['family', 'source', 'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
+    const searchHTML = SEARCHABLE_FILTER_TYPES.includes(filterType)
+        ? `<div class="multi-select-search-box"><label for="multi-select-search">${langDict.filterBy || ''}</label><input type="text" id="multi-select-search" class="multi-select-search" autocomplete="off"></div>`
+        : '';
+
     modalContent.innerHTML = `
-        <div class="multi-select-header"><h3>${title}</h3><button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
+        <div class="multi-select-header"><h3>${title}</h3>${searchHTML}<button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
         <div class="multi-select-options-grid">${optionsHTML}</div>
+        <div class="multi-select-empty hidden" id="multi-select-empty">${langDict.noMatchingResults || ''}</div>
         <div class="multi-select-footer">
             <button class="action-button" id="clear-multi-select">${langDict.clearSelection}</button>
             <button class="action-button" id="close-multi-select-modal-bottom">${langDict.detailsCloseBtn}</button>
@@ -609,9 +616,30 @@ function openMultiSelectModal(filterType, title) {
         });
     });
 
+    // 筛选输入框：按选项的显示文本（或规范 ID）即时隐藏不匹配的项
+    const searchInput = modalContent.querySelector('#multi-select-search');
+    if (searchInput) {
+        const optionEls = [...modal.querySelectorAll('.multi-select-option')];
+        const emptyTip = modalContent.querySelector('#multi-select-empty');
+        const applyOptionFilter = () => {
+            const q = searchInput.value.trim().toLowerCase();
+            let shown = 0;
+            optionEls.forEach(opt => {
+                const hit = !q
+                    || opt.textContent.toLowerCase().includes(q)
+                    || String(opt.dataset.value || '').toLowerCase().includes(q);
+                opt.classList.toggle('option-hidden', !hit);
+                if (hit) shown++;
+            });
+            if (emptyTip) emptyTip.classList.toggle('hidden', shown > 0);
+        };
+        searchInput.addEventListener('input', applyOptionFilter);
+    }
+
     const clearButton = document.getElementById('clear-multi-select');
-    if (filterType === 'filterScope') clearButton.style.display = 'none';
-    else {
+    if (filterType === 'filterScope') {
+        clearButton.style.display = 'none';
+    } else {
         clearButton.addEventListener('click', () => {
             state.multiSelectFilters[filterType] = [];
             modal.querySelectorAll('.multi-select-option.selected').forEach(div => div.classList.remove('selected'));
@@ -625,6 +653,10 @@ function openMultiSelectModal(filterType, title) {
     overlay.classList.remove('hidden');
     document.body.classList.add('modal-open');
     modalContent.scrollTop = 0;
+    // 打开即聚焦筛选框（只有选项很多的类型才有）⇒ 直接打字就能缩小范围。
+    // ⚠ 只在桌面聚焦：手机上自动聚焦会弹起软键盘，把刚打开的选项列表挡住。
+    //   阈值与 CSS 的移动端断点一致（max-width: 768px）。
+    if (searchInput && window.innerWidth > 768) searchInput.focus();
     document.getElementById('close-multi-select-modal-top').addEventListener('click', () => history.back());
     document.getElementById('close-multi-select-modal-bottom').addEventListener('click', () => history.back());
     history.pushState({ modal: 'multiSelect' }, null);

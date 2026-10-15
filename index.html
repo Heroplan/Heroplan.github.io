@@ -181,10 +181,22 @@
             }
             var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
             var q = new URLSearchParams(location.search);
-            var lang = norm(m ? decodeURIComponent(m[1]) : '')
-                || norm(q.get('lang')) || norm(q.get('hl'))
+            // ⚠ 优先级必须与 main.js 的语言解析块一致：**URL 参数 > Cookie > 浏览器语言**。
+            //   爬虫的渲染会话可能带着上次访问留下的 cookie，若 cookie 优先，`?lang=da` 会被渲染成
+            //   别的语言、canonical 也跟着指错 ⇒ GSC 判成"备用网页（有适当的规范标记）"。
+            var urlLang = norm(q.get('lang')) || norm(q.get('hl'));
+            var lang = urlLang
+                || norm(m ? decodeURIComponent(m[1]) : '')
                 || norm(navigator.language);
             document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            // canonical 自指也在首屏先改掉，不等 ui.js::applyLanguage ⇒ 渲染时间线更早，
+            // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**：
+            // 根页（无 `lang`/`hl`）保持自指根，否则根会被判成某个语言版的副本。
+            // 写法与 ui.js 的 `SEO_ORIGIN + '?lang=' + lang` 逐字一致（两处不一致会互相覆盖）。
+            if (urlLang) {
+                var canon = document.getElementById('canonical-link');
+                if (canon) canon.setAttribute('href', 'https://heroplan.github.io/?lang=' + urlLang);
+            }
         })();
     </script>
 
@@ -244,9 +256,9 @@
         content="Heroplan 是《帝国与谜题》全语言英雄资料库：20 种游戏内语言、全英雄立绘、未来英雄预览与多种玩家工具。">
     <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
         onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
-    <link rel="stylesheet" href="theme.css?v=20261010h">
-    <link rel="stylesheet" href="style.css?v=20261010h">
-    <link rel="stylesheet" href="talent-tree.css?v=20261010h">
+    <link rel="stylesheet" href="theme.css?v=20261015a">
+    <link rel="stylesheet" href="style.css?v=20261015a">
+    <link rel="stylesheet" href="talent-tree.css?v=20261015a">
 </head>
 
 <body class="js-loading">
@@ -1051,23 +1063,23 @@
         <button id="open-filters-btn">🔍</button>
     </div>
 
-    <script src="./i18n_funcs.js?v=20261010h" defer></script>
-    <script src="./langs.js?v=20261010h" defer></script>
-    <script src="./lz-string.min.js?v=20261010h" defer></script>
-    <script src="./talent-tree.js?v=20261010h" defer></script>
-    <script src="./data.js?v=20261010h" defer></script>
-    <script src="./eva1-parser.js?v=20261010h" defer></script>
-    <script src="./utils.js?v=20261010h" defer></script>
-    <script src="./state.js?v=20261010h" defer></script>
-    <script src="./ui.js?v=20261010h" defer></script>
-    <script src="./filters.js?v=20261010h" defer></script>
-    <script src="./render.js?v=20261010h" defer></script>
-    <script src="./special-views.js?v=20261010h" defer></script>
-    <script src="./lottery-simulator.js?v=20261010h" defer></script>
-    <script src="./team-simulator.js?v=20261010h" defer></script>
-    <script src="./chat-simulator.js?v=20261010h" defer></script>
-    <script src="./import-export.js?v=20261010h" defer></script>
-    <script src="./main.js?v=20261010h" defer></script>
+    <script src="./i18n_funcs.js?v=20261015a" defer></script>
+    <script src="./langs.js?v=20261015a" defer></script>
+    <script src="./lz-string.min.js?v=20261015a" defer></script>
+    <script src="./talent-tree.js?v=20261015a" defer></script>
+    <script src="./data.js?v=20261015a" defer></script>
+    <script src="./eva1-parser.js?v=20261015a" defer></script>
+    <script src="./utils.js?v=20261015a" defer></script>
+    <script src="./state.js?v=20261015a" defer></script>
+    <script src="./ui.js?v=20261015a" defer></script>
+    <script src="./filters.js?v=20261015a" defer></script>
+    <script src="./render.js?v=20261015a" defer></script>
+    <script src="./special-views.js?v=20261015a" defer></script>
+    <script src="./lottery-simulator.js?v=20261015a" defer></script>
+    <script src="./team-simulator.js?v=20261015a" defer></script>
+    <script src="./chat-simulator.js?v=20261015a" defer></script>
+    <script src="./import-export.js?v=20261015a" defer></script>
+    <script src="./main.js?v=20261015a" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

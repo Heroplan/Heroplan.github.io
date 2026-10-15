@@ -2891,7 +2891,9 @@ function renderDetailsInModal(hero, context = {}) {
         shareBtn.addEventListener('click', () => {
             // 身份键 = 规范 heroId（见 utils.js::heroIdentity）
             const identifier = heroIdentity(hero);
-            const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}&lang=${state.currentLang}`;
+            // ⚠ 链接里**不带 `lang`**：英雄数据存的是语言无关的 ID，接收方按自己的 cookie / 浏览器语言
+            //   渲染即可；带上等于把分享者的语言强加给对方（`?lang=` 的优先级还高于 cookie）。
+            const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}`;
             copyTextToClipboard(url).then(() => {
                 const originalText = shareBtn.innerHTML;
                 shareBtn.innerText = '✔️';

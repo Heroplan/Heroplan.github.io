@@ -164,14 +164,18 @@ async function initializeApp() {
     // URL 参数：`lang`（本站口径）优先，`hl`（Google 界面语言参数）兜底。
     const urlLang = _normLang(langFromUrl) || _normLang(hlFromUrl);
 
-    // 1. 优先使用 Cookie
-    if (_knownLang(languageCookie)) {
-        langToUse = languageCookie;
+    // 1. 优先使用 URL 里**显式写的语言**（分享链接、爬虫带过来的 `?lang=`/`?hl=`）。
+    //    ⚠ 顺序曾是"Cookie 优先"，对 SEO 有实际危害：爬虫渲染 `?lang=da` 时若带着上次访问留下的
+    //      `language` cookie，页面会被渲染成另一种语言、canonical 也跟着指到别的语言版
+    //      ⇒ GSC 判成"备用网页（有适当的规范标记）"、这条 URL 不被单独收录。
+    //      显式写在地址里的意图必须说了算；回访用户的 cookie 仍在第 2 级生效（地址不带语言时照旧）。
+    if (urlLang) {
+        langToUse = urlLang;
     }
 
-    // 2. 其次使用 URL 参数
-    else if (urlLang) {
-        langToUse = urlLang;
+    // 2. 其次使用 Cookie
+    else if (_knownLang(languageCookie)) {
+        langToUse = languageCookie;
     }
 
     // 3. 最后根据浏览器语言自动判断

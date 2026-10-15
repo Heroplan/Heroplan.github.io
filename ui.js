@@ -220,6 +220,15 @@ function applyLanguage(lang) {
         if (langDict[key]) el.placeholder = langDict[key];
     });
 
+    // 4.1 处理 Title / Aria-label（图标类按钮内部只有符号，可访问名与提示都要过字典）
+    document.querySelectorAll('[data-lang-key-title]').forEach(el => {
+        const key = el.getAttribute('data-lang-key-title');
+        const translation = langDict[key];
+        if (!translation) return;
+        el.title = translation;
+        if (el.hasAttribute('aria-label')) el.setAttribute('aria-label', translation);
+    });
+
     // 5. 处理特定 ID 的 Title (工具栏按钮等)
     const titles = {
         'theme-toggle-btn': 'toggleThemeTitle',
@@ -472,6 +481,8 @@ function updateResultsHeader() {
 function updateFilterButtonUI(filterType) {
     const button = document.getElementById(`btn-filter-${filterType}`);
     if (!button) return;
+    // 列表上方便捷栏的同类型按钮：文案、计数、高亮一律与筛选页面保持一致
+    const targets = [button, ...document.querySelectorAll(`.quick-filter-button[data-filter="${filterType}"]`)];
 
     const selectedValues = state.multiSelectFilters[filterType] || [];
     const selectedCount = selectedValues.length;
@@ -486,17 +497,18 @@ function updateFilterButtonUI(filterType) {
         label = label.slice(0, -1);
     }
 
-    if (selectedCount === 0) {
-        button.textContent = label;
-        button.classList.remove('active');
-    } else if (filterType === 'filterScope') {
-        const scope_label = langDict[`filterScope_${selectedValues[0]}`];
-        button.textContent = `${label}: ${scope_label}`;
-        button.classList.add('active');
-    } else {
-        button.textContent = `${label} (${selectedCount})`;
-        button.classList.add('active');
+    let text = label;
+    const active = selectedCount > 0;
+    if (active && filterType === 'filterScope') {
+        text = `${label}: ${langDict[`filterScope_${selectedValues[0]}`]}`;
+    } else if (active) {
+        text = `${label} (${selectedCount})`;
     }
+
+    targets.forEach(target => {
+        target.textContent = text;
+        target.classList.toggle('active', active);
+    });
 }
 
 // --- 模态框管理 ---

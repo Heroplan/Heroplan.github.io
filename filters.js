@@ -442,17 +442,9 @@ function populateFilters() {
         updateFilterButtonUI(key);
     });
 
-    const checkboxWrapper = document.createElement('div');
-    checkboxWrapper.className = 'filter-button checkbox-wrapper';
-    checkboxWrapper.innerHTML = `<div class="checkbox-container"><input type="checkbox" id="show-event-name-checkbox"><label for="show-event-name-checkbox" class="checkbox-label" data-lang-key="showEventNameLabel">${langDict.showEventNameLabel}</label></div>`;
-    container.appendChild(checkboxWrapper);
-    const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
-    const cookieValue = getCookie('showEventNameState');
-    showEventNameCheckbox.checked = (cookieValue === null) ? true : (cookieValue !== 'false');
-    showEventNameCheckbox.addEventListener('change', () => {
-        setCookie('showEventNameState', showEventNameCheckbox.checked.toString(), 365);
-        applyFiltersAndRender();
-    });
+    // 「显示活动名称」已改为 `index.html` 里的静态控件（右栏·英雄立绘光效上方），
+    // 接线挪到 `main.js` 的静态复选框区 ⇒ 这里不再动态生成，也避免每次 populateFilters
+    // 都给同一个 checkbox 再叠一层 change 监听器。
     setTimeout(() => {
         initializeNameAutocomplete();
     }, 100);
@@ -527,6 +519,12 @@ function resetAllFilters() {
         if (state.multiSelectFilters.hasOwnProperty(key)) continue;
         const element = filterInputs[key];
         if (element && element.tagName === 'INPUT') element.value = '';
+    }
+    // 与筛选页面名称输入共用筛选状态；重置全部筛选时同步清空列表上方名称框
+    if (typeof document !== 'undefined') {
+        document.querySelectorAll('.quick-search-input').forEach(input => { input.value = ''; });
+        // 值是被这里直接清掉的（不经过 input 事件）⇒ 需主动让快捷栏的清空按钮回到隐藏态
+        if (typeof updateQuickClearButtons === 'function') updateQuickClearButtons();
     }
     state.temporaryFavorites = null;
     state.temporaryDateFilter = null;

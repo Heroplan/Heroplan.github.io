@@ -598,6 +598,45 @@
                 </div>
             </div>
 
+            <!-- 列表上方便捷栏：按钮文案/计数/高亮由 ui.js::updateFilterButtonUI 下发
+                 （与筛选页面 `#btn-filter-<类型>` 共用同一套字典键），此处静态文本为简中兜底 -->
+            <div id="quick-search-bar" class="quick-search-bar">
+                <div class="quick-search-row quick-search-desktop">
+                    <div class="quick-search-name-field">
+                        <label for="quick-name-input" data-lang-key="nameLabel">名称:</label>
+                        <div class="quick-search-name-control">
+                            <input type="text" id="quick-name-input" class="quick-search-input" autocomplete="off">
+                            <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
+                        </div>
+                    </div>
+                    <div class="quick-search-buttons">
+                        <button type="button" class="quick-filter-button" data-filter="filterScope">筛选范围</button>
+                        <button type="button" class="quick-filter-button" data-filter="star">星级</button>
+                        <button type="button" class="quick-filter-button" data-filter="color">颜色</button>
+                        <button type="button" class="quick-filter-button" data-filter="costume">服装类型</button>
+                        <button type="button" class="quick-filter-button" data-filter="family">家族</button>
+                        <button type="button" class="quick-filter-button" data-filter="source">起源</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_base">基础技能</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_special">特殊效果</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_buff">增益效果</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_debuff">负面效果</button>
+                    </div>
+                </div>
+                <div class="quick-search-row quick-search-mobile">
+                    <div class="quick-search-name-field">
+                        <label for="quick-name-input-mobile" data-lang-key="nameLabel">名称:</label>
+                        <div class="quick-search-name-control">
+                            <input type="text" id="quick-name-input-mobile" class="quick-search-input" autocomplete="off">
+                            <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
+                        </div>
+                    </div>
+                    <div class="quick-search-buttons">
+                        <button type="button" class="quick-filter-button" data-filter="star">星级</button>
+                        <button type="button" class="quick-filter-button" data-filter="color">颜色</button>
+                    </div>
+                </div>
+            </div>
+
             <div id="results-wrapper">
                 <div class="results-header">
                     <h3 id="results-count"></h3>
@@ -774,6 +813,17 @@
                             </div>
                         </div>
                         
+                        <div class="filter-item">
+                            <label for="show-event-name-checkbox" data-lang-key="showEventNameLabel">显示活动名称</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="show-event-name-checkbox" checked>
+                                    <label for="show-event-name-checkbox" class="checkbox-label"
+                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="filter-item">
                             <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">英雄立绘中显示元素光效</label>
                             <div class="input-with-help">

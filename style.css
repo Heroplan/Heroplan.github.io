@@ -311,6 +311,61 @@ html:not(.dark-theme) .moon-icon {
   min-width: 70px;
 }
 
+/* ===== 桌面端：高级筛选的两个分区改成「标签列 + 控件列」两列网格 =====
+   · 标签按当前语言里最宽者成列、保持**单行**（既不再被 200px 省略号截断，也不换成两行）
+   · 控件列占满剩余宽度 ⇒ 同区内所有开关胶囊/筛选按钮**等宽、右边缘对齐**
+   · 「查看平衡数据英雄」那行没有日期框 ⇒ 它的按钮自动等于下方「日期框 + 按钮」的总宽
+   仅 >768px 生效；手机端保持原来上下堆叠的版式 */
+@media (min-width: 769px) {
+
+    #advanced-filters-content,
+    .horizontal-filter-group {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        column-gap: 0.5rem;
+        row-gap: 0.7rem
+    }
+
+    /* 让每行的 label 与控件直接成为网格的两列（.filter-item 自身不再产生盒子，
+       其 margin-bottom 由 row-gap 接管） */
+    #advanced-filters-content>.filter-item,
+    .horizontal-filter-group>.filter-item {
+        display: contents
+    }
+
+    /* 虚线分隔的大块（活动组、突破/天赋设置）横跨两列 */
+    #advanced-filters-content>div:not(.filter-item) {
+        grid-column: 1 / -1
+    }
+
+    #advanced-filters-content>.filter-item>label,
+    .horizontal-filter-group>.filter-item>label {
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+        margin-bottom: 0
+    }
+
+    /* 日期框按内容宽，按钮吃掉本列剩余 ⇒ 各行按钮等宽且右对齐 */
+    .horizontal-filter-group .date-display-box {
+        flex: 0 0 auto
+    }
+
+    .horizontal-filter-group .action-button-right {
+        flex: 1 1 auto
+    }
+
+    /* `.filter-item label` 自带 margin-right:0.5rem，这条也会命中行内的开关胶囊，
+       导致胶囊右边缘比按钮短 8px ⇒ 这里归零，让两列的右边缘对齐 */
+    .filter-item .checkbox-container .checkbox-label {
+        margin-right: 0
+    }
+}
+
 .filter-item .input-with-help {
   display: flex;
   flex-grow: 1;
@@ -640,6 +695,13 @@ input[type="number"] {
   max-height: 85vh;
   overflow-y: auto;
   transition: all 0.3s ease
+}
+
+/* 筛选面板按屏幕宽度动态取宽：85% 视口、上限与 .main-container 同档（1300px）。
+   原来与详情页共用 900px 上限，长语言（俄/德/葡）的两栏内容会挤到溢出 */
+#filters-modal {
+  width: min(85vw, 1300px);
+  max-width: none;
 }
 
 #help-modal,
@@ -1831,6 +1893,7 @@ html[dir="rtl"] .input-with-right-button > .action-button-right:only-child {
 
   .filter-item label {
     width: auto;
+    max-width: none;
     min-width: auto;
     white-space: normal;
     margin-bottom: 5px
@@ -2736,7 +2799,8 @@ select.custom-select-hidden {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 37px;
+  /* 高度自适应：长语言（俄语「Область фильтрации」）换行后不再被 37px 裁掉 */
+  min-height: 37px;
   padding: 8px 15px;
   /* 可以适当增加左右内边距 */
   box-sizing: border-box;
@@ -2752,8 +2816,10 @@ select.custom-select-hidden {
   /* 移除 width: 100%，让宽度由内容决定 */
   flex-shrink: 0;
   /* 防止按钮在 flex 布局中被压缩 */
-  white-space: nowrap;
-  /* 确保按钮内部文本不换行 */
+  /* 网格列宽不足以放下整句时让文字换行，而不是溢出边框外（原 nowrap 会把文字顶出格子） */
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .filter-button:hover {
@@ -2767,6 +2833,187 @@ select.custom-select-hidden {
   border-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary-container);
   font-weight: bold
+}
+
+/* 列表上方便捷栏：名字实时搜索 + 直达标准筛选多选按钮 */
+.quick-search-bar {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--md-sys-color-surface-variant);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 12px;
+}
+
+/* 便捷栏只服务于英雄主列表：
+   · 通缉任务 / 材料出处 / 聊天模拟器会把列表切成表格（`#hero-table-view.hidden`）
+   · 抽奖模拟器用 `body.lottery-mode-active` 标记（它保留列表可见，故需单独判）
+   ⇒ 以上视图隐藏；队伍模拟器保留英雄列表供挑选，照常显示 */
+#quick-search-bar:has(~ #results-wrapper #hero-table-view.hidden),
+body.lottery-mode-active #quick-search-bar {
+  display: none;
+}
+
+/* 仅单行：名字输入框 + 按钮组排在同一行，禁止换行；两组之间互相推开、铺满整行 */
+.quick-search-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+.quick-search-name-field {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.quick-search-name-field > label {
+  flex: 0 0 auto;
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* 输入栏缩短：桌面最多 120px，给最长语言（俄语 10 个按钮需 1022px 地板宽）留出滚动余量 */
+.quick-search-name-control {
+  position: relative;
+  width: clamp(96px, 10vw, 120px);
+}
+
+.quick-search-name-control .quick-search-input {
+  display: block;
+  width: 100%;
+  height: 37px;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  /* 右侧留给叠在框内的清空按钮（逻辑属性 ⇒ 阿拉伯语 RTL 自动镜像） */
+  padding-inline-end: 30px;
+  background-color: var(--md-sys-color-background);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 8px;
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9em;
+}
+
+.quick-search-name-control .quick-search-input:focus {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: -2px;
+}
+
+/* 清空按钮：与筛选页面 #clear-input 同款的“叠在输入框右端内部”做法 */
+.quick-search-clear {
+  position: absolute;
+  inset-inline-end: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-search-clear:hover {
+  background-color: var(--md-sys-color-on-surface-variant);
+  color: var(--md-sys-color-surface);
+}
+
+.quick-search-clear:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+/* 空输入时隐藏清空按钮：由 main.js::updateQuickClearButtons 挂站点的 `.hidden` 工具类
+   （键盘输入、筛选页面回写、重置筛选三条写入路径都走它） */
+
+/* 按钮组吃掉整行的剩余宽度并**均匀铺满**（space-between 与 gap 取较大者，
+   所以语言较长、放不下时自动退回 gap 间距 + 行内横向滚动，而不是换行） */
+.quick-search-buttons {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  gap: 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-sys-color-outline) transparent;
+  padding-bottom: 2px;
+}
+
+.quick-search-buttons::-webkit-scrollbar {
+  height: 4px;
+}
+
+.quick-search-buttons::-webkit-scrollbar-thumb {
+  background-color: var(--md-sys-color-outline);
+  border-radius: 2px;
+}
+
+.quick-filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 等分加宽：把整行剩余宽度平均分给每个按钮（等宽、文字居中）；
+     min-width 兜住按钮自身文字 ⇒ 语言过长时退回自然宽 + 行内横向滚动，不裁字 */
+  flex: 1 1 0;
+  min-width: max-content;
+  min-height: 37px;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  background-color: var(--md-sys-color-background);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 8px;
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.quick-filter-button:hover {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+}
+
+/* 有选中项时与筛选页面 .filter-button.active 同样高亮（文本含计数，由 updateFilterButtonUI 下发） */
+.quick-filter-button.active {
+  background-color: var(--md-sys-color-primary-container);
+  border-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary-container);
+  font-weight: bold;
+}
+
+.quick-search-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .quick-search-desktop {
+    display: none;
+  }
+
+  .quick-search-mobile {
+    display: flex;
+  }
+
+  /* 移动端只有 3 个按钮，剩余空间多，输入栏可以比桌面端宽一些 */
+  .quick-search-name-control {
+    width: clamp(120px, 34vw, 240px);
+  }
 }
 
 /* 多选模态框基础样式 (类似帮助模态框) */
@@ -2891,38 +3138,8 @@ select.custom-select-hidden {
   /* 关键：使用 Grid 布局 */
   gap: 10px;
   /* 按钮之间的间距 */
-  /* 核心魔法：创建自适应列，并让它们自动填充可用空间 */
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
-}
-
-.filter-buttons-container .filter-button.checkbox-wrapper {
-  padding: 0;
-  border: none;
-  background-color: transparent
-}
-
-.filter-buttons-container .checkbox-container {
-  width: 100%;
-  height: 37px;
-  /* 与其他筛选按钮高度保持一致 */
-}
-
-.filter-buttons-container .checkbox-label {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 15px;
-  /* 保持与 .filter-button 相同的内边距 */
-  font-size: 0.9em;
-  font-weight: normal;
-  /* 默认状态下非粗体 */
-}
-
-.filter-buttons-container input[type="checkbox"]:checked+.checkbox-label {
-  font-weight: bold;
-  /* 仅在选中时加粗 */
+  /* 自适应列：下限 150px（原 120px 时，俄语「Область фильтрации」需要 135px 会被挤到溢出） */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
 }
 
 /* 针对移动设备（屏幕宽度 <= 768px）的样式调整 */

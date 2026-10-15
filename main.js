@@ -600,6 +600,17 @@ async function initializeApp() {
             setCookie('showCircleRay', showCircleRayCheckbox.checked, 365);
         });
     }
+
+    // 「显示活动名称」：原由 populateFilters() 动态生成，现是右栏的静态控件（utils.js 按 id 读取）
+    const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
+    if (showEventNameCheckbox) {
+        const eventNameCookie = getCookie('showEventNameState');
+        showEventNameCheckbox.checked = (eventNameCookie === null) ? true : (eventNameCookie !== 'false');
+        showEventNameCheckbox.addEventListener('change', () => {
+            setCookie('showEventNameState', showEventNameCheckbox.checked.toString(), 365);
+            applyFiltersAndRender();
+        });
+    }
 }
 
 /**
@@ -799,6 +810,61 @@ function addEventListeners() {
         if (filterInputs[key]) {
             filterInputs[key].addEventListener('input', debouncedRender);
         }
+    });
+
+    // --- 列表上方便捷栏：名字输入复用筛选页面 #name-input 的同一套逻辑（含上面的 300ms 防抖搜索） ---
+    const quickNameInputs = [...document.querySelectorAll('.quick-search-input')];
+    const nameFilterInput = filterInputs.name;
+
+    // 清空按钮只在有内容时出现（与筛选页面一样叠在输入框内，但不常驻）
+    const updateQuickClearButtons = () => {
+        quickNameInputs.forEach(input => {
+            const button = input.parentElement.querySelector('.quick-search-clear');
+            if (button) button.classList.toggle('hidden', input.value === '');
+        });
+    };
+    window.updateQuickClearButtons = updateQuickClearButtons;
+
+    // ⚠ 值相同就不回写：给正在输入的框重新赋值会重置光标位置、打断输入法合成
+    const setQuickNameValue = value => {
+        quickNameInputs.forEach(input => { if (input.value !== value) input.value = value; });
+        updateQuickClearButtons();
+    };
+    // 把名字写回筛选页面的输入框并派发 input ⇒ 走原有监听链（防抖搜索 + 其它同步逻辑）
+    const pushNameToFilter = value => {
+        if (!nameFilterInput) return;
+        nameFilterInput.value = value;
+        nameFilterInput.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+
+    if (nameFilterInput) {
+        // 筛选页面里改动时，同步显示到列表上方
+        nameFilterInput.addEventListener('input', () => setQuickNameValue(nameFilterInput.value));
+        quickNameInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                pushNameToFilter(input.value);
+                updateQuickClearButtons();
+            });
+        });
+    }
+
+    document.querySelectorAll('.quick-search-clear').forEach(button => {
+        button.addEventListener('click', () => {
+            const nameControl = button.closest('.quick-search-name-control');
+            const input = nameControl ? nameControl.querySelector('.quick-search-input') : null;
+            setQuickNameValue('');
+            pushNameToFilter('');
+            if (input) input.focus(); // 与筛选页面 #clear-input 一致：清完把光标留在输入框
+        });
+    });
+    updateQuickClearButtons();
+
+    // 快捷纯按钮直接触发筛选页面对应按钮 click，复用其模态框/标题/行为
+    document.querySelectorAll('.quick-filter-button[data-filter]').forEach(button => {
+        button.addEventListener('click', () => {
+            const standardButton = document.getElementById(`btn-filter-${button.dataset.filter}`);
+            if (standardButton) standardButton.click();
+        });
     });
 
     // 3. 为“默认突破/天赋设置”的整个组绑定统一的处理器

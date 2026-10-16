@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Dissipa com segurança os reforços de efeito de status de todos os inimigos. (A dissipação segura ignora efeitos secundários, como o dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como habilidades passivas e efeitos da família, ainda podem ser ativados.)",
+      "Aumenta a vida de todos os aliados em 1300. A vida reforçada pode exceder o limite de PV.",
+      "Fonte de Males: os seguintes efeitos são aplicados a um inimigo aleatório no início de cada turno:\n[*] -45% de geração de mana por 3 turnos\n[*] -60% de defesa contra habilidades especiais por 3 turnos\n[*] A Fonte de Males é ativada 4 vezes. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Este personagem é imune a reduções de mana e ganha 10% mana sempre que resiste."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana por Reforço Inimigo",
-     "text": "Ganha uma pequena quantidade de mana por cada reforço de efeito de status ativo da equipe inimiga no início de cada turno (limite de 20 reforços)."
+     "id": "mana_on_buff",
+     "title": "Mana por reforço recebido",
+     "text": "Este personagem ganha 5% de mana ao receber um reforço ou uma acumulação positiva."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV.",
       "Todos os aliados recebem 50% de ataque por 5 turnos. O ataque aumenta em 5% a cada turno, até o limite de 70%.",
       "Todos os aliados recuperam 1270 de vida reforçada ao longo de 5 turnos. A vida reforçada pode exceder o limite de PV."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 15% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
       "Convoca um ajudante Elfo para cada aliado. O ajudante herda 10% de PV e 10% de ataque do invocador.",
       "Todos os aliados regeneram 612 PV por 4 turnos."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Causa 210% de dano a todos os inimigos.\n[*] Causa mais 20% de dano por cada escudo de Luz no tabuleiro, até 450% de dano no total.",
-      "Cada aliado derrotado tem 20% de chance de reviver com 40% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total."
+      "Cada aliado derrotado tem 20% de chance de reviver com 48% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Causa 260% de dano a todos os inimigos.\n[*] Causa mais 25% de dano por cada escudo de Luz no tabuleiro, até 560% de dano no total.",
-      "Cada aliado derrotado tem 20% de chance de reviver com 45% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total.",
+      "Cada aliado derrotado tem 20% de chance de reviver com 50% de PV.\n[*] Cada escudo de Luz no tabuleiro aumenta em 5% a chance de reviver, até 65% no total.",
       "Causa dano extra contra Trevas."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Cada aliado derrotado tem 50% de chance de ser revivido com 30% de PV.",
-      "Todos os aliados regeneram 1424 PV por 4 turnos. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza.",
-      "Durante os 4 turnos seguintes, todos os aliados recebem 5% de mana ao fim do turno. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza.",
-      "Vinculo elemental dá a todos os aliados de natureza 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado. Este efeito de status não pode ser dissipado e dura mais 2 turnos em personagens de Natureza."
+      "Todos os aliados regeneram 1424 PV por 4 turnos.",
+      "Durante os 4 turnos seguintes, todos os aliados recebem 5% de mana ao fim do turno.",
+      "Vinculo elemental dá a todos os aliados de natureza 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Causa 350% de dano e aplica 35 Insanidade ao alvo e aos inimigos próximos.",
       "O alvo e os inimigos próximos recebem[#Dynamic] 654 [#]de dano de Água por 3 turnos. Todos os aliados absorvem como vida reforçada 50% do dano de Água.",
       "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
-      "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Causa 350% de dano ao alvo.\n[*] Causa 350% de dano adicional a 2 inimigos aleatórios.",
-      "Todos os alvos recebem 15 Insanidade sempre que são atingidos.",
-      "Cumulativo (Max: 10): todo o dano recebido pelo alvo aumenta em 5% a cada acerto. (O expurgo reduz 1 acumulação negativa.)",
-      "Quando lançada, esta habilidade especial aplica 40 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Causa 280% de dano e aplica 15 Insanidade ao alvo e aos inimigos próximos.",
-      "O alvo e os inimigos próximos recebem[#Dynamic] 51 [#]a[#Dynamic] 156 [#]de dano de maldição por 4 turnos, aumentando a cada turno. (No primeiro turno, causa[#Dynamic] 51 [#]de dano. O dano aumenta em 45% a cada turno, até o limite de[#Dynamic] 156 [#]de dano por turno.)",
-      "Quando lançada, esta habilidade especial aplica 60 Insanidade ao invocador.",
-      "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Ao fim de cada turno, o invocador e os aliados próximos disparam um Raio Ocular em um inimigo aleatório por 2 turnos.\n[*] Cada Raio Ocular aplica 10 Insanidade no inimigo atingido.\n[*] Cada Raio Ocular reduz o limite de vida do inimigo atingido em 100. O efeito é mais forte contra alvos com vida reforçada.",
       "(O limite de vida não pode ser inferior a 30% do limite de vida original.\n[*] A vida reforçada recebe uma redução adicional de 100.)",
       "Quando lançada, esta habilidade especial aplica 40 Insanidade ao invocador.",
-      "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Dissipa com segurança os reforços de todos os inimigos e aumenta o mana de todos os aliados em 3% por cada reforço removido.",
-      "O alvo se transforma em um Vermental. Vermentais têm 70% de ataque, 70% de defesa e a seguinte habilidade especial:\n[*]Um de Nós (Muito rápido)\n[*]Aplica 75 de Insanidade a um aliado aleatório.\n[*]Remove o mal Vermental do invocador. (Este efeito dura até que seja expurgado, substituído ou removido.\n[*]Chefes, Titãs e Titãs Míticos não são afetados por este efeito de status.)",
-      "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Causa 565% de dano ao alvo.",
       "O alvo recebe[#Dynamic] 1875 [#]de dano de água por 3 turnos. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Causa 520% de dano ao alvo e 5 inimigos aleatórios.",
       "Todos os alvos atingidos ficam imunes a novos reforços de efeito de status por 5 turnos e recebem 1200 de dano por cada reforço não aplicado. Este efeito é persistente.",
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 250% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Vinculo elemental dá a todos os aliados de luz 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "O invocador cura 75% do dano normal causado por 5 turnos.",
       "Vinculo elemental dá a todos os aliados de luz 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Causa 450% de dano e aplica 50 Insanidade ao alvo e aos inimigos próximos.",
-      "Todos os aliados recebem 50% de poder de ataque adicional na próxima habilidade especial invocada. O poder de ataque adicional aumenta em 25% a cada turno, até o máximo de 150%.",
-      "Todos os aliados ficam imunes a transferências e dissipações de reforços por 4 turnos. (A imunidade também inclui o próprio efeito.\n[*] Também inclui saques.)",
-      "Invocar esta habilidade especial aplica 20 Insanidade a todos os aliados.",
-      "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Altera o elemento de todos os inimigos para Fogo por 4 turnos. (Titãs e Titãs Míticos não são afetados por este efeito de status.)",
-      "Causa 240% de dano e aplica 15 Insanidade a todos os inimigos.",
+      "Causa 240% de dano a todos os inimigos.",
       "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 4 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
       "O invocador reflete todos os males de status e 165% de dano de volta para o atacante e bloqueiam outros efeitos negativos de habilidades especiais de inimigos de Fogo por 4 turnos. (Não é possível refletir efeitos de status lançados por personagens, ajudantes e demônios aliados.)",
       "Quando lançada, esta habilidade especial aplica 55 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Convoca um mega-ajudante Aberração. O ajudante herda 45% de PV e 180% de ataque do invocador.\n[*]Cada ataque de um mega-ajudante Aberração dá ao alvo o seguinte mal de status:",
       "[**]O alvo recebe[#Dynamic] 552 [#]de dano de Toxina ao longo de 3 turnos. O dano aumenta contra alvos com vida reforçada, ajudantes ou um mega-ajudante. (O dano de Toxina aumenta em 100% contra alvos com vida reforçada.\n[***]O dano de Toxina aumenta em 33% por ajudante ou mega-ajudante do alvo.\n[***]O dano aumenta até o limite de 199%.)",
       "[**]Aplica 10 Insanidade ao alvo.",
-      "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Aplica Remoção Total ao alvo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O alvo assume a forma de Fantasma do Abismo por 5 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 261 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)",
-      "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Causa 220% de dano e aplica 25 Insanidade ao alvo e aos inimigos próximos.",
       "Acumulação +2 (máx.: 10): o invocador recebe 26% do ataque. (A dissipação remove 1 acumulação positiva.)",
-      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 40 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Todos os inimigos sucumbem ao medo por 5 turnos. (O alvo recebe -40% de defesa.\n[*] Remove todos os reforços dissipáveis e efeitos Crescimento quando um efeito de status Medo é adicionado.\n[*] O alvo não pode ganhar novos reforços nem efeitos Crescimento enquanto este efeito está ativo.\n[*] O alvo com Medo causa 250% de dano a um aliado aleatório sempre que qualquer outro aliado usa a habilidade especial. Cada personagem pode ativar este efeito uma vez por turno.)",
       "Atrofia: todos os inimigos recebem -480 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Causa 420% de dano e aplica 25 Insanidade a todos os inimigos.",
-      "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Causa 300% de dano ao alvo.",
-      "O ataque ignora reforços defensivos. (Inclui contra-ataques.)",
-      "O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
-      "Todos os alvos recebem 20 Insanidade sempre que são atingidos.",
-      "Após 1 turno, o alvo recebe Paralisado por 4 turnos.",
-      "(Chefes, Titãs e Titãs Míticos não são afetados por este efeito de status.)",
-      "(Os inimigos Paralisados não podem atacar nem ganhar mana e recebem 50% mais dano.\n[*] Após a Paralização, o efeito não pode ser expurgado.)",
-      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
-      "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Causa 310% de dano e aplica 30 Insanidade ao alvo e aos inimigos próximos.",
-      "Convoca um demônio Coruja Moldavita para o alvo e os inimigos próximos. O demônio causa dano ao inimigo com 70% do ataque a cada turno.\n[*] O demônio Coruja Moldavita absorve a cura e desaparece depois de absorver cura equivalente a 25% do limite de vida do alvo.",
+      "Causa 350% de dano e aplica 30 Insanidade ao alvo e aos inimigos próximos.",
+      "Convoca um demônio Coruja Moldavita para o alvo e os inimigos próximos. O demônio causa dano ao inimigo com 70% do ataque a cada turno.\n[*] O demônio Coruja Moldavita absorve a cura e desaparece depois de absorver cura equivalente a 27% do limite de vida do alvo.",
       "O demônio Coruja Moldavita aplica 5 Insanidade ao dono a cada turno.",
       "Ao fim de cada turno, o demônio Coruja Moldavita dissipa um reforço dissipável do alvo.",
       "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduzir Insanidade",
-     "text": "No início de cada turno, a Insanidade atual deste personagem diminui em 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupção de ajudante",
-     "text": "Ao fim de cada turno, inimigos com Insanidade podem ter seus ajudantes transformados em demônios. Ao atingir 70 Insanidade, a transformação é ativada automaticamente.\n[*] O ajudante se transforma em demônio Místico: 15% de ataque, 18% de vida, aplica 5 Insanidade a cada turno.\n[*] O mega-ajudante se transforma em megademônio Místico: 115% de ataque, 68% de vida, aplica 10 Insanity a cada turno."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV.",
       "Todos os aliados recuperam 1080 de vida reforçada ao longo de 4 turnos. A vida reforçada pode exceder o limite de PV.",
       "Todos os inimigos ganham -50% de defesa contra habilidades especiais por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos."
      ]
@@ -2311,7 +2208,7 @@
       "[**]O alvo e os inimigos próximos recebem[#Dynamic] 222 [#]de dano de queimadura por 2 turnos. O invocador absorve 10% do dano de queimadura como vida.",
       "[**]Se derrotado durante os próximos 2 turnos, o invocador ressuscita no começo do turno seguinte com 40% de vida. Todos os efeitos de status e acumulações são removidos quando o invocador é derrotado.",
       "[*]x 2 carga de mana:",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 44% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 50% de PV.",
       "[**]Todos os aliados recuperam 795 de vida reforçada ao longo de 3 turnos. A vida reforçada pode exceder o limite de PV.",
       "[**]Todos os aliados reduzem todo o dano recebido em -60% por 3 turnos."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos."
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 20% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Um por todos!",
-     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 50% do dano recebido a todos os inimigos. (Limite de dano: 600)"
+     "text": "Quando este personagem recebe dano por um personagem com Cobertura, causa 75% do dano recebido a todos os inimigos. (Limite de dano: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Todos os aliados exceto o invocador ganham 54% de defesa contra Luz por 4 turnos."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O invocador assume a forma de Fantasma Nefasto por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma Nefasto, o invocador causa 175% de dano automaticamente a um inimigo aleatório a cada turno.\n[*] Enquanto está na forma de Fantasma Nefasto Desequilibrado, o invocador pode receber dano dos inimigos cujo elemento é mais forte contra ele. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Todos os aliados regeneram 609 PV por 3 turnos.",
       "[*]x 3 carga de mana:",
       "[**]Aumenta a vida de todos os aliados em 700. A vida reforçada pode exceder o limite de PV.",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 27% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 32% de PV.",
       "[**]Todos os aliados regeneram 952 PV por 4 turnos."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Causa 530% de dano a todos os inimigos.",
+      "Causa 600% de dano a todos os inimigos.",
       "Reduz em 800 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 800.)",
       "Ceifa reforços de todos os inimigos.\n[*]A Ceifa remove com segurança 2 reforços, acumulações positivas ou efeitos Crescimento de cada alvo. Isso inclui efeitos persistentes, reforços indissipáveis e efeitos de dança.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Crescimento são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
       "Atrofia: todos os inimigos recebem -540 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Causa 350% de dano ao alvo e aos inimigos próximos.\n[*] Causa 10% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 450% de dano no total.",
+      "Ceifa reforços do alvo e dos inimigos próximos.\n[*]A Ceifa remove com segurança 2 reforços, acumulações positivas ou efeitos Crescimento de cada alvo. Isso inclui efeitos persistentes, reforços indissipáveis e efeitos de dança.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Crescimento são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
+      "O invocador e os aliados próximos contra-atacam com 115% do dano recebido por 4 turnos."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Causa 560% de dano ao alvo.\n[*] Causa 15% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 710% de dano no total.",
+      "O alvo recebe 400 de dano duradouro de sangramento por turno. (Este efeito dura até que seja expurgado, substituído ou removido.)",
+      "O invocador recebe 40% de ataque e mais 20% de aumento cada vez que é atingido por 4 turnos, até o limite de 140% de ataque."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Restaura 50% da vida do invocador e aliados próximos.",
       "Extrai males do invocador e dos aliados próximos.\n[*]Extração remove com segurança 2 males, acumulações negativas ou efeitos Atrofia de cada alvo. Isso inclui efeitos de dança e males de status inexpurgáveis.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos efeitos de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Atrofia são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
-      "Crescimento: todos os aliados recebem 150 de ataque e 150 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: todos os aliados recebem 170 de ataque e 170 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 20% de ataque, 5% de vida\n[*]Demônio Broto:\n[*] 30% de ataque, 10% de vida\n[*]Megademônio Florescência:\n[*] 40% de ataque, 30% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 20% de ataque, 5% de vida\n[*]Demônio Broto:\n[*] 30% de ataque, 10% de vida\n[*]Megademônio Florescência:\n[*] 90% de ataque, 30% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Causa 600% de dano ao alvo.",
-      "Quando o alvo tem demônios ou megademônios, causa 500% de dano a outro inimigo aleatório.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
+      "Quando o alvo tem demônios ou megademônios, causa 550% de dano a outro inimigo aleatório.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
       "O invocador e os aliados próximos recebem 44% de defesa e mais 10% de aumento cada vez que são atingidos durante 3 turnos, até o limite de 94% de defesa."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Ceifa reforços do alvo.\n[*]A Ceifa remove com segurança 2 reforços, acumulações positivas ou efeitos Crescimento de cada alvo. Isso inclui efeitos persistentes, reforços indissipáveis e efeitos de dança.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Crescimento são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
+      "O alvo recebe uma bomba pungente. A bomba pungente explode após 3 turnos e causa 1600 de dano ao alvo e aos aliados próximos. (A bomba pungente também explode quando é substituída ou o alvo é derrotado.)",
+      "O alvo ganha -45% de defesa por 3 turnos.",
+      "Causa 420% de dano ao alvo."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Causa 300% de dano a todos os inimigos.\n[*] Causa 5% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 350% de dano no total.",
+      "Causa 285% de dano a todos os inimigos.\n[*] Causa 10% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 385% de dano no total.",
       "Acumulação +2 (máx.: 10): todo o dano recebido pelos inimigos aumenta em 10%. (O expurgo reduz 1 acumulação negativa.)",
       "Acumulação +2 (máx.: 10): todos os aliados recebem 6% de geração de mana. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.\n[*]A dissipação remove 1 acumulação positiva.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Todos os aliados ganham 25% de mana.\n[*] Todos os aliados ganham 5% de mana adicional para cada demônio ou megademônio dos inimigos, até o máximo de 50% de mana. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "Extrai males de todos os aliados.\n[*]Extração remove com segurança 2 males de status, acumulações negativas ou efeitos Atrofia de cada alvo. Isso inclui efeitos de dança e males de status inexpurgáveis.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] O expurgo seguro ignora os efeitos secundários, como dano ao remover, do mal de status removido. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Atrofia são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
+      "Todos os aliados recuperam 950 de vida reforçada ao longo de 5 turnos. A vida reforçada pode exceder o limite de PV."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Causa 385% de dano ao alvo e 5 inimigos aleatórios.\n[*] Convoca um demônio Muda para cada inimigo atingido.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.",
+      "Causa 395% de dano ao alvo e 5 inimigos aleatórios.\n[*] Convoca um demônio Muda para cada inimigo atingido.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.",
       "Todos os alvos atingidos recebem -55% de precisão por 5 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Causa 600% de dano ao alvo.",
-      "Quando o alvo tem demônios ou megademônios, causa 300% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
+      "Quando o alvo tem demônios ou megademônios, causa 350% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
       "Todos os aliados recebem 55% de defesa por 4 turnos. A duração do efeito é redefinida quando o invocador recebe dano direto de uma habilidade especial."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 35% de ataque, 10% de vida\n[*]Demônio Broto:\n[*] 60% de ataque, 15% de vida\n[*]Megademônio Florescência:\n[*] 85% de ataque, 50% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 35% de ataque, 10% de vida\n[*]Demônio Broto:\n[*] 60% de ataque, 15% de vida\n[*]Megademônio Florescência:\n[*] 120% de ataque, 50% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Causa 485% de dano a todos os inimigos.\n[*] Causa 10% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 585% de dano no total.",
+      "Todo o dano recebido pelos inimigos aumenta em 30% por 5 turnos.",
+      "Se derrotado durante os próximos 5 turnos, o invocador ressuscita no começo do turno seguinte com 35% de vida e causando 1000 de dano a todos os inimigos. (Todos os efeitos de status e acumulações são removidos quando o invocador é derrotado.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sete Vidas",
      "text": "[*] Quando é derrotado, este personagem tem 100% de chance de reviver no início do turno seguinte com 50% de vida e 40% de mana.\n[*] Limite de 9 ativações. A chance de reviver diminui a cada ativação."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Fofura",
+     "text": "75% mais chance de resistir a todos os males de status, reduções de mana e dissipações de reforços."
     }
    ]
   }

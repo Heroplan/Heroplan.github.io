@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Häivyttää turvallisesti tilaefektien tehosteet kaikilta vihollisilta. (Turvallinen häivytys ohittaa poistetun tilaefektin tehosteen toissijaiset efektit, kuten poistamisesta syntyvän vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.)",
+      "Lisää 1300 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
+      "Vaivojen lähde: Seuraavat efektit loitsitaan satunnaiseen viholliseen jokaisen vuoron alussa:\n[*] -45% manatuotantoa 3 vuoron ajan.\n[*] -60% puolustusta erikoistaitoja vastaan 3 vuoron ajan.\n[*]Vaivojen lähde aktivoituu 4 kertaa. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Hahmo on immuuni manan vähennyksille. Lisäksi hän saa 10% manaa jokaisesta vastustuskerrasta."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Manaa per vihollisen tehoste",
-     "text": "Saa pienen määrän manaa jokaista vihollisryhmällä kunkin vuoron alussa olevaa aktiivista tilaefektien tehostetta kohti (enintään 20 tehostetta)."
+     "id": "mana_on_buff",
+     "title": "Manaa saadusta tehosteesta",
+     "text": "Hahmo saa 5% manaa, kun hän saa tehosteen tai positiivisen kasauman."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi.",
       "Kaikki liittolaiset saavat 50% hyökkäystä 5 vuoron ajaksi. Hyökkäys nousee 5% joka vuorolla, yhteensä enintään 70%.",
       "Kaikki liittolaiset saavat 1270 tehostettua terveyttä 5 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 15% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
       "Kutsuu jokaista liittolaista kohden tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
       "Kaikki liittolaiset saavat 612 terveyspistettä 4 vuoron aikana."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Tuottaa 210% vauriota kaikille vihollisille.\n[*] Tuottaa 20% lisävauriota jokaisesta laudalla olevasta pyhästä kilvestä. Yhteisvaurio on enintään 450%.",
-      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 40% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%."
+      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 48% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Tuottaa 260% vauriota kaikille vihollisille.\n[*] Tuottaa 25% lisävauriota jokaisesta laudalla olevasta pyhästä kilvestä. Yhteisvaurio on enintään 560%.",
-      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 45% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%.",
+      "Jokaisella kukistetulla liittolaisella on 20%:n mahdollisuus elpyä ja saada 50% terveyttä.\n[*]Jokainen laudalla oleva pyhä kilpi nostaa elpymismahdollisuutta 5%. Mahdollisuus voi olla kaikkiaan enintään 65%.",
       "Tuottaa lisävauriota pimeyttä vastaan."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi.",
-      "Kaikki liittolaiset saavat 1424 terveyspistettä 4 vuoron aikana. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla.",
-      "Kaikki liittolaiset saavat 5% manaa vuoron lopussa 4 vuoron ajan. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla.",
-      "Elementtiyhteys antaa kaikille luonnon liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää. Tätä tilaefektiä ei voi häivyttää, ja se kestää 2 vuoroa pidempään luontohahmoilla."
+      "Kaikki liittolaiset saavat 1424 terveyspistettä 4 vuoron aikana.",
+      "Kaikki liittolaiset saavat 5% manaa vuoron lopussa 4 vuoron ajan.",
+      "Elementtiyhteys antaa kaikille luonnon liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Tuottaa 350% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 35 hulluutta.",
       "Kohde ja lähellä olevat viholliset kärsivät[#Dynamic] 654 [#]vesivauriota 3 vuoron aikana. Kaikki liittolaiset imevät 50% tuotetusta vesivauriosta tehostettuna terveytenä.",
       "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
-      "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Tuottaa kohteelle 350% vauriota. Tuottaa 350% lisävauriota 2 satunnaiselle viholliselle.",
-      "Kaikki osutut kohteet saavat 15 hulluutta jokaisesta osumasta.",
-      "Kasauma (maksimi: 10): Jokainen osuma nostaa kaikkea kohteen kärsimää vauriota 5% (Puhdistus poistaa 1 negatiivista kasaumaa.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 40 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Tuottaa 280% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 15 hulluutta.",
-      "Kohde ja lähellä olevat viholliset kärsivät[#Dynamic] 51 [#]–[#Dynamic] 156 [#]kasvavaa kirousvauriota joka vuorolla 4 vuoron ajan. (Ensimmäisellä vuorolla vauriota tulee[#Dynamic] 51 [#]. Vaurio kasvaa 45% joka vuorolla, yhteensä enintään[#Dynamic] 156 [#]vauriota vuoroa kohden.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 60 hulluutta loitsijalle.",
-      "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Loitsija ja lähellä olevat liittolaiset ampuvat silmäsäteen satunnaiseen viholliseen jokaisen vuoron lopussa 2 vuoron ajan.\n[*] Kukin silmäsäde aiheuttaa 10 hulluutta osutulle viholliselle.\n[*] Kukin silmäsäde vähentää osutun vihollisen maksimiterveyttä 100 pisteellä. Vaikutus on suurempi kohteissa, joiden terveyttä on tehostettu.",
       "(Maksimiterveys ei voi olla matalampi kuin 30% alkuperäisestä maksimiterveydestä.\n[*] Tehostetusta terveydestä vähennetään vielä 100 lisää.)",
       "Tämän erikoistaidon käyttäminen aiheuttaa 40 hulluutta loitsijalle.",
-      "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Häivyttää turvallisesti tehosteet kaikilta vihollisilta ja nostaa kaikkien liittolaisten manaa 3% jokaisesta poistetusta tehosteesta.",
-      "Kohde muuttuu mielimadoksi. Mielimadoilla on 70% hyökkäystä, 70% puolustusta ja seuraava erikoistaito:\n[*]Yksi meistä (Hyvin nopea)\n[*]Aiheuttaa 75 hulluutta yhdelle satunnaiselle liittolaiselle.\n[*]Poistaa loitsijalta mielimato-vaivan. (Tämä vaikutus pysyy, kunnes se puhdistetaan, korvataan tai poistetaan.\n[*]Tämä tilaefekti ei vaikuta pomoihin, titaaneihin ja myyttisiin titaaneihin.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Tuottaa 565% vauriota kohteelle.",
       "Kohde kärsii[#Dynamic] 1875 [#]vesivauriota 3 vuoron aikana. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Tuottaa 520% vauriota kohteelle ja 5 satunnaiselle viholliselle.",
       "Kaikki osutut kohteet ovat immuuneja uusille tilaefektien tehosteille 5 vuoron ajan ja saavat 1200 vauriota jokaisesta yritetystä tehosteesta. Tämä vaikutus on sitkeä.",
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 250% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementtiyhteys antaa kaikille pyhän liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Loitsija parantaa 75% tehdystä normaalivauriosta 5 vuoron ajan.",
       "Elementtiyhteys antaa kaikille pyhän liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Tuottaa 450% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 50 hulluutta.",
-      "Kaikki liittolaiset saavat 50% lisää hyökkäystehoa seuraavaan käyttämäänsä erikoistaitoon. Lisähyökkäysteho nousee 25% joka vuorolla kunnes saavuttaa 150%:n maksimimäärän.",
-      "Kaikki liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 4 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[*] Koskee myös ryöstämistä.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 20 hulluutta kaikille liittolaisille.",
-      "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Kaikkien vihollisten elementti muuttuu tuleksi 4 vuoron ajaksi. (Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)",
-      "Tuottaa 240% vauriota kaikille vihollisille ja aiheuttaa heille 15 hulluutta.",
+      "Tuottaa 240% vauriota kaikille vihollisille.",
       "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 4 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
       "Loitsija heijastaa kaikki vaivat ja 165% vauriota takaisin hyökkääjään ja estää muut negatiiviset efektit vihollisten tulen erikoistaidoista 4 vuoron ajan. (Samalla puolella olevien hahmojen, käskyläisten ja riiviöiden loitsimia tilaefektejä ei voi heijastaa.)",
       "Tämän erikoistaidon käyttäminen aiheuttaa 55 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Kutsuu hirvitys-megakäskyläisen, joka perii loitsijalta 45% terveyttä ja 180% hyökkäystä.\n[*]Jokainen hirvitys-megakäskyläisen osuma aiheuttaa kohteelle seuraavan vaivan:",
       "[**]Kohde kärsii[#Dynamic] 552 [#]toksiinivauriota 3 vuoron aikana. Vaurio kasvaa, jos kohteella on tehostettua terveyttä, käskyläisiä tai megakäskyläinen. (Toksiinivaurio kasvaa 100%, jos kohteella on tehostettua terveyttä.\n[***]Toksiinivaurio kasvaa 33% jokaista kohteen omistamaa käskyläistä tai megakäskyläistä kohti.\n[***]Vaurio voi kasvaa enintään 199%.)",
       "[**]Aiheuttaa 10 hulluutta kohteelle.",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Loitsii täyden poiston kohteeseen. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Kohde muuttuu syvyyksien haamuksi 5 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 261 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Tuottaa 220% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 25 hulluutta.",
       "Kasauma +2 (maksimi: 10): Loitsija saa 26% hyökkäystä. (Häivytys poistaa 1 positiivista kasaumaa.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 40 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Kaikki viholliset pelkäävät 5 vuoron ajan. (Kohde saa -40% puolustusta.\n[*] Poistaa kaikki häivytettävät tehosteet ja kasvuefektit, kun pelko-tilaefekti lisätään.\n[*] Kohde ei voi saada uusia tehosteita tai kasvuefektejä vaikutuksen keston aikana.\n[*] Pelkäävä kohde tuottaa 250% vauriota satunnaiselle liittolaiselle aina kun joku muu liittolainen käyttää erikoistaitoaan. Kukin hahmo voi laukaista tämän efektin kerran vuorossa.)",
       "Näivettäminen: Kaikki viholliset saavat -480 hyökkäystä. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)",
       "Tuottaa 420% vauriota kaikille vihollisille ja aiheuttaa heille 25 hulluutta.",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Tuottaa 300% vauriota kohteelle.",
-      "Hyökkäys ohittaa puolustustehosteet. (Koskee myös vastahyökkäyksiä.)",
-      "Hyökkäys läpäisee ketjussa kaikki osutun vihollisen vieressä olleet viholliset.",
-      "Kaikki osutut kohteet saavat 20 hulluutta jokaisesta osumasta.",
-      "1 vuoron jälkeen kohde halvaantuu 4 vuoron ajaksi.",
-      "(Tämä tilaefekti ei vaikuta pomoihin, titaaneihin ja myyttisiin titaaneihin.)",
-      "(Halvaantuneet viholliset eivät voi hyökätä tai saada manaa, ja he kärsivät 50% enemmän vauriota.\n[*]Vaikutusta ei voi puhdistaa halvaantumisen jälkeen.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
-      "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Tuottaa 310% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 30 hulluutta.",
-      "Kutsuu moldaviittipöllöriiviön kohteelle ja lähellä oleville vihollisille. Riiviö vaurioittaa vihollista 70%:n hyökkäyksellä joka vuorolla.\n[*]Moldaviittipöllöriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 25% sen kohteen maksimiterveydestä.",
+      "Tuottaa 350% vauriota kohteelle ja lähellä oleville vihollisille ja aiheuttaa heille 30 hulluutta.",
+      "Kutsuu moldaviittipöllöriiviön kohteelle ja lähellä oleville vihollisille. Riiviö vaurioittaa vihollista 70%:n hyökkäyksellä joka vuorolla.\n[*]Moldaviittipöllöriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 27% sen kohteen maksimiterveydestä.",
       "Moldaviittipöllöriiviö aiheuttaa omistajalleen 5 hulluutta joka vuorolla.",
       "Moldaviittipöllöriiviö häivyttää jokaisen vuoron lopussa yhden kohteensa häivytettävistä tehosteista.",
       "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Laskee hulluutta",
-     "text": "Tämän hahmon nykyinen hulluus laskee 1 pisteellä jokaisen vuoron alussa."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Käskyläisten korruptio",
-     "text": "Jokaisen vuoron lopussa hulluilla vihollisilla on mahdollisuus, että heidän käskyläisensä muuttuvat riiviöiksi.\n[*]Jos hulluus nousee 70 pisteeseen, muutos aktivoituu automaattisesti.\n[*] Käskyläinen muuttuu ikiaikaiseksi riiviöksi: 15% hyökkäystä, 18% terveyttä, aiheuttaa 5 hulluutta joka vuorolla.\n[*] Megakäskyläinen muuttuu ikiaikaiseksi megariiviöksi: 115% hyökkäystä, 68% terveyttä, aiheuttaa 10 hulluutta joka vuorolla."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi.",
       "Kaikki liittolaiset saavat 1080 tehostettua terveyttä 4 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
       "Kaikki viholliset saavat -50% puolustusta erikoistaitoja vastaan 4 vuoron ajaksi. Kun vastassa on pimeyden hahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Kohde ja lähellä olevat viholliset kärsivät[#Dynamic] 222 [#]palovauriota 2 vuoron aikana. Loitsija imee 10% tuotetusta palovauriosta terveytenä.",
       "[**]Jos loitsija kukistuu seuraavan 2 vuoron aikana, hän palaa kuolleista seuraavan vuoronsa alussa ja hänellä on 40% terveyttä. Kaikki tilaefektit ja kasaumat poistuvat loitsijan kukistuessa.",
       "[*]x 2 manalataus:",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 44% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 50% terveyttä tullessaan elvytetyksi.",
       "[**]Kaikki liittolaiset saavat 795 tehostettua terveyttä 3 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
       "[**]Kaikkien liittolaisten saama vaurio vähentyy -60% 3 vuoron ajan."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille."
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 20% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Yksi kaikkien puolesta!",
-     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 50% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
+     "text": "Kun tämä hahmo kärsii vauriota suojatun hahmon sijaan, hän tuottaa 75% kärsimästään vauriosta kaikille vihollisille. (Maksimivaurio: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Kaikki liittolaiset loitsijaa lukuun ottamatta saavat 54% puolustusta pyhää vastaan 4 vuoron ajaksi."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Loitsija muuttuu hirvittäväksi haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Hirvittävän haamun muodossa oleva loitsija aiheuttaa joka vuorolla satunnaiselle viholliselle automaattisesti 175% vauriota.\n[*] Hirvittävän haamun muodossa olevaa loitsijaa voivat vaurioittaa vain sellaiset viholliset, joiden elementti on vahva loitsijaa vastaan. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Kaikki liittolaiset saavat 609 terveyspistettä 3 vuoron aikana.",
       "[*]x 3 manalataus:",
       "[**]Lisää 700 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 27% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 32% terveyttä tullessaan elvytetyksi.",
       "[**]Kaikki liittolaiset saavat 952 terveyspistettä 4 vuoron aikana."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Tuottaa 530% vauriota kaikille vihollisille.",
+      "Tuottaa 600% vauriota kaikille vihollisille.",
       "Vähentää 800 kaikkien vihollisten maksimiterveydestä. Vaikutus on suurempi kohteissa, joiden terveyttä on tehostettu. (Maksimiterveys ei voi olla matalampi kuin 30% alkuperäisestä maksimiterveydestä.\n[*] Tehostetusta terveydestä vähennetään vielä 800 lisää.)",
       "Kerää tehosteita kaikilta vihollisilta.\n[*]Sadonkorjuu poistaa kultakin kohteelta turvallisesti 2 tehostetta, positiivista kasaumaa tai kasvuefektiä. Tämä koskee myös sitkeitä efektejä, tehosteita, joita ei voi häivyttää, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen poisto ohittaa poistettujen tilaefektitehosteiden toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Kasvuefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
       "Näivettäminen: Kaikki viholliset saavat -540 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Tuottaa 350% vauriota kohteelle ja läheisille vihollisille.\n[*] Tuottaa 10% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 450%.",
+      "Kerää tehosteita kohteelta ja lähellä olevilta vihollisilta.\n[*]Sadonkorjuu poistaa kultakin kohteelta turvallisesti 2 tehostetta, positiivista kasaumaa tai kasvuefektiä. Tämä koskee myös sitkeitä efektejä, tehosteita, joita ei voi häivyttää, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen poisto ohittaa poistettujen tilaefektitehosteiden toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Kasvuefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
+      "Loitsija ja lähellä olevat liittolaiset tekevät 4 vuoron ajan vastahyökkäyksen, jonka suuruus on 115% heidän kärsimistään vaurioista."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Tuottaa 560% vauriota kohteelle.\n[*] Tuottaa 15% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 710%.",
+      "Kohde kärsii 400 pistettä pysyvää verenvuotovauriota vuoron aikana. (Tämä vaikutus pysyy, kunnes se puhdistetaan, korvataan tai poistetaan.)",
+      "Loitsija saa 40% hyökkäystä ja 20%:n lisäyksen aina, kun häneen osutaan 4 vuoron aikana, yhteensä enintään 140% hyökkäystä."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Palauttaa 50% loitsijan ja lähellä olevien liittolaisten terveyttä.",
       "Kitkee vaivat loitsijalta ja lähellä olevilta liittolaisilta.\n[*]Kitkentä poistaa kultakin kohteelta turvallisesti 2 vaivaa, negatiivista kasaumaa tai näivetysefektiä. Tämä koskee myös vaivoja, joita ei voi puhdistaa, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen poisto ohittaa poistettujen tilaefektitehosteiden toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Näivetysefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
-      "Kasvu: Kaikki liittolaiset saavat 150 hyökkäystä ja 150 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)"
+      "Kasvu: Kaikki liittolaiset saavat 170 hyökkäystä ja 170 puolustusta. (Näivetys ja kasvu muokkaavat hahmojen ominaisuuksia. Vaikutus jää, vaikka hahmo kukistuisikin.\n[*]Uudet näivetys- ja kasvuefektit muokkaavat ominaisuuksia lisää.\n[*]Näivetystä ja kasvua ei voi poistaa häivytyksillä tai puhdistuksilla.\n[*]Ominaisuuksien muokkauksen rajat.\n[*]Minimi on 30% ja maksimi on 170% alkuperäisestä arvosta.\n[*]Muut tehosteet ja vaivat lisätään muokattuihin ominaisuuksiin.\n[*]Tämä vaikutus ei ole yhtä tehokas hirviöiden ja pomojen aktivoimana.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 20% hyökkäystä, 5% terveyttä.\n[*]Taimiriiviö:\n[*] 30% hyökkäystä, 10% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 40% hyökkäystä, 30% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 20% hyökkäystä, 5% terveyttä.\n[*]Taimiriiviö:\n[*] 30% hyökkäystä, 10% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 90% hyökkäystä, 30% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Tuottaa 600% vauriota kohteelle.",
-      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 500% vauriota satunnaiselle toiselle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
+      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 550% vauriota satunnaiselle toiselle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
       "Loitsija ja lähellä olevat liittolaiset saavat 44% puolustusta ja 10%:n lisäyksen aina, kun heihin osutaan 3 vuoron aikana, yhteensä enintään 94% puolustusta."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Kerää tehosteita kohteelta.\n[*]Sadonkorjuu poistaa kultakin kohteelta turvallisesti 2 tehostetta, positiivista kasaumaa tai kasvuefektiä. Tämä koskee myös sitkeitä efektejä, tehosteita, joita ei voi häivyttää, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen poisto ohittaa poistettujen tilaefektitehosteiden toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Kasvuefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
+      "Kohde saa hajupommin. Hajupommi räjähtää 3 vuoron jälkeen ja tuottaa 1600 vauriota kohteelle ja lähellä oleville liittolaisille. (Hajupommi räjähtää myös silloin, jos se korvataan tai jos kohde kukistuu.)",
+      "Kohde saa -45% puolustusta 3 vuoron ajaksi.",
+      "Tuottaa 420% vauriota kohteelle."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Tuottaa 300% vauriota kaikille vihollisille.\n[*] Tuottaa 5% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 350%.",
+      "Tuottaa 285% vauriota kaikille vihollisille.\n[*] Tuottaa 10% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 385%.",
       "Kasauma +2 (maksimi: 10): Kaikki vihollisten kärsimä vaurio kasvaa 10%. (Puhdistus poistaa 1 negatiivista kasaumaa.)",
       "Kasauma +2 (maksimi: 10): Kaikki liittolaiset saavat 6% manatuotantoa. (Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa.\n[*]Häivytys poistaa 1 positiivista kasaumaa.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Kaikki liittolaiset saavat 25% manaa.\n[*]Kaikki liittolaiset saavat 5% lisämanaa jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteensä enintään 50% manaa. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "Kitkee vaivat kaikilta liittolaisilta.\n[*]Kitkentä poistaa kultakin kohteelta turvallisesti 2 vaivaa, negatiivista kasaumaa tai näivetysefektiä. Tämä koskee myös vaivoja, joita ei voi puhdistaa, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen puhdistus ohittaa poistettujen vaivojen toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Näivetysefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
+      "Kaikki liittolaiset saavat 950 tehostettua terveyttä 5 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Tuottaa 385% vauriota kohteelle ja 5 satunnaisille vihollisille.\n[*]Kutsuu siementaimiriiviön jokaiselle osutulle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.",
+      "Tuottaa 395% vauriota kohteelle ja 5 satunnaisille vihollisille.\n[*]Kutsuu siementaimiriiviön jokaiselle osutulle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.",
       "Kaikki osutut kohteet saavat -55% tarkkuutta 5 vuoron ajaksi. (Myös hyökkäävät erikoistaidot voivat mennä ohi.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Tuottaa 600% vauriota kohteelle.",
-      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 300% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
+      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 350% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
       "Kaikki liittolaiset saavat 55% puolustusta 4 vuoron aikana. Vaikutuksen kesto alkaa alusta, jos tilaefektin omistaja kärsii suoraa vauriota erikoistaidosta."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 35% hyökkäystä, 10% terveyttä.\n[*]Taimiriiviö:\n[*] 60% hyökkäystä, 15% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 85% hyökkäystä, 50% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 35% hyökkäystä, 10% terveyttä.\n[*]Taimiriiviö:\n[*] 60% hyökkäystä, 15% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 120% hyökkäystä, 50% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Tuottaa 485% vauriota kaikille vihollisille.\n[*] Tuottaa 10% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 585%.",
+      "Kaikkien vihollisten saama vaurio kasvaa 30% 5 vuoron ajan.",
+      "Jos loitsija kukistuu seuraavan 5 vuoron aikana, hän palaa kuolleista seuraavan vuoronsa alussa ja hänellä on 35% terveyttä. Lisäksi kaikki viholliset kärsivät 1000 vauriota. (Kaikki tilaefektit ja kasaumat poistuvat loitsijan kukistuessa.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Yhdeksän elämää",
      "text": "[*]Kukistuessaan tällä hahmolla on 100%:n mahdollisuus elpyä seuraavan vuoronsa alussa ja saada 50% terveyttä ja 40% manaa.\n[*]Aktivoituu enintään 9 kertaa. Elpymisen mahdollisuus laskee jokaisen aktivoitumisen jälkeen."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Piirretty",
+     "text": "75%:n lisämahdollisuus vastustaa kaikkia vaivoja, manavähennyksiä ja tehosteiden häivytyksiä."
     }
    ]
   }

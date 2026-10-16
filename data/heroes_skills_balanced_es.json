@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Descarta de forma segura las bendiciones de estado de todos los enemigos. (El descarte seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de la bendición de estado eliminada. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.)",
+      "Potencia la vitalidad de todos los aliados en 1300. La vitalidad potenciada puede exceder la VIT máxima.",
+      "Fuente de alteraciones: Se aplican los siguientes efectos a un enemigo aleatorio al comienzo de cada turno:\n[*] -45% de regeneración de maná durante 3 turnos.\n[*] -60% de defensa contra habilidades especiales durante 3 turnos.\n[*] La fuente de alteraciones se activará 4 veces. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Este personaje es inmune a las reducciones de maná. Además, obtiene un 10% de maná cada vez que resiste un ataque."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Maná por bendición enemiga",
-     "text": "Obtiene una pequeña cantidad de maná por cada bendición de estado activa que tenga el equipo enemigo al comienzo de cada turno (máximo de 20 bendiciones)."
+     "id": "mana_on_buff",
+     "title": "Maná al recibir una bendición",
+     "text": "Este personaje obtiene un 5% de maná cuando recibe una bendición o una acumulación positiva."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 24% de VIT.",
       "Todos los aliados obtienen un 50% de ataque durante 5 turnos. El ataque aumenta un 5% en cada turno hasta un máximo del 70%.",
       "Todos los aliados regeneran 1270 de vitalidad potenciada durante 5 turnos. La vitalidad potenciada puede exceder la VIT máxima."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 15% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
       "Invoca un secuaz elfo para todos los aliados con un 10% de VIT y un 10% de ataque heredados del héroe.",
       "Todos los aliados recuperan 612 VIT durante 4 turnos."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Causa un 210% de daño a todos los enemigos.\n[*] Causa un 20% de daño adicional por cada escudo sagrado en el tablero, hasta un 450% de daño en total.",
-      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 40% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%."
+      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 48% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Causa un 260% de daño a todos los enemigos.\n[*] Causa un 25% de daño adicional por cada escudo sagrado en el tablero, hasta un 560% de daño en total.",
-      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 45% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%.",
+      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 50% de VIT.\n[*] Cada escudo sagrado del tablero aumenta un 5% la probabilidad de revivir hasta un máximo de 65%.",
       "Causa daño adicional contra oscuro."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 30% de VIT.",
-      "Todos los aliados recuperan 1424 VIT durante 4 turnos. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
-      "Durante los siguientes 4 turnos, todos los aliados reciben un 5% de maná al final del turno. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
-      "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza."
+      "Todos los aliados recuperan 1424 VIT durante 4 turnos.",
+      "Durante los siguientes 4 turnos, todos los aliados reciben un 5% de maná al final del turno.",
+      "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Inflige un 350% de daño y 35 de demencia al objetivo y los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 654 [#]de daño de agua durante 3 turnos. Todos los aliados absorben un 50% del daño de agua infligido como vitalidad potenciada.",
       "Usar esta habilidad especial inflige 45 de demencia al héroe.",
-      "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Inflige un 350% de daño al objetivo.\n[*] Inflige un 350% de daño adicional a 2 enemigos aleatorios.",
-      "Todos los objetivos golpeados reciben 15 de demencia cada vez que reciben un golpe.",
-      "Acumulación (máx.: 10): Cada golpe aumenta un 5% todo el daño que recibe el objetivo. (La purificación reduce las acumulaciones negativas en 1.)",
-      "Usar esta habilidad especial inflige 40 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Inflige un 280% de daño y 15 de demencia al objetivo y los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos reciben[#Dynamic] 51 [#]-[#Dynamic] 156 [#]de daño de maldición creciente cada turno durante 4 turnos. (En el primer turno, se inflige[#Dynamic] 51 [#]de daño. El daño aumenta un 45% cada turno hasta un máximo de[#Dynamic] 156 [#]de daño por turno.)",
-      "Usar esta habilidad especial inflige 60 de demencia al héroe.",
-      "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Al final de cada turno, el héroe y los aliados cercanos disparan un rayo ocular a un enemigo aleatorio durante 2 turnos.\n[*] Cada rayo ocular inflige 10 de demencia al enemigo golpeado.\n[*] Cada rayo ocular reduce la vitalidad máxima del enemigo golpeado en 100. El efecto es más fuerte contra objetivos con vitalidad potenciada.",
       "(La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 100 adicional.)",
       "Usar esta habilidad especial inflige 40 de demencia al héroe.",
-      "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Descarta las bendiciones de todos los enemigos de forma segura y aumenta el maná de todos los aliados un 3% por cada bendición eliminada.",
-      "El objetivo se convierte en gusano mental. Los gusanos mentales cuentan con 70% de ataque, 70% de defensa y la siguiente habilidad especial:\n[*]Uno de nosotros (Muy rápido)\n[*]Inflige 75 de demencia a un aliado aleatorio.\n[*]Elimina la alteración del gusano mental del héroe. (Este efecto dura hasta que se purifique, se reemplace o se elimine.\n[*]A los jefes, titanes y titanes míticos no les afecta este efecto de estado.)",
-      "Usar esta habilidad especial inflige 50 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Causa un 565% de daño al objetivo.",
       "El objetivo recibe[#Dynamic] 1875 [#]de daño de agua durante 3 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Inflige 520% de daño al objetivo y a 5 enemigos aleatorios.",
       "Todos los objetivos golpeados son inmunes a las nuevas bendiciones de estado durante 5 turnos y, en su lugar, reciben 1200 de daño por cada efecto de estado que se les intente aplicar. Este efecto es obstinado.",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 250% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "El enlace de elemento proporciona a todos los aliados sagrados un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "El héroe cura un 75% del daño normal infligido durante 5 turnos.",
       "El enlace de elemento proporciona a todos los aliados sagrados un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Inflige un 450% de daño y 50 de demencia al objetivo y los enemigos cercanos.",
-      "Todos los aliados reciben un 50% de poder de ataque para la siguiente habilidad especial que usen. El poder de ataque adicional aumenta un 25% en cada turno, hasta alcanzar un 150% en total.",
-      "Todos los aliados son inmunes a descartes y reasignaciones de bendiciones durante 4 turnos. (La inmunidad también incluye este efecto.\n[*] También incluye saqueo.)",
-      "Usar esta habilidad especial inflige 20 de demencia a todos los aliados.",
-      "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Cambia el elemento de todos los enemigos a fuego durante 4 turnos. (A los titanes y titanes míticos no les afecta este efecto de estado.)",
-      "Inflige un 240% de daño y 15 de demencia a todos los enemigos.",
+      "Inflige un 240% de daño a todos los enemigos.",
       "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 4 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
       "El héroe refleja todos los estados alterados y un 165% de daño al atacante y bloquea otros efectos negativos de las habilidades especiales de fuego de los enemigos durante 4 turnos. (No se pueden reflejar los efectos de estado aplicados por personajes, secuaces y demonios del mismo bando.)",
       "Usar esta habilidad especial inflige 55 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Invoca un megasecuaz aberrante con un 45% de VIT y un 180% de ataque heredados del héroe.\n[*]Cada golpe de un megasecuaz aberrante otorga al objetivo el siguiente estado alterado:",
       "[**]El objetivo recibe[#Dynamic] 552 [#]de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[***]El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[***]El daño puede aumentar hasta un máximo del 199%.)",
       "[**]Inflige 10 de demencia al objetivo.",
-      "Usar esta habilidad especial inflige 50 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El objetivo cambia a la forma de fantasma del abismo durante 5 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 261 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)",
-      "Usar esta habilidad especial inflige 50 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Inflige un 220% de daño y 25 de demencia al objetivo y los enemigos cercanos.",
       "Acumulación +2 (máx.: 10): El héroe obtiene un 26% de ataque. (Descarte reduce las acumulaciones positivas en 1.)",
-      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 40 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Todos los enemigos sucumben al miedo durante 5 turnos. (El objetivo obtiene un -40% de defensa.\n[*] Elimina todas las bendiciones descartables y efectos de crecimiento al aplicarse miedo.\n[*] El objetivo no puede obtener nuevas bendiciones ni efectos de crecimiento mientras dure.\n[*] El objetivo con miedo inflige un 250% de daño a un aliado aleatorio cada vez que otro aliado usa su habilidad especial. Cada personaje solo puede activar este efecto una vez por turno.)",
       "Merma: Todos los enemigos obtienen -480 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Inflige un 420% de daño y 25 de demencia a todos los enemigos.",
-      "Usar esta habilidad especial inflige 50 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Causa un 300% de daño al objetivo.",
-      "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
-      "Todos los objetivos golpeados reciben 20 de demencia cada vez que reciben un golpe.",
-      "Tras 1 turno, el objetivo queda paralizado durante 4 turnos.",
-      "(A los jefes, titanes y titanes míticos no les afecta este efecto de estado.)",
-      "(Los enemigos paralizados no pueden atacar ni obtener maná, y reciben un 50% más de daño.\n[*] Una vez paralizados, el efecto no se puede purificar.)",
-      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
-      "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Inflige un 310% de daño y 30 de demencia al objetivo y los enemigos cercanos.",
-      "Invoca un demonio búho de moldavita para el objetivo y los enemigos cercanos que daña al enemigo con un 70% de ataque cada turno.\n[*] El demonio búho de moldavita absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 25% de la vitalidad máxima de su objetivo.",
+      "Inflige un 350% de daño y 30 de demencia al objetivo y los enemigos cercanos.",
+      "Invoca un demonio búho de moldavita para el objetivo y los enemigos cercanos que daña al enemigo con un 70% de ataque cada turno.\n[*] El demonio búho de moldavita absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 27% de la vitalidad máxima de su objetivo.",
       "El demonio búho de moldavita inflige 5 de demencia a su dueño cada turno.",
       "Al final de cada turno, el demonio búho de moldavita descarta una de las bendiciones descartables de su objetivo.",
       "Usar esta habilidad especial inflige 50 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce la demencia",
-     "text": "Al comienzo de cada turno, la demencia actual de ese personaje se reduce en 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corrupción de secuaces",
-     "text": "Al final de cada turno, los enemigos con demencia tienen una probabilidad de que sus secuaces se transformen en demonios.\n[*] Al llegar a 70 de demencia, la transformación se activa automáticamente.\n[*] Un secuaz se transformará en un demonio sobrenatural: 15% de ataque y 18% de vitalidad; aplica 5 de demencia por turno.\n[*] Un megasecuaz se transformará un en megademonio sobrenatural: 115% de ataque y 68% de vitalidad; aplica 10 de demencia por turno."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 24% de VIT.",
       "Todos los aliados regeneran 1080 de vitalidad potenciada durante 4 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
       "Todos los enemigos reciben un -50% de defensa contra habilidades especiales durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros."
      ]
@@ -2311,7 +2208,7 @@
       "[**]El objetivo y los enemigos cercanos reciben[#Dynamic] 222 [#]de daño de quemadura durante 2 turnos. El héroe absorbe un 10% del daño de quemadura infligido como vitalidad.",
       "[**]Si el héroe cae derrotado durante los siguientes 2 turnos, resucita al principio de su siguiente turno con un 40% de vitalidad. Todos los efectos de estado y acumulaciones se eliminan cuando el héroe cae derrotado.",
       "[*]x 2 de carga de maná:",
-      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 44% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 50% de VIT.",
       "[**]Todos los aliados regeneran 795 de vitalidad potenciada durante 3 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
       "[**]Todos los aliados reducen todo el daño recibido en un -60% durante 3 turnos."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos. (daño máximo: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos. (daño máximo: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos. (daño máximo: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos."
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 20% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "¡Uno para todos!",
-     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 50% del daño recibido a todos los enemigos. (daño máximo: 600)"
+     "text": "Cuando este personaje recibe daño en lugar de un personaje en cobertura, inflige 75% del daño recibido a todos los enemigos. (daño máximo: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Todos los aliados, salvo el héroe, reciben un 54% de defensa contra sagrado durante 4 turnos."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El héroe cambia a forma de fantasma terrible durante 4 turnos. Este efecto es obstinado.\n[*] Mientras está en esta forma, el héroe inflige automáticamente un 175% de daño contra un enemigo aleatorio cada turno.\n[*] Mientras está en esta forma, el héroe puede recibir daño de los enemigos cuyo elemento sea fuerte contra él. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Todos los aliados recuperan 609 VIT durante 3 turnos.",
       "[*]x 3 de carga de maná:",
       "[**]Potencia la vitalidad de todos los aliados en 700. La vitalidad potenciada puede exceder la VIT máxima.",
-      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 27% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 32% de VIT.",
       "[**]Todos los aliados recuperan 952 VIT durante 4 turnos."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Causa un 530% de daño a todos los enemigos.",
+      "Causa un 600% de daño a todos los enemigos.",
       "Reduce la vitalidad máxima de todos los enemigos en 800. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 800 adicional.)",
       "Cosecha bendiciones de todos los enemigos.\n[*]La cosecha elimina de forma segura hasta 2 bendiciones, acumulaciones positivas o efectos de crecimiento de cada objetivo. Se incluyen los efectos obstinados, las bendiciones indescartables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de crecimiento se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
       "Merma: Todos los enemigos obtienen -540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Inflige un 350% de daño al objetivo y los enemigos cercanos.\n[*] Inflige un 10% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 450% de daño en total.",
+      "Cosecha bendiciones del objetivo y de los enemigos cercanos.\n[*]La cosecha elimina de forma segura hasta 2 bendiciones, acumulaciones positivas o efectos de crecimiento de cada objetivo. Se incluyen los efectos obstinados, las bendiciones indescartables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de crecimiento se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
+      "El héroe y los aliados cercanos contraatacan con un 115% del daño recibido durante 4 turnos."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Inflige un 560% de daño al objetivo.\n[*] Inflige un 15% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 710% de daño en total.",
+      "El objetivo recibe 400 de daño de sangrado duradero por turno. (Este efecto dura hasta que se purifique, se reemplace o se elimine.)",
+      "El héroe obtiene un 40% de ataque y un 20% más cada vez que recibe un ataque durante 4 turnos hasta un 140% de ataque."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Recupera un 50% de vitalidad para el héroe y los aliados cercanos.",
       "Arranca de raíz las mermas del héroe y los aliados cercanos.\n[*]Arrancar de raíz elimina de forma segura hasta 2 mermas, acumulaciones negativas o efectos de merma de cada objetivo. Se incluyen los estados alterados impurificables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones de estado eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de merma se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
-      "Crecimiento: Todos los aliados obtienen 150 de ataque y 150 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Todos los aliados obtienen 170 de ataque y 170 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 20% de ataque y 5% de vitalidad.\n[*]Demonio retoño:\n[*] 30% de ataque y 10% de vitalidad.\n[*]Megademonio flor:\n[*] 40% de ataque y 30% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 20% de ataque y 5% de vitalidad.\n[*]Demonio retoño:\n[*] 30% de ataque y 10% de vitalidad.\n[*]Megademonio flor:\n[*] 90% de ataque y 30% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Causa un 600% de daño al objetivo.",
-      "Si el objetivo tiene demonios o megademonios, inflige un 500% de daño a un enemigo diferente aleatorio.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
+      "Si el objetivo tiene demonios o megademonios, inflige un 550% de daño a un enemigo diferente aleatorio.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
       "El héroe y los aliados cercanos obtienen un 44% de defensa y un aumento adicional de un 10% cada vez que son golpeados durante 3 turnos hasta un 94% de defensa."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Cosecha bendiciones del objetivo.\n[*]La cosecha elimina de forma segura hasta 2 bendiciones, acumulaciones positivas o efectos de crecimiento de cada objetivo. Se incluyen los efectos obstinados, las bendiciones indescartables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de crecimiento se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
+      "El objetivo recibe una bomba punzante que explota tras 3 turnos e inflige 1600 de daño al objetivo y a los aliados cercanos. (La bomba punzante también explota si es reemplazada o si el objetivo cae derrotado.)",
+      "El objetivo recibe un -45% de defensa durante 3 turnos.",
+      "Inflige un 420% de daño al objetivo."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Inflige un 300% de daño a todos los enemigos.\n[*] Inflige un 5% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 350% de daño en total.",
+      "Inflige un 285% de daño a todos los enemigos.\n[*] Inflige un 10% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 385% de daño en total.",
       "Acumulación +2 (máx.: 10): Todo el daño que reciben todos los enemigos aumenta un 10%. (La purificación reduce las acumulaciones negativas en 1.)",
       "Acumulación +2 (máx.: 10): Todos los aliados reciben un 6% de regeneración de maná. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.\n[*]Descarte reduce las acumulaciones positivas en 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Todos los aliados obtienen un 25% de maná.\n[*] Todos los aliados obtienen un 5% de maná por cada demonio o megademonio que tengan los enemigos hasta un 50% de maná en total. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "Arranca de raíz las mermas de todos los aliados.\n[*]Arrancar de raíz elimina de forma segura hasta 2 estados alterados, acumulaciones negativas o efectos de merma de cada objetivo. Se incluyen los estados alterados impurificables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La purificación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de los estados alterados eliminados. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de merma se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
+      "Todos los aliados regeneran 950 de vitalidad potenciada durante 5 turnos. La vitalidad potenciada puede exceder la VIT máxima."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Inflige un 385% de daño al objetivo y a 5 enemigos aleatorios.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado.\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*] El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.",
+      "Inflige un 395% de daño al objetivo y a 5 enemigos aleatorios.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado.\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*] El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.",
       "Todos los objetivos golpeados obtienen un -55% de precisión durante 5 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Causa un 600% de daño al objetivo.",
-      "Si el objetivo tiene demonios o megademonios, inflige un 300% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
+      "Si el objetivo tiene demonios o megademonios, inflige un 350% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
       "Todos los aliados obtienen un 55% de defensa durante 4 turnos. La duración del efecto se restablece si el poseedor del efecto recibe daño directo de una habilidad especial."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 35% de ataque y 10% de vitalidad.\n[*]Demonio retoño:\n[*] 60% de ataque y 15% de vitalidad.\n[*]Megademonio flor:\n[*] 85% de ataque y 50% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 35% de ataque y 10% de vitalidad.\n[*]Demonio retoño:\n[*] 60% de ataque y 15% de vitalidad.\n[*]Megademonio flor:\n[*] 120% de ataque y 50% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Inflige un 485% de daño a todos los enemigos.\n[*] Inflige un 10% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 585% de daño en total.",
+      "Todo el daño que reciben todos los enemigos aumenta un 30% durante 5 turnos.",
+      "Si el héroe cae derrotado durante los siguientes 5 turnos, resucita al principio de su siguiente turno con un 35% de vitalidad, y se inflige 1000 de daño a todos los enemigos. (Todos los efectos de estado y acumulaciones se eliminan cuando el héroe cae derrotado.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Vidas felinas",
      "text": "[*] Cuando cae derrotado, este personaje tiene un 100% de probabilidad de revivir al comienzo del siguiente turno con un 50% de vitalidad y un 40% de maná.\n[*] Se activa hasta 9 veces. La probabilidad de revivir se reduce con cada activación."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Caricatura",
+     "text": "75% de probabilidad extra de resistir todos los estados alterados, reducciones de maná y descartes de bendiciones."
     }
    ]
   }

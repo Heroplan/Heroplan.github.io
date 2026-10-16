@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Tüm düşmanlardan durum efekti buff'larını güvenle bozar. (Güvenli bozma, kaldırılan durum efekti buff'ının kaldırmadan sonra hasar gibi ikincil efektlerini atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.)",
+      "Tüm müttefiklerin sağlığını 1300 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
+      "Engel Kaynağı: Her turun başında rastgele bir düşmana aşağıdaki efektler uygulanır:\n[*] 3 tur boyunca% -45 mana üretimi.\n[*] 3 tur boyunca Özel Yeteneklere karşı% -60 savunma.\n[*]Engel Kaynağı 4 kez etkinleşir. Bu efekt İnatçıdır. (Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Bu karakterin, mana azaltmalarına karşı bağışıklığı bulunur. Ayrıca her direndiğinde% 10 mana kazanır."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Düşman Buff'ı başına Mana",
-     "text": "Düşman takımının her bir turun başında sahip olduğu aktif durum efekti buff'ı (maksimum 20 buff) için küçük bir miktarda mana kazanır."
+     "id": "mana_on_buff",
+     "title": "Buff'ta Mana Alındı",
+     "text": "Bu karakter bir buff ya da pozitif bir istif aldığında% 5 mana kazanır."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir.",
       "Tüm müttefikler, 5 tur boyunca% 50 saldırı alır. Saldırı, en fazla% 70 olmak üzere her turda% 5 artar.",
       "Tüm müttefikler 5 tur boyunca 1270 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 15 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
       "Her müttefik için eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
       "Tüm müttefikler 4 tur boyunca 612 SP yeniler"
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Tüm düşmanlara% 210 hasar verir.\n[*]Panodaki her Kutsal kalkan başına% 20 ek hasar verir, toplamda maksimum% 450 hasar olabilir.",
-      "Yenilen her müttefikin,% 40 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır."
+      "Yenilen her müttefikin,% 48 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Tüm düşmanlara% 260 hasar verir.\n[*]Panodaki her Kutsal kalkan başına% 25 ek hasar verir, toplamda maksimum% 560 hasar olabilir.",
-      "Yenilen her müttefikin,% 45 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır.",
+      "Yenilen her müttefikin,% 50 SP ile diriltilmesi için% 20 şans bulunur.\n[*]Panodaki her Kutsal kalkanı, toplamda% 65 şans olmak üzere diriltilme şansını% 5 artırır.",
       "Karanlığa ekstra hasar verir."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Her yenilen müttefik% 50 şansla% 30 SP ile dirilir.",
-      "Tüm müttefikler 4 tur boyunca 1424 SP yeniler Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer.",
-      "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 5 mana alır. Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer.",
-      "Element Bağlantısı tüm Doğa müttefiklerine 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz. Bu durum etkisi bozulamaz ve Doğa karakterlerinde 2 tur daha uzun sürer."
+      "Tüm müttefikler 4 tur boyunca 1424 SP yeniler",
+      "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 5 mana alır.",
+      "Element Bağlantısı tüm Doğa müttefiklerine 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Hedefe ve yakındaki düşmanlara% 350 hasar verir ve onlara 35 Delilik efekti uygular.",
       "Hedef ve yakındaki düşmanlar 3 tur boyunca[#Dynamic] 654 [#]Su hasarı alır. Tüm müttefikler verilen Su hasarının% 50 kadarını güçlendirilmiş sağlık olarak emer.",
       "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
-      "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Hedefe% 350 hasar verir.\n[*] Rastgele 2 düşmana ek% 350 hasar verir.",
-      "Vurulan tüm hedefler, her vurulduklarında 15 Delilik alır.",
-      "İstif (Maks: 10): Her vuruş, hedefin aldığı tüm hasarı% 5 artırır (Arındırma, olumsuz istifleri 1 azaltır.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 40 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Hedefe ve yakındaki düşmanlara% 280 hasar verir ve onlara 15 Delilik efekti uygular.",
-      "Hedef ve yakındaki düşmanlar 4 tur boyunca her tur[#Dynamic] 51 [#]-[#Dynamic] 156 [#]artan Lanet hasarı alır. (İlk turda[#Dynamic] 51 [#]hasar verilir. Hasar, tur başına en fazla[#Dynamic] 156 [#]olmak üzere her turda% 45 artar.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 60 Delilik efekti verir.",
-      "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "2 tur boyunca eylemci ve yakındaki müttefikler her turun sonunda rastgele bir düşmana Oküler Işın atar.\n[*] Her Oküler Işın, vurulan düşmana 10 Delilik efekti uygular.\n[*] Her Oküler Işın, vurulan düşmanın Maks. Sağlığını 100 azaltır. Efekt, güçlendirilmiş sağlığa sahip hedeflere karşı daha güçlüdür.",
       "(Maks. sağlık, asıl maks. sağlığın% 30 oranından daha fazla düşemez.\n[*] Güçlendirilmiş sağlık ek 100 daha düşürülür.)",
       "Bu Özel Yeteneği uygulamak, eylemciye 40 Delilik efekti verir.",
-      "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Tüm düşmanların buff'larını güvenli bir şekilde bozar ve kaldırılan her buff için tüm müttefiklerin manasını% 3 artırır.",
-      "Hedef bir Zihin Kurduna dönüşür. Zihin Kurtları% 70 saldırıya,% 70 savunmaya ve aşağıdaki Özel Yeteneğe sahiptir:\n[*]İçimizden Biri (Çok Hızlı)\n[*]Rastgele bir müttefike 75 Delilik uygular.\n[*]Eylemciden Zihin Kurdu engelini kaldırır. (Bu efekt; arındırılana, değiştirilene veya kaldırılana dek devam eder.\n[*]Boss'lar, Titanlar ve Mitsi Titanlar bu durum efektinden etkilenmezler.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 50 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Hedefe% 565 hasar verir.",
       "Hedef 3 tur boyunca[#Dynamic] 1875 [#]Su hasarı alır. Bu efekt İnatçıdır. (Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)",
       "Eylemciye Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)",
-      "Eylemci, 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun buff'larını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+      "Eylemci, 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun buff'larını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Hedefe ve rastgele 5 düşmana% 520 hasar verir.",
       "Vurulan tüm hedeflerin, 5 tur boyunca yeni buff'lara bağışıklığı bulunur ve denenen her buff için 1200 hasar alırlar. Bu efekt İnatçıdır.",
       "Eylemciye Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)",
-      "Eylemci, 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun buff'larını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+      "Eylemci, 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun buff'larını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kindar Musallat",
-     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 250 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
+     "text": "Bu karakter, bir defada maks. sağlığın% 30 oranından daha fazlasını kaybettiğinde aşağıdaki efektler etkinleşir.\n[*]Bu karakter kendine Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)\n[*]Bu karakter 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 300 hasar verir ve onun 1 buff'ını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Element Bağlantısı tüm Kutsal müttefiklere 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Eylemci 5 tur boyunca verilen hasarı% 75 oranında onarır.",
       "Element Bağlantısı tüm Kutsal müttefiklere 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Hedefe ve yakındaki düşmanlara% 450 hasar verir ve onlara 50 Delilik efekti uygular.",
-      "Tüm müttefikler, uygulayacakları bir sonraki Özel Yetenek için ek% 50 saldırı gücü alır. Ek saldırı gücü, toplamda% 150 olmak üzere her turda% 25 artar.",
-      "Tüm müttefikler 4 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[*] Yağmalamayı da içerir.)",
-      "Bu Özel Yeteneği uygulamak, tüm müttefiklere 20 Delilik efekti verir.",
-      "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "4 boyunca tüm düşmanların elementini Ateş olarak değiştirir. (Titanlar ve Mitsi Titanlar bu durum efektinden etkilenmezler.)",
-      "Tüm düşmanlara% 240 hasar verir ve onlara 15 Delilik efekti uygular.",
+      "Tüm düşmanlara% 240 hasar verir.",
       "Eylemci 4 tur boyunca, düşmanların eylemci tarafındaki müttefiklerin Özel Yetenekler kullanmasını engelleyen Alay Etme özelliğini alır. (Alay, tüm düşmanların Alayı olmayan müttefiklerine Özel Yetenek uygulamasını önler.)",
       "Eylemci, tüm durum engellerini ve% 165 hasarı saldırana geri yansıtır ve düşmanın Özel Ateş Yeteneklerinin tüm diğer negatif efektlerini 4 tur boyunca engeller. (Aynı taraftaki karakterlerin, Hizmetkarların ve Canavarların uyguladığı durum efektleri yansıtılamaz.)",
       "Bu Özel Yeteneği uygulamak, eylemciye 55 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Eylemciden% 45 SP ve% 180 saldırı devralan bir Sapkın Mega Hizmetkar çağırır.\n[*]Bir Sapkın Mega Hizmetkardan alınan her darbe hedefe şu durum engelini verir:",
       "[**]Hedef 3 tur boyunca[#Dynamic] 552 [#]Toksin hasarı alır. Güçlendirilmiş sağlığa, Hizmetkarlara veya Mega Hizmetkara sahip hedeflere verilen hasar artar. (Toksin hasarı, güçlendirilmiş sağlığa sahip hedeflere karşı% 100 artırılır.\n[***]Toksin hasarı, hedefin sahip olduğu Hizmetkar veya Mega Hizmetkar başına% 33 artırılır.\n[***]Artırılan hasar maksimum% 199 olabilir.)",
       "[**]Hedefe 10 Delilik efekti uygular.",
-      "Bu Özel Yeteneği uygulamak, eylemciye 50 Delilik efekti verir.",
+      "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Hedefe Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)",
       "Hedef, 5 tur boyunca Boşluk Hayaleti formuna dönüşür. Bu efekt İnatçıdır.\n[*] Boşluk Hayaleti formundayken hedef her turda[#Dynamic] 261 [#]hasar alır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.\n[*]Savaşta sadece bir düşman kaldıysa uygulanamaz.\n[*]Titanlar ve Mitsi Titanlar bu durum efektinden etkilenmezler.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 50 Delilik efekti verir.",
+      "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Hedefe ve yakındaki düşmanlara% 220 hasar verir ve onlara 25 Delilik efekti uygular.",
       "İstif +2 (Maks.: 10): Eylemci her turda% 26 saldırı alır. (Dağıtma, olumlu istifleri 1 azaltır.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
+      "Bu Özel Yeteneği uygulamak, eylemciye 40 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Tüm düşmanlar 5 tur boyunca Korkuya yenik düşer. (Hedef% -40 savunma alır.\n[*] Bir Korku durum efekti eklendiğinde tüm buff'ları ve Büyüme efektlerini kaldırır.\n[*] Hedef, etkisi geçene kadar yeni buff'lar veya Büyüme efektleri kazanamaz.\n[*] Korkusu olan hedef, başka herhangi bir müttefik Özel Yeteneğini uyguladığında rastgele bir müttefike% 250 hasar verir. Her karakter, tur başına bu efekti bir defa tetikleyebilir.)",
       "Soldurma: Tüm düşmanlar -480 saldırı alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilir.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)",
       "Tüm düşmanlara% 420 hasar verir ve onlara 25 Delilik efekti uygular.",
-      "Bu Özel Yeteneği uygulamak, eylemciye 50 Delilik efekti verir.",
+      "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Hedefe% 300 hasar verir.",
-      "Saldırı, savunma buff'larını atlatır. (Buna kontrataklar da dâhildir.)",
-      "Saldırı, vurulan herhangi bir düşmana bitişik olan tüm düşmanlara etki eder.",
-      "Vurulan tüm hedefler, her vurulduklarında 20 Delilik alır.",
-      "1 turdan sonra hedef 4 tur boyunca Felç olur.",
-      "(Boss'lar, Titanlar ve Mitsi Titanlar bu durum efektinden etkilenmezler.)",
-      "(Felç olan düşmanlar saldıramaz veya mana kazanamaz ve% 50 artırılmış hasar alır.\n[*]Felç olduktan sonra efekt arındırılamaz.)",
-      "Bu Özel Yeteneği uygulamak, eylemciye 45 Delilik efekti verir.",
-      "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Hedefe ve yakındaki düşmanlara% 310 hasar verir ve onlara 30 Delilik efekti uygular.",
-      "Hedef ve yakındaki düşmanlar için bir Moldavit Baykuş Canavarı çağırır. Canavar, düşmana her turda% 70 saldırıyla hasar verir.\n[*]Moldavit Baykuş Canavarı şifayı emer. Hedefinin maks. sağlığının% 25 kadarına denk şifa emdiğinde ortadan kaybolur.",
+      "Hedefe ve yakındaki düşmanlara% 350 hasar verir ve onlara 30 Delilik efekti uygular.",
+      "Hedef ve yakındaki düşmanlar için bir Moldavit Baykuş Canavarı çağırır. Canavar, düşmana her turda% 70 saldırıyla hasar verir.\n[*]Moldavit Baykuş Canavarı şifayı emer. Hedefinin maks. sağlığının% 27 kadarına denk şifa emdiğinde ortadan kaybolur.",
       "Moldavit Baykuş Canavarı, her turda sahibine 5 Delilik efekti uygular.",
       "Moldavit Baykuş Canavarı her turun sonunda, hedefinin bozulabilen buff'larından birini bozar.",
       "Bu Özel Yeteneği uygulamak, eylemciye 50 Delilik efekti verir.",
       "(Delilik, bir Özel Yeteneğin hedefini tersine çevirme şansı ekler.\n[*] Delilik etkinleştiğinde düşmanları hedef alan Özel Yetenekler, müttefikleri hedef alır veya tam tersi olur.\n[*] Bir eylemciye yönelik Özel Yetenekler, rastgele bir hedefe uygulanır. Bir hedefe yönelik Özel Yetenekler, eylemciye uygulanır.\n[*] Delilik etkinleştiğinde uygulanınca ekstra efektler veren Pasif Yetenekler ve Birlik Yetenekleri etkinleşmez.\n[*] 100 Deliliğe ulaşmak, mana dolu olduğunda otomatik olarak bir Özel Yetenek uygular.\n[*] Delilik bozulamaz veya arındırılamaz.\n[*] Kahraman doğrudan Özel Yetenekler, Yardımcı Yetenekler, Nesneler veya Kalkanlar tarafından her iyileştirildiğinde Deliliği 10 azaltılabilir. Özel Yeteneklerden gelen doğrudan şifalar, her kullanım için Deliliği yalnızca bir defa azaltabilir.\n[*] Diğer tüm şifalar, Deliliği 1 azaltır.\n[*] Tersine çevrilmiş bir Özel Yetenek uygulandığında Delilik tamamen kaldırılır.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Deliliği Azalt",
-     "text": "Her turun başında bu karakterin mevcut Deliliği 1 azaltılır."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Hizmetkar Yozlaşması",
-     "text": "Deliliğe sahip olan düşmanların her turun sonunda Hizmetkarlarını Canavarlara dönüştürme şansı vardır. 70 Deliliğe ulaşınca dönüşüm otomatik olarak etkinleşir.\n[*] Bir Hizmetkar, Tuhaf Canavara dönüşür:% 15 saldırı,% 18 sağlık, her turda 5 Delilik uygular\n[*] Bir Mega Hizmetkar, Tuhaf Mega Canavara dönüşür:% 115 saldırı,% 68 sağlık, her turda 10 Delilik uygular."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir.",
       "Tüm müttefikler 4 tur boyunca 1080 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
       "Tüm düşmanlar 4 tur boyunca Özel Yetenekler karşıtı% -50 savunma alır. Karanlık karakterlerine karşı bu durum efekti arındırılamaz olur ve 2 tur daha uzun sürer."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Hedef ve yakındaki düşmanlar 2 tur boyunca[#Dynamic] 222 [#]Yakma hasarı alır. Eylemci, verilen Yakma hasarının% 10 kadarını sağlık olarak emer.",
       "[**]Eylemci, sonraki 2 tur sırasında yenilirse bir sonraki turun başında% 40 sağlık ile dirilir. Eylemci yenildiğinde tüm durum efektleri ve istifler kaldırılır.",
       "[*] 2 kat Mana Hücumu:",
-      "[**]Her yenilen müttefik% 50 şansla% 44 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 50 SP ile dirilir.",
       "[**]Tüm müttefikler 3 tur boyunca 795 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
       "[**]Tüm müttefikler 3 boyunca alınan tüm hasarları% -60 oranında azaltır."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir."
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 20 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Birimiz hepimiz için!",
-     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 50 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
+     "text": "Bu karakter Koruma altındaki karakterin yerine hasar alırsa alınan hasarın% 75 kadarını tüm düşmanlara verir. (Maks. hasar: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Eylemci dışındaki tüm müttefikler 4 tur boyunca Kutsal karşıtı% 54 savunma alır."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Eylemciye Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)",
       "Eylemci, 4 tur boyunca Dengesiz Ulu Hayalet formuna dönüşür. Bu efekt İnatçıdır.\n[*] Eylemci, Dengesiz Ulu Hayalet formundayken otomatik olarak her turda rastgele bir düşmana% 175 hasar verir.\n[*] Dengesiz Ulu Hayalet formundayken eylemci, elementi kendininkinden daha güçlü düşmanlardan hasar alabilir. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Tüm müttefikler 3 tur boyunca 609 SP yeniler",
       "[*] 3 kat Mana Hücumu:",
       "[**]Tüm müttefiklerin sağlığını 700 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
-      "[**]Her yenilen müttefik% 50 şansla% 27 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 32 SP ile dirilir.",
       "[**]Tüm müttefikler 4 tur boyunca 952 SP yeniler"
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Tüm düşmanlara% 530 hasar verir.",
+      "Tüm düşmanlara% 600 hasar verir.",
       "Tüm düşmanların maksimum sağlığını 800 düşürür. Efekt, güçlendirilmiş sağlığı olan hedeflere karşı daha güçlüdür. (Maks. sağlık, asıl maks. sağlığın% 30 oranından daha fazla düşemez.\n[*] Güçlendirilmiş sağlık ek 800 daha düşürülür.)",
       "Tüm düşmanlardan buff toplar.\n[*]Hasat her bir hedeften 2 buff'ı, olumlu İstifi veya Büyüme efektini güvenle kaldırır. Buna İnatçı efektler, bozulamayan buff'lar ve Dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 artırılmış sağlık alır. Artırılmış sağlık, maks. SP'yi geçebilir.\n[*]Güvenli kaldırma, kaldırılan durum efekti buff'larındaki kaldırınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce büyüme efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
       "Soldurma: Tüm düşmanlar -540 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilir.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Hedefe ve yakındaki düşmanlara% 350 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 10 hasar verir, toplamda en fazla% 450 hasar verebilir.",
+      "Hedeften ve yakındaki düşmanlardan buff hasat eder.\n[*]Hasat her bir hedeften 2 buff'ı, olumlu İstifi veya Büyüme efektini güvenle kaldırır. Buna İnatçı efektler, bozulamayan buff'lar ve Dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 artırılmış sağlık alır. Artırılmış sağlık, maks. SP'yi geçebilir.\n[*]Güvenli kaldırma, kaldırılan durum efekti buff'larındaki kaldırınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce büyüme efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
+      "Eylemci ve yakındaki müttefikler 4 tur boyunca alınan hasarı% 115 oranında kontratak yapar."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Hedefe% 560 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 15 hasar verir, toplamda en fazla% 710 hasar verebilir.",
+      "Hedef, tur başına kalıcı 400 Kanama hasarı alır. (Bu efekt; arındırılana, değiştirilene veya kaldırılana dek devam eder.)",
+      "Eylemci% 40 saldırı ve 4 tur boyunca her vurulduğunda% 20 artış alır. Maksimum% 140 saldırı olabilir."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Eylemci ve yakındaki müttefikler için% 50 sağlık onarır.",
       "Eylemciden ve yakındaki müttefiklerden Kökten Sökme debuff'ları.\n[*]Kökten Sökme; her bir hedeften 2 debuff'ı, olumsuz İstifi veya Soldurma efektini güvenle kaldırır. Bunlara, arındırılamaz durum engelleri ve dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 güçlendirilmiş sağlık alır. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.\n[*]Güvenli kaldırma; kaldırılan buff'ın sahip olduğu, kaldırılınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce soldurma efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
-      "Büyüme: Tüm müttefikler 150 saldırı ve 150 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilirler.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)"
+      "Büyüme: Tüm müttefikler 170 saldırı ve 170 savunma alır. (Soldurma ve Büyüme, karakterlerin Kabiliyet Skorlarını değiştirebilir. Karakter yenilse bile efekt aynı kalır.\n[*]Ek Soldurma ve Büyüme efektleri, Kabiliyet Skorunu daha fazla değiştirebilir.\n[*]Soldurma ve Büyüme, bozmalar veya arındırmalarla kaldırılamaz.\n[*]Değiştirilmiş Kabiliyet Skorlarının sınırları.\n[*]İlk değerlerinin en az% 30 ve en fazla% 170 kadarı olabilirler.\n[*]Diğer buff'lar ve debuff'lar, değiştirilmiş Kabiliyet Skorlarına uygulanır.\n[*]Bu efekt, canavarlar ve boss'lar tarafından etkinleştirildiğinde daha az etkilidir.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Fide Ulağı",
-     "text": "Her tur rastgele bir düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*]Fide Canavarı:\n[*]% 20 saldırı,% 5 sağlık.\n[*]Filiz Canavarı:\n[*]% 30 saldırı,% 10 sağlık.\n[*]Çiçek Açan Mega Canavar:\n[*]% 40 saldırı,% 30 sağlık."
+     "text": "Her tur rastgele bir düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*]Fide Canavarı:\n[*]% 20 saldırı,% 5 sağlık.\n[*]Filiz Canavarı:\n[*]% 30 saldırı,% 10 sağlık.\n[*]Çiçek Açan Mega Canavar:\n[*]% 90 saldırı,% 30 sağlık."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Hedefe% 600 hasar verir.",
-      "Hedefin Canavarları veya Mega Canavarları varsa farklı rastgele bir düşmana% 500 hasar verir.\n[*]Vurulan her düşmanda bir Fide Canavarı çağırır. (\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.\n[*]Aynı kahramanın üzerinde Hizmetkârlar varsa Canavarlar, Mega Canavarlara evrilemez.)",
+      "Hedefin Canavarları veya Mega Canavarları varsa farklı rastgele bir düşmana% 550 hasar verir.\n[*]Vurulan her düşmanda bir Fide Canavarı çağırır. (\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.\n[*]Aynı kahramanın üzerinde Hizmetkârlar varsa Canavarlar, Mega Canavarlara evrilemez.)",
       "Eylemci ve yakındaki müttefikler 3 tur boyunca% 44 savunma ve her vurulduklarında% 10 artış alır. Maksimum% 94 savunma olabilir."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Hedeften buff'ları hasat eder.\n[*]Hasat her bir hedeften 2 buff'ı, olumlu İstifi veya Büyüme efektini güvenle kaldırır. Buna İnatçı efektler, bozulamayan buff'lar ve Dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 artırılmış sağlık alır. Artırılmış sağlık, maks. SP'yi geçebilir.\n[*]Güvenli kaldırma, kaldırılan durum efekti buff'larındaki kaldırınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce büyüme efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
+      "Hedef bir Haşin Bomba alır. Haşin Bomba, 3 tur sonra patlayarak hedefe ve yakındaki müttefiklere 1600 hasar verir. (Haşin Bomba, değiştirilirse veya hedef yenilgiye uğrarsa da patlar.)",
+      "Hedef 3 tur boyunca% -45 savunma alır.",
+      "Hedefe% 420 hasar verir."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Tüm düşmanlara% 300 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 5 hasar verir, toplamda en fazla% 350 hasar verebilir.",
+      "Tüm düşmanlara% 285 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 10 hasar verir, toplamda en fazla% 385 hasar verebilir.",
       "İstif +2 (Maks: 10): Tüm düşmanların aldığı tüm hasar% 10 artırılır. (Arındırma, olumsuz istifleri 1 azaltır.)",
       "İstif +2 (Maks.: 10): Tüm müttefikler% 6 mana üretimi alır. (Yalnızca kalkan eşleştirmekten üretilen veya turunun sonunda savunma takımından kazanılan manayı etkiler.\n[*]Dağıtma, olumlu istifleri 1 azaltır.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Tüm müttefikler% 25 mana kazanır.\n[*] Tüm müttefikler, Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 5 mana kazanır, toplamda en fazla% 50 mana kazanılabilir. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "Tüm müttefiklerden Kökten Sökme debuff'ları.\n[*]Kökten Sökme; her bir hedeften 2 durum engelini, olumsuz İstifi veya Soldurma efektini güvenle kaldırır. Bunlara, arındırılamaz durum engelleri ve dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 güçlendirilmiş sağlık alır. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.\n[*]Güvenli arındırma; kaldırılan durum engelinin sahip olduğu, kaldırılınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce soldurma efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
+      "Tüm müttefikler 5 tur boyunca 950 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Hedefe ve rastgele 5 düşmana% 385 hasar verir.\n[*]Vurulan her düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.",
+      "Hedefe ve rastgele 5 düşmana% 395 hasar verir.\n[*]Vurulan her düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.",
       "Vurulan tüm hedefler 5 tur boyunca% -55 isabetlilik alır. (Iskalama şansı saldırgan Özel Yetenekleri için de geçerlidir.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Hedefe% 600 hasar verir.",
-      "Hedefin Canavarları veya Mega Canavarları varsa farklı rastgele 2 düşmana% 300 hasar verir.\n[*]Vurulan her düşmanda bir Fide Canavarı çağırır. (\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.\n[*]Aynı kahramanın üzerinde Hizmetkârlar varsa Canavarlar, Mega Canavarlara evrilemez.)",
+      "Hedefin Canavarları veya Mega Canavarları varsa farklı rastgele 2 düşmana% 350 hasar verir.\n[*]Vurulan her düşmanda bir Fide Canavarı çağırır. (\n[*]Fide Canavarı, 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı, 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*] Fide Canavarı:% 50 saldırı,% 15 sağlık.\n[*] Filiz Canavarı:% 75 saldırı,% 20 sağlık.\n[*] Çiçek Açan Mega Canavar:% 150 saldırı,% 70 sağlık.\n[*]Canavar, her turda hedefine hasar verir. Canavar, şifa emdikten sonra ortadan kaybolur. Gereken şifa miktarı hedefin maks. sağlığına bağlıdır.\n[*]Aynı kahramanın üzerinde Hizmetkârlar varsa Canavarlar, Mega Canavarlara evrilemez.)",
       "Tüm müttefikler 4 tur boyunca% 55 savunma alır. Durum efekti sahibi doğrudan Özel Yetenek hasarı alırsa efekt süresi sıfırlanır."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Fide Ulağı",
-     "text": "Her tur rastgele bir düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*]Fide Canavarı:\n[*]% 35 saldırı,% 10 sağlık.\n[*]Filiz Canavarı:\n[*]% 60 saldırı,% 15 sağlık.\n[*]Çiçek Açan Mega Canavar:\n[*]% 85 saldırı,% 50 sağlık."
+     "text": "Her tur rastgele bir düşmana bir Fide Canavarı çağırır.\n[*]Fide Canavarı 3 tur sonra bir Filiz Canavarına evrilir.\n[*]Filiz Canavarı 3 tur sonra bir Çiçek Açan Mega Canavara evrilir.\n[*]Fide Canavarı:\n[*]% 35 saldırı,% 10 sağlık.\n[*]Filiz Canavarı:\n[*]% 60 saldırı,% 15 sağlık.\n[*]Çiçek Açan Mega Canavar:\n[*]% 120 saldırı,% 50 sağlık."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Tüm düşmanlara% 485 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 10 hasar verir, toplamda en fazla% 585 hasar verebilir.",
+      "Tüm düşmanların aldığı tüm hasar 5 boyunca% 30 artırılır.",
+      "Eylemci, sonraki 5 tur sırasında yenilirse bir sonraki turun başında% 35 sağlık ile dirilir ve tüm düşmanlara 1000 hasar verilir. (Eylemci yenildiğinde tüm durum efektleri ve istifler kaldırılır.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dokuz Can",
      "text": "[*]Bu karakter yenildiğinde bir sonraki turunda% 100 şansla% 50 sağlık ve% 40 mana ile dirilir.\n[*] 9 defaya kadar etkinleşir. Dirilme şansı her etkinleşmede azalır."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Çizgi Film",
+     "text": "Tüm durum engellerine, mana düşüşlerine ve buff bozmalarına direnmek için% 75 ekstra şans."
     }
    ]
   }

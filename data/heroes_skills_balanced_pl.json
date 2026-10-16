@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Bezpiecznie usuwa z wszystkich wrogów wzmocnienia ze statusu. (Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia przy usunięciu, nakłądane przez usuwane efekty wzmocnień statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.)",
+      "Wzmacnia zdrowie wszystkich sojuszników o 1300. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
+      "Źródło dolegliwości: Na początku każdej tury na losowego wroga rzucane są następujące efekty:\n[*] -45% do regeneracji many na okres 3 tur.\n[*] -60% do obrony przeciwko umiejętnościom specjalnym na okres 3 tur.\n[*]Źródło dolegliwości aktywuje się 4 razy. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Ten bohater ma odporność na zmniejszenia many i zyskuje 10% many za każde odparcie."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana za każde wzmocnienie wroga",
-     "text": "Na początku każdej tury zyskuje niewielką ilość many za każde aktywne wzmocnienie ze statusu drużyny przeciwnej (maksymalna liczba wzmocnień: 20)."
+     "id": "mana_on_buff",
+     "title": "Mana za wzmocnienie odebrana",
+     "text": "Ta postać zyskuje 5% many, gdy zostaje wzmocniona lub gdy kumulacja będzie pozytywna."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 20% PŻ.",
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 24% PŻ.",
       "Wszyscy sojusznicy otrzymują 50% do ataku na czas 5 tur. Atak zwiększa się o 5% w każdej turze, maksymalnie do 70%.",
       "Wszyscy sojusznicy regenerują 1270 wzmocnionego zdrowia przez 5 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 15% PŻ.",
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 20% PŻ.",
       "Przywołuje elfiego pomocnika za każdego sojusznika z 10% PŻ i 10% ataku przejętymi od bohatera.",
       "Wszyscy sojusznicy regenerują 612 PŻ przez 4 tur(y)."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Zadaje 210% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowo 20% obrażeń za każdą tarczę światłości na planszy, łącznie do 450% obrażeń.",
-      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 40% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%."
+      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 48% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Zadaje 260% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowo 25% obrażeń za każdą tarczę światłości na planszy, łącznie do 560% obrażeń.",
-      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 45% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%.",
+      "Każdy pokonany sojusznik ma 20% szans na ożywienie z 50% PŻ.\n[*]Każda tarcza światłości na planszy zwiększa szansę ożywienia o 5% , maks. do 65%.",
       "Zadaje dodatkowe obrażenia przeciwko mrokowi."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 30% PŻ.",
-      "Wszyscy sojusznicy regenerują 1424 PŻ przez 4 tur(y). Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury.",
-      "Podczas następnych 4 tur wszyscy sojusznicy otrzymują 5% many na końcu tury. Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury.",
-      "Spoiwo żywiołów daje wszystkim sojusznikom natury 15% do ataku i 15% do obrony przez 6 tur(y). Efekt nie może być odwołany czarami. Efekt ze statusu jest nieodwoływalny i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury."
+      "Wszyscy sojusznicy regenerują 1424 PŻ przez 4 tur(y).",
+      "Podczas następnych 4 tur wszyscy sojusznicy otrzymują 5% many na końcu tury.",
+      "Spoiwo żywiołów daje wszystkim sojusznikom natury 15% do ataku i 15% do obrony przez 6 tur(y). Efekt nie może być odwołany czarami."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Zadaje celowi i pobliskim wrogom 350% obrażeń i nakłada na nich 35 pkt. obłędu.",
       "Cel oraz pobliscy wrogowie odnoszą[#Dynamic] 654 [#]pkt. obrażeń od wody przez okres 3 tur. Wszyscy sojusznicy pochłaniają 50% zadanych obrażeń od wody w postaci wzmocnionego zdrowia.",
       "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
-      "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Zadaje 350% obrażeń celowi.\n[*] Zadaje dodatkowe 350% obrażeń 2 losowym wrogom.",
-      "Wszystkie trafione cele otrzymują 15 pkt. obłędu po każdym trafieniu.",
-      "Kumulacja (Maks.: 10): Każde trafienie zwiększa wszystkie obrażenia odnoszone przez cel o 5% (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 40 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Zadaje celowi i pobliskim wrogom 280% obrażeń i nakłada na nich 15 pkt. obłędu.",
-      "Cel i pobliscy wrogowie odnoszą[#Dynamic] 51 [#]-[#Dynamic] 156 [#]pkt. narastających obrażeń od klątwy przez okres 4 tur. (W pierwszej turze zadanych zostaje[#Dynamic] 51 [#]pkt. obrażeń. Obrażenia rosną co turę o 45% , do maksymalnie[#Dynamic] 156 [#]pkt. obrażeń na turę.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 60 pkt. obłędu na rzucającego.",
-      "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Na końcu każdej tury rzucający i pobliscy sojusznicy strzelają okularnym promieniem w losowego wroga przez 2 tur(y).\n[*] Każdy okularny promień nakłada 10 pkt. obłędu na trafionego przeciwnika.\n[*] Każdy okularny promień zmniejsza maksymalne zdrowie trafionego wroga o 100 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem.",
       "(Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 100 pkt.)",
       "Rzucenie tej umiejętności specjalnej nakłada 40 pkt. obłędu na rzucającego.",
-      "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Bezpiecznie odwołuje wzmocnienia ze wszystkich wrogów i zwiększa manę wszystkich sojuszników o 3% za każde usunięte wzmocnienie.",
-      "Cel zmienia się w robaka umysłu. Robaki umysłu posiadają 70% ataku, 70% obrony i następującą specjalną zdolność:\n[*]Jeden z nas (Bardzo szybka)\n[*]Zadaje 75 pkt. obłędu jednemu losowemu sojusznikowi.\n[*]Usuwa robaka umysłu z rzucającego. (Ten efekt utrzymuje się, dopóki nie zostanie oczyszczony, zastąpiony lub usunięty.\n[*]Bossowie, tytani i mityczni tytani nie odczuwają tego efektu statusu.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Zadaje 565% obrażeń celowi.",
       "Cel odnosi[#Dynamic] 1875 [#]pkt. obrażeń od wody w ciągu 3 tur. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Zadaje 520% obrażeń celowi i 5 losowym wrogom.",
       "Wszystkie trafione cele nie mogą otrzymywać wzmocnień ze statusu przez okres 5 tur i otrzymują 1200 pkt. obrażeń za każdą próbę nałożenia wzmocnienia. Ten efekt jest nieustępliwy.",
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 250% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Spoiwo żywiołów daje wszystkim sojusznikom światłości 15% do ataku i 15% do obrony przez 6 tur(y). Efekt nie może być odwołany czarami."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Bohater odzyskuje 75% zadanych normalnych obrażeń przez 5 tur(y).",
       "Spoiwo żywiołów daje wszystkim sojusznikom światłości 15% do ataku i 15% do obrony przez 6 tur(y). Efekt nie może być odwołany czarami."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Zadaje celowi i pobliskim wrogom 450% obrażeń i nakłada na nich 50 pkt. obłędu.",
-      "Wszyscy sojusznicy otrzymują dodatkowe 50% siły ataku do następnej użytej umiejętności specjalnej. Ilość otrzymywanej siły ataku zwiększa się co turę o 25% aż do maksymalnej łącznej wartości 150%.",
-      "Wszyscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 4 tur(y). (Odporność obejmuje również ten efekt.\n[*] Obejmuje także ograbienie.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 20 pkt. obłędu na wszystkich sojuszników.",
-      "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Zmienia żywioł wszystkich wrogów na ogień na 4 tur(y). (Tytani i mityczni tytani nie odczuwają tego efektu statusu.)",
-      "Zadaje wszystkim wrogom 240% obrażeń i nakłada na nich 15 pkt. obłędu.",
+      "Zadaje 240% obrażeń wszystkim przeciwnikom.",
       "Bohater zyskuje efekt Prowokacji, który uniemożliwia wrogom używanie umiejętności specjalnych na sojusznikach bohatera przez 4 tur(y). (Prowokacja sprawia, że żaden z wrogów nie może użyć umiejętności specjalnej na sojusznikach, którzy nie są pod wpływem Prowokacji.)",
       "Rzucający odbija wszystkie dolegliwości ze statusu i 165% obrażeń w atakującego i blokuje inne negatywne efekty od wrogich umiejętności specjalnych ognia przez okres 4 tur. (Efekty ze statusu rzucone przez postaci, sojuszników i potwory po tej samej stronie nie mogą zostać odbite.)",
       "Rzucenie tej umiejętności specjalnej nakłada 55 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Wzywa mega pomocnika aberrację posiadającego 45% PŻ i 180% ataku rzucającego.\n[*]Każde trafienie przez mega pomocnika aberrację nakłada na cel następującą dolegliwość ze statusu:",
       "[**]Cel otrzymuje[#Dynamic] 552 [#]pkt. obrażeń od toksyn w ciągu 3 tur. Obrażenia są zwiększone przeciwko celom ze wzmocnionym zdrowiem, pomocnikami lub mega pomocnikiem. (Obrażenia od toksyn są zwiększone o 100% przeciwko celom ze wzmocnionym zdrowiem.\n[***]Każdy pomocnik lub mega pomocnik posiadany przez cel zwiększa obrażenia od toksyn o dodatkowe 33%.\n[***]Obrażenia mogą być większe o maksymalnie 199%.)",
       "[**]Nakłada 10 pkt. obłędu na cel.",
-      "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Rzuca pełne usunięcie na cel. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Cel przeobraża się w ducha otchłani na okres 5 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 261 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Zadaje celowi i pobliskim wrogom 220% obrażeń i nakłada na nich 25 pkt. obłędu.",
       "Kumulacja +2 (maks.: 10): inicjator otrzymuje 26% siły ataku. (Odczarowanie zmniejsza liczbę pozytywnych kumulacji o 1.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 40 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Wszyscy wrogowie zostają przestraszeni na okres 5 tur. (Cel otrzymuje -40% do obrony.\n[*] usuwa wszystkie odwoływalne wzmocnienia i efekty wzrostu, gdy zostanie dodany efekt strachu.\n[*] Przez okres trwania cel nie może otrzymać nowych wzmocnień i efektów wzrostu.\n[*] Przestraszony cel zadaje losowemu sojusznikowi 250% obrażeń za każdym razem, gdy inny sojusznik użyje umiejętności specjalnej. Każda postać może aktywować ten efekt raz na turę.)",
       "Susza: wszyscy wrogowie otrzymują -480 do ataku. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)",
       "Zadaje wszystkim wrogom 420% obrażeń i nakłada na nich 25 pkt. obłędu.",
-      "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Zadaje 300% obrażeń celowi.",
-      "Atak pomija efekty obronne. (Obejmuje to także kontrataki.)",
-      "Atak przechodzi kolejno po wszystkich wrogach sąsiadujących z trafionymi nieprzyjaciółmi.",
-      "Wszystkie trafione cele otrzymują 20 pkt. obłędu po każdym trafieniu.",
-      "Po upływie 1 tury cel zostaje sparaliżowany na okres 4 tur.",
-      "(Bossowie, tytani i mityczni tytani nie odczuwają tego efektu statusu.)",
-      "(Sparaliżowani wrogowie nie mogą atakować ani zyskiwać many i otrzymują obrażenia zwiększone o 50%.\n[*]Po sparaliżowaniu efektu nie można oczyścić.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
-      "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Zadaje celowi i pobliskim wrogom 310% obrażeń i nakłada na nich 30 pkt. obłędu.",
-      "Wzywa potwora mołdawitową sowę na cel i pobliskich wrogów. Potwór zadaje przeciwnikowi obrażenia o wartości 70% ataku w każdej turze.\n[*]Potwór mołdawitowa sowa wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 25% maksymalnego zdrowia celu.",
+      "Zadaje celowi i pobliskim wrogom 350% obrażeń i nakłada na nich 30 pkt. obłędu.",
+      "Wzywa potwora mołdawitową sowę na cel i pobliskich wrogów. Potwór zadaje przeciwnikowi obrażenia o wartości 70% ataku w każdej turze.\n[*]Potwór mołdawitowa sowa wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 27% maksymalnego zdrowia celu.",
       "Potwór mołdawitowa sowa co turę nakłada 5 pkt. obłędu na posiadacza.",
       "Pod koniec każdej tury potwór mołdawitowa sowa odwołuje jedno z możliwych do odwołania wzmocnień z celu.",
       "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Zmniejszenie obłędu",
-     "text": "Na początku każdej tury bieżący obłęd tej postaci zostaje zmniejszony o 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Spaczenie pomocnika",
-     "text": "Na koniec każdej tury wrogowie pod wpływem obłędu mają szansę na przemianę ich pomocników w potwory.Osiągnięcie 70 pkt. obłędu automatycznie aktywuje przemianę.\n[*] Pomocnik zostanie przemieniony w nadprzyrodzonego potwora: 15% ataku, 18% zdrowia, nakłada 5 pkt. obłędu co turę.\n[*] Mega pomocnik zostanie przemieniony w nadprzyrodzonego mega potwora: 115% ataku, 68% zdrowia, nakłada 10 pkt. obłędu co turę."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 20% PŻ.",
+      "Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 24% PŻ.",
       "Wszyscy sojusznicy regenerują 1080 wzmocnionego zdrowia przez 4 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
       "Wszyscy wrogowie otrzymują -50% do obrony przeciwko umiejętnościom specjalnym przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Cel oraz pobliscy wrogowie odnoszą[#Dynamic] 222 [#]pkt. obrażeń od oparzeń przez okres 2 tur. Rzucający pochłania 10% zadanych obrażeń od oparzeń w postaci PŻ.",
       "[**]Jeśli rzucający zostanie pokonany w trakcie kolejnych 2 tur, zostanie wskrzeszony na początku kolejnej tury z 40% zdrowia. W razie pokonania rzucającego wszystkie efekty statusu i kumulacji zostaną anulowane.",
       "[*]Ładunek many x 2:",
-      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 44% PŻ.",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 50% PŻ.",
       "[**]Wszyscy sojusznicy regenerują 795 wzmocnionego zdrowia przez 3 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
       "[**]Wszyscy sojusznicy odnoszą -60% mniej obrażeń przez 3 tur(y)."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń."
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 20% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Jeden za wszystkich!",
-     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 50% otrzymanych obrażeń. (Maks. obrażenia: 600)"
+     "text": "Gdy ta postać otrzyma obrażenia zamiast postaci znajdującej się za osłoną, zadaje wszystkim wrogom 75% otrzymanych obrażeń. (Maks. obrażenia: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Wszyscy sojusznicy z wyjątkiem rzucającego otrzymują 54% do obrony przeciwko światłości przez okres 4 tur."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Bohater przeobraża się w strasznego ducha na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią strasznego ducha automatycznie zadaje 175% obrażeń przeciw losowemu wrogowi w każdej turze.\n[*] Pod tą postacią rzucający może otrzymywać obrażenia od wrogów, którzych żywioł jest silny przeciwko jego żywiołowi. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Wszyscy sojusznicy regenerują 609 PŻ przez 3 tur(y).",
       "[*]Ładunek many x 3:",
       "[**]Wzmacnia zdrowie wszystkich sojuszników o 700. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
-      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 27% PŻ.",
+      "[**]Każdy pokonany sojusznik ma 50% szans na wskrzeszenie z 32% PŻ.",
       "[**]Wszyscy sojusznicy regenerują 952 PŻ przez 4 tur(y)."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Zadaje 530% obrażeń wszystkim przeciwnikom.",
+      "Zadaje 600% obrażeń wszystkim przeciwnikom.",
       "Obniża maks. poziom zdrowia wszystkich wrogów o 800 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 800 pkt.)",
       "Zabiera wzmocnienia ze wszystkich wrogów.\n[*]Żniwo bezpiecznie usuwa z każdego celu do 2 wzmocnień, pozytywnych kumulacji lub efektów wzrostu. Obejmuje to wzmocnienia i efekty tańca, które są nieustępliwe lub których nie można rozproszyć.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane wzmocnienia statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty wzrostu. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
       "Susza: wszyscy wrogowie otrzymują -540 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Zadaje 350% obrażeń celowi i pobliskim wrogom.\n[*]Zadaje dodatkowe 10% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 450% obrażeń.",
+      "Zabiera wzmocnienia z celu i pobliskich wrogów.\n[*]Żniwo bezpiecznie usuwa z każdego celu do 2 wzmocnień, pozytywnych kumulacji lub efektów wzrostu. Obejmuje to wzmocnienia i efekty tańca, które są nieustępliwe lub których nie można rozproszyć.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane wzmocnienia statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty wzrostu. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
+      "Bohater i pobliscy sojusznicy kontratakują z siłą 115% otrzymanych obrażeń przez 4 tur(y)."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Zadaje 560% obrażeń celowi.\n[*]Zadaje dodatkowe 15% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 710% obrażeń.",
+      "Cel otrzymuje utrzymujące się 400 pkt. obrażeń od krwawienia co turę. (Ten efekt utrzymuje się, dopóki nie zostanie oczyszczony, zastąpiony lub usunięty.)",
+      "Rzucający otrzymuje 40% do ataku i dodatkowe 20% za każde otrzymane trafienie przez 4 tur(y). Atak może wzrosnąć maksymalnie do 140%."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Regeneruje 50% zdrowia bohatera i pobliskich sojuszników.",
       "Wykorzenia osłabienia z rzucającego i pobliskich sojuszników.\n[*]Wykorzenienie bezpiecznie usuwa z każdego celu do 2 osłabień, kumulacji negatywnych lub efektów suszy. Obejmuje to nieoczyszczalne dolegliwości ze statusu oraz efekty tańca.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia przy usunięciu nakładane przez usunięte wzmocnienia efektów ze statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty suszy. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
-      "Wzrost: wszyscy sojusznicy otrzymują 150 do ataku i 150 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)"
+      "Wzrost: wszyscy sojusznicy otrzymują 170 do ataku i 170 do obrony. (Susza i wzrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i wzrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Suszy i wzrostu nie można usunąć odwołaniem ani oczyszczeniem.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 20% ataku, 5% zdrowia.\n[*]Kiełkujący potwór:\n[*] 30% ataku, 10% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 40% ataku, 30% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 20% ataku, 5% zdrowia.\n[*]Kiełkujący potwór:\n[*] 30% ataku, 10% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 90% ataku, 30% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Zadaje 600% obrażeń celowi.",
-      "Jeśli cel ma potwory lub mega potwory, zadaje 500% obrażeń innemu losowemu wrogowi.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
+      "Jeśli cel ma potwory lub mega potwory, zadaje 550% obrażeń innemu losowemu wrogowi.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
       "Rzucający i pobliscy sojusznicy otrzymują 44% do obrony i dodatkowe 10% za każde otrzymane trafienie przez 3 tur(y). Obrona może wzrosnąć maksymalnie do 94%."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Zabiera wzmocnienia z celu.\n[*]Żniwo bezpiecznie usuwa z każdego celu do 2 wzmocnień, pozytywnych kumulacji lub efektów wzrostu. Obejmuje to wzmocnienia i efekty tańca, które są nieustępliwe lub których nie można rozproszyć.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane wzmocnienia statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty wzrostu. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
+      "Cel otrzymuje śmierdzącą bombę. Śmierdząca bomba wybucha po 3 turach i zadaje 1600 obrażeń celowi i pobliskim sojusznikom. (Śmierdząca bomba wybucha również wtedy, gdy zostanie zastąpiona albo gdy cel zostanie pokonany.)",
+      "Cel otrzymuje -45% do obrony przez 3 tur(y).",
+      "Zadaje celowi 420% obrażeń."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Zadaje 300% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowe 5% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 350% obrażeń.",
+      "Zadaje 285% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowe 10% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 385% obrażeń.",
       "Kumulacja +2 (Maks.: 10): Wszystkie obrażenia odnoszone przez wszystkich wrogów są o 10% większe. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)",
       "Kumulacja +2 (maks.: 10): wszyscy sojusznicy otrzymują 6% regeneracji many. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.\n[*]Odczarowanie zmniejsza liczbę pozytywnych kumulacji o 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Wszyscy sojusznicy zyskują 25% many.\n[*]Wszyscy sojusznicy zyskują dodatkowo 5% many za każdego potwora i mega potwora posiadanego przez wrogów, maksymalnie do 50% many łącznie. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "Wykorzenia osłabienia ze wszystkich sojuszników.\n[*]Wykorzenienie bezpiecznie usuwa z każdego celu do 2 dolegliwości ze statusu, kumulacji negatywnych lub efektów suszy. Obejmuje to nieoczyszczalne dolegliwości ze statusu oraz efekty tańca.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne oczyszczenie pomija efekty drugorzędne, takie jak obrażenia przy usunięciu nakładane przez usuniętą dolegliwość ze statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty suszy. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
+      "Wszyscy sojusznicy regenerują 950 wzmocnionego zdrowia przez 5 tur(y). Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Zadaje 385% obrażeń celowi i 5 losowym wrogom.\n[*]Wzywa potwora sadzonkę na każdego trafionego wroga.\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.",
+      "Zadaje 395% obrażeń celowi i 5 losowym wrogom.\n[*]Wzywa potwora sadzonkę na każdego trafionego wroga.\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.",
       "Wszystkie trafione cele otrzymują -55% do celności przez okres 5 tur. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Zadaje 600% obrażeń celowi.",
-      "Jeśli cel ma potwory lub mega potwory, zadaje 300% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
+      "Jeśli cel ma potwory lub mega potwory, zadaje 350% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
       "Wszyscy sojusznicy otrzymują 55% do obrony na okres 4 tur. Czas trwania efektu jest resetowany, jeśli jednostka z nałożonym efektem ze statusu zostanie trafiona bezpośrednimi obrażeniami od umiejętności specjalnej."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 35% ataku, 10% zdrowia.\n[*]Kiełkujący potwór:\n[*] 60% ataku, 15% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 85% ataku, 50% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 35% ataku, 10% zdrowia.\n[*]Kiełkujący potwór:\n[*] 60% ataku, 15% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 120% ataku, 50% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Zadaje 485% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowe 10% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 585% obrażeń.",
+      "Wszystkie obrażenia zadane wszystkim przeciwnikom są 30% większe przez 5 tur(y).",
+      "Jeśli rzucający zostanie pokonany w trakcie kolejnych 5 tur, zostanie wskrzeszony na początku kolejnej tury z 35% zdrowia, a wszyscy wrogowie odniosą 1000 pkt. obrażeń. (Po pokonaniu rzucającego usuwane są wszystkie efekty ze statusu i kumulacje.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Dziewięć żyć",
      "text": "[*]Po pokonaniu ta postać ma 100% szans na wskrzeszenie na początku swojej następnej tury z 50% zdrowia i 40% many.\n[*]Aktywuje się maksymalnie 9 razy. Szanse na wskrzeszenie maleją z każdą aktywacją."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Kreskówkowi",
+     "text": "75% dodatkowych szans na odporność na wszystkie dolegliwości ze statusu, wyssania many i odwołania wzmocnień."
     }
    ]
   }

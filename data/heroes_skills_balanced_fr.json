@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Dissipe de façon sûre les bonus de tous les ennemis. (La dissipation sûre permet d'éviter les effets secondaires de la suppression d'un bonus, par exemple les dégâts lors de la suppression. Les effets externes comme les effets passifs ou de famille peuvent toujours s'appliquer.)",
+      "Booste la santé de tous les alliés de 1300. Le maximum de PV peut être dépassé.",
+      "Source de maux: les effets suivants sont infligés à un ennemi aléatoire au début de chaque tour:\n[*] -45% de génération de mana pendant 3 tours.\n[*] -60% de défense contre les compétences spéciales pendant 3 tours.\n[*]La source de maux s'active 4 fois. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Ce personnage est immunisé contre les réductions de mana et reçoit 10% de mana à chaque fois qu'il résiste."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana pour chaque bonus ennemi",
-     "text": "Au début de chaque tour, octroie une petite quantité de mana pour chaque bonus actif dont bénéficie l'équipe ennemie (20 bonus au maximum)."
+     "id": "mana_on_buff",
+     "title": "Mana lors de bonus",
+     "text": "Ce personne gagne 5% de mana lorsqu'il reçoit un bonus ou un cumul positif."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 20% de PV.",
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 24% de PV.",
       "Tous les alliés reçoivent 50% d'attaque pendant 5 tours. L'attaque augmente de 5% à chaque tour, jusqu'à 70%.",
       "La santé de tous les alliés est boostée de 1270 sur 5 tours. Le maximum de PV peut être dépassé."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 15% de PV.",
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 20% de PV.",
       "Invoque un sbire lutin pour chaque allié avec 10% de PV et 10% d'attaque hérités du lanceur.",
       "Tous les alliés récupèrent 612 PV sur 4 tours."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Inflige 210% de dégâts à tous les ennemis.\n[*]Inflige 20% de dégâts supplémentaires pour chaque bouclier de type Sacré sur le plateau, jusqu'à un total 450% de dégâts.",
-      "Chaque allié vaincu a 20% de chances d'être ranimé avec 40% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%."
+      "Chaque allié vaincu a 20% de chances d'être ranimé avec 48% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Inflige 260% de dégâts à tous les ennemis.\n[*]Inflige 25% de dégâts supplémentaires pour chaque bouclier de type Sacré sur le plateau, jusqu'à un total 560% de dégâts.",
-      "Chaque allié vaincu a 20% de chances d'être ranimé avec 45% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%.",
+      "Chaque allié vaincu a 20% de chances d'être ranimé avec 50% de PV.\n[*]Chaque bouclier sacré sur le plateau augmente la probabilité de 5%, jusqu'à un maximum de 65%.",
       "Inflige des dégâts supplémentaires contre l'élément sombre."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Chaque allié vaincu a 50% de chances de revenir à la vie avec 30% de PV.",
-      "Tous les alliés récupèrent 1424 PV sur 4 tours. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature.",
-      "Pendant les 4 tours suivants, tous les alliés reçoivent 5% de mana à la fin du tour. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature.",
-      "Lien élémentaire donne à tous les alliés Nature 15% d'attaque et 15% de défense pour 6 tours. Cet effet ne peut pas être dissipé. Cet effet appliqué ne peut pas être dissipé et dure 2 tours de plus sur les personnages de nature."
+      "Tous les alliés récupèrent 1424 PV sur 4 tours.",
+      "Pendant les 4 tours suivants, tous les alliés reçoivent 5% de mana à la fin du tour.",
+      "Lien élémentaire donne à tous les alliés Nature 15% d'attaque et 15% de défense pour 6 tours. Cet effet ne peut pas être dissipé."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Inflige 350% de dégâts et 35 point(s) de folie à la cible et aux ennemis proches.",
       "La cible et les ennemis proches reçoivent[#Dynamic] 654 [#]points de dégâts d'eau en 3 tours. La santé de tous les alliés est boostée à hauteur de 50% des dégâts d'eau.",
       "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
-      "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Inflige 350% de dégâts à la cible.\n[*] Inflige 350% de dégâts supplémentaires à 2 ennemis aléatoires.",
-      "Toutes les cibles touchés subissent 15 point(s) de folie à chaque fois qu'elles sont touchées.",
-      "Cumul (maximum: 10): chaque coup augmente tous les dégâts subis par la cible de 5%. (La purification réduit les cumuls négatifs de 1.)",
-      "Utiliser cette compétence spéciale inflige 40 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Inflige 280% de dégâts et 15 point(s) de folie à la cible et aux ennemis proches.",
-      "La cible et les ennemis proches subissent[#Dynamic] 51 [#]-[#Dynamic] 156 [#]points de dégâts de malédiction sur 4 tours, qui augmentent à chaque tour. (Pendant le premier tour,[#Dynamic] 51 [#]points de dégâts sont infligés. Les dégâts augmentent de 45% à chaque tour, jusqu'à[#Dynamic] 156 [#]points de dégâts par tour.)",
-      "Utiliser cette compétence spéciale inflige 60 point(s) de folie au lanceur.",
-      "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "À la fin de chaque tour, le lanceur et les alliés proches tirent un rayon oculaire sur un ennemi aléatoire pendant 2 tours.\n[*] Chaque rayon oculaire inflige 10 point(s) de folie à l'ennemi touché.\n[*] Chaque rayon oculaire réduit la santé maximale de l'ennemi touché de 100. L'effet est plus puissant sur les cibles dont la santé est boostée.",
       "(La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 100.)",
       "Utiliser cette compétence spéciale inflige 40 point(s) de folie au lanceur.",
-      "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Dissipe de façon sûre les bonus de tous les ennemis et augmente le mana de tous les alliés de 3% pour chaque bonus dissipé.",
-      "La cible se transforme en ver de l'esprit. Le ver de l'esprit a 70% d'attaque, 70% de défense et la compétence spéciale suivante:\n[*]L'un de nous (Très rapide)\n[*]Inflige 75 points de folie à un allié aléatoire.\n[*]Retire le malus Ver de l'esprit du lanceur. (L'effet dure jusqu'à ce qu'il ait été purifié, remplacé ou supprimé.\n[*]Les boss, les titans et les titans mythiques ne sont pas affectés par cet effet.)",
-      "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Inflige 565% de dégâts à la cible.",
       "La cible reçoit[#Dynamic] 1875 [#]points de dégâts d'eau sur 3 tours. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Inflige 520% de dégâts à la cible et à 5 ennemis aléatoires.",
       "Les cibles touchées ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 5 tours, et elles subissent 1200 points de dégâts à la place de chaque bonus qui leur est conféré. Cet effet est obstiné.",
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 250% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Lien élémentaire donne à tous les alliés Sacrés 15% d'attaque et 15% de défense pour 6 tours. Cet effet ne peut pas être dissipé."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Le lanceur récupère 75% des dégâts normaux infligés pour 5 tours.",
       "Lien élémentaire donne à tous les alliés Sacrés 15% d'attaque et 15% de défense pour 6 tours. Cet effet ne peut pas être dissipé."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Inflige 450% de dégâts et 50 point(s) de folie à la cible et aux ennemis proches.",
-      "La puissance d'attaque de la compétence spéciale suivante de tous les alliés est augmentée de 50%. Le bonus augmente de 25% à chaque tour, jusqu'à un maximum de 150%.",
-      "Tous les alliés sont immunisés contre les retraits et les transferts de bonus pendant 4 tours. (L'immunité concerne également cet effet.\n[*] Concerne également Pillage.)",
-      "Utiliser cette compétence spéciale inflige 20 point(s) de folie à tous les alliés.",
-      "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Change l'élément de tous les ennemis en feu pour 4 tours. (Les titans et les titans mythiques ne sont pas affectés par cet effet.)",
-      "Inflige 240% de dégâts et 15 point(s) de folie à tous les ennemis.",
+      "Inflige 240% de dégâts à tous les ennemis.",
       "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 4 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
       "Le lanceur renvoie les effets négatifs ainsi que 165% des dégâts aux attaquants, et bloque les autres effets négatifs des compétences spéciales de feu ennemies pendant 4 tours. (Les effets lancés par les personnages, sbires et démons alliés ne peuvent pas être renvoyés.)",
       "Utiliser cette compétence spéciale inflige 55 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Invoque un méga sbire aberration avec 45% de PV et 180% d'attaque hérités du lanceur.\n[*]Chaque coup d'un méga sbire aberration donne l'effet négatif suivant à la cible:",
       "[**]La cible reçoit[#Dynamic] 552 [#]points de dégâts de toxines en 3 tours. Les dégâts sont plus importants sur les cibles dont la santé est boostée ou qui possèdent des sbires ou des méga sbires. (Les dégâts de toxines augmentent de 100% pour les cibles dont la santé est boostée.\n[***]Les dégâts de toxines augmentent de 33% pour chaque sbire ou méga sbire possédé par la cible.\n[***]L'augmentation maximale est de 199%.)",
       "[**]Inflige 10 point(s) de folie à la cible.",
-      "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Applique Suppression totale à la cible. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "La cible passe en forme de fantôme abyssal pour 5 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 261 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)",
-      "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Inflige 220% de dégâts et 25 point(s) de folie à la cible et aux ennemis proches.",
       "Cumul +2 (max: 10): Le lanceur reçoit 26% d'attaque. (La dissipation réduit les cumuls positifs de 1.)",
-      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 40 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Tous les ennemis succombent à la peur pendant 5 tours. (La cible reçoit -40% de défense.\n[*] Supprime tous les bonus et effets de croissance dissipables lorsqu'un effet Peur est ajouté.\n[*] La cible ne peut pas gagner de nouveaux buffs ou de nouveaux effets de croissance pendant la durée de l'effet.\n[*] La cible victime de Peur inflige 250% de dégâts à un allié aléatoire à chaque fois qu'un autre allié lance sa compétence spéciale. Chaque personnage peut déclencher cet effet une fois par tour.)",
       "Flétrissement: tous les ennemis reçoivent -480 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Inflige 420% de dégâts et 25 point(s) de folie à tous les ennemis.",
-      "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Inflige 300% de dégâts à la cible.",
-      "L'attaque contourne les bonus défensifs. (Les contre-attaques sont également concernées.)",
-      "L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
-      "Toutes les cibles touchés subissent 20 point(s) de folie à chaque fois qu'elles sont touchées.",
-      "Au bout de 1 tour, la cible est paralysée pour 4 tours.",
-      "(Les boss, les titans et les titans mythiques ne sont pas affectés par cet effet.)",
-      "(Les ennemis paralysés ne peuvent ni attaquer ni gagner de mana, et les dégâts qu'ils subissent sont augmentés de 50%.\n[*]Une fois que la paralysie a commencé, cet effet ne peut pas être purifié.)",
-      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
-      "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Inflige 310% de dégâts et 30 point(s) de folie à la cible et aux ennemis proches.",
-      "Invoque un démon hibou de moldavite pour la cible et les ennemis proches. Il inflige des dégâts à l'ennemi à hauteur de 70% d'attaque à chaque tour.\n[*]Le démon hibou de moldavite absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 25% de la santé maximum de sa cible",
+      "Inflige 350% de dégâts et 30 point(s) de folie à la cible et aux ennemis proches.",
+      "Invoque un démon hibou de moldavite pour la cible et les ennemis proches. Il inflige des dégâts à l'ennemi à hauteur de 70% d'attaque à chaque tour.\n[*]Le démon hibou de moldavite absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 27% de la santé maximum de sa cible",
       "Le démon hibou de moldavite inflige 5 point(s) de folie à son propriétaire à chaque tour.",
       "À la fin de chaque tour, le démon hibou de moldavite dissipe l'un des bonus dissipables de sa cible.",
       "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Réduction de folie",
-     "text": "Au début de chaque tour, les points de folie actuels de ce personnage sont réduits de 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Corruption de sbire",
-     "text": "À la fin du tour, les ennemis atteints de folie ont une chance de voir leurs sbires se transformer en démons. La transformation s'active automatiquement à 70 points de folie.\n[*] Les sbires se transforment en démons fantasmagoriques: 15% d'attaque, 18% de santé, inflige 5 points de folie chaque tour.\n[*] Les méga sbires se transforment en méga démons fantasmagoriques: 115% d'attaque, 68% de santé, inflige 10 points de santé à chaque tour."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 20% de PV.",
+      "Chaque allié vaincu a 50% de chances de revenir à la vie avec 24% de PV.",
       "La santé de tous les alliés est boostée de 1080 sur 4 tours. Le maximum de PV peut être dépassé.",
       "Tous les ennemis reçoivent -50% de défense contre les compétences spéciales pour 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres."
      ]
@@ -2311,7 +2208,7 @@
       "[**]La cible et les ennemis proches reçoivent[#Dynamic] 222 [#]points de dégâts de brûlure en 2 tours. Le lanceur absorbe et se soigne à hauteur de 10% des dégâts de brûlure.",
       "[**]Si le lanceur est vaincu durant les prochains 2 tours, il sera ressuscité au début de son prochain tour avec 40% de santé. Tous les effets appliqués et cumuls sont retirés lorsque le lanceur est vaincu.",
       "[*]Charge de mana x 2:",
-      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 44% de PV.",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 50% de PV.",
       "[**]La santé de tous les alliés est boostée de 795 sur 3 tours. Le maximum de PV peut être dépassé.",
       "[**]Tous les alliés réduisent les dégâts reçus de -60% pendant 3 tours."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis."
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 20% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Un pour tous !",
-     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 50% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
+     "text": "Lorsque ce personnage encaisse les dégâts d'un allié à couvert, il inflige 75% des dégâts subis à tous les ennemis. (Dégâts maximum: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Tous les alliés à l'exception du lanceur reçoivent 54% de défense contre l'élément sacré pour 4 tours."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "Le lanceur passe en forme de fantôme pressant pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, le lanceur inflige automatiquement 175% de dégâts à un ennemi aléatoire à chaque tour.\n[*] Sous cette forme, le lanceur peut subir des dégâts des ennemis dont l'élément est fort face au sien. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Tous les alliés récupèrent 609 PV sur 3 tours.",
       "[*]Charge de mana x 3:",
       "[**]Booste la santé de tous les alliés de 700. Le maximum de PV peut être dépassé.",
-      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 27% de PV.",
+      "[**]Chaque allié vaincu a 50% de chances de revenir à la vie avec 32% de PV.",
       "[**]Tous les alliés récupèrent 952 PV sur 4 tours."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Inflige 530% de dégâts à tous les ennemis.",
+      "Inflige 600% de dégâts à tous les ennemis.",
       "La santé maximale de tous les ennemis est réduite de 800. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 800.)",
       "Récolte les bonus de tous les ennemis.\n[*]La récolte supprime de façon sûre 2 bonus, cumuls positifs ou effets de croissance pour chaque cible. Les effets obstinés, les bonus non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de croissance sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
       "Flétrissement: tous les ennemis reçoivent -540 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Inflige 350% de dégâts à la cible et aux ennemis proches.\n[*]Inflige 10% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 450%.",
+      "Récolte les bonus de la cible et des ennemis proches.\n[*]La récolte supprime de façon sûre 2 bonus, cumuls positifs ou effets de croissance pour chaque cible. Les effets obstinés, les bonus non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de croissance sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
+      "Le lanceur et les alliés à proximité ripostent avec 115% des dégâts qu'ils reçoivent pendant 4 tours."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Inflige 560% de dégâts à la cible.\n[*]Inflige 15% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 710%.",
+      "Le cible reçoit 400 points de dégâts de saignement persistants par tour. (L'effet dure jusqu'à ce qu'il ait été purifié, remplacé ou supprimé.)",
+      "Le lanceur reçoit 40% d'attaque et une augmentation supplémentaire de 20% à chaque coup subi pendant 4 tours, jusqu'à un maximum de 140%."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Restaure 50% de la santé du lanceur et des alliés à proximité.",
       "Déracine les malus du lanceur et des alliés proches.\n[*]Le déracinement supprime de façon sûre 2 malus, cumuls négatifs ou effets de flétrissement pour chaque cible. Les effets négatifs non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de flétrissement sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
-      "Croissance: tous les alliés reçoivent 150 points d'attaque et 150 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: tous les alliés reçoivent 170 points d'attaque et 170 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 20% d'attaque, 5% de santé.\n[*]Démon jeune pousse:\n[*] 30% d'attaque, 10% de santé.\n[*]Méga démon florissant:\n[*] 40% d'attaque, 30% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 20% d'attaque, 5% de santé.\n[*]Démon jeune pousse:\n[*] 30% d'attaque, 10% de santé.\n[*]Méga démon florissant:\n[*] 90% d'attaque, 30% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Inflige 600% de dégâts à la cible.",
-      "Si la cible à des démons ou des méga démons, inflige 500% de dégâts à un autre ennemi aléatoire.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
+      "Si la cible à des démons ou des méga démons, inflige 550% de dégâts à un autre ennemi aléatoire.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
       "Le lanceur et les alliés proches reçoivent 44% de défense et une augmentation supplémentaire de 10% à chaque coup subi pendant 3 tours, jusqu'à un maximum de 94%."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Récolte les bonus de la cible.\n[*]La récolte supprime de façon sûre 2 bonus, cumuls positifs ou effets de croissance pour chaque cible. Les effets obstinés, les bonus non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de croissance sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
+      "La cible obtient une bombe caustique. La bombe caustique explose au bout de 3 tours et inflige 1600 points de dégâts à la cible et aux alliés proches. (La bombe caustique explose également si elle est remplacée ou si la cible est vaincue.)",
+      "La cible reçoit -45% de défense pour 3 tours.",
+      "Inflige 420% de dégâts à la cible."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Inflige 300% de dégâts à tous les ennemis.\n[*] Inflige 5% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 350%.",
+      "Inflige 285% de dégâts à tous les ennemis.\n[*] Inflige 10% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 385%.",
       "Cumul +2 (maximum: 10): tous les dégâts subis par les ennemis sont augmentés de 10%. (La purification réduit les cumuls négatifs de 1.)",
       "Cumul +2 (max: 10): Tous les alliés reçoivent 6% de génération de mana. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.\n[*]La dissipation réduit les cumuls positifs de 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Tous les alliés gagnent 25% de mana.\n[*]Tous les alliés gagnent 5% de mana supplémentaire pour chaque démon ou méga démon que possèdent les ennemis, jusqu'à un maximum de 50%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "Déracine les malus de tous les alliés.\n[*]Le déracinement supprime de façon sûre 2 effets et cumuls négatifs ou effets de flétrissement pour chaque cible. Les effets négatifs non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La purification sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de flétrissement sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
+      "La santé de tous les alliés est boostée de 950 sur 5 tours. Le maximum de PV peut être dépassé."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Inflige 385% de dégâts à la cible et 5 ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché.\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.",
+      "Inflige 395% de dégâts à la cible et 5 ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché.\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.",
       "Toutes les cibles touchées reçoivent -55% de précision pendant 5 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Inflige 600% de dégâts à la cible.",
-      "Si la cible a des démons ou des méga démons, inflige 300% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
+      "Si la cible a des démons ou des méga démons, inflige 350% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
       "Tous les alliés reçoivent 55% de défense pendant 4 tours. La durée de l'effet est réinitialisée si le propriétaire de l'effet subit des dégâts directs de compétence spéciale."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 35% d'attaque, 10%de santé.\n[*]Démon jeune pousse:\n[*] 60% d'attaque, 15% de santé.\n[*]Méga démon florissant:\n[*] 85% d'attaque, 50% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 35% d'attaque, 10%de santé.\n[*]Démon jeune pousse:\n[*] 60% d'attaque, 15% de santé.\n[*]Méga démon florissant:\n[*] 120% d'attaque, 50% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Inflige 485% de dégâts à tous les ennemis.\n[*] Inflige 10% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 585%.",
+      "Tous les dégâts subis par les ennemis sont augmentés de 30% pendant 5 tours.",
+      "Si le lanceur est vaincu au cours des 5 tours suivants, il est ressuscité au début de son tour suivant avec 35% de santé et inflige 1000 points de dégâts à tous les ennemis. (Tous les effets et cumuls sont supprimés lorsque le lanceur est vaincu.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neuf vies",
      "text": "[*]Lorsqu'il est vaincu, ce personnage a 100% de chances de ressusciter au début du tour suivant avec 50% de santé et 40% de mana.\n[*]Cet effet peut s'activer 9 fois au maximum. Les chances de résurrection diminuent à chaque activation."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Cartoon",
+     "text": "75% de chances supplémentaires de résister à tous les effets négatifs, réductions de mana et dissipations de bonus."
     }
    ]
   }

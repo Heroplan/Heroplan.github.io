@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Afviser sikkert statuseffekt-buffere fra alle fjender. (Sikker fjernelse tilsidesætter sekundære effekter, for eksempel skade ved fjernelse, fra den fjernede statuseffekt-buffere. Eksterne effekter som passive færdigheder og familieeffekter kan stadig være aktive.)",
+      "Forstærker alle allieredes helbred med 1300. Forstærket helbred kan overstige maks. HP.",
+      "Lidelseskilde: Følgende effekter rammer en tilfældig fjende i starten af hver runde:\n[*] -45% managendannelse i 3 runder.\n[*] -60% forsvar mod særlige evner i 3 runder.\n[*]Lidelseskilden vil blive aktiveret 4 gange. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Denne figur er immun over for manareduktioner. Den får også 10% mana, hver gang den står imod."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana pr. fjendtlig buffer",
-     "text": "Får en lille smule mana for hver aktiv statuseffekt-buffer på det fjendtlige hold i starten af hver tur (højest 20 buffere)."
+     "id": "mana_on_buff",
+     "title": "Mana ved modtaget buffer",
+     "text": "Denne figur får 5% mana ved modtagelse af en buffer eller en positiv kumulativ effekt."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 24% HP.",
       "Alle allierede i nærheden får 50% angreb i 5 runder. Angrebet stiger med 5% i hver runde, op til 70%.",
       "Alle allierede gendanner 1270 boostet helbred i løbet af 5 runder. Boostet helbred kan overstige maks. HP."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 15% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
       "Hidkalder en elverhåndlanger til hver allieret med 10% HP og 10% angreb, nedarvet fra kasteren.",
       "Alle allierede regenererer 612 HP i 4 runder."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Påfører 210% skade til alle fjender.\n[*]Påfører yderligere 20% skade per hellig skjold på brættet, op til 450% skade i alt.",
-      "Hver besjret allieret har 20% chance for at blive genoplivet med 40% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt."
+      "Hver besjret allieret har 20% chance for at blive genoplivet med 48% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Påfører 260% skade til alle fjender.\n[*]Påfører yderligere 25% skade per hellig skjold på brættet, op til 560% skade i alt.",
-      "Hver besjret allieret har 20% chance for at blive genoplivet med 45% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt.",
+      "Hver besjret allieret har 20% chance for at blive genoplivet med 50% HP.\n[*]Hvert helligt skjold på brættet øger chancen for at blive genoplivet med 5%, op til 65% chance i alt.",
       "Giver ekstra skade mod mørk."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Hver besejret allieret har en 50% chance for at blive genoplivet med 30% HP.",
-      "Alle allierede regenererer 1424 HP i 4 runder. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
-      "I de næste 4 ture får alle allierede bortset fra kasteren 5% mana i slutningen af runden. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
-      "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer."
+      "Alle allierede regenererer 1424 HP i 4 runder.",
+      "I de næste 4 ture får alle allierede bortset fra kasteren 5% mana i slutningen af runden.",
+      "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Giver 350% i skade til målet og fjender i nærheden og påfører dem 35 vanvid.",
       "Målet og fjender i nærheden får[#Dynamic] 654 [#]vandskade i 3 runder. Alle allierede absorberer 50% af den påførte vandskade som boostet helbred.",
       "Denne specialevne forvolder 45 vanvid på kasteren.",
-      "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Forvolder 350% skade til målet.\n[*] Forvolder yderligere 350% skade mod 2 tilfældige fjender.",
-      "Alle ramte mål får 15 vanvid, hver gang de bliver ramt.",
-      "Kumulativ (Maks: 10): Hvert slag øger den skade, som målet modtager, med 5% (Fjernelse reducerer negative kumulative effekter med 1.)",
-      "Denne specialevne forvolder 40 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Giver 280% i skade til målet og fjender i nærheden og påfører dem 15 vanvid.",
-      "Målet og fjender i nærheden rammes af[#Dynamic] 51 [#]-[#Dynamic] 156 [#]intensiverende forbandet skade i 4 runder. (I den første runde bliver[#Dynamic] 51 [#]skade forvoldt. Skaden øges med 45% i hver runde, op til[#Dynamic] 156 [#]skade pr. runde.)",
-      "Denne specialevne forvolder 60 vanvid på kasteren.",
-      "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "I slutningen af hver runde affyrer kasteren og allierede i nærheden en okulærstråle mod en tilfældig fjende i 2 runder.\n[*] Hver okulærstråle påfører 10 vanvid på den ramte fjende.\n[*] Hver okulærstråle reducerer maks. helbred for den ramte fjende med 100. Effekten er større mod mål med forstærket helbred.",
       "(Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 100.)",
       "Denne specialevne forvolder 40 vanvid på kasteren.",
-      "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Ophæver på sikker vis buffere fra alle fjender og øger alle allieredes mana med 3% for hver fjernet buffer.",
-      "Målet bliver til en Sindsorm. Sindsorme har 70% angreb, 70% forsvar og følgende særlige evne:\n[*]En af os (Meget hurtig)\n[*]Giver 75 vanvid til en tilfældig allieret.\n[*]Fjerner Sindsormens lidelse fra kasteren. (Effekten varer indtil den ryddes, erstattes eller fjernes.\n[*]Bosser, titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
-      "Denne specialevne forvolder 50 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Giver 565% skade til målet.",
       "Målet får[#Dynamic] 1875 [#]vandskade i 3 runder. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+      "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Forvolder 520% skade mod målet og 5 tilfældige fjender.",
       "Alle ramte mål er immune over for nye statuseffektbuffere i 5 runder og modtager 1200 skade for hvert bufferforsøg. Denne effekt er stædig.",
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
-      "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+      "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hævngerrig forfølgelse",
-     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 250% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
+     "text": "Når denne figur mister mere end 30% af dens maks. helbred på én gang, aktiveres følgende effekter.\n[*]Denne figur kaster fuld fjernelse på sig selv. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)\n[*]Denne figur tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 300% skade på en tilfældig fjende, og det ophæver 1 af vedkommendes buffere. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementlink giver alle hellige allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Kasteren heler 75% af normale skader i 5 runder.",
       "Elementlink giver alle hellige allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Giver 450% i skade til målet og fjender i nærheden og påfører dem 50 vanvid.",
-      "Alle allierede får yderligere 50% styrke til den næste særlige egenskab, de kaster. Den ekstra styrke øges med 25% i hver runde op til et maksimum på i alt 150%.",
-      "Alle allierede er immune over for ophævelser af buffere og omfordelinger i 4 runder. (Immuniteten inkluderer også selv denne effekt.\n[*] Inkluderer også Ransagning.)",
-      "Denne specialevne forvolder 20 vanvid på alle allierede.",
-      "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Ændrer alle fjenders element til ild i 4 runder. (Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
-      "Giver 240% i skade til alle fjender og påfører dem 15 vanvid.",
+      "Giver 240% skade på alle fjender.",
       "Kasteren får hån, der forhindrer fjender fra at bruge særlig evneer på kasterens allierede i 4 runder. (Hån forhindrer alle fjender i at bruge særlige evner på allierede, der ikke har hån.)",
       "Kasteren kaster alle statuslidelser og 165% skade tilbage på angriberen og blokerer andre negative effekter fra fjenders særlige ild-egenskaber i 4 runder. (Statuseffekter, der kastes af figurer, håndlangere og djævle på samme side kan ikke tilbagekastes.)",
       "Denne specialevne forvolder 55 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Hidkalder en vildfarne kæmpehåndlanger 45% HP og 180% nedarvet fra kasteren.\n[*]Hver træffer fra en vildfaren kæmpehåndlanger giver målet følgende statuslidelser:",
       "[**]Målet modtager[#Dynamic] 552 [#]giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[***]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[***]Den maksimale øgede skade er 199%.)",
       "[**]Påfører 10 vanvid på målet.",
-      "Denne specialevne forvolder 50 vanvid på kasteren.",
+      "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Kaster fuld fjernelse på målet. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
       "Målet tager form som Dybets spøgelse i 5 runder. Denne effekt er stædig.\n[*] Som Dybets spøgelse tager målet[#Dynamic] 261 [#]skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
-      "Denne specialevne forvolder 50 vanvid på kasteren.",
+      "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Giver 220% i skade til målet og fjender i nærheden og påfører dem 25 vanvid.",
       "Kumulativ +2 (Maks.: 10): Kasteren får 26% angreb. (Ophæver positive kumulative effekter med 1.)",
-      "Denne specialevne forvolder 45 vanvid på kasteren.",
+      "Denne specialevne forvolder 40 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Alle fjender bukker under for frygt i 5 runder. (Målet får -40% forsvar.\n[*] Fjerner alle fordele der kan fjernes, og vækst, når en frygt-statuseffekt bliver tilføjet.\n[*] Målet kan ikke få nye buffer eller væksteffekter under varigheden.\n[*] Mål med frygt giver 250% skade til en vilkårlig allieret, hver gang en anden allieret bruger sin særlige evne. Hver figur kan udløse denne effekt én gang pr. runde.)",
       "Visne: Alle fjender får -480 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Giver 420% i skade til alle fjender og påfører dem 25 vanvid.",
-      "Denne specialevne forvolder 50 vanvid på kasteren.",
+      "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Giver 300% skade til målet.",
-      "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
-      "Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
-      "Alle ramte mål får 20 vanvid, hver gang de bliver ramt.",
-      "Efter 1 runder bliver målet lammet i 4 runder.",
-      "(Bosser, titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
-      "(Lammede fjender kan ikke angribe eller få mana, og de tager 50% mere skade.\n[*]Effekten kan ikke renses, når personen er lammet.)",
-      "Denne specialevne forvolder 45 vanvid på kasteren.",
-      "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Giver 310% i skade til målet og fjender i nærheden og påfører dem 30 vanvid.",
-      "Hidkalder en moldavitugledjævel til målet og fjender i nærheden. Djævlen skader fjenden med 70% angreb i hver runde.\n[*]Moldavitugledjævlen optager helbredelse. Den forsvinder igen, når den har optaget den mængde helbred, der svarer til 25% af målets maksimale helbred.",
+      "Giver 350% i skade til målet og fjender i nærheden og påfører dem 30 vanvid.",
+      "Hidkalder en moldavitugledjævel til målet og fjender i nærheden. Djævlen skader fjenden med 70% angreb i hver runde.\n[*]Moldavitugledjævlen optager helbredelse. Den forsvinder igen, når den har optaget den mængde helbred, der svarer til 27% af målets maksimale helbred.",
       "Moldavit-ugledjævlen påfører ejeren 5 vanvid i hver runde.",
       "I slutningen af hver runde ophæver moldavitugledjævlen en af målets ophævelige buffere.",
       "Denne specialevne forvolder 50 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reducer vanvid",
-     "text": "I starten af hver runde reduceres denne figurs aktuelle vanvid med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Håndlangerkorruption",
-     "text": "I slutningen af hver tur har fjender med Vanvid en chance for, at deres håndlangere forvandles til djævle. Når 70 nås, aktiverer Vanvid automatisk forvandlingen.\n[*] En håndlanger forvandles til en Sælsom djævel: 15% angreb, 18% helbred, påfører 5. Vanvid hver tur.\n[*] En kæmpehåndlanger forvandles til en Sælsom kæmpehåndlanger: 115% angreb, 68% helbred, påfører 10 Vanvid hver tur."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 24% HP.",
       "Alle allierede gendanner 1080 boostet helbred i løbet af 4 runder. Boostet helbred kan overstige maks. HP.",
       "Alle fjender får -50% forsvar mod særlige evner i 4 runder. Mod mørke figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Målet og fjender i nærheden får[#Dynamic] 222 [#]brandskade over 2 runder. Kasteren absorberer 10% af den påførte brandskade som helbred.",
       "[**]Hvis kasteren besejres i løbet af de næste 2 runder, bliver de genoplivet i starten af deres næste runde med 40% helbred. Alle statuseffekter og kumulative værdier fjernes, når kasteren besejres.",
       "[*]x 2 manaangreb:",
-      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 44% HP.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 50% HP.",
       "[**]Alle allierede gendanner 795 boostet helbred i løbet af 3 runder. Boostet helbred kan overstige maks. HP.",
       "[**]Alle allierede reducerer alt modtaget skade med -60% i 3 runder."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender."
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 20% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 50% af den modtagne skade på alle fjender. (Maks. skade: 600)"
+     "text": "Når denne figur tager skade i stedet for en figur i dækning, gør de 75% af den modtagne skade på alle fjender. (Maks. skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Alle allierede undtagen kasteren får 54% i forsvar mod hellige i 4 runder."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
       "Kasteren tager form som et frygteligt spøgelse i 4 runder. Denne effekt er stædig.\n[*] Som et frygteligt spøgelse gør kasteren i hver runde automatisk en tilfældig fjende 175% skade.\n[*] Som et frygteligt spøgelse kan kasteren tage skade fra fjender, hvis element er stærkt sammenlignet med kasterens. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Alle allierede regenererer 609 HP i 3 runder.",
       "[*]x 3 manaangreb:",
       "[**]Forstærker alle allieredes helbred med 700. Forstærket helbred kan overstige maks. HP.",
-      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 27% HP.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 32% HP.",
       "[**]Alle allierede regenererer 952 HP i 4 runder."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Giver 530% i skade til alle fjender.",
+      "Giver 600% i skade til alle fjender.",
       "Reducerer maks. helbred for alle fjender med 800. Effekten er større mod mål med forstærket helbred. (Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 800.)",
       "Høster buffere fra alle fjender.\n[*]Høst fjerner sikkert 2 buffere, positive kumulative effekter eller væksteffekter fra hvert mål. Dette omfatter stædige effekter, uophævelige buffere og danseeffekter.\n[*]Kasteren får 7% boostet helbred for hver effekt, der fjernes. Boostet helbred kan overstige maks. helbred.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektbuffere. Eksterne effekter som passive evner og familieeffekter kan stadig aktiveres.\n[*]Væksteffekter fjernes først. Ved andre effekter fjernes den seneste først.",
       "Visne: Alle fjender får -540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Forvolder 350% skade på målet og fjender i nærheden.\n[*] Forvolder yderligere 10% skade for hver af fjendens djævle eller megadjævle, op til 450% skade i alt.",
+      "Høster buffere fra målet og fjender i nærheden.\n[*]Høst fjerner sikkert 2 buffere, positive kumulative effekter eller væksteffekter fra hvert mål. Dette omfatter stædige effekter, uophævelige buffere og danseeffekter.\n[*]Kasteren får 7% boostet helbred for hver effekt, der fjernes. Boostet helbred kan overstige maks. helbred.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektbuffere. Eksterne effekter som passive evner og familieeffekter kan stadig aktiveres.\n[*]Væksteffekter fjernes først. Ved andre effekter fjernes den seneste først.",
+      "Kasteren og allierede i nærheden udfører modangreb med 115% af den modtagne skade i 4 runder."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Forvolder 560% skade på målet.\n[*] Forvolder yderligere 15% skade for hver af fjendens djævle eller megadjævle, op til 710% skade i alt.",
+      "Målet rammes af vedvarende 400 bløderskade for hver runde. (Effekten varer indtil den ryddes, erstattes eller fjernes.)",
+      "Kasteren får 40% angreb og yderligere 20% forøgelse, hver gang de bliver ramt i 4 runder, op til 140% angreb."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Gendanner 50% helbred til kasteren og allierede i nærheden.",
       "Uproots debuffer fra kasteren og allierede i nærheden.\n[*]Uproot fjerner sikkert 2 debuffs, negative kumulative effekter eller skrumpeeffekter fra hvert mål. Dette inkluderer urenselige statuslidelser og danseeffekter.\n[*]Kasteren modtager 7% forbedret helbred for hver effekt, der fjernes. Forbedret helbred kan overstige maks. HP.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektforstærkere. Eksterne effekter såsom passive egenskaber og familieeffekter kan stadig aktiveres.\n[*]Skrumpeeffekter fjernes først. Ved andre effekter fjernes den seneste først.",
-      "Vækst: Alle allierede får 150 angreb og 150 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Alle allierede får 170 angreb og 170 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Frøplantefremkalder",
-     "text": "Hidkalder en frøplantedjævel hver runde til en tilfældig fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*]Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*]Frøplantedjævel:\n[*] 20% angreb, 5% helbred\n[*]Spiredjævel:\n[*] 30% angreb, 10% helbred\n[*]Blomstrende megadjævel:\n[*] 40% angreb, 30% helbred"
+     "text": "Hidkalder en frøplantedjævel hver runde til en tilfældig fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*]Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*]Frøplantedjævel:\n[*] 20% angreb, 5% helbred\n[*]Spiredjævel:\n[*] 30% angreb, 10% helbred\n[*]Blomstrende megadjævel:\n[*] 90% angreb, 30% helbred"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Giver 600% skade til målet.",
-      "Hvis målet har djævle eller megadjævle, giver det 500% skade til en tilfældig anden fjende.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende. (\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.\n[*]Djævle kan ikke udvikle sig til megadjævle, hvis der er håndlangere på den samme helt.)",
+      "Hvis målet har djævle eller megadjævle, giver det 550% skade til en tilfældig anden fjende.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende. (\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.\n[*]Djævle kan ikke udvikle sig til megadjævle, hvis der er håndlangere på den samme helt.)",
       "Kasteren og allierede i nærheden får 44% forsvar og yderligere 10% forøgelse, hver gang de bliver ramt i 3 runder, op til 94% forsvar."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Høster forstærkere fra målet.\n[*]Høst fjerner sikkert 2 buffere, positive kumulative effekter eller væksteffekter fra hvert mål. Dette omfatter stædige effekter, uophævelige buffere og danseeffekter.\n[*]Kasteren får 7% boostet helbred for hver effekt, der fjernes. Boostet helbred kan overstige maks. helbred.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektbuffere. Eksterne effekter som passive evner og familieeffekter kan stadig aktiveres.\n[*]Væksteffekter fjernes først. Ved andre effekter fjernes den seneste først.",
+      "Målet får en ubehagelig bombe. Den ubehagelige bombe eksploderer efter 3 runder og gør 1600 skade på målet og allierede i nærheden. (Den ubehagelige bombe eksploderer også, hvis den erstattes, eller hvis målet besejres.)",
+      "Målet får -45% forsvar i 3 runder.",
+      "Giver 420% skade til målet."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Gør 300% skade på alle fjender.\n[*] Gør yderligere 5% skade for hver af fjendens djævle eller megadjævle, op til 350% skade i alt.",
+      "Gør 285% skade på alle fjender.\n[*] Gør yderligere 10% skade for hver af fjendens djævle eller megadjævle, op til 385% skade i alt.",
       "Kumulativ +2 (Maks.: 10): Al skade, der tages af alle fjender, forøges med 10%. (Fjernelse reducerer negative kumulative effekter med 1.)",
       "Kumulativ +2 (Maks.: 10): Alle allierede får 6% managendannelse. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.\n[*]Ophæver positive kumulative effekter med 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Alle allierede får 25% mana.\n[*]Alle allierede får en bonus på 5% mana for hver af fjendens djævle eller megadjævle, op til 50% mana i alt. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "Uproots debuffer fra alle allierede.\n[*]Uproot fjerner sikkert 2 statuslidelser, negative kumulative effekter eller skrumpeeffekter fra hvert mål. Dette inkluderer urenselige statuslidelser og danseeffekter.\n[*]Kasteren modtager 7% forbedret helbred for hver effekt, der fjernes. Forbedret helbred kan overstige maks. HP.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra den fjernede statuslidelse. Eksterne effekter såsom passive egenskaber og familieeffekter kan stadig aktiveres.\n[*]Skrumpeeffekter fjernes først. Ved andre effekter fjernes den seneste først.",
+      "Alle allierede gendanner 950 boostet helbred i løbet af 5 runder. Boostet helbred kan overstige maks. HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Forvolder 385% skade på et mål og 5 tilfældige fjender.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.",
+      "Forvolder 395% skade på et mål og 5 tilfældige fjender.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.",
       "Alle ramte mål får -55% præcision i 5 ture. (Chancen for at ramme ved siden af gælder for offensive særlige evner.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Giver 600% skade til målet.",
-      "Hvis målet har djævle eller megadjævle, forvolder det 300% skade på 2 andre tilfældige fjender.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende. (\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.\n[*]Djævle kan ikke udvikle sig til megadjævle, hvis der er håndlangere på den samme helt.)",
+      "Hvis målet har djævle eller megadjævle, forvolder det 350% skade på 2 andre tilfældige fjender.\n[*]Hidkalder en frøplantedjævel til hver ramt fjende. (\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*] Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*] Frøplantedjævel: 50% angreb, 15% helbred.\n[*] Spiredjævel: 75% angreb, 20% helbred.\n[*] Blomstrende megadjævel: 150% angreb, 70% helbred.\n[*]En djævel skader sit mål i hver runde. En djævel forsvinder, når den absorberer helbredelse. Den mængde helbredelse, som er påkrævet, afhænger af målets maksimale helbred.\n[*]Djævle kan ikke udvikle sig til megadjævle, hvis der er håndlangere på den samme helt.)",
       "Alle allierede får 55% forsvar i 4 runder. Effektens varighed nulstilles, hvis statuseffektens ejer rammes af direkte skade fra en særlig evne."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Frøplantefremkalder",
-     "text": "Hidkalder en frøplantedjævel hver runde til en tilfældig fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*]Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*]Frøplantedjævel:\n[*] 35% angreb, 10% helbred\n[*]Spiredjævel:\n[*] 60% angreb, 15% helbred\n[*]Blomstrende megadjævel:\n[*] 85% angreb, 50% helbred"
+     "text": "Hidkalder en frøplantedjævel hver runde til en tilfældig fjende.\n[*]Frøplantedjævlen udvikler sig til en spiredjævel efter 3 runder.\n[*]Spiredjævlen udvikler sig til en blomstrende megadjævel efter 3 runder.\n[*]Frøplantedjævel:\n[*] 35% angreb, 10% helbred\n[*]Spiredjævel:\n[*] 60% angreb, 15% helbred\n[*]Blomstrende megadjævel:\n[*] 120% angreb, 50% helbred"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Gør 485% skade på alle fjender.\n[*] Gør yderligere 10% skade for hver af fjendens djævle eller megadjævle, op til 585% skade i alt.",
+      "Al skade, som fjender får, øges med 30% i 5 runder.",
+      "Hvis kasteren dør i løbet af de næste 5 runder, bliver de genoplivet i starten af deres næste runde med 35% helbred og 1000 skade forvoldes på alle fjender. (All statuseffekter og kumulativer fjernes, når kasteren besejres.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
      "text": "[*]Når denne figur besejres, har den 100% chance for at genoplive i begyndelsen af sin næste tur med 50% helbred og 40% mana.\n[*]Aktiveres op til 9 gange. Chancen for genoplivning reduceres ved hver aktivering."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tegneseriefigur",
+     "text": "+75% chance for at modstå statuslidelser, manareduktioner og bufferophævelse."
     }
    ]
   }

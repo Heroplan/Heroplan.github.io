@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Entfernt sicher Statuseffekt-Boni von allen Gegnern. (Sicheres Entfernen umgeht Sekundäreffekte wie z. B. Schaden beim Entfernen von entfernten Statuseffekt-Boni. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.)",
+      "Verstärkt das Leben aller Verbündeten um 1300. Verstärktes Leben kann die max. LP übersteigen.",
+      "Quelle des Leids: Die folgenden Effekte werden zu Beginn jedes Zuges auf einen zufälligen Gegner gewirkt:\n[*] -45% Mana-Erzeugung für 3 Züge.\n[*] -60% Verteidigung gegen Spezialfähigkeiten für 3 Züge.\n[*]Die Quelle des Leids wird maximal 4 -mal aktiviert. Dieser Effekt ist hartnäckig. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Dieser Charakter ist immun gegen Manareduktionen. Außerdem erhält er bei jeder Resistenz 10% Mana."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana pro Gegner-Bonus",
-     "text": "Erhalte eine kleine Menge Mana für jeden aktiven Statuseffekt-Bonus, den das gegnerische Team zu Beginn eines jeden Zuges hat (maximal 20 Stärkungen)."
+     "id": "mana_on_buff",
+     "title": "Mana bei erhaltenem Bonus",
+     "text": "Dieser Charakter erhält 5% Mana, wenn er einen Bonus oder einen positiven Stapel erhält."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 20% LP wiederbelebt zu werden.",
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 24% LP wiederbelebt zu werden.",
       "Alle Verbündeten erhalten 50% Angriff für 5 Züge. Der Angriff erhöht sich um 5% mit jedem Zug, bis zu 70%.",
       "Alle Verbündeten stellen 1270 verstärktes Leben für 5 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 15% LP wiederbelebt zu werden.",
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 20% LP wiederbelebt zu werden.",
       "Beschwört für jeden Verbündeten einen Elflakaien mit 10% LP und 10% Angriff des Wirkers.",
       "Alle Verbündeten regenerieren 612 LP für 4 Züge."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Fügt allen Gegnern 210% Schaden zu.\n[*]Fügt zusätzlich 20% Schaden zu für jeden heiligen Schild auf dem Feld, bis zu 450% Schaden insgesamt.",
-      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 40% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%."
+      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 48% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Fügt allen Gegnern 260% Schaden zu.\n[*]Fügt zusätzlich 25% Schaden zu für jeden heiligen Schild auf dem Feld, bis zu 560% Schaden insgesamt.",
-      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 45% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%.",
+      "Jeder besiegte Verbündete kann mit einer Chance von 20% mit 50% LP wiederbelebt werden.\n[*]Jeder Lichtschild auf dem Spielfeld erhöht die Chance, wiederbelebt zu werden, um 5%, bis zu insgesamt 65%.",
       "Fügt Schatten zusätzlichen Schaden zu."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Jeder besiegte Verbündete hat eine Chance von 50%, mit 30% LP wiederbelebt zu werden.",
-      "Alle Verbündeten regenerieren 1424 LP für 4 Züge. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an.",
-      "Für die nächsten 4 Runden erhalten alle Verbündeten am Ende der Runde 5% Mana. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an.",
-      "Elementare Verbindung verleiht allen Natur-Verbündeten 15% Angriff und 15% Verteidigung für 6 Züge. Der Effekt kann nicht gebannt werden. Dieser Statuseffekt kann nicht gebannt werden und hält bei Natur-Charakteren 2 Züge länger an."
+      "Alle Verbündeten regenerieren 1424 LP für 4 Züge.",
+      "Für die nächsten 4 Runden erhalten alle Verbündeten am Ende der Runde 5% Mana.",
+      "Elementare Verbindung verleiht allen Natur-Verbündeten 15% Angriff und 15% Verteidigung für 6 Züge. Der Effekt kann nicht gebannt werden."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Verursacht 350% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 35 Wahnsinn zu.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 654 [#]Wasserschaden über 3 Züge. Alle Verbündeten absorbieren 50% des zugefügten Wasserschadens als verstärktes Leben.",
       "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
-      "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Verursacht 350% Schaden am Gegner.\n[*] Verursacht zusätzlich 350% Schaden an 2 beliebigen Gegnern.",
-      "Alle getroffenen Ziele erleiden 15 Wahnsinn bei jedem Treffer.",
-      "Stapel (Max.: 10): Jeder Treffer erhöht den gesamten Schaden, den das Ziel erleidet, um 5%. (Reinigen verringert negative Stapel um 1.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 40 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Verursacht 280% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 15 Wahnsinn zu.",
-      "Das Ziel und Gegner in der Nähe erleiden für 4 Züge[#Dynamic] 51 [#]-[#Dynamic] 156 [#]erhöhten, steigenden Fluchschaden. (Im ersten Zug wird[#Dynamic] 51 [#]Schaden verursacht. Der Schaden steigt in jedem Zug um 45% bis zu einem Maximum von[#Dynamic] 156 [#]Schaden pro Zug.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 60 Wahnsinn beim Wirker.",
-      "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "2 Züge lang schießen der Wirker und nahe Verbündete am Ende jedes Zuges einen Okularstrahl auf einen zufälligen Gegner.\n[*] Jeder Okularstrahl fügt dem getroffenen Gegner 10 Wahnsinn zu.\n[*] Jeder Okularstrahl verringert die maximale Gesundheit des getroffenen Gegners um 100. Der Effekt ist bei Zielen mit erhöhter Lebensenergie stärker.",
       "(Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 100 verringert.)",
       "Der Einsatz dieser Spezialfähigkeit verursacht 40 Wahnsinn beim Wirker.",
-      "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Entfernt sicher Boni von allen Gegnern und erhöht das Mana aller Verbündeten für jeden entfernten Bonus um 3%.",
-      "Das Ziel verwandelt sich in einen Verstandswurm. Verstandswürmer haben 70% Angriff, 70% Verteidigung und die folgende Spezialfähigkeit:\n[*]Einer von uns (Sehr schnell)\n[*]Fügt einem zufälligen Verbündeten 75 Wahnsinn hinzu.\n[*]Entfernt den Zustand Verstandswurm vom Wirker. (Dieser Effekt hält an, bis er gereinigt, ersetzt oder entfernt wird.\n[*]Bosse, Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Fügt dem Ziel 565% Schaden zu.",
       "Das Ziel erleidet[#Dynamic] 1875 [#]Wasserschaden über 3 Züge. Dieser Effekt ist hartnäckig. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Verursacht 520% Schaden am Ziel und an 5 zufälligen Gegnern.",
       "Alle getroffenen Ziele sind für 5 Züge immun gegen neue Status-Effekt-Buffs und erhalten für jeden versuchten Buff 1200 Schaden. Dieser Effekt ist Stur.",
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 250% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementare Verbindung verleiht allen Licht-Verbündeten 15% Angriff und 15% Verteidigung für 6 Züge. Der Effekt kann nicht gebannt werden."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Der Wirker heilt 75% des ausgeteilten normalen Schadens für 5 Züge.",
       "Elementare Verbindung verleiht allen Licht-Verbündeten 15% Angriff und 15% Verteidigung für 6 Züge. Der Effekt kann nicht gebannt werden."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Verursacht 450% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 50 Wahnsinn zu.",
-      "Alle Verbündeten erhalten 50% zusätzliche Angriffsstärke für die nächste Spezialfähigkeit, die sie wirken. Die zusätzliche Angriffsstärke erhöht sich um 25% pro Zug, bis zu maximal insgesamt 150%.",
-      "Alle Verbündeten sind für 4 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[*] Umfasst auch Ausrauben.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 20 Wahnsinn bei allen Verbündeten.",
-      "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Ändert das Element aller Gegner für 4 Runden zu Feuer. (Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)",
-      "Verursacht 240% Schaden bei allen Gegnern und fügt ihnen 15 Wahnsinn zu.",
+      "Verursacht 240% Schaden bei allen Gegnern.",
       "Der Wirker erhält Verspotten, was 4 Züge lang verhindert, dass die Gegner Spezialfähigkeiten bei den Verbündeten des Wirkers einsetzen können. (Verspotten hindert alle Gegner daran, Spezialfähigkeiten auf ihre Verbündeten anzuwenden, die nicht Verspotten haben.)",
       "Der Wirker reflektiert alle negativen Statusänderungen und 165% Schaden zurück auf den Angreifer und blockiert andere negative Effekte durch Feuer-Spezialfähigkeiten vom Feind für 4 Züge. (Statuseffekte, die von Charakteren, Lakaien und Feinden auf derselben Seite gewirkt werden, können nicht zurückgeworfen werden.)",
       "Der Einsatz dieser Spezialfähigkeit verursacht 55 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Beschwört einen Abweichungs-Mega-Lakaien mit 45% LP und 180% Angriff vom Wirker.\n[*]Jeder Treffer eines Abweichungs-Mega-Lakaien verleiht dem Ziel folgende negative Statusänderung:",
       "[**]Das Ziel erleidet 3 Züge lang[#Dynamic] 552 [#]Toxinschaden. Der Schaden ist für Ziele mit verstärktem Leben, Lakaien oder Mega-Lakaien erhöht. (Der Toxinschaden wird gegen Ziele mit verstärktem Leben um 100% erhöht.\n[***]Der Toxinschaden wird pro Lakai oder Mega-Lakai des Ziels um 33% erhöht.\n[***]Der Schaden wird maximal um 199% erhöht.)",
       "[**]Verursacht 10 Wahnsinn beim Ziel.",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Wirkt Vollständige Entfernung auf das Ziel. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
       "Das Ziel wechselt für 5 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 261 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Verursacht 220% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 25 Wahnsinn zu.",
       "Stapel +2 (Max.: 10): Der Wirker erhält 26% Angriff. (Bannen verringert die positiven Stapel um 1.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 40 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Alle Gegner erliegen für 5 Züge der Furcht. (Das Ziel erhält -40% Verteidigung.\n[*] Alle säuberbaren Buffs und Wachstumseffekte werden entfernt, wenn ein Furcht-Statuseffekt hinzugefügt wird.\n[*] Das Ziel kann während der Dauer keine neuen Buffs oder Wachstumseffekte bekommen.\n[*] Das Ziel mit Furcht verursacht 250% Schaden an einem zufälligen Verbündeten jedes Mal, wenn ein anderer Verbündeter seine Spezialfähigkeit einsetzt. Jeder Charakter kann diesen Effekt einmal pro Zug auslösen.)",
       "Verwelken: Alle Gegner erhalten -480 Angriff. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)",
       "Verursacht 420% Schaden bei allen Gegnern und fügt ihnen 25 Wahnsinn zu.",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Fügt dem Ziel 300% Schaden zu.",
-      "Der Angriff umgeht Defensivboni. (Schließt auch Gegenangriffe ein.)",
-      "Der Angriff geht durch alle Gegner hindurch, die sich direkt neben einem getroffenen Gegner befinden.",
-      "Alle getroffenen Ziele erleiden 20 Wahnsinn bei jedem Treffer.",
-      "Nach 1 Runde wird das Ziel für 4 Runden paralysiert.",
-      "(Bosse, Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)",
-      "(Paralysierte Gegner können nicht angreifen oder Mana erhalten und erleiden um 50% erhöhten Schaden.\n[*]Einmal paralysiert kann der Effekt nicht mehr gesäubert werden.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
-      "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Verursacht 310% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 30 Wahnsinn zu.",
-      "Beschwört einen Moldavit-Eulenfeind für das Ziel und Gegner in der Nähe. Der Feind greift den Gegner jede Runde mit 70% Angriff an.\n[*]Der Moldavit-Eulenfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 25% des max. Lebens des Ziels aufgenommen hat.",
+      "Verursacht 350% Schaden beim Ziel und Gegnern in der Nähe und fügt ihnen 30 Wahnsinn zu.",
+      "Beschwört einen Moldavit-Eulenfeind für das Ziel und Gegner in der Nähe. Der Feind greift den Gegner jede Runde mit 70% Angriff an.\n[*]Der Moldavit-Eulenfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 27% des max. Lebens des Ziels aufgenommen hat.",
       "Der Moldavit-Eulenfeind verursacht bei jedem Besitzer in jeder Runde 5 Wahnsinn.",
       "Am Ende jedes Zugs entfernt der Moldavit-Eulenfeind einen der bannbaren Bonus des Ziels.",
       "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Verringerter Wahnsinn",
-     "text": "Zu Beginn jedes Zugs wird der aktuelle Wahnsinn dieses Charakters um 1 reduziert."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Lakaienverderbnis",
-     "text": "Am Ende jedes Zuges haben Gegner mit Wahnsinn eine Chance, dass ihre Lakaien zu Feinden werden. Wenn 70 Wahnsinn erreicht wird, passiert die Verwandlung automatisch.\n[*] Ein Lakai verwandelt sich in einen Gespenstischer Feind: 15% Angriff, 18% Leben, verursacht 5 Wahnsinn pro Runde.\n[*] Ein Mega-Minion verwandelt sich in einen Gespenstischer Mega-Feind: 115% Angriff, 68% Leben, verursacht 10 Wahnsinn pro Runde."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 20% LP wiederbelebt zu werden.",
+      "Jeder besiegte Verbündete hat eine Chance von 50%, mit 24% LP wiederbelebt zu werden.",
       "Alle Verbündeten stellen 1080 verstärktes Leben für 4 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten.",
       "Alle Gegner erhalten -50% Verteidigung gegen Spezialfähigkeiten für 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Das Ziel und nahe Gegner erleiden[#Dynamic] 222 [#]Brandschaden über 2 Züge. Der Wirker absorbiert 10% des zugefügten Brandschadens als Leben.",
       "[**]Wenn während der nächsten 2 Züge der Wirker besiegt wird, wird er zu Beginn der nächsten Runde mit 40% Leben wiederbelebt. Alle Statuseffekte und Stapel werden entfernt, wenn der Wirker besiegt wird.",
       "[*] 2 x Manaaufladung:",
-      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 44% LP wiederbelebt zu werden.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 50% LP wiederbelebt zu werden.",
       "[**]Alle Verbündeten stellen 795 verstärktes Leben für 3 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten.",
       "[**]Für alle Verbündeten wird der erlittene Schaden für 3 Züge um -60% reduziert."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern."
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 20% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Einer für alle!",
-     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 50% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
+     "text": "Wenn dieser Charakter anstelle eines Charakters in Deckung Schaden erleidet, verursacht er 75% des erlittenen Schadens bei allen Gegnern. (Max. Schaden: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Alle Verbündete außer der Wirker erhalten 54% Verteidigung gegen Licht für 4 Züge."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
       "Der Wirker wechselt für 4 Runden in die Gestalt des Grässlichen Geistes. Dieser Effekt ist hartnäckig.\n[*]In der Gestalt des Grässlichen Geistes verursacht der Wirker in jeder Runde automatisch 175% Schaden bei einem zufälligen Feind.\n[*]In der Gestalt des Grässlichen Geistes kann der Wirker Schaden durch Gegner erleiden, deren Element stark gegen den Wirker ist. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Alle Verbündeten regenerieren 609 LP für 3 Züge.",
       "[*] 3 x Manaaufladung:",
       "[**]Verstärkt das Leben aller Verbündeten um 700. Verstärktes Leben kann die max. LP übersteigen.",
-      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 27% LP wiederbelebt zu werden.",
+      "[**]Jeder besiegte Verbündete hat eine Chance von 50%, mit 32% LP wiederbelebt zu werden.",
       "[**]Alle Verbündeten regenerieren 952 LP für 4 Züge."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Verursacht 530% Schaden bei allen Gegnern.",
+      "Verursacht 600% Schaden bei allen Gegnern.",
       "Verringert das maximale Leben aller Gegner um 800. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 800 verringert.)",
       "Sammelt Buffs von allen Gegnern.\n[*]Ernte entfernt 2 Boni, positive Stapel oder Wachstumseffekte sicher von jedem Ziel. Dazu zählen auch hartnäckige Effekte, nicht entfernbare Boni und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Entfernen werden sekundäre Effekte wie Schaden bei Entfernung umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Wachstumseffekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der letzte wird zuerst entfernt.",
       "Verwelken: Alle Gegner erhalten -540 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Fügt dem Ziel und nahen Gegnern 350% Schaden zu.\n[*]Verursacht zusätzlich 10% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 450% Schaden insgesamt.",
+      "Erntet Boni vom Ziel und nahen Gegnern.\n[*]Ernte entfernt 2 Boni, positive Stapel oder Wachstumseffekte sicher von jedem Ziel. Dazu zählen auch hartnäckige Effekte, nicht entfernbare Boni und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Entfernen werden sekundäre Effekte wie Schaden bei Entfernung umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Wachstumseffekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der letzte wird zuerst entfernt.",
+      "Der Wirker und nahe Verbündete führen 4 Züge lang Gegenangriffe mit 115% des erlittenen Schadens aus."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Fügt dem Ziel 560% Schaden zu.\n[*]Verursacht zusätzlich 15% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 710% Schaden insgesamt.",
+      "Das Ziel erleidet 400 bleibenden Blutungsschaden pro Zug. (Dieser Effekt hält an, bis er gereinigt, ersetzt oder entfernt wird.)",
+      "Der Wirker erhält 40% Angriff und eine weitere 20% Erhöhung jedes Mal, wenn sie während 4 Runden getroffen werden, bis zu 140% Angriff."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Heilt den Wirker und alle nahen Verbündeten um 50%.",
       "Entwurzelt Schwächungen vom Wirker und nahen Verbündeten.\n[*]Entwurzeln entfernt 2 Schwächungen, negative Stapel oder Verwelken-Effekte sicher von jedem Ziel. Dazu zählen auch nicht säuberbare negative Statusänderungen und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Entfernen werden sekundäre Effekte wie Schaden bei Entfernung der Statuseffektboni umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Verwelken-Effekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der neueste wird zuerst entfernt.",
-      "Wachstum: Alle Verbündeten erhalten 150 Angriff und 150 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)"
+      "Wachstum: Alle Verbündeten erhalten 170 Angriff und 170 Verteidigung. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*]Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*]Verwelken und Wachstum können nicht gebannt oder gereinigt werden.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*]Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*]Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*]Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 20% Angriff, 5% Leben.\n[*]Spross-Feind:\n[*] 30% Angriff, 10% Leben.\n[*]Blüten-Mega-Feind:\n[*] 40% Angriff, 30% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 20% Angriff, 5% Leben.\n[*]Spross-Feind:\n[*] 30% Angriff, 10% Leben.\n[*]Blüten-Mega-Feind:\n[*] 90% Angriff, 30% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Fügt dem Ziel 600% Schaden zu.",
-      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird einem zufälligen anderen Gegner 500% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
+      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird einem zufälligen anderen Gegner 550% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
       "Der Wirker und nahe Verbündete erhalten 44% Verteidigung und eine weitere 10%ige Erhöhung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu 94% Verteidigung."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Erntet Boni vom Ziel.\n[*]Ernte entfernt 2 Boni, positive Stapel oder Wachstumseffekte sicher von jedem Ziel. Dazu zählen auch hartnäckige Effekte, nicht entfernbare Boni und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Entfernen werden sekundäre Effekte wie Schaden bei Entfernung umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Wachstumseffekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der letzte wird zuerst entfernt.",
+      "Das Ziel erhält eine Stinkbombe. Die Stinkbombe explodiert nach 3 Zügen und fügt dem Ziel und Verbündeten in der Nähe 1600 Schaden zu. (Die Stinkbombe explodiert auch dann, wenn sie ersetzt oder das Ziel besiegt wird.)",
+      "Das Ziel erhält -45% Verteidigung für 3 Züge.",
+      "Verursacht 420% Schaden am Ziel."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Fügt allen Gegnern 300% Schaden zu.\n[*] Verursacht zusätzlich 5% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 350% Schaden insgesamt.",
+      "Fügt allen Gegnern 285% Schaden zu.\n[*] Verursacht zusätzlich 10% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 385% Schaden insgesamt.",
       "Stapel +2 (Max.: 10): Der gesamte Schaden, den alle Gegner erleiden, wird um 10% erhöht. (Reinigen verringert negative Stapel um 1.)",
       "Stapel +2 (Max.: 10): Alle Verbündeten erhalten 6% Manaregeneration. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.\n[*]Bannen verringert die positiven Stapel um 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Alle Verbündeten erhalten 25% Mana.\n[*] Alle Verbündeten erhalten zusätzlich 5% Mana für jeden Feind oder Mega-Feind von Gegnern, bis zu 50% Mana insgesamt. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "Entwurzelt Schwächungen von allen Verbündeten.\n[*]Entwurzeln entfernt 2 negative Statusänderungen, negative Stapel oder Verwelken-Effekte sicher von jedem Ziel. Dazu zählen auch nicht säuberbare negative Statusänderungen und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Säubern werden sekundäre Effekte wie Schaden bei Säuberung der Statusänderungen umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Verwelken-Effekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der neueste wird zuerst entfernt.",
+      "Alle Verbündeten stellen 950 verstärktes Leben für 5 Züge wieder her. Verstärktes Leben kann die max. LP überschreiten."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Verursacht 385% Schaden am Ziel und an 5 zufälligen Gegnern.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner.\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.",
+      "Verursacht 395% Schaden am Ziel und an 5 zufälligen Gegnern.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner.\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.",
       "Alle getroffenen Ziele erhalten -55% Genauigkeit für 5 Züge. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Fügt dem Ziel 600% Schaden zu.",
-      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 300% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
+      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 350% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
       "Alle Verbündeten erhalten für 4 Züge 55% Verteidigung. Die Effektdauer wird zurückgesetzt, wenn der Besitzer des Statuseffekts mit direktem Schaden durch eine Spezialfähigkeit getroffen wird."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 35% Angriff, 10% Leben.\n[*]Spross-Feind:\n[*] 60% Angriff, 15% Leben.\n[*]Blüten-Mega-Feind:\n[*] 85% Angriff, 50% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 35% Angriff, 10% Leben.\n[*]Spross-Feind:\n[*] 60% Angriff, 15% Leben.\n[*]Blüten-Mega-Feind:\n[*] 120% Angriff, 50% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Fügt allen Gegnern 485% Schaden zu.\n[*] Verursacht zusätzlich 10% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 585% Schaden insgesamt.",
+      "Der gesamte erlittene Schaden aller Gegner wird für 5 Züge um 30% erhöht.",
+      "Wenn der Wirker in den nächsten 5 Zügen besiegt wird, wird er zu Beginn seines nächsten Zuges mit 35% Gesundheit wiederbelebt und 1000 Schaden wird an allen Gegnern verursacht. (Alle Statuseffekte und Stapel werden entfernt, wenn der Wirker besiegt wird.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Neun Leben",
      "text": "[*]Wenn dieser Charakter besiegt wird, hat er eine Chance von 100%, zu Beginn seines nächsten Zuges mit 50% Gesundheit und 40% Mana wiederzubeleben.\n[*]Kann bis zu 9 -mal aktiviert werden. Die Chance auf Wiederbelebung wird bei jeder Aktivierung verringert."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% zusätzliche Chance, allen negativen Statusänderungen, Manaverringerungen und dem Entfernen von Boni zu widerstehen."
     }
    ]
   }

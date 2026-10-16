@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Fjerner statustilstand-økninger fra alle fiender på en trygg måte. (Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statustilstand-økningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.)",
+      "Øker helsen til alle allierte med 1300. Økt helse kan overskride maks HP.",
+      "Kilde til lidelser: Følgende effekter brukes på en tilfeldig fiende ved starten av hver runde:\n[*] -45% mana-generering i 3 runder.\n[*] -60% forsvar mot spesialferdigheter i 3 runder.\n[*]Kilde til lidelser aktiveres 4 ganger. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Denne figuren er immun mot manareduksjoner. Den får også 10% mana hver gang den motstår."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana per fiendeøkning",
-     "text": "Får en liten mengde mana for hver aktive statustilstand-økning som motstanderlaget har ved starten av hver runde (maksimalt 20 økninger)."
+     "id": "mana_on_buff",
+     "title": "Mana ved økning mottatt",
+     "text": "Denne figuren får 5% mana når den får en økning eller en positiv stabel."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 24% HP.",
       "Alle allierte får 50% angrep i 5 runder. Angrepet øker med 5% hver runde opptil 70%.",
       "Alle allierte regenererer 1270 økt helse over 5 runder. Økt helse kan overskrider maks HP."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 15% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 20% HP.",
       "Fremkaller en alv-undersått for hver allierte med 10% HP og 10% angrep nedarvet fra brukeren.",
       "Alle allierte regenererer 612 HP over 4 runder."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Gjør 210% skade på alle fiender.\n[*]Gjør ytterligere 20% skade for hvert hellige skjold på brettet, opptil totalt 450% skade.",
-      "Hver beseirede alliert har 20% sjanse for å bli gjenopplivet med 40% HP.\n[*]Hvert hellige skjold på brettet øker sjansen for gjenopplivelse med 5%, inntil 65% sjanse til sammen."
+      "Hver beseirede alliert har 20% sjanse for å bli gjenopplivet med 48% HP.\n[*]Hvert hellige skjold på brettet øker sjansen for gjenopplivelse med 5%, inntil 65% sjanse til sammen."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Gjør 260% skade på alle fiender.\n[*]Gjør ytterligere 25% skade for hvert hellige skjold på brettet, opptil totalt 560% skade.",
-      "Hver beseirede alliert har 20% sjanse for å bli gjenopplivet med 45% HP.\n[*]Hvert hellige skjold på brettet øker sjansen for gjenopplivelse med 5%, inntil 65% sjanse til sammen.",
+      "Hver beseirede alliert har 20% sjanse for å bli gjenopplivet med 50% HP.\n[*]Hvert hellige skjold på brettet øker sjansen for gjenopplivelse med 5%, inntil 65% sjanse til sammen.",
       "Påfører ekstra skade mot mørke."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 30% HP.",
-      "Alle allierte regenererer 1424 HP over 4 runder. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer.",
-      "De neste 4 rundene mottar alle allierte 5% mana når runden er over. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer.",
-      "Elementlink gir alle natur-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer."
+      "Alle allierte regenererer 1424 HP over 4 runder.",
+      "De neste 4 rundene mottar alle allierte 5% mana når runden er over.",
+      "Elementlink gir alle natur-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Gjør 350% skade på målet og fiender i nærheten og påfører dem 35 galskap.",
       "Målet og fiender i nærheten tar[#Dynamic] 654 [#]vannkade over 3 runder. Alle allierte absorberer 50% av påført vannskade som økt helse.",
       "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
-      "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Påfører 350% skade på målet.\n[*] Påfører ytterligere 350% skade på 2 tilfeldige fiender.",
-      "Alle trufne mål får 15 galskap hver gang de treffes.",
-      "Stabel (Maksimalt: 10): Hvert treff øker all skade som målet tar med 5% (Rensing reduserer negative stabler med 1.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 40 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Gjør 280% skade på målet og fiender i nærheten og påfører dem 15 galskap.",
-      "Målet og fiender i nærheten tar[#Dynamic] 51 [#]–[#Dynamic] 156 [#]økt forbannelsesskade hver runde i 4 runder. (Den første gangen påføres[#Dynamic] 51 [#]skade. Skaden øker med 45% hver runde, opptil[#Dynamic] 156 [#]skade per runde.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 60 galskap.",
-      "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Ved slutten av hver tur skyter brukeren og allierte i nærheten en okulær stråle på en tilfeldig fiende i 2 turer.\n[*] Hver okulære stråle påfører 10 galskap på fienden som blir truffet.\n[*] Hver okulære stråle reduserer maksimal helse for fienden som er truffet med 100. Effekten er sterkere overfor mål med økt helse.",
       "(Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksimal helse.\n[*] Økt helse reduseres med ytterligere 100.)",
       "Bruk av denne spesialferdigheten påfører brukeren 40 galskap.",
-      "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Fjerner trygt økninger fra alle fiender, og øker alle alliertes mana med 3% for hver fjernet økning.",
-      "Målet gjøres om til en tankeorm. Tankeormer har 70% angrep, 70% forsvar og følgende spesialferdighet:\n[*]En av oss (Svært rask)\n[*]Påfører 75 galskap på én tilfeldig alliert.\n[*]Fjerner tankeorm-lidelsen fra brukeren. (Denne effekten varer til den blir renset, erstattet eller fjernet.\n[*]Sjefer, titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Påfør 565% skade på målet.",
       "Målet tar[#Dynamic] 1875 [#]vannskade over 3 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 250% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 300% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Påfører 520% skade på målet 5 tilfeldige fiender.",
       "Alle mål truffet er immune mot nye statuseffektøkninger i 5 runder og tar 1200 skade for hver forsøkte økning. Denne effekten er sta.",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 250% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 300% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 250% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementlink gir alle hellig-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Brukeren helbredes for 75% av tildelt normal skade i 5 runder.",
       "Elementlink gir alle hellig-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Gjør 450% skade på målet og fiender i nærheten og påfører dem 50 galskap.",
-      "Alle allierte får 50% ekstra kraft for neste spesialferdighet som brukes. Den ekstra angrepskraften øker med 25% hver tur, opptil maksimalt 150% totalt.",
-      "Alle allierte er immune mot fjerning og flytting av økninger i 4 runder. (Immuniteten inkluderer også selve denne effekten.\n[*] Inkluderer også ransake.)",
-      "Bruk av denne spesialferdigheten påfører alle allierte 20 galskap.",
-      "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Endrer elementet til alle fiender til ild i 4 runder. (Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
-      "Gjør 240% skade på alle fiender og påfører dem 15 galskap.",
+      "Påfører 240% skade på alle fiender.",
       "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 4 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)",
       "Brukeren reflekterer alle statuslidelser og 165% skade tilbake til angriperen og blokkerer andre negative effekter fra fienders ild-spesialferdigheter i 4 runder. (Statuseffekter brukt av figurer, undersåtter og djevler på samme side kan ikke reflekteres.)",
       "Bruk av denne spesialferdigheten påfører brukeren 55 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Påkaller en avviker-megaundersått med 45% HP og 180% angrep nedarvet fra brukeren.\n[*]Hvert treff fra en avviker-megaundersått påfører målet følgende statuslidelse:",
       "[**]Målet tar[#Dynamic] 552 [#]giftskade over 3 runder. Skade økes mot mål med økt helse, undersåtter eller en megaundersått. (Giftskaden økes med 100% mot målene med økt helse.\n[***]Giftskade økes med 33% per undersått eller megaundersått eid av målet.\n[***]Maksimal økt skade er 199%.)",
       "[**]Påfører målet 10 galskap.",
-      "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Målet går over til avgrunnsspøkelse-form i 5 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 261 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Gjør 220% skade på målet og fiender i nærheten og påfører dem 25 galskap.",
       "Stabel +2 (Maks: 10): Brukeren får 26% angrep. (Fjerning reduserer positive stabler med 1.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 40 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Alle fiender gir etter for frykt i 5 runder. (Målet får -40% forsvar.\n[*] Fjerner alle fjernbare økninger og veksteffekter når en Frykt-statuseffekt legges til.\n[*] Målet kan ikke få nye økninger eller veksteffekter under varigheten.\n[*] Målet med frykt påfører en tilfeldig alliert 250% skade hver gang en annen alliert bruker spesialferdigheten sin. Hver figur kan utløse denne effekten én gang per runde.)",
       "Visne: Alle allfiendererte får -480 angrep. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)",
       "Gjør 420% skade på alle fiender og påfører dem 25 galskap.",
-      "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Påfør 300% skade på målet.",
-      "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
-      "Angrepet videreføres gjennom alle fiendene ved siden av en fiende som ble truffet.",
-      "Alle trufne mål får 20 galskap hver gang de treffes.",
-      "Etter 1 runde blir målet lammet i 4 runder.",
-      "(Sjefer, titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
-      "(Lammede fiender kan ikke angripe eller få mana, og de tar 50% økt skade.\n[*]Når lammet kan ikke effenten renses.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
-      "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Gjør 310% skade på målet og fiender i nærheten og påfører dem 30 galskap.",
-      "Påkaller en Moldavite-ugledjevel for målet og fiender i nærheten. Djevelen skader fienden med 70% angrep hver runde.\n[*]Moldavite-ugledjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 25% av målets maksimale helse.",
+      "Gjør 350% skade på målet og fiender i nærheten og påfører dem 30 galskap.",
+      "Påkaller en Moldavite-ugledjevel for målet og fiender i nærheten. Djevelen skader fienden med 70% angrep hver runde.\n[*]Moldavite-ugledjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 27% av målets maksimale helse.",
       "Moldavite-ugledjevelen påfører eieren 5 galskap hver runde.",
       "Ved slutten av hver runde fjerner Moldavite-ugledjevelen én av målets fjernbare økninger.",
       "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduser galskap",
-     "text": "Ved starten av hver runde reduseres denne figurens nåværende galskap med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersått-fordervelse",
-     "text": "Ved slutten av hver tur har fiender med galskap en sjanse til å få undersåttene sine gjort om til djevler. Når du når 70 galskap aktiveres transformasjonen automatisk.\n[*] En undersått gjøres om til en uhyggelig djevel: 15% angrep, 18% helse, påfører 5 galskap hver runde.\n[*] En megaundersått gjøres om til en uhyggelig megadjevel: 115% angrep, 68% helse, påfører 10 galskap hver runde."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 24% HP.",
       "Alle allierte regenererer 1080 økt helse over 4 runder. Økt helse kan overskrider maks HP.",
       "Alle fiender får -50% forsvar mot spesialferdigheter i 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Målet og fiender i nærheten tar[#Dynamic] 222 [#]brannskade over 2 runder. Brukeren absorberer 10% av påført brannskade som helse.",
       "[**]Dersom brukeren beseires i løpet av de neste 2 rundene, gjenopplives de i begynnelsen av neste runde med 40% helse. Alle statustilstander og stabler fjernes når brukeren beseires.",
       "[*]x 2 manaladning",
-      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 44% HP.",
+      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 50% HP.",
       "[**]Alle allierte regenererer 795 økt helse over 3 runder. Økt helse kan overskrider maks HP.",
       "[**]Allierte tar -60% mindre skade i 3 runder."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender."
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 20% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Én for alle!",
-     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 50% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
+     "text": "Når denne figuren tar skade i stedet for en figur i dekke, påfører de 75% av den tatte skaden på alle fiender. (Maksimal skade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Alle allierte, med unntak av brukeren, får 54% forsvar mot hellig i 4 runder."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren bytter til Skrekkelig spøkelse-form i 4 runder. Denne effekten er sta.\n[*] Mens den er i Skrekkelig spøkelse-form, gjør brukeren automatisk 175% skade på en tilfeldig fiende hver runde.\n[*] Mens den er i Skrekkelig spøkelse-form, kan brukeren ta skade fra fiender i et element som er sterkt mot brukeren. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Alle allierte regenererer 609 HP over 3 runder.",
       "[*]x 3 manaladning",
       "[**]Øker helsen til alle allierte med 700. Økt helse kan overskride maks HP.",
-      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 27% HP.",
+      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 32% HP.",
       "[**]Alle allierte regenererer 952 HP over 4 runder."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Påfører 530% skade på alle fiender.",
+      "Påfører 600% skade på alle fiender.",
       "Reduserer maksimal helse for alle fiender med 800. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 800.)",
       "Innhøster økninger fra alle fiender.\n[*]Innhøsting fjerner trygt 2 økninger, positive stabler eller veksteffekter fra hvert mål. Dette inkluderer sta effekter, økninger som ikke kan fjernes og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuseffektøkningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Veksteffekter fjernes først. For andre effekter fjernes den siste først.",
       "Visne: Alle fiender får -540 forsvar. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Gjør 350% skade på målet og fiender i nærheten.\n[*]Gjør ytterligere 10% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 450% skade.",
+      "Innhøster økninger fra målet og fiender i nærheten.\n[*]Innhøsting fjerner trygt 2 økninger, positive stabler eller veksteffekter fra hvert mål. Dette inkluderer sta effekter, økninger som ikke kan fjernes og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuseffektøkningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Veksteffekter fjernes først. For andre effekter fjernes den siste først.",
+      "Brukeren og allierte i nærheten foretar motangrep med 115% av skaden mottatt i 4 runder."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Gjør 560% skade på målet.\n[*]Gjør ytterligere 15% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 710% skade.",
+      "Målet tar varig 400 blødeskade gjennom hver runde. (Denne effekten varer til den blir renset, erstattet eller fjernet.)",
+      "Brukeren får 40% angrep og ytterligere 20% økning hver gang de treffes gjennom 4 runder, opptil 140% angrep."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Få tilbake 50% helse for brukeren og allierte i nærheten.",
       "Rotløs fjerner svekkelser fra brukeren og og allierte i nærheten.\n[*]Rotløs fjerner trygt 2 svekkelser, negative stabler og visne-effekter fra hvert mål. Dette inkluderer statuslidelser som ikke kan renses, og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuseffektøkningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Visneeffekter fjernes først. For andre effekter fjernes den siste først.",
-      "Vekst: Alle allierte får 150 angrep og 150 forsvar. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)"
+      "Vekst: Alle allierte får 170 angrep og 170 forsvar. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Visne og vekst kan ikke fjernes med fjerning eller rensing.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 20% angrep, 5% helse.\n[*]Knopp-djevel:\n[*] 30% angrep, 10% helse.\n[*]Blomst-megadjevel:\n[*] 40% angrep, 30% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 20% angrep, 5% helse.\n[*]Knopp-djevel:\n[*] 30% angrep, 10% helse.\n[*]Blomst-megadjevel:\n[*] 90% angrep, 30% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Påfør 600% skade på målet.",
-      "Hvis målet har djevler eller megadjevler, påføres 500% skade på en tilfeldig annen fiend.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
+      "Hvis målet har djevler eller megadjevler, påføres 550% skade på en tilfeldig annen fiend.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
       "Brukeren og allierte i nærheten får 44% forsvar, og ytterligere 10% økning hver gang de treffes i 3 runder, opp til 94% forsvar."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Innhøster økninger fra målet.\n[*]Innhøsting fjerner trygt 2 økninger, positive stabler eller veksteffekter fra hvert mål. Dette inkluderer sta effekter, økninger som ikke kan fjernes og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuseffektøkningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Veksteffekter fjernes først. For andre effekter fjernes den siste først.",
+      "Målet får en skarp bombe. Skarp bombe eksploderer etter 3 runder og påfører 1600 skade på målet og allierte i nærheten. (Den skarpe bomben eksploderer også hvis den erstattes, eller dersom målet beseires.)",
+      "Målet får -45% forsvar i 3 runder.",
+      "Påfører 420% skade på fienden."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Gjør 300% skade på alle fiender.\n[*] Gjør ytterligere 5% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 350% skade.",
+      "Gjør 285% skade på alle fiender.\n[*] Gjør ytterligere 10% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 385% skade.",
       "Stabel +2 (Maks.: 10): All skade alle fiender tar øker med 10%. (Rensing reduserer negative stabler med 1.)",
       "Stabel +2 (Maks: 10): Alle allierte får 6% mana-generering. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.\n[*]Fjerning reduserer positive stabler med 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Alle allierte får 25% mana.\n[*]Alle allierte får ytterligere 5% mana for hver djevel eller megadjevel eid av fiendene, opptil totalt 50% mana. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
+      "Rotløs fjerner svekkelser fra alle allierte.\n[*]Rotløs fjerner trygt 2 statuslidelser, negative stabler og visne-effekter fra hvert mål. Dette inkluderer statuslidelser som ikke kan renses, og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuslidelsene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Visneeffekter fjernes først. For andre effekter fjernes den siste først.",
+      "Alle allierte regenererer 950 økt helse over 5 runder. Økt helse kan overskrider maks HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Påfører 385% skade på målet og 5 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse.\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helse. Mengde helse som kreves avhenger av målets maksimale helse.",
+      "Påfører 395% skade på målet og 5 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse.\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helse. Mengde helse som kreves avhenger av målets maksimale helse.",
       "Alle trufne mål får -55% treffsikkerhet i 5 runder. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Påfør 600% skade på målet.",
-      "Hvis målet har djevler eller megadjevler, påføres 300% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
+      "Hvis målet har djevler eller megadjevler, påføres 350% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
       "Alle allierte får 55% forsvar i 4 runder. Effektens varighet nullstilles hvis eieren av statuseffekten blir truffet av direkte skade fra en spesialferdighet."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 35% angrep, 10% helse.\n[*]Knopp-djevel:\n[*] 60% angrep, 15% helse.\n[*]Blomst-megadjevel:\n[*] 85% angrep, 50% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 35% angrep, 10% helse.\n[*]Knopp-djevel:\n[*] 60% angrep, 15% helse.\n[*]Blomst-megadjevel:\n[*] 120% angrep, 50% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Gjør 485% skade på alle fiender.\n[*] Gjør ytterligere 10% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 585% skade.",
+      "All skade alle fiender tar øker med 30% i 5 runder.",
+      "Dersom brukeren beseires i løpet av de neste 5 rundene, gjenopplives de i begynnelsen av neste runde med 35% helse og 1000 skade påføres alle fiender. (Alle statuseffekter og stabler fjernes når brukeren beseires.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Ni liv",
      "text": "[*]Når den beseires, har denne figuren 100% sjanse til å gjenopplives ved starten av neste runde med 50% helse og 40% mana.\n[*]Aktiveres opptil 9 ganger. Sjansen for å gjenopplives reduseres for hver aktivering."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% ekstra sjanse til å motstå alle statuslidelser, manareduksjoner og fjerning av økninger."
     }
    ]
   }

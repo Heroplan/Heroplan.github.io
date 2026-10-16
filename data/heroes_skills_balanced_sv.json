@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Tar, på säkert manér, bort statuseffektsbonusar från alla fiender. (Säkert avbrott ignorerar sekundära effekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.)",
+      "Ökar alla allierades hälsa med 1300. Hälsan kan komma att överstiga maxhälsan.",
+      "Källa till negativa effekter: Följande effekter används på en slumpvald fiende i början av varje runda:\n[*] -45% manaskapande i 3 rundor.\n[*] -60% försvar mot specialförmågor i 3 rundor.\n[*]Källan till negativa effekter aktiveras 4 gånger. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Karaktären är immun mot manaminskning och får 10% mana varje gång den motstår."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana per fiendebonus",
-     "text": "Får lite mana för varje aktiv statuseffektbonus som fiendelaget har i början av varje runda (maximalt 20 bonusar)."
+     "id": "mana_on_buff",
+     "title": "Mana vid bonus",
+     "text": "Karaktären får 5% mana efter att ha fått en bonus eller positiv stapel."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa.",
       "Alla allierade får 50% attack i 5 rundor. Attacken ökar med 5% per runda, upp till 70%.",
       "Alla allierade regenererar 1270 ökad hälsa i 5 rundor. Hälsan kan komma att överstiga maxhälsan."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 15% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
       "Åkallar en tomteundersåte till varje allierad, med 10% hälsa och 10% attack som ärvs från anfallaren.",
       "Alla allierade återfår 612 hälsa under 4 rundor."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Gör 210% skada mot alla fiender.\n[*]Gör ytterligare 20% skada för varje helig sköld på brädet, upp till totalt 450% skada.",
-      "Varje besegrad allierad har 20% chans att återupplivas med 40% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans."
+      "Varje besegrad allierad har 20% chans att återupplivas med 48% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Gör 260% skada mot alla fiender.\n[*]Gör ytterligare 25% skada för varje helig sköld på brädet, upp till totalt 560% skada.",
-      "Varje besegrad allierad har 20% chans att återupplivas med 45% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans.",
+      "Varje besegrad allierad har 20% chans att återupplivas med 50% hälsa.\n[*]Varje helig sköld på brädet ökar chansen att återupplivas med 5%, upp till totalt 65% chans.",
       "Gör extra skada mot mörker."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Varje besegrad allierad har 50% chans återupplivas med 30% hälsa.",
-      "Alla allierade återfår 1424 hälsa under 4 rundor. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer.",
-      "De kommande 4 rundorna får alla allierade 5% mana i slutet av sin runda. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer.",
-      "Elementlänk ger alla naturallierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas. Denna statuseffekt kan inte avbrytas och varar 2 rundor längre på naturkaraktärer."
+      "Alla allierade återfår 1424 hälsa under 4 rundor.",
+      "De kommande 4 rundorna får alla allierade 5% mana i slutet av sin runda.",
+      "Elementlänk ger alla naturallierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Gör 350% skada mot målet och fiender i närheten och ger dem 35 vansinne.",
       "Målet och fiender i närheten tar[#Dynamic] 654 [#]vattenskada över 3 rundor. Alla allierade absorberar 50% av den gjorda vattenskadan som boostad hälsa.",
       "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
-      "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Gör 350% skada mot målet.\n[*] Gör ytterligare 350% skada mot 2 slumpmässiga fiender.",
-      "Alla träffade mål får 15 vansinne varje gång de träffas.",
-      "Staplas (Max: 10): Varje träff ökar all skada som målet tar med 5% (Rening minskar negativa staplar med 1.)",
-      "Att kasta den här specialförmågan ger 40 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Gör 280% skada mot målet och fiender i närheten och ger dem 15 vansinne.",
-      "Målet och fiender i närheten tar[#Dynamic] 51 [#]–[#Dynamic] 156 [#]stigande förbannelseskada varje runda i 4 rundor. (Den första rundan gör effekten[#Dynamic] 51 [#]skada. Skadan stiger med 45% varje runda, upp till[#Dynamic] 156 [#]skada per runda.)",
-      "Att kasta den här specialförmågan ger 60 vansinne till användaren.",
-      "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "I slutet av varje runda avfyrar användaren och allierade i närheten en ögonstråle mot en slumpvald fiende i 2 rundor.\n[*] Varje ögonstråle ger den träffade fienden 10 vansinne.\n[*] Varje ögonstråle sänker den träffade fiendes maxhälsa med 100. Den här effekten är starkare mot mål med ökad hälsa.",
       "(Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 100.)",
       "Att kasta den här specialförmågan ger 40 vansinne till användaren.",
-      "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Tar säkert bort bonusar från alla fiender och ökar alla allierades mana med 3% för varje borttagen bonus.",
-      "Målet blir till en sinnesmask. Sinnesmaskar har 70% attack, 70% försvar och följande specialförmåga:\n[*]En av oss (Väldigt snabb)\n[*]Gör 75 vansinne på en slumpmässig allierad.\n[*]Tar bort effekten sinnesmask från användaren. (Effekten varar tills den rensas, ersätts eller tas bort.\n[*]Bossar, titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
-      "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Skadar målet med 565%.",
       "Målet får[#Dynamic] 1875 [#]vattenskada under 3 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Gör 520% skada mot målet och 5 slumpmässiga fiender.",
       "Alla träffade mål är immuna mot nya positiva statuseffekter i 5 rundor och tar 1200 skada när de försöker få bonusar. Den här effekten är envis.",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 250% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementlänk ger alla heliga allierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Anfallaren läker 75% av utdelad normal skada under 5 rundor.",
       "Elementlänk ger alla heliga allierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Gör 450% skada mot målet och fiender i närheten och ger dem 50 vansinne.",
-      "Alla allierade får 50% extra attackstyrka nästa gång de använder sina specialförmågor. Den extra attackstyrkan stiger med 25% varje runda, upp till maximalt 150%.",
-      "Alla allierade är immuna mot att få bonusar avbrutna och överförda i 4 rundor. (Immuniteten inkluderar även den här effekten.\n[*] Inkluderar även plundring.)",
-      "Att använda den här specialförmågan ger 20 vansinne till alla allierade.",
-      "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Ändrar alla fienders element till eld i 4 rundor. (Titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
-      "Gör 240% skada mot alla fiender och ger dem 15 vansinne.",
+      "Gör 240% skada mot alla fiender.",
       "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 4 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
       "Användaren reflekterar alla negativa statuseffekter och 165% skada tillbaka till anfallaren och blockerar andra negativa statuseffekter från fienders specialförmågor med eld i 4 rundor. (Statuseffekter som kastas av karaktärer, undersåtar eller odjur på samma sida kan inte reflekteras.)",
       "Att kasta den här specialförmågan ger 55 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Åkallar en monstrummegaundersåte med 45% hälsa och 180% attack som ärvs från anfallaren.\n[*]Varje träff från en monstrummegaundersåte ger målet följande negativa statuseffekt:",
       "[**]Målet tar[#Dynamic] 552 [#]giftskada i 3 rundor. Skadan ökas mot mål med boostad hälsa, undersåtar eller megaundersåtar. (Giftskadan stiger med 100% mot mål med ökad hälsa.\n[***]Giftskadan ökar med 33% för varje undersåte eller megaundersåte som ägs av målet.\n[***]Den maximala ökade skadan är 199%.)",
       "[**]Ger 10 vansinne till målet.",
-      "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Målet antar avgrundsspökeform i 5 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 261 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
-      "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Gör 220% skada mot målet och fiender i närheten och ger dem 25 vansinne.",
       "Stapel +2 (max: 10): Användaren får 26% attack. (Avbrytningar minskar positiva staplar med 1.)",
-      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 40 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Alla fiender drabbas av skräck i 5 rundor. (Målet får -40% försvar.\n[*] Tar bort alla bonusar som kan avbrytas och tillväxteffekter när en skräckstatuseffekt läggs till.\n[*] Målet kan inte få nya bonusar eller tillväxteffekter under den här tiden.\n[*] Mål med skräck gör 250% skada mot en slumpmässig allierad varje gång en annan allierad använder sin specialförmåga. Varje karaktär kan aktivera den här effekten en gång per runda.)",
       "Vittra: Alla fiender får -480 attack. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
       "Gör 420% skada mot alla fiender och ger dem 25 vansinne.",
-      "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Skadar målet med 300%.",
-      "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
-      "Attacken länkas vidare till alla fiender bredvid de som träffas.",
-      "Alla träffade mål får 20 vansinne varje gång de träffas.",
-      "Efter 1 rundor blir målet paralyserat i 4 rundor.",
-      "(Bossar, titaner och mytomspunna titaner påverkas inte av statuseffekten.)",
-      "(Paralyserade fiender kan inte attackera eller få mana och tar 50% mer skada.\n[*]När du har blivit paralyserad kan effekten inte rensas.)",
-      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
-      "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Gör 310% skada mot målet och fiender i närheten och ger dem 30 vansinne.",
-      "Åkallar ett moldavituggleodjur för målet och fiender i närheten. Odjuret skadar fienden med 70% attack varje runda.\n[*]Moldavituggleodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 25% av målets maximala hälsa.",
+      "Gör 350% skada mot målet och fiender i närheten och ger dem 30 vansinne.",
+      "Åkallar ett moldavituggleodjur för målet och fiender i närheten. Odjuret skadar fienden med 70% attack varje runda.\n[*]Moldavituggleodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 27% av målets maximala hälsa.",
       "Moldavituggleodjuret ger 5 vansinne till ägaren varje runda.",
       "I slutet av varje runda avbryter moldavituggleodjuret en av målets avbrytningsbara bonusar.",
       "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Sänk vansinne",
-     "text": "I början av varje tur sänks den här karaktärens aktuella vansinne med 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Undersåtesfördärv",
-     "text": "I slutet av varje runda kan fiender med vansinne eventuellt få sina undersåtar och megaundersåtar förvandlade till odjur. Vid 70 vansinne aktiveras förvandlingen automatiskt.\n[*] Undersåtar förvandlas till kusliga odjur: 15% attack, 18% hälsa, ger 5 vansinne varje runda.\n[*] Megaundersåtar förvandlas till kusliga megaodjur: 115% attack, 68% hälsa, ger 10 vansinne varje runda."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa.",
       "Alla allierade regenererar 1080 ökad hälsa i 4 rundor. Hälsan kan komma att överstiga maxhälsan.",
       "Alla fiender får -50% försvar mot specialförmågor under 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Målet och fiender i närheten får[#Dynamic] 222 [#]eldskada under 2 rundor. Användaren absorberar 10% av gjord eldskada som hälsa.",
       "[**]Om användaren dör under de följande 2 rundorna återupplivas användaren i början av nästkommande runda med 40% hälsa. Alla statuseffekter och staplar tas bort när användaren besegras.",
       "[*] 2 st manaladdningar",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 44% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 50% hälsa.",
       "[**]Alla allierade regenererar 795 ökad hälsa i 3 rundor. Hälsan kan komma att överstiga maxhälsan.",
       "[**]Alla allierade minskar all tagen skada med -60% i 3 rundor."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender."
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 20% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "En för alla!",
-     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 50% av den tagna skadan mot alla fiender. (Maxskada: 600)"
+     "text": "När karaktären tar skada istället för en skyddad karaktär gör den 75% av den tagna skadan mot alla fiender. (Maxskada: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Alla allierade utom användaren får 54% försvar mot heligt i 4 rundor."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren byter skepnad till ett hemskt spöke i 4 rundor. Den här effekten är envis.\n[*] Medan användaren har formen av ett hemskt spöke gör anfallaren automatiskt 175% skada mot en slumpad fiende varje runda.\n[*] I hemsk spökform kan användaren ta skada från fiender vars element är starkt mot användaren. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Alla allierade återfår 609 hälsa under 3 rundor.",
       "[*] 3 st manaladdningar",
       "[**]Ökar alla allierades hälsa med 700. Hälsan kan komma att överstiga maxhälsan.",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 27% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 32% hälsa.",
       "[**]Alla allierade återfår 952 hälsa under 4 rundor."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Alla fiender tar 530% skada.",
+      "Alla fiender tar 600% skada.",
       "Minskar alla fienders maxhälsa med 800. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 800.)",
       "Skördar bonusar från alla fiender.\n[*]Skörd tar riskfritt bort 2 bonusar, positiva staplar eller tillväxteffekter från varje mål. Det här gäller envisa effekter, danseffekter och bonusar som inte kan avbrytas.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Riskfri borttagning ignorerar sekundäreffekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.\n[*]Tillväxteffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
       "Vittra: Alla fiender får -540 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Gör 350% skada mot målet och fiender i närheten.\n[*]Gör ytterligare 10% skada för varje odjur eller megaodjur fienderna har, upp till 450% skada totalt.",
+      "Skördar bonusar från målet och fiender i närheten.\n[*]Skörd tar riskfritt bort 2 bonusar, positiva staplar eller tillväxteffekter från varje mål. Det här gäller envisa effekter, danseffekter och bonusar som inte kan avbrytas.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Riskfri borttagning ignorerar sekundäreffekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.\n[*]Tillväxteffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
+      "Anfallaren och omgivande allierade motanfaller med 115% av skadan de tagit emot i 4 rundor."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Gör 560% skada mot målet.\n[*]Gör ytterligare 15% skada för varje odjur eller megaodjur fienderna har, upp till 710% skada totalt.",
+      "Målet tar 400 varaktig blödningsskada per runda. (Effekten varar tills den rensas, ersätts eller tas bort.)",
+      "Användaren får 40% attack och ytterligare 20% mer varje gång de blir träffade under 4 rundor, upp till 140%."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Återger 50% hälsa till anfallaren och allierade i närheten.",
       "Rycker upp negativa statuseffekter från användaren och allierade i närheten.\n[*]Uppryckning tar säkert bort 2 negativa statuseffekter, negativa staplar och vittringseffekter från varje mål. Det här gäller även negativa statuseffekter som inte kan renas och danseffekter.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Säker borttagning aktiverar inte sekundära effekter, som skada vid borttagning, hos de borttagna negativa statuseffekterna. Externa effekter som passiva förmågor och familjeeffekter kan fortfarande aktiveras.\n[*]Vittringseffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
-      "Tillväxt: Alla allierade får 150 attack och 150 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)"
+      "Tillväxt: Alla allierade får 170 attack och 170 försvar. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Vittring och tillväxt kan inte avbrytas eller rensas.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 20% attack, 5% hälsa.\n[*]Skottodjuret:\n[*] 30% attack, 10% hälsa.\n[*]Blomstermegaodjuret:\n[*] 40% attack, 30% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 20% attack, 5% hälsa.\n[*]Skottodjuret:\n[*] 30% attack, 10% hälsa.\n[*]Blomstermegaodjuret:\n[*] 90% attack, 30% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Skadar målet med 600%.",
-      "Om målet har odjur eller megaodjur tar en annan slumpmässig fiende 500% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
+      "Om målet har odjur eller megaodjur tar en annan slumpmässig fiende 550% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
       "Användaren och allierade i närheten får 44% försvar och ytterligare 10% mer varje gång de blir träffade under 3 rundor, upp till 94% försvar."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Skördar bonusar från målet.\n[*]Skörd tar riskfritt bort 2 bonusar, positiva staplar eller tillväxteffekter från varje mål. Det här gäller envisa effekter, danseffekter och bonusar som inte kan avbrytas.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Riskfri borttagning ignorerar sekundäreffekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.\n[*]Tillväxteffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
+      "Målet får en stinkbomb. Stinkbomben exploderar efter 3 rundor och gör 1600 skada mot målet och allierade i närheten. (Stinkbomben exploderar också om den ersätts eller om målet besegras.)",
+      "Målet får -45% försvar under 3 rundor.",
+      "Gör 420% skada mot målet."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Gör 300% skada mot alla fiender.\n[*] Gör 5% extra skada för varje odjur eller megaodjur som fienden äger, upp till sammanlagt 350% skada.",
+      "Gör 285% skada mot alla fiender.\n[*] Gör 10% extra skada för varje odjur eller megaodjur som fienden äger, upp till sammanlagt 385% skada.",
       "Stapel +2 (max: 10): All skada som alla fiender tar ökar med 10%. (Rening minskar negativa staplar med 1.)",
       "Stapel +2 (max: 10): Alla allierade får 6% manaskapande. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.\n[*]Avbrytningar minskar positiva staplar med 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Alla allierade får 25% mana.\n[*]Alla allierade får ytterligare 5% mana för varje odjur eller megaodjur fienderna har, upp till 50% mana totalt. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "Rycker upp negativa statuseffekter från alla allierade.\n[*]Uppryckning tar säkert bort 2 negativa statuseffekter, negativa staplar och vittringseffekter från varje mål. Det här gäller även negativa statuseffekter som inte kan rensas och danseffekter.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Säker rensning aktiverar inte sekundära effekter, som skada vid borttagning, hos de borttagna negativa statuseffekterna. Externa effekter som passiva förmågor och familjeeffekter kan fortfarande aktiveras.\n[*]Vittringseffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
+      "Alla allierade regenererar 950 ökad hälsa i 5 rundor. Hälsan kan komma att överstiga maxhälsan."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Gör 385% skada mot målet och 5 slumpmässiga fiender.\n[*]Åkallar ett groddodjur på varje fiende som träffas.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.",
+      "Gör 395% skada mot målet och 5 slumpmässiga fiender.\n[*]Åkallar ett groddodjur på varje fiende som träffas.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.",
       "Alla träffade mål får -55% träffsäkerhet i 5 rundor. (Chansen att missa gäller även offensiva specialförmågor.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Skadar målet med 600%.",
-      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 300% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
+      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 350% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
       "Alla allierade får 55% försvar i 4 rundor. Effektens varaktighet återställs om ägaren av statuseffekten tar direktskada av en specialförmåga."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 35% attack, 10% hälsa.\n[*]Skottodjuret:\n[*] 60% attack, 15% hälsa.\n[*]Blomstermegaodjuret:\n[*] 85% attack, 50% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 35% attack, 10% hälsa.\n[*]Skottodjuret:\n[*] 60% attack, 15% hälsa.\n[*]Blomstermegaodjuret:\n[*] 120% attack, 50% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Gör 485% skada mot alla fiender.\n[*] Gör 10% extra skada för varje odjur eller megaodjur som fienden äger, upp till sammanlagt 585% skada.",
+      "All skada som alla fiender tar emot ökar med 30% i 5 rundor.",
+      "Om användaren besegras under de följande 5 rundorna återupplivas användaren i början av nästkommande runda med 35% hälsa och 1000 skada görs mot alla fiender. (Alla statuseffekter och staplar tas bort när användaren besegras.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nio liv",
      "text": "[*]När karaktären besegras har den 100% chans att återupplivas i början av sin nästa runda med 50% hälsa och 40% mana.\n[*]Kan aktiveras upp till 9 gånger. Chansen att återupplivas blir mindre för varje aktivering."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Tecknad",
+     "text": "75% extra chans att motstå alla negativa statuseffekter, manaminskningar och avbrytningar av bonusar."
     }
    ]
   }

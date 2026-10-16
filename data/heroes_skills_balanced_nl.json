@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Verwijdert veilig de oppeppers door statuseffecten van alle vijanden. (Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.)",
+      "Verhoogt de gezondheid van alle bondgenoten met 1300. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
+      "Bron van aandoeningen: de volgende effecten worden aan het begin van iedere beurt toegepast op een willekeurige vijand:\n[*] 3 beurten lang -45% manarecuperatie.\n[*] 3 beurten lang -60% verdediging tegen speciale vaardigheden.\n[*]De bron van aandoeningen wordt 4 keer geactiveerd. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Dit personage is immuun voor manareductie en krijgt bovendien elke keer als het weerstand biedt 10% mana."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana per vijandelijke oppepper",
-     "text": "Krijgt een kleine hoeveelheid mana voor elke actieve oppepper door statuseffecten die het vijandelijke team heeft aan het begin van elke beurt (maximaal 20 oppeppers)."
+     "id": "mana_on_buff",
+     "title": "Mana bij ontvangen oppepper",
+     "text": "Dit personage ontvangt 5% mana als het een oppepper of een positief cumulatief effect krijgt."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 20% gezondheid.",
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 24% gezondheid.",
       "Alle bondgenoten krijgen 5 beurten lang 50% aanvalskracht. De aanvalskracht stijgt elke beurt met 5% , tot maximaal 70%.",
       "Alle bondgenoten regenereren 1270 verhoogde gezondheid gedurende 5 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 15% gezondheid.",
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 20% gezondheid.",
       "Roept een elfvolgeling aan voor elke bondgenoot. De elfvolgeling erft 10% gezondheid en 10% aanvalskracht van de spreukspreker.",
       "Alle bondgenoten genezen 612 HP over 4 beurten."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Alle vijanden lijden 210% schade.\n[*] Doet 20% extra schade voor elk heilig schild op het bord, tot maximaal 450% extra schade.",
-      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 40% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal."
+      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 48% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Alle vijanden lijden 260% schade.\n[*] Doet 25% extra schade voor elk heilig schild op het bord, tot maximaal 560% extra schade.",
-      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 45% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal.",
+      "Elke verslagen bondgenoot heeft een kans van 20% om te worden teruggebracht met 50% gezondheid.\n[*]\n[*]Alle heilige schilden op het bord vergroten de kans om te worden teruggebracht met 5% , tot maximaal 65% in totaal.",
       "Extra schadelijk tegen Duisternis."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 30% gezondheid.",
-      "Alle bondgenoten genezen 1424 HP over 4 beurten. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages.",
-      "De volgende 4 beurten krijgen alle bondgenoten 5% mana aan het eind van de beurt. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages.",
-      "Elementenlink geeft alle Natuur-bondgenoten 6 beurten lang 15% aanval en 15% verdediging. Dit effect kan niet ongedaan worden gemaakt. Dit statuseffect is niet-verwijderbaar en duurt 2 beurten langer bij natuurpersonages."
+      "Alle bondgenoten genezen 1424 HP over 4 beurten.",
+      "De volgende 4 beurten krijgen alle bondgenoten 5% mana aan het eind van de beurt.",
+      "Elementenlink geeft alle Natuur-bondgenoten 6 beurten lang 15% aanval en 15% verdediging. Dit effect kan niet ongedaan worden gemaakt."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Brengt 350% schade en 35 waanzin toe aan het doelwit en vijanden in de buurt.",
       "Het doelwit en vijanden in de buurt lijden[#Dynamic] 654 [#]waterschade over 3 beurten. Alle bondgenoten absorberen 50% van de toegebrachte waterschade als verhoogde gezondheid.",
       "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
-      "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Brengt 350% schade toe aan het doelwit.\n[*] Brengt 350% schade toe aan 2 willekeurige vijanden.",
-      "Alle getroffen doelwitten lopen 15 waanzin op telkens als ze worden getroffen.",
-      "Cumulatief (max. 10): iedere treffer vergroot alle schade die het doelwit lijdt met 5% (Zuivering vermindert negatieve stapels met 1.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 40 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Brengt 280% schade en 15 waanzin toe aan het doelwit en vijanden in de buurt.",
-      "Het doelwit en vijanden in de buurt lopen 4 beurten lang, iedere beurt[#Dynamic] 51 [#]-[#Dynamic] 156 [#]vloekschade op. (De eerste beurt wordt[#Dynamic] 51 [#]schade aangebracht. De schade neemt iedere beurt met 45% toe, tot maximaal[#Dynamic] 156 [#]schade per beurt.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 60 waanzin toegebracht aan de spreukspreker.l",
-      "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Gedurende 2 beurten schieten de spreukspreker en bondgenoten in de buurt aan het eind van de beurt een oculaire straal naar een willekeurige vijand.\n[*] Iedere oculaire straal brengt 10 waanzin toe aan de getroffen vijand.\n[*] Iedere oculaire straal vermindert de maximale gezondheid van de getroffen vijand met 100. Het effect is sterker tegen doelwitten met gebooste gezondheid.",
       "(Max. gezondheid kan niet lager zijn dan 30% van de oorspronkelijke max. gezondheid.\n[*] Gebooste gezondheid wordt verminderd met nog eens 100.)",
       "Door deze speciale vaardigheid toe te passen, wordt er 40 waanzin toegebracht aan de spreukspreker.l",
-      "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Verwijdert veilig oppeppers van alle vijanden en verhoogt de mana van alle bondgenoten met 3% voor elke verwijderde oppepper.",
-      "Het doelwit verandert in een geestworm. De geestwormen hebben 70% aanvalskracht, 70% verdediging en de volgende speciale vaardigheid:\n[*]Een van ons (Zeer snel)\n[*]Brengt 75 waanzin toe aan één willekeurige bondgenoot.\n[*]Verwijdert de geestwormaandoening van de spreukspreker. (Dit effect houdt aan tot het wordt gezuiverd, vervangen of verwijderd.\n[*]Dit statuseffect heeft geen invloed op eindbazen, titanen en mythische titanen.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Het doelwit lijdt 565% schade.",
       "Het doelwit lijdt[#Dynamic] 1875 [#]waterschade gedurende 3 beurten. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Brengt 520% schade toe aan het doelwit en 5 willekeurige vijanden.",
       "Alle geraakte vijanden zijn 5 beurten lang immuun voor nieuwe oppeppers van statuseffecten en krijgen 1200 schade voor elke nieuwe oppepperpoging. Dit effect is hardnekkig.",
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 250% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Elementenlink geeft alle Heiligheids-bondgenoten 6 beurten lang 15% aanval en 15% verdediging. Dit effect kan niet ongedaan worden gemaakt."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "De held geneest 5 beurten lang 75% van de normale toegebrachte schade.",
       "Elementenlink geeft alle Heiligheids-bondgenoten 6 beurten lang 15% aanval en 15% verdediging. Dit effect kan niet ongedaan worden gemaakt."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Brengt 450% schade en 50 waanzin toe aan het doelwit en vijanden in de buurt.",
-      "Alle bondgenoten krijgen 50% extra aanvalskracht voor de volgende speciale vaardigheid. De extra aanvalskracht neemt elke beurt met 25% toe, tot maximaal 150% in totaal.",
-      "Alle bondgenoten zijn 4 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[*] Is ook inclusief plundering.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 20 waanzin toegebracht aan alle bondgenoten.",
-      "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Verandert het element van alle vijanden 4 beurten lang in vuur. (Dit statuseffect heeft geen invloed op titanen en mythische titanen.)",
-      "Brengt 240% schade en 15 waanzin toe aan alle vijanden.",
+      "Alle vijanden lijden 240% schade.",
       "De spreukspreker krijgt het effect Uitlokken wat 4 beurten lang voorkomt dat vijanden hun Speciale vaardigheden op de bondgenoten van de spreukspreker kunnen richten. (Uitlokking voorkomt dat alle vijanden speciale vaardigheden gebruiken op bondgenoten die geen uitlokking hebben.)",
       "De spreukspreker kaatst 4 beurten lang alle statusaandoeningen en 165% van de schade terug naar de aanvaller, en blokkeert andere negatieve effecten van vijandelijke speciale vuurvaardigheden. (Statuseffecten door personages, volgelingen en demonen aan dezelfde kant kunnen niet worden teruggekaatst.)",
       "Door deze speciale vaardigheid toe te passen, wordt er 55 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Roept een atypische megavolgeling aan met 45% gezondheid en 180% aanval van de spreukspreker.\n[*]Elke treffer van de atypische megavolgeling geeft het doelwit het volgende negatieve statuseffect:",
       "[**]Het doelwit lijdt 3 beurten lang[#Dynamic] 552 [#]toxineschade. Doelwitten met meer gezondheid, volgelingen of een megavolgeling, lopen meer schade op. (Toxineschade neemt toe met 100% tegen doelwitten met verhoogde gezondheid.\n[***]De toxineschade is 33% hoger per volgeling of megavolgeling van het doelwit.\n[***]De maximale schadeverhoging is 199%.)",
       "[**]Brengt 10 waanzin toe aan het doelwit.",
-      "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Gebruikt volledige verwijdering op het doelwit. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "Het doelwit neemt 5 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 261 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Brengt 220% schade en 25 waanzin toe aan het doelwit en vijanden in de buurt.",
       "Cumulatief +2 (max. 10): de spreukspreker krijgt 26% aanvalskracht. (Verwijdering vermindert positieve cumulatieve effecten met 1.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 40 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Alle vijanden worden 5 beurten lang overmand door angst. (Het doelwit krijgt -40% verdediging.\n[*] Verwijdert alle verwijderbare oppeppers en groeieffecten wanneer er een angststatuseffect wordt toegevoegd.\n[*] Het doelwit kan in die tijd geen nieuwe oppeppers of groeieffecten krijgen.\n[*] Doelwitten met angst brengen elke keer als een andere bondgenoot de speciale vaardigheid gebruikt 250% schade toe aan een willekeurige bondgenoot. Ieder personage kan dit effect één keer per beurt activeren.)",
       "Verwelking: alle vijanden krijgen -480 aanval. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)",
       "Brengt 420% schade en 25 waanzin toe aan alle vijanden.",
-      "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Het doelwit lijdt 300% schade.",
-      "De aanval negeert alle verdedigende oppeppers. (Dit geldt ook voor tegenaanvallen.)",
-      "De aanvalsketen raakt alle vijanden die naast een geraakte vijand staan.",
-      "Alle getroffen doelwitten lopen 20 waanzin op telkens als ze worden getroffen.",
-      "Na 1 beurt raakt het doelwit 4 beurten lang verlamd.",
-      "(Dit statuseffect heeft geen invloed op eindbazen, titanen en mythische titanen.)",
-      "(Verlamde vijanden kunnen niet aanvallen of mana recupereren en lopen 50% meer schade op.\n[*]Eenmaal verlamd, kan het effect niet worden gezuiverd.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
-      "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Brengt 310% schade en 30 waanzin toe aan het doelwit en vijanden in de buurt.",
-      "Roept een moldavietuilendemon aan voor het doelwit en vijanden in de buurt. De demon brengt de vijand elke beurt schade toe met 70% aanvalskracht.\n[*]De moldavietuilendemon absorbeert genezing. Hij verdwijnt als hij het equivalent van 25% van de maximale gezondheid van het doelwit heeft geabsorbeerd.",
+      "Brengt 350% schade en 30 waanzin toe aan het doelwit en vijanden in de buurt.",
+      "Roept een moldavietuilendemon aan voor het doelwit en vijanden in de buurt. De demon brengt de vijand elke beurt schade toe met 70% aanvalskracht.\n[*]De moldavietuilendemon absorbeert genezing. Hij verdwijnt als hij het equivalent van 27% van de maximale gezondheid van het doelwit heeft geabsorbeerd.",
       "De moldavietuilendemon brengt elke beurt 5 waanzin toe aan de eigenaar.",
       "Aan het eind van iedere beurt verwijdert de moldavietuilendemon een van de verwijderbare oppeppers van het doelwit.",
       "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Waanzin verminderen",
-     "text": "Aan het begin van elke beurt wordt de huidige waanzin van dit personage met 1 verlaagd."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Volgelingencorruptie",
-     "text": "Aan het eind van iedere beurt hebben vijanden met waanzin een kans om hun volgelingen om te zetten in demonen. De verandering wordt automatisch geactiveerd zodra 70 waanzin bereikt wordt.\n[*] Een volgeling verandert in een Eldritch-demon: 15% aanvalskracht, 18% gezondheid, brengt iedere beurt 5 waanzin toe.\n[*] Een megavolgeling verandert in een Eldritch-megademon: 115% aanvalskracht, 68% gezondheid, brengt elke beurt 10 waanzin toe."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 20% gezondheid.",
+      "Elke verslagen bondgenoot maakt 50% kans om terug te keren met 24% gezondheid.",
       "Alle bondgenoten regenereren 1080 verhoogde gezondheid gedurende 4 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
       "Alle vijanden hebben 4 beurten lang -50% verdediging tegen Speciale vaardigheden. Dit statuseffect is niet-zuiverbaar en duurt 2 beurten langer tegen duistere personages."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Het doelwit en vijanden in de buurt wordt gedurende 2 beurten[#Dynamic] 222 [#]vuurschade toegebracht. De spreukspreker absorbeert 10% van de toegebrachte vuurschade als gezondheid.",
       "[**]Als de spreukspreker binnen de volgende 2 beurten wordt verslagen, wordt deze aan het begin van de volgende beurt teruggebracht met 40% gezondheid. Alle statuseffecten en cumulatieve effecten worden verwijderd als de spreukspreker wordt verslagen.",
       "[*]x 2 manalading:",
-      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 44% gezondheid.",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 50% gezondheid.",
       "[**]Alle bondgenoten regenereren 795 verhoogde gezondheid gedurende 3 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
       "[**]Alle bondgenoten ontvangen 3 beurten lang -60% minder schade."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden."
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 20% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Eén voor allen!",
-     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 50% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
+     "text": "Wanneer dit personage schade oploopt in plaats van een personage in dekking, wordt 75% van de opgelopen schade toegebracht aan alle vijanden. (Max. schade: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Alle bondgenoten, met uitzondering van de spreukspreker, hebben 4 beurten lang 54% verdediging tegen heilig."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "De spreukspreker neemt 4 beurten lang de vorm van een gevaarlijke geest aan. Dit effect is hardnekkig.\n[*] In de vorm van een gevaarlijke geest richt de spreukspreker elke beurt automatisch 175% schade aan een willekeurige vijand aan.\n[*] In de vorm van een gevaarlijke geest kan de spreukspreker schade aan van vijanden die sterk zijn tegen het element van de spreukspreker. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Alle bondgenoten genezen 609 HP over 3 beurten.",
       "[*]x 3 manalading:",
       "[**]Verhoogt de gezondheid van alle bondgenoten met 700. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid.",
-      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 27% gezondheid.",
+      "[**]Elke verslagen bondgenoot maakt 50% kans om terug te keren met 32% gezondheid.",
       "[**]Alle bondgenoten genezen 952 HP over 4 beurten."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Alle vijanden lijden 530% schade.",
+      "Alle vijanden lijden 600% schade.",
       "Vermindert de maximale gezondheid van alle vijanden met 800. Het effect is sterker tegen doelwitten met verhoogde gezondheid. (Max. gezondheid kan niet lager zijn dan 30% van de oorspronkelijke max. gezondheid.\n[*] Gebooste gezondheid wordt verminderd met nog eens 800.)",
       "Oogst oppeppers van alle vijanden.\n[*]Met oogsten worden maximaal 2 oppeppers, positieve cumulatieve effecten of groei-effecten veilig verwijderd van elk doelwit. Dit is inclusief hardnekkige effecten, niet-verwijderbare oppeppers en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Groei-effecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
       "Verwelking: alle vijanden krijgen -540 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Brengt 350% schade toe aan het doelwit en alle vijanden in de buurt.\n[*]Brengt een extra 10% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 450% schade in totaal.",
+      "Oogst oppeppers van het doelwit en vijanden in de buurt.\n[*]Met oogsten worden maximaal 2 oppeppers, positieve cumulatieve effecten of groei-effecten veilig verwijderd van elk doelwit. Dit is inclusief hardnekkige effecten, niet-verwijderbare oppeppers en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Groei-effecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
+      "De held en bondgenoten in de buurt doen 4 beurten lang tegenaanvallen met 115% van de geleden schade."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Brengt 560% schade toe aan het doelwit.\n[*]Brengt een extra 15% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 710% schade in totaal.",
+      "Het doelwit krijgt per beurt blijvende 400 bloedschade. (Dit effect houdt aan tot het wordt gezuiverd, vervangen of verwijderd.)",
+      "De spreukspreker krijgt 4 beurten lang 40% aanvalskracht, en 20% extra elke keer dat deze wordt geraakt, tot maximaal 140% aanvalskracht."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "De held en bondgenoten in de buurt genezen 50%.",
       "Uitroeiingsdebuffs van de spreukspreker en bondgenoten in de buurt.\n[*]Met uitroeien worden maximaal 2 debuffs, negetieve cumulatieve effecten of verwerkingseffecten veilig verwijderd van elk doelwit. Dit is inclusief niet-zuiverbare statusaandoeningen en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van statuseffectoppeppers. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Verwelkingseffecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
-      "Groei: alle bondgenoten krijgen 150 aanval en 150 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)"
+      "Groei: alle bondgenoten krijgen 170 aanval en 170 verdediging. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*] Extra verwelk- en groei-effecten passen de vaardigheidsscores verder aan.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] 30% en 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 20% aanval, 5% gezondheid.\n[*]Scheutdemon:\n[*] 30% aanval, 10% gezondheid.\n[*]Bloesemmegademon:\n[*] 40% aanval, 30% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 20% aanval, 5% gezondheid.\n[*]Scheutdemon:\n[*] 30% aanval, 10% gezondheid.\n[*]Bloesemmegademon:\n[*] 90% aanval, 30% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Het doelwit lijdt 600% schade.",
-      "Brengt 500% schade toe aan een willekeurige, andere vijand als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
+      "Brengt 550% schade toe aan een willekeurige, andere vijand als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
       "De spreukspreker en bondgenoten in de buurt krijgen 3 beurten lang 44% verdediging, en 10% extra elke keer dat ze worden geraakt, tot maximaal 94% verdediging."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Oogst oppeppers van het doelwit.\n[*]Met oogsten worden maximaal 2 oppeppers, positieve cumulatieve effecten of groei-effecten veilig verwijderd van elk doelwit. Dit is inclusief hardnekkige effecten, niet-verwijderbare oppeppers en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Groei-effecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
+      "Het doelwit krijgt een penetrante bom. Penetrante bom ontploft na 3 beurten en brengt 1600 schade toe aan het doelwit en bondgenoten in de buurt. (De penetrante bom explodeert ook als die vervangen wordt of als het doelwit verslagen wordt.)",
+      "Het doelwit krijgt 3 beurten lang -45% verdediging.",
+      "Het doelwit lijdt 420% schade."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Brengt 300% schade toe aan alle vijanden.\n[*] Brengt een extra 5% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 350% schade in totaal.",
+      "Brengt 285% schade toe aan alle vijanden.\n[*] Brengt een extra 10% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 385% schade in totaal.",
       "Cumulatief +2 (max. 10): alle schade die alle vijanden oplopen, wordt verhoogd met 10%. (Zuivering vermindert negatieve stapels met 1.)",
       "Cumulatief +2 (max. 10): alle bondgenoten recupereren 6% mana. (Beïnvloedt alleen mana die gegenereerd wordt door schilden te combineren of mana die het verdedigingsteam krijgt na afloop van hun beurt.\n[*]Verwijdering vermindert positieve cumulatieve effecten met 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Alle bondgenoten krijgen 25% mana.\n[*]Alle bondgenoten krijgen 5% extra mana voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 50% mana in totaal. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "Uitroeiingsdebuffs van alle bondgenoten.\n[*]Met uitroeien worden maximaal 2 statusaandoeningen, negetieve cumulatieve effecten of verwerkingseffecten veilig verwijderd van elk doelwit. Dit is inclusief niet-zuiverbare statusaandoeningen en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig zuiveren omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van statusaandoeningen. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Verwelkingseffecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
+      "Alle bondgenoten regenereren 950 verhoogde gezondheid gedurende 5 beurten. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Brengt 385% schade toe aan het doelwit en 5 willekeurige vijanden.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.",
+      "Brengt 395% schade toe aan het doelwit en 5 willekeurige vijanden.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.",
       "Het getroffen doelwitten krijgen 5 beurten lang -55% trefzekerheid. (Miskansen gelden ook voor offensieve Speciale vaardigheden.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Het doelwit lijdt 600% schade.",
-      "Brengt 300% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
+      "Brengt 350% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
       "Alle bondgenoten krijgen 4 beurten lang 55% verdedigingskracht. De effectduur wordt gereset wanneer de eigenaar van het statuseffect rechtstreekse schade oploopt door een speciale vaardigheid."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 35% aanval, 10% gezondheid.\n[*]Scheutdemon:\n[*] 60% aanval, 15% gezondheid.\n[*]Bloesemmegademon:\n[*] 85% aanval, 50% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 35% aanval, 10% gezondheid.\n[*]Scheutdemon:\n[*] 60% aanval, 15% gezondheid.\n[*]Bloesemmegademon:\n[*] 120% aanval, 50% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Brengt 485% schade toe aan alle vijanden.\n[*] Brengt een extra 10% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 585% schade in totaal.",
+      "Alle schade die alle vijanden oplopen, is gedurende 5 beurten 30% hoger.",
+      "Als de spreukspreker binnen de volgende 5 beurten wordt verslagen, wordt deze aan het begin van de volgende beurt teruggebracht met 35% gezondheid en wordt er 1000 schade toegebracht aan alle vijanden. (Alle statuseffecten en cumulatieve effecten worden verwijderd als de spreukspreker wordt verslagen.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Negen levens",
      "text": "[*]Wanneer dit personage wordt verslagen, heeft hij/zij 100% kans om aan het begin van de volgende beurt terug te keren met 50% gezondheid en 40% mana.\n[*]Wordt maximaal 9 keer geactiveerd. De kans op terugkeer wordt bij elke activering kleiner."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra kans om alle negatieve statuseffecten, manaverminderingen en het verwijderen van oppeppers te weerstaan."
     }
    ]
   }

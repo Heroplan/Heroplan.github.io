@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Dengan aman mengenyahkan genjotan efek status dari semua musuh. (Pengenyahan aman melewati efek sekunder, seperti kerusakan saat penghapusan, dari genjotan efek status yang dihapus. Efek eksternal seperti keahlian pasif dan efek keluarga masih bisa aktif.)",
+      "Meningkatkan kesehatan semua sekutu sebesar 1300. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
+      "Sumber Pelemahan: Efek berikut dirapal ke satu musuh acak di awal tiap giliran:\n[*] -45% generasi mana selama 3 giliran.\n[*] -60% pertahanan terhadap Keahlian Khusus selama 3 giliran.\n[*]Sumber Pelemahan akan aktif 4 kali. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "Karakter ini kebal terhadap pengurangan mana serta meraih 10% mana tiap kali menampik."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana per Genjotan Musuh",
-     "text": "Mendapatkan sejumlah kecil mana untuk setiap genjotan efek status aktif milik tim musuh di awal setiap giliran (maksimum 20 genjotan)."
+     "id": "mana_on_buff",
+     "title": "Mana Saat Menerima Genjotan",
+     "text": "Karakter ini meraih 5% mana saat dia menerima genjotan atau tumpukan positif."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 20%.",
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 24%.",
       "Semua sekutu mendapat 50% serangan selama 5 giliran. Serangan naik 5% setiap giliran, hingga 70%.",
       "Semua sekutu meregenerasi 1270 kesehatan yang ditingkatkan selama 5 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 15%.",
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 20%.",
       "Memanggil Antek Elf untuk tiap sekutu dengan 10% HP dan 10% serangan yang diwarisi dari perapal.",
       "Semua sekutu meregenerasi 612 HP selama 4 giliran."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Menimbulkan kerusakan 210% kepada semua musuh.\n[*]Menimbulkan kerusakan tambahan 20% per perisai Suci yang dipakai, sampai total kerusakan 450%.",
-      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 40% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%."
+      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 48% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Menimbulkan kerusakan 260% kepada semua musuh.\n[*]Menimbulkan kerusakan tambahan 25% per perisai Suci yang dipakai, sampai total kerusakan 560%.",
-      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 45% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%.",
+      "Setiap sekutu yang kalah berpeluang 20% untuk dibangkitkan dengan 50% HP.\n[*]Setiap perisai Suci yang dipakai akan menambah peluang untuk dibangkitkan sebesar 5% , hingga total peluangnya 65%.",
       "Kerusakan ekstra terhadap elemen Gelap."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 30%.",
-      "Semua sekutu meregenerasi 1424 HP selama 4 giliran. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam.",
-      "Semua sekutu menerima 5% mana di akhir giliran selama 4 giliran. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam.",
-      "Dinamika Elemen memberi semua sekutu Alam 15% serangan dan 15% pertahanan selama 6 giliran. Efek ini tidak bisa dienyahkan. Efek status ini tidak bisa dienyahkan dan berlangsung selama 2 giliran lagi di karakter Alam."
+      "Semua sekutu meregenerasi 1424 HP selama 4 giliran.",
+      "Semua sekutu menerima 5% mana di akhir giliran selama 4 giliran.",
+      "Dinamika Elemen memberi semua sekutu Alam 15% serangan dan 15% pertahanan selama 6 giliran. Efek ini tidak bisa dienyahkan."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Menimbulkan 350% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 35 Kegilaan kepada mereka.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 654 [#]kerusakan Air selama 3 giliran. Semua sekutu menyerap 50% dari kerusakan Air yang ditimbulkan sebagai peningkatan kesehatan.",
       "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
-      "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Menimbulkan kerusakan 350% pada sasaran.\n[*] Menimbulkan kerusakan tambahan 350% ke 2 musuh acak.",
-      "Setiap kali terkena, semua sasaran mendapat 15 Kegilaan.",
-      "Tumpukan (Maks: 10): Setiap hantaman meningkatkan semua kerusakan yang diterima sasaran sebesar 5% (Pembersihan mengurangi tumpukan negatif sebanyak 1.)",
-      "Merapal Keahlian Khusus ini menimbulkan 40 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Menimbulkan 280% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 15 Kegilaan kepada mereka.",
-      "Sasaran dan musuh terdekat menerima[#Dynamic] 51 [#]-[#Dynamic] 156 [#]kerusakan Kutukan yang bertambah besar pada tiap giliran selama 4 giliran. (Pada giliran pertama,[#Dynamic] 51 [#]kerusakan ditimbulkan. Kerusakan bertambah sebesar 45% di setiap giliran, hingga[#Dynamic] 156 [#]kerusakan per giliran.)",
-      "Merapal Keahlian Khusus ini menimbulkan 60 Kegilaan pada perapal.",
-      "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "Di akhir setiap giliran, perapal dan sekutu terdekat menembakkan Sinar Okuler ke musuh acak selama 2 giliran.\n[*] Setiap Sinar Okuler menimpakan 10 Kegilaan pada musuh yang terkena.\n[*] Setiap Sinar Okuler mengurangi Kesehatan Maks musuh yang terkena sebesar 100. Efek ini lebih kuat terhadap sasaran yang mendapat peningkatan kesehatan.",
       "(Kesehatan maks. tidak boleh lebih rendah dari 30% dari kesehatan maks. awal.\n[*] Peningkatan kesehatan dikurangi 100 lagi.)",
       "Merapal Keahlian Khusus ini menimbulkan 40 Kegilaan pada perapal.",
-      "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Dengan aman mengenyahkan genjotan dari semua musuh, dan meningkatkan mana semua sekutu sebesar 3% untuk setiap genjotan yang dihilangkan.",
-      "Sasaran berubah jadi Mindworm. Mindworm memiliki 70% serangan, 70% pertahanan, dan Keahlian Khusus berikut:\n[*]Satu dari Kita (Sangat Cepat)\n[*]Menimpakan 75 Kegilaan pada satu sekutu acak.\n[*]Menghilangkan pelemahan Mindworm dari perapal. (Efek ini berlangsung sampai dibersihkan, diganti, atau dihapus.\n[*]Bos, Titan, dan Titan Mistis tidak dipengaruhi oleh efek status ini.)",
-      "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Menimbulkan kerusakan 565% pada sasaran.",
       "Sasaran mengalami[#Dynamic] 1875 [#]kerusakan Air selama 3 giliran. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Menimbulkan kerusakan 520% ke sasaran dan 5 musuh acak.",
       "Semua sasaran yang terkena kebal terhadap genjotan efek status baru selama 5 giliran, dan menerima 1200 kerusakan untuk setiap upaya genjotan. Efek ini Bandel.",
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 250% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Dinamika Elemen memberi semua sekutu Suci 15% serangan dan 15% pertahanan selama 6 giliran. Efek ini tidak bisa dienyahkan."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "Perapal sembuh 75% dari kerusakan normal yang diterima selama 5 giliran.",
       "Dinamika Elemen memberi semua sekutu Suci 15% serangan dan 15% pertahanan selama 6 giliran. Efek ini tidak bisa dienyahkan."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Menimbulkan 450% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 50 Kegilaan kepada mereka.",
-      "Semua sekutu mendapat kekuatan serangan tambahan 50% untuk Keahlian Khusus berikutnya yang dirapal. Kekuatan tambahan meningkat 25% setiap giliran hingga total maksimum 150%.",
-      "Semua sekutu kebal terhadap pengenyahan genjotan dan realokasi selama 4 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[*] Juga termasuk Geledah.)",
-      "Merapal Keahlian Khusus ini menimbulkan 20 Kegilaan pada semua sekutu.",
-      "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Mengubah elemen semua musuh menjadi Api selama 4 giliran. (Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)",
-      "Menimbulkan 240% kerusakan kepada semua musuh dan menimbulkan 15 Kegilaan kepada mereka.",
+      "Menimbulkan 240% kerusakan kepada semua musuh.",
       "Perapal mendapat Cela yang membuat musuh tidak bisa menggunakan Keahlian Khusus pada sekutu perapal selama 4 giliran. (Ejek mencegah semua musuh agar tidak menggunakan Keahlian Khusus pada sekutu mereka yang tidak memiliki Ejek.)",
       "Perapal memantulkan semua status pelemahan dan 165% kerusakan kepada penyerang dan memblokir efek negatif dari Keahlian Khusus Api musuh selama 4 giliran. (Efek status yang dirapal oleh karakter, Antek, dan Iblis di sisi yang sama tidak bisa dipantulkan.)",
       "Merapal Keahlian Khusus ini menimbulkan 55 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Memanggil Antek Mega Aberasi dengan 45% HP dan 180% serangan yang diwarisi dari perapal.\n[*]Setiap serangan dari Antek Mega Aberasi memberikan status pelemahan berikut kepada sasaran:",
       "[**]Sasaran mengalami[#Dynamic] 552 [#]kerusakan Racun selama 3 giliran.\n[***]Kerusakan bertambah melawan sasaran dengan peningkatan kesehatan, Antek, atau satu Antek Mega. (Kerusakan Racun naik 100% terhadap sasaran dengan peningkatan kesehatan.\n[***]Kerusakan Racun bertambah 33% per Antek atau Antek Mega yang dimiliki sasarant.\n[***]Maksimal peningkatan kerusakan adalah 199%.)",
       "[**]Menimbulkan 10 Kegilaan pada sasarannya.",
-      "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Merapal Penghapusan Penuh pada sasaran. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Sasaran berubah menjadi Hantu Jurang selama 5 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 261 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)",
-      "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Menimbulkan 220% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 25 Kegilaan kepada mereka.",
       "Tumpukan +2 (Maks: 10): Perapal mendapat serangan 26%. (Pengenyahan mengurangi tumpukan positif sebanyak 1.)",
-      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 40 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "Semua musuh menyerah pada rasa Takut selama 5 giliran. (Sasaran mendapat pertahanan -40%.\n[*] Menghapus semua genjotan yang bisa dienyahkan dan efek Bertumbuh saat efek status Rasa Takut ditambahkan.\n[*] Sasaran tidak bisa meraih genjotan atau efek Bertumbuh baru selama durasi.\n[*] Sasaran dengan rasa Takut menimbulkan 250% kerusakan ke musuh acak tiap kali sekutu lain merapal Keahlian Khususnya. Tiap karakter dapat memicu efek ini sekali per giliran.)",
       "Layu: Semua sekutu mendapat -480 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Menimbulkan 420% kerusakan kepada semua musuh dan menimbulkan 25 Kegilaan kepada mereka.",
-      "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Menimbulkan kerusakan 300% pada sasaran.",
-      "Serangan itu menembus genjotan defensif. (Ini termasuk serangan balik.)",
-      "Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
-      "Setiap kali terkena, semua sasaran mendapat 20 Kegilaan.",
-      "Setelah 1 giliran, sasaran menjadi Lumpuh selama 4 giliran.",
-      "(Bos, Titan, dan Titan Mistis tidak dipengaruhi oleh efek status ini.)",
-      "(Musuh yang lumpuh tidak bisa menyerang atau meraih mana dan mengalami peningkatan kerusakan 50%.\n[*]Begitu Lumpuh, efeknya tidak dapat dibersihkan.)",
-      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
-      "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Menimbulkan 310% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 30 Kegilaan kepada mereka.",
-      "Memanggil Iblis Burung Hantu Moldavite untuk sasaran dan musuh terdekat. Iblis menyerang musuh dengan 70% serangan tiap giliran.\n[*]Iblis Burung Hantu Moldavite menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 25% dari kesehatan maksimum sasarannya.",
+      "Menimbulkan 350% kerusakan kepada sasaran dan musuh terdekat serta menimbulkan 30 Kegilaan kepada mereka.",
+      "Memanggil Iblis Burung Hantu Moldavite untuk sasaran dan musuh terdekat. Iblis menyerang musuh dengan 70% serangan tiap giliran.\n[*]Iblis Burung Hantu Moldavite menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 27% dari kesehatan maksimum sasarannya.",
       "Iblis Burung Hantu Moldavite menimbulkan 5 Kegilaan pada pemiliknya di setiap giliran.",
       "Pada akhir setiap giliran, Iblis Burung Hantu Moldavite mengenyahkan salah satu genjotan sasarannya yang bisa dienyahkan.",
       "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Mengurangi Kegilaan",
-     "text": "Di awal tiap giliran, Kegilaan saat ini karakter ini berkurang sebesar 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Korupsi Antek",
-     "text": "Di akhir setiap giliran, musuh dengan Kegilaan berpeluang mengubah Antek mereka berubah menjadi Iblis. Mencapai 70 Kegilaan mengaktifkan transformasi secara otomatis.\n[*] Antek akan berubah menjadi Iblis Eldritch: 15% serangan, 18% kesehatan, menimbulkan 5 Kegilaan setiap giliran\n[*]Antek Mega akan berubah menjadi Iblis Mega Eldritch: 115% serangan, 68% kesehatan, menimbulkan 10 Kegilaan setiap giliran."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 20%.",
+      "Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 24%.",
       "Semua sekutu meregenerasi 1080 kesehatan yang ditingkatkan selama 4 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal",
       "Pertahanan semua musuh terhadap Keahlian Khusus naik -50% selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama."
      ]
@@ -2311,7 +2208,7 @@
       "[**]Sasaran dan musuh terdekat menerima[#Dynamic] 222 [#]kerusakan Terbakar selama 2 giliran. Perapal menyerap 10% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
       "[**]Jika perapal kalah selama 2 giliran berikutnya, dia dibangkitkan pada awal giliran yang berikutnya dengan kesehatan 40%. Segala efek status dan tumpukan dihapus saat perapal kalah.",
       "[*]x 2 Daya Mana:",
-      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 44%.",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 50%.",
       "[**]Semua sekutu meregenerasi 795 kesehatan yang ditingkatkan selama 3 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal",
       "[**]Semua kerusakan yang diterima semua sekutu berkurang -60% selama 3 giliran."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh."
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 20% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "Satu untuk semua!",
-     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 50% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
+     "text": "Ketika karakter ini mengalami kerusakan sebagai pengganti karakter yang Terlindungi, dia menimbulkan 75% dari kerusakan yang diterima kepada semua musuh. (Kerusakan maks: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "Semua sekutu kecuali perapal mendapat 54% pertahanan melawan Suci selama 4 giliran."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Perapal berubah menjadi Arwah Ngeri selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Arwah Ngeri, perapal secara otomatis menimbulkan 175% kerusakan terhadap musuh acak setiap giliran.\n[*] Saat berwujud Arwah Ngeri, perapal dapat mengalami kerusakan dari musuh yang berelemen kuat melawan perapal. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]Semua sekutu meregenerasi 609 HP selama 3 giliran.",
       "[*]x 3 Daya Mana:",
       "[**]Meningkatkan kesehatan semua sekutu sebesar 700. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
-      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 27%.",
+      "[**]Tiap sekutu yang kalah berpeluang 50% dibangkitkan dengan HP 32%.",
       "[**]Semua sekutu meregenerasi 952 HP selama 4 giliran."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Menimbulkan kerusakan 530% pada semua musuh.",
+      "Menimbulkan kerusakan 600% pada semua musuh.",
       "Mengurangi kesehatan maksimal semua musuh sebesar 800. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 800 lagi.)",
       "Panen genjotan dari semua musuh.\n[*]Panen dengan aman menghapus 2 genjotan, Tumpukan positif, atau efek Bertumbuh dari setiap sasaran. Ini termasuk efek Bandel, genjotan yang tidak bisa dienyahkan, dan efek Tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman melewati efek sekunder, seperti kerusakan saat menghapus, dari genjotan efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Bertumbuh dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
       "Layu: Semua musuh mendapat -540 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Menimbulkan 350% kerusakan kepada sasaran dan musuh terdekat.\n[*]Menimbulkan 10% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 450%.",
+      "Panen genjotan dari sasaran dan musuh terdekat.\n[*]Panen dengan aman menghapus 2 genjotan, Tumpukan positif, atau efek Bertumbuh dari setiap sasaran. Ini termasuk efek Bandel, genjotan yang tidak bisa dienyahkan, dan efek Tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman melewati efek sekunder, seperti kerusakan saat menghapus, dari genjotan efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Bertumbuh dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
+      "Perapal dan sekutu terdekat menyerang balik dengan 115% kerusakan yang diterima selama 4 giliran."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Menimbulkan 560% kerusakan kepada sasaran.\n[*]Menimbulkan 15% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 710%.",
+      "Sasaran menerima 400 kerusakan berdarah langgeng per giliran. (Efek ini berlangsung sampai dibersihkan, diganti, atau dihapus.)",
+      "Perapal mendapat 40% serangan dan bertambah 20% setiap kali mereka terkena hantaman selama 4 giliran, hingga 140% serangan."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Memulihkan kesehatan perapal dan sekutu terdekat sebesar 50%.",
       "Mencerabut pelemah dari perapal dan sekutu terdekat.\n[*]Cerabut dengan aman menghapus 2 pelemah, Tumpukan positif, atau efek Layu dari setiap sasaran. Ini termasuk status pelemahan yang tidak bisa dibersihkan dan efek tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman mengabaikan efek sekunder, seperti kerusakan saat menghapus, dari pelemah efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Layu dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
-      "Bertumbuh: Semua sekutu mendapat 150 serangan dan 150 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Semua sekutu mendapat 170 serangan dan 170 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 20% , kesehatan 5%.\n[*]Iblis Tunas:\n[*]serangan 30% , kesehatan 10%.\n[*]Iblis Mega Mekar:\n[*]serangan 40% , kesehatan 30%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 20% , kesehatan 5%.\n[*]Iblis Tunas:\n[*]serangan 30% , kesehatan 10%.\n[*]Iblis Mega Mekar:\n[*]serangan 90% , kesehatan 30%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
-      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 500% kepada satu musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
+      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 550% kepada satu musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
       "Perapal dan sekutu terdekat mendapat 44% pertahanan dan naik 10% lagi setiap kali terkena serangan selama 3 giliran, hingga pertahanan 94%."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Memanen genjotan dari sasaran.\n[*]Panen dengan aman menghapus 2 genjotan, Tumpukan positif, atau efek Bertumbuh dari setiap sasaran. Ini termasuk efek Bandel, genjotan yang tidak bisa dienyahkan, dan efek Tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman melewati efek sekunder, seperti kerusakan saat menghapus, dari genjotan efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Bertumbuh dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
+      "Sasaran menerima Bom Bau Tajam. Bom Bau Tajam meledak setelah 3 giliran dan menimbulkan 1600 kerusakan pada sasaran dan sekutu terdekat. (Bom Bau Tajam juga akan meledak jika diganti atau jika sasaran kalah.)",
+      "Sasaran mendapat -45% pertahanan selama 3 giliran.",
+      "Menimbulkan 420% kerusakan kepada sasaran."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Menimbulkan 300% kerusakan kepada semua musuh.\n[*] Menimbulkan 5% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 350%.",
+      "Menimbulkan 285% kerusakan kepada semua musuh.\n[*] Menimbulkan 10% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 385%.",
       "Tumpukan +2 (Maks: 10): Semua kerusakan yang diterima semua musuh bertambah 10%. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)",
       "Tumpukan +2 (Maks: 10): Semua sekutu mendapat generasi mana 6%. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.\n[*]Pengenyahan mengurangi tumpukan positif sebanyak 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "Semua sekutu mendapatkan 25% mana.\n[*]Semua sekutu mendapatkan 5% mana tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total 50% mana. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "Mencerabut pelemah dari semua sekutu.\n[*]Cerabut dengan aman menghapus 2 status pelemahan, Tumpukan positif, atau efek Layu dari setiap sasaran. Ini termasuk status pelemahan yang tidak bisa dibersihkan dan efek tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Pembersihan yang aman mengabaikan efek sekunder, seperti kerusakan saat menghapus, dari status pelemahan yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Layu dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
+      "Semua sekutu meregenerasi 950 kesehatan yang ditingkatkan selama 5 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Menimbulkan 385% kerusakan pada sasaran dan 5 musuh acak.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.",
+      "Menimbulkan 395% kerusakan pada sasaran dan 5 musuh acak.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.",
       "Semua sasaran yang terkena mendapat akurasi -55% selama 5 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
-      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 300% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
+      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 350% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
       "Semua sekutu mendapat 55% pertahanan selama 4 giliran. Durasi efek ini akan direset jika pemilik efek status terkena kerusakan langsung dari Keahlian Khusus."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 35% , kesehatan 10%.\n[*]Iblis Tunas:\n[*]serangan 60% , kesehatan 15%.\n[*]Iblis Mega Mekar:\n[*]serangan 85% , kesehatan 50%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 35% , kesehatan 10%.\n[*]Iblis Tunas:\n[*]serangan 60% , kesehatan 15%.\n[*]Iblis Mega Mekar:\n[*]serangan 120% , kesehatan 50%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Menimbulkan 485% kerusakan kepada semua musuh.\n[*] Menimbulkan 10% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 585%.",
+      "Semua kerusakan yang diterima musuh bertambah 30% selama 5 giliran.",
+      "Jika perapal kalah selama 5 giliran berikutnya, mereka dibangkitkan pada awal giliran yang berikutnya dengan kesehatan 35% dan 1000 kerusakan ditimbulkan kepada semua musuh. (Semua efek status dan tumpukan dihapus saat perapal kalah.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Sembilan Nyawa",
      "text": "[*]Saat kalah, karakter ini berpeluang 100% untuk dibangkitkan di awal giliran berikutnya dengan kesehatan 50% dan mana 40%.\n[*]Aktif hingga 9 kali. Peluang untuk bangkit berkurang setiap aktivasi."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "Peluang ekstra 75% untuk menampik semua status pelemahan, pengurangan mana, dan pengenyahan genjotan."
     }
    ]
   }

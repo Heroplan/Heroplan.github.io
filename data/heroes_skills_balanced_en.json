@@ -700,6 +700,16 @@
  ],
  "beowulf_freawaru": [
   {
+   "skills": [
+    {
+     "id": "scroll_of_fellowship_mayhem",
+     "lines": [
+      "Safely dispels status effect buffs from all enemies. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.)",
+      "Boosts health of all allies by 1300. Boosted health can exceed max HP.",
+      "Source of Ailments: The following effects are cast on a random enemy at the start of each turn:\n[*] -45% mana generation for 3 turns.\n[*] -60% defense against Special Skills for 3 turns.\n[*]The Source of Ailments will activate 4 times. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "resist_buff_immunity",
@@ -712,9 +722,9 @@
      "text": "This character is immune to mana reductions. They also gain 10% mana each time they resist."
     },
     {
-     "id": "fixed_mana_per_enemy_buff",
-     "title": "Mana per Enemy Buff",
-     "text": "Gains a small amount of mana for every active status effect buff that the enemy team has at the start of each turn (maximum of 20 buffs)."
+     "id": "mana_on_buff",
+     "title": "Mana on Buff Received",
+     "text": "This character gains 5% mana when they receive a buff or a positive stack."
     }
    ]
   }
@@ -888,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Each defeated ally has a 50% chance to get revived with 20% HP.",
+      "Each defeated ally has a 50% chance to get revived with 24% HP.",
       "All allies get 50% attack for 5 turns. The attack increases by 5% each turn, up to 70%.",
       "All allies regenerate 1270 boosted health over 5 turns. Boosted health can exceed max HP."
      ]
@@ -931,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Each defeated ally has a 50% chance to get revived with 15% HP.",
+      "Each defeated ally has a 50% chance to get revived with 20% HP.",
       "Summons an Elf Minion for each ally with 10% HP and 10% attack inherited from the caster.",
       "All allies regenerate 612 HP over 4 turns."
      ]
@@ -1200,6 +1210,17 @@
    ]
   }
  ],
+ "dark_god_hel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
  "dark_god_september": [
   {
    "skills": [
@@ -1253,7 +1274,7 @@
      "id": "unwavering_devotion_mayhem",
      "lines": [
       "Deals 210% damage to all enemies.\n[*]Deals additional 20% damage per each Holy shield on the board, up to 450% damage in total.",
-      "Each defeated ally has a 20% chance to be revived with 40% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total."
+      "Each defeated ally has a 20% chance to be revived with 48% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total."
      ]
     }
    ]
@@ -1266,9 +1287,31 @@
      "id": "cosmic_devotion_mayhem",
      "lines": [
       "Deals 260% damage to all enemies.\n[*]Deals additional 25% damage per each Holy shield on the board, up to 560% damage in total.",
-      "Each defeated ally has a 20% chance to be revived with 45% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total.",
+      "Each defeated ally has a 20% chance to be revived with 50% HP.\n[*]Each Holy shield on the board increases the chance to be revived by 5% , up to 65% chance in total.",
       "Deals extra damage against Dark."
      ]
+    }
+   ]
+  }
+ ],
+ "fire_god_ares_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "fire_god_natalya_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }
@@ -1296,10 +1339,28 @@
      "id": "toonsummers_dream_mayhem",
      "lines": [
       "Each defeated ally has a 50% chance to get revived with 30% HP.",
-      "All allies regenerate 1424 HP over 4 turns. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
-      "For the next 4 turns, all allies receive 5% mana at the end of the turn. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
-      "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled. This status effect is undispellable and lasts 2 turns longer on Nature characters."
+      "All allies regenerate 1424 HP over 4 turns.",
+      "For the next 4 turns, all allies receive 5% mana at the end of the turn.",
+      "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled."
      ]
+    }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "forest_god_zeline_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }
@@ -1358,34 +1419,6 @@
       "Deals 350% damage to the target and nearby enemies and inflicts 35 Insanity on them.",
       "The target and nearby enemies receive[#Dynamic] 654 [#]Water damage over 3 turns. All allies absorb 50% of dealt Water damage as boosted health.",
       "Casting this Special Skill inflicts 45 Insanity on the caster.",
-      "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
-    }
-   ]
-  }
- ],
- "forsaken_inanis": [
-  {
-   "skills": [
-    {
-     "id": "severed_seal_mayhem",
-     "lines": [
-      "Deals 350% damage to the target.\n[*] Deals additional 350% damage to 2 random enemies.",
-      "All hit targets get 15 Insanity every time they are hit.",
-      "Stack (Max: 10): Each hit increases all damage the target receives by 5% (Cleansing reduces negative stacks by 1.)",
-      "Casting this Special Skill inflicts 40 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
     }
@@ -1481,28 +1514,6 @@
    ]
   }
  ],
- "forsaken_lamentia": [
-  {
-   "skills": [
-    {
-     "id": "frenzied_rend_mayhem",
-     "lines": [
-      "Deals 280% damage to the target and nearby enemies and inflicts 15 Insanity on them.",
-      "The target and nearby enemies receive[#Dynamic] 51 [#]-[#Dynamic] 156 [#]increasing Curse damage each turn for 4 turns. (On the first turn,[#Dynamic] 51 [#]damage is dealt. The damage increases by 45% each turn, up to[#Dynamic] 156 [#]damage per turn.)",
-      "Casting this Special Skill inflicts 60 Insanity on the caster.",
-      "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    }
-   ]
-  }
- ],
  "forsaken_nyctalos": [
   {
    "skills": [
@@ -1513,33 +1524,6 @@
       "At the end of each turn, the caster and nearby allies shoot an Ocular Ray at a random enemy for 2 turns.\n[*] Each Ocular Ray inflicts 10 Insanity on the hit enemy.\n[*] Each Ocular Ray reduces the Max Health of the hit enemy by 100. The effect is stronger against targets with boosted health.",
       "(Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 100.)",
       "Casting this Special Skill inflicts 40 Insanity on the caster.",
-      "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
-    }
-   ]
-  }
- ],
- "forsaken_vermis": [
-  {
-   "skills": [
-    {
-     "id": "mysteries_of_the_worm_mayhem",
-     "lines": [
-      "Safely dispels buffs from all enemies, and increases all allies' mana by 3% for each removed buff.",
-      "The target turns into a Mindworm. Mindworms have 70% attack, 70% defense and the following Special Skill:\n[*]One of Us (Very Fast)\n[*]Inflicts 75 Insanity on one random ally.\n[*]Removes the Mindworm ailment from the caster. (This effect lasts until it is cleansed, replaced or removed.\n[*]Bosses, Titans and Mythic Titans are not affected by this status effect.)",
-      "Casting this Special Skill inflicts 50 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
     }
@@ -1620,7 +1604,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1631,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1646,7 +1630,7 @@
       "Deals 565% damage to the target.",
       "The target receives[#Dynamic] 1875 [#]Water damage over 3 turns. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ],
@@ -1654,7 +1638,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1665,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1686,7 +1670,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1732,7 +1716,7 @@
       "Deals 520% damage to the target and 5 random enemies.",
       "All hit targets are immune to new status effect buffs for 5 turns, and receive 1200 damage for each attempted buff. This effect is Stubborn.",
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ],
@@ -1740,7 +1724,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1751,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1762,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 250% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1851,6 +1835,17 @@
    ]
   }
  ],
+ "holy_god_delilah_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
  "holy_god_musashi": [
   {
    "skills": [
@@ -1879,6 +1874,13 @@
       "Element Link gives all Holy allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
    ]
   }
  ],
@@ -1893,6 +1895,17 @@
       "The caster heals 75% of dealt normal damage for 5 turns.",
       "Element Link gives all Holy allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled."
      ]
+    }
+   ]
+  }
+ ],
+ "ice_god_athena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }
@@ -1927,30 +1940,13 @@
    ]
   }
  ],
- "institute_axioma": [
+ "ice_god_perseus_costume_cute": [
   {
-   "skills": [
-    {
-     "id": "the_forbidden_formula_mayhem",
-     "lines": [
-      "Deals 450% damage to the target and nearby enemies and inflicts 50 Insanity on them.",
-      "All allies get an additional 50% attack power for the next Special Skill they cast. The additional attack power increases 25% each turn, up to a maximum of 150% in total.",
-      "All allies are immune to buff dispels and reallocations for 4 turns. (The immunity also includes this effect itself.\n[*] Also includes Ransack.)",
-      "Casting this Special Skill inflicts 20 Insanity on all allies.",
-      "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
-     ]
-    }
-   ],
    "passiveSkills": [
     {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }
@@ -1962,24 +1958,12 @@
      "id": "aetheric_transmutation_mayhem",
      "lines": [
       "Changes the element of all enemies to Fire for 4 turns. (Titans and Mythic Titans are not affected by this status effect.)",
-      "Deals 240% damage to all enemies and inflicts 15 Insanity on them.",
+      "Deals 240% damage to all enemies.",
       "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 4 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
       "The caster reflects all status ailments and 165% damage back to the attacker and block other negative effects from enemies' Fire Special Skills for 4 turns. (Status effects cast by characters, Minions and Fiends on the same side cannot be reflected.)",
       "Casting this Special Skill inflicts 55 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
     }
    ]
   }
@@ -1994,21 +1978,9 @@
       "Summons an Aberration Mega Minion with 45% HP and 180% attack inherited from the caster.\n[*]Each hit from an Aberration Mega Minion gives the target the following status ailment:",
       "[**]The target receives[#Dynamic] 552 [#]Toxin damage over 3 turns. Damage is increased against targets with boosted health, Minions or a Mega Minion. (The Toxin damage is increased by 100% against targets with boosted health.\n[***]The Toxin damage is increased by 33% per Minion or Mega Minion owned by target.\n[***]Maximum increased damage is 199%.)",
       "[**]Inflicts 10 Insanity on the target.",
-      "Casting this Special Skill inflicts 50 Insanity on the caster.",
+      "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
     }
    ]
   }
@@ -2021,21 +1993,9 @@
      "lines": [
       "Casts Full Removal on the target. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The target shifts into Abyss Ghost form for 5 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 261 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)",
-      "Casting this Special Skill inflicts 50 Insanity on the caster.",
+      "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
     }
    ]
   }
@@ -2048,16 +2008,9 @@
      "lines": [
       "Deals 220% damage to the target and nearby enemies and inflicts 25 Insanity on them.",
       "Stack +2 (Max: 10): The caster gets 26% attack. (Dispelling reduces positive stacks by 1.)",
-      "Casting this Special Skill inflicts 45 Insanity on the caster.",
+      "Casting this Special Skill inflicts 40 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
     }
    ]
   }
@@ -2071,21 +2024,9 @@
       "All enemies succumb to Fear for 5 turns. (The target gets -40% defense.\n[*] Removes all dispellable buffs and Growth effects when a Fear status effect is added.\n[*] The target cannot gain new buffs or Growth effects for the duration.\n[*] Target with Fear deals 250% damage to random ally each time any other ally casts their Special Skill. Each character can trigger this effect once per turn.)",
       "Wither: All enemies get -480 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Deals 420% damage to all enemies and inflicts 25 Insanity on them.",
-      "Casting this Special Skill inflicts 50 Insanity on the caster.",
+      "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
     }
    ]
   }
@@ -2140,63 +2081,19 @@
    ]
   }
  ],
- "institute_wilcox": [
-  {
-   "skills": [
-    {
-     "id": "volatile_crystal_conduit_mayhem",
-     "lines": [
-      "Deals 300% damage to the target.",
-      "The attack bypasses defensive buffs. (This includes counterattacks.)",
-      "The attack chains through all the enemies who are adjacent to any hit enemy.",
-      "All hit targets get 20 Insanity every time they are hit.",
-      "After 1 turn the target gets Paralyzed for 4 turns.",
-      "(Bosses, Titans and Mythic Titans are not affected by this status effect.)",
-      "(Paralyzed enemies can't attack or gain mana and receive 50% increased damage.\n[*]Once Paralyzed, the effect can't be cleansed.)",
-      "Casting this Special Skill inflicts 45 Insanity on the caster.",
-      "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
-     ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
-    }
-   ]
-  }
- ],
  "institute_zenas": [
   {
    "skills": [
     {
      "id": "moldavite_wings_mayhem",
      "lines": [
-      "Deals 310% damage to the target and nearby enemies and inflicts 30 Insanity on them.",
-      "Summons a Moldavite Owl Fiend for the target and nearby enemies. The Fiend damages the enemy with 70% attack every turn.\n[*]The Moldavite Owl Fiend absorbs healing. It disappears after absorbing a healing amount equal to 25% of its target's max health.",
+      "Deals 350% damage to the target and nearby enemies and inflicts 30 Insanity on them.",
+      "Summons a Moldavite Owl Fiend for the target and nearby enemies. The Fiend damages the enemy with 70% attack every turn.\n[*]The Moldavite Owl Fiend absorbs healing. It disappears after absorbing a healing amount equal to 27% of its target's max health.",
       "The Moldavite Owl Fiend inflicts 5 Insanity on the owner on every turn.",
       "At the end of each turn, the Moldavite Owl Fiend dispels one of its target's dispellable buffs.",
       "Casting this Special Skill inflicts 50 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
-    }
-   ],
-   "passiveSkills": [
-    {
-     "id": "reduce_insanity_per_turn",
-     "title": "Reduce Insanity",
-     "text": "At the start of each turn, this character's current Insanity is reduced by 1."
-    },
-    {
-     "id": "corrupt_minions_all_enemies",
-     "title": "Minion Corruption",
-     "text": "At the end of each turn, enemies with Insanity have a chance to have their Minions turn to Fiends. Reaching 70 Insanity activates the transformation automatically.\n[*] A Minion will transform into an Eldritch Fiend: 15% attack, 18% health, inflicts 5 Insanity every turn.\n[*] A Mega Minion will transform into an Eldritch Mega Fiend: 115% attack, 68% health, inflicts 10 Insanity every turn."
     }
    ]
   }
@@ -2235,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Each defeated ally has a 50% chance to get revived with 20% HP.",
+      "Each defeated ally has a 50% chance to get revived with 24% HP.",
       "All allies regenerate 1080 boosted health over 4 turns. Boosted health can exceed max HP.",
       "All enemies get -50% defense against Special Skills for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer."
      ]
@@ -2311,7 +2208,7 @@
       "[**]The target and nearby enemies receive[#Dynamic] 222 [#]Burn damage over 2 turns. The caster absorbs 10% of dealt Burn damage as health.",
       "[**]If the caster is defeated during the next 2 turns, they are resurrected in the beginning of their next turn with 40% health. All status effects and stacks are removed when the caster is defeated.",
       "[*]x 2 Mana Charge:",
-      "[**]Each defeated ally has a 50% chance to get revived with 44% HP.",
+      "[**]Each defeated ally has a 50% chance to get revived with 50% HP.",
       "[**]All allies regenerate 795 boosted health over 3 turns. Boosted health can exceed max HP.",
       "[**]All allies reduce all received damage by -60% for 3 turns."
      ]
@@ -2402,7 +2299,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2424,7 +2321,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2440,7 +2337,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2451,7 +2348,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2467,7 +2364,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2478,7 +2375,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2494,7 +2391,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2505,7 +2402,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2521,7 +2418,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2532,7 +2429,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2548,7 +2445,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
     }
    ]
   }
@@ -2559,7 +2456,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies. (Max damage: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2575,7 +2472,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
     }
    ]
   }
@@ -2586,7 +2483,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies. (Max damage: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2602,7 +2499,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2613,7 +2510,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2629,7 +2526,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
     }
    ]
   }
@@ -2640,7 +2537,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies. (Max damage: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2656,7 +2553,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2667,7 +2564,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2683,7 +2580,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2705,7 +2602,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2721,7 +2618,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
     }
    ]
   }
@@ -2732,7 +2629,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies."
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies."
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -2748,7 +2645,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 20% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
     }
    ]
   }
@@ -2759,7 +2656,7 @@
     {
      "id": "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
      "title": "One for all!",
-     "text": "When this character receives damage in place of a character in Cover, they deal 50% of the received damage to all enemies. (Max damage: 600)"
+     "text": "When this character receives damage in place of a character in Cover, they deal 75% of the received damage to all enemies. (Max damage: 600)"
     },
     {
      "id": "resist_defense_modifier_debuffs",
@@ -3080,6 +2977,94 @@
    ]
   }
  ],
+ "s2_ariel_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_atlantean_robot_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_chief_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_chameleon_mage_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_cursed_samurai_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_demon_master_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_fiji_mermaid_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_fox_girl_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
  "s2_ghost_woman": [
   {
    "skills": [
@@ -3104,6 +3089,13 @@
       "All allies except the caster get 54% defense against Holy for 4 turns."
      ]
     }
+   ],
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
    ]
   }
  ],
@@ -3122,6 +3114,303 @@
    ]
   }
  ],
+ "s2_hammerhead_hulk_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_junglehunter_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_mercenary_woman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_merman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_merwoman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_noble_lady_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_oceanus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_poseidon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_proteus_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_rugged_fisherman_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_skyllaros_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_tanuki_raccoon_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_tethys_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_triton_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s2_ursena_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_almur_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_bjorn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_by_ulf_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_ei_dunn_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_fenrir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_fura_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_gullinbursti_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_heimdall_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_kvasir_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_mist_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_nordri_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_norns_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
  "s3_stonecleave": [
   {
    "skills": [
@@ -3131,6 +3420,28 @@
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Dire Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Dire Ghost form the caster automatically deals 175% damage against a random enemy each turn.\n[*] While in Dire Ghost form the caster can take damage from enemies whose element is strong against the caster. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
+    }
+   ]
+  }
+ ],
+ "s3_sumle_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
+    }
+   ]
+  }
+ ],
+ "s3_tyr_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }
@@ -3558,7 +3869,7 @@
       "[**]All allies regenerate 609 HP over 3 turns.",
       "[*]x 3 Mana Charge:",
       "[**]Boosts health of all allies by 700. Boosted health can exceed max HP.",
-      "[**]Each defeated ally has a 50% chance to get revived with 27% HP.",
+      "[**]Each defeated ally has a 50% chance to get revived with 32% HP.",
       "[**]All allies regenerate 952 HP over 4 turns."
      ]
     }
@@ -4544,7 +4855,7 @@
     {
      "id": "bitter_wilting_mayhem",
      "lines": [
-      "Deals 530% damage to all enemies.",
+      "Deals 600% damage to all enemies.",
       "Reduces max health of all enemies by 800. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 800.)",
       "Harvests buffs from all enemies.\n[*]Harvest safely removes 2 buffs, positive Stacks or Growth effects from each target. This includes Stubborn effects, undispellable buffs and Dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Growth effects are removed first. Other effects, the latest is removed first.",
       "Wither: All enemies get -540 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
@@ -4567,6 +4878,16 @@
  ],
  "vegetable_bartholomew": [
   {
+   "skills": [
+    {
+     "id": "capsicum_charge_mayhem",
+     "lines": [
+      "Deals 350% damage to the target and nearby enemies.\n[*] Deals additional 10% damage for each Fiend or Mega Fiend owned by the enemies, up to 450% damage in total.",
+      "Harvests buffs from target and nearby enemies.\n[*]Harvest safely removes 2 buffs, positive Stacks or Growth effects from each target. This includes Stubborn effects, undispellable buffs and Dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Growth effects are removed first. Other effects, the latest is removed first.",
+      "The caster and nearby allies counterattack with 115% of the damage received for 4 turns."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4583,6 +4904,16 @@
  ],
  "vegetable_big_barry": [
   {
+   "skills": [
+    {
+     "id": "spiked_bat_thrashing_mayhem",
+     "lines": [
+      "Deals 560% damage to the target.\n[*] Deals additional 15% damage for each Fiend or Mega Fiend owned by the enemies, up to 710% damage in total.",
+      "The target receives lasting 400 Bleed damage per turn. (This effect lasts until it is cleansed, replaced or removed.)",
+      "The caster gets 40% attack, and a further 20% increase every time they are hit during 4 turns, up to 140% attack."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4605,7 +4936,7 @@
      "lines": [
       "Recovers 50% health for the caster and nearby allies.",
       "Uproots debuffs from the caster and nearby allies.\n[*]Uproot safely removes 2 debuffs, negative Stacks or Wither effects from each target. This includes uncleansable status ailments and dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Wither effects are removed first. Other effects, the latest is removed first.",
-      "Growth: All allies get 150 attack and 150 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 170 attack and 170 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ],
@@ -4629,7 +4960,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_rare",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 20% attack, 5% health.\n[*]Sprout Fiend:\n[*] 30% attack, 10% health.\n[*]Blossom Mega Fiend:\n[*] 40% attack, 30% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 20% attack, 5% health.\n[*]Sprout Fiend:\n[*] 30% attack, 10% health.\n[*]Blossom Mega Fiend:\n[*] 90% attack, 30% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4694,7 +5025,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Deals 600% damage to the target.",
-      "If the target has Fiends or Mega Fiends, deals 500% damage to a random different enemy.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
+      "If the target has Fiends or Mega Fiends, deals 550% damage to a random different enemy.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
       "The caster and nearby allies get 44% defense, and a further 10% increase every time they are hit during 3 turns, up to 94% defense."
      ]
     }
@@ -4715,6 +5046,17 @@
  ],
  "vegetable_garlacteus": [
   {
+   "skills": [
+    {
+     "id": "pungent_punishment_mayhem",
+     "lines": [
+      "Harvests buffs from the target.\n[*]Harvest safely removes 2 buffs, positive Stacks or Growth effects from each target. This includes Stubborn effects, undispellable buffs and Dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Growth effects are removed first. Other effects, the latest is removed first.",
+      "The target receives a Pungent Bomb. Pungent Bomb explodes after 3 turns and deals 1600 damage to the target and nearby allies. (The Pungent Bomb also explodes if it is replaced or if the target is defeated.)",
+      "The target gets -45% defense for 3 turns.",
+      "Deals 420% damage to the target."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4735,7 +5077,7 @@
     {
      "id": "brand_of_reckoning_mayhem",
      "lines": [
-      "Deals 300% damage to all enemies.\n[*] Deals additional 5% damage for each Fiend or Mega Fiend owned by the enemies, up to 350% damage in total.",
+      "Deals 285% damage to all enemies.\n[*] Deals additional 10% damage for each Fiend or Mega Fiend owned by the enemies, up to 385% damage in total.",
       "Stack +2 (Max: 10): All damage all enemies receive is increased by 10%. (Cleansing reduces negative stacks by 1.)",
       "Stack +2 (Max: 10): All allies get 6% mana generation. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.\n[*]Dispelling reduces positive stacks by 1.)"
      ]
@@ -4757,6 +5099,16 @@
  ],
  "vegetable_melonius": [
   {
+   "skills": [
+    {
+     "id": "magical_refreshment_mayhem",
+     "lines": [
+      "All allies gain 25% mana.\n[*]All allies gain an additional 5% mana for each Fiend or Mega Fiend owned by the enemies, up to 50% mana in total. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "Uproots debuffs from all allies.\n[*]Uproot safely removes 2 status ailments, negative Stacks or Wither effects from each target. This includes uncleansable status ailments and dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe cleanse bypasses secondary effects, such as damage on removal, from the removed status ailment. External effects such as passive skills and family effects can still activate.\n[*]Wither effects are removed first. Other effects, the latest is removed first.",
+      "All allies regenerate 950 boosted health over 5 turns. Boosted health can exceed max HP."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -4777,7 +5129,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Deals 385% damage to the target and 5 random enemies.\n[*]Summons a Seedling Fiend to each hit enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.",
+      "Deals 395% damage to the target and 5 random enemies.\n[*]Summons a Seedling Fiend to each hit enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.",
       "All hit targets get -55% accuracy for 5 turns. (Chance to miss also applies to offensive Special Skills.)"
      ]
     }
@@ -4803,7 +5155,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Deals 600% damage to the target.",
-      "If the target has Fiends or Mega Fiends, deals 300% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
+      "If the target has Fiends or Mega Fiends, deals 350% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
       "All allies get 55% defense for 4 turns. The effect duration is reset if the status effect owner is hit with direct damage from a Special Skill."
      ]
     }
@@ -4838,7 +5190,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_epic",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 35% attack, 10% health.\n[*]Sprout Fiend:\n[*] 60% attack, 15% health.\n[*]Blossom Mega Fiend:\n[*] 85% attack, 50% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 35% attack, 10% health.\n[*]Sprout Fiend:\n[*] 60% attack, 15% health.\n[*]Blossom Mega Fiend:\n[*] 120% attack, 50% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4850,6 +5202,16 @@
  ],
  "vegetable_pyaza": [
   {
+   "skills": [
+    {
+     "id": "chlorokinesis_tears_mayhem",
+     "lines": [
+      "Deals 485% damage to all enemies.\n[*] Deals additional 10% damage for each Fiend or Mega Fiend owned by the enemies, up to 585% damage in total.",
+      "All damage all enemies receive is increased by 30% for 5 turns.",
+      "If the caster is defeated during the next 5 turns, they are resurrected in the beginning of their next turn with 35% health and 1000 damage is dealt to all enemies. (All status effects and stacks are removed when the caster is defeated.)"
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
@@ -5268,6 +5630,17 @@
      "id": "revive_chance_nine_lives_mayhem",
      "title": "Nine Lives",
      "text": "[*]When defeated, this character has 100% chance to revive at the beginning of their next turn with 50% health and 40% mana.\n[*]Activates up to 9 times. Chance to revive is reduced on each activation."
+    }
+   ]
+  }
+ ],
+ "witch_king_costume_cute": [
+  {
+   "passiveSkills": [
+    {
+     "id": "toon_resist_debuffs_manareduction_dispels",
+     "title": "Toon",
+     "text": "75% extra chance to resist all status ailments, mana reductions and buff dispels."
     }
    ]
   }

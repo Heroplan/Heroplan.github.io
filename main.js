@@ -477,8 +477,12 @@ async function initializeApp() {
     // 7.5 技能正文（2.6~4MB/语言）延后补齐：首屏表格已渲染完，此时再解析并挂到英雄对象上，
     //     供**详情弹窗**与**高级筛选（技能/被动文本）**使用（首屏表格本身不需要它）。
     //     仅在相关筛选已有输入时才重渲染，避免无谓的长任务。
+    //     ⚠ 把这个 promise 留在 `skillsReady` 里给下面 `?view=` 用 —— **不能再调一次
+    //     ensureSkillsLoaded()**：它进函数就把 `_skillsHydrated` 置位，第二次并发调用会立刻
+    //     返回 false（正文还没挂上），详情弹窗照样是空的（就是这个 bug 的成因）。
+    let skillsReady = Promise.resolve();
     if (typeof ensureSkillsLoaded === 'function') {
-        ensureSkillsLoaded().then(ok => {
+        skillsReady = ensureSkillsLoaded().then(ok => {
             if (!ok) return;
             const fi = uiElements.filterInputs || {};
             const needRerender =
@@ -489,17 +493,23 @@ async function initializeApp() {
     }
 
     if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
-        // 1. 新格式：按 heroId 查找
-        let targetHero = state.allHeroes.find(h => h.heroId === viewHeroFromUrl);
+        // `?view=<heroId>`（英雄详情分享链接）：**等技能正文补齐再开弹窗**，否则特殊/被动技能
+        // 与家族加成全是空的，用户看到的就是一张"没加载完"的详情。
+        skillsReady.then(() => {
+            // 等的时候用户可能已经自己点开了某只英雄 ⇒ 不抢他的操作。
+            if (state.modalStack && state.modalStack.length) return;
+            // 1. 新格式：按 heroId 查找
+            let targetHero = state.allHeroes.find(h => h.heroId === viewHeroFromUrl);
 
-        // 2. 向后兼容：旧的 english_name-costume_id 格式
-        if (!targetHero) {
-            targetHero = state.allHeroes.find(
-                h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl
-            );
-        }
+            // 2. 向后兼容：旧的 english_name-costume_id 格式
+            if (!targetHero) {
+                targetHero = state.allHeroes.find(
+                    h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl
+                );
+            }
 
-        if (targetHero) openDetailsModal(targetHero);
+            if (targetHero) openDetailsModal(targetHero);
+        });
     }
 
     setTimeout(adjustStickyHeaders, 100);

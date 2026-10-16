@@ -707,6 +707,12 @@ function addEventListeners() {
             // 应用筛选并重新渲染表格
             applyFiltersAndRender();
         }
+        // 「查看平衡数据英雄」页头按钮：**直接点筛选页面那颗按钮**（同一套状态 + 渲染，不另起一份逻辑）。
+        // 按钮只在未激活时渲染（见 ui.js::updateResultsHeader），取消由页头的「重置」tag 负责。
+        // ⚠ 用 closest：按钮里有 `<img>`，`event.target` 可能是图片。
+        if (event.target.closest('#view-balance-heroes-btn')) {
+            uiElements.filterInputs.filterBalanceHeroesBtn.click();
+        }
     });
 
     // --- 特殊视图切换事件 ---

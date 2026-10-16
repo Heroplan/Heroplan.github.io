@@ -461,6 +461,25 @@ function updateResultsHeader() {
         }
         // --- 查看最新 按钮逻辑结束 ---
 
+        // --- 查看平衡数据英雄（带图标，调用筛选页面那颗同名按钮）---
+        // 与「查看最新」同进同出：**有任何筛选（即页头出现「重置」tag）就不显示**，取消筛选后自动恢复；
+        // 且只在主列表页出现（非列表视图由 style.css 里 `#view-balance-heroes-btn` 的规则隐藏）。
+        if (!filtersAreActive) {
+            const balanceBtn = document.createElement('span');
+            balanceBtn.id = 'view-balance-heroes-btn';
+            balanceBtn.className = 'reset-tag';
+            balanceBtn.title = langDict.balanceHeroesList;
+            const balanceIcon = document.createElement('img');
+            balanceIcon.src = 'imgs/event/emoji_spritesheet_234.webp';
+            balanceIcon.className = 'event-icon';
+            balanceIcon.alt = '';
+            balanceIcon.onerror = () => { balanceIcon.style.display = 'none'; };
+            balanceBtn.appendChild(balanceIcon);
+            balanceBtn.appendChild(document.createTextNode(langDict.balanceHeroesList || ''));
+            uiElements.resultsCountEl.appendChild(balanceBtn);
+        }
+        // --- 查看平衡数据英雄 逻辑结束 ---
+
         if (showResetButton) {
             const resetTag = document.createElement('span');
             resetTag.className = 'reset-tag';

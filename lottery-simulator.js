@@ -2676,6 +2676,12 @@ function toggleLotterySimulator() {
         uiElements.donationlistcontainer.classList.add('hidden');
         document.body.classList.add('lottery-mode-active');
 
+        // 进入抽奖模拟器：**清空所有筛选**，让下面那份卡池列表从"全量"里取，而不是叠在上一次的筛选上。
+        // ⚠ 这个进入分支原本不重渲染（只有退出分支调 applyFiltersAndRender），而英雄表在上面被显式
+        //   保持可见 ⇒ 渲染交给 handleActivityClick（它内部 `activeHeroSubset = getFilteredMasterPool()`
+        //   + applyFiltersAndRender），拿不到卡池的两种情况才自己补一次 ⇒ 每条路径恰好渲染一次。
+        resetAllFilters();
+
         const activityList = document.getElementById('lottery-activity-list-container');
         const historyList = document.getElementById('summon-history-list-container');
         if (activityList) activityList.scrollTop = 0;
@@ -2685,7 +2691,11 @@ function toggleLotterySimulator() {
             const firstPoolId = Object.keys(state.allSummonPools)[0];
             if (firstPoolId) {
                 handleActivityClick(firstPoolId);
+            } else {
+                applyFiltersAndRender();
             }
+        } else {
+            applyFiltersAndRender();
         }
         setMainViewHistory('lotterySimulator');
     } else {

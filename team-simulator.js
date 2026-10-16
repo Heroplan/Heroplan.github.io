@@ -97,9 +97,11 @@ function toggleTeamSimulator() {
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
         if (chatSimulatorView) chatSimulatorView.classList.add('hidden');
+        // 进抽屉前**清空所有筛选**（名字、星级、平衡档、各种临时视图…）：否则抽屉拿到的是
+        // "上一次筛选 ∩ 收藏"，会莫名其妙少一批英雄。清空后再把范围设成收藏 ⇒ 正确的"全部收藏"。
+        resetAllFilters();
         state.multiSelectFilters.filterScope = ['favorites'];
         updateFilterButtonUI('filterScope');
-        state.temporaryFavorites = null;
         applyFiltersAndRender();
         renderActiveTabList();
         setMainViewHistory('teamSimulator');

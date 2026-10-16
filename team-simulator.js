@@ -301,7 +301,7 @@ function renderTeamDisplay() {
                     const sanitizedFilename = chineseKey.replace(/\//g, '');
 
                     // 3. 构建单个图标HTML
-                    return `<img src="imgs/skill/${sanitizedFilename}.webp" 
+                    return `<img loading="lazy" src="imgs/skill/${sanitizedFilename}.webp" decoding="async" 
                       class="skill-icon" 
                       alt="${tag}" 
                       title="${tag}">`;
@@ -416,7 +416,7 @@ function updateTeamTags() {
 
             // 图标查找只依赖 tag 值本身，用一个代表性类型（skillTag_base）取图标
             const iconSrc = getIconForFilter('skillTag_base', tag);
-            const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+            const iconHTML = iconSrc ? `<img loading="lazy" src="${iconSrc}" decoding="async" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
 
             return `<span class="team-tag-item">${iconHTML}${tag}${countHTML}</span>`;
         }).join('');
@@ -469,7 +469,7 @@ function renderSavedTeams(teams, isSharedView = false) {
                 return `
                     <div class="saved-team-avatar-container ${getColorGlowClass(hero.colorId)}" title="${hero.name}">
                         <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.colorId)};"></div>
-                        <img src="${imageSrc}" class="saved-team-avatar-image" alt="${hero.name}">
+                        <img loading="lazy" src="${imageSrc}" decoding="async" class="saved-team-avatar-image" alt="${hero.name}">
                     </div>
                 `;
             } else {

@@ -85,7 +85,7 @@ function initAndShowWantedMissionView() {
         // 创建表头
         let thead = wantedMissionTable.querySelector('thead') || wantedMissionTable.appendChild(document.createElement('thead'));
         thead.innerHTML = '<tr>' + Object.keys(headers).map(key =>
-            key === 'season' ? `<th></th>` : `<th><img src="${headers[key]}" alt="${key}" style="height: 32px; vertical-align: middle;"></th>`
+            key === 'season' ? `<th></th>` : `<th><img loading="lazy" src="${headers[key]}" decoding="async" alt="${key}" style="height: 32px; vertical-align: middle;"></th>`
         ).join('') + '</tr>';
 
         // 创建表格内容
@@ -150,7 +150,7 @@ function initAndShowFarmingGuideView() {
                 if (key === 'item') {
                     // 修复：恢复第一列物品图标的渲染
                     if (value) {
-                        return `<td data-col-index="${colIndex}"><img src="imgs/farm/${value}.webp" alt="${value}" class="farm-item-image"></td>`;
+                        return `<td data-col-index="${colIndex}"><img loading="lazy" src="imgs/farm/${value}.webp" decoding="async" alt="${value}" class="farm-item-image"></td>`;
                         return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
                     }
                     return `<td data-col-index="${colIndex}"></td>`;
@@ -340,7 +340,7 @@ function showSoulExchangeModal() {
             : '';
 
         const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${colorIcon}.webp">`;
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `${colorIconHTML}${starsHTML}`;
 

@@ -106,7 +106,7 @@ function updateChatPreview() {
         } else if (emojiMatch && emojiList.includes(emojiMatch[1])) {
             // 如果是表情符号，则渲染为图片
             const emojiName = emojiMatch[1];
-            html += `<img src="imgs/emoticons/${emojiName}.webp" alt="${token}" style="width: 20px; height: 20px; vertical-align: middle;">`;
+            html += `<img loading="lazy" src="imgs/emoticons/${emojiName}.webp" decoding="async" alt="${token}" style="width: 20px; height: 20px; vertical-align: middle;">`;
         } else {
             // 普通文本，应用当前颜色
             const textWithBreaks = token.replace(/\n/g, '<br>');

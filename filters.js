@@ -551,7 +551,7 @@ function openMultiSelectModal(filterType, title) {
     let optionsHTML = options.map(optionValue => {
         const isSelected = currentSelections.has(optionValue);
         const iconSrc = getIconForFilter(filterType, optionValue);
-        const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'">` : '';
+        const iconHTML = iconSrc ? `<img loading="lazy" src="${iconSrc}" decoding="async" class="option-icon" alt="" onerror="this.style.display='none'">` : '';
 
         // --- 核心：选项值是规范 ID，**只有显示时才过字典** ---
         let displayText;
@@ -1298,7 +1298,7 @@ function initializeNameAutocomplete() {
             let itemHTML = '';
 
             if (avatarPath) {
-                itemHTML += `<img src="${avatarPath}" alt="${displayName}" class="autocomplete-avatar" onerror="this.style.display='none'">`;
+                itemHTML += `<img loading="lazy" src="${avatarPath}" decoding="async" alt="${displayName}" class="autocomplete-avatar" onerror="this.style.display='none'">`;
             }
 
             itemHTML += `<div class="autocomplete-text">${highlightText(displayName, searchTerm)}</div>`;

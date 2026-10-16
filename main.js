@@ -474,6 +474,20 @@ async function initializeApp() {
         applyFiltersAndRender();
     }
 
+    // 7.5 技能正文（2.6~4MB/语言）延后补齐：首屏表格已渲染完，此时再解析并挂到英雄对象上，
+    //     供**详情弹窗**与**高级筛选（技能/被动文本）**使用（首屏表格本身不需要它）。
+    //     仅在相关筛选已有输入时才重渲染，避免无谓的长任务。
+    if (typeof ensureSkillsLoaded === 'function') {
+        ensureSkillsLoaded().then(ok => {
+            if (!ok) return;
+            const fi = uiElements.filterInputs || {};
+            const needRerender =
+                (fi.effects && fi.effects.value && fi.effects.value.trim()) ||
+                (fi.passives && fi.passives.value && fi.passives.value.trim());
+            if (needRerender) applyFiltersAndRender();
+        });
+    }
+
     if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
         // 1. 新格式：按 heroId 查找
         let targetHero = state.allHeroes.find(h => h.heroId === viewHeroFromUrl);

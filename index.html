@@ -4,6 +4,8 @@
 <html lang="zh-Hans">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <style>
         /* 确保背景颜色变量能被立即使用 */
@@ -132,27 +134,6 @@
             });
         })();
     </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-LPVF61FMD9', {
-            cookie_domain: 'none',
-            cookie_flags: 'SameSite=None;Secure'
-        });
-    </script>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?d9d317ef382dafc61c3891f01c561672";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
         /* 书写方向：**首屏之前**就把 `<html dir>` 定下来，避免阿拉伯语用户先看到 LTR 再翻转。
@@ -254,11 +235,33 @@
     <meta name="twitter:title" id="tw-title" content="帝国与谜题英雄资料库 | Heroplan">
     <meta name="twitter:description" id="tw-description"
         content="Heroplan 是《帝国与谜题》全语言英雄资料库：20 种游戏内语言、全英雄立绘、未来英雄预览与多种玩家工具。">
-    <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/medium.css"
-        onerror="this.onerror=null;this.href='https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap';">
-    <link rel="stylesheet" href="theme.css?v=20261015a">
-    <link rel="stylesheet" href="style.css?v=20261015a">
-    <link rel="stylesheet" href="talent-tree.css?v=20261015a">
+    <!-- 自定义 Web 字体已移除（原为跨源 `s1.hdslb.com` 字体 CSS，失败还回退 Google Fonts）：
+         它是 PSI 实测「渲染阻塞预估 8760ms」与跨源请求的主因，且字体 swap 造成 CLS。
+         现一律使用系统字体（见 style.css 的 font-family 栈），观感几乎无差异。 -->
+    <link rel="stylesheet" href="theme.css?v=20261016b">
+    <link rel="stylesheet" href="style.css?v=20261016b">
+    <link rel="stylesheet" href="talent-tree.css?v=20261016b">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LPVF61FMD9', {
+            cookie_domain: 'none',
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    </script>
+    <script>
+        /* 统计脚本不参与首屏渲染 ⇒ 挪到 head 末尾，并等页面 load 完再注入，
+           免得跟数据/立绘抢带宽；`_hmt` 数组先行，hm.js 加载后会自己消费。 */
+        var _hmt = _hmt || [];
+        window.addEventListener("load", function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d9d317ef382dafc61c3891f01c561672";
+            document.head.appendChild(hm);
+        }, { once: true });
+    </script>
+
 </head>
 
 <body class="js-loading">
@@ -1063,23 +1066,23 @@
         <button id="open-filters-btn">🔍</button>
     </div>
 
-    <script src="./i18n_funcs.js?v=20261015a" defer></script>
-    <script src="./langs.js?v=20261015a" defer></script>
-    <script src="./lz-string.min.js?v=20261015a" defer></script>
-    <script src="./talent-tree.js?v=20261015a" defer></script>
-    <script src="./data.js?v=20261015a" defer></script>
-    <script src="./eva1-parser.js?v=20261015a" defer></script>
-    <script src="./utils.js?v=20261015a" defer></script>
-    <script src="./state.js?v=20261015a" defer></script>
-    <script src="./ui.js?v=20261015a" defer></script>
-    <script src="./filters.js?v=20261015a" defer></script>
-    <script src="./render.js?v=20261015a" defer></script>
-    <script src="./special-views.js?v=20261015a" defer></script>
-    <script src="./lottery-simulator.js?v=20261015a" defer></script>
-    <script src="./team-simulator.js?v=20261015a" defer></script>
-    <script src="./chat-simulator.js?v=20261015a" defer></script>
-    <script src="./import-export.js?v=20261015a" defer></script>
-    <script src="./main.js?v=20261015a" defer></script>
+    <script src="./i18n_funcs.js?v=20261016b" defer></script>
+    <script src="./langs.js?v=20261016b" defer></script>
+    <script src="./lz-string.min.js?v=20261016b" defer></script>
+    <script src="./talent-tree.js?v=20261016b" defer></script>
+    <script src="./data.js?v=20261016b" defer></script>
+    <script src="./eva1-parser.js?v=20261016b" defer></script>
+    <script src="./utils.js?v=20261016b" defer></script>
+    <script src="./state.js?v=20261016b" defer></script>
+    <script src="./ui.js?v=20261016b" defer></script>
+    <script src="./filters.js?v=20261016b" defer></script>
+    <script src="./render.js?v=20261016b" defer></script>
+    <script src="./special-views.js?v=20261016b" defer></script>
+    <script src="./lottery-simulator.js?v=20261016b" defer></script>
+    <script src="./team-simulator.js?v=20261016b" defer></script>
+    <script src="./chat-simulator.js?v=20261016b" defer></script>
+    <script src="./import-export.js?v=20261016b" defer></script>
+    <script src="./main.js?v=20261016b" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

@@ -512,8 +512,13 @@ function updateFilterButtonUI(filterType) {
 }
 
 // --- 模态框管理 ---
-function openDetailsModal(hero, context = {}) {
+async function openDetailsModal(hero, context = {}) {
     state.modalContext = context; // 在打开模态框时存储上下文
+    // 技能正文是「延后加载」的（2.6~4MB/语言，为不拖慢首屏而移出关键路径）⇒
+    // 打开详情前确保已补齐；`hydrateSkills` 是**就地**改英雄对象，故 hero 引用无需重新取。
+    if (typeof ensureSkillsLoaded === 'function') {
+        await ensureSkillsLoaded();
+    }
     renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');
     uiElements.modalOverlay.classList.remove('hidden');

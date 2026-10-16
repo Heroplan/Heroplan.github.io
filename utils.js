@@ -266,6 +266,9 @@ async function reloadLanguageData(lang) {
         }
     });
     state.family_values = familyValues;
+    // 切语言时技能正文已在本函数内**同步**补齐 ⇒ 标记已水合，
+    // 防止 `ensureSkillsLoaded()` 之后拿**旧语言**的 `_skillsPromise` 覆盖回来。
+    _skillsHydrated = true;
 }
 
 /**
@@ -476,24 +479,34 @@ function _cmpAutoOrder(ha, hb) {
  * 语言：整页重载 ⇒ 启动时 await 一次即可。
  * @param {string} lang - 当前语言码（cn/tc/en/…）。
  */
+// ── 技能正文「延后加载」状态（性能优化）──────────────────────────────────
+// `data/heroes_skills_<码>.json` 达 **2.6~4MB/语言**，而首屏表格并不需要它
+// （表格只用 `heroes_skill_types.json` 的标签 + `characters.json` 的三围），
+// 只有**详情弹窗**和**高级筛选（技能/被动文本）**才用得上。
+// 实测它是 LCP 20.3s 的主因 ⇒ 这里只发起请求、不 await，首屏渲染后再补齐。
+let _skillsPromise = null;
+let _balSkillsPromise = null;
+let _skillsHydrated = false;
+
 async function loadData(lang) {
     // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。
     try {
         // ① 语言表（i18n + 各词表 + 排序表）
         await Lang.loadAll(lang);
 
-        // ② 数据
-        const [orderRes, charsRes, typesRes, srcRes, skillsRes, enNameRes, costumeRes, balRes, charBalRes] = await Promise.all([
+        // ② 技能正文档：**只发起、不 await**（与下面其余档并行下载，但不进关键路径）
+        _skillsPromise = fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`);
+        _balSkillsPromise = fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`).catch(() => null);
+        _skillsHydrated = false;
+
+        // ② 数据（首屏真正需要的档）
+        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes] = await Promise.all([
             fetch(`data/hero_order.json?v=${Date.now()}`),
             fetch(`data/characters.json?v=${Date.now()}`),
             fetch(`data/heroes_skill_types.json?v=${Date.now()}`),
             fetch(`data/source_info.json?v=${Date.now()}`),
-            fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`),
             fetch(`langs_json/heroes_name_en.json?v=${Date.now()}`).catch(() => null),
             fetch(`data/costume_bonuses.json?v=${Date.now()}`).catch(() => null),
-            // 平衡数据（官方第二表）：**可能没有这份档**（生成器未跑 --site-export-balanced）
-            //   ⇒ 允许 404，缺失时全站无 `_balanced`，其余功能不受影响。
-            fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`).catch(() => null),
             // 平衡版角色定义（第二表完整定义，语言无关）：按完整定义重算三围用；同样允许缺失。
             fetch(`data/characters_balanced.json?v=${Date.now()}`).catch(() => null)
         ]);
@@ -501,11 +514,11 @@ async function loadData(lang) {
         const charsDoc = await charsRes.json();
         const typesDoc = await typesRes.json();
         const srcDoc = await srcRes.json();
-        const skills = await skillsRes.json();
+        const skills = {};              // 正文延后由 hydrateSkills 补齐
         const enNames = enNameRes ? await enNameRes.json() : {};   // 供 `hero.english_name` 用
         const costumeBonuses = costumeRes ? await costumeRes.json() : {};
         // ⚠ 404 不会 reject（fetch 只在网络错误时 reject）⇒ 必须看 `.ok`，否则会把错误页当 JSON 解析而抛错
-        const balSkills = (balRes && balRes.ok) ? await balRes.json() : null;
+        const balSkills = null;         // 平衡正文同样延后补齐
         // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）—— 切三围时按**完整定义**算，不必拼差异字段
         const charBal = (charBalRes && charBalRes.ok) ? await charBalRes.json() : null;
 
@@ -682,6 +695,60 @@ async function loadData(lang) {
 }
 
 /**
+ * 把「技能正文 + 平衡数据」补进英雄对象（延后加载的第二阶段）。
+ *
+ * 这两档合计 2.6~4MB/语言，只有**详情弹窗**与**高级筛选（技能/被动文本）**需要；
+ * 首屏表格不需要 ⇒ `loadData` 只发起请求不等待，首屏渲染完再由 `ensureSkillsLoaded()` 调它补齐。
+ * @param {object} skills - `heroes_skills_<码>.json` 解析结果
+ * @param {object|null} balSkills - `heroes_skills_balanced_<码>.json` 解析结果（可为 null）
+ */
+function hydrateSkills(skills, balSkills) {
+    (state.allHeroes || []).forEach(hero => {
+        const hid = hero.heroId;
+        const st = (skills && skills[hid] && skills[hid][0]) || {};
+        hero.effects = (st.skills && st.skills[0] && st.skills[0].lines) || [];
+        hero.passiveSkills = st.passiveSkills || [];
+        hero.passives = (st.passiveSkills || []).map(x => x.text).filter(Boolean);
+        // 被动筛选文本池 = 正文 + 标题（与 loadData / reloadLanguageData 同口径）
+        hero.passivesSearchPool = (st.passiveSkills || []).reduce((a, x) => {
+            if (x && x.text) a.push(x.text);
+            if (x && x.title) a.push(x.title);
+            return a;
+        }, []);
+        hero.familyBonus = st.familyBonus || [];
+        hero._balanced = balancedFieldsFrom(balSkills, hid);
+        // 基线快照必须按**补齐后**的值重建 —— 否则「切换平衡数据」会把技能正文回退成空
+        hero._normalSnapshot = {
+            effects: hero.effects, passiveSkills: hero.passiveSkills, familyBonus: hero.familyBonus,
+            attack: hero.attack, defense: hero.defense, health: hero.health,
+            power: hero.power, lb1: hero.lb1, lb2: hero.lb2
+        };
+        // DoT 依赖 `hero.effects`（技能正文）⇒ 首帧正文未到时算不出，这里补齐后**同步重算**
+        if (typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
+    });
+}
+
+/**
+ * 首屏渲染后调用：把延后加载的技能正文补齐（幂等 —— 重复调用直接返回 false）。
+ * @returns {Promise<boolean>} 是否成功补齐（失败时详情/高级筛选会缺文本，但不影响首屏）
+ */
+async function ensureSkillsLoaded() {
+    if (_skillsHydrated || !_skillsPromise) return false;
+    _skillsHydrated = true;             // 先置位 ⇒ 并发调用不会重复解析
+    try {
+        const [sRes, bRes] = await Promise.all([_skillsPromise, _balSkillsPromise]);
+        const skills = await sRes.json();
+        // ⚠ 404 不会 reject ⇒ 必须看 `.ok`
+        const balSkills = (bRes && bRes.ok) ? await bRes.json() : null;
+        hydrateSkills(skills, balSkills);
+        return true;
+    } catch (e) {
+        console.error('技能正文延后加载失败：', e);
+        return false;
+    }
+}
+
+/**
  * 根据颜色名称获取对应的辉光边框CSS类名。
  * @param {string} colorName - 颜色名称 (如 '红', 'blue')。
  * @returns {string} CSS类名 (如 'red-glow-border')。
@@ -752,7 +819,7 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
     for (let i = 0; i < ascensionLevels; i++) {
         const isLimitBreakBar = i < lbCount;
         const barImage = isLimitBreakBar ? 'ascension_bar_limitbreak.webp' : 'ascension_bar.webp';
-        barsHtml += `<img src="imgs/other/${barImage}" class="ascension-bar" alt="ascension bar">`;
+        barsHtml += `<img loading="lazy" src="imgs/other/${barImage}" decoding="async" class="ascension-bar" alt="ascension bar">`;
     }
 
     let talentNodeHtml = '';
@@ -764,7 +831,7 @@ function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
         const nodeImage = talentCount >= 21 ? 'node_master.webp' : 'node.webp';
         talentNodeHtml = `
             <div class="talent-node-container">
-                <img src="imgs/talents/${nodeImage}" class="talent-node-image" alt="talent node">
+                <img loading="lazy" src="imgs/talents/${nodeImage}" decoding="async" class="talent-node-image" alt="talent node">
                 <span class="talent-node-text">${talentCount}</span>
             </div>
         `;

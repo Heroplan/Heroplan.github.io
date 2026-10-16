@@ -1363,7 +1363,7 @@ async function handleActivityClick(poolId) {
                 w3kButton.id = 'w3k-limited-pool-btn';
                 w3kButton.className = 'theme-toggle-btn';
                 w3kButton.title = (i18n[state.currentLang] || {}).w3kLimitedPoolTitle;
-                w3kButton.innerHTML = `<img src="imgs/coins/red_lucky.webp" style="width: 28px; height: 28px;">`;
+                w3kButton.innerHTML = `<img loading="lazy" src="imgs/coins/red_lucky.webp" decoding="async" style="width: 28px; height: 28px;">`;
                 w3kButton.style.marginTop = '1px'; // 添加上边距
 
                 // 为按钮添加点击事件
@@ -2107,7 +2107,7 @@ function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false)
         heroImage.style.objectFit = 'contain';
 
         lightEffect.className = 'summon-animation-element';
-        lightEffect.innerHTML = `<img src="imgs/lottery/gate/lottery_animation_light.webp" class="anim-light-img">`;
+        lightEffect.innerHTML = `<img loading="lazy" src="imgs/lottery/gate/lottery_animation_light.webp" decoding="async" class="anim-light-img">`;
         lightEffect.style.filter = `drop-shadow(0 0 15px ${getColorHex(hero.colorId)})`;
 
         const playAnimation = () => {
@@ -2215,13 +2215,13 @@ function showSummaryModal(results) {
         if (hero.star) {
             let starsHTML = '';
             for (let i = 0; i < hero.star; i++) {
-                starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
+                starsHTML += `<img loading="lazy" src="imgs/other/star.webp" decoding="async" alt="star">`;
             }
             starsContent = starsHTML;
         }
 
         const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${colorIcon}.webp">`;
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}
@@ -2754,12 +2754,12 @@ function showSinglePullResultsModal(results) {
         if (hero.star) {
             let starsHTML = '';
             for (let i = 0; i < hero.star; i++) {
-                starsHTML += `<img src="imgs/other/star.webp" alt="star">`;
+                starsHTML += `<img loading="lazy" src="imgs/other/star.webp" decoding="async" alt="star">`;
             }
             starsContent = starsHTML;
         }
         const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img class="summary-color-icon" src="imgs/colors/${colorIcon}.webp">`;
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}

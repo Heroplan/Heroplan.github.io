@@ -52,7 +52,7 @@ function getFormattedHeroNameHTML(hero) {
     if (iconName) {
         // 服装类型标签走 `costume_type_<码>.json` 字典（全 20 语言齐全）。
         const skinLabel = (typeof Lang !== 'undefined') ? Lang.t('costume_type', iconName) : iconName;
-        content = content + `<img src="imgs/costume/${iconName}.webp" class="costume-icon" alt="${iconName} costume" title="${skinLabel}"/>`;
+        content = content + `<img loading="lazy" src="imgs/costume/${iconName}.webp" decoding="async" class="costume-icon" alt="${iconName} costume" title="${skinLabel}"/>`;
     }
     return content;
 }
@@ -176,6 +176,18 @@ function balancedToggleHTML(hero, section) {
         + '" data-section="' + section + '" title="' + label + '">' + label + '</span>';
 }
 
+// ── 分块渲染（改善 INP / LCP）──────────────────────────────────────────
+// 一次性 `innerHTML` 塞进 2000+ 行会形成超长任务：既推迟首屏内容绘制（LCP），
+// 又让主线程长时间无法响应交互（INP）。改为：先同步画出首屏若干行，
+// 其余行在浏览器空闲时续渲 —— 每批都很短，主线程能及时让出。
+var _tableRenderGen = 0;        // 渲染代号：防止上一次未完成的续渲继续往新结果里追加
+const TABLE_ROW_CHUNK = 60;     // 每批渲染的行数（约一屏多一点）
+
+function scheduleChunk(fn) {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(fn, { timeout: 200 });
+    else setTimeout(fn, 0);
+}
+
 /**
  * 渲染主列表的英雄表格。
  * @param {object[]} heroes - 要渲染的英雄对象数组。
@@ -235,7 +247,7 @@ function renderTable(heroes) {
         return;
     }
 
-    const rowsHTML = heroes.map(hero => {
+    const rows = heroes.map((hero, rowIdx) => {
         const isHeroFavorite = isFavorite(hero);
         const cellsHTML = colKeys.map(key => {
             let content = '';
@@ -285,7 +297,7 @@ function renderTable(heroes) {
                     const tagLabel = (typeof Lang !== 'undefined') ? Lang.t('skill_types', chineseKey) : tag;
 
                     // 4. 构建单个图标HTML
-                    iconsHtml += `<img src="imgs/skill/${sanitizedFilename}.webp" 
+                    iconsHtml += `<img loading="lazy" src="imgs/skill/${sanitizedFilename}.webp" decoding="async" 
                       class="skill-icon" 
                       alt="${tagLabel}" 
                       title="${tagLabel}" />`;
@@ -306,10 +318,10 @@ function renderTable(heroes) {
                 content = `${displayName}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
                 const classIcon = String(hero.classId || hero[key]).toLowerCase();
-                content = `<img src="imgs/classes/${classIcon}.webp" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
+                content = `<img loading="lazy" src="imgs/classes/${classIcon}.webp" decoding="async" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
             } else if (key === 'color' && hero[key]) {
                 const colorIcon = String(hero.colorId || hero[key]).toLowerCase();
-                return `<td class="col-color"><img src="imgs/colors/${colorIcon}.webp" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
+                return `<td class="col-color"><img loading="lazy" src="imgs/colors/${colorIcon}.webp" decoding="async" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
                 let icon;
                 let cssClass = '';
@@ -368,13 +380,13 @@ function renderTable(heroes) {
                 const iconName = getCostumeIconName(hero);
                 if (iconName) {
                     // 使用一个新的、专门用于头像的CSS类
-                    costumeIconHtml = `<img src="imgs/costume/${iconName}.webp" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
+                    costumeIconHtml = `<img loading="lazy" src="imgs/costume/${iconName}.webp" decoding="async" class="table-avatar-costume-icon" alt="${iconName} costume" title=""/>`;
                 }
 
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
-                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/not_found.webp'">
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="${rowIdx < TABLE_ROW_CHUNK ? 'eager' : 'lazy'}" decoding="async"${rowIdx < TABLE_ROW_CHUNK ? ' fetchpriority="high"' : ''} onerror="this.src='imgs/not_found.webp'">
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
@@ -388,11 +400,26 @@ function renderTable(heroes) {
             return `<td class="col-${key}">${content}</td>`;
         }).join('');
         return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
-    }).join('');
+    });
 
-    tbody.innerHTML = rowsHTML;
+    // ── 分块渲染：首屏若干行先同步画出（加快 LCP），其余在空闲时续渲（缩短长任务 ⇒ 改善 INP）──
+    const gen = ++_tableRenderGen;
+    tbody.innerHTML = rows.slice(0, TABLE_ROW_CHUNK).join('');
     adjustStickyHeaders();
     scrollToTableTop();
+
+    if (rows.length > TABLE_ROW_CHUNK) {
+        let i = TABLE_ROW_CHUNK;
+        const step = () => {
+            if (gen !== _tableRenderGen) return;   // 已有更新的渲染 ⇒ 放弃本次续渲
+            const end = Math.min(i + TABLE_ROW_CHUNK, rows.length);
+            tbody.insertAdjacentHTML('beforeend', rows.slice(i, end).join(''));
+            i = end;
+            if (i < rows.length) scheduleChunk(step);
+            else adjustStickyHeaders();
+        };
+        scheduleChunk(step);
+    }
 }
 
 /**
@@ -1589,7 +1616,7 @@ function renderDetailsInModal(hero, context = {}) {
     if (hero.star && hero.star > 0) {
         starsHTML = '<div class="hero-avatar-stars-container">';
         for (let i = 0; i < hero.star; i++) {
-            starsHTML += '<img src="imgs/other/star.webp" class="hero-avatar-star" alt="star">';
+            starsHTML += '<img loading="lazy" src="imgs/other/star.webp" decoding="async" class="hero-avatar-star" alt="star">';
         }
         starsHTML += '</div>';
     }
@@ -1597,21 +1624,21 @@ function renderDetailsInModal(hero, context = {}) {
     // 根据 costume_id 生成服装图标HTML
     let costumeIconHTML = '';
     if (hero.costume_id && hero.costume_id !== 0) {
-        costumeIconHTML = '<img src="imgs/costume/c1.webp" class="hero-avatar-costume-icon" alt="costume">';
+        costumeIconHTML = '<img loading="lazy" src="imgs/costume/c1.webp" decoding="async" class="hero-avatar-costume-icon" alt="costume">';
     }
 
     // 根据 family 生成家族图标HTML
     let familyIconHTML = '';
     if (hero.family) {
         const familyIconSrc = `imgs/family/${String(hero.family).toLowerCase()}.webp`;
-        familyIconHTML = `<img src="${familyIconSrc}" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
+        familyIconHTML = `<img loading="lazy" src="${familyIconSrc}" decoding="async" class="hero-avatar-family-icon" alt="${hero.family}" onerror="this.style.display='none'">`;
     }
 
     // 根据 class 生成职业图标HTML
     let classIconHTML = '';
     if (hero.class) {
         const classIcon = String(hero.classId || hero.class).toLowerCase();
-        classIconHTML = `<img src="imgs/classes/${classIcon}.webp" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
+        classIconHTML = `<img loading="lazy" src="imgs/classes/${classIcon}.webp" decoding="async" class="hero-avatar-class-icon" alt="${hero.class}" title="${hero.class}">`;
     }
     // --- 生成被动技能图标(包含两种来源) ---
     let passiveSkillsHtml = '';
@@ -1643,8 +1670,8 @@ function renderDetailsInModal(hero, context = {}) {
 
         aetherPowerIconHTML = `
             <div class="hero-aether-power-icon-container" title="${hero.AetherPower}">
-                <img src="${framePath}" class="hero-aether-power-frame" alt="Aether Power Frame">
-                <img src="${iconPath}" class="hero-aether-power-image" alt="${hero.AetherPower}" onerror="this.style.display='none'">
+                <img loading="lazy" src="${framePath}" decoding="async" class="hero-aether-power-frame" alt="Aether Power Frame">
+                <img loading="lazy" src="${iconPath}" decoding="async" class="hero-aether-power-image" alt="${hero.AetherPower}" onerror="this.style.display='none'">
             </div>
         `;
     }
@@ -1666,16 +1693,16 @@ function renderDetailsInModal(hero, context = {}) {
                     const shieldPath = 'imgs/passive_icon/resist_shield.webp';
 
                     // 基础层是盾牌
-                    baseIconHtml = `<img src="${shieldPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}">`;
+                    baseIconHtml = `<img loading="lazy" src="${shieldPath}" decoding="async" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}">`;
 
                     // 叠加层是 "原本" 的图标 (缩小)
                     // 注意: alt="" 是故意的，避免屏幕阅读器重复播报，title 保留悬停提示
-                    overlayIconHtml = `<img src="${originalIconPath}" class="hero-avatar-passive-overlay-icon" alt="" title="${skillTitle}" onerror="this.style.display='none'">`;
+                    overlayIconHtml = `<img loading="lazy" src="${originalIconPath}" decoding="async" class="hero-avatar-passive-overlay-icon" alt="" title="${skillTitle}" onerror="this.style.display='none'">`;
 
                 } else {
                     // --- 普通技能 ---
                     // 基础层就是 "原本" 的图标
-                    baseIconHtml = `<img src="${originalIconPath}" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}" onerror="this.style.display='none'">`;
+                    baseIconHtml = `<img loading="lazy" src="${originalIconPath}" decoding="async" class="hero-avatar-passive-icon" alt="${skillKey}" title="${skillTitle}" onerror="this.style.display='none'">`;
                 }
 
                 // 总是返回一个包裹容器，用于正确定位
@@ -2129,7 +2156,7 @@ function renderDetailsInModal(hero, context = {}) {
                 // 图标文件名按 **CN 键** 取（不能跟着翻译走）；图标查找只依赖 tag 值本身
                 const iconSrc = getIconForFilter('skillTag_base', type);
                 // 复用 option-icon class（已定义合适尺寸）
-                const iconHTML = iconSrc ? `<img src="${iconSrc}" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
+                const iconHTML = iconSrc ? `<img loading="lazy" src="${iconSrc}" decoding="async" class="option-icon" alt="" onerror="this.style.display='none'"/>` : '';
                 const innerHTML = `${iconHTML}${label}`;
 
                 return `<span class="hero-info-block skill-type-tag" data-filter-type="types" data-filter-value="${type}" title="${langDict.filterBy} ${label}">${innerHTML}</span>`;
@@ -2159,11 +2186,11 @@ function renderDetailsInModal(hero, context = {}) {
         const src = `imgs/passive_icon/${iconName}.webp`;
         if (String(key).startsWith('resist_')) {
             return `<span class="big-passive-icon-wrap">`
-                + `<img src="imgs/passive_icon/resist_shield.webp" class="big-skill-icon" alt="${key}">`
-                + `<img src="${src}" class="big-passive-overlay-icon" alt="" onerror="this.style.display='none'">`
+                + `<img loading="lazy" src="imgs/passive_icon/resist_shield.webp" decoding="async" class="big-skill-icon" alt="${key}">`
+                + `<img loading="lazy" src="${src}" decoding="async" class="big-passive-overlay-icon" alt="" onerror="this.style.display='none'">`
                 + `</span>`;
         }
-        return `<img src="${src}" class="big-skill-icon" alt="${key}" onerror="this.style.display='none'">`;
+        return `<img loading="lazy" src="${src}" decoding="async" class="big-skill-icon" alt="${key}" onerror="this.style.display='none'">`;
     };
 
     // ── 被动技能段：每个被动 = 大图标 + 被动名（同一行），下一元素是该被动的词条 ──
@@ -2210,7 +2237,7 @@ function renderDetailsInModal(hero, context = {}) {
         <div id="modal-family-bonus-section" class="skill-category-block">
             <p class="uniform-style">${langDict.modalFamilyBonus('')}</p>
             <div class="skill-header-container">
-                <img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="big-skill-icon" alt="${hero.family}" onerror="this.style.display='none'">
+                <img loading="lazy" src="imgs/family/${String(hero.family).toLowerCase()}.webp" decoding="async" class="big-skill-icon" alt="${hero.family}" onerror="this.style.display='none'">
                 <div class="skill-name-speed-block"><p${familyTitleTag}>${familyTitleName}</p></div>
             </div>
             <ul class="skill-list">${renderListAsHTML(familyBonus, 'familyBonus')}</ul>
@@ -2240,7 +2267,7 @@ function renderDetailsInModal(hero, context = {}) {
         for (let k = 1; k <= N; k++) {
             const sk = _costumeSkinOf(k);
             out += `<button type="button" class="costume-opt${k === N ? ' selected' : ''}" data-value="${k}" title="${sk.name}">`
-                + `<img src="imgs/costume/${sk.icon}.webp" alt="" onerror="this.style.display='none'"><span>${sk.name}</span></button>`;
+                + `<img loading="lazy" src="imgs/costume/${sk.icon}.webp" decoding="async" alt="" onerror="this.style.display='none'"><span>${sk.name}</span></button>`;
         }
         return `<div class="details-selector-item"><label data-lang-key="costumeBonusSetting">${langDict.costumeBonusSetting}</label>`
             + `<div class="costume-bonus-picker" id="modal-costume-picker">${out}</div></div>`;
@@ -2289,10 +2316,10 @@ function renderDetailsInModal(hero, context = {}) {
                         <div id="modal-talent-bonus-display"></div>
                         <hr class="divider">
                         <div id="modal-talent-cost-display">
-                            <div class="cost-item"><img src="imgs/emblems/${classIcon}.webp" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
-                            <div class="cost-item"><img src="imgs/farm/Food.webp" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
-                            <div class="cost-item"><img src="imgs/farm/Iron.webp" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
-                            <div class="cost-item"><img src="imgs/emblems/master_${classIcon}.webp" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
+                            <div class="cost-item"><img loading="lazy" src="imgs/emblems/${classIcon}.webp" decoding="async" class="cost-icon" alt="纹章图标">${langDict.emblemCostLabel}<span id="cost-emblem">0</span></div>
+                            <div class="cost-item"><img loading="lazy" src="imgs/farm/Food.webp" decoding="async" class="cost-icon" alt="食物图标">${langDict.foodCostLabel}<span id="cost-food">0</span></div>
+                            <div class="cost-item"><img loading="lazy" src="imgs/farm/Iron.webp" decoding="async" class="cost-icon" alt="铁矿图标">${langDict.ironCostLabel}<span id="cost-iron">0</span></div>
+                            <div class="cost-item"><img loading="lazy" src="imgs/emblems/master_${classIcon}.webp" decoding="async" class="cost-icon" alt="大师纹章图标">${langDict.masterEmblemCostLabel}<span id="cost-master-emblem">0</span></div>
                         </div>
                     </div>
                     <div id="talent-tree-panel" class="mobile-tab-content">
@@ -2308,7 +2335,7 @@ function renderDetailsInModal(hero, context = {}) {
     
     const specialId = hero.parent_specialId || hero.specialId;
     const specialSkillIconHTML = specialId
-        ? `<img src="imgs/skill_icon/special_${specialId}.webp" class="special-skill-icon" alt="${specialId} icon" onerror="this.style.display='none'">`
+        ? `<img loading="lazy" src="imgs/skill_icon/special_${specialId}.webp" decoding="async" class="special-skill-icon" alt="${specialId} icon" onerror="this.style.display='none'">`
         : '';
 
     // 技能类别部分 - 根据设置决定是否显示
@@ -2341,7 +2368,7 @@ function renderDetailsInModal(hero, context = {}) {
             <div class="details-top-left">
                 <div class="hero-avatar-container-modal ${avatarGlowClass}">
                     <div class="hero-avatar-background-modal" style="background: ${modalGradientBg};"></div>
-                    <img src="${modalImageSrc}" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/not_found.webp'">
+                    <img src="${modalImageSrc}" decoding="async" id="modal-hero-avatar-img" class="hero-avatar-image-modal" alt="${hero.name}" loading="lazy" onerror="this.src='imgs/not_found.webp'">
                     
                     <div class="hero-avatar-overlays overlays-hidden">
                         ${starsHTML}
@@ -2356,11 +2383,11 @@ function renderDetailsInModal(hero, context = {}) {
             </div>
             <div class="details-top-right">
                 <div class="details-info-line">
-                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.classId}"><img src="imgs/classes/${String(hero.classId || hero.class).toLowerCase()}.webp" class="class-icon"/>${hero.class}</span>` : ''}
-                    ${getCostumeIconName(hero) ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${getCostumeIconName(hero)}">${langDict.modalSkin} <img src="imgs/costume/${getCostumeIconName(hero)}.webp" class="costume-icon"/></span>` : ''}
-                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.aetherPowerId}">⏫<img src="imgs/Aether Power/${String(hero.aetherPowerId || hero.AetherPower).toLowerCase()}.webp" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
-                    ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img src="imgs/family/${String(hero.family).toLowerCase()}.webp" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}
-                    ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.sourceId}"><img src="imgs/coins/${sourceIconMap[hero.sourceId]}" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
+                    ${hero.class ? `<span class="hero-info-block skill-type-tag" data-filter-type="class" data-filter-value="${hero.classId}"><img loading="lazy" src="imgs/classes/${String(hero.classId || hero.class).toLowerCase()}.webp" decoding="async" class="class-icon"/>${hero.class}</span>` : ''}
+                    ${getCostumeIconName(hero) ? `<span class="hero-info-block skill-type-tag" data-filter-type="costume" data-filter-value="${getCostumeIconName(hero)}">${langDict.modalSkin} <img loading="lazy" src="imgs/costume/${getCostumeIconName(hero)}.webp" decoding="async" class="costume-icon"/></span>` : ''}
+                    ${hero.AetherPower ? `<span class="hero-info-block skill-type-tag" data-filter-type="aetherpower" data-filter-value="${hero.aetherPowerId}">⏫<img loading="lazy" src="imgs/Aether Power/${String(hero.aetherPowerId || hero.AetherPower).toLowerCase()}.webp" decoding="async" class="aether-power-icon"/>${hero.AetherPower}</span>` : ''}
+                    ${hero.family ? `<span class="hero-info-block skill-type-tag" data-filter-type="family" data-filter-value="${hero.family}"><img loading="lazy" src="imgs/family/${String(hero.family).toLowerCase()}.webp" decoding="async" class="family-icon"/>${getDisplayName(hero.family, 'family')}</span>` : ''}
+                    ${hero.source ? `<span class="hero-info-block skill-type-tag" data-filter-type="source" data-filter-value="${hero.sourceId}"><img loading="lazy" src="imgs/coins/${sourceIconMap[hero.sourceId]}" decoding="async" class="source-icon"/>${getDisplayName(hero.source, 'source')}</span>` : ''}
                     ${hero['Release date'] ? `<span class="hero-info-block">📅 ${formatLocalDate(hero['Release date'])}</span>` : ''}
                 </div>
                 <h3 id="modal-core-stats-header">${langDict.modalCoreStats}${balancedToggleHTML(hero, 'stats')}</h3>
@@ -2727,7 +2754,7 @@ function renderDetailsInModal(hero, context = {}) {
             for (const key in bonusMap) {
                 const bonus = bonusMap[key];
                 if (bonus.value > 0) {
-                    bonusHTML += `<div class="bonus-item"><img src="imgs/talents/${iconMap[key]}" class="bonus-icon" alt="${bonus.label}">${bonus.label}<span>+${bonus.value}${bonus.isPercent ? '%' : ''}</span></div>`;
+                    bonusHTML += `<div class="bonus-item"><img loading="lazy" src="imgs/talents/${iconMap[key]}" decoding="async" class="bonus-icon" alt="${bonus.label}">${bonus.label}<span>+${bonus.value}${bonus.isPercent ? '%' : ''}</span></div>`;
                 }
             }
             bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
@@ -3348,7 +3375,7 @@ function renderRedeemCodesModal() {
         // 创建奖励物品HTML
         const rewardsHTML = codeData.rewards.map(reward => `
             <div class="reward-item">
-                <img src="${reward.img}" alt="Reward Image" class="reward-icon">
+                <img loading="lazy" src="${reward.img}" decoding="async" alt="Reward Image" class="reward-icon">
                 <span class="reward-count">×${reward.num}</span>
             </div>
         `).join('');

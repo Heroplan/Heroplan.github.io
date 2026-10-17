@@ -1,6 +1,24 @@
 {
     "headers": [
         {
+            "source": "/data/:rest*",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/langs_json/:rest*",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, immutable"
+                }
+            ]
+        },
+        {
             "source": "/(.*\\.html$|^/$)",
             "headers": [
                 {

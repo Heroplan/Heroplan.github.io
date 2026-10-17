@@ -1,6 +1,25 @@
 // utils.js: 包含通用的辅助函数。
 
 /**
+ * 数据档（`data/*.json`、`langs_json/*.json`）的统一取数 URL。
+ *
+ * 版本来自 `asset_ver.js` 里的 `window.AV`（每个文件的**内容哈希**，由主站仓库的 pre-commit
+ * 钩子在提交时增量重算）。这样缓存是**按文件各自**判断的：
+ *   · 文件没变 ⇒ 哈希不变 ⇒ URL 不变 ⇒ 命中缓存，一次请求都不发；
+ *   · 文件变了 ⇒ 哈希变 ⇒ URL 变 ⇒ 立刻拿到新内容，不存在"等缓存过期"的陈旧窗口。
+ * ⚠ 旧写法是 `?v=${Date.now()}`：URL 每次都不同 ⇒ 浏览器缓存与 Pages 的 CDN 全被作废，
+ *   实测每次访问重复下载 5.17 MB（技能正文单档 2.6~4.2 MB）。
+ * ⚠ 没登记在表里（或 `asset_ver.js` 没加载到）时**退回 `Date.now()`** ⇒ 顶多少缓存，
+ *   不会取到错数据，也不会因为这张表缺失而整站取数失败。
+ * @param {string} rel 站点根起的相对路径，如 'data/characters.json'。
+ * @returns {string} 带版本查询串的 URL。
+ */
+function av(rel) {
+    const v = (typeof window !== 'undefined' && window.AV && window.AV[rel]) || Date.now();
+    return rel + '?v=' + v;
+}
+
+/**
  * 设置一个 Cookie。
  * @param {string} name - Cookie 的名称。
  * @param {string} value - Cookie 的值。
@@ -219,12 +238,12 @@ function balancedFieldsFrom(balSkills, hid) {
  */
 async function reloadLanguageData(lang) {
     await Lang.loadAll(lang);
-    const res = await fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`);
+    const res = await fetch(av('data/heroes_skills_' + lang + '.json'));
     if (!res.ok) throw new Error('heroes_skills HTTP ' + res.status);
     const skills = await res.json();
     // 平衡数据档：与常规档**同步重载**（否则切语言后按钮切换的还是旧语言的平衡文本）。
     // ⚠ 该档可能不存在（生成器未跑 --site-export-balanced）⇒ 缺失时降级为 null，不算失败。
-    const balRes = await fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`)
+    const balRes = await fetch(av('data/heroes_skills_balanced_' + lang + '.json'))
         .catch(() => null);
     const balSkills = (balRes && balRes.ok) ? await balRes.json() : null;
 
@@ -487,6 +506,10 @@ function _cmpAutoOrder(ha, hb) {
 let _skillsPromise = null;
 let _balSkillsPromise = null;
 let _skillsHydrated = false;
+// "正在补齐"的 memo（与 `_skillsHydrated` = "已补齐"分工），让并发调用者等同一份工作。
+// ⚠ 生命周期必须跟 `_skillsPromise` 一致：换语言重新发起请求时要一起清掉，
+//   否则新的正文还没到、旧的 resolved promise 就被当成"已完成"返回，等于把 bug 搬回语言切换路径。
+let _skillsEnsure = null;
 
 async function loadData(lang) {
     // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。
@@ -495,20 +518,21 @@ async function loadData(lang) {
         await Lang.loadAll(lang);
 
         // ② 技能正文档：**只发起、不 await**（与下面其余档并行下载，但不进关键路径）
-        _skillsPromise = fetch(`data/heroes_skills_${lang}.json?v=${Date.now()}`);
-        _balSkillsPromise = fetch(`data/heroes_skills_balanced_${lang}.json?v=${Date.now()}`).catch(() => null);
+        _skillsPromise = fetch(av('data/heroes_skills_' + lang + '.json'));
+        _balSkillsPromise = fetch(av('data/heroes_skills_balanced_' + lang + '.json')).catch(() => null);
         _skillsHydrated = false;
+        _skillsEnsure = null;           // memo 与新档同生命周期（见上面的声明处注释）
 
         // ② 数据（首屏真正需要的档）
         const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes] = await Promise.all([
-            fetch(`data/hero_order.json?v=${Date.now()}`),
-            fetch(`data/characters.json?v=${Date.now()}`),
-            fetch(`data/heroes_skill_types.json?v=${Date.now()}`),
-            fetch(`data/source_info.json?v=${Date.now()}`),
-            fetch(`langs_json/heroes_name_en.json?v=${Date.now()}`).catch(() => null),
-            fetch(`data/costume_bonuses.json?v=${Date.now()}`).catch(() => null),
+            fetch(av('data/hero_order.json')),
+            fetch(av('data/characters.json')),
+            fetch(av('data/heroes_skill_types.json')),
+            fetch(av('data/source_info.json')),
+            fetch(av('langs_json/heroes_name_en.json')).catch(() => null),
+            fetch(av('data/costume_bonuses.json')).catch(() => null),
             // 平衡版角色定义（第二表完整定义，语言无关）：按完整定义重算三围用；同样允许缺失。
-            fetch(`data/characters_balanced.json?v=${Date.now()}`).catch(() => null)
+            fetch(av('data/characters_balanced.json')).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
         const charsDoc = await charsRes.json();
@@ -729,23 +753,36 @@ function hydrateSkills(skills, balSkills) {
 }
 
 /**
- * 首屏渲染后调用：把延后加载的技能正文补齐（幂等 —— 重复调用直接返回 false）。
- * @returns {Promise<boolean>} 是否成功补齐（失败时详情/高级筛选会缺文本，但不影响首屏）
+ * 首屏渲染后调用：把延后加载的技能正文补齐。
+ * ⚠ **并发调用必须等到同一份工作完成**，不能"第二个调用者立刻返回"：
+ *   旧写法是进函数就把 `_skillsHydrated` 置 true（把"已补齐"和"正在补齐"混成一个标志），
+ *   于是 `openDetailsModal()` 自己那句 `await ensureSkillsLoaded()` 变成**空枪** ——
+ *   首屏那条链已经把标志位置了，它立刻拿到 false 就去渲染 ⇒ 详情的特殊/被动技能与家族加成全空
+ *   （实测被动区只有 10 字符 vs 补齐后 91 字符）。`?view=` 分享链接和**所有点击进详情**的路径都中招。
+ * @returns {Promise<boolean>} 是否**由本次调用完成补齐**（已补齐或已放弃时返回 false；
+ *          失败会留下控制台日志，详情缺文本但不影响首屏）
  */
-async function ensureSkillsLoaded() {
-    if (_skillsHydrated || !_skillsPromise) return false;
-    _skillsHydrated = true;             // 先置位 ⇒ 并发调用不会重复解析
-    try {
-        const [sRes, bRes] = await Promise.all([_skillsPromise, _balSkillsPromise]);
-        const skills = await sRes.json();
-        // ⚠ 404 不会 reject ⇒ 必须看 `.ok`
-        const balSkills = (bRes && bRes.ok) ? await bRes.json() : null;
-        hydrateSkills(skills, balSkills);
-        return true;
-    } catch (e) {
-        console.error('技能正文延后加载失败：', e);
-        return false;
+function ensureSkillsLoaded() {
+    if (_skillsHydrated || !_skillsPromise) return Promise.resolve(false);
+    if (!_skillsEnsure) {
+        _skillsEnsure = (async () => {
+            try {
+                const [sRes, bRes] = await Promise.all([_skillsPromise, _balSkillsPromise]);
+                // ⚠ 404 不会 reject ⇒ 必须看 `.ok`；主档不判的话 404 会抛"JSON 解析错"，
+                //   日志看不出是文件缺失，详情静默空壳
+                if (!sRes.ok) throw new Error(`技能正文档 HTTP ${sRes.status}：${sRes.url}`);
+                const skills = await sRes.json();
+                const balSkills = (bRes && bRes.ok) ? await bRes.json() : null;
+                hydrateSkills(skills, balSkills);
+                _skillsHydrated = true;             // 只有真补齐了才置位
+                return true;
+            } catch (e) {
+                console.error('技能正文延后加载失败：', e);
+                return false;
+            }
+        })();
     }
+    return _skillsEnsure;
 }
 
 /**

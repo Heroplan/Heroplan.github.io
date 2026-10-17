@@ -679,7 +679,9 @@ async function migrateLegacyHistoryPoolKeys() {
             const langs = (typeof Lang !== 'undefined' && Lang.LANGS) || ['cn', 'en'];
             await Promise.all(langs.map(async (lg) => {
                 try {
-                    const r = await fetch(`langs_json/lottery_title_${lg}.json`);
+                    // ⚠ 这条原先**完全不带版本串**：加了 `_headers` 的长缓存后它会变成陈旧源，
+                    //   所以一并走 av()（表里没登记时退回 Date.now()，行为不比原来差）。
+                    const r = await fetch(av('langs_json/lottery_title_' + lg + '.json'));
                     if (!r.ok) return;
                     const d = await r.json();
                     for (const k in d) {

@@ -65,11 +65,14 @@
     var _sortOrder = null;  // 语言无关排序表
     var _lang = null;
 
-    function url(p) { return 'langs_json/' + p; }
+    // 版本串来自 asset_ver.js 的 window.AV（每个文件的内容哈希，拼法见 utils.js::av）
+    // ⇒ 未改动的表命中缓存、改动过的立刻失效；没有登记时 av() 自动退回 Date.now()。
+    function url(p) { return av('langs_json/' + p); }
 
     function getJSON(p) {
         if (_cache[p]) return Promise.resolve(_cache[p]);
-        return fetch(url(p), { cache: 'no-cache' })
+        // ⚠ 不再用 `cache: 'no-cache'`：URL 已按内容哈希变化，强制复验只会白白多打一次请求
+        return fetch(url(p))
             .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + p); return r.json(); })
             .then(function (j) { _cache[p] = j; return j; });
     }

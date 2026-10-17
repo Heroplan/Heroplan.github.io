@@ -1,4 +1,14 @@
+# 页面：绝不缓存 ⇒ 改版立刻可见，也是"资源换戳"能生效的前提（新 URL 由这份 HTML 带出来）。
 /index.html
   Cache-Control: no-cache, no-store, must-revalidate
   Pragma: no-cache
   Expires: 0
+
+# 数据档：走"内容哈希 URL"（`asset_ver.js` 的 window.AV + `utils.js::av()`）⇒ URL 随内容变，
+# 旧 URL 天然作废，所以可以放心长缓存：文件没变就连请求都不发。
+# ⚠ 前提是**所有**取这两批文件的地方都经过 av()（`_tools/gen_asset_ver.py` 覆盖 data/ 与 langs_json/）；
+#   漏一个不带版本的取数点，那个文件就会被缓存最长 30 天不放。改取数代码时记得核这条。
+/data/*.json
+  Cache-Control: public, max-age=2592000, immutable
+/langs_json/*.json
+  Cache-Control: public, max-age=2592000, immutable

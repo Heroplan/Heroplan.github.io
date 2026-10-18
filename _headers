@@ -1,3 +1,11 @@
+# ⚠⚠ 实测（2026-10-17）：GitHub Pages **不处理这份文件**——`GET /_headers` 返回 200 且按
+#    `application/octet-stream` 当普通文件发布，`/index.html` 仍回 `Cache-Control: max-age=600`
+#    （Pages 对所有静态资源固定 `max-age=600` + `ETag`/`Last-Modified`）。`_headers` 是 Netlify
+#    的约定，不是 Pages 的。⇒ 本站**真正生效的缓存策略在 `vercel.json`**（Vercel 侧实测：
+#    html = no-store、`/data/*` 与 `/langs_json/*` = max-age=2592000 immutable、X-Vercel-Cache: HIT）。
+#    这份文件保留只为兼容会读它的主机；**改缓存策略时以 `vercel.json` 为准，别拿这份当依据**。
+#    验策略只能按域名实测：`curl -I https://heroplan.github.io/...` 与 `curl -I https://15.de5.net/...`。
+
 # 页面：绝不缓存 ⇒ 改版立刻可见，也是"资源换戳"能生效的前提（新 URL 由这份 HTML 带出来）。
 /index.html
   Cache-Control: no-cache, no-store, must-revalidate
@@ -6,8 +14,8 @@
 
 # 数据档：走"内容哈希 URL"（`asset_ver.js` 的 window.AV + `utils.js::av()`）⇒ URL 随内容变，
 # 旧 URL 天然作废，所以可以放心长缓存：文件没变就连请求都不发。
-# ⚠ 前提是**所有**取这两批文件的地方都经过 av()（`_tools/gen_asset_ver.py` 覆盖 data/ 与 langs_json/）；
-#   漏一个不带版本的取数点，那个文件就会被缓存最长 30 天不放。改取数代码时记得核这条。
+# ⚠ 前提是**所有**取这两批文件的地方都经过 av()；漏一个不带版本的取数点，就会被缓存 30 天不放
+#   （实测连 `/data/x.json?v=随便` 这种都按目录规则走 immutable）。
 /data/*.json
   Cache-Control: public, max-age=2592000, immutable
 /langs_json/*.json

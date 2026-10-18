@@ -8,6 +8,8 @@ const LotterySimulator = {
     toggle: toggleLotterySimulator,
     handleActivityClick: handleActivityClick,
     renderFeaturedHeroes: renderFeaturedHeroes,
+    orderFeaturedIdsByOfficialRule: orderFeaturedIdsByOfficialRule,
+    featuredCellMap: featuredCellMap,
     updateSummonButtons: updateSummonButtons,
     addHeroToFeaturedSlot: addHeroToFeaturedSlot,
 };
@@ -311,13 +313,6 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
                 bulk30: bulk30 || null,
                 _extraBucketConfigs: extraConfigs, // 附加补充配置
             };
-
-            if (pool.id === 'lottery_featured_event_festival' || pool.id === 'lottery_black_solstice_default') {
-                lotteryPoolsData[pool.id].featuredHeroNum = 2;
-            }
-            if (pool.id === 'lottery_season_atlantis') {
-                lotteryPoolsData[pool.id].featuredHeroNum = 4;
-            }
         }
     });
 
@@ -1305,8 +1300,10 @@ async function handleActivityClick(poolId) {
         state.selectedElementalColor = userChoice;
     }
 
-    const numSlots = poolConfig.featuredHeroNum || 0;
+    const numSlots = featuredSlotCount(poolConfig);
     let heroesForSlots = [];
+    // 本次奖池"官方口径"的精选 id 顺序，渲染格子时要用它判断读取方向
+    let featuredDisplayIds = [];
 
     // 仅从 featuredHeroes 列表中选取英雄进行初始填充
     if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
@@ -1314,15 +1311,17 @@ async function handleActivityClick(poolId) {
         const dynamicKey = `featuredHeroes_${state.selectedElementalColor}`;
         const heroIdList = poolConfig[dynamicKey];
         if (heroIdList && Array.isArray(heroIdList)) {
-            heroesForSlots = heroIdList.map(heroId => state.heroesByIdMap.get(heroId) || null);
+            featuredDisplayIds = orderFeaturedIdsByOfficialRule(heroIdList);
+            heroesForSlots = featuredDisplayIds.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
     } else {
         // 对于普通召唤，仅使用 featuredHeroes 列表（如果存在）
         if (poolConfig.featuredHeroes && Array.isArray(poolConfig.featuredHeroes)) {
-            // 核心修改：直接使用 featuredHeroes 列表，不包含 entitiesToChooseFrom
-            heroesForSlots = poolConfig.featuredHeroes.map(heroId => state.heroesByIdMap.get(heroId) || null);
+            featuredDisplayIds = orderFeaturedIdsByOfficialRule(poolConfig.featuredHeroes);
+            heroesForSlots = featuredDisplayIds.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
     }
+    state.featuredDisplayIds = featuredDisplayIds;
 
     // 初始化精选英雄数组：用 featuredHeroes 列表的英雄填充前部，剩余位置为 null
     state.customFeaturedHeroes = [];
@@ -1622,8 +1621,164 @@ async function handleActivityClick(poolId) {
 
 
 /**
- * 渲染精选英雄卡槽UI
+ * 展示用的格子数。官方是"只点亮有内容的格子"（`HideAllFeaturedPortraits()` 后按实体数写格子），
+ * 所以**没有可选槽的池子按精选实体数自适应**，不再拿 `featuredHeroNum` 补空格子；
+ * 只有带自选槽的池子（`amountOfSelectableFeaturedSlots` > 0 或有 `entitiesToChooseFrom`）才保留
+ * 配置的槽位数 —— 那些空槽是留给玩家自选英雄的。
  */
+function featuredSlotCount(pool) {
+    if (!pool) return 0;
+    const configured = pool.featuredHeroNum || 0;
+    if ((pool.amountOfSelectableFeaturedSlots || 0) > 0 || (pool.entitiesToChooseFrom || []).length > 0) {
+        return configured;
+    }
+    const entities = Array.isArray(pool.featuredHeroes) ? pool.featuredHeroes.length : 0;
+    return entities || configured;
+}
+
+/**
+ * 官方精选英雄的**展示顺序**。证据（libil2cpp.so，dump.cs 同版本 2026-10-04）：
+ *   `SummonViewController.SetFeaturedPortraitsIfNeeded` RVA 0x1ACBA54 ——
+ *     OrderByDescending(Rarity) → ThenByDescending(Id == 宣传位) →
+ *     ThenByDescending(CanBeReceivedDate) → ThenBy(NameKey)
+ *     键取自 `FeaturedSummonEntity` 字段 0x10/0x8/0x20/0x3C（反编译 `FeaturedSummonEntity..ctor` 0x1AD4ADC）
+ *   宣传位 = `LotteryProductDefinition.GetAdvertisedEntry` RVA 0x1C3E20C：列表非空时**直接返回 ids[0]**，
+ *     也就是配置 `featuredHeroes` 的第 0 项；它只在同稀有度里把这位"钉"到最前，跨稀有度仍按稀有度。
+ *   `GetAllFeatureableEntities` RVA 0x1AD0DC0 只是 LINQ `Where + Select` ⇒ **不改顺序**，只剔除取不到配置的 id。
+ *   LINQ 的 OrderBy 是**稳定**排序 ⇒ 四个键全等时回到配置原序（这里靠 `Array.prototype.sort` 的稳定性，ES2019 起保证）。
+ *
+ * ⚠ **皮肤也参与排序**（2026-10-17 用游戏内截图复核后推翻了我原先的读法）：
+ *   谓词 0x1AD3CFC / 0x1AD3D6C 确实把 `parentHeroId` 非空的条目排除在 A/B 两个分组之外，
+ *   但两张实测样本都表明**展示顺序仍按同一套比较器排**：
+ *     · `lottery_season_untold_tales2`（3 格全皮肤）配置 `[holy, omen, guardian]` → 游戏 `[holy, guardian, omen]`
+ *       = 宣传位 + `canBeReceivedDate` 降序（2026-10-16 / 2026-02-18 / 2025-10-15）；
+ *     · `lottery_covenant_default` 6 格里的 `elemental_desmond_costume_assassin` 也按自身日期(2026-09-10)参与排序。
+ *   ⇒ 只有"站点取不到这条 id 的配置"时才退回配置原序（那种情况官方 `GetAllFeatureableEntities` 会把它剔除）。
+ */
+function orderFeaturedIdsByOfficialRule(idList) {
+    state.featuredPortraitsReadByRow = false;
+    const list = Array.isArray(idList) ? idList : [];
+    state.featuredGroupSizes = [list.length, 0];
+    if (list.length < 2) return idList;
+    // 取不到配置的条目 ⇒ 官方那边这条根本进不了 entities 列表，站点无法定序 ⇒ 整表保持配置原序
+    if (list.some(id => !state.heroesByIdMap.get(id))) return idList;
+
+    const advertised = idList[0];
+    const isAdvertised = hero => (hero.heroId === advertised ? 1 : 0);
+    const cmp = (a, b) => {
+        const ha = state.heroesByIdMap.get(a);
+        const hb = state.heroesByIdMap.get(b);
+        if (hb.star !== ha.star) return hb.star - ha.star;
+        if (isAdvertised(hb) !== isAdvertised(ha)) return isAdvertised(hb) - isAdvertised(ha);
+        const da = ha.releaseDate || '';
+        const db = hb.releaseDate || '';
+        if (da !== db) return da < db ? 1 : -1;
+        // 官方第四键 = NameKey.Id，而 `Language.GetHeroNameKey` RVA 0x1B94B70 的实现是
+        //   key = 前缀 + id.Substring(0, id.IndexOf("_", 4))（找不到就整串）⇒ 比的是"id 头部的家族段"，不是整条 id。
+        //   另有一条 `Contains(常量)` 的特殊分支（常量真值未取，命中的是皮肤那一类 ⇒ 走不到）。
+        const ka = officialNameKey(ha.heroId);
+        const kb = officialNameKey(hb.heroId);
+        if (ka !== kb) return ka < kb ? -1 : 1;
+        // 家族段相同（例：同族几件皮肤）⇒ 再按自身日期降序；仍相等就靠稳定排序回到配置原序
+        if (ha.heroId !== hb.heroId) return ha.heroId < hb.heroId ? -1 : 1;
+        return 0;
+    };
+    // **分组**（`v29`/`v36` = 谓词 0x1AD3CFC / 0x1AD3D6C）：一组 = 皮肤（`parentHeroId` 非空），另一组 = 非皮肤。
+    // `v40`：条目多的那组先写格子；**平手时先写皮肤组**（S2 池 2 皮肤 + 2 本体，截图实测皮肤占左边两格；
+    // 谓词 `b__99_0` 的返回值在伪代码里被优化掉了 ⇒ 极性只能靠这个样本定）。
+    // 另一组从 `max(L, ceil(N/2))` 格起（`v94`；横排时就是 `L`）。
+    const isCostume = id => !!state.heroesByIdMap.get(id).parentHeroId;
+    const costumes = idList.filter(isCostume);
+    const others = idList.filter(id => !isCostume(id));
+    const first = costumes.length >= others.length ? costumes : others;
+    const second = first === costumes ? others : costumes;
+    // `v87`（选横排还是竖排表）：站点按**总展示数 ∈ {2, 4}** 判 ⇒ 横排表 = sib[0,1,2,3,…] 逐行左右交替。
+    //   反编译里这个判据挂在 `v86` 上（我读成"多的那组的条数"），但用户实测**"无论什么情况，2 个都是左右各一"**
+    //   ⇒ 1 本体 + 1 皮肤（两组各 1，`v86` 只等于 1）也必须是横排 ⇒ 判据实际等价于**总展示数**。
+    //   在"只有一组非空"的常见池子上两种读法同值，差别只出现在混合池 ⇒ 以实测为准。
+    // 结果：2 个 = 左右各一、3 个 = 单列竖排、4 个 = 2×2、6 个 = 两列各 3。
+    state.featuredPortraitsReadByRow = idList.length === 2 || idList.length === 4;
+    // 两组各自的条数 ⇒ 交给 `featuredLitCellIndices` 算"第二组从第几格起"（会出现左 2 右 1 这种留空格的形状）
+    state.featuredGroupSizes = [first.length, second.length];
+    return first.slice().sort(cmp).concat(second.slice().sort(cmp));
+}
+
+/**
+ * 官方"被点亮的格子序号"：第一组占 `0 .. L-1`，第二组从 `v94` 起 ——
+ *   `v94 = 横排 ? L : max(L, ceil(N/2))`（`N` = 该主题格子表的长度）
+ * ⇒ 例：默认容器（N=6，half=3）里 **2 个本体 + 1 个皮肤** 会点亮 0、1、3 格 =
+ *   左列上两格 + 右列第一格 = **左 2 右 1**，中间第 2 格留空（官方 `HideAllFeaturedPortraits()` 后不写它就一直是关的）。
+ * 返回长度 = 实体数的数组：第 i 个实体的格子序号。
+ */
+function featuredLitCellIndices(pool) {
+    const seq = featuredCellSequence(pool);
+    const sizes = state.featuredGroupSizes || [seq.length, 0];
+    const [l, s] = sizes;
+    const start2 = state.featuredPortraitsReadByRow ? l : Math.max(l, Math.ceil(seq.length / 2));
+    const out = [];
+    for (let i = 0; i < l; i++) out.push(i);
+    for (let i = 0; i < s; i++) out.push(start2 + i);
+    return out.filter(c => c < seq.length);
+}
+
+/** `Language.GetHeroNameKey`（0x1B94B70）里决定 `ThenBy` 的那段：取第 4 个字符之后第一个 '_' 以前的部分。 */
+function officialNameKey(heroId) {
+    const i = heroId.indexOf('_', 4);
+    return i < 0 ? heroId : heroId.slice(0, i);
+}
+
+/**
+ * 官方格子的**读取方向**（同一个 0x1ACBA54 + 从 bundle 里扫出的各主题格子表）：
+ *   portraits = GetCustomFeaturedPortraits() ?? (竖排 ? _featuredPortraitsInVerticalOrder : _featuredPortraitsInHorizontalOrder)
+ *   ⇒ **有自定义表的主题根本不看横排/竖排那个分支**，直接用自定义表的顺序。各主题的表是扫序列化字节得到的
+ *   （脚本 `配置数据更新/逆向取证/_all_lists.py`；bundle 无 TypeTree，AssetStudioCLI 也只认类名）：
+ *     · 默认容器（`SummonViewController` 两张 6 元素表）= 2 列 × 3 行，x = ±120、y = -260/-520/-780，
+ *       横排表 = 子节点 [0,1,2,3,4,5]（逐行左右交替）、竖排表 = [0,2,4,1,3,5]（先填满一列 3 格）
+ *     · `AtlantisShowcaseController`（S2 主题）= **4 格一行**：`HeroLeft(100,-130) HeroLeftSmall(270,-120)
+ *       HeroRightSmall(-270,-120) HeroRight(-100,-130)` ⇒ 中间大图**左右各 2**、每列 2 格、先填左列
+ *     · `LeagueShowcaseController` = 6 格，但顺序是**先右列 3 格再左列 3 格**（站点暂无 League 池，未接）
+ *     · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排 3 格等效）
+ *   实测 x>0 是**屏幕左**（容器镜像）⇒ 两张表的第 0 项都在站点左列，与盟约截图一致。
+ *   选横排表的判据 `v86 == 4`：`v86` = 展示条目数。
+ */
+/*
+ * 各主题的**格子表**（站点坐标 = [列(0=左), 行(0=顶)]；官方 x>0 是屏幕左，容器镜像）。
+ * 表本身是扫序列化字节得到的（脚本 `配置数据更新/逆向取证/_all_lists.py`）：
+ *   · 默认容器 `SummonViewController`：两张 6 元素表（偏移 0x0E8 = 横排、0x134 = 竖排，按 dump.cs 声明顺序），
+ *     几何 = 2 列 × 3 行（x = ±120、y = -260/-520/-780），子节点序 = (右,左)×行1..行3
+ *     ⇒ 横排 = sib[0,1,2,3,4,5]（逐行左右交替）、竖排 = sib[0,2,4,1,3,5]（先填满一列 3 格）
+ *   · `AtlantisShowcaseController`（S2）= 4 格一行 `HeroLeft(+100) HeroLeftSmall(+270) HeroRightSmall(-270) HeroRight(-100)`
+ *     ⇒ **左右各 2**；该容器两种读法在站点 DOM 下同形
+ *   · `LeagueShowcaseController` = 6 格但**先填右列**（站点暂无 League 池，未接）
+ *   · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排前 3 格同形）
+ */
+const FEATURED_CELL_SEQUENCES = {
+    default: {
+        vertical: [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]],
+        horizontal: [[0, 0], [1, 0], [0, 1], [1, 1], [0, 2], [1, 2]],
+    },
+    atlantis: {
+        vertical: [[0, 0], [0, 1], [1, 0], [1, 1]],
+        horizontal: [[0, 0], [1, 0], [0, 1], [1, 1]],
+    },
+};
+
+function featuredCellSequence(pool) {
+    const theme = String((pool && (pool.banner || pool.lotterybg)) || '');
+    const table = /atlantis|season2/i.test(theme) ? FEATURED_CELL_SEQUENCES.atlantis : FEATURED_CELL_SEQUENCES.default;
+    return table[state.featuredPortraitsReadByRow ? 'horizontal' : 'vertical'];
+}
+
+/** 第 i 个**被点亮的格子**的 [列, 行]：官方 `HideAllFeaturedPortraits()` 后只写表的前若干格，
+ *  站点渲染的格子数由 `featuredSlotCount` 决定（无可选槽 = 精选实体数）⇒ 按该主题表被点亮的顺序依次取格。 */
+function featuredCellMap(n, pool) {
+    const seq = featuredCellSequence(pool);
+    const lit = featuredLitCellIndices(pool);
+    const out = [];
+    for (let i = 0; i < n; i++) out.push(seq[lit[i] !== undefined ? lit[i] : i % seq.length]);
+    return out;
+}
+
 function renderFeaturedHeroes() {
     const leftColumn = document.getElementById('featured-heroes-left');
     const rightColumn = document.getElementById('featured-heroes-right');
@@ -1632,7 +1787,10 @@ function renderFeaturedHeroes() {
     leftColumn.innerHTML = '';
     rightColumn.innerHTML = '';
 
-    const numFeatured = state.currentSummonData.featuredHeroNum || 0;
+    const numFeatured = featuredSlotCount(state.currentSummonData);
+    const cellMap = featuredCellMap(numFeatured, state.currentSummonData);
+    const columns = [[], []];
+    rightColumn.style.display = cellMap.some(c => c[0] === 1) ? '' : 'none';
     for (let i = 0; i < numFeatured; i++) {
         const slot = document.createElement('div');
         slot.className = 'featured-hero-slot';
@@ -1665,10 +1823,12 @@ function renderFeaturedHeroes() {
             }
         });
 
-        if (i % 2 === 0) {
-            leftColumn.appendChild(slot);
-        } else {
-            rightColumn.appendChild(slot);
+        const [col, row] = cellMap[i];
+        columns[col][row] = slot;
+    }
+    for (const [colIndex, columnEl] of [[0, leftColumn], [1, rightColumn]]) {
+        for (const slot of columns[colIndex]) {
+            if (slot) columnEl.appendChild(slot);
         }
     }
 }

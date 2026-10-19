@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Påfører 370% skade på målet 3 tilfeldige fiender.",
+      "Påfører 300% skade på målet 3 tilfeldige fiender.",
       "Alle trufne mål tar 1200 økningsblødningskade over 6 runder.",
       "Brukeren stjeler 70% av all helbredelse som påføres alle fiender som treffes, over 4 runder."
      ]
@@ -35136,11 +35136,11 @@
       "[*]x 2 manaladning",
       "[**]Påfører 430% skade på målet og fiender i nærheten.",
       "[**]Reduserer mana for målet og fiender i nærheten med 50%.",
-      "[**]Målet og fiender i nærheten får -35% mana-generering i 3 runder. Mot natur-figurer kan ikke denne effekten renses bort og varer 2 runder lenger. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
+      "[**]Målet og fiender i nærheten får -30% mana-generering i 3 runder. Mot natur-figurer kan ikke denne effekten renses bort og varer 2 runder lenger. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
       "[*]x 3 manaladning",
       "[**]Påfører 440% skade på alle fiender.",
       "[**]Reduserer mana til alle fiender med 100%.",
-      "[**]Alle fiender får -45% mana-generering i 4 runder. Mot natur-figurer kan ikke denne effekten renses bort og varer 2 runder lenger. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
+      "[**]Alle fiender får -40% mana-generering i 4 runder. Mot natur-figurer kan ikke denne effekten renses bort og varer 2 runder lenger. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% / 300% mana:",
       "[*]x 1 manaladning",
-      "[**]Øker manaen til alle allierte med 15%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
+      "[**]Øker manaen til alle allierte med 10%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
       "[**]Renser bort statuslidelser fra alle allierte etter hver runde i 2 runder.",
       "[**]Alle allierte regenererer 700 HP over 2 runder.",
       "[*]x 2 manaladning",
-      "[**]Øker manaen til alle allierte med 20%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
-      "[**]Renser bort statuslidelser fra alle allierte etter hver runde i 3 runder. Denne effekten kan ikke fjernes.",
-      "[**]Alle allierte får tilbake 1200 HP over 3 runder. Denne effekten kan ikke fjernes.",
+      "[**]Øker manaen til alle allierte med 15%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
+      "[**]Renser bort statuslidelser fra alle allierte etter hver runde i 3 runder.",
+      "[**]Alle allierte regenererer 1020 HP over 3 runder.",
       "[*]x 3 manaladning",
-      "[**]Øker manaen til alle allierte med 30%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
+      "[**]Øker manaen til alle allierte med 25%. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
       "[**]Renser bort statuslidelser fra alle allierte etter hver runde i 5 runder. Denne effekten kan ikke fjernes.",
-      "[**]Alle allierte får tilbake 2250 HP over 5 runder. Denne effekten kan ikke fjernes."
+      "[**]Alle allierte får tilbake 1400 HP over 5 runder. Denne effekten kan ikke fjernes."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Påfør 500% skade på målet.",
-      "Målet tar[#Dynamic] 2945 [#]brannskade over 5 runder. Denne effekten sprer seg til fiender i nærheten.",
+      "Målet tar[#Dynamic] 2990 [#]brannskade over 5 runder. Denne effekten sprer seg til fiender i nærheten.",
       "Påkaller en pesthund-megaundersått med 70% HP og 300% angrep nedarvet fra brukeren.",
       "Før pesthund-megaundersåtten treffer et mål, ødelegger den alle undersåttene til målet og skader megaundersåtter.",
       "Hver gang pesthund-megaundersåtten treffer en fiende, stjeler den 3 tilfeldige fjernbare økninger fra fienden og gir dem til eieren sin."

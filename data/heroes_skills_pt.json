@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Causa 370% de dano ao alvo e 3 inimigos aleatórios.",
+      "Causa 300% de dano ao alvo e 3 inimigos aleatórios.",
       "Todos os alvos atingidos recebem 1200 de dano de sangramento súbito ao longo de 6 turnos.",
       "O invocador rouba 70% de qualquer cura aplicada a todos os inimigos atingidos por 4 turnos."
      ]
@@ -35136,11 +35136,11 @@
       "[*]x 2 carga de mana:",
       "[**]Causa 430% de dano ao alvo e inimigos próximos.",
       "[**]Reduz o mana do alvo e inimigos próximos em 50%.",
-      "[**]O alvo e os inimigos próximos ganham -35% de geração de mana por 3 turnos. Contra personagens de Natureza, este efeito de status não pode ser expurgado e dura mais 2 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
+      "[**]O alvo e os inimigos próximos ganham -30% de geração de mana por 3 turnos. Contra personagens de Natureza, este efeito de status não pode ser expurgado e dura mais 2 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
       "[*]x 3 carga de mana:",
       "[**]Causa 440% de dano a todos os inimigos.",
       "[**]Reduz o mana de todos os inimigos 100%.",
-      "[**]Todos os inimigos ganham -45% de geração de mana por 4 turnos. Contra personagens de Natureza, este efeito de status não pode ser expurgado e dura mais 2 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
+      "[**]Todos os inimigos ganham -40% de geração de mana por 4 turnos. Contra personagens de Natureza, este efeito de status não pode ser expurgado e dura mais 2 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
       "[*]x 1 carga de mana:",
-      "[**]Aumenta o mana de todos os aliados em 15%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "[**]Aumenta o mana de todos os aliados em 10%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
       "[**]Expurga os males de status de todos os aliados ao fim de cada turno por 2 turnos.",
       "[**]Todos os aliados regeneram 700 PV por 2 turnos.",
       "[*]x 2 carga de mana:",
-      "[**]Aumenta o mana de todos os aliados em 20%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
-      "[**]Expurga os males de status de todos os aliados ao fim de cada turno por 3 turnos. Este efeito não pode ser dissipado.",
-      "[**]Todos os aliados recuperam 1200 PV ao longo de 3 turnos. Este efeito não pode ser dissipado.",
+      "[**]Aumenta o mana de todos os aliados em 15%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "[**]Expurga os males de status de todos os aliados ao fim de cada turno por 3 turnos.",
+      "[**]Todos os aliados regeneram 1020 PV por 3 turnos.",
       "[*]x 3 carga de mana:",
-      "[**]Aumenta o mana de todos os aliados em 30%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "[**]Aumenta o mana de todos os aliados em 25%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
       "[**]Expurga os males de status de todos os aliados ao fim de cada turno por 5 turnos. Este efeito não pode ser dissipado.",
-      "[**]Todos os aliados recuperam 2250 PV ao longo de 5 turnos. Este efeito não pode ser dissipado."
+      "[**]Todos os aliados recuperam 1400 PV ao longo de 5 turnos. Este efeito não pode ser dissipado."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Causa 500% de dano ao alvo.",
-      "O alvo recebe[#Dynamic] 2945 [#]de dano de queimadura por 5 turnos. O efeito contagia os inimigos próximos.",
+      "O alvo recebe[#Dynamic] 2990 [#]de dano de queimadura por 5 turnos. O efeito contagia os inimigos próximos.",
       "Convoca um mega-ajudante Cão Pestilento com 70% de PV e 300% de ataque herdados do invocador.",
       "Antes de atingir um alvo, o mega-ajudante Cão Pestilento destrói todos os ajudantes do alvo e causa dano aos mega-ajudantes.",
       "Sempre que atinge um inimigo, o mega-ajudante Cão Pestilento rouba 3 reforços dissipáveis aleatórios do inimigo e os transfere para o dono."

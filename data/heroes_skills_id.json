@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Menimbulkan kerusakan 370% ke sasaran dan 3 musuh acak.",
+      "Menimbulkan kerusakan 300% ke sasaran dan 3 musuh acak.",
       "Semua sasaran yang terkena mengalami 1200 kerusakan Lonjakan Berdarah selama 6 giliran.",
       "Perapal mencuri 70% penyembuhan yang diterima semua musuh yang terkena selama 4 giliran."
      ]
@@ -35136,11 +35136,11 @@
       "[*]x 2 Daya Mana:",
       "[**]Menimbulkan kerusakan 430% pada sasaran dan musuh terdekat.",
       "[**]Mengurangi 50% mana sasaran dan musuh terdekat.",
-      "[**]Sasaran dan musuh terdekat mendapat generasi mana -35% selama 3 giliran. Melawan karakter Alam, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
+      "[**]Sasaran dan musuh terdekat mendapat generasi mana -30% selama 3 giliran. Melawan karakter Alam, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
       "[*]x 3 Daya Mana:",
       "[**]Menimbulkan kerusakan 440% pada semua musuh.",
       "[**]Mana semua musuh berkurang 100%.",
-      "[**]Generasi mana semua musuh jadi -45% selama 4 giliran. Melawan karakter Alam, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
+      "[**]Generasi mana semua musuh jadi -40% selama 4 giliran. Melawan karakter Alam, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
       "[*]x 1 Daya Mana:",
-      "[**]Mana semua sekutu bertambah 15%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "[**]Mana semua sekutu bertambah 10%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
       "[**]Membersihkan status pelemahan pada akhir tiap giliran untuk semua sekutu selama 2 giliran.",
       "[**]Semua sekutu meregenerasi 700 HP selama 2 giliran.",
       "[*]x 2 Daya Mana:",
-      "[**]Mana semua sekutu bertambah 20%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
-      "[**]Membersihkan status pelemahan pada akhir giliran untuk semua sekutu selama 3 giliran. Efek ini tidak bisa dienyahkan.",
-      "[**]Semua sekutu meregenerasi 1200 HP selama 3 giliran. Efek ini tidak bisa dienyahkan.",
+      "[**]Mana semua sekutu bertambah 15%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "[**]Membersihkan status pelemahan pada akhir tiap giliran untuk semua sekutu selama 3 giliran.",
+      "[**]Semua sekutu meregenerasi 1020 HP selama 3 giliran.",
       "[*]x 3 Daya Mana:",
-      "[**]Mana semua sekutu bertambah 30%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "[**]Mana semua sekutu bertambah 25%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
       "[**]Membersihkan status pelemahan pada akhir giliran untuk semua sekutu selama 5 giliran. Efek ini tidak bisa dienyahkan.",
-      "[**]Semua sekutu meregenerasi 2250 HP selama 5 giliran. Efek ini tidak bisa dienyahkan."
+      "[**]Semua sekutu meregenerasi 1400 HP selama 5 giliran. Efek ini tidak bisa dienyahkan."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Menimbulkan kerusakan 500% pada sasaran.",
-      "Sasaran mengalami[#Dynamic] 2945 [#]kerusakan Terbakar selama 5 giliran. Efek ini menyebar ke musuh terdekat.",
+      "Sasaran mengalami[#Dynamic] 2990 [#]kerusakan Terbakar selama 5 giliran. Efek ini menyebar ke musuh terdekat.",
       "Memanggil Antek Mega Pemburu Hama dengan 70% HP dan 300% serangan yang diwarisi dari perapal.",
       "Sebelum Antek Mega Pemburu Hama mengenai sasaran, dia menghancurkan semua Antek dari sasaran dan merusak Antek Mega.",
       "Setiap kali Antek Mega Pemburu Hama mengenai musuh, dia mencuri 3 genjotan yang tidak bisa dienyahkan acak dari musuh dan memberikannya kepada pemiliknya."

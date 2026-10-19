@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Inflige 370% de dégâts à la cible et à 3 ennemis aléatoires.",
+      "Inflige 300% de dégâts à la cible et à 3 ennemis aléatoires.",
       "Toutes les cibles touchées reçoivent 1200 points de dégâts de saignement abondant sur 6 tours.",
       "Le lanceur vole 70% des soins appliqués à tous les ennemis touchés pendant 4 tours."
      ]
@@ -35136,11 +35136,11 @@
       "[*]Charge de mana x 2:",
       "[**]Inflige 430% de dégâts à la cible et aux ennemis proches.",
       "[**]Réduit de 50% le mana de la cible et des ennemis à proximité.",
-      "[**]La cible et les ennemis à proximité reçoivent -35% de génération de mana pour 3 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de nature. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
+      "[**]La cible et les ennemis à proximité reçoivent -30% de génération de mana pour 3 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de nature. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
       "[*]Charge de mana x 3:",
       "[**]Inflige 440% de dégâts à tous les ennemis.",
       "[**]Réduit le mana de tous les ennemis de 100%.",
-      "[**]Tous les ennemis reçoivent -45% de génération de mana pour 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de nature. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
+      "[**]Tous les ennemis reçoivent -40% de génération de mana pour 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de nature. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
       "[*]Charge de mana x 1:",
-      "[**]Augmente le mana de tous les alliés de 15%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "[**]Augmente le mana de tous les alliés de 10%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
       "[**]Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 2 tours.",
       "[**]Tous les alliés récupèrent 700 PV sur 2 tours.",
       "[*]Charge de mana x 2:",
-      "[**]Augmente le mana de tous les alliés de 20%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
-      "[**]Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 3 tours. Cet effet ne peut pas être dissipé.",
-      "[**]Tous les alliés récupèrent 1200 PV sur 3 tours. Cet effet ne peut pas être dissipé.",
+      "[**]Augmente le mana de tous les alliés de 15%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "[**]Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 3 tours.",
+      "[**]Tous les alliés récupèrent 1020 PV sur 3 tours.",
       "[*]Charge de mana x 3:",
-      "[**]Augmente le mana de tous les alliés de 30%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "[**]Augmente le mana de tous les alliés de 25%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
       "[**]Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 5 tours. Cet effet ne peut pas être dissipé.",
-      "[**]Tous les alliés récupèrent 2250 PV sur 5 tours. Cet effet ne peut pas être dissipé."
+      "[**]Tous les alliés récupèrent 1400 PV sur 5 tours. Cet effet ne peut pas être dissipé."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Inflige 500% de dégâts à la cible.",
-      "La cible subit[#Dynamic] 2945 [#]dégâts de brûlure sur 5 tours. L'effet contamine les ennemis proches.",
+      "La cible subit[#Dynamic] 2990 [#]dégâts de brûlure sur 5 tours. L'effet contamine les ennemis proches.",
       "Invoque un méga sbire chien de peste avec 70% de PV et 300% d'attaque hérités du lanceur.",
       "Avant que le méga sbire chien de peste ne touche une cible, il détruit tous les sbires de la cible et inflige des dégâts aux méga sbires.",
       "Chaque fois que le méga sbire chien de peste touche un ennemi, il vole 3 bonus dissipables aléatoires de l'ennemi et les donne à son propriétaire."

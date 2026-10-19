@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Tuottaa 370% vauriota kohteelle ja 3 satunnaiselle viholliselle.",
+      "Tuottaa 300% vauriota kohteelle ja 3 satunnaiselle viholliselle.",
       "Kaikki osutut kohteet kärsivät 1200 verensyöksyvauriota 6 vuoron aikana.",
       "Loitsija varastaa 70% kaikille osutuille vihollisille suunnatusta parannuksesta 4 vuoron ajan."
      ]
@@ -35136,11 +35136,11 @@
       "[*]x 2 manalataus:",
       "[**]Tuottaa 430% vauriota kohteelle ja lähellä oleville vihollisille.",
       "[**]Vähentää kohteen ja lähellä olevien vihollisten manaa 50%.",
-      "[**]Kohde ja lähellä olevat viholliset saavat -35% manatuotantoa 3 vuoron ajaksi. Kun vastassa on luontohahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään. (Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa.)",
+      "[**]Kohde ja lähellä olevat viholliset saavat -30% manatuotantoa 3 vuoron ajaksi. Kun vastassa on luontohahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään. (Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa.)",
       "[*]x 3 manalataus:",
       "[**]Tuottaa 440% vauriota kaikille vihollisille.",
       "[**]Vähentää kaikkien vihollisten manaa 100%.",
-      "[**]Kaikki viholliset saavat -45% manatuotantoa 4 vuoron ajaksi. Kun vastassa on luontohahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään. (Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa.)"
+      "[**]Kaikki viholliset saavat -40% manatuotantoa 4 vuoron ajaksi. Kun vastassa on luontohahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään. (Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
       "[*]x 1 manalataus:",
-      "[**]Lisää kaikkien liittolaisten manaa 15%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "[**]Lisää kaikkien liittolaisten manaa 10%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
       "[**]Puhdistaa kaikilta liittolaisilta vaivat jokaisen vuoron lopussa 2 vuoron ajan.",
       "[**]Kaikki liittolaiset saavat 700 terveyspistettä 2 vuoron aikana.",
       "[*]x 2 manalataus:",
-      "[**]Lisää kaikkien liittolaisten manaa 20%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
-      "[**]Puhdistaa kaikilta liittolaisilta vaivat jokaisen vuoron lopussa 3 vuoron ajan. Vaikutusta ei voi häivyttää.",
-      "[**]Kaikki liittolaiset saavat 1200 terveyspistettä 3 vuoron aikana. Vaikutusta ei voi häivyttää.",
+      "[**]Lisää kaikkien liittolaisten manaa 15%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "[**]Puhdistaa kaikilta liittolaisilta vaivat jokaisen vuoron lopussa 3 vuoron ajan.",
+      "[**]Kaikki liittolaiset saavat 1020 terveyspistettä 3 vuoron aikana.",
       "[*]x 3 manalataus:",
-      "[**]Lisää kaikkien liittolaisten manaa 30%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "[**]Lisää kaikkien liittolaisten manaa 25%. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
       "[**]Puhdistaa kaikilta liittolaisilta vaivat jokaisen vuoron lopussa 5 vuoron ajan. Vaikutusta ei voi häivyttää.",
-      "[**]Kaikki liittolaiset saavat 2250 terveyspistettä 5 vuoron aikana. Vaikutusta ei voi häivyttää."
+      "[**]Kaikki liittolaiset saavat 1400 terveyspistettä 5 vuoron aikana. Vaikutusta ei voi häivyttää."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Tuottaa 500% vauriota kohteelle.",
-      "Kohde kärsii[#Dynamic] 2945 [#]palovauriota 5 vuoron aikana. Vaikutus leviää lähellä oleviin vihollisiin.",
+      "Kohde kärsii[#Dynamic] 2990 [#]palovauriota 5 vuoron aikana. Vaikutus leviää lähellä oleviin vihollisiin.",
       "Kutsuu tuholaisvihikoira-megakäskyläisen, joka perii loitsijalta 70% terveyttä ja 300% hyökkäystä.",
       "Ennen kuin tuholaisvihikoira-megakäskyläinen osuu kohteeseen, se tuhoaa kohteelta kaikki käskyläiset ja vaurioittaa megakäskyläisiä.",
       "Aina kun tuholaisvihikoira-megakäskyläinen osuu viholliseen, se varastaa viholliselta 3 satunnaista häivytettävää tehostetta ja antaa ne omistajalleen."

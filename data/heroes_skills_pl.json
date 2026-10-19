@@ -21676,7 +21676,7 @@
     {
      "id": "midnight_blitzing",
      "lines": [
-      "Zadaje 370% obrażeń celowi i 3 losowym wrogom.",
+      "Zadaje 300% obrażeń celowi i 3 losowym wrogom.",
       "Wszystkie trafione cele otrzymują 1200 pkt. obrażeń od narastającego krwawienia przez okres 6 tur.",
       "Bohater kradnie 70% dowolnej regeneracji zdrowia działającej na wszystkich trafionych wrogów przez okres 4 tur."
      ]
@@ -35136,11 +35136,11 @@
       "[*]Ładunek many x 2:",
       "[**]Zadaje 430% obrażeń celowi i pobliskim wrogom.",
       "[**]Zmniejsza manę celu i pobliskich wrogów o 50%.",
-      "[**]Cel i pobliscy wrogowie otrzymują -35% regeneracji many przez 3 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)",
+      "[**]Cel i pobliscy wrogowie otrzymują -30% regeneracji many przez 3 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)",
       "[*]Ładunek many x 3:",
       "[**]Zadaje 440% obrażeń wszystkim przeciwnikom.",
       "[**]Zmniejsza manę wszystkich wrogów o 100%.",
-      "[**]Wszyscy wrogowie otrzymują -45% regeneracji many przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)"
+      "[**]Wszyscy wrogowie otrzymują -40% regeneracji many przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci natury. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)"
      ]
     }
    ]
@@ -41563,17 +41563,17 @@
      "lines": [
       "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
       "[*]Ładunek many x 1:",
-      "[**]Zwiększa manę wszystkich sojuszników o 15%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "[**]Zwiększa manę wszystkich sojuszników o 10%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
       "[**]Na koniec każdej tury oczyszcza dolegliwości ze statusu wszystkich sojuszników przez 2 tur(y).",
       "[**]Wszyscy sojusznicy regenerują 700 PŻ przez 2 tur(y).",
       "[*]Ładunek many x 2:",
-      "[**]Zwiększa manę wszystkich sojuszników o 20%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
-      "[**]Przez 3 tur(y) na koniec każdej tury oczyszcza dolegliwości ze statusu wszystkich sojuszników. Odwołanie tego efektu nie jest możliwe.",
-      "[**]Wszyscy sojusznicy regenerują 1200 PŻ przez 3 tur(y). Efekt nie może być odwołany czarami.",
+      "[**]Zwiększa manę wszystkich sojuszników o 15%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "[**]Na koniec każdej tury oczyszcza dolegliwości ze statusu wszystkich sojuszników przez 3 tur(y).",
+      "[**]Wszyscy sojusznicy regenerują 1020 PŻ przez 3 tur(y).",
       "[*]Ładunek many x 3:",
-      "[**]Zwiększa manę wszystkich sojuszników o 30%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "[**]Zwiększa manę wszystkich sojuszników o 25%. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
       "[**]Przez 5 tur(y) na koniec każdej tury oczyszcza dolegliwości ze statusu wszystkich sojuszników. Odwołanie tego efektu nie jest możliwe.",
-      "[**]Wszyscy sojusznicy regenerują 2250 PŻ przez 5 tur(y). Efekt nie może być odwołany czarami."
+      "[**]Wszyscy sojusznicy regenerują 1400 PŻ przez 5 tur(y). Efekt nie może być odwołany czarami."
      ]
     }
    ]
@@ -50187,7 +50187,7 @@
      "id": "pest_inspection",
      "lines": [
       "Zadaje 500% obrażeń celowi.",
-      "Cel otrzymuje[#Dynamic] 2945 [#]obrażeń od poparzenia przez 5 tur(y). Efekt przenosi się na pobliskich wrogów.",
+      "Cel otrzymuje[#Dynamic] 2990 [#]obrażeń od poparzenia przez 5 tur(y). Efekt przenosi się na pobliskich wrogów.",
       "Wzywa mega pomocnika ogara plagi z 70% PŻ i 300% ataku przejętymi od rzucającego.",
       "Zanim mega pomocnik ogar plagi trafi w cel, zniszczy wszystkich pomocników celu i zadaje obrażenia Mega pomocnikom.",
       "Za każdym razem, gdy megapomocnik ogar plagi trafi wroga, kradnie losowe wzmocnienia w liczbie 3 od wroga i daje je swojemu właścicielowi."

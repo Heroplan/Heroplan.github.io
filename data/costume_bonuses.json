@@ -4521,21 +4521,21 @@
    {
     "bonusLevels": [
      {
-      "attackBonusPerMil": 150,
-      "defenseBonusPerMil": 160,
-      "healthBonusPerMil": 160,
+      "attackBonusPerMil": 120,
+      "defenseBonusPerMil": 120,
+      "healthBonusPerMil": 120,
       "manaBonusPerMil": 10
      },
      {
-      "attackBonusPerMil": 180,
-      "defenseBonusPerMil": 180,
-      "healthBonusPerMil": 180,
+      "attackBonusPerMil": 170,
+      "defenseBonusPerMil": 170,
+      "healthBonusPerMil": 170,
       "manaBonusPerMil": 30
      },
      {
       "attackBonusPerMil": 240,
-      "defenseBonusPerMil": 240,
-      "healthBonusPerMil": 240,
+      "defenseBonusPerMil": 260,
+      "healthBonusPerMil": 250,
       "manaBonusPerMil": 50
      }
     ]
@@ -4543,9 +4543,9 @@
    {
     "bonusLevels": [
      {
-      "attackBonusPerMil": 200,
-      "defenseBonusPerMil": 200,
-      "healthBonusPerMil": 200,
+      "attackBonusPerMil": 170,
+      "defenseBonusPerMil": 170,
+      "healthBonusPerMil": 170,
       "manaBonusPerMil": 10
      },
      {
@@ -4561,9 +4561,9 @@
       "manaBonusPerMil": 30
      },
      {
-      "attackBonusPerMil": 280,
-      "defenseBonusPerMil": 280,
-      "healthBonusPerMil": 280,
+      "attackBonusPerMil": 260,
+      "defenseBonusPerMil": 270,
+      "healthBonusPerMil": 300,
       "manaBonusPerMil": 50
      }
     ]
@@ -4571,9 +4571,9 @@
    {
     "bonusLevels": [
      {
-      "attackBonusPerMil": 450,
-      "defenseBonusPerMil": 450,
-      "healthBonusPerMil": 450,
+      "attackBonusPerMil": 400,
+      "defenseBonusPerMil": 400,
+      "healthBonusPerMil": 400,
       "manaBonusPerMil": 10
      },
      {
@@ -4583,15 +4583,15 @@
       "manaBonusPerMil": 20
      },
      {
-      "attackBonusPerMil": 550,
-      "defenseBonusPerMil": 550,
-      "healthBonusPerMil": 550,
+      "attackBonusPerMil": 600,
+      "defenseBonusPerMil": 600,
+      "healthBonusPerMil": 600,
       "manaBonusPerMil": 30
      },
      {
-      "attackBonusPerMil": 650,
-      "defenseBonusPerMil": 650,
-      "healthBonusPerMil": 650,
+      "attackBonusPerMil": 720,
+      "defenseBonusPerMil": 720,
+      "healthBonusPerMil": 690,
       "manaBonusPerMil": 50
      }
     ]
@@ -5109,6 +5109,51 @@
    },
    {
     "bonusLevels": []
+   }
+  ]
+ },
+ "ninja_oct26": {
+  "id": "ninja_oct26",
+  "statBonuses": [
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": [
+     {
+      "attackBonusPerMil": 470,
+      "defenseBonusPerMil": 470,
+      "healthBonusPerMil": 470,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 570,
+      "defenseBonusPerMil": 570,
+      "healthBonusPerMil": 570,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 670,
+      "defenseBonusPerMil": 670,
+      "healthBonusPerMil": 670,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 780,
+      "defenseBonusPerMil": 780,
+      "healthBonusPerMil": 780,
+      "manaBonusPerMil": 10
+     }
+    ]
    }
   ]
  }

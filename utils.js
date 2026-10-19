@@ -272,6 +272,7 @@ async function reloadLanguageData(lang) {
         hero.familyBonus = st.familyBonus || [];
         // 平衡数据（差异档）：键存在与否 = 该节要不要显示「切换平衡数据」按钮
         hero._balanced = balancedFieldsFrom(balSkills, hid);
+        mergeCostumeBonusPassiveIds(hero);
         // ⚠ 常规基线**随语言重建**（旧基线是上一语言的文本，必须作废）；
         //   若该英雄此前切到了平衡版，这里按原开关重新套用到新语言的平衡文本上。
         hero._normalSnapshot = {
@@ -632,6 +633,18 @@ async function loadData(lang) {
             // ⚠ **列表口径只有服装英雄吃服装奖励**（本体不吃）—— 与旧数据一致；
             //   本体英雄的 `_cbLevels` 只给详情页的「服装奖励」选择器用。
             const _cbListSets = (isCostume && _cbLevels) ? Math.min(costumeOrd[hid] || 1, _cbMax) : 0;
+            // 服装奖励被动的 id 集合（展示时要把它们留在普通被动**下面**）：
+            //   ① 本行配置的 `costumeBonusPassiveSkillIds`；
+            //   ② **从第一套服装继承**的那类 —— 本行没有该字段，但生成档 `heroes_skills_<码>.json` 的
+            //     `passiveSkills` 比本行配置多出来的那几条就是它（实测：205 行有字段的 bonus 全部连续在尾部；
+            //     另有 10 行没字段但生成档多出尾部词条，全是 `*_costume_cute`）。
+            //   ② 与"`extra_` 前缀"口径等价（5 语言 × 2121 行 0 处不一致，且 `extra_` 从不出现在非服装英雄身上），
+            //     留在这儿当交叉验证的依据。
+            // ⚠ ②要靠生成档 ⇒ 这里**算不了**（正文是首屏之后才补齐的，见 `hydrateSkills`）：
+            //   此刻只写①，②由 `hydrateSkills` / `reloadLanguageData` 拿到生成档后补上。
+            const _pidOf = x => (x && typeof x === 'object' ? (x.id || '') : String(x || ''));
+            const _cfgPids = (c.passiveSkills || []).map(_pidOf).filter(Boolean);
+            const _bonusIds = Array.from(new Set((c.costumeBonusPassiveSkillIds || []).map(_pidOf).filter(Boolean)));
             const hero = {
                 heroId: hid,
                 specialId: c.specialId || '',
@@ -643,6 +656,11 @@ async function loadData(lang) {
                 parentHeroId: c.parentHeroId || null,
                 costume_id: isCostume ? _costumeSlot(hid, costumeOrd[hid] || 1) : 0,
                 costumeBonusLevels: _cbLevels,
+                // ⚠ 这条必须往下传：`data/heroes_skills_<码>.json` 里的 `passiveSkills` 是
+                //   "普通被动 + 服装奖励被动"**合并后**的数组 ⇒ 展示要按组逆序就得知道哪些 id 属于服装奖励
+                //   （含"从第一套服装继承"那种本行没字段的，由 `hydrateSkills` 用 `_cfgPassiveIds` 做差集补上）。
+                costumeBonusPassiveSkillIds: _bonusIds,
+                _cfgPassiveIds: _cfgPids,
                 costumeStages: _cbStages,
                 costumeMaxSets: _cbMax,
                 costumeListSets: _cbListSets,
@@ -719,6 +737,21 @@ async function loadData(lang) {
 }
 
 /**
+ * 把「生成档比本行配置多出来的被动」并进 `hero.costumeBonusPassiveSkillIds`。
+ * 这些多出来的就是**从第一套服装继承**的服装奖励 —— 本行配置没有 `costumeBonusPassiveSkillIds`
+ * 字段（实测 10 行，全是 `*_costume_cute`），但生成档的 `passiveSkills` 把它们追加在尾部。
+ * ⚠ 生成档是首屏之后才补齐的 ⇒ 只能在两条补齐路径里调（`hydrateSkills` / `reloadLanguageData`）。
+ * Set 并集 ⇒ 重复调用幂等。
+ */
+function mergeCostumeBonusPassiveIds(hero) {
+    const _id = x => (x && typeof x === 'object' ? (x.id || '') : String(x || ''));
+    const gen = (hero.passiveSkills || []).map(_id).filter(Boolean);
+    const cfg = hero._cfgPassiveIds || [];
+    hero.costumeBonusPassiveSkillIds = Array.from(new Set(
+        (hero.costumeBonusPassiveSkillIds || []).concat(gen.filter(id => cfg.indexOf(id) < 0))));
+}
+
+/**
  * 把「技能正文 + 平衡数据」补进英雄对象（延后加载的第二阶段）。
  *
  * 这两档合计 2.6~4MB/语言，只有**详情弹窗**与**高级筛选（技能/被动文本）**需要；
@@ -741,6 +774,7 @@ function hydrateSkills(skills, balSkills) {
         }, []);
         hero.familyBonus = st.familyBonus || [];
         hero._balanced = balancedFieldsFrom(balSkills, hid);
+        mergeCostumeBonusPassiveIds(hero);
         // 基线快照必须按**补齐后**的值重建 —— 否则「切换平衡数据」会把技能正文回退成空
         hero._normalSnapshot = {
             effects: hero.effects, passiveSkills: hero.passiveSkills, familyBonus: hero.familyBonus,

@@ -1649,14 +1649,18 @@ function renderDetailsInModal(hero, context = {}) {
     const basePassives = (hero.passiveSkills || []).map(_pid).filter(Boolean);
     const costumePassives = (hero.costumeBonusPassiveSkillIds || []).map(_pid).filter(Boolean);
 
-    // ⚠ **不要再倒序**：导出侧已取消逆序、按官方配置数组原序输出
-    //   （`passive_desc_gen.ORDER_MODE = 'config'`）⇒ 网站**原样使用**即可。
-    //   这里的 `[...].reverse()` 是当年为"对冲导出侧的逆序"加的补偿，导出改原序后它会
-    //   把头像被动图标又翻回去，与详情页被动段（原样渲染导出顺序）**互相打架** ⇒ 已移除。
-    const allPassiveSkills = [
-        ...basePassives,
-        ...costumePassives
+    // **展示逆序**（2026-10-19 用户口径）：普通被动与服装奖励被动**各自内部**倒序，服装奖励留在下面。
+    //   ⚠ `hero.passiveSkills` 里**已经追加了**服装奖励被动（生成器合并的结果，含"从第一套服装继承"那种
+    //   本行没有 `costumeBonusPassiveSkillIds` 字段的情况）⇒ 必须按 `costumeBonusPassiveSkillIds`
+    //   先拆组再分别翻，整条倒序会把服装奖励顶到第一位。
+    //   判别样本：`magic_telonius_costume_brew`、`forest_god_zeline_costume_cute`。
+    //   数据与导出侧仍是官方配置数组原序（`passive_desc_gen.ORDER_MODE = 'config'`），只在渲染时翻。
+    const _bonusSet = new Set(costumePassives);
+    const _orderedPassives = [
+        ...basePassives.filter(id => !_bonusSet.has(id)).reverse(),
+        ...basePassives.filter(id => _bonusSet.has(id)).reverse()
     ];
+    const allPassiveSkills = _orderedPassives;
 
     // --- 生成头像上的 Aether Power 叠加图标 ---
     let aetherPowerIconHTML = '';
@@ -2195,9 +2199,15 @@ function renderDetailsInModal(hero, context = {}) {
 
     // ── 被动技能段：每个被动 = 大图标 + 被动名（同一行），下一元素是该被动的词条 ──
     // 新数据 `hero.passiveSkills = [{id,title,text}]`；旧形状（纯文本数组）走 `hero.passives` 兜底。
-    const _passiveItems = (hero.passiveSkills && hero.passiveSkills.length)
+    // **展示逆序**（与头像被动图标同一口径）：本体组与服装奖励组**各自内部**倒序、本体组在前 ——
+    //   `hero.passiveSkills` 已把服装奖励被动追加在尾部，所以按 `costumeBonusPassiveSkillIds` 先拆组再翻。
+    const _passiveItemsRaw = (hero.passiveSkills && hero.passiveSkills.length)
         ? hero.passiveSkills.filter(p => p && (p.text || p.id))
         : (hero.passives || []).map(t => ({ id: '', title: '', text: t }));
+    const _bonusIds = (hero.costumeBonusPassiveSkillIds || []).map(x => (x && typeof x === 'object') ? (x.id || '') : String(x || ''));
+    const _baseItems = _passiveItemsRaw.filter(p => _bonusIds.indexOf(p.id) < 0);
+    const _bonusItems = _passiveItemsRaw.filter(p => _bonusIds.indexOf(p.id) >= 0);
+    const _passiveItems = [..._baseItems].reverse().concat([..._bonusItems].reverse());
     const passivesSectionHTML = `<div id="modal-passives-section" class="skill-category-block">
         <p class="uniform-style">${langDict.modalPassiveSkill}${balancedToggleHTML(hero, 'passiveSkills')}</p>
         ${_passiveItems.length ? _passiveItems.map(p => {

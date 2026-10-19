@@ -251,6 +251,44 @@ function getSimHeroPool() {
     return (state.allHeroes || []).filter(h => h && !h.hidden && !h.excluded);
 }
 
+// 「已经出过任何服装的本体英雄 id」集合。按 `state.allHeroes` 数组身份缓存：
+//   换语言 / 重载数据时它是新数组 ⇒ 自动重建，不必手动失效；模拟里每发一次奖励都要查，别每次重扫 2121 行。
+let _costumeParentCache = { src: null, set: null };
+function costumeParentIdSet() {
+    if (_costumeParentCache.src !== state.allHeroes) {
+        const s = new Set();
+        (state.allHeroes || []).forEach(h => { if (h && h.parentHeroId) s.add(h.parentHeroId); });
+        _costumeParentCache = { src: state.allHeroes, set: s };
+    }
+    return _costumeParentCache.set;
+}
+
+/**
+ * 月英（HOTM）额外奖励的人选：**当月最新、且没有任何服装的月英本体**。
+ *   ① 先按 `isFavoritable`（= 已过发布日期）过滤，再取发布日期最大的 ——
+ *      旧实现把「没有发布日期」的排在**最前** ⇒ 会抽出尚未发布的月英。
+ *   ② 服装行不能进奖励池（38 行）；**已经出过服装的本体也不行**（28 行）：
+ *      奖励只发"干净的月英本体"，同一只月英不会以两种形态出现。
+ *      ⇒ 若当月最新那只已经有服装，就顺位取上一只符合条件的。
+ * @param {object} hotmInfo - `summonPoolDetails.hotm`（用它的 `family`）
+ * @returns {object|null} 选中的英雄，池子里没有符合条件的人选时返回 null
+ */
+function pickHotmBonusHero(hotmInfo) {
+    const _hotmFam = String((hotmInfo && hotmInfo.family) || '');
+    const _isHotmFam = (f) => String(f) === _hotmFam
+        || (/^hotm/i.test(_hotmFam) && /^hotm/i.test(String(f)));
+    const _cbParents = costumeParentIdSet();
+    const hotmPool = getSimHeroPool().filter(h =>
+        _isHotmFam(h.family)
+        && !h.parentHeroId
+        && !_cbParents.has(h.heroId)
+        && (typeof isFavoritable !== 'function' || isFavoritable(h)));
+    if (!hotmPool.length) return null;
+    // `Release date` 是 `YYYY-MM-DD` 字符串 ⇒ 字典序即时间序
+    return hotmPool.reduce((best, h) =>
+        (!best || String(h['Release date'] || '') > String(best['Release date'] || '')) ? h : best, null);
+}
+
 function processSummonData(allPoolsConfig, summonTypesConfig) {
     lotteryPoolsData = {};
     summonPoolDetails = summonTypesConfig.SummonPool;
@@ -2089,21 +2127,8 @@ async function performSummon(count) {
             if (poolConfig.hasMysteryHeroBonusRoll) {
                 const hotmInfo = summonPoolDetails.hotm;
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
-                    // 月英（HOTM）额外奖励：**只产出"最新已发布"的那一只**。
-                    // 旧实现把「没有发布日期」的排在**最前** ⇒ 会抽出尚未发布的月英；
-                    // 现在先按 `isFavoritable`（= 已过发布日期）过滤，再取发布日期最大的。
-                    const _hotmFam = String(hotmInfo.family || '');
-                    const _isHotmFam = (f) => String(f) === _hotmFam
-                        || (/^hotm/i.test(_hotmFam) && /^hotm/i.test(String(f)));
-                    const hotmPool = getSimHeroPool().filter(h =>
-                        _isHotmFam(h.family)
-                        && (typeof isFavoritable !== 'function' || isFavoritable(h)));
-                    if (hotmPool.length > 0) {
-                        // `Release date` 是 `YYYY-MM-DD` 字符串 ⇒ 字典序即时间序
-                        const latestHotm = hotmPool.reduce((best, h) =>
-                            (!best || String(h['Release date'] || '') > String(best['Release date'] || '')) ? h : best, null);
-                        singlePullResults.push({ hero: latestHotm, bucket: 'hotm' });
-                    }
+                    const latestHotm = pickHotmBonusHero(hotmInfo);
+                    if (latestHotm) singlePullResults.push({ hero: latestHotm, bucket: 'hotm' });
                 }
                 let mysteryInfo = poolConfig.productType === 'LegendsSummon' ? summonPoolDetails.LegendsSummonMysteryHero : summonPoolDetails.MysteryHero;
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {

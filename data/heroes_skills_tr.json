@@ -49905,7 +49905,7 @@
      "lines": [
       "Hedefe ve rastgele 2 düşmana% 385 hasar verir.",
       "Saldırı sonucunda yenilen her düşman için eylemci% 25 sağlık yeniler ve% 25 mana kazanır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
-      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% 40 artar ve aldığı hasar% -25 azalır.",
+      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% +40 artar ve aldığı hasar% -25 azalır.",
       "(Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1200 hasar aldığında Pusu durumu sona erer.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Hedefe ve civardaki düşmanlara% 300 hasar verir.",
-      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% 40 artar ve aldığı hasar% -30 azalır.",
+      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% +40 artar ve aldığı hasar% -30 azalır.",
       "(Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 500 hasar aldığında Pusu durumu sona erer.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Hedefe% 585 hasar ve diğer tüm düşmanlara küçük hasar verir.",
-      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% 50 artar ve aldığı hasar% -40 azalır.",
+      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% +50 artar ve aldığı hasar% -40 azalır.",
       "(Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1500 hasar aldığında Pusu durumu sona erer.)",
       "Ateşe ekstra hasar verir."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% 20 artar ve aldığı hasar% 50 azalır. (Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1500 hasar aldığında Pusu durumu sona erer.)",
+      "Eylemci, Pusu moduna girer. Eylemcinin verdiği hasar% +20 artar ve aldığı hasar% -50 azalır. (Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1500 hasar aldığında Pusu durumu sona erer.)",
       "Eylemcinin sağlığını 1000 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
       "Engel Kaynağı: Her turun başında rastgele bir düşmana aşağıdaki efektler uygulanır:\n[*] 5 tur boyunca[#Dynamic] 435 [#]Zehir hasarı.\n[*]Şifaya direnir ve 5 tur boyunca direnilen her şifa için 400 hasar alır.\n[*]Engel Kaynağı 5 defa etkinleşir. Bu efekt İnatçıdır. (Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Tüm müttefikler Pusu moduna girer. Eylemcinin ve tüm müttefiklerin verdiği hasar% 50 artar ve onlardan aldığı hasar% 40 azalır. (Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1000 hasar aldığında Pusu durumu sona erer.)",
+      "Tüm müttefikler Pusu moduna girer. Eylemcinin ve tüm müttefiklerin verdiği hasar% +50 artar ve onlardan aldığı hasar% -40 azalır. (Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1000 hasar aldığında Pusu durumu sona erer.)",
       "Tüm müttefiklerin sağlığını 1000 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
       "Tüm müttefikler 6 tur boyunca% 40 mana yenilemesi alır. (Yalnızca kalkan eşleştirmekten üretilen veya turunun sonunda savunma takımından kazanılan manayı etkiler.)",
       "Eylemci 6 tur boyunca, düşmanların eylemci tarafındaki müttefiklerin Özel Yetenekler kullanmasını engelleyen Alay Etme özelliğini alır. (Alay, tüm düşmanların Alayı olmayan müttefiklerine Özel Yetenek uygulamasını önler.)"
@@ -50254,7 +50254,7 @@
       "Tüm düşmanlara% 250 hasar verir.",
       "Saldırı, savunma buff'larını atlatır. (Buna kontrataklar da dâhildir.)",
       "Tüm düşmanlar, 4 tur boyunca[#Dynamic] 728 [#]Zehir hasarı alır. Eylemci ve tüm müttefikleri, verilen Zehir hasarının% 30 kadarını güçlendirilmiş sağlık olarak emer.",
-      "Eylemci ve yakındaki müttefikler Pusu moduna girer. Eylemcinin ve yakındaki müttefiklerin verdiği hasar% 40 artar ve onlardan aldığı hasar% -25 azalır.",
+      "Eylemci ve yakındaki müttefikler Pusu moduna girer. Eylemcinin ve yakındaki müttefiklerin verdiği hasar% +40 artar ve onlardan aldığı hasar% -25 azalır.",
       "(Karakter Pusu moduna girdiğinde mevcut tüm durum engelleri ve Soldurma efektleri kaldırılır.\n[*] Karakter Pusudayken yeni engeller veya Soldurma efektleri alamaz.\n[*] Bu efekt bozulamaz.\n[*] Karakter 1200 hasar aldığında Pusu durumu sona erer.)"
      ]
     }

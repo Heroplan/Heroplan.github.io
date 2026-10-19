@@ -49905,7 +49905,7 @@
      "lines": [
       "Causa 385% de dano ao alvo e 2 inimigos aleatórios.",
       "Por cada inimigo derrotado pelo ataque, o invocador recupera 25% de vida e ganha 25% de mana. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
-      "O invocador entra em Emboscada. O dano causado por ele aumenta em 40% , e o dano recebido diminui em -25%.",
+      "O invocador entra em Emboscada. O dano causado por ele aumenta em +40% , e o dano recebido diminui em -25%.",
       "(Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1200 de dano.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Causa 300% de dano ao alvo e inimigos próximos.",
-      "O invocador entra em Emboscada. O dano causado por ele aumenta em 40% , e o dano recebido diminui em -30%.",
+      "O invocador entra em Emboscada. O dano causado por ele aumenta em +40% , e o dano recebido diminui em -30%.",
       "(Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 500 de dano.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Causa 585% de dano ao alvo e pouco dano a todos os outros inimigos.",
-      "O invocador entra em Emboscada. O dano causado por ele aumenta em 50% , e o dano recebido diminui em -40%.",
+      "O invocador entra em Emboscada. O dano causado por ele aumenta em +50% , e o dano recebido diminui em -40%.",
       "(Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1500 de dano.)",
       "Causa dano extra contra Fogo."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "O invocador entra em Emboscada. O dano causado por ele aumenta em 20% , e o dano recebido diminui em 50%. (Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1500 de dano.)",
+      "O invocador entra em Emboscada. O dano causado por ele aumenta em +20% , e o dano recebido diminui em -50%. (Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1500 de dano.)",
       "Aumenta a vida do invocador em 1000. A vida reforçada pode exceder o limite de PV.",
       "Fonte de Males: os seguintes efeitos são aplicados a um inimigo aleatório no início de cada turno:\n[*][#Dynamic] 435 [#]de dano de veneno ao longo de 5 turnos.\n[*] Resiste à cura e recebe 400 de dano por cada cura resistida por 5 turnos.\n[*] A Fonte de Males é ativada 5 vezes. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Todos os aliados entram em Emboscada. O dano causado por todos os aliados aumenta em 50% , e o dano recebido por eles diminui em 40%. (Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1000 de dano.)",
+      "Todos os aliados entram em Emboscada. O dano causado por todos os aliados aumenta em +50% , e o dano recebido por eles diminui em -40%. (Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1000 de dano.)",
       "Aumenta a vida de todos os aliados em 1000. A vida reforçada pode exceder o limite de PV.",
       "Todos os aliados ganham 40% de geração de mana por 6 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
       "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 6 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)"
@@ -50254,7 +50254,7 @@
       "Causa 250% de dano a todos os inimigos.",
       "O ataque ignora reforços defensivos. (Inclui contra-ataques.)",
       "Todos os inimigos recebem[#Dynamic] 728 [#]de dano de veneno por 4 turnos. O invocador e todos os aliados absorvem 30% do dano de veneno como vida reforçada.",
-      "O invocador e os aliados próximos entram em Emboscada. O dano causado pelo invocador e pelos aliados próximos aumenta em 40% , e o dano recebido por eles diminui em -25%.",
+      "O invocador e os aliados próximos entram em Emboscada. O dano causado pelo invocador e pelos aliados próximos aumenta em +40% , e o dano recebido por eles diminui em -25%.",
       "(Quando o personagem entra em Emboscada, todos os males de status e efeitos Atrofia são removidos.\n[*] O personagem não pode ganhar novos males ou efeitos Atrofia enquanto está em Emboscada.\n[*] Este efeito é indissipável.\n[*] O personagem sai de Emboscada depois de receber 1200 de dano.)"
      ]
     }

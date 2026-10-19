@@ -49905,7 +49905,7 @@
      "lines": [
       "Forvolder 385% skade mod målet og 2 tilfældige fjender.",
       "For hver fjende, der besejres af angrebet, genvinder kasteren 25% helbred og får 25% mana. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
-      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med 40%, og skade modtaget af vedkommende reduceres med -25%.",
+      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med +40%, og skade modtaget af vedkommende reduceres med -25%.",
       "(Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1200 skade.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Giver 300% skade til målet og fjender i nærheden.",
-      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med 40%, og skade modtaget af vedkommende reduceres med -30%.",
+      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med +40%, og skade modtaget af vedkommende reduceres med -30%.",
       "(Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 500 skade.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Giver 585% skade til målet og mindre skade til alle andre fjender.",
-      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med 50%, og skade modtaget af vedkommende reduceres med -40%.",
+      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med +50%, og skade modtaget af vedkommende reduceres med -40%.",
       "(Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1500 skade.)",
       "Giver ekstra skade mod ild."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med 20%, og skade modtaget af vedkommende reduceres med 50%. (Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1500 skade.)",
+      "Kasteren går i baghold. Skade forvoldt af kasteren forøges med +20%, og skade modtaget af vedkommende reduceres med -50%. (Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1500 skade.)",
       "Forstærker helbredet hos kasteren med 1000. Forstærket helbred kan overstige maks. HP.",
       "Lidelseskilde: Følgende effekter kastes mod en tilfældig fjende i starten af hver runde:\n[*][#Dynamic] 435 [#]Giftskade over 5 runder.\n[*]Modstår helbredelse og modtager 400 skade for hver modstået helbredelse i 5 runder.\n[*]Lidelseskilden vil blive aktiveret 5 gange. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Alle allierede går i baghold. Skade forvoldt af alle allierede forøges med 50%, og modtaget skade reduceres med 40%. (Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1000 skade.)",
+      "Alle allierede går i baghold. Skade forvoldt af alle allierede forøges med +50%, og modtaget skade reduceres med -40%. (Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1000 skade.)",
       "Forstærker alle allieredes helbred med 1000. Forstærket helbred kan overstige maks. HP.",
       "Alle allierede gendanner 40% mana i 6 runder. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)",
       "Kasteren får hån, der forhindrer fjender fra at bruge særlig evneer på kasterens allierede i 6 runder. (Hån forhindrer alle fjender i at bruge særlige evner på allierede, der ikke har hån.)"
@@ -50254,7 +50254,7 @@
       "Giver 250% i skade til alle fjender.",
       "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
       "Alle fjender modtager[#Dynamic] 728 [#]giftskade i 4 runder. Kasteren og alle deres allierede absorberer 30% af den påførte giftskade som forbedret helbred.",
-      "Kasteren og allierede i nærheden går i baghold. Skade forvoldt af kasteren og allierede i nærheden forøges med 40%, og modtaget skade reduceres med -25%.",
+      "Kasteren og allierede i nærheden går i baghold. Skade forvoldt af kasteren og allierede i nærheden forøges med +40%, og modtaget skade reduceres med -25%.",
       "(Når figuren går i baghold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter, så længe den er i baghold.\n[*] Denne effekt er uophævelig.\n[*] Figuren kommer ud af et baghold, når den har modtaget 1200 skade.)"
      ]
     }

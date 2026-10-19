@@ -49905,7 +49905,7 @@
      "lines": [
       "Gör 385% skada mot målet och 2 slumpmässiga fiender.",
       "För varje fiende som besegras av attacken återfår användaren 25% hälsa och får 25% mana. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
-      "Kastaren lägger sig i bakhåll. Anfallaren gör 40% mer skada och tar -25% mindre skada.",
+      "Kastaren lägger sig i bakhåll. Anfallaren gör +40% mer skada och tar -25% mindre skada.",
       "(När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1200 skada.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Skadar målet och fiender i närheten med 300%.",
-      "Kastaren lägger sig i bakhåll. Anfallaren gör 40% mer skada och tar -30% mindre skada.",
+      "Kastaren lägger sig i bakhåll. Anfallaren gör +40% mer skada och tar -30% mindre skada.",
       "(När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 500 skada.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Skadar målet med 585% och gör mindre skada mot alla andra fiender.",
-      "Kastaren lägger sig i bakhåll. Anfallaren gör 50% mer skada och tar -40% mindre skada.",
+      "Kastaren lägger sig i bakhåll. Anfallaren gör +50% mer skada och tar -40% mindre skada.",
       "(När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1500 skada.)",
       "Gör extra skada mot eld."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Kastaren lägger sig i bakhåll. Anfallaren gör 20% mer skada och tar 50% mindre skada. (När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1500 skada.)",
+      "Kastaren lägger sig i bakhåll. Anfallaren gör +20% mer skada och tar -50% mindre skada. (När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1500 skada.)",
       "Ökar hälsan för kastaren med 1000. Hälsan kan komma att överstiga maxhälsan.",
       "Källa till negativa effekter: Följande effekter används på en slumpvald fiende i början av varje runda:\n[*][#Dynamic] 435 [#]giftskada i 5 rundor.\n[*]Står emot läkning och får 400 per motstådd läkning i 5 rundor.\n[*]Källan till negativa effekter aktiveras 5 gånger. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Alla allierade lägger sig i bakhåll. Alla allierade gör 50% mer skada och tar 40% mindre skada. (När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1000 skada.)",
+      "Alla allierade lägger sig i bakhåll. Alla allierade gör +50% mer skada och tar -40% mindre skada. (När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1000 skada.)",
       "Ökar alla allierades hälsa med 1000. Hälsan kan komma att överstiga maxhälsan.",
       "Alla allierade genererar 40% mana i 6 rundor. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)",
       "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 6 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)"
@@ -50254,7 +50254,7 @@
       "Alla fiender tar 250% skada.",
       "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
       "Alla fiender tar[#Dynamic] 728 [#]giftskada över 4 rundor. Användaren och alla allierade absorberar 30% av den gjorda giftskadan som ökad hälsa.",
-      "Användaren och allierade i närheten lägger sig i bakhåll. Användaren och allierade i närheten gör 40% mer skada och tar -25% mindre skada.",
+      "Användaren och allierade i närheten lägger sig i bakhåll. Användaren och allierade i närheten gör +40% mer skada och tar -25% mindre skada.",
       "(När karaktären lägger sig i bakhåll tas alla negativa statuseffekter och vittringseffekter bort.\n[*] Karaktären kan inte få nya negativa statuseffekter eller vittringseffekter i bakhåll.\n[*] Den här effekten kan inte avbrytas.\n[*] Bakhåll slutar när karaktären har tagit 1200 skada.)"
      ]
     }

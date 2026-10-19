@@ -49905,7 +49905,7 @@
      "lines": [
       "Påfører 385% skade på målet 2 tilfeldige fiender.",
       "For hver fiende beseiret av angrepet, får brukeren tilbake 25% helse og får 25% mana. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
-      "Brukeren går i et bakhold. Skade påført av brukeren økes med 40%, og skade mottatt av denne reduseres med -25%.",
+      "Brukeren går i et bakhold. Skade påført av brukeren økes med +40%, og skade mottatt av denne reduseres med -25%.",
       "(Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1200 skade.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Påfører 300% skade på målet og fiender i nærheten.",
-      "Brukeren går i et bakhold. Skade påført av brukeren økes med 40%, og skade mottatt av denne reduseres med -30%.",
+      "Brukeren går i et bakhold. Skade påført av brukeren økes med +40%, og skade mottatt av denne reduseres med -30%.",
       "(Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 500 skade.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Påfører 585% skade på målet og mindre skade på alle andre fiender.",
-      "Brukeren går i et bakhold. Skade påført av brukeren økes med 50%, og skade mottatt av denne reduseres med -40%.",
+      "Brukeren går i et bakhold. Skade påført av brukeren økes med +50%, og skade mottatt av denne reduseres med -40%.",
       "(Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1500 skade.)",
       "Påfører ekstra skade mot ild."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Brukeren går i et bakhold. Skade påført av brukeren økes med 20%, og skade mottatt av denne reduseres med 50%. (Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1500 skade.)",
+      "Brukeren går i et bakhold. Skade påført av brukeren økes med +20%, og skade mottatt av denne reduseres med -50%. (Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1500 skade.)",
       "Øker helsen til brukeren med 1000. Økt helse kan overskrider maks HP.",
       "Kilde til lidelser: Følgende effekter brukes på en tilfeldig fiende ved starten av hver tur:\n[*][#Dynamic] 435 [#]giftskade i 5 turer.\n[*]Motstår helbredelse og tar 400 skade per motstått helbredelse i 5 turer.\n[*]Kilde til lidelser aktiveres 5 ganger. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Alle allierte går i et bakhold. Skade påført av alle allierte økes med 50%, og skade mottatt av dem reduseres med 40%. (Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1000 skade.)",
+      "Alle allierte går i et bakhold. Skade påført av alle allierte økes med +50%, og skade mottatt av dem reduseres med -40%. (Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1000 skade.)",
       "Øker helsen til alle allierte med 1000. Økt helse kan overskride maks HP.",
       "Alle allierte får 40% mana-generering i 6 runder. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
       "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 6 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)"
@@ -50254,7 +50254,7 @@
       "Påfører 250% skade på alle fiender.",
       "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
       "Alle fiender tar[#Dynamic] 728 [#]giftskade over 4 runder. Brukeren og alle allierte absorberer 30% av påført giftskade som økt helse.",
-      "Brukeren og allierte i nærheten går i et bakhold. Skade påført av brukeren og allierte i nærheten økes med 40%, og skade mottatt av denne reduseres med -25%.",
+      "Brukeren og allierte i nærheten går i et bakhold. Skade påført av brukeren og allierte i nærheten økes med +40%, og skade mottatt av denne reduseres med -25%.",
       "(Når figuren går i et bakhold, fjernes alle eksisterende statuslidelser og visneeffekter.\n[*] Figuren kan ikke få nye lidelser eller visneeffekter mens i bakhold.\n[*] Denne effekten kan ikke fjernes.\n[*] Bakhold avsluttes når figuren har tatt 1200 skade.)"
      ]
     }

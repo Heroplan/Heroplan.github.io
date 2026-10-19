@@ -49905,7 +49905,7 @@
      "lines": [
       "Deals 385% damage to the target and 2 random enemies.",
       "For each enemy defeated by the attack, the caster recovers 25% health and gains 25% mana. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
-      "The caster goes into Ambush. Damage dealt by the caster is increased by 40% , and damage received by them is decreased by -25%.",
+      "The caster goes into Ambush. Damage dealt by the caster is increased by +40% , and damage received by them is decreased by -25%.",
       "(When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1200 damage.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Deals 300% damage to the target and nearby enemies.",
-      "The caster goes into Ambush. Damage dealt by the caster is increased by 40% , and damage received by them is decreased by -30%.",
+      "The caster goes into Ambush. Damage dealt by the caster is increased by +40% , and damage received by them is decreased by -30%.",
       "(When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 500 damage.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Deals 585% damage to the target and minor damage to all other enemies.",
-      "The caster goes into Ambush. Damage dealt by the caster is increased by 50% , and damage received by them is decreased by -40%.",
+      "The caster goes into Ambush. Damage dealt by the caster is increased by +50% , and damage received by them is decreased by -40%.",
       "(When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1500 damage.)",
       "Deals extra damage against Fire."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "The caster goes into Ambush. Damage dealt by the caster is increased by 20% , and damage received by them is decreased by 50%. (When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1500 damage.)",
+      "The caster goes into Ambush. Damage dealt by the caster is increased by +20% , and damage received by them is decreased by -50%. (When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1500 damage.)",
       "Boosts health of the caster by 1000. Boosted health can exceed max HP.",
       "Source of Ailments: The following effects are cast on a random enemy at the start of each turn:\n[*][#Dynamic] 435 [#]Poison damage over 5 turns.\n[*]Resists healing and receives 400 damage per each resisted healing for 5 turns.\n[*]The Source of Ailments will activate 5 times. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "All allies go into Ambush. Damage dealt by all allies is increased by 50% , and damage received by them is decreased by 40%. (When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1000 damage.)",
+      "All allies go into Ambush. Damage dealt by all allies is increased by +50% , and damage received by them is decreased by -40%. (When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1000 damage.)",
       "Boosts health of all allies by 1000. Boosted health can exceed max HP.",
       "All allies get 40% mana generation for 6 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)",
       "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 6 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)"
@@ -50254,7 +50254,7 @@
       "Deals 250% damage to all enemies.",
       "The attack bypasses defensive buffs. (This includes counterattacks.)",
       "All enemies receive[#Dynamic] 728 [#]Poison damage over 4 turns. The caster and all their allies absorb 30% of dealt Poison damage as boosted health.",
-      "The caster and nearby allies go into Ambush. Damage dealt by the caster and nearby allies is increased by 40% , and damage received by them is decreased by -25%.",
+      "The caster and nearby allies go into Ambush. Damage dealt by the caster and nearby allies is increased by +40% , and damage received by them is decreased by -25%.",
       "(When the character goes into Ambush, all existing status ailments and Wither effects are removed.\n[*] The character can't gain new ailments or Wither effects while in Ambush.\n[*] This effect is undispellable.\n[*] Ambush ends once the character has received 1200 damage.)"
      ]
     }

@@ -49905,7 +49905,7 @@
      "lines": [
       "Inflige 385% de dégâts à la cible et à 2 ennemis aléatoires.",
       "Pour chaque ennemi éliminé par l'attaque, le lanceur récupère 25% de santé et gagne 25% de mana. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
-      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de 40%, et les dégâts qu'il subit sont réduits de -25%.",
+      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de +40%, et les dégâts qu'il subit sont réduits de -25%.",
       "(Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1200 points de dégâts.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Inflige 300% de dégâts à la cible et aux ennemis proches.",
-      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de 40%, et les dégâts qu'il subit sont réduits de -30%.",
+      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de +40%, et les dégâts qu'il subit sont réduits de -30%.",
       "(Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 500 points de dégâts.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Inflige 585% de dégâts à la cible et des dégâts mineurs à tous les autres ennemis.",
-      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de 50%, et les dégâts qu'il subit sont réduits de -40%.",
+      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de +50%, et les dégâts qu'il subit sont réduits de -40%.",
       "(Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1500 points de dégâts.)",
       "Inflige des dégâts supplémentaires contre le feu."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de 20%, et les dégâts qu'il subit sont réduits de 50%. (Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1500 points de dégâts.)",
+      "Le lanceur se met en embuscade. Les dégâts qu'il inflige augmentent de +20%, et les dégâts qu'il subit sont réduits de -50%. (Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1500 points de dégâts.)",
       "Booste la santé du lanceur de 1000. Le maximum de PV peut être dépassé.",
       "Source de maux: les effets suivants sont infligés à un ennemi au début de chaque tour:\n[*][#Dynamic] 435 [#]points dégâts de poison sur 5 tours.\n[*]Résiste aux soins et subit 400 points de dégâts à chaque soin resisté pendant 5 tours.\n[*]La source de maux s'active 5 fois. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Tous les alliés se mettent en embuscade. Les dégâts qu'ils infligent augmentent de 50%, et les dégâts qu'ils subissent sont réduits de 40%. (Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1000 points de dégâts.)",
+      "Tous les alliés se mettent en embuscade. Les dégâts qu'ils infligent augmentent de +50%, et les dégâts qu'ils subissent sont réduits de -40%. (Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1000 points de dégâts.)",
       "Booste la santé de tous les alliés de 1000. Le maximum de PV peut être dépassé.",
       "Tous les alliés reçoivent 40% de génération de mana pour 6 tours. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
       "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 6 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)"
@@ -50254,7 +50254,7 @@
       "Inflige 250% de dégâts à tous les ennemis.",
       "L'attaque contourne les bonus défensifs. (Les contre-attaques sont également concernées.)",
       "Tous les ennemis subissent[#Dynamic] 728 [#]points de dégâts de poison en 4 tours. Le lanceur et ses alliés absorbent 30% des dégâts de poison sous forme de santée boostée.",
-      "Le lanceur et les alliés proches se mettent en embuscade. Les dégâts qu'ils infligent augmentent de 40%, et les dégâts qu'ils subissent sont réduits de -25%.",
+      "Le lanceur et les alliés proches se mettent en embuscade. Les dégâts qu'ils infligent augmentent de +40%, et les dégâts qu'ils subissent sont réduits de -25%.",
       "(Lorsque le personnage se met en embuscade, tous les effets négatifs et effets de flétrissement sont supprimés.\n[*] Le personnage ne peut pas recevoir de nouveaux malus ou effets de flétrissement tant qu'il est en embuscade.\n[*] Cet effet ne peut pas être dissipé.\n[*] Le personnage arrête d'être en embuscade une fois qu'il a subi 1200 points de dégâts.)"
      ]
     }

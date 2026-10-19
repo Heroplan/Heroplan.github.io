@@ -49905,7 +49905,7 @@
      "lines": [
       "Menimbulkan kerusakan 385% ke sasaran dan 2 musuh acak.",
       "Untuk setiap musuh yang dikalahkan serangan, kesehatan perapal pulih 25% dan meraih 25% mana. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
-      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah 40% dan kerusakan yang diterima berkurang -25%.",
+      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah +40% dan kerusakan yang diterima berkurang -25%.",
       "(Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1200 kerusakan.)"
      ]
     }
@@ -49998,7 +49998,7 @@
      "id": "haphazard_chop",
      "lines": [
       "Menimbulkan kerusakan 300% pada sasaran dan musuh terdekat.",
-      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah 40% dan kerusakan yang diterima berkurang -30%.",
+      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah +40% dan kerusakan yang diterima berkurang -30%.",
       "(Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 500 kerusakan.)"
      ]
     }
@@ -50029,7 +50029,7 @@
      "id": "roadside_surprise",
      "lines": [
       "Menimbulkan kerusakan 585% pada sasaran dan kerusakan minor pada semua musuh lainnya.",
-      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah 50% dan kerusakan yang diterima berkurang -40%.",
+      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah +50% dan kerusakan yang diterima berkurang -40%.",
       "(Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1500 kerusakan.)",
       "Kerusakan ekstra terhadap elemen Api."
      ]
@@ -50123,7 +50123,7 @@
     {
      "id": "dose_makes_the_poison",
      "lines": [
-      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah 20% dan kerusakan yang diterima berkurang 50%. (Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1500 kerusakan.)",
+      "Perapal ikut Sergapan, Kerusakan yang ditimbulkan perapal bertambah +20% dan kerusakan yang diterima berkurang -50%. (Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1500 kerusakan.)",
       "Meningkatkan kesehatan perapal sebesar 1000. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
       "Sumber Pelemahan: Efek berikut dirapal ke musuh acak di awal tiap giliran:\n[*][#Dynamic] 435 [#]kerusakan Racun selama 5 giliran.\n[*]Menampik penyembuhan dan menerima 400 kerusakan untuk setiap penyembuhan yang ditampik selama 5 giliran.\n[*]Sumber Pelemahan akan aktif 5 kali. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
@@ -50154,7 +50154,7 @@
     {
      "id": "eternal_mist",
      "lines": [
-      "Semua sekutu ikut Sergapan. Kerusakan yang ditimbulkan oleh semua sekutu bertambah 50% , dan kerusakan yang diterima mereka berkurang 40%. (Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1000 kerusakan.)",
+      "Semua sekutu ikut Sergapan. Kerusakan yang ditimbulkan oleh semua sekutu bertambah +50% , dan kerusakan yang diterima mereka berkurang -40%. (Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1000 kerusakan.)",
       "Meningkatkan kesehatan semua sekutu sebesar 1000. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
       "Generasi mana semua sekutu menjadi 40% selama 6 giliran. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
       "Perapal mendapat Cela yang membuat musuh tidak bisa menggunakan Keahlian Khusus pada sekutu perapal selama 6 giliran. (Ejek mencegah semua musuh agar tidak menggunakan Keahlian Khusus pada sekutu mereka yang tidak memiliki Ejek.)"
@@ -50254,7 +50254,7 @@
       "Menimbulkan kerusakan 250% pada semua musuh.",
       "Serangan itu menembus genjotan defensif. (Ini termasuk serangan balik.)",
       "Semua musuh mengalami[#Dynamic] 728 [#]kerusakan Racun selama 4 giliran. Perapal dan semua sekutunya menyerap 30% dari kerusakan Racun yang ditimbulkan sebagai kesehatan yang ditingkatkan.",
-      "Perapal dan sekutu terdekat ikut Sergapan. Kerusakan yang ditimbulkan perapal dan sekutu terdekat bertambah 40% , dan kerusakan yang diterima mereka berkurang -25%.",
+      "Perapal dan sekutu terdekat ikut Sergapan. Kerusakan yang ditimbulkan perapal dan sekutu terdekat bertambah +40% , dan kerusakan yang diterima mereka berkurang -25%.",
       "(Saat karakter ikut Menyergap, semua status pelemahan dan efek Layu yang ada dihapus.\n[*] Karakter tidak dapat meraih pelemahan atau efek Layu baru selagi Menyergap.\n[*] Efek ini tidak bisa dienyahkan.\n[*] Menyergap berakhir begitu karakter menderita 1200 kerusakan.)"
      ]
     }

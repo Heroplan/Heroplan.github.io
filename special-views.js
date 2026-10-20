@@ -38,6 +38,17 @@ function urlWithParams(params) {
         if (v === null || v === '') u.searchParams.delete(k);
         else u.searchParams.set(k, v);
     });
+    // `pool` 是 `view=lottery` 的子参数（层级关系）⇒ 地址里固定写成 `?view=…&pool=…`。
+    // 进入抽奖时 `handleActivityClick` 会先写 `pool`、`setMainViewHistory` 随后才补 `view`，
+    // `URLSearchParams.set` 只会把 `view` 追加到末尾 ⇒ 不归一会得到 `?pool=…&view=lottery`。
+    const entries = Array.from(u.searchParams.entries());
+    const vi = entries.findIndex(([k]) => k === 'view');
+    const pi = entries.findIndex(([k]) => k === 'pool');
+    if (vi >= 0 && pi >= 0 && vi > pi) {
+        const [viewEntry] = entries.splice(vi, 1);
+        entries.splice(pi, 0, viewEntry);
+        u.search = new URLSearchParams(entries).toString();
+    }
     return u.pathname + u.search + u.hash;
 }
 

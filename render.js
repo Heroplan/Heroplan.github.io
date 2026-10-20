@@ -239,7 +239,11 @@ function renderTable(heroes) {
             headerText = shouldPredictFavoriteAll ? '★' : '☆';
             return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
         }
-        return `<th class="col-${key} ${isSortable ? 'sortable' : ''}" data-sort-key="${key}">${headerText}<span class="sort-indicator">${sortIndicator}</span></th>`;
+        // 移动端稀有度列窄、列名又长 ⇒ 用 star.webp 代替文字（CSS 断点切换，桌面仍是文字）
+        const headerInner = key === 'rarity'
+            ? `<span class="th-label">${headerText}</span><img loading="lazy" src="imgs/other/star.webp" decoding="async" class="th-star-icon" alt="${headerText}">`
+            : headerText;
+        return `<th class="col-${key} ${isSortable ? 'sortable' : ''}" data-sort-key="${key}">${headerInner}<span class="sort-indicator">${sortIndicator}</span></th>`;
     }).join('') + '</tr>';
 
     // 渲染表格内容
@@ -322,7 +326,7 @@ function renderTable(heroes) {
                 //   （用户 2026-10-20 试过后明确要求保持"不一样才显示"；改成按语言会让 fi 出现 `Niki (Niki)`）。
                 //   副作用认知：Mimic 的 42 条在每种语言都已译 ⇒ 看起来"只有 Mimic 带括号"。
                 const _enSuffix = (hero.english_name && hero.english_name !== displayName)
-                    ? ` (${hero.english_name})` : '';
+                    ? `<span class="hero-en-name">(${hero.english_name})</span>` : '';
                 content = `${displayName}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
                 const classIcon = String(hero.classId || hero[key]).toLowerCase();

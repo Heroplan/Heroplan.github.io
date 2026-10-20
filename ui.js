@@ -443,13 +443,17 @@ function updateResultsHeader() {
             message = langDict.resultsCountTextFiltered(count);
             showResetButton = true;
         } else {
-            message = langDict.resultsCountTextUnfiltered(count);
+            // 未筛选时显示本地化的「共 N 位」，不再带「英雄 (包含服装)」后缀；
+            // totalHeroesCountText 自带一层括号（原本用于跟在标题后），这里去掉
+            message = String(langDict.totalHeroesCountText(count)).replace(/^\(|\)$/g, '');
             showResetButton = false;
         }
 
-        const messageSpan = document.createElement('span');
-        messageSpan.innerHTML = message;
-        uiElements.resultsCountEl.appendChild(messageSpan);
+        if (message) {
+            const messageSpan = document.createElement('span');
+            messageSpan.innerHTML = message;
+            uiElements.resultsCountEl.appendChild(messageSpan);
+        }
 
         // --- 查看最新 按钮逻辑 ---
         // 仅在未应用任何筛选时显示「查看最新」按钮；一旦有筛选（含英雄学院10列表临时筛选）

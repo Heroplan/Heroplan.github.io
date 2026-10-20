@@ -332,7 +332,7 @@ function populateFilters() {
     });
 
     const filtersToConvert = [
-        'filterScope', 'star', 'color', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower',
+        'filterScope', 'rarity', 'element', 'speed', 'class', 'costume', 'family', 'source', 'aetherpower',
         'skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'
     ];
 
@@ -380,11 +380,11 @@ function populateFilters() {
                 if (ib !== 9999) return 1;
                 return a.localeCompare(b, locale, sortOptions);
             });
-        } else if (key === 'speed' || key === 'color' || key === 'class' || key === 'aetherpower' || key === 'costume') {
+        } else if (key === 'speed' || key === 'element' || key === 'class' || key === 'aetherpower' || key === 'costume') {
             // 「先排序后翻译」：用语言无关的 ID 顺序（langs_json/sort_order.json），
             // 不再依赖 language.js 的 speedOrder_<码> / colorOrder_<码> 数组。
-            const _tbl = { speed: 'speed', color: 'color', class: 'class', aetherpower: 'aether_power', costume: 'costume' }[key];
-            const _idKey = { speed: 'speedId', color: 'colorId', class: 'classId', aetherpower: 'aetherPowerId' }[key];
+            const _tbl = { speed: 'speed', element: 'element', class: 'class', aetherpower: 'aether_power', costume: 'costume' }[key];
+            const _idKey = { speed: 'speedId', element: 'elementId', class: 'classId', aetherpower: 'aetherPowerId' }[key];
             const _ord = {};
             if (_idKey) {
                 // 这几类的选项值来自英雄身上的 <key>Id 字段
@@ -457,14 +457,14 @@ function populateFilters() {
  * @returns {string|null} 图标路径。
  */
 // 筛选类型 → 官方字典表名 / 图标目录 / 英雄的规范 ID 字段（**选项值一律是规范 ID**）
-const ICON_TABLE = { color: 'color', class: 'class', source: 'source', aetherpower: 'aether_power' };
-const ICON_DIR = { color: 'colors/', class: 'classes/', aetherpower: 'Aether Power/' };
-const ID_FIELD = { speed: 'speedId', color: 'colorId', class: 'classId', source: 'sourceId', aetherpower: 'aetherPowerId' };
+const ICON_TABLE = { element: 'element', class: 'class', source: 'source', aetherpower: 'aether_power' };
+const ICON_DIR = { element: 'element/', class: 'classes/', aetherpower: 'Aether Power/' };
+const ID_FIELD = { speed: 'speedId', element: 'elementId', class: 'classId', source: 'sourceId', aetherpower: 'aetherPowerId' };
 
 function getIconForFilter(filterType, optionValue) {
     if (!optionValue) return null;
     switch (filterType) {
-        case 'color':
+        case 'element':
         case 'class':
         case 'aetherpower':
             // ID 直查：图标文件名就是规范 ID（显示层才过字典）
@@ -573,7 +573,7 @@ function openMultiSelectModal(filterType, title) {
             displayText = langDict[optionValue] || optionValue;
         }
 
-        const starSuffix = filterType === 'star' ? '⭐' : '';
+        const starSuffix = filterType === 'rarity' ? '⭐' : '';
 
         // data-value 始终是简体中文，而 <span> 中显示的是翻译后的文本
         return `<div class="multi-select-option ${isSelected ? 'selected' : ''}" data-value="${optionValue}">${iconHTML}<span>${displayText}${starSuffix}</span></div>`;
@@ -860,7 +860,7 @@ function calculateHeroStats(hero, settings) {
         finalStats.health = (baseStats.health || 0) + talentBonuses.health_flat + healthPercentBonus;
     }
     const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
-    const star_power = STAR_BASE_POWER[hero.star] || 0;
+    const star_power = STAR_BASE_POWER[hero.rarity] || 0;
     const stats_raw_power = (baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14);
     const stats_final_power = Math.floor(stats_raw_power);
     const skill_power = (8 - 1) * 5;
@@ -926,7 +926,7 @@ function applyFiltersAndRender() {
         // （存档键与站点 heroId 完全同名 ⇒ 直接 Set.has，零映射）。
         if (state.temporaryOwnedHeroes) {
             if (!state.temporaryOwnedHeroes.has(hero.heroId)) return false;
-            if (Number(hero.star) <= 2) return false;
+            if (Number(hero.rarity) <= 2) return false;
         }
         if (filterScope === 'favorites') {
             if (!favoriteIndexSet || !favoriteIndexSet.has(hero.originalIndex)) return false;
@@ -1003,7 +1003,7 @@ function applyFiltersAndRender() {
 
             // --- 根据不同的筛选模式执行逻辑 ---
             if (state.temporaryAcademyFilter) {
-                if (hero.star !== 5) return false;
+                if (hero.rarity !== 5) return false;
                 const baseDate = new Date();
                 baseDate.setHours(0, 0, 0, 0);
                 const diffDays = Math.ceil((baseDate - releaseDate) / (1000 * 60 * 60 * 24));
@@ -1286,7 +1286,7 @@ function initializeNameAutocomplete() {
         suggestions.forEach((suggestion, index) => {
             const item = document.createElement('div');
             const displayName = suggestion.name;
-            const colorClass = suggestion.color ? 'hero-' + suggestion.color : '';
+            const colorClass = suggestion.element ? 'hero-' + suggestion.element : '';
             const heroId = suggestion.heroId;
 
             // 获取头像路径
@@ -1408,7 +1408,7 @@ function getHeroNameSuggestions(searchTerm) {
             english_name: hero.english_name,
             fillValue: fillValue,
             heroId: hero.heroId,
-            color: hero.colorId ? String(hero.colorId).toLowerCase() : '',
+            element: hero.elementId ? String(hero.elementId).toLowerCase() : '',
             matchIndex: matchIndex
         });
     });

@@ -119,6 +119,8 @@ function toggleTeamSimulator() {
         updateFilterButtonUI('filterScope');
         applyFiltersAndRender();
         document.body.classList.remove('team-mode-active');
+        // 主动退出 ⇒ 地址回到列表（带条件，见 special-views.js::syncViewUrlAfterToggle）
+        if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
     }
 }
 
@@ -275,13 +277,13 @@ function renderTeamDisplay() {
 
             // ▼▼▼使用新的HTML结构来添加背景色▼▼▼
             const avatarContainer = document.createElement('div');
-            avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.colorId)}`;
+            avatarContainer.className = `sim-hero-avatar-container ${getColorGlowClass(hero.elementId)}`;
             avatarContainer.style.width = '60px';
             avatarContainer.style.height = '60px';
 
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
-            avatarBackground.style.background = getHeroColorLightGradient(hero.colorId);
+            avatarBackground.style.background = getHeroColorLightGradient(hero.elementId);
 
             const avatar = document.createElement('img');
             avatar.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
@@ -469,8 +471,8 @@ function renderSavedTeams(teams, isSharedView = false) {
             if (hero) {
                 const imageSrc = `imgs/hero_icon/${hero.heroId}.webp`;
                 return `
-                    <div class="saved-team-avatar-container ${getColorGlowClass(hero.colorId)}" title="${hero.name}">
-                        <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.colorId)};"></div>
+                    <div class="saved-team-avatar-container ${getColorGlowClass(hero.elementId)}" title="${hero.name}">
+                        <div class="saved-team-avatar-background" style="background: ${getHeroColorLightGradient(hero.elementId)};"></div>
                         <img loading="lazy" src="${imageSrc}" decoding="async" class="saved-team-avatar-image" alt="${hero.name}">
                     </div>
                 `;

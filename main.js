@@ -128,7 +128,16 @@ async function initializeApp() {
     });
     // 1. 处理URL参数和Cookie，确定语言
     const urlParams = new URLSearchParams(window.location.search);
-    const viewHeroFromUrl = urlParams.get('view');
+    const viewParamFromUrl = urlParams.get('view');
+    // 奖池定位参数：值 = 官方标题键 `lottery.title.<x>` 的后缀（见 lottery-simulator.js::poolUrlKeyOf）
+    const poolParamFromUrl = urlParams.get('pool');
+    // `?view=` 命中 `VIEW_NAME_BY_URL_KEYWORD`（见 special-views.js）就是"主视图"深链接；
+    // 只写了 `?pool=` 也当作进抽奖视图（分享某个池子时不必再带上 view）。
+    const viewFromUrl = ((typeof viewNameFromUrlParam === 'function') ? viewNameFromUrlParam(viewParamFromUrl) : null)
+        || (!viewParamFromUrl && poolParamFromUrl ? 'lotterySimulator' : null);
+    // 英雄身份键：`?hero=<身份>` 是现在的地址形态；**旧写法 `?view=<身份>` 继续认**（已经分享出去的链接不能失效）。
+    //   两者同时出现时以 `hero` 为准（`view` 那时多半是视图名）。
+    const heroFromUrl = urlParams.get('hero') || (viewFromUrl ? null : viewParamFromUrl);
     const langFromUrl = urlParams.get('lang');
     // `hl` = Google 的"界面语言"参数（事实标准，外部链接/工具常用）。
     // 本站**自己的**参数是 `lang`；这里把 `hl` 当别名兜底（见下面的优先级链）。
@@ -380,7 +389,22 @@ async function initializeApp() {
     addEventListeners();
 
     // 6. 根据URL参数执行特殊操作
-    history.replaceState({ view: 'list' }, '');
+    // ⚠ 深链接进来时（`?view=lottery` / `?hero=<身份>`）这条必须**带着视图名**：否则首屏之后任何一次
+    //   `setMainViewHistory` 都会因"当前不在主视图里"而走 push ⇒ 历史栈多出一条指向同一地址的记录。
+    // ⚠ 同时要**把 `hero` 从这一条摘掉**：英雄详情由 `openDetailsModal` 自己那条 pushState 表示，
+    //   底层条目若也挂着 `hero`，关掉弹窗后退回到这里 ⇒ 地址仍带 `hero`，用户刷新会再弹一次详情。
+    {
+        const _seed = viewFromUrl || 'list';
+        if (heroFromUrl) {
+            const _u = new URL(window.location.href);
+            _u.searchParams.delete('hero');
+            // 旧写法 `?view=<身份>` 也一并摘掉（它与 hero 同义，见 utils.js::heroUrl 的归一）
+            if (_u.searchParams.get('view') === heroFromUrl) _u.searchParams.delete('view');
+            history.replaceState({ view: _seed }, '', _u.pathname + _u.search + _u.hash);
+        } else {
+            history.replaceState({ view: _seed }, '');
+        }
+    }
     document.getElementById('hero-academy-date-display').textContent = formatLocalDate(new Date().toISOString().split('T')[0]);
     document.getElementById('one-click-max-date-display').textContent = formatLocalDate(oneClickMaxDate);
     document.getElementById('purchase-costume-date-display').textContent = formatLocalDate(purchaseCostumeDate);
@@ -492,25 +516,30 @@ async function initializeApp() {
         });
     }
 
-    if (viewHeroFromUrl && !zfavsFromUrl && !favsFromUrl) {
-        // `?view=<heroId>`（英雄详情分享链接）：**等技能正文补齐再开弹窗**，否则特殊/被动技能
-        // 与家族加成全是空的，用户看到的就是一张"没加载完"的详情。
+    if (heroFromUrl && !zfavsFromUrl && !favsFromUrl) {
+        // `?hero=<身份>`（或旧写法 `?view=<身份>`，英雄详情分享链接）：**等技能正文补齐再开弹窗**，
+        // 否则特殊/被动技能与家族加成全是空的，用户看到的就是一张"没加载完"的详情。
         skillsReady.then(() => {
             // 等的时候用户可能已经自己点开了某只英雄 ⇒ 不抢他的操作。
             if (state.modalStack && state.modalStack.length) return;
             // 1. 新格式：按 heroId 查找
-            let targetHero = state.allHeroes.find(h => h.heroId === viewHeroFromUrl);
+            let targetHero = state.allHeroes.find(h => h.heroId === heroFromUrl);
 
             // 2. 向后兼容：旧的 english_name-costume_id 格式
             if (!targetHero) {
                 targetHero = state.allHeroes.find(
-                    h => h.english_name && `${h.english_name}-${h.costume_id}` === viewHeroFromUrl
+                    h => h.english_name && `${h.english_name}-${h.costume_id}` === heroFromUrl
                 );
             }
 
             if (targetHero) openDetailsModal(targetHero);
         });
     }
+
+    // `?view=lottery|team|chat|wanted|farming`（主视图深链接）：直接跳到对应功能。
+    //   放在首屏渲染之后 —— 这些视图各自要建表格/卡池列表，数据（含已 await 的 `state.allSummonPools`）此刻才齐。
+    //   地址与 `history.state` 已由上面那条 replaceState 对齐，视图函数内部的 `setMainViewHistory` 只会 replace，不会多压一条记录。
+    if (viewFromUrl) applyMainView(viewFromUrl);
 
     setTimeout(adjustStickyHeaders, 100);
 
@@ -1250,7 +1279,7 @@ function handleTableHeaderClick(event) {
             state.currentSort.direction = state.currentSort.direction === 'asc' ? 'desc' : 'asc';
         } else {
             state.currentSort.key = sortKey;
-            state.currentSort.direction = ['power', 'attack', 'defense', 'health', 'star'].includes(sortKey) ? 'desc' : 'asc';
+            state.currentSort.direction = ['power', 'attack', 'defense', 'health', 'rarity'].includes(sortKey) ? 'desc' : 'asc';
         }
         applyFiltersAndRender();
     }
@@ -1387,13 +1416,23 @@ function handlePopState(event) {
         return; // 已处理模态框关闭，结束函数
     }
 
-    // --- 如果模态框堆栈为空，则后退操作旨在切换主视图 ---
+    // --- 如果模态框堆栈为空，则后退/前进操作旨在切换主视图 ---
+    // ⚠ 不能再靠"哪个激活标志为真"去猜（旧写法是 team 开着就关 team、lottery 开着就关 lottery）：
+    //   那样在**前进**时方向是反的（历史目的地是 lottery，当前显示 team ⇒ 会被关成列表）。
+    //   现在按历史条目给的目的地派发：`history.state.view` 为准，地址上的 `?view=` 兜底
+    //   （兜底覆盖"手输网址后从弹窗后退"这类没有 state 的路径）。
+    let wantView = (event.state && event.state.view) || '';
+    if (!wantView) {
+        const vFromUrl = viewNameFromUrlParam(new URLSearchParams(window.location.search).get('view'));
+        wantView = vFromUrl || 'list';
+    }
+    if (typeof applyMainView === 'function') { applyMainView(wantView); return; }
+    // 回退到旧派发（理论上到不了这里：special-views.js 先于 main.js 加载）
     if (state.teamSimulatorActive) {
         toggleTeamSimulator();
     } else if (state.lotterySimulatorActive) {
         LotterySimulator.toggle();
     } else {
-        // 作为备用，处理从其他特殊视图（如通缉任务）返回的情况
         showHeroListViewUI();
     }
 }

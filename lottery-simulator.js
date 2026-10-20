@@ -30,6 +30,16 @@ let bonusTranslations = {};
  *   `lotteryTitleDict` / `bonusTranslations` 会**一直指着旧语言的对象**，
  *   表现为"切了语言但抽奖池标题不变"。切换语言后必须调这里重新取。
  */
+/**
+ * 只重渲染奖池标题（语言切换路径用）。
+ * ⚠ 标题原先**只**在 `handleActivityClick` 里写一次 ⇒ 无缝切语言时卡池列表/精选/历史都刷新了，
+ *   唯独 `#lottery-pool-title` 停在旧语言（用户报的"带参数进抽奖后标题没跟着换语言"就是它）。
+ */
+function refreshPoolTitle() {
+    const el = document.getElementById('lottery-pool-title');
+    if (el && state.currentSummonData) el.innerHTML = getPoolDisplayName(state.currentSummonData);
+}
+
 function refreshLotteryTranslations() {
     lotteryTitleDict = (typeof Lang !== 'undefined' && Lang.get('lottery_title')) || {};
     bonusTranslations = (i18n[state.currentLang] || {}).lottery_bonus_translations || {};
@@ -551,7 +561,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
             const families = extraRules.includedFamilies.map(f => f.toLowerCase());
-            let candidates = baseHeroPool.filter(h => h.star === targetStar && families.includes(String(h.family).toLowerCase()));
+            let candidates = baseHeroPool.filter(h => h.rarity === targetStar && families.includes(String(h.family).toLowerCase()));
             pool = pool.concat(candidates);
         }
         // 2. 处理 includedOrigins
@@ -560,7 +570,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
             let candidates = baseHeroPool.filter(h => {
                 if (!h.source) return false;
                 const heroSourceEng = String(h.sourceId || '').toLowerCase();
-                return h.star === targetStar && origins.includes(heroSourceEng);
+                return h.rarity === targetStar && origins.includes(heroSourceEng);
             });
             pool = pool.concat(candidates);
         }
@@ -574,7 +584,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
         if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
             const targetColor = String(state.selectedElementalColor).toLowerCase();
             pool = pool.filter(h => {
-                const heroColor = String(h.colorId || '').toLowerCase();
+                const heroColor = String(h.elementId || '').toLowerCase();
                 if (!heroColor) return false;
                 return heroColor === targetColor;
             });
@@ -837,7 +847,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             // 颜色检查逻辑
             const targetColor = state.selectedElementalColor ? String(state.selectedElementalColor).toLowerCase() : '';
 
-            const heroColor = String(hero.colorId || '').toLowerCase();
+            const heroColor = String(hero.elementId || '').toLowerCase();
             if (!heroColor) return false; // 没有颜色的英雄直接排除
 
             // 如果颜色不匹配，直接排除
@@ -846,7 +856,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
             }
 
             // 2. 其他常规检查
-            return hero.star === star &&
+            return hero.rarity === star &&
                 heroFamily !== 'classic' && // 排除 classic 家族
                 !state.globalExcludeFamilies.includes(heroFamily);
         });
@@ -885,7 +895,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         if (includedIds.length > 0) {
             includedIds.forEach(heroId => {
                 const exactHero = state.heroesByIdMap.get(heroId);
-                if (exactHero && exactHero.star === star) {
+                if (exactHero && exactHero.rarity === star) {
                     finalPool.push(exactHero);
                     if (exactHero.english_name) {
                         processedNames.add(exactHero.english_name);
@@ -897,7 +907,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         if (listedFamilies.length > 0) {
             baseHeroPool.forEach(hero => {
                 const heroFamily = String(hero.family || '').toLowerCase();
-                if (hero.star === star && listedFamilies.includes(heroFamily) && !state.globalExcludeFamilies.includes(heroFamily)) {
+                if (hero.rarity === star && listedFamilies.includes(heroFamily) && !state.globalExcludeFamilies.includes(heroFamily)) {
                     if (hero.english_name && !processedNames.has(hero.english_name)) {
                         processedNames.add(hero.english_name);
                         const latestVersion = state.latestHeroVersionsMap.get(hero.english_name);
@@ -926,7 +936,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
 
         // 因为我们在前面将 mimic 加入了 explicitlyIncludedFamilies，
         // 所以 (!isGloballyExcluded || isExplicitlyIncluded) 现在对 mimic 家族返回 true。
-        if (hero.star === star && (!isGloballyExcluded || isExplicitlyIncluded)) {
+        if (hero.rarity === star && (!isGloballyExcluded || isExplicitlyIncluded)) {
             switch (bucketType) {
                 case 's1':
                     matches = (heroFamily === 'classic');
@@ -957,7 +967,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
                     matches = eventFamilies.includes(heroFamily);
 
                     if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
-                        const heroColor = String(hero.colorId || '').toLowerCase();
+                        const heroColor = String(hero.elementId || '').toLowerCase();
                         const targetColor = String(state.selectedElementalColor || '').toLowerCase();
                         matches = (heroColor === targetColor);
                     }
@@ -980,7 +990,7 @@ function getHeroPoolForBucket(bucketString, poolConfig) {
         if (matches && poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor) {
             const targetColor = String(state.selectedElementalColor).toLowerCase();
 
-            const heroColor = String(hero.colorId || '').toLowerCase();
+            const heroColor = String(hero.elementId || '').toLowerCase();
             if (!heroColor) {
                 matches = false;
             } else {
@@ -1157,8 +1167,8 @@ function getAllHeroesInPool(poolConfig) {
                         const heroType = isChinese ? '训练师英雄' : 'Trainer';
                         const trainerHero = {
                             name: `${star}* ${colorName} ${heroType}`,
-                            star: star,
-                            color: color.id,
+                            rarity: star,
+                            element: color.id,
                             family: 'trainer',
                             source: 'trainer',
                             heroId: `trainer_${star}_${color.id}`,
@@ -1196,7 +1206,7 @@ function getAllHeroesInPool(poolConfig) {
             const isGloballyExcluded = state.globalExcludeFamilies.includes(heroFamily);
             const isExplicitlyIncluded = explicitlyIncludedFamilies.has(heroFamily);
             const isAllowed = !isGloballyExcluded || isExplicitlyIncluded;
-            return hero.star === 5 &&
+            return hero.rarity === 5 &&
                 hero.costume_id === 0 &&
                 new Date(hero['Release date']) < cutoffDate &&
                 heroFamily !== 'classic' &&
@@ -1220,8 +1230,8 @@ function getAllHeroesInPool(poolConfig) {
             colors.forEach((color, idx) => {
                 const trainerHero = {
                     name: `${star}* ${color.name}训练师英雄`,
-                    star: star,
-                    color: color.name,
+                    rarity: star,
+                    element: color.name,
                     family: 'trainer',
                     source: 'trainer',
                     heroId: `trainer_${star}_${color.id}`,
@@ -1293,6 +1303,34 @@ function renderActivityList() {
  * 当用户点击活动列表时，更新所有相关UI并设置状态
  * @param {string} poolId - 被选中的奖池ID
  */
+/**
+ * 奖池 → 地址参数值：官方标题键 `lottery.title.<x>` 去掉前缀后的 `<x>`
+ *   （就是 `langs_json/lottery_title_<码>.json` 里的键后缀，用户在奖池标题上看到的那份 ID）。
+ * 实测 52 个在售池（`amount === 1`）的后缀互不重复 ⇒ 能唯一定位。
+ */
+function poolUrlKeyOf(poolConfig) {
+    const k = String(getPoolTitleKey(poolConfig) || '');
+    return k.startsWith('lottery.title.') ? k.slice('lottery.title.'.length) : '';
+}
+
+/**
+ * 按深链接参数选中奖池：`?pool=<后缀>`（也兼容直接写池 id，如 `?pool=lottery_season_atlantis`）。
+ * ⚠ 同步返回是否命中；选中动作沿用既有写法**不等** `handleActivityClick` 的异步尾巴。
+ * @param {string} param
+ * @returns {boolean}
+ */
+function selectSummonPoolByUrlParam(param) {
+    if (!param || !state.allSummonPools) return false;
+    let id = null;
+    for (const pid in state.allSummonPools) {
+        if (poolUrlKeyOf(state.allSummonPools[pid]) === param) { id = pid; break; }
+    }
+    if (!id && state.allSummonPools[param]) id = param;
+    if (!id) return false;
+    handleActivityClick(id);
+    return true;
+}
+
 async function handleActivityClick(poolId) {
     // ▼▼▼ 新增代码：在处理新奖池前，先移除可能存在的旧的特殊按钮和其包装容器 ▼▼▼
     const existingWrapper = document.getElementById('lottery-title-wrapper');
@@ -1313,6 +1351,12 @@ async function handleActivityClick(poolId) {
 
     state.currentSummonData = poolConfig;
     state.selectedElementalColor = null;
+    // 地址带上当前奖池 ⇒ 复制地址就能分享"这个池子"（`?pool=` 见 `poolUrlKeyOf`）。
+    //   用 replace：换池子不该往历史栈里堆记录（后退应该退出抽奖，而不是回到上一个池）。
+    if (typeof urlWithParams === 'function') {
+        const _pk = poolUrlKeyOf(poolConfig);
+        history.replaceState(Object.assign({}, history.state, { pool: _pk || null }), '', urlWithParams({ pool: _pk || null }));
+    }
 
     if (poolConfig.productType === 'SuperElementalSummon') {
         const elementalModal = document.getElementById('elemental-modal');
@@ -1325,12 +1369,12 @@ async function handleActivityClick(poolId) {
             const elementalContainer = document.querySelector('.elemental-selection-container');
             const handler = (event) => {
                 const target = event.target.closest('.elemental-icon');
-                if (target && target.dataset.color) {
+                if (target && target.dataset.element) {
                     elementalContainer.removeEventListener('click', handler);
                     elementalModal.classList.add('hidden');
                     elementalOverlay.classList.add('hidden');
                     document.body.classList.remove('modal-open');
-                    resolve(target.dataset.color);
+                    resolve(target.dataset.element);
                 }
             };
             elementalContainer.addEventListener('click', handler);
@@ -1706,7 +1750,7 @@ function orderFeaturedIdsByOfficialRule(idList) {
     const cmp = (a, b) => {
         const ha = state.heroesByIdMap.get(a);
         const hb = state.heroesByIdMap.get(b);
-        if (hb.star !== ha.star) return hb.star - ha.star;
+        if (hb.rarity !== ha.rarity) return hb.rarity - ha.rarity;
         if (isAdvertised(hb) !== isAdvertised(ha)) return isAdvertised(hb) - isAdvertised(ha);
         const da = ha.releaseDate || '';
         const db = hb.releaseDate || '';
@@ -1841,12 +1885,12 @@ function renderFeaturedHeroes() {
 
         if (hero) {
             const avatarContainer = document.createElement('div');
-            avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.colorId)}`;
+            avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.elementId)}`;
             avatarContainer.style.width = '100%';
             avatarContainer.style.height = '100%';
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
-            avatarBackground.style.background = getHeroColorLightGradient(hero.colorId);
+            avatarBackground.style.background = getHeroColorLightGradient(hero.elementId);
             const avatarImg = document.createElement('img');
             avatarImg.src = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
             avatarImg.className = 'hero-avatar-image';
@@ -1908,7 +1952,7 @@ function addHeroToFeaturedSlot(selectedHero) {
             return;
         }
     }
-    if (selectedHero.star !== 5) {
+    if (selectedHero.rarity !== 5) {
         alert(i18n[state.currentLang].mustSelect5StarHero || '请选择一位5星英雄。');
         return;
     }
@@ -2008,7 +2052,7 @@ async function performSummon(count) {
             } else {
                 const starMatch = bucketString.match(/_(\d+)$/);
                 const targetStar = isFeatured ? 5 : (starMatch ? parseInt(starMatch[1], 10) : 0);
-                const heroPoolOfStar = costumePool.filter(h => h.star === targetStar);
+                const heroPoolOfStar = costumePool.filter(h => h.rarity === targetStar);
 
                 if (heroPoolOfStar.length > 0) {
                     drawnHero = heroPoolOfStar[Math.floor(Math.random() * heroPoolOfStar.length)];
@@ -2023,7 +2067,7 @@ async function performSummon(count) {
                 const star = parseInt(bucketString.split('_')[1], 10);
                 const colors = ['红', '蓝', '绿', '黄', '紫'];
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                drawnHero = { name: `${star}* 训练师`, type: 'trainer', star, color: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
+                drawnHero = { name: `${star}* 训练师`, type: 'trainer', rarity: star, element: randomColor, image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
             } else if (bucketString === 'featuredHero') {
                 const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
                 if (validFeatured.length > 0) {
@@ -2079,9 +2123,9 @@ async function performSummon(count) {
             // 奖励传奇英雄逻辑（不变）
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             let shouldTriggerBonusLegendary = false;
-            if (poolConfig.id === 'lottery_black_7th_birthday' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) {
+            if (poolConfig.id === 'lottery_black_7th_birthday' && drawnHero.rarity === 5 && poolConfig.bonusLegendaryHeroChancePerMil) {
                 shouldTriggerBonusLegendary = true;
-            } else if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.star === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.star === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
+            } else if ((poolConfig.productType.toLowerCase() === 'shadowsummon' && drawnHero.rarity === 5 && poolConfig.bonusLegendaryHeroChancePerMil) || (drawnHero.rarity === 5 && drawnHero.family && associatedFamilies.includes(String(drawnHero.family).toLowerCase()) && poolConfig.bonusLegendaryHeroChancePerMil)) {
                 shouldTriggerBonusLegendary = true;
             }
 
@@ -2097,14 +2141,14 @@ async function performSummon(count) {
                         state.customFeaturedHeroes.forEach(hero => hero && hero.heroId && featuredHeroIds.add(hero.heroId));
                     }
                     baseBonusPool = masterHeroPool.filter(h =>
-                        h.star === 5 &&
+                        h.rarity === 5 &&
                         h.family && h.family !== 'classic' &&
                         !featuredHeroIds.has(h.heroId)
                     );
                 } else if (isEventOnly) {
-                    baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
+                    baseBonusPool = masterHeroPool.filter(h => h.rarity === 5 && h.family && associatedFamilies.includes(String(h.family).toLowerCase()));
                 } else {
-                    baseBonusPool = masterHeroPool.filter(h => h.star === 5 && h.family && h.family !== 'classic');
+                    baseBonusPool = masterHeroPool.filter(h => h.rarity === 5 && h.family && h.family !== 'classic');
                 }
 
                 const awardedBonusHeroesInThisPull = [];
@@ -2137,7 +2181,7 @@ async function performSummon(count) {
                         let mysteryHero = mysteryPool.sort((a, b) => {
                             const aHasDate = !!a['Release date'];
                             const bHasDate = !!b['Release date'];
-                            if (a.star !== b.star) return b.star - a.star;
+                            if (a.rarity !== b.rarity) return b.rarity - a.rarity;
                             if (!aHasDate && bHasDate) return -1;
                             if (!bHasDate && aHasDate) return 1;
                             return String(b['Release date']).localeCompare(String(a['Release date']));
@@ -2160,7 +2204,7 @@ async function performSummon(count) {
                             let extraHero = null;
                             if (extraBucketString && extraBucketString.startsWith('trainer')) {
                                 const star = parseInt(extraBucketString.split('_')[1], 10);
-                                extraHero = { name: `${star}* 训练师`, type: 'trainer', star, color: ['红', '蓝', '绿', '黄', '紫'][Math.floor(Math.random() * 5)], image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
+                                extraHero = { name: `${star}* 训练师`, type: 'trainer', rarity: star, element: ['红', '蓝', '绿', '黄', '紫'][Math.floor(Math.random() * 5)], image: `imgs/hero_icon/trainer_rainbow.webp`, heroId: `trainer_rainbow` };
                             } else if (extraBucketString === 'featuredHero') {
                                 const validFeatured = state.customFeaturedHeroes.filter(h => h !== null);
                                 if (validFeatured.length > 0) {
@@ -2295,7 +2339,7 @@ function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false)
 
         lightEffect.className = 'summon-animation-element';
         lightEffect.innerHTML = `<img loading="lazy" src="imgs/lottery/gate/lottery_animation_light.webp" decoding="async" class="anim-light-img">`;
-        lightEffect.style.filter = `drop-shadow(0 0 15px ${getColorHex(hero.colorId)})`;
+        lightEffect.style.filter = `drop-shadow(0 0 15px ${getColorHex(hero.elementId)})`;
 
         const playAnimation = () => {
             if (isBonusDraw) {
@@ -2325,8 +2369,8 @@ function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false)
             };
             heroImage.onerror = () => {
                 heroAvatarContainer.removeAttribute('style');
-                heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.colorId)}`;
-                heroAvatarContainer.style.background = getHeroColorLightGradient(hero.colorId);
+                heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.elementId)}`;
+                heroAvatarContainer.style.background = getHeroColorLightGradient(hero.elementId);
                 heroImage.onload = null;
                 heroImage.src = iconSrc;
                 heroImage.onerror = null;
@@ -2335,8 +2379,8 @@ function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false)
             };
             heroImage.src = avatarSrc;
         } else {
-            heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.colorId)}`;
-            heroAvatarContainer.style.background = getHeroColorLightGradient(hero.colorId);
+            heroAvatarContainer.className = `summon-animation-element anim-hero-art ${getColorGlowClass(hero.elementId)}`;
+            heroAvatarContainer.style.background = getHeroColorLightGradient(hero.elementId);
             heroImage.src = hero.image || '';
             heroAvatarContainer.appendChild(heroImage);
             playAnimation();
@@ -2373,17 +2417,17 @@ function showSummaryModal(results) {
     results.forEach(result => {
         const hero = result.hero;
         const card = document.createElement('div');
-        card.className = `summary-hero-card ${getColorGlowClass(hero.colorId)}`;
+        card.className = `summary-hero-card ${getColorGlowClass(hero.elementId)}`;
         card.title = hero.name;
 
         // 【新增代码】如果是5星英雄，则添加跑马灯效果的CSS类
-        if (hero.star === 5) {
+        if (hero.rarity === 5) {
             card.classList.add('star-5-marquee');
         }
 
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
-        avatar.style.background = getHeroColorLightGradient(hero.colorId);
+        avatar.style.background = getHeroColorLightGradient(hero.elementId);
 
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
@@ -2399,20 +2443,20 @@ function showSummaryModal(results) {
         detailsOverlay.className = 'summary-details-overlay';
         let starsContent = '';
 
-        if (hero.star) {
+        if (hero.rarity) {
             let starsHTML = '';
-            for (let i = 0; i < hero.star; i++) {
+            for (let i = 0; i < hero.rarity; i++) {
                 starsHTML += `<img loading="lazy" src="imgs/other/star.webp" decoding="async" alt="star">`;
             }
             starsContent = starsHTML;
         }
 
-        const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
+        const colorIcon = String(hero.elementId || 'default').toLowerCase();
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/element/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}
-            <div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>
+            <div class="summary-hero-stars star-level-${hero.rarity}">${starsContent}</div>
         `;
 
         card.appendChild(avatar);
@@ -2635,15 +2679,15 @@ function renderSummonHistory() {
             const hero = result.hero;
             if (!hero) return;
             const avatarContainer = document.createElement('div');
-            avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.colorId)}`;
+            avatarContainer.className = `hero-avatar-container ${getColorGlowClass(hero.elementId)}`;
             avatarContainer.title = hero.name;
             // 【新增代码】如果是5星英雄，则添加跑马灯效果的CSS类
-            if (hero.star === 5) {
+            if (hero.rarity === 5) {
                 avatarContainer.classList.add('star-5-marquee');
             }
             const avatarBackground = document.createElement('div');
             avatarBackground.className = 'hero-avatar-background';
-            avatarBackground.style.background = getHeroColorLightGradient(hero.colorId);
+            avatarBackground.style.background = getHeroColorLightGradient(hero.elementId);
             avatarContainer.appendChild(avatarBackground);
             const avatar = document.createElement('img');
             // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
@@ -2673,11 +2717,11 @@ function renderSummonHistory() {
                 exLabel.textContent = 'Ex';
                 avatarContainer.appendChild(exLabel);
             }
-            if (hero.star) {
-                const starLabel = document.createElement('div');
-                starLabel.className = `history-hero-stars star-level-${hero.star}`;
-                starLabel.innerHTML = `${hero.star}⭐`;
-                avatarContainer.appendChild(starLabel);
+            if (hero.rarity) {
+                const rarityLabel = document.createElement('div');
+                rarityLabel.className = `history-hero-stars star-level-${hero.rarity}`;
+                rarityLabel.innerHTML = `${hero.rarity}⭐`;
+                avatarContainer.appendChild(rarityLabel);
             }
             avatarsContainer.appendChild(avatarContainer);
         });
@@ -2699,6 +2743,21 @@ function saveHistoryToLocalStorage() {
 }
 
 /**
+ * 旧存档键名兼容（就地、幂等）。
+ * 2026-10-20 把英雄模型字段统一成官方口径：`star`→`rarity`、`colorId`→`elementId`、`color`→`element`
+ * （对齐 `data/characters.json` 的 `rarity` / `element`，去掉 `ID_FIELD` 那层转换定义）。
+ * 而 `localStorage.summonHistory` 存的是**整份英雄对象** ⇒ 老记录只有旧键，
+ * 不补就会渲染成空星星、没有元素底色。
+ */
+function migrateLegacyHeroKeys(hero) {
+    if (!hero || typeof hero !== 'object') return hero;
+    if (hero.rarity === undefined && hero.star !== undefined) hero.rarity = hero.star;
+    if (hero.elementId === undefined && hero.colorId !== undefined) hero.elementId = hero.colorId;
+    if (hero.element === undefined && hero.color !== undefined) hero.element = hero.color;
+    return hero;
+}
+
+/**
  * 从本地存储加载历史记录
  */
 function loadHistoryFromLocalStorage() {
@@ -2708,6 +2767,12 @@ function loadHistoryFromLocalStorage() {
             const parsedHistory = JSON.parse(historyJSON);
             if (Array.isArray(parsedHistory)) {
                 state.summonHistory = parsedHistory;
+                // 旧记录补新键（results 是扁平数组，groupedResults 是分组数组）
+                state.summonHistory.forEach(rec => {
+                    if (!rec) return;
+                    (rec.results || []).forEach(migrateLegacyHeroKeys);
+                    (rec.groupedResults || []).forEach(grp => (grp || []).forEach(migrateLegacyHeroKeys));
+                });
             } else {
                 state.summonHistory = [];
             }
@@ -2761,7 +2826,7 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
             assigned = true;
         }
         if (!assigned) {
-            const star = hero.star;
+            const star = hero.rarity;
             const bucketPriority = [`heroes_event_${star}`, `heroes_ex_s1_${star}`, `heroes_listed_${star}`, `heroes_s1_${star}`];
             const targetBucket = bucketPriority.find(b => categoryCounts.hasOwnProperty(b));
             if (targetBucket) categoryCounts[targetBucket]++;
@@ -2787,10 +2852,10 @@ function calculateAndFormatProbabilities(historyToRender, poolConfig) {
             allOriginalPulls.forEach(pull => {
                 if (pull && pull.length > 0) {
                     const primaryHero = pull[0].hero;
-                    if (poolConfig.productType.toLowerCase() === 'shadowsummon' && primaryHero.star === 5) {
+                    if (poolConfig.productType.toLowerCase() === 'shadowsummon' && primaryHero.rarity === 5) {
                         triggerCount++;
                     } else {
-                        if (primaryHero.star === 5 && primaryHero.family && associatedFamilies.includes(String(primaryHero.family).toLowerCase())) {
+                        if (primaryHero.rarity === 5 && primaryHero.family && associatedFamilies.includes(String(primaryHero.family).toLowerCase())) {
                             triggerCount++;
                         }
                     }
@@ -2863,6 +2928,13 @@ function toggleLotterySimulator() {
         uiElements.donationlistcontainer.classList.add('hidden');
         document.body.classList.add('lottery-mode-active');
 
+        // 奖池标题字典是**按语言缓存**的：`renderActivityList()` 原先只在 `initializeLotterySimulator`
+        // （开站那一刻）和"抽奖已可见时切语言"两条路里被调 ⇒ 在列表页先把语言切好、再进抽奖时，
+        // 左侧卡池列表还是开站时的语言（只有中间标题走 `handleActivityClick` 现算，所以它对、列表不对）。
+        // ⇒ 进入抽奖无条件重取字典并重画列表（很便宜，列表只有几十个节点）。
+        if (typeof refreshLotteryTranslations === 'function') refreshLotteryTranslations();
+        renderActivityList();
+
         // 进入抽奖模拟器：**清空所有筛选**，让下面那份卡池列表从"全量"里取，而不是叠在上一次的筛选上。
         // ⚠ 这个进入分支原本不重渲染（只有退出分支调 applyFiltersAndRender），而英雄表在上面被显式
         //   保持可见 ⇒ 渲染交给 handleActivityClick（它内部 `activeHeroSubset = getFilteredMasterPool()`
@@ -2875,11 +2947,15 @@ function toggleLotterySimulator() {
         if (historyList) historyList.scrollTop = 0;
 
         if (state.allSummonPools) {
+            // 带 `?pool=` 进来 ⇒ 停在那个池；没有则沿用"选列表第一个"的既有行为
+            const _poolParam = new URLSearchParams(window.location.search).get('pool');
             const firstPoolId = Object.keys(state.allSummonPools)[0];
-            if (firstPoolId) {
-                handleActivityClick(firstPoolId);
-            } else {
-                applyFiltersAndRender();
+            if (!(_poolParam && selectSummonPoolByUrlParam(_poolParam))) {
+                if (firstPoolId) {
+                    handleActivityClick(firstPoolId);
+                } else {
+                    applyFiltersAndRender();
+                }
             }
         } else {
             applyFiltersAndRender();
@@ -2894,6 +2970,8 @@ function toggleLotterySimulator() {
         document.body.classList.remove('lottery-mode-active');
         state.activeHeroSubset = null;
         applyFiltersAndRender();
+        // 主动退出 ⇒ 地址回到列表（带条件，见 special-views.js::syncViewUrlAfterToggle）
+        if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
     }
 }
 
@@ -2924,16 +3002,16 @@ function showSinglePullResultsModal(results) {
     results.forEach(result => {
         const hero = result.hero;
         const card = document.createElement('div');
-        card.className = `summary-hero-card ${getColorGlowClass(hero.colorId)}`;
+        card.className = `summary-hero-card ${getColorGlowClass(hero.elementId)}`;
         card.title = hero.name;
 
-        if (hero.star === 5) {
+        if (hero.rarity === 5) {
             card.classList.add('star-5-marquee');
         }
 
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
-        avatar.style.background = getHeroColorLightGradient(hero.colorId);
+        avatar.style.background = getHeroColorLightGradient(hero.elementId);
 
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
@@ -2948,19 +3026,19 @@ function showSinglePullResultsModal(results) {
         detailsOverlay.className = 'summary-details-overlay';
         let starsContent = '';
 
-        if (hero.star) {
+        if (hero.rarity) {
             let starsHTML = '';
-            for (let i = 0; i < hero.star; i++) {
+            for (let i = 0; i < hero.rarity; i++) {
                 starsHTML += `<img loading="lazy" src="imgs/other/star.webp" decoding="async" alt="star">`;
             }
             starsContent = starsHTML;
         }
-        const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
+        const colorIcon = String(hero.elementId || 'default').toLowerCase();
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/element/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `
             ${colorIconHTML}
-            <div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>
+            <div class="summary-hero-stars star-level-${hero.rarity}">${starsContent}</div>
         `;
 
         card.appendChild(avatar);

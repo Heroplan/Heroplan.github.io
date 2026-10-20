@@ -1,21 +1,131 @@
 // special-views.js: 管理特殊视图，如通缉任务、材料指南和聊天模拟器。
 
 /**
- * 根据当前历史状态智能地设置主视图的历史记录。
+ * `?view=` 的**保留字**（地址里写的短名）：命中即当"主视图"处理，没命中才当英雄身份键（`?view=<heroId>` 分享链接）。
+ * 短名 → 内部视图名（`history.state.view` 用的那套，也是 `setMainViewHistory` / `applyMainView` 的入参）：
+ *   地址要短要好读（`?view=lottery`），内部名沿用既有标志（`lotterySimulator`），两者靠下面这张表换。
+ * ⚠ 新增视图要同时改这张表、`applyMainView` 的派发与 `main.js` 的解析。
+ *   现有 2121 个 heroId 与这些短名零冲突（heroId 都是 `color_class_name` / `seasonN_xxx` 形态）。
+ */
+const VIEW_NAME_BY_URL_KEYWORD = {
+    wanted: 'wanted',
+    farming: 'farming',
+    chat: 'chat',
+    team: 'teamSimulator',
+    lottery: 'lotterySimulator'
+};
+const VIEW_URL_KEYWORDS = Object.keys(VIEW_NAME_BY_URL_KEYWORD);
+const VIEW_URL_KEYWORD_BY_NAME = VIEW_URL_KEYWORDS.reduce((m, k) => { m[VIEW_NAME_BY_URL_KEYWORD[k]] = k; return m; }, {});
+
+/** 地址参数值是不是"主视图"保留字？ */
+const isViewUrlKeyword = (v) => typeof v === 'string' && Object.prototype.hasOwnProperty.call(VIEW_NAME_BY_URL_KEYWORD, v);
+/** 地址短名 → 内部视图名；不是保留字时返回 null。 */
+const viewNameFromUrlParam = (v) => (isViewUrlKeyword(v) ? VIEW_NAME_BY_URL_KEYWORD[v] : null);
+
+/**
+ * 生成"只改指定参数、其余参数原样保留"的相对地址（供 pushState/replaceState 用）。
+ * 值为 `null`/`''` ⇒ 删掉该参数；值为 `undefined` ⇒ 该参数不动。
+ * ⚠ 视图名要换成地址短名再传进来（`VIEW_URL_KEYWORD_BY_NAME`）—— 地址用短名（`?view=lottery`），
+ *   内部 `history.state.view` 用长名（`lotterySimulator`）。
+ * @param {Object<string, string|null|undefined>} params
+ * @returns {string}
+ */
+function urlWithParams(params) {
+    const u = new URL(window.location.href);
+    Object.keys(params).forEach(k => {
+        const v = params[k];
+        if (v === undefined) return;                     // 不动这个参数
+        if (v === null || v === '') u.searchParams.delete(k);
+        else u.searchParams.set(k, v);
+    });
+    return u.pathname + u.search + u.hash;
+}
+
+/**
+ * 根据当前历史状态智能地设置主视图的历史记录**与地址**。
  * 如果当前已在一个主视图中，则替换状态；否则，添加新状态。
- * @param {string} viewName - 要设置的新视图名称 ('wanted', 'farming', 'chat', 'teamSimulator')。
+ * @param {string} viewName - 要设置的新视图名称 ('wanted', 'farming', 'chat', 'teamSimulator', 'lotterySimulator')。
  */
 function setMainViewHistory(viewName) {
     const mainViews = ['wanted', 'farming', 'chat', 'teamSimulator', 'lotterySimulator'];
     const currentState = history.state || {};
-
+    // 切到**别的**视图时把抽奖的子参数 `pool` 一起清掉（留着就是陈旧状态）；
+    // 进抽奖本身不能清 —— 抽奖的进入分支会先 `handleActivityClick` 写好 `pool`，再调本函数。
+    const poolParam = viewName === 'lotterySimulator'
+        ? (new URLSearchParams(window.location.search).get('pool') || null) : null;
+    const st = { view: viewName };
+    if (poolParam) st.pool = poolParam;              // state 与地址保持一致
+    const url = urlWithParams({
+        view: VIEW_URL_KEYWORD_BY_NAME[viewName] || null,
+        pool: poolParam
+    });
     if (currentState.view && mainViews.includes(currentState.view)) {
-        // 如果当前已在一个主视图中，则替换历史状态
-        history.replaceState({ view: viewName }, '');
+        history.replaceState(st, '', url);
     } else {
-        // 否则（例如首次进入或从弹窗返回），则添加新的历史状态
-        history.pushState({ view: viewName }, '');
+        history.pushState(st, '', url);
     }
+}
+
+/**
+ * 退出到主列表：把当前那条"视图"历史**原地替换**成列表（绝不 push —— 后退语义要留给浏览器）。
+ * 只在用户主动点"退出"的两个分支里调用；`handlePopState` 里不需要（浏览器已把地址恢复好了）。
+ */
+function clearMainViewHistory() {
+    // 退出视图时把它自己的子参数一起清掉（`pool` = 抽奖选中的奖池，见 lottery-simulator.js）
+    history.replaceState({ view: 'list' }, '', urlWithParams({ view: null, pool: null }));
+}
+
+/**
+ * 给两个模拟器"开关"函数收尾用：**只有确实停在列表上**才清地址。
+ * ⚠ 必须延一拍再判：跨视图切换（进通缉任务/材料/聊天会先关抽奖，见各 `initAndShow*` 开头）时，
+ *   目标视图的 `.hidden`/标志**还没落下**，当场判会误以为"回列表了"而把地址清掉 +
+ *   把 `history.state.view` 打成 'list' ⇒ 随后那次 `setMainViewHistory(目标)` 就从 replace 变成 push，
+ *   历史栈白多一条、后退语义跟着变。0ms 定时器跑在本次调用栈之后，那时目标视图已经就位。
+ */
+function syncViewUrlAfterToggle() {
+    setTimeout(() => { if (currentMainViewName() === 'list') clearMainViewHistory(); }, 0);
+}
+
+/**
+ * 当前显示中的主视图名（与 `setMainViewHistory` 用的那套激活标志同源）。
+ * @returns {string} 'list' | VIEW_URL_KEYWORDS 之一
+ */
+function currentMainViewName() {
+    if (state.lotterySimulatorActive) return 'lotterySimulator';
+    if (state.teamSimulatorActive) return 'teamSimulator';
+    const vis = el => el && !el.classList.contains('hidden');
+    if (vis(uiElements.wantedMissionView)) return 'wanted';
+    if (vis(uiElements.farmingGuideView)) return 'farming';
+    if (vis(uiElements.chatSimulatorView)) return 'chat';
+    return 'list';
+}
+
+/**
+ * 打开指定主视图（**只做打开**，历史/地址由调用方或视图函数自己负责）。
+ * 冷启动深链接（`main.js`）和浏览器前进后退（`handlePopState`）都走这里，避免两套派发漂移。
+ * @param {string} viewName
+ */
+function applyMainView(viewName) {
+    switch (viewName) {
+        case 'wanted': initAndShowWantedMissionView(); break;
+        case 'farming': initAndShowFarmingGuideView(); break;
+        case 'chat': initAndShowChatSimulatorView(); break;
+        // 两个模拟器是"开关"语义：只在没开的时候开，别把已开着的关掉
+        case 'teamSimulator': if (!state.teamSimulatorActive) toggleTeamSimulator(); break;
+        case 'lotterySimulator': if (!state.lotterySimulatorActive) LotterySimulator.toggle(); break;
+        default:
+            if (currentMainViewName() !== 'list') closeAllMainViews();
+    }
+}
+
+/**
+ * 回到主列表：按激活标志逐个关（复用各自的退出逻辑，不自己摘 `.hidden` ——
+ * 队伍/抽奖的退出分支还要清 body class、恢复表头信息、重渲染列表）。
+ */
+function closeAllMainViews() {
+    if (state.teamSimulatorActive) toggleTeamSimulator();
+    if (state.lotterySimulatorActive) LotterySimulator.toggle();
+    showHeroListViewUI();
 }
 
 /**
@@ -57,6 +167,10 @@ function showHeroListViewUI() {
     // 恢复英雄列表的滚动位置
     uiElements.resultsWrapper.scrollTop = state.scrollPositions.list.top;
     uiElements.resultsWrapper.scrollLeft = state.scrollPositions.list.left;
+
+    // 停在列表 ⇒ 地址不该再留着 `?view=<某个视图>`（刷新会又跳回那个视图）。
+    //   ⚠ 这里只能 replace：本函数也是 `handlePopState` 的后退目的地，push 会破坏后退。
+    clearMainViewHistory();
 
     updateResultsHeader(); // 更新结果头部信息
 }
@@ -310,16 +424,16 @@ function showSoulExchangeModal() {
     // ▼▼▼ 辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
     const createSoulExchangeCard = (hero, options = {}) => {
         const card = document.createElement('div');
-        card.className = `summary-hero-card ${getColorGlowClass(hero.colorId)}`;
+        card.className = `summary-hero-card ${getColorGlowClass(hero.elementId)}`;
         card.title = hero.name;
 
-        if (hero.star === 5) {
+        if (hero.rarity === 5) {
             card.classList.add('star-5-marquee');
         }
 
         const avatar = document.createElement('div');
         avatar.className = 'summary-avatar';
-        avatar.style.background = getHeroColorLightGradient(hero.colorId);
+        avatar.style.background = getHeroColorLightGradient(hero.elementId);
 
         const avatarImage = document.createElement('img');
         avatarImage.className = 'summary-avatar-image';
@@ -331,16 +445,16 @@ function showSoulExchangeModal() {
 
         let starsContent = '';
         // ▼▼▼ 只有在 options.hideStars 不为 true 时才显示星星 ▼▼▼
-        if (!options.hideStars && hero.star) {
-            starsContent = `${hero.star}⭐`;
+        if (!options.hideStars && hero.rarity) {
+            starsContent = `${hero.rarity}⭐`;
         }
 
         const starsHTML = starsContent
-            ? `<div class="summary-hero-stars star-level-${hero.star}">${starsContent}</div>`
+            ? `<div class="summary-hero-stars star-level-${hero.rarity}">${starsContent}</div>`
             : '';
 
-        const colorIcon = String(hero.colorId || 'default').toLowerCase();
-        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/colors/${colorIcon}.webp" decoding="async">`;
+        const colorIcon = String(hero.elementId || 'default').toLowerCase();
+        const colorIconHTML = `<img loading="lazy" class="summary-color-icon" src="imgs/element/${colorIcon}.webp" decoding="async">`;
 
         detailsOverlay.innerHTML = `${colorIconHTML}${starsHTML}`;
 

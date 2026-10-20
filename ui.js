@@ -304,13 +304,15 @@ function syncLanguageUrl(lang) {
     try {
         const u = new URL(window.location.href);
         u.searchParams.set('lang', lang);
-        history.replaceState(null, '', u.toString());
+        // ⚠ 第二个参数不能传 `null`：那会把 `history.state`（视图深链接用的 `{view:'lottery'}`）一起抹掉，
+        //   于是切完语言后 `setMainViewHistory` 的 push/replace 判据和 `handlePopState` 的派发都失忆。
+        history.replaceState(history.state || { view: currentMainViewName() }, '', u.toString());
     } catch (e) { /* URL 同步失败不影响切换本身 */ }
 }
 
 /**
  * 重刷筛选器标签：`populateFilters()` 会**清空** `multiSelectFilters` ⇒ 先存后还，再刷按钮态。
- * ⚠ 筛选值存的都是规范 ID（`colorId`/`classId`/…）⇒ 语言无关，可以原样还原。
+ * ⚠ 筛选值存的都是规范 ID（`elementId`/`classId`/…）⇒ 语言无关，可以原样还原。
  */
 function refreshFiltersAfterLanguageChange() {
     const saved = JSON.parse(JSON.stringify(state.multiSelectFilters || {}));
@@ -343,6 +345,7 @@ function refreshActiveViewAfterLanguageChange() {
             // 抽奖模拟器：先重取按语言缓存的字典（标题/加成文案），再调三个**纯渲染**函数
             // （不重新 initialize，避免重置抽奖状态）。
             if (typeof refreshLotteryTranslations === 'function') refreshLotteryTranslations();
+            if (typeof refreshPoolTitle === 'function') refreshPoolTitle();   // 奖池标题只在点卡池时写过 ⇒ 必须显式补
             if (typeof renderActivityList === 'function') renderActivityList();
             if (typeof renderFeaturedHeroes === 'function') renderFeaturedHeroes();
             if (typeof renderSummonHistory === 'function') renderSummonHistory();
@@ -495,7 +498,7 @@ function updateResultsHeader() {
 
 /**
  * 更新单个多选筛选按钮的UI（文本和激活状态）。
- * @param {string} filterType - 筛选器的类型 (e.g., 'color', 'class')。
+ * @param {string} filterType - 筛选器的类型 (e.g., 'element', 'class')。
  */
 function updateFilterButtonUI(filterType) {
     const button = document.getElementById(`btn-filter-${filterType}`);
@@ -543,7 +546,15 @@ async function openDetailsModal(hero, context = {}) {
     uiElements.modalOverlay.classList.remove('hidden');
     document.body.classList.add('modal-open');
     uiElements.modal.scrollTop = 0;
-    history.pushState({ modal: 'details' }, null); // 添加历史记录
+    // 地址栏同步成"这只英雄"的地址：**保留当前所有参数**，只加/换 `hero`
+    //   ⇒ 在抽奖视图里打开英雄，地址是 `?view=lottery&hero=<身份>`，复制出去就能把上下文一起带走；
+    //   关闭走 `history.back()`（见 closeDetailsModal），浏览器自动把地址退回去。
+    //   ⚠ state 里要带上 `view`：弹窗这条历史记录若丢了视图名，后退/前进回来时 `handlePopState`
+    //   只能退回"没有视图"的状态。
+    const _hid = (typeof heroIdentity === 'function') ? heroIdentity(hero) : (hero && hero.heroId) || '';
+    history.pushState(
+        { modal: 'details', hero: _hid, view: (typeof currentMainViewName === 'function' ? currentMainViewName() : 'list') },
+        '', _hid ? heroUrl(_hid, true) : null); // 添加历史记录
     state.modalStack.push('details'); // 入栈
 }
 

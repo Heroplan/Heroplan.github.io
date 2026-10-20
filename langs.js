@@ -1,7 +1,7 @@
 /* langs.js —— 新的语言/数据访问层（Heroplan_v2）
  *
  * 设计口径（定）：
- *   ① 数据里一律存 **ID**（color/class/speed/aetherGift/family/source/specialId…），
+ *   ① 数据里一律存 **ID**（element/rarity/class/speed/aetherGift/family/source/specialId…），
  *      显示时才查 `langs_json/<表>_<码>.json` 翻译；
  *   ② **先排序后翻译** —— 排序用语言无关的 `langs_json/sort_order.json`（ID 顺序），
  *      不再需要 language.js 里 20×speedOrder / 20×colorOrder 那些硬编码数组；
@@ -11,7 +11,7 @@
  *
  * 用法：
  *   await Lang.loadAll(state.currentLang);   // 启动时一次
- *   Lang.t('color', 'red')                   // → "烈火"
+ *   Lang.t('element', 'red')                   // → "烈火"
  *   Lang.t('skill_name', hero.specialId)
  *   Lang.i18n('nameLabel')                   // 当前语言的 UI 文案
  *   Lang.orderIndex('speed', hero.speedId)   // 排序键（语言无关）
@@ -26,7 +26,7 @@
                  'id', 'it', 'no', 'pl', 'pt', 'es', 'sv', 'tr'];
 
     // 单语言表（文件名前缀）
-    var TABLES = ['heroes_name', 'heroes_name_fancy', 'skill_name', 'class', 'color', 'speed',
+    var TABLES = ['heroes_name', 'heroes_name_fancy', 'skill_name', 'class', 'element', 'speed',
                   'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type',
                   'lottery_title'];
 
@@ -101,7 +101,7 @@
         });
     }
 
-    /** 取词：t('color','red') → 当前语言的显示文本；查不到回退到 ID 本身 */
+    /** 取词：t('element','red') → 当前语言的显示文本；查不到回退到 ID 本身 */
     function t(table, id) {
         if (id === null || id === undefined || id === '') return '';
         var m = _tables[table];

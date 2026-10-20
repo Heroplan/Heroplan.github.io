@@ -19,7 +19,7 @@ function getCostumeIconName(hero) {
     if (!hero || hero.costume_id === 0) return '';
     let costumeId = hero.costume_id;
     if (hero.family === 'classic') {
-        if (hero.star === 3 && costumeId > 1) {
+        if (hero.rarity === 3 && costumeId > 1) {
             costumeId = costumeId + 1;
         }
     }
@@ -206,16 +206,20 @@ function renderTable(heroes) {
     let favHeaderIcon = (state.teamSimulatorActive || state.lotterySimulatorActive) ? '⬆️' : (shouldPredictFavoriteAll ? '★' : '☆');
 
     // 定义表头
+    // ⚠ 尾冒号只能**按需**去：`filter.charactersearch.*` 那 5 个标签（族系/元素/家族/法力速度/稀有度）
+    //   用的是官方检索词条，**本身不带冒号** ⇒ 无条件 `.slice(0,-1)` 会把最后一个真字符砍掉
+    //   （「稀有度」变「稀有」）。`filters.js` / `ui.js` 那两处早就是按需去的。
+    const noColon = s => String(s == null ? '' : s).replace(/:\s*$/, '');
     const headers = {
-        fav: favHeaderIcon, image: langDict.avatarLabel, name: langDict.nameLabel.slice(0, -1),
-        color: langDict.colorLabel.slice(0, -1), star: langDict.starLabel.slice(0, -1),
-        class: langDict.classLabel.slice(0, -1), speed: langDict.speedLabel.slice(0, -1),
+        fav: favHeaderIcon, image: langDict.avatarLabel, name: noColon(langDict.nameLabel),
+        element: noColon(langDict.elementLabel), rarity: noColon(langDict.rarityLabel),
+        class: noColon(langDict.classLabel), speed: noColon(langDict.speedLabel),
         power: langDict.minPower, attack: langDict.minAttack,
         defense: langDict.minDefense, health: langDict.minHealth,
-        types: langDict.skillTypeLabel.slice(0, -1)
+        types: noColon(langDict.skillTypeLabel)
     };
     const colKeys = Object.keys(headers);
-    const sortableKeys = ['name', 'color', 'star', 'class', 'speed', 'power', 'attack', 'defense', 'health'];
+    const sortableKeys = ['name', 'element', 'rarity', 'class', 'speed', 'power', 'attack', 'defense', 'health'];
 
     // 渲染表头
     let thead = heroTable.querySelector('thead');
@@ -257,7 +261,7 @@ function renderTable(heroes) {
             if (['power', 'attack', 'defense', 'health'].includes(key)) {
                 const icons = { power: '💪', attack: '⚔️', defense: '🛡️', health: '❤️' };
                 content = `${icons[key]} ${displayStats[key] || 0}`;
-            } else if (key === 'star') {
+            } else if (key === 'rarity') {
                 content = `${hero[key] || ''}⭐`;
             } else if (key === 'types') {
                 // 技能标签列：渲染成图标
@@ -313,15 +317,19 @@ function renderTable(heroes) {
 
                 // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别；
                 // 详情页不加（见 renderDetailsInModal 的 nameBlockHTML）。英文界面下两者相同 ⇒ 自动不重复。
+                // ⚠ 判据就是「英文名 ≠ 显示名」，**不要**改成「界面语言 ≠ en 就一律附」：fi/de/pl 的官方名
+                //   有 1208/1205/1129 条（共 1384）本来就是英文，那些行按本判据不附括号是**预期行为**
+                //   （用户 2026-10-20 试过后明确要求保持"不一样才显示"；改成按语言会让 fi 出现 `Niki (Niki)`）。
+                //   副作用认知：Mimic 的 42 条在每种语言都已译 ⇒ 看起来"只有 Mimic 带括号"。
                 const _enSuffix = (hero.english_name && hero.english_name !== displayName)
                     ? ` (${hero.english_name})` : '';
                 content = `${displayName}${_enSuffix}`;
             } else if (key === 'class' && hero[key]) {
                 const classIcon = String(hero.classId || hero[key]).toLowerCase();
                 content = `<img loading="lazy" src="imgs/classes/${classIcon}.webp" decoding="async" class="class-icon" alt="${hero[key]}"/>${hero[key]}`;
-            } else if (key === 'color' && hero[key]) {
-                const colorIcon = String(hero.colorId || hero[key]).toLowerCase();
-                return `<td class="col-color"><img loading="lazy" src="imgs/colors/${colorIcon}.webp" decoding="async" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
+            } else if (key === 'element' && hero[key]) {
+                const colorIcon = String(hero.elementId || hero[key]).toLowerCase();
+                return `<td class="col-element"><img loading="lazy" src="imgs/element/${colorIcon}.webp" decoding="async" class="color-icon" alt="${hero[key]}" title="${hero[key]}"/></td>`;
             } else if (key === 'fav') {
                 let icon;
                 let cssClass = '';
@@ -333,7 +341,7 @@ function renderTable(heroes) {
                         let isDisabled = false;
 
                         // 规则1: 英雄不是5星则禁用
-                        if (hero.star !== 5) {
+                        if (hero.rarity !== 5) {
                             isDisabled = true;
                         }
 
@@ -362,7 +370,7 @@ function renderTable(heroes) {
                 }
                 return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
             } else if (key === 'image') {
-                const gradientBg = getHeroColorLightGradient(hero.colorId);
+                const gradientBg = getHeroColorLightGradient(hero.elementId);
                 let imageSrc; // 先声明变量
 
                 // ▼▼▼ 为训练师英雄设置特殊头像路径 ▼▼▼
@@ -373,7 +381,7 @@ function renderTable(heroes) {
                     // 对于所有其他英雄，保留原始逻辑
                     imageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
                 }
-                const heroColorClass = getColorGlowClass(hero.colorId);
+                const heroColorClass = getColorGlowClass(hero.elementId);
 
                 // --- 检查英雄是否有皮肤并生成图标HTML ---
                 let costumeIconHtml = '';
@@ -1564,7 +1572,7 @@ function showCopyToast(message) {
 }
 
 /**
- * 安全地把任意 hero.color 值转成英文小写颜色 key（'red'/'blue'/'green'/'yellow'/'purple'）。
+ * 安全地把任意 hero.element 值转成英文小写颜色 key（'red'/'blue'/'green'/'yellow'/'purple'）。
  * 兼容：英文、中文简体、中文繁体、大小写、未知值（兜底 'red'，绝不返回 undefined）。
  */
 function getSafeColorKey(colorValue) {
@@ -1606,16 +1614,16 @@ function renderDetailsInModal(hero, context = {}) {
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
     const classIcon = String(hero.classId || hero.class).toLowerCase();
-    const avatarGlowClass = getColorGlowClass(hero.colorId);
+    const avatarGlowClass = getColorGlowClass(hero.elementId);
     // 为详情框头像准备变量
-    const modalGradientBg = getHeroColorLightGradient(hero.colorId);
+    const modalGradientBg = getHeroColorLightGradient(hero.elementId);
     const modalImageSrc = hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
 
     // 根据星级生成星星的HTML
     let starsHTML = '';
-    if (hero.star && hero.star > 0) {
+    if (hero.rarity && hero.rarity > 0) {
         starsHTML = '<div class="hero-avatar-stars-container">';
-        for (let i = 0; i < hero.star; i++) {
+        for (let i = 0; i < hero.rarity; i++) {
             starsHTML += '<img loading="lazy" src="imgs/other/star.webp" decoding="async" class="hero-avatar-star" alt="star">';
         }
         starsHTML += '</div>';
@@ -2260,7 +2268,7 @@ function renderDetailsInModal(hero, context = {}) {
     // ⚠ 这只影响**详情页**显示；列表属性仍按"该英雄自身的服装顺序"算（见 filters.js::calculateHeroStats）。
     const _costumeSkinOf = (k) => {
         let cid = k;
-        if (hero.family === 'classic') { if (hero.star === 3 && cid > 1) cid += 1; }
+        if (hero.family === 'classic') { if (hero.rarity === 3 && cid > 1) cid += 1; }
         if (hero.family !== 'classic') { if (cid === 2) cid = 3; }
         // 档位 → 服装类型键（与 `getCostumeIconName` 同一套映射）；
         // 类型名走 `langs_json/costume_type_<码>.json`（20 语言，见 _tools/_costume_names.py 的推导）
@@ -2733,7 +2741,7 @@ function renderDetailsInModal(hero, context = {}) {
                 finalStats.health += bonuses.health_flat + Math.floor(baseStats.health * (bonuses.health_percent / 100));
             }
             const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
-            finalStats.power = (STAR_BASE_POWER[hero.star] || 0) + Math.floor((baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14)) + 35 + (nodeCount * 5);
+            finalStats.power = (STAR_BASE_POWER[hero.rarity] || 0) + Math.floor((baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14)) + 35 + (nodeCount * 5);
             modal.querySelector('.details-stats-grid > div:nth-child(1) p').innerHTML = `💪 ${finalStats.power || 0}`;
             modal.querySelector('.details-stats-grid > div:nth-child(2) p').innerHTML = `⚔️ ${finalStats.attack || 0}`;
             modal.querySelector('.details-stats-grid > div:nth-child(3) p').innerHTML = `🛡️ ${finalStats.defense || 0}`;
@@ -2770,7 +2778,7 @@ function renderDetailsInModal(hero, context = {}) {
             bonusDisplay.innerHTML = bonusHTML || `<div class="bonus-item">${langDict.noBonusLabel}</div>`;
 
             const costs = { emblem: 0, food: 0, iron: 0, masterEmblem: 0 };
-            const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === hero.star);
+            const relevantCosts = costData.filter(item => Math.floor(item.slot / 100) === hero.rarity);
             for (let i = 0; i < nodeCount; i++) {
                 if (relevantCosts[i]) {
                     costs.emblem += parseInt(relevantCosts[i].emblem) || 0;
@@ -2928,9 +2936,11 @@ function renderDetailsInModal(hero, context = {}) {
         shareBtn.addEventListener('click', () => {
             // 身份键 = 规范 heroId（见 utils.js::heroIdentity）
             const identifier = heroIdentity(hero);
-            // ⚠ 链接里**不带 `lang`**：英雄数据存的是语言无关的 ID，接收方按自己的 cookie / 浏览器语言
-            //   渲染即可；带上等于把分享者的语言强加给对方（`?lang=` 的优先级还高于 cookie）。
-            const url = `${window.location.origin}${window.location.pathname}?view=${encodeURIComponent(identifier)}`;
+            // 分享链接**只带 `hero` 一个参数**：
+            //   ⚠ 不带 `lang` —— 英雄数据存的是语言无关的身份键，接收方按自己的 cookie / 浏览器语言
+            //      渲染即可；带上等于把分享者的语言强加给对方（`?lang=` 的优先级还高于 cookie）。
+            //   也不带当前视图/筛选（地址栏那边才会保留，见 ui.js::openDetailsModal）。
+            const url = heroUrl(identifier, false);
             copyTextToClipboard(url).then(() => {
                 const originalText = shareBtn.innerHTML;
                 shareBtn.innerText = '✔️';
@@ -3094,7 +3104,7 @@ function renderDetailsInModal(hero, context = {}) {
                     // 定义获取背景后缀的函数
                     const getBackgrounSuffix = (family, costumeId) => {
                         // ✅ 只在这里算一次，全程复用，杜绝任何裸调用
-                        const colorKey = getSafeColorKey(hero.colorId);
+                        const colorKey = getSafeColorKey(hero.elementId);
 
                         // 优先处理 classic 家族
                         if (family === 'classic') {
@@ -3103,7 +3113,7 @@ function renderDetailsInModal(hero, context = {}) {
                                 4: 'stainedglass',
                                 5: 'stylish'
                             };
-                            if (hero.star === 3) {
+                            if (hero.rarity === 3) {
                                 costumeId = costumeId + 1;
                             }
                             if (costumeId <= 2) {
@@ -3260,7 +3270,7 @@ function renderDetailsInModal(hero, context = {}) {
                         raysImage.style.maxHeight = '110vh';
 
                         // 根据英雄颜色设置光效滤镜
-                        const colorFilter = getColorFilterForHero(hero.colorId);
+                        const colorFilter = getColorFilterForHero(hero.elementId);
                         const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
                         raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
                         portraitContainer.appendChild(raysImage);

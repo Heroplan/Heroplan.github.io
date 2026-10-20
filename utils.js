@@ -228,11 +228,11 @@ function balancedFieldsFrom(balSkills, hid) {
  *   ① 词表（`Lang.loadAll` 的 13 张表 + i18n）；
  *   ② 技能文本 `data/heroes_skills_<lang>.json`（`effects`/`passives`/`passiveSkills`/
  *      `passivesSearchPool`/`familyBonus`）；
- *   ③ hero 对象上用 `Lang.t()` 写死的显示字段（name/fancy_name/skill/color/class/
+ *   ③ hero 对象上用 `Lang.t()` 写死的显示字段（name/fancy_name/skill/element/class/
  *      speed/source/AetherPower）与 `state.family_values`。
  *   旧实现靠**整页重载**重跑 loadData；无缝切换必须在这里等价重刷，否则列表/详情仍是旧语言。
  *
- * 只改**显示字段**，不动任何 ID（`heroId`/`colorId`/`classId`/`speedId`/`sourceId`/`aetherPowerId`），
+ * 只改**显示字段**，不动任何 ID（`heroId`/`elementId`/`classId`/`speedId`/`sourceId`/`aetherPowerId`），
  * 与 `loadData` 的口径完全一致（含最长前缀回退 `_tPrefix`）。
  * @param {string} lang 目标语言码
  */
@@ -255,7 +255,7 @@ async function reloadLanguageData(lang) {
         hero.name = _tPrefix('heroes_name', hid);
         hero.fancy_name = _tPrefix('heroes_name_fancy', hid);
         hero.skill = Lang.t('skill_name', hero.specialId || '');
-        hero.color = Lang.t('color', hero.colorId);
+        hero.element = Lang.t('element', hero.elementId);
         hero.class = Lang.t('class', hero.classId);
         hero.speed = Lang.t('speed', hero.speedId);
         hero.source = Lang.t('source', hero.sourceId);
@@ -398,6 +398,34 @@ function heroIdentity(hero) {
     if (!hero) return '';
     if (hero.heroId) return hero.heroId;
     return `${hero.english_name}-${hero.costume_id}`;
+}
+
+/** 英雄详情在地址里的参数名。⚠ 旧链接用的是 `?view=<身份>`，解析端（`main.js`）继续认。 */
+const HERO_URL_PARAM = 'hero';
+
+/**
+ * 生成"带英雄身份键"的地址，两种用途形状不同：
+ *   · `keepOtherParams = true`（**地址栏**）：只加/换 `hero`，其余参数原样留着
+ *     （`lang`、`view=lottery` 这类主视图、`bfavs` 这类分享态都保得住 ⇒ 地址与屏上一致，
+ *      复制地址栏就等于分享这只英雄 + 当前所在视图）。返回**相对**地址，供 pushState 用。
+ *   · `keepOtherParams = false`（**分享链接**）：只带 `hero` 一个参数。
+ *     ⚠ 故意不带 `lang`：英雄数据存的是语言无关的身份键，带上等于把分享者的语言强加给对方
+ *       （`?lang=` 的优先级还高于 cookie）。也不带视图/筛选，接收方落到干净的列表 + 这只英雄。
+ * @param {string} identity - `heroIdentity(hero)`
+ * @param {boolean} keepOtherParams
+ * @returns {string}
+ */
+function heroUrl(identity, keepOtherParams) {
+    const enc = encodeURIComponent(identity || '');
+    if (!keepOtherParams) {
+        return window.location.origin + window.location.pathname + '?' + HERO_URL_PARAM + '=' + enc;
+    }
+    const u = new URL(window.location.href);
+    u.searchParams.set(HERO_URL_PARAM, identity || '');
+    // 旧写法的深链接（`?view=<身份>`）打开后，`view` 与 `hero` 会是同一个值 ⇒ 归一成一个，
+    // 免得复制出去的地址里挂着两个同义参数。（解析端仍继续认 `?view=<身份>`，老链接不受影响。）
+    if (u.searchParams.get('view') === identity) u.searchParams.delete('view');
+    return u.pathname + u.search + u.hash;
 }
 
 /**
@@ -599,7 +627,7 @@ async function loadData(lang) {
             if (!c) return;
             const st = (skills[hid] && skills[hid][0]) || {};
             const s = computeHeroStats(c);
-            const colorId = String(c.element || '').toLowerCase();
+            const elementId = String(c.element || '').toLowerCase();
             const classId = String(c.classType || '').toLowerCase();
             const speedId = c.manaSpeedId || '';
             const aetherId = c.aetherGift || '';
@@ -651,7 +679,7 @@ async function loadData(lang) {
                 // 服装英雄自带的 specialId 基本没有图标（实测 702 个服装只有 7 个有，且都是通用 `tackle`）
                 // ⇒ 技能图标回退到**本体英雄**的 specialId（服装英雄的技能图标用父英雄的）。
                 parent_specialId: isCostume ? ((byId[c.parentHeroId] || {}).specialId || '') : '',
-                star: c.rarity,
+                rarity: c.rarity,
                 family: famId,
                 parentHeroId: c.parentHeroId || null,
                 costume_id: isCostume ? _costumeSlot(hid, costumeOrd[hid] || 1) : 0,
@@ -666,7 +694,7 @@ async function loadData(lang) {
                 costumeListSets: _cbListSets,
                 sourceId: srcId,
                 source: Lang.t('source', srcId),
-                colorId: colorId, color: Lang.t('color', colorId),
+                elementId: elementId, element: Lang.t('element', elementId),
                 classId: classId, class: Lang.t('class', classId),
                 speedId: speedId, speed: Lang.t('speed', speedId),
                 aetherPowerId: aetherId, AetherPower: Lang.t('aether_power', aetherId),
@@ -825,8 +853,8 @@ function ensureSkillsLoaded() {
  * @returns {string} CSS类名 (如 'red-glow-border')。
  */
 // 入参就是**颜色规范 ID**（red/blue/green/yellow/purple）
-const getColorGlowClass = (colorId) => {
-    return colorId ? `${colorId}-glow-border` : '';
+const getColorGlowClass = (elementId) => {
+    return elementId ? `${elementId}-glow-border` : '';
 };
 
 /**
@@ -873,12 +901,12 @@ function getHeroColorLightGradient(colorName) {
  * @returns {string} 包含所有段位元素的HTML字符串。
  */
 function generateRankHtml(hero, lbSetting, talentSetting, nodeCount = 0) {
-    if (!hero || !hero.star) return '';
+    if (!hero || !hero.rarity) return '';
 
     let ascensionLevels = 0;
-    if (hero.star === 1) ascensionLevels = 2;
-    else if (hero.star === 2 || hero.star === 3) ascensionLevels = 3;
-    else if (hero.star >= 4) ascensionLevels = 4;
+    if (hero.rarity === 1) ascensionLevels = 2;
+    else if (hero.rarity === 2 || hero.rarity === 3) ascensionLevels = 3;
+    else if (hero.rarity >= 4) ascensionLevels = 4;
 
     if (ascensionLevels === 0) return '';
 

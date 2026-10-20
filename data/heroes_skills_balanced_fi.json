@@ -898,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[*]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "Kaikki liittolaiset saavat 50% hyökkäystä 5 vuoron ajaksi. Hyökkäys nousee 5% joka vuorolla, yhteensä enintään 70%.",
       "Kaikki liittolaiset saavat 1270 tehostettua terveyttä 5 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden."
      ]
@@ -941,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 20% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[*]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "Kutsuu jokaista liittolaista kohden tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
       "Kaikki liittolaiset saavat 612 terveyspistettä 4 vuoron aikana."
      ]
@@ -1338,7 +1338,7 @@
     {
      "id": "toonsummers_dream_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[*]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "Kaikki liittolaiset saavat 1424 terveyspistettä 4 vuoron aikana.",
       "Kaikki liittolaiset saavat 5% manaa vuoron lopussa 4 vuoron ajan.",
       "Elementtiyhteys antaa kaikille luonnon liittolaisille 15% hyökkäystä ja 15% puolustusta 6 vuoron ajaksi. Vaikutusta ei voi häivyttää."
@@ -2132,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi.",
+      "Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 24% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[*]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "Kaikki liittolaiset saavat 1080 tehostettua terveyttä 4 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
       "Kaikki viholliset saavat -50% puolustusta erikoistaitoja vastaan 4 vuoron ajaksi. Kun vastassa on pimeyden hahmoja, tätä tilaefektiä ei voi puhdistaa ja se kestää 2 vuoroa pidempään."
      ]
@@ -2208,7 +2208,7 @@
       "[**]Kohde ja lähellä olevat viholliset kärsivät[#Dynamic] 222 [#]palovauriota 2 vuoron aikana. Loitsija imee 10% tuotetusta palovauriosta terveytenä.",
       "[**]Jos loitsija kukistuu seuraavan 2 vuoron aikana, hän palaa kuolleista seuraavan vuoronsa alussa ja hänellä on 40% terveyttä. Kaikki tilaefektit ja kasaumat poistuvat loitsijan kukistuessa.",
       "[*]x 2 manalataus:",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 50% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 50% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Kaikki liittolaiset saavat 795 tehostettua terveyttä 3 vuoron aikana. Tehostettu terveys voi ylittää maksimiterveyden.",
       "[**]Kaikkien liittolaisten saama vaurio vähentyy -60% 3 vuoron ajan."
      ]
@@ -2936,18 +2936,18 @@
       "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
       "[*]x 1 manalataus:",
       "[**]Palauttaa 15% liittolaisten terveyttä.",
-      "[**]Jokaisella kukistuneella liittolaisella on 30%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 30%:n mahdollisuus saada 30% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Kaikki liittolaiset saavat 10% manaa vuoron lopussa 2 vuoron ajan.",
       "[*]x 2 manalataus:",
       "[**]Palauttaa 35% liittolaisten terveyttä.",
-      "[**]Jokaisella kukistuneella liittolaisella on 40%:n mahdollisuus saada 40% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 40%:n mahdollisuus saada 40% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Puhdistaa 1 vaivan kaikilta liittolaisilta. (Vaivat puhdistetaan saamisjärjestyksessä, viimeisimmät ensin.)",
       "[**]Kaikki liittolaiset saavat 10% manaa vuoron lopussa 3 vuoron ajan.",
       "[*]x 3 manalataus:",
       "[**]Palauttaa 55% liittolaisten terveyttä.",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 60% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 60% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Puhdistaa vaivat kaikilta liittolaisilta.",
-      "[**]Kaikki liittolaiset saavat 15% manaa vuoron lopussa 5 vuoron ajan."
+      "[**]Kaikki liittolaiset saavat 10% manaa vuoron lopussa 4 vuoron ajan."
      ]
     }
    ]
@@ -3865,11 +3865,11 @@
       "[*]x 1 manalataus:",
       "[**]Lisää 450 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
       "[*]x 2 manalataus:",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 10% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 10% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Kaikki liittolaiset saavat 609 terveyspistettä 3 vuoron aikana.",
       "[*]x 3 manalataus:",
       "[**]Lisää 700 kaikkien liittolaisten terveyteen. Tehostettu terveys voi ylittää maksimiterveyden.",
-      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 32% terveyttä tullessaan elvytetyksi.",
+      "[**]Jokaisella kukistuneella liittolaisella on 50%:n mahdollisuus saada 32% terveyttä tullessaan elvytetyksi. (Kun hahmo elvytetään erikoistaidolla, kaikki myöhemmät erikoistaitoelvytykset antavat hahmolle -50% vähemmän terveyttä.\n[***]Kun hahmo elvytetään erikoistaidolla, kaikilla myöhemmillä erikoistaitoelvytyksillä on -50% pienempi mahdollisuus elvyttää hahmo.)",
       "[**]Kaikki liittolaiset saavat 952 terveyspistettä 4 vuoron aikana."
      ]
     }

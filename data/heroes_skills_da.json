@@ -282,7 +282,7 @@
      "lines": [
       "Giver 400% i skade til alle fjender.",
       "Skaden øges med 60% pr. besejret fjende.",
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 30% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Giver ekstra skade mod mørk."
      ]
     }
@@ -2376,7 +2376,7 @@
      "id": "booming_mend",
      "lines": [
       "Gendanner 50% helbred for alle allierede.",
-      "Hver besejret allieret har en 40% chance for at blive genoplivet med 30% HP.",
+      "Hver besejret allieret har en 40% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede har en 20% chance for at sænke al modtaget skade til 1 i 3 runder."
      ]
     }
@@ -5900,7 +5900,7 @@
     {
      "id": "sapphire_eyes",
      "lines": [
-      "Hver besejret allieret har en 60% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 60% chance for at blive genoplivet med 20% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede i nærheden får 50% angreb i 5 runder. Angrebet stiger med 5% i hver runde, op til 70%.",
       "Alle allierede gendanner 1270 boostet helbred i løbet af 5 runder. Boostet helbred kan overstige maks. HP."
      ]
@@ -7028,7 +7028,7 @@
      "id": "super_porridge",
      "lines": [
       "Gendanner 30% helbred for alle allierede.",
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 10% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 10% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Hidkalder en elverhåndlanger til hver allieret med 10% HP og 10% angreb, nedarvet fra kasteren."
      ]
     }
@@ -7056,7 +7056,7 @@
     {
      "id": "hyper_porridge",
      "lines": [
-      "Hver besejret allieret har en 55% chance for at blive genoplivet med 15% HP.",
+      "Hver besejret allieret har en 55% chance for at blive genoplivet med 15% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Hidkalder en elverhåndlanger til hver allieret med 10% HP og 10% angreb, nedarvet fra kasteren.",
       "Alle allierede regenererer 612 HP i 4 runder."
      ]
@@ -16086,7 +16086,7 @@
     {
      "id": "midsummers_dream",
      "lines": [
-      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP.",
+      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede regenererer 712 HP i 4 runder.",
       "Alle allierede modtager en moderat mængde mana i løbet af 4 runder.",
       "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves."
@@ -16118,7 +16118,7 @@
     {
      "id": "toonsummers_dream",
      "lines": [
-      "Hver besejret allieret har en 60% chance for at blive genoplivet med 30% HP.",
+      "Hver besejret allieret har en 60% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede regenererer 1424 HP i 4 runder. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
       "I de næste 4 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer.",
       "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer."
@@ -16145,7 +16145,7 @@
     {
      "id": "midsummers_reverie",
      "lines": [
-      "Hver besejret allieret har en 38% chance for at blive genoplivet med 28% HP.",
+      "Hver besejret allieret har en 38% chance for at blive genoplivet med 28% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede regenererer 648 HP i 4 runder.",
       "Alle allierede gendanner 38% mana i 4 runder. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)",
       "Elementlink giver alle natur allierede 15% angreb og 15% forsvar i 6 runder. Denne effekt kan ikke ophæves."
@@ -24923,7 +24923,7 @@
     {
      "id": "mending_stitches",
      "lines": [
-      "Hver besejret allieret har en 60% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 60% chance for at blive genoplivet med 20% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede gendanner 1080 boostet helbred i løbet af 4 runder. Boostet helbred kan overstige maks. HP.",
       "Alle fjender får -50% forsvar mod særlige evner i 4 runder. Mod mørke figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
      ]
@@ -25900,7 +25900,7 @@
       "Giver 350% skade til målet og fjender i nærheden.",
       "Skaden øges med 50% pr. besejret allieret.",
       "Alle allierede får 50% forsvar i 4 runder. Forsvaret reduceres med 10% for hver allieret, der besejres.",
-      "Har en 100% chance for at genoplive en vilkårlig besejret allieret med 50% HP."
+      "Har en 100% chance for at genoplive en vilkårlig besejret allieret med 50% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)"
      ]
     }
    ]
@@ -26968,7 +26968,7 @@
       "[**]Giver 250% i skade til alle fjender. Hver træfning er 60% præcist.",
       "[**]Alle fjender får[#Dynamic] 92 [#]giftskade i 2 runder.",
       "[*]x 2 manaangreb:",
-      "[**]Hver besejret allieret har en 44% chance for at blive genoplivet med 40% HP.",
+      "[**]Hver besejret allieret har en 44% chance for at blive genoplivet med 40% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Alle allierede regenererer 405 HP i 5 runder."
      ]
     }
@@ -27256,7 +27256,7 @@
      "id": "sewing_back_together",
      "lines": [
       "Alle allierede regenererer 425 HP i 5 runder.",
-      "Hver besejret allieret har en 35% chance for at blive genoplivet med 25% HP."
+      "Hver besejret allieret har en 35% chance for at blive genoplivet med 25% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)"
      ]
     }
    ]
@@ -27992,7 +27992,7 @@
       "[**]Målet og fjender i nærheden får[#Dynamic] 158 [#]brandskade i 2 runder.",
       "[**]Hvis kasteren besejres i løbet af de næste 2 runder, bliver de genoplivet i starten af deres næste runde med 32% helbred. Alle statuseffekter og kumulative værdier fjernes, når kasteren besejres.",
       "[*]x 2 manaangreb:",
-      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 40% HP.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 40% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Alle allierede regenererer 714 HP i 3 runder.",
       "[**]Alle allierede reducerer alt modtaget skade med -50% i 3 runder."
      ]
@@ -28027,7 +28027,7 @@
       "[**]Målet og fjender i nærheden får[#Dynamic] 222 [#]brandskade over 2 runder. Kasteren absorberer 10% af den påførte brandskade som helbred.",
       "[**]Hvis kasteren besejres i løbet af de næste 2 runder, bliver de genoplivet i starten af deres næste runde med 40% helbred. Alle statuseffekter og kumulative værdier fjernes, når kasteren besejres.",
       "[*]x 2 manaangreb:",
-      "[**]Hver besejret allieret har en 55% chance for at blive genoplivet med 44% HP.",
+      "[**]Hver besejret allieret har en 55% chance for at blive genoplivet med 44% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Alle allierede gendanner 795 boostet helbred i løbet af 3 runder. Boostet helbred kan overstige maks. HP.",
       "[**]Alle allierede reducerer alt modtaget skade med -60% i 3 runder."
      ]
@@ -28862,7 +28862,7 @@
      "lines": [
       "Gendanner 25% helbred for alle allierede.",
       "Vækstvelsignelse: Gendanner 2x ekstra helbred for hvert point i det modificerede forsvar. (Ekstra helbred er baseret på kasterens modificerede forsvar, når healing anvendes.\n[*]Op til 600 ekstra helbred\n[*]Statuseffekter, der påvirker modtaget helbredelse, påvirker også helbredelsestilpasningen.)",
-      "Hver besejret allieret har en 35% chance for at blive genoplivet med 35% HP.",
+      "Hver besejret allieret har en 35% chance for at blive genoplivet med 35% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Rydder 1 statuslidelse fra alle allierede. (Statuslidelser ryddes i samme rækkefølge, som de er kommet. Den seneste statuslidelse ryddes først.)"
      ]
     }
@@ -31468,7 +31468,7 @@
     {
      "id": "liturgy_of_the_fallen",
      "lines": [
-      "Hver besejret allieret har en 40% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 40% chance for at blive genoplivet med 20% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede gendanner 666 HP i løbet af 4 runder. Starter lavt, men øges for hver runde.",
       "Alle allierede i nærheden får 24% forsvar i 4 runder. Forsvaret stiger med 10% i hver runde, op til 54%."
      ]
@@ -40525,7 +40525,7 @@
      "id": "mixed_green_herbs",
      "lines": [
       "Gendanner 30% helbred for alle allierede.",
-      "Hver besejret allieret har en 40% chance for at blive genoplivet med 30% HP.",
+      "Hver besejret allieret har en 40% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede får en månebeskyttelse i 4 runder, der reducerer den skade, de tager fra særlige evner, med op til -800. Reducerer skade med yderligere 30%, når angriberen tilhører elementet hellig.",
       "(Grundskadereduktion: -400\n[*]Skadereduktionen skaleres afhængigt af forsvarerens forsvar og angriberens angrebskraft.\n[*] Maksimal skadereduktion: -800\n[*] Minimal skadereduktion: -200\n[*]Vækst og visne påvirker, hvor meget skadereduktion skaleres.\n[*]Buffere og statuslidelser på angreb og forsvar påvirker ikke skadereduktionens skalering.)"
      ]
@@ -41610,16 +41610,16 @@
       "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
       "[*]x 1 manaangreb:",
       "[**]Gendanner 15% helbred for alle allierede.",
-      "[**]Hver besejret allieret har en 30% chance for at blive genoplivet med 30% HP.",
+      "[**]Hver besejret allieret har en 30% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]I de næste 2 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden.",
       "[*]x 2 manaangreb:",
       "[**]Gendanner 35% helbred for alle allierede.",
-      "[**]Hver besejret allieret har en 40% chance for at blive genoplivet med 40% HP.",
+      "[**]Hver besejret allieret har en 40% chance for at blive genoplivet med 40% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Rydder 1 statuslidelse fra alle allierede. (Statuslidelser ryddes i samme rækkefølge, som de er kommet. Den seneste statuslidelse ryddes først.)",
       "[**]I de næste 3 ture får alle allierede bortset fra kasteren 10% mana i slutningen af runden.",
       "[*]x 3 manaangreb:",
       "[**]Gendanner 55% helbred for alle allierede.",
-      "[**]Hver besejret allieret har en 60% chance for at blive genoplivet med 60% HP.",
+      "[**]Hver besejret allieret har en 60% chance for at blive genoplivet med 60% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Rydder statuslidelser fra alle allierede.",
       "[**]I de næste 5 ture får alle allierede bortset fra kasteren 15% mana i slutningen af runden."
      ]
@@ -44948,7 +44948,7 @@
      "id": "boon_of_gjallarhorn",
      "lines": [
       "Forstærker alle allieredes helbred med 500. Forstærket helbred kan overstige maks. HP.",
-      "Hver besejret allieret har en 20% chance for at blive genoplivet med 30% HP.",
+      "Hver besejret allieret har en 20% chance for at blive genoplivet med 30% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede får 30% angreb i 4 runder."
      ]
     }
@@ -44974,7 +44974,7 @@
      "id": "toon_boon_of_gjallarhorn",
      "lines": [
       "Forstærker alle allieredes helbred med 1600. Forstærket helbred kan overstige maks. HP.",
-      "Hver besejret allieret har en 45% chance for at blive genoplivet med 35% HP.",
+      "Hver besejret allieret har en 45% chance for at blive genoplivet med 35% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede får 50% angreb i 4 runder. Denne statuseffekt kan ikke fordrives og varer 2 længere for natur-figurer."
      ]
     }
@@ -44993,7 +44993,7 @@
     {
      "id": "blessing_of_gjallarhorn",
      "lines": [
-      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP.",
+      "Hver besejret allieret har en 50% chance for at blive genoplivet med 20% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede får 50% angreb i 4 runder.",
       "Alle allierede gendanner 672 boostet helbred i løbet af 4 runder. Boostet helbred kan overstige maks. HP."
      ]
@@ -46224,7 +46224,7 @@
     {
      "id": "elders_remedy",
      "lines": [
-      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP.",
+      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede modtager en lille mængde mana i løbet af 4 runder."
      ]
     }
@@ -46248,7 +46248,7 @@
     {
      "id": "gardeners_remedy",
      "lines": [
-      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP.",
+      "Hver besejret allieret har en 33% chance for at blive genoplivet med 23% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "Alle allierede regenererer 324 HP i 4 runder."
      ]
     }
@@ -50480,7 +50480,8 @@
       "Kasteren og allierede i nærheden modtager en moderat mængde mana i 6 runder.",
       "Denne specialevne forvolder 35 vanvid på allierede i nærheden.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang de helbredes direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)",
-      "Kasteren bliver til en Yag-Mago i 6 ture. Denne effekt kan udrenses. Yag-Magoen har 200% angreb, 150% forsvar og følgende særlige evne:\n[*]Evigt bånd (Meget hurtig)\n[*]Giver 300% i skade til alle fjender og påfører dem 20 vanvid.\n[*]Genopliver en tilfældigt besejret allieret med 10% HP. (Denne statuseffekt forvandler målet til en anden form.\n[*]Den nye forms familiebonus og særlige evner bestemmes af denne statuseffekt.\n[*]Bosser, titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
+      "Kasteren bliver til en Yag-Mago i 6 ture. Denne effekt kan udrenses. Yag-Magoen har 200% angreb, 150% forsvar og følgende særlige evne:\n[*]Evigt bånd (Meget hurtig)\n[*]Giver 300% i skade til alle fjender og påfører dem 20 vanvid.\n[*]Genopliver en tilfældigt besejret allieret med 10% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[*]Bosser, titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)",
+      "(Denne statuseffekt forvandler målet til en anden form.\n[*]Den nye forms familiebonus og særlige evner bestemmes af denne statuseffekt.)"
      ]
     }
    ]
@@ -50564,7 +50565,7 @@
     {
      "id": "grim_awakening",
      "lines": [
-      "Genopliver alle allierede med 70% HP og 50 vanvid.",
+      "Genopliver alle allierede med 70% HP og 50 vanvid. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.)",
       "Alle allierede får 74% forsvar mod særlige evner i 5 runder.",
       "Hvis en allieret, som ikke er kasteren, bliver besejret på 5 runder, får alle fjender 400 i skade.",
       "Denne specialevne forvolder 50 vanvid på kasteren.",
@@ -52353,11 +52354,11 @@
       "[*]x 1 manaangreb:",
       "[**]Forstærker alle allieredes helbred med 450. Forstærket helbred kan overstige maks. HP.",
       "[*]x 2 manaangreb:",
-      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 10% HP.",
+      "[**]Hver besejret allieret har en 50% chance for at blive genoplivet med 10% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Alle allierede regenererer 609 HP i 3 runder.",
       "[*]x 3 manaangreb:",
       "[**]Forstærker alle allieredes helbred med 700. Forstærket helbred kan overstige maks. HP.",
-      "[**]Hver besejret allieret har en 65% chance for at blive genoplivet med 27% HP.",
+      "[**]Hver besejret allieret har en 65% chance for at blive genoplivet med 27% HP. (Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% mindre helbred for den figur.\n[***]Når en figur bliver genoplivet af en særlig egenskab, har alle efterfølgende genoplivelser med særlige egenskaber -50% reduceret chance for den figur.)",
       "[**]Alle allierede regenererer 952 HP i 4 runder."
      ]
     }

@@ -898,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[*]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "Alla allierade får 50% attack i 5 rundor. Attacken ökar med 5% per runda, upp till 70%.",
       "Alla allierade regenererar 1270 ökad hälsa i 5 rundor. Hälsan kan komma att överstiga maxhälsan."
      ]
@@ -941,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 20% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[*]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "Åkallar en tomteundersåte till varje allierad, med 10% hälsa och 10% attack som ärvs från anfallaren.",
       "Alla allierade återfår 612 hälsa under 4 rundor."
      ]
@@ -1338,7 +1338,7 @@
     {
      "id": "toonsummers_dream_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 30% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 30% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[*]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "Alla allierade återfår 1424 hälsa under 4 rundor.",
       "De kommande 4 rundorna får alla allierade 5% mana i slutet av sin runda.",
       "Elementlänk ger alla naturallierade 15% attack och 15% försvar under 6 rundor. Denna effekt kan ej avbrytas."
@@ -2132,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa.",
+      "Varje besegrad allierad har 50% chans återupplivas med 24% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[*]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "Alla allierade regenererar 1080 ökad hälsa i 4 rundor. Hälsan kan komma att överstiga maxhälsan.",
       "Alla fiender får -50% försvar mot specialförmågor under 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem."
      ]
@@ -2208,7 +2208,7 @@
       "[**]Målet och fiender i närheten får[#Dynamic] 222 [#]eldskada under 2 rundor. Användaren absorberar 10% av gjord eldskada som hälsa.",
       "[**]Om användaren dör under de följande 2 rundorna återupplivas användaren i början av nästkommande runda med 40% hälsa. Alla statuseffekter och staplar tas bort när användaren besegras.",
       "[*] 2 st manaladdningar",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 50% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 50% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]Alla allierade regenererar 795 ökad hälsa i 3 rundor. Hälsan kan komma att överstiga maxhälsan.",
       "[**]Alla allierade minskar all tagen skada med -60% i 3 rundor."
      ]
@@ -2936,18 +2936,18 @@
       "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
       "[*] 1 st manaladdningar",
       "[**]Alla allierade återfår 15% hälsa.",
-      "[**]Varje besegrad allierad har 30% chans återupplivas med 30% hälsa.",
+      "[**]Varje besegrad allierad har 30% chans återupplivas med 30% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]De kommande 2 rundorna får alla allierade 10% mana i slutet av sin runda.",
       "[*] 2 st manaladdningar",
       "[**]Alla allierade återfår 35% hälsa.",
-      "[**]Varje besegrad allierad har 40% chans återupplivas med 40% hälsa.",
+      "[**]Varje besegrad allierad har 40% chans återupplivas med 40% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]Renar 1 negativ statuseffekt från alla allierade. (Negativa statuseffekter rensas bort i den ordning de fåtts. De senaste statuseffekterna rensas bort först.)",
       "[**]De kommande 3 rundorna får alla allierade 10% mana i slutet av sin runda.",
       "[*] 3 st manaladdningar",
       "[**]Alla allierade återfår 55% hälsa.",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 60% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 60% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]Rensar negativa statuseffekter från alla allierade.",
-      "[**]De kommande 5 rundorna får alla allierade 15% mana i slutet av sin runda."
+      "[**]De kommande 4 rundorna får alla allierade 10% mana i slutet av sin runda."
      ]
     }
    ]
@@ -3865,11 +3865,11 @@
       "[*] 1 st manaladdningar",
       "[**]Ökar alla allierades hälsa med 450. Hälsan kan komma att överstiga maxhälsan.",
       "[*] 2 st manaladdningar",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 10% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 10% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]Alla allierade återfår 609 hälsa under 3 rundor.",
       "[*] 3 st manaladdningar",
       "[**]Ökar alla allierades hälsa med 700. Hälsan kan komma att överstiga maxhälsan.",
-      "[**]Varje besegrad allierad har 50% chans återupplivas med 32% hälsa.",
+      "[**]Varje besegrad allierad har 50% chans återupplivas med 32% hälsa. (När en karaktär återupplivas av en specialförmåga ger alla efterföljande återupplivningar med specialförmågor -50% mindre hälsa till den karaktären.\n[***]När en karaktär återupplivas av en specialförmåga har alla efterföljande återupplivningar med specialförmågor -50% lägre chans för den karaktären.)",
       "[**]Alla allierade återfår 952 hälsa under 4 rundor."
      ]
     }

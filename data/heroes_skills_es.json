@@ -282,7 +282,7 @@
      "lines": [
       "Causa un 400% de daño a todos los enemigos.",
       "El daño aumenta en un 60% por cada enemigo derrotado.",
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 30% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Causa daño adicional contra oscuro."
      ]
     }
@@ -2376,7 +2376,7 @@
      "id": "booming_mend",
      "lines": [
       "Recupera un 50% de vitalidad para todos los aliados.",
-      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 30% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados tienen un 20% de probabilidad de reducir cualquier daño recibido a 1 durante 3 turnos."
      ]
     }
@@ -5900,7 +5900,7 @@
     {
      "id": "sapphire_eyes",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 20% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados obtienen un 50% de ataque durante 5 turnos. El ataque aumenta un 5% en cada turno hasta un máximo del 70%.",
       "Todos los aliados regeneran 1270 de vitalidad potenciada durante 5 turnos. La vitalidad potenciada puede exceder la VIT máxima."
      ]
@@ -7028,7 +7028,7 @@
      "id": "super_porridge",
      "lines": [
       "Recupera un 30% de vitalidad para todos los aliados.",
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 10% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 10% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Invoca un secuaz elfo para todos los aliados con un 10% de VIT y un 10% de ataque heredados del héroe."
      ]
     }
@@ -7056,7 +7056,7 @@
     {
      "id": "hyper_porridge",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 55% de revivir con un 15% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 55% de revivir con un 15% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Invoca un secuaz elfo para todos los aliados con un 10% de VIT y un 10% de ataque heredados del héroe.",
       "Todos los aliados recuperan 612 VIT durante 4 turnos."
      ]
@@ -16086,7 +16086,7 @@
     {
      "id": "midsummers_dream",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados recuperan 712 VIT durante 4 turnos.",
       "Todos los aliados reciben una cantidad moderada de maná durante 4 turnos.",
       "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar."
@@ -16118,7 +16118,7 @@
     {
      "id": "toonsummers_dream",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 30% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados recuperan 1424 VIT durante 4 turnos. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
       "Durante los siguientes 4 turnos, todos los aliados reciben un 10% de maná al final del turno. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza.",
       "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza."
@@ -16145,7 +16145,7 @@
     {
      "id": "midsummers_reverie",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 38% de revivir con un 28% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 38% de revivir con un 28% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados recuperan 648 VIT durante 4 turnos.",
       "Todos los aliados obtienen un 38% de regeneración de maná durante 4 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
       "El enlace de elemento proporciona a todos los aliados de naturaleza un 15% de ataque y 15% de defensa durante 6 turnos. Este efecto no se puede descartar."
@@ -24923,7 +24923,7 @@
     {
      "id": "mending_stitches",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 20% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados regeneran 1080 de vitalidad potenciada durante 4 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
       "Todos los enemigos reciben un -50% de defensa contra habilidades especiales durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros."
      ]
@@ -25900,7 +25900,7 @@
       "Causa un 350% de daño al objetivo y a los enemigos cercanos.",
       "El daño aumenta en un 50% por cada aliado derrotado.",
       "Todos los aliados reciben un 50% de defensa durante 4 turnos. La defensa aumenta un 10% más por cada aliado derrotado.",
-      "Tiene un 100% de probabilidad de revivir a un aliado derrotado con un 50% de VIT."
+      "Tiene un 100% de probabilidad de revivir a un aliado derrotado con un 50% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)"
      ]
     }
    ]
@@ -26968,7 +26968,7 @@
       "[**]Causa un 250% de daño a todos los enemigos. Cada golpe tiene una precisión del 60%.",
       "[**]Todos los enemigos reciben[#Dynamic] 92 [#]de daño de veneno durante 2 turnos.",
       "[*]x 2 de carga de maná:",
-      "[**]Cada aliado derrotado tiene una probabilidad del 44% de revivir con un 40% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 44% de revivir con un 40% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Todos los aliados recuperan 405 VIT durante 5 turnos."
      ]
     }
@@ -27256,7 +27256,7 @@
      "id": "sewing_back_together",
      "lines": [
       "Todos los aliados recuperan 425 VIT durante 5 turnos.",
-      "Cada aliado derrotado tiene una probabilidad del 35% de revivir con un 25% de VIT."
+      "Cada aliado derrotado tiene una probabilidad del 35% de revivir con un 25% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)"
      ]
     }
    ]
@@ -27992,7 +27992,7 @@
       "[**]Los enemigos objetivo y cercanos reciben[#Dynamic] 158 [#]de daño de quemadura durante 2 turnos.",
       "[**]Si el héroe cae derrotado durante los siguientes 2 turnos, resucita al principio de su siguiente turno con un 32% de vitalidad. Todos los efectos de estado y acumulaciones se eliminan cuando el héroe cae derrotado.",
       "[*]x 2 de carga de maná:",
-      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 40% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 40% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Todos los aliados recuperan 714 VIT durante 3 turnos.",
       "[**]Todos los aliados reducen todo el daño recibido en un -50% durante 3 turnos."
      ]
@@ -28027,7 +28027,7 @@
       "[**]El objetivo y los enemigos cercanos reciben[#Dynamic] 222 [#]de daño de quemadura durante 2 turnos. El héroe absorbe un 10% del daño de quemadura infligido como vitalidad.",
       "[**]Si el héroe cae derrotado durante los siguientes 2 turnos, resucita al principio de su siguiente turno con un 40% de vitalidad. Todos los efectos de estado y acumulaciones se eliminan cuando el héroe cae derrotado.",
       "[*]x 2 de carga de maná:",
-      "[**]Cada aliado derrotado tiene una probabilidad del 55% de revivir con un 44% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 55% de revivir con un 44% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Todos los aliados regeneran 795 de vitalidad potenciada durante 3 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
       "[**]Todos los aliados reducen todo el daño recibido en un -60% durante 3 turnos."
      ]
@@ -28862,7 +28862,7 @@
      "lines": [
       "Recupera un 25% de vitalidad para todos los aliados.",
       "Bendición de crecimiento: Recupera x 2 de vitalidad extra por cada punto de defensa modificado. (La vitalidad extra se basa en la defensa modificada del héroe en el momento de aplicar la curación.\n[*] Hasta un máximo de 600 de curación adicional.\n[*] Los efectos de estado que influyen en las curaciones recibidas también influyen en el aumento de curación.)",
-      "Cada aliado derrotado tiene una probabilidad del 35% de revivir con un 35% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 35% de revivir con un 35% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Purifica 1 estado alterado de todos los aliados. (Los estados alterados se purifican en el orden en el que se han recibido; los más recientes se purifican primero.)"
      ]
     }
@@ -31468,7 +31468,7 @@
     {
      "id": "liturgy_of_the_fallen",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 20% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados regeneran 666 de VIT de menos a más durante durante 4 turnos.",
       "Todos los aliados obtienen un 24% de defensa durante 4 turnos. La defensa aumenta un 10% en cada turno hasta un máximo del 54%."
      ]
@@ -40525,7 +40525,7 @@
      "id": "mixed_green_herbs",
      "lines": [
       "Recupera un 30% de vitalidad para todos los aliados.",
-      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 30% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados obtienen Protección lunar, que reduce el daño de las habilidades especiales recibido en hasta -800 , durante 4 turnos. Reduce el daño un 30% más cuando el atacante es del elemento sagrado.",
       "(Reducción de daño base: -400\n[*] La reducción de daño aumenta en función de la defensa de quien se defiende y el poder de ataque de quien ataca.\n[*] Reducción de daño máxima: -800\n[*] Reducción de daño mínima: -200\n[*] El crecimiento y la merma influyen en el aumento de la reducción del daño.\n[*] Las bendiciones y los estados alterados influyen en el ataque y la defensa, pero no en el aumento de la reducción del daño.)"
      ]
@@ -41610,16 +41610,16 @@
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
       "[*]x 1 de carga de maná:",
       "[**]Recupera un 15% de vitalidad para todos los aliados.",
-      "[**]Cada aliado derrotado tiene una probabilidad del 30% de revivir con un 30% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 30% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Durante los siguientes 2 turnos, todos los aliados reciben un 10% de maná al final del turno.",
       "[*]x 2 de carga de maná:",
       "[**]Recupera un 35% de vitalidad para todos los aliados.",
-      "[**]Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 40% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 40% de revivir con un 40% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Purifica 1 estado alterado de todos los aliados. (Los estados alterados se purifican en el orden en el que se han recibido; los más recientes se purifican primero.)",
       "[**]Durante los siguientes 3 turnos, todos los aliados reciben un 10% de maná al final del turno.",
       "[*]x 3 de carga de maná:",
       "[**]Recupera un 55% de vitalidad para todos los aliados.",
-      "[**]Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 60% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 60% de revivir con un 60% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Purifica los estados alterados de todos los aliados.",
       "[**]Durante los siguientes 5 turnos, todos los aliados reciben un 15% de maná al final del turno."
      ]
@@ -44948,7 +44948,7 @@
      "id": "boon_of_gjallarhorn",
      "lines": [
       "Potencia la vitalidad de todos los aliados en 500. La vitalidad potenciada puede exceder la VIT máxima.",
-      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 30% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 20% de revivir con un 30% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados reciben un 30% de ataque durante 4 turnos."
      ]
     }
@@ -44974,7 +44974,7 @@
      "id": "toon_boon_of_gjallarhorn",
      "lines": [
       "Potencia la vitalidad de todos los aliados en 1600. La vitalidad potenciada puede exceder la VIT máxima.",
-      "Cada aliado derrotado tiene una probabilidad del 45% de revivir con un 35% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 45% de revivir con un 35% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados reciben un 50% de ataque durante 4 turnos. Este efecto de estado no se puede descartar y dura 2 turnos más en personajes de naturaleza."
      ]
     }
@@ -44993,7 +44993,7 @@
     {
      "id": "blessing_of_gjallarhorn",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 20% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados reciben un 50% de ataque durante 4 turnos.",
       "Todos los aliados regeneran 672 de vitalidad potenciada durante 4 turnos. La vitalidad potenciada puede exceder la VIT máxima."
      ]
@@ -46224,7 +46224,7 @@
     {
      "id": "elders_remedy",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados reciben una cantidad pequeña de maná durante 4 turnos."
      ]
     }
@@ -46248,7 +46248,7 @@
     {
      "id": "gardeners_remedy",
      "lines": [
-      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT.",
+      "Cada aliado derrotado tiene una probabilidad del 33% de revivir con un 23% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "Todos los aliados recuperan 324 VIT durante 4 turnos."
      ]
     }
@@ -50480,7 +50480,8 @@
       "El héroe y los aliados cercanos reciben una cantidad moderada de maná durante 6 turnos.",
       "Usar esta habilidad especial inflige 35 de demencia a los aliados cercanos.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)",
-      "El héroe se convierte en yag-mago durante 6 turnos. Este efecto no se puede descartar. El yag-mago tiene un 200% de ataque, un 150% de defensa y esta habilidad especial:\n[*]Vínculo eterno (Muy rápido)\n[*]Inflige un 300% de daño y 20 de demencia a todos los enemigos.\n[*]Revive a un aliado derrotado aleatorio con un 10% de VIT. (Este efecto de estado cambia la forma del objetivo.\n[*] Este efecto de estado determina la bonificación familiar y la habilidad especial de la nueva forma.\n[*]A los jefes, titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El héroe se convierte en yag-mago durante 6 turnos. Este efecto no se puede descartar. El yag-mago tiene un 200% de ataque, un 150% de defensa y esta habilidad especial:\n[*]Vínculo eterno (Muy rápido)\n[*]Inflige un 300% de daño y 20 de demencia a todos los enemigos.\n[*]Revive a un aliado derrotado aleatorio con un 10% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[*]A los jefes, titanes y titanes míticos no les afecta este efecto de estado.)",
+      "(Este efecto de estado cambia la forma del objetivo.\n[*] Este efecto de estado determina la bonificación familiar y la habilidad especial de la nueva forma.)"
      ]
     }
    ]
@@ -50564,7 +50565,7 @@
     {
      "id": "grim_awakening",
      "lines": [
-      "Revive a todos los aliados caídos con un 70% de VIT y 50 de demencia.",
+      "Revive a todos los aliados caídos con un 70% de VIT y 50 de demencia. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.)",
       "Todos los aliados reciben un 74% de defensa contra habilidades especiales durante 5 turnos.",
       "Si cualquier aliado, salvo el héroe, cae derrotado en 5 turnos, todos los enemigos reciben 400 de daño.",
       "Usar esta habilidad especial inflige 50 de demencia al héroe.",
@@ -52353,11 +52354,11 @@
       "[*]x 1 de carga de maná:",
       "[**]Potencia la vitalidad de todos los aliados en 450. La vitalidad potenciada puede exceder la VIT máxima.",
       "[*]x 2 de carga de maná:",
-      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 10% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 50% de revivir con un 10% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Todos los aliados recuperan 609 VIT durante 3 turnos.",
       "[*]x 3 de carga de maná:",
       "[**]Potencia la vitalidad de todos los aliados en 700. La vitalidad potenciada puede exceder la VIT máxima.",
-      "[**]Cada aliado derrotado tiene una probabilidad del 65% de revivir con un 27% de VIT.",
+      "[**]Cada aliado derrotado tiene una probabilidad del 65% de revivir con un 27% de VIT. (Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes otorgan un -50% de vitalidad para ese personaje.\n[***]Cuando un personaje revive con una habilidad especial, todas las revivificaciones con habilidades especiales siguientes tienen una probabilidad reducida del -50% para ese personaje.)",
       "[**]Todos los aliados recuperan 952 VIT durante 4 turnos."
      ]
     }

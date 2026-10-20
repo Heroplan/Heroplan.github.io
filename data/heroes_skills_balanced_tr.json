@@ -898,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[*]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "Tüm müttefikler, 5 tur boyunca% 50 saldırı alır. Saldırı, en fazla% 70 olmak üzere her turda% 5 artar.",
       "Tüm müttefikler 5 tur boyunca 1270 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir."
      ]
@@ -941,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 20 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[*]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "Her müttefik için eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
       "Tüm müttefikler 4 tur boyunca 612 SP yeniler"
      ]
@@ -1338,7 +1338,7 @@
     {
      "id": "toonsummers_dream_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 30 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 30 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[*]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "Tüm müttefikler 4 tur boyunca 1424 SP yeniler",
       "Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 5 mana alır.",
       "Element Bağlantısı tüm Doğa müttefiklerine 6 tur boyunca% 15 atak ve% 15 defans sağlar. Bu efekt bozulamaz."
@@ -2132,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir.",
+      "Her yenilen müttefik% 50 şansla% 24 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[*]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "Tüm müttefikler 4 tur boyunca 1080 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
       "Tüm düşmanlar 4 tur boyunca Özel Yetenekler karşıtı% -50 savunma alır. Karanlık karakterlerine karşı bu durum efekti arındırılamaz olur ve 2 tur daha uzun sürer."
      ]
@@ -2208,7 +2208,7 @@
       "[**]Hedef ve yakındaki düşmanlar 2 tur boyunca[#Dynamic] 222 [#]Yakma hasarı alır. Eylemci, verilen Yakma hasarının% 10 kadarını sağlık olarak emer.",
       "[**]Eylemci, sonraki 2 tur sırasında yenilirse bir sonraki turun başında% 40 sağlık ile dirilir. Eylemci yenildiğinde tüm durum efektleri ve istifler kaldırılır.",
       "[*] 2 kat Mana Hücumu:",
-      "[**]Her yenilen müttefik% 50 şansla% 50 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 50 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Tüm müttefikler 3 tur boyunca 795 güçlendirilmiş sağlık yeniler. Güçlendirilmiş sağlık, maks. SP'yi geçebilir.",
       "[**]Tüm müttefikler 3 boyunca alınan tüm hasarları% -60 oranında azaltır."
      ]
@@ -2936,18 +2936,18 @@
       "Özel Yetenek% 100 /% 200 /% 300 mana ile doldurulduğunda farklı bir efekt verir:",
       "[*] 1 kat Mana Hücumu:",
       "[**]Tüm müttefikler için% 15 sağlık yeniler.",
-      "[**]Her yenilen müttefik% 30 şansla% 30 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 30 şansla% 30 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Sonraki 2 tur boyunca tüm müttefikler turun sonunda% 10 mana alır.",
       "[*] 2 kat Mana Hücumu:",
       "[**]Tüm müttefikler için% 35 sağlık yeniler.",
-      "[**]Her yenilen müttefik% 40 şansla% 40 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 40 şansla% 40 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Tüm müttefiklerden 1 durum engelini arındırır. (Durum engelleri, alındıkları sırayla arındırılır. İlk önce son eklenen durum engelleri arındırılır.)",
       "[**]Sonraki 3 tur boyunca tüm müttefikler turun sonunda% 10 mana alır.",
       "[*] 3 kat Mana Hücumu:",
       "[**]Tüm müttefikler için% 55 sağlık yeniler.",
-      "[**]Her yenilen müttefik% 50 şansla% 60 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 60 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Tüm müttefiklerden durum engellerini arındırır.",
-      "[**]Sonraki 5 tur boyunca tüm müttefikler turun sonunda% 15 mana alır."
+      "[**]Sonraki 4 tur boyunca tüm müttefikler turun sonunda% 10 mana alır."
      ]
     }
    ]
@@ -3865,11 +3865,11 @@
       "[*] 1 kat Mana Hücumu:",
       "[**]Tüm müttefiklerin sağlığını 450 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
       "[*] 2 kat Mana Hücumu:",
-      "[**]Her yenilen müttefik% 50 şansla% 10 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 10 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Tüm müttefikler 3 tur boyunca 609 SP yeniler",
       "[*] 3 kat Mana Hücumu:",
       "[**]Tüm müttefiklerin sağlığını 700 artırır. Güçlendirilen sağlık, maks. SP'yi geçebilir.",
-      "[**]Her yenilen müttefik% 50 şansla% 32 SP ile dirilir.",
+      "[**]Her yenilen müttefik% 50 şansla% 32 SP ile dirilir. (Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az sağlık verir.\n[***]Bir karakter, bir Özel Yetenekle diriltildiğinde o karakter için sonraki tüm Özel Yetenek diriltmeleri% -50 daha az şansa sahip olur.)",
       "[**]Tüm müttefikler 4 tur boyunca 952 SP yeniler"
      ]
     }

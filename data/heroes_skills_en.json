@@ -282,7 +282,7 @@
      "lines": [
       "Deals 400% damage to all enemies.",
       "The damage is increased by 60% per each defeated enemy.",
-      "Each defeated ally has a 50% chance to get revived with 30% HP.",
+      "Each defeated ally has a 50% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "Deals extra damage against Dark."
      ]
     }
@@ -2376,7 +2376,7 @@
      "id": "booming_mend",
      "lines": [
       "Recovers 50% health for all allies.",
-      "Each defeated ally has a 40% chance to get revived with 30% HP.",
+      "Each defeated ally has a 40% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies have a 20% chance to drop any received damage to 1 for 3 turns."
      ]
     }
@@ -5900,7 +5900,7 @@
     {
      "id": "sapphire_eyes",
      "lines": [
-      "Each defeated ally has a 60% chance to get revived with 20% HP.",
+      "Each defeated ally has a 60% chance to get revived with 20% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies get 50% attack for 5 turns. The attack increases by 5% each turn, up to 70%.",
       "All allies regenerate 1270 boosted health over 5 turns. Boosted health can exceed max HP."
      ]
@@ -7028,7 +7028,7 @@
      "id": "super_porridge",
      "lines": [
       "Recovers 30% health for all allies.",
-      "Each defeated ally has a 50% chance to get revived with 10% HP.",
+      "Each defeated ally has a 50% chance to get revived with 10% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "Summons an Elf Minion for each ally with 10% HP and 10% attack inherited from the caster."
      ]
     }
@@ -7056,7 +7056,7 @@
     {
      "id": "hyper_porridge",
      "lines": [
-      "Each defeated ally has a 55% chance to get revived with 15% HP.",
+      "Each defeated ally has a 55% chance to get revived with 15% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "Summons an Elf Minion for each ally with 10% HP and 10% attack inherited from the caster.",
       "All allies regenerate 612 HP over 4 turns."
      ]
@@ -16086,7 +16086,7 @@
     {
      "id": "midsummers_dream",
      "lines": [
-      "Each defeated ally has a 33% chance to get revived with 23% HP.",
+      "Each defeated ally has a 33% chance to get revived with 23% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 712 HP over 4 turns.",
       "All allies receive a moderate amount of mana over 4 turns.",
       "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled."
@@ -16118,7 +16118,7 @@
     {
      "id": "toonsummers_dream",
      "lines": [
-      "Each defeated ally has a 60% chance to get revived with 30% HP.",
+      "Each defeated ally has a 60% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 1424 HP over 4 turns. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
       "For the next 4 turns, all allies receive 10% mana at the end of the turn. This status effect is undispellable and lasts 2 turns longer on Nature characters.",
       "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled. This status effect is undispellable and lasts 2 turns longer on Nature characters."
@@ -16145,7 +16145,7 @@
     {
      "id": "midsummers_reverie",
      "lines": [
-      "Each defeated ally has a 38% chance to get revived with 28% HP.",
+      "Each defeated ally has a 38% chance to get revived with 28% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 648 HP over 4 turns.",
       "All allies get 38% mana generation for 4 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)",
       "Element Link gives all Nature allies 15% attack and 15% defense for 6 turns. This effect can't be dispelled."
@@ -24923,7 +24923,7 @@
     {
      "id": "mending_stitches",
      "lines": [
-      "Each defeated ally has a 60% chance to get revived with 20% HP.",
+      "Each defeated ally has a 60% chance to get revived with 20% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 1080 boosted health over 4 turns. Boosted health can exceed max HP.",
       "All enemies get -50% defense against Special Skills for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer."
      ]
@@ -25900,7 +25900,7 @@
       "Deals 350% damage to the target and nearby enemies.",
       "The damage is increased by 50% per each defeated ally.",
       "All allies receive 50% defense for 4 turns. Defense is further increased by 10% for each defeated ally.",
-      "Has 100% chance to revive a random defeated ally with 50% HP."
+      "Has 100% chance to revive a random defeated ally with 50% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)"
      ]
     }
    ]
@@ -26968,7 +26968,7 @@
       "[**]Deals 250% damage to all enemies. Each hit has 60% accuracy.",
       "[**]All enemies receive[#Dynamic] 92 [#]Poison damage over 2 turns.",
       "[*]x 2 Mana Charge:",
-      "[**]Each defeated ally has a 44% chance to get revived with 40% HP.",
+      "[**]Each defeated ally has a 44% chance to get revived with 40% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]All allies regenerate 405 HP over 5 turns."
      ]
     }
@@ -27256,7 +27256,7 @@
      "id": "sewing_back_together",
      "lines": [
       "All allies regenerate 425 HP over 5 turns.",
-      "Each defeated ally has a 35% chance to get revived with 25% HP."
+      "Each defeated ally has a 35% chance to get revived with 25% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)"
      ]
     }
    ]
@@ -27992,7 +27992,7 @@
       "[**]The target and nearby enemies receive[#Dynamic] 158 [#]Burn damage over 2 turns.",
       "[**]If the caster is defeated during the next 2 turns, they are resurrected in the beginning of their next turn with 32% health. All status effects and stacks are removed when the caster is defeated.",
       "[*]x 2 Mana Charge:",
-      "[**]Each defeated ally has a 50% chance to get revived with 40% HP.",
+      "[**]Each defeated ally has a 50% chance to get revived with 40% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]All allies regenerate 714 HP over 3 turns.",
       "[**]All allies reduce all received damage by -50% for 3 turns."
      ]
@@ -28027,7 +28027,7 @@
       "[**]The target and nearby enemies receive[#Dynamic] 222 [#]Burn damage over 2 turns. The caster absorbs 10% of dealt Burn damage as health.",
       "[**]If the caster is defeated during the next 2 turns, they are resurrected in the beginning of their next turn with 40% health. All status effects and stacks are removed when the caster is defeated.",
       "[*]x 2 Mana Charge:",
-      "[**]Each defeated ally has a 55% chance to get revived with 44% HP.",
+      "[**]Each defeated ally has a 55% chance to get revived with 44% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]All allies regenerate 795 boosted health over 3 turns. Boosted health can exceed max HP.",
       "[**]All allies reduce all received damage by -60% for 3 turns."
      ]
@@ -28862,7 +28862,7 @@
      "lines": [
       "Recovers 25% health for all allies.",
       "Growth Boon: Recovers 2x extra health for each point of modified defense. (Extra health is based on the modified defense on the caster when healing is applied.\n[*]Up to maximum 600 of additional healing\n[*]Status effects affecting healing received do affect the healing scaling.)",
-      "Each defeated ally has a 35% chance to get revived with 35% HP.",
+      "Each defeated ally has a 35% chance to get revived with 35% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "Cleanses 1 status ailment from all allies. (Status ailments are cleansed in the order they have been received. The latest status ailments are cleansed first.)"
      ]
     }
@@ -31468,7 +31468,7 @@
     {
      "id": "liturgy_of_the_fallen",
      "lines": [
-      "Each defeated ally has a 40% chance to get revived with 20% HP.",
+      "Each defeated ally has a 40% chance to get revived with 20% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 666 HP over 4 turns, starting low and increasing every turn.",
       "All allies get 24% defense for 4 turns. The defense increases by 10% each turn, up to 54%."
      ]
@@ -40525,7 +40525,7 @@
      "id": "mixed_green_herbs",
      "lines": [
       "Recovers 30% health for all allies.",
-      "Each defeated ally has a 40% chance to get revived with 30% HP.",
+      "Each defeated ally has a 40% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies get a Moonrise Ward for 4 turns, that reduces incoming Special Skill damage by up to -800. Reduces damage by additional 30% when the attacker is of the Holy element.",
       "(Base damage reduction: -400\n[*]Damage reduction scales depending on the defender's defense and attacker's attack power.\n[*] Maximum damage reduction: -800\n[*] Minimum damage reduction: -200\n[*]Growth and Wither affect damage reduction scaling.\n[*]Buffs and status ailments affecting attack and defense do not affect damage reduction scaling.)"
      ]
@@ -41610,16 +41610,16 @@
       "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
       "[*]x 1 Mana Charge:",
       "[**]Recovers 15% health for all allies.",
-      "[**]Each defeated ally has a 30% chance to get revived with 30% HP.",
+      "[**]Each defeated ally has a 30% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]For the next 2 turns, all allies receive 10% mana at the end of the turn.",
       "[*]x 2 Mana Charge:",
       "[**]Recovers 35% health for all allies.",
-      "[**]Each defeated ally has a 40% chance to get revived with 40% HP.",
+      "[**]Each defeated ally has a 40% chance to get revived with 40% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]Cleanses 1 status ailment from all allies. (Status ailments are cleansed in the order they have been received. The latest status ailments are cleansed first.)",
       "[**]For the next 3 turns, all allies receive 10% mana at the end of the turn.",
       "[*]x 3 Mana Charge:",
       "[**]Recovers 55% health for all allies.",
-      "[**]Each defeated ally has a 60% chance to get revived with 60% HP.",
+      "[**]Each defeated ally has a 60% chance to get revived with 60% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]Cleanses status ailments from all allies.",
       "[**]For the next 5 turns, all allies receive 15% mana at the end of the turn."
      ]
@@ -44948,7 +44948,7 @@
      "id": "boon_of_gjallarhorn",
      "lines": [
       "Boosts health of all allies by 500. Boosted health can exceed max HP.",
-      "Each defeated ally has a 20% chance to get revived with 30% HP.",
+      "Each defeated ally has a 20% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies get 30% attack for 4 turns."
      ]
     }
@@ -44974,7 +44974,7 @@
      "id": "toon_boon_of_gjallarhorn",
      "lines": [
       "Boosts health of all allies by 1600. Boosted health can exceed max HP.",
-      "Each defeated ally has a 45% chance to get revived with 35% HP.",
+      "Each defeated ally has a 45% chance to get revived with 35% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies get 50% attack for 4 turns. This status effect is undispellable and lasts 2 turns longer on Nature characters."
      ]
     }
@@ -44993,7 +44993,7 @@
     {
      "id": "blessing_of_gjallarhorn",
      "lines": [
-      "Each defeated ally has a 50% chance to get revived with 20% HP.",
+      "Each defeated ally has a 50% chance to get revived with 20% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies get 50% attack for 4 turns.",
       "All allies regenerate 672 boosted health over 4 turns. Boosted health can exceed max HP."
      ]
@@ -46224,7 +46224,7 @@
     {
      "id": "elders_remedy",
      "lines": [
-      "Each defeated ally has a 33% chance to get revived with 23% HP.",
+      "Each defeated ally has a 33% chance to get revived with 23% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies receive a small amount of mana over 4 turns."
      ]
     }
@@ -46248,7 +46248,7 @@
     {
      "id": "gardeners_remedy",
      "lines": [
-      "Each defeated ally has a 33% chance to get revived with 23% HP.",
+      "Each defeated ally has a 33% chance to get revived with 23% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "All allies regenerate 324 HP over 4 turns."
      ]
     }
@@ -50480,7 +50480,8 @@
       "The caster and nearby allies receive a moderate amount of mana over 6 turns.",
       "Casting this Special Skill inflicts 35 Insanity on nearby allies.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)",
-      "The caster turns into a Yag-Mago for 6 turns. This effect can't be dispelled. The Yag-Mago has 200% attack, 150% defense and the following Special Skill:\n[*]Eternal Bond (Very Fast)\n[*]Deals 300% damage to all enemies and inflicts 20 Insanity on them.\n[*]Revives a random defeated ally with 10% HP. (This status effect transforms the target into a different form.\n[*]The Family Bonus and Special Skill of the new form are determined by this status effect.\n[*]Bosses, Titans and Mythic Titans are not affected by this status effect.)"
+      "The caster turns into a Yag-Mago for 6 turns. This effect can't be dispelled. The Yag-Mago has 200% attack, 150% defense and the following Special Skill:\n[*]Eternal Bond (Very Fast)\n[*]Deals 300% damage to all enemies and inflicts 20 Insanity on them.\n[*]Revives a random defeated ally with 10% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]Bosses, Titans and Mythic Titans are not affected by this status effect.)",
+      "(This status effect transforms the target into a different form.\n[*]The Family Bonus and Special Skill of the new form are determined by this status effect.)"
      ]
     }
    ]
@@ -50564,7 +50565,7 @@
     {
      "id": "grim_awakening",
      "lines": [
-      "Revives all allies with 70% HP and 50 Insanity.",
+      "Revives all allies with 70% HP and 50 Insanity. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.)",
       "All allies get 74% defense against Special Skills for 5 turns.",
       "If any ally except the caster is defeated in 5 turns, all enemies receive 400 damage.",
       "Casting this Special Skill inflicts 50 Insanity on the caster.",
@@ -52353,11 +52354,11 @@
       "[*]x 1 Mana Charge:",
       "[**]Boosts health of all allies by 450. Boosted health can exceed max HP.",
       "[*]x 2 Mana Charge:",
-      "[**]Each defeated ally has a 50% chance to get revived with 10% HP.",
+      "[**]Each defeated ally has a 50% chance to get revived with 10% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]All allies regenerate 609 HP over 3 turns.",
       "[*]x 3 Mana Charge:",
       "[**]Boosts health of all allies by 700. Boosted health can exceed max HP.",
-      "[**]Each defeated ally has a 65% chance to get revived with 27% HP.",
+      "[**]Each defeated ally has a 65% chance to get revived with 27% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[***]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "[**]All allies regenerate 952 HP over 4 turns."
      ]
     }

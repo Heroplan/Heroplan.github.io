@@ -282,7 +282,7 @@
      "lines": [
       "Påfører 400% skade på alle fiender.",
       "Skaden øker med 60% for hver beseirede fiende.",
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 30% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Påfører ekstra skade mot mørke."
      ]
     }
@@ -2376,7 +2376,7 @@
      "id": "booming_mend",
      "lines": [
       "Få tilbake 50% helse til alle allierte.",
-      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 30% HP.",
+      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte har 20% mulighet til å redusere all mottatt skade i 1 i 3 runder."
      ]
     }
@@ -5900,7 +5900,7 @@
     {
      "id": "sapphire_eyes",
      "lines": [
-      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 20% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte får 50% angrep i 5 runder. Angrepet øker med 5% hver runde opptil 70%.",
       "Alle allierte regenererer 1270 økt helse over 5 runder. Økt helse kan overskrider maks HP."
      ]
@@ -7028,7 +7028,7 @@
      "id": "super_porridge",
      "lines": [
       "Få tilbake 30% helse til alle allierte.",
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 10% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 10% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Fremkaller en alv-undersått for hver allierte med 10% HP og 10% angrep nedarvet fra brukeren."
      ]
     }
@@ -7056,7 +7056,7 @@
     {
      "id": "hyper_porridge",
      "lines": [
-      "Hver beseirede allierte har en 55% sjanse til å gjenopplives med 15% HP.",
+      "Hver beseirede allierte har en 55% sjanse til å gjenopplives med 15% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Fremkaller en alv-undersått for hver allierte med 10% HP og 10% angrep nedarvet fra brukeren.",
       "Alle allierte regenererer 612 HP over 4 runder."
      ]
@@ -16086,7 +16086,7 @@
     {
      "id": "midsummers_dream",
      "lines": [
-      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP.",
+      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 712 HP over 4 runder.",
       "Alle allierte mottar et moderat antall mana over 4 runder.",
       "Elementlink gir alle natur-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes."
@@ -16118,7 +16118,7 @@
     {
      "id": "toonsummers_dream",
      "lines": [
-      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 30% HP.",
+      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 1424 HP over 4 runder. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer.",
       "De neste 4 rundene mottar alle allierte 10% mana når runden er over. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer.",
       "Elementlink gir alle natur-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer."
@@ -16145,7 +16145,7 @@
     {
      "id": "midsummers_reverie",
      "lines": [
-      "Hver beseirede allierte har en 38% sjanse til å gjenopplives med 28% HP.",
+      "Hver beseirede allierte har en 38% sjanse til å gjenopplives med 28% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 648 HP over 4 runder.",
       "Alle allierte får 38% mana-generering i 4 runder. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
       "Elementlink gir alle natur-allierte 15% angrep og 15% forsvar i 6 runder. Denne effekten kan ikke fjernes."
@@ -24923,7 +24923,7 @@
     {
      "id": "mending_stitches",
      "lines": [
-      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 60% sjanse til å gjenopplives med 20% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 1080 økt helse over 4 runder. Økt helse kan overskrider maks HP.",
       "Alle fiender får -50% forsvar mot spesialferdigheter i 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger."
      ]
@@ -25900,7 +25900,7 @@
       "Påfører 350% skade på målet og fiender i nærheten.",
       "Skaden øker med 50% for hver beseirede alliert.",
       "Alle allierte mottar 50% forsvar i 4 runder. Forsvaret økes ytterligere med 10% for hver beseirede alliert.",
-      "Har en 100% sjanse til å gjenopplive en tilfeldig beseiret alliert med 50% HP."
+      "Har en 100% sjanse til å gjenopplive en tilfeldig beseiret alliert med 50% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)"
      ]
     }
    ]
@@ -26968,7 +26968,7 @@
       "[**]Påfører 250% skade på alle fiender. Hver treff har 60% presisjon.",
       "[**]Alle fiender tar[#Dynamic] 92 [#]giftskade over 2 runder.",
       "[*]x 2 manaladning",
-      "[**]Hver beseirede allierte har en 44% sjanse til å gjenopplives med 40% HP.",
+      "[**]Hver beseirede allierte har en 44% sjanse til å gjenopplives med 40% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Alle allierte regenererer 405 HP over 5 runder."
      ]
     }
@@ -27256,7 +27256,7 @@
      "id": "sewing_back_together",
      "lines": [
       "Alle allierte regenererer 425 HP over 5 runder.",
-      "Hver beseirede allierte har en 35% sjanse til å gjenopplives med 25% HP."
+      "Hver beseirede allierte har en 35% sjanse til å gjenopplives med 25% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)"
      ]
     }
    ]
@@ -27992,7 +27992,7 @@
       "[**]Målet og fiender i nærheten tar[#Dynamic] 158 [#]brannskade over 2 runder.",
       "[**]Dersom brukeren beseires i løpet av de neste 2 rundene, gjenopplives de i begynnelsen av neste runde med 32% helse. Alle statustilstander og stabler fjernes når brukeren beseires.",
       "[*]x 2 manaladning",
-      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 40% HP.",
+      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 40% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Alle allierte regenererer 714 HP over 3 runder.",
       "[**]Allierte tar -50% mindre skade i 3 runder."
      ]
@@ -28027,7 +28027,7 @@
       "[**]Målet og fiender i nærheten tar[#Dynamic] 222 [#]brannskade over 2 runder. Brukeren absorberer 10% av påført brannskade som helse.",
       "[**]Dersom brukeren beseires i løpet av de neste 2 rundene, gjenopplives de i begynnelsen av neste runde med 40% helse. Alle statustilstander og stabler fjernes når brukeren beseires.",
       "[*]x 2 manaladning",
-      "[**]Hver beseirede allierte har en 55% sjanse til å gjenopplives med 44% HP.",
+      "[**]Hver beseirede allierte har en 55% sjanse til å gjenopplives med 44% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Alle allierte regenererer 795 økt helse over 3 runder. Økt helse kan overskrider maks HP.",
       "[**]Allierte tar -60% mindre skade i 3 runder."
      ]
@@ -28862,7 +28862,7 @@
      "lines": [
       "Få tilbake 25% helse til alle allierte.",
       "Vekstvelsignelse: Gir tilbake 2x ekstra helse for hvert punkt med modifisert forsvar. (Ekstra helse er basert på det modifiserte forsvar på bruker når helbreding påføres.\n[*]Opptil maksimalt 600 med ekstra helbredelse.\n[*]Statuseffekter som påvirker helse mottatt, påvirker skaleringen til helbredelse.)",
-      "Hver beseirede allierte har en 35% sjanse til å gjenopplives med 35% HP.",
+      "Hver beseirede allierte har en 35% sjanse til å gjenopplives med 35% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Renser bort 1 statuslidelse fra alle allierte. (Statuslidelser fjernes i rekkefølgen de er mottatt. De siste statuslidelsene fjernes først.)"
      ]
     }
@@ -31468,7 +31468,7 @@
     {
      "id": "liturgy_of_the_fallen",
      "lines": [
-      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 20% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 666 HP over 4 runder, som begynner lavt og øker hver runde.",
       "Alle allierte i nærheten får 24% forsvar i 4 runder. Forsvaret øker med 10% hver runde opptil 54%."
      ]
@@ -40525,7 +40525,7 @@
      "id": "mixed_green_herbs",
      "lines": [
       "Få tilbake 30% helse til alle allierte.",
-      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 30% HP.",
+      "Hver beseirede allierte har en 40% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte får en måneoppgangvokter i 4 runder som reduserer innkommende skade fra spesialferdighet med opptil -800. Reduserer skade med ytterligere 30% når angriperen er av hellig-element.",
       "(Reduksjon av grunnskade: -400\n[*]Skadereduksjonskalering avhenger av forsvarerens forsvar og angriperens angrep.\n[*] Maksimal skadereduksjon: 800\n[*] Minimum skadereduksjon: 200\n[*]Vekst og visning påvirker skalering av skadereduksjon.\n[*]Økninger og statuslidelser som påvirker angrep og forsvar, påvirker ikke skaleringen av skadereduksjon.)"
      ]
@@ -41610,16 +41610,16 @@
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% / 300% mana:",
       "[*]x 1 manaladning",
       "[**]Få tilbake 15% helse til alle allierte.",
-      "[**]Hver beseirede allierte har en 30% sjanse til å gjenopplives med 30% HP.",
+      "[**]Hver beseirede allierte har en 30% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]De neste 2 rundene mottar alle allierte 10% mana når runden er over.",
       "[*]x 2 manaladning",
       "[**]Få tilbake 35% helse til alle allierte.",
-      "[**]Hver beseirede allierte har en 40% sjanse til å gjenopplives med 40% HP.",
+      "[**]Hver beseirede allierte har en 40% sjanse til å gjenopplives med 40% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Renser bort 1 statuslidelse fra alle allierte. (Statuslidelser fjernes i rekkefølgen de er mottatt. De siste statuslidelsene fjernes først.)",
       "[**]De neste 3 rundene mottar alle allierte 10% mana når runden er over.",
       "[*]x 3 manaladning",
       "[**]Få tilbake 55% helse til alle allierte.",
-      "[**]Hver beseirede allierte har en 60% sjanse til å gjenopplives med 60% HP.",
+      "[**]Hver beseirede allierte har en 60% sjanse til å gjenopplives med 60% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Renser bort statuslidelser fra alle allierte.",
       "[**]De neste 5 rundene mottar alle allierte 15% mana når runden er over."
      ]
@@ -44948,7 +44948,7 @@
      "id": "boon_of_gjallarhorn",
      "lines": [
       "Øker helsen til alle allierte med 500. Økt helse kan overskride maks HP.",
-      "Hver beseirede allierte har en 20% sjanse til å gjenopplives med 30% HP.",
+      "Hver beseirede allierte har en 20% sjanse til å gjenopplives med 30% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte får 30% angrep i 4 runder."
      ]
     }
@@ -44974,7 +44974,7 @@
      "id": "toon_boon_of_gjallarhorn",
      "lines": [
       "Øker helsen til alle allierte med 1600. Økt helse kan overskride maks HP.",
-      "Hver beseirede allierte har en 45% sjanse til å gjenopplives med 35% HP.",
+      "Hver beseirede allierte har en 45% sjanse til å gjenopplives med 35% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte får 50% angrep i 4 runder. Denne statuseffekten kan ikke fjernes og varer 2 runder lenger på natur-figurer."
      ]
     }
@@ -44993,7 +44993,7 @@
     {
      "id": "blessing_of_gjallarhorn",
      "lines": [
-      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 20% HP.",
+      "Hver beseirede allierte har en 50% sjanse til å gjenopplives med 20% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte får 50% angrep i 4 runder.",
       "Alle allierte regenererer 672 økt helse over 4 runder. Økt helse kan overskrider maks HP."
      ]
@@ -46224,7 +46224,7 @@
     {
      "id": "elders_remedy",
      "lines": [
-      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP.",
+      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte mottar en liten mengde mana over 4 runder."
      ]
     }
@@ -46248,7 +46248,7 @@
     {
      "id": "gardeners_remedy",
      "lines": [
-      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP.",
+      "Hver beseirede allierte har en 33% sjanse til å gjenopplives med 23% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "Alle allierte regenererer 324 HP over 4 runder."
      ]
     }
@@ -50480,7 +50480,8 @@
       "Brukeren og allierte i nærheten mottar en moderat mengde mana gjennom 6 runder.",
       "Bruk av denne spesialferdigheten påfører allierte i nærheten 35 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)",
-      "Brukeren blir til et Forbannet maleri i 6 runder. Denne effekten kan ikke fjernes. Yag-Mago har 200% angrep, 150% forsvar og følgende spesialferdighet:\n[*]Evig bånd (Svært rask)\n[*]Gjør 300% skade på alle fiender og påfører dem 20 galskap.\n[*]Gjenoppliv en tilfeldig beseiret alliert med 10% HP. (Denne statuseffekten transformerer målet til en annen form.\n[*]Familiebonusen og spesialferdigheten til den nye formen avgjøres av denne statuseffekten.\n[*]Sjefer, titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Brukeren blir til et Forbannet maleri i 6 runder. Denne effekten kan ikke fjernes. Yag-Mago har 200% angrep, 150% forsvar og følgende spesialferdighet:\n[*]Evig bånd (Svært rask)\n[*]Gjør 300% skade på alle fiender og påfører dem 20 galskap.\n[*]Gjenoppliv en tilfeldig beseiret alliert med 10% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[*]Sjefer, titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)",
+      "(Denne statuseffekten transformerer målet til en annen form.\n[*]Familiebonusen og spesialferdigheten til den nye formen avgjøres av denne statuseffekten.)"
      ]
     }
    ]
@@ -50564,7 +50565,7 @@
     {
      "id": "grim_awakening",
      "lines": [
-      "Gjenoppliver alle allierte med 70% HP og 50 galskap.",
+      "Gjenoppliver alle allierte med 70% HP og 50 galskap. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.)",
       "Alle allierte får 74% forsvar mot spesialferdigheter i 5 runder.",
       "Hvis en alliert, med unntak av brukeren, beseires på 5 runder, tar alle fiender 400 skade.",
       "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
@@ -52353,11 +52354,11 @@
       "[*]x 1 manaladning",
       "[**]Øker helsen til alle allierte med 450. Økt helse kan overskride maks HP.",
       "[*]x 2 manaladning",
-      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 10% HP.",
+      "[**]Hver beseirede allierte har en 50% sjanse til å gjenopplives med 10% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Alle allierte regenererer 609 HP over 3 runder.",
       "[*]x 3 manaladning",
       "[**]Øker helsen til alle allierte med 700. Økt helse kan overskride maks HP.",
-      "[**]Hver beseirede allierte har en 65% sjanse til å gjenopplives med 27% HP.",
+      "[**]Hver beseirede allierte har en 65% sjanse til å gjenopplives med 27% HP. (Når en figur gjenopplives av en spesialferdighet, gir alle påfølgende spesialferdigheters gjenopplivning -50% mindre helse for den figuren.\n[***]Når en figur gjenopplives av en spesialferdighet, har alle påfølgende spesialferdigheters gjenopplivning -50% redusert sjanse for den figuren.)",
       "[**]Alle allierte regenererer 952 HP over 4 runder."
      ]
     }

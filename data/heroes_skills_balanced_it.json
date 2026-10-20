@@ -904,7 +904,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 24% di HP.",
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 24% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[*]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "Tutti gli alleati ricevono il 50% di Attacco per 5 turni. L'Attacco aumenta del 5% a ogni turno, fino a un massimo del 70%.",
       "Tutti gli alleati ottengono 1270 punti Salute in più nel corso di 5 turni. La Salute potenziata può superare gli HP massimi."
      ]
@@ -947,7 +947,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 20% di HP.",
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 20% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[*]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "Chiama un servitore elfo per ogni alleato con il 10% di HP e il 10% di Attacco ereditati dall'evocatore.",
       "Tutti gli alleati recuperano 612 HP nel corso di 4 turni."
      ]
@@ -1344,7 +1344,7 @@
     {
      "id": "toonsummers_dream_mayhem",
      "lines": [
-      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 30% di HP.",
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 30% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[*]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "Tutti gli alleati recuperano 1424 HP nel corso di 4 turni.",
       "Per i prossimi 4 turni, tutti gli alleati ricevono il 5% di mana alla fine del turno.",
       "Collegamento elementale fornisce a tutti gli alleati Natura 15% Attacco e 15% Difesa per 6 turni. Questo effetto non può essere annullato."
@@ -2138,7 +2138,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 24% di HP.",
+      "Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 24% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[*]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "Tutti gli alleati ottengono 1080 punti Salute in più nel corso di 4 turni. La Salute potenziata può superare gli HP massimi.",
       "Tutti i nemici ricevono -50% Difesa dalle Abilità speciali per 4 turni. Contro i personaggi di tipo Oscurità, questo effetto di stato diventa non rimovibile e dura 2 turni in più."
      ]
@@ -2214,7 +2214,7 @@
       "[**]Il bersaglio e i nemici vicini subiscono[#Dynamic] 222 [#]danni da ustione nel corso di 2 turni. L'evocatore assorbe il 10% di danni da ustione inflitti come Salute.",
       "[**]Se l'evocatore viene sconfitto nei prossimi 2 turni, viene rianimato all'inizio del suo turno successivo con il 40% di Salute. Tutti gli effetti di stato e le iterazioni vengono rimossi al momento della sconfitta.",
       "[*]Carica di mana x 2:",
-      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 50% di HP.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 50% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Tutti gli alleati ottengono 795 punti Salute in più nel corso di 3 turni. La Salute potenziata può superare gli HP massimi.",
       "[**]Tutti gli alleati riducono tutti i danni subiti del -60% per 3 turni."
      ]
@@ -2942,18 +2942,18 @@
       "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% / 300% di mana:",
       "[*]Carica di mana x 1:",
       "[**]Fa recuperare il 15% di Salute a tutti gli alleati.",
-      "[**]Ogni alleato sconfitto ha il 30% di probabilità di rinascere col 30% di HP.",
+      "[**]Ogni alleato sconfitto ha il 30% di probabilità di rinascere col 30% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Per i prossimi 2 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno.",
       "[*]Carica di mana x 2:",
       "[**]Fa recuperare il 35% di Salute a tutti gli alleati.",
-      "[**]Ogni alleato sconfitto ha il 40% di probabilità di rinascere col 40% di HP.",
+      "[**]Ogni alleato sconfitto ha il 40% di probabilità di rinascere col 40% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Rimuove 1 disturbo da tutti gli alleati. (I disturbi vengono rimossi nell'ordine in cui sono stati ricevuti. I disturbi più recenti vengono rimossi per primi.)",
       "[**]Per i prossimi 3 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno.",
       "[*]Carica di mana x 3:",
       "[**]Fa recuperare il 55% di Salute a tutti gli alleati.",
-      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 60% di HP.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 60% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Rimuove i disturbi di tutti gli alleati.",
-      "[**]Per i prossimi 5 turni, tutti gli alleati ricevono il 15% di mana alla fine del turno."
+      "[**]Per i prossimi 4 turni, tutti gli alleati ricevono il 10% di mana alla fine del turno."
      ]
     }
    ]
@@ -3871,11 +3871,11 @@
       "[*]Carica di mana x 1:",
       "[**]Aumenta di 450 la Salute di tutti gli alleati. La Salute potenziata può superare gli HP massimi.",
       "[*]Carica di mana x 2:",
-      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 10% di HP.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 10% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Tutti gli alleati recuperano 609 HP nel corso di 3 turni.",
       "[*]Carica di mana x 3:",
       "[**]Aumenta di 700 la Salute di tutti gli alleati. La Salute potenziata può superare gli HP massimi.",
-      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 32% di HP.",
+      "[**]Ogni alleato sconfitto ha il 50% di probabilità di rinascere col 32% di HP. (Quando un personaggio viene rianimato da un'Abilità speciale, tutte le successive rianimazioni tramite Abilità speciali ripristinano il -50% di Salute in meno a quel personaggio.\n[***]Quando un personaggio viene rianimato da un'Abilità speciale, le probabilità di tutte le successive rianimazioni tramite Abilità speciali per quel personaggio vengono ridotte del -50%.)",
       "[**]Tutti gli alleati recuperano 952 HP nel corso di 4 turni."
      ]
     }

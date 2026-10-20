@@ -898,7 +898,7 @@
     {
      "id": "sapphire_eyes_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[*]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "Todos os aliados recebem 50% de ataque por 5 turnos. O ataque aumenta em 5% a cada turno, até o limite de 70%.",
       "Todos os aliados recuperam 1270 de vida reforçada ao longo de 5 turnos. A vida reforçada pode exceder o limite de PV."
      ]
@@ -941,7 +941,7 @@
     {
      "id": "hyper_porridge_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 20% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[*]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "Convoca um ajudante Elfo para cada aliado. O ajudante herda 10% de PV e 10% de ataque do invocador.",
       "Todos os aliados regeneram 612 PV por 4 turnos."
      ]
@@ -1338,7 +1338,7 @@
     {
      "id": "toonsummers_dream_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 30% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 30% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[*]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "Todos os aliados regeneram 1424 PV por 4 turnos.",
       "Durante os 4 turnos seguintes, todos os aliados recebem 5% de mana ao fim do turno.",
       "Vinculo elemental dá a todos os aliados de natureza 15% de ataque e 15% de defesa por 6 turnos. Este efeito não pode ser dissipado."
@@ -2132,7 +2132,7 @@
     {
      "id": "mending_stitches_mayhem",
      "lines": [
-      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV.",
+      "Cada aliado derrotado tem 50% de chance de ser revivido com 24% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[*]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "Todos os aliados recuperam 1080 de vida reforçada ao longo de 4 turnos. A vida reforçada pode exceder o limite de PV.",
       "Todos os inimigos ganham -50% de defesa contra habilidades especiais por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos."
      ]
@@ -2208,7 +2208,7 @@
       "[**]O alvo e os inimigos próximos recebem[#Dynamic] 222 [#]de dano de queimadura por 2 turnos. O invocador absorve 10% do dano de queimadura como vida.",
       "[**]Se derrotado durante os próximos 2 turnos, o invocador ressuscita no começo do turno seguinte com 40% de vida. Todos os efeitos de status e acumulações são removidos quando o invocador é derrotado.",
       "[*]x 2 carga de mana:",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 50% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 50% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Todos os aliados recuperam 795 de vida reforçada ao longo de 3 turnos. A vida reforçada pode exceder o limite de PV.",
       "[**]Todos os aliados reduzem todo o dano recebido em -60% por 3 turnos."
      ]
@@ -2936,18 +2936,18 @@
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
       "[*]x 1 carga de mana:",
       "[**]Restaura 15% da vida de todos os aliados.",
-      "[**]Cada aliado derrotado tem 30% de chance de ser revivido com 30% de PV.",
+      "[**]Cada aliado derrotado tem 30% de chance de ser revivido com 30% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Durante os 2 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno.",
       "[*]x 2 carga de mana:",
       "[**]Restaura 35% da vida de todos os aliados.",
-      "[**]Cada aliado derrotado tem 40% de chance de ser revivido com 40% de PV.",
+      "[**]Cada aliado derrotado tem 40% de chance de ser revivido com 40% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Expurga 1 mal de status de todos os aliados. (Os males de status são expurgados na ordem em que foram recebidos. Os males de status mais recentes são expurgados primeiro.)",
       "[**]Durante os 3 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno.",
       "[*]x 3 carga de mana:",
       "[**]Restaura 55% da vida de todos os aliados.",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 60% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 60% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Expurga os males de status de todos os aliados.",
-      "[**]Durante os 5 turnos seguintes, todos os aliados recebem 15% de mana ao fim do turno."
+      "[**]Durante os 4 turnos seguintes, todos os aliados recebem 10% de mana ao fim do turno."
      ]
     }
    ]
@@ -3865,11 +3865,11 @@
       "[*]x 1 carga de mana:",
       "[**]Aumenta a vida de todos os aliados em 450. A vida reforçada pode exceder o limite de PV.",
       "[*]x 2 carga de mana:",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 10% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 10% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Todos os aliados regeneram 609 PV por 3 turnos.",
       "[*]x 3 carga de mana:",
       "[**]Aumenta a vida de todos os aliados em 700. A vida reforçada pode exceder o limite de PV.",
-      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 32% de PV.",
+      "[**]Cada aliado derrotado tem 50% de chance de ser revivido com 32% de PV. (Depois que um personagem é revivido por uma habilidade especial, recebe -50% menos vida ao reviver com habilidades especiais subsequentes.\n[***]Depois que um personagem é revivido por uma habilidade especial, a chance de que ele reviva com habilidades especiais subsequentes diminui em -50%.)",
       "[**]Todos os aliados regeneram 952 PV por 4 turnos."
      ]
     }

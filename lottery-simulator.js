@@ -1817,20 +1817,23 @@ function officialNameKey(heroId) {
  *     · 默认容器（`SummonViewController` 两张 6 元素表）= 2 列 × 3 行，x = ±120、y = -260/-520/-780，
  *       横排表 = 子节点 [0,1,2,3,4,5]（逐行左右交替）、竖排表 = [0,2,4,1,3,5]（先填满一列 3 格）
  *     · `AtlantisShowcaseController`（S2 主题）= **4 格一行**：`HeroLeft(100,-130) HeroLeftSmall(270,-120)
- *       HeroRightSmall(-270,-120) HeroRight(-100,-130)` ⇒ 中间大图**左右各 2**、每列 2 格、先填左列
+ *       HeroRightSmall(-270,-120) HeroRight(-100,-130)`；但这四个 x 是**边锚**的偏移，不是中心锚：
+ *       HeroLeft/HeroLeftSmall 的 anchor=(0,1)（左上角起算，x 越大越靠内），HeroRight/HeroRightSmall 的
+ *       anchor=(1,1)（右上角起算，x 越负越靠内）⇒ 屏幕 L→R 恰好等于序列化表序（见下）。
  *     · `LeagueShowcaseController` = 6 格，但顺序是**先右列 3 格再左列 3 格**（站点暂无 League 池，未接）
  *     · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排 3 格等效）
- *   实测 x>0 是**屏幕左**（容器镜像）⇒ 两张表的第 0 项都在站点左列，与盟约截图一致。
+ *   默认容器的 6 格是中心锚（±120），实测 x>0 在屏幕上**偏左**（容器镜像）⇒ 横排表第 0 项落在站点左列，
+ *   与盟约截图一致；S2 是边锚，不能把这条套过来。
  *   选横排表的判据 `v86 == 4`：`v86` = 展示条目数。
  */
 /*
- * 各主题的**格子表**（站点坐标 = [列(0=左), 行(0=顶)]；官方 x>0 是屏幕左，容器镜像）。
- * 表本身是扫序列化字节得到的（脚本 `配置数据更新/逆向取证/_all_lists.py`）：
+ * 各主题的**格子表**（站点坐标 = [列(0=左), 行(0=顶)]）：
  *   · 默认容器 `SummonViewController`：两张 6 元素表（偏移 0x0E8 = 横排、0x134 = 竖排，按 dump.cs 声明顺序），
  *     几何 = 2 列 × 3 行（x = ±120、y = -260/-520/-780），子节点序 = (右,左)×行1..行3
  *     ⇒ 横排 = sib[0,1,2,3,4,5]（逐行左右交替）、竖排 = sib[0,2,4,1,3,5]（先填满一列 3 格）
- *   · `AtlantisShowcaseController`（S2）= 4 格一行 `HeroLeft(+100) HeroLeftSmall(+270) HeroRightSmall(-270) HeroRight(-100)`
- *     ⇒ **左右各 2**；该容器两种读法在站点 DOM 下同形
+ *   · `AtlantisShowcaseController`（S2）= 4 格一行，引擎按 `_customFeaturedPortraits` 表序依次填
+ *     （`ConfigureFeaturedPortraits` 0x1AD06D0：entity[i] → portraits[startIndex+i]），边锚又让表序
+ *     恰好等于屏幕 L→R ⇒ 站点左列 = 表项 0、1，右列 = 表项 2、3（不是默认容器那种 2×2 行列交替）。
  *   · `LeagueShowcaseController` = 6 格但**先填右列**（站点暂无 League 池，未接）
  *   · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排前 3 格同形）
  */
@@ -1840,8 +1843,11 @@ const FEATURED_CELL_SEQUENCES = {
         horizontal: [[0, 0], [1, 0], [0, 1], [1, 1], [0, 2], [1, 2]],
     },
     atlantis: {
+        // S2 的 4 格是**一组一行**：HeroLeft/HeroLeftSmall 锚在左上角、HeroRightSmall/HeroRight 锚在右上角
+        //   ⇒ 屏幕 L→R 恰好就是序列化表序 [HeroLeft, HeroLeftSmall, HeroRightSmall, HeroRight]。
+        //   官方反正也不看横/竖排（有自定义表就直接按表序填 `ConfigureFeaturedPortraits`），两张表同值。
         vertical: [[0, 0], [0, 1], [1, 0], [1, 1]],
-        horizontal: [[0, 0], [1, 0], [0, 1], [1, 1]],
+        horizontal: [[0, 0], [0, 1], [1, 0], [1, 1]],
     },
 };
 

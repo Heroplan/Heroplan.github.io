@@ -495,273 +495,29 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
 // --- 关键词高亮逻辑 ---
 
 /**
- * 用于关键词高亮的字典，按语言和数据类型分离。
+ * 关键字词表来自 `langs_json/highlight_<码>.json`（`_tools/gen_highlight_terms.py`
+ * 从游戏本地化表生成），组名 → 渲染标记。
  */
-const highlightDictionaries = {
-    en: {
-        // 英文通用字典
-        common: {
-            'Dark': '[##elementpurple]Dark[#]',
-            'Nature': '[##elementgreen]Nature[#]',
-            'Fire': '[##elementred]Fire[#]',
-            'Holy': '[##elementyellow]Holy[#]',
-            'Ice': '[##elementblue]Ice[#]',
-            'Mindless Attack': '[##elementred]Mindless Attack[#]',
-            'Mindless Heal': '[##elementred]Mindless Heal[#]',
-            'Max stacks: 10': '[##elementred]Max stacks: 10[#]',
-            'Stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
-            'stack (Max: 10)': '[##elementred]Stack (Max: 10)[#]',
-            'stacks': '[##elementred]stacks[#]',
-            'stack': '[##elementred]stack[#]',
-            'Soul Bound': '[##elementred]Soul Bound[#]',
-            'Greed': '[##elementred]Greed[#]',
-            'Deep Sleep': '[##elementred]Deep Sleep[#]',
-            'falls asleep': '[##elementred]falls asleep[#]',
-            'fall asleep': '[##elementred]fall asleep[#]',
-            'asleep': '[##elementred]asleep[#]',
-            'Wither': '[##elementred]Wither[#]',
-            'spreads': '[##elementred]spreads[#]',
-            'Mana generation': '[#!]Mana generation[#]',
-            'mana generation': '[#!]mana generation[#]',
-            'Mana': '[#!]Mana[#]',
-            'mana': '[#!]mana[#]',
-            'accuracy': '[##elementyellow]accuracy[#]',
-            'never misses': '[##elementyellow]never misses[#]',
-            'Growth': '[##elementgreen]Growth[#]',
-            'Growth Boon': '[##elementgreen]Growth Boon[#]',
-            'reflects': '[##elementred]reflects[#]',
-            'reflect': '[##elementred]reflect[#]',
-            'steals': '[##elementred]steals[#]',
-            'steal': '[##elementred]steal[#]',
-            'critical': '[##elementred]critical[#]',
-            'immune to new status ailments': '[#!]immune to new status ailments[#]',
-            'immune to new status effect buffs': '[##elementred]immune to new status effect buffs[#]',
-            'immune': '[##elementgreen]immune[#]',
-            'dodge': '[#!]dodge[#]',
-            'bypasses': '[#!]bypasses[#]',
-            'Taunt': '[##elementred]Taunt[#]',
-            'silenced': '[##elementred]silenced[#]',
-            'Safely cleanses': '[##elementgreen]Safely cleanses[#]',
-            'safely cleanses': '[##elementgreen]safely cleanses[#]',
-            'safely cleanse': '[##elementgreen]safely cleanse[#]',
-            'Safely dispels': '[##elementgreen]Safely dispels[#]',
-            'safely dispels': '[##elementgreen]safely dispels[#]',
-            'safely dispel': '[##elementgreen]safely dispel[#]',
-            'cleanable': '[#!]cleanable[#]',
-            'Cleanses': '[##elementgreen]Cleanses[#]',
-            'undispellable': '[##elementgreen]undispellable[#]',
-            'dispellable': '[#!]dispellable[#]',
-            'Dispels': '[#!]Dispels[#]',
-            'revived': '[##elementgreen]revived[#]',
-            'revive': '[##elementgreen]revive[#]',
-            'drop any received damage': '[##elementyellow]drop any received damage[#]',
-            'reduce all received damage': '[##elementyellow]reduce all received damage[#]',
-            'Full Removal': '[#!]Full Removal[#]',
-            'Blocks': '[##elementred]Blocks[#]',
-            'block': '[##elementred]block[#]',
-            'prevents': '[##elementred]prevents[#]',
-            'prevent': '[##elementred]prevent[#]',
-            'can\'t be dispelled': '[##elementgreen]can\'t be dispelled[#]',
-            'can\’t be dispelled': '[##elementgreen]can\’t be dispelled[#]',
-            'uncleansable': '[##elementred]uncleansable[#]',
-            'can\'t be cleansed': '[##elementred]can\'t be cleansed[#]',
-            'Paralyzed': '[##elementred]Paralyzed[#]',
-            'Curse damage': '[#!]Curse damage[#]',
-            'Poison damage': '[##elementpurple]Poison damage[#]',
-            'Corrosive Poison': '[##elementpurple]Corrosive Poison[#]',
-            'Burn damage': '[##elementred]Burn damage[#]',
-            'Corrosive Burn': '[##elementred]Corrosive Burn[#]',
-            'Surge Bleed damage': '[##elementred]Surge Bleed damage[#]',
-            'Bleed damage': '[##elementred]Bleed damage[#]',
-            'Sand damage': '[##elementyellow]Sand damage[#]',
-            'Water damage': '[##elementblue]Water damage[#]',
-            'Frost damage': '[##elementblue]Frost damage[#]',
-            'Corrosive Frost': '[##elementblue]Corrosive Frost[#]',
-            'Stubborn': '[##elementred]Stubborn[#]',
-            'Uproots': '[##elementgreen]Uproots[#]',
-            'Uproot': '[##elementgreen]Uproot[#]',
-            'Harvests': '[##elementred]Harvests[#]',
-            'Harvest': '[##elementred]Harvest[#]', 
-            'Special Skills': '[##elementblue]Special Skills[#]',
-            'Special Skill': '[##elementblue]Special Skill[#]',
-            
-        },
-        // 英文 effects 专属字典
-        effects: {
-            // 在这里添加 'en' effects 专属词条
-        },
-        // 英文 passives 专属字典
-        passives: {
-            // 在这里添加 'en' passives 专属词条
-        },
-        // 英文 familyBonus 专属字典
-        familyBonus: {
-            // 在这里添加 'en' familyBonus 专属词条
-        }
-    },
-    zh: { // 包含简体 (cn) 和繁体 (tc)
-        // 中文通用字典
-        common: {
-            '暗黑系': '[##elementpurple]暗黑系[#]',
-            '自然系': '[##elementgreen]自然系[#]',
-            '烈火系': '[##elementred]烈火系[#]',
-            '神圣系': '[##elementyellow]神圣系[#]',
-            '神聖系': '[##elementyellow]神聖系[#]',
-            '冰雪系': '[##elementblue]冰雪系[#]',
-            '暗黑': '[##elementpurple]暗黑[#]',
-            '自然': '[##elementgreen]自然[#]',
-            '烈火': '[##elementred]烈火[#]',
-            '神圣': '[##elementyellow]神圣[#]',
-            '神聖': '[##elementyellow]神聖[#]',
-            '冰雪': '[##elementblue]冰雪[#]',
-            '冰霜': '[##elementblue]冰霜[#]',
-            '莽夫乱拳': '[##elementred]莽夫乱拳[#]',
-            '莽夫亂拳': '[##elementred]莽夫亂拳[#]',
-            '盲目治疗': '[##elementred]盲目治疗[#]',
-            '莽夫治療': '[##elementred]莽夫治療[#]',
-            '无限回合': '[#!]无限回合[#]',
-            '叠加（最多： 10 ）': '[##elementred]叠加（最多： 10 ）[#]',
-            '叠加（最多： 10 层）': '[##elementred]叠加（最多： 10 层）[#]',
-            '叠加（最多： 10 层 ）': '[##elementred]叠加（最多： 10 层 ）[#]',
-            '疊加（最大值： 10 ）': '[##elementred]疊加（最大值： 10 ）[#]',
-            '叠加 +2 （最多： 10 ）': '[##elementred]叠加 +2 （最多： 10 ）[#]',
-            '叠加 +2 （最多： 10 层）': '[##elementred]叠加 +2 （最多： 10 层）[#]',
-            '疊加 +2 （最大值： 10 ）': '[##elementred]疊加 +2 （最大值： 10 ）[#]',
-            '叠加': '[##elementred]叠加[#]',
-            '疊加': '[##elementred]疊加[#]',
-            '无法': '[##elementred]无法[#]',
-            '無法': '[##elementred]無法[#]',
-            '阻止': '[##elementred]阻止[#]',
-            '缚魂': '[##elementred]缚魂[#]',
-            '靈魂绑定': '[##elementred]靈魂绑定[#]',
-            '贪婪': '[##elementred]贪婪[#]',
-            '貪婪': '[##elementred]貪婪[#]',
-            '沉睡': '[##elementred]沉睡[#]',
-            '深眠': '[##elementred]深眠[#]',
-            '深沉睡眠': '[##elementred]深沉睡眠[#]',
-            '衰退': '[##elementred]衰退[#]',
-            '枯萎': '[##elementred]枯萎[#]',
-            '蔓延': '[##elementred]蔓延[#]',
-            '擴散': '[##elementred]擴散[#]',
-            '法力': '[#!]法力[#]',
-            '法力生成': '[#!]法力生成[#]',
-            '法力產出': '[#!]法力產出[#]',
-            '精准度': '[##elementyellow]精准度[#]',
-            '精準度': '[##elementyellow]精準度[#]',
-            '必定命中': '[##elementyellow]必定命中[#]',
-            '成长恩赐': '[##elementgreen]成长恩赐[#]',
-            '成長恩惠': '[##elementgreen]成長恩惠[#]',
-            '成长': '[##elementgreen]成长[#]',
-            '成長': '[##elementgreen]成長[#]',
-            '反弹': '[##elementred]反弹[#]',
-            '反彈': '[##elementred]反彈[#]',
-            '反射': '[##elementred]反射[#]',
-            '偷取': '[##elementred]偷取[#]',
-            '偷走': '[##elementred]偷走[#]',
-            '窃取': '[##elementred]窃取[#]',
-            '竊取': '[##elementred]竊取[#]',
-            '暴击几率': '[##elementred]暴击几率[#]',
-            '暴擊率': '[##elementred]暴擊率[#]',
-            '暴击': '[##elementred]暴击[#]',
-            '暴擊': '[##elementred]暴擊[#]',
-            '免疫': '[##elementgreen]免疫[#]',
-            '状态异常免疫': '[##elementgreen]状态异常免疫[#]',
-            '狀態異常免疫': '[##elementgreen]狀態異常免疫[#]',
-            '增益状态效果免疫': '[##elementred]增益状态效果免疫[#]',
-            '免疫新的狀態效果增益': '[##elementred]免疫新的狀態效果增益[#]',
-            '闪避': '[#!]闪避[#]',
-            '閃避': '[#!]閃避[#]',
-            '无视防御增益': '[#!]无视防御增益[#]',
-            '無視防禦增益': '[#!]無視防禦增益[#]',
-            '嘲讽': '[##elementred]嘲讽[#]',
-            '嘲諷': '[##elementred]嘲諷[#]',
-            '沉默': '[##elementred]沉默[#]',
-            '安全净化': '[##elementgreen]安全净化[#]',
-            '安全淨化': '[##elementgreen]安全淨化[#]',
-            '安全驱散': '[##elementgreen]安全驱散[#]',
-            '安全驅散': '[##elementgreen]安全驅散[#]',
-            '可净化': '[##elementgreen]可净化[#]',
-            '可淨化': '[##elementgreen]可淨化[#]',
-            '净化': '[##elementgreen]净化[#]',
-            '淨化': '[##elementgreen]淨化[#]',
-            '可驱散': '[#!]可驱散[#]',
-            '可驅散': '[#!]可驅散[#]',
-            '驱散': '[#!]驱散[#]',
-            '驅散': '[#!]驅散[#]',
-            '复活': '[##elementgreen]复活[#]',
-            '復活': '[##elementgreen]復活[#]',
-            '伤害减少': '[##elementyellow]伤害减少[#]',
-            '傷害減少': '[##elementyellow]傷害減少[#]',
-            '伤害降低': '[##elementyellow]伤害降低[#]',
-            '傷害降低': '[##elementyellow]傷害降低[#]',
-            '完全移除': '[#!]完全移除[#]',
-            '完整移除': '[#!]完整移除[#]',
-            '不可驱散': '[##elementgreen]不可驱散[#]',
-            '无法驱散': '[##elementgreen]无法驱散[#]',
-            '無法驅散': '[##elementgreen]無法驅散[#]',
-            '不可净化': '[##elementred]不可净化[#]',
-            '不可淨化': '[##elementred]不可淨化[#]',
-            '无法净化': '[##elementred]无法净化[#]',
-            '無法淨化': '[##elementred]無法淨化[#]',
-            '麻木': '[##elementred]麻木[#]',
-            '麻痺': '[##elementred]麻痺[#]',
-            '诅咒伤害': '[#!]诅咒伤害[#]',
-            '詛咒傷害': '[#!]詛咒傷害[#]',
-            '剧毒伤害': '[##elementpurple]剧毒伤害[#]',
-            '劇毒傷害': '[##elementpurple]劇毒傷害[#]',
-            '腐蚀剧毒': '[##elementpurple]腐蚀剧毒[#]',
-            '腐蝕劇毒': '[##elementpurple]腐蝕劇毒[#]',
-            '燃烧伤害': '[##elementred]燃烧伤害[#]',
-            '燃燒傷害': '[##elementred]燃燒傷害[#]',
-            '腐蚀燃烧': '[##elementred]腐蚀燃烧[#]',
-            '腐蝕燃燒': '[##elementred]腐蝕燃燒[#]',
-            '奔涌流血伤害': '[##elementred]奔涌流血伤害[#]',
-            '重傷流血傷害': '[##elementred]重傷流血傷害[#]',
-            '流血伤害': '[##elementred]流血伤害[#]',
-            '流血傷害': '[##elementred]流血傷害[#]',
-            '沙系伤害': '[##elementyellow]沙系伤害[#]',
-            '飛沙傷害': '[##elementyellow]飛沙傷害[#]',
-            '水系伤害': '[##elementblue]水系伤害[#]',
-            '水系傷害': '[##elementblue]水系傷害[#]',
-            '冰冻伤害': '[##elementblue]冰冻伤害[#]',
-            '冰霜傷害': '[##elementblue]冰霜傷害[#]',
-            '腐蚀冰冻': '[##elementblue]腐蚀冰冻[#]',
-            '腐蝕冰霜': '[##elementblue]腐蝕冰霜[#]',
-            '顽固': '[##elementred]顽固[#]',
-            '根除': '[##elementgreen]根除[#]',
-            '收割': '[##elementred]收割[#]',
-            '拔除': '[##elementgreen]拔除[#]',
-            '豐收': '[##elementred]豐收[#]',
-            '特殊技能': '[##elementblue]特殊技能[#]',
-        }, 
-        // 中文 effects 专属字典
-        effects: {
-            // 在这里添加 'zh' effects 专属词条
-        },
-        // 中文 passives 专属字典
-        passives: {
-            '剧毒': '[##elementpurple]剧毒[#]',
-            '劇毒': '[##elementpurple]劇毒[#]',
-            '燃烧': '[##elementred]燃烧[#]',
-            '燃焼': '[##elementred]燃焼[#]',
-            '流血': '[##elementred]流血[#]',
-            '沙系': '[##elementyellow]沙系[#]',
-            '水系': '[##elementblue]水系[#]',
-            '冰冻': '[##elementblue]冰冻[#]',
-            '冰霜': '[##elementblue]冰霜[#]',
-        },
-        // 中文 familyBonus 专属字典
-        familyBonus: {
-            // 在这里添加 'zh' familyBonus 专属词条
-        }
-    }
+const HIGHLIGHT_GROUP_MARKUP = {
+    elementblue: '[##elementblue]',
+    elementgreen: '[##elementgreen]',
+    elementpurple: '[##elementpurple]',
+    elementred: '[##elementred]',
+    elementyellow: '[##elementyellow]',
+    special: '[#!]',
 };
 
-/**
- * 用于预编译高亮工具（正则表达式、替换器等）的缓存。
- * (Memoization)
- */
-const highlightingToolsCache = {};
+// 无词间空格、按子串匹配的文字系统（汉字/假名）；韩文靠词尾助词成词，多字词同样按子串匹配，
+// 单字韩文（불/물/독）仍按整词匹配，否则会在 불가능 这类词里误命中。
+const HIGHLIGHT_CJK_RE = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u;
+const HIGHLIGHT_HANGUL_RE = /\p{Script=Hangul}/u;
+
+let _highlightTools = { data: null, regex: null, markup: null };
+
+/** 词条查表键：`İ`.toLowerCase() 会留下组合点 U+0307，正则 `i` 不能折叠它 ⇒ 统一剥掉。 */
+function highlightKey(str) {
+    return str.toLowerCase().replace(/\u0307/g, '');
+}
 
 /**
  * 转义字符串中的正则表达式特殊字符。
@@ -774,58 +530,49 @@ function escapeRegExp(str) {
 }
 
 /**
- * 获取或创建用于高亮的已编译工具（正则表达式、保护列表）。
- * 这是为了性能而进行的“记忆化”处理。
- * @param {string} lang - 'en' 或 'zh' (来自 state.currentLang)
- * @param {string} type - 'effects', 'passives', 'familyBonus', 或 'common' (null)。
- * @returns {{regex: RegExp, protectionValues: string[], replacer: function}}
+ * 取当前语言的词表并预编译正则（按词条长度降序，长词优先）。
+ * 拉丁/西里尔/阿拉伯等**按词精确匹配**（`Ice` 不命中 `device`、`Лед` 不命中 `следующий`）；
+ * CJK 与多字韩文按子串匹配（词尾助词、无空格分词），单字韩文按整词匹配。
+ * @returns {{regex: RegExp|null, markup: Map<string,string>|null}}
  */
-function getHighlightingTools(lang, type) {
-    // 统一将其它语言处理为 'en'
-    const isChinese = lang === 'cn' || lang === 'tc';
-    const langKey = isChinese ? 'zh' : 'en';
-    const typeKey = type || 'common';
-    const cacheKey = `${langKey}_${typeKey}`;
+function getHighlightingTools() {
+    const data = (typeof Lang !== 'undefined' && typeof Lang.get === 'function')
+        ? Lang.get('highlight')
+        : null;
+    if (!data || typeof data !== 'object') return { regex: null, markup: null };
+    if (_highlightTools.data === data) return _highlightTools;
 
-    // 1. 检查缓存
-    if (highlightingToolsCache[cacheKey]) {
-        return highlightingToolsCache[cacheKey];
+    const markup = new Map();
+    const variants = new Set();
+    for (const group of Object.keys(HIGHLIGHT_GROUP_MARKUP)) {
+        const words = Array.isArray(data[group]) ? data[group] : [];
+        for (const word of words) {
+            if (typeof word !== 'string') continue;
+            const kw = word.trim();
+            if (!kw) continue;
+            const key = highlightKey(kw);
+            if (!markup.has(key)) markup.set(key, HIGHLIGHT_GROUP_MARKUP[group]);
+            variants.add(kw);
+        }
+    }
+    if (markup.size === 0) {
+        _highlightTools = { data, regex: null, markup: null };
+        return _highlightTools;
     }
 
-    // --- 2. 构建工具 ---
-    const langDicts = highlightDictionaries[langKey];
-    if (!langDicts) {
-        // 如果没有该语言的字典，缓存一个空操作
-        return (highlightingToolsCache[cacheKey] = { regex: null, protectionValues: [], replacer: null });
-    }
-
-    const commonDict = langDicts.common || {};
-    const specificDict = (typeKey !== 'common' && langDicts[typeKey]) ? langDicts[typeKey] : {};
-
-    // 专属字典会覆盖通用字典中的相同键
-    const combinedDict = { ...commonDict, ...specificDict };
-
-    if (Object.keys(combinedDict).length === 0) {
-        // 如果没有替换规则，缓存一个空操作
-        return (highlightingToolsCache[cacheKey] = { regex: null, protectionValues: [], replacer: null });
-    }
-
-    // 按键的长度降序排序 (例如，优先匹配 "Corrosive Fire" 而不是 "Fire")
-    const allKeys = Object.keys(combinedDict).sort((a, b) => b.length - a.length);
-
-    // 创建正则表达式
-    const regexPattern = allKeys.map(escapeRegExp).join('|');
-    const regex = new RegExp(regexPattern, 'g');
-
-    // 获取所有唯一的 *值* 用于保护步骤 (例如 "[##elementred]Fire[#]")
-    const protectionValues = [...new Set(Object.values(combinedDict))].sort((a, b) => b.length - a.length);
-
-    // 替换函数 (replacer)
-    const replacer = (match) => combinedDict[match];
-
-    // 3. 存入缓存并返回
-    highlightingToolsCache[cacheKey] = { regex, protectionValues, replacer };
-    return highlightingToolsCache[cacheKey];
+    const pattern = [...variants]
+        .sort((a, b) => b.length - a.length)
+        .map(kw => {
+            const esc = escapeRegExp(kw);
+            const bySubstring = HIGHLIGHT_CJK_RE.test(kw)
+                || (HIGHLIGHT_HANGUL_RE.test(kw) && [...kw].length > 1);
+            return bySubstring
+                ? esc
+                : `(?<![\\p{L}])(?:${esc})(?![\\p{L}])`;
+        })
+        .join('|');
+    _highlightTools = { data, regex: new RegExp(pattern, 'giu'), markup };
+    return _highlightTools;
 }
 
 /**
@@ -1039,45 +786,13 @@ function applyKeywordHighlighting(text, lang, filterType, noParen) {
         return highlightedPrefix;
     }
 
-    // 1. 获取预编译的工具
-    const { regex, protectionValues, replacer } = getHighlightingTools(lang, filterType);
-
-    // 如果没有规则，直接返回原文
-    if (!regex) {
-        return text;
-    }
-
-    let tempText = textToProcess;
-    const protectionMap = {};
-    let placeholderCount = 0;
-
-    // 步骤 1: 保护文本中已存在的、符合格式的值
-    for (const value of protectionValues) {
-        // 使用 while 循环，因为 .replace(string, string) 只替换第一个匹配项
-        while (tempText.includes(value)) {
-            const placeholder = `__KEYWORD_PROTECT_${placeholderCount}__`;
-            // .replace() 只替换第一个，所以 while 循环是安全的
-            tempText = tempText.replace(value, placeholder);
-            protectionMap[placeholder] = value;
-            placeholderCount++;
-        }
-    }
-
-    // 步骤 2: 应用替换
-    // .replace(regex, function) 会替换所有匹配项
-    let replacedText = tempText.replace(regex, replacer);
-
-    // 步骤 3: 恢复被保护的值
-    // 按占位符长度降序排序，防止 `__P_1__` 错误地替换 `__P_10__` 的一部分
-    const sortedPlaceholders = Object.keys(protectionMap).sort((a, b) => b.length - a.length);
-    for (const placeholder of sortedPlaceholders) {
-        // 同样使用 while 循环，以防同一个占位符需要恢复多次
-        while (replacedText.includes(placeholder)) {
-            replacedText = replacedText.replace(placeholder, protectionMap[placeholder]);
-        }
-    }
-
-    return replacedText;
+    // 用当前语言的词表给关键字套上分组标记
+    const { regex, markup } = getHighlightingTools();
+    if (!regex) return textToProcess;
+    return textToProcess.replace(regex, (match) => {
+        const open = markup.get(highlightKey(match));
+        return open ? `${open}${match}[#]` : match;
+    });
 }
 
 // ============================================================
@@ -1753,11 +1468,11 @@ function renderDetailsInModal(hero, context = {}) {
 
         // ▼▼▼ 定义颜色映射表 ▼▼▼
         const colorNameMap = {
-            'purple': '#ca4bf8ff', // 暗黑系 (紫)
+            'purple': '#e290ff', // 暗黑系 (紫)
             'green': '#70e92f',  // 自然系 (绿)
-            'red': '#ef3838ff',    // 烈火系 (红)
-            'yellow': '#c2b52dff', // 神圣系 (黄)
-            'blue': '#26d0faff',   // 冰雪系 (蓝)
+            'red': '#ef3838ff',    // 烈火系 (红，与负数同色)
+            'yellow': '#f2e33a', // 神圣系 (黄)
+            'blue': '#41d8fe',   // 冰雪系 (蓝)
             'orange': '#ff7800ff'   // 被动天赋 (橙)
         };
         const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色

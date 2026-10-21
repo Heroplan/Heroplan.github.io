@@ -28,7 +28,7 @@
     // 单语言表（文件名前缀）
     var TABLES = ['heroes_name', 'heroes_name_fancy', 'skill_name', 'class', 'element', 'speed',
                   'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type',
-                  'lottery_title'];
+                  'lottery_title', 'highlight'];
 
     // ── 外部语言标签 → 站点语言码 ────────────────────────────────────────
     // 用途：`?hl=<标签>` 别名（`hl` 是 Google 的"界面语言"参数，属于事实标准；

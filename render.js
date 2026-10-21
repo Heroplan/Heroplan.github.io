@@ -1672,10 +1672,15 @@ function renderDetailsInModal(hero, context = {}) {
         const _appendSubs = (li, subs) => subs ? li.replace(/<\/li>\s*$/, subs + '</li>') : li;
 
         // ── 括号注释块（「括号只适用最外层，内层的括号不作为换行注释解析」）──
-        //   规则：从左往右找第一个**配对完整**的括号；只有当它的闭括号是**本行最后一个字符**
-        //   （允许后面跟 `.` / `。`）时才算注释块，否则算普通正文、继续往后找。
-        //   ⇒ `被…获得血莲标记。 (来自…（最高：10）。\n[*]…\n[*]…。)` 里**外层** `(来自…）` 才是注释块，
-        //     内层的 `（最高：10）` 原样留在正文；`使所有盟友（包括自己）获得增益。` 这种行内括号完全不受影响。
+        //   规则：从左往右找第一个**配对完整**的括号；同时满足两条才算注释块：
+        //     ① 闭括号是**本行最后一个字符**（允许后面跟 `.` / `。` / 空白）；
+        //     ② 开括号在**行首**——位于串首、前面是空白，或本行在它前面只有 `[*]`/`[**]` 子行标记。
+        //   ②是 2026-10-20 补的：我们的导出里注释块一律是"正文 (…)"（`skill_desc_gen._wrap_extra`
+        //   写死 `EXTRA_OPEN=' ('`），而**官方原文自带**的行内括号紧贴前一个词，比如俄语的复数提示
+        //   `на 4 ходов(а).`、波兰语 `obrażeń(y)`、简中`（最多： 10 层）`。旧规则只看①，把这些
+        //   切成了一条虚线子行（用户报的"俄语词条缺失/多出 `* а.`"就是它）。
+        //   全量核对站点导出 20 语言 392,435 条词条：加②后**保留** 38,135 条真注释块，
+        //   只把 1,959 条"紧贴词尾的官方行内括号"改回正文（ru 626 / pl 1150 / ja 99 / cn 31 / tc 23 …）。
         //   ⚠ 注释块**可以跨行**（旧实现按单行找配对，会把内层括号误判成注释，就是用户报的那个 bug）。
         const _matchParen = (s, start) => {
             let depth = 0;
@@ -1695,6 +1700,12 @@ function renderDetailsInModal(hero, context = {}) {
             }
             return true;
         };
+        // 开括号算不算"在行首"：串首 / 前面是空白 / 本行它前面只有一个子行标记 `[*]`、`[**]` …
+        const _isLineHead = (s, i) => {
+            if (i === 0 || /[\s]/.test(s[i - 1])) return true;
+            const ls = s.lastIndexOf('\n', i - 1) + 1;
+            return /^\s*\[\*+\]\s*$/.test(s.slice(ls, i));
+        };
         // 一条词条 → [{kind:'text',text}, {kind:'paren',text,tail}]（保持原顺序）
         const _splitAnnotations = (s) => {
             const parts = [];
@@ -1703,7 +1714,7 @@ function renderDetailsInModal(hero, context = {}) {
                 const c = s[i];
                 if (c === '(' || c === '（') {
                     const m = _matchParen(s, i);
-                    if (m > -1 && _isLineTail(s, m)) {
+                    if (m > -1 && _isLineTail(s, m) && _isLineHead(s, i)) {
                         if (seg) { parts.push({ kind: 'text', text: seg }); seg = ''; }
                         let end = m + 1, tail = '';
                         while (end < s.length && (s[end] === '.' || s[end] === '。')) { tail += s[end]; end++; }

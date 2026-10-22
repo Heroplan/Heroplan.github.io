@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Het doelwit lijdt 410% schade.",
+      "Heeft 80% kans op extra aanvallen tegen willekeurige vijanden tot maximaal 4 keer. Extra aanvallen doen niet veel schade.",
+      "Getroffen vijanden krijgen 3 beurten lang resonantie. In elke beurt brengt resonantie[#Dynamic] 284 [#]schade toe aan getroffen vijanden en[#Dynamic] 142 [#]schade aan vijanden in de buurt.",
+      "De spreukspreker steelt 3 beurten lang 20% ontvangen mana van getroffen vijanden. Dit effect verdwijnt als de spreukspreker wordt verslagen."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Het doelwit lijdt 630% schade.",
       "Gebruikt volledige verwijdering op het doelwit. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "Het doelwit neemt 3 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 483 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
+      "Het doelwit neemt 3 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 576 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Het doelwit lijdt 565% schade.",
       "Het doelwit lijdt[#Dynamic] 1875 [#]waterschade gedurende 3 beurten. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Brengt 520% schade toe aan het doelwit en 5 willekeurige vijanden.",
       "Alle geraakte vijanden zijn 5 beurten lang immuun voor nieuwe oppeppers van statuseffecten en krijgen 1200 schade voor elke nieuwe oppepperpoging. Dit effect is hardnekkig.",
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Wraakzuchtige vervloeking",
-     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 300% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+     "text": "Als dit personage meer dan 30% van de maximale gezondheid tegelijk verliest, worden de volgende effecten geactiveerd.\n[*]Dit personage gebruikt volledige verwijdering voor zichzelf. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)\n[*]Dit personage neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert deze 1 oppepper. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Alle vijanden lijden 240% schade.",
       "De spreukspreker krijgt het effect Uitlokken wat 4 beurten lang voorkomt dat vijanden hun Speciale vaardigheden op de bondgenoten van de spreukspreker kunnen richten. (Uitlokking voorkomt dat alle vijanden speciale vaardigheden gebruiken op bondgenoten die geen uitlokking hebben.)",
       "De spreukspreker kaatst 4 beurten lang alle statusaandoeningen en 165% van de schade terug naar de aanvaller, en blokkeert andere negatieve effecten van vijandelijke speciale vuurvaardigheden. (Statuseffecten door personages, volgelingen en demonen aan dezelfde kant kunnen niet worden teruggekaatst.)",
-      "Door deze speciale vaardigheid toe te passen, wordt er 55 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Roept een moldavietuilendemon aan voor het doelwit en vijanden in de buurt. De demon brengt de vijand elke beurt schade toe met 70% aanvalskracht.\n[*]De moldavietuilendemon absorbeert genezing. Hij verdwijnt als hij het equivalent van 27% van de maximale gezondheid van het doelwit heeft geabsorbeerd.",
       "De moldavietuilendemon brengt elke beurt 5 waanzin toe aan de eigenaar.",
       "Aan het eind van iedere beurt verwijdert de moldavietuilendemon een van de verwijderbare oppeppers van het doelwit.",
-      "Door deze speciale vaardigheid toe te passen, wordt er 50 waanzin toegebracht aan de spreukspreker.l",
+      "Door deze speciale vaardigheid toe te passen, wordt er 45 waanzin toegebracht aan de spreukspreker.l",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Doet 450% schade aan vijanden aan de randen van vijandelijke formaties. Als er maar één vijand is, wordt de schade verdubbeld.",
       "Gebruikt volledige verwijdering voor de vijanden aan de randen van de vijandelijke formatie. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "Vijanden aan de randen van de vijandelijke formatie nemen 4 beurten lang de vorm van een afgrondgeest aan.\n[*] Als afgrondgeest lijdt doelwitten[#Dynamic] 313 [#]schade per beurt. Dit effect is hardnekkig. Dit statuseffect duurt 2 beurten langer tegen heilige personages. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
+      "Vijanden aan de randen van de vijandelijke formatie nemen 4 beurten lang de vorm van een afgrondgeest aan.\n[*] Als afgrondgeest lijdt doelwitten[#Dynamic] 384 [#]schade per beurt. Dit effect is hardnekkig. Dit statuseffect duurt 2 beurten langer tegen heilige personages. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 4 beurten lang de geestesvorm aan.\n[*] In geestesvorm krijgt de spreukspreker 82% aanvalskracht. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 4 beurten lang de geestesvorm aan.\n[*] In geestesvorm krijgt de spreukspreker 87% aanvalskracht. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 4 beurten lang de geestesvorm aan.\n[*] In geestesvorm krijgt de spreukspreker 90% aanvalskracht. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
+      "De spreukspreker neemt 4 beurten lang de geestesvorm aan.\n[*] In geestesvorm krijgt de spreukspreker 95% aanvalskracht. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Alle bondgenoten, met uitzondering van de spreukspreker, hebben 4 beurten lang 54% verdediging tegen heilig."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "De spreukspreker neemt 4 beurten lang de geestesvorm aan. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
-      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 44% verdediging.",
+      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 50% verdediging.",
       "Alle bondgenoten behalve de spreukspreker regenereren 140 gezondheid per beurt terwijl ze in geestesvorm zijn."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 4 beurten lang de vorm van een gevaarlijke geest aan. Dit effect is hardnekkig.\n[*] In de vorm van een gevaarlijke geest richt de spreukspreker elke beurt automatisch 175% schade aan een willekeurige vijand aan.\n[*] In de vorm van een gevaarlijke geest kan de spreukspreker schade aan van vijanden die sterk zijn tegen het element van de spreukspreker. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
+      "De spreukspreker neemt 4 beurten lang de vorm van een gevaarlijke geest aan. Dit effect is hardnekkig.\n[*] In de vorm van een gevaarlijke geest richt de spreukspreker elke beurt automatisch 210% schade aan een willekeurige vijand aan.\n[*] In de vorm van een gevaarlijke geest kan de spreukspreker schade aan van vijanden die sterk zijn tegen het element van de spreukspreker. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Het doelwit lijdt 158% schade.",
       "Gebruikt volledige verwijdering op het doelwit. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "Het doelwit neemt 4 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 88 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
+      "Het doelwit neemt 4 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 115 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Het doelwit lijdt 150% schade.",
       "Gebruikt volledige verwijdering op het doelwit. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "Het doelwit neemt 4 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 140 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
+      "Het doelwit neemt 4 beurten lang de vorm van een afgrondgeest aan. Dit effect is hardnekkig.\n[*] Als afgrondgeest lijdt het doelwit[#Dynamic] 163 [#]schade per beurt. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.\n[*]Kan niet worden toegepast als er nog maar één vijand in het gevecht over is.\n[*]Dit statuseffect heeft geen invloed op titanen en mythische titanen.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "De spreukspreker neemt 4 beurten lang de geestesvorm aan. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
-      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 64% verdediging.",
-      "Alle bondgenoten behalve de spreukspreker herstellen 180 verhoogde gezondheid per beurt terwijl ze in geestesvorm zijn. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
+      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 75% verdediging.",
+      "Alle bondgenoten behalve de spreukspreker herstellen 215 verhoogde gezondheid per beurt terwijl ze in geestesvorm zijn. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "De spreukspreker neemt 4 beurten lang de geestesvorm aan. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
-      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 56% verdediging.",
-      "Alle bondgenoten behalve de spreukspreker herstellen 300 verhoogde gezondheid per beurt terwijl ze in geestesvorm zijn. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
+      "In geestesvorm hebben alle bondgenoten behalve de spreukspreker 65% verdediging.",
+      "Alle bondgenoten behalve de spreukspreker herstellen 360 verhoogde gezondheid per beurt terwijl ze in geestesvorm zijn. De verhoogde gezondheid kan niet hoger zijn dan de maximale gezondheid."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
-      "De spreukspreker neemt 5 beurten lang de vorm van een gevaarlijke geest aan. Dit effect is hardnekkig.\n[*] In de vorm van een gevaarlijke geest richt de spreukspreker elke beurt automatisch 350% schade aan een willekeurige vijand aan.\n[*] In de vorm van een gevaarlijke geest kan de spreukspreker schade aan van vijanden die sterk zijn tegen het element van de spreukspreker. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
+      "De spreukspreker neemt 5 beurten lang de vorm van een gevaarlijke geest aan. Dit effect is hardnekkig.\n[*] In de vorm van een gevaarlijke geest richt de spreukspreker elke beurt automatisch 420% schade aan een willekeurige vijand aan.\n[*] In de vorm van een gevaarlijke geest kan de spreukspreker schade aan van vijanden die sterk zijn tegen het element van de spreukspreker. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Door deze speciale vaardigheid toe te passen, wordt er 25 waanzin toegebracht aan alle bondgenoten behalve de spreukspreker.",
       "(Waanzin geeft een kans dat het doelwit van een speciale vaardigheid omgekeerd wordt.\n[*] Bij activering van waanzin worden speciale vaardigheden die vijanden als doelwit hebben ineens toegepast op bondgenoten en andersom.\n[*] Speciale vaardigheden die de spreukspreker als doelwit hebben, worden toegepast op een willekeurig doelwit. Speciale vaardigheden die een bepaald doelwit hebben, worden op de spreukspreker toegepast.\n[*] Als waanzin geactiveerd wordt, worden passieve vaardigheden en troepenvaardigheden die bij gebruik extra effecten toekennen niet geactiveerd.\n[*] Als waanzin de 100 bereikt, wordt automatisch een speciale vaardigheid gebruikt wanneer mana vol is.\n[*] Waanzin kan niet worden verwijderd of gezuiverd.\n[*] Waanzin van helden wordt wel met 10 verlaagd telkens als ze rechtstreeks genezen worden door een speciale vaardigheid, hulpvaardigheden, items of schilden. Rechtstreekse genezing door speciale vaardigheden verlaagt waanzin maar één keer per gebruik.\n[*] Alle overige genezing verlaagt waanzin met 1.\n[*] Waanzin wordt volledig verwijderd wanneer een omgekeerde speciale vaardigheid wordt gebruikt.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Het doelwit lijdt 600% schade.",
-      "Brengt 550% schade toe aan een willekeurige, andere vijand als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
+      "Brengt 550% schade toe aan een willekeurige, andere vijand als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 20% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 25% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
       "De spreukspreker en bondgenoten in de buurt krijgen 3 beurten lang 44% verdediging, en 10% extra elke keer dat ze worden geraakt, tot maximaal 94% verdediging."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Brengt 395% schade toe aan het doelwit en 5 willekeurige vijanden.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.",
+      "Brengt 395% schade toe aan het doelwit en 5 willekeurige vijanden.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 20% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 25% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.",
       "Het getroffen doelwitten krijgen 5 beurten lang -55% trefzekerheid. (Miskansen gelden ook voor offensieve Speciale vaardigheden.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Het doelwit lijdt 600% schade.",
-      "Brengt 350% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
+      "Brengt 350% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 20% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 25% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)",
       "Alle bondgenoten krijgen 4 beurten lang 55% verdedigingskracht. De effectduur wordt gereset wanneer de eigenaar van het statuseffect rechtstreekse schade oploopt door een speciale vaardigheid."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Het doelwit lijdt 480% schade.",
-      "Brengt 320% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 15% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 20% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)"
+      "Brengt 320% schade toe aan 2 willekeurige, andere vijanden als het doelwit demonen of megademonen heeft.\n[*]Roept een zaailingdemon aan voor elke geraakte vijand. (\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*] Zaailingdemon: 50% aanvalskracht, 20% gezondheid\n[*] Scheutdemon: 75% aanvalskracht, 25% gezondheid\n[*] Bloesemmegademon: 150% aanvalskracht, 70% gezondheid\n[*]Een demon brengt het doelwit elke beurt schade toe. Een demon verdwijnt na genezing te hebben geabsorbeerd. De vereiste hoeveelheid genezing hangt af van de maximale gezondheid van het doelwit.\n[*]Demonen kunnen niet evolueren tot megademonen als dezelfde held volgelingen heeft.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Zaailingaanroeper",
-     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 15% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 20% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
+     "text": "Roept elke beurt een zaailingdemon aan voor een willekeurige vijand.\n[*]De zaailingdemon ontwikkelt zich tot een scheutdemon na 3 beurten.\n[*]De scheutdemon ontwikkelt zich tot een bloesemmegademon na 3 beurten.\n[*]Zaailingdemon:\n[*] 50% aanval, 20% gezondheid.\n[*]Scheutdemon:\n[*] 75% aanval, 25% gezondheid.\n[*]Bloesemmegademon:\n[*] 150% aanval, 70% gezondheid."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

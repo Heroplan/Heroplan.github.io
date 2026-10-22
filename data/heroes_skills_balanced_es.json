@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Causa un 410% de daño al objetivo.",
+      "Tiene un 80% de probabilidad de asestar golpes adicionales a enemigos aleatorios hasta 4 veces. Los ataques adicionales infligen menos daño.",
+      "Los enemigos golpeados reciben resonancia durante 3 turnos. Cada turno, la resonancia inflige[#Dynamic] 284 [#]de daño a los enemigos afectados y[#Dynamic] 142 [#]de daño a los enemigos cercanos.",
+      "El héroe roba un 20% del maná generado de los enemigos golpeados durante 3 turnos. Este efecto se elimina si el héroe cae derrotado."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Causa un 630% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 3 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 483 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 3 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 576 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Causa un 565% de daño al objetivo.",
       "El objetivo recibe[#Dynamic] 1875 [#]de daño de agua durante 3 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Inflige 520% de daño al objetivo y a 5 enemigos aleatorios.",
       "Todos los objetivos golpeados son inmunes a las nuevas bendiciones de estado durante 5 turnos y, en su lugar, reciben 1200 de daño por cada efecto de estado que se les intente aplicar. Este efecto es obstinado.",
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta bendiciones. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Embrujo vengativo",
-     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 300% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+     "text": "Cuando este personaje pierde más de un 30% de vitalidad máxima de una vez, se activan los siguientes efectos.\n[*] Este personaje lanza Eliminación completa sobre sí mismo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)\n[*]Este personaje cambia a forma de fantasma vengativo durante 2 turnos. Al final de cada turno, el fantasma vengativo inflige un 350% de daño a un enemigo aleatorio y le descarta 1 bendición. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Inflige un 240% de daño a todos los enemigos.",
       "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 4 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
       "El héroe refleja todos los estados alterados y un 165% de daño al atacante y bloquea otros efectos negativos de las habilidades especiales de fuego de los enemigos durante 4 turnos. (No se pueden reflejar los efectos de estado aplicados por personajes, secuaces y demonios del mismo bando.)",
-      "Usar esta habilidad especial inflige 55 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Invoca un demonio búho de moldavita para el objetivo y los enemigos cercanos que daña al enemigo con un 70% de ataque cada turno.\n[*] El demonio búho de moldavita absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 27% de la vitalidad máxima de su objetivo.",
       "El demonio búho de moldavita inflige 5 de demencia a su dueño cada turno.",
       "Al final de cada turno, el demonio búho de moldavita descarta una de las bendiciones descartables de su objetivo.",
-      "Usar esta habilidad especial inflige 50 de demencia al héroe.",
+      "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Causa un 450% de daño a los enemigos en los márgenes de la formación enemiga. Si solo queda un enemigo, el daño se duplica.",
       "Lanza Eliminación completa a los enemigos en los márgenes de la formación enemiga. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "Los enemigos en los bordes de la formación enemiga pasan a la forma de fantasma abisal durante 4 turnos.\n[*] Mientras están en la forma de fantasma abisal, los objetivos reciben[#Dynamic] 313 [#]de daño cada turno. Este efecto es obstinado. Este efecto de estado dura 2 turnos más en personajes sagrados. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "Los enemigos en los bordes de la formación enemiga pasan a la forma de fantasma abisal durante 4 turnos.\n[*] Mientras están en la forma de fantasma abisal, los objetivos reciben[#Dynamic] 384 [#]de daño cada turno. Este efecto es obstinado. Este efecto de estado dura 2 turnos más en personajes sagrados. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma fantasma durante 4 turnos.\n[*] Mientras está en esta forma, el héroe obtiene un 82% de ataque. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma fantasma durante 4 turnos.\n[*] Mientras está en esta forma, el héroe obtiene un 87% de ataque. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma fantasma durante 4 turnos.\n[*] Mientras está en esta forma, el héroe obtiene un 90% de ataque. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
+      "El héroe cambia a forma fantasma durante 4 turnos.\n[*] Mientras está en esta forma, el héroe obtiene un 95% de ataque. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Todos los aliados, salvo el héroe, reciben un 54% de defensa contra sagrado durante 4 turnos."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El héroe cambia a forma fantasma durante 4 turnos. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
-      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 44% de defensa.",
+      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 50% de defensa.",
       "En su forma fantasma, todos los aliados, salvo el héroe, regeneran 140 de VIT cada turno."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma terrible durante 4 turnos. Este efecto es obstinado.\n[*] Mientras está en esta forma, el héroe inflige automáticamente un 175% de daño contra un enemigo aleatorio cada turno.\n[*] Mientras está en esta forma, el héroe puede recibir daño de los enemigos cuyo elemento sea fuerte contra él. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
+      "El héroe cambia a forma de fantasma terrible durante 4 turnos. Este efecto es obstinado.\n[*] Mientras está en esta forma, el héroe inflige automáticamente un 210% de daño contra un enemigo aleatorio cada turno.\n[*] Mientras está en esta forma, el héroe puede recibir daño de los enemigos cuyo elemento sea fuerte contra él. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Causa un 158% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 88 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 115 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Causa un 150% de daño al objetivo.",
       "Lanza Eliminación completa al objetivo. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 140 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
+      "El objetivo cambia a la forma de fantasma del abismo durante 4 turnos. Este efecto es obstinado.\n[*] El objetivo recibe[#Dynamic] 163 [#]de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El héroe cambia a forma fantasma durante 4 turnos. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
-      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 64% de defensa.",
-      "En su forma fantasma, todos los aliados, salvo el héroe, regeneran 180 de vitalidad potenciada cada turno. La vitalidad potenciada puede exceder la VIT máxima."
+      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 75% de defensa.",
+      "En su forma fantasma, todos los aliados, salvo el héroe, regeneran 215 de vitalidad potenciada cada turno. La vitalidad potenciada puede exceder la VIT máxima."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "El héroe cambia a forma fantasma durante 4 turnos. Este efecto es obstinado. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
-      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 56% de defensa.",
-      "En su forma fantasma, todos los aliados, salvo el héroe, regeneran 300 de vitalidad potenciada cada turno. La vitalidad potenciada puede exceder la VIT máxima."
+      "En su forma fantasma, todos los aliados, salvo el héroe, tienen un 65% de defensa.",
+      "En su forma fantasma, todos los aliados, salvo el héroe, regeneran 360 de vitalidad potenciada cada turno. La vitalidad potenciada puede exceder la VIT máxima."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Lanza Eliminación completa al héroe. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
-      "El héroe cambia a forma de fantasma terrible durante 5 turnos. Este efecto es obstinado.\n[*] Mientras está en esta forma, el héroe inflige automáticamente un 350% de daño contra un enemigo aleatorio cada turno.\n[*] Mientras está en esta forma, el héroe puede recibir daño de los enemigos cuyo elemento sea fuerte contra él. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
+      "El héroe cambia a forma de fantasma terrible durante 5 turnos. Este efecto es obstinado.\n[*] Mientras está en esta forma, el héroe inflige automáticamente un 420% de daño contra un enemigo aleatorio cada turno.\n[*] Mientras está en esta forma, el héroe puede recibir daño de los enemigos cuyo elemento sea fuerte contra él. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Usar esta habilidad especial inflige 25 de demencia a todos los aliados, salvo al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que el héroe se cura directamente a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Toda la demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Causa un 600% de daño al objetivo.",
-      "Si el objetivo tiene demonios o megademonios, inflige un 550% de daño a un enemigo diferente aleatorio.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
+      "Si el objetivo tiene demonios o megademonios, inflige un 550% de daño a un enemigo diferente aleatorio.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 20%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 25%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
       "El héroe y los aliados cercanos obtienen un 44% de defensa y un aumento adicional de un 10% cada vez que son golpeados durante 3 turnos hasta un 94% de defensa."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Inflige un 395% de daño al objetivo y a 5 enemigos aleatorios.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado.\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*] El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.",
+      "Inflige un 395% de daño al objetivo y a 5 enemigos aleatorios.\n[*] Invoca un demonio brote maldito para cada enemigo golpeado.\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 20%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 25%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*] El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.",
       "Todos los objetivos golpeados obtienen un -55% de precisión durante 5 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Causa un 600% de daño al objetivo.",
-      "Si el objetivo tiene demonios o megademonios, inflige un 350% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
+      "Si el objetivo tiene demonios o megademonios, inflige un 350% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 20%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 25%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)",
       "Todos los aliados obtienen un 55% de defensa durante 4 turnos. La duración del efecto se restablece si el poseedor del efecto recibe daño directo de una habilidad especial."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Causa un 480% de daño al objetivo.",
-      "Si el objetivo tiene demonios o megademonios, inflige un 320% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 15%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 20%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)"
+      "Si el objetivo tiene demonios o megademonios, inflige un 320% de daño a 2 enemigos diferentes aleatorios.\n[*] Invoca un demonio brote para cada enemigo golpeado. (\n[*] El demonio brote maldito evoluciona a demonio retoño tras 3 turnos.\n[*] El demonio retoño evoluciona a megademonio flor tras 3 turnos.\n[*] Demonio brote maldito: Ataque de 50%, vitalidad de 20%.\n[*] Demonio retoño: Ataque de 75%, vitalidad de 25%.\n[*] Megademonio flor: Ataque de 150%, vitalidad de 70%.\n[*]El demonio daña a su objetivo cada turno. El demonio desaparece tras absorber curación. La cantidad de curación necesaria depende de la vitalidad máxima del objetivo.\n[*] Los demonios no pueden evolucionar a megademonios si hay esbirros del mismo héroe.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invoca un brote",
-     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 15% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 20% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
+     "text": "Invoca un demonio brote maldito para un enemigo aleatorio en cada turno.\n[*] El demonio brote maldito se convierte en demonio retoño pasados 3 turnos.\n[*] El demonio retoño se convierte en megademonio flor pasados 3 turnos.\n[*]Demonio brote maldito:\n[*] 50% de ataque y 20% de vitalidad.\n[*]Demonio retoño:\n[*] 75% de ataque y 25% de vitalidad.\n[*]Megademonio flor:\n[*] 150% de ataque y 70% de vitalidad."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

@@ -281,7 +281,7 @@
      "id": "power_of_shattered_moons",
      "lines": [
       "Deals 400% damage to all enemies.",
-      "The damage is increased by 60% per each defeated enemy.",
+      "The damage is increased by 75% per each defeated enemy.",
       "Each defeated ally has a 50% chance to get revived with 30% HP. (After a character has been revived by a Special Skill, their HP is -50% less on each subsequent Special Skill revive.\n[*]After a character has been revived by a Special Skill, the chance for them to be revived is -50% on each subsequent Special Skill revive.)",
       "Deals extra damage against Dark."
      ]
@@ -881,7 +881,7 @@
       "Deals 600% damage to the target.",
       "If the target had more than 50% mana before receiving damage, targets another enemy who had over 50% mana before receiving any damage from this Special Skill. If none of the other enemies had 50% mana, targets a random enemy. The damage is reduced on each consecutive hit. Each enemy can only be hit once.",
       "All hit targets get silenced for 4 turns.",
-      "Wither: All enemies get -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -300 attack and -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Boosts health of the caster and nearby allies by 350. Boosted health can exceed max HP.",
-      "Growth: The caster and nearby allies get 50 attack and 50 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: The caster and nearby allies get 60 attack and 60 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Deals 400% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -350 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -420 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies receive 25% increased damage for 3 turns. The effect is increased by 10% for each Minion or Mega Minion owned by all enemies, up to 85% in total."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Deals 600% damage to the target.",
       "If the target has buffs and is hit, targets another enemy with buffs. If none of the other enemies have buffs, targets a random enemy. The damage is reduced on each consecutive hit. Each enemy can only be hit once.",
       "Safely dispels 1 buff from all enemies. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]The latest buffs are dispelled first.)",
-      "Wither: All enemies get -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Deals 850% damage to the target.",
       "For 5 turns, the target receives 100% of all damage dealt to their allies.",
-      "Growth: All allies get 550 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 660 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies get 35% mana generation for 5 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Deals 530% damage to the target.",
       "The attack chains through all the enemies who are adjacent to any hit enemy.",
       "All hit targets receive 50% increased damage for 5 turns. The effect is increased by 10% for each Minion or Mega Minion owned by all enemies, up to 100% in total.",
-      "Wither: All enemies get -450 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -540 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Recovers 30% health for all allies.",
-      "Growth: All allies get 250 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 300 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Boosts health of all allies by 450 after 3 turns, or immediately if the effect is removed before the duration ends. Boosted health can exceed max HP."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Deals 450% damage to the target and nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 792 [#]Water damage over 4 turns. All allies absorb 50% of dealt Water damage as boosted health.",
-      "Growth: All allies get 200 attack and 200 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 240 attack and 240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Deals 450% damage to all enemies.",
       "All enemies receive[#Dynamic] 785 [#]Burn damage over 5 turns. All allies absorb 25% of dealt Burn damage as boosted health.",
-      "Wither: All enemies get -350 attack and -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Deals 470% damage to all enemies.",
-      "Wither: All enemies get -350 attack and -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies get -35% mana generation for 5 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -12432,6 +12432,7 @@
     {
      "id": "great_frost_axe",
      "lines": [
+      "This Special Skill has a chance to deal critical hits. (The chance of dealing a critical hit is based on the Hero's overall critical chance when the damage is dealt.\n[*]Critical hits caused by this Special Skill:\n[*]Deal 50% more damage.\n[*]Remove Growth effects.Critical hits reduce enemies' max health. This effect is stronger against boosted health.)",
       "Deals 200% damage to the target.",
       "If the target is of Fire element, deals 450% damage to nearby enemies.",
       "The target receives[#Dynamic] 447 [#]Frost damage over 3 turns.",
@@ -12463,6 +12464,7 @@
     {
      "id": "great_frost_hoe",
      "lines": [
+      "This Special Skill has a chance to deal critical hits. (The chance of dealing a critical hit is based on the Hero's overall critical chance when the damage is dealt.\n[*]Critical hits caused by this Special Skill:\n[*]Deal 50% more damage.\n[*]Remove Growth effects.Critical hits reduce enemies' max health. This effect is stronger against boosted health.)",
       "Deals 450% damage to the target.",
       "If the target is of Fire element, deals 400% damage to nearby enemies.",
       "Heals the caster for 30% of damage dealt.",
@@ -14041,6 +14043,7 @@
     {
      "id": "lash_of_the_whip",
      "lines": [
+      "This Special Skill has a chance to deal critical hits. (The chance of dealing a critical hit is based on the Hero's overall critical chance when the damage is dealt.\n[*]Critical hits caused by this Special Skill:\n[*]Deal 50% more damage.\n[*]Remove Growth effects.Critical hits reduce enemies' max health. This effect is stronger against boosted health.)",
       "Deals 535% damage to the target and minor damage to nearby enemies.",
       "Enhanced Defense Ailment: The target and nearby enemies get -64% defense against Special Skills. This effect lasts until the enemy takes damage from a Special Skill 3 times.\n[*] After the Enhanced Defense Ailment ends or is removed or replaced, dispels buffs on the enemy."
      ]
@@ -19203,7 +19206,7 @@
     {
      "id": "noxious_breath",
      "lines": [
-      "Safely dispels 1 buff from the target and nearby enemies. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]The latest buffs are dispelled first.)",
+      "Dispels 2 buffs from the target and nearby enemies. (The latest buffs are dispelled first.)",
       "The target and nearby enemies receive[#Dynamic] 337 [#]-[#Dynamic] 661 [#]increasing Curse damage each turn for 3 turns. This effect is Stubborn. (On the first turn,[#Dynamic] 337 [#]damage is dealt. The damage increases by 40% each turn, up to[#Dynamic] 661 [#]damage per turn.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "All damage the target and nearby enemies receive is increased by 20% for 3 turns. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
@@ -19442,7 +19445,7 @@
      "lines": [
       "Destroys all Minions from all enemies and damages Mega Minions.",
       "Deals 355% damage to all enemies.",
-      "Wither: All enemies get -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -510 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies receive[#Dynamic] 129 [#]-[#Dynamic] 317 [#]increasing Curse damage each turn for 4 turns. This effect is Stubborn. (On the first turn,[#Dynamic] 129 [#]damage is dealt. The damage increases by 35% each turn, up to[#Dynamic] 317 [#]damage per turn.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
@@ -43171,7 +43174,7 @@
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns.",
       "(While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.)",
-      "While in Ghost form, all allies except the caster have 44% defense.",
+      "While in Ghost form, all allies except the caster have 50% defense.",
       "While in Ghost form, all allies except the caster regenerate 140 HP every turn."
      ]
     }
@@ -46591,8 +46594,8 @@
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns.",
       "(While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.)",
-      "While in Ghost form, all allies except the caster have 64% defense.",
-      "While in Ghost form, all allies except the caster regenerate 180 boosted health every turn. Boosted health can exceed max HP."
+      "While in Ghost form, all allies except the caster have 75% defense.",
+      "While in Ghost form, all allies except the caster regenerate 215 boosted health every turn. Boosted health can exceed max HP."
      ]
     }
    ]
@@ -46623,8 +46626,8 @@
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns.",
       "(While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.)",
-      "While in Ghost form, all allies except the caster have 56% defense.",
-      "While in Ghost form, all allies except the caster regenerate 300 boosted health every turn. Boosted health can exceed max HP."
+      "While in Ghost form, all allies except the caster have 65% defense.",
+      "While in Ghost form, all allies except the caster regenerate 360 boosted health every turn. Boosted health can exceed max HP."
      ]
     }
    ]
@@ -50703,7 +50706,7 @@
      "id": "deranged_existence",
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Deranged Dire Ghost form for 5 turns.\n[*] While in Deranged Dire Ghost form, the caster automatically deals 350% damage and inflicts 30 Insanity on a random enemy each turn.\n[*] While in Deranged Dire Ghost form, the caster can take damage from enemies whose element is strong against them. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.)",
+      "The caster shifts into Deranged Dire Ghost form for 5 turns.\n[*] While in Deranged Dire Ghost form, the caster automatically deals 350% damage and inflicts 35 Insanity on a random enemy each turn.\n[*] While in Deranged Dire Ghost form, the caster can take damage from enemies whose element is strong against them. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.)",
       "Casting this Special Skill inflicts 25 Insanity on all allies except the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]

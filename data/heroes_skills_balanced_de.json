@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Fügt dem Ziel 410% Schaden zu.",
+      "Hat 80% Chance auf zusätzliche Treffer bis zu 4 -mal bei zufälligen Gegnern. Zusätzliche Treffer fügen geringen Schaden zu.",
+      "Getroffene Gegner erhalten für 3 Züge Resonanz. Resonanz verursacht[#Dynamic] 284 [#]Schaden an den betroffenen Gegnern und[#Dynamic] 142 [#]Schaden an Gegnern in der Nähe.",
+      "Der Wirker stiehlt über 3 Runden hinweg 20% des von getroffenen Gegnern erzeugten Manas. Dieser Effekt wird aufgehoben, wenn der Wirker besiegt wird."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Fügt dem Ziel 630% Schaden zu.",
       "Wirkt Vollständige Entfernung auf das Ziel. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Das Ziel wechselt für 3 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 483 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
+      "Das Ziel wechselt für 3 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 576 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Fügt dem Ziel 565% Schaden zu.",
       "Das Ziel erleidet[#Dynamic] 1875 [#]Wasserschaden über 3 Züge. Dieser Effekt ist hartnäckig. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Verursacht 520% Schaden am Ziel und an 5 zufälligen Gegnern.",
       "Alle getroffenen Ziele sind für 5 Züge immun gegen neue Status-Effekt-Buffs und erhalten für jeden versuchten Buff 1200 Schaden. Dieser Effekt ist Stur.",
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form.\n[*] Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt dessen Stärkungseffekte. Dieser Effekt ist Hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Rachsüchtiger Spuk",
-     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 300% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+     "text": "Wenn dieser Charakter mehr als 30% seines maximalen Lebens auf einmal verliert, werden die folgenden Effekte aktiviert.\n[*] Dieser Charakter wirkt Vollständige Entfernung auf sich selbst. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)\n[*]Der Wirker wechselt für 2 Runden in die Rachsüchtiger-Geist-Form. Am Ende jedes Zugs fügt der Rachsüchtige Geist einem zufälligen Gegner 350% Schaden zu und entfernt 1 Bonus. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Verursacht 240% Schaden bei allen Gegnern.",
       "Der Wirker erhält Verspotten, was 4 Züge lang verhindert, dass die Gegner Spezialfähigkeiten bei den Verbündeten des Wirkers einsetzen können. (Verspotten hindert alle Gegner daran, Spezialfähigkeiten auf ihre Verbündeten anzuwenden, die nicht Verspotten haben.)",
       "Der Wirker reflektiert alle negativen Statusänderungen und 165% Schaden zurück auf den Angreifer und blockiert andere negative Effekte durch Feuer-Spezialfähigkeiten vom Feind für 4 Züge. (Statuseffekte, die von Charakteren, Lakaien und Feinden auf derselben Seite gewirkt werden, können nicht zurückgeworfen werden.)",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 55 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Beschwört einen Moldavit-Eulenfeind für das Ziel und Gegner in der Nähe. Der Feind greift den Gegner jede Runde mit 70% Angriff an.\n[*]Der Moldavit-Eulenfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 27% des max. Lebens des Ziels aufgenommen hat.",
       "Der Moldavit-Eulenfeind verursacht bei jedem Besitzer in jeder Runde 5 Wahnsinn.",
       "Am Ende jedes Zugs entfernt der Moldavit-Eulenfeind einen der bannbaren Bonus des Ziels.",
-      "Der Einsatz dieser Spezialfähigkeit verursacht 50 Wahnsinn beim Wirker.",
+      "Der Einsatz dieser Spezialfähigkeit verursacht 45 Wahnsinn beim Wirker.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Fügt Gegnern am Rand der gegnerischen Formation 450% Schaden zu. Wenn nur ein Gegner übrig ist, wird der Schaden verdoppelt.",
       "Wirkt Vollständige Entfernung auf die Gegner am Rand der gegnerischen Formation. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Gegner an den Rändern der gegnerischen Formation wechseln für 4 Züge in die Gestalt eines Abgrundgeists.\n[*]In Gestalt eines Abgrundgeists erleiden Ziele[#Dynamic] 313 [#]Schaden pro Zug. Dieser Effekt ist hartnäckig. Gegen Heilige Charaktere hält dieser Statuseffekt 2 Runden länger an. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
+      "Gegner an den Rändern der gegnerischen Formation wechseln für 4 Züge in die Gestalt eines Abgrundgeists.\n[*]In Gestalt eines Abgrundgeists erleiden Ziele[#Dynamic] 384 [#]Schaden pro Zug. Dieser Effekt ist hartnäckig. Gegen Heilige Charaktere hält dieser Statuseffekt 2 Runden länger an. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 4 Runden in die Geisterform.\n[*] In der Geisterform erhält der Wirker 82% Angriff. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 4 Runden in die Geisterform.\n[*] In der Geisterform erhält der Wirker 87% Angriff. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 4 Runden in die Geisterform.\n[*] In der Geisterform erhält der Wirker 90% Angriff. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
+      "Der Wirker wechselt für 4 Runden in die Geisterform.\n[*] In der Geisterform erhält der Wirker 95% Angriff. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Alle Verbündete außer der Wirker erhalten 54% Verteidigung gegen Licht für 4 Züge."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
       "Der Wirker wechselt für 4 Runden in die Geisterform. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
-      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 44% Verteidigung.",
+      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 50% Verteidigung.",
       "In Geistform regenerieren alle Verbündeten außer dem Wirker bei jedem Zug 140 LP."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 4 Runden in die Gestalt des Grässlichen Geistes. Dieser Effekt ist hartnäckig.\n[*]In der Gestalt des Grässlichen Geistes verursacht der Wirker in jeder Runde automatisch 175% Schaden bei einem zufälligen Feind.\n[*]In der Gestalt des Grässlichen Geistes kann der Wirker Schaden durch Gegner erleiden, deren Element stark gegen den Wirker ist. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
+      "Der Wirker wechselt für 4 Runden in die Gestalt des Grässlichen Geistes. Dieser Effekt ist hartnäckig.\n[*]In der Gestalt des Grässlichen Geistes verursacht der Wirker in jeder Runde automatisch 210% Schaden bei einem zufälligen Feind.\n[*]In der Gestalt des Grässlichen Geistes kann der Wirker Schaden durch Gegner erleiden, deren Element stark gegen den Wirker ist. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Fügt dem Ziel 158% Schaden zu.",
       "Wirkt Vollständige Entfernung auf das Ziel. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Das Ziel wechselt für 4 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 88 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
+      "Das Ziel wechselt für 4 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 115 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Fügt dem Ziel 150% Schaden zu.",
       "Wirkt Vollständige Entfernung auf das Ziel. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Das Ziel wechselt für 4 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 140 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
+      "Das Ziel wechselt für 4 Züge in die Gestalt eines Abgrundgeists. Dieser Effekt ist hartnäckig.\n[*]In Gestalt eines Abgrundgeists erleidet das Ziel[#Dynamic] 163 [#]Schaden pro Zug. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.\n[*]Kann nicht gewirkt werden, wenn nur noch ein Gegner im Kampf ist.\n[*]Titanen und Mythische Titanen werden nicht durch diesen Statuseffekt beeinflusst.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
       "Der Wirker wechselt für 4 Runden in die Geisterform. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
-      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 64% Verteidigung.",
-      "In Geistform regenerieren alle Verbündeten außer dem Wirker bei jedem Zug 180 verstärktes Leben. Verstärktes Leben kann die max. LP überschreiten."
+      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 75% Verteidigung.",
+      "In Geistform regenerieren alle Verbündeten außer dem Wirker bei jedem Zug 215 verstärktes Leben. Verstärktes Leben kann die max. LP überschreiten."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
       "Der Wirker wechselt für 4 Runden in die Geisterform. Dieser Effekt ist hartnäckig. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
-      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 56% Verteidigung.",
-      "In Geistform regenerieren alle Verbündeten außer dem Wirker bei jedem Zug 300 verstärktes Leben. Verstärktes Leben kann die max. LP überschreiten."
+      "In Geistform haben alle Verbündeten mit Ausnahme des Wirkers 65% Verteidigung.",
+      "In Geistform regenerieren alle Verbündeten außer dem Wirker bei jedem Zug 360 verstärktes Leben. Verstärktes Leben kann die max. LP überschreiten."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Wirkt Vollständige Entfernung auf den Wirker. (Vollständige Entfernung entfernt alle Statuseffekte, Stapel und Wachstum- und Verfall-Effekte. Entfernt auch Statuseffekte und Stapel, die hartnäckig sind oder sonst nicht entfernt oder gereinigt werden können.)",
-      "Der Wirker wechselt für 5 Runden in die Gestalt des Grässlichen Geistes. Dieser Effekt ist hartnäckig.\n[*]In der Gestalt des Grässlichen Geistes verursacht der Wirker in jeder Runde automatisch 350% Schaden bei einem zufälligen Feind.\n[*]In der Gestalt des Grässlichen Geistes kann der Wirker Schaden durch Gegner erleiden, deren Element stark gegen den Wirker ist. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
+      "Der Wirker wechselt für 5 Runden in die Gestalt des Grässlichen Geistes. Dieser Effekt ist hartnäckig.\n[*]In der Gestalt des Grässlichen Geistes verursacht der Wirker in jeder Runde automatisch 420% Schaden bei einem zufälligen Feind.\n[*]In der Gestalt des Grässlichen Geistes kann der Wirker Schaden durch Gegner erleiden, deren Element stark gegen den Wirker ist. (Solange er in einer Geisterform ist, kann der Charakter kein Mana erhalten und nicht durch Spezialfähigkeiten geheilt werden, ist aber immun gegen normale Angriffe, Spezialfähigkeiten-Angriffe, Schaden verursachende passive Effekte, Statuseffekte und Stapel.\n[*] Immun gegen neue Wachstums-, Verwelken und Wahnsinn-Effekte.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Wenn du diese Spezialfähigkeit einsetzt, löst 25 Wahnsinn aus, außer bei dir selbst.",
       "(Durch Wahnsinn wird mit einer gewissen Wahrscheinlichkeit die Anvisierung einer gewirkten Spezialfähigkeit umgekehrt.\n[*] Wenn Wahnsinn aktiviert wird, visieren Spezialfähigkeiten, die Gegner anvisieren, stattdessen Verbündete an und umgekehrt.\n[*] Spezialfähigkeiten, die den Wirker anvisieren, greifen stattdessen ein zufälliges Ziel an. Spezialfähigkeiten, die ein Ziel anvisieren, greifen den Wirker an.\n[*] Wenn Wahnsinn aktiviert wird, werden passive Fähigkeiten und Truppenfähigkeiten, die zusätzliche Effekte auslösen, nicht aktiviert.\n[*] Bei 100 Wahnsinn wird bei vollem Mana sofort eine Spezialfähigkeit gewirkt.\n[*] Wahnsinn kann nicht entfernt oder gereinigt werden.\n[*] Jedes Mal, wenn ein Held direkt durch Spezialfähigkeiten, Unterstützungsfähigkeiten, Gegenstände oder Schilde geheilt wird, kann der Wahnsinn dieses Helden um 10 verringert werden. Direkte Heilungen aus Spezialfähigkeiten verringern Wahnsinn nur einmal pro Wirkung.\n[*] Alle anderen Heilungen verringern Wahnsinn um 1.\n[*] Wahnsinn wird vollständig entfernt, wenn eine umgekehrte Spezialfähigkeit gewirkt wird.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Fügt dem Ziel 600% Schaden zu.",
-      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird einem zufälligen anderen Gegner 550% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
+      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird einem zufälligen anderen Gegner 550% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 20% Leben.\n[*] Spross-Feind: 75% Angriff, 25% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
       "Der Wirker und nahe Verbündete erhalten 44% Verteidigung und eine weitere 10%ige Erhöhung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu 94% Verteidigung."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Verursacht 395% Schaden am Ziel und an 5 zufälligen Gegnern.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner.\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.",
+      "Verursacht 395% Schaden am Ziel und an 5 zufälligen Gegnern.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner.\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 20% Leben.\n[*] Spross-Feind: 75% Angriff, 25% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.",
       "Alle getroffenen Ziele erhalten -55% Genauigkeit für 5 Züge. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Fügt dem Ziel 600% Schaden zu.",
-      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 350% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
+      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 350% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 20% Leben.\n[*] Spross-Feind: 75% Angriff, 25% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)",
       "Alle Verbündeten erhalten für 4 Züge 55% Verteidigung. Die Effektdauer wird zurückgesetzt, wenn der Besitzer des Statuseffekts mit direktem Schaden durch eine Spezialfähigkeit getroffen wird."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Fügt dem Ziel 480% Schaden zu.",
-      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 320% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 15% Leben.\n[*] Spross-Feind: 75% Angriff, 20% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)"
+      "Wenn das Ziel über Feinde oder Mega-Feinde verfügt, wird 2 zufälligen anderen Gegnern 320% Schaden zugefügt.\n[*]Beschwört einen Setzling-Feind für jeden getroffenen Gegner. (\n[*]Der Setzling-Feind entwickelt sich nach 3 Runden zu einem Spross-Feind.\n[*]Der Spross-Feind entwickelt sich nach 3 Runden zu einem Mega-Blütenfeind.\n[*] Setzling-Feind: 50% Angriff, 20% Leben.\n[*] Spross-Feind: 75% Angriff, 25% Leben.\n[*] Mega-Blütenfeind: 150% Angriff, 70% Leben.\n[*]Ein Feind fügt seinem Ziel in jedem Zug Schaden zu. Ein Feind verschwindet, nachdem er Heilung absorbiert hat. Die benötigte Menge an Heilung hängt vom maximalen Leben des Ziels ab.\n[*]Feinde können sich nicht zu Megafeinden entwickeln, wenn es Lakaien desselben Helden gibt.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Setzling-Beschwörer",
-     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 15% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 20% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
+     "text": "Beschwört jede Runde einen Setzling-Feind für einen zufälligen Gegner.\n[*]Der Setzling-Feind entwickelt sich zu einem Spross-Feind nach 3 Runden.\n[*]Der Spross-Feind entwickelt sich zu einem Blüten-Mega-Feind nach 3 Runden.\n[*]Setzling-Feind:\n[*] 50% Angriff, 20% Leben.\n[*]Spross-Feind:\n[*] 75% Angriff, 25% Leben.\n[*]Blüten-Mega-Feind:\n[*] 150% Angriff, 70% Leben."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Deals 410% damage to the target.",
+      "Has a 80% chance for additional hits on random enemies up to 4 times. Additional hits deal minor damage.",
+      "Hit enemies receive Resonance for 3 turns. Each turn, Resonance deals[#Dynamic] 284 [#]damage to the afflicted enemies and[#Dynamic] 142 [#]damage to nearby enemies.",
+      "The caster steals 20% of generated mana from hit enemies over 3 turns. This effect gets removed if the caster is defeated."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Deals 630% damage to the target.",
       "Casts Full Removal on the target. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The target shifts into Abyss Ghost form for 3 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 483 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
+      "The target shifts into Abyss Ghost form for 3 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 576 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Deals 565% damage to the target.",
       "The target receives[#Dynamic] 1875 [#]Water damage over 3 turns. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Deals 520% damage to the target and 5 random enemies.",
       "All hit targets are immune to new status effect buffs for 5 turns, and receive 1200 damage for each attempted buff. This effect is Stubborn.",
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels buffs from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Vengeful Haunting",
-     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 300% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+     "text": "When this character loses more than 30% of max health at once, the following effects activate.\n[*]This character casts Full Removal on themselves. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)\n[*]This character shifts into Vengeful Ghost form for 2 turns. At the end of each turn, Vengeful Ghost deals 350% damage to a random enemy and dispels 1 buff from them. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Deals 240% damage to all enemies.",
       "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 4 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
       "The caster reflects all status ailments and 165% damage back to the attacker and block other negative effects from enemies' Fire Special Skills for 4 turns. (Status effects cast by characters, Minions and Fiends on the same side cannot be reflected.)",
-      "Casting this Special Skill inflicts 55 Insanity on the caster.",
+      "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Summons a Moldavite Owl Fiend for the target and nearby enemies. The Fiend damages the enemy with 70% attack every turn.\n[*]The Moldavite Owl Fiend absorbs healing. It disappears after absorbing a healing amount equal to 27% of its target's max health.",
       "The Moldavite Owl Fiend inflicts 5 Insanity on the owner on every turn.",
       "At the end of each turn, the Moldavite Owl Fiend dispels one of its target's dispellable buffs.",
-      "Casting this Special Skill inflicts 50 Insanity on the caster.",
+      "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Deals 450% damage to the enemies on the edges of the enemy formation. If there is only one enemy, the damage is doubled.",
       "Casts Full Removal on the enemies on the edges of the enemy formation. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "Enemies on the edges of the enemy formation shift into Abyss Ghost form for 4 turns.\n[*] While in Abyss Ghost form the targets receive[#Dynamic] 313 [#]damage each turn. This effect is Stubborn. Against Holy characters, this status effect lasts 2 turns longer. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
+      "Enemies on the edges of the enemy formation shift into Abyss Ghost form for 4 turns.\n[*] While in Abyss Ghost form the targets receive[#Dynamic] 384 [#]damage each turn. This effect is Stubborn. Against Holy characters, this status effect lasts 2 turns longer. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Ghost form for 4 turns.\n[*] While in Ghost form the caster gains 82% attack. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Ghost form for 4 turns.\n[*] While in Ghost form the caster gains 87% attack. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Ghost form for 4 turns.\n[*] While in Ghost form the caster gains 90% attack. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
+      "The caster shifts into Ghost form for 4 turns.\n[*] While in Ghost form the caster gains 95% attack. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "All allies except the caster get 54% defense against Holy for 4 turns."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
-      "While in Ghost form, all allies except the caster have 44% defense.",
+      "While in Ghost form, all allies except the caster have 50% defense.",
       "While in Ghost form, all allies except the caster regenerate 140 HP every turn."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Dire Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Dire Ghost form the caster automatically deals 175% damage against a random enemy each turn.\n[*] While in Dire Ghost form the caster can take damage from enemies whose element is strong against the caster. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
+      "The caster shifts into Dire Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Dire Ghost form the caster automatically deals 210% damage against a random enemy each turn.\n[*] While in Dire Ghost form the caster can take damage from enemies whose element is strong against the caster. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Deals 158% damage to the target.",
       "Casts Full Removal on the target. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The target shifts into Abyss Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 88 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
+      "The target shifts into Abyss Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 115 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Deals 150% damage to the target.",
       "Casts Full Removal on the target. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The target shifts into Abyss Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 140 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
+      "The target shifts into Abyss Ghost form for 4 turns. This effect is Stubborn.\n[*] While in Abyss Ghost form the target receives[#Dynamic] 163 [#]damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
-      "While in Ghost form, all allies except the caster have 64% defense.",
-      "While in Ghost form, all allies except the caster regenerate 180 boosted health every turn. Boosted health can exceed max HP."
+      "While in Ghost form, all allies except the caster have 75% defense.",
+      "While in Ghost form, all allies except the caster regenerate 215 boosted health every turn. Boosted health can exceed max HP."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "The caster shifts into Ghost form for 4 turns. This effect is Stubborn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
-      "While in Ghost form, all allies except the caster have 56% defense.",
-      "While in Ghost form, all allies except the caster regenerate 300 boosted health every turn. Boosted health can exceed max HP."
+      "While in Ghost form, all allies except the caster have 65% defense.",
+      "While in Ghost form, all allies except the caster regenerate 360 boosted health every turn. Boosted health can exceed max HP."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Casts Full Removal on the caster. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
-      "The caster shifts into Dire Ghost form for 5 turns. This effect is Stubborn.\n[*] While in Dire Ghost form the caster automatically deals 350% damage against a random enemy each turn.\n[*] While in Dire Ghost form the caster can take damage from enemies whose element is strong against the caster. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
+      "The caster shifts into Dire Ghost form for 5 turns. This effect is Stubborn.\n[*] While in Dire Ghost form the caster automatically deals 420% damage against a random enemy each turn.\n[*] While in Dire Ghost form the caster can take damage from enemies whose element is strong against the caster. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "Casting this Special Skill inflicts 25 Insanity on all allies except the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time they are healed directly by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Deals 600% damage to the target.",
-      "If the target has Fiends or Mega Fiends, deals 550% damage to a random different enemy.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
+      "If the target has Fiends or Mega Fiends, deals 550% damage to a random different enemy.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 20% health.\n[*] Sprout Fiend: 75% attack, 25% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
       "The caster and nearby allies get 44% defense, and a further 10% increase every time they are hit during 3 turns, up to 94% defense."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Deals 395% damage to the target and 5 random enemies.\n[*]Summons a Seedling Fiend to each hit enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.",
+      "Deals 395% damage to the target and 5 random enemies.\n[*]Summons a Seedling Fiend to each hit enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 20% health.\n[*] Sprout Fiend: 75% attack, 25% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.",
       "All hit targets get -55% accuracy for 5 turns. (Chance to miss also applies to offensive Special Skills.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Deals 600% damage to the target.",
-      "If the target has Fiends or Mega Fiends, deals 350% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
+      "If the target has Fiends or Mega Fiends, deals 350% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 20% health.\n[*] Sprout Fiend: 75% attack, 25% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)",
       "All allies get 55% defense for 4 turns. The effect duration is reset if the status effect owner is hit with direct damage from a Special Skill."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Deals 480% damage to the target.",
-      "If the target has Fiends or Mega Fiends, deals 320% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 15% health.\n[*] Sprout Fiend: 75% attack, 20% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)"
+      "If the target has Fiends or Mega Fiends, deals 320% damage to 2 random different enemies.\n[*]Summons a Seedling Fiend to each hit enemy. (\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*] Seedling Fiend: 50% attack, 20% health.\n[*] Sprout Fiend: 75% attack, 25% health.\n[*] Blossom Mega Fiend: 150% attack, 70% health.\n[*]A Fiend damages their target every turn. A Fiend disappears after absorbing healing. Amount of healing required depends on the target's max health.\n[*]Fiends cannot evolve into Mega Fiends if there are Minions on the same hero.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Seedling Summoner",
-     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 15% health.\n[*]Sprout Fiend:\n[*] 75% attack, 20% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
+     "text": "Summons a Seedling Fiend every turn to a random enemy.\n[*]The Seedling Fiend evolves into a Sprout Fiend after 3 turns.\n[*]The Sprout Fiend evolves into a Blossom Mega Fiend after 3 turns.\n[*]Seedling Fiend:\n[*] 50% attack, 20% health.\n[*]Sprout Fiend:\n[*] 75% attack, 25% health.\n[*]Blossom Mega Fiend:\n[*] 150% attack, 70% health."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

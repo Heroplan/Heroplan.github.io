@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Menimbulkan kerusakan 410% pada sasaran.",
+      "Punya peluang 80% untuk melayangkan pukulan tambahan ke musuh acak hingga 4 kali. Hantaman tambahan menimbulkan kerusakan minor.",
+      "Musuh yang terkena menerima Resonansi selama 3 giliran. Setiap giliran, Resonansi menimbulkan[#Dynamic] 284 [#]kerusakan pada musuh yang terdampak dan[#Dynamic] 142 [#]kerusakan pada musuh terdekat.",
+      "Perapal mencuri 20% dari mana yang dihasilkan musuh yang terkena selama 3 giliran. Efek ini akan hilang jika perapalnya kalah."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Menimbulkan kerusakan 630% pada sasaran.",
       "Merapal Penghapusan Penuh pada sasaran. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Sasaran berubah menjadi Hantu Jurang selama 3 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 483 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
+      "Sasaran berubah menjadi Hantu Jurang selama 3 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 576 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Menimbulkan kerusakan 565% pada sasaran.",
       "Sasaran mengalami[#Dynamic] 1875 [#]kerusakan Air selama 3 giliran. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Menimbulkan kerusakan 520% ke sasaran dan 5 musuh acak.",
       "Semua sasaran yang terkena kebal terhadap genjotan efek status baru selama 5 giliran, dan menerima 1200 kerusakan untuk setiap upaya genjotan. Efek ini Bandel.",
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantu Pendendam",
-     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 300% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+     "text": "Saat karakter ini kehilangan lebih dari 30% kesehatan maksimal sekaligus, efek berikut ini aktif.\n[*]Karakter ini merapal Penghapusan Penuh pada dirinya sendiri. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)\n[*]Karakter ini berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan 1 genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Menimbulkan 240% kerusakan kepada semua musuh.",
       "Perapal mendapat Cela yang membuat musuh tidak bisa menggunakan Keahlian Khusus pada sekutu perapal selama 4 giliran. (Ejek mencegah semua musuh agar tidak menggunakan Keahlian Khusus pada sekutu mereka yang tidak memiliki Ejek.)",
       "Perapal memantulkan semua status pelemahan dan 165% kerusakan kepada penyerang dan memblokir efek negatif dari Keahlian Khusus Api musuh selama 4 giliran. (Efek status yang dirapal oleh karakter, Antek, dan Iblis di sisi yang sama tidak bisa dipantulkan.)",
-      "Merapal Keahlian Khusus ini menimbulkan 55 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Memanggil Iblis Burung Hantu Moldavite untuk sasaran dan musuh terdekat. Iblis menyerang musuh dengan 70% serangan tiap giliran.\n[*]Iblis Burung Hantu Moldavite menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 27% dari kesehatan maksimum sasarannya.",
       "Iblis Burung Hantu Moldavite menimbulkan 5 Kegilaan pada pemiliknya di setiap giliran.",
       "Pada akhir setiap giliran, Iblis Burung Hantu Moldavite mengenyahkan salah satu genjotan sasarannya yang bisa dienyahkan.",
-      "Merapal Keahlian Khusus ini menimbulkan 50 Kegilaan pada perapal.",
+      "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Menimbulkan 450% kerusakan kepada musuh di tepi formasi musuh. Jika hanya ada satu musuh, kerusakannya ganda.",
       "Merapal Penghapusan Penuh pada musuh di tepi formasi musuh. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Musuh di tepi formasi musuh menjadi Hantu Jurang selama 4 giliran.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 313 [#]setiap giliran. Efek ini Bandel. Melawan karakter Suci, efek status ini bertahan 2 giliran lebih lama. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
+      "Musuh di tepi formasi musuh menjadi Hantu Jurang selama 4 giliran.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 384 [#]setiap giliran. Efek ini Bandel. Melawan karakter Suci, efek status ini bertahan 2 giliran lebih lama. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah wujud menjadi Hantu selama 4 giliran.\n[*] Saat berwujud Hantu, perapal meraih 82% serangan. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah wujud menjadi Hantu selama 4 giliran.\n[*] Saat berwujud Hantu, perapal meraih 87% serangan. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah wujud menjadi Hantu selama 4 giliran.\n[*] Saat berwujud Hantu, perapal meraih 90% serangan. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
+      "Perapal berubah wujud menjadi Hantu selama 4 giliran.\n[*] Saat berwujud Hantu, perapal meraih 95% serangan. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Semua sekutu kecuali perapal mendapat 54% pertahanan melawan Suci selama 4 giliran."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Perapal berubah wujud menjadi Hantu selama 4 giliran. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
-      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 44% pertahanan.",
+      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 50% pertahanan.",
       "Selagi dalam wujud Hantu, perapal mendapat 140 HP setiap giliran."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi Arwah Ngeri selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Arwah Ngeri, perapal secara otomatis menimbulkan 175% kerusakan terhadap musuh acak setiap giliran.\n[*] Saat berwujud Arwah Ngeri, perapal dapat mengalami kerusakan dari musuh yang berelemen kuat melawan perapal. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
+      "Perapal berubah menjadi Arwah Ngeri selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Arwah Ngeri, perapal secara otomatis menimbulkan 210% kerusakan terhadap musuh acak setiap giliran.\n[*] Saat berwujud Arwah Ngeri, perapal dapat mengalami kerusakan dari musuh yang berelemen kuat melawan perapal. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Menimbulkan kerusakan 158% pada sasaran.",
       "Merapal Penghapusan Penuh pada sasaran. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Sasaran berubah menjadi Hantu Jurang selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 88 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
+      "Sasaran berubah menjadi Hantu Jurang selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 115 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Menimbulkan kerusakan 150% pada sasaran.",
       "Merapal Penghapusan Penuh pada sasaran. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Sasaran berubah menjadi Hantu Jurang selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 140 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
+      "Sasaran berubah menjadi Hantu Jurang selama 4 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Jurang, sasaran menderita kerusakan sebesar[#Dynamic] 163 [#]setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Perapal berubah wujud menjadi Hantu selama 4 giliran. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
-      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 64% pertahanan.",
-      "Selagi dalam wujud Hantu, semua sekutu kecuali perapal meregenerasi 180 kesehatan yang ditingkatkan setiap giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
+      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 75% pertahanan.",
+      "Selagi dalam wujud Hantu, semua sekutu kecuali perapal meregenerasi 215 kesehatan yang ditingkatkan setiap giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Perapal berubah wujud menjadi Hantu selama 4 giliran. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
-      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 56% pertahanan.",
-      "Selagi dalam wujud Hantu, semua sekutu kecuali perapal meregenerasi 300 kesehatan yang ditingkatkan setiap giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
+      "Selagi dalam wujud Hantu, semua sekutu selain perapal memiliki 65% pertahanan.",
+      "Selagi dalam wujud Hantu, semua sekutu kecuali perapal meregenerasi 360 kesehatan yang ditingkatkan setiap giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal"
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
-      "Perapal berubah menjadi Arwah Ngeri selama 5 giliran. Efek ini Bandel.\n[*] Saat berwujud Arwah Ngeri, perapal secara otomatis menimbulkan 350% kerusakan terhadap musuh acak setiap giliran.\n[*] Saat berwujud Arwah Ngeri, perapal dapat mengalami kerusakan dari musuh yang berelemen kuat melawan perapal. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
+      "Perapal berubah menjadi Arwah Ngeri selama 5 giliran. Efek ini Bandel.\n[*] Saat berwujud Arwah Ngeri, perapal secara otomatis menimbulkan 420% kerusakan terhadap musuh acak setiap giliran.\n[*] Saat berwujud Arwah Ngeri, perapal dapat mengalami kerusakan dari musuh yang berelemen kuat melawan perapal. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Merapal Keahlian Khusus ini menimbulkan 25 Kegilaan pada semua sekutu kecuali perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali dia disembuhkan langsung oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
-      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 550% kepada satu musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
+      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 550% kepada satu musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 20% kesehatan.\n[*] Iblis Tunas: 75% serangan, 25% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
       "Perapal dan sekutu terdekat mendapat 44% pertahanan dan naik 10% lagi setiap kali terkena serangan selama 3 giliran, hingga pertahanan 94%."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Menimbulkan 395% kerusakan pada sasaran dan 5 musuh acak.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.",
+      "Menimbulkan 395% kerusakan pada sasaran dan 5 musuh acak.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 20% kesehatan.\n[*] Iblis Tunas: 75% serangan, 25% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.",
       "Semua sasaran yang terkena mendapat akurasi -55% selama 5 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
-      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 350% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
+      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 350% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 20% kesehatan.\n[*] Iblis Tunas: 75% serangan, 25% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)",
       "Semua sekutu mendapat 55% pertahanan selama 4 giliran. Durasi efek ini akan direset jika pemilik efek status terkena kerusakan langsung dari Keahlian Khusus."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Menimbulkan kerusakan 480% pada sasaran.",
-      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 320% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 15% kesehatan.\n[*] Iblis Tunas: 75% serangan, 20% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)"
+      "Jika sasaran memiliki Iblis atau Iblis Mega, menimbulkan kerusakan 320% kepada 2 musuh acak yang berbeda.\n[*]Memanggil satu Iblis Benih untuk setiap musuh yang terkena. (\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*] Iblis Benih: 50% serangan, 20% kesehatan.\n[*] Iblis Tunas: 75% serangan, 25% kesehatan.\n[*] Iblis Mega Mekar: 150% serangan, 70% kesehatan.\n[*]Iblis merusak sasaran setiap giliran. Iblis menghilang setelah menyerap penyembuhan. Jumlah penyembuhan yang diperlukan tergantung kesehatan maks sasaran.\n[*]Iblis tidak dapat berevolusi menjadi Iblis Mega jika ada Antek pada pahlawan yang sama.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Pemanggil Benih",
-     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 15%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 20%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
+     "text": "Memanggil Iblis Benih setiap giliran ke musuh acak.\n[*]Iblis Benih berubah menjadi Iblis Tunas setelah 3 giliran.\n[*]Iblis Tunas berubah menjadi Iblis Mega Mekar setelah 3 giliran.\n[*]Iblis Benih:\n[*]serangan 50% , kesehatan 20%.\n[*]Iblis Tunas:\n[*]serangan 75% , kesehatan 25%.\n[*]Iblis Mega Mekar:\n[*]serangan 150% , kesehatan 70%."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

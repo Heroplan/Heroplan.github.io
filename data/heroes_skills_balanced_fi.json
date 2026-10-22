@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Tuottaa 410% vauriota kohteelle.",
+      "80%:n mahdollisuus iskeä lisäosumia satunnaisiin vihollisiin enintään 4 kertaa. Lisäiskut tekevät vähäistä vauriota.",
+      "Osutut viholliset saavat resonanssin 3 vuoron ajaksi. Resonanssi tuottaa joka vuorolla[#Dynamic] 284 [#]vauriota vaikutuksen alaisille vihollisille ja[#Dynamic] 142 [#]vauriota lähellä oleville vihollisille.",
+      "Loitsija anastaa 20% osuttujen vihollisten tuottamasta manasta 3 vuoron aikana. Vaikutus poistuu, jos loitsija kukistuu."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Tuottaa 630% vauriota kohteelle.",
       "Loitsii täyden poiston kohteeseen. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Kohde muuttuu syvyyksien haamuksi 3 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 483 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
+      "Kohde muuttuu syvyyksien haamuksi 3 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 576 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Tuottaa 565% vauriota kohteelle.",
       "Kohde kärsii[#Dynamic] 1875 [#]vesivauriota 3 vuoron aikana. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Tuottaa 520% vauriota kohteelle ja 5 satunnaiselle viholliselle.",
       "Kaikki osutut kohteet ovat immuuneja uusille tilaefektien tehosteille 5 vuoron ajan ja saavat 1200 vauriota jokaisesta yritetystä tehosteesta. Tämä vaikutus on sitkeä.",
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Kostonhimoista kummittelua",
-     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 300% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+     "text": "Kun tämä hahmo menettää kerralla yli 30% maksimiterveydestään, seuraavat vaikutukset aktivoituvat.\n[*]Tämä hahmo loitsii itseensä täyden poiston. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)\n[*]Hahmo muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä 1 tehosteen. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Tuottaa 240% vauriota kaikille vihollisille.",
       "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 4 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
       "Loitsija heijastaa kaikki vaivat ja 165% vauriota takaisin hyökkääjään ja estää muut negatiiviset efektit vihollisten tulen erikoistaidoista 4 vuoron ajan. (Samalla puolella olevien hahmojen, käskyläisten ja riiviöiden loitsimia tilaefektejä ei voi heijastaa.)",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 55 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Kutsuu moldaviittipöllöriiviön kohteelle ja lähellä oleville vihollisille. Riiviö vaurioittaa vihollista 70%:n hyökkäyksellä joka vuorolla.\n[*]Moldaviittipöllöriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 27% sen kohteen maksimiterveydestä.",
       "Moldaviittipöllöriiviö aiheuttaa omistajalleen 5 hulluutta joka vuorolla.",
       "Moldaviittipöllöriiviö häivyttää jokaisen vuoron lopussa yhden kohteensa häivytettävistä tehosteista.",
-      "Tämän erikoistaidon käyttäminen aiheuttaa 50 hulluutta loitsijalle.",
+      "Tämän erikoistaidon käyttäminen aiheuttaa 45 hulluutta loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Tuottaa 450% vauriota vihollismuodostelman ulkoreunoilla oleville vihollisille. Jos vihollisia on vain yksi, vaurio tuplaantuu.",
       "Loitsii täyden poiston vihollisryhmän laidoilla oleviin vihollisiin. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Vihollisryhmän laidoilla olevat viholliset muuttuvat syvyyksien haamuiksi 4 vuoron ajaksi.\n[*] Syvyyksien haamun muodossa kohteet saavat[#Dynamic] 313 [#]vauriota joka vuorolla. Tämä vaikutus on sitkeä. Kun vastassa on pyhiä hahmoja, tämä tilaefekti kestää 2 vuoroa pidempään. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
+      "Vihollisryhmän laidoilla olevat viholliset muuttuvat syvyyksien haamuiksi 4 vuoron ajaksi.\n[*] Syvyyksien haamun muodossa kohteet saavat[#Dynamic] 384 [#]vauriota joka vuorolla. Tämä vaikutus on sitkeä. Kun vastassa on pyhiä hahmoja, tämä tilaefekti kestää 2 vuoroa pidempään. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu haamuksi 4 vuoron ajaksi.\n[*] Haamun muodossa loitsija saa 82% hyökkäystä. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu haamuksi 4 vuoron ajaksi.\n[*] Haamun muodossa loitsija saa 87% hyökkäystä. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu haamuksi 4 vuoron ajaksi.\n[*] Haamun muodossa loitsija saa 90% hyökkäystä. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
+      "Loitsija muuttuu haamuksi 4 vuoron ajaksi.\n[*] Haamun muodossa loitsija saa 95% hyökkäystä. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Kaikki liittolaiset loitsijaa lukuun ottamatta saavat 54% puolustusta pyhää vastaan 4 vuoron ajaksi."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Loitsija muuttuu haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
-      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 44% puolustusta.",
+      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 50% puolustusta.",
       "Haamumuodossa kaikki liittolaiset loitsijaa lukuun ottamatta saavat 140 terveyttä joka vuorolla."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu hirvittäväksi haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Hirvittävän haamun muodossa oleva loitsija aiheuttaa joka vuorolla satunnaiselle viholliselle automaattisesti 175% vauriota.\n[*] Hirvittävän haamun muodossa olevaa loitsijaa voivat vaurioittaa vain sellaiset viholliset, joiden elementti on vahva loitsijaa vastaan. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
+      "Loitsija muuttuu hirvittäväksi haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Hirvittävän haamun muodossa oleva loitsija aiheuttaa joka vuorolla satunnaiselle viholliselle automaattisesti 210% vauriota.\n[*] Hirvittävän haamun muodossa olevaa loitsijaa voivat vaurioittaa vain sellaiset viholliset, joiden elementti on vahva loitsijaa vastaan. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Tuottaa 158% vauriota kohteelle.",
       "Loitsii täyden poiston kohteeseen. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Kohde muuttuu syvyyksien haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 88 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
+      "Kohde muuttuu syvyyksien haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 115 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Tuottaa 150% vauriota kohteelle.",
       "Loitsii täyden poiston kohteeseen. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Kohde muuttuu syvyyksien haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 140 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
+      "Kohde muuttuu syvyyksien haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Syvyyksien haamun muodossa kohde saa[#Dynamic] 163 [#]vauriota joka vuorolla. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.\n[*]Ei voi käyttää, jos taistelussa on vain yksi vihollinen jäljellä.\n[*]Tämä tilaefekti ei vaikuta titaaneihin ja myyttisiin titaaneihin.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Loitsija muuttuu haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
-      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 64% puolustusta.",
-      "Haamumuodossa kaikki liittolaiset loitsijaa lukuun ottamatta saavat 180 tehostettua terveyttä joka vuorolla. Tehostettu terveys voi ylittää maksimiterveyden."
+      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 75% puolustusta.",
+      "Haamumuodossa kaikki liittolaiset loitsijaa lukuun ottamatta saavat 215 tehostettua terveyttä joka vuorolla. Tehostettu terveys voi ylittää maksimiterveyden."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Loitsija muuttuu haamuksi 4 vuoron ajaksi. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
-      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 56% puolustusta.",
-      "Haamumuodossa kaikki liittolaiset loitsijaa lukuun ottamatta saavat 300 tehostettua terveyttä joka vuorolla. Tehostettu terveys voi ylittää maksimiterveyden."
+      "Haamumuodossa kaikilla liittolaisilla loitsijaa lukuun ottamatta on 65% puolustusta.",
+      "Haamumuodossa kaikki liittolaiset loitsijaa lukuun ottamatta saavat 360 tehostettua terveyttä joka vuorolla. Tehostettu terveys voi ylittää maksimiterveyden."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
-      "Loitsija muuttuu hirvittäväksi haamuksi 5 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Hirvittävän haamun muodossa oleva loitsija aiheuttaa joka vuorolla satunnaiselle viholliselle automaattisesti 350% vauriota.\n[*] Hirvittävän haamun muodossa olevaa loitsijaa voivat vaurioittaa vain sellaiset viholliset, joiden elementti on vahva loitsijaa vastaan. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
+      "Loitsija muuttuu hirvittäväksi haamuksi 5 vuoron ajaksi. Tämä vaikutus on sitkeä.\n[*] Hirvittävän haamun muodossa oleva loitsija aiheuttaa joka vuorolla satunnaiselle viholliselle automaattisesti 420% vauriota.\n[*] Hirvittävän haamun muodossa olevaa loitsijaa voivat vaurioittaa vain sellaiset viholliset, joiden elementti on vahva loitsijaa vastaan. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Tämän erikoistaidon käyttäminen aiheuttaa 25 hulluutta kaikille liittolaisille paitsi loitsijalle.",
       "(Hulluus voi kääntää käytetyn erikoistaidon kohteet päinvastaisiksi.\n[*] Kun hulluus aktivoituu, vihollisiin kohdistuvat erikoistaidot kohdistuvatkin liittolaisiin ja päin vastoin.\n[*] Loitsijaan kohdistuvat erikoistaidot kohdistuvat satunnaiseen kohteeseen. Kohteeseen kohdistuvat erikoistaidot kohdistuvat loitsijaan.\n[*] Kun hulluus aktivoituu, käytöstä lisävaikutuksia antavat passiiviset taidot ja joukkojen kyvyt eivät aktivoidu.\n[*] Jos hulluus nousee 100 pisteeseen, erikoistaitoa käytetään automaattisesti, kun mana täyttyy.\n[*] Hulluutta ei voi häivyttää tai puhdistaa.\n[*] Sankarin hulluus laskee 10 pistettä aina kun häntä parannetaan suoraan erikoistaidoilla, aputaidoilla, esineillä tai kilvillä. Erikoistaitojen suora parannus laskee hulluutta vain kerran käyttökertaa kohti.\n[*] Kaikki muu parannus laskee hulluutta 1 pistettä.\n[*] Hulluus poistuu kokonaan, kun erikoistaitoa käytetään päinvastaisiin kohteisiin.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Tuottaa 600% vauriota kohteelle.",
-      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 550% vauriota satunnaiselle toiselle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
+      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 550% vauriota satunnaiselle toiselle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 20% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 25% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
       "Loitsija ja lähellä olevat liittolaiset saavat 44% puolustusta ja 10%:n lisäyksen aina, kun heihin osutaan 3 vuoron aikana, yhteensä enintään 94% puolustusta."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Tuottaa 395% vauriota kohteelle ja 5 satunnaisille vihollisille.\n[*]Kutsuu siementaimiriiviön jokaiselle osutulle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.",
+      "Tuottaa 395% vauriota kohteelle ja 5 satunnaisille vihollisille.\n[*]Kutsuu siementaimiriiviön jokaiselle osutulle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 20% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 25% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.",
       "Kaikki osutut kohteet saavat -55% tarkkuutta 5 vuoron ajaksi. (Myös hyökkäävät erikoistaidot voivat mennä ohi.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Tuottaa 600% vauriota kohteelle.",
-      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 350% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
+      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 350% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 20% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 25% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)",
       "Kaikki liittolaiset saavat 55% puolustusta 4 vuoron aikana. Vaikutuksen kesto alkaa alusta, jos tilaefektin omistaja kärsii suoraa vauriota erikoistaidosta."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Tuottaa 480% vauriota kohteelle.",
-      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 320% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 15% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 20% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)"
+      "Jos kohteella on riiviöitä tai megariiviöitä, tämä tuottaa 320% vauriota 2 satunnaiselle muulle viholliselle.\n[*]Kutsuu jokaiselle osutulle viholliselle siementaimiriiviön. (\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*] Siementaimiriiviö: 50% hyökkäystä, 20% terveyttä\n[*] Taimiriiviö: 75% hyökkäystä, 25% terveyttä\n[*] Kukkiva megariiviö: 150% hyökkäystä, 70% terveyttä.\n[*]Riiviö vaurioittaa kohdettaan joka vuorolla. Riiviö katoaa imettyään parannusta. Tarvittavan parannuksen määrä riippuu kohteen maksimiterveydestä.\n[*]Riiviöt eivät voi kehittyä megariiviöiksi, jos samalla sankarilla on käskyläisiä.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Siementaimien kutsuja",
-     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 15% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 20% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
+     "text": "Kutsuu joka vuorolla siementaimiriiviön satunnaiselle viholliselle.\n[*]Siementaimiriiviö kehittyy taimiriiviöksi 3 vuoron jälkeen.\n[*]Taimiriiviö kehittyy kukkivaksi megariiviöksi 3 vuoron jälkeen.\n[*]Siementaimiriiviö:\n[*] 50% hyökkäystä, 20% terveyttä.\n[*]Taimiriiviö:\n[*] 75% hyökkäystä, 25% terveyttä.\n[*]Kukkiva megariiviö:\n[*] 150% hyökkäystä, 70% terveyttä."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

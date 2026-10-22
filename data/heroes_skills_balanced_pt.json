@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Causa 410% de dano ao alvo.",
+      "Tem 80% de chance de acertos adicionais em inimigos aleatórios até 4 vezes. Os acertos adicionais causam pouco dano.",
+      "Os inimigos atingidos recebem Ressonância por 3 turnos. A cada turno, Ressonância causa[#Dynamic] 284 [#]de dano aos inimigos afetados e[#Dynamic] 142 [#]de dano aos inimigos próximos.",
+      "O invocador rouba 20% de mana gerado dos inimigos atingidos por 3 turnos. Este efeito é removido quando o invocador é derrotado."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Causa 630% de dano ao alvo.",
       "Aplica Remoção Total ao alvo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O alvo assume a forma de Fantasma do Abismo por 3 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 483 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
+      "O alvo assume a forma de Fantasma do Abismo por 3 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 576 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Causa 565% de dano ao alvo.",
       "O alvo recebe[#Dynamic] 1875 [#]de dano de água por 3 turnos. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Causa 520% de dano ao alvo e 5 inimigos aleatórios.",
       "Todos os alvos atingidos ficam imunes a novos reforços de efeito de status por 5 turnos e recebem 1200 de dano por cada reforço não aplicado. Este efeito é persistente.",
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Assombração vingativa",
-     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 300% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+     "text": "Quando este personagem perde mais de 30% do limite de vida de uma vez, os efeitos a seguir são ativados.\n[*] Este personagem lança Remoção total em si mesmo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)\n[*]Este personagem assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa 1 reforço dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Causa 240% de dano a todos os inimigos.",
       "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 4 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
       "O invocador reflete todos os males de status e 165% de dano de volta para o atacante e bloqueiam outros efeitos negativos de habilidades especiais de inimigos de Fogo por 4 turnos. (Não é possível refletir efeitos de status lançados por personagens, ajudantes e demônios aliados.)",
-      "Quando lançada, esta habilidade especial aplica 55 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Convoca um demônio Coruja Moldavita para o alvo e os inimigos próximos. O demônio causa dano ao inimigo com 70% do ataque a cada turno.\n[*] O demônio Coruja Moldavita absorve a cura e desaparece depois de absorver cura equivalente a 27% do limite de vida do alvo.",
       "O demônio Coruja Moldavita aplica 5 Insanidade ao dono a cada turno.",
       "Ao fim de cada turno, o demônio Coruja Moldavita dissipa um reforço dissipável do alvo.",
-      "Quando lançada, esta habilidade especial aplica 50 Insanidade ao invocador.",
+      "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Causa 450% de dano aos inimigos nas bordas da formação do inimigo. Quando só há um inimigo, o dano é duplicado.",
       "Aplica Remoção Total aos inimigos nas bordas da formação inimiga. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "Os inimigos nas bordas da formação inimiga assumem a forma de Fantasma do Abismo por 4 turnos.\n[*] Enquanto estão na forma de Fantasma de Abismo, os alvos recebem[#Dynamic] 313 [#]de dano a cada turno. Este efeito é persistente. Contra personagens de Luz, este efeito de status dura mais 2 turnos. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
+      "Os inimigos nas bordas da formação inimiga assumem a forma de Fantasma do Abismo por 4 turnos.\n[*] Enquanto estão na forma de Fantasma de Abismo, os alvos recebem[#Dynamic] 384 [#]de dano a cada turno. Este efeito é persistente. Contra personagens de Luz, este efeito de status dura mais 2 turnos. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de Fantasma por 4 turnos.\n[*] Enquanto está na forma de Fantasma, o invocador ganha 82% de ataque. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de Fantasma por 4 turnos.\n[*] Enquanto está na forma de Fantasma, o invocador ganha 87% de ataque. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de Fantasma por 4 turnos.\n[*] Enquanto está na forma de Fantasma, o invocador ganha 90% de ataque. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
+      "O invocador assume a forma de Fantasma por 4 turnos.\n[*] Enquanto está na forma de Fantasma, o invocador ganha 95% de ataque. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Todos os aliados exceto o invocador ganham 54% de defesa contra Luz por 4 turnos."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O invocador assume a forma de Fantasma por 4 turnos. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
-      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 44% de defesa.",
+      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 50% de defesa.",
       "Enquanto está na forma de Fantasma, todos os aliados exceto o invocador recuperam 140 PV por turno."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de Fantasma Nefasto por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma Nefasto, o invocador causa 175% de dano automaticamente a um inimigo aleatório a cada turno.\n[*] Enquanto está na forma de Fantasma Nefasto Desequilibrado, o invocador pode receber dano dos inimigos cujo elemento é mais forte contra ele. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
+      "O invocador assume a forma de Fantasma Nefasto por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma Nefasto, o invocador causa 210% de dano automaticamente a um inimigo aleatório a cada turno.\n[*] Enquanto está na forma de Fantasma Nefasto Desequilibrado, o invocador pode receber dano dos inimigos cujo elemento é mais forte contra ele. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Causa 158% de dano ao alvo.",
       "Aplica Remoção Total ao alvo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O alvo assume a forma de Fantasma do Abismo por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 88 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
+      "O alvo assume a forma de Fantasma do Abismo por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 115 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Causa 150% de dano ao alvo.",
       "Aplica Remoção Total ao alvo. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O alvo assume a forma de Fantasma do Abismo por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 140 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
+      "O alvo assume a forma de Fantasma do Abismo por 4 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Abismo, o alvo recebe[#Dynamic] 163 [#]de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O invocador assume a forma de Fantasma por 4 turnos. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
-      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 64% de defesa.",
-      "Enquanto na forma de Fantasma, todos os aliados exceto o invocador recuperam 180 de vida reforçada por turno. A vida reforçada pode exceder o limite de PV."
+      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 75% de defesa.",
+      "Enquanto na forma de Fantasma, todos os aliados exceto o invocador recuperam 215 de vida reforçada por turno. A vida reforçada pode exceder o limite de PV."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O invocador assume a forma de Fantasma por 4 turnos. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
-      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 56% de defesa.",
-      "Enquanto na forma de Fantasma, todos os aliados exceto o invocador recuperam 300 de vida reforçada por turno. A vida reforçada pode exceder o limite de PV."
+      "Enquanto o invocador está na forma de fantasma, todos os aliados exceto ele têm 65% de defesa.",
+      "Enquanto na forma de Fantasma, todos os aliados exceto o invocador recuperam 360 de vida reforçada por turno. A vida reforçada pode exceder o limite de PV."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
-      "O invocador assume a forma de Fantasma Nefasto por 5 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma Nefasto, o invocador causa 350% de dano automaticamente a um inimigo aleatório a cada turno.\n[*] Enquanto está na forma de Fantasma Nefasto Desequilibrado, o invocador pode receber dano dos inimigos cujo elemento é mais forte contra ele. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
+      "O invocador assume a forma de Fantasma Nefasto por 5 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma Nefasto, o invocador causa 420% de dano automaticamente a um inimigo aleatório a cada turno.\n[*] Enquanto está na forma de Fantasma Nefasto Desequilibrado, o invocador pode receber dano dos inimigos cujo elemento é mais forte contra ele. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Quando lançada, esta habilidade especial aplica 25 Insanidade a todos os aliados, exceto o invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 sempre que ele é curado diretamente por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Causa 600% de dano ao alvo.",
-      "Quando o alvo tem demônios ou megademônios, causa 550% de dano a outro inimigo aleatório.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
+      "Quando o alvo tem demônios ou megademônios, causa 550% de dano a outro inimigo aleatório.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 20% de vida\n[*] Demônio Broto: 75% de ataque, 25% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
       "O invocador e os aliados próximos recebem 44% de defesa e mais 10% de aumento cada vez que são atingidos durante 3 turnos, até o limite de 94% de defesa."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Causa 395% de dano ao alvo e 5 inimigos aleatórios.\n[*] Convoca um demônio Muda para cada inimigo atingido.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.",
+      "Causa 395% de dano ao alvo e 5 inimigos aleatórios.\n[*] Convoca um demônio Muda para cada inimigo atingido.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 20% de vida\n[*] Demônio Broto: 75% de ataque, 25% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.",
       "Todos os alvos atingidos recebem -55% de precisão por 5 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Causa 600% de dano ao alvo.",
-      "Quando o alvo tem demônios ou megademônios, causa 350% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
+      "Quando o alvo tem demônios ou megademônios, causa 350% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 20% de vida\n[*] Demônio Broto: 75% de ataque, 25% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)",
       "Todos os aliados recebem 55% de defesa por 4 turnos. A duração do efeito é redefinida quando o invocador recebe dano direto de uma habilidade especial."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Causa 480% de dano ao alvo.",
-      "Quando o alvo tem demônios ou megademônios, causa 320% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 15% de vida\n[*] Demônio Broto: 75% de ataque, 20% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)"
+      "Quando o alvo tem demônios ou megademônios, causa 320% de dano a 2 inimigos aleatórios diferentes.\n[*] Convoca um demônio Muda para cada inimigo atingido. (\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*] Demônio Muda: 50% de ataque, 20% de vida\n[*] Demônio Broto: 75% de ataque, 25% de vida\n[*] Megademônio Florescência: 150% de ataque, 70% de vida\n[*] O demônio causa dano ao alvo a cada turno e desaparece após absorver a cura. A quantidade de cura necessária depende do limite de vida do alvo.\n[*] Demônios não podem se transformar em megademônios quando o mesmo herói tem ajudantes.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Convocador de Muda",
-     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 15% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 20% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
+     "text": "Convoca um demônio Muda a cada turno para um inimigo aleatório.\n[*] O demônio Muda se transforma em demônio Broto após 3 turnos.\n[*] O demônio Broto se transforma em megademônio Florescência após 3 turnos.\n[*]Demônio Muda:\n[*] 50% de ataque, 20% de vida\n[*]Demônio Broto:\n[*] 75% de ataque, 25% de vida\n[*]Megademônio Florescência:\n[*] 150% de ataque, 70% de vida"
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

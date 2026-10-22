@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Skadar målet med 410%.",
+      "Har 80% chans att göra extra träffar på slumpmässiga fiender upp till 4 gånger. Extraträffarna gör mindre skada.",
+      "Fiender som träffas får resonans i 3 rundor. Varje runda gör resonans[#Dynamic] 284 [#]skada mot de drabbade fienderna och[#Dynamic] 142 [#]skada mot fiender i närheten.",
+      "Användaren stjäl 20% av den skapade manan från träffade fiender över 3 rundor. Effekten tas bort när användaren besegras."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Skadar målet med 630%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 3 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 483 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 3 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 576 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Skadar målet med 565%.",
       "Målet får[#Dynamic] 1875 [#]vattenskada under 3 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Gör 520% skada mot målet och 5 slumpmässiga fiender.",
       "Alla träffade mål är immuna mot nya positiva statuseffekter i 5 rundor och tar 1200 skada när de försöker få bonusar. Den här effekten är envis.",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hämndlysten hemsökning",
-     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 300% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+     "text": "När den här karaktären förlorar mer än 30% maxhälsa på en och samma gång aktiveras följande effekter.\n[*]Den här karaktären använder fullständig borttagning på sig själv. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)\n[*]Den här karaktären antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter 1 bonus hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Gör 240% skada mot alla fiender.",
       "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 4 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
       "Användaren reflekterar alla negativa statuseffekter och 165% skada tillbaka till anfallaren och blockerar andra negativa statuseffekter från fienders specialförmågor med eld i 4 rundor. (Statuseffekter som kastas av karaktärer, undersåtar eller odjur på samma sida kan inte reflekteras.)",
-      "Att kasta den här specialförmågan ger 55 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Åkallar ett moldavituggleodjur för målet och fiender i närheten. Odjuret skadar fienden med 70% attack varje runda.\n[*]Moldavituggleodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 27% av målets maximala hälsa.",
       "Moldavituggleodjuret ger 5 vansinne till ägaren varje runda.",
       "I slutet av varje runda avbryter moldavituggleodjuret en av målets avbrytningsbara bonusar.",
-      "Att kasta den här specialförmågan ger 50 vansinne till användaren.",
+      "Att kasta den här specialförmågan ger 45 vansinne till användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Gör 450% skada mot fiender vid kanten av fiendeformationen. Om det bara finns en fiende så dubblas skadan.",
       "Använder fullständig borttagning på fienderna i utkanten av fiendeformationen. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Fiender i utkanten av fiendeformationen antar avgrundsspökform i 4 rundor.\n[*] I avgrundsspökform tar målet[#Dynamic] 313 [#]skada varje runda. Den här effekten är envis. Den här statuseffekten varar 2 rundor längre mot heliga karaktärer. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Fiender i utkanten av fiendeformationen antar avgrundsspökform i 4 rundor.\n[*] I avgrundsspökform tar målet[#Dynamic] 384 [#]skada varje runda. Den här effekten är envis. Den här statuseffekten varar 2 rundor längre mot heliga karaktärer. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar spökform i 4 rundor.\n[*] I spökform får användaren 82% attack. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren antar spökform i 4 rundor.\n[*] I spökform får användaren 87% attack. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren antar spökform i 4 rundor.\n[*] I spökform får användaren 90% attack. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Användaren antar spökform i 4 rundor.\n[*] I spökform får användaren 95% attack. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Alla allierade utom användaren får 54% försvar mot heligt i 4 rundor."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren antar spökform i 4 rundor. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
-      "I spökform har alla allierade förutom anfallaren 44% försvar.",
+      "I spökform har alla allierade förutom anfallaren 50% försvar.",
       "I spökform regenererar alla allierade utom kastaren 140 hälsa varje runda."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren byter skepnad till ett hemskt spöke i 4 rundor. Den här effekten är envis.\n[*] Medan användaren har formen av ett hemskt spöke gör anfallaren automatiskt 175% skada mot en slumpad fiende varje runda.\n[*] I hemsk spökform kan användaren ta skada från fiender vars element är starkt mot användaren. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
+      "Användaren byter skepnad till ett hemskt spöke i 4 rundor. Den här effekten är envis.\n[*] Medan användaren har formen av ett hemskt spöke gör anfallaren automatiskt 210% skada mot en slumpad fiende varje runda.\n[*] I hemsk spökform kan användaren ta skada från fiender vars element är starkt mot användaren. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Skadar målet med 158%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 88 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 115 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Skadar målet med 150%.",
       "Använder fullständig borttagning på målet. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 140 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
+      "Målet antar avgrundsspökeform i 4 rundor. Den här effekten är envis.\n[*] I avgrundsspökeform tar målet[#Dynamic] 163 [#]skada varje runda. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.\n[*]Kan inte användas om endast en fiende är kvar i striden.\n[*]Titaner och mytomspunna titaner påverkas inte av statuseffekten.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren antar spökform i 4 rundor. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
-      "I spökform har alla allierade förutom anfallaren 64% försvar.",
-      "I spökform regenererar alla allierade utom kastaren 180 ökad hälsa varje runda. Hälsan kan komma att överstiga maxhälsan."
+      "I spökform har alla allierade förutom anfallaren 75% försvar.",
+      "I spökform regenererar alla allierade utom kastaren 215 ökad hälsa varje runda. Hälsan kan komma att överstiga maxhälsan."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren antar spökform i 4 rundor. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
-      "I spökform har alla allierade förutom anfallaren 56% försvar.",
-      "I spökform regenererar alla allierade utom kastaren 300 ökad hälsa varje runda. Hälsan kan komma att överstiga maxhälsan."
+      "I spökform har alla allierade förutom anfallaren 65% försvar.",
+      "I spökform regenererar alla allierade utom kastaren 360 ökad hälsa varje runda. Hälsan kan komma att överstiga maxhälsan."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
-      "Användaren byter skepnad till ett hemskt spöke i 5 rundor. Den här effekten är envis.\n[*] Medan användaren har formen av ett hemskt spöke gör anfallaren automatiskt 350% skada mot en slumpad fiende varje runda.\n[*] I hemsk spökform kan användaren ta skada från fiender vars element är starkt mot användaren. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Användaren byter skepnad till ett hemskt spöke i 5 rundor. Den här effekten är envis.\n[*] Medan användaren har formen av ett hemskt spöke gör anfallaren automatiskt 420% skada mot en slumpad fiende varje runda.\n[*] I hemsk spökform kan användaren ta skada från fiender vars element är starkt mot användaren. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Att kasta den här specialförmågan ger 25 vansinne till alla allierade utom användaren.",
       "(Vansinne kan få en specialförmåga att byta mål.\n[*] När vansinne aktiveras används specialförmågor som vanligtvis riktar in sig på fiender istället på allierade, och tvärtom.\n[*] Specialförmågor som påverkar sin användare används istället på ett slumpvalt mål, och specialförmågor som används på ett specifikt mål träffar istället användaren.\n[*] När vansinne aktiveras så aktiveras inga passiva förmågor eller truppförmågor som ger extra effekter vid användning.\n[*] Vid 100 vansinne används en specialförmåga automatiskt när manan är full.\n[*] Vansinne kan inte avbrytas eller rensas.\n[*] En hjältes vansinne kan sänkas med 10 varje gång den läks direkt av specialförmågor, hjälpförmågor, föremål eller sköldar. Direkt läkning från specialförmågor sänker bara vansinnet en gång per användning.\n[*] All annan läkning sänker vansinnet med 1.\n[*] Vansinnet tas bort helt när en spegelvänd specialförmåga används.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Skadar målet med 600%.",
-      "Om målet har odjur eller megaodjur tar en annan slumpmässig fiende 550% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
+      "Om målet har odjur eller megaodjur tar en annan slumpmässig fiende 550% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
       "Användaren och allierade i närheten får 44% försvar och ytterligare 10% mer varje gång de blir träffade under 3 rundor, upp till 94% försvar."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Gör 395% skada mot målet och 5 slumpmässiga fiender.\n[*]Åkallar ett groddodjur på varje fiende som träffas.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.",
+      "Gör 395% skada mot målet och 5 slumpmässiga fiender.\n[*]Åkallar ett groddodjur på varje fiende som träffas.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.",
       "Alla träffade mål får -55% träffsäkerhet i 5 rundor. (Chansen att missa gäller även offensiva specialförmågor.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Skadar målet med 600%.",
-      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 350% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
+      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 350% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)",
       "Alla allierade får 55% försvar i 4 rundor. Effektens varaktighet återställs om ägaren av statuseffekten tar direktskada av en specialförmåga."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Skadar målet med 480%.",
-      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 320% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)"
+      "Om målet har odjur eller megaodjur tar 2 slumpmässiga fiender 320% skada.\n[*]Åkallar ett groddodjur på varje fiende som träffas. (\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*] Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*] Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*] Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa.\n[*]Odjur skadar sina mål varje runda. Odjur försvinner efter att ha absorberat läkning. Mängden läkning som krävs beror på målets maxhälsa.\n[*]Odjur kan inte utvecklas till megaodjur om samma hjälte har undersåtar.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Groddåkallare",
-     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 15% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 20% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
+     "text": "Åkallar ett groddodjur på en slumpmässig fiende varje runda.\n[*]Groddodjuret utvecklas till ett skottodjur efter 3 rundor.\n[*]Skottodjuret utvecklas till ett blomstermegaodjur efter 3 rundor.\n[*]Groddodjuret:\n[*] 50% attack, 20% hälsa.\n[*]Skottodjuret:\n[*] 75% attack, 25% hälsa.\n[*]Blomstermegaodjuret:\n[*] 150% attack, 70% hälsa."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

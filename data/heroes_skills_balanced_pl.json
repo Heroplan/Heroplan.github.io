@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Zadaje 410% obrażeń celowi.",
+      "Daje 80% szans na dodatkowe trafienia losowych przeciwników, maksymalnie 4 razy. Dodatkowe trafienia zadają niewielkie obrażenia.",
+      "Trafieni wrogowie otrzymują Rezonowanie na 3 tur(y). W każdej turze Rezonowanie zadaje[#Dynamic] 284 [#]pkt. obrażeń dotkniętym wrogom i[#Dynamic] 142 [#]pkt. obrażeń pobliskim wrogom.",
+      "Rzucający kradnie 20% regeneracji many trafionych wrogów przez okres 3 tur. Efekt ten zostaje zdjęty w razie pokonania rzucającego."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Zadaje 630% obrażeń celowi.",
       "Rzuca pełne usunięcie na cel. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Cel przeobraża się w ducha otchłani na okres 3 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 483 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
+      "Cel przeobraża się w ducha otchłani na okres 3 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 576 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Zadaje 565% obrażeń celowi.",
       "Cel odnosi[#Dynamic] 1875 [#]pkt. obrażeń od wody w ciągu 3 tur. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Zadaje 520% obrażeń celowi i 5 losowym wrogom.",
       "Wszystkie trafione cele nie mogą otrzymywać wzmocnień ze statusu przez okres 5 tur i otrzymują 1200 pkt. obrażeń za każdą próbę nałożenia wzmocnienia. Ten efekt jest nieustępliwy.",
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Mściwe nawiedzenie",
-     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 300% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+     "text": "Gdy ta postać straci więcej niż 30% maksymalnego zdrowia naraz, aktywują się następujące efekty.\n[*]Ta postać rzuca pełne usunięcie na siebie. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)\n[*]Ta postać przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z nich 1 wzmocnienie. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Zadaje 240% obrażeń wszystkim przeciwnikom.",
       "Bohater zyskuje efekt Prowokacji, który uniemożliwia wrogom używanie umiejętności specjalnych na sojusznikach bohatera przez 4 tur(y). (Prowokacja sprawia, że żaden z wrogów nie może użyć umiejętności specjalnej na sojusznikach, którzy nie są pod wpływem Prowokacji.)",
       "Rzucający odbija wszystkie dolegliwości ze statusu i 165% obrażeń w atakującego i blokuje inne negatywne efekty od wrogich umiejętności specjalnych ognia przez okres 4 tur. (Efekty ze statusu rzucone przez postaci, sojuszników i potwory po tej samej stronie nie mogą zostać odbite.)",
-      "Rzucenie tej umiejętności specjalnej nakłada 55 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Wzywa potwora mołdawitową sowę na cel i pobliskich wrogów. Potwór zadaje przeciwnikowi obrażenia o wartości 70% ataku w każdej turze.\n[*]Potwór mołdawitowa sowa wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 27% maksymalnego zdrowia celu.",
       "Potwór mołdawitowa sowa co turę nakłada 5 pkt. obłędu na posiadacza.",
       "Pod koniec każdej tury potwór mołdawitowa sowa odwołuje jedno z możliwych do odwołania wzmocnień z celu.",
-      "Rzucenie tej umiejętności specjalnej nakłada 50 pkt. obłędu na rzucającego.",
+      "Rzucenie tej umiejętności specjalnej nakłada 45 pkt. obłędu na rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Zadaje 450% obrażeń wrogom na skraju formacji przeciwnika. Jeśli został tylko jeden wróg, obrażenia są podwajane.",
       "Rzuca pełne usunięcie na cele znajdujące się na skrajach formacji wroga. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Cele na skrajach formacji wroga przeobrażają się w duchy otchłani na okres 4 tur.\n[*] Pod tą postacią otrzymują[#Dynamic] 313 [#]pkt. obrażeń z każdą turą. Ten efekt jest nieustępliwy. Ten efekt ze statusu obowiązuje dłużej o 2 tur(y) w przypadku postaci światłości. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
+      "Cele na skrajach formacji wroga przeobrażają się w duchy otchłani na okres 4 tur.\n[*] Pod tą postacią otrzymują[#Dynamic] 384 [#]pkt. obrażeń z każdą turą. Ten efekt jest nieustępliwy. Ten efekt ze statusu obowiązuje dłużej o 2 tur(y) w przypadku postaci światłości. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Bohater przeobraża się w ducha na okres 4 tur.\n[*] Jako duch zyskuje 82% do ataku. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Bohater przeobraża się w ducha na okres 4 tur.\n[*] Jako duch zyskuje 87% do ataku. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Bohater przeobraża się w ducha na okres 4 tur.\n[*] Jako duch zyskuje 90% do ataku. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
+      "Bohater przeobraża się w ducha na okres 4 tur.\n[*] Jako duch zyskuje 95% do ataku. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Wszyscy sojusznicy z wyjątkiem rzucającego otrzymują 54% do obrony przeciwko światłości przez okres 4 tur."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Rzucający przeobraża się w ducha na okres 4 tur. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
-      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 44% do obrony.",
+      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 50% do obrony.",
       "W formie ducha wszyscy sojusznicy z wyjątkiem rzucającego regenerują 140 PŻ w każdej turze."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Bohater przeobraża się w strasznego ducha na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią strasznego ducha automatycznie zadaje 175% obrażeń przeciw losowemu wrogowi w każdej turze.\n[*] Pod tą postacią rzucający może otrzymywać obrażenia od wrogów, którzych żywioł jest silny przeciwko jego żywiołowi. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
+      "Bohater przeobraża się w strasznego ducha na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią strasznego ducha automatycznie zadaje 210% obrażeń przeciw losowemu wrogowi w każdej turze.\n[*] Pod tą postacią rzucający może otrzymywać obrażenia od wrogów, którzych żywioł jest silny przeciwko jego żywiołowi. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Zadaje 158% obrażeń celowi.",
       "Rzuca pełne usunięcie na cel. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Cel przeobraża się w ducha otchłani na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 88 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
+      "Cel przeobraża się w ducha otchłani na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 115 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Zadaje 150% obrażeń celowi.",
       "Rzuca pełne usunięcie na cel. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Cel przeobraża się w ducha otchłani na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 140 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
+      "Cel przeobraża się w ducha otchłani na okres 4 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią ducha otłchani zadaje wrogowi[#Dynamic] 163 [#]pkt. obrażeń w każdej turze. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.\n[*]Nie można rzucić, gdy w bitwie pozostał tylko jeden wróg.\n[*]Tytani i mityczni tytani nie odczuwają tego efektu statusu.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Rzucający przeobraża się w ducha na okres 4 tur. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
-      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 64% do obrony.",
-      "W formie ducha wszyscy sojusznicy z wyjątkiem rzucającego regenerują 180 wzmocnionego zdrowia w każdej turze. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ"
+      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 75% do obrony.",
+      "W formie ducha wszyscy sojusznicy z wyjątkiem rzucającego regenerują 215 wzmocnionego zdrowia w każdej turze. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ"
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Rzucający przeobraża się w ducha na okres 4 tur. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
-      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 56% do obrony.",
-      "W formie ducha wszyscy sojusznicy z wyjątkiem rzucającego regenerują 300 wzmocnionego zdrowia w każdej turze. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ"
+      "Gdy jest w formie ducha, wszyscy sojusznicy poza rzucającym otrzymują 65% do obrony.",
+      "W formie ducha wszyscy sojusznicy z wyjątkiem rzucającego regenerują 360 wzmocnionego zdrowia w każdej turze. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ"
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
-      "Bohater przeobraża się w strasznego ducha na okres 5 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią strasznego ducha automatycznie zadaje 350% obrażeń przeciw losowemu wrogowi w każdej turze.\n[*] Pod tą postacią rzucający może otrzymywać obrażenia od wrogów, którzych żywioł jest silny przeciwko jego żywiołowi. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
+      "Bohater przeobraża się w strasznego ducha na okres 5 tur. Ten efekt jest nieustępliwy.\n[*] Pod postacią strasznego ducha automatycznie zadaje 420% obrażeń przeciw losowemu wrogowi w każdej turze.\n[*] Pod tą postacią rzucający może otrzymywać obrażenia od wrogów, którzych żywioł jest silny przeciwko jego żywiołowi. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Rzucenie tej umiejętności specjalnej nakłada 25 pkt. obłędu na wszystkich sojuszników z wyjątkiem rzucającego.",
       "(Obłęd zapewnia szansę na odwrócenie celów zdolności specjalnej.\n[*] Po aktywacji obłędu zdolności specjalne, które obierają za cel wrogów, będą zamiast tego obierać za cel sojuszników i odwrotnie.\n[*] Zdolności specjalne wymierzone w rzucającego zostaną rzucone na losowy cel. Zdolności specjalne wymierzone w cel zostaną rzucone na rzucającego.\n[*] Gdy obłęd się aktywuje, nie działają zdolności pasywne i umiejętności oddziałów zapewniające dodatkowe efekty użycia zdolności.\n[*] Osiągnięcie 100 pkt. obłędu powoduje automatyczne rzucenie zdolności specjalnej, gdy mana jest pełna.\n[*] Obłędu nie można rozproszyć ani oczyścić.\n[*] Obłęd bohatera można zmniejszyć o 10 pkt. przy każdym uzdrowieniu bezpośrednio zdolnością specjalną, zdolnością wsparcia, przedmiotem lub przez tarczę. Bezpośrednie uzdrowienia za pomocą zdolności specjalnych zmniejszają obłęd tylko raz na jedno użycie.\n[*] Wszystkie inne efekty leczenia obniżają obłęd o 1.\n[*] Obłęd zostaje całkowicie usunięty, gdy odwrócona zdolność specjalna zostaje rzucona.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Zadaje 600% obrażeń celowi.",
-      "Jeśli cel ma potwory lub mega potwory, zadaje 550% obrażeń innemu losowemu wrogowi.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
+      "Jeśli cel ma potwory lub mega potwory, zadaje 550% obrażeń innemu losowemu wrogowi.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 20% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 25% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
       "Rzucający i pobliscy sojusznicy otrzymują 44% do obrony i dodatkowe 10% za każde otrzymane trafienie przez 3 tur(y). Obrona może wzrosnąć maksymalnie do 94%."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Zadaje 395% obrażeń celowi i 5 losowym wrogom.\n[*]Wzywa potwora sadzonkę na każdego trafionego wroga.\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.",
+      "Zadaje 395% obrażeń celowi i 5 losowym wrogom.\n[*]Wzywa potwora sadzonkę na każdego trafionego wroga.\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 20% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 25% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.",
       "Wszystkie trafione cele otrzymują -55% do celności przez okres 5 tur. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Zadaje 600% obrażeń celowi.",
-      "Jeśli cel ma potwory lub mega potwory, zadaje 350% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
+      "Jeśli cel ma potwory lub mega potwory, zadaje 350% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 20% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 25% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)",
       "Wszyscy sojusznicy otrzymują 55% do obrony na okres 4 tur. Czas trwania efektu jest resetowany, jeśli jednostka z nałożonym efektem ze statusu zostanie trafiona bezpośrednimi obrażeniami od umiejętności specjalnej."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Zadaje 480% obrażeń celowi.",
-      "Jeśli cel ma potwory lub mega potwory, zadaje 320% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 15% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 20% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)"
+      "Jeśli cel ma potwory lub mega potwory, zadaje 320% obrażeń 2 innym losowym wrogom.\n[*]Wzywa na każdego trafionego wroga potwora sadzonkę. (\n[*]Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*]Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*] Potwór sadzonka: 50% ataku, 20% zdrowia.\n[*] Kiełkujący potwór: 75% ataku, 25% zdrowia.\n[*] Kwitnący mega potwór: 150% ataku, 70% zdrowia.\n[*]Potwór zadaje obrażenia celowi co turę i znika po pochłonięciu leczenia. Ilość wymaganego leczenia zależy od maksymalnego zdrowia celu.\n[*]Potwory nie mogą ewoluować w mega potwory, jeśli na tym samym bohaterze są pomocnicy.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Przywoływacz sadzonek",
-     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 15% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 20% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
+     "text": "Co turę wzywa na losowego wroga potwora sadzonkę.\n[*] Potwór sadzonka ewoluuje w kiełkującego potwora po upływie 3 tur.\n[*] Kiełkujący potwór ewoluuje w kwitnącego mega potwora po upływie 3 tur.\n[*]Potwór sadzonka:\n[*] 50% ataku, 20% zdrowia.\n[*]Kiełkujący potwór:\n[*] 75% ataku, 25% zdrowia.\n[*]Kwitnący mega potwór:\n[*] 150% ataku, 70% zdrowia."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Inflige 410% de dégâts à la cible.",
+      "A 80% de chances de donner des coups supplémentaires à des ennemis aléatoires avec un maximum de 4 coups. Les coups causent des dégâts légers.",
+      "Les ennemis touchés reçoivent Résonance pendant 3 tours. À chaque tour, Résonance inflige[#Dynamic] 284 [#]points de dégâts aux ennemis affectés et[#Dynamic] 142 [#]points de dégâts aux ennemis proches.",
+      "Le lanceur vole 20% du mana généré par les ennemis sur 3 tours. Cet effet disparaît si le lanceur est vaincu."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Inflige 630% de dégâts à la cible.",
       "Applique Suppression totale à la cible. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "La cible passe en forme de fantôme abyssal pour 3 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 483 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
+      "La cible passe en forme de fantôme abyssal pour 3 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 576 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Inflige 565% de dégâts à la cible.",
       "La cible reçoit[#Dynamic] 1875 [#]points de dégâts d'eau sur 3 tours. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Inflige 520% de dégâts à la cible et à 5 ennemis aléatoires.",
       "Les cibles touchées ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 5 tours, et elles subissent 1200 points de dégâts à la place de chaque bonus qui leur est conféré. Cet effet est obstiné.",
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe des bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hantise vengeresse",
-     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 300% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+     "text": "Quand ce personnage perd plus de 30% de ses PV max d'un coup, les effets suivants s'activent.\n[*]Ce personnage lance Suppression totale sur lui-même. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)\n[*]Ce personnage passe en forme de fantôme vengeur pendant 2 tours. À la fin de chaque tour, le fantôme vengeur inflige 350% de dégâts à un ennemi aléatoire et lui dissipe 1 bonus. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Inflige 240% de dégâts à tous les ennemis.",
       "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 4 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
       "Le lanceur renvoie les effets négatifs ainsi que 165% des dégâts aux attaquants, et bloque les autres effets négatifs des compétences spéciales de feu ennemies pendant 4 tours. (Les effets lancés par les personnages, sbires et démons alliés ne peuvent pas être renvoyés.)",
-      "Utiliser cette compétence spéciale inflige 55 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Invoque un démon hibou de moldavite pour la cible et les ennemis proches. Il inflige des dégâts à l'ennemi à hauteur de 70% d'attaque à chaque tour.\n[*]Le démon hibou de moldavite absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 27% de la santé maximum de sa cible",
       "Le démon hibou de moldavite inflige 5 point(s) de folie à son propriétaire à chaque tour.",
       "À la fin de chaque tour, le démon hibou de moldavite dissipe l'un des bonus dissipables de sa cible.",
-      "Utiliser cette compétence spéciale inflige 50 point(s) de folie au lanceur.",
+      "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Inflige 450% de dégâts aux ennemis sur les bords de la formation ennemie. S'il n'y a qu'un seul ennemi, les dégâts sont doublés.",
       "Applique Suppression totale aux ennemis sur les bords de la formation ennemie. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Les ennemis sur les bords de la formation ennemie passent en forme de fantôme abyssal pour 4 tours.\n[*] Sous cette forme, ils reçoivent[#Dynamic] 313 [#]points de dégâts par tour. Cet effet est obstiné. Cet effet appliqué dure 2 tours de plus sur les personnages sacrés. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
+      "Les ennemis sur les bords de la formation ennemie passent en forme de fantôme abyssal pour 4 tours.\n[*] Sous cette forme, ils reçoivent[#Dynamic] 384 [#]points de dégâts par tour. Cet effet est obstiné. Cet effet appliqué dure 2 tours de plus sur les personnages sacrés. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme pour 4 tours.\n[*] Sous cette forme, le lanceur gagne 82% d'attaque. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme pour 4 tours.\n[*] Sous cette forme, le lanceur gagne 87% d'attaque. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme pour 4 tours.\n[*] Sous cette forme, le lanceur gagne 90% d'attaque. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
+      "Le lanceur passe en forme de fantôme pour 4 tours.\n[*] Sous cette forme, le lanceur gagne 95% d'attaque. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Tous les alliés à l'exception du lanceur reçoivent 54% de défense contre l'élément sacré pour 4 tours."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "Le lanceur passe en forme de fantôme pour 4 tours. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
-      "Sous forme de fantôme, tous les alliés du lanceur ont 44% de défense.",
+      "Sous forme de fantôme, tous les alliés du lanceur ont 50% de défense.",
       "Quand le lanceur est sous forme de fantôme, tous les alliés sauf lui récupèrent 140 PV chaque tour."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme pressant pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, le lanceur inflige automatiquement 175% de dégâts à un ennemi aléatoire à chaque tour.\n[*] Sous cette forme, le lanceur peut subir des dégâts des ennemis dont l'élément est fort face au sien. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
+      "Le lanceur passe en forme de fantôme pressant pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, le lanceur inflige automatiquement 210% de dégâts à un ennemi aléatoire à chaque tour.\n[*] Sous cette forme, le lanceur peut subir des dégâts des ennemis dont l'élément est fort face au sien. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Inflige 158% de dégâts à la cible.",
       "Applique Suppression totale à la cible. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "La cible passe en forme de fantôme abyssal pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 88 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
+      "La cible passe en forme de fantôme abyssal pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 115 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Inflige 150% de dégâts à la cible.",
       "Applique Suppression totale à la cible. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "La cible passe en forme de fantôme abyssal pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 140 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
+      "La cible passe en forme de fantôme abyssal pour 4 tours. Cet effet est obstiné.\n[*] Sous cette forme, elle reçoit[#Dynamic] 163 [#]points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "Le lanceur passe en forme de fantôme pour 4 tours. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
-      "Sous forme de fantôme, tous les alliés du lanceur ont 64% de défense.",
-      "Quand le lanceur est sous forme de fantôme, booste la santé de tous les alliés sauf lui de 180 à chaque tour. Le maximum de PV peut être dépassé."
+      "Sous forme de fantôme, tous les alliés du lanceur ont 75% de défense.",
+      "Quand le lanceur est sous forme de fantôme, booste la santé de tous les alliés sauf lui de 215 à chaque tour. Le maximum de PV peut être dépassé."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "Le lanceur passe en forme de fantôme pour 4 tours. Cet effet est obstiné. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
-      "Sous forme de fantôme, tous les alliés du lanceur ont 56% de défense.",
-      "Quand le lanceur est sous forme de fantôme, booste la santé de tous les alliés sauf lui de 300 à chaque tour. Le maximum de PV peut être dépassé."
+      "Sous forme de fantôme, tous les alliés du lanceur ont 65% de défense.",
+      "Quand le lanceur est sous forme de fantôme, booste la santé de tous les alliés sauf lui de 360 à chaque tour. Le maximum de PV peut être dépassé."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Applique Suppression totale au lanceur. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
-      "Le lanceur passe en forme de fantôme pressant pour 5 tours. Cet effet est obstiné.\n[*] Sous cette forme, le lanceur inflige automatiquement 350% de dégâts à un ennemi aléatoire à chaque tour.\n[*] Sous cette forme, le lanceur peut subir des dégâts des ennemis dont l'élément est fort face au sien. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
+      "Le lanceur passe en forme de fantôme pressant pour 5 tours. Cet effet est obstiné.\n[*] Sous cette forme, le lanceur inflige automatiquement 420% de dégâts à un ennemi aléatoire à chaque tour.\n[*] Sous cette forme, le lanceur peut subir des dégâts des ennemis dont l'élément est fort face au sien. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Utiliser cette compétence spéciale inflige 25 point(s) de folie à tous les alliés à l'exception du lanceur.",
       "(La folie a une petite chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 quand il est soigné directement par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Inflige 600% de dégâts à la cible.",
-      "Si la cible à des démons ou des méga démons, inflige 550% de dégâts à un autre ennemi aléatoire.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
+      "Si la cible à des démons ou des méga démons, inflige 550% de dégâts à un autre ennemi aléatoire.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 20% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 25% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
       "Le lanceur et les alliés proches reçoivent 44% de défense et une augmentation supplémentaire de 10% à chaque coup subi pendant 3 tours, jusqu'à un maximum de 94%."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Inflige 395% de dégâts à la cible et 5 ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché.\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.",
+      "Inflige 395% de dégâts à la cible et 5 ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché.\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 20% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 25% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.",
       "Toutes les cibles touchées reçoivent -55% de précision pendant 5 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Inflige 600% de dégâts à la cible.",
-      "Si la cible a des démons ou des méga démons, inflige 350% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
+      "Si la cible a des démons ou des méga démons, inflige 350% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 20% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 25% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)",
       "Tous les alliés reçoivent 55% de défense pendant 4 tours. La durée de l'effet est réinitialisée si le propriétaire de l'effet subit des dégâts directs de compétence spéciale."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Inflige 480% de dégâts à la cible.",
-      "Si la cible a des démons ou des méga démons, inflige 320% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 15% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 20% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)"
+      "Si la cible a des démons ou des méga démons, inflige 320% de dégâts à 2 autres ennemis aléatoires.\n[*]Invoque un démon plantule pour chaque ennemi touché. (\n[*]Le démon plantule devient un démon jeune pousse après 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant après 3 tours.\n[*] Démon plantule: 50% d'attaque, 20% de santé.\n[*] Démon jeune pousse: 75% d'attaque, 25% de santé.\n[*] Méga démon florissant: 150% d'attaque, 70% de santé.\n[*]Les démons infligent des dégâts à leur cible à chaque tour et disparaissent après avoir absorbé une quantité de soins proportionnelle à la santé maximale de la cible.\n[*]Les démons ne peuvent pas évoluer en méga démons si le même héros possède des sbires.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Invocation de plantule",
-     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 15% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 20% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
+     "text": "À chaque tour, invoque un démon plantule pour un ennemi aléatoire.\n[*]Le démon plantule devient un démon jeune pousse au bout de 3 tours.\n[*]Le démon jeune pousse devient un méga démon florissant au bout de 3 tours.\n[*]Démon plantule:\n[*] 50% d'attaque, 20% de santé.\n[*]Démon jeune pousse:\n[*] 75% d'attaque, 25% de santé.\n[*]Méga démon florissant:\n[*] 150% d'attaque, 70% de santé."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

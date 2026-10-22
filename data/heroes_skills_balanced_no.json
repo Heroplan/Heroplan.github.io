@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Påfør 410% skade på målet.",
+      "Har en 80% mulighet for ytterligere angrep mot tilfeldige fiender, opptil 4 ganger. Ytterligere angrep gjør minimal skade.",
+      "Fiender som treffes mottar resonans i 3 runder. Hver runde gjør resonans[#Dynamic] 284 [#]skade på de påvirkede fiendene og[#Dynamic] 142 [#]skade på fiender i nærheten.",
+      "Brukeren stjeler 20% av generert mana fra trufne fiender over 3 runder. Denne effekten fjernes dersom brukeren beseires."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Påfør 630% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 3 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 483 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 3 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 576 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ],
@@ -1604,7 +1615,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1615,7 +1626,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1630,7 +1641,7 @@
       "Påfør 565% skade på målet.",
       "Målet tar[#Dynamic] 1875 [#]vannskade over 3 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 300% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 350% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ],
@@ -1638,7 +1649,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1649,7 +1660,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1670,7 +1681,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1716,7 +1727,7 @@
       "Påfører 520% skade på målet 5 tilfeldige fiender.",
       "Alle mål truffet er immune mot nye statuseffektøkninger i 5 runder og tar 1200 skade for hver forsøkte økning. Denne effekten er sta.",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 300% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 350% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ],
@@ -1724,7 +1735,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1735,7 +1746,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1746,7 +1757,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Hevngjerrig hån",
-     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 300% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+     "text": "Når denne figuren mister mer enn 30% av maksimal helse på en gang, aktiveres følgende effekter.\n[*]Denne figuren bruker full fjerning på seg selv. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)\n[*]Denne figuren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur vil hevngjerrig spøkelse påføre en tilfeldig fiende 350% skade og fjerne 1 økning fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
     }
    ]
   }
@@ -1961,7 +1972,7 @@
       "Påfører 240% skade på alle fiender.",
       "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 4 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)",
       "Brukeren reflekterer alle statuslidelser og 165% skade tilbake til angriperen og blokkerer andre negative effekter fra fienders ild-spesialferdigheter i 4 runder. (Statuseffekter brukt av figurer, undersåtter og djevler på samme side kan ikke reflekteres.)",
-      "Bruk av denne spesialferdigheten påfører brukeren 55 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
     }
@@ -2091,7 +2102,7 @@
       "Påkaller en Moldavite-ugledjevel for målet og fiender i nærheten. Djevelen skader fienden med 70% angrep hver runde.\n[*]Moldavite-ugledjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 27% av målets maksimale helse.",
       "Moldavite-ugledjevelen påfører eieren 5 galskap hver runde.",
       "Ved slutten av hver runde fjerner Moldavite-ugledjevelen én av målets fjernbare økninger.",
-      "Bruk av denne spesialferdigheten påfører brukeren 50 galskap.",
+      "Bruk av denne spesialferdigheten påfører brukeren 45 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
     }
@@ -2106,7 +2117,7 @@
      "lines": [
       "Påfører 450% skade på fiendene på kanten av fiendens formasjon. Dersom kun er én fiende, dobles skaden.",
       "Bruker full fjerning på fiendene på kanten av fiendens formasjon. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Fiendene på kanten av fiendens formasjon går over til avgrunnsspøkelse-form i 4 runder.\n[*] Når målene er i avgrunnsspøkelse-form, tar de[#Dynamic] 313 [#]skade hver runde. Denne effekten er sta. Mot hellig-figurer varer denne statuseffekten 2 runder lenger. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Fiendene på kanten av fiendens formasjon går over til avgrunnsspøkelse-form i 4 runder.\n[*] Når målene er i avgrunnsspøkelse-form, tar de[#Dynamic] 384 [#]skade hver runde. Denne effekten er sta. Mot hellig-figurer varer denne statuseffekten 2 runder lenger. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ]
@@ -3072,7 +3083,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren og allierte i nærheten bytter til spøkelsesform i 4 turns.\n[*] Mens den er i spøkelsesform, får den 82% angrep. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren og allierte i nærheten bytter til spøkelsesform i 4 turns.\n[*] Mens den er i spøkelsesform, får den 87% angrep. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ]
@@ -3085,7 +3096,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren og allierte i nærheten bytter til spøkelsesform i 4 turns.\n[*] Mens den er i spøkelsesform, får den 90% angrep. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Brukeren og allierte i nærheten bytter til spøkelsesform i 4 turns.\n[*] Mens den er i spøkelsesform, får den 95% angrep. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Alle allierte, med unntak av brukeren, får 54% forsvar mot hellig i 4 runder."
      ]
     }
@@ -3107,7 +3118,7 @@
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren forvandles til spøkelsesform i 4 runder. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
-      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 44% forsvar.",
+      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 50% forsvar.",
       "Når i spøkelsesform, vil alle allierte, med unntak av brukeren, regenererer 140 HP hver runde."
      ]
     }
@@ -3418,7 +3429,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren bytter til Skrekkelig spøkelse-form i 4 runder. Denne effekten er sta.\n[*] Mens den er i Skrekkelig spøkelse-form, gjør brukeren automatisk 175% skade på en tilfeldig fiende hver runde.\n[*] Mens den er i Skrekkelig spøkelse-form, kan brukeren ta skade fra fiender i et element som er sterkt mot brukeren. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
+      "Brukeren bytter til Skrekkelig spøkelse-form i 4 runder. Denne effekten er sta.\n[*] Mens den er i Skrekkelig spøkelse-form, gjør brukeren automatisk 210% skade på en tilfeldig fiende hver runde.\n[*] Mens den er i Skrekkelig spøkelse-form, kan brukeren ta skade fra fiender i et element som er sterkt mot brukeren. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
    ]
@@ -3454,7 +3465,7 @@
      "lines": [
       "Påfør 158% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 88 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 115 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ]
@@ -3468,7 +3479,7 @@
      "lines": [
       "Påfør 150% skade på målet.",
       "Bruker full fjerning på målet. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 140 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
+      "Målet går over til avgrunnsspøkelse-form i 4 runder. Denne effekten er sta.\n[*] Når målet er i avgrunnsspøkelse-form, tar det[#Dynamic] 163 [#]skade hver runde. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.\n[*]Kan ikke brukes hvis det bare er én fiende igjen i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke av denne statuseffekten.)"
      ]
     }
    ]
@@ -3482,8 +3493,8 @@
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren forvandles til spøkelsesform i 4 runder. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
-      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 64% forsvar.",
-      "Når i spøkelsesform, vil alle allierte, med unntak av brukeren, regenerere 180 økt helse hver runde. Økt helse kan overskrider maks HP."
+      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 75% forsvar.",
+      "Når i spøkelsesform, vil alle allierte, med unntak av brukeren, regenerere 215 økt helse hver runde. Økt helse kan overskrider maks HP."
      ]
     }
    ]
@@ -3497,8 +3508,8 @@
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren forvandles til spøkelsesform i 4 runder. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
-      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 56% forsvar.",
-      "Når i spøkelsesform, vil alle allierte, med unntak av brukeren, regenerere 300 økt helse hver runde. Økt helse kan overskrider maks HP."
+      "Mens de er i spøkelsesform, får alle allierte bortsett fra brukeren 65% forsvar.",
+      "Når i spøkelsesform, vil alle allierte, med unntak av brukeren, regenerere 360 økt helse hver runde. Økt helse kan overskrider maks HP."
      ]
     }
    ]
@@ -3722,7 +3733,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
-      "Brukeren bytter til Skrekkelig spøkelse-form i 5 runder. Denne effekten er sta.\n[*] Mens den er i Skrekkelig spøkelse-form, gjør brukeren automatisk 350% skade på en tilfeldig fiende hver runde.\n[*] Mens den er i Skrekkelig spøkelse-form, kan brukeren ta skade fra fiender i et element som er sterkt mot brukeren. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Brukeren bytter til Skrekkelig spøkelse-form i 5 runder. Denne effekten er sta.\n[*] Mens den er i Skrekkelig spøkelse-form, gjør brukeren automatisk 420% skade på en tilfeldig fiende hver runde.\n[*] Mens den er i Skrekkelig spøkelse-form, kan brukeren ta skade fra fiender i et element som er sterkt mot brukeren. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Bruk av denne spesialferdigheten påfører alle allierte, med unntak av brukeren, 25 galskap.",
       "(Galskap legger til en sjanse for å reversere valgt mål for en bruk av spesialferdighet.\n[*] Når galskap aktiveres, rettes spesialferdigheter som har fiender som mål, i stedet mot allierte, og omvendt.\n[*] Spesialferdigheter rettet mot brukeren blir brukt på et tilfeldig mål. Spesialferdigheter rettet mot et mål blir brukt på brukeren.\n[*] Når galskap aktiveres, aktiveres ikke passive ferdigheter og troppegenskaper som gir ekstra effekter ved bruk.\n[*] Når du når 100 galskap brukes automatisk en spesialferdighet når mana er full.\n[*] Galskap kan ikke fjernes eller renses.\n[*] Heltens galskap kan senkes med 10 hver gang denne blir helbredet direkte av spesialferdigheter, hjelperferdigheter, gjenstander eller skjold. Direkte helbredelser fra spesialferdigheter reduserer galskapen bare én gang per bruk.\n[*] Alle andre helbredelser reduserer galskap med 1.\n[*] Galskap fjernes helt når en reversert spesialferdighet brukes.)"
      ]
@@ -4866,7 +4877,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4892,7 +4903,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4918,7 +4929,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4944,7 +4955,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4976,7 +4987,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5008,7 +5019,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5025,7 +5036,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Påfør 600% skade på målet.",
-      "Hvis målet har djevler eller megadjevler, påføres 550% skade på en tilfeldig annen fiend.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
+      "Hvis målet har djevler eller megadjevler, påføres 550% skade på en tilfeldig annen fiend.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 20% helse\n[*] Knopp-djevel: 75% angrep, 25% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
       "Brukeren og allierte i nærheten får 44% forsvar, og ytterligere 10% økning hver gang de treffes i 3 runder, opp til 94% forsvar."
      ]
     }
@@ -5034,7 +5045,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5061,7 +5072,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5087,7 +5098,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5113,7 +5124,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5129,7 +5140,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Påfører 395% skade på målet og 5 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse.\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helse. Mengde helse som kreves avhenger av målets maksimale helse.",
+      "Påfører 395% skade på målet og 5 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 20% helse\n[*] Knopp-djevel: 75% angrep, 25% helse.\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helse. Mengde helse som kreves avhenger av målets maksimale helse.",
       "Alle trufne mål får -55% treffsikkerhet i 5 runder. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)"
      ]
     }
@@ -5138,7 +5149,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5155,7 +5166,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Påfør 600% skade på målet.",
-      "Hvis målet har djevler eller megadjevler, påføres 350% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
+      "Hvis målet har djevler eller megadjevler, påføres 350% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 20% helse\n[*] Knopp-djevel: 75% angrep, 25% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)",
       "Alle allierte får 55% forsvar i 4 runder. Effektens varighet nullstilles hvis eieren av statuseffekten blir truffet av direkte skade fra en spesialferdighet."
      ]
     }
@@ -5164,7 +5175,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5216,7 +5227,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5232,7 +5243,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5254,7 +5265,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Påfør 480% skade på målet.",
-      "Hvis målet har djevler eller megadjevler, påføres 320% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 15% helse\n[*] Knopp-djevel: 75% angrep, 20% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)"
+      "Hvis målet har djevler eller megadjevler, påføres 320% skade på 2 tilfeldige fiender.\n[*]Fremkaller en frøplante-djevel for hver fiende som blir truffet. (\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*] Frøplante-djevel: 50% angrep, 20% helse\n[*] Knopp-djevel: 75% angrep, 25% helse\n[*] Blomst-megadjevel: 150% angrep, 70% helse\n[*]En djevel skader målet sitt hver runde. En djevel forsvinner etter å ha absorbert helbredelse. Mengde helbredelse som kreves avhenger av målets maksimale helse.\n[*]Djevler kan ikke utvikle seg til megadjevler hvis det er undersåtter på samme helt.)"
      ]
     }
    ],
@@ -5262,7 +5273,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Fremkalling av frøplante",
-     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 15% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 20% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
+     "text": "Fremkaller en frøplante-djevel hver runde til en tilfeldig fiende.\n[*]Frøplante-djevelen utvikler seg til en knopp-djevel etter 3 runder.\n[*]Knopp-djevelen utvikler seg til en blomst-megadjevel etter 3 runder.\n[*]Frøplante-djevel:\n[*] 50% angrep, 20% helse.\n[*]Knopp-djevel:\n[*] 75% angrep, 25% helse.\n[*]Blomst-megadjevel:\n[*] 150% angrep, 70% helse."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

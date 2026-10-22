@@ -64,6 +64,17 @@
  ],
  "astral_demon_carthizux": [
   {
+   "skills": [
+    {
+     "id": "astral_madness_unleashed_mayhem",
+     "lines": [
+      "Infligge 410% di danni al bersaglio.",
+      "Ha una probabilità del 80% di sferrare colpi aggiuntivi su nemici a caso fino a un massimo di 4 volte. I colpi aggiuntivi infliggono danni minori.",
+      "I nemici colpiti ricevono Risonanza per 3 turni. A ogni turno, Risonanza infligge[#Dynamic] 284 [#]danni ai nemici afflitti e[#Dynamic] 142 [#]danni ai nemici vicini.",
+      "L'evocatore ruba il 20% del mana generato dai nemici colpiti nel corso di 3 turni. Questo effetto viene eliminato se l'evocatore viene sconfitto."
+     ]
+    }
+   ],
    "passiveSkills": [
     {
      "id": "never_miss_special",
@@ -418,7 +429,7 @@
      "lines": [
       "Infligge 630% di danni al bersaglio.",
       "Lancia Rimozione totale sul bersaglio. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "Il bersaglio assume la forma di Spettro abissale per 3 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 483 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
+      "Il bersaglio assume la forma di Spettro abissale per 3 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 576 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
      ]
     }
    ],
@@ -1610,7 +1621,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1621,7 +1632,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1636,7 +1647,7 @@
       "Infligge 565% di danni al bersaglio.",
       "Il bersaglio subisce[#Dynamic] 1875 [#]danni da acqua nel corso di 3 turni. Questo effetto è persistente. (Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla le sue magie benefiche. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+      "L'evocatore assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla le sue magie benefiche. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
      ]
     }
    ],
@@ -1644,7 +1655,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1655,7 +1666,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1676,7 +1687,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1722,7 +1733,7 @@
       "Infligge il 520% di danni al bersaglio e a 5 nemici casuali.",
       "Tutti i bersagli colpiti sono immuni dalle nuove magie benefiche degli effetti di stato per 5 turni, e subiscono 1200 danni per ogni nuova magia benefica tentata. Questo effetto è Persistente.",
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla le sue magie benefiche. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+      "L'evocatore assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla le sue magie benefiche. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
      ]
     }
    ],
@@ -1730,7 +1741,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1741,7 +1752,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1752,7 +1763,7 @@
     {
      "id": "vengeful_ghost_on_damage_received_weaker",
      "title": "Infestazione vendicativa",
-     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 300% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+     "text": "Quando questo personaggio perde più del 30% della Salute massima in un colpo solo, si attivano i seguenti effetti.\n[*] Questo personaggio lancia Rimozione totale su di sé. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)\n[*]Questo personaggio assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla 1 magia benefica da quel bersaglio. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
     }
    ]
   }
@@ -1967,7 +1978,7 @@
       "Infligge il 240% di danni a tutti i nemici.",
       "L'evocatore ottiene Deridi, che impedisce ai nemici di usare le Abilità speciali sui suoi alleati per 4 turni. (Deridi impedisce a tutti i nemici di usare le Abilità speciali sugli alleati che non hanno Deridi.)",
       "L'evocatore riflette contro l'assalitore tutti i disturbi e il 165% dei danni. Inoltre, blocca gli altri effetti negativi causati dalle Abilità speciali di tipo Fuoco dei nemici per 4 turni. (Gli effetti di stato lanciati da personaggi, servitori e demoni dello stesso lato non possono essere riflessi.)",
-      "Lanciare questa Abilità speciale infligge 55 di Follia all'evocatore.",
+      "Lanciare questa Abilità speciale infligge 45 di Follia all'evocatore.",
       "(Follia aggiunge la possibilità di invertire il bersaglio di un'Abilità speciale.\n[*] Quando Follia si attiva, le Abilità speciali che hanno come bersaglio i nemici avranno come bersaglio gli alleati e viceversa.\n[*] Le Abilità speciali rivolte all'evocatore saranno lanciate su un bersaglio casuale. Le Abilità speciali rivolte a un bersaglio saranno lanciate sull'evocatore.\n[*] Quando Follia si attiva, le abilità passive e le abilità delle truppe che conferiscono effetti extra al lancio non si attivano.\n[*] Raggiungendo 100 di Follia, si lancerà automaticamente un'Abilità speciale quando il mana è pieno.\n[*] La Follia non può essere annullata né rimossa.\n[*] La Follia dell'Eroe può essere ridotta di 10 ogni volta che viene guarito direttamente da Abilità speciali, abilità Assistente, oggetti o scudi. Le guarigioni dirette dalle Abilità speciali riducono la Follia solo una volta per lancio.\n[*] Tutte le altre guarigioni riducono Follia di 1.\n[*] Follia viene rimossa completamente quando viene lanciata un'Abilità speciale invertita.)"
      ]
     }
@@ -2097,7 +2108,7 @@
       "Evoca un demone Gufo di moldavite per il bersaglio e per i nemici vicini. Il demone infligge danni al nemico con il 70% di Attacco a ogni turno.\n[*] Il demone Gufo di moldavite assorbe la guarigione e scompare dopo aver assorbito HP pari al 27% della Salute massima del suo bersaglio.",
       "Il demone Gufo di moldavite infligge 5 Follia al proprietario a ogni turno.",
       "Alla fine di ogni turno, il demone Gufo di moldavite annulla una delle magie benefiche annullabili del suo bersaglio.",
-      "Lanciare questa Abilità speciale infligge 50 di Follia all'evocatore.",
+      "Lanciare questa Abilità speciale infligge 45 di Follia all'evocatore.",
       "(Follia aggiunge la possibilità di invertire il bersaglio di un'Abilità speciale.\n[*] Quando Follia si attiva, le Abilità speciali che hanno come bersaglio i nemici avranno come bersaglio gli alleati e viceversa.\n[*] Le Abilità speciali rivolte all'evocatore saranno lanciate su un bersaglio casuale. Le Abilità speciali rivolte a un bersaglio saranno lanciate sull'evocatore.\n[*] Quando Follia si attiva, le abilità passive e le abilità delle truppe che conferiscono effetti extra al lancio non si attivano.\n[*] Raggiungendo 100 di Follia, si lancerà automaticamente un'Abilità speciale quando il mana è pieno.\n[*] La Follia non può essere annullata né rimossa.\n[*] La Follia dell'Eroe può essere ridotta di 10 ogni volta che viene guarito direttamente da Abilità speciali, abilità Assistente, oggetti o scudi. Le guarigioni dirette dalle Abilità speciali riducono la Follia solo una volta per lancio.\n[*] Tutte le altre guarigioni riducono Follia di 1.\n[*] Follia viene rimossa completamente quando viene lanciata un'Abilità speciale invertita.)"
      ]
     }
@@ -2112,7 +2123,7 @@
      "lines": [
       "Infligge 450% di danni ai nemici nella parte esterna della formazione. Se c'è un solo nemico, i danni raddoppiano.",
       "Lancia Rimozione totale sui nemici ai confini della formazione nemica. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "I nemici ai confini della formazione nemica assumono la forma di Spettro abissale per 4 turni.\n[*] Mentre sono nella forma di Spettro abissale, i bersagli subiscono[#Dynamic] 313 [#]danni a ogni turno. Questo effetto è persistente. Contro i personaggi di tipo Sacro, questo effetto di stato dura 2 turni in più. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
+      "I nemici ai confini della formazione nemica assumono la forma di Spettro abissale per 4 turni.\n[*] Mentre sono nella forma di Spettro abissale, i bersagli subiscono[#Dynamic] 384 [#]danni a ogni turno. Questo effetto è persistente. Contro i personaggi di tipo Sacro, questo effetto di stato dura 2 turni in più. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
      ]
     }
    ]
@@ -3078,7 +3089,7 @@
      "id": "ethereal_mayhem",
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Spettro per 4 turni.\n[*] Mentre è nella forma di Spettro, l'evocatore ottiene il 82% di Attacco. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+      "L'evocatore assume la forma di Spettro per 4 turni.\n[*] Mentre è nella forma di Spettro, l'evocatore ottiene il 87% di Attacco. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
      ]
     }
    ]
@@ -3091,7 +3102,7 @@
      "id": "toon_ghost_mayhem",
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Spettro per 4 turni.\n[*] Mentre è nella forma di Spettro, l'evocatore ottiene il 90% di Attacco. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
+      "L'evocatore assume la forma di Spettro per 4 turni.\n[*] Mentre è nella forma di Spettro, l'evocatore ottiene il 95% di Attacco. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
       "Tutti gli alleati tranne l'evocatore ricevono il 54% di Difesa dal Sacro per 4 turni."
      ]
     }
@@ -3113,7 +3124,7 @@
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
       "L'evocatore assume la forma di Fantasma per 4 turni. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
-      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 44% di Difesa.",
+      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 50% di Difesa.",
       "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore rigenerano 140 HP a ogni turno."
      ]
     }
@@ -3424,7 +3435,7 @@
      "id": "dire_ghost_mayhem",
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Fantasma spietato per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Fantasma spietato, l'evocatore infligge automaticamente il 175% di danni a un nemico casuale a ogni turno.\n[*] Mentre è nella forma di Spettro feroce, l'evocatore può subire danni dai nemici il cui elemento è forte contro il suo. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
+      "L'evocatore assume la forma di Fantasma spietato per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Fantasma spietato, l'evocatore infligge automaticamente il 210% di danni a un nemico casuale a ogni turno.\n[*] Mentre è nella forma di Spettro feroce, l'evocatore può subire danni dai nemici il cui elemento è forte contro il suo. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
      ]
     }
    ]
@@ -3460,7 +3471,7 @@
      "lines": [
       "Infligge 158% di danni al bersaglio.",
       "Lancia Rimozione totale sul bersaglio. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "Il bersaglio assume la forma di Spettro abissale per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 88 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
+      "Il bersaglio assume la forma di Spettro abissale per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 115 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
      ]
     }
    ]
@@ -3474,7 +3485,7 @@
      "lines": [
       "Infligge 150% di danni al bersaglio.",
       "Lancia Rimozione totale sul bersaglio. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "Il bersaglio assume la forma di Spettro abissale per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 140 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
+      "Il bersaglio assume la forma di Spettro abissale per 4 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Spettro abissale, il bersaglio subisce[#Dynamic] 163 [#]danni a ogni turno. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.\n[*]Non può essere lanciato se è rimasto un solo nemico in battaglia.\n[*]I Titani e i Titani mitici non vengono influenzati da questo effetto di stato.)"
      ]
     }
    ]
@@ -3488,8 +3499,8 @@
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
       "L'evocatore assume la forma di Fantasma per 4 turni. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
-      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 64% di Difesa.",
-      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore rigenerano 180 Salute in più a ogni turno. La Salute potenziata può superare gli HP massimi."
+      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 75% di Difesa.",
+      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore rigenerano 215 Salute in più a ogni turno. La Salute potenziata può superare gli HP massimi."
      ]
     }
    ]
@@ -3503,8 +3514,8 @@
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
       "L'evocatore assume la forma di Fantasma per 4 turni. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
-      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 56% di Difesa.",
-      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore rigenerano 300 Salute in più a ogni turno. La Salute potenziata può superare gli HP massimi."
+      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore hanno un 65% di Difesa.",
+      "Mentre è un Fantasma, tutti gli alleati tranne l'evocatore rigenerano 360 Salute in più a ogni turno. La Salute potenziata può superare gli HP massimi."
      ]
     }
    ]
@@ -3728,7 +3739,7 @@
      "id": "deranged_existence_mayhem",
      "lines": [
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
-      "L'evocatore assume la forma di Fantasma spietato per 5 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Fantasma spietato, l'evocatore infligge automaticamente il 350% di danni a un nemico casuale a ogni turno.\n[*] Mentre è nella forma di Spettro feroce, l'evocatore può subire danni dai nemici il cui elemento è forte contro il suo. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
+      "L'evocatore assume la forma di Fantasma spietato per 5 turni. Questo effetto è persistente.\n[*] Mentre è nella forma di Fantasma spietato, l'evocatore infligge automaticamente il 420% di danni a un nemico casuale a ogni turno.\n[*] Mentre è nella forma di Spettro feroce, l'evocatore può subire danni dai nemici il cui elemento è forte contro il suo. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
       "Lanciare questa Abilità speciale infligge 25 di Follia a tutti gli alleati tranne l'evocatore.",
       "(Follia aggiunge la possibilità di invertire il bersaglio di un'Abilità speciale.\n[*] Quando Follia si attiva, le Abilità speciali che hanno come bersaglio i nemici avranno come bersaglio gli alleati e viceversa.\n[*] Le Abilità speciali rivolte all'evocatore saranno lanciate su un bersaglio casuale. Le Abilità speciali rivolte a un bersaglio saranno lanciate sull'evocatore.\n[*] Quando Follia si attiva, le abilità passive e le abilità delle truppe che conferiscono effetti extra al lancio non si attivano.\n[*] Raggiungendo 100 di Follia, si lancerà automaticamente un'Abilità speciale quando il mana è pieno.\n[*] La Follia non può essere annullata né rimossa.\n[*] La Follia dell'Eroe può essere ridotta di 10 ogni volta che viene guarito direttamente da Abilità speciali, abilità Assistente, oggetti o scudi. Le guarigioni dirette dalle Abilità speciali riducono la Follia solo una volta per lancio.\n[*] Tutte le altre guarigioni riducono Follia di 1.\n[*] Follia viene rimossa completamente quando viene lanciata un'Abilità speciale invertita.)"
      ]
@@ -4872,7 +4883,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4898,7 +4909,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4924,7 +4935,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4950,7 +4961,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -4982,7 +4993,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5014,7 +5025,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5031,7 +5042,7 @@
      "id": "guard_the_garden_mayhem",
      "lines": [
       "Infligge 600% di danni al bersaglio.",
-      "Se il bersaglio ha demoni o demoni Mega, infligge un 550% di danni a un nemico diverso a caso.\n[*]Evoca un demone Piantina su ciascun nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 15% di Salute.\n[*] Demone Alberello: 75% di Attacco, 20% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)",
+      "Se il bersaglio ha demoni o demoni Mega, infligge un 550% di danni a un nemico diverso a caso.\n[*]Evoca un demone Piantina su ciascun nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 20% di Salute.\n[*] Demone Alberello: 75% di Attacco, 25% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)",
       "L'evocatore e gli alleati vicini ricevono il 44% di Difesa, che aumenta del 10% ogni volta che vengono colpiti nel corso di 3 turni, fino a un massimo del 94% di Difesa."
      ]
     }
@@ -5040,7 +5051,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5067,7 +5078,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5093,7 +5104,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5119,7 +5130,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5135,7 +5146,7 @@
     {
      "id": "teargas_roulette_mayhem",
      "lines": [
-      "Infligge il 395% di danni al bersaglio e a 5 nemici casuali.\n[*] Evoca un demone Piantina per ogni nemico colpito.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 15% di Salute.\n[*] Demone Alberello: 75% di Attacco, 20% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.",
+      "Infligge il 395% di danni al bersaglio e a 5 nemici casuali.\n[*] Evoca un demone Piantina per ogni nemico colpito.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 20% di Salute.\n[*] Demone Alberello: 75% di Attacco, 25% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.",
       "Tutti i bersagli colpiti ottengono il -55% di precisione per 5 turni. (La probabilità di mancare il colpo si applica anche alle Abilità speciali offensive)"
      ]
     }
@@ -5144,7 +5155,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5161,7 +5172,7 @@
      "id": "survival_of_the_plumpest_mayhem",
      "lines": [
       "Infligge 600% di danni al bersaglio.",
-      "Se il bersaglio ha demoni o demoni Mega, infligge il 350% di danni a 2 nemici casuali diversi.\n[*] Evoca un demone Piantina su ogni nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 15% di Salute.\n[*] Demone Alberello: 75% di Attacco, 20% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)",
+      "Se il bersaglio ha demoni o demoni Mega, infligge il 350% di danni a 2 nemici casuali diversi.\n[*] Evoca un demone Piantina su ogni nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 20% di Salute.\n[*] Demone Alberello: 75% di Attacco, 25% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)",
       "Tutti gli alleati ottengono il 55% di Difesa per 4 turni. La durata dell'effetto si azzera se il proprietario dell'effetto di stato viene colpito dai danni diretti di un'Abilità speciale."
      ]
     }
@@ -5170,7 +5181,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5222,7 +5233,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5238,7 +5249,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",
@@ -5260,7 +5271,7 @@
      "id": "slingshot_ricochet_mayhem",
      "lines": [
       "Infligge 480% di danni al bersaglio.",
-      "Se il bersaglio ha demoni o demoni Mega, infligge il 320% di danni a 2 nemici casuali diversi.\n[*] Evoca un demone Piantina su ogni nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 15% di Salute.\n[*] Demone Alberello: 75% di Attacco, 20% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)"
+      "Se il bersaglio ha demoni o demoni Mega, infligge il 320% di danni a 2 nemici casuali diversi.\n[*] Evoca un demone Piantina su ogni nemico colpito. (\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*] Demone Piantina: 50% di Attacco, 20% di Salute.\n[*] Demone Alberello: 75% di Attacco, 25% di Salute.\n[*] Demone Mega Fiore: 150% di Attacco, 70% di Salute.\n[*] Un demone danneggia il suo bersaglio a ogni turno. Un demone scompare dopo aver assorbito la guarigione. La quantità di guarigione richiesta varia in base alla Salute massima del bersaglio.\n[*] I demoni non possono evolversi in demoni Mega se sullo stesso Eroe sono presenti dei servitori.)"
      ]
     }
    ],
@@ -5268,7 +5279,7 @@
     {
      "id": "summon_seedling_parasite_per_turn_veggie",
      "title": "Evocatore della Piantina",
-     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 15% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 20% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
+     "text": "Evoca un demone Piantina a ogni turno contro un nemico casuale.\n[*] Il demone Piantina si evolve in un demone Alberello dopo 3 turni.\n[*] Il demone Alberello si evolve in un demone Mega Fiore dopo 3 turni.\n[*]Demone Piantina:\n[*] 50% di Attacco, 20% di Salute.\n[*]Demone Alberello:\n[*] 75% di Attacco, 25% di Salute.\n[*]Demone Mega Fiore:\n[*] 150% di Attacco, 70% di Salute."
     },
     {
      "id": "resist_special_blocking_with_mana_mayhem",

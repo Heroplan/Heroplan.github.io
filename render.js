@@ -516,7 +516,8 @@ let _highlightTools = { data: null, regex: null, markup: null, pairs: null };
 
 /** 词条查表键：`İ`.toLowerCase() 会留下组合点 U+0307，正则 `i` 不能折叠它 ⇒ 统一剥掉。 */
 function highlightKey(str) {
-    return str.toLowerCase().replace(/\u0307/g, '');
+    // NBSP（U+00A0）在官方文案里出现得很频繁（es 尤其多），归一成普通空格才能命中词表
+    return str.toLowerCase().replace(/\u0307/g, '').replace(/\u00a0/g, ' ');
 }
 
 /**
@@ -538,12 +539,14 @@ function buildHighlightPattern(words) {
     return words
         .sort((a, b) => b.length - a.length)
         .map(kw => {
-            const esc = escapeRegExp(kw);
+            // 词条里的普通空格放宽为任意空白：官方文案常用 NBSP（U+00A0），否则西语等短语永远命中不了
+            const esc = escapeRegExp(kw).replace(/ /g, '\\s');
             const bySubstring = HIGHLIGHT_CJK_RE.test(kw)
                 || (HIGHLIGHT_HANGUL_RE.test(kw) && [...kw].length > 1);
             return bySubstring
                 ? esc
-                : `(?<![\\p{L}])(?:${esc})(?![\\p{L}])`;
+                // 数字也算词边界，否则 `auf 1` 会命中 `auf 150%`、`إلى 1` 会命中 `إلى 1800`
+                : `(?<![\\p{L}\\p{N}])(?:${esc})(?![\\p{L}\\p{N}])`;
         })
         .join('|');
 }

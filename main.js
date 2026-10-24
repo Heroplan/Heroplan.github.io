@@ -1235,8 +1235,8 @@ function handleTableBodyClick(event) {
     if (target.classList.contains('favorite-toggle-icon')) {
         event.stopPropagation();
 
-        // 检查图标是否被禁用
-        if (target.classList.contains('disabled')) {
+        // 检查图标是否被禁用（模拟器不可加 / 未推出的未来英雄）
+        if (target.classList.contains('disabled') || target.classList.contains('favorite-upcoming')) {
             return; // 如果被禁用，则不执行任何后续操作
         }
 

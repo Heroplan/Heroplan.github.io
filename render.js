@@ -337,6 +337,7 @@ function renderTable(heroes) {
             } else if (key === 'fav') {
                 let icon;
                 let cssClass = '';
+                let favTitle = '';
 
                 if (state.teamSimulatorActive || state.lotterySimulatorActive) {
                     icon = '⬆️';
@@ -369,10 +370,18 @@ function renderTable(heroes) {
                     }
                 } else {
                     const isHeroFavorite = isFavorite(hero);
-                    icon = isHeroFavorite ? '★' : '☆';
-                    cssClass = isHeroFavorite ? 'favorited' : '';
+                    if (isFavoritable(hero)) {
+                        icon = isHeroFavorite ? '★' : '☆';
+                        cssClass = isHeroFavorite ? 'favorited' : '';
+                    } else {
+                        // 未推出的未来英雄：收藏位用锁标志，不可点（main.js 委托跳过 favorite-upcoming）
+                        icon = '🔒';
+                        cssClass = 'favorite-upcoming';
+                        favTitle = (langDict.favoriteLockedTitle || '尚未发布，暂不可收藏')
+                            + (hero.releaseDate ? ` (${String(hero.releaseDate).slice(0, 10)})` : '');
+                    }
                 }
-                return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}">${icon}</span></td>`;
+                return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}"${favTitle ? ` title="${favTitle}"` : ''}>${icon}</span></td>`;
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.elementId);
                 let imageSrc; // 先声明变量

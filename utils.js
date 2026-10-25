@@ -296,21 +296,41 @@ async function reloadLanguageData(lang) {
  * @param {string} lang - 要加载的语言版本 ('cn', 'tc', 'en')。
  * @returns {Promise<boolean>} 数据是否加载成功。
  */
-/** 稀有度参数（满级/突破成长） */
+/**
+ * 稀有度成长参数（全部来自官方配置，不再拟合）：
+ *   perLevelMil      `battle.statsPerLevelConfiguration.{attack,defense,health}StatMultipliersPerLevelPerMil[rarity-1]`
+ *                    三张表同值 ⇒ 三围共用一个每级千分比。
+ *   trueLevel        `GetTrueLevel(满突破阶, 破限 0, 满级)` 的结果，由
+ *                    `other.heroLevelUp.parametersPerAscensionLevelPerRarity[rarity-1]` 递推得到。
+ *   lbPerLevelMil    同配置里 `…PerLimitBreak[rarity-1][k-1].multipliers`（1/2 星没有破限 ⇒ 空表）。
+ */
 const RARITY_PARAMS = {
-    5: { m1: 4, m2: 265, lb1: 20, lb2: 40 }, 4: { m1: 5, m2: 225, lb1: 23, lb2: 46 },
-    3: { m1: 6, m2: 123, lb1: 29, lb2: 58 }, 2: { m1: 7, m2: 93, lb1: 0, lb2: 0 },
-    1: { m1: 8, m2: 31, lb1: 0, lb2: 0 }
+    5: { perLevelMil: 4, trueLevel: 265, lbPerLevelMil: [16, 36] },
+    4: { perLevelMil: 5, trueLevel: 225, lbPerLevelMil: [18, 41] },
+    3: { perLevelMil: 6, trueLevel: 123, lbPerLevelMil: [23, 52] },
+    2: { perLevelMil: 7, trueLevel: 93, lbPerLevelMil: [] },
+    1: { perLevelMil: 8, trueLevel: 31, lbPerLevelMil: [] }
 };
+/** 每一破限档在「满级真级数」上多加的量 = 等级上限 +5 叠加 levelsIncreasedOnUpgrade 3。 */
+const LB_TRUE_LEVEL_STEP = 8;
 const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
 
-/** 单个属性：基础 → 80 级 → LB1 → LB2（每步整除截断，与游戏一致） */
+/**
+ * 单个属性：满级 → LB1 → LB2。
+ * 官方 `CalculateAndApplyStatMultiplierToStat`（@0x1E24C7C）先把等级与破限**合成一个千分比**，
+ * 再由 `ApplyStatMultiplierToStat`（@0x1E25324）做一次 `stat × perMil / 1000`，
+ * 所以整条阶梯只有**一次**整除截断；旧实现逐级截断，破限档会偏小 1~2。
+ */
 function _statLadder(base, rarity) {
-    const p = RARITY_PARAMS[rarity] || { m1: 0, m2: 0, lb1: 0, lb2: 0 };
-    const lv80 = Math.trunc(base + (base * p.m1 / 1000 * p.m2));
-    const lb1 = Math.trunc(lv80 + (base * p.lb1 / 1000 * 8));
-    const lb2 = Math.trunc(lb1 + (base * p.lb2 / 1000 * 8));
-    return [lv80, lb1, lb2];
+    const p = RARITY_PARAMS[rarity] || { perLevelMil: 0, trueLevel: 0, lbPerLevelMil: [] };
+    let perMil = 1000 + p.trueLevel * p.perLevelMil;
+    const out = [Math.trunc(base * perMil / 1000)];
+    for (const add of p.lbPerLevelMil) {
+        perMil += LB_TRUE_LEVEL_STEP * (p.perLevelMil + add);
+        out.push(Math.trunc(base * perMil / 1000));
+    }
+    while (out.length < 3) out.push(out[out.length - 1]);
+    return out;
 }
 
 /**

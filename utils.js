@@ -556,10 +556,21 @@ let _skillsHydrated = false;
 let _skillsEnsure = null;
 
 /**
- * 动态伤害的 `(‰, 回合)` 参数表：`{英雄ID: {展示值: [‰, 回合]}}`，来自 `data/heroes_dynamic.json`。
+ * 动态伤害的官方重算参数表：`{英雄ID: {展示值: [分子, 分母, 回合]}}`，来自 `data/heroes_dynamic.json`。
  * 详情页换 LB / 服装后要按官方口径重算 `[#Dynamic]` 数值需要它；档缺失或该值有歧义 ⇒ 调用方退回比例式。
  */
 let HERO_DYNAMIC_PARAMS = null;
+
+/**
+ * 官方动态伤害重算：`floor(攻击 × 分子 / (1000 × 分母)) × 回合`。
+ * 用整数取模而不是浮点除法：整点值（`攻击×分子` 正好被 `1000×分母` 整除）在浮点下可能算成
+ * `x.9999999996`，`Math.floor` 会少 1。攻击链里 `分母` 来自递增伤害的 `Σw`，普通千分比是 1。
+ */
+function applyDynSpec(attack, num, den, turns) {
+    const a = (attack || 0) * (num || 0);
+    const b = 1000 * (den || 1);
+    return Math.trunc((a - (a % b)) / b) * (turns || 1);
+}
 
 async function loadData(lang) {
     // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。

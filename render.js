@@ -513,13 +513,13 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
             if (!span) return;
             // 数值高亮会再套一层 <span style="color:…"> ⇒ 改写**最内层**，免得把颜色 span 一起抹掉
             const target = span.querySelector('span') || span;
-            // 有 `(‰, 回合)` ⇒ 官方口径 `v = floor(当前攻击 × ‰ / 1000) × 回合`（每回合先截断，回合数最后才乘），
+            // 有 `(分子, 分母, 回合)` ⇒ 官方口径 `floor(当前攻击×分子/(1000×分母))×回合`（每回合先截断，回合数最后才乘），
             // 与导出时用的那个攻击力无关：LB/服装/天赋只要体现在 `currentAttack` 上就自动跟着走。
             // 缺参数 ⇒ 退回 `floor(攻击 × v0 / A0)`：截断压在总量上，误差 0~(回合−1)，且依赖 `refAttack` 锚点。
             const v0 = dotInfo.originalDamage, A0 = dotInfo.refAttack;
-            const pm = dotInfo.perMil, t = dotInfo.turns;
-            target.textContent = (pm && t)
-                ? Math.floor(currentAttack * pm / 1000) * t
+            const num = dotInfo.num, den = dotInfo.den, t = dotInfo.turns;
+            target.textContent = (num && den && t)
+                ? applyDynSpec(currentAttack, num, den, t)
                 : (A0 && v0)
                     ? Math.floor(currentAttack * v0 / A0)
                     : Math.round(dotInfo.coefficient * currentAttack);

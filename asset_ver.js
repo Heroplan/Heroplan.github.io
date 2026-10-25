@@ -348,5 +348,5 @@ window.AV = {
   "langs_json/speed_sv.json": "6ef7c120",
   "langs_json/speed_tc.json": "d7aff5ce",
   "langs_json/speed_tr.json": "3fb74f36",
-  "data/heroes_dynamic.json": "13bc8576",
+  "data/heroes_dynamic.json": "8bdb0c0c",
 };

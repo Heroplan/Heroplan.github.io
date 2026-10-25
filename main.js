@@ -12,10 +12,11 @@ document.addEventListener('DOMContentLoaded', async function () {
  *
  * **完全抛弃**旧站那一套「技能标签门控 + 关键词组合 + 排除词」的启发式识别，
  * 只认生成器打的 `[#Dynamic]` 标记（`skill_desc_gen` 的 `lang_markup.mark_dynamic`）——
- * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是「80 级攻击力」下的展示值
- * ⇒ `系数 = 标记值 / hero.attack`；详情页切 LB / 服装加成时按 `系数 × 当前攻击力` 重算。
+ * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是导出时那个攻击力下的展示值。
+ * 重算优先用 `data/heroes_dynamic.json` 里的 `(分子, 分母, 回合)` 走官方式，缺参数才退回
+ * `系数 = 标记值 / refAttack` 的比例式（详见 render.js::updateDynamicDoTDisplay）。
  * 渲染侧 `_renderOneCore` 会把标记换成 `<span class="dynamic-value">`（见 render.js），
- * 这里只负责"找 + 算系数"，两边按**出现顺序**一一对应（`index` = 词条下标，`subIndex` = 条内第几个）。
+ * 这里只负责"找 + 挂参数"，两边按**出现顺序**一一对应（`index` = 词条下标，`subIndex` = 条内第几个）。
  * @param {object} hero - 要处理的英雄对象。
  */
 function parseAndStoreDoTInfo(hero) {
@@ -23,7 +24,8 @@ function parseAndStoreDoTInfo(hero) {
     // 只要求有攻击力基准：技能正文未到（首帧延后加载）时被动/家族段仍可能已带标记
     if (!hero.attack) return;
 
-    // 官方 (‰,回合) 参数表（`data/heroes_dynamic.json`）里该英雄的那份；没有就整批退回比例式
+    // 官方重算参数表（`data/heroes_dynamic.json`，条目 = [分子, 分母, 回合]）里该英雄的那份；
+    // 普通千分比就是分母 1。没有就整批退回比例式。
     const _specs = (typeof HERO_DYNAMIC_PARAMS !== 'undefined' && HERO_DYNAMIC_PARAMS)
         ? (HERO_DYNAMIC_PARAMS[hero.heroId] || null) : null;
 
@@ -58,9 +60,10 @@ function parseAndStoreDoTInfo(hero) {
                     originalDamage: value,
                     refAttack: refAttack,          // 导出这些数值时用的攻击力（L80 × 服装奖励最多套）
                     coefficient: value / refAttack,
-                    // 官方口径参数（缺档 ⇒ null ⇒ 重算退回比例式）。DoT 文案里那句"每回合 X"也算同一对参数。
-                    perMil: spec ? spec[0] : null,
-                    turns: spec ? spec[1] : null
+                    // 官方重算参数：值 = floor(攻击×num/(1000×den))×turns（缺档 ⇒ null ⇒ 退回比例式）
+                    num: spec ? spec[0] : null,
+                    den: spec ? spec[1] : null,
+                    turns: spec ? spec[2] : null
                 });
             }
         });

@@ -297,12 +297,10 @@ async function reloadLanguageData(lang) {
  * @returns {Promise<boolean>} 数据是否加载成功。
  */
 /**
- * 稀有度成长参数（全部来自官方配置，不再拟合）：
- *   perLevelMil      `battle.statsPerLevelConfiguration.{attack,defense,health}StatMultipliersPerLevelPerMil[rarity-1]`
- *                    三张表同值 ⇒ 三围共用一个每级千分比。
- *   trueLevel        `GetTrueLevel(满突破阶, 破限 0, 满级)` 的结果，由
- *                    `other.heroLevelUp.parametersPerAscensionLevelPerRarity[rarity-1]` 递推得到。
- *   lbPerLevelMil    同配置里 `…PerLimitBreak[rarity-1][k-1].multipliers`（1/2 星没有破限 ⇒ 空表）。
+ * 稀有度成长参数：
+ *   perLevelMil      每升一级的千分比
+ *   trueLevel        满突破阶、无破限时的满级"真级数"
+ *   lbPerLevelMil    各破限档追加的千分比（1/2 星无破限 ⇒ 空表）
  */
 const RARITY_PARAMS = {
     5: { perLevelMil: 4, trueLevel: 265, lbPerLevelMil: [16, 36] },
@@ -311,15 +309,13 @@ const RARITY_PARAMS = {
     2: { perLevelMil: 7, trueLevel: 93, lbPerLevelMil: [] },
     1: { perLevelMil: 8, trueLevel: 31, lbPerLevelMil: [] }
 };
-/** 每一破限档在「满级真级数」上多加的量 = 等级上限 +5 叠加 levelsIncreasedOnUpgrade 3。 */
+/** 每提升一档破限增加的真级数（等级上限 +5，再算上每档的升级级数）。 */
 const LB_TRUE_LEVEL_STEP = 8;
 const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
 
 /**
  * 单个属性：满级 → LB1 → LB2。
- * 官方 `CalculateAndApplyStatMultiplierToStat`（@0x1E24C7C）先把等级与破限**合成一个千分比**，
- * 再由 `ApplyStatMultiplierToStat`（@0x1E25324）做一次 `stat × perMil / 1000`，
- * 所以整条阶梯只有**一次**整除截断；旧实现逐级截断，破限档会偏小 1~2。
+ * 等级与破限先合成**同一个**千分比，整条阶梯只做**一次**整除截断。
  */
 function _statLadder(base, rarity) {
     const p = RARITY_PARAMS[rarity] || { perLevelMil: 0, trueLevel: 0, lbPerLevelMil: [] };
@@ -334,8 +330,7 @@ function _statLadder(base, rarity) {
 }
 
 /**
- * 英雄三档属性（80 级 / LB1 / LB2）+ 战力。
- * 口径与旧数据一致（实测本体英雄 1309/1309 逐字段复现）：
+ * 英雄三档属性（80 级 / LB1 / LB2）+ 战力：
  *   power = starBase[star] + int(atk*0.35 + def*0.28 + hp*0.14) + (8-1)*5
  */
 function computeHeroStats(c) {
@@ -560,6 +555,12 @@ let _skillsHydrated = false;
 //   否则新的正文还没到、旧的 resolved promise 就被当成"已完成"返回，等于把 bug 搬回语言切换路径。
 let _skillsEnsure = null;
 
+/**
+ * 动态伤害的 `(‰, 回合)` 参数表：`{英雄ID: {展示值: [‰, 回合]}}`，来自 `data/heroes_dynamic.json`。
+ * 详情页换 LB / 服装后要按官方口径重算 `[#Dynamic]` 数值需要它；档缺失或该值有歧义 ⇒ 调用方退回比例式。
+ */
+let HERO_DYNAMIC_PARAMS = null;
+
 async function loadData(lang) {
     // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。
     try {
@@ -573,15 +574,17 @@ async function loadData(lang) {
         _skillsEnsure = null;           // memo 与新档同生命周期（见上面的声明处注释）
 
         // ② 数据（首屏真正需要的档）
-        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes] = await Promise.all([
+        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes, dynRes] = await Promise.all([
             fetch(av('data/hero_order.json')),
             fetch(av('data/characters.json')),
             fetch(av('data/heroes_skill_types.json')),
             fetch(av('data/source_info.json')),
             fetch(av('langs_json/heroes_name_en.json')).catch(() => null),
             fetch(av('data/costume_bonuses.json')).catch(() => null),
-            // 平衡版角色定义（第二表完整定义，语言无关）：按完整定义重算三围用；同样允许缺失。
-            fetch(av('data/characters_balanced.json')).catch(() => null)
+            // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）：切三围时按**完整定义**算，允许缺失。
+            fetch(av('data/characters_balanced.json')).catch(() => null),
+            // 动态伤害的 (‰,回合) 参数表（语言无关，生成器 `--site-export` 附带）；允许缺失 ⇒ 退回比例式
+            fetch(av('data/heroes_dynamic.json')).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
         const charsDoc = await charsRes.json();
@@ -594,6 +597,7 @@ async function loadData(lang) {
         const balSkills = null;         // 平衡正文同样延后补齐
         // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）—— 切三围时按**完整定义**算，不必拼差异字段
         const charBal = (charBalRes && charBalRes.ok) ? await charBalRes.json() : null;
+        HERO_DYNAMIC_PARAMS = (dynRes && dynRes.ok) ? await dynRes.json() : null;
 
         // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {

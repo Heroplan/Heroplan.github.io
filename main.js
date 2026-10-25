@@ -20,7 +20,12 @@ document.addEventListener('DOMContentLoaded', async function () {
  */
 function parseAndStoreDoTInfo(hero) {
     hero.dynamicDoTEffects = [];
-    if (!hero.effects || !hero.attack) return;
+    // 只要求有攻击力基准：技能正文未到（首帧延后加载）时被动/家族段仍可能已带标记
+    if (!hero.attack) return;
+
+    // 官方 (‰,回合) 参数表（`data/heroes_dynamic.json`）里该英雄的那份；没有就整批退回比例式
+    const _specs = (typeof HERO_DYNAMIC_PARAMS !== 'undefined' && HERO_DYNAMIC_PARAMS)
+        ? (HERO_DYNAMIC_PARAMS[hero.heroId] || null) : null;
 
     // ⚠ 系数基准必须是**生成器算这些数值时用的那个攻击力**：
     //   生成器对"攻击缩放型伤害"用的是 `hero_attack_at_max` = **L80 × 服装奖励（最多套满阶）**
@@ -33,24 +38,36 @@ function parseAndStoreDoTInfo(hero) {
     if (!refAttack) return;
 
     // 标记内容 = `值`（生成器 `lang_markup.mark_dynamic` 打的就是纯数值）。
+    // 三段一起扫，顺序必须与各段 DOM 的文档顺序一致：技能段 = `hero.effects`；
+    // 被动段 = `orderedPassiveItems(hero)`（本体组逆序 + 服装奖励组逆序）；家族段 = `hero.familyBonus`。
     const DYNAMIC_RE = /\[#Dynamic\]\s*([^\[\]]*?)\s*\[#\]/g;
-    hero.effects.forEach((text, index) => {
-        if (typeof text !== 'string' || text.indexOf('[#Dynamic]') < 0) return;
-        DYNAMIC_RE.lastIndex = 0;
-        let m, sub = 0;
-        while ((m = DYNAMIC_RE.exec(text)) !== null) {
-            const subIndex = sub++;
-            const value = parseFloat(String(m[1]).split('|')[0]);
-            if (!isFinite(value)) continue;
-            hero.dynamicDoTEffects.push({
-                index: index,
-                subIndex: subIndex,
-                originalDamage: value,
-                refAttack: refAttack,          // 导出这些数值时用的攻击力（L80 × 服装奖励最多套）
-                coefficient: value / refAttack
-            });
-        }
-    });
+    const scan = (section, texts) => {
+        (texts || []).forEach((text, index) => {
+            if (typeof text !== 'string' || text.indexOf('[#Dynamic]') < 0) return;
+            DYNAMIC_RE.lastIndex = 0;
+            let m, sub = 0;
+            while ((m = DYNAMIC_RE.exec(text)) !== null) {
+                const subIndex = sub++;
+                const value = parseFloat(String(m[1]).split('|')[0]);
+                if (!isFinite(value)) continue;
+                const spec = _specs ? _specs[String(value)] : null;
+                hero.dynamicDoTEffects.push({
+                    section: section,
+                    index: index,
+                    subIndex: subIndex,
+                    originalDamage: value,
+                    refAttack: refAttack,          // 导出这些数值时用的攻击力（L80 × 服装奖励最多套）
+                    coefficient: value / refAttack,
+                    // 官方口径参数（缺档 ⇒ null ⇒ 重算退回比例式）。DoT 文案里那句"每回合 X"也算同一对参数。
+                    perMil: spec ? spec[0] : null,
+                    turns: spec ? spec[1] : null
+                });
+            }
+        });
+    };
+    scan('skill', hero.effects);
+    scan('passive', orderedPassiveItems(hero).map(p => p.text));
+    scan('family', hero.familyBonus);
 }
 
 /**

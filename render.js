@@ -464,11 +464,29 @@ function generateGeneralSearchTerm(text) {
 }
 
 /**
+ * 被动段在 DOM 里的**实际顺序** = 本体被动组逆序 + 服装奖励被动组逆序（本体组在前）。
+ * `hero.passiveSkills` 是正序且服装奖励被动追加在尾部 ⇒ 直接按下标对齐 span 会错位。
+ * 渲染（`renderDetailsInModal`）与动态数值解析/重算必须共用这一个函数。
+ * @param {object} hero - 英雄对象。
+ * @returns {Array<{id:string,title:string,text:string}>} 与 DOM 文档顺序一致的被动脉条。
+ */
+function orderedPassiveItems(hero) {
+    const raw = (hero.passiveSkills && hero.passiveSkills.length)
+        ? hero.passiveSkills.filter(p => p && (p.text || p.id))
+        : (hero.passives || []).map(t => ({ id: '', title: '', text: t }));
+    const bonusIds = (hero.costumeBonusPassiveSkillIds || [])
+        .map(x => (x && typeof x === 'object') ? (x.id || '') : String(x || ''));
+    const base = raw.filter(p => bonusIds.indexOf(p.id) < 0);
+    const bonus = raw.filter(p => bonusIds.indexOf(p.id) >= 0);
+    return [...base].reverse().concat([...bonus].reverse());
+}
+
+/**
  * 根据英雄当前的攻击力，更新模态框中所有动态伤害的数值。
  *
  * 只认渲染侧打的 `<span class="dynamic-value">`（由 `[#Dynamic]` 标记转换而来，见 `_renderOneCore`）。
- * 对齐方式 = **文档顺序**：`parseAndStoreDoTInfo` 按 `hero.effects` 顺序扫标记，
- * `renderListAsHTML` 也按同样顺序吐 span ⇒ 第 k 个 span ↔ 第 k 个标记
+ * 对齐方式 = **每段各自按文档顺序**：技能段扫 `hero.effects`、被动段扫 `orderedPassiveItems(hero)`、
+ * 家族段扫 `hero.familyBonus` ⇒ 第 k 个 span ↔ 该段第 k 个标记
  * （⚠ 不能用"词条下标 = `<li>` 下标"：以 `[*]` 开头的词条行会并进上一条 `<li>`，下标会错位）。
  * @param {object} hero - 英雄对象。
  * @param {number} currentAttack - 英雄当前计算后的攻击力。
@@ -479,25 +497,33 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
     // 记下本次用的攻击力：翻译工具栏等**重渲染 effects 列表**的地方要用它再刷一遍
     hero._lastDynamicAttack = currentAttack;
 
-    // 只取「特殊技能」那一段的列表（被动/家族奖励段也有 .skill-list，不能用宽松选择器）
-    const skillList = document.querySelector('#modal-skill-effects-section .skill-list');
-    if (!skillList) return;
-
-    const spans = skillList.querySelectorAll('.dynamic-value');
-    hero.dynamicDoTEffects.forEach((dotInfo, k) => {
-        const span = spans[k];
-        if (!span) return;
-        // 数值高亮会再套一层 <span style="color:…"> ⇒ 改写**最内层**，免得把颜色 span 一起抹掉
-        const target = span.querySelector('span') || span;
-        // **按游戏口径重算**（生成器 `dot()` 的公式）：`int(攻击力 × ‰ / 1000) × 回合`。
-        // 导出值 v0 是在**参考攻击力** A0（= L80 × 服装奖励"最多套"）下算出来的
-        // ⇒ 等效「‰×回合」可直接反推 `K = v0 × 1000 / A0`（在 A0 处严格成立），
-        //   于是 `int(攻击力 × K / 1000)` 就是 `int(攻击力 × v0 / A0)`。
-        // 取不到 v0/A0 时退回"系数 × 攻击力"的近似式（不会更差）。
-        const v0 = dotInfo.originalDamage, A0 = dotInfo.refAttack;
-        target.textContent = (A0 && v0)
-            ? Math.floor(currentAttack * v0 / A0)
-            : Math.round(dotInfo.coefficient * currentAttack);
+    // 三段**各自**取自己的列表（被动/家族奖励段也有 `.skill-list` ⇒ 不能整页宽松取，
+    // 也不能只取技能段——被动里的 `{DAMAGE}` 同样是攻击力参与计算的动态值）。
+    const DYN_SECTIONS = {
+        skill: '#modal-skill-effects-section',
+        passive: '#modal-passives-section',
+        family: '#modal-family-bonus-section'
+    };
+    Object.keys(DYN_SECTIONS).forEach(sec => {
+        const entries = hero.dynamicDoTEffects.filter(x => (x.section || 'skill') === sec);
+        if (!entries.length) return;
+        const spans = document.querySelectorAll(DYN_SECTIONS[sec] + ' .dynamic-value');
+        entries.forEach((dotInfo, k) => {
+            const span = spans[k];
+            if (!span) return;
+            // 数值高亮会再套一层 <span style="color:…"> ⇒ 改写**最内层**，免得把颜色 span 一起抹掉
+            const target = span.querySelector('span') || span;
+            // 有 `(‰, 回合)` ⇒ 官方口径 `v = floor(当前攻击 × ‰ / 1000) × 回合`（每回合先截断，回合数最后才乘），
+            // 与导出时用的那个攻击力无关：LB/服装/天赋只要体现在 `currentAttack` 上就自动跟着走。
+            // 缺参数 ⇒ 退回 `floor(攻击 × v0 / A0)`：截断压在总量上，误差 0~(回合−1)，且依赖 `refAttack` 锚点。
+            const v0 = dotInfo.originalDamage, A0 = dotInfo.refAttack;
+            const pm = dotInfo.perMil, t = dotInfo.turns;
+            target.textContent = (pm && t)
+                ? Math.floor(currentAttack * pm / 1000) * t
+                : (A0 && v0)
+                    ? Math.floor(currentAttack * v0 / A0)
+                    : Math.round(dotInfo.coefficient * currentAttack);
+        });
     });
 }
 
@@ -1689,8 +1715,8 @@ function renderDetailsInModal(hero, context = {}) {
             cleanItem = cleanItem.replace(/\[#Dynamic\]([\s\S]*?)\[#\]/g, (m, v) => {
                 const lead = (v.match(/^\s*/) || [''])[0];
                 const trail = (v.match(/\s*$/) || [''])[0];
-                // 标记内容 = `值` 或 `值|‰|回合`（后者是生成器带出来的**游戏公式参数**，
-                // `main.js` 直接从 `hero.effects` 解析，DOM 里只放展示值）
+                // 标记内容 = 展示值（兼容 `值|…` 的旧写法时只取第一段）；重算用的 (‰,回合) 在
+                // `data/heroes_dynamic.json` 里，DOM 只放玩家可见的那个数
                 const fields = v.trim().replace(/<\/?span[^>]*>/g, '').split('|');
                 return `${lead}<span class="dynamic-value">${fields[0].trim()}</span>${trail}`;
             });
@@ -2016,14 +2042,8 @@ function renderDetailsInModal(hero, context = {}) {
     // ── 被动技能段：每个被动 = 大图标 + 被动名（同一行），下一元素是该被动的词条 ──
     // 新数据 `hero.passiveSkills = [{id,title,text}]`；旧形状（纯文本数组）走 `hero.passives` 兜底。
     // **展示逆序**（与头像被动图标同一口径）：本体组与服装奖励组**各自内部**倒序、本体组在前 ——
-    //   `hero.passiveSkills` 已把服装奖励被动追加在尾部，所以按 `costumeBonusPassiveSkillIds` 先拆组再翻。
-    const _passiveItemsRaw = (hero.passiveSkills && hero.passiveSkills.length)
-        ? hero.passiveSkills.filter(p => p && (p.text || p.id))
-        : (hero.passives || []).map(t => ({ id: '', title: '', text: t }));
-    const _bonusIds = (hero.costumeBonusPassiveSkillIds || []).map(x => (x && typeof x === 'object') ? (x.id || '') : String(x || ''));
-    const _baseItems = _passiveItemsRaw.filter(p => _bonusIds.indexOf(p.id) < 0);
-    const _bonusItems = _passiveItemsRaw.filter(p => _bonusIds.indexOf(p.id) >= 0);
-    const _passiveItems = [..._baseItems].reverse().concat([..._bonusItems].reverse());
+    //   该顺序由 `orderedPassiveItems()` 唯一决定，动态数值解析/重算与这里必须同一口径。
+    const _passiveItems = orderedPassiveItems(hero);
     const passivesSectionHTML = `<div id="modal-passives-section" class="skill-category-block">
         <p class="uniform-style">${langDict.modalPassiveSkill}${balancedToggleHTML(hero, 'passiveSkills')}</p>
         ${_passiveItems.length ? _passiveItems.map(p => {

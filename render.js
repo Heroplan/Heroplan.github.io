@@ -2552,23 +2552,16 @@ function renderDetailsInModal(hero, context = {}) {
         modalManaCheckbox.checked = settingsToUse.manaPriority;
 
         function _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount) {
-            let baseStats = { power: hero.power || 0, attack: hero.attack || 0, defense: hero.defense || 0, health: hero.health || 0 };
-            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            // 服装奖励（「服装奖励」下拉；默认最多套）
-            const _cb = costumeBonusEntry(hero, settings.costume);
-            if (_cb) {
-                baseStats.attack = applyStatPerMil(baseStats.attack, _cb.attackBonusPerMil);
-                baseStats.defense = applyStatPerMil(baseStats.defense, _cb.defenseBonusPerMil);
-                baseStats.health = applyStatPerMil(baseStats.health, _cb.healthBonusPerMil);
-            }
-            let finalStats = { ...baseStats };
+            // 档位三围（破限 + 服装奖励、天赋前）唯一来源见 filters.js::heroTierStats
+            const baseStats = heroTierStats(hero, settings);
+            let finalStats = { attack: baseStats.attack, defense: baseStats.defense, health: baseStats.health };
             if (nodeCount > 0 && bonuses) {
                 finalStats.attack += bonuses.attack_flat + Math.floor(baseStats.attack * (bonuses.attack_percent / 100));
                 finalStats.defense += bonuses.defense_flat + Math.floor(baseStats.defense * (bonuses.defense_percent / 100));
                 finalStats.health += bonuses.health_flat + Math.floor(baseStats.health * (bonuses.health_percent / 100));
             }
             const STAR_BASE_POWER = { 1: 0, 2: 10, 3: 30, 4: 50, 5: 90 };
+            // 战力 = 天赋前三围 + 每点天赋固定 5 ⇒ 与"选了哪条路径"无关
             finalStats.power = (STAR_BASE_POWER[hero.rarity] || 0) + Math.floor((baseStats.attack * 0.35) + (baseStats.defense * 0.28) + (baseStats.health * 0.14)) + 35 + (nodeCount * 5);
             modal.querySelector('.details-stats-grid > div:nth-child(1) p').innerHTML = `💪 ${finalStats.power || 0}`;
             modal.querySelector('.details-stats-grid > div:nth-child(2) p').innerHTML = `⚔️ ${finalStats.attack || 0}`;
@@ -2636,17 +2629,8 @@ function renderDetailsInModal(hero, context = {}) {
             };
             _updateModalStatsWithBonuses(hero, settings, bonuses, nodeCount);
 
-            let baseStats = { attack: hero.attack, defense: hero.defense, health: hero.health };
-            if (settings.lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-            else if (settings.lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
-            // 天赋百分比是相对"含服装奖励"的属性算的 ⇒ 这里也要先套上服装奖励
-            const _cb2 = costumeBonusEntry(hero, settings.costume);
-            if (_cb2) {
-                baseStats.attack = applyStatPerMil(baseStats.attack, _cb2.attackBonusPerMil);
-                baseStats.defense = applyStatPerMil(baseStats.defense, _cb2.defenseBonusPerMil);
-                baseStats.health = applyStatPerMil(baseStats.health, _cb2.healthBonusPerMil);
-            }
-            _updateBonusAndCostDisplay(bonuses, nodeCount, baseStats);
+            // 天赋百分比是相对"含服装奖励的当前档位三围"算的 ⇒ 与自动路径共用同一个来源
+            _updateBonusAndCostDisplay(bonuses, nodeCount, heroTierStats(hero, settings));
             const avatarContainerModal = modalContent.querySelector('.hero-avatar-container-modal');
             if (avatarContainerModal) {
                 // 根据是否为 LB2，切换 .is-lb2 类
@@ -2664,7 +2648,8 @@ function renderDetailsInModal(hero, context = {}) {
             updateCommonUI(currentTalentBonuses, currentNodeCount);
         };
 
-        // 仅用于天赋相关设置的处理器，它会刷新天赋树
+        // 天赋相关设置的处理器：刷新天赋树。
+        // ⚠ 突破/服装也要走它 —— 自动路径现在按"这一档的三围"给节点估值，档位一变百分比节点就不等值了。
         const handleTreeAndStatUpdate = () => {
             const newTalentLevel = modalTalentSelect.value;
             const isDisabled = (newTalentLevel === 'none');
@@ -2675,7 +2660,11 @@ function renderDetailsInModal(hero, context = {}) {
                 if (newTalentLevel === 'none') {
                     TalentTree.clear();
                 } else {
-                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked, newTalentLevel);
+                    const tierStats = heroTierStats(hero, {
+                        lb: modalLbSelect.value, costume: readCostumeSets()
+                    });
+                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked,
+                        newTalentLevel, tierStats);
                 }
             } else {
                 handleStatUpdateOnly();
@@ -2694,12 +2683,12 @@ function renderDetailsInModal(hero, context = {}) {
         modalManaCheckbox.checked = settingsToUse.manaPriority;
 
         // 3. 绑定事件监听器
-        // 职责分离的事件监听器
-        modalLbSelect.addEventListener('change', handleStatUpdateOnly);
+        // 四个设置都会改变"档位三围"或路径口径 ⇒ 统一走会刷新天赋树的那个处理器
+        modalLbSelect.addEventListener('change', handleTreeAndStatUpdate);
         modalTalentSelect.addEventListener('change', handleTreeAndStatUpdate);
         modalStrategySelect.addEventListener('change', handleTreeAndStatUpdate);
         modalManaCheckbox.addEventListener('change', handleTreeAndStatUpdate);
-        // 「服装奖励」选择器：点一个档位就选中它（只影响属性数值 ⇒ 走"不触碰天赋树"的那条路）
+        // 「服装奖励」选择器：点一个档位就选中它（服装加成会抬高百分比节点的价值 ⇒ 同样要重算路径）
         const costumePicker = document.getElementById('modal-costume-picker');
         if (costumePicker) {
             costumePicker.addEventListener('click', (ev) => {
@@ -2707,7 +2696,7 @@ function renderDetailsInModal(hero, context = {}) {
                 if (!btn) return;
                 costumePicker.querySelectorAll('.costume-opt').forEach(b => b.classList.remove('selected'));
                 btn.classList.add('selected');
-                handleStatUpdateOnly();
+                handleTreeAndStatUpdate();
             });
         }
 

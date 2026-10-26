@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==========================================================================
  * 天赋树系统模块 (Talent Tree System Module)
  * V2 - 修正了路径切换逻辑，完全复刻参考文件的交互行为
@@ -29,6 +29,13 @@ const TalentTree = (() => {
     let currentContainer = null;
     let onStatsChangeCallback = () => { };
     let talentTermsDict = {}; // 【新增】用于存储当前语言的天赋术语字典
+    // 给"三围属性点"定价的尺子，只用来把 `+15` 与 `+3%` 放到同一量纲上比大小
+    // ⚠ 不是战力口径：游戏里天赋每点的战力是**固定加成**（见 filters.js::calculateHeroStats 的
+    //   `talent_power = 点数 × 5`，且战力只吃天赋前的三围）⇒ 这里的系数与选路无关的战力互不影响。
+    const VALUE_WEIGHT = { '攻击': 0.35, '防御': 0.28, '生命': 0.14 };
+    const UTIL_VALUE_PER_PCT = 0.5;   // 法力/治疗/暴击不进三围 ⇒ 每 1% 记这个名义值
+    let currentTierStats = null;   // 当前档位（破限+服装、天赋前）的三围，供节点估值与提示用
+
 
     // --- 内部辅助函数 ---
 
@@ -91,6 +98,11 @@ const TalentTree = (() => {
             if (!nodeElement) return;
             const isSelected = selectedNodes.has(nodeId);
             nodeElement.classList.toggle('selected', isSelected);
+            // 百分比节点的提示里补「这一档 ≈ +多少点」⇒ 与固定值节点可直接比较
+            const p = _parseText(talentData[nodeId].text);
+            const abs = (p && p.isPercent && VALUE_WEIGHT[p.stat]) ? _absGainOf(talentData[nodeId].text, currentTierStats) : 0;
+            nodeElement.title = _getTranslatedNodeText(talentData[nodeId])
+                + (abs >= 1 ? ' ≈ +' + Math.round(abs) : '');
         });
         currentContainer.querySelectorAll('.connector').forEach(conn => {
             const [startId, endId] = conn.dataset.connects.split('-');
@@ -288,7 +300,54 @@ const TalentTree = (() => {
      * @param {boolean} manaPriority - 是否优先选择法力
      * @param {string} talentLevel - 天赋等级 ('none', 'talent20', 'talent25')
      */
-    function _applyAutoPath(strategy, manaPriority, talentLevel) {
+    /** 节点文本 → `{stat, value, isPercent}`；文本形如 `攻击 +15` / `防御 +3%`。 */
+    function _parseText(text) {
+        const m = String(text || '').match(/^(攻击|防御|生命|法力|治疗|暴击)\s*\+?(\d+)\s*(%)?$/);
+        return m ? { stat: m[1], value: parseInt(m[2], 10), isPercent: m[3] === '%' } : null;
+    }
+
+    /** 百分比折算成**属性点数**（固定值节点即其本身；法力/治疗/暴击 ⇒ 0）。缺档位三围时按 0 计。 */
+    function _absGainOf(text, tierStats) {
+        const p = _parseText(text);
+        if (!p || !VALUE_WEIGHT[p.stat]) return 0;
+        if (!p.isPercent) return p.value;
+        if (!tierStats) return 0;
+        const cur = p.stat === '攻击' ? tierStats.attack : p.stat === '防御' ? tierStats.defense : tierStats.health;
+        return (cur || 0) * p.value / 100;
+    }
+
+    /**
+     * 单条文本在**当前档位属性**下的估值（自动路径打分与节点提示都用它）。
+     * 量纲 = 属性点（三围按 `VALUE_WEIGHT` 定价，与战力公式系数同值但只作比较尺子用）：
+     * 固定值节点 = 值 × 系数；百分比节点 = 档位属性 × %/100 × 系数
+     * （5★LB2 攻击 1704 的 +3% ⇒ 51.1×0.35 = 17.9，远高于「攻击 +15」的 5.25 ⇒ 高攻英雄该选百分比）。
+     * 法力/治疗/暴击不进战力公式 ⇒ 每 1% 记 `UTIL_VALUE_PER_PCT`。
+     * @param {string} text 节点文本
+     * @param {{attack?:number,defense?:number,health?:number}|null} tierStats 破限/服装之后、天赋之前的三围
+     */
+    function _powerGainOf(text, tierStats) {
+        const p = _parseText(text);
+        if (!p) return 0;
+        if (VALUE_WEIGHT[p.stat]) return _absGainOf(text, tierStats) * VALUE_WEIGHT[p.stat];
+        return p.isPercent ? p.value * UTIL_VALUE_PER_PCT : 0;
+    }
+
+    /** 取某职业下某节点的文本（不改动当前职业状态 ⇒ 供 `nodeGain` 这种旁路查询用）。 */
+    function _nodeTextOf(classKey, nodeId) {
+        return ((classData[classKey] || {}).data || {})[nodeId]?.text || '';
+    }
+
+    /**
+     * 自动路径：每个分叉选「策略优先级 × 该档位的属性估值」更大的一边。
+     * ⚠ 只按属性种类打分（旧实现）会让 `攻击 +3%` 与 `攻击 +15` 同分 ⇒ 恒选左边；
+     *   5★ 的 3% 远高于 15，而 1~3★ 反之 ⇒ 必须带当前档位属性来比。
+     * 选路只改动三围加成，**不动战力**（战力 = 天赋前三围 + 每点固定 5，见 filters.js）。
+     * @param {string} strategy 形如 'atk-hp-def'
+     * @param {boolean} manaPriority
+     * @param {string} talentLevel 'none' | 'talent20' | 'talent25'
+     * @param {{attack:number,defense:number,health:number}|null} tierStats 缺省时退回旧的"按种类打分"口径
+     */
+    function _applyAutoPath(strategy, manaPriority, talentLevel, tierStats) {
         selectedNodes.clear();
 
         // 如果是“无天赋”，则直接返回一个空路径
@@ -307,10 +366,12 @@ const TalentTree = (() => {
         }
 
         const getNodeScore = (nodeId) => {
-            const nodeText = talentData[nodeId]?.text || '';
-            const match = nodeText.match(/^(攻击|防御|生命|法力|治疗|暴击)/);
-            if (match) return weights[match[1]] || 0;
-            return 0;
+            const match = String(talentData[nodeId]?.text || '').match(/^(攻击|防御|生命|法力|治疗|暴击)/);
+            if (!match) return 0;
+            const w = weights[match[1]] || 0;
+            if (!w) return 0;
+            if (!tierStats) return w;
+            return w * _powerGainOf(talentData[nodeId]?.text, tierStats);
         };
 
         // 总是先计算出完整的25天赋路径
@@ -537,31 +598,47 @@ const TalentTree = (() => {
             const classKey = heroClassName || 'ranger';
             _setupTalentData(classKey);
             _createTreeHTML();
-            this.setPath(settings.strategy, settings.manaPriority);
+            // 天赋档位也要带上：只传策略/法力优先会让初始路径恒按 25 点算
+            this.setPath(settings.strategy, settings.manaPriority, settings.talent, settings.tierStats);
             const resizeObserver = new ResizeObserver(_positionConnectors);
             resizeObserver.observe(currentContainer);
         },
         /**
-         * 【已修正】根据策略设置天赋路径并更新UI
-         * @param {string} strategy 
-         * @param {boolean} manaPriority 
-         * @param {string} talentLevel - 新增参数，用于控制路径节点数量
+         * 按策略设置天赋路径并更新UI
+         * @param {string} strategy
+         * @param {boolean} manaPriority
+         * @param {string} talentLevel 控制路径节点数量（'none'/'talent20'/'talent25'）
+         * @param {{attack:number,defense:number,health:number}|null} tierStats
+         *        当前档位（破限+服装、天赋前）三围 ⇒ 百分比节点按它折算后再比大小
          */
-        setPath: function (strategy, manaPriority, talentLevel) {
-            _applyAutoPath(strategy, manaPriority, talentLevel);
+        setPath: function (strategy, manaPriority, talentLevel, tierStats) {
+            currentTierStats = tierStats || null;   // 只由"树"这条路径记，列表的 getBonusesForPath 不覆盖它
+            _applyAutoPath(strategy, manaPriority, talentLevel, tierStats);
             _updateUI();
         },
 
-        // 【新增】清空天赋树选择的公共方法
+        // 清空天赋树选择的公共方法
         clear: function () {
             selectedNodes.clear();
             _updateUI();
         },
-        getBonusesForPath: function (heroClassName, strategy, manaPriority) {
+        getBonusesForPath: function (heroClassName, strategy, manaPriority, talentLevel, tierStats) {
             const classKey = heroClassName || 'ranger';
             _setupTalentData(classKey);
-            _applyAutoPath(strategy, manaPriority);
+            // talentLevel/tierStats 必须一起往下传：漏掉 talentLevel 会让"20 天赋"按 25 点出加成
+            _applyAutoPath(strategy, manaPriority, talentLevel, tierStats);
             return _calculateBonuses();
+        },
+        /**
+         * 某个节点的估值（`≈ +N` 与测试/提示复用）。职业要先给，`talentData` 是按职业装的。
+         * @param {string} heroClassName 如 'cleric'
+         * @param {string} nodeId 如 '8_1'
+         * @param {{attack:number,defense:number,health:number}|null} tierStats
+         */
+        nodeGain: function (heroClassName, nodeId, tierStats) {
+            _setupTalentData(heroClassName || 'ranger');
+            const text = _nodeTextOf(heroClassName || 'ranger', nodeId);
+            return { abs: _absGainOf(text, tierStats), power: _powerGainOf(text, tierStats) };
         }
     };
 

@@ -827,31 +827,40 @@ function isOnlySpecificScopeFilterActive(scopeName) {
  * @param {object} settings - 设置对象 { lb, talent, strategy, manaPriority }。
  * @returns {object} 包含最终 power, attack, defense, health 的对象。
  */
-function calculateHeroStats(hero, settings) {
-    const { lb, talent, strategy, manaPriority } = settings;
-    let baseStats = {
+/**
+ * 破限档位 + 服装奖励之后、**天赋之前**的三围。
+ * 天赋的百分比加成、以及天赋树自动路径的"这个节点值多少"都以它为基础 ⇒ 单一来源，避免两处算法漂移。
+ * @param {object} hero
+ * @param {object} settings `{lb, costume?}`；`costume` 不传时用该英雄发布当时的服装顺序
+ * @returns {{power:number,attack:number,defense:number,health:number}}
+ */
+function heroTierStats(hero, settings) {
+    let s = {
         power: hero.power || 0, attack: hero.attack || 0,
         defense: hero.defense || 0, health: hero.health || 0
     };
-    if (lb === 'lb1' && hero.lb1) baseStats = { ...hero.lb1 };
-    else if (lb === 'lb2' && hero.lb2) baseStats = { ...hero.lb2 };
+    if (settings.lb === 'lb1' && hero.lb1) s = { ...hero.lb1 };
+    else if (settings.lb === 'lb2' && hero.lb2) s = { ...hero.lb2 };
 
-    // ── 服装奖励──
-    // 详情页传 `settings.costume`（"突破与天赋设置"里的「服装奖励」下拉，默认最多套）；
-    // **列表不传** ⇒ 用该英雄自身的服装顺序 `hero.costumeListSets`
-    //   —— 即"英雄发布当时"的属性（旧数据 638/638 逐字段吻合）。
-    const _costumeSets = (settings && settings.costume !== undefined && settings.costume !== null)
+    const sets = (settings.costume !== undefined && settings.costume !== null)
         ? settings.costume : (hero.costumeListSets || 0);
-    const _cb = (typeof costumeBonusEntry === 'function') ? costumeBonusEntry(hero, _costumeSets) : null;
-    if (_cb) {
-        baseStats.attack = applyStatPerMil(baseStats.attack, _cb.attackBonusPerMil);
-        baseStats.defense = applyStatPerMil(baseStats.defense, _cb.defenseBonusPerMil);
-        baseStats.health = applyStatPerMil(baseStats.health, _cb.healthBonusPerMil);
+    const cb = (typeof costumeBonusEntry === 'function') ? costumeBonusEntry(hero, sets) : null;
+    if (cb) {
+        s.attack = applyStatPerMil(s.attack, cb.attackBonusPerMil);
+        s.defense = applyStatPerMil(s.defense, cb.defenseBonusPerMil);
+        s.health = applyStatPerMil(s.health, cb.healthBonusPerMil);
     }
+    return s;
+}
+
+function calculateHeroStats(hero, settings) {
+    const { talent, strategy, manaPriority } = settings;
+    let baseStats = heroTierStats(hero, settings);
 
     let finalStats = { attack: baseStats.attack, defense: baseStats.defense, health: baseStats.health };
     if (talent !== 'none' && hero.class && typeof TalentTree !== 'undefined') {
-        const talentBonuses = TalentTree.getBonusesForPath(hero.classId, strategy, manaPriority, talent);
+        // 档位三围要传下去：`攻击 +3%` 与 `攻击 +15` 谁更值取决于当前是三档里的哪一档
+        const talentBonuses = TalentTree.getBonusesForPath(hero.classId, strategy, manaPriority, talent, baseStats);
         const attackPercentBonus = Math.floor((baseStats.attack || 0) * (talentBonuses.attack_percent / 100));
         finalStats.attack = (baseStats.attack || 0) + talentBonuses.attack_flat + attackPercentBonus;
         const defensePercentBonus = Math.floor((baseStats.defense || 0) * (talentBonuses.defense_percent / 100));

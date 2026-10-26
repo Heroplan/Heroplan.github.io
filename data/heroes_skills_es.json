@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría, en su lugar redirige un 100% de ese daño a un enemigo aleatorio.\n[*]En batallas con múltiples oleadas, el efecto se reinicia al comienzo de cada una."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Oportunidad de robar",
-     "text": "Al comienzo de cada turno, este personaje saquea a un enemigo aleatorio:\n[*] Roba 100 de vitalidad.\n[*] Roba de forma segura una bendición del enemigo. Se incluyen las bendiciones indescartables y los efectos de danza."
+     "text": "Cuando otro aliado lanza una habilidad especial, este personaje saquea al enemigo con más bendiciones:\n[*] Roba 100 de vitalidad.\n[*] Roba de forma segura una bendición del enemigo. Se incluyen las bendiciones indescartables y los efectos de danza."
     }
    ],
    "skills": [

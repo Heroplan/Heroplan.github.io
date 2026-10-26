@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Dem Tod ein Schnippchen schlagen",
-     "text": "Wenn dieser Charakter zum ersten Mal tödlichen Schaden erleiden würde, werden 100% dieses Schadens stattdessen zu einem zufälligen Gegner umgeleitet.\n[*]In Kämpfen mit mehreren Wellen wird dieser Effekt zu Beginn jeder Welle zurückgesetzt."
+     "text": "Das erste Mal, wenn dieser Charakter durch normale Angriffe oder Spezialfähigkeiten tödlichen Schaden erleiden würde, leitet er stattdessen bis zu 2500 Schaden an einen zufälligen Gegner weiter."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Diebische Gelegenheit",
-     "text": "Zu Beginn jedes Zugs raubt dieser Charakter einen zufälligen Gegner aus:\n[*]Er stiehlt 100 Leben.\n[*]Er stiehlt stiehlt einen Bonus des Gegners. Dazu zählen auch nicht entfernbare Boni und Tanzeffekte."
+     "text": "Wenn ein anderer Verbündeter eine Spezialfähigkeit wirkt, raubt dieser Charakter den Gegner mit den meisten Boni aus:\n[*] Stiehlt 100 Gesundheit.\n[*] Stiehlt sicher einen Bonus des Gegners. Dazu zählen auch nicht entfernbare Boni und Tanzeffekte."
     }
    ],
    "skills": [

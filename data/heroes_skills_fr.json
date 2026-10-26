@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts qui devraient l'éliminer, il redirige à la place 100% de ces dégâts vers un ennemi aléatoire.\n[*]Dans les combats comportant plusieurs vagues, l'effet est rechargé au début de chaque vague."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Opportunité du voleur",
-     "text": "Au début de chaque tour, ce personnage pille un ennemi aléatoire:\n[*]Vole 100 PV.\n[*]Vole de façon sûre un bonus de l'ennemi. Il peut s'agir d'un bonus non dissipable ou d'un effet de danse."
+     "text": "Lorsqu'un autre allié lance sa compétence spéciale, ce personnage pille l'ennemi disposant du plus de bonus:\n[*]Vole 100 PV.\n[*]Vole de façon sûre un bonus de l'ennemi. Il peut s'agir d'un bonus non dissipable ou d'un effet de danse."
     }
    ],
    "skills": [

@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Ontsnap aan de dood",
-     "text": "De eerste keer dat dit personage fatale schade zou lijden, stuurt het in plaats daarvan 100% van die schade door naar een willekeurige vijand.\n[*]In gevechten met meerdere golven, wordt dit effect aan het begin van iedere golf vernieuwd."
+     "text": "De eerste keer dat dit personage fatale schade zou lijden door normale aanvallen of speciale vaardigheden, stuurt het in plaats daarvan maximaal 2500 schade terug naar een willekeurige vijand."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Kans voor een dief",
-     "text": "Aan het begin van elke beurt plundert dit personage een willekeurige vijand:\n[*]Steelt 100 gezondheid.\n[*]Steelt veilig een oppepper van de vijand. Dit is inclusief niet-verwijderbare oppeppers en danseffecten."
+     "text": "Wanneer een andere bondgenoot een speciale vaardigheid gebruikt, plundert dit personage de vijand met de meeste oppeppers:\n[*]Steelt 100 gezondheid.\n[*]Steelt veilig een oppepper van de vijand. Dit is inclusief niet-verwijderbare oppeppers en danseffecten."
     }
    ],
    "skills": [

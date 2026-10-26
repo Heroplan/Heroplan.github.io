@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal pela primeira vez, este personagem redireciona 100% desse dano a um inimigo aleatório.\n[*]Em batalhas com várias ondas, o efeito é atualizado no início de cada onda."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Oportunidade de Ladrão",
-     "text": "No início de cada turno, este personagem saqueia um inimigo aleatório:\n[*] Rouba 100 de vida.\n[*] Rouba com segurança um reforço do inimigo. Isso inclui efeitos de dança e reforços indissipáveis."
+     "text": "Quando qualquer outro aliado lança uma habilidade especial, este personagem saqueia o inimigo com mais reforços:\n[*] Rouba 100 de vida.\n[*] Rouba com segurança um reforço do inimigo. Isso inclui efeitos de dança e reforços indissipáveis."
     }
    ],
    "skills": [

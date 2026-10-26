@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Saat pertama kali karakter ini terancam menerima kerusakan fatal, dia mengalihkan 100% dari kerusakan itu ke satu musuh acak.\n[*]Dalam pertempuran dengan beberapa gelombang, efek ini akan disegarkan di awal setiap gelombang."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Kesempatan Pencuri",
-     "text": "Di awal tiap giliran, karakter ini Menggeledah satu musuh acak:\n[*]Mencuri 100 kesehatan.\n[*]Dengan aman mencuri genjotan dari musuh. Ini termasuk genjotan yang tidak bisa dienyahkan dan efek Tarian."
+     "text": "Saat salah satu sekutu lain merapal Keahlian Khusus, karakter ini Menggeledah musuh yang punya genjotan terbanyak:\n[*]Mencuri 100 kesehatan.\n[*]Dengan aman mencuri genjotan dari musuh. Ini termasuk genjotan yang tidak bisa dienyahkan dan efek Tarian."
     }
    ],
    "skills": [

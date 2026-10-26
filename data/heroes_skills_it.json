@@ -50353,14 +50353,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Ingannare la morte",
-     "text": "La prima volta che questo personaggio subirebbe danni fatali, reindirizza il 100% di quei danni a un nemico casuale.\n[*]Nelle battaglie con più ondate, l'effetto si rinnova all'inizio di ogni ondata."
+     "text": "La prima volta che questo personaggio sta per subire danni fatali da attacchi normali o Abilità speciali, reindirizza invece fino a 2500 danni a un nemico casuale."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Occasione del ladro",
-     "text": "All'inizio di ogni turno, questo personaggio saccheggia un nemico casuale:\n[*] Ruba 100 di Salute.\n[*] Ruba in modo sicuro una magia benefica dal nemico. Questo include magie benefiche non annullabili ed effetti di Danza."
+     "text": "Quando un altro alleato lancia un'Abilità speciale, questo personaggio saccheggia il nemico con più magie benefiche:\n[*] Ruba 100 di Salute.\n[*] Ruba in modo sicuro una magia benefica al nemico. Sono incluse le magie benefiche non annullabili e gli effetti Danza."
     }
    ],
    "skills": [

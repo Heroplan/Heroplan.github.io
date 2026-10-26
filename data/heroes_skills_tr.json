@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Ölümü Atlat",
-     "text": "Bu karakter, ilk defa ölümcül bir hasar aldığında bunun yerine o hasarın% 100 kadarını rastgele bir düşmana yansıtır.\n[*]Birden çok dalganın olduğu savaşlarda efekt, her dalganın başında yenilenir."
+     "text": "Bu karakter, normal saldırılardan veya Özel Yeteneklerden ilk kez ölümcül hasar aldığında hasar almak yerine bu hasarın en fazla 2500 kadarını rastgele bir düşmana yönlendirir."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Hırsızın Fırsatı",
-     "text": "Bu karakter, her turun başında rastgele bir düşmanı Yağmalar:\n[*] 100 çalar.\n[*]Düşmandan bir buff'ı güvenli bir şekilde çalar. Buna bozulamaz buff'lar ve Dans efektleri dâhildir."
+     "text": "Başka bir müttefik bir Özel Yetenek uyguladığında bu karakter, en çok buff'a sahip olan düşmanı Yağmalar:\n[*] 100 sağllık çalar.\n[*]Düşmandan bir buff'ı güvenli bir şekilde çalar. Buna bozulamaz buff'lar ve Dans efektleri dâhildir."
     }
    ],
    "skills": [

@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade, omdirigerer den i stedet 100% af den pågældende skade til en tilfældig fjende.\n[*]I kampe med flere bølger fornyes effekten i begyndelsen af hver bølge."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Tyvens mulighed",
-     "text": "Ved starten af hver runde ransager denne figur en vilkårlig fjende:\n[*]Stjæler 100 helbred.\n[*]Stjæler på sikker vis en buffer fra fjenden. Heriblandt uophævelige buffere og danseeffekter."
+     "text": "Når enhver anden allieret kaster en særlig evne, ransager denne figur fjenden med flest buffere:\n[*]Stjæler 100 helbred.\n[*]Stjæler på sikker vis en buffer fra fjenden, heriblandt uophævelige buffere og danseeffekter."
     }
    ],
    "skills": [

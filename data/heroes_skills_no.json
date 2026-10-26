@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Lure døden",
-     "text": "Den første gangen denne figuren ville tatt fatal skade, omdirigeres i stedet 100% av den skaden til en tilfeldig fiende.\n[*]I kamper med flere bølger oppdateres effekten ved begynnelsen av hver bølge."
+     "text": "Den første gangen denne figuren ville tatt fatal skade fra normale angrep eller spesialferdigheter, omdirigeres i stedet opptil 2500 skade til en tilfeldig fiende."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Tyvs mulighet",
-     "text": "Ved starten av hver runde ransaker denne figuren en tilfeldig fiende:\n[*]Stjeler 100 helse.\n[*]Stjeler på en trygg måte en økning fra fienden. Dette inkluderer økninger som ikke kan fjernes, og danseeffekter."
+     "text": "Når en annen alliert bruker en spesialferdighet, ransaker denne figuren fienden med flest økninger:\n[*]Stjeler 100 helse.\n[*]Stjeler på en trygg måte en økning fra fienden. Dette inkluderer økninger som ikke kan fjernes, og danseeffekter."
     }
    ],
    "skills": [

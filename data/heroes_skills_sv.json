@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Lura döden",
-     "text": "Första gången den här karaktären skulle få dödlig skada så omdirigeras istället 100% av den skadan till en slumpmässig fiende.\n[*]I strider med flera vågor återställs effekten i början av varje våg."
+     "text": "Första gången den här karaktären hade tagit dödlig skada av vanliga attacker eller specialförmågor dirigeras upp till 2500 skada vidare till en slumpvald fiende."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Tjuvsinne",
-     "text": "I början av varje runda plundrar den här karaktären en slumpmässig fiende:\n[*]Stjäl 100 hälsa.\n[*]Stjäl en bonus säkert från fienden – även sådana som inte kan avbrytas och danseffekter."
+     "text": "När andra allierade använder specialförmågor plundrar den här karaktären fienden med flest bonusar:\n[*]Stjäl 100 hälsa.\n[*]Stjäl riskfritt en bonus från fienden – även sådana som inte kan avbrytas och danseffekter."
     }
    ],
    "skills": [

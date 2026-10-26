@@ -50175,14 +50175,14 @@
    ],
    "passiveSkills": [
     {
-     "id": "cheat_death",
+     "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage, they instead redirect 100% of that damage to a random enemy.\n[*]In battles with multiple waves, the effect is refreshed at the beginning of each wave."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
     },
     {
-     "id": "ransack",
+     "id": "ransack_on_other_ally_special",
      "title": "Thief's Opportunity",
-     "text": "At the start of each turn, this character Ransacks a random enemy:\n[*]Steals 100 health.\n[*]Safely steals a buff from the enemy. This includes undispellable buffs and Dance effects."
+     "text": "When any other ally casts a Special Skill, this character Ransacks the enemy with the most buffs:\n[*]Steals 100 health.\n[*]Safely steals a buff from the enemy. This includes undispellable buffs and Dance effects."
     }
    ],
    "skills": [

@@ -127,6 +127,54 @@ function applyBalancedSections(hero) {
     if ('stats' in b && on.stats) applyBalancedStats(hero);
     else restoreNormalStats(hero);
     refreshBalancedDisplayStats(hero);
+    // ⚠ 动态数值(`[#Dynamic]`→`<span class="dynamic-value">`)是按**当前正文**解析、且以该档的
+    //   满级攻击力为系数基准 ⇒ 换文本后解析表必须重建（否则 span 会错位、参数也选错一张表）。
+    //   这里做而不是只在按钮里做：切语言时正文按 `_balancedOn` 重新套用，同样要跟着重解析。
+    if (typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
+}
+
+/** 服装奖励选择器当前档位；控件不存在（该英雄无服装奖励表）⇒ 按该英雄的最多套。 */
+function modalCostumeSets(hero) {
+    const el = document.getElementById('modal-costume-picker');
+    if (el) {
+        const sel = el.querySelector('.costume-opt.selected');
+        return sel ? (parseInt(sel.dataset.value, 10) || 0) : 0;
+    }
+    return (hero && hero.costumeMaxSets) || 0;
+}
+
+/**
+ * 详情页当前的档位选择（突破/天赋/策略/法力优先/服装）+ 手点过的天赋树节点——这些都只存在于 DOM /
+ * `TalentTree` 闭包里，而 `renderDetailsInModal` 重建整块内容时会按**筛选面板的全局默认值**重置它们。
+ * ⇒ 原地重渲染（切换平衡数据）前必须先读出来，再作为 `context.tier` 传回去。
+ * `nodes` 只在**当前树 ≠ 预设自动路径**（= 用户手点过，或档位与树不一致）时才带；
+ *   完全一致就别钉住，否则换破限档/服装时自动路径不再按新档位重算（§7DH 的行为会被冻住）。
+ *   「无天赋」的自动路径是**空集** ⇒ 树里哪怕只有一个节点也属于手动状态，同样要钉住。
+ * @returns {{lb:string,talent:string,strategy:string,manaPriority:boolean,costume:number,nodes:string[]|null}|null}
+ *          「突破与天赋详情」面板没开 ⇒ 没有这些控件 ⇒ null
+ */
+function readModalTierSettings(hero) {
+    const lb = document.getElementById('modal-limit-break-select');
+    const talent = document.getElementById('modal-talent-select');
+    if (!lb || !talent) return null;
+    const strategy = document.getElementById('modal-talent-strategy-select');
+    const mana = document.getElementById('modal-mana-priority-checkbox');
+    const tier = {
+        lb: lb.value,
+        talent: talent.value,
+        strategy: strategy ? strategy.value : 'atk-hp-def',
+        manaPriority: !!(mana && mana.checked),
+        costume: modalCostumeSets(hero),
+        nodes: null
+    };
+    if (typeof TalentTree !== 'undefined' && TalentTree.getPath
+        && TalentTree.getAutoPath && typeof heroTierStats === 'function') {
+        const cur = TalentTree.getPath().slice().sort().join(',');
+        const auto = TalentTree.getAutoPath(tier.strategy, tier.manaPriority, tier.talent,
+            heroTierStats(hero, { lb: tier.lb, costume: tier.costume })).slice().sort().join(',');
+        if (cur && cur !== auto) tier.nodes = TalentTree.getPath();
+    }
+    return tier;
 }
 
 /**
@@ -140,11 +188,10 @@ function toggleBalancedData(hero, section) {
     if (!hero._normalSnapshot) ensureBalancedSnapshot(hero);
     hero._balancedOn = hero._balancedOn || {};
     hero._balancedOn[section] = !hero._balancedOn[section];
-    applyBalancedSections(hero);
-    // ⚠ 动态数值(`[#Dynamic]`→`<span class="dynamic-value">`)是按 `hero.effects` **解析**、且以
-    //   `hero.attack` 为基准算系数的 ⇒ 换技能文本**或换三围**都必须重算，否则数值还是旧的。
-    if (typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
-    if (typeof renderDetailsInModal === 'function') renderDetailsInModal(hero);
+    // 重渲染前留住用户在详情页手选的档位（否则整块内容按筛选面板默认值重建 ⇒ 档位被抹掉）
+    const tier = readModalTierSettings(hero);
+    applyBalancedSections(hero);        // 内部会重解析动态数值（见该函数注释）
+    if (typeof renderDetailsInModal === 'function') renderDetailsInModal(hero, { tier: tier });
 }
 
 /**
@@ -1429,6 +1476,8 @@ function getSafeColorKey(colorValue) {
 function renderDetailsInModal(hero, context = {}) {
 
     const { teamSlotIndex } = context;
+    // 原地重渲染（切换平衡数据）时沿用详情页当前档位；null ⇒ 用筛选面板的全局默认值
+    const tierPreset = context.tier || null;
     // 兜底：`displayStats` 平时由 `applyFiltersAndRender` 预计算，但从队伍模拟器/分享链接等
     //   入口打开详情时该英雄可能不在 `filteredHeroes` 里 ⇒ 这里懒算一次，避免模板读 undefined 崩溃。
     if (hero && !hero.displayStats) refreshBalancedDisplayStats(hero);
@@ -2109,10 +2158,12 @@ function renderDetailsInModal(hero, context = {}) {
     const costumePickerHTML = (() => {
         if (!hero.costumeBonusLevels) return '';
         const N = hero.costumeMaxSets || 1;
-        let out = `<button type="button" class="costume-opt" data-value="0">${langDict.costumeSetsNone}</button>`;
+        // 默认「最多套」；原地重渲染时保持用户已选的档位
+        const sel = tierPreset ? tierPreset.costume : N;
+        let out = `<button type="button" class="costume-opt${sel === 0 ? ' selected' : ''}" data-value="0">${langDict.costumeSetsNone}</button>`;
         for (let k = 1; k <= N; k++) {
             const sk = _costumeSkinOf(k);
-            out += `<button type="button" class="costume-opt${k === N ? ' selected' : ''}" data-value="${k}" title="${sk.name}">`
+            out += `<button type="button" class="costume-opt${k === sel ? ' selected' : ''}" data-value="${k}" title="${sk.name}">`
                 + `<img loading="lazy" src="imgs/costume/${sk.icon}.webp" decoding="async" alt="" onerror="this.style.display='none'"><span>${sk.name}</span></button>`;
         }
         return `<div class="details-selector-item"><label data-lang-key="costumeBonusSetting">${langDict.costumeBonusSetting}</label>`
@@ -2120,14 +2171,7 @@ function renderDetailsInModal(hero, context = {}) {
     })();
 
     // 读当前选中的服装档位：选择器不存在（无服装奖励表 / 未开天赋面板）⇒ 默认最多套
-    const readCostumeSets = () => {
-        const el = document.getElementById('modal-costume-picker');
-        if (el) {
-            const s = el.querySelector('.costume-opt.selected');
-            return s ? (parseInt(s.dataset.value, 10) || 0) : 0;
-        }
-        return hero.costumeMaxSets || 0;
-    };
+    const readCostumeSets = () => modalCostumeSets(hero);
 
     const talentSystemHTML = filterInputs.showLbTalentDetailsCheckbox.checked ? `
         <div id="modal-talent-system-wrapper">
@@ -2432,13 +2476,13 @@ function renderDetailsInModal(hero, context = {}) {
         });
     });
     // 动态伤害值计算逻辑，确保始终执行
-    // 1. 定义一个 settings 对象，从“高级筛选”面板获取当前的全局设置。
+    // 1. 定义一个 settings 对象：原地重渲染沿用详情页当前档位，否则取「高级筛选」面板的全局设置。
     const settingsToUse = {
-        lb: filterInputs.defaultLimitBreakSelect.value,
-        talent: filterInputs.defaultTalentSelect.value,
-        strategy: filterInputs.defaultTalentStrategySelect.value,
-        manaPriority: filterInputs.defaultManaPriorityCheckbox.checked,
-        // 服装奖励：读选择器（默认已选中「最多套」）；
+        lb: tierPreset ? tierPreset.lb : filterInputs.defaultLimitBreakSelect.value,
+        talent: tierPreset ? tierPreset.talent : filterInputs.defaultTalentSelect.value,
+        strategy: tierPreset ? tierPreset.strategy : filterInputs.defaultTalentStrategySelect.value,
+        manaPriority: tierPreset ? tierPreset.manaPriority : filterInputs.defaultManaPriorityCheckbox.checked,
+        // 服装奖励：读选择器（上面已按 tierPreset 还原选中态）；
         // 没有选择器（无服装奖励表 / 未开天赋面板）⇒ 直接用最多套（无表时 costumeBonusEntry 返回 null，等于不加）
         costume: readCostumeSets()
     };
@@ -2505,6 +2549,11 @@ function renderDetailsInModal(hero, context = {}) {
         // 用于在内存中缓存天赋树计算出的最新加成状态
         let currentTalentBonuses = { attack_flat: 0, attack_percent: 0, defense_flat: 0, defense_percent: 0, health_flat: 0, health_percent: 0, mana_percent: 0, healing_percent: 0, crit_percent: 0 };
         let currentNodeCount = 0;
+        // 手动状态：`context.tier.nodes` 只在"当前树 ≠ 预设自动路径"时才带进来；本次会话里用户再点树也算
+        // （见下面 wrapper 的 click 监听）。改「天赋档位 / 策略 / 法力优先」= 明确要求重算 ⇒ 作废手动状态；
+        // 换破限档、换服装、切平衡数据都不作废 ⇒ 树**完全保留**（不按档位裁剪）。
+        let manualTree = !!(tierPreset && tierPreset.nodes && tierPreset.nodes.length);
+        const pinnedNodes = manualTree ? tierPreset.nodes.slice() : null;
 
         const updateRankDisplay = (currentNodeCount = -1) => {
             const lbSetting = modalLbSelect.value;
@@ -2539,13 +2588,7 @@ function renderDetailsInModal(hero, context = {}) {
             }
         };
 
-        const settingsToUse = {
-            lb: filterInputs.defaultLimitBreakSelect.value,
-            talent: filterInputs.defaultTalentSelect.value,
-            strategy: filterInputs.defaultTalentStrategySelect.value,
-            manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
-        };
-
+        // `settingsToUse` 用函数开头那一份（同一来源，别再按筛选面板默认值重算一遍）
         modalLbSelect.value = settingsToUse.lb;
         modalTalentSelect.value = settingsToUse.talent;
         modalStrategySelect.value = settingsToUse.strategy;
@@ -2657,15 +2700,12 @@ function renderDetailsInModal(hero, context = {}) {
             modalManaCheckbox.disabled = isDisabled;
 
             if (typeof TalentTree !== 'undefined' && hero.class) {
-                if (newTalentLevel === 'none') {
-                    TalentTree.clear();
-                } else {
-                    const tierStats = heroTierStats(hero, {
-                        lb: modalLbSelect.value, costume: readCostumeSets()
-                    });
-                    TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked,
-                        newTalentLevel, tierStats);
-                }
+                // 「无天赋」的自动路径是空集 ⇒ 没有手动钉住时 `setPath` 的效果就等于清空
+                const tierStats = heroTierStats(hero, {
+                    lb: modalLbSelect.value, costume: readCostumeSets()
+                });
+                TalentTree.setPath(modalStrategySelect.value, modalManaCheckbox.checked,
+                    newTalentLevel, tierStats, pinForTree());
             } else {
                 handleStatUpdateOnly();
             }
@@ -2673,7 +2713,9 @@ function renderDetailsInModal(hero, context = {}) {
 
         // 1. 先初始化天赋树 (即使它会错误地设置下拉菜单)
         if (typeof TalentTree !== 'undefined' && hero.class) {
-            TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.classId, settingsToUse, talentChangeCallback, langDict.talentTerms);
+            TalentTree.init(document.getElementById('modal-talent-tree-wrapper'), hero.classId,
+                Object.assign({}, settingsToUse, { pinnedNodes: pinnedNodes }),
+                talentChangeCallback, langDict.talentTerms);
         }
 
         // 2. 然后，保存的正确设置，强制覆盖下拉菜单的值
@@ -2682,12 +2724,21 @@ function renderDetailsInModal(hero, context = {}) {
         modalStrategySelect.value = settingsToUse.strategy;
         modalManaCheckbox.checked = settingsToUse.manaPriority;
 
+        // 手动状态一旦建立，就以树里的**当前**选择为准（用户可能又点了几个节点），不吃旧快照
+        const pinForTree = () => !manualTree ? null
+            : (typeof TalentTree !== 'undefined' && TalentTree.getPath ? TalentTree.getPath() : pinnedNodes);
+
         // 3. 绑定事件监听器
         // 四个设置都会改变"档位三围"或路径口径 ⇒ 统一走会刷新天赋树的那个处理器
         modalLbSelect.addEventListener('change', handleTreeAndStatUpdate);
-        modalTalentSelect.addEventListener('change', handleTreeAndStatUpdate);
-        modalStrategySelect.addEventListener('change', handleTreeAndStatUpdate);
-        modalManaCheckbox.addEventListener('change', handleTreeAndStatUpdate);
+        // 档位/策略/法力优先是「请重算路径」的指令 ⇒ 先作废手动状态再走自动路径
+        const _withAutoPath = (fn) => () => { manualTree = false; fn(); };
+        modalTalentSelect.addEventListener('change', _withAutoPath(handleTreeAndStatUpdate));
+        modalStrategySelect.addEventListener('change', _withAutoPath(handleTreeAndStatUpdate));
+        modalManaCheckbox.addEventListener('change', _withAutoPath(handleTreeAndStatUpdate));
+        // 树里点一下 = 进入手动状态（此后切平衡数据 / 换破限档 / 换服装都原样保留这棵树）
+        const treeWrap = document.getElementById('modal-talent-tree-wrapper');
+        if (treeWrap) treeWrap.addEventListener('click', () => { manualTree = true; });
         // 「服装奖励」选择器：点一个档位就选中它（服装加成会抬高百分比节点的价值 ⇒ 同样要重算路径）
         const costumePicker = document.getElementById('modal-costume-picker');
         if (costumePicker) {

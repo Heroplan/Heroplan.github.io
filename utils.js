@@ -560,6 +560,11 @@ let _skillsEnsure = null;
  * 详情页换 LB / 服装后要按官方口径重算 `[#Dynamic]` 数值需要它；档缺失或该值有歧义 ⇒ 调用方退回比例式。
  */
 let HERO_DYNAMIC_PARAMS = null;
+/**
+ * 平衡档（官方第二表）的同款参数表：`data/heroes_dynamic_balanced.json`。
+ * 两档的英雄 id 同名、数值却不同 ⇒ **必须分表**，按"这一节正文来自哪张表"（`hero._balancedOn`）选。
+ */
+let HERO_DYNAMIC_PARAMS_BALANCED = null;
 
 /**
  * 官方动态伤害重算：`floor(攻击 × 分子 / (1000 × 分母)) × 回合`。
@@ -585,7 +590,7 @@ async function loadData(lang) {
         _skillsEnsure = null;           // memo 与新档同生命周期（见上面的声明处注释）
 
         // ② 数据（首屏真正需要的档）
-        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes, dynRes] = await Promise.all([
+        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes, dynRes, dynBalRes] = await Promise.all([
             fetch(av('data/hero_order.json')),
             fetch(av('data/characters.json')),
             fetch(av('data/heroes_skill_types.json')),
@@ -594,8 +599,10 @@ async function loadData(lang) {
             fetch(av('data/costume_bonuses.json')).catch(() => null),
             // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）：切三围时按**完整定义**算，允许缺失。
             fetch(av('data/characters_balanced.json')).catch(() => null),
-            // 动态伤害的 (‰,回合) 参数表（语言无关，生成器 `--site-export` 附带）；允许缺失 ⇒ 退回比例式
-            fetch(av('data/heroes_dynamic.json')).catch(() => null)
+            // 动态伤害的 (分子,分母,回合) 参数表（语言无关，生成器 `--site-export` 附带）；允许缺失 ⇒ 退回比例式
+            fetch(av('data/heroes_dynamic.json')).catch(() => null),
+            // 平衡正文那批数值的同款参数表（`--site-export-balanced` 附带）；允许缺失
+            fetch(av('data/heroes_dynamic_balanced.json')).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
         const charsDoc = await charsRes.json();
@@ -609,6 +616,7 @@ async function loadData(lang) {
         // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）—— 切三围时按**完整定义**算，不必拼差异字段
         const charBal = (charBalRes && charBalRes.ok) ? await charBalRes.json() : null;
         HERO_DYNAMIC_PARAMS = (dynRes && dynRes.ok) ? await dynRes.json() : null;
+        HERO_DYNAMIC_PARAMS_BALANCED = (dynBalRes && dynBalRes.ok) ? await dynBalRes.json() : null;
 
         // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {

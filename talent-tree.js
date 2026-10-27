@@ -338,7 +338,21 @@ const TalentTree = (() => {
     }
 
     /**
-     * 自动路径：每个分叉选「策略优先级 × 该档位的属性估值」更大的一边。
+     * 恢复「用户手动点出来」的路径（切平衡数据等**原地重渲染**要保住它，否则手动状态被自动路径顶掉）。
+     * **完全保留**：不按天赋档位裁剪 ⇒ 树里有什么就是什么（档位下拉与树不一致时以树为准）。
+     * @param {string[]} nodeIds
+     * @returns {boolean} 是否恢复成功（一个都不认 ⇒ 调用方退回自动路径）
+     */
+    function _restoreNodes(nodeIds) {
+        const ids = (nodeIds || []).filter(id => talentData[id]);
+        if (!ids.length) return false;
+        selectedNodes = new Set(ids);
+        return true;
+    }
+
+    /**
+     * 自动路径（**纯函数**，不碰树的状态；调用方需要"和当前树比一比"时也能用）。
+     * 每个分叉选「策略优先级 × 该档位的属性估值」更大的一边。
      * ⚠ 只按属性种类打分（旧实现）会让 `攻击 +3%` 与 `攻击 +15` 同分 ⇒ 恒选左边；
      *   5★ 的 3% 远高于 15，而 1~3★ 反之 ⇒ 必须带当前档位属性来比。
      * 选路只改动三围加成，**不动战力**（战力 = 天赋前三围 + 每点固定 5，见 filters.js）。
@@ -346,13 +360,13 @@ const TalentTree = (() => {
      * @param {boolean} manaPriority
      * @param {string} talentLevel 'none' | 'talent20' | 'talent25'
      * @param {{attack:number,defense:number,health:number}|null} tierStats 缺省时退回旧的"按种类打分"口径
+     * @returns {Set<string>}
      */
-    function _applyAutoPath(strategy, manaPriority, talentLevel, tierStats) {
-        selectedNodes.clear();
-
+    function _computeAutoPath(strategy, manaPriority, talentLevel, tierStats) {
+        const picked = new Set();
         // 如果是“无天赋”，则直接返回一个空路径
         if (talentLevel === 'none') {
-            return;
+            return picked;
         }
 
         const weights = { '攻击': 0, '防御': 0, '生命': 0, '法力': 0.5, '治疗': 0, '暴击': 0 };
@@ -376,7 +390,7 @@ const TalentTree = (() => {
 
         // 总是先计算出完整的25天赋路径
         const mandatoryNodes = Object.keys(talentData).filter(id => talentData[id].type === 'mandatory');
-        mandatoryNodes.forEach(id => selectedNodes.add(id));
+        mandatoryNodes.forEach(id => picked.add(id));
 
         const segments = [
             { path1: ['2_1', '3_1'], path2: ['2_2', '3_2'] }, { path1: ['5_1', '6_1'], path2: ['5_2', '6_2'] },
@@ -390,20 +404,25 @@ const TalentTree = (() => {
             const score1 = seg.path1.reduce((acc, id) => acc + getNodeScore(id), 0);
             const score2 = seg.path2.reduce((acc, id) => acc + getNodeScore(id), 0);
             const winningPath = (score1 >= score2) ? seg.path1 : seg.path2;
-            winningPath.forEach(id => selectedNodes.add(id));
+            winningPath.forEach(id => picked.add(id));
         });
 
         // 【新增逻辑】如果选择的是20天赋，则移除所有20级以后的节点
         if (talentLevel === 'talent20') {
             const nodesToRemove = [];
-            for (const nodeId of selectedNodes) {
+            for (const nodeId of picked) {
                 const level = parseInt(nodeId.split('_')[0]);
                 if (level > 20) {
                     nodesToRemove.push(nodeId);
                 }
             }
-            nodesToRemove.forEach(id => selectedNodes.delete(id));
+            nodesToRemove.forEach(id => picked.delete(id));
         }
+        return picked;
+    }
+
+    function _applyAutoPath(strategy, manaPriority, talentLevel, tierStats) {
+        selectedNodes = _computeAutoPath(strategy, manaPriority, talentLevel, tierStats);
     }
 
     function _createTreeHTML() {
@@ -599,7 +618,9 @@ const TalentTree = (() => {
             _setupTalentData(classKey);
             _createTreeHTML();
             // 天赋档位也要带上：只传策略/法力优先会让初始路径恒按 25 点算
-            this.setPath(settings.strategy, settings.manaPriority, settings.talent, settings.tierStats);
+            // `pinnedNodes` = 原地重渲染时要原样恢复的手动路径（见 `setPath`）
+            this.setPath(settings.strategy, settings.manaPriority, settings.talent,
+                settings.tierStats, settings.pinnedNodes);
             const resizeObserver = new ResizeObserver(_positionConnectors);
             resizeObserver.observe(currentContainer);
         },
@@ -610,11 +631,24 @@ const TalentTree = (() => {
          * @param {string} talentLevel 控制路径节点数量（'none'/'talent20'/'talent25'）
          * @param {{attack:number,defense:number,health:number}|null} tierStats
          *        当前档位（破限+服装、天赋前）三围 ⇒ 百分比节点按它折算后再比大小
+         * @param {string[]|null} pinnedNodes 手动点出来的路径：给了就原样恢复、**不跑自动路径**
          */
-        setPath: function (strategy, manaPriority, talentLevel, tierStats) {
+        setPath: function (strategy, manaPriority, talentLevel, tierStats, pinnedNodes) {
             currentTierStats = tierStats || null;   // 只由"树"这条路径记，列表的 getBonusesForPath 不覆盖它
-            _applyAutoPath(strategy, manaPriority, talentLevel, tierStats);
+            const restored = pinnedNodes && pinnedNodes.length && _restoreNodes(pinnedNodes);
+            if (!restored) _applyAutoPath(strategy, manaPriority, talentLevel, tierStats);
             _updateUI();
+        },
+        /** 当前已选节点（含手动点出来的）——原地重渲染前用它把状态带走。 */
+        getPath: function () {
+            return Array.from(selectedNodes);
+        },
+        /**
+         * 预设的自动路径（纯查询，**不动树**）——用来判断"当前树是不是被手动改过"。
+         * 按树里当前那个职业的表算 ⇒ 只在弹窗开着（`init` 已跑过）时调用。
+         */
+        getAutoPath: function (strategy, manaPriority, talentLevel, tierStats) {
+            return Array.from(_computeAutoPath(strategy, manaPriority, talentLevel, tierStats));
         },
 
         // 清空天赋树选择的公共方法
@@ -624,10 +658,16 @@ const TalentTree = (() => {
         },
         getBonusesForPath: function (heroClassName, strategy, manaPriority, talentLevel, tierStats) {
             const classKey = heroClassName || 'ranger';
+            // 列表口径的纯函数调用 ⇒ 用完必须还原树自己的状态：`selectedNodes` 里可能有用户手点的天赋路径，
+            //   `talentData/currentClassKey` 是弹窗那棵树正在用的职业表；被这里换掉后 `_updateUI`/`getPath`
+            //   会读到别的职业、或把手动路径当成"没点过"。
+            const keepNodes = Array.from(selectedNodes), keepData = talentData, keepClass = currentClassKey;
             _setupTalentData(classKey);
             // talentLevel/tierStats 必须一起往下传：漏掉 talentLevel 会让"20 天赋"按 25 点出加成
             _applyAutoPath(strategy, manaPriority, talentLevel, tierStats);
-            return _calculateBonuses();
+            const bonuses = _calculateBonuses();
+            talentData = keepData; currentClassKey = keepClass; selectedNodes = new Set(keepNodes);
+            return bonuses;
         },
         /**
          * 某个节点的估值（`≈ +N` 与测试/提示复用）。职业要先给，`talentData` 是按职业装的。

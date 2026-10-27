@@ -24,26 +24,35 @@ function parseAndStoreDoTInfo(hero) {
     // 只要求有攻击力基准：技能正文未到（首帧延后加载）时被动/家族段仍可能已带标记
     if (!hero.attack) return;
 
-    // 官方重算参数表（`data/heroes_dynamic.json`，条目 = [分子, 分母, 回合]）里该英雄的那份；
-    // 普通千分比就是分母 1。没有就整批退回比例式。
-    const _specs = (typeof HERO_DYNAMIC_PARAMS !== 'undefined' && HERO_DYNAMIC_PARAMS)
-        ? (HERO_DYNAMIC_PARAMS[hero.heroId] || null) : null;
-
     // ⚠ 系数基准必须是**生成器算这些数值时用的那个攻击力**：
     //   生成器对"攻击缩放型伤害"用的是 `hero_attack_at_max` = **L80 × 服装奖励（最多套满阶）**
     //   （见 passive_desc_gen.hero_attack_at_max / costume_bonus_level 的默认档）。
     //   用裸 `hero.attack` 会让系数偏大 ⇒ 一开服装奖励数值就整体飘高。
     const _refCb = (typeof costumeBonusEntry === 'function')
         ? costumeBonusEntry(hero, hero.costumeMaxSets || 0) : null;
-    const refAttack = (_refCb && typeof applyStatPerMil === 'function')
-        ? applyStatPerMil(hero.attack, _refCb.attackBonusPerMil) : hero.attack;
-    if (!refAttack) return;
+    const _anchor = (atk) => (_refCb && typeof applyStatPerMil === 'function')
+        ? applyStatPerMil(atk, _refCb.attackBonusPerMil) : atk;
+    const refAttackNormal = _anchor(hero.attack);
+    if (!refAttackNormal) return;
+    // 平衡正文的数值是按**平衡档的满级攻击力**算出来的 ⇒ 退回比例式时锚点也得换成那一档
+    const _balDef = hero._balancedDef
+        || (hero._balanced && hero._balanced.stats && hero._baseStats
+            ? Object.assign({}, hero._baseStats, hero._balanced.stats) : null);
+    const refAttackBalanced = (_balDef && typeof computeHeroStats === 'function')
+        ? _anchor(computeHeroStats(_balDef).attack) : refAttackNormal;
 
     // 标记内容 = `值`（生成器 `lang_markup.mark_dynamic` 打的就是纯数值）。
     // 三段一起扫，顺序必须与各段 DOM 的文档顺序一致：技能段 = `hero.effects`；
     // 被动段 = `orderedPassiveItems(hero)`（本体组逆序 + 服装奖励组逆序）；家族段 = `hero.familyBonus`。
     const DYNAMIC_RE = /\[#Dynamic\]\s*([^\[\]]*?)\s*\[#\]/g;
+    // 官方重算参数表（条目 = [分子, 分母, 回合]，普通千分比分母 1）按**节**选：
+    // 同一英雄的常规正文与平衡正文可能给出不同数值 ⇒ 两档各一张表（合一张会互相顶掉）。
+    const BAL_KEY = { skill: 'effects', passive: 'passiveSkills', family: 'familyBonus' };
     const scan = (section, texts) => {
+        const onBal = !!(hero._balancedOn && hero._balancedOn[BAL_KEY[section]]);
+        const tbl = onBal ? HERO_DYNAMIC_PARAMS_BALANCED : HERO_DYNAMIC_PARAMS;
+        const _specs = (typeof tbl !== 'undefined' && tbl) ? (tbl[hero.heroId] || null) : null;
+        const refAttack = onBal ? refAttackBalanced : refAttackNormal;
         (texts || []).forEach((text, index) => {
             if (typeof text !== 'string' || text.indexOf('[#Dynamic]') < 0) return;
             DYNAMIC_RE.lastIndex = 0;
@@ -58,9 +67,9 @@ function parseAndStoreDoTInfo(hero) {
                     index: index,
                     subIndex: subIndex,
                     originalDamage: value,
-                    refAttack: refAttack,          // 导出这些数值时用的攻击力（L80 × 服装奖励最多套）
+                    refAttack: refAttack,          // 导出这些数值时用的攻击力（该档的 L80 × 服装奖励最多套）
                     coefficient: value / refAttack,
-                    // 官方重算参数：值 = floor(攻击×num/(1000×den))×turns（缺档 ⇒ null ⇒ 退回比例式）
+                    // 官方重算参数：值 = floor(攻击×分子/(1000×分母))×回合（缺档 ⇒ null ⇒ 退回比例式）
                     num: spec ? spec[0] : null,
                     den: spec ? spec[1] : null,
                     turns: spec ? spec[2] : null
@@ -652,6 +661,9 @@ async function initializeApp() {
             if (!uiElements.modal.classList.contains('hidden')) {
                 const currentHero = state.modalContext.hero;
                 if (currentHero) {
+                    // 与「切换平衡数据」同一条约束：原地重渲染会按筛选面板默认值重建档位与天赋树
+                    //   ⇒ 先把详情页当前档位（含手点的天赋节点）带进 context，否则用户设置被抹掉
+                    state.modalContext.tier = readModalTierSettings(currentHero);
                     renderDetailsInModal(currentHero, state.modalContext);
                 }
             }

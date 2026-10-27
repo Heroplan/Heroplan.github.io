@@ -166,10 +166,10 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Skadar målet och fiender i närheten med 450%.",
-      "Sänker mana för målet och fiender i närheten med 20%.",
-      "I slutet av varje runda avfyrar användaren och allierade i närheten en stjärnstråle mot en slumpvald fiende i 4 rundor.\n[*]Varje stjärnstråle gör 150% skada.\n[*]Varje stjärnstråle minskar den träffade fiendens maxhälsa med 150. Den här effekten är starkare mot mål med ökad hälsa.",
-      "(Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 150.)"
+      "Skadar målet och fiender i närheten med 370%.",
+      "Sänker mana för målet och fiender i närheten med 35%.",
+      "I slutet av varje runda avfyrar användaren och allierade i närheten en stjärnstråle mot en slumpvald fiende i 4 rundor.\n[*]Varje stjärnstråle gör 200% skada.\n[*]Varje stjärnstråle minskar den träffade fiendens maxhälsa med 200. Den här effekten är starkare mot mål med ökad hälsa.",
+      "(Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 200.)"
      ]
     }
    ]
@@ -7722,7 +7722,7 @@
     {
      "id": "destructive_core_costume",
      "title": "Förödelsekärna",
-     "text": "Den här karaktärens konstruktionskärna är en förödelsekärna.\n[*]Förödelsekärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] En fulladdad förödelsekärna gör 300% skada på alla fiender.\n[*] Skadan blir högre ju större laddning kärnan har. All laddning laddas ur när kärnan aktiveras."
+     "text": "Den här karaktärens konstruktionskärna är en förödelsekärna.\n[*]Förödelsekärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] En fulladdad förödelsekärna gör 200% skada på alla fiender.\n[*] Skadan blir högre ju större laddning kärnan har. All laddning laddas ur när kärnan aktiveras."
     },
     {
      "id": "resist_special_blocking",
@@ -7739,9 +7739,9 @@
     {
      "id": "rock_and_rime",
      "lines": [
-      "Skadar målet och fiender i närheten med 260%.",
+      "Skadar målet och fiender i närheten med 250%.",
       "Målet och fiender i närheten får -40% försvar mot specialförmågor under 3 rundor.",
-      "Användaren och allierade i närheten får 90% försvar mot natur och ytterligare 2% mer varje gång de blir träffade under 3 rundor, upp till 100% försvar."
+      "Användaren och allierade i närheten får 84% försvar mot natur och ytterligare 2% mer varje gång de blir träffade under 3 rundor, upp till 100% försvar."
      ]
     }
    ]
@@ -7788,7 +7788,7 @@
     {
      "id": "destructive_core_costume",
      "title": "Förödelsekärna",
-     "text": "Den här karaktärens konstruktionskärna är en förödelsekärna.\n[*]Förödelsekärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] En fulladdad förödelsekärna gör 300% skada på alla fiender.\n[*] Skadan blir högre ju större laddning kärnan har. All laddning laddas ur när kärnan aktiveras."
+     "text": "Den här karaktärens konstruktionskärna är en förödelsekärna.\n[*]Förödelsekärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] En fulladdad förödelsekärna gör 200% skada på alla fiender.\n[*] Skadan blir högre ju större laddning kärnan har. All laddning laddas ur när kärnan aktiveras."
     },
     {
      "id": "resist_special_blocking",
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Nedbrytande kärna",
-     "text": "Den här karaktärens konstruktionskärna är en nedbrytande kärna.\n[*]Den nedbrytande kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande gift i 3 rundor. Med en fulladdad nedbrytande kärna gör giftet[#Dynamic] 202 [#]giftskada och sänker målets manaskapande med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Giftskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras. Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda."
+     "text": "Den här karaktärens konstruktionskärna är en nedbrytande kärna.\n[*]Den nedbrytande kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande gift i 3 rundor. Med en fulladdad nedbrytande kärna gör giftet[#Dynamic] 291 [#]giftskada och sänker målets manaskapande med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Giftskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras. Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda."
     },
     {
      "id": "resist_special_blocking",
@@ -7993,10 +7993,10 @@
     {
      "id": "charged_cutlass",
      "lines": [
-      "Skadar målet och fiender i närheten med 425%.",
+      "Skadar målet och fiender i närheten med 430%.",
       "Målet och fiender i närheten får[#Dynamic] 651 [#]blödningsskada under 3 rundor.",
       "Målet och fiender i närheten blir blödningsmarkerade i 3 rundor. När ett markerat mål tar blödningsskada får det en stapel (högst 10). Varje stapel ökar all skada målet tar med 5%.",
-      "Målet och fiender i närheten får -65% försvar mot natur i 3 rundor."
+      "Målet och fiender i närheten får -64% försvar mot natur i 3 rundor."
      ]
     }
    ]
@@ -8415,7 +8415,7 @@
      "id": "stargazers_telescope",
      "lines": [
       "Alla allierade återfår 1800 hälsa under 4 rundor.",
-      "Under de 4 kommande rundorna får användaren och allierade i närheten 10% mana i slutet av rundan.",
+      "De kommande 4 rundorna får allierade i närheten 5% mana i slutet av sin runda.",
       "Allierade i närheten genererar 45% mana i 4 rundor. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)",
       "Anfallaren och allierade i närheten får 55% kritisk träffchans under 4 rundor. (Kritiska träffar gör 100% mer skada med vanliga attacker.\n[*]Kritiska träffar minskar fienders maxhälsa i PvP-strider. Effekten är starkare mot ökad hälsa.)"
      ]
@@ -11947,8 +11947,8 @@
      "id": "melody_harvest",
      "lines": [
       "Den här specialförmågan missar aldrig.",
-      "Alla fiender tar 460% skada.",
-      "Läker alla allierade som har mindre än 65% hälsa kvar. Eldallierade läks till 80% hälsa och andra allierade till 65% hälsa.\n[*]Ignorerar läkningsstöld, läkningsmodifierare och odjur.",
+      "Alla fiender tar 480% skada.",
+      "Läker alla allierade som har mindre än 60% hälsa kvar. Eldallierade läks till 75% hälsa och andra allierade till 60% hälsa.\n[*]Ignorerar läkningsstöld, läkningsmodifierare och odjur.",
       "Gör extra skada mot natur."
      ]
     }
@@ -14827,11 +14827,11 @@
     {
      "id": "swing_of_torment",
      "lines": [
-      "Skadar målet med 600%.",
-      "Målet blir själsbundet i 5 rundor. Effekten kan inte renas. (Den här effekten kringgår alltid reflektion.)",
+      "Skadar målet med 650%.",
+      "Målet blir själsbundet i 3 rundor. Effekten kan inte renas. (Den här effekten kringgår alltid reflektion.)",
       "All skada som användaren tar utdelas också till alla själsbundna fiender. (Skadan delas mellan alla själsbundna fiender.\n[*] Den här effekten delar inte skada som kommer från andra delade skadekällor eller motattacker.)",
-      "Lagrar all skada som drabbat kastaren i 5 rundor. När effekten upphör utdelas lagrad skada till alla fiender, upp till maximalt 1000 skada. Denna effekt kan ej avbrytas.",
-      "Anfallaren återfår 2000 hälsa under 5 rundor.",
+      "Lagrar all skada som drabbat kastaren i 3 rundor. När effekten upphör utdelas lagrad skada till alla fiender, upp till maximalt 1000 skada. Denna effekt kan ej avbrytas.",
+      "Anfallaren återfår 1200 hälsa under 3 rundor.",
       "Elementlänk åkallar en eldundersåte till alla eldallierade med 10% HP och 15% attack som ärvs från anfallaren."
      ]
     }

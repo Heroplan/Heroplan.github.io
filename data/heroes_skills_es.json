@@ -166,10 +166,10 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Causa un 450% de daño al objetivo y a los enemigos cercanos.",
-      "Reduce el maná del objetivo y de los enemigos cercanos en un 20%.",
-      "Al final de cada turno, el héroe y los aliados cercanos disparan un rayo astral contra un objetivo aleatorio durante 4 turnos.\n[*] Cada rayo astral causa un 150% de daño.\n[*] Cada rayo astral reduce en 150 la vitalidad máxima del enemigo golpeado. El efecto es más fuerte contra objetivos con vitalidad potenciada.",
-      "(La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 150 adicional.)"
+      "Causa un 370% de daño al objetivo y a los enemigos cercanos.",
+      "Reduce el maná del objetivo y de los enemigos cercanos en un 35%.",
+      "Al final de cada turno, el héroe y los aliados cercanos disparan un rayo astral contra un objetivo aleatorio durante 4 turnos.\n[*] Cada rayo astral causa un 200% de daño.\n[*] Cada rayo astral reduce en 200 la vitalidad máxima del enemigo golpeado. El efecto es más fuerte contra objetivos con vitalidad potenciada.",
+      "(La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 200 adicional.)"
      ]
     }
    ]
@@ -7722,7 +7722,7 @@
     {
      "id": "destructive_core_costume",
      "title": "Núcleo destructor",
-     "text": "El núcleo de creación de este personaje es un núcleo destructor.\n[*]El núcleo destructor se activa cada vez que este personaje lanza su habilidad especial:\n[*] Con un núcleo destructor cargado al máximo, inflige un 300% de daño a todos los enemigos.\n[*] El daño aumenta en función de la carga del núcleo. La carga completa se agota cuando se activa el núcleo."
+     "text": "El núcleo de creación de este personaje es un núcleo destructor.\n[*]El núcleo destructor se activa cada vez que este personaje lanza su habilidad especial:\n[*] Con un núcleo destructor cargado al máximo, inflige un 200% de daño a todos los enemigos.\n[*] El daño aumenta en función de la carga del núcleo. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_special_blocking",
@@ -7739,9 +7739,9 @@
     {
      "id": "rock_and_rime",
      "lines": [
-      "Causa un 260% de daño al objetivo y a los enemigos cercanos.",
+      "Causa un 250% de daño al objetivo y a los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben un -40% de defensa contra habilidades especiales durante 3 turnos.",
-      "El héroe y los aliados cercanos obtienen un 90% de defensa contra naturaleza y un aumento adicional de un 2% cada vez que son golpeados durante 3 turnos hasta un 100% de defensa."
+      "El héroe y los aliados cercanos obtienen un 84% de defensa contra naturaleza y un aumento adicional de un 2% cada vez que son golpeados durante 3 turnos hasta un 100% de defensa."
      ]
     }
    ]
@@ -7788,7 +7788,7 @@
     {
      "id": "destructive_core_costume",
      "title": "Núcleo destructor",
-     "text": "El núcleo de creación de este personaje es un núcleo destructor.\n[*]El núcleo destructor se activa cada vez que este personaje lanza su habilidad especial:\n[*] Con un núcleo destructor cargado al máximo, inflige un 300% de daño a todos los enemigos.\n[*] El daño aumenta en función de la carga del núcleo. La carga completa se agota cuando se activa el núcleo."
+     "text": "El núcleo de creación de este personaje es un núcleo destructor.\n[*]El núcleo destructor se activa cada vez que este personaje lanza su habilidad especial:\n[*] Con un núcleo destructor cargado al máximo, inflige un 200% de daño a todos los enemigos.\n[*] El daño aumenta en función de la carga del núcleo. La carga completa se agota cuando se activa el núcleo."
     },
     {
      "id": "resist_special_blocking",
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Núcleo corrosivo",
-     "text": "El núcleo de creación de este personaje es un núcleo corrosivo.\n[*]El núcleo corrosivo se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren veneno corrosivo durante 3 turnos. Con un núcleo corrosivo cargado al máximo, el veneno corrosivo inflige[#Dynamic] 202 [#]de daño de veneno y reduce la regeneración de maná del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de veneno aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo. Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno."
+     "text": "El núcleo de creación de este personaje es un núcleo corrosivo.\n[*]El núcleo corrosivo se activa cada vez que este personaje lanza su habilidad especial:\n[*] Todos los enemigos sufren veneno corrosivo durante 3 turnos. Con un núcleo corrosivo cargado al máximo, el veneno corrosivo inflige[#Dynamic] 291 [#]de daño de veneno y reduce la regeneración de maná del objetivo un -15% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz.\n[*] El daño de veneno aumenta en función de la carga consumida. La carga completa se agota cuando se activa el núcleo. Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno."
     },
     {
      "id": "resist_special_blocking",
@@ -7993,10 +7993,10 @@
     {
      "id": "charged_cutlass",
      "lines": [
-      "Causa un 425% de daño al objetivo y a los enemigos cercanos.",
+      "Causa un 430% de daño al objetivo y a los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 651 [#]de daño de sangrado durante 3 turnos.",
       "El objetivo y los enemigos cercanos reciben una marca de sangre durante 3 turnos. Cuando un objetivo marcado recibe daño de sangrado, obtiene una acumulación (máx.: 10). Cada acumulación aumenta todo el daño que recibe el objetivo un 5%.",
-      "El objetivo y los enemigos cercanos obtienen un -65% de defensa contra naturaleza durante 3 turnos."
+      "El objetivo y los enemigos cercanos obtienen un -64% de defensa contra naturaleza durante 3 turnos."
      ]
     }
    ]
@@ -8415,7 +8415,7 @@
      "id": "stargazers_telescope",
      "lines": [
       "Todos los aliados recuperan 1800 VIT durante 4 turnos.",
-      "Durante los siguientes 4 turnos, el héroe y los aliados cercanos reciben un 10% de maná al final del turno.",
+      "Durante los siguientes 4 turnos, los aliados cercanos reciben un 5% de maná al final del turno.",
       "Los aliados cercanos obtienen un 45% de regeneración de maná durante 4 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
       "El héroe y los aliados cercanos reciben una probabilidad de crítico del 55% durante 4 turnos. (Los golpes críticos infligen más de un 100% más de daño de los ataques normales.\n[*] Los golpes críticos reducen la vitalidad máxima de los enemigos en las batallas JcJ. Este efecto es más fuerte contra la vitalidad potenciada.)"
      ]
@@ -11947,8 +11947,8 @@
      "id": "melody_harvest",
      "lines": [
       "Esta habilidad especial nunca falla.",
-      "Causa un 460% de daño a todos los enemigos.",
-      "Cura a todos los aliados a los que les quede menos del 65% de VIT. La vitalidad de los aliados de fuego aumenta hasta el 80%, y la de los demás aliados, hasta el 65%.\n[*]Ignora el robo de curación, los modificadores de curación y los demonios.",
+      "Causa un 480% de daño a todos los enemigos.",
+      "Cura a todos los aliados a los que les quede menos del 60% de VIT. La vitalidad de los aliados de fuego aumenta hasta el 75%, y la de los demás aliados, hasta el 60%.\n[*]Ignora el robo de curación, los modificadores de curación y los demonios.",
       "Causa daño adicional contra naturaleza."
      ]
     }
@@ -14827,11 +14827,11 @@
     {
      "id": "swing_of_torment",
      "lines": [
-      "Causa un 600% de daño al objetivo.",
-      "El objetivo obtiene un vínculo espiritual durante 5 turnos. Este efecto no se puede purificar. (Este efecto siempre ignora los reflejos.)",
+      "Causa un 650% de daño al objetivo.",
+      "El objetivo obtiene un vínculo espiritual durante 3 turnos. Este efecto no se puede purificar. (Este efecto siempre ignora los reflejos.)",
       "Todo el daño recibido por el héroe también se inflige a todos los enemigos con vínculo espiritual. (El daño se comparte entre todos los enemigos con vínculo espiritual.\n[*] Con este efecto no se comparte el daño procedente de otras fuentes de daño compartido ni de los contraataques.)",
-      "Almacena todo el daño causado al héroe durante 5 turnos. Cuando termina el efecto, inflige el daño almacenado a todos los enemigos, hasta un máximo de 1000 de daño. Este efecto no se puede descartar.",
-      "El héroe recupera 2000 VIT durante 5 turnos.",
+      "Almacena todo el daño causado al héroe durante 3 turnos. Cuando termina el efecto, inflige el daño almacenado a todos los enemigos, hasta un máximo de 1000 de daño. Este efecto no se puede descartar.",
+      "El héroe recupera 1200 VIT durante 3 turnos.",
       "El enlace de elemento invoca un secuaz de fuego para todos los aliados de fuego con un 10% de VIT y un 15% de ataque heredados del héroe."
      ]
     }

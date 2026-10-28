@@ -146,7 +146,6 @@ window.AV = {
   "langs_json/heroes_name_fancy_tc.json": "9932cbc9",
   "langs_json/heroes_name_fancy_tr.json": "09942647",
   "langs_json/highlight_ar.json": "d1a9e62b",
-  "langs_json/highlight_cn.json": "22560b29",
   "langs_json/highlight_da.json": "aecbd82f",
   "langs_json/highlight_de.json": "1b917853",
   "langs_json/highlight_en.json": "bf564fd3",
@@ -350,4 +349,5 @@ window.AV = {
   "data/heroes_skills_sv.json": "0aca927d",
   "data/heroes_skills_tc.json": "87a36300",
   "data/heroes_skills_tr.json": "a30e1775",
+  "langs_json/highlight_cn.json": "58fc36b2",
 };

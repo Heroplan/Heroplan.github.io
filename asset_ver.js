@@ -344,10 +344,10 @@ window.AV = {
   "data/heroes_skills_no.json": "d65fbd66",
   "data/heroes_skills_pl.json": "b2cdbdf5",
   "data/heroes_skills_pt.json": "48178e53",
-  "data/heroes_skills_ru.json": "f9982756",
   "data/heroes_skills_sv.json": "0aca927d",
   "data/heroes_skills_tc.json": "87a36300",
   "data/heroes_skills_tr.json": "a30e1775",
   "langs_json/highlight_cn.json": "58fc36b2",
   "data/heroes_skill_types.json": "0aaaea55",
+  "data/heroes_skills_ru.json": "c9a11454",
 };

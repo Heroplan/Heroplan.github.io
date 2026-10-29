@@ -250,6 +250,17 @@ function applyLanguage(lang) {
         if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
     }
 
+    // 5.1 「活动日历」：不再用站点自带的 calendar.webp，直接跳 EP-BASE 的同语言当月月历。
+    //     站点码与 EP-BASE locale 只差中文两码；月份用本机当前年月
+    //     （`/calendar/<YYYYMM>` 只认已发布的月份，更早的会 404）。
+    const calendarBtn = document.getElementById('calendar-btn');
+    if (calendarBtn) {
+        const EPBASE_LOCALE = { cn: 'zh_CN', tc: 'zh_TW' };
+        const now = new Date();
+        const ym = now.getFullYear() + String(now.getMonth() + 1).padStart(2, '0');
+        calendarBtn.href = 'https://ep-base.com/' + (EPBASE_LOCALE[lang] || lang) + '/calendar/' + ym;
+    }
+
     // 6. SEO：Meta Description + canonical + Open Graph / Twitter
     //
     // ⚠ 多语言 SEO 的关键：20 个语言版本用 `?lang=<码>` 区分

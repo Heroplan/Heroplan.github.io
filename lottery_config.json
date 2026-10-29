@@ -368,7 +368,6 @@
       "AssociatedFamilies": [
         "rodent"
       ],
-      "latestIncludedHeroDate": "2026-03-18",
       "latestIncludedHeroAgeInDays": 730
     },
     "lottery_black_solstice_default": {
@@ -376,8 +375,8 @@
         "dryad_cloveria",
         "dryad_pansius"
       ],
-      "latestIncludedHeroDate": "2026-06-15",
-      "latestIncludedHeroAgeInDays": 730
+      "latestIncludedHeroAgeInDays": 730,
+      "startDate": "2026-06-15"
     },
     "lottery_harvest_default": {
       "featuredHeroes": [
@@ -387,8 +386,8 @@
       "AssociatedFamilies": [
         "vegetable"
       ],
-      "latestIncludedHeroDate": "2026-09-07",
-      "latestIncludedHeroAgeInDays": 730
+      "latestIncludedHeroAgeInDays": 730,
+      "startDate": "2026-09-07"
     },
     "lottery_black_default": {
       "featuredHeroes": [
@@ -398,8 +397,8 @@
       "AssociatedFamilies": [
         "shady_scoundrels"
       ],
-      "latestIncludedHeroDate": "2025-11-24",
-      "latestIncludedHeroAgeInDays": 730
+      "latestIncludedHeroAgeInDays": 730,
+      "startDate": "2026-11-22"
     },
     "lottery_covenant_default": {
       "featuredHeroes": [
@@ -410,7 +409,8 @@
         "construct_nepant",
         "beauty_beast_rose_de_flo"
       ],
-      "advertisedHero": "fox_riverfang"
+      "advertisedHero": "fox_riverfang",
+      "startDate": "2026-10-27"
     },
     "lottery_wilderness_default": {
       "AssociatedFamilies": [
@@ -423,12 +423,13 @@
         "mighty_pet"
       ],
       "featuredHeroes": [
-        "scoundrel_lane",
-        "scoundrel_duval",
-        "beauty_beast_glamiera",
-        "beauty_beast_henriette"
+        "ghost_hua_pi_gui",
+        "rodent_galepaw",
+        "wild_cat_irme",
+        "astral_demon_ushal"
       ],
-      "advertisedHero": "wild_cat_stravia"
+      "advertisedHero": "wild_cat_stravia",
+      "startDate": "2026-10-31"
     },
     "lottery_mercenary_war_default": {
       "featuredHeroes": [
@@ -458,7 +459,8 @@
           "journey_xie_zi_jing",
           "kingdom_cao_cao_costume_ice"
         ]
-      }
+      },
+      "startDate": "2026-11-06"
     },
     "lottery_monster_island_default": {
       "featuredHeroes": [
@@ -470,7 +472,8 @@
         "plains_hunter",
         "jungle_hunter",
         "abyss_hunter"
-      ]
+      ],
+      "startDate": "2026-11-07"
     },
     "lottery_goblin_default": {
       "featuredHeroes": [
@@ -482,7 +485,8 @@
         "goblin",
         "garrison",
         "shady_scoundrels"
-      ]
+      ],
+      "startDate": "2026-10-25"
     },
     "lottery_temple_default": {
       "featuredHeroes": [
@@ -491,7 +495,8 @@
       ],
       "AssociatedFamilies": [
         "mahayoddha"
-      ]
+      ],
+      "startDate": "2026-11-16"
     },
     "lottery_astralelves_default": {
       "featuredHeroes": [
@@ -502,7 +507,8 @@
         "astral_elves",
         "astral_dwarfs",
         "astral_demons"
-      ]
+      ],
+      "startDate": "2026-11-04"
     },
     "lottery_shadow_default": {
       "AssociatedFamilies": [
@@ -552,7 +558,8 @@
         "halloween_goopy",
         "pirate_vodnik",
         "magic_kornel"
-      ]
+      ],
+      "startDate": "2026-10-22"
     },
     "lottery_costume_default": {
       "AssociatedFamilies": [
@@ -561,7 +568,8 @@
       "featuredHeroes": [
         "forest_titan_costume_stylish",
         "exalted_female_statue_costume_stylish"
-      ]
+      ],
+      "startDate": "2026-10-28"
     },
     "lottery_costume_wardrobe2": {
       "AssociatedFamilies": [
@@ -583,7 +591,8 @@
       "featuredHeroes": [
         "s2_tethys_costume_cute",
         "forest_god_oberon_costume_cute"
-      ]
+      ],
+      "startDate": "2026-11-26"
     },
     "lottery_titan_hunter_default": {
       "featuredHeroes": [
@@ -629,7 +638,8 @@
         "ballerina_swan_maiden",
         "shadow_cthuwu",
         "s2_fiji_mermaid_costume_hunter"
-      ]
+      ],
+      "startDate": "2026-10-24"
     },
     "lottery_mimic_default": {
       "allowsTrainerCharacter": true,
@@ -685,7 +695,8 @@
         "beauty_beast",
         "musketeer"
       ],
-      "Searchid": "AllianceQuestMusketeers"
+      "Searchid": "AllianceQuestMusketeers",
+      "startDate": "2026-10-06"
     },
     "lottery_featured_alliance_quest_moths": {
       "featuredHeroes": [
@@ -720,7 +731,8 @@
         "ninja_ruby_costume_menancer",
         "ninja_peridot_costume_herbalist"
       ],
-      "Searchid": "TowerNinja"
+      "Searchid": "TowerNinja",
+      "startDate": "2026-10-20"
     },
     "lottery_tower_magic_default": {
       "AssociatedFamilies": [
@@ -762,7 +774,8 @@
       "AssociatedFamilies": [
         "vegetable"
       ],
-      "Searchid": "RecurringFarmland"
+      "Searchid": "RecurringFarmland",
+      "startDate": "2026-10-29"
     },
     "lottery_featured_event_beowulf": {
       "featuredHeroes": [
@@ -842,7 +855,8 @@
         "lagoon",
         "japanese",
         "atlantis"
-      ]
+      ],
+      "startDate": "2026-11-13"
     },
     "lottery_season_valhalla": {
       "featuredHeroes": [
@@ -860,7 +874,8 @@
         "niflheim",
         "svartalfheim",
         "vanaheim"
-      ]
+      ],
+      "startDate": "2026-10-24"
     },
     "lottery_season_underwild": {
       "featuredHeroes": [
@@ -870,7 +885,8 @@
       ],
       "AssociatedFamilies": [
         "abyss"
-      ]
+      ],
+      "startDate": "2026-10-28"
     },
     "lottery_season_season5": {
       "featuredHeroes": [
@@ -881,21 +897,24 @@
       "AssociatedFamilies": [
         "sun",
         "moon"
-      ]
+      ],
+      "startDate": "2026-11-01"
     },
     "lottery_season_untold_tales1": {
       "featuredHeroes": [
         "tales1_atlanteia_costume_siren",
         "tales1_gestalt_costume_pearls",
         "tales1_gelert_costume_scavenger"
-      ]
+      ],
+      "startDate": "2026-11-05"
     },
     "lottery_season_untold_tales2": {
       "featuredHeroes": [
         "tales2_svafa_costume_spirit_hunter",
         "tales2_fafnir_costume_fallen",
         "tales2_thrivaldi_costume_void"
-      ]
+      ],
+      "startDate": "2026-11-09"
     },
     "lottery_hero_lunar_new_year": {
       "featuredHeroes": [
@@ -1051,7 +1070,8 @@
       ],
       "AssociatedFamilies": [
         "halloween"
-      ]
+      ],
+      "startDate": "2026-10-19"
     },
     "lottery_seasonal_premium_halloween": {
       "featuredHeroes": [
@@ -1138,14 +1158,22 @@
         "super_elemental",
         "slime"
       ],
-      "latestIncludedNonEventHeroAgeInDays": 60
+      "latestIncludedNonEventHeroAgeInDays": 60,
+      "startDate": "2026-06-20",
+      "startDateByColor": {
+        "blue": "2026-10-02",
+        "green": "2026-09-10",
+        "purple": "2026-07-01",
+        "red": "2026-06-20",
+        "yellow": "2026-08-10"
+      }
     },
     "lottery_thunderbolt_default": {
       "featuredHeroes": [
         "dryad_cloveria",
         "dryad_pansius"
       ],
-      "latestIncludedHeroDate": "2026-08-31"
+      "startDate": "2026-08-30"
     },
     "lottery_league_default": {
       "amountOfSelectableFeaturedSlots": 6,
@@ -1233,7 +1261,7 @@
         "hotm2020",
         "hotm2019"
       ],
-      "latestIncludedHeroDate": "2026-03-03"
+      "startDate": "2026-08-30"
     },
     "lottery_hotm_event_default": {
       "AssociatedFamilies": [
@@ -1261,7 +1289,8 @@
         "ballerina_charlotta",
         "fox_whitefang",
         "ballerina_armand"
-      ]
+      ],
+      "startDate": "2026-10-23"
     },
     "lottery_deluxe_ascension_default": {
       "featuredHeroes": [
@@ -1269,7 +1298,8 @@
         "mahayoddha_bhima",
         "villain_toxicandra_costume_rose",
         "elemental_griffex_costume_camera"
-      ]
+      ],
+      "startDate": "2026-11-03"
     },
     "lottery_pickup_default": {
       "featuredHeroes": {

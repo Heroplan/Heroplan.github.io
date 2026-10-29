@@ -375,9 +375,6 @@ const TalentTree = (() => {
         weights[statMap[parts[0]]] = 4;
         weights[statMap[parts[1]]] = 2;
         weights[statMap[parts[2]]] = 1;
-        if (manaPriority) {
-            weights['法力'] = 8;
-        }
 
         const getNodeScore = (nodeId) => {
             const match = String(talentData[nodeId]?.text || '').match(/^(攻击|防御|生命|法力|治疗|暴击)/);
@@ -400,10 +397,18 @@ const TalentTree = (() => {
             { path1: ['24_1'], path2: ['24_2'] },
         ];
 
+        // 「法力优先」是对分叉的**硬约束**：勾了就一定走带法力节点的那一侧，不再参与估值比较。
+        // ⚠ 不能只把它记成权重：加了档位估值后分数 = 权重 × 属性点数，法力每 1% 只记 0.5，
+        //   8×1 会被 `4×攻击点数(≈21)` 直接压过去 ⇒ ranger/barbarian 的法力分叉永远选不中。
+        const hasMana = (path) => path.some(id => String(talentData[id]?.text || '').startsWith('法力'));
+
         segments.forEach(seg => {
             const score1 = seg.path1.reduce((acc, id) => acc + getNodeScore(id), 0);
             const score2 = seg.path2.reduce((acc, id) => acc + getNodeScore(id), 0);
-            const winningPath = (score1 >= score2) ? seg.path1 : seg.path2;
+            const mana1 = hasMana(seg.path1), mana2 = hasMana(seg.path2);
+            const winningPath = (manaPriority && mana1 !== mana2)
+                ? (mana1 ? seg.path1 : seg.path2)
+                : (score1 >= score2 ? seg.path1 : seg.path2);
             winningPath.forEach(id => picked.add(id));
         });
 

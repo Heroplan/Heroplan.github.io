@@ -204,12 +204,13 @@
         "bonusChestLimit": 20,
         "bonusChestEnabled": true,
         "bucketWeights": [
-            710,
-            265,
-            9,
-            16,
-            0,
-            0
+            664,
+            247,
+            3,
+            46,
+            18,
+            6,
+            16
         ],
         "hasMysteryHeroBonusRoll": true
     },
@@ -357,8 +358,8 @@
             16,
             142,
             57,
-            5,
-            4
+            3,
+            6
         ],
         "bonusLegendaryHeroChancePerMil": 1000,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
@@ -1361,13 +1362,13 @@
         "bucketWeights": [
             710,
             265,
-            12,
+            9,
             0,
             0,
-            5,
+            3,
             0,
             0,
-            8,
+            13,
             0,
             0,
             0
@@ -1652,10 +1653,10 @@
             9,
             142,
             57,
-            3,
+            7,
             0,
             0,
-            13,
+            9,
             0,
             0,
             0
@@ -1830,6 +1831,13 @@
             1,
             5
         ],
+        "elementalBucketWeights": {
+            "yellow": [643, 208, 19, 67, 57, 1, 5],
+            "red": [710, 208, 19, 0, 57, 1, 5],
+            "purple": [710, 208, 19, 0, 57, 1, 5],
+            "blue": [710, 208, 19, 0, 57, 1, 5],
+            "green": [710, 208, 19, 0, 57, 1, 5]
+        },
         "extraBucketsPullAmount": 1,
         "extraPullBucketWeights": [
             75,
@@ -2007,6 +2015,68 @@
         "id": "lottery_ascension_default_30_bulk",
         "gemPrice": 7200,
         "sourceProductId": "lottery_ascension_default",
+        "amount": 30,
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
+        "productType": "DeluxeAscensionSummon",
+        "id": "lottery_deluxe_ascension_default",
+        "banner": "event_lotterybanner_deluxe_ascension",
+        "lotterybg": "event_lotterybg_deluxe_ascension",
+        "gemPrice": 400,
+        "amount": 1,
+        "uiPriority": 221,
+        "bucketWeights": [
+            710,
+            265,
+            15,
+            10
+        ],
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
+        "productType": "DeluxeAscensionSummon",
+        "id": "lottery_deluxe_ascension_default_bulk",
+        "gemPrice": 3400,
+        "sourceProductId": "lottery_deluxe_ascension_default",
+        "amount": 10,
+        "powerGradeWeights": [
+            0,
+            200,
+            200,
+            200,
+            0,
+            200,
+            0,
+            150,
+            50
+        ]
+    },
+    {
+        "productType": "DeluxeAscensionSummon",
+        "id": "lottery_deluxe_ascension_default_30_bulk",
+        "gemPrice": 9400,
+        "sourceProductId": "lottery_deluxe_ascension_default",
         "amount": 30,
         "powerGradeWeights": [
             0,

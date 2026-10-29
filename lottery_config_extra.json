@@ -294,7 +294,59 @@
           "weight": 10,
           "rarity": 5,
           "includedCostume": "None",
-          "isFeatured": true
+          "isFeatured": true,
+          "youngestCharacterAgeInDays": 730,
+          "oldestCharacterAgeInDays": 1460
+        }
+      ]
+    },
+    {
+      "lotteryId": "lottery_deluxe_ascension_default",
+      "bucketIncludedEntryConfigs": [
+        {
+          "index": 0,
+          "weight": 710,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 1095,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 1,
+          "weight": 265,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 1095,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 2,
+          "weight": 15,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 1095,
+          "excludedOrigins": [
+            "Season1"
+          ]
+        },
+        {
+          "index": 3,
+          "weight": 10,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "isFeatured": true,
+          "youngestCharacterAgeInDays": 365,
+          "oldestCharacterAgeInDays": 730,
+          "excludedOrigins": [
+            "Season1"
+          ]
         }
       ]
     },
@@ -942,41 +994,65 @@
       "bucketIncludedEntryConfigs": [
         {
           "index": 0,
-          "weight": 710,
+          "weight": 664,
           "rarity": 3,
           "includedCostume": "None",
           "includedFamilies": [
             "musketeer",
             "gargoyle",
-            "classic",
-            "construct"
+            "classic"
           ]
         },
         {
           "index": 1,
-          "weight": 265,
+          "weight": 247,
           "rarity": 4,
           "includedCostume": "None",
           "includedFamilies": [
             "musketeer",
             "gargoyle",
-            "classic",
-            "construct"
+            "classic"
           ]
         },
         {
           "index": 2,
-          "weight": 9,
+          "weight": 3,
           "rarity": 5,
           "includedCostume": "None",
           "includedFamilies": [
-            "construct",
             "wonderland",
             "pirate"
           ]
         },
         {
           "index": 3,
+          "weight": 46,
+          "rarity": 3,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "CovenantSummon"
+          ]
+        },
+        {
+          "index": 4,
+          "weight": 18,
+          "rarity": 4,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "CovenantSummon"
+          ]
+        },
+        {
+          "index": 5,
+          "weight": 6,
+          "rarity": 5,
+          "includedCostume": "NonExclusive",
+          "includedOrigins": [
+            "CovenantSummon"
+          ]
+        },
+        {
+          "index": 6,
           "weight": 16,
           "rarity": 5,
           "includedCostume": "NonExclusive",
@@ -993,7 +1069,7 @@
           "rarity": 3,
           "includedCostume": "None",
           "includedFamilies": [
-            "journey",
+            "rodent",
             "faun",
             "owl",
             "gargoyle",
@@ -1006,7 +1082,7 @@
           "rarity": 4,
           "includedCostume": "None",
           "includedFamilies": [
-            "journey",
+            "rodent",
             "faun",
             "owl",
             "gargoyle",
@@ -1019,7 +1095,7 @@
           "rarity": 5,
           "includedCostume": "None",
           "includedFamilies": [
-            "magic",
+            "wild_cat",
             "faun",
             "owl",
             "mighty_pet"

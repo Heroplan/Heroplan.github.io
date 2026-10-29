@@ -58,6 +58,80 @@ function getMaxAllowedCostumeId(poolConfig) {
     return Infinity;
 }
 
+// --- 官方服装口径（libil2cpp.so 2026-10-04 版，dump.cs 同版本） ---
+// `SummonExclusiveTagType { None=0, Wardrobe1=1, Wardrobe2=2 }`（dump.cs:253198）
+// `IncludedCostumeType { None=0, Exclusive=1, NonExclusive=2 }`（dump.cs:253186 附近）
+//
+// ① `BucketIncludedEntryConfiguration.IsCostumeIncluded` RVA 0x1C6C518 —— 只对服装角色调用
+//    （本体恒通过），按桶的 `includedCostume` 判：
+//      None      → 服装全部排除
+//      Exclusive → 服装 tag == None，或 tag == 产品 `SummonExclusiveTag`
+//      NonExclusive → 服装 tag == None
+// ② `BucketIncludedEntryConfiguration.IsCharacterIncluded` RVA 0x1C6BE68 ——
+//    `minParentCharacterCostumeCount` 不区分本体/服装：父角色 = 服装的 `ParentPlayerCharacterId`、
+//    本体取自己 `Id`，再要求 `GetAvailableCostumeConfigs(parentId, time, product).Count >= N`（0x1C6C090）。
+// ③ `GetAvailableCostumeConfigs` RVA 0x1DFC0FC —— 产品 tag == None 时不筛 tag（0x1DFC344 分支），
+//    否则只收 tag == None 或 == 产品 tag 的服装，且必须 `CanBeReceived(time)`（0x1DFC398）。
+// ④ `CostumeSummonProductDefinition.Init` RVA 0x1C594F4 —— 产品 tag 不是序列化字段，而是拿产品 id 比
+//    `shopConfig.lottery.costumeSummonId`（→Wardrobe1）/ `costume2SummonId`（→Wardrobe2），其余产品为 None。
+// ⑤ 选精选英雄：基类 `LotteryProductDefinitionV1.IsHeroEligibleForSelection` RVA 0x1CBC880
+//    （Deluxe/Ascension 等未覆写）里 `IsCostume()` 直接不合格 ⇒ 服装一律不能选；
+//    `AllianceEventSummon` 覆写 RVA 0x1C52A90 放宽成 `IsCostume() && !IncludeCostumes` 才不合格。
+//    两者并起来 = 服装只在 `includeCostumes` 为真时可选。它只管"选进精选位"，不筛抽取桶。
+
+/** 英雄的官方服装标签（`None` 归一成 ''） */
+function heroExclusiveTag(hero) {
+    const tag = String((hero && hero.exclusiveTag) || '');
+    return tag === 'None' ? '' : tag;
+}
+
+/** 产品侧的 `SummonExclusiveTag`（见 ④：按产品 id 映射，其余产品为 None） */
+function getPoolSummonExclusiveTag(poolConfig) {
+    if (!poolConfig) return '';
+    if (poolConfig.id === 'lottery_costume_wardrobe2') return 'Wardrobe2';
+    if (poolConfig.id === 'lottery_costume_default') return 'Wardrobe1';
+    return '';
+}
+
+/** 单个英雄是否通过桶的 `includedCostume` 规则（本体恒通过） */
+function isCostumeAllowedByRule(hero, includedCostume, poolConfig) {
+    if (!hero || !hero.costume_id) return true;
+    const tag = heroExclusiveTag(hero);
+    switch (includedCostume) {
+        case 'None':
+            return false;
+        case 'NonExclusive':
+            return tag === '';
+        case 'Exclusive': {
+            const productTag = getPoolSummonExclusiveTag(poolConfig);
+            return tag === '' || (productTag !== '' && tag === productTag);
+        }
+        default:
+            return true;
+    }
+}
+
+/**
+ * 每个角色「可获得服装数」= 官方 `GetAvailableCostumeConfigs(parentId, …).Count`（见 ③）。
+ * 统计范围是**全量英雄池**（不是某个桶），因为官方查的是父角色自己的服装清单。
+ * @returns {Map<string, number>} english_name（角色归并键）→ 服装数
+ */
+function countAvailableCostumes(poolConfig) {
+    const productTag = getPoolSummonExclusiveTag(poolConfig);
+    const baseDate = getBaseDateForAgeRules(poolConfig);
+    const counts = new Map();
+    getSimHeroPool().forEach(h => {
+        if (!h || !h.costume_id) return;
+        const tag = heroExclusiveTag(h);
+        if (productTag !== '' && tag !== '' && tag !== productTag) return;
+        const date = parseReleaseDate(h['Release date']);
+        if (date && baseDate && date > baseDate) return;
+        const key = h.english_name;
+        counts.set(key, (counts.get(key) || 0) + 1);
+    });
+    return counts;
+}
+
 /**
  * 处理 lottery_config_extra.json 中的补充规则，建立 lotteryId -> bucketIncludedEntryConfigs 映射
  * @param {object} extraConfigs - 从 lottery_config_extra.json 解析的对象
@@ -395,10 +469,12 @@ function processSummonData(allPoolsConfig, summonTypesConfig) {
 // --- 核心逻辑辅助函数 ---
 
 /**
- * 应用服装规则，确保只保留指定的服装版本
+ * 应用服装规则（官方 `IsCostumeIncluded` 口径，见上方 ①）。
+ * 站点把"角色 + 各套服装"按 `english_name` 归并成一行 ⇒ 先按标签筛掉不允许的服装，
+ * 再在允许的版本里保留最新的一套（没有服装就保留本体）。
  * @param {Array} heroes - 英雄数组
  * @param {string} includedCostume - "None" | "Exclusive" | "NonExclusive"
- * @param {object} poolConfig - 奖池配置（用于赛季限制）
+ * @param {object} poolConfig - 奖池配置（产品 tag 取自它）
  * @returns {Array} 过滤后的英雄数组
  */
 function applyCostumeRule(heroes, includedCostume, poolConfig) {
@@ -406,58 +482,17 @@ function applyCostumeRule(heroes, includedCostume, poolConfig) {
         return heroes;
     }
     const maxCostumeId = getMaxAllowedCostumeId(poolConfig);
-    let result;
-    switch (includedCostume) {
-        case "None":
-            // 只保留本体
-            result = heroes.filter(h => h.costume_id === 0);
-            break;
-        case "Exclusive": {
-            // 按英文名分组，保留最新服装（若存在），否则保留本体
-            const map = new Map();
-            heroes.forEach(h => {
-                if (h.costume_id > maxCostumeId) return;
-                const key = h.english_name;
-                const existing = map.get(key);
-                if (!existing) {
-                    map.set(key, h);
-                } else {
-                    // 如果当前是服装（>0）且已有记录是本体（0），则替换
-                    // 如果两者都是服装，取 costumed_id 大的
-                    // 如果当前是本体，已有是服装，则保留已有
-                    if (h.costume_id > 0) {
-                        if (existing.costume_id === 0 || h.costume_id > existing.costume_id) {
-                            map.set(key, h);
-                        }
-                    }
-                }
-            });
-            result = Array.from(map.values());
-            break;
+    const map = new Map();
+    heroes.forEach(h => {
+        if (h.costume_id > maxCostumeId) return;
+        if (!isCostumeAllowedByRule(h, includedCostume, poolConfig)) return;
+        const key = h.english_name;
+        const existing = map.get(key);
+        if (!existing || h.costume_id > existing.costume_id) {
+            map.set(key, h);
         }
-        case "NonExclusive": {
-            // 优先保留第一件服装（costume_id===1），若没有则保留本体（0）
-            const candidates = heroes.filter(h => h.costume_id <= 1 && h.costume_id <= maxCostumeId);
-            const map = new Map();
-            candidates.forEach(h => {
-                const key = h.english_name;
-                const existing = map.get(key);
-                if (!existing) {
-                    map.set(key, h);
-                } else {
-                    // 如果已有是本体（0），当前是服装（1），则替换
-                    if (h.costume_id === 1 && existing.costume_id === 0) {
-                        map.set(key, h);
-                    }
-                }
-            });
-            result = Array.from(map.values());
-            break;
-        }
-        default:
-            result = heroes;
-    }
-    return result;
+    });
+    return Array.from(map.values());
 }
 
 /**
@@ -548,6 +583,36 @@ function deduplicateHeroes(heroes) {
  * @param {object} poolConfig - 奖池配置（已附加 _extraBucketConfigs）
  * @returns {Array} 符合条件的英雄数组
  */
+/** 官方 origin（`originId`）优先；老数据没有它时回退站点归并后的 `sourceId`。 */
+function heroOriginKey(hero) {
+    return String((hero && (hero.originId || hero.sourceId)) || '').toLowerCase();
+}
+
+/**
+ * 合成某个稀有度的 5 色训练师英雄（与 getAllHeroesInPool 的 allowsTrainerCharacter 同形）。
+ * 官方 `includeTrainers` 的桶里，训练师本身就是可抽到的结果。
+ */
+function buildSyntheticTrainers(star) {
+    const colors = [
+        { name: '红', id: 'red' },
+        { name: '蓝', id: 'blue' },
+        { name: '绿', id: 'green' },
+        { name: '黄', id: 'yellow' },
+        { name: '紫', id: 'purple' }
+    ];
+    return colors.map((color, idx) => ({
+        name: `${star}* ${color.name}训练师英雄`,
+        rarity: star,
+        element: color.name,
+        family: 'trainer',
+        source: 'trainer',
+        heroId: `trainer_${star}_${color.id}`,
+        originalIndex: -1 * (1000 + star * 10 + idx),
+        displayStats: { power: 300 + star * 50, attack: 100, defense: 100, health: 100 },
+        image: 'imgs/hero_icon/trainer_rainbow.webp'
+    }));
+}
+
 function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
     const extraRules = poolConfig._extraBucketConfigs ? poolConfig._extraBucketConfigs.find(rule => rule.index === bucketIndex) : null;
 
@@ -560,7 +625,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
 
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
-            const families = extraRules.includedFamilies.map(f => f.toLowerCase());
+            const families = extraRules.includedFamilies.map(f => String(f).toLowerCase());
             let candidates = baseHeroPool.filter(h => h.rarity === targetStar && families.includes(String(h.family).toLowerCase()));
             pool = pool.concat(candidates);
         }
@@ -568,15 +633,27 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
         if (extraRules.includedOrigins && extraRules.includedOrigins.length > 0) {
             const origins = extraRules.includedOrigins.map(o => String(o).toLowerCase());
             let candidates = baseHeroPool.filter(h => {
-                if (!h.source) return false;
-                const heroSourceEng = String(h.sourceId || '').toLowerCase();
-                return h.rarity === targetStar && origins.includes(heroSourceEng);
+                const heroOrigin = heroOriginKey(h);
+                return heroOrigin && h.rarity === targetStar && origins.includes(heroOrigin);
             });
             pool = pool.concat(candidates);
         }
-        // 3. 如果没有指定包含条件，但有 extra 规则，则回退到原逻辑作为基础
-        if (pool.length === 0 && !extraRules.includedFamilies && !extraRules.includedOrigins) {
-            pool = getHeroPoolForBucket(bucketString, poolConfig);
+        // 3. 没有任何 include 条件 ⇒ 官方语义是该稀有度的**全部英雄**，
+        //    再由 excluded*/服装/年龄收窄（旧实现退回 bucket 的旧语义，
+        //    会让 black r5 漏 classic、ascension/league 抽到错误池）
+        const hasIncludedConditions = (extraRules.includedFamilies && extraRules.includedFamilies.length > 0)
+            || (extraRules.includedOrigins && extraRules.includedOrigins.length > 0);
+        if (!hasIncludedConditions && targetStar !== undefined) {
+            pool = baseHeroPool.filter(h => h.rarity === targetStar);
+        }
+
+        // 3.5 全局排除家族（exclude_for_all，如 mystery），显式 include 的除外
+        if (state.globalExcludeFamilies && state.globalExcludeFamilies.length > 0) {
+            const explicitFamilies = new Set((extraRules.includedFamilies || []).map(f => String(f).toLowerCase()));
+            pool = pool.filter(h => {
+                const fam = String(h.family || '').toLowerCase();
+                return !state.globalExcludeFamilies.includes(fam) || explicitFamilies.has(fam);
+            });
         }
 
         // 4. ★ 新增：SuperElementalSummon 颜色过滤 ★
@@ -594,15 +671,28 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
         if (extraRules.excludedOrigins && extraRules.excludedOrigins.length > 0) {
             const exOrigins = extraRules.excludedOrigins.map(o => String(o).toLowerCase());
             pool = pool.filter(h => {
-                if (!h.source) return true;
-                const heroSourceEng = String(h.sourceId || '').toLowerCase();
-                return !exOrigins.includes(heroSourceEng);
+                const heroOrigin = heroOriginKey(h);
+                return !heroOrigin || !exOrigins.includes(heroOrigin);
             });
+        }
+
+        // 5.5 排除家族（excludedFamilies）
+        if (extraRules.excludedFamilies && extraRules.excludedFamilies.length > 0) {
+            const exFamilies = extraRules.excludedFamilies.map(f => String(f).toLowerCase());
+            pool = pool.filter(h => !exFamilies.includes(String(h.family || '').toLowerCase()));
         }
 
         // 6. 应用服装规则（includedCostume）
         if (extraRules.includedCostume) {
             pool = applyCostumeRule(pool, extraRules.includedCostume, poolConfig);
+        }
+
+        // 6.5 minParentCharacterCostumeCount（见上方 ②）：父角色可获得服装数必须 >= N。
+        //     官方对本体/服装一视同仁（本体取自己 Id 当父角色）⇒ 按 english_name 归并键统计即可。
+        const minParentCostumes = extraRules.minParentCharacterCostumeCount || 0;
+        if (minParentCostumes > 0) {
+            const availableCounts = countAvailableCostumes(poolConfig);
+            pool = pool.filter(h => (availableCounts.get(h.english_name) || 0) >= minParentCostumes);
         }
 
         // 7. 应用年龄规则（在包含/排除之后）
@@ -619,6 +709,12 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
             if (baseDate) {
                 pool = filterByDateCutoff(pool, baseDate);
             }
+        }
+
+        // 9. includeTrainers：官方桶允许训练师进入抽取（mimic 的 3★/4★）
+        //    放在服装/年龄之后——合成训练师没有服装和发布日期，会被这些规则误杀
+        if (extraRules.includeTrainers && (targetStar === 3 || targetStar === 4)) {
+            pool = pool.concat(buildSyntheticTrainers(targetStar));
         }
     } else {
         // 无 extra 规则，使用原逻辑（原逻辑内部已包含 SuperElementalSummon 的颜色处理）
@@ -638,6 +734,43 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
 }
 
 /**
+ * 服装召唤（`CostumeSummon`）的抽取池：官方桶规则 = 家族筛选 + `includedCostume` +
+ * `minParentCharacterCostumeCount`（两个池的 4 个桶规则完全一致，取 index 0 即可）。
+ * 旧实现按 `costume_id === 2` / `costume_id <= 1` 猜"第几套"，与实际标签不符：
+ * 站点 2121 行里第 1 套标签 None 354 / Wardrobe1 66 / Wardrobe2 2，第 2 套 Wardrobe1 66 / Wardrobe2 46，
+ * 第 3 套起全是 Wardrobe1 ⇒ 猜"第 2 套"会把 66 件 Wardrobe1 也放进 wardrobe2 池。
+ */
+function buildCostumeSummonPool(poolConfig) {
+    const families = (Array.isArray(poolConfig.AssociatedFamilies) && poolConfig.AssociatedFamilies.length)
+        ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
+        : ['classic'];
+    const rules = poolConfig._extraBucketConfigs || [];
+    const baseRule = rules[0] || {};
+    const includedCostume = baseRule.includedCostume || 'Exclusive';
+
+    let pool = getSimHeroPool().filter(h => {
+        if (!h.costume_id) return false;
+        if (!families.includes(String(h.family || '').toLowerCase())) return false;
+        return isCostumeAllowedByRule(h, includedCostume, poolConfig);
+    });
+
+    const minParentCostumes = baseRule.minParentCharacterCostumeCount || 0;
+    if (minParentCostumes > 0) {
+        const availableCounts = countAvailableCostumes(poolConfig);
+        pool = pool.filter(h => (availableCounts.get(h.english_name) || 0) >= minParentCostumes);
+    }
+
+    const latest = new Map();
+    pool.forEach(h => {
+        const existing = latest.get(h.english_name);
+        if (!existing || h.costume_id > existing.costume_id) {
+            latest.set(h.english_name, h);
+        }
+    });
+    return Array.from(latest.values());
+}
+
+/**
  * 根据权重数组，随机返回一个索引
  * @param {number[]} weights - 权重数组
  * @returns {number} - 选中的索引
@@ -652,6 +785,39 @@ function selectWeightedIndex(weights) {
         random -= (weights[i] || 0);
     }
     return -1;
+}
+
+/**
+ * 奖池的**实际**桶权重：lottery.json 原值 → 补充规则覆盖。
+ * 抽取、概率提示、模拟历史三处必须共用这一份，否则会出现「抽的和显示的不一样」。
+ * @param {object} poolConfig - 奖池配置
+ * @returns {number[]} 与 bucketConfig 等长的权重数组
+ */
+function getEffectiveBucketWeights(poolConfig) {
+    if (!poolConfig) return [];
+    let base = poolConfig.bucketWeights;
+    let usedElemental = false;
+    // 超级元素人召唤：官方拆成 5 个奖池（lottery_super_elemental_<color>），权重表不同 ——
+    // yellow 的 3★ 桶是 643 + SuperElemental 桶 67，其余四色是 710 + 0。
+    if (poolConfig.productType === 'SuperElementalSummon' && state.selectedElementalColor
+        && poolConfig.elementalBucketWeights) {
+        const perColor = poolConfig.elementalBucketWeights[String(state.selectedElementalColor).toLowerCase()];
+        if (Array.isArray(perColor)) {
+            base = perColor;
+            usedElemental = true;
+        }
+    }
+    if (!Array.isArray(base)) return [];
+    const weights = base.slice();
+    // 补充规则里的 weight 抄的是黄池口径，按颜色选表时不能再覆盖
+    if (!usedElemental && Array.isArray(poolConfig._extraBucketConfigs)) {
+        poolConfig._extraBucketConfigs.forEach(rule => {
+            if (rule && rule.weight !== undefined && Number.isInteger(rule.index) && rule.index >= 0) {
+                weights[rule.index] = rule.weight;
+            }
+        });
+    }
+    return weights;
 }
 
 /**
@@ -1085,24 +1251,7 @@ function getAllHeroesInPool(poolConfig) {
 
     // ---- 服装召唤特殊处理 ----
     if (poolConfig.productType === 'CostumeSummon') {
-        const associatedFamilies = (poolConfig.AssociatedFamilies && Array.isArray(poolConfig.AssociatedFamilies))
-            ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
-            : ['classic'];
-        const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
-        const latestCostumes = new Map();
-        getSimHeroPool().forEach(hero => {
-            const heroFamily = String(hero.family || '').toLowerCase();
-            if (!associatedFamilies.includes(heroFamily)) return;
-            if (hero.costume_id <= 0) return;
-            if (isWardrobe2 && hero.costume_id !== 2) return;
-            const existing = latestCostumes.get(hero.english_name);
-            if (!existing || hero.costume_id > existing.costume_id) {
-                latestCostumes.set(hero.english_name, hero);
-            }
-        });
-        const result = Array.from(latestCostumes.values());
-        //console.log(`[getAllHeroesInPool] 服装召唤结果数: ${result.length}`);
-        return result;
+        return buildCostumeSummonPool(poolConfig);
     }
 
     let allPossibleHeroes = [];
@@ -1128,29 +1277,17 @@ function getAllHeroesInPool(poolConfig) {
 
     // 遍历 bucketConfig
     if (poolConfig.bucketConfig) {
-        //console.log(`[getAllHeroesInPool] bucketConfig:`, poolConfig.bucketConfig);
+        const effectiveWeights = getEffectiveBucketWeights(poolConfig);
         poolConfig.bucketConfig.forEach((bucketString, index) => {
             if (!bucketString) return;
-            //console.log(`[getAllHeroesInPool] 处理桶 [${index}]: ${bucketString}`);
 
-            // 检查该桶的权重是否为 0（包括可能被 extra 覆盖的权重）
-            let weight = poolConfig.bucketWeights[index] || 0;
-            // 如果有 extra 规则，且 extra 中定义了 weight，则使用 extra 的 weight
-            const extraRules = poolConfig._extraBucketConfigs ? poolConfig._extraBucketConfigs.find(rule => rule.index === index) : null;
-            if (extraRules && extraRules.weight !== undefined) {
-                weight = extraRules.weight;
-            }
+            // 该桶实际生效的权重（补充规则/元素颜色覆盖后）
+            const weight = effectiveWeights[index] || 0;
             if (weight === 0) {
-                //console.log(`[getAllHeroesInPool] 桶 ${bucketString} 最终权重为 0，跳过添加`);
                 return;
             }
             // trainer 桶：只添加权重大于 0 的
             if (bucketString.startsWith('trainer')) {
-                const weight = poolConfig.bucketWeights[index];
-                if (weight === 0) {
-                    //console.log(`[getAllHeroesInPool] 桶 ${bucketString} 权重为 0，跳过`);
-                    return;
-                }
                 const starMatch = bucketString.match(/_(\d+)$/);
                 if (starMatch) {
                     const star = parseInt(starMatch[1], 10);
@@ -1490,8 +1627,9 @@ async function handleActivityClick(poolId) {
             const bonusTranslations = i18n[state.currentLang].lottery_bonus_translations || {};
 
             let listItems = '';
+            const effectiveWeights = getEffectiveBucketWeights(poolConfig);
             poolConfig.bucketConfig.forEach((bucketName, index) => {
-                const weight = poolConfig.bucketWeights[index];
+                const weight = effectiveWeights[index];
                 if (weight > 0) {
                     const percentage = (weight / 10).toFixed(1);
                     const translatedName = bucketTranslations[bucketName] || bucketName;
@@ -1958,6 +2096,12 @@ function addHeroToFeaturedSlot(selectedHero) {
             return;
         }
     }
+    // 官方精选位资格（基类 0x1CBC880 / AllianceEventSummon 覆写 0x1C52A90）：
+    // 服装角色只有在产品 `includeCostumes` 为真时才允许被选为精选英雄。
+    if (poolConfig && selectedHero.costume_id && poolConfig.includeCostumes !== true) {
+        alert("该英雄无法在此奖池中被选为精选英雄。");
+        return;
+    }
     if (selectedHero.rarity !== 5) {
         alert(i18n[state.currentLang].mustSelect5StarHero || '请选择一位5星英雄。');
         return;
@@ -2001,41 +2145,15 @@ async function performSummon(count) {
         return;
     }
 
-    // ★ 修改：获取权重时使用补充规则覆盖 ★
-    let bucketWeights = poolConfig.bucketWeights.slice(); // 复制
-    const extraRules = poolConfig._extraBucketConfigs;
-    if (extraRules && extraRules.length > 0) {
-        extraRules.forEach(rule => {
-            if (rule.weight !== undefined && rule.index !== undefined) {
-                bucketWeights[rule.index] = rule.weight;
-            }
-        });
-    }
+    // ★ 权重：补充规则覆盖 + 超级元素按颜色覆盖（与概率提示/历史统计共用）
+    const bucketWeights = getEffectiveBucketWeights(poolConfig);
 
     const masterHeroPool = getFilteredMasterPool();
     const isCostumeSummon = poolConfig.productType === 'CostumeSummon';
     let costumePool = [];
 
     if (isCostumeSummon) {
-        const associatedFamilies = (poolConfig.AssociatedFamilies && Array.isArray(poolConfig.AssociatedFamilies))
-            ? poolConfig.AssociatedFamilies.map(f => String(f).toLowerCase())
-            : ['classic'];
-
-        const isWardrobe2 = (poolConfig.id === 'lottery_costume_wardrobe2');
-
-        const latestCostumes = new Map();
-        getSimHeroPool().forEach(hero => {
-            const heroFamily = String(hero.family || '').toLowerCase();
-            if (!associatedFamilies.includes(heroFamily)) return;
-            if (hero.costume_id <= 0) return;
-            if (isWardrobe2 && hero.costume_id !== 2) return;
-
-            const existing = latestCostumes.get(hero.english_name);
-            if (!existing || hero.costume_id > existing.costume_id) {
-                latestCostumes.set(hero.english_name, hero);
-            }
-        });
-        costumePool = Array.from(latestCostumes.values());
+        costumePool = buildCostumeSummonPool(poolConfig);
         if (costumePool.length === 0) return;
     }
 
@@ -2600,8 +2718,9 @@ function renderSummonHistory() {
             // 生成主统计列表
             let listItems = '';
             if (poolConfig.bucketConfig && poolConfig.bucketWeights) {
+                const effectiveWeights = getEffectiveBucketWeights(poolConfig);
                 poolConfig.bucketConfig.forEach((bucketName, index) => {
-                    if (poolConfig.bucketWeights[index] > 0) {
+                    if (effectiveWeights[index] > 0) {
                         const count = stats.heroStats.counts[bucketName] || 0;
                         const percentage = formatPercentage(count, stats.heroStats.total);
                         const translatedName = bucketTranslations[bucketName] || bucketName;

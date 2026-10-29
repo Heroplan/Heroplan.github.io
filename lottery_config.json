@@ -25,9 +25,10 @@
         "heroes_listed_3",
         "heroes_listed_4",
         "heroes_listed_5",
-        "featuredHero",
-        "trainer_3",
-        "trainer_4"
+        "heroes_event_3",
+        "heroes_event_4",
+        "heroes_event_5",
+        "featuredHero"
       ],
       "featuredHeroNum": 6
     },
@@ -290,6 +291,26 @@
       ],
       "featuredHeroNum": 4
     },
+    "DeluxeAscensionSummon": {
+      "bucketConfig": [
+        "heroes_ex_s1_3",
+        "heroes_ex_s1_4",
+        "heroes_ex_s1_5",
+        "featuredHero"
+      ],
+      "powerGradeWeights": [
+        0,
+        200,
+        200,
+        200,
+        0,
+        200,
+        0,
+        150,
+        50
+      ],
+      "featuredHeroNum": 4
+    },
     "PickupSummon": {
       "bucketConfig": [
         "heroes_s1_3",
@@ -375,16 +396,12 @@
         "scoundrel_duval"
       ],
       "AssociatedFamilies": [
-        "scoundrel"
+        "shady_scoundrels"
       ],
       "latestIncludedHeroDate": "2025-11-24",
       "latestIncludedHeroAgeInDays": 730
     },
     "lottery_covenant_default": {
-      "AssociatedFamilies": [
-        "fox1",
-        "construct1"
-      ],
       "featuredHeroes": [
         "beauty_beast_mirielle",
         "ronin_tenzin_kiba",
@@ -397,9 +414,13 @@
     },
     "lottery_wilderness_default": {
       "AssociatedFamilies": [
-        "classic1",
-        "woodlandfaun1",
-        "wildcat1"
+        "rodent",
+        "faun",
+        "owl",
+        "gargoyle",
+        "atlantis",
+        "wild_cat",
+        "mighty_pet"
       ],
       "featuredHeroes": [
         "vegetable_pyaza",
@@ -760,7 +781,7 @@
       ],
       "AssociatedFamilies": [
         "knight",
-        "corellia",
+        "pirate",
         "fable",
         "guardian",
         "wonderland"
@@ -1038,9 +1059,6 @@
         "fleur_bezian",
         "fleur_elyzabel"
       ],
-      "AssociatedFamilies": [
-        "halloween1"
-      ],
       "includedHeroes": [
         "fleur_guillemette",
         "fleur_ludovico",
@@ -1243,6 +1261,14 @@
         "ballerina_charlotta",
         "fox_whitefang",
         "ballerina_armand"
+      ]
+    },
+    "lottery_deluxe_ascension_default": {
+      "featuredHeroes": [
+        "vegetable_bartholomew",
+        "mahayoddha_bhima",
+        "villain_toxicandra_costume_rose",
+        "elemental_griffex_costume_camera"
       ]
     },
     "lottery_pickup_default": {

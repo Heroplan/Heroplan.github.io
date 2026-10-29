@@ -736,6 +736,14 @@ async function loadData(lang) {
                 costumeMaxSets: _cbMax,
                 costumeListSets: _cbListSets,
                 sourceId: srcId,
+                // 官方 `origin`（CovenantSummon / Goblin / Season1 …）。奖池补充配置的
+                // `includedOrigins`/`excludedOrigins` 抄的是官方值；`sourceId` 是站点归并后的
+                // 粗分类（construct→covenant、goblin→goblinvillage），按它匹配会整桶落空。
+                originId: c.origin || '',
+                // 官方 `summonExclusiveTag`（Wardrobe1 / Wardrobe2 / 缺省=None）：奖池桶的
+                // `includedCostume` 判定依据（反编译 BucketIncludedEntryConfiguration.IsCostumeIncluded）。
+                // `None` 在枚举里就是 0 ⇒ 入库时统一成 ''，判定处不用再区分 "None" / 缺字段。
+                exclusiveTag: (c.summonExclusiveTag && c.summonExclusiveTag !== 'None') ? c.summonExclusiveTag : '',
                 source: Lang.t('source', srcId),
                 elementId: elementId, element: Lang.t('element', elementId),
                 classId: classId, class: Lang.t('class', classId),

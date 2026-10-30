@@ -23,21 +23,26 @@
         ],
         "bonusLegendaryHeroChancePerMil": 1000,
         "bonusLegendaryHeroPullAmount": 1,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_7th_birthday_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_black_7th_birthday",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_7th_birthday_30_bulk",
         "gemPrice": 9400,
         "sourceProductId": "lottery_black_7th_birthday",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "BlackSummon",
@@ -61,21 +66,26 @@
             0,
             0
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_solstice_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_black_solstice_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_solstice_default_30_bulk",
         "gemPrice": 8400,
         "sourceProductId": "lottery_black_solstice_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "HarvestSummon",
@@ -104,7 +114,8 @@
             4,
             2,
             1
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "HarvestSummon",
@@ -123,7 +134,9 @@
             4,
             2,
             1
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "HarvestSummon",
@@ -142,7 +155,9 @@
             4,
             2,
             1
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "BlackSummon",
@@ -174,21 +189,26 @@
             null,
             null
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_black_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "BlackSummon",
         "id": "lottery_black_default_30_bulk",
         "gemPrice": 8400,
         "sourceProductId": "lottery_black_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "CovenantSummon",
@@ -212,21 +232,26 @@
             6,
             16
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "CovenantSummon",
         "id": "lottery_covenant_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_covenant_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "CovenantSummon",
         "id": "lottery_covenant_default_30_bulk",
         "gemPrice": 9400,
         "sourceProductId": "lottery_covenant_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "WildernessSummon",
@@ -249,21 +274,26 @@
             0,
             0
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "WildernessSummon",
         "id": "lottery_wilderness_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_wilderness_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "WildernessSummon",
         "id": "lottery_wilderness_default_30_bulk",
         "gemPrice": 9400,
         "sourceProductId": "lottery_wilderness_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MercenaryWarSummon",
@@ -288,21 +318,26 @@
             15,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MercenaryWarSummon",
         "id": "lottery_mercenary_war_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_mercenary_war_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MercenaryWarSummon",
         "id": "lottery_mercenary_war_default_30_bulk",
         "gemPrice": 8400,
         "sourceProductId": "lottery_mercenary_war_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MonsterIslandSummon",
@@ -327,21 +362,26 @@
             15,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MonsterIslandSummon",
         "id": "lottery_monster_island_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_monster_island_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MonsterIslandSummon",
         "id": "lottery_monster_island_default_30_bulk",
         "gemPrice": 8400,
         "sourceProductId": "lottery_monster_island_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "GoblinSummon",
@@ -363,14 +403,17 @@
         ],
         "bonusLegendaryHeroChancePerMil": 1000,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "GoblinSummon",
         "id": "lottery_goblin_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_goblin_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TempleSummon",
@@ -392,14 +435,17 @@
         ],
         "bonusLegendaryHeroChancePerMil": 1000,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TempleSummon",
         "id": "lottery_temple_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_temple_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AstralElvesSummon",
@@ -422,14 +468,17 @@
         "featuredHeroNum": 2,
         "bonusLegendaryHeroChancePerMil": 1000,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "AstralElvesSummon",
         "id": "lottery_astralelves_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_astralelves_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ShadowSummon",
@@ -455,14 +504,17 @@
         ],
         "bonusLegendaryHeroChancePerMil": 300,
         "bonusLegendaryHeroPullAmount": 3,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ShadowSummon",
         "id": "lottery_shadow_default_bulk",
         "gemPrice": 3900,
         "sourceProductId": "lottery_shadow_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "CostumeSummon",
@@ -497,7 +549,8 @@
             0,
             0,
             13
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "CostumeSummon",
@@ -518,7 +571,9 @@
             0,
             0,
             13
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "CostumeSummon",
@@ -553,7 +608,8 @@
             0,
             0,
             13
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "CostumeSummon",
@@ -574,7 +630,9 @@
             0,
             0,
             13
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TitanHunterSummon",
@@ -591,21 +649,26 @@
             15,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TitanHunterSummon",
         "id": "lottery_titan_hunter_default_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_titan_hunter_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TitanHunterSummon",
         "id": "lottery_titan_hunter_default_30_bulk",
         "gemPrice": 7500,
         "sourceProductId": "lottery_titan_hunter_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MimicSummon",
@@ -621,14 +684,18 @@
             10,
             15
         ],
-        "amountOfSelectableFeaturedSlots": 3
+        "amountOfSelectableFeaturedSlots": 3,
+        "hasCharacterOfTheMonthBonusRoll": false,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MimicSummon",
         "id": "lottery_mimic_default_bulk",
         "gemPrice": 2400,
         "sourceProductId": "lottery_mimic_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": false,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
@@ -654,7 +721,8 @@
             10
         ],
         "hasMysteryHeroBonusRoll": true,
-        "includeCostumes": true
+        "includeCostumes": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
@@ -662,7 +730,9 @@
         "gemPrice": 3000,
         "sourceProductId": "lottery_featured_alliance_quest_musketeers",
         "amount": 10,
-        "includeCostumes": true
+        "includeCostumes": true,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
@@ -683,14 +753,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
         "id": "lottery_featured_alliance_quest_moths_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_alliance_quest_moths",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
@@ -711,7 +784,9 @@
             3,
             10
         ],
-        "includeCostumes": true
+        "includeCostumes": true,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AllianceEventSummon",
@@ -719,7 +794,9 @@
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_alliance_quest_castle",
         "amount": 10,
-        "includeCostumes": true
+        "includeCostumes": true,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
@@ -743,14 +820,17 @@
         "bonusLegendaryHeroChancePerMil": 200,
         "bonusLegendaryHeroPullAmount": 1,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
         "id": "lottery_tower_ninja_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_tower_ninja_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
@@ -774,14 +854,17 @@
         "bonusLegendaryHeroChancePerMil": 200,
         "bonusLegendaryHeroPullAmount": 1,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
         "id": "lottery_tower_magic_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_tower_magic_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
@@ -805,14 +888,17 @@
         "bonusLegendaryHeroChancePerMil": 200,
         "bonusLegendaryHeroPullAmount": 1,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
         "id": "lottery_tower_owl_default_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_tower_owl_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
@@ -833,14 +919,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "TowerEventSummon",
         "id": "lottery_tower_styx_default_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_tower_styx_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -866,14 +955,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_farmland_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_featured_event_farmland",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -900,14 +992,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_beowulf_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_featured_event_beowulf",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -934,14 +1029,17 @@
             15,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_festival_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_event_festival",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -971,14 +1069,17 @@
         "bonusLegendaryHeroChancePerMil": 200,
         "bonusLegendaryHeroPullAmount": 1,
         "bonusLegendaryHeroPullTriggersOnEventHeroesOnly": true,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_festival_b_bulk",
         "gemPrice": 3000,
         "sourceProductId": "lottery_featured_event_festival_b",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -999,14 +1100,18 @@
             57,
             3,
             10
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_opera_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_event_opera",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -1029,14 +1134,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_masquerade_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_event_masquerade",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
@@ -1058,14 +1166,17 @@
             3,
             10
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ChallengeEventSummon",
         "id": "lottery_featured_event_gargoyles2_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_featured_event_gargoyles2",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1092,7 +1203,8 @@
             0
         ],
         "hasMysteryHeroBonusRoll": true,
-        "associatedSeason": "Season2"
+        "associatedSeason": "Season2",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1100,7 +1212,9 @@
         "gemPrice": 3000,
         "sourceProductId": "lottery_season_atlantis",
         "amount": 10,
-        "associatedSeason": "Season2"
+        "associatedSeason": "Season2",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1108,7 +1222,9 @@
         "gemPrice": 8400,
         "sourceProductId": "lottery_season_atlantis",
         "amount": 30,
-        "associatedSeason": "Season2"
+        "associatedSeason": "Season2",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1135,7 +1251,8 @@
             0
         ],
         "hasMysteryHeroBonusRoll": true,
-        "associatedSeason": "Season3"
+        "associatedSeason": "Season3",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1143,7 +1260,9 @@
         "gemPrice": 3000,
         "sourceProductId": "lottery_season_valhalla",
         "amount": 10,
-        "associatedSeason": "Season3"
+        "associatedSeason": "Season3",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1151,7 +1270,9 @@
         "gemPrice": 8400,
         "sourceProductId": "lottery_season_valhalla",
         "amount": 30,
-        "associatedSeason": "Season3"
+        "associatedSeason": "Season3",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1178,7 +1299,8 @@
             0
         ],
         "hasMysteryHeroBonusRoll": true,
-        "associatedSeason": "Season4"
+        "associatedSeason": "Season4",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1186,7 +1308,9 @@
         "gemPrice": 3000,
         "sourceProductId": "lottery_season_underwild",
         "amount": 10,
-        "associatedSeason": "Season4"
+        "associatedSeason": "Season4",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1194,7 +1318,9 @@
         "gemPrice": 8400,
         "sourceProductId": "lottery_season_underwild",
         "amount": 30,
-        "associatedSeason": "Season4"
+        "associatedSeason": "Season4",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1221,7 +1347,8 @@
             0
         ],
         "hasMysteryHeroBonusRoll": true,
-        "associatedSeason": "Season5"
+        "associatedSeason": "Season5",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1229,7 +1356,9 @@
         "gemPrice": 3000,
         "sourceProductId": "lottery_season_season5",
         "amount": 10,
-        "associatedSeason": "Season5"
+        "associatedSeason": "Season5",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1237,7 +1366,9 @@
         "gemPrice": 8400,
         "sourceProductId": "lottery_season_season5",
         "amount": 30,
-        "associatedSeason": "Season5"
+        "associatedSeason": "Season5",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1267,7 +1398,8 @@
         "associatedSeason": "UntoldTales1",
         "extraAssociatedFamilies": [
             "atlantis"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1278,7 +1410,9 @@
         "associatedSeason": "UntoldTales1",
         "extraAssociatedFamilies": [
             "atlantis"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1289,7 +1423,9 @@
         "associatedSeason": "UntoldTales1",
         "extraAssociatedFamilies": [
             "atlantis"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1321,7 +1457,8 @@
             "jotunheim",
             "muspelheim",
             "svartalfheim"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1334,7 +1471,9 @@
             "jotunheim",
             "muspelheim",
             "svartalfheim"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "MapSeasonSummon",
@@ -1347,7 +1486,9 @@
             "jotunheim",
             "muspelheim",
             "svartalfheim"
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1379,7 +1520,8 @@
             "lunar_new_year_xiaoqing",
             "lunar_new_year_baishu"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1391,7 +1533,9 @@
             "lunar_new_year_xiaoqing",
             "lunar_new_year_baishu"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon_Lunar_New_Year",
@@ -1422,7 +1566,8 @@
         ],
         "hasGuaranteedFeaturedBucketPowerGrade": true,
         "guaranteedFeaturedBucketPowerGrade": "MaxAscension",
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon_Lunar_New_Year",
@@ -1430,7 +1575,9 @@
         "gemPrice": 3900,
         "sourceProductId": "lottery_seasonal_premium_lunar_new_year",
         "amount": 10,
-        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_lunar_new_year"
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_lunar_new_year",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": false
     },
     {
         "productType": "EpicHeroSummon",
@@ -1462,7 +1609,8 @@
             "valentines_anteros",
             "valentines_matchmaker_dodgrom"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1474,7 +1622,9 @@
             "valentines_anteros",
             "valentines_matchmaker_dodgrom"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1507,7 +1657,8 @@
             "easter_sadie",
             "easter_miss_ethel"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1520,7 +1671,9 @@
             "easter_sadie",
             "easter_miss_ethel"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1553,7 +1706,8 @@
         "availableEventCostumesAreFeatured": false,
         "premiumSummonProductId": "lottery_seasonal_premium_beach_party",
         "spiritGainFromSingleSummon": 10,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1563,7 +1717,9 @@
         "amount": 10,
         "availableEventCostumesAreFeatured": false,
         "premiumSummonProductId": "lottery_seasonal_premium_beach_party",
-        "spiritGainFromSingleSummon": 10
+        "spiritGainFromSingleSummon": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon",
@@ -1581,7 +1737,8 @@
         ],
         "seasonalEventId": "BeachParty2026",
         "summonSpiritTokenId": "lottery_seasonal_summon_spirit_beach_party",
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon",
@@ -1589,7 +1746,9 @@
         "gemPrice": 3900,
         "sourceProductId": "lottery_seasonal_premium_beach_party",
         "amount": 10,
-        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_beach_party"
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_beach_party",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": false
     },
     {
         "productType": "EpicHeroSummon",
@@ -1622,7 +1781,8 @@
             "kalevala_mother_lemminkainen",
             "kalevala_louhi_costume_mistress"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1635,7 +1795,9 @@
             "kalevala_mother_lemminkainen",
             "kalevala_louhi_costume_mistress"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1671,7 +1833,8 @@
             "halloween_chester",
             "halloween_alucard_costume_mafia"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1684,7 +1847,9 @@
             "halloween_chester",
             "halloween_alucard_costume_mafia"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon",
@@ -1752,8 +1917,9 @@
             0
         ],
         "hasGuaranteedFeaturedBucketPowerGrade": true,
-        "hasMysteryHeroBonusRoll": true,
-        "guaranteedFeaturedBucketPowerGrade": "MaxAscension"
+        "hasMysteryHeroBonusRoll": false,
+        "guaranteedFeaturedBucketPowerGrade": "MaxAscension",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "SeasonalPremiumSummon",
@@ -1761,7 +1927,9 @@
         "gemPrice": 3900,
         "sourceProductId": "lottery_seasonal_premium_halloween",
         "amount": 10,
-        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_halloween"
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_halloween",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": false
     },
     {
         "productType": "EpicHeroSummon",
@@ -1794,7 +1962,8 @@
             "christmas_ottilia",
             "christmas_mr_pengi_costume_snowboarder"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "EpicHeroSummon",
@@ -1807,7 +1976,9 @@
             "christmas_ottilia",
             "christmas_mr_pengi_costume_snowboarder"
         ],
-        "availableEventCostumesAreFeatured": false
+        "availableEventCostumesAreFeatured": false,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "SuperElementalSummon",
@@ -1849,7 +2020,8 @@
         ],
         "hasMysteryHeroBonusRoll": true,
         "includeCostumes": true,
-        "eventOffer": "superelemental_calendar"
+        "eventOffer": "superelemental_calendar",
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "SuperElementalSummon",
@@ -1867,14 +2039,18 @@
             0
         ],
         "includeCostumes": true,
-        "eventOffer": "superelemental_calendar"
+        "eventOffer": "superelemental_calendar",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "LeagueSummon",
         "id": "lottery_league_default_bulk",
         "gemPrice": 4500,
         "sourceProductId": "lottery_league_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": false
     },
     {
         "productType": "ThunderboltSummon",
@@ -1895,21 +2071,26 @@
             17,
             8
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "ThunderboltSummon",
         "id": "lottery_thunderbolt_default_bulk",
         "gemPrice": 3900,
         "sourceProductId": "lottery_thunderbolt_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "ThunderboltSummon",
         "id": "lottery_thunderbolt_default_30_bulk",
         "gemPrice": 10800,
         "sourceProductId": "lottery_thunderbolt_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "LeagueSummon",
@@ -1924,7 +2105,8 @@
         "gemPrice": 500,
         "amount": 1,
         "uiPriority": 188,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": false,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "LegendsSummon",
@@ -1947,21 +2129,26 @@
             6
         ],
         "secretLegendaryHeroChancePerMil": 1,
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "LegendsSummon",
         "id": "lottery_hotm_event_default_bulk",
         "gemPrice": 3400,
         "sourceProductId": "lottery_hotm_event_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "LegendsSummon",
         "id": "lottery_hotm_event_default_30_bulk",
         "gemPrice": 9400,
         "sourceProductId": "lottery_hotm_event_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AscensionSummon",
@@ -1990,7 +2177,9 @@
             150,
             50
         ],
-        "nonFeaturedLegendaryHeroesAgeInDays": 730
+        "nonFeaturedLegendaryHeroesAgeInDays": 730,
+        "hasCharacterOfTheMonthBonusRoll": false,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AscensionSummon",
@@ -2008,7 +2197,9 @@
             0,
             150,
             50
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": false,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "AscensionSummon",
@@ -2026,7 +2217,9 @@
             0,
             150,
             50
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": false,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "DeluxeAscensionSummon",
@@ -2052,7 +2245,9 @@
             0,
             150,
             50
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "DeluxeAscensionSummon",
@@ -2070,7 +2265,9 @@
             0,
             150,
             50
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "DeluxeAscensionSummon",
@@ -2088,7 +2285,9 @@
             0,
             150,
             50
-        ]
+        ],
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "PickupSummon",
@@ -2104,20 +2303,25 @@
             7,
             18
         ],
-        "hasMysteryHeroBonusRoll": true
+        "hasMysteryHeroBonusRoll": true,
+        "hasCharacterOfTheMonthBonusRoll": true
     },
     {
         "productType": "PickupSummon",
         "id": "lottery_pickup_default_bulk",
         "gemPrice": 2600,
         "sourceProductId": "lottery_pickup_default",
-        "amount": 10
+        "amount": 10,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     },
     {
         "productType": "PickupSummon",
         "id": "lottery_pickup_default_30_bulk",
         "gemPrice": 7500,
         "sourceProductId": "lottery_pickup_default",
-        "amount": 30
+        "amount": 30,
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": true
     }
 ]

@@ -381,9 +381,9 @@ async function initializeApp() {
     // ▼▼▼ 加载抽奖配置文件 ▼▼▼
     try {
         const [poolsResponse, typesResponse, extraResponse] = await Promise.all([
-            fetch('./lottery.json'),      // 读取 lottery.json
-            fetch('./lottery_config.json'), // 读取 lottery_config.json
-            fetch('./lottery_config_extra.json') // 读取 lottery_config_extra.json
+            fetch(av('lottery.json')),                  // 读取 lottery.json
+            fetch(av('lottery_config.json')),           // 读取 lottery_config.json
+            fetch(av('lottery_config_extra.json'))      // 读取 lottery_config_extra.json
         ]);
         const allPoolsConfig = await poolsResponse.json();
         const summonTypesConfig = await typesResponse.json();

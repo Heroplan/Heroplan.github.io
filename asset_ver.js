@@ -350,4 +350,7 @@ window.AV = {
   "langs_json/family_sv.json": "c248454f",
   "langs_json/family_tc.json": "fe049ba4",
   "langs_json/family_tr.json": "5fd75adb",
+  "lottery_config.json": "11983ec5",
+  "lottery_config_extra.json": "b885b1dc",
+  "lottery.json": "a834dcfa",
 };

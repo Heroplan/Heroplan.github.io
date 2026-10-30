@@ -348,29 +348,13 @@ function costumeParentIdSet() {
 }
 
 /**
- * 月英（HOTM）额外奖励的人选：**当月最新、且没有任何服装的月英本体**。
- *   ① 先按 `isFavoritable`（= 已过发布日期）过滤，再取发布日期最大的 ——
- *      旧实现把「没有发布日期」的排在**最前** ⇒ 会抽出尚未发布的月英。
- *   ② 服装行不能进奖励池（38 行）；**已经出过服装的本体也不行**（28 行）：
- *      奖励只发"干净的月英本体"，同一只月英不会以两种形态出现。
- *      ⇒ 若当月最新那只已经有服装，就顺位取上一只符合条件的。
- * @param {object} hotmInfo - `summonPoolDetails.hotm`（用它的 `family`）
- * @returns {object|null} 选中的英雄，池子里没有符合条件的人选时返回 null
+ * 月英（HOTM）额外奖励的人选 = `getActiveMonthlyHero()` 那只本体。
+ * 与桶侧的排除**共用同一个判定** ⇒ "池内不含当月月英、只有这条奖励会给它"两边永远一致。
+ * @param {object} hotmInfo - `summonPoolDetails.hotm`（用它的 `family` 前缀）
+ * @returns {object|null} 没有符合条件的人选时返回 null
  */
 function pickHotmBonusHero(hotmInfo) {
-    const _hotmFam = String((hotmInfo && hotmInfo.family) || '');
-    const _isHotmFam = (f) => String(f) === _hotmFam
-        || (/^hotm/i.test(_hotmFam) && /^hotm/i.test(String(f)));
-    const _cbParents = costumeParentIdSet();
-    const hotmPool = getSimHeroPool().filter(h =>
-        _isHotmFam(h.family)
-        && !h.parentHeroId
-        && !_cbParents.has(h.heroId)
-        && (typeof isFavoritable !== 'function' || isFavoritable(h)));
-    if (!hotmPool.length) return null;
-    // `Release date` 是 `YYYY-MM-DD` 字符串 ⇒ 字典序即时间序
-    return hotmPool.reduce((best, h) =>
-        (!best || String(h['Release date'] || '') > String(best['Release date'] || '')) ? h : best, null);
+    return getActiveMonthlyHero(hotmInfo);
 }
 
 function processSummonData(allPoolsConfig, summonTypesConfig) {
@@ -572,6 +556,53 @@ function filterReleasedByAnchor(heroes, anchorDate) {
     });
 }
 
+/**
+ * 当期月英（HOTM）本体 = **站点原有判据**：`hotm` 家族里"已过发布日期、最新、且没有任何服装"的那个本体。
+ * 官方 `IsCharacterIncluded` 的 `activeMonthlyCharacterEventId` 与 `uniqueEvents` 的 MonthlyHero 窗口
+ * 都是**按月平铺**的（每月 1 日 07:00 换人），而那只英雄的发布日期就是同一天 ⇒ 不必把 114 条窗口带进配置，
+ * 按发布日期取最新即可与官方同期命中。
+ * @param {object} hotmInfo - `summonPoolDetails.hotm`（用它的 `family` 前缀）
+ * @returns {object|null} 没有符合条件的人选时返回 null（此时不排任何人）
+ */
+let _activeMonthlyHeroCache = { src: null, day: '', hero: undefined };
+function getActiveMonthlyHero(hotmInfo) {
+    const info = hotmInfo || (summonPoolDetails && summonPoolDetails.hotm) || {};
+    const now = new Date();
+    const day = now.getFullYear() + '-' + now.getMonth() + '-' + now.getDate();
+    if (_activeMonthlyHeroCache.src === state.allHeroes && _activeMonthlyHeroCache.day === day) {
+        return _activeMonthlyHeroCache.hero;
+    }
+    const fam = String(info.family || '');
+    const isHotmFam = (f) => String(f) === fam || (/^hotm/i.test(fam) && /^hotm/i.test(String(f)));
+    const cbParents = costumeParentIdSet();
+    const candidates = getSimHeroPool().filter(h =>
+        isHotmFam(h.family)
+        && !h.parentHeroId
+        && !cbParents.has(h.heroId)
+        && (typeof isFavoritable !== 'function' || isFavoritable(h)));
+    // `Release date` 是 `YYYY-MM-DD` 字符串 ⇒ 字典序即时间序
+    const hero = candidates.reduce((best, h) =>
+        (!best || String(h['Release date'] || '') > String(best['Release date'] || '')) ? h : best, null);
+    _activeMonthlyHeroCache = { src: state.allHeroes, day, hero };
+    return hero;
+}
+
+/**
+ * 排除当期月英。官方 `BucketIncludedEntryConfiguration.IsCharacterIncluded` 在稀有度/家族/年龄
+ * 判定**之前**就有一道闸：当期月英事件 id 非空且 `character.HasOrigin(该 id)` ⇒ 直接判"不属于本桶"，
+ * 对**所有桶**（含精选桶）生效 ⇒ 当月月英不在奖池里，只能由额外月英奖励发出来。
+ */
+function excludeActiveMonthlyHero(heroes) {
+    const active = getActiveMonthlyHero();
+    if (!active) return heroes;
+    return heroes.filter(h => h.heroId !== active.heroId);
+}
+
+/** 构造桶的统一基线：开池锚点前已发布 + 不是当期月英（官方 IsCharacterIncluded 的两道闸）。 */
+function bucketBasePool(source, anchorDate) {
+    return excludeActiveMonthlyHero(filterReleasedByAnchor(source, anchorDate));
+}
+
 /** 桶配置里是否带官方年龄规则（有则 `latestIncludedHeroDate` 这条站点遗留规则不再叠加） */
 function _hasBucketAgeRules(extraRules) {
     if (extraRules && (extraRules.oldestCharacterAgeInDays >= 1 || extraRules.youngestCharacterAgeInDays >= 1)) {
@@ -712,7 +743,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
     if (extraRules) {
         // ★ 有 extra 规则：直接从全英雄池构建 ★
         const targetStar = extraRules.rarity;
-        const baseHeroPool = filterReleasedByAnchor(getSimHeroPool(), getAnchorResolver(poolConfig));
+        const baseHeroPool = bucketBasePool(getSimHeroPool(), getAnchorResolver(poolConfig));
 
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
@@ -838,7 +869,7 @@ function buildCostumeSummonPool(poolConfig) {
     const baseRule = rules[0] || {};
     const includedCostume = baseRule.includedCostume || 'Exclusive';
 
-    let pool = filterReleasedByAnchor(getSimHeroPool(), getBaseDateForAgeRules(poolConfig)).filter(h => {
+    let pool = bucketBasePool(getSimHeroPool(), getBaseDateForAgeRules(poolConfig)).filter(h => {
         if (!h.costume_id) return false;
         if (!families.includes(String(h.family || '').toLowerCase())) return false;
         return isCostumeAllowedByRule(h, includedCostume, poolConfig);
@@ -1016,7 +1047,7 @@ function getFilteredMasterPool() {
     // 开池日还没发布的英雄不进池（官方 CanBeReceivedDate 晚于开池时刻 ⇒ 那时角色还不存在）
     // ⚠ 用解析器而不是单个日期：超级元素池五色各开一档，锚点按英雄所属颜色取。
     const anchorOf = getAnchorResolver(poolConfig);
-    let masterHeroPool = filterReleasedByAnchor(getAllHeroesInPool(poolConfig), anchorOf);
+    let masterHeroPool = bucketBasePool(getAllHeroesInPool(poolConfig), anchorOf);
 
     switch (poolConfig.productType) {
         case 'SuperElementalSummon':
@@ -1059,7 +1090,7 @@ function getFilteredMasterPool() {
  * @returns {Array} - 符合条件的英雄对象数组
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
-    const baseHeroPool = filterReleasedByAnchor(poolConfig.masterPool || getSimHeroPool(),
+    const baseHeroPool = bucketBasePool(poolConfig.masterPool || getSimHeroPool(),
         getAnchorResolver(poolConfig));
 
     const explicitlyIncludedFamilies = new Set();
@@ -1634,6 +1665,13 @@ async function handleActivityClick(poolId) {
             heroesForSlots = featuredDisplayIds.map(heroId => state.heroesByIdMap.get(heroId) || null);
         }
     }
+    // 官方 `IsCharacterIncluded` 的当期月英闸对**精选桶**同样生效 ⇒ 当期月英不占精选位。
+    // 手工自选（`addHeroToFeaturedSlot`）不经过这里，保留给用户。
+    const _monthlyHero = getActiveMonthlyHero();
+    if (_monthlyHero) {
+        featuredDisplayIds = featuredDisplayIds.filter(heroId => heroId !== _monthlyHero.heroId);
+        heroesForSlots = heroesForSlots.filter(h => !h || h.heroId !== _monthlyHero.heroId);
+    }
     state.featuredDisplayIds = featuredDisplayIds;
 
     // 初始化精选英雄数组：用 featuredHeroes 列表的英雄填充前部，剩余位置为 null
@@ -1749,7 +1787,7 @@ async function handleActivityClick(poolId) {
                 }
             }
             const hotmInfo = summonPoolDetails.hotm;
-            if (hotmInfo && hotmInfo.ChancePerMil && poolConfig.hasMysteryHeroBonusRoll) {
+            if (hotmInfo && hotmInfo.ChancePerMil && poolConfig.hasCharacterOfTheMonthBonusRoll) {
                 const percentage = (parseInt(hotmInfo.ChancePerMil, 10) / 10).toFixed(1);
                 const name = bonusTranslations.hotm || 'HOTM';
                 bonusListItems += `<li><span>${name}</span><span>${percentage}%</span></li>`;
@@ -2386,12 +2424,15 @@ async function performSummon(count) {
                 }
             }
 
-            if (poolConfig.hasMysteryHeroBonusRoll) {
+            if (poolConfig.hasCharacterOfTheMonthBonusRoll) {
                 const hotmInfo = summonPoolDetails.hotm;
                 if (hotmInfo && Math.random() * 1000 < parseInt(hotmInfo.ChancePerMil, 10)) {
                     const latestHotm = pickHotmBonusHero(hotmInfo);
                     if (latestHotm) singlePullResults.push({ hero: latestHotm, bucket: 'hotm' });
                 }
+            }
+
+            if (poolConfig.hasMysteryHeroBonusRoll) {
                 let mysteryInfo = poolConfig.productType === 'LegendsSummon' ? summonPoolDetails.LegendsSummonMysteryHero : summonPoolDetails.MysteryHero;
                 if (mysteryInfo && Math.random() * 1000 < parseInt(mysteryInfo.ChancePerMil, 10)) {
                     const mysteryPool = getSimHeroPool().filter(h => String(h.family) === String(mysteryInfo.family));
@@ -2825,8 +2866,10 @@ function renderSummonHistory() {
 
             // 生成额外概率列表
             let bonusListItems = '';
-            if (poolConfig.hasMysteryHeroBonusRoll) {
+            if (poolConfig.hasCharacterOfTheMonthBonusRoll) {
                 bonusListItems += `<li><span>${bonusTranslations.hotm}</span><span>${formatPercentage(stats.eventStats.hotm.count, stats.eventStats.hotm.total)}%</span></li>`;
+            }
+            if (poolConfig.hasMysteryHeroBonusRoll) {
                 const mysteryDictKey = poolConfig.productType === 'LegendsSummon' ? 'LegendsSummonMysteryHero' : 'MysteryHero';
                 bonusListItems += `<li><span>${bonusTranslations[mysteryDictKey]}</span><span>${formatPercentage(stats.eventStats.mystery.count, stats.eventStats.mystery.total)}%</span></li>`;
             }

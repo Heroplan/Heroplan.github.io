@@ -4281,6 +4281,51 @@
    }
   ]
  },
+ "elemental_sep_2026_less_less": {
+  "id": "elemental_sep_2026_less_less",
+  "statBonuses": [
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": [
+     {
+      "attackBonusPerMil": 300,
+      "defenseBonusPerMil": 300,
+      "healthBonusPerMil": 300,
+      "manaBonusPerMil": 20
+     },
+     {
+      "attackBonusPerMil": 330,
+      "defenseBonusPerMil": 330,
+      "healthBonusPerMil": 340,
+      "manaBonusPerMil": 30
+     },
+     {
+      "attackBonusPerMil": 380,
+      "defenseBonusPerMil": 380,
+      "healthBonusPerMil": 390,
+      "manaBonusPerMil": 40
+     },
+     {
+      "attackBonusPerMil": 400,
+      "defenseBonusPerMil": 410,
+      "healthBonusPerMil": 410,
+      "manaBonusPerMil": 50
+     }
+    ]
+   }
+  ]
+ },
  "atlantis_aug2026": {
   "id": "atlantis_aug2026",
   "statBonuses": [
@@ -4643,8 +4688,97 @@
    }
   ]
  },
- "construct_nautica": {
-  "id": "construct_nautica",
+ "construct_sep_2026": {
+  "id": "construct_sep_2026",
+  "statBonuses": [
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": []
+   },
+   {
+    "bonusLevels": [
+     {
+      "attackBonusPerMil": 90,
+      "defenseBonusPerMil": 90,
+      "healthBonusPerMil": 90,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 100,
+      "defenseBonusPerMil": 100,
+      "healthBonusPerMil": 100,
+      "manaBonusPerMil": 30
+     },
+     {
+      "attackBonusPerMil": 110,
+      "defenseBonusPerMil": 120,
+      "healthBonusPerMil": 120,
+      "manaBonusPerMil": 50
+     }
+    ]
+   },
+   {
+    "bonusLevels": [
+     {
+      "attackBonusPerMil": 110,
+      "defenseBonusPerMil": 110,
+      "healthBonusPerMil": 140,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 130,
+      "defenseBonusPerMil": 130,
+      "healthBonusPerMil": 160,
+      "manaBonusPerMil": 20
+     },
+     {
+      "attackBonusPerMil": 140,
+      "defenseBonusPerMil": 140,
+      "healthBonusPerMil": 170,
+      "manaBonusPerMil": 30
+     },
+     {
+      "attackBonusPerMil": 170,
+      "defenseBonusPerMil": 170,
+      "healthBonusPerMil": 180,
+      "manaBonusPerMil": 50
+     }
+    ]
+   },
+   {
+    "bonusLevels": [
+     {
+      "attackBonusPerMil": 200,
+      "defenseBonusPerMil": 200,
+      "healthBonusPerMil": 210,
+      "manaBonusPerMil": 10
+     },
+     {
+      "attackBonusPerMil": 300,
+      "defenseBonusPerMil": 300,
+      "healthBonusPerMil": 320,
+      "manaBonusPerMil": 20
+     },
+     {
+      "attackBonusPerMil": 330,
+      "defenseBonusPerMil": 350,
+      "healthBonusPerMil": 360,
+      "manaBonusPerMil": 30
+     },
+     {
+      "attackBonusPerMil": 420,
+      "defenseBonusPerMil": 430,
+      "healthBonusPerMil": 440,
+      "manaBonusPerMil": 50
+     }
+    ]
+   }
+  ]
+ },
+ "construct_sep_2026_more": {
+  "id": "construct_sep_2026_more",
   "statBonuses": [
    {
     "bonusLevels": []
@@ -4661,27 +4795,27 @@
    {
     "bonusLevels": [
      {
-      "attackBonusPerMil": 100,
-      "defenseBonusPerMil": 100,
-      "healthBonusPerMil": 100,
+      "attackBonusPerMil": 250,
+      "defenseBonusPerMil": 250,
+      "healthBonusPerMil": 260,
       "manaBonusPerMil": 10
      },
      {
-      "attackBonusPerMil": 200,
-      "defenseBonusPerMil": 200,
-      "healthBonusPerMil": 200,
+      "attackBonusPerMil": 370,
+      "defenseBonusPerMil": 370,
+      "healthBonusPerMil": 380,
       "manaBonusPerMil": 20
      },
      {
-      "attackBonusPerMil": 300,
-      "defenseBonusPerMil": 300,
-      "healthBonusPerMil": 300,
+      "attackBonusPerMil": 420,
+      "defenseBonusPerMil": 420,
+      "healthBonusPerMil": 430,
       "manaBonusPerMil": 30
      },
      {
-      "attackBonusPerMil": 400,
-      "defenseBonusPerMil": 400,
-      "healthBonusPerMil": 400,
+      "attackBonusPerMil": 500,
+      "defenseBonusPerMil": 500,
+      "healthBonusPerMil": 510,
       "manaBonusPerMil": 50
      }
     ]
@@ -4775,70 +4909,6 @@
       "manaBonusPerMil": 50
      }
     ]
-   }
-  ]
- },
- "construct_epicrare": {
-  "id": "construct_epicrare",
-  "statBonuses": [
-   {
-    "bonusLevels": []
-   },
-   {
-    "bonusLevels": []
-   },
-   {
-    "bonusLevels": [
-     {
-      "attackBonusPerMil": 30,
-      "defenseBonusPerMil": 30,
-      "healthBonusPerMil": 30,
-      "manaBonusPerMil": 10
-     },
-     {
-      "attackBonusPerMil": 60,
-      "defenseBonusPerMil": 60,
-      "healthBonusPerMil": 60,
-      "manaBonusPerMil": 30
-     },
-     {
-      "attackBonusPerMil": 100,
-      "defenseBonusPerMil": 100,
-      "healthBonusPerMil": 100,
-      "manaBonusPerMil": 50
-     }
-    ]
-   },
-   {
-    "bonusLevels": [
-     {
-      "attackBonusPerMil": 60,
-      "defenseBonusPerMil": 60,
-      "healthBonusPerMil": 60,
-      "manaBonusPerMil": 20
-     },
-     {
-      "attackBonusPerMil": 90,
-      "defenseBonusPerMil": 90,
-      "healthBonusPerMil": 90,
-      "manaBonusPerMil": 30
-     },
-     {
-      "attackBonusPerMil": 120,
-      "defenseBonusPerMil": 120,
-      "healthBonusPerMil": 120,
-      "manaBonusPerMil": 40
-     },
-     {
-      "attackBonusPerMil": 150,
-      "defenseBonusPerMil": 150,
-      "healthBonusPerMil": 150,
-      "manaBonusPerMil": 50
-     }
-    ]
-   },
-   {
-    "bonusLevels": []
    }
   ]
  },

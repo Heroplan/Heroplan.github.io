@@ -1,9 +1,30 @@
 {
  "balancedHeroIds": [
+  "astral_demon_azaghim",
   "vegetable_cauliver",
   "vegetable_taterian"
  ],
  "heroes": {
+  "astral_demon_azaghim": {
+   "rarity": 5,
+   "specialId": "scintillating_slam",
+   "canBeReceivedDate": "2026-11-04 07:00:00",
+   "origin": "AstralElves",
+   "id": "astral_demon_azaghim",
+   "element": "Green",
+   "family": "astral_demons",
+   "baseHealth": 1169,
+   "baseAttack": 707,
+   "baseDefense": 692,
+   "manaSpeedId": "average",
+   "passiveSkills": [
+    "never_miss_special",
+    "resist_direct_mana_reductions",
+    "mana_generation_modifier_all_enemies_more_sources"
+   ],
+   "classType": "Paladin",
+   "aetherGift": "aether_attack"
+  },
   "vegetable_cauliver": {
    "rarity": 5,
    "specialId": "happy_hops",

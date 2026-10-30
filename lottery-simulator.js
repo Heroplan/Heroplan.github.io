@@ -518,31 +518,31 @@ function filterByDateCutoff(heroes, baseDate) {
  *    YoungestCharacterAgeInDays(+0x1C) ≥1 ⇒  `heroDate >  start − N*86400` 时**拒绝**
  *                                          ⇒ 只收"开池前已满 N 天"的英雄（老英雄桶）
  *  两侧边界都**含等号**（拒绝用严格不等号）；`N < 1`（含 0/缺省）不生效（`cmp r1,#1; blt`）。
- *  base 传**开池日**（`getBaseDateForAgeRules`），不是今天。
+ *  base 传**开池日**（`getBaseDateForAgeRules`）或按英雄取开池日的函数
+ *  （`getAnchorResolver`：超级元素池五色各开一档），不是今天。
  *  ⚠ 2026-10-29 曾把这两个方向改成"oldest 收更老 / youngest 收更新"，那是把分支目标
  *    `0x1C6C414` 误读成"继续检查"造成的——按上面证据回退，别再改回去。
  */
 function filterByAge(heroes, baseDate, oldestDays, youngestDays) {
     let filtered = heroes;
-    const _shift = (days) => {
-        const c = new Date(baseDate);
+    const _shift = (days, hero) => {
+        const b = (typeof baseDate === 'function') ? baseDate(hero) : baseDate;
+        const c = new Date(b);
         c.setUTCDate(c.getUTCDate() - days);
         return c;
     };
     // OldestCharacterAgeInDays：只保留开池日往前 N 天以内发布的英雄
     if (oldestDays >= 1) {
-        const cutoff = _shift(oldestDays);
         filtered = filtered.filter(h => {
             const date = parseReleaseDate(h['Release date']) || new Date(0);
-            return date >= cutoff;
+            return date >= _shift(oldestDays, h);
         });
     }
     // YoungestCharacterAgeInDays：只保留开池日 N 天前就已发布的英雄
     if (youngestDays >= 1) {
-        const cutoff = _shift(youngestDays);
         filtered = filtered.filter(h => {
             const date = parseReleaseDate(h['Release date']) || new Date(0);
-            return date <= cutoff;
+            return date <= _shift(youngestDays, h);
         });
     }
     return filtered;
@@ -565,8 +565,10 @@ function parseReleaseDate(dateStr) {
 function filterReleasedByAnchor(heroes, anchorDate) {
     if (!anchorDate) return heroes;
     return heroes.filter(h => {
+        const anchor = (typeof anchorDate === 'function') ? anchorDate(h) : anchorDate;
+        if (!anchor) return true;
         const d = parseReleaseDate(h['Release date']);
-        return !d || d <= anchorDate;
+        return !d || d <= anchor;
     });
 }
 
@@ -581,12 +583,14 @@ function _hasBucketAgeRules(extraRules) {
     return buckets.some(b => b && (b.oldestCharacterAgeInDays >= 1 || b.youngestCharacterAgeInDays >= 1));
 }
 
-/** 奖池自身的"开池时刻""（官方 `lotteryStartTime`）；超级元素池按当前选中颜色取。
+/** 奖池自身的"开池时刻"（官方 `lotteryStartTime`）；超级元素池按当前选中颜色取。
  *  E1：`BucketIncludedEntryConfiguration.IsCharacterIncluded(..., lotteryStartTime, ...)` @0x1C6BE68
  *  里的年龄限制全部以 **开池时刻** 为基准（不是"今天"）：
  *      OldestCharacterAgeInDays(+0x20) ≥1 ⇒ CanBeReceivedDate(+0x48) <  start − N*86400
  *      YoungestCharacterAgeInDays(+0x1C) ≥1 ⇒ CanBeReceivedDate(+0x48) >  start − N*86400
  *  `startDate` 由 `5.更新奖池.py` 从官方条目写进 lottery_config.json。
+ *  ⚠ 超级元素池**没有**统一 `startDate`（五色各是独立 product、各开各的档），
+ *    没选颜色时这里返回 null ⇒ 上层要用 `getAnchorResolver()` 按英雄所属颜色取。
  *  @returns {Date|null} 解析不出来就 null，交给调用方决定兜底 */
 function getPoolStartDate(poolConfig) {
     if (!poolConfig) return null;
@@ -595,9 +599,7 @@ function getPoolStartDate(poolConfig) {
         s = (poolConfig.startDateByColor || {})[String(state.selectedElementalColor).toLowerCase()] || '';
     }
     if (!s) s = poolConfig.startDate || '';
-    const parts = String(s).split('-');
-    if (parts.length !== 3 || !parts.every(x => /^\d+$/.test(x))) return null;
-    return new Date(Date.UTC(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10)));
+    return parseYmd(s);
 }
 
 /** 获取用于年龄规则的基准日期（优先**开池日**，其次预置的 latestIncludedHeroDate，最后今日） */
@@ -612,6 +614,35 @@ function getBaseDateForAgeRules(poolConfig) {
     }
     const now = new Date();
     return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+}
+
+/** `YYYY-MM-DD` → UTC Date（解析不出来返回 null） */
+function parseYmd(s) {
+    const parts = String(s || '').split('-');
+    if (parts.length !== 3 || !parts.every(x => /^\d+$/.test(x))) return null;
+    return new Date(Date.UTC(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10)));
+}
+
+/**
+ * 年龄/收录规则的**锚点解析器**：返回 `(hero) => Date`。
+ *
+ * 超级元素池是"五色各开一档"——官方每个颜色是独立 product（`lottery_super_elemental_<色>`）、
+ * 各有自己的 `lotteryStartTime`，配置里就是 `startDateByColor`（实测 2026 年 red 06-20 /
+ * purple 07-01 / yellow 08-10 / green 09-10 / blue 10-02）。
+ * ⚠ 不能把五色统一成一个日期：`youngestCharacterAgeInDays=60` 是"开池日 60 天前就已发布"，
+ *   取最早那档统一 ⇒ 其余四色的 60 天线被一起提前，"全部色"视图实测少收 68 个英雄
+ *   （blue 329→354、green 355→379、purple 342→350、yellow 323→334、red 357→357）。
+ * 单色视图本来就用该色自己的日期 ⇒ 两种视图口径一致。
+ * 英雄取不到颜色（只有 5 个彩虹训练师 `elementId='all'`，元素池的桶不收训练师）时退回恒定锚点。
+ */
+function getAnchorResolver(poolConfig) {
+    const byColor = poolConfig && poolConfig.startDateByColor;
+    const fixed = getBaseDateForAgeRules(poolConfig);
+    if (!byColor || poolConfig.productType !== 'SuperElementalSummon') return () => fixed;
+    return (hero) => {
+        const c = String((hero && (hero.elementId !== undefined ? hero.elementId : hero.element)) || '').toLowerCase();
+        return parseYmd(byColor[c]) || fixed;
+    };
 }
 
 /** 去重（基于 heroId） */
@@ -681,7 +712,7 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
     if (extraRules) {
         // ★ 有 extra 规则：直接从全英雄池构建 ★
         const targetStar = extraRules.rarity;
-        const baseHeroPool = filterReleasedByAnchor(getSimHeroPool(), getBaseDateForAgeRules(poolConfig));
+        const baseHeroPool = filterReleasedByAnchor(getSimHeroPool(), getAnchorResolver(poolConfig));
 
         // 1. 处理 includedFamilies
         if (extraRules.includedFamilies && extraRules.includedFamilies.length > 0) {
@@ -757,9 +788,9 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
 
         // 7. 应用年龄规则（在包含/排除之后）
         if (extraRules.oldestCharacterAgeInDays !== undefined || extraRules.youngestCharacterAgeInDays !== undefined) {
-            const baseDate = getBaseDateForAgeRules(poolConfig);
-            if (baseDate) {
-                pool = filterByAge(pool, baseDate, extraRules.oldestCharacterAgeInDays, extraRules.youngestCharacterAgeInDays);
+            const anchorOf = getAnchorResolver(poolConfig);
+            if (anchorOf) {
+                pool = filterByAge(pool, anchorOf, extraRules.oldestCharacterAgeInDays, extraRules.youngestCharacterAgeInDays);
             }
         }
 
@@ -983,24 +1014,25 @@ function getFilteredMasterPool() {
     if (!poolConfig) return [];
 
     // 开池日还没发布的英雄不进池（官方 CanBeReceivedDate 晚于开池时刻 ⇒ 那时角色还不存在）
-    let masterHeroPool = filterReleasedByAnchor(getAllHeroesInPool(poolConfig),
-        getBaseDateForAgeRules(poolConfig));
+    // ⚠ 用解析器而不是单个日期：超级元素池五色各开一档，锚点按英雄所属颜色取。
+    const anchorOf = getAnchorResolver(poolConfig);
+    let masterHeroPool = filterReleasedByAnchor(getAllHeroesInPool(poolConfig), anchorOf);
 
     switch (poolConfig.productType) {
         case 'SuperElementalSummon':
             const associatedFamilies = (poolConfig.AssociatedFamilies || []).map(f => String(f).toLowerCase());
             // 从配置读取天数，如果配置不存在则默认为 60
             const days = poolConfig.latestIncludedNonEventHeroAgeInDays || 60;
-            // 基准日 = **该色奖池的开池日**（`startDate` / `startDateByColor` 由 5.更新奖池.py 从官方
-            // lotteryEntries[].startDate 写入）。官方规则是"开池那天算起，非活动家族的英雄要满 N 天才进池"，
-            // 原先写死"今天 − N 天" ⇒ 活动开几天后池子会自己缩水，和游戏里不一致（用户 2026-10-29 报）。
-            // 五色是轮转开的 ⇒ `getPoolStartDate` 已按当前选中颜色取；配置里没有开池日才退回今天。
-            let cutoffDate = getPoolStartDate(poolConfig);
-            if (!cutoffDate) {
-                const _n = new Date();
-                cutoffDate = new Date(Date.UTC(_n.getFullYear(), _n.getMonth(), _n.getDate()));
-            }
-            cutoffDate = new Date(cutoffDate.getTime() - days * 86400000);
+            // 基准日 = **该色奖池的开池日**（`startDateByColor` 由 5.更新奖池.py 从官方各色的
+            // `lotteryEntries[].startDate` 写入；五色是轮转开的，官方每个颜色是独立 product
+            // `lottery_super_elemental_<色>`、各有 `lotteryStartTime` ⇒ 没有"整池开池日"这回事，
+            // 配置里也**不再写**统一的 `startDate`，见 §7DU）。
+            // 官方规则是"开池那天算起，非活动家族的英雄要满 N 天才进池"，原先写死"今天 − N 天"
+            // ⇒ 活动开几天后池子会自己缩水，和游戏里不一致（用户 2026-10-29 报）。
+            const _cutoffOf = (hero) => {
+                const b = anchorOf(hero);
+                return b ? new Date(b.getTime() - days * 86400000) : null;
+            };
 
             masterHeroPool = masterHeroPool.filter(hero => {
                 const heroFamily = String(hero.family || '').toLowerCase();
@@ -1009,8 +1041,10 @@ function getFilteredMasterPool() {
                 }
                 // 与 cutoff 同用 UTC（`parseReleaseDate` 口径）；无发布日期的英雄官方 `CanBeReceivedDate=0`
                 // ⇒ 必然早于基准日 ⇒ 收进池子，所以这里缺日期当 epoch 0 处理，结论与旧的"直接放行"一致。
+                const cutoff = _cutoffOf(hero);
+                if (!cutoff) return true;
                 const releaseDate = parseReleaseDate(hero['Release date']) || new Date(0);
-                return releaseDate < cutoffDate;
+                return releaseDate < cutoff;
             });
             break;
     }
@@ -1026,7 +1060,7 @@ function getFilteredMasterPool() {
  */
 function getHeroPoolForBucket(bucketString, poolConfig) {
     const baseHeroPool = filterReleasedByAnchor(poolConfig.masterPool || getSimHeroPool(),
-        getBaseDateForAgeRules(poolConfig));
+        getAnchorResolver(poolConfig));
 
     const explicitlyIncludedFamilies = new Set();
     if (poolConfig.AssociatedFamilies) {

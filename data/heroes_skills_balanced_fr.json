@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Dissipe de façon sûre les bonus de tous les ennemis. (La dissipation sûre permet d'éviter les effets secondaires de la suppression d'un bonus, par exemple les dégâts lors de la suppression. Les effets externes comme les effets passifs ou de famille peuvent toujours s'appliquer.)",
-      "Les ennemis ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant? tours.",
+      "Tous les ennemis ne peuvent pas recevoir de nouveaux bonus d'effets appliqués. L'effet dure jusqu'à ce que 3 bonus aient été annulés.",
       "Invoque un sbire méga garde à épée avec 35% de PV et 300% d'attaque hérités du lanceur.",
       "La cible touchée par le sbire méga garde à épée subit[#Dynamic] 447 [#]points de dégâts de saignement sur 3 tours. L'effet contamine les ennemis proches."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Restaure 42% de la santé de tous les alliés.",
       "Bienfait de croissance: rend 2 fois plus de PV pour chaque point de défense modifiée. (La santé supplémentaire dépend de la défense modifiée du lanceur lorsque les soins sont appliqués.\n[*]Jusqu'à 600 points de soins supplémentaires.\n[*]Les effets affectant les soins affectent le modificateur de soins.)",
-      "Tous les alliés sont immunisés contre les nouveaux effets négatifs pendant? tours, et ils récupèrent 250 PV à la place de chaque effet négatif qui leur est infligé.",
+      "Tous les alliés sont immunisés contre les nouveaux effets négatifs et récupèrent 250 PV pour chaque tentative d'application d'effet. L'effet dure jusqu'à ce que 3 effets aient été annulés.",
       "Altère la puissance de tous les boucliers de type Feu sur le plateau. Lorsqu'un héros attaquant lance la compétence spéciale, le bouclier devient amélioré et donne 37% de mana supplémentaire. Lorsqu'un héros défenseur lance la compétence spéciale, les boucliers sont affaiblis et donnent -30% de mana en moins."
      ]
     }

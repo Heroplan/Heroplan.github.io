@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Afviser sikkert statuseffekt-buffere fra alle fjender. (Sikker fjernelse tilsidesætter sekundære effekter, for eksempel skade ved fjernelse, fra den fjernede statuseffekt-buffere. Eksterne effekter som passive færdigheder og familieeffekter kan stadig være aktive.)",
-      "Alle fjender er immune over for nye statuseffekt-buffere i? runder.",
+      "Alle fjender er immune over for nye statuseffektbuffere. Denne effekt varer indtil 3 buffere er blevet modstået.",
       "Hidkalder en Megasværdvogter med 35% HP og 300% angreb, der er arvet fra kasteren.",
       "Hvis målet rammes af en sværvogter-kæmpehåndlanger, får det[#Dynamic] 447 [#]bløderskade i løbet af 3 runder. Effekten spreder sig til fjender i nærheden."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Gendanner 42% helbred for alle allierede.",
       "Vækstvelsignelse: Gendanner 2x ekstra helbred for hvert point i det modificerede forsvar. (Ekstra helbred er baseret på kasterens modificerede forsvar, når healing anvendes.\n[*]Op til 600 ekstra helbred\n[*]Statuseffekter, der påvirker modtaget helbredelse, påvirker også helbredelsestilpasningen.)",
-      "Alle allierede er immune over for nye statuslidelser i? runder og gendanner 250 helbred for hvert statuslidelse-forsøg.",
+      "Alle allierede er immune over for nye statuslidelser og gendanner 250 helbred for hvert statuslidelse-forsøg. Denne effekt varer indtil 3 lidelser er blevet modstået.",
       "Ændrer kraften på alle ild-skjolde på brættet. Når en angribende helt kaster det særlige angreb, bliver skjoldene fortryllet og giver 37% mere mana. Når en forsvarende helt kaster det særlige angreb, svækkes skjoldene og giver -30% mindre mana."
      ]
     }

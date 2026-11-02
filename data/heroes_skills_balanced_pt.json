@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Dissipa com segurança os reforços de efeito de status de todos os inimigos. (A dissipação segura ignora efeitos secundários, como o dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como habilidades passivas e efeitos da família, ainda podem ser ativados.)",
-      "Todos os inimigos ficam imunes a novos reforços de efeito de status por? turnos.",
+      "Todos os inimigos ficam imunes a novos reforços de efeito de status. Este efeito dura até que 3 reforços sejam resistidos.",
       "Convoca um mega-ajudante Guarda Espadachim com 35% de PV e 300% de ataque herdados do invocador.",
       "O alvo atingido pelo mega-ajudante Guarda Espadachim recebe[#Dynamic] 447 [#]de dano de Sangramento por 3 turnos. O efeito contagia os inimigos próximos."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Restaura 42% da vida de todos os aliados.",
       "Dádiva de Crescimento: restaura 2x mais vida adicional por cada ponto de defesa modificada. (O dano adicional é baseado no ataque modificado do invocador quando o dano é causado.\n[*] Limite de 600 de cura adicional\n[*] Os efeitos de status que afetam a cura recebida não afetam o cálculo da cura.)",
-      "Todos os aliados ficam imunes a novos males de status por? turnos e recuperam 250 de vida por cada mal de status não aplicado.",
+      "Todos os aliados ficam imunes a novos males de status e recuperam 250 de vida por cada mal de status não aplicado. Este efeito dura até que 3 males sejam resistidos.",
       "Altera o poder de todos os escudos de Fogo no tabuleiro. Quando um herói atacante lança a habilidade especial, os escudos são reforçados e dão 37% mais mana. Quando um herói defensor lança a habilidade especial, os escudos são enfraquecidos e dão -30% menos mana."
      ]
     }

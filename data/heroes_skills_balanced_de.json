@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Entfernt sicher Statuseffekt-Boni von allen Gegnern. (Sicheres Entfernen umgeht Sekundäreffekte wie z. B. Schaden beim Entfernen von entfernten Statuseffekt-Boni. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.)",
-      "Alle Gegner sind für? Runden immun gegen neue Statuseffekt-Boni.",
+      "Alle Gegner sind immun gegen neue Statuseffektboni. Dieser Effekt hält an, bis 3 Boni abgewehrt wurden.",
       "Beschwört einen Mega-Schwertwächter-Lakaien mit 35% LP und 300% Angriff des Wirkers.",
       "Das Ziel, das vom Mega-Schwertwächter-Lakeien getroffen wird, erhält[#Dynamic] 447 [#]Blutungsschaden über 3 Züge. Dieser Effekt breitet sich auf nahe Gegner aus."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Heilt alle Verbündeten um 42%.",
       "Wachstumssegen: Gewinnt 2x zusätzliches Leben für jeden Punkt modifizierter Verteidigung. (Das zusätzliche Leben richtet sich nach der veränderten Verteidigung des Wirkers zum Zeitpunkt, wenn die Heilung durchgeführt wird.\n[*]Bis zu maximal 600 zusätzliche Heilung\n[*]Statuseffekte, die die erhaltene Heilung beeinflussen, wirken sich auf die Heilungsskalierung aus.)",
-      "Alle Verbündeten sind für? Züge immun gegen neue negative Statusänderungen und stellen 250 Leben für jede versuchte Statusänderung her.",
+      "Alle Verbündeten sind immun gegen neue Statusveränderungen und erhalten 250 Leben für jede versuchte Statusveränderung zurück. Dieser Effekt hält so lange an, bis 3 Statusveränderungen abgewehrt wurden.",
       "Verändert die Stärke aller Feuerschilde auf dem Feld. Wenn ein angreifender Held die Spezialfähigkeit wirkt, werden die Schilde verstärkt und gewähren um 37% mehr Mana. Wenn ein verteidigender Held die Spezialfähigkeit wirkt, werden die Schilde geschwächt und gewähren um -30% weniger Mana."
      ]
     }

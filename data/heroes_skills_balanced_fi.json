@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Häivyttää turvallisesti tilaefektien tehosteet kaikilta vihollisilta. (Turvallinen häivytys ohittaa poistetun tilaefektin tehosteen toissijaiset efektit, kuten poistamisesta syntyvän vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.)",
-      "Kaikki viholliset ovat immuuneja uusille tilaefektien tehosteille? vuoron ajan.",
+      "Kaikki viholliset ovat immuuneja uusille tilaefektien tehosteille. Vaikutus kestää, kunnes 3 tehostetta on vastustettu.",
       "Kutsuu miekkavartija-megakäskyläisen, joka perii loitsijalta 35% terveyttä ja 300% hyökkäystä.",
       "Miekkavartija-megakäskyläisen iskun kohde kärsii[#Dynamic] 447 [#]verenvuotovauriota 3 vuoron aikana. Vaikutus leviää lähellä oleviin vihollisiin."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Palauttaa 42% liittolaisten terveyttä.",
       "Kasvusiunaus: Palauttaa 2x terveyttä jokaista muokattua puolustuspistettä kohti. (Lisäterveys perustuu loitsijan mukautettuun puolustukseen parannuksen tekohetkellä.\n[*]Yhteensä enintään 600 lisäparannusta\n[*]Saatuun parannukseen vaikuttavat tilaefektit vaikuttavat myös parannuksen skaalaukseen.)",
-      "Kaikki liittolaiset ovat immuuneja uusille vaivoille? vuoron ajan, ja he saavat 250 terveyttä jokaisesta yritetystä vaivasta.",
+      "Kaikki liittolaiset ovat immuuneja uusille vaivoille ja saavat 250 terveyttä jokaisesta yritetystä vaivasta. Vaikutus kestää, kunnes 3 vaivaa on vastustettu.",
       "Muuttaa kaikkien laudalla olevien tulikilpien voimaa. Hyökkäävän sankarin loitsima erikoishyökkäys voimistaa kilvet antamaan 37% enemmän manaa. Puolustavan sankarin loitsima erikoishyökkäys heikentää kilvet antamaan -30% vähemmän manaa."
      ]
     }

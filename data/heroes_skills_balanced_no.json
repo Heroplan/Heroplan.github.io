@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Fjerner statustilstand-økninger fra alle fiender på en trygg måte. (Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statustilstand-økningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.)",
-      "Alle fiender er immune mot nye statuseffektøkninger i? runder.",
+      "Alle fiender er immun mot nye statuseffektøkninger. Denne effekten varer frem til 3 økninger har blitt motstått.",
       "Påkaller en sverdvokter-megaundersått med 35% HP og 300% angrep nedarvet fra brukeren.",
       "Målet som treffes av sverdvakt-megaundersåtten, tar[#Dynamic] 447 [#]blødeskade over 3 runder. Denne effekten sprer seg til fiender i nærheten."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Få tilbake 42% helse til alle allierte.",
       "Vekstvelsignelse: Gir tilbake 2x ekstra helse for hvert punkt med modifisert forsvar. (Ekstra helse er basert på det modifiserte forsvar på bruker når helbreding påføres.\n[*]Opptil maksimalt 600 med ekstra helbredelse.\n[*]Statuseffekter som påvirker helse mottatt, påvirker skaleringen til helbredelse.)",
-      "Alle allierte er immune mot nye statuslidelser i? runder, og de får tilbake 250 helse for hver forsøkte statuslidelse.",
+      "Alle allierte er immune mot nye statuslidelser og får tilbake 250 helse for hver forsøkte statuslidelse. Denne effekten varer frem til 3 lidelser har blitt motstått.",
       "Endrer styrken til alle ild-skjold på brettet. Når en angripende helt bruker spesialangrepet, blir skjoldene forbedret, og de gir 37% mer mana. Når en forsvarende helt bruker spesialangrepet, svekkes skjoldene, og de gir -30% mindre mana."
      ]
     }

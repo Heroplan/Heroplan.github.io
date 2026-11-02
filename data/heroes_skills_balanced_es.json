@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Descarta de forma segura las bendiciones de estado de todos los enemigos. (El descarte seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de la bendición de estado eliminada. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.)",
-      "Todos los enemigos son inmunes a las nuevas bendiciones de estado durante? turnos.",
+      "Todos los enemigos son inmunes a las nuevas bendiciones de efecto de estado. Este efecto dura hasta que hayan resistido 3 bendiciones.",
       "Invoca un megasecuaz guardia espadachín con un 35% de VIT y un 300% de ataque heredados del héroe.",
       "El objetivo al que golpea el megasecuaz guardia espadachín recibe[#Dynamic] 447 [#]de daño de sangrado durante 3 turnos. El efecto se propaga a los enemigos cercanos."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Recupera un 42% de vitalidad para todos los aliados.",
       "Bendición de crecimiento: Recupera x 2 de vitalidad extra por cada punto de defensa modificado. (La vitalidad extra se basa en la defensa modificada del héroe en el momento de aplicar la curación.\n[*] Hasta un máximo de 600 de curación adicional.\n[*] Los efectos de estado que influyen en las curaciones recibidas también influyen en el aumento de curación.)",
-      "Todos los aliados son inmunes a los nuevos estados alterados durante? turnos y, en su lugar, recuperan 250 de vitalidad por cada estado alterado que se les intente aplicar.",
+      "Todos los aliados son inmunes a los nuevos estados alterados y recuperan 250 de vitalidad por cada intento de estado alterado. Este efecto dura hasta que hayan resistido 3 estados alterados.",
       "El poder de todos los escudos de fuego del tablero se altera. Cuando un héroe atacante usa su habilidad especial, los escudos se mejoran y otorgan un 37% más de maná. Cuando la usa un héroe defensor, los escudos se debilitan y otorgan un -30% menos de maná."
      ]
     }

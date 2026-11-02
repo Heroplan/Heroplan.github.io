@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Safely dispels status effect buffs from all enemies. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.)",
-      "All enemies are immune to new status effect buffs for? turns.",
+      "All enemies are immune to new status effect buffs. This effect lasts until 3 buffs have been resisted.",
       "Summons a Sword Guard Mega Minion with 35% HP and 300% attack inherited from the caster.",
       "The target hit by the Sword Guard Mega Minion receives[#Dynamic] 447 [#]Bleed damage over 3 turns. This effect spreads to nearby enemies."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Recovers 42% health for all allies.",
       "Growth Boon: Recovers 2x extra health for each point of modified defense. (Extra health is based on the modified defense on the caster when healing is applied.\n[*]Up to maximum 600 of additional healing\n[*]Status effects affecting healing received do affect the healing scaling.)",
-      "All allies are immune to new status ailments for? turns, and recover 250 health for each attempted status ailment.",
+      "All allies are immune to new status ailments, and recover 250 health for each attempted status ailment. This effect lasts until 3 ailments have been resisted.",
       "Alters the power of all Fire shields on the board. When an attacking Hero casts the special, the shields become enhanced and give 37% more mana. When a defending Hero casts the special, the shields become weakened and give -30% less mana."
      ]
     }

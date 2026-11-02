@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Verwijdert veilig de oppeppers door statuseffecten van alle vijanden. (Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.)",
-      "Alle vijanden zijn? beurten lang immuun voor nieuwe oppeppers van statuseffecten.",
+      "Alle vijanden zijn immuun voor nieuwe oppeppers door statuseffecten. Dit effect blijft van kracht totdat er 3 oppeppers weerstaan zijn.",
       "Roept een zwaardwachter-megavolgeling aan die 35% van de gezondheid en 300% van de aanvalskracht erft van de spreukspreker.",
       "Het doelwit dat geraakt wordt door de zwaardwachter-megavolgeling lijdt[#Dynamic] 447 [#]bloedschade gedurende 3 beurten. Dit effect verspreidt zich naar vijanden in de buurt."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Alle bondgenoten genezen 42%.",
       "Groeigunst: herstelt 2x extra gezondheid voor elk punt van aangepaste verdediging. (Extra gezondheid is gebaseerd op de aangepaste verdediging van de spreukspreker wanneer genezing wordt toegepast.\n[*]Tot maximaal 600 extra genezing\n[*]Statuseffecten die invloed hebben op ontvangen genezing, hebben ook effect op de schaal van de genezing.)",
-      "Alle bondgenoten zijn? beurten lang immuun voor nieuwe statuseffecten en herstellen 250 gezondheid voor elke statuseffectpoging.",
+      "Alle bondgenoten zijn immuun voor nieuwe statusaandoeningen en herstellen 250 gezondheid voor elke poging om een statusaandoening toe te passen. Dit effect blijft van kracht totdat er 3 aandoeningen zijn weerstaan.",
       "Verandert de kracht van alle vuurschilden op het bord. Als een aanvallende held een speciale vaardigheid gebruikt, worden de schilden versterkt en leveren 37% meer mana op. Als een verdedigende held een speciale vaardigheid gebruikt, verzwakken de schilden en leveren -30% minder mana op."
      ]
     }

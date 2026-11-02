@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Tar, på säkert manér, bort statuseffektsbonusar från alla fiender. (Säkert avbrott ignorerar sekundära effekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.)",
-      "Alla fiender är immuna mot nya bonusar med statuseffekter under? rundor.",
+      "Alla fiender är immuna mot nya positiva statuseffekter. Den här effekten varar till dess att 3 bonusar har motståtts.",
       "Åkallar megaundersåten Svärdsvakt med 35% hälsa och 300% attack som ärvs från anfallaren.",
       "Målet som träffas av megaundersåten Svärdsvakt tar[#Dynamic] 447 [#]blödningsskada under 3 rundor. Effekten sprids till fiender i närheten."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Alla allierade återfår 42% hälsa.",
       "Tillväxtfavör: Återfår 2x extra hälsa för varje modifierat försvarspoäng. (Extra läkning baseras på användarens modifierade försvar när läkningen görs.\n[*]Upp till 600 extra läkning.\n[*]Statuseffekter som påverkar mottagen läkning påverkar läkningsskalningen.)",
-      "Alla allierade blir immuna mot nya negativa statuseffekter i? rundor, och återfår 250 hälsa för varje negativ statuseffekt-försök.",
+      "Alla allierade är immuna mot nya negativa statuseffekter och återfår 250 hälsa för varje försök till negativ statuseffekt. Den här effekten varar till dess att 3 negativa statuseffekter har motståtts.",
       "Påverkar alla eldsköldar på brädet. När en attackerande hjälte använder specialförmågan blir sköldarna förstärkta och ger 37% mer mana. När en försvarande hjälte använder specialförmågan blir sköldar svagare och ger -30% mindre mana."
      ]
     }

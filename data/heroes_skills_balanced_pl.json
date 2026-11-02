@@ -281,7 +281,7 @@
      "id": "lucky_coin_mayhem",
      "lines": [
       "Bezpiecznie usuwa z wszystkich wrogów wzmocnienia ze statusu. (Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia przy usunięciu, nakłądane przez usuwane efekty wzmocnień statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.)",
-      "Wszyscy wrogowie są odporni na nowe wzmocnienia ze statusu przez? tur(y).",
+      "Wszyscy wrogowie są odporni na nowe wzmocnienia ze statusu. Efekt trwa aż do odparcia łącznie 3 wzmocnień.",
       "Wzywa mega pomocnika strażnika miecza z 35% PŻ i 300% ataku przejętymi od rzucającego.",
       "Cel trafiony przez mega pomocnika strażnika miecza otrzymuje[#Dynamic] 447 [#]pkt. obrażeń od krwawienia przez 3 tur(y). Efekt przenosi się na pobliskich wrogów."
      ]
@@ -426,7 +426,7 @@
      "lines": [
       "Regeneruje 42% zdrowia wszystkich sojuszników.",
       "Dar wzrostu: regeneruje 2x dodatkowego zdrowia za każdy punkt zmodyfikowanej obrony. (Dodatkowe zdrowie jest zależne od zmodyfikowanej obrony rzucającego w chwili zastosowania leczenia.\n[*]Maksymalne leczenie dodatkowe: 600\n[*]Efekty ze statusu wpływające na otrzymywane leczenie nie mają wpływu na skalowanie leczenia.)",
-      "Wszyscy sojusznicy są niewrażliwi na dolegliwości ze statusu przez okres? tur(y) i odzyskują 250 pkt. zdrowia za każdą próbę nałożenia dolegliwości ze statusu.",
+      "Wszyscy sojusznicy są odporni na nowe dolegliwości ze statusu i odzyskują 250 pkt. zdrowia za każdą próbę nałożenia dolegliwości ze statusu. Efekt trwa aż do odparcia łącznie 3 dolegliwości.",
       "Zmienia wszystkie tarcze ognia na planszy. Gdy atakujący bohater używa umiejętności specjalnej, wzmocnione tarcze zapewniają 37% więcej many, a gdy broniący bohater używa umiejętności specjalnej, tarcze słabną i zapewniają -30% mniej many."
      ]
     }

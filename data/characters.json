@@ -1433,11 +1433,11 @@
         "baseAttack": 350,
         "baseDefense": 340,
         "manaSpeedId": "very_fast",
-        "classType": "Paladin",
-        "aetherGift": "aether_counterattack",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Paladin",
+        "aetherGift": "aether_counterattack"
       },
       {
         "parentHeroId": "dark_god_seshat",
@@ -1453,13 +1453,11 @@
         "baseDefense": 329,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "resist_direct_mana_reductions"
+          "resist_direct_mana_reductions",
+          "extra_special_cleanse_newest"
         ],
         "classType": "Barbarian",
-        "aetherGift": "aether_dodge",
-        "costumeBonusPassiveSkillIds": [
-          "extra_special_cleanse_newest"
-        ]
+        "aetherGift": "aether_dodge"
       },
       {
         "parentHeroId": "holy_god_drake_lee",
@@ -1474,11 +1472,11 @@
         "baseAttack": 358,
         "baseDefense": 343,
         "manaSpeedId": "fast",
-        "classType": "Fighter",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Fighter",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "pirate_commodore_finley",
@@ -1512,11 +1510,11 @@
         "baseAttack": 354,
         "baseDefense": 339,
         "manaSpeedId": "average",
-        "classType": "Barbarian",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Barbarian",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "forest_god_oberon",
@@ -1531,11 +1529,11 @@
         "baseAttack": 346,
         "baseDefense": 365,
         "manaSpeedId": "slow",
-        "classType": "Cleric",
-        "aetherGift": "aether_special_armor",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Cleric",
+        "aetherGift": "aether_special_armor"
       },
       {
         "parentHeroId": "ice_god_eskimo",
@@ -1550,11 +1548,11 @@
         "baseAttack": 355,
         "baseDefense": 346,
         "manaSpeedId": "fast",
-        "classType": "Rogue",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Rogue",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "pirate_marie_therese",
@@ -1788,7 +1786,7 @@
       {
         "parentHeroId": "christmas_mrs_claus",
         "rarity": 5,
-        "specialId": "hyper_porridge",
+        "specialId": "hyper_porridge_mayhem",
         "canBeReceivedDate": "2021-12-01 07:00:00",
         "origin": "Christmas",
         "id": "christmas_mrs_claus_costume_fangirl",
@@ -1912,7 +1910,7 @@
       {
         "parentHeroId": "s2_ghost_woman",
         "rarity": 4,
-        "specialId": "yurei",
+        "specialId": "yurei_mayhem",
         "canBeReceivedDate": "2022-05-02 07:00:00",
         "origin": "Season2",
         "id": "s2_ghost_woman_costume_yurei",
@@ -1928,7 +1926,7 @@
       {
         "parentHeroId": "s2_ghost_woman",
         "rarity": 4,
-        "specialId": "toon_ghost",
+        "specialId": "toon_ghost_mayhem",
         "canBeReceivedDate": "2026-06-28 07:00:00",
         "origin": "Season2",
         "summonExclusiveTag": "Wardrobe2",
@@ -1940,7 +1938,7 @@
         "baseDefense": 297,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_special_armor"
@@ -4524,7 +4522,7 @@
       {
         "costumeBonusesId": "legends",
         "rarity": 5,
-        "specialId": "dragon_fang",
+        "specialId": "dragon_fang_mayhem",
         "canBeReceivedDate": "2017-09-01 00:00:00",
         "origin": "MonthlyHeroSeptember2017",
         "id": "holy_god_musashi",
@@ -4944,7 +4942,7 @@
       {
         "costumeBonusesId": "seasonal",
         "rarity": 4,
-        "specialId": "ethereal",
+        "specialId": "ethereal_mayhem",
         "canBeReceivedDate": "2018-08-01 00:00:00",
         "origin": "Season2",
         "id": "s2_ghost_woman",
@@ -5418,7 +5416,7 @@
       {
         "costumeBonusesId": "legends",
         "rarity": 5,
-        "specialId": "bleeding_edge",
+        "specialId": "bleeding_edge_mayhem",
         "canBeReceivedDate": "2018-09-01 00:00:00",
         "origin": "MonthlyHeroSeptember2018",
         "id": "dark_god_september",
@@ -6616,7 +6614,7 @@
       {
         "costumeBonusesId": "kalevala",
         "rarity": 4,
-        "specialId": "dire_ghost",
+        "specialId": "dire_ghost_mayhem",
         "canBeReceivedDate": "2020-02-27 07:00:00",
         "origin": "Season3",
         "id": "s3_stonecleave",
@@ -7063,7 +7061,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "midnight_magic",
+        "specialId": "midnight_magic_mayhem",
         "canBeReceivedDate": "2020-11-01 07:00:00",
         "origin": "MonthlyHeroNovember2020",
         "id": "ice_god_glenda",
@@ -7740,7 +7738,7 @@
       {
         "costumeBonusesId": "underwild",
         "rarity": 5,
-        "specialId": "abyssal_incantation",
+        "specialId": "abyssal_incantation_mayhem",
         "canBeReceivedDate": "2021-03-25 07:00:00",
         "origin": "Season4",
         "id": "s4_lepiota",
@@ -7892,7 +7890,7 @@
       {
         "costumeBonusesId": "underwild",
         "rarity": 5,
-        "specialId": "transcendental_frame",
+        "specialId": "transcendental_frame_mayhem",
         "canBeReceivedDate": "2021-11-04 07:00:00",
         "origin": "Season4",
         "id": "s4_lughaidh",
@@ -12497,11 +12495,11 @@
         "baseAttack": 352,
         "baseDefense": 339,
         "manaSpeedId": "fast",
-        "classType": "Fighter",
-        "aetherGift": "aether_defense",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Fighter",
+        "aetherGift": "aether_defense"
       },
       {
         "parentHeroId": "dark_god_hel",
@@ -12516,11 +12514,11 @@
         "baseAttack": 362,
         "baseDefense": 336,
         "manaSpeedId": "average",
-        "classType": "Cleric",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Cleric",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "s3_fura",
@@ -12799,7 +12797,7 @@
       {
         "parentHeroId": "nordic_ancestral_warrior",
         "rarity": 4,
-        "specialId": "postal_pulverizer",
+        "specialId": "postal_pulverizer_mayhem",
         "canBeReceivedDate": "2023-06-12 07:00:00",
         "origin": "Season1",
         "summonExclusiveTag": "Wardrobe1",
@@ -13007,11 +13005,11 @@
         "baseAttack": 341,
         "baseDefense": 359,
         "manaSpeedId": "average",
-        "classType": "Cleric",
-        "aetherGift": "aether_special_armor",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Cleric",
+        "aetherGift": "aether_special_armor"
       },
       {
         "parentHeroId": "ice_god_october",
@@ -13026,11 +13024,11 @@
         "baseAttack": 308,
         "baseDefense": 374,
         "manaSpeedId": "average",
-        "classType": "Monk",
-        "aetherGift": "aether_ailment_shield",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Monk",
+        "aetherGift": "aether_ailment_shield"
       },
       {
         "parentHeroId": "fire_god_ares",
@@ -13045,11 +13043,11 @@
         "baseAttack": 332,
         "baseDefense": 345,
         "manaSpeedId": "average",
-        "classType": "Druid",
-        "aetherGift": "aether_heal_increase",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Druid",
+        "aetherGift": "aether_heal_increase"
       },
       {
         "parentHeroId": "fire_god_zimkitha",
@@ -13064,11 +13062,11 @@
         "baseAttack": 345,
         "baseDefense": 338,
         "manaSpeedId": "fast",
-        "classType": "Paladin",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Paladin",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "s2_skyllaros",
@@ -13149,7 +13147,7 @@
         "baseDefense": 309,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_gamble"
@@ -13201,7 +13199,7 @@
         "baseDefense": 310,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_regen"
@@ -13237,7 +13235,7 @@
         "baseDefense": 301,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_fiend_resist"
@@ -13303,11 +13301,11 @@
         "baseAttack": 355,
         "baseDefense": 328,
         "manaSpeedId": "fast",
-        "classType": "Wizard",
-        "aetherGift": "aether_attack",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Wizard",
+        "aetherGift": "aether_attack"
       },
       {
         "parentHeroId": "holy_god_delilah",
@@ -13322,11 +13320,11 @@
         "baseAttack": 348,
         "baseDefense": 349,
         "manaSpeedId": "average",
-        "classType": "Paladin",
-        "aetherGift": "aether_defense",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Paladin",
+        "aetherGift": "aether_defense"
       },
       {
         "parentHeroId": "forest_god_zeline",
@@ -13341,16 +13339,16 @@
         "baseAttack": 365,
         "baseDefense": 340,
         "manaSpeedId": "fast",
-        "classType": "Sorcerer",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Sorcerer",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "holy_god_musashi",
         "rarity": 5,
-        "specialId": "rod_of_freedom",
+        "specialId": "rod_of_freedom_mayhem",
         "canBeReceivedDate": "2023-10-02 07:00:00",
         "origin": "MonthlyHeroSeptember2017",
         "id": "holy_god_musashi_costume_prisoner",
@@ -13360,16 +13358,16 @@
         "baseAttack": 375,
         "baseDefense": 336,
         "manaSpeedId": "fast",
-        "classType": "Barbarian",
-        "aetherGift": "aether_rage",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Barbarian",
+        "aetherGift": "aether_rage"
       },
       {
         "parentHeroId": "holy_god_musashi",
         "rarity": 5,
-        "specialId": "toon_blade",
+        "specialId": "toon_blade_mayhem",
         "canBeReceivedDate": "2026-06-28 07:00:00",
         "origin": "MonthlyHeroSeptember2017",
         "summonExclusiveTag": "Wardrobe2",
@@ -13381,7 +13379,7 @@
         "baseDefense": 331,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -13399,11 +13397,11 @@
         "baseAttack": 361,
         "baseDefense": 345,
         "manaSpeedId": "fast",
-        "classType": "Rogue",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_cleanse_newest"
-        ]
+        ],
+        "classType": "Rogue",
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "witch_king",
@@ -13418,16 +13416,16 @@
         "baseAttack": 346,
         "baseDefense": 344,
         "manaSpeedId": "fast",
-        "classType": "Wizard",
-        "aetherGift": "aether_bulwark",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Wizard",
+        "aetherGift": "aether_bulwark"
       },
       {
         "parentHeroId": "dark_god_september",
         "rarity": 5,
-        "specialId": "bleeding_hammer",
+        "specialId": "bleeding_hammer_mayhem",
         "canBeReceivedDate": "2024-02-09 07:00:00",
         "origin": "MonthlyHeroSeptember2018",
         "id": "dark_god_september_costume_engineer",
@@ -13437,11 +13435,11 @@
         "baseAttack": 366,
         "baseDefense": 340,
         "manaSpeedId": "average",
-        "classType": "Fighter",
-        "aetherGift": "aether_special_armor",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Fighter",
+        "aetherGift": "aether_special_armor"
       },
       {
         "parentHeroId": "forest_god_gregorion",
@@ -13456,11 +13454,11 @@
         "baseAttack": 364,
         "baseDefense": 341,
         "manaSpeedId": "average",
-        "classType": "Rogue",
-        "aetherGift": "aether_rage",
-        "costumeBonusPassiveSkillIds": [
+        "passiveSkills": [
           "extra_special_dispel_newest"
-        ]
+        ],
+        "classType": "Rogue",
+        "aetherGift": "aether_rage"
       },
       {
         "parentHeroId": "s4_professor_lidenbrock",
@@ -13553,7 +13551,7 @@
       {
         "parentHeroId": "s4_lepiota",
         "rarity": 5,
-        "specialId": "undying_incantation",
+        "specialId": "undying_incantation_mayhem",
         "canBeReceivedDate": "2023-04-27 07:00:00",
         "origin": "Season4",
         "id": "s4_lepiota_costume_undying",
@@ -14710,7 +14708,7 @@
       {
         "parentHeroId": "s4_lughaidh",
         "rarity": 5,
-        "specialId": "transcendental_charge",
+        "specialId": "transcendental_charge_mayhem",
         "canBeReceivedDate": "2024-08-29 07:00:00",
         "origin": "Season4",
         "id": "s4_lughaidh_costume_deathless",
@@ -16848,7 +16846,7 @@
         "baseDefense": 405,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_ailment_shield"
@@ -16867,7 +16865,7 @@
         "baseDefense": 379,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_heal_increase"
@@ -16886,7 +16884,7 @@
         "baseDefense": 413,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -17085,7 +17083,7 @@
         "baseDefense": 363,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_defense"
@@ -17179,7 +17177,7 @@
         "baseDefense": 422,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_fiend_resist"
@@ -17198,7 +17196,7 @@
         "baseDefense": 320,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_fiend_resist"
@@ -17217,7 +17215,7 @@
         "baseDefense": 401,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_defense"
@@ -17236,7 +17234,7 @@
         "baseDefense": 261,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_special_boost"
@@ -17308,7 +17306,7 @@
         "baseDefense": 401,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_attack"
@@ -17327,7 +17325,7 @@
         "baseDefense": 448,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_taunt"
@@ -17346,7 +17344,7 @@
         "baseDefense": 312,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_defense"
@@ -17365,7 +17363,7 @@
         "baseDefense": 294,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -17384,7 +17382,7 @@
         "baseDefense": 440,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received"
+          "damage_all_enemies_on_cover_or_special_damage_received_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -17485,7 +17483,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "grips_of_longing",
+        "specialId": "grips_of_longing_mayhem",
         "canBeReceivedDate": "2023-02-14 07:00:00",
         "origin": "ValentinesSeasonal",
         "id": "valentines_himeros",
@@ -18815,7 +18813,7 @@
         "baseDefense": 684,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Rogue",
@@ -18824,7 +18822,7 @@
       {
         "additionalBattleSpecificHeroEffectOrigin": "BeachParty2026",
         "rarity": 5,
-        "specialId": "terrycloth_shakeoff",
+        "specialId": "terrycloth_shakeoff_mayhem",
         "canBeReceivedDate": "2026-06-01 07:00:00",
         "origin": "BeachParty",
         "id": "beachparty_bubo",
@@ -18835,7 +18833,7 @@
         "baseDefense": 690,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Cleric",
@@ -19814,7 +19812,7 @@
       {
         "costumeBonusesId": "goblin",
         "rarity": 5,
-        "specialId": "the_eagles_blessing",
+        "specialId": "the_eagles_blessing_mayhem",
         "canBeReceivedDate": "2023-09-18 07:00:00",
         "origin": "Goblin",
         "id": "goblin_darkfeather",
@@ -22961,7 +22959,7 @@
         "baseDefense": 431,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Cleric",
@@ -22981,7 +22979,7 @@
         "baseDefense": 283,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Monk",
@@ -23001,7 +22999,7 @@
         "baseDefense": 332,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Fighter",
@@ -23021,7 +23019,7 @@
         "baseDefense": 409,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "underwater_on_special_beach"
         ],
         "classType": "Fighter",
@@ -23753,7 +23751,7 @@
         "baseDefense": 400,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Monk",
@@ -23773,7 +23771,7 @@
         "baseDefense": 363,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Fighter",
@@ -23793,7 +23791,7 @@
         "baseDefense": 377,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Paladin",
@@ -23813,7 +23811,7 @@
         "baseDefense": 406,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Druid",
@@ -23833,7 +23831,7 @@
         "baseDefense": 405,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Wizard",
@@ -23853,7 +23851,7 @@
         "baseDefense": 421,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Rogue",
@@ -23862,7 +23860,7 @@
       {
         "parentHeroId": "musketeer_queen_anne",
         "rarity": 5,
-        "specialId": "leading_by_example",
+        "specialId": "leading_by_example_mayhem",
         "canBeReceivedDate": "2026-07-14 07:00:00",
         "origin": "AllianceQuestMusketeers",
         "id": "musketeer_queen_anne_costume_commander",
@@ -23873,7 +23871,7 @@
         "baseDefense": 434,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Paladin",
@@ -23893,7 +23891,7 @@
         "baseDefense": 415,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Cleric",
@@ -23913,7 +23911,7 @@
         "baseDefense": 450,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Ranger",
@@ -23933,7 +23931,7 @@
         "baseDefense": 318,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Rogue",
@@ -23953,7 +23951,7 @@
         "baseDefense": 293,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Barbarian",
@@ -23973,7 +23971,7 @@
         "baseDefense": 317,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Cleric",
@@ -23993,7 +23991,7 @@
         "baseDefense": 259,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "damage_all_enemies_on_cover_or_special_damage_received_costume",
+          "damage_all_enemies_on_cover_or_special_damage_received_costume_mayhem",
           "resist_defense_modifier_debuffs"
         ],
         "classType": "Paladin",
@@ -24014,7 +24012,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Rogue",
@@ -24035,7 +24033,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -24056,7 +24054,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Monk",
@@ -24077,7 +24075,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Fighter",
@@ -24098,7 +24096,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -24135,7 +24133,7 @@
         "baseDefense": 370,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_attack"
@@ -24171,7 +24169,7 @@
         "baseDefense": 351,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_attack"
@@ -24191,7 +24189,7 @@
         "baseDefense": 338,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_attack",
@@ -24441,7 +24439,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "sapphire_eyes",
+        "specialId": "sapphire_eyes_mayhem",
         "canBeReceivedDate": "2023-10-18 07:00:00",
         "origin": "AllianceQuestCastle",
         "id": "castle_stag_lysanor",
@@ -24841,7 +24839,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "spirit_of_spring",
+        "specialId": "spirit_of_spring_mayhem",
         "canBeReceivedDate": "2023-12-01 07:00:00",
         "origin": "MonthlyHeroDecember2023",
         "id": "nature_god_leadria",
@@ -24937,7 +24935,7 @@
       {
         "costumeBonusesId": "christmas",
         "rarity": 5,
-        "specialId": "hasty_trigger_finger",
+        "specialId": "hasty_trigger_finger_mayhem",
         "canBeReceivedDate": "2023-12-01 07:00:00",
         "origin": "Christmas",
         "id": "christmas_ginger",
@@ -25013,7 +25011,7 @@
       {
         "additionalBattleSpecificHeroEffectOrigin": "ShadowQuest",
         "rarity": 5,
-        "specialId": "deranged_existence",
+        "specialId": "deranged_existence_mayhem",
         "canBeReceivedDate": "2025-07-08 07:00:00",
         "origin": "ShadowQuest",
         "id": "shadow_salvatore",
@@ -25525,7 +25523,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "vengeance_of_owlhalla",
+        "specialId": "vengeance_of_owlhalla_mayhem",
         "canBeReceivedDate": "2025-02-05 07:00:00",
         "origin": "TowerOwl",
         "id": "owl_pertinax",
@@ -27388,7 +27386,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Rogue",
@@ -27409,7 +27407,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -27430,7 +27428,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Ranger",
@@ -27451,7 +27449,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Monk",
@@ -27460,7 +27458,7 @@
       {
         "costumeBonusesId": "tales2_may_2026",
         "rarity": 5,
-        "specialId": "mana_immolation",
+        "specialId": "mana_immolation_mayhem",
         "canBeReceivedDate": "2025-03-23 07:00:00",
         "origin": "UntoldTales2",
         "id": "tales2_aethslegaur",
@@ -27472,7 +27470,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Fighter",
@@ -27493,7 +27491,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -27514,7 +27512,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Wizard",
@@ -27535,7 +27533,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Sorcerer",
@@ -27556,7 +27554,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Fighter",
@@ -27577,7 +27575,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core",
-          "resist_burn_with_health_boost_and_mana",
+          "resist_burn_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -27598,7 +27596,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Fighter",
@@ -27619,7 +27617,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -27640,16 +27638,16 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_defense"
       },
       {
-        "costumeBonusesId": "tales2_sep26",
+        "costumeBonusesId": "tales2",
         "rarity": 5,
-        "specialId": "self_preservation",
+        "specialId": "self_preservation_mayhem",
         "canBeReceivedDate": "2025-07-11 07:00:00",
         "origin": "UntoldTales2",
         "id": "tales2_fimafeng",
@@ -27661,7 +27659,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Barbarian",
@@ -27682,7 +27680,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Monk",
@@ -27703,7 +27701,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Ranger",
@@ -27724,7 +27722,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Fighter",
@@ -27745,7 +27743,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Monk",
@@ -27766,7 +27764,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -27787,7 +27785,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core",
-          "resist_frost_with_health_boost_and_mana",
+          "resist_frost_with_mana_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Barbarian",
@@ -28278,7 +28276,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "ill_bring_you_back",
+        "specialId": "ill_bring_you_back_mayhem",
         "canBeReceivedDate": "2025-02-02 07:00:00",
         "origin": "CovenantSummon",
         "id": "fox_sable",
@@ -29435,7 +29433,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "never_miss_special"
         ],
         "classType": "Fighter",
@@ -29475,7 +29473,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_buff_immunity",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "mana_on_buff"
         ],
         "classType": "Paladin",
@@ -29495,7 +29493,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "mana_on_debuff",
-          "resist_mana_reductions_with_health_boost_and_mana"
+          "resist_mana_reductions_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_defense"
@@ -29514,7 +29512,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_mana_reductions_with_health_boost_and_mana"
+          "resist_mana_reductions_with_mana_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -29533,7 +29531,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "never_miss_special"
         ],
         "classType": "Monk",
@@ -29553,7 +29551,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "mana_on_buff"
         ],
         "classType": "Sorcerer",
@@ -29573,7 +29571,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "never_miss_special"
         ],
         "classType": "Fighter",
@@ -29593,14 +29591,14 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana"
+          "resist_mana_reductions_with_mana_mayhem"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_defense"
       },
       {
         "rarity": 5,
-        "specialId": "scroll_of_fellowship",
+        "specialId": "scroll_of_fellowship_mayhem",
         "canBeReceivedDate": "2025-09-05 07:00:00",
         "origin": "RecurringBeowulf",
         "id": "beowulf_freawaru",
@@ -29612,8 +29610,8 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_buff_immunity",
-          "resist_mana_reductions_with_health_boost_and_mana",
-          "fixed_mana_per_enemy_buff"
+          "resist_mana_reductions_with_mana_mayhem",
+          "mana_on_buff"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_bulwark"
@@ -29632,7 +29630,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_buff_immunity",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "mana_on_buff"
         ],
         "classType": "Cleric",
@@ -29652,7 +29650,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "never_miss_special"
         ],
         "classType": "Paladin",
@@ -29672,7 +29670,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "attack_buff_on_damage_received",
-          "resist_mana_reductions_with_health_boost_and_mana",
+          "resist_mana_reductions_with_mana_mayhem",
           "never_miss_special"
         ],
         "classType": "Paladin",
@@ -29787,14 +29785,14 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_special_boost"
       },
       {
         "rarity": 5,
-        "specialId": "royal_meatball_buffet",
+        "specialId": "royal_meatball_buffet_mayhem",
         "canBeReceivedDate": "2025-03-17 07:00:00",
         "origin": "7thBirthday",
         "id": "wild_cat_rajesh",
@@ -29806,7 +29804,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_fiend_resist"
@@ -29825,7 +29823,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_boosted_regen"
@@ -29844,7 +29842,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_ailment_shield"
@@ -29863,7 +29861,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_fiend_resist"
@@ -29882,7 +29880,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_attack"
@@ -29901,7 +29899,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_heal_increase"
@@ -29920,7 +29918,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -29939,14 +29937,14 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 5,
-        "specialId": "greeting_of_the_sun",
+        "specialId": "greeting_of_the_sun_mayhem",
         "canBeReceivedDate": "2026-03-04 07:00:00",
         "origin": "WildernessSummon",
         "id": "wild_cat_savann",
@@ -29958,7 +29956,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_regen"
@@ -29977,7 +29975,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_boosted_regen"
@@ -29996,7 +29994,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_special_boost"
@@ -30015,14 +30013,14 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_taunt"
       },
       {
         "rarity": 5,
-        "specialId": "absolute_stillness",
+        "specialId": "absolute_stillness_mayhem",
         "canBeReceivedDate": "2026-08-16 07:00:00",
         "origin": "WildernessSummon",
         "id": "wild_cat_vora",
@@ -30034,14 +30032,14 @@
         "manaSpeedId": "very_slow",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_regen"
       },
       {
         "rarity": 5,
-        "specialId": "ignited_defiance",
+        "specialId": "ignited_defiance_mayhem",
         "canBeReceivedDate": "2026-07-25 07:00:00",
         "origin": "WildernessSummon",
         "id": "wild_cat_irme",
@@ -30053,14 +30051,14 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_rage"
       },
       {
         "rarity": 5,
-        "specialId": "rending_flurry",
+        "specialId": "rending_flurry_mayhem",
         "canBeReceivedDate": "2026-09-16 07:00:00",
         "origin": "WildernessSummon",
         "id": "wild_cat_tyrix",
@@ -30072,7 +30070,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_special_boost"
@@ -30091,14 +30089,14 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_boosted_regen"
       },
       {
         "rarity": 5,
-        "specialId": "whirling_stone_storm",
+        "specialId": "whirling_stone_storm_mayhem",
         "canBeReceivedDate": "2026-05-24 07:00:00",
         "origin": "WildernessSummon",
         "id": "wild_cat_zarek",
@@ -30110,7 +30108,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_attack"
@@ -30129,7 +30127,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_special_boost"
@@ -30148,7 +30146,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_all_defense_effects",
-          "revive_chance_nine_lives"
+          "revive_chance_nine_lives_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_regen"
@@ -30519,7 +30517,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "advice_from_beyond",
+        "specialId": "advice_from_beyond_mayhem",
         "canBeReceivedDate": "2025-06-30 07:00:00",
         "origin": "KingdomWar",
         "id": "outlaw_chao_gai",
@@ -30579,7 +30577,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "punishing_strike",
+        "specialId": "punishing_strike_mayhem",
         "canBeReceivedDate": "2025-12-14 07:00:00",
         "origin": "KingdomWar",
         "id": "outlaw_lin_chong",
@@ -31177,7 +31175,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "endless_daggers",
+        "specialId": "endless_daggers_mayhem",
         "canBeReceivedDate": "2025-10-01 07:00:00",
         "origin": "MonthlyHeroOctober2025",
         "id": "ice_god_nerasis",
@@ -31716,7 +31714,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "cherry_pudding_served",
+        "specialId": "cherry_pudding_served_mayhem",
         "canBeReceivedDate": "2025-10-11 07:00:00",
         "origin": "SuperElemental",
         "id": "slime_zestique",
@@ -31967,7 +31965,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "mending_stitches",
+        "specialId": "mending_stitches_mayhem",
         "canBeReceivedDate": "2025-07-28 07:00:00",
         "origin": "Kalevala",
         "id": "kalevala_mother_lemminkainen",
@@ -32005,7 +32003,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "alluring_whispers",
+        "specialId": "alluring_whispers_mayhem",
         "canBeReceivedDate": "2026-07-13 07:00:00",
         "origin": "Kalevala",
         "id": "kalevala_ajatar",
@@ -32024,7 +32022,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "slash_and_burn",
+        "specialId": "slash_and_burn_mayhem",
         "canBeReceivedDate": "2026-07-13 07:00:00",
         "origin": "Kalevala",
         "id": "kalevala_kaski",
@@ -32043,7 +32041,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "capsicum_charge",
+        "specialId": "capsicum_charge_mayhem",
         "canBeReceivedDate": "2025-09-02 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_bartholomew",
@@ -32054,15 +32052,15 @@
         "baseDefense": 636,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_rage"
       },
       {
         "rarity": 5,
-        "specialId": "guard_the_garden",
+        "specialId": "guard_the_garden_mayhem",
         "canBeReceivedDate": "2025-09-02 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_elsbeth",
@@ -32073,15 +32071,15 @@
         "baseDefense": 635,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_flesh_wound"
       },
       {
         "rarity": 5,
-        "specialId": "herbal_remedies",
+        "specialId": "herbal_remedies_mayhem",
         "canBeReceivedDate": "2025-10-19 07:00:00",
         "origin": "TowerMagic",
         "id": "magic_carpet_ragrim",
@@ -32133,7 +32131,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_damage_reduction"
@@ -32152,7 +32150,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -32171,14 +32169,14 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_defense"
       },
       {
         "rarity": 5,
-        "specialId": "soul_guardian",
+        "specialId": "soul_guardian_mayhem",
         "canBeReceivedDate": "2025-11-13 07:00:00",
         "origin": "CovenantSummon",
         "id": "construct_halwinter",
@@ -32190,7 +32188,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_taunt"
@@ -32209,7 +32207,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_counterattack"
@@ -32228,7 +32226,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_regen"
@@ -32247,7 +32245,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_defense"
@@ -32266,7 +32264,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -32285,14 +32283,14 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_counterattack"
       },
       {
         "rarity": 5,
-        "specialId": "ancient_technology",
+        "specialId": "ancient_technology_mayhem",
         "canBeReceivedDate": "2026-03-26 07:00:00",
         "origin": "CovenantSummon",
         "id": "construct_dancrag",
@@ -32304,14 +32302,14 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_damage_reduction"
       },
       {
         "rarity": 5,
-        "specialId": "ruthless_gambit",
+        "specialId": "ruthless_gambit_mayhem",
         "canBeReceivedDate": "2025-10-18 07:00:00",
         "origin": "Goblin",
         "id": "goblin_soursting",
@@ -32404,7 +32402,7 @@
       },
       {
         "rarity": 3,
-        "specialId": "vantage_point",
+        "specialId": "vantage_point_mayhem",
         "canBeReceivedDate": "2025-09-09 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_piper",
@@ -32475,7 +32473,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "endless_maze",
+        "specialId": "endless_maze_mayhem",
         "canBeReceivedDate": "2025-10-24 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_emilie",
@@ -32776,7 +32774,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Sorcerer",
@@ -32796,7 +32794,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Barbarian",
@@ -32816,7 +32814,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Cleric",
@@ -32836,7 +32834,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Rogue",
@@ -32856,7 +32854,7 @@
         "manaSpeedId": "very_slow",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Paladin",
@@ -33019,7 +33017,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "building_blocks_bulklug",
+        "specialId": "building_blocks_bulklug_mayhem",
         "canBeReceivedDate": "2025-11-26 07:00:00",
         "origin": "SuperElemental",
         "id": "slime_bulklug",
@@ -33129,7 +33127,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "mutated_specimen",
+        "specialId": "mutated_specimen_mayhem",
         "canBeReceivedDate": "2025-12-03 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_ellery",
@@ -33199,7 +33197,7 @@
         "baseDefense": 335,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_attack"
@@ -33219,7 +33217,7 @@
         "baseDefense": 336,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_attack"
@@ -33239,7 +33237,7 @@
         "baseDefense": 361,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_defense"
@@ -33259,7 +33257,7 @@
         "baseDefense": 338,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_revive"
@@ -33279,7 +33277,7 @@
         "baseDefense": 320,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Monk",
         "aetherGift": "aether_counterattack"
@@ -33299,7 +33297,7 @@
         "baseDefense": 349,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_special_boost"
@@ -33319,7 +33317,7 @@
         "baseDefense": 304,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_attack"
@@ -33339,7 +33337,7 @@
         "baseDefense": 341,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_dodge"
@@ -33359,7 +33357,7 @@
         "baseDefense": 348,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_rage"
@@ -33379,7 +33377,7 @@
         "baseDefense": 379,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_defense"
@@ -33399,7 +33397,7 @@
         "baseDefense": 356,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -33419,7 +33417,7 @@
         "baseDefense": 350,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_bulwark"
@@ -33439,7 +33437,7 @@
         "baseDefense": 285,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_boosted_regen"
@@ -33459,7 +33457,7 @@
         "baseDefense": 333,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Monk",
         "aetherGift": "aether_regen"
@@ -33479,7 +33477,7 @@
         "baseDefense": 292,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -33499,7 +33497,7 @@
         "baseDefense": 287,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_damage_reduction"
@@ -33519,7 +33517,7 @@
         "baseDefense": 320,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_fiend_resist"
@@ -33539,7 +33537,7 @@
         "baseDefense": 276,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_counterattack"
@@ -33559,7 +33557,7 @@
         "baseDefense": 228,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_attack"
@@ -33579,7 +33577,7 @@
         "baseDefense": 243,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_attack"
@@ -33610,7 +33608,7 @@
       {
         "parentHeroId": "christmas_ginger",
         "rarity": 5,
-        "specialId": "hasty_gift_wrapper",
+        "specialId": "hasty_gift_wrapper_mayhem",
         "canBeReceivedDate": "2025-12-01 07:00:00",
         "origin": "Christmas",
         "id": "christmas_ginger_costume_gift_wrapper",
@@ -34263,7 +34261,7 @@
         "baseDefense": 329,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_rage"
@@ -34283,7 +34281,7 @@
         "baseDefense": 358,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -34291,7 +34289,7 @@
       {
         "parentHeroId": "tales2_aethslegaur",
         "rarity": 5,
-        "specialId": "mana_immolation_soul_seeker",
+        "specialId": "mana_immolation_soul_seeker_mayhem",
         "canBeReceivedDate": "2026-06-18 07:00:00",
         "origin": "UntoldTales2",
         "id": "tales2_aethslegaur_costume_soul_seeker",
@@ -34303,7 +34301,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -34324,7 +34322,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -34345,7 +34343,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -34366,7 +34364,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Monk",
@@ -34375,7 +34373,7 @@
       {
         "parentHeroId": "tales2_hreidmarr",
         "rarity": 5,
-        "specialId": "dwarven_traders_deal",
+        "specialId": "dwarven_traders_deal_mayhem",
         "canBeReceivedDate": "2026-05-25 07:00:00",
         "origin": "UntoldTales2",
         "id": "tales2_hreidmarr_costume_trader",
@@ -34387,7 +34385,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "molten_core_costume",
-          "resist_burn_with_health_and_mana_boost_costume",
+          "resist_burn_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Sorcerer",
@@ -34408,7 +34406,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -34429,7 +34427,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Sorcerer",
@@ -34450,7 +34448,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Rogue",
@@ -34471,7 +34469,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Rogue",
@@ -34480,7 +34478,7 @@
       {
         "parentHeroId": "tales2_fimafeng",
         "rarity": 5,
-        "specialId": "defending_the_title",
+        "specialId": "defending_the_title_mayhem",
         "canBeReceivedDate": "2026-09-22 07:00:00",
         "origin": "UntoldTales2",
         "id": "tales2_fimafeng_costume_skater",
@@ -34492,7 +34490,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -34513,7 +34511,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -34534,7 +34532,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -34555,7 +34553,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Paladin",
@@ -34576,7 +34574,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Cleric",
@@ -34597,7 +34595,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "arctic_core_costume",
-          "resist_frost_with_health_boost_and_mana_costume",
+          "resist_frost_with_mana_costume_mayhem",
           "resist_all_stealing"
         ],
         "classType": "Druid",
@@ -34640,7 +34638,7 @@
         "baseDefense": 295,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Monk",
         "aetherGift": "aether_counterattack"
@@ -34660,7 +34658,7 @@
         "baseDefense": 297,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_attack"
@@ -34680,7 +34678,7 @@
         "baseDefense": 306,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_special_boost"
@@ -34700,7 +34698,7 @@
         "baseDefense": 348,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_special_boost"
@@ -34720,7 +34718,7 @@
         "baseDefense": 357,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_rage"
@@ -34740,7 +34738,7 @@
         "baseDefense": 276,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_ailment_shield"
@@ -34760,7 +34758,7 @@
         "baseDefense": 233,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_rage"
@@ -34780,7 +34778,7 @@
         "baseDefense": 250,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Monk",
         "aetherGift": "aether_attack"
@@ -34800,7 +34798,7 @@
         "baseDefense": 246,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_defense"
@@ -34808,7 +34806,7 @@
       {
         "parentHeroId": "forest_god_oberon",
         "rarity": 5,
-        "specialId": "toonsummers_dream",
+        "specialId": "toonsummers_dream_mayhem",
         "canBeReceivedDate": "2026-07-20 07:00:00",
         "origin": "MonthlyHeroOctober2017",
         "summonExclusiveTag": "Wardrobe2",
@@ -34820,7 +34818,7 @@
         "baseDefense": 368,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_defense"
@@ -34894,7 +34892,7 @@
       {
         "parentHeroId": "goblin_darkfeather",
         "rarity": 5,
-        "specialId": "the_eagles_enchantment",
+        "specialId": "the_eagles_enchantment_mayhem",
         "canBeReceivedDate": "2026-07-23 07:00:00",
         "origin": "Goblin",
         "id": "goblin_darkfeather_costume_glowing",
@@ -35026,7 +35024,7 @@
       {
         "parentHeroId": "goblin_boom_and_fang",
         "rarity": 5,
-        "specialId": "boar_fury",
+        "specialId": "boar_fury_mayhem",
         "canBeReceivedDate": "2026-08-19 07:00:00",
         "origin": "Goblin",
         "id": "goblin_boom_and_fang_costume_poisonous",
@@ -35153,7 +35151,7 @@
       {
         "parentHeroId": "ninja_topaz",
         "rarity": 5,
-        "specialId": "precise_needles",
+        "specialId": "precise_needles_mayhem",
         "canBeReceivedDate": "2026-08-27 07:00:00",
         "origin": "TowerNinja",
         "id": "ninja_topaz_costume_precise",
@@ -35440,13 +35438,11 @@
         "baseDefense": 393,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_accuracy_modifier_debuffs"
+          "resist_accuracy_modifier_debuffs",
+          "legendary_reflector"
         ],
         "classType": "Sorcerer",
-        "aetherGift": "aether_counterattack",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reflector"
-        ]
+        "aetherGift": "aether_counterattack"
       },
       {
         "parentHeroId": "dark_god_kunchen",
@@ -35462,13 +35458,11 @@
         "baseDefense": 399,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "resist_defense_modifier_debuffs"
+          "resist_defense_modifier_debuffs",
+          "legendary_reflector"
         ],
         "classType": "Monk",
-        "aetherGift": "aether_damage_reduction",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reflector"
-        ]
+        "aetherGift": "aether_damage_reduction"
       },
       {
         "parentHeroId": "ice_god_frida",
@@ -35484,13 +35478,11 @@
         "baseDefense": 350,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_attack_modifier_debuffs"
+          "resist_attack_modifier_debuffs",
+          "legendary_reflector"
         ],
         "classType": "Fighter",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reflector"
-        ]
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "fire_god_anzogh",
@@ -35506,13 +35498,11 @@
         "baseDefense": 364,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_mana_generation_modifier_debuffs"
+          "resist_mana_generation_modifier_debuffs",
+          "legendary_reflector"
         ],
         "classType": "Paladin",
-        "aetherGift": "aether_attack",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reflector"
-        ]
+        "aetherGift": "aether_attack"
       },
       {
         "parentHeroId": "fire_god_natalya",
@@ -35529,7 +35519,7 @@
         "baseDefense": 329,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_dodge"
@@ -35549,7 +35539,7 @@
         "baseDefense": 340,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_defense"
@@ -35596,7 +35586,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "beautiful_petals",
+        "specialId": "beautiful_petals_mayhem",
         "canBeReceivedDate": "2025-11-12 07:00:00",
         "origin": "AllianceQuestMusketeers",
         "id": "beauty_beast_rose_de_flo",
@@ -35676,7 +35666,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "spell_of_camaraderie",
+        "specialId": "spell_of_camaraderie_mayhem",
         "canBeReceivedDate": "2026-02-20 07:00:00",
         "origin": "AllianceQuestMusketeers",
         "id": "beauty_beast_cerissa",
@@ -35696,7 +35686,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "ruthless_derision",
+        "specialId": "ruthless_derision_mayhem",
         "canBeReceivedDate": "2026-05-08 07:00:00",
         "origin": "AllianceQuestMusketeers",
         "id": "beauty_beast_seraphine",
@@ -35894,7 +35884,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "swift_maneuvers",
+        "specialId": "swift_maneuvers_mayhem",
         "canBeReceivedDate": "2025-11-30 07:00:00",
         "origin": "TowerMagic",
         "id": "magic_carpet_amelia",
@@ -35914,7 +35904,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "juggling_trials",
+        "specialId": "juggling_trials_mayhem",
         "canBeReceivedDate": "2026-01-18 07:00:00",
         "origin": "TowerMagic",
         "id": "magic_carpet_crustee",
@@ -36080,15 +36070,15 @@
         "baseDefense": 674,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_dodge"
       },
       {
         "rarity": 5,
-        "specialId": "roadside_surprise",
+        "specialId": "roadside_surprise_mayhem",
         "canBeReceivedDate": "2025-11-24 07:00:00",
         "origin": "Goblin",
         "id": "scoundrel_lane",
@@ -36099,8 +36089,8 @@
         "baseDefense": 684,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_counterattack"
@@ -36118,15 +36108,15 @@
         "baseDefense": 701,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_damage_reduction"
       },
       {
         "rarity": 5,
-        "specialId": "aqua_tofana",
+        "specialId": "aqua_tofana_mayhem",
         "canBeReceivedDate": "2026-07-23 07:00:00",
         "origin": "Goblin",
         "id": "scoundrel_tofana",
@@ -36137,8 +36127,8 @@
         "baseDefense": 689,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_special_armor"
@@ -36156,8 +36146,8 @@
         "baseDefense": 685,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Monk",
         "aetherGift": "aether_heal_increase"
@@ -36183,7 +36173,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "target_practice",
+        "specialId": "target_practice_mayhem",
         "canBeReceivedDate": "2026-09-23 07:00:00",
         "origin": "Goblin",
         "id": "scoundrel_clim",
@@ -36194,8 +36184,8 @@
         "baseDefense": 690,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_special_boost"
@@ -36213,8 +36203,8 @@
         "baseDefense": 675,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_counterattack"
@@ -36232,8 +36222,8 @@
         "baseDefense": 710,
         "manaSpeedId": "very_slow",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_heal_increase"
@@ -36251,8 +36241,8 @@
         "baseDefense": 695,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Druid",
         "aetherGift": "aether_boosted_regen"
@@ -36270,8 +36260,8 @@
         "baseDefense": 684,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_special_boost"
@@ -36289,8 +36279,8 @@
         "baseDefense": 708,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_ailment_reflect"
@@ -36308,8 +36298,8 @@
         "baseDefense": 672,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "cheat_death",
-          "ransack"
+          "cheat_death_mayhem",
+          "ransack_on_other_ally_special"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_special_armor"
@@ -36327,15 +36317,15 @@
         "baseDefense": 396,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "cheat_death_epic_and_rare",
-          "ransack_epic_and_rare"
+          "cheat_death_epic_and_rare_mayhem",
+          "ransack_on_other_ally_special_epic_and_rare"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 3,
-        "specialId": "haphazard_chop",
+        "specialId": "haphazard_chop_mayhem",
         "canBeReceivedDate": "2026-07-23 07:00:00",
         "origin": "Goblin",
         "id": "scoundrel_ketch",
@@ -36346,8 +36336,8 @@
         "baseDefense": 316,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "cheat_death_epic_and_rare",
-          "ransack_epic_and_rare"
+          "cheat_death_epic_and_rare_mayhem",
+          "ransack_on_other_ally_special_epic_and_rare"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_special_armor"
@@ -36402,7 +36392,7 @@
         "manaSpeedId": "very_fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Fighter",
@@ -36422,7 +36412,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_heal_multiplier_debuffs",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Cleric",
@@ -36499,7 +36489,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Sorcerer",
@@ -36519,7 +36509,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Wizard",
@@ -36539,7 +36529,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "resist_heal_multiplier_debuffs",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Monk",
@@ -36547,7 +36537,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "astral_madness_unleashed",
+        "specialId": "astral_madness_unleashed_mayhem",
         "canBeReceivedDate": "2026-04-05 07:00:00",
         "origin": "AstralElves",
         "id": "astral_demon_carthizux",
@@ -36559,7 +36549,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Rogue",
@@ -36567,7 +36557,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "cosmic_spirals",
+        "specialId": "cosmic_spirals_mayhem",
         "canBeReceivedDate": "2026-05-13 07:00:00",
         "origin": "AstralElves",
         "id": "astral_demon_ushal",
@@ -36579,7 +36569,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Wizard",
@@ -36644,7 +36634,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "righteous_stance",
+        "specialId": "righteous_stance_mayhem",
         "canBeReceivedDate": "2025-12-10 07:00:00",
         "origin": "Temple",
         "id": "mahayoddha_devyani",
@@ -37017,7 +37007,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "moldavite_wings",
+        "specialId": "moldavite_wings_mayhem",
         "canBeReceivedDate": "2026-02-06 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_zenas",
@@ -37036,7 +37026,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "staff_of_domination",
+        "specialId": "staff_of_domination_mayhem",
         "canBeReceivedDate": "2026-03-22 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_professor_ambrose",
@@ -37093,7 +37083,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "teargas_roulette",
+        "specialId": "teargas_roulette_mayhem",
         "canBeReceivedDate": "2026-03-06 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_onwyn",
@@ -37104,15 +37094,15 @@
         "baseDefense": 644,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_counterattack"
       },
       {
         "rarity": 5,
-        "specialId": "brand_of_reckoning",
+        "specialId": "brand_of_reckoning_mayhem",
         "canBeReceivedDate": "2026-02-04 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_indigon",
@@ -37123,15 +37113,15 @@
         "baseDefense": 628,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 5,
-        "specialId": "superfood_purification",
+        "specialId": "superfood_purification_mayhem",
         "canBeReceivedDate": "2026-02-04 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_broseph",
@@ -37142,15 +37132,15 @@
         "baseDefense": 645,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_ailment_shield"
       },
       {
         "rarity": 4,
-        "specialId": "tangy_torture",
+        "specialId": "tangy_torture_mayhem",
         "canBeReceivedDate": "2026-02-04 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_pineon",
@@ -37161,8 +37151,8 @@
         "baseDefense": 388,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_per_turn_shared_with_delay_epic_veggie",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_epic",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_special_boost"
@@ -37180,8 +37170,8 @@
         "baseDefense": 320,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_per_turn_shared_with_delay_rare_veggie",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_rare",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_dodge"
@@ -37307,7 +37297,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "blazing_matchstick",
+        "specialId": "blazing_matchstick_mayhem",
         "canBeReceivedDate": "2026-03-18 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_embertail",
@@ -37326,7 +37316,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "vibrant_whistle",
+        "specialId": "vibrant_whistle_mayhem",
         "canBeReceivedDate": "2026-03-18 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_sproutwhisker",
@@ -37400,7 +37390,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "farmhands_fury",
+        "specialId": "farmhands_fury_mayhem",
         "canBeReceivedDate": "2026-05-01 07:00:00",
         "origin": "MonthlyHeroMay2026",
         "id": "nature_god_coleston",
@@ -37419,7 +37409,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "aetheric_transmutation",
+        "specialId": "aetheric_transmutation_mayhem",
         "canBeReceivedDate": "2026-07-02 07:00:00",
         "origin": "ShadowQuest",
         "id": "institute_azureus",
@@ -37476,7 +37466,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "mysteries_of_the_worm",
+        "specialId": "mysteries_of_the_worm_mayhem",
         "canBeReceivedDate": "2026-08-17 07:00:00",
         "origin": "ShadowQuest",
         "id": "forsaken_vermis",
@@ -37515,7 +37505,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "two_sword_technique",
+        "specialId": "two_sword_technique_mayhem",
         "canBeReceivedDate": "2026-03-10 07:00:00",
         "origin": "TowerNinja",
         "id": "ronin_asakura_masao",
@@ -37614,7 +37604,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "bitter_wilting",
+        "specialId": "bitter_wilting_mayhem",
         "canBeReceivedDate": "2026-04-02 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_auberguy",
@@ -37625,8 +37615,8 @@
         "baseDefense": 658,
         "manaSpeedId": "very_slow",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_special_armor"
@@ -37652,7 +37642,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "unyielding_lashes",
+        "specialId": "unyielding_lashes_mayhem",
         "canBeReceivedDate": "2026-06-01 07:00:00",
         "origin": "MonthlyHeroJune2026",
         "id": "fire_god_zerfain",
@@ -37747,7 +37737,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "spiked_bat_thrashing",
+        "specialId": "spiked_bat_thrashing_mayhem",
         "canBeReceivedDate": "2026-04-25 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_big_barry",
@@ -37758,15 +37748,15 @@
         "baseDefense": 647,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_rage"
       },
       {
         "rarity": 5,
-        "specialId": "magical_refreshment",
+        "specialId": "magical_refreshment_mayhem",
         "canBeReceivedDate": "2026-05-17 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_melonius",
@@ -37777,8 +37767,8 @@
         "baseDefense": 684,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_regen"
@@ -37824,7 +37814,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "sensu_of_immortality",
+        "specialId": "sensu_of_immortality_mayhem",
         "canBeReceivedDate": "2026-05-03 07:00:00",
         "origin": "TowerNinja",
         "id": "ronin_hiyori",
@@ -37856,7 +37846,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_defense"
@@ -37875,7 +37865,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_attack"
@@ -37894,7 +37884,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_regen"
@@ -37913,7 +37903,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_special_boost"
@@ -37932,7 +37922,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "minion_core",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Rogue",
         "aetherGift": "aether_heal_increase"
@@ -37958,7 +37948,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "four_leaf_fortune",
+        "specialId": "four_leaf_fortune_mayhem",
         "canBeReceivedDate": "2026-06-15 07:00:00",
         "origin": "SolsticeSummon",
         "id": "dryad_cloveria",
@@ -38088,14 +38078,14 @@
         "baseDefense": 667,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Monk",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 5,
-        "specialId": "ghastly_drowning",
+        "specialId": "ghastly_drowning_weaker",
         "canBeReceivedDate": "2026-05-21 07:00:00",
         "origin": "KingdomWar",
         "id": "ghost_he_gui",
@@ -38106,7 +38096,7 @@
         "baseDefense": 662,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_attack"
@@ -38124,7 +38114,7 @@
         "baseDefense": 669,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_counterattack"
@@ -38142,14 +38132,14 @@
         "baseDefense": 394,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received_rare_and_epic"
+          "vengeful_ghost_on_damage_received_rare_and_epic_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 3,
-        "specialId": "bolanggu_blessing",
+        "specialId": "bolanggu_blessing_weaker",
         "canBeReceivedDate": "2026-05-21 07:00:00",
         "origin": "KingdomWar",
         "id": "ghost_miao_yin",
@@ -38160,7 +38150,7 @@
         "baseDefense": 311,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received_rare_and_epic"
+          "vengeful_ghost_on_damage_received_rare_and_epic_mayhem"
         ],
         "classType": "Druid",
         "aetherGift": "aether_regen"
@@ -38178,7 +38168,7 @@
         "baseDefense": 656,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "dealt_damage_modifier_per_water_ailment_on_target"
         ],
         "classType": "Fighter",
@@ -38197,7 +38187,7 @@
         "baseDefense": 684,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "dealt_damage_modifier_per_water_ailment_on_target"
         ],
         "classType": "Cleric",
@@ -38216,7 +38206,7 @@
         "baseDefense": 671,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "dealt_damage_modifier_per_water_ailment_on_target"
         ],
         "classType": "Rogue",
@@ -38235,7 +38225,7 @@
         "baseDefense": 406,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "dealt_damage_modifier_per_water_ailment_on_target"
         ],
         "classType": "Monk",
@@ -38254,7 +38244,7 @@
         "baseDefense": 310,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "resist_water_with_health_boost_and_mana",
+          "resist_water_with_mana_mayhem",
           "dealt_damage_modifier_per_water_ailment_on_target"
         ],
         "classType": "Sorcerer",
@@ -38262,7 +38252,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "eye_see_you",
+        "specialId": "eye_see_you_mayhem",
         "canBeReceivedDate": "2026-08-11 07:00:00",
         "origin": "AstralElves",
         "id": "astral_demon_zurrumurgh",
@@ -38274,7 +38264,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Wizard",
@@ -38294,7 +38284,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Fighter",
@@ -38314,7 +38304,7 @@
         "manaSpeedId": "average",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Monk",
@@ -38334,7 +38324,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Ranger",
@@ -38354,7 +38344,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Cleric",
@@ -38369,12 +38359,12 @@
         "element": "Green",
         "family": "astral_demons",
         "baseHealth": 1169,
-        "baseAttack": 709,
+        "baseAttack": 707,
         "baseDefense": 692,
         "manaSpeedId": "average",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Paladin",
@@ -38394,7 +38384,7 @@
         "manaSpeedId": "fast",
         "passiveSkills": [
           "resist_heal_multiplier_debuffs",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Paladin",
@@ -38414,7 +38404,7 @@
         "manaSpeedId": "slow",
         "passiveSkills": [
           "never_miss_special",
-          "resist_all_mana_debuffs_and_reductions",
+          "resist_direct_mana_reductions",
           "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Monk",
@@ -38640,7 +38630,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "pungent_punishment",
+        "specialId": "pungent_punishment_mayhem",
         "canBeReceivedDate": "2026-08-23 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_garlacteus",
@@ -38651,15 +38641,15 @@
         "baseDefense": 698,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_fiend_resist"
       },
       {
         "rarity": 5,
-        "specialId": "survival_of_the_plumpest",
+        "specialId": "survival_of_the_plumpest_mayhem",
         "canBeReceivedDate": "2026-06-09 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_pepo",
@@ -38670,8 +38660,8 @@
         "baseDefense": 685,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_bulwark"
@@ -38797,7 +38787,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "surrender_your_heart",
+        "specialId": "surrender_your_heart_mayhem",
         "canBeReceivedDate": "2026-07-05 07:00:00",
         "origin": "KingdomWar",
         "id": "ghost_hua_pi_gui",
@@ -38808,7 +38798,7 @@
         "baseDefense": 668,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Sorcerer",
         "aetherGift": "aether_regen"
@@ -38826,7 +38816,7 @@
         "baseDefense": 696,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_heal_increase"
@@ -38844,8 +38834,8 @@
         "baseDefense": 676,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_attack"
@@ -39013,7 +39003,7 @@
         "baseDefense": 676,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_fiend_resist"
@@ -39031,14 +39021,14 @@
         "baseDefense": 678,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Monk",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 5,
-        "specialId": "chlorokinesis_tears",
+        "specialId": "chlorokinesis_tears_mayhem",
         "canBeReceivedDate": "2026-09-19 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_pyaza",
@@ -39049,15 +39039,15 @@
         "baseDefense": 682,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_attack"
       },
       {
         "rarity": 5,
-        "specialId": "slingshot_ricochet",
+        "specialId": "slingshot_ricochet_mayhem",
         "canBeReceivedDate": "2026-10-29 07:00:00",
         "origin": "RecurringFarmland",
         "id": "vegetable_yusopea",
@@ -39068,8 +39058,8 @@
         "baseDefense": 687,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Ranger",
         "aetherGift": "aether_dodge"
@@ -39114,7 +39104,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "buried_vengeance",
+        "specialId": "buried_vengeance_weaker",
         "canBeReceivedDate": "2026-11-06 07:00:00",
         "origin": "KingdomWar",
         "id": "ghost_mu_gui",
@@ -39125,7 +39115,7 @@
         "baseDefense": 712,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "vengeful_ghost_on_damage_received"
+          "vengeful_ghost_on_damage_received_weaker"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_special_armor"
@@ -39223,13 +39213,13 @@
         "id": "vegetable_taterian",
         "element": "Yellow",
         "family": "vegetable",
-        "baseHealth": 1215,
-        "baseAttack": 686,
-        "baseDefense": 682,
+        "baseHealth": 1137,
+        "baseAttack": 684,
+        "baseDefense": 670,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_attack"
@@ -39242,13 +39232,13 @@
         "id": "vegetable_cauliver",
         "element": "Blue",
         "family": "vegetable",
-        "baseHealth": 1211,
-        "baseAttack": 675,
-        "baseDefense": 695,
+        "baseHealth": 1137,
+        "baseAttack": 684,
+        "baseDefense": 670,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "summon_seedling_parasite_with_delay",
-          "resist_special_blocking_with_health_boost_and_mana"
+          "summon_seedling_parasite_per_turn_veggie",
+          "resist_special_blocking_with_mana_mayhem"
         ],
         "classType": "Monk",
         "aetherGift": "aether_heal_increase"
@@ -39355,8 +39345,8 @@
         "element": "Yellow",
         "family": "construct",
         "baseHealth": 474,
-        "baseAttack": 285,
-        "baseDefense": 294,
+        "baseAttack": 286,
+        "baseDefense": 293,
         "manaSpeedId": "average",
         "passiveSkills": [
           "repair_core_costume",
@@ -39481,13 +39471,11 @@
         "baseDefense": 313,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "resist_buff_dispels"
+          "resist_buff_dispels",
+          "legendary_reversal"
         ],
         "classType": "Sorcerer",
-        "aetherGift": "aether_special_boost",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reversal"
-        ]
+        "aetherGift": "aether_special_boost"
       },
       {
         "parentHeroId": "ice_god_miki",
@@ -39503,13 +39491,11 @@
         "baseDefense": 380,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "resist_special_blocking"
+          "resist_special_blocking",
+          "legendary_reflector"
         ],
         "classType": "Druid",
-        "aetherGift": "aether_rage",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reflector"
-        ]
+        "aetherGift": "aether_rage"
       },
       {
         "parentHeroId": "holy_god_ranvir",
@@ -39525,13 +39511,11 @@
         "baseDefense": 379,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "resist_poison"
+          "resist_poison",
+          "legendary_reversal"
         ],
         "classType": "Cleric",
-        "aetherGift": "aether_attack",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reversal"
-        ]
+        "aetherGift": "aether_attack"
       },
       {
         "parentHeroId": "fire_god_nadnog",
@@ -39547,13 +39531,11 @@
         "baseDefense": 399,
         "manaSpeedId": "very_fast",
         "passiveSkills": [
-          "resist_heal_multiplier_debuffs"
+          "resist_heal_multiplier_debuffs",
+          "legendary_reversal"
         ],
         "classType": "Monk",
-        "aetherGift": "aether_special_armor",
-        "costumeBonusPassiveSkillIds": [
-          "legendary_reversal"
-        ]
+        "aetherGift": "aether_special_armor"
       },
       {
         "rarity": 5,
@@ -39576,7 +39558,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "plummeting_arrow",
+        "specialId": "plummeting_arrow_mayhem",
         "canBeReceivedDate": "2026-10-13 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_galepaw",
@@ -39595,7 +39577,7 @@
       },
       {
         "rarity": 5,
-        "specialId": "sturdy_club",
+        "specialId": "sturdy_club_mayhem",
         "canBeReceivedDate": "2026-10-13 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_oakspine",
@@ -39614,7 +39596,7 @@
       },
       {
         "rarity": 4,
-        "specialId": "wild_splinter",
+        "specialId": "wild_splinter_mayhem",
         "canBeReceivedDate": "2026-10-13 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_dewfoot",
@@ -39633,7 +39615,7 @@
       },
       {
         "rarity": 3,
-        "specialId": "purifying_brush",
+        "specialId": "purifying_brush_mayhem",
         "canBeReceivedDate": "2026-10-13 07:00:00",
         "origin": "WildernessSummon",
         "id": "rodent_honeytuft",
@@ -39769,7 +39751,7 @@
         "baseDefense": 407,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_heal_increase"
@@ -39789,7 +39771,7 @@
         "baseDefense": 335,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Wizard",
         "aetherGift": "aether_attack"
@@ -39809,7 +39791,7 @@
         "baseDefense": 287,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Druid",
         "aetherGift": "aether_heal_increase"
@@ -39829,7 +39811,7 @@
         "baseDefense": 258,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_special_armor"
@@ -39849,7 +39831,7 @@
         "baseDefense": 368,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Fighter",
         "aetherGift": "aether_attack"
@@ -39869,7 +39851,7 @@
         "baseDefense": 285,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "empowered_toon_resist_manareduction_dispels"
+          "toon_resist_debuffs_manareduction_dispels"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_attack"
@@ -48967,5 +48949,5 @@
       }
     ]
   },
-  "charactersConfigId": -1277612555
+  "charactersConfigId": 1489148254
 }

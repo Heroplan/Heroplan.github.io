@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Skadar målet och fiender i närheten med 370%.",
+      "Skadar målet och fiender i närheten med 450%.",
       "Sänker mana för målet och fiender i närheten med 35%.",
       "I slutet av varje runda avfyrar användaren och allierade i närheten en stjärnstråle mot en slumpvald fiende i 4 rundor.\n[*]Varje stjärnstråle gör 200% skada.\n[*]Varje stjärnstråle minskar den träffade fiendens maxhälsa med 200. Den här effekten är starkare mot mål med ökad hälsa.",
       "(Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 200.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Nedbrytande kärna",
-     "text": "Den här karaktärens konstruktionskärna är en nedbrytande kärna.\n[*]Den nedbrytande kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande gift i 3 rundor. Med en fulladdad nedbrytande kärna gör giftet[#Dynamic] 291 [#]giftskada och sänker målets manaskapande med -15% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Giftskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras. Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda."
+     "text": "Den här karaktärens konstruktionskärna är en nedbrytande kärna.\n[*]Den nedbrytande kärnan aktiveras varje gång den här karaktärens specialförmåga används:\n[*] Alla fiender får nedbrytande gift i 3 rundor. Med en fulladdad nedbrytande kärna gör giftet[#Dynamic] 291 [#]giftskada och sänker målets manaskapande med -14% varje runda. Gör extra skada mot hjältar med undersåtar eller en megaundersåte.\n[*] Giftskadan blir högre ju större kärnans laddning är. All laddning laddar ur när kärnan aktiveras. Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Den här specialförmågan har chansen att få in kritiska träffar. (Chansen att få in en kritisk träff baseras på hjältens totala kritiska chans när skadan utdelas. Chansen är alltid minst 1%.\n[*]Kritiska träffar från den här specialförmågan:\n[*]Gör 50% mer skada.Kritiska träffar minskar fienders maxhälsa. Effekten är starkare mot ökad hälsa.)",
       "Alla fiender tar 500% skada.",
-      "Alla fiender är immuna mot nya positiva statuseffekter i 5 rundor och tar 400 skada när de försöker få bonusar. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Alla fiender är immuna mot nya positiva statuseffekter i 5 rundor och tar 500 skada när de försöker få bonusar. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Använder fullständig borttagning på användaren. (Fullständig borttagning tar bort alla statuseffekter, staplar och tillväxt- och vittringseffekter. Tar även bort statuseffekter och staplar som annars är envisa eller inte kan avbrytas eller rensas.)",
       "Användaren antar hämndlysten spökform i 2 rundor. I slutet av varje runda gör det hämndlystna spöket 350% skada mot en slumpvald fiende och avbryter bonusar hos den. Den här effekten är envis. (När karaktären är i spökform kan den inte få mana och kan inte heller läkas av specialförmågor, men är immun mot vanliga attacker, specialförmågeattacker, passiva attacker som gör skada, statuseffekter och staplar.\n[*] Immun mot nya tillväxt-, vittrings- och vansinneseffekter.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]

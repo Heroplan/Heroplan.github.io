@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Hedefe ve civardaki düşmanlara% 370 hasar verir.",
+      "Hedefe ve civardaki düşmanlara% 450 hasar verir.",
       "Hedefin ve yakındaki düşmanların mana miktarını% 35 düşürür.",
       "4 tur boyunca eylemci ve yakındaki müttefikler her turun sonunda rastgele bir düşmana Astral Işın atar.\n[*]Her Astral Işın% 200 hasar verir.\n[*]Her Astral Işın, vurulan düşmanın Maks. Sağlığını 200 azaltır. Efekt, güçlendirilmiş sağlığa sahip hedeflere karşı daha güçlüdür.",
       "(Maks. sağlık, asıl maks. sağlığın% 30 oranından daha fazla düşemez.\n[*] Güçlendirilmiş sağlık ek 200 daha düşürülür.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Yıpratıcı Merkez",
-     "text": "Bu karakterin Yapı Merkezi Yıpratıcı Merkezdir.\n[*]Yıpratıcı Merkez bu karakterin Özel Yeteneği her uygulandığında etkinleşir:\n[*] Tüm düşmanlar 3 tur boyunca Yıpratıcı Zehir alır. Tamamen dolan bir Yıpratıcı Merkezle Yıpratıcı Zehir,[#Dynamic] 291 [#]Zehir Hasarı verir ve hedefin mana üretimini her turda% -15 azaltır. Hizmetkarları veya bir Mega Hizmetkarı olan kahramanlara karşı ekstra hasar verir.\n[*] Zehir hasarı, Merkezin dolum oranına göre değişir. Merkez etkinleştirildiğinde doluluk oranı tamamen boşaltılır. Yalnızca kalkan eşleştirmekten üretilen veya turunun sonunda savunma takımından kazanılan manayı etkiler."
+     "text": "Bu karakterin Yapı Merkezi Yıpratıcı Merkezdir.\n[*]Yıpratıcı Merkez bu karakterin Özel Yeteneği her uygulandığında etkinleşir:\n[*] Tüm düşmanlar 3 tur boyunca Yıpratıcı Zehir alır. Tamamen dolan bir Yıpratıcı Merkezle Yıpratıcı Zehir,[#Dynamic] 291 [#]Zehir Hasarı verir ve hedefin mana üretimini her turda% -14 azaltır. Hizmetkarları veya bir Mega Hizmetkarı olan kahramanlara karşı ekstra hasar verir.\n[*] Zehir hasarı, Merkezin dolum oranına göre değişir. Merkez etkinleştirildiğinde doluluk oranı tamamen boşaltılır. Yalnızca kalkan eşleştirmekten üretilen veya turunun sonunda savunma takımından kazanılan manayı etkiler."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Bu Özel Yetenek, kritik darbe verme şansına sahiptir. (Kritik darbe vurma şansı, hasar verildiğinde Kahramanın genel kritik şansına bağlıdır. Şans, her zaman en az% 1 oranındadır.\n[*]Bu Özel Yeteneğin neden olduğu kritik darbeler:\n[*]% 50 daha fazla hasar verir.Kritik darbeler, düşmanların maks. sağlığını azaltır. Bu efekt, güçlendirilmiş sağlığa karşı daha güçlüdür.)",
       "Tüm düşmanlara% 500 hasar verir.",
-      "Tüm düşmanların 5 tur boyunca yeni durum efekti buff'larına bağışıklığı bulunur ve denenen her buff için 400 hasar alırlar. Bu efekt İnatçıdır. (Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)",
+      "Tüm düşmanların 5 tur boyunca yeni durum efekti buff'larına bağışıklığı bulunur ve denenen her buff için 500 hasar alırlar. Bu efekt İnatçıdır. (Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)",
       "Eylemciye Tam Kaldırma uygular. (Tam Kaldırma, tüm durum efektlerini, istifleri, Büyüme ve Soldurma efektlerini kaldırır. İnatçı, başka bir şekilde bozulamayan ya da arındırılamayan durum efektlerini ve istifleri bile kaldırır.)",
       "Eylemci, 2 tur boyunca Kindar Hayalet formuna dönüşür. Kindar Hayalet, her turun sonunda rastgele bir düşmana% 350 hasar verir ve onun buff'larını bozar. Bu efekt İnatçıdır. (Karakter, bir Hayalet formundayken mana kazanamaz ve Özel Yeteneklerle iyileştirilemez ama normal saldırılara, Özel Yetenek saldırılarına, hasar veren pasif yeteneklere, durum efektlerine ve istiflere karşı bağışıklığı bulunur.\n[*] Yeni Büyüme, Soldurma ve Delilik efektlerine karşı bağışıklığı bulunur.\n[*]Her bir İnatçı efekti bozma, arındırma veya yeniden dağıtma denemesi süresini 1 tur azaltır veya kalan etkinleştirmeleri 1 azaltır.)"
      ]

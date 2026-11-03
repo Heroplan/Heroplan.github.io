@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Giver 370% skade til målet og fjender i nærheden.",
+      "Giver 450% skade til målet og fjender i nærheden.",
       "Reducerer mana for målet og fjender i nærheden med 35%.",
       "I slutningen af hver runde affyrer kasteren og allierede i nærheden en astralstråle mod en tilfældig fjende i 4 runder.\n[*]Hver astralstråle forvolder 200% skade.\n[*]Hver astralstråle reducerer maks. helbred for den ramte fjende med 200. Effekten er større mod mål med forstærket helbred.",
       "(Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 200.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Ætsende kerne",
-     "text": "Byggekernen i denne figur er en ætsende kerne.\n[*]Den ætsende kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende gift i 3 runder. Med en fuldt opladt ætsende kerne, forvolder den ætsende gift[#Dynamic] 291 [#]giftskade og sænker målets managendannelse med -15% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Giftskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres. Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter."
+     "text": "Byggekernen i denne figur er en ætsende kerne.\n[*]Den ætsende kerne aktiveres, hver gang figurens særlige egenskab kastes:\n[*] Alle fjender rammes af ætsende gift i 3 runder. Med en fuldt opladt ætsende kerne, forvolder den ætsende gift[#Dynamic] 291 [#]giftskade og sænker målets managendannelse med -14% i hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger.\n[*] Giftskaden tilpasses kernens ladning. Ladningen tømmes, når kernen aktiveres. Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Denne særlige egenskab har en chance for at give kritiske træffere. (Sandsynligheden for at uddele en kritisk træffer er baseret på heltens samlede kritiske sandsynlighed, når skaden uddeles. Sandsynligheden er altid på mindst 1%.\n[*]Kritiske træffere forårsaget af denne særlige evne:\n[*]Gør 50% mere skade.Kritiske træffere reducerer fjenders maksimale helbred. Denne effekt er stærkere mod boostet helbred.)",
       "Giver 500% i skade til alle fjender.",
-      "Alle fjender er immune over for nye statuseffektbuffere i 5 runder og tager 400 skade for hvert bufferforsøg. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
+      "Alle fjender er immune over for nye statuseffektbuffere i 5 runder og tager 500 skade for hvert bufferforsøg. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
       "Kaster fuld fjernelse på kasteren. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
       "Kasteren tager form som det hævngerrige spøgelse i 2 runder. I slutningen af hver runde gør det hævngerrige spøgelse 350% skade på en tilfældig fjende, og det ophæver buffere fra vedkommende. Denne effekt er stædig. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]

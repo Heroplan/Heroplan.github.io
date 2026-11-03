@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Menimbulkan kerusakan 370% pada sasaran dan musuh terdekat.",
+      "Menimbulkan kerusakan 450% pada sasaran dan musuh terdekat.",
       "Mengurangi 35% mana sasaran dan musuh terdekat.",
       "Di akhir setiap giliran, perapal dan sekutu terdekat menembakkan Sinar Astral ke musuh acak selama 4 giliran.\n[*]Setiap Sinar Astral menimbulkan kerusakan 200%.\n[*]Setiap Sinar Astral mengurangi Kesehatan Maks. musuh yang terkena sebesar 200. Efek ini lebih kuat terhadap sasaran yang mendapat peningkatan kesehatan.",
       "(Kesehatan maks. tidak boleh lebih rendah dari 30% dari kesehatan maks. awal.\n[*] Peningkatan kesehatan dikurangi 200 lagi.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Inti Korosif",
-     "text": "Inti Konstruksi karakter ini adalahInti Korosif.\n[*]Inti Korofisf aktif setiap kali Keahlian Khusus karakter ini dirapal:\n[*] Semua musuh menerima Racun Korosif selama 3 giliran. Dengan Inti Korosif yang terisi penuh, Racun Korosif memberikan[#Dynamic] 291 [#]kerusakan Racun dan menurunkan generasi mana sasaran sebesar -15% setiap giliran. Menimbulkan kerusakan ekstra terhadap pahlawan dengan beberapa Antek atau satu Antek Mega.\n[*] Kerusakan Racun diskalakan berdasarkan jumlah daya di Inti. Semua daya habis saat Inti diaktifkan. Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka."
+     "text": "Inti Konstruksi karakter ini adalahInti Korosif.\n[*]Inti Korofisf aktif setiap kali Keahlian Khusus karakter ini dirapal:\n[*] Semua musuh menerima Racun Korosif selama 3 giliran. Dengan Inti Korosif yang terisi penuh, Racun Korosif memberikan[#Dynamic] 291 [#]kerusakan Racun dan menurunkan generasi mana sasaran sebesar -14% setiap giliran. Menimbulkan kerusakan ekstra terhadap pahlawan dengan beberapa Antek atau satu Antek Mega.\n[*] Kerusakan Racun diskalakan berdasarkan jumlah daya di Inti. Semua daya habis saat Inti diaktifkan. Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Keahlian Khusus ini berpeluang menimbulkan pukulan kritis. (Peluang menimbulkan pukulan kritis didasarkan pada peluang kritis keseluruhan dari Pahlawan saat kerusakan ditimbulkan. Peluang dijamin paling sedikit 1%.\n[*]Pukulan Kritis yang disebabkan oleh Keahlian Khusus ini:\n[*]Menimbulkan kerusakan 50% lebih banyak.Serangan kritis mengurangi kesehatan maks. musuh. Efek ini lebih kuat terhadap peningkatan kesehatan.)",
       "Menimbulkan kerusakan 500% pada semua musuh.",
-      "Semua musuh kebal terhadap genjotan efek status baru selama 5 giliran, dan menerima 400 kerusakan untuk setiap upaya genjotan. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
+      "Semua musuh kebal terhadap genjotan efek status baru selama 5 giliran, dan menerima 500 kerusakan untuk setiap upaya genjotan. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Merapal Penghapusan Penuh pada perapal. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Perapal berubah menjadi wujud Hantu Pendendam selama 2 giliran. Pada akhir setiap giliran, Hantu Pendendam menimbulkan 350% kerusakan pada musuh acak dan mengenyahkan genjotan darinya. Efek ini Bandel. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]

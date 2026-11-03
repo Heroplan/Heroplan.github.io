@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Påfører 370% skade på målet og fiender i nærheten.",
+      "Påfører 450% skade på målet og fiender i nærheten.",
       "Reduserer mana for målet og fiender i nærheten med 35%.",
       "Ved slutten av hver tur vil brukeren og allierte i nærheten skyte en astralstråle på en tilfeldig fiende i 4 turer.\n[*]Hver astralstråle påfører 200% skade.\n[*]Hver astralstråle reduserer maksimal helse på fienden truffet med 200. Effekten er sterkere overfor mål med økt helse.",
       "(Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksimal helse.\n[*] Økt helse reduseres med ytterligere 200.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Etsekjerne",
-     "text": "Konstruktørkjernen til denne figuren er en etsekjerne.\n[*]Etsekjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende gift i 3 runder. Med en fulladet etsekjerne påfører den etsende giften[#Dynamic] 291 [#]giftskade og senker målets mana-generering med -15% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Giftskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres. Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres."
+     "text": "Konstruktørkjernen til denne figuren er en etsekjerne.\n[*]Etsekjernen aktiveres hver gang denne figurens spesialferdigheter brukes:\n[*] Alle fiender utsettes for etsende gift i 3 runder. Med en fulladet etsekjerne påfører den etsende giften[#Dynamic] 291 [#]giftskade og senker målets mana-generering med -14% hver runde. Påfører ekstra skade mot helter med undersått eller megaundersått.\n[*] Giftskaden skaleres av mengden ladning i kjernen. All ladning brukes når kjernen aktiveres. Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Denne spesialferdigheten har en sjanse til å påføre kritiske treff. (Sjansen for å påføre et kritisk treff er basert på heltens generelle fulltreffersjanse når skaden blir gjort. Sjansen er alltid minst 1%.\n[*]Kritiske treff forårsaket av denne spesialferdligheten:\n[*]Påfør 50% mer skade.Kritiske treff reduserer fiendens maksimale helse. Denne effekten er sterkere mot økt helse.)",
       "Påfører 500% skade på alle fiender.",
-      "Alle fiender er immune mot nye statuseffektøkninger i 5 runder og tar 400 skade for hver forsøkte økning. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Alle fiender er immune mot nye statuseffektøkninger i 5 runder og tar 500 skade for hver forsøkte økning. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Bruker full fjerning på brukeren. (Full fjerning fjerner alle statuseffekter, stabler og vekst- og visne-effekter. Fjerner til og med statuseffekter og stabler som ellers er sta, ikke kan fjernes eller ikke kan renses bort.)",
       "Brukeren skifter til hevngjerrig spøkelse-form i 2 runder. Ved slutten av hver tur påfører hevngjerrig spøkelse en tilfeldig fiende 350% skade og fjerner økninger fra dem. Denne effekten er sta. (Mens den er i spøkelseform, kan ikke figuren få mana eller helbredes med spesialferdigheter, men er immun mot normale angrep, angrep fra spesialferdigheter, passive som gjør skade, statuseffekter og stabler.\n[*] Immun mot nye vekst-, visne- og galskap-effekter.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]

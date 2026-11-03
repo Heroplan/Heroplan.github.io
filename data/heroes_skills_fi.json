@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Tuottaa 370% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Tuottaa 450% vauriota kohteelle ja lähellä oleville vihollisille.",
       "Vähentää kohteen ja lähellä olevien vihollisten manaa 35%.",
       "Loitsija ja lähellä olevat liittolaiset ampuvat astraalisäteen satunnaiseen viholliseen jokaisen vuoron lopussa 4 vuoron ajan.\n[*]Jokainen astraalisäde tekee 200% vauriota.\n[*]Jokainen astraalisäde vähentää osutun vihollisen maksimiterveyttä 200 pisteellä. Vaikutus on suurempi kohteissa, joiden terveyttä on tehostettu.",
       "(Maksimiterveys ei voi olla matalampi kuin 30% alkuperäisestä maksimiterveydestä.\n[*] Tehostetusta terveydestä vähennetään vielä 200 lisää.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Korroosioydin",
-     "text": "Tämän hahmon rakennelmaydin on korroosioydin.\n[*]Korroosioydin aktivoituu aina kun tämän hahmon erikoistaitoa käytetään:\n[*] Kaikki viholliset saavat syövyttävää myrkkyä 3 vuoron ajaksi. Täyteen ladatun korroosioytimen syövyttävä myrkky tuottaa[#Dynamic] 291 [#]myrkkyvauriota ja laskee kohteen manatuotantoa -15% joka vuorolla. Tuottaa lisävauriota sankareille, joilla on käskyläisiä tai megakäskyläinen.\n[*] Myrkyn vaurio skaalautuu ytimessä olevan latauksen määrän mukaan. Lataus tyhjenee kokonaan, kun ydin aktivoituu. Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa."
+     "text": "Tämän hahmon rakennelmaydin on korroosioydin.\n[*]Korroosioydin aktivoituu aina kun tämän hahmon erikoistaitoa käytetään:\n[*] Kaikki viholliset saavat syövyttävää myrkkyä 3 vuoron ajaksi. Täyteen ladatun korroosioytimen syövyttävä myrkky tuottaa[#Dynamic] 291 [#]myrkkyvauriota ja laskee kohteen manatuotantoa -14% joka vuorolla. Tuottaa lisävauriota sankareille, joilla on käskyläisiä tai megakäskyläinen.\n[*] Myrkyn vaurio skaalautuu ytimessä olevan latauksen määrän mukaan. Lataus tyhjenee kokonaan, kun ydin aktivoituu. Vaikuttaa vain kilpien yhdistämisestä saatuun manaan ja manaan, jonka puolustusryhmä saa vuoronsa lopussa."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Tällä erikoistaidolla on mahdollisuus kriittisiin osumiin. (Mahdollisuus kriittiseen osumaan perustuu sankarin yleiseen kriittisen osuman mahdollisuuteen vauriota tuottaessa. Mahdollisuus on aina vähintään 1%.\n[*]Tämän erikoistaidon kriittiset osumat:\n[*]Tuottaa 50% enemmän vauriota.Kriittiset osumat vähentävät vihollisten maksimiterveyttä. Vaikutus on suurempi tehostettua terveyttä vastaan.)",
       "Tuottaa 500% vauriota kaikille vihollisille.",
-      "Kaikki viholliset ovat immuuneja uusille tilaefektien tehosteille 5 vuoron ajan ja saavat 400 vauriota jokaisesta yritetystä tehosteesta. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
+      "Kaikki viholliset ovat immuuneja uusille tilaefektien tehosteille 5 vuoron ajan ja saavat 500 vauriota jokaisesta yritetystä tehosteesta. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Loitsii täyden poiston loitsijaan. (Täysi poisto poistaa kaikki tilaefektit, kasaumat ja kasvu- ja näivetysefektit. Poistaa myös tilaefektit ja kasaumat, jotka ovat sitkeitä, tai joita ei voi normaalisti häivyttää tai puhdistaa.)",
       "Loitsija muuttuu kostonhimoiseksi haamuksi 2 vuoron ajaksi. Kostonhimoinen haamu tuottaa jokaisen vuoron lopussa 350% vauriota satunnaiselle viholliselle ja häivyttää siltä tehosteita. Tämä vaikutus on sitkeä. (Haamuna ollessaan hahmo ei voi saada manaa, eikä häntä voi parantaa erikoistaidoilla, mutta hän on immuuni normaalihyökkäyksille, erikoistaitohyökkäyksille, vauriota tuottaville passiivisille taidoille, tilaefekteille ja kasaumille.\n[*] Immuuni uusille kasvu- ja näivetys- ja hulluusefekteille.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)"
      ]

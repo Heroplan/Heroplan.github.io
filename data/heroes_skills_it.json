@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Infligge 370% di danni al bersaglio e ai nemici vicini.",
+      "Infligge 450% di danni al bersaglio e ai nemici vicini.",
       "Riduce del 35% il mana del bersaglio e dei nemici vicini.",
       "Alla fine di ogni turno, l'evocatore e gli alleati vicini sparano un Raggio astrale contro un nemico a caso per 4 turni.\n[*]Ogni Raggio astrale infligge il 200% di danni.\n[*]Ogni Raggio astrale riduce la Salute massima del nemico colpito di 200. L'effetto è più forte contro bersagli con Salute potenziata.",
       "(La Salute massima non può essere inferiore al 30% di quella originaria.\n[*] La Salute potenziata viene ridotta di 200 extra.)"
@@ -8032,7 +8032,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Nucleo corrosivo",
-     "text": "Il Nucleo costrutto di questo personaggio è un Nucleo corrosivo.\n[*]Il Nucleo corrosivo si attiva ogni volta che viene lanciata l'Abilità speciale di questo personaggio:\n[*] Tutti i nemici subiscono Veleno corrosivo per 3 turni. Con un Nucleo corrosivo completamente carico, il Veleno corrosivo infligge[#Dynamic] 291 [#]danni da veleno e riduce di -15% la rigenerazione mana del bersaglio a ogni turno. Infligge danni extra contro gli eroi con servitori o servitori Mega.\n[*] I danni da veleno sono proporzionali alla quantità di carica del nucleo. Tutta la carica si esaurisce quando il nucleo viene attivato. Influisce solo sul mana generato dall'abbinamento degli scudi o sul mana ottenuto dalla squadra in difesa alla fine del proprio turno."
+     "text": "Il Nucleo costrutto di questo personaggio è un Nucleo corrosivo.\n[*]Il Nucleo corrosivo si attiva ogni volta che viene lanciata l'Abilità speciale di questo personaggio:\n[*] Tutti i nemici subiscono Veleno corrosivo per 3 turni. Con un Nucleo corrosivo completamente carico, il Veleno corrosivo infligge[#Dynamic] 291 [#]danni da veleno e riduce di -14% la rigenerazione mana del bersaglio a ogni turno. Infligge danni extra contro gli eroi con servitori o servitori Mega.\n[*] I danni da veleno sono proporzionali alla quantità di carica del nucleo. Tutta la carica si esaurisce quando il nucleo viene attivato. Influisce solo sul mana generato dall'abbinamento degli scudi o sul mana ottenuto dalla squadra in difesa alla fine del proprio turno."
     },
     {
      "id": "resist_special_blocking",
@@ -19442,8 +19442,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Questa Abilità speciale ha una probabilità di infliggere colpi critici. (Le probabilità di infliggere un colpo critico dipendono dalle probabilità complessive di colpi critici dell'Eroe al momento in cui vengono inflitti i danni. Le probabilità sono sempre almeno del 1%.\n[*]Colpi critici causati da questa Abilità speciale:\n[*] Infligge il 50% di danni in più.I colpi critici riducono la Salute massima dei nemici. Questo effetto è più potente contro la Salute potenziata.)",
       "Infligge 500% di danni a tutti i nemici.",
-      "Tutti i nemici sono immuni dalle nuove magie benefiche degli effetti di stato per 5 turni, e subiscono 400 danni per ogni tentativo di applicare una magia benefica. Questo effetto è persistente. (Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
+      "Tutti i nemici sono immuni dalle nuove magie benefiche degli effetti di stato per 5 turni, e subiscono 500 danni per ogni tentativo di applicare una magia benefica. Questo effetto è persistente. (Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
       "Lancia Rimozione totale sull'evocatore. (Rimozione totale rimuove tutti gli effetti di stato, le iterazioni, e gli effetti di Crescita e Avvizzimento. Rimuove anche gli effetti di stato e le iterazioni che altrimenti sono persistenti, non annullabili o non rimovibili.)",
       "L'evocatore assume la forma di Fantasma vendicativo per 2 turni. Alla fine di ogni turno, il Fantasma vendicativo infligge il 350% di danni a un nemico casuale e annulla le sue magie benefiche. Questo effetto è persistente. (Mentre è in forma Fantasma, il personaggio non può ottenere mana e non può essere curato dalle Abilità speciali, ma è immune da attacchi normali, attacchi con Abilità speciali, abilità passive che infliggono danni, effetti di stato e iterazioni.\n[*] Immune dai nuovi effetti Crescita, Avvizzimento e Follia.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)"
      ]

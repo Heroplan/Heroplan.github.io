@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Het doelwit en vijanden in de buurt lijden 370% schade.",
+      "Het doelwit en vijanden in de buurt lijden 450% schade.",
       "Vermindert de mana met 35% voor het doelwit en vijanden in de buurt.",
       "De spreukspreker en bondgenoten in de buurt schieten 4 beurten lang aan het eind van elke beurt een astrale straal naar een willekeurige vijand.\n[*]Elke astrale straal brengt 200% schade toe.\n[*]Elke astrale straal vermindert de maximale gezondheid van de geraakte vijand met 200. Het effect is sterker tegen doelwitten met gebooste gezondheid.",
       "(Max. gezondheid kan niet lager zijn dan 30% van de oorspronkelijke max. gezondheid.\n[*] Gebooste gezondheid wordt verminderd met nog eens 200.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Corrosiekern",
-     "text": "De constructiekern van dit personage is een corrosieve kern.\n[*]De corrosieve kern wordt geactiveerd als de speciale vaardigheid van dit personage gebruikt wordt:\n[*] Alle vijanden krijgen 3 beurten lang corrosief gif. Met een volledig geladen corrosiekern brengt het corrosieve gif elke beurt[#Dynamic] 291 [#]gifschade toe en verlaagt de manarecuperatie van het doelwit met -15%. Brengt extra schade toe aan helden met volgelingen en megavolgelingen.\n[*] De gifschade hangt af van de lading in de kern. De lading wordt volledig gebruikt als de kern geactiveerd wordt. Beïnvloedt alleen mana die gegenereerd wordt door schilden te combineren of mana die het verdedigingsteam krijgt na afloop van hun beurt."
+     "text": "De constructiekern van dit personage is een corrosieve kern.\n[*]De corrosieve kern wordt geactiveerd als de speciale vaardigheid van dit personage gebruikt wordt:\n[*] Alle vijanden krijgen 3 beurten lang corrosief gif. Met een volledig geladen corrosiekern brengt het corrosieve gif elke beurt[#Dynamic] 291 [#]gifschade toe en verlaagt de manarecuperatie van het doelwit met -14%. Brengt extra schade toe aan helden met volgelingen en megavolgelingen.\n[*] De gifschade hangt af van de lading in de kern. De lading wordt volledig gebruikt als de kern geactiveerd wordt. Beïnvloedt alleen mana die gegenereerd wordt door schilden te combineren of mana die het verdedigingsteam krijgt na afloop van hun beurt."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Deze speciale vaardigheid heeft een kans om kritieke treffers te maken. (De kans om een kritieke treffer te doen is gebaseerd op de algehele kritieke kans van de held wanneer de schade wordt toegebracht. De kans is altijd ten minste 1%.\n[*]Kritieke treffers veroorzaakt door deze speciale vaardigheid:\n[*]Breng 50% meer schade toe.Kritieke treffers verminderen de maximale gezondheid van vijanden. Dit effect is sterker tegen verhoogde gezondheid.)",
       "Alle vijanden lijden 500% schade.",
-      "Alle vijanden zijn 5 beurten lang immuun voor nieuwe oppeppers van statuseffecten en krijgen 400 schade voor elke nieuwe oppepperpoging. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
+      "Alle vijanden zijn 5 beurten lang immuun voor nieuwe oppeppers van statuseffecten en krijgen 500 schade voor elke nieuwe oppepperpoging. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Gebruikt volledige verwijdering op de spreukspreker. (Volledige verwijdering verwijdert alle statuseffecten, cumulatieve effecten en groei- en verwelkingseffecten. Verwijdert zelfs statuseffecten en cumulatieve effecten die normaliter niet ongedaan kunnen worden gemaakt of kunnen worden gezuiverd.)",
       "De spreukspreker neemt 2 beurten lang de Wraakzuchtige geestesvorm aan. Aan het eind van elke beurt brengt wraakzuchtige geest 350% schade toe aan een willekeurige vijand en verwijdert oppeppers. Dit effect is hardnekkig. (In geestesvorm kan het personage geen mana recupereren en kan het niet door speciale vaardigheden worden genezen, maar is het immuun voor normale aanvallen, speciale aanvallen, passieve vaardigheden die schade toebrengen, statuseffecten en cumulatieve effecten.\n[*] Immuun voor nieuwe effecten van groei en verwelking en waanzin.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]

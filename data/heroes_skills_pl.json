@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Zadaje 370% obrażeń celowi i pobliskim wrogom.",
+      "Zadaje 450% obrażeń celowi i pobliskim wrogom.",
       "Zmniejsza manę celu i pobliskich wrogów o 35%.",
       "Na końcu każdej tury rzucający i pobliscy sojusznicy strzelają astralnym promieniem w losowego wroga przez okres 4 tur.\n[*]Każdy astralny promień zadaje 200% obrażeń.\n[*]Każdy astralny promień zmniejsza maksymalne zdrowie trafionego wroga o 200. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem.",
       "(Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 200 pkt.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Rdzeń korozji",
-     "text": "Rdzeń konstruktu tej postaci to rdzeń korozji.\n[*]Rdzeń korozji aktywuje się za każdym razem, gdy postać rzuca umiejętność specjalną:\n[*] Wszyscy wrogowie otrzymują cykliczne zatrucie na czas 3 tur. Jeśli rdzeń korozji jest w pełni naładowany, cykliczne zatrucie zadaje[#Dynamic] 291 [#]pkt. obrażeń od trucizny i obniża regenerację many celu o -15% w każdej turze. Zadaje dodatkowe obrażenia przeciwko bohaterom z pomocnikami lub mega pomocnikiem.\n[*] Obrażenia od trucizny skalują się poziomem naładowania rdzenia. Aktywacja rdzenia zużywa cały ładunek. Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury."
+     "text": "Rdzeń konstruktu tej postaci to rdzeń korozji.\n[*]Rdzeń korozji aktywuje się za każdym razem, gdy postać rzuca umiejętność specjalną:\n[*] Wszyscy wrogowie otrzymują cykliczne zatrucie na czas 3 tur. Jeśli rdzeń korozji jest w pełni naładowany, cykliczne zatrucie zadaje[#Dynamic] 291 [#]pkt. obrażeń od trucizny i obniża regenerację many celu o -14% w każdej turze. Zadaje dodatkowe obrażenia przeciwko bohaterom z pomocnikami lub mega pomocnikiem.\n[*] Obrażenia od trucizny skalują się poziomem naładowania rdzenia. Aktywacja rdzenia zużywa cały ładunek. Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Ta umiejętność specjalna ma szanse na trafienie krytyczne. (Szansa na trafienie krytyczne zależy od ogólnych szans na trafienie krytyczne bohatera w chwili zadania obrażeń. Szansa wynosi zawsze co najmniej 1%.\n[*]Trafienia krytyczne tą zdolnością specjalną:\n[*]Zadaj 50% więcej obrażeń.Trafienia krytyczne zmniejszają maksymalne zdrowie przeciwników. Efekt ten jest silniejszy w przypadku wzmocnionego zdrowia.)",
       "Zadaje 500% obrażeń wszystkim przeciwnikom.",
-      "Wszyscy wrogowie nie mogą otrzymywać wzmocnień ze statusu przez okres 5 tur i otrzymują 400 pkt. obrażeń za każdą próbę nałożenia wzmocnienia. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
+      "Wszyscy wrogowie nie mogą otrzymywać wzmocnień ze statusu przez okres 5 tur i otrzymują 500 pkt. obrażeń za każdą próbę nałożenia wzmocnienia. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Rzuca pełne usunięcie na rzucającego. (Pełne usunięcie usuwa wszystkie efekty ze statusu, kumulacje oraz efekty rozrostu i suszy. Usuwa wszystkie efekty statusu i kumulacje celu, nawet te, które są nieustępliwe lub których nie można oczyścić ani odwołać.)",
       "Ten rzucający przeobraża się w mściwego ducha na okres 2 tur. Na końcu każdej tury mściwy duch zadaje 350% obrażeń losowemu wrogowi i odwołuje z niego wzmocnienia. Ten efekt jest nieustępliwy. (Będąc w postaci ducha nie może zyskiwać many i nie może zostać uleczona umiejętnościami specjalnymi, ale jest odporna na normalne ataki, umiejętności specjalne, pasywne efekty zadające obrażenia, efekty ze statusu i kumulacje.\n[*] Odporność na nowe efekty rozrostu, suszy i obłędu.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]

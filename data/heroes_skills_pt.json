@@ -166,7 +166,7 @@
     {
      "id": "scintillating_slam",
      "lines": [
-      "Causa 370% de dano ao alvo e inimigos próximos.",
+      "Causa 450% de dano ao alvo e inimigos próximos.",
       "Reduz o mana do alvo e inimigos próximos em 35%.",
       "Ao fim de cada turno, o invocador e os aliados próximos disparam um Feixe Astral contra um inimigo aleatório por 4 turnos.\n[*] Cada Feixe Astral causa 200% de dano.\n[*] Cada Feixe Astral reduz o limite de vida do inimigo atingido em 200. O efeito é mais forte contra alvos com vida reforçada.",
       "(O limite de vida não pode ser inferior a 30% do limite de vida original.\n[*] A vida reforçada recebe uma redução adicional de 200.)"
@@ -7976,7 +7976,7 @@
     {
      "id": "corrosive_core_costume",
      "title": "Núcleo Corrosivo",
-     "text": "O Núcleo de Construto deste personagem é um Núcleo Corrosivo.\n[*]O Núcleo Corrosivo é ativado a cada vez que a habilidade especial deste personagem é lançada:\n[*] Todos os inimigos recebem Veneno Corrosivo por 3 turnos. Com um Núcleo Corrosivo totalmente carregado, o Veneno Corrosivo causa[#Dynamic] 291 [#]de dano de veneno e reduz a geração de mana do alvo em -15% a cada turno. Causa dano adicional contra heróis com ajudantes ou um mega-ajudante.\n[*] O dano de Envenenar é proporcional à quantidade de carga no Núcleo. Toda a carga é exaurida quando o Núcleo é ativado. Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela."
+     "text": "O Núcleo de Construto deste personagem é um Núcleo Corrosivo.\n[*]O Núcleo Corrosivo é ativado a cada vez que a habilidade especial deste personagem é lançada:\n[*] Todos os inimigos recebem Veneno Corrosivo por 3 turnos. Com um Núcleo Corrosivo totalmente carregado, o Veneno Corrosivo causa[#Dynamic] 291 [#]de dano de veneno e reduz a geração de mana do alvo em -14% a cada turno. Causa dano adicional contra heróis com ajudantes ou um mega-ajudante.\n[*] O dano de Envenenar é proporcional à quantidade de carga no Núcleo. Toda a carga é exaurida quando o Núcleo é ativado. Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela."
     },
     {
      "id": "resist_special_blocking",
@@ -19362,8 +19362,9 @@
     {
      "id": "buried_vengeance_weaker",
      "lines": [
+      "Esta habilidade especial tem a chance de causar acertos críticos. (A chance de causar um acerto crítico é baseada na chance crítica geral do herói ao causar dano. A chance é sempre de pelo menos 1%.\n[*]Os acertos críticos causados por esta habilidade especial:\n[*] Causam 50% mais dano.Os acertos críticos reduzem o limite de vida dos inimigos. Este efeito é mais forte contra vida reforçada.)",
       "Causa 500% de dano a todos os inimigos.",
-      "Todos os inimigos ficam imunes a novos reforços de efeito de status por 5 turnos e recebem 400 de dano por cada reforço não aplicado. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
+      "Todos os inimigos ficam imunes a novos reforços de efeito de status por 5 turnos e recebem 500 de dano por cada reforço não aplicado. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Aplica Remoção Total ao invocador. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "O invocador assume a forma de fantasma vingativo por 2 turnos. Ao fim de cada turno, o fantasma vingativo causa 350% de dano a um inimigo aleatório e dissipa reforços dele. Este efeito é persistente. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]

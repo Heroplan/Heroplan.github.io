@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Gör 200% skada mot alla fiender från vänster kant av fiendeformationen. Skadan sjunker för varje efterföljande träff.",
+      "Gör 200% skada mot alla fiender från vänster kant av fiendeformationen. Skadan sjunker för varje efterföljande träff. (Skadan sänks med 10% för varje efterföljande träff.)",
       "Alla allierade ignorerar försvarsbonusar med sina attacker under 4 rundor. (Försvarsbonusar inkluderar motattacker.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Gör 350% skada mot alla fiender från vänster kant av fiendeformationen. Skadan sjunker för varje efterföljande träff.",
+      "Gör 350% skada mot alla fiender från vänster kant av fiendeformationen. Skadan sjunker för varje efterföljande träff. (Skadan sänks med 10% för varje efterföljande träff.)",
       "Alla fiender får -35% försvar och ytterligare -5% mindre varje gång de blir träffade i 3 rundor, ner till -50% försvar.",
       "Alla fiender är immuna mot nya bonusar med statuseffekter under 3 rundor."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Skadar målet och fiender i närheten med 420%.",
       "Åkallar ett leksakssoldatsodjur på målet och fiender i närheten.",
+      "Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.",
+      "Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.",
       "Leksakssoldatsodjuret exploderar efter 3 rundor och gör 1500 skada på sitt mål.",
+      "Leksakssoldatsodjur kan inte ersättas av megaundersåtar.",
       "Alla fiender med en undersåte eller ett odjur tar[#Dynamic] 525 [#]frostskada över 3 rundor."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Gör 650% skada mot målet och 2 slumpmässiga fiender.\n[*]Åkallar ett leksakssoldatsodjur för varje träff.",
       "Alla mål som träffas tystas i 5 rundor.",
       "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten.",
+      "Leksakssoldatsundersåten har 2% HP som ärvs från användaren.",
+      "Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.",
       "Leksakssoldatsundersåten exploderar efter 3 rundor och gör 1500 skada på en slumpmässig fiende.",
-      "Leksakssoldatsodjuret exploderar efter 3 rundor och gör 1500 skada på sitt mål."
+      "Leksakssoldatsundersåten kan inte ersättas av megaodjur.",
+      "Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.",
+      "Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.",
+      "Leksakssoldatsodjuret exploderar efter 3 rundor och gör 1500 skada på sitt mål.",
+      "Leksakssoldatsodjur kan inte ersättas av megaundersåtar."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Skadar målet och fiender i närheten med 230%.",
       "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten.",
-      "Leksakssoldatsundersåten exploderar efter 3 rundor och gör 500 skada på en slumpmässig fiende."
+      "Leksakssoldatsundersåten har 2% hälsa som ärvs från användaren.",
+      "Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.",
+      "Leksakssoldatsundersåten exploderar efter 3 rundor och gör 500 skada på en slumpmässig fiende.",
+      "Leksakssoldatsundersåten blockerar nya megaodjur."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Förstör alla allierades odjur och skadar alla megaodjur.",
       "Åkallar en leksakssoldatsundersåte till varje allierad.",
+      "Leksakssoldatsundersåten har 2% HP som ärvs från användaren.",
+      "Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.",
       "Leksakssoldatsundersåten exploderar efter 3 rundor och gör 1500 skada på en slumpmässig fiende.",
+      "Leksakssoldatsundersåten kan inte ersättas av megaodjur.",
       "Alla allierades hälsa ökar med 200 HP för varje undersåte de allierade har.",
       "Rensar negativa statuseffekter från alla allierade."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Skadar målet med 300%.",
       "Åkallar 2 leksakssoldatsodjur på målet.",
-      "Leksakssoldatsodjuret exploderar efter 3 rundor och gör 500 skada på sitt mål."
+      "Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.",
+      "Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.",
+      "Leksakssoldatsodjuret exploderar efter 3 rundor och gör 500 skada på sitt mål.",
+      "Leksakssoldatsodjur kan inte ersättas av megaundersåtar."
      ]
     }
    ]

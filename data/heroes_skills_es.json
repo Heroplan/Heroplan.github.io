@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Inflige un 200% de daño a todos los enemigos empezando por el margen izquierdo de la formación enemiga. El daño se reduce con cada golpe consecutivo.",
+      "Inflige un 200% de daño a todos los enemigos empezando por el margen izquierdo de la formación enemiga. El daño se reduce con cada golpe consecutivo. (El daño se reduce un 10% con cada golpe consecutivo.)",
       "Todos los aliados ignoran las bendiciones defensivas con sus ataques durante 4 turnos. (Las bendiciones defensivas incluyen los contraataques.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Inflige un 350% de daño a todos los enemigos empezando por el margen izquierdo de la formación enemiga. El daño se reduce con cada golpe consecutivo.",
+      "Inflige un 350% de daño a todos los enemigos empezando por el margen izquierdo de la formación enemiga. El daño se reduce con cada golpe consecutivo. (El daño se reduce un 10% con cada golpe consecutivo.)",
       "Todos los enemigos reciben un -35% de defensa y una disminución adicional de un -5% cada vez que son golpeados durante 3 turnos hasta un -50% de defensa.",
       "Todos los enemigos son inmunes a las nuevas bendiciones de estado durante 3 turnos."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Causa un 420% de daño al objetivo y a los enemigos cercanos.",
       "Invoca un demonio soldado de juguete para el objetivo y los enemigos cercanos.",
+      "El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.",
+      "Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.",
       "El demonio soldado de juguete explota después de 3 turnos e inflige 1500 de daño al objetivo.",
+      "El demonio soldado de juguete no puede ser reemplazado por megasecuaces.",
       "Todos los enemigos que tengan un secuaz o un demonio reciben[#Dynamic] 525 [#]de daño de escarcha durante 3 turnos."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Inflige un 650% de daño al objetivo y a 2 enemigos aleatorios.\n[*] Invoca un demonio soldado de juguete con cada golpe.",
       "Se silencia a todos los objetivos golpeados durante 5 turnos.",
       "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos.",
+      "El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.",
+      "Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.",
       "El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 1500 de daño a un enemigo aleatorio.",
-      "El demonio soldado de juguete explota después de 3 turnos e inflige 1500 de daño al objetivo."
+      "El secuaz soldado de juguete no puede ser reemplazado por megademonios.",
+      "El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.",
+      "Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.",
+      "El demonio soldado de juguete explota después de 3 turnos e inflige 1500 de daño al objetivo.",
+      "El demonio soldado de juguete no puede ser reemplazado por megasecuaces."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Causa un 230% de daño al objetivo y a los enemigos cercanos.",
       "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos.",
-      "El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 500 de daño a un enemigo aleatorio."
+      "El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.",
+      "Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.",
+      "El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 500 de daño a un enemigo aleatorio.",
+      "El secuaz soldado de juguete bloquea a los megademonios nuevos."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
       "Invoca a un secuaz soldado de juguete para cada aliado.",
+      "El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.",
+      "Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.",
       "El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 1500 de daño a un enemigo aleatorio.",
+      "El secuaz soldado de juguete no puede ser reemplazado por megademonios.",
       "La vitalidad de todos los aliados aumenta en 200 por cada secuaz que tengan.",
       "Purifica los estados alterados de todos los aliados."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Causa un 300% de daño al objetivo.",
       "Invoca a 2 demonios soldado de juguete para el objetivo.",
-      "El demonio soldado de juguete explota después de 3 turnos e inflige 500 de daño al objetivo."
+      "El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.",
+      "Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.",
+      "El demonio soldado de juguete explota después de 3 turnos e inflige 500 de daño al objetivo.",
+      "El demonio soldado de juguete no puede ser reemplazado por megasecuaces."
      ]
     }
    ]

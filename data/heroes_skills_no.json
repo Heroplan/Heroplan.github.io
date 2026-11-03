@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Påfører alle fiender 200% skade fra den venstre kanten til fiendens formasjon. Skaden er redusert for hvert etterfølgende treff.",
+      "Påfører alle fiender 200% skade fra den venstre kanten til fiendens formasjon. Skaden er redusert for hvert etterfølgende treff. (Skaden reduseres med 10% for hvert etterfølgende treff.)",
       "Alle allierte forbigår forsvarsøkninger med angrepene sine i 4 runder. (Forsvarsøkninger inkluderer motangrep.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Påfører alle fiender 350% skade fra den venstre kanten til fiendens formasjon. Skaden er redusert for hvert etterfølgende treff.",
+      "Påfører alle fiender 350% skade fra den venstre kanten til fiendens formasjon. Skaden er redusert for hvert etterfølgende treff. (Skaden reduseres med 10% for hvert etterfølgende treff.)",
       "Alle fiender får -35% forsvar, og ytterligere -5% reduksjon hver gang de treffes i 3 runder, ned til -50% forsvar.",
       "Alle fiender er immune mot nye statuseffektøkninger i 3 runder."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Påfører 420% skade på målet og fiender i nærheten.",
       "Fremkaller en lekesoldatdjevel for målet og fiender i nærheten.",
+      "Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.",
+      "Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.",
       "Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 1500 skade.",
+      "Lekesoldatdjevel kan ikke erstattes av megaundersåtter.",
       "Alle fiender som eier en undersått eller en djevel, tar[#Dynamic] 525 [#]frostskade over 3 runder."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Påfører 650% skade på målet og 2 tilfeldige fiender.\n[*]Fremkaller en lekesoldatdjevel for hvert treff.",
       "Alle mål som treffes blir forstummet i 5 runder.",
       "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten.",
+      "Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.",
+      "Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.",
       "Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 1500 skade på en tilfeldig fiende.",
-      "Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 1500 skade."
+      "Lekesoldatundersåtter kan ikke erstattes av megadjevler.",
+      "Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.",
+      "Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.",
+      "Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 1500 skade.",
+      "Lekesoldatdjevel kan ikke erstattes av megaundersåtter."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Påfører 230% skade på målet og fiender i nærheten.",
       "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten.",
-      "Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 500 skade på en tilfeldig fiende."
+      "Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.",
+      "Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.",
+      "Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 500 skade på en tilfeldig fiende.",
+      "Lekesoldatundersått blokkerer nye megadjevler."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Ødelegger alle djevler fra alle allierte og skader alle megadjevler.",
       "Fremkaller en lekesoldatundersått for hver alliert.",
+      "Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.",
+      "Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.",
       "Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 1500 skade på en tilfeldig fiende.",
+      "Lekesoldatundersåtter kan ikke erstattes av megadjevler.",
       "Alle alliertes helse økes med 200 HP for hver undersått eid av de allierte.",
       "Renser bort statuslidelser fra alle allierte."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Påfør 300% skade på målet.",
       "Fremkaller 2 lekesoldatdjevler på målet.",
-      "Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 500 skade."
+      "Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.",
+      "Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.",
+      "Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 500 skade.",
+      "Lekesoldatdjevel kan ikke erstattes av megaundersåtter."
      ]
     }
    ]

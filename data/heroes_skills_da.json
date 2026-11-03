@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Gør 200% skade på alle fjender, der starter fra venstre kant af fjendens formation. Skaden reduceres for hvert efterfølgende hit.",
+      "Gør 200% skade på alle fjender, der starter fra venstre kant af fjendens formation. Skaden reduceres for hvert efterfølgende hit. (Skaden reduceres med 10% for hvert efterfølgende slag.)",
       "Alle allierede omgår forsvarsbuffere med deres angreb i 4 runder. (Forsvarsbuffere inkluderer modangreb.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Gør 350% skade på alle fjender, der starter fra venstre kant af fjendens formation. Skaden reduceres for hvert efterfølgende hit.",
+      "Gør 350% skade på alle fjender, der starter fra venstre kant af fjendens formation. Skaden reduceres for hvert efterfølgende hit. (Skaden reduceres med 10% for hvert efterfølgende slag.)",
       "Alle fjender får -35% forsvar og yderligere -5% reducering, hver gang de bliver ramt i 3 runder, ned til -50% forsvar.",
       "Alle fjender er immune over for nye statuseffekt-buffere i 3 runder."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Giver 420% skade til målet og fjender i nærheden.",
       "Hidkalder en legetøjssoldatdjævel til målet og alle fjender i nærheden.",
+      "Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.",
+      "Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke ryddes.",
       "Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 1500 skade på dens mål.",
+      "Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere.",
       "Alle fjender med en håndlanger eller en djævel modtager[#Dynamic] 525 [#]frostskade i 3 runder."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Giver 650% skade til målet og 2 tilfældige fjender.\n[*]Hidkalder en legetøjssoldatdjævel for hver træffer.",
       "Alle ramte mål gøres tavse i 5 runde.",
       "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden.",
+      "Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.",
+      "Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.",
       "Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 1500 skade på en tilfældig fjende.",
-      "Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 1500 skade på dens mål."
+      "Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.",
+      "Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.",
+      "Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke ryddes.",
+      "Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 1500 skade på dens mål.",
+      "Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Giver 230% skade til målet og fjender i nærheden.",
       "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden.",
-      "Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 500 skade på en tilfældig fjende."
+      "Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.",
+      "Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.",
+      "Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 500 skade på en tilfældig fjende.",
+      "Legetøjssoldathåndlangeren blokerer nye megadjævle."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
       "Hidkalder en legetøjssoldathåndlanger til hver allieret.",
+      "Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.",
+      "Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.",
       "Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 1500 skade på en tilfældig fjende.",
+      "Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.",
       "Helbred boostes for alle allierede med 200 HP for hver håndlanger, de allierede har.",
       "Rydder statuslidelser fra alle allierede."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Giver 300% skade til målet.",
       "Hidkalder 2 legetøjssoldatdjævle til målet.",
-      "Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 500 skade på dens mål."
+      "Legetøjssoldatdjævlen absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.",
+      "Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke fjernes.",
+      "Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 500 skade på dens mål.",
+      "Legetøjssoldatdjævlen kan ikke erstattes af kæmpehåndlangere."
      ]
     }
    ]

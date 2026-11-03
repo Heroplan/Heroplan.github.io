@@ -60476,7 +60476,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Infligge il 200% di danni a tutti i nemici, partendo dall'estremità sinistra della formazione nemica. I danni diminuiscono a ogni colpo successivo.",
+      "Infligge il 200% di danni a tutti i nemici, partendo dall'estremità sinistra della formazione nemica. I danni diminuiscono a ogni colpo successivo. (I danni diminuiscono del 10% a ogni colpo successivo.)",
       "Tutti gli alleati superano le magie benefiche difensive con i loro attacchi per 4 turni. (Le magie benefiche difensive includono i contrattacchi.)"
      ]
     }
@@ -60503,7 +60503,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Infligge il 350% di danni a tutti i nemici, partendo dall'estremità sinistra della formazione nemica. I danni diminuiscono a ogni colpo successivo.",
+      "Infligge il 350% di danni a tutti i nemici, partendo dall'estremità sinistra della formazione nemica. I danni diminuiscono a ogni colpo successivo. (I danni diminuiscono del 10% a ogni colpo successivo.)",
       "Tutti i nemici ricevono il -35% di Difesa, che diminuisce del -5% ogni volta che vengono colpiti durante 3 turni, fino a un massimo del -50%.",
       "Tutti i nemici sono immuni dalle nuove magie benefiche degli effetti di stato per 3 turni."
      ]
@@ -61014,7 +61014,10 @@
      "lines": [
       "Infligge 420% di danni al bersaglio e ai nemici vicini.",
       "Chiama un demone Soldatino per il bersaglio e i nemici vicini.",
+      "Il demone Soldatino assorbe della guarigione. Scompare dopo aver assorbito una quantità di guarigione pari al 1% della Salute massima del proprio bersaglio.",
+      "Ogni demone Soldatino riduce la Difesa del proprio bersaglio del -25% , fino a un minimo del -75%. Questo effetto non può essere rimosso.",
       "Il demone Soldatino esplode dopo 3 turni, infliggendo 1500 danni al suo bersaglio.",
+      "Il demone Soldatino non può essere sostituito dai servitori Mega.",
       "Tutti i nemici che possiedono un servitore o un demone subiscono[#Dynamic] 525 [#]danni da gelo nell'arco di 3 turni."
      ]
     }
@@ -61045,8 +61048,14 @@
       "Infligge il 650% di danni al bersaglio e a 2 nemici casuali.\n[*] Chiama un demone Soldatino a ogni colpo.",
       "Tutti i bersagli colpiti vengono silenziati per 5 turni.",
       "Chiama un servitore Soldatino per l'evocatore e gli alleati vicini.",
+      "Il servitore Soldatino ha il 2% degli HP ereditati dall'evocatore.",
+      "Ogni servitore Soldatino aumenta l'Attacco del proprio proprietario del +100% , fino a un massimo del +300%. Questo effetto non può essere annullato.",
       "Il servitore Soldatino esplode dopo 3 turni, infliggendo 1500 danni a un nemico casuale.",
-      "Il demone Soldatino esplode dopo 3 turni, infliggendo 1500 danni al suo bersaglio."
+      "Il servitore Soldatino non può essere sostituito dai demoni Mega.",
+      "Il demone Soldatino assorbe della guarigione. Scompare dopo aver assorbito una quantità di guarigione pari al 1% della Salute massima del proprio bersaglio.",
+      "Ogni demone Soldatino riduce la Difesa del proprio bersaglio del -25% , fino a un minimo del -75%. Questo effetto non può essere rimosso.",
+      "Il demone Soldatino esplode dopo 3 turni, infliggendo 1500 danni al suo bersaglio.",
+      "Il demone Soldatino non può essere sostituito dai servitori Mega."
      ]
     }
    ]
@@ -61075,7 +61084,10 @@
      "lines": [
       "Infligge 230% di danni al bersaglio e ai nemici vicini.",
       "Chiama un servitore Soldatino per l'evocatore e gli alleati vicini.",
-      "Il servitore Soldatino esplode dopo 3 turni, infliggendo 500 danni a un nemico casuale."
+      "Il servitore Soldatino ha il 2% degli HP ereditati dall'evocatore.",
+      "Ogni servitore Soldatino aumenta l'Attacco del proprio proprietario del +100% , fino a un massimo del +300%. Questo effetto non può essere annullato.",
+      "Il servitore Soldatino esplode dopo 3 turni, infliggendo 500 danni a un nemico casuale.",
+      "Il servitore Soldatino blocca i nuovi demoni Mega."
      ]
     }
    ]
@@ -61104,7 +61116,10 @@
      "lines": [
       "Distrugge tutti i demoni di tutti gli alleati e infligge danni a tutti i demoni Mega.",
       "Chiama un servitore Soldatino per ogni alleato.",
+      "Il servitore Soldatino ha il 2% degli HP ereditati dall'evocatore.",
+      "Ogni servitore Soldatino aumenta l'Attacco del proprio proprietario del +100% , fino a un massimo del +300%. Questo effetto non può essere annullato.",
       "Il servitore Soldatino esplode dopo 3 turni, infliggendo 1500 danni a un nemico casuale.",
+      "Il servitore Soldatino non può essere sostituito dai demoni Mega.",
       "La salute di tutti gli alleati viene potenziata di 200 HP per ogni servitore da essi posseduto.",
       "Annulla i disturbi di tutti gli alleati."
      ]
@@ -61135,7 +61150,10 @@
      "lines": [
       "Infligge 300% di danni al bersaglio.",
       "Chiama 2 demoni Soldatino per il bersaglio.",
-      "Il demone Soldatino esplode dopo 3 turni, infliggendo 500 danni al suo bersaglio."
+      "Il demone Soldatino assorbe della guarigione. Scompare dopo aver assorbito una quantità di guarigione pari al 1% della Salute massima del proprio bersaglio.",
+      "Ogni demone Soldatino riduce la Difesa del proprio bersaglio del -25% , fino a un minimo del -75%. Questo effetto non può essere rimosso.",
+      "Il demone Soldatino esplode dopo 3 turni, infliggendo 500 danni al suo bersaglio.",
+      "Il demone Soldatino non può essere sostituito dai servitori Mega."
      ]
     }
    ]

@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Düşman oluşumunun sol kenarından başlayarak tüm düşmanlara% 200 hasar verir. Her ardışık vuruşta hasar azalır.",
+      "Düşman oluşumunun sol kenarından başlayarak tüm düşmanlara% 200 hasar verir. Her ardışık vuruşta hasar azalır. (Hasar, her ardışık darbede% 10 azalır.)",
       "Tüm müttefikler, 4 tur boyunca saldırılarıyla savunma bufflarını atlatır. (Savunma bufflarına kontrataklar dâhildir.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Düşman oluşumunun sol kenarından başlayarak tüm düşmanlara% 350 hasar verir. Her ardışık vuruşta hasar azalır.",
+      "Düşman oluşumunun sol kenarından başlayarak tüm düşmanlara% 350 hasar verir. Her ardışık vuruşta hasar azalır. (Hasar, her ardışık darbede% 10 azalır.)",
       "Tüm düşmanlar 3 turda% -35 savunma ve her vurulduklarında% -5 düşüş alır. Minimum% -50 savunma olabilir.",
       "Tüm düşmanlar yeni durum efekti buff'larına karşı 3 tur boyunca bağışıklık kazanır."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Hedefe ve civardaki düşmanlara% 420 hasar verir.",
       "Hedef ve yakındaki düşmanlar için birer Oyuncak Asker Canavarı çağırır.",
+      "Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.",
+      "Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.",
       "Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 1500 hasar verir.",
+      "Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.",
       "Bir Hizmetkârı ya da Canavarı olan tüm düşmanlar, 3 tur boyunca[#Dynamic] 525 [#]Ayaz hasarı alır."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Hedefe ve rastgele 2 düşmana% 650 hasar verir.\n[*]Her bir vuruşla bir Oyuncak Asker Canavarı çağırır.",
       "Vurulan tüm hedefler 5 tur boyunca susturulur.",
       "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır.",
+      "Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.",
+      "Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.",
       "Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 1500 hasar verir.",
-      "Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 1500 hasar verir."
+      "Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.",
+      "Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.",
+      "Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.",
+      "Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 1500 hasar verir.",
+      "Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Hedefe ve civardaki düşmanlara% 230 hasar verir.",
       "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır.",
-      "Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 500 hasar verir."
+      "Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.",
+      "Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.",
+      "Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 500 hasar verir.",
+      "Oyuncak Asker Hizmetkârı, yeni Mega Canavarları engeller."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Tüm müttefiklerin tüm Canavarlarını yok eder ve Mega Canavarlara hasar verir.",
       "Her bir müttefik için bir Oyuncak Asker Hizmetkârı çağırır.",
+      "Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.",
+      "Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.",
       "Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 1500 hasar verir.",
+      "Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.",
       "Tüm müttefiklerin sağlığı, müttefiklerin sahip olduğu her Hizmetkar için 200 SP artırılır.",
       "Tüm müttefiklerden durum engellerini arındırır."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Hedefe% 300 hasar verir.",
       "Hedef için 2 Oyuncak Asker Canavarı çağırır.",
-      "Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 500 hasar verir."
+      "Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.",
+      "Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.",
+      "Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 500 hasar verir.",
+      "Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez."
      ]
     }
    ]

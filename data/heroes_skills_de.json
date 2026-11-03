@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Verursacht 200% Schaden an allen Gegnern, die vom linken Rand der gegnerischen Aufstellung aus starten. Der Schaden wird bei jedem weiteren Treffer verringert.",
+      "Verursacht 200% Schaden an allen Gegnern, die vom linken Rand der gegnerischen Aufstellung aus starten. Der Schaden wird bei jedem weiteren Treffer verringert. (Der Schaden wird bei jedem aufeinanderfolgenden Treffer um 10% verringert.)",
       "Alle Verbündeten umgehen mit ihren Angriffen 4 Züge lang Verteidigungsboni. (Verteidigungsboni schließen Gegenangriffe mit ein.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Verursacht 350% Schaden an allen Gegnern, die vom linken Rand der gegnerischen Aufstellung aus starten. Der Schaden wird bei jedem weiteren Treffer verringert.",
+      "Verursacht 350% Schaden an allen Gegnern, die vom linken Rand der gegnerischen Aufstellung aus starten. Der Schaden wird bei jedem weiteren Treffer verringert. (Der Schaden wird bei jedem aufeinanderfolgenden Treffer um 10% verringert.)",
       "Alle Gegner erhalten -35% Verteidigung und eine weitere -5%ige Verringerung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu -50% Verteidigung.",
       "Alle Gegner sind für 3 Runden immun gegen neue Statuseffekt-Boni."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 420% Schaden zu.",
       "Beschwört einen Spielzeugsoldat-Feind für das Ziel und Gegner in der Nähe.",
+      "Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.",
+      "Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.",
       "Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 1500 Schaden zu.",
+      "Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.",
       "Alle Gegner, die einen Lakaien oder Feind besitzen, erleiden[#Dynamic] 525 [#]Frostschaden über 3 Züge."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Verursacht 650% Schaden am Ziel und 2 zufälligen Gegnern.\n[*]Beschwört mit jedem Treffer einen Spielzeugsoldat-Feind.",
       "Alle getroffenen Ziele werden für 5 Züge zum Schweigen gebracht.",
       "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe.",
+      "Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.",
+      "Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.",
       "Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 1500 Schaden zu.",
-      "Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 1500 Schaden zu."
+      "Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.",
+      "Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.",
+      "Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.",
+      "Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 1500 Schaden zu.",
+      "Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 230% Schaden zu.",
       "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe.",
-      "Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 500 Schaden zu."
+      "Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.",
+      "Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.",
+      "Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 500 Schaden zu.",
+      "Spielzeugsoldat-Lakaien blockieren neue Megafeinde."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Vernichtet alle Feinde von allen Verbündeten und fügt allen Mega-Feinden Schaden zu.",
       "Beschwört einen Spielzeugsoldat-Lakaien für jeden Verbündeten.",
+      "Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.",
+      "Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.",
       "Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 1500 Schaden zu.",
+      "Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.",
       "Das Leben aller Verbündeten wird um 200 LP für jeden Lakaien im Besitz von Verbündeten erhöht.",
       "Reinigt negative Statusänderungen von allen Verbündeten."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Fügt dem Ziel 300% Schaden zu.",
       "Beschwört 2 Spielzeugsoldat-Feinde für das Ziel.",
-      "Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 500 Schaden zu."
+      "Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.",
+      "Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.",
+      "Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 500 Schaden zu.",
+      "Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden."
      ]
     }
    ]

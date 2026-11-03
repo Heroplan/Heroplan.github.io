@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Menimbulkan 200% kerusakan ke semua musuh mulai dari tepi kiri formasi musuh. Kerusakannya berkurang seiring tiap pukulan beruntun.",
+      "Menimbulkan 200% kerusakan ke semua musuh mulai dari tepi kiri formasi musuh. Kerusakannya berkurang seiring tiap pukulan beruntun. (Kerusakannya berkurang 10% seiring tiap pukulan beruntun.)",
       "Semua sekutu melewati genjotan defensif dengan serangan mereka selama 4 giliran. (Genjotan defensif termasuk serangan balik.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Menimbulkan 350% kerusakan ke semua musuh mulai dari tepi kiri formasi musuh. Kerusakannya berkurang seiring tiap pukulan beruntun.",
+      "Menimbulkan 350% kerusakan ke semua musuh mulai dari tepi kiri formasi musuh. Kerusakannya berkurang seiring tiap pukulan beruntun. (Kerusakannya berkurang 10% seiring tiap pukulan beruntun.)",
       "Semua musuh mendapat -35% pertahanan dan turun -5% lagi setiap kali terkena serangan selama 3 giliran, hingga -50% pertahanan.",
       "Semua musuh kebal terhadap genjotan efek status baru selama 3 giliran."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Menimbulkan kerusakan 420% pada sasaran dan musuh terdekat.",
       "Memanggil Iblis Prajurit Mainan untuk sasaran dan musuh terdekat.",
+      "Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.",
+      "Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.",
       "Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 1500 kerusakan ke sasarannya.",
+      "Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.",
       "Semua musuh yang punya Antek atau Iblis mengalami[#Dynamic] 525 [#]kerusakan Beku selama 3 giliran."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Menimbulkan 650% kerusakan pada sasaran dan 2 musuh acak.\n[*]Memanggil Iblis Prajurit Mainan dengan tiap pukulan.",
       "Semua sasaran yang terkena dibungkam selama 5 giliran.",
       "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat.",
+      "Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.",
+      "Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.",
       "Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 1500 kerusakan pada satu musuh acak.",
-      "Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 1500 kerusakan ke sasarannya."
+      "Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.",
+      "Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.",
+      "Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.",
+      "Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 1500 kerusakan ke sasarannya.",
+      "Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Menimbulkan kerusakan 230% pada sasaran dan musuh terdekat.",
       "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat.",
-      "Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 500 kerusakan pada satu musuh acak."
+      "Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.",
+      "Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.",
+      "Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 500 kerusakan pada satu musuh acak.",
+      "Antek Prajurit Mainan memblokir Iblis Mega baru."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
       "Memanggil Antek Prajurit Mainan untuk setiap sekutu.",
+      "Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.",
+      "Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.",
       "Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 1500 kerusakan pada satu musuh acak.",
+      "Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.",
       "Kesehatan sekutu naik 200 HP untuk setiap Antek milik sekutu.",
       "Membersihkan status pelemahan dari semua sekutu."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Menimbulkan kerusakan 300% pada sasaran.",
       "Memanggil 2 Iblis Prajurit Mainan untuk sasaran.",
-      "Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 500 kerusakan ke sasarannya."
+      "Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.",
+      "Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.",
+      "Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 500 kerusakan ke sasarannya.",
+      "Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega."
      ]
     }
    ]

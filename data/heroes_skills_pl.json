@@ -60232,7 +60232,7 @@
     {
      "id": "earthen_tempering",
      "lines": [
-      "Zadaje 200% obrażeń wszystkim wrogom począwszy od lewego skraju formacji wroga. Obrażenia zmniejszają się z każdym kolejnym trafieniem.",
+      "Zadaje 200% obrażeń wszystkim wrogom począwszy od lewego skraju formacji wroga. Obrażenia zmniejszają się z każdym kolejnym trafieniem. (Obrażenia zmniejszają się o 10% z każdym kolejnym trafieniem.)",
       "Ataki wszystkich sojuszników omijają wzmocnienia obrony przez okres 4 tur. (Wzmocnienia obrony obejmują kontrataki.)"
      ]
     }
@@ -60259,7 +60259,7 @@
     {
      "id": "boar_barrage",
      "lines": [
-      "Zadaje 350% obrażeń wszystkim wrogom począwszy od lewego skraju formacji wroga. Obrażenia zmniejszają się z każdym kolejnym trafieniem.",
+      "Zadaje 350% obrażeń wszystkim wrogom począwszy od lewego skraju formacji wroga. Obrażenia zmniejszają się z każdym kolejnym trafieniem. (Obrażenia zmniejszają się o 10% z każdym kolejnym trafieniem.)",
       "Wszyscy wrogowie mają -35% obrony, która obniża się o dodatkowe -5% za każde otrzymane trafienie przez 3 tur(y). Obrona może obniżyć się maksymalnie do -50%.",
       "Wszyscy wrogowie są odporni na nowe wzmocnienia ze statusu przez 3 tur(y)."
      ]
@@ -60770,7 +60770,10 @@
      "lines": [
       "Zadaje 420% obrażeń celowi i pobliskim wrogom.",
       "Przywołuje potwora zabawkowego żołnierzyka dla celu i pobliskich wrogów.",
+      "Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.",
+      "Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.",
       "Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń celowi.",
+      "Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.",
       "Wszyscy przeciwnicy mający pomocników lub potwory, otrzymują[#Dynamic] 525 [#]pkt. obrażeń od mrozu przez okres 3 tur."
      ]
     }
@@ -60801,8 +60804,14 @@
       "Zadaje 650% obrażeń celowi oraz 2 losowym wrogom.\n[*]Za każdym trafieniem wzywa potwora zabawkowego żołnierzyka.",
       "Wszystkie trafione cele zostają uciszone przez 5 tur(y).",
       "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników.",
+      "Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.",
+      "Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , do maks. +300%. Odwołanie tego efektu nie jest możliwe.",
       "Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń losowemu wrogowi.",
-      "Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń celowi."
+      "Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.",
+      "Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.",
+      "Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.",
+      "Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń celowi.",
+      "Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami."
      ]
     }
    ]
@@ -60831,7 +60840,10 @@
      "lines": [
       "Zadaje 230% obrażeń celowi i pobliskim wrogom.",
       "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników.",
-      "Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń losowemu wrogowi."
+      "Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.",
+      "Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , aż do +300%. Odwołanie tego efektu nie jest możliwe.",
+      "Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń losowemu wrogowi.",
+      "Pomocnik zabawkowy żołnierzyk blokuje megapotwory."
      ]
     }
    ]
@@ -60860,7 +60872,10 @@
      "lines": [
       "Niszczy wszystkie potwory wszystkich sojuszników i zadaje obrażenia mega potworom.",
       "Przywołuje zabawkowego żołnierzyka dla każdego sojusznika.",
+      "Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.",
+      "Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , do maks. +300%. Odwołanie tego efektu nie jest możliwe.",
       "Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń losowemu wrogowi.",
+      "Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.",
       "Zdrowie wszystkich sojuszników zwiększa się o 200 PŻ za każdego pomocnika sojuszników.",
       "Oczyszcza status wszystkich sojuszników z dolegliwości."
      ]
@@ -60891,7 +60906,10 @@
      "lines": [
       "Zadaje 300% obrażeń celowi.",
       "Wzywa potwory zabawkowych żołnierzy (2) do celu.",
-      "Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń celowi."
+      "Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.",
+      "Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.",
+      "Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń celowi.",
+      "Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami."
      ]
     }
    ]

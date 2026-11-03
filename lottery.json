@@ -776,11 +776,11 @@
         "advertisedHero": "castle_raven_rayne",
         "associatedEvent": "AllianceQuestCastle",
         "bucketWeights": [
-            473,
-            185,
+            643,
+            208,
             12,
-            237,
-            80,
+            67,
+            57,
             3,
             10
         ],
@@ -1947,10 +1947,10 @@
             9,
             142,
             57,
-            3,
+            7,
             0,
             0,
-            13,
+            9,
             0,
             0,
             0
@@ -1979,6 +1979,35 @@
         "availableEventCostumesAreFeatured": false,
         "hasCharacterOfTheMonthBonusRoll": true,
         "hasMysteryHeroBonusRoll": true
+    },
+    {
+        "productType": "SeasonalPremiumSummon",
+        "id": "lottery_seasonal_premium_christmas",
+        "banner": "event_lotterybanner_premium_christmas",
+        "lotterybg": "event_lotterybg_premium_christmas",
+        "gemPrice": 450,
+        "amount": 1,
+        "uiPriority": 137,
+        "bucketWeights": [
+            710,
+            265,
+            19,
+            6
+        ],
+        "seasonalEventId": "Christmas2026",
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_christmas",
+        "hasMysteryHeroBonusRoll": false,
+        "hasCharacterOfTheMonthBonusRoll": true
+    },
+    {
+        "productType": "SeasonalPremiumSummon",
+        "id": "lottery_seasonal_premium_christmas_bulk",
+        "gemPrice": 3900,
+        "sourceProductId": "lottery_seasonal_premium_christmas",
+        "amount": 10,
+        "summonSpiritTokenId": "lottery_seasonal_summon_spirit_christmas",
+        "hasCharacterOfTheMonthBonusRoll": true,
+        "hasMysteryHeroBonusRoll": false
     },
     {
         "productType": "SuperElementalSummon",

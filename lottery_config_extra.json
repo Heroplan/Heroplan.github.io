@@ -12,7 +12,10 @@
             "magic",
             "mimic"
           ],
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         },
         {
           "index": 1,
@@ -23,7 +26,10 @@
             "magic",
             "mimic"
           ],
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         },
         {
           "index": 2,
@@ -1267,6 +1273,7 @@
             "hotm2024",
             "hotm2025",
             "hotm2026",
+            "hotm2027",
             "fox"
           ]
         },
@@ -1328,6 +1335,7 @@
             "hotm2024",
             "hotm2025",
             "hotm2026",
+            "hotm2027",
             "fox"
           ]
         },
@@ -1388,28 +1396,40 @@
           "weight": 584,
           "rarity": 1,
           "includedCostume": "None",
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         },
         {
           "index": 1,
           "weight": 300,
           "rarity": 2,
           "includedCostume": "None",
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         },
         {
           "index": 2,
           "weight": 100,
           "rarity": 3,
           "includedCostume": "None",
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         },
         {
           "index": 3,
           "weight": 10,
           "rarity": 4,
           "includedCostume": "None",
-          "includeTrainers": true
+          "includedTrainerTypes": [
+            "Normal",
+            "MasterRainbow"
+          ]
         }
       ]
     },

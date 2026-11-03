@@ -392,14 +392,14 @@
     },
     "lottery_black_default": {
       "featuredHeroes": [
-        "scoundrel_lane",
-        "scoundrel_duval"
+        "wild_west_stella",
+        "wild_west_lenny"
       ],
       "AssociatedFamilies": [
         "shady_scoundrels"
       ],
       "latestIncludedHeroAgeInDays": 730,
-      "startDate": "2026-11-22"
+      "startDate": "2026-11-23"
     },
     "lottery_covenant_default": {
       "featuredHeroes": [
@@ -487,7 +487,7 @@
         "garrison",
         "shady_scoundrels"
       ],
-      "startDate": "2026-10-25"
+      "startDate": "2026-11-20"
     },
     "lottery_temple_default": {
       "featuredHeroes": [
@@ -560,7 +560,7 @@
         "pirate_vodnik",
         "magic_kornel"
       ],
-      "startDate": "2026-10-22"
+      "startDate": "2026-11-18"
     },
     "lottery_costume_default": {
       "AssociatedFamilies": [
@@ -729,12 +729,12 @@
         "ronin"
       ],
       "featuredHeroes": [
-        "ronin_ayami",
-        "ninja_ruby_costume_menancer",
-        "ninja_peridot_costume_herbalist"
+        "ninja_azurite",
+        "ninja_ekanite",
+        "ninja_garnet_costume_flame"
       ],
       "Searchid": "TowerNinja",
-      "startDate": "2026-10-20"
+      "startDate": "2026-11-24"
     },
     "lottery_tower_magic_default": {
       "AssociatedFamilies": [
@@ -1130,13 +1130,13 @@
     },
     "lottery_hero_christmas": {
       "featuredHeroes": [
-        "christmas_noel",
-        "christmas_florencia",
-        "christmas_ginger_costume_gift_wrapper"
+        "christmas_flurry",
+        "christmas_tinsel_costume_baker"
       ],
       "AssociatedFamilies": [
         "winter"
-      ]
+      ],
+      "startDate": "2026-12-01"
     },
     "lottery_super_elemental": {
       "featuredHeroes_red": [
@@ -1182,90 +1182,58 @@
     "lottery_league_default": {
       "amountOfSelectableFeaturedSlots": 6,
       "entitiesToChooseFrom": [
-        "s2_oceanus_costume_volcano",
-        "s2_tethys_costume_steel",
-        "wonderland_hatter_costume_tea",
-        "wonderland_knave_of_hearts",
-        "fables_cinderella",
-        "guardian_elephant",
-        "pirate_boatswain",
-        "pirate_dread_captain_costume_rotten",
-        "pirate_lady_costume_queen",
-        "wonderland_queen_costume_benefactor",
-        "wonderland_tweedles",
-        "fables_frog_prince",
-        "fables_puss_in_boots_costume_highwaycat",
-        "knights_green_knight",
-        "knights_guinevere_costume_rider",
-        "s2_skyllaros_costume_reef",
-        "s2_noble_lady_costume_warrior",
-        "s2_hammerhead_hulk_costume_emerald",
-        "guardian_gazelle_costume_bandalore",
-        "guardian_hippo",
-        "s2_mercenary_woman_costume_dancer",
-        "s2_junglehunter_costume_party",
-        "pirate_anne",
-        "fables_rumpelstiltskin_costume_eternal",
-        "guardian_cat_warrior_costume_fierce",
-        "knights_black_knight_costume_negative",
-        "s2_fox_girl_costume_white_kitsune",
-        "guardian_gorilla_chieftain_costume_conqueror",
-        "pirate_commodore_finley_costume_bleak",
-        "pirate_marie_therese_costume_priestess",
-        "wonderland_white_rabbit_costume_mask",
-        "fables_snow_white_costume_slayer",
-        "knights_lady_of_the_lake_costume_blades",
-        "wonderland_jabberwocky_costume_moth",
-        "s2_ariel_costume_enchanter",
-        "s2_cursed_samurai_costume_beetle",
-        "s2_poseidon_costume_slayer",
-        "s2_ursena_costume_reef",
-        "dark_god_seshat_costume_revenant",
-        "fire_god_reuben",
-        "ice_god_glenda",
-        "dark_god_zulag",
-        "holy_god_bai_yeong",
-        "forest_god_zocc",
-        "fire_god_noor",
-        "ice_god_raffaele",
-        "dark_god_clarissa",
-        "holy_god_malosi",
-        "forest_god_telluria",
-        "fire_god_jean_francois",
-        "ice_god_vela",
-        "dark_god_grimble",
-        "holy_god_neith",
-        "forest_god_kingston",
-        "fire_god_nadnog",
-        "ice_god_miki",
-        "holy_god_ranvir",
-        "forest_god_elinor",
-        "fire_god_anzogh",
-        "ice_god_frida",
-        "dark_god_kunchen",
-        "holy_god_onatel",
-        "fables_boss_wolf",
-        "fables_red_hood",
-        "guardian_chameleon",
-        "guardian_owl_gentleman",
-        "knights_king_arthur",
-        "knights_morgan_le_fay",
-        "pirate_swashbuckler",
-        "wonderland_alice"
+        "forest_god_gregorion_costume_alchemist",
+        "dark_god_september_costume_engineer",
+        "witch_king_costume_cosmic",
+        "forest_god_zeline_costume_avian",
+        "s3_loki_female_costume_mother",
+        "forest_god_evelyn_costume_huntress",
+        "holy_god_musashi_costume_prisoner",
+        "s3_ratatoskr_costume_architect",
+        "s3_norns_costume_puppeteers",
+        "s3_loki_fish_costume_dapper",
+        "s3_alfrike_costume_hatter",
+        "s3_bera_costume_conjurer",
+        "fire_god_natalya_costume_seamstress",
+        "holy_god_delilah_costume_guardian",
+        "s3_loki_male_costume_shapeshifter",
+        "s3_fenrir_costume_guardian",
+        "fire_god_ares_costume_keymaster",
+        "fire_god_zimkitha_costume_adventurer",
+        "s3_odin_costume_champion",
+        "s3_tyr_costume_savage",
+        "dark_god_aeron_costume_periwig",
+        "ice_god_october_costume_farmer",
+        "s3_frigg_costume_clairvoyance",
+        "s3_thor_costume_conduit",
+        "dark_god_hel_costume_omen",
+        "ice_god_perseus_costume_frozen",
+        "s3_baldur_costume_fiery",
+        "s3_heimdall_costume_dreaded",
+        "s3_gefjon_costume_wilderness",
+        "s3_sif_costume_golden",
+        "s3_freya_costume_witch",
+        "s3_skadi_costume_ravager",
+        "holy_god_drake_lee_costume_serene",
+        "ice_god_athena_costume_wargoddess",
+        "ice_god_eskimo_costume_champion",
+        "fire_god_doom_costume_avenger",
+        "forest_god_oberon_costume_everoak"
       ],
       "AssociatedFamilies": [
-        "atlantis",
-        "japanese",
-        "lagoon",
-        "wonderland",
-        "pirate",
-        "knight",
-        "fable",
-        "guardian",
-        "hotm2020",
-        "hotm2019"
+        "jotunheim",
+        "muspelheim",
+        "midgard",
+        "vanaheim",
+        "asgard",
+        "alfheim",
+        "helheim",
+        "svartalfheim",
+        "niflheim",
+        "hotm2018",
+        "hotm2017"
       ],
-      "startDate": "2026-08-30"
+      "startDate": "2026-11-16"
     },
     "lottery_hotm_event_default": {
       "AssociatedFamilies": [
@@ -1347,6 +1315,60 @@
         "s4_xnolphod",
         "s5_el_naddaha"
       ]
+    },
+    "lottery_seasonal_premium_christmas": {
+      "featuredHeroes": [
+        "nutcracker_hans",
+        "nutcracker_marie",
+        "nutcracker_king_mouserinks"
+      ],
+      "includedHeroes": [
+        "nutcracker_mauser",
+        "nutcracker_kratz",
+        "christmas_albin",
+        "christmas_augustus",
+        "christmas_cookie",
+        "christmas_florencia",
+        "christmas_flurry",
+        "christmas_ginger_costume_gift_wrapper",
+        "christmas_krampus_costume_eager_devil",
+        "christmas_mr_pengi_costume_snowboarder",
+        "christmas_mrs_claus_costume_fangirl",
+        "christmas_noel",
+        "christmas_ottilia",
+        "christmas_peppermint",
+        "christmas_santa_costume_metal",
+        "christmas_tinsel_costume_baker",
+        "christmas_zappa",
+        "christmas_carol_costume_artisan",
+        "christmas_dizzy",
+        "christmas_elf_costume_gift_bookkeper",
+        "christmas_holly",
+        "christmas_buster",
+        "christmas_frosty_costume_alchemist",
+        "christmas_jolly",
+        "christmas_reindeer_costume_knightly_steed",
+        "tales2_bragi",
+        "tales2_fafnir_costume_fallen",
+        "tales2_fimafeng_costume_skater",
+        "tales2_hogne_costume_lunar",
+        "tales2_motsognir_costume_holy",
+        "tales2_svafa",
+        "tales2_thrivaldi_costume_void",
+        "tales2_dain_costume_kitchen",
+        "tales2_snorri_costume_powder",
+        "tales2_bryggvir",
+        "s3_loki_male_costume_shapeshifter",
+        "s3_skadi_costume_ravager",
+        "s3_jott",
+        "s3_nordri_costume_explorer",
+        "s3_fenrir_costume_guardian",
+        "s3_loki_fish_costume_dapper",
+        "s3_anwindr",
+        "s3_by_ulf",
+        "s3_ei_dunn_costume_shield"
+      ],
+      "startDate": "2026-12-01"
     }
   }
 }

@@ -2071,7 +2071,8 @@ function renderDetailsInModal(hero, context = {}) {
     // 被动技能 / 家族奖励的**大图标**（
     //   「被动奖励和家族奖励要大图标展示，右边渲染被动名，下一元素是被动词条」；
     //   后续又反馈「图标太大、标题文字要加大」⇒ 图标 40px、名字 `.big-skill-name`）。
-    //   图标名走 `PassiveSkillIconCollection`（data.js）；`resist_*` 仍是「盾牌底 + 原图标」两层。
+    //   图标名走 `PassiveSkillIconCollection`（`data/PassiveSkillIconCollection.json`，由 `utils.js::loadData` 取）；
+    //   `resist_*` 仍是「盾牌底 + 原图标」两层。
     //   没有图标定义 / `NULL_SPRITE` 占位 ⇒ 返回 ''（调用方只剩名字，不留破图）。
     const bigPassiveIconHTML = (key) => {
         if (!key) return '';
@@ -3014,6 +3015,7 @@ function renderDetailsInModal(hero, context = {}) {
                             'raven': 'castle',
                             'stag': 'castle',
                             'bear': 'castle',
+                            'boar': 'castle',
                             'plains_hunter': 'monsterisland',
                             'abyss_hunter': 'monsterisland',
                             'jungle_hunter': 'monsterisland',

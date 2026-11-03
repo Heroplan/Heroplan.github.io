@@ -567,6 +567,14 @@ let HERO_DYNAMIC_PARAMS = null;
 let HERO_DYNAMIC_PARAMS_BALANCED = null;
 
 /**
+ * 被动技能 id → 图标 sprite 名，来自 `data/PassiveSkillIconCollection.json`
+ * （`7.提取被动图标映射表.bat` 从 `data.unity3d` 里那个同名 MonoBehaviour 直接提出来写进站点数据目录）。
+ * 以前它是 `data.js` 里的 477 行内联字面量（占 data.js 2/3 体积、且每次改动都要换 data.js 的戳）
+ * ⇒ 现在按语言无关的数据档随其它档一起取，未加载/取失败时是空对象，调用方按"没有图标定义"处理。
+ */
+let PassiveSkillIconCollection = {};
+
+/**
  * 官方动态伤害重算：`floor(攻击 × 分子 / (1000 × 分母)) × 回合`。
  * 用整数取模而不是浮点除法：整点值（`攻击×分子` 正好被 `1000×分母` 整除）在浮点下可能算成
  * `x.9999999996`，`Math.floor` 会少 1。攻击链里 `分母` 来自递增伤害的 `Σw`，普通千分比是 1。
@@ -590,7 +598,7 @@ async function loadData(lang) {
         _skillsEnsure = null;           // memo 与新档同生命周期（见上面的声明处注释）
 
         // ② 数据（首屏真正需要的档）
-        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes, dynRes, dynBalRes] = await Promise.all([
+        const [orderRes, charsRes, typesRes, srcRes, enNameRes, costumeRes, charBalRes, dynRes, dynBalRes, iconMapRes] = await Promise.all([
             fetch(av('data/hero_order.json')),
             fetch(av('data/characters.json')),
             fetch(av('data/heroes_skill_types.json')),
@@ -602,7 +610,9 @@ async function loadData(lang) {
             // 动态伤害的 (分子,分母,回合) 参数表（语言无关，生成器 `--site-export` 附带）；允许缺失 ⇒ 退回比例式
             fetch(av('data/heroes_dynamic.json')).catch(() => null),
             // 平衡正文那批数值的同款参数表（`--site-export-balanced` 附带）；允许缺失
-            fetch(av('data/heroes_dynamic_balanced.json')).catch(() => null)
+            fetch(av('data/heroes_dynamic_balanced.json')).catch(() => null),
+            // 被动图标映射（语言无关；原来内联在 data.js，现随数据档一起取）
+            fetch(av('data/PassiveSkillIconCollection.json')).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
         const charsDoc = await charsRes.json();
@@ -617,6 +627,14 @@ async function loadData(lang) {
         const charBal = (charBalRes && charBalRes.ok) ? await charBalRes.json() : null;
         HERO_DYNAMIC_PARAMS = (dynRes && dynRes.ok) ? await dynRes.json() : null;
         HERO_DYNAMIC_PARAMS_BALANCED = (dynBalRes && dynBalRes.ok) ? await dynBalRes.json() : null;
+        if (iconMapRes && iconMapRes.ok) {
+            PassiveSkillIconCollection = await iconMapRes.json();
+        } else {
+            // 取失败只会让被动图标全部不渲染（不是报错），必须留一行日志，别静默当成"这些被动本来就没图标"
+            console.warn('[utils] data/PassiveSkillIconCollection.json 未取到，被动图标将全部缺省',
+                iconMapRes ? iconMapRes.status : 'fetch 失败');
+            PassiveSkillIconCollection = {};
+        }
 
         // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {

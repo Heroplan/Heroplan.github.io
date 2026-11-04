@@ -103,9 +103,9 @@ function updateChatPreview() {
 
         if (colorMatch) {
             currentColor = colorMatch[1]; // 更新当前颜色
-        } else if (emojiMatch && emojiList.includes(emojiMatch[1])) {
-            // 如果是表情符号，则渲染为图片
-            const emojiName = emojiMatch[1];
+        } else if (emojiMatch && (emojiAliases[emojiMatch[1]] || emojiList.includes(emojiMatch[1]))) {
+            // 如果是表情符号，则渲染为图片；官方别名（:happy:）解析到同一张官方贴图
+            const emojiName = emojiAliases[emojiMatch[1]] || emojiMatch[1];
             html += `<img loading="lazy" src="imgs/emoticons/${emojiName}.webp" decoding="async" alt="${token}" style="width: 20px; height: 20px; vertical-align: middle;">`;
         } else {
             // 普通文本，应用当前颜色

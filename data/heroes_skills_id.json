@@ -57,7 +57,7 @@
       "Keahlian Khusus ini tidak pernah meleset dari sasaran.",
       "Menimbulkan kerusakan 495% pada sasaran dan kerusakan minor pada musuh terdekat.",
       "Mencuri semua genjotan yang bisa dienyahkan dari sasaran dan musuh terdekat dan secara acak membagikannya kepada sekutu.",
-      "Bertumbuh: Perapal dan sekutu terdekat mendapat 340 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Perapal dan sekutu terdekat mendapat 340 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Menimbulkan kerusakan 355% pada semua musuh.",
       "Serangan itu melewati serangan balasan dan pantulan.",
-      "Layu: Semua sekutu mendapat -510 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -510 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Di akhir setiap giliran, perapal menembakkan Sinar Astral ke musuh acak selama 4 giliran.\n[*]Setiap Sinar Astral menimbulkan kerusakan 300%.\n[*]Setiap Sinar Astral mengurangi Kesehatan Maks. musuh yang terkena sebesar 300. Efek ini lebih kuat terhadap sasaran yang mendapat peningkatan kesehatan.",
       "(Kesehatan maks. tidak boleh lebih rendah dari 30% dari kesehatan maks. awal.\n[*] Peningkatan kesehatan dikurangi 300 lagi.)"
      ]
@@ -881,7 +881,7 @@
       "Menimbulkan kerusakan 600% pada sasaran.",
       "Jika sasaran memiliki mana lebih dari 50% sebelum mengalami kerusakan, menarget musuh lain dengan mana lebih dari 50% sebelum mengalami kerusakan apa pun dari Keahlian Khusus ini. Jika tidak ada musuh lain dengan mana 50% , menarget musuh acak. Kerusakan berkurang pada setiap pukulan beruntun. Setiap musuh hanya bisa terkena satu kali.",
       "Semua sasaran yang terkena dibungkam selama 4 giliran.",
-      "Layu: Semua musuh mendapat -300 serangan dan -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua musuh mendapat -300 serangan dan -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Meningkatkan kesehatan perapal dan sekutu sekitar sebesar 350. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
-      "Bertumbuh: Perapal dan sekutu terdekat mendapat 60 serangan dan 60 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Perapal dan sekutu terdekat mendapat 60 serangan dan 60 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Menimbulkan kerusakan 400% pada sasaran dan musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -420 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran dan musuh terdekat mendapat -420 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran dan musuh terdekat menerima peningkatan kerusakan sebesar 25% selama 3 giliran. Efeknya meningkat sebesar 10% untuk setiap Antek atau Antek Mega yang dimiliki semua musuh, hingga total 85%."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Menimbulkan kerusakan 600% pada sasaran.",
       "Jika sasaran memiliki genjotan dan terkena, menyasar musuh lain yang memiliki genjotan. Jika tidak ada musuh lain yang memiliki genjotan, menyasar musuh secara acak. Kerusakan berkurang dengan setiap serangan yang beruntun. Setiap musuh hanya dapat diserang satu kali.",
       "Dengan aman mengenyahkan 1 genjotan dari semua musuh. (Pengenyahan aman melewati efek sekunder, seperti kerusakan saat penghapusan, dari genjotan efek status yang dihapus. Efek eksternal seperti keahlian pasif dan efek keluarga masih bisa aktif.\n[*]Genjotan terbaru dienyahkan dahulu.)",
-      "Layu: Semua musuh mendapat -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua musuh mendapat -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Menimbulkan kerusakan 850% pada sasaran.",
       "Selama 5 giliran, sasaran mengalami kerusakan 100% dari semua kerusakan yang ditimbulkan kepada sekutu mereka.",
-      "Bertumbuh: Semua sekutu mendapat 660 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 660 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Generasi mana semua sekutu menjadi 35% selama 5 giliran. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Menimbulkan kerusakan 530% pada sasaran.",
       "Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
       "Semua sasaran yang terkena menerima peningkatan kerusakan sebesar 50% selama 5 giliran. Efeknya meningkat sebesar 10% untuk setiap Antek atau Antek Mega yang dimiliki semua musuh, hingga total 100%.",
-      "Layu: Semua sekutu mendapat -540 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua sekutu mendapat -540 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 30%.",
-      "Bertumbuh: Semua sekutu mendapat 300 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 300 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Kesehatan semua sekutu meningkat 450 setelah 3 giliran atau segera jika efek dihapus sebelum durasi berakhir. Kesehatan yang ditingkatkan dapat melebihi HP maksimal."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Menimbulkan kerusakan 450% pada sasaran dan musuh terdekat.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 792 [#]kerusakan Air selama 4 giliran. Semua sekutu menyerap 50% dari kerusakan Air yang ditimbulkan sebagai peningkatan kesehatan.",
-      "Bertumbuh: Semua sekutu mendapat 240 serangan dan 240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Semua sekutu mendapat 240 serangan dan 240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Menimbulkan kerusakan 450% pada semua musuh.",
       "Semua musuh mengalami[#Dynamic] 785 [#]kerusakan Terbakar selama 5 giliran. Semua sekutu menyerap 25% dari kerusakan Terbakar yang ditimbulkan sebagai peningkatan kesehatan.",
-      "Layu: Semua musuh mendapat -420 serangan dan -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua musuh mendapat -420 serangan dan -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Menimbulkan kerusakan 470% pada semua musuh.",
-      "Layu: Semua musuh mendapat -420 serangan dan -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua musuh mendapat -420 serangan dan -420 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Generasi mana semua musuh jadi -35% selama 5 giliran. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
       "Membersihkan status pelemahan dari semua sekutu.",
       "Meningkatkan kesehatan semua sekutu sebesar 1550. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
-      "Bertumbuh: Semua sekutu mendapat 480 serangan dan 480 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Semua sekutu mendapat 480 serangan dan 480 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Kerendahan Hati kurang dari 40:",
       "[*]Menimbulkan 265% kerusakan kepada musuh di tepi formasi musuh. Jika hanya ada satu musuh, kerusakannya ganda.",
-      "[*]Layu: Musuh di tepi formasi musuh mendapat -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[*]Layu: Musuh di tepi formasi musuh mendapat -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Pembersihan melemahkan Layu sebesar 50%.\n[**]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]Mengenyahkan genjotan dari musuh di tepi formasi musuh.",
       "Kerendahan Hati 40 atau lebih:",
       "[*]Mengenyahkan genjotan dari musuh dengan aman di tepi formasi musuh. (Pengenyahan aman melewati efek sekunder, seperti kerusakan saat penghapusan, dari genjotan efek status yang dihapus. Efek eksternal seperti keahlian pasif dan efek keluarga masih bisa aktif.)",
       "[*]Menimbulkan 360% kerusakan kepada musuh di tepi formasi musuh. Jika hanya ada satu musuh, kerusakannya ganda.",
-      "[*]Layu: Musuh di tepi formasi musuh mendapat -350 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "[*]Layu: Musuh di tepi formasi musuh mendapat -350 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Pembersihan melemahkan Layu sebesar 50%.\n[**]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Kerendahan Hati kurang dari 60:",
       "[*]Memulihkan kesehatan semua sekutu sebesar 25%.",
       "[*]Membersihkan 1 status pelemahan dari semua sekutu. (Status pelemahan dibersihkan sesuai urutan diterima. Status pelemahan terbaru dibersihkan terlebih dahulu.)",
-      "[*]Bertumbuh: Semua sekutu mendapat 180 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[*]Bertumbuh: Semua sekutu mendapat 180 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Pembersihan melemahkan Layu sebesar 50%.\n[**]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]Semua sekutu meregenerasi 1005 HP selama 3 giliran.",
       "Kerendahan Hati 60 atau lebih:",
       "[*]Memulihkan kesehatan semua sekutu sebesar 32%.",
       "[*]Membersihkan status pelemahan dari semua sekutu.",
-      "[*]Bertumbuh: Semua sekutu mendapat 240 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[*]Bertumbuh: Semua sekutu mendapat 240 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[**]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[**]Pembersihan melemahkan Layu sebesar 50%.\n[**]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[**]Batas untuk Skor Kemampuan yang dimodifikasi.\n[**]Min 30% dan maksimal 170% dari nilai aslinya.\n[**]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[**]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]Semua sekutu meregenerasi 1440 HP selama 3 giliran.",
       "[*]Pertahanan perapal terhadap Keahlian Khusus naik 84% selama 3 giliran."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Menimbulkan 420% kerusakan pada musuh dengan sisa HP tertinggi. Menimbulkan 300% kerusakan pada semua musuh yang lain.",
       "Musuh dengan sisa HP tertinggi akan dibungkam selama 3 giliran.",
-      "Layu: Semua sekutu mendapat -350 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua sekutu mendapat -350 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Membinasakan semua Antek dari semua musuh dan merusak Antek Mega.",
       "Menimbulkan 355% kerusakan kepada semua musuh.",
-      "Layu: Semua musuh mendapat -510 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua musuh mendapat -510 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua musuh menerima[#Dynamic] 129 [#]-[#Dynamic] 317 [#]kerusakan Kutukan yang bertambah besar pada tiap giliran selama 4 giliran. Efek ini Bandel. (Pada giliran pertama,[#Dynamic] 129 [#]kerusakan ditimbulkan. Kerusakan bertambah sebesar 35% di setiap giliran, hingga[#Dynamic] 317 [#]kerusakan per giliran.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Menimbulkan kerusakan 355% pada sasaran dan musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -225 serangan dan -225 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran dan musuh terdekat mendapat -225 serangan dan -225 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran dan musuh terdekat memantulkan genjotan efek status ke karakter acak di tim lawan selama 3 giliran. (Hanya genjotan yang bisa dienyahkan yang dipantulkan.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Menimbulkan kerusakan 200% pada sasaran dan musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -40 serangan dan -40 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran dan musuh terdekat mendapat -40 serangan dan -40 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran dan musuh terdekat mendapat -35% pertahanan selama 3 giliran. Jika efeknya hilang sebelum durasi berakhir, sasaran dengan efek tersebut akan menderita[#Dynamic] 124 [#]kerusakan."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Menimbulkan kerusakan 210% pada sasaran dan musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -45 serangan dan -45 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran dan musuh terdekat mendapat -45 serangan dan -45 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua kerusakan yang dialami sasaran dan musuh terdekat bertambah 40% selama 3 giliran."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 25%.",
-      "Bertumbuh: Semua sekutu mendapat 215 serangan dan 215 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 215 serangan dan 215 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua sekutu berpeluang 50% untuk menimbulkan kerusakan 270% pada musuh acak setelah Keahlian Khusus dirapal selama 3 giliran. (Tiap karakter bisa memicu efek ini sekali per giliran.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "Semua sekutu meregenerasi 1200 kesehatan yang ditingkatkan selama 3 giliran. Kesehatan yang ditingkatkan bisa melebihi HP maksimal",
-      "Bertumbuh: Semua sekutu mendapat 240 serangan dan 240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 240 serangan dan 240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua sekutu berpeluang 50% untuk menimbulkan kerusakan 280% pada musuh acak setelah Keahlian Khusus dirapal selama 3 giliran. (Tiap karakter bisa memicu efek ini sekali per giliran.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Mencuri semua genjotan yang bisa dienyahkan dari sasaran dan secara acak membagikannya kepada sekutu.",
       "Menimbulkan kerusakan 375% pada sasaran.\n[*]Menimbulkan kerusakan tambahan 50% per genjotan status pelemahan yang dipindahkan, sampai total kerusakan 625%.",
-      "Layu: Sasaran mendapat -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Sasaran mendapat -300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Mencuri semua genjotan yang bisa dienyahkan dari sasaran dan secara acak membagikannya kepada sekutu.",
       "Menimbulkan kerusakan 400% pada sasaran.\n[*]Menimbulkan kerusakan tambahan 50% per genjotan status pelemahan yang dipindahkan, sampai total kerusakan 650%.",
-      "Layu: Sasaran mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran kebal terhadap genjotan efek status baru selama 2 giliran."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Menimbulkan kerusakan 240% pada semua musuh.",
-      "Layu: Semua musuh mendapat -200 serangan dan -200 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua musuh mendapat -200 serangan dan -200 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua musuh mendapat -30% generasi mana selama 3 giliran. Jika efeknya dihilangkan sebelum durasinya berakhir, mana sasaran dengan efek tersebut berkurang -5% mana. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 38%.",
-      "Bertumbuh: Semua sekutu mendapat 100 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 100 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua sekutu memantulkan status pelemahan ke karakter acak di tim lawan selama 3 giliran. (Hanya status pelemahan yang bisa dibersihkan yang dipantulkan.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "Semua sekutu meregenerasi 1080 HP selama 3 giliran.",
-      "Bertumbuh: Semua sekutu mendapat 110 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 110 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Mengangkat status pelemahan yang bisa dibersihkan terbaru dari semua sekutu dan secara acak membagikannya kepada musuh.",
       "Semua sekutu memantulkan status pelemahan ke karakter acak di tim lawan selama 3 giliran. (Hanya status pelemahan yang bisa dibersihkan yang dipantulkan.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 54%.",
-      "Bertumbuh: Semua sekutu mendapat 450 serangan dan 450 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 450 serangan dan 450 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua sekutu mendapat 30% generasi mana selama 4 giliran. Jika efeknya dihilangkan sebelum durasinya berakhir, sekutu dengan efek tersebut mendapat 10% mana. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Peluang aktivasi untuk tiap efek:",
       "[*]Makanan Indah: 45%",
       "[**]Memulihkan kesehatan semua sekutu sebesar 50%.",
-      "[**]Bertumbuh: Semua sekutu mendapat 400 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Bertumbuh: Semua sekutu mendapat 400 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]Makanan Busuk: 45%",
       "[**]Menimbulkan kerusakan 350% pada semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 965 [#]kerusakan Racun selama 5 giliran.",
@@ -19992,7 +19992,7 @@
       "Peluang aktivasi untuk tiap efek:",
       "[*]Makanan Indah: 45%",
       "[**]Meningkatkan kesehatan semua sekutu sebesar 1800. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
-      "[**]Bertumbuh: Semua sekutu mendapat 700 serangan dan 700 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Bertumbuh: Semua sekutu mendapat 700 serangan dan 700 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]Makanan Busuk: 45%",
       "[**]Menimbulkan kerusakan 550% pada semua musuh.",
       "[**]Semua musuh mengalami Keracunan Korosif selama 5 giliran. Keracunan Korosif menimbulkan[#Dynamic] 378 [#]kerusakan Racun dan menurunkan generasi mana sebesar -10% per giliran. Menimbulkan kerusakan ekstra terhadap pahlawan dengan beberapa Antek atau satu Antek Mega. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Bertumbuh: Semua sekutu mendapat 355 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 355 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Mega Celeng Berbintik dengan 65% HP dan 260% serangan yang diwarisi dari perapal.",
       "Ketika dipanggil, Antek Mega Celeng Berbintik memberikan pemiliknya kekebalan terhadap pengenyahan genjotan dan realokasi selama pemiliknya memiliki Antek Mega Celeng Berbintik. (Kekebalan juga termasuk efek ini sendiri.\n[*] Juga termasuk Geledah.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Menimbulkan kerusakan 470% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "Bertumbuh: Perapal dan sekutu terdekat mendapat 250 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Perapal dan sekutu terdekat mendapat 250 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran dan musuh terdekat mendapat -35% pertahanan selama 3 giliran. Jika efeknya hilang sebelum durasi berakhir, sasaran dengan efek tersebut akan menderita[#Dynamic] 577 [#]kerusakan."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Layu: Sasaran mendapat -330 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran mendapat -330 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Iblis Eksplosif Goblin untuk sasaran dan musuh terdekat. Iblis menyerang musuh dengan 195% serangan tiap giliran.\n[*]Iblis Eksplosif Goblin menyerap penyembuhan dan menghilang setelah menyerap kesehatan sebanyak 20% dari kesehatan maksimum pemiliknya.",
       "Ketika Iblis Eksplosif Goblin menghilang setelah menyerap penyembuhan yang cukup, pemilik menerima[#Dynamic] 1269 [#]kerusakan Terbakar selama 3 giliran."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Menimbulkan kerusakan 365% pada semua musuh.",
-      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Mega Celeng Putih dengan 65% HP dan 250% serangan yang diwarisi dari perapal.",
       "Saat dipanggil, Antek Mega Celeng Putih memberi pemiliknya kemampuan serangan balik dengan 100% dari kerusakan yang diterima selama pemiliknya memiliki Antek Mega Celeng Putih. Efek ini tidak bisa dienyahkan."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Layu: Semua sekutu mendapat -350 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -350 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Mengurangi kesehatan maksimal semua musuh sebesar 700. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 700 lagi.)",
       "Pertahanan semua musuh terhadap Keahlian Khusus naik -45% selama 4 giliran."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Mengurangi kesehatan maksimal semua musuh sebesar 800. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 800 lagi.)",
       "Semua musuh mendapat -50% pertahanan terhadap Keahlian Khusus selama 4 giliran. Jika efeknya hilang sebelum durasi berakhir, sasaran dengan efek tersebut akan mengalami 800 kerusakan."
      ]
@@ -20379,7 +20379,7 @@
       "Sasaran dan musuh terdekat tidak bisa membangkitkan sekutu atau diri sendiri selama 5 giliran.",
       "Sasaran dan musuh terdekat tidak bisa menerima efek status baru yang tidak akan membangkitkan mereka kembali selama 5 giliran.",
       "Menimbulkan kerusakan 530% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -455 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Sasaran dan musuh terdekat mendapat -455 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Bertumbuh: Semua sekutu mendapat 150 serangan dan 150 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Semua sekutu mendapat 150 serangan dan 150 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Wortel untuk tiap sekutu dengan 25% HP yang diwarisi dari perapal.",
       "Saat dipanggil, Antek Wortel memberi pemiliknya generasi mana 20% selama si pemilik memiliki Antek Wortel. Efek ini tidak bisa dienyahkan. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
       "Dinamika Elemen memberi semua sekutu Suci pertahanan 40% terhadap Keahlian Khusus selama 4 giliran. Efek ini tidak bisa dienyahkan."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Bertumbuh: Perapal dan sekutu terdekat mendapat 540 serangan dan 540 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Perapal dan sekutu terdekat mendapat 540 serangan dan 540 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Mega Aberasi dengan 45% HP dan 180% serangan yang diwarisi dari perapal.\n[*]Setiap serangan dari Antek Mega Aberasi memberikan status pelemahan berikut kepada sasaran:",
       "[**]Sasaran mengalami[#Dynamic] 552 [#]kerusakan Racun selama 3 giliran.\n[***]Kerusakan bertambah melawan sasaran dengan peningkatan kesehatan, Antek, atau satu Antek Mega. (Kerusakan Racun naik 100% terhadap sasaran dengan peningkatan kesehatan.\n[***]Kerusakan Racun bertambah 33% per Antek atau Antek Mega yang dimiliki sasarant.\n[***]Maksimal peningkatan kerusakan adalah 199%.)",
       "[**]Menimbulkan 10 Kegilaan pada sasarannya.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "Semua musuh menyerah pada rasa Takut selama 5 giliran. (Sasaran mendapat pertahanan -40%.\n[*] Menghapus semua genjotan yang bisa dienyahkan dan efek Bertumbuh saat efek status Rasa Takut ditambahkan.\n[*] Sasaran tidak bisa meraih genjotan atau efek Bertumbuh baru selama durasi.\n[*] Sasaran dengan rasa Takut menimbulkan 250% kerusakan ke musuh acak tiap kali sekutu lain merapal Keahlian Khususnya. Tiap karakter dapat memicu efek ini sekali per giliran.)",
-      "Layu: Semua sekutu mendapat -480 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -480 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Menimbulkan 420% kerusakan kepada semua musuh dan menimbulkan 25 Kegilaan kepada mereka.",
       "Merapal Keahlian Khusus ini menimbulkan 45 Kegilaan pada perapal.",
       "(Kegilaan menambah peluang membalikkan penargetan Keahlian Khusus.\n[*] Saat Kegilaan diaktifkan, Keahlian Khusus yang menarget musuh malah akan menarget sekutu, dan sebaliknya.\n[*] Keahlian Khusus yang ditujukan untuk perapal akan dirapal ke sasaran acak. Keahlian Khusus yang ditujukan pada suatu sasaran akan dirapal ke perapal.\n[*] Saat Kegilaan diaktifkan, Keahlian Pasif dan Kemampuan Pasukan yang memberikan efek tambahan saat dirapal tidak akan aktif.\n[*] Mencapai 100 Kegilaan secara otomatis akan merapal Keahlian Khusus saat mana penuh.\n[*] Kegilaan tidak bisa dienyahkan atau dibersihkan.\n[*] Kegilaan Pahlawan bisa turun sebesar 10 tiap kali penyembuhan langsung diupayakan oleh Keahlian Khusus, Keahlian Asisten, Barang, atau Perisai. Penyembuhan langsung dari Keahlian Khusus menurunkan Kegilaan sekali per rapal.\n[*] Semua penyembuhan lain menurunkan Kegilaan sebesar 1.\n[*] Kegilaan sepenuhnya dihapus ketika Keahlian Khusus terbalik dirapal.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Menimbulkan kerusakan 270% pada semua musuh.",
-      "Layu: Semua musuh mendapat -240 serangan dan -240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua musuh mendapat -240 serangan dan -240 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua musuh mengalami[#Dynamic] 405 [#]kerusakan Terbakar selama 3 giliran. Perapal menyerap 50% dari kerusakan Terbakar yang ditimbulkan sebagai peningkatan kesehatan. Melawan karakter Es, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
       "Memulihkan 65% kesehatan untuk sekutu dengan sisa HP terendah. Memulihkan 45% kesehatan untuk sekutu yang lain.",
-      "Bertumbuh: Semua sekutu mendapat 300 serangan dan 300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Semua sekutu mendapat 300 serangan dan 300 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
       "Anugerah Bertumbuh: Menimbulkan 2x kerusakan ekstra untuk setiap titik serangan yang dimodifikasi. (Kerusakan ekstra didasarkan pada serangan yang dimodifikasi pada pengguna ketika kerusakan ditimbulkan.\n[*]Hingga maksimum 600 kerusakan ekstra tambahan.\n[*]Efek status yang memengaruhi kerusakan yang ditimbulkan akan memengaruhi kerusakan ekstra.\n[*]Statistik pertahanan tidak memengaruhi kerusakan ekstra.\n[*]Efek status yang memengaruhi statistik serangan tidak memengaruhi kerusakan ekstra.)",
-      "Layu: Sasaran mendapat -500 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran mendapat -500 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran mengalami[#Dynamic] 1068 [#]kerusakan Pasir selama 3 giliran."
      ]
     }
@@ -28892,7 +28892,7 @@
       "Keahlian Khusus ini tidak pernah meleset dari sasaran.",
       "Menimbulkan kerusakan 500% pada sasaran.",
       "Anugerah Bertumbuh: Menimbulkan 2x kerusakan ekstra untuk setiap titik serangan yang dimodifikasi. (Kerusakan ekstra didasarkan pada serangan yang dimodifikasi pada pengguna ketika kerusakan ditimbulkan.\n[*]Hingga maksimum 600 kerusakan ekstra tambahan.\n[*]Efek status yang memengaruhi kerusakan yang ditimbulkan akan memengaruhi kerusakan ekstra.\n[*]Statistik pertahanan tidak memengaruhi kerusakan ekstra.\n[*]Efek status yang memengaruhi statistik serangan tidak memengaruhi kerusakan ekstra.)",
-      "Layu: Sasaran mendapat -480 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Sasaran mendapat -480 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Eter Es I 0.9%\n[*]Eter Es II 0.4%\n[*]Ester Es III 0.025%\n[*]Eter Alfa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Ester Es III 0.025%\n[**]Eter Alfa 0.01%\n[*]EPIK\n[**]Eter Es II 0.4%\n[*]LANGKA\n[**]Eter Es I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Eter Alam I 0.9%\n[*]Eter Alam II 0.4%\n[*]Eter Alam III 0.025%\n[*]Eter Alfa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Eter Alam III 0.025%\n[**]Eter Alfa 0.01%\n[*]EPIK\n[**]Eter Alam II 0.4%\n[*]LANGKA\n[**]Eter Alam I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Eter Gelap I 0.9%\n[*]Eter Gelap II 0.4%\n[*]Eter Gelap III 0.025%\n[*]Eter Alfa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Eter Gelap III 0.025%\n[**]Eter Alfa 0.01%\n[*]EPIK\n[**]Eter Gelap II 0.4%\n[*]LANGKA\n[**]Eter Gelap I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Eter Api I 0.9%\n[*]Eter Api II 0.4%\n[*]Eter Api III 0.025%\n[*]Eter Alfa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Eter Api III 0.025%\n[**]Eter Alfa 0.01%\n[*]EPIK\n[**]Eter Api II 0.4%\n[*]LANGKA\n[**]Eter Api I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Eter Suci I 0.9%\n[*]Eter Suci II 0.4%\n[*]Eter Suci III 0.025%\n[*]Eter Alfa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Eter Suci III 0.025%\n[**]Eter Alfa 0.01%\n[*]EPIK\n[**]Eter Suci II 0.4%\n[*]LANGKA\n[**]Eter Suci I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Kit Petualang 0.5%\n[*]Pedang Latihan 0.5%\n[*]Baju Kasar 0.5%\n[*]Naskah Gaib 0.25%\n[*]Belati 0.25%\n[*]Baju Zirah Kulit 0.25%\n[*]Batu Asah 0.25%\n[*]Tali Kuat 0.25%\n[*]Perisai Kayu 0.25%\n[*]Buku Panduan Pertempuran 0.05%\n[*]Baju Rantai 0.05%\n[*]Sarung Pedang 0.05%\n[*]Boot Tinggi 0.05%\n[*]Pedang Tersembunyi 0.03%\n[*]Bola Ajaib 0.03%\n[*]Perisai Kokoh 0.03%\n[*]Alat Jebakan 0.03%\n[*]Mantel Hangat 0.03%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Buku Panduan Pertempuran 0.05%\n[**]Baju Rantai 0.05%\n[**]Sarung Pedang 0.05%\n[**]Boot Tinggi 0.05%\n[**]Pedang Tersembunyi 0.03%\n[**]Bola Ajaib 0.03%\n[**]Perisai Kokoh 0.03%\n[**]Alat Jebakan 0.03%\n[**]Mantel Hangat 0.03%\n[*]TIDAK BIASA\n[**]Naskah Gaib 0.25%\n[**]Belati 0.25%\n[**]Baju Zirah Kulit 0.25%\n[**]Batu Asah 0.25%\n[**]Tali Kuat 0.25%\n[**]Perisai Kayu 0.25%\n[*]BIASA\n[**]Kit Petualang 0.5%\n[**]Pedang Latihan 0.5%\n[**]Baju Kasar 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Boot Tinggi 1.5%\n[*]Kompas 0.2%\n[*]Sarung Tangan Halus 0.2%\n[*]Pedang Damaskus 0.01%\n[*]Kitab Taktik 0.01%\n[*]Tali Kuat 1%\n[*]Buku Panduan Pertempuran 2%\n[*]Baju Rantai 2%\n[*]Mantel Hangat 0.16%\n[*]Teleskop Jarak Jauh 0.06%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]EPIK\n[**]Pedang Damaskus 0.01%\n[**]Kitab Taktik 0.01%\n[**]Teleskop Jarak Jauh 0.06%\n[*]LANGKA\n[**]Boot Tinggi 1.5%\n[**]Kompas 0.2%\n[**]Sarung Tangan Halus 0.2%\n[**]Buku Panduan Pertempuran 2%\n[**]Baju Rantai 2%\n[**]Mantel Hangat 0.16%\n[*]TIDAK BIASA\n[**]Tali Kuat 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Boot Tinggi 1.5%\n[*]Kompas 0.2%\n[*]Sarung Tangan Halus 0.2%\n[*]Pedang Damaskus 0.01%\n[*]Kitab Taktik 0.01%\n[*]Tali Kuat 1%\n[*]Belati 1%\n[*]Sarung Pedang 2%\n[*]Perisai Kokoh 0.16%\n[*]Tonik Misterius 0.06%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]EPIK\n[**]Pedang Damaskus 0.01%\n[**]Kitab Taktik 0.01%\n[**]Tonik Misterius 0.06%\n[*]LANGKA\n[**]Boot Tinggi 1.5%\n[**]Kompas 0.2%\n[**]Sarung Tangan Halus 0.2%\n[**]Sarung Pedang 2%\n[**]Perisai Kokoh 0.16%\n[*]TIDAK BIASA\n[**]Tali Kuat 1%\n[**]Belati 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Boot Tinggi 1.5%\n[*]Kompas 0.2%\n[*]Sarung Tangan Halus 0.2%\n[*]Pedang Damaskus 0.01%\n[*]Kitab Taktik 0.01%\n[*]Tali Kuat 1%\n[*]Belati 1%\n[*]Sarung Pedang 2%\n[*]Alat Jebakan 0.16%\n[*]Jubah Pendek Kerajaan 0.06%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]EPIK\n[**]Pedang Damaskus 0.01%\n[**]Kitab Taktik 0.01%\n[**]Jubah Pendek Kerajaan 0.06%\n[*]LANGKA\n[**]Boot Tinggi 1.5%\n[**]Kompas 0.2%\n[**]Sarung Tangan Halus 0.2%\n[**]Sarung Pedang 2%\n[**]Alat Jebakan 0.16%\n[*]TIDAK BIASA\n[**]Tali Kuat 1%\n[**]Belati 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Boot Tinggi 1.5%\n[*]Kompas 0.2%\n[*]Sarung Tangan Halus 0.2%\n[*]Pedang Damaskus 0.01%\n[*]Kitab Taktik 0.01%\n[*]Naskah Gaib 1%\n[*]Baju Rantai 2%\n[*]Pedang Tersembunyi 0.16%\n[*]Cincin Mistis 0.06%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]EPIK\n[**]Pedang Damaskus 0.01%\n[**]Kitab Taktik 0.01%\n[**]Cincin Mistis 0.06%\n[*]LANGKA\n[**]Boot Tinggi 1.5%\n[**]Kompas 0.2%\n[**]Sarung Tangan Halus 0.2%\n[**]Baju Rantai 2%\n[**]Pedang Tersembunyi 0.16%\n[*]TIDAK BIASA\n[**]Naskah Gaib 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Boot Tinggi 1.5%\n[*]Kompas 0.2%\n[*]Sarung Tangan Halus 0.2%\n[*]Pedang Damaskus 0.01%\n[*]Kitab Taktik 0.01%\n[*]Naskah Gaib 1%\n[*]Baju Rantai 2%\n[*]Bola Ajaib 0.16%\n[*]Anak Panah Beracun 0.06%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]EPIK\n[**]Pedang Damaskus 0.01%\n[**]Kitab Taktik 0.01%\n[**]Anak Panah Beracun 0.06%\n[*]LANGKA\n[**]Boot Tinggi 1.5%\n[**]Kompas 0.2%\n[**]Sarung Tangan Halus 0.2%\n[**]Baju Rantai 2%\n[**]Bola Ajaib 0.16%\n[*]TIDAK BIASA\n[**]Naskah Gaib 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Emblem Dukun 2.5%\n[*]Emblem Dukun Master 0.1%\n[*]Emblem Penyihir 2.5%\n[*]Emblem Penyihir Master 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Emblem Dukun Master 0.1%\n[**]Emblem Penyihir Master 0.1%\n[*]EPIK\n[**]Emblem Dukun 2.5%\n[**]Emblem Penyihir 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Emblem Kesatria 2.5%\n[*]Emblem Kesatria Master 0.1%\n[*]Emblem Klenik 2.5%\n[*]Emblem Klenik Master 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Emblem Kesatria Master 0.1%\n[**]Emblem Klenik Master 0.1%\n[*]EPIK\n[**]Emblem Kesatria 2.5%\n[**]Emblem Klenik 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Emblem Pamong 2.5%\n[*]Emblem Pamong Master 0.1%\n[*]Emblem Berandal 2.5%\n[*]Emblem Berandal Master 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Emblem Pamong Master 0.1%\n[**]Emblem Berandal Master 0.1%\n[*]EPIK\n[**]Emblem Pamong 2.5%\n[**]Emblem Berandal 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Emblem Petarung 2.5%\n[*]Emblem Petarung Master 0.1%\n[*]Emblem Barbar 2.5%\n[*]Emblem Barbar Master 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Emblem Petarung Master 0.1%\n[**]Emblem Barbar Master 0.1%\n[*]EPIK\n[**]Emblem Petarung 2.5%\n[**]Emblem Barbar 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Emblem Petapa 2.5%\n[*]Emblem Petapa Master 0.1%\n[*]Emblem Padri 2.5%\n[*]Emblem Padri Master 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Emblem Petapa Master 0.1%\n[**]Emblem Padri Master 0.1%\n[*]EPIK\n[**]Emblem Petapa 2.5%\n[**]Emblem Padri 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrunn 0.5%\n[*]Nightshade 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenneh 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Pahlawan Pelatih Biasa 0.16%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]TIDAK BIASA\n[**]Jill 0.033%\n[**]Jenneh 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]BIASA\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrunn 0.5%\n[**]Nightshade 0.5%\n[**]Hikaru 0.5%\n[**]Pelatih Master Biasa 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Bundel Makanan Mungil 2.25%\n[*]Bundel Makanan Kecil 0.6%\n[*]Bundel Makanan Sedang 0.1%\n[*]Bundel Makanan Besar 0.04%\n[*]Bundel Makanan Raksasa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Makanan Raksasa 0.01%\n[*]EPIK\n[**]Bundel Makanan Besar 0.04%\n[*]LANGKA\n[**]Bundel Makanan Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Makanan Kecil 0.6%\n[**]Pahlawan Pelatih Tidak Biasa 0.1%\n[*]BIASA\n[**]Bundel Makanan Mungil 2.25%\n[**]Pahlawan Pelatih Biasa 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Bundel Makanan Mungil 2.25%\n[*]Bundel Makanan Kecil 0.6%\n[*]Bundel Makanan Sedang 0.1%\n[*]Bundel Makanan Besar 0.04%\n[*]Bundel Makanan Raksasa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Makanan Raksasa 0.01%\n[*]EPIK\n[**]Bundel Makanan Besar 0.04%\n[*]LANGKA\n[**]Bundel Makanan Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Makanan Kecil 0.6%\n[**]Pahlawan Pelatih Tidak Biasa 0.1%\n[*]BIASA\n[**]Bundel Makanan Mungil 2.25%\n[**]Pahlawan Pelatih Biasa 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Bundel Makanan Mungil 2.25%\n[*]Bundel Makanan Kecil 0.6%\n[*]Bundel Makanan Sedang 0.1%\n[*]Bundel Makanan Besar 0.04%\n[*]Bundel Makanan Raksasa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Makanan Raksasa 0.01%\n[*]EPIK\n[**]Bundel Makanan Besar 0.04%\n[*]LANGKA\n[**]Bundel Makanan Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Makanan Kecil 0.6%\n[**]Pahlawan Pelatih Tidak Biasa 0.1%\n[*]BIASA\n[**]Bundel Makanan Mungil 2.25%\n[**]Pahlawan Pelatih Biasa 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Bundel Makanan Mungil 2.25%\n[*]Bundel Makanan Kecil 0.6%\n[*]Bundel Makanan Sedang 0.1%\n[*]Bundel Makanan Besar 0.04%\n[*]Bundel Makanan Raksasa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Makanan Raksasa 0.01%\n[*]EPIK\n[**]Bundel Makanan Besar 0.04%\n[*]LANGKA\n[**]Bundel Makanan Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Makanan Kecil 0.6%\n[**]Pahlawan Pelatih Tidak Biasa 0.1%\n[*]BIASA\n[**]Bundel Makanan Mungil 2.25%\n[**]Pahlawan Pelatih Biasa 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Bundel Makanan Mungil 2.25%\n[*]Bundel Makanan Kecil 0.6%\n[*]Bundel Makanan Sedang 0.1%\n[*]Bundel Makanan Besar 0.04%\n[*]Bundel Makanan Raksasa 0.01%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Makanan Raksasa 0.01%\n[*]EPIK\n[**]Bundel Makanan Besar 0.04%\n[*]LANGKA\n[**]Bundel Makanan Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Makanan Kecil 0.6%\n[**]Pahlawan Pelatih Tidak Biasa 0.1%\n[*]BIASA\n[**]Bundel Makanan Mungil 2.25%\n[**]Pahlawan Pelatih Biasa 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Bundel Besi Mungil 2.25%\n[*]Bundel Besi Kecil 0.6%\n[*]Bundel Besi Sedang 0.1%\n[*]Bundel Besi Besar 0.04%\n[*]Bundel Besi Raksasa 0.01%\n[*]Warga Desa Biasa 0.4%\n[*]Pemanah Milisi 0.4%\n[*]Penyerang Imperial 0.4%\n[*]Pasukan Imperial 0.1%\n[*]Anak Baru Milisi 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Besi Raksasa 0.01%\n[*]EPIK\n[**]Bundel Besi Besar 0.04%\n[*]LANGKA\n[**]Bundel Besi Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Besi Kecil 0.6%\n[**]Pasukan Imperial 0.1%\n[**]Anak Baru Milisi 0.1%\n[*]BIASA\n[**]Bundel Besi Mungil 2.25%\n[**]Warga Desa Biasa 0.4%\n[**]Pemanah Milisi 0.4%\n[**]Penyerang Imperial 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Bundel Besi Mungil 2.25%\n[*]Bundel Besi Kecil 0.6%\n[*]Bundel Besi Sedang 0.1%\n[*]Bundel Besi Besar 0.04%\n[*]Bundel Besi Raksasa 0.01%\n[*]Warga Desa Biasa 0.4%\n[*]Bajingan Pemberontak 0.4%\n[*]Peneluh Hutan Lebat 0.4%\n[*]Pemanah Pemberontak 0.1%\n[*]Petarung Desa 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Besi Raksasa 0.01%\n[*]EPIK\n[**]Bundel Besi Besar 0.04%\n[*]LANGKA\n[**]Bundel Besi Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Besi Kecil 0.6%\n[**]Pemanah Pemberontak 0.1%\n[**]Petarung Desa 0.1%\n[*]BIASA\n[**]Bundel Besi Mungil 2.25%\n[**]Warga Desa Biasa 0.4%\n[**]Bajingan Pemberontak 0.4%\n[**]Peneluh Hutan Lebat 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Bundel Besi Mungil 2.25%\n[*]Bundel Besi Kecil 0.6%\n[*]Bundel Besi Sedang 0.1%\n[*]Bundel Besi Besar 0.04%\n[*]Bundel Besi Raksasa 0.01%\n[*]Warga Desa Biasa 0.4%\n[*]Petarung yang Dibangkitkan 0.4%\n[*]Calon Anggota Perserikatan 0.4%\n[*]Pembunuh Perserikatan 0.1%\n[*]Penyerang Perserikatan 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Besi Raksasa 0.01%\n[*]EPIK\n[**]Bundel Besi Besar 0.04%\n[*]LANGKA\n[**]Bundel Besi Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Besi Kecil 0.6%\n[**]Pembunuh Perserikatan 0.1%\n[**]Penyerang Perserikatan 0.1%\n[*]BIASA\n[**]Bundel Besi Mungil 2.25%\n[**]Warga Desa Biasa 0.4%\n[**]Petarung yang Dibangkitkan 0.4%\n[**]Calon Anggota Perserikatan 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Bundel Besi Mungil 2.25%\n[*]Bundel Besi Kecil 0.6%\n[*]Bundel Besi Sedang 0.1%\n[*]Bundel Besi Besar 0.04%\n[*]Bundel Besi Raksasa 0.01%\n[*]Warga Desa Biasa 0.4%\n[*]Petarung Kejam 0.4%\n[*]Biarawan Kejam 0.4%\n[*]Pengamuk Kejam 0.1%\n[*]Dukun Pemanggil Api 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Besi Raksasa 0.01%\n[*]EPIK\n[**]Bundel Besi Besar 0.04%\n[*]LANGKA\n[**]Bundel Besi Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Besi Kecil 0.6%\n[**]Pengamuk Kejam 0.1%\n[**]Dukun Pemanggil Api 0.1%\n[*]BIASA\n[**]Bundel Besi Mungil 2.25%\n[**]Warga Desa Biasa 0.4%\n[**]Petarung Kejam 0.4%\n[**]Biarawan Kejam 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Bundel Besi Mungil 2.25%\n[*]Bundel Besi Kecil 0.6%\n[*]Bundel Besi Sedang 0.1%\n[*]Bundel Besi Besar 0.04%\n[*]Bundel Besi Raksasa 0.01%\n[*]Warga Desa Biasa 0.4%\n[*]Berandal dari Biara 0.4%\n[*]Petarung Saleh 0.4%\n[*]Biarawan Agung 0.1%\n[*]Dukun Taat 0.1%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Bundel Besi Raksasa 0.01%\n[*]EPIK\n[**]Bundel Besi Besar 0.04%\n[*]LANGKA\n[**]Bundel Besi Sedang 0.1%\n[*]TIDAK BIASA\n[**]Bundel Besi Kecil 0.6%\n[**]Biarawan Agung 0.1%\n[**]Dukun Taat 0.1%\n[*]BIASA\n[**]Bundel Besi Mungil 2.25%\n[**]Warga Desa Biasa 0.4%\n[**]Berandal dari Biara 0.4%\n[**]Petarung Saleh 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Cangkang Titan 0.58%\n[*]Paruh Titan 0.58%\n[*]Taring Titan 0.58%\n[*]Telur Titan 0.41%\n[*]Bulu Titan 0.41%\n[*]Mata Titan 0.41%\n[*]Tulang Belakang Titan 0.617%\n[*]Ekor Titan 0.617%\n[*]Jantung Titan 0.25%\n[*]Tengkorak Titan 0.25%\n[*]Badai 0.25%\n[*]Bane-nya Valkyrie 0.25%\n[*]Spanduk Titan 0.25%\n[*]Gulungan Pengubah 0.25%\n[*]Harpun Raksasa 0.25%\n[*]Sigrunn 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Badai 0.25%\n[**]Bane-nya Valkyrie 0.25%\n[**]Spanduk Titan 0.25%\n[**]Gulungan Pengubah 0.25%\n[**]Harpun Raksasa 0.25%\n[*]EPIK\n[**]Jantung Titan 0.25%\n[**]Tengkorak Titan 0.25%\n[*]LANGKA\n[**]Tulang Belakang Titan 0.617%\n[**]Ekor Titan 0.617%\n[*]TIDAK BIASA\n[**]Telur Titan 0.41%\n[**]Bulu Titan 0.41%\n[**]Mata Titan 0.41%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]BIASA\n[**]Cangkang Titan 0.58%\n[**]Paruh Titan 0.58%\n[**]Taring Titan 0.58%\n[**]Sigrunn 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Cangkang Titan 0.58%\n[*]Paruh Titan 0.58%\n[*]Taring Titan 0.58%\n[*]Telur Titan 0.41%\n[*]Bulu Titan 0.41%\n[*]Mata Titan 0.41%\n[*]Tulang Belakang Titan 0.617%\n[*]Ekor Titan 0.617%\n[*]Jantung Titan 0.25%\n[*]Tengkorak Titan 0.25%\n[*]Badai 0.25%\n[*]Bane-nya Valkyrie 0.25%\n[*]Spanduk Titan 0.25%\n[*]Gulungan Pengubah 0.25%\n[*]Harpun Raksasa 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Needler 0.8%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Badai 0.25%\n[**]Bane-nya Valkyrie 0.25%\n[**]Spanduk Titan 0.25%\n[**]Gulungan Pengubah 0.25%\n[**]Harpun Raksasa 0.25%\n[*]EPIK\n[**]Jantung Titan 0.25%\n[**]Tengkorak Titan 0.25%\n[*]LANGKA\n[**]Tulang Belakang Titan 0.617%\n[**]Ekor Titan 0.617%\n[*]TIDAK BIASA\n[**]Telur Titan 0.41%\n[**]Bulu Titan 0.41%\n[**]Mata Titan 0.41%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]BIASA\n[**]Cangkang Titan 0.58%\n[**]Paruh Titan 0.58%\n[**]Taring Titan 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Cangkang Titan 0.58%\n[*]Paruh Titan 0.58%\n[*]Taring Titan 0.58%\n[*]Telur Titan 0.41%\n[*]Bulu Titan 0.41%\n[*]Mata Titan 0.41%\n[*]Tulang Belakang Titan 0.617%\n[*]Ekor Titan 0.617%\n[*]Jantung Titan 0.25%\n[*]Tengkorak Titan 0.25%\n[*]Badai 0.25%\n[*]Bane-nya Valkyrie 0.25%\n[*]Spanduk Titan 0.25%\n[*]Gulungan Pengubah 0.25%\n[*]Harpun Raksasa 0.25%\n[*]Nightshade 2%\n[*]Fletcher 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Badai 0.25%\n[**]Bane-nya Valkyrie 0.25%\n[**]Spanduk Titan 0.25%\n[**]Gulungan Pengubah 0.25%\n[**]Harpun Raksasa 0.25%\n[*]EPIK\n[**]Jantung Titan 0.25%\n[**]Tengkorak Titan 0.25%\n[*]LANGKA\n[**]Tulang Belakang Titan 0.617%\n[**]Ekor Titan 0.617%\n[*]TIDAK BIASA\n[**]Telur Titan 0.41%\n[**]Bulu Titan 0.41%\n[**]Mata Titan 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]BIASA\n[**]Cangkang Titan 0.58%\n[**]Paruh Titan 0.58%\n[**]Taring Titan 0.58%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Cangkang Titan 0.58%\n[*]Paruh Titan 0.58%\n[*]Taring Titan 0.58%\n[*]Telur Titan 0.41%\n[*]Bulu Titan 0.41%\n[*]Mata Titan 0.41%\n[*]Tulang Belakang Titan 0.617%\n[*]Ekor Titan 0.617%\n[*]Jantung Titan 0.25%\n[*]Tengkorak Titan 0.25%\n[*]Badai 0.25%\n[*]Bane-nya Valkyrie 0.25%\n[*]Spanduk Titan 0.25%\n[*]Gulungan Pengubah 0.25%\n[*]Harpun Raksasa 0.25%\n[*]Sharan 2%\n[*]Tudan 2%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Badai 0.25%\n[**]Bane-nya Valkyrie 0.25%\n[**]Spanduk Titan 0.25%\n[**]Gulungan Pengubah 0.25%\n[**]Harpun Raksasa 0.25%\n[*]EPIK\n[**]Jantung Titan 0.25%\n[**]Tengkorak Titan 0.25%\n[*]LANGKA\n[**]Tulang Belakang Titan 0.617%\n[**]Ekor Titan 0.617%\n[*]TIDAK BIASA\n[**]Telur Titan 0.41%\n[**]Bulu Titan 0.41%\n[**]Mata Titan 0.41%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]BIASA\n[**]Cangkang Titan 0.58%\n[**]Paruh Titan 0.58%\n[**]Taring Titan 0.58%\n[**]Sharan 2%\n[**]Tudan 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Cangkang Titan 0.58%\n[*]Paruh Titan 0.58%\n[*]Taring Titan 0.58%\n[*]Telur Titan 0.41%\n[*]Bulu Titan 0.41%\n[*]Mata Titan 0.41%\n[*]Tulang Belakang Titan 0.617%\n[*]Ekor Titan 0.617%\n[*]Jantung Titan 0.25%\n[*]Tengkorak Titan 0.25%\n[*]Badai 0.25%\n[*]Bane-nya Valkyrie 0.25%\n[*]Spanduk Titan 0.25%\n[*]Gulungan Pengubah 0.25%\n[*]Harpun Raksasa 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LEGENDARIS\n[**]Badai 0.25%\n[**]Bane-nya Valkyrie 0.25%\n[**]Spanduk Titan 0.25%\n[**]Gulungan Pengubah 0.25%\n[**]Harpun Raksasa 0.25%\n[*]EPIK\n[**]Jantung Titan 0.25%\n[**]Tengkorak Titan 0.25%\n[*]LANGKA\n[**]Tulang Belakang Titan 0.617%\n[**]Ekor Titan 0.617%\n[*]TIDAK BIASA\n[**]Telur Titan 0.41%\n[**]Bulu Titan 0.41%\n[**]Mata Titan 0.41%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]BIASA\n[**]Cangkang Titan 0.58%\n[**]Paruh Titan 0.58%\n[**]Taring Titan 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%\n[*] 0.48 0.48%\n[*]Sigrunn 2%\n[*]Brand 2%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pahlawan Pelatih Langka 0.01%\n[*]TIDAK BIASA\n[**]Pahlawan Pelatih Tidak Biasa 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]BIASA\n[**]Pahlawan Pelatih Biasa 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Needler 0.8%\n[*] 0.48 0.48%\n[*]Aife 2%\n[*]Derric 2%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pahlawan Pelatih Langka 0.01%\n[*]TIDAK BIASA\n[**]Pahlawan Pelatih Tidak Biasa 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]BIASA\n[**]Pahlawan Pelatih Biasa 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Layla 0.8%\n[*]Silthus 0.8%\n[*]Julius 0.8%\n[*] 0.48 0.48%\n[*]Nightshade 2%\n[*]Fletcher 2%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pahlawan Pelatih Langka 0.01%\n[*]TIDAK BIASA\n[**]Pahlawan Pelatih Tidak Biasa 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]BIASA\n[**]Pahlawan Pelatih Biasa 0.48%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%\n[*] 0.48 0.48%\n[*]Sharan 2%\n[*]Tudan 2%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pahlawan Pelatih Langka 0.01%\n[*]TIDAK BIASA\n[**]Pahlawan Pelatih Tidak Biasa 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]BIASA\n[**]Pahlawan Pelatih Biasa 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%\n[*] 0.48 0.48%\n[*]Hikaru 2%\n[*]Kenjiro 2%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pahlawan Pelatih Langka 0.01%\n[*]TIDAK BIASA\n[**]Pahlawan Pelatih Tidak Biasa 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]BIASA\n[**]Pahlawan Pelatih Biasa 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Warga Desa Biasa 0.85%\n[*]Pemanah Milisi 0.85%\n[*]Penyerang Imperial 0.85%\n[*]Pasukan Imperial 0.15%\n[*]Anak Baru Milisi 0.15%\n[*]Penyerang Elite Imperial 0.05%\n[*]Pemanah Perusak 0.05%\n[*]Kesatria Imperial 0.05%\n[*]Pasukan Pelatih 0.85%\n[*]Pasukan Pelatih 0.1%\n[*]Pasukan Pelatih 0.05%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Penyerang Elite Imperial 0.05%\n[**]Pemanah Perusak 0.05%\n[**]Kesatria Imperial 0.05%\n[**]Pasukan Pelatih 0.05%\n[*]TIDAK BIASA\n[**]Pasukan Imperial 0.15%\n[**]Anak Baru Milisi 0.15%\n[**]Pasukan Pelatih 0.1%\n[*]BIASA\n[**]Warga Desa Biasa 0.85%\n[**]Pemanah Milisi 0.85%\n[**]Penyerang Imperial 0.85%\n[**]Pasukan Pelatih 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Warga Desa Biasa 0.85%\n[*]Bajingan Pemberontak 0.85%\n[*]Peneluh Hutan Lebat 0.85%\n[*]Pemanah Pemberontak 0.15%\n[*]Petarung Desa 0.15%\n[*]Penembak Jitu Pemberontak 0.05%\n[*]Bangsa Ent Hutan Lebat 0.05%\n[*]Ilusionis Pemberontak 0.05%\n[*]Pasukan Pelatih 0.85%\n[*]Pasukan Pelatih 0.1%\n[*]Pasukan Pelatih 0.05%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Penembak Jitu Pemberontak 0.05%\n[**]Bangsa Ent Hutan Lebat 0.05%\n[**]Ilusionis Pemberontak 0.05%\n[**]Pasukan Pelatih 0.05%\n[*]TIDAK BIASA\n[**]Pemanah Pemberontak 0.15%\n[**]Petarung Desa 0.15%\n[**]Pasukan Pelatih 0.1%\n[*]BIASA\n[**]Warga Desa Biasa 0.85%\n[**]Bajingan Pemberontak 0.85%\n[**]Peneluh Hutan Lebat 0.85%\n[**]Pasukan Pelatih 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Warga Desa Biasa 0.85%\n[*]Petarung yang Dibangkitkan 0.85%\n[*]Calon Anggota Perserikatan 0.85%\n[*]Pembunuh Perserikatan 0.15%\n[*]Penyerang Perserikatan 0.15%\n[*]Petarung yang Dibangkitkan 0.05%\n[*]Kesatria yang Dibangkitkan 0.05%\n[*]Kesatria Perserikatan 0.05%\n[*]Pasukan Pelatih 0.85%\n[*]Pasukan Pelatih 0.1%\n[*]Pasukan Pelatih 0.05%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Petarung yang Dibangkitkan 0.05%\n[**]Kesatria yang Dibangkitkan 0.05%\n[**]Kesatria Perserikatan 0.05%\n[**]Pasukan Pelatih 0.05%\n[*]TIDAK BIASA\n[**]Pembunuh Perserikatan 0.15%\n[**]Penyerang Perserikatan 0.15%\n[**]Pasukan Pelatih 0.1%\n[*]BIASA\n[**]Warga Desa Biasa 0.85%\n[**]Petarung yang Dibangkitkan 0.85%\n[**]Calon Anggota Perserikatan 0.85%\n[**]Pasukan Pelatih 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Warga Desa Biasa 0.85%\n[*]Biarawan Kejam 0.85%\n[*]Petarung Kejam 0.85%\n[*]Pengamuk Kejam 0.15%\n[*]Dukun Pemanggil Api 0.15%\n[*]Penganiaya Kejam 0.05%\n[*]Minotaur Kejam 0.05%\n[*]Penyihir Pertempuran Pemanggil Api 0.05%\n[*]Pasukan Pelatih 0.85%\n[*]Pasukan Pelatih 0.1%\n[*]Pasukan Pelatih 0.05%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Penganiaya Kejam 0.05%\n[**]Minotaur Kejam 0.05%\n[**]Penyihir Pertempuran Pemanggil Api 0.05%\n[**]Pasukan Pelatih 0.05%\n[*]TIDAK BIASA\n[**]Pengamuk Kejam 0.15%\n[**]Dukun Pemanggil Api 0.15%\n[**]Pasukan Pelatih 0.1%\n[*]BIASA\n[**]Warga Desa Biasa 0.85%\n[**]Biarawan Kejam 0.85%\n[**]Petarung Kejam 0.85%\n[**]Pasukan Pelatih 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Jarahan Mimik",
-     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Warga Desa Biasa 0.85%\n[*]Berandal dari Biara 0.85%\n[*]Petarung Saleh 0.85%\n[*]Biarawan Agung 0.15%\n[*]Dukun Taat 0.15%\n[*]Pasukan Tempur Taat 0.05%\n[*]Pembunuh Taat 0.05%\n[*]Konsep Wali Agung 0.05%\n[*]Pasukan Pelatih 0.85%\n[*]Pasukan Pelatih 0.1%\n[*]Pasukan Pelatih 0.05%"
+     "text": "Setiap Mimik unik di tim Anda dapat memberikan jarahan ekstra saat menyelesaikan tahap.\n[*]Mimik ini menghasilkan peluang mendapatkan jarahan tambahan berikut:\n[*]LANGKA\n[**]Pasukan Tempur Taat 0.05%\n[**]Pembunuh Taat 0.05%\n[**]Konsep Wali Agung 0.05%\n[**]Pasukan Pelatih 0.05%\n[*]TIDAK BIASA\n[**]Biarawan Agung 0.15%\n[**]Dukun Taat 0.15%\n[**]Pasukan Pelatih 0.1%\n[*]BIASA\n[**]Warga Desa Biasa 0.85%\n[**]Berandal dari Biara 0.85%\n[**]Petarung Saleh 0.85%\n[**]Pasukan Pelatih 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Menimbulkan kerusakan 600% pada sasaran.",
       "Serangan itu menembus genjotan defensif. (Ini termasuk serangan balik.)",
-      "Layu: Sasaran mendapat -350 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran mendapat -350 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Dinamika Elemen memulihkan 5% kesehatan semua sekutu Alam selama 6 giliran. Efek ini tidak bisa dienyahkan."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1100 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran",
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1100 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Setelah berhasil dirapal, berpeluang 100% untuk merapal Sayap Bilah lagi pada sasaran acak.\n[*]Bisa merapal ulang hingga 3 kali dan peluang merapal ulang berkurang sebesar -35% seusai tiap berhasil merapal."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 2180 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran.",
+      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 2180 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Sasaran otomatis mengerahkan Serangan Awur Berubah ke sekutu acak saat mananya penuh selama 4 giliran. Saat efek ini terpicu, efek beralih mengenai sekutu dan durasinya diperbarui.",
       "Semua musuh mendapat -35% pertahanan selama 4 giliran."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 700 kerusakan. Menimbulkan kerusakan 20% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran"
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 700 kerusakan. Menimbulkan kerusakan 20% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran"
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1440 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran",
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1440 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Selama 3 giliran, mengurangi mana sasaran dan musuh terdekat sebesar -15% di akhir giliran.",
       "Sasaran dan musuh terdekat mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 860 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran",
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 860 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Sasaran dan musuh terdekat menerima 900 kerusakan Racun selama 5 giliran. Perapal dan semua sekutu menyerap 35% dari kerusakan Racun yang ditimbulkan sebagai kesehatan."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran.",
+      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Jika sasaran dikalahkan oleh serangan tersebut, musuh terdekat tidak dapat memperoleh mana selama 3 giliran.",
       "Semua sekutu menyerang balik dengan 60% kerusakan yang diterima selama 3 giliran."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 1020 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran.",
+      "Menyerang sasaran dengan Serangan Bulan Terbit, menimbulkan hingga 1020 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Mana sasaran berkurang 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
-      "Menyerang semua musuh dengan Serangan Bulan Terbit, menimbulkan hingga 2000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran.",
+      "Menyerang semua musuh dengan Serangan Bulan Terbit, menimbulkan hingga 2000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Semua sekutu mendapat 5% mana untuk setiap Iblis yang hancur. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1620 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran",
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1620 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Memanggil Antek Owlkyrie untuk perapal dan sekutu terdekat. Antek mewarisi 25% HP dan 45% serangan dari perapal.",
       "Jika Antek Owlkyrie dikalahkan, Penghapusan Penuh dirapal ke penyerang. (Penghapusan Penuh menghapus semua efek status, tumpukan, serta efek Bertumbuh dan Layu. Menghapus bahkan efek status dan tumpukan yang biasanya Bandel, tidak bisa dienyahkan, atau tidak bisa dibersihkan.)",
       "Setelah Penghapusan Penuh dirapal, penyerang berubah menjadi Hantu Owlhalla selama 3 giliran. Efek ini Bandel.\n[*] Saat berwujud Hantu Owlhalla, sasaran menderita kerusakan sebesar 430 setiap giliran. (Saat berwujud Hantu, karakter tidak bisa meraih mana dan tidak bisa disembuhkan dengan Keahlian Khusus, tetapi kebal terhadap serangan normal, serangan Keahlian Khusus, kemampuan pasif yang menimbulkan kerusakan, efek status, dan tumpukan.\n[*] Kebal terhadap efek Bertumbuh, Layu, dan Kegilaan baru.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.\n[*]Tidak bisa dirapal jika hanya tersisa satu musuh dalam pertempuran.\n[*]Titan dan Titan Mistis tidak dipengaruhi oleh efek status ini.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Mengenyahkan genjotan dari sasaran dan musuh terdekat.",
-      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran",
+      "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Sasaran dan musuh terdekat kebal terhadap genjotan efek status baru selama 3 giliran."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Menyerang semua musuh dengan Serangan Bulan Terbit, menimbulkan hingga 1200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Serangan ini tak pernah meleset dari sasaran.",
+      "Menyerang semua musuh dengan Serangan Bulan Terbit, menimbulkan hingga 1200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Semua musuh mengalami[#Dynamic] 924 [#]kerusakan Berdarah selama 4 giliran.",
       "Semua musuh mendapat akurasi -45% selama 4 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]x 1 Daya Mana:",
       "[**]Menimbulkan kerusakan 280% pada sasaran.",
       "[**]Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
-      "[**]Bertumbuh: Semua sekutu mendapat 120 serangan dan 120 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Bertumbuh: Semua sekutu mendapat 120 serangan dan 120 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]x 2 Daya Mana:",
       "[**]Menimbulkan kerusakan 430% pada sasaran.",
       "[**]Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
-      "[**]Bertumbuh: Semua sekutu mendapat 210 serangan dan 210 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Bertumbuh: Semua sekutu mendapat 210 serangan dan 210 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]x 3 Daya Mana:",
       "[**]Menimbulkan kerusakan 650% pada sasaran.",
       "[**]Serangan berantai melalui semua musuh yang berada terdekat musuh yang terkena serangan itu.",
-      "[**]Bertumbuh: Semua sekutu mendapat 750 serangan dan 750 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "[**]Bertumbuh: Semua sekutu mendapat 750 serangan dan 750 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
       "[*]x 1 Daya Mana:",
       "[**]Menimbulkan kerusakan 450% pada sasaran.",
-      "[**]Layu: Sasaran mendapat -200 serangan dan -200 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Layu: Sasaran mendapat -200 serangan dan -200 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]x 2 Daya Mana:",
       "[**]Menimbulkan kerusakan 600% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "[**]Layu: Sasaran dan musuh terdekat mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "[**]Layu: Sasaran dan musuh terdekat mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "[*]x 3 Daya Mana:",
       "[**]Menimbulkan kerusakan 800% pada sasaran dan kerusakan minor pada semua musuh lainnya.",
-      "[**]Layu: Semua musuh mendapat -650 serangan dan -650 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "[**]Layu: Semua musuh mendapat -650 serangan dan -650 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[***]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[***]Pembersihan melemahkan Layu sebesar 50%.\n[***]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[***]Batas untuk Skor Kemampuan yang dimodifikasi.\n[***]Min 30% dan maksimal 170% dari nilai aslinya.\n[***]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[***]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 750 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 750 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 750 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 750 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Menimbulkan kerusakan 450% pada sasaran dan musuh terdekat.",
-      "Bertumbuh: Perapal dan sekutu terdekat mendapat 240 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Perapal dan sekutu terdekat mendapat 240 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Perapal dan sekutu terdekat memantulkan semua status pelemahan dan 160% kerusakan kepada penyerang dan memblokir efek negatif dari Keahlian Khusus Api musuh selama 4 giliran. Efek ini tidak bisa dienyahkan. (Efek status yang dirapal oleh karakter, Antek, dan Iblis di sisi yang sama tidak bisa dipantulkan.)",
       "Perapal menerima Kebangkitan Lendir selama 4 giliran. Efek ini tidak bisa dienyahkan.\n[*]Jika kalah selagi Kebangkitan Lendir aktif, ia akan terlahir kembali sebagai Lendir\n[*]Lendir\n[*] 100% warisan kesehatan.\n[*] 50% serangan\n[*] 50% pertahanan\n[*]Keahlian Khusus: Tamparan Lendir (Menimbulkan kerusakan 350% pada sasaran)\n[*]Efek ini tidak bisa dienyahkan.\n[*]Jika Lendir tidak kalah dalam 2 giliran, ia akan terlahir kembali sebagai bentuk asli karakter, mewarisi kesehatan dan mana Lendir."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Memulihkan kesehatan perapal dan sekutu terdekat sebesar 25%.",
       "Mana sekutu terdekat bertambah 30%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
-      "Bertumbuh: Sekutu terdekat mendapat 360 serangan dan 360 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Bertumbuh: Sekutu terdekat mendapat 360 serangan dan 360 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Memanggil Antek Mega Lendir dengan 50% HP dan 40% serangan yang diwarisi dari perapal."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 4000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 4000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Semua sekutu berpeluang 45% untuk berkelit dari serangan dan Keahlian Khusus selama 5 giliran.",
       "Karakter ini mendapat Tanda Terbakar selama 5 giliran. Setiap kali musuh atau sekutu menerima kerusakan Terbakar, perapal akan meraih tumpukan (Maks: 10). Setiap tumpukan meningkatkan generasi mana dari perapal sebesar 7%."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 4400 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 4400 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Semua sekutu berpeluang 45% untuk berkelit dari Keahlian Khusus selama 5 giliran. Setiap kali berkelit akan mengakibatkan kerusakan pada penyerang sebanyak 500.",
       "Karakter ini mendapat Tanda Terbakar selama 5 giliran. Setiap kali musuh atau sekutu menerima kerusakan Terbakar, perapal akan meraih tumpukan (Maks: 10). Setiap tumpukan meningkatkan generasi mana dari perapal sebesar 7%."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 1500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 1500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Kerusakan melewati Antek milik sasaran.",
       "Semua musuh mengalami[#Dynamic] 388 [#]kerusakan Racun selama 4 giliran.",
       "Semua musuh menanggung 50% pertambahan kerusakan dari status pelemahan dan tumpukan negatif selama 4 giliran."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 1650 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 1650 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Kerusakan melewati Antek milik sasaran.",
       "Semua musuh mengalami[#Dynamic] 408 [#]kerusakan Racun selama 4 giliran. Perapal menyerap 10% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
       "Semua musuh menanggung 52% pertambahan kerusakan dari status pelemahan dan tumpukan negatif selama 4 giliran."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "Kerusakan melewati Antek milik sasaran.",
-      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 1080 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 1080 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Sasaran menampik Antek baru selama 4 giliran."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "Kerusakan melewati Antek milik sasaran.",
-      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 1180 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dengan Serbuan Badai Api, menimbulkan hingga 1180 kerusakan. Menimbulkan kerusakan 30% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Sasaran menampik Antek baru selama 4 giliran."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Menyembuhkan semua sekutu untuk 30% kerusakan yang ditimbulkan.",
       "Semua sekutu menyerang balik dengan 65% kerusakan yang diterima selama 5 giliran."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2600 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2600 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Kesehatan semua sekutu meningkat 27% dari kerusakan yang ditimbulkan. Peningkatan kesehatan dapat melampaui HP maks.",
       "Semua sekutu menyerang balik dengan 75% kerusakan yang diterima selama 5 giliran."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2200 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Perapal mencuri generasi mana semua musuh selama 5 giliran, awalnya sedikit, lalu makin banyak seiring giliran, dan pada akhir giliran, semua mana dicuri. Efek ini tidak bisa dibersihkan, tetapi hilang jika perapal kalah.",
       "Di akhir tiap giliran, mencuri genjotan terbaru yang bisa dienyahkan dari semua musuh dan secara acak membagikannya di antara sekutu selama 5 giliran."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang semua musuh dengan Serbuan Badai Api, menimbulkan hingga 2500 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Mana semua musuh berkurang 35%.",
       "Setelah Keahlian Khusus dirapal, mana perapal bertambah 15%. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
       "Di akhir tiap giliran, mencuri genjotan terbaru yang bisa dienyahkan dari semua musuh dan secara acak membagikannya di antara sekutu selama 5 giliran."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Mengenyahkan genjotan sasaran dan musuh terdekat.",
-      "Menyerang sasaran dan musuh terdekat dengan Serbuan Badai Api, menimbulkan hingga 2000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dan musuh terdekat dengan Serbuan Badai Api, menimbulkan hingga 2000 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Sasaran dan musuh terdekat kebal terhadap genjotan efek status baru selama 3 giliran."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Mengenyahkan genjotan sasaran dan musuh terdekat.",
-      "Menyerang sasaran dan musuh terdekat dengan Serbuan Badai Api, menimbulkan hingga 2300 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam.",
+      "Menyerang sasaran dan musuh terdekat dengan Serbuan Badai Api, menimbulkan hingga 2300 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Alam. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Sasaran dan musuh terdekat kebal terhadap genjotan efek status baru selama 3 giliran."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Menimbulkan kerusakan 600% pada semua musuh.",
       "Mengurangi kesehatan maksimal semua musuh sebesar 800. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 800 lagi.)",
       "Panen genjotan dari semua musuh.\n[*]Panen dengan aman menghapus 2 genjotan, Tumpukan positif, atau efek Bertumbuh dari setiap sasaran. Ini termasuk efek Bandel, genjotan yang tidak bisa dienyahkan, dan efek Tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman melewati efek sekunder, seperti kerusakan saat menghapus, dari genjotan efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Bertumbuh dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
-      "Layu: Semua musuh mendapat -540 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Layu: Semua musuh mendapat -540 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Memulihkan kesehatan perapal dan sekutu terdekat sebesar 50%.",
       "Mencerabut pelemah dari perapal dan sekutu terdekat.\n[*]Cerabut dengan aman menghapus 2 pelemah, Tumpukan positif, atau efek Layu dari setiap sasaran. Ini termasuk status pelemahan yang tidak bisa dibersihkan dan efek tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman mengabaikan efek sekunder, seperti kerusakan saat menghapus, dari pelemah efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Layu dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
-      "Bertumbuh: Semua sekutu mendapat 170 serangan dan 170 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Semua sekutu mendapat 170 serangan dan 170 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua musuh mendapat tambahan -80% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan.",
       "Mengangkat status pelemahan yang bisa dibersihkan terbaru dari semua sekutu dan secara acak membagikannya kepada musuh.",
       "Membersihkan status pelemahan pada akhir tiap giliran untuk semua sekutu selama 4 giliran."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Menimbulkan 330% kerusakan Cakar kepada semua musuh.\n[*]Menimbulkan 400% kerusakan terhadap musuh dengan genjotan pertahanan, Antek, atau Antek Mega.\n[*]Musuh dengan genjotan pertahanan, Antek, atau Antek Mega mendapat -35% pertahanan selama 5 giliran.",
-      "Layu: Semua sekutu mendapat -300 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Semua sekutu mendapat -300 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Semua musuh menjadi Terprovokasi selama 4 giliran. Karakter Terprovokasi menimbulkan 1% kerusakan kepada lawan acak di akhir giliran.",
       "Semua sekutu mendapat 50% serangan dan bertambah 20% setiap kali mereka terkena hantaman selama 4 giliran, hingga 150% serangan."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "Mengurangi kesehatan maksimal sasaran sebesar 1600. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 1600 lagi.)",
       "Sasaran dibungkam selama 3 giliran.",
-      "Bertumbuh: Sekutu terdekat mendapat 540 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
+      "Bertumbuh: Sekutu terdekat mendapat 540 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Menimbulkan kerusakan 410% pada sasaran dan musuh terdekat.",
-      "Layu: Sasaran dan musuh terdekat mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Layu dan Bertumbuh tidak dapat dihapus dengan mengenyahkan atau membersihkan.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
+      "Layu: Sasaran dan musuh terdekat mendapat -250 serangan dan -250 pertahanan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
       "Sasaran dan musuh terdekat memantulkan genjotan efek status ke karakter acak di tim lawan selama 3 giliran. (Hanya genjotan yang bisa dienyahkan yang dipantulkan.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Menipu Kematian",
-     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke satu musuh acak."
+     "text": "Pertama kalinya karakter ini menerima kerusakan fatal dari serangan normal atau Keahlian Khusus, dia mengalihkan hingga 2500 kerusakan ke si penyerang.\n[*]Tidak diaktifkan jika karakter ini adalah satu-satunya anggota timnya dalam pertempuran."
     },
     {
      "id": "ransack_on_other_ally_special",

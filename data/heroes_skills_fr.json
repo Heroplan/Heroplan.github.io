@@ -57,7 +57,7 @@
       "Cette compétence spéciale ne rate jamais sa cible.",
       "Inflige 495% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
       "Vole tous les bonus dissipables de la cible et des ennemis proches, et les octroie aléatoirement aux alliés.",
-      "Croissance: le lanceur et les alliés proches reçoivent 340 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: le lanceur et les alliés proches reçoivent 340 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Inflige 355% de dégâts à tous les ennemis.",
       "L'attaque ignore les contre-attaques et les renvois.",
-      "Flétrissement: tous les ennemis reçoivent -510 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -510 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Pendant 4 tours, à la fin de chaque tour, le lanceur tire un rayon astral sur un ennemi aléatoire.\n[*]Chaque rayon astral inflige 300% de dégâts.\n[*]Chaque rayon astral réduit la santé maximale de la cible de 300. L'effet est plus puissant sur les cibles dont la santé est boostée.",
       "(La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 300.)"
      ]
@@ -881,7 +881,7 @@
       "Inflige 600% de dégâts à la cible.",
       "Si la cible avait plus de 50% de mana avant de subir les dégâts, la compétence spéciale cible un autre ennemi qui avait plus de 50% de mana avant de subir les dégâts. Si aucun des autres ennemis n'avait plus de 50% de mana, la compétence cible un ennemi aléatoire. Les dégâts diminuent à chaque coup consécutif. Chaque ennemi ne peut être frappé qu'une fois.",
       "Les cibles touchées sont réduites au silence pour 4 tours.",
-      "Flétrissement: tous les ennemis reçoivent -300 points d'attaque et -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -300 points d'attaque et -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Booste la santé du lanceur et des alliés à proximité de 350. Le maximum de PV peut être dépassé.",
-      "Croissance: le lanceur et les alliés proches reçoivent 60 points d'attaque et 60 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: le lanceur et les alliés proches reçoivent 60 points d'attaque et 60 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Inflige 400% de dégâts à la cible et aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -420 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible et les ennemis proches reçoivent -420 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Les dégâts subis par la cible et les ennemis proches sont augmentés de 25% pendant 3 tours. Cet effet augmente de 10% pour chaque sbire et méga sbire possédé par les ennemis, jusqu'à un maximum de 85%."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Inflige 600% de dégâts à la cible.",
       "Si la cible a des bonus et est touchée, elle vise un autre ennemi qui a des bonus. Si aucun des ennemis n'a de bonus, elle vise un ennemi aléatoire. Les dégâts sont réduits à chaque coup consécutif. Chaque ennemi ne peut être touché qu'une seule fois.",
       "Dissipe de façon sûre 1 bonus pour tous les ennemis. (La dissipation sûre permet d'éviter les effets secondaires de la suppression d'un bonus, par exemple les dégâts lors de la suppression. Les effets externes comme les effets passifs ou de famille peuvent toujours s'appliquer.\n[*]Les bonus les plus récents sont dissipés en premier.)",
-      "Flétrissement: tous les ennemis reçoivent -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Inflige 850% de dégâts à la cible.",
       "Pendant 5 tours, la cible reçoit 100% de tous les dégâts infligés à ses alliés.",
-      "Croissance: tous les alliés reçoivent 660 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 660 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les alliés reçoivent 35% de génération de mana pour 5 tours. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Inflige 530% de dégâts à la cible.",
       "L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
       "Les dégâts subis par les cibles touchées sont augmentés de 50% pendant 5 tours. Cet effet augmente de 10% pour chaque sbire et méga sbire possédé par les ennemis, jusqu'à un maximum de 100%.",
-      "Flétrissement: tous les ennemis reçoivent -540 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -540 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Restaure 30% de la santé de tous les alliés.",
-      "Croissance: tous les alliés reçoivent 300 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 300 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La santé de tous les alliés est boostée de 450 au bout de 3 tours, ou immédiatement si l'effet prend fin avant d'arriver à terme. Le maximum de PV peut être dépassé."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Inflige 450% de dégâts à la cible et aux ennemis proches.",
       "La cible et les ennemis proches reçoivent[#Dynamic] 792 [#]points de dégâts d'eau en 4 tours. La santé de tous les alliés est boostée à hauteur de 50% des dégâts d'eau.",
-      "Croissance: tous les alliés reçoivent 240 points d'attaque et 240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: tous les alliés reçoivent 240 points d'attaque et 240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Inflige 450% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent[#Dynamic] 785 [#]points de dégâts de brûlure en 5 tours. Tous les alliés absorbent 25% des dégâts de saignement sous forme de santé boostée.",
-      "Flétrissement: tous les ennemis reçoivent -420 points d'attaque et -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -420 points d'attaque et -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Inflige 470% de dégâts à tous les ennemis.",
-      "Flétrissement: tous les ennemis reçoivent -420 points d'attaque et -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -420 points d'attaque et -420 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les ennemis reçoivent -35% de génération de mana pour 5 tours. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Détruit tous les démons des alliés et inflige des dégâts à tous les méga démons.",
       "Purifie les effets négatifs de tous les alliés.",
       "Booste la santé de tous les alliés de 1550. Le maximum de PV peut être dépassé.",
-      "Croissance: tous les alliés reçoivent 480 points d'attaque et 480 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: tous les alliés reçoivent 480 points d'attaque et 480 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Moins de 40 point(s) d'humilité:",
       "[*]Inflige 265% de dégâts aux ennemis sur les bords de la formation ennemie. S'il n'y a qu'un seul ennemi, les dégâts sont doublés.",
-      "[*]Flétrissement: les ennemis sur les bords de leur formation obtiennent -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[*]Flétrissement: les ennemis sur les bords de leur formation obtiennent -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les purifications affaiblissent le flétrissement de 50%.\n[**]Les dissipations affaiblissent la croissance de 50%.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Dissipe les bonus des ennemis situés sur les bords de la formation ennemie.",
       "40 point(s) d'humilité ou plus:",
       "[*]Dissipe de façon sûre les bonus des ennemis situés sur les bords de leur formation. (La dissipation sûre permet d'éviter les effets secondaires de la suppression d'un bonus, par exemple les dégâts lors de la suppression. Les effets externes comme les effets passifs ou de famille peuvent toujours s'appliquer.)",
       "[*]Inflige 360% de dégâts aux ennemis sur les bords de la formation ennemie. S'il n'y a qu'un seul ennemi, les dégâts sont doublés.",
-      "[*]Flétrissement: les ennemis sur les bords de leur formation obtiennent -350 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "[*]Flétrissement: les ennemis sur les bords de leur formation obtiennent -350 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les purifications affaiblissent le flétrissement de 50%.\n[**]Les dissipations affaiblissent la croissance de 50%.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Moins de 60 point(s) d'humilité:",
       "[*]Restaure 25% de la santé de tous les alliés.",
       "[*]Purifie 1 effet négatif pour tous les alliés. (Les effets négatifs sont purifiés selon l'ordre dans lequel ils ont été reçus, en commençant par les plus récents.)",
-      "[*]Croissance: tous les alliés reçoivent 180 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[*]Croissance: tous les alliés reçoivent 180 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les purifications affaiblissent le flétrissement de 50%.\n[**]Les dissipations affaiblissent la croissance de 50%.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Tous les alliés récupèrent 1005 PV sur 3 tours.",
       "60 point(s) d'humilité ou plus:",
       "[*]Restaure 32% de la santé de tous les alliés.",
       "[*]Purifie les effets négatifs de tous les alliés.",
-      "[*]Croissance: tous les alliés reçoivent 240 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[*]Croissance: tous les alliés reçoivent 240 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[**]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[**]Les purifications affaiblissent le flétrissement de 50%.\n[**]Les dissipations affaiblissent la croissance de 50%.\n[**]Limites des scores de capacité modifiés\n[**]Entre 30% et 170% de la valeur originale.\n[**]D'autres bonus et malus peuvent modifier les scores de capacité.\n[**]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Tous les alliés récupèrent 1440 PV sur 3 tours.",
       "[*]Le lanceur reçoit 84% de défense contre les compétences spéciales pour 3 tours."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Inflige 420% de dégâts à l'ennemi à qui il reste le plus de PV, et 300% de dégâts aux autres.",
       "L'ennemi avec le plus grand nombre de PV est réduit au silence pendant 3 tours.",
-      "Flétrissement: tous les ennemis reçoivent -350 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -350 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Détruit tous les sbires de tous les ennemis et inflige des dégâts à tous leurs méga sbires.",
       "Inflige 355% de dégâts à tous les ennemis.",
-      "Flétrissement: tous les ennemis reçoivent -510 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -510 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les ennemis subissent[#Dynamic] 129 [#]-[#Dynamic] 317 [#]points de dégâts de malédiction sur 4 tours, qui augmentent à chaque tour. Cet effet est obstiné. (Pendant le premier tour,[#Dynamic] 129 [#]points de dégâts sont infligés. Les dégâts augmentent de 35% à chaque tour, jusqu'à[#Dynamic] 317 [#]points de dégâts par tour.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Inflige 355% de dégâts à la cible et aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -225 points d'attaque et -225 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible et les ennemis proches reçoivent -225 points d'attaque et -225 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible et les ennemis proches renvoient leurs bonus à un personnage aléatoire de l'équipe adverse pendant 3 tours. (Seuls les bonus dissipables sont renvoyés.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Inflige 200% de dégâts à la cible et aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -40 points d'attaque et -40 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible et les ennemis proches reçoivent -40 points d'attaque et -40 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible et les ennemis proches reçoivent -35% de défense pour 3 tours. Si l'effet est supprimé avant d'arriver à terme, la cible subit[#Dynamic] 124 [#]points de dégâts."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Inflige 210% de dégâts à la cible et aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -45 points d'attaque et -45 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible et les ennemis proches reçoivent -45 points d'attaque et -45 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les dégâts subis par la cible et les ennemis proches sont augmentés de 40% pendant 3 tours."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Restaure 25% de la santé de tous les alliés.",
-      "Croissance: tous les alliés reçoivent 215 points d'attaque et 215 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 215 points d'attaque et 215 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les alliés ont 50% de chances d'infliger 270% de dégâts à un ennemi aléatoire après l'utilisation d'une compétence spéciale pendant 3 tours. (Chaque personnage peut déclencher cet effet une fois par tour.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "La santé de tous les alliés est boostée de 1200 sur 3 tours. Le maximum de PV peut être dépassé.",
-      "Croissance: tous les alliés reçoivent 240 points d'attaque et 240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 240 points d'attaque et 240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les alliés ont 50% de chances d'infliger 280% de dégâts à un ennemi aléatoire après l'utilisation d'une compétence spéciale pendant 3 tours. (Chaque personnage peut déclencher cet effet une fois par tour.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Vole tous les bonus dissipables de la cible et les octroie aléatoirement aux alliés.",
       "Inflige 375% de dégâts à la cible.\n[*]Inflige 50% de dégâts supplémentaires par bonus transféré, avec un maximum de 625%.",
-      "Flétrissement: la cible reçoit -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: la cible reçoit -300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Vole tous les bonus dissipables de la cible et les octroie aléatoirement aux alliés.",
       "Inflige 400% de dégâts à la cible.\n[*]Inflige 50% de dégâts supplémentaires par bonus transféré, avec un maximum de 650%.",
-      "Flétrissement: la cible reçoit -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible reçoit -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible est immunisée contre les nouveaux bonus d'effets appliqués pendant 2 tours."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Inflige 240% de dégâts à tous les ennemis.",
-      "Flétrissement: tous les ennemis reçoivent -200 points d'attaque et -200 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -200 points d'attaque et -200 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les ennemis reçoivent -30% de génération de mana pour 3 tours. Si l'effet est supprimé avant ce délai, le mana de la cible est réduit de -5%. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Restaure 38% de la santé de tous les alliés.",
-      "Croissance: tous les alliés reçoivent 100 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 100 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les alliés renvoient leurs effets négatifs à un personnage aléatoire de l'équipe adverse pendant 3 tours. (Seuls les effets négatifs dissipables sont renvoyés.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "Tous les alliés récupèrent 1080 PV sur 3 tours.",
-      "Croissance: tous les alliés reçoivent 110 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 110 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Retire l'effet négatif purifiable le plus récent de chaque allié, et inflige aléatoirement les effets retirés aux ennemis.",
       "Tous les alliés renvoient leurs effets négatifs à un personnage aléatoire de l'équipe adverse pendant 3 tours. (Seuls les effets négatifs dissipables sont renvoyés.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Restaure 54% de la santé de tous les alliés.",
-      "Croissance: tous les alliés reçoivent 450 points d'attaque et 450 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 450 points d'attaque et 450 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les alliés reçoivent 30% de génération de mana pour 4 tours. Si l'effet est supprimé avant ce délai, l'allié qui le possédait reçoit 10% de mana. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Chances d'activation de chaque effet:",
       "[*]Mets exquis: 45%",
       "[**]Restaure 50% de la santé de tous les alliés.",
-      "[**]Croissance: tous les alliés reçoivent 400 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Croissance: tous les alliés reçoivent 400 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Nourriture faisandée: 45%",
       "[**]Inflige 350% de dégâts à tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 965 [#]dégâts de poison sur 5 tours.",
@@ -19992,7 +19992,7 @@
       "Chances d'activation de chaque effet:",
       "[*]Mets exquis: 45%",
       "[**]Booste la santé de tous les alliés de 1800. Le maximum de PV peut être dépassé.",
-      "[**]Croissance: tous les alliés reçoivent 700 points d'attaque et 700 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Croissance: tous les alliés reçoivent 700 points d'attaque et 700 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Nourriture faisandée: 45%",
       "[**]Inflige 550% de dégâts à tous les ennemis.",
       "[**]Tous les ennemis sont affectés pendant 5 tours par Poison corrosif, qui inflige[#Dynamic] 378 [#]points de dégâts de poison et réduit la génération de mana des ennemis affectés de -10% à chaque tour. Inflige des dégâts supplémentaires aux héros disposant de sbires ou de méga sbires. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Croissance: tous les alliés reçoivent 355 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 355 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un sbire méga sanglier tacheté avec 65% de PV et 260% d'attaque hérités du lanceur.",
       "Lorsqu'il est invoqué, le sbire méga sanglier tacheté octroie à son propriétaire une immunité contre les dissipations et les transferts de bonus aussi longtemps qu'il est actif. (L'immunité concerne également cet effet.\n[*] Concerne également Pillage.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Inflige 470% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "Croissance: le lanceur et les alliés proches reçoivent 250 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: le lanceur et les alliés proches reçoivent 250 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible et les ennemis proches reçoivent -35% de défense pour 3 tours. Si l'effet est supprimé avant d'arriver à terme, la cible subit[#Dynamic] 577 [#]points de dégâts."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Flétrissement: la cible reçoit -330 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible reçoit -330 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un démon explosif gobelin pour la cible et les ennemis proches. Il inflige des dégâts à l'ennemi à hauteur de 195% d'attaque à chaque tour.\n[*]Le démon explosif gobelin absorbe les soins et disparaît après avoir absorbé 20% de la santé maximum de son propriétaire.",
       "Lorsque le démon explosif gobelin disparaît après avoir absorbé suffisamment de soins, le propriétaire subit[#Dynamic] 1269 [#]points de dégâts de brûlure sur 3 tours."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Inflige 365% de dégâts à tous les ennemis.",
-      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un sbire méga sanglier blanc avec 65% de PV et 250% d'attaque hérités du lanceur.",
       "Lorsqu'il est invoqué, le sbire méga sanglier blanc permet à son propriétaire de contre-attaquer en infligeant 100% des dégâts subis tant qu'il est actif. Cet effet ne peut pas être dissipé."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Flétrissement: tous les ennemis reçoivent -350 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -350 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La santé maximale de tous les ennemis est réduite de 700. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 700.)",
       "Tous les ennemis reçoivent -45% de défense contre les compétences spéciales pour 4 tours."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La santé maximale de tous les ennemis est réduite de 800. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 800.)",
       "Tous les ennemis reçoivent -50% de défense contre les compétences spéciales pour 4 tours. Si l'effet est supprimé avant d'arriver à terme, la cible subit 800 points de dégâts."
      ]
@@ -20379,7 +20379,7 @@
       "La cible et les ennemis proches ne peuvent pas ressusciter leurs alliés ou eux-mêmes pendant 5 tours.",
       "Pendant 5 tours, la cible et les ennemis proches ne peuvent pas recevoir de nouveaux effets qui les ressusciteraient.",
       "Inflige 530% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -455 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: la cible et les ennemis proches reçoivent -455 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Croissance: tous les alliés reçoivent 150 points d'attaque et 150 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: tous les alliés reçoivent 150 points d'attaque et 150 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un sbire carotte pour tous les alliés avec 25% de PV hérités du lanceur.",
       "Lorsqu'il est invoqué, le sbire carotte octroie 20% de génération de mana à son propriétaire tant qu'il est actif. Cet effet ne peut pas être dissipé. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
       "Lien élémentaire donne à tous les alliés Sacrés 40% de défense contre les compétences spéciales sur 4 tours. Cet effet ne peut pas être dissipé."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Croissance: le lanceur et les alliés proches reçoivent 540 points d'attaque et 540 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: le lanceur et les alliés proches reçoivent 540 points d'attaque et 540 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un méga sbire aberration avec 45% de PV et 180% d'attaque hérités du lanceur.\n[*]Chaque coup d'un méga sbire aberration donne l'effet négatif suivant à la cible:",
       "[**]La cible reçoit[#Dynamic] 552 [#]points de dégâts de toxines en 3 tours. Les dégâts sont plus importants sur les cibles dont la santé est boostée ou qui possèdent des sbires ou des méga sbires. (Les dégâts de toxines augmentent de 100% pour les cibles dont la santé est boostée.\n[***]Les dégâts de toxines augmentent de 33% pour chaque sbire ou méga sbire possédé par la cible.\n[***]L'augmentation maximale est de 199%.)",
       "[**]Inflige 10 point(s) de folie à la cible.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "Tous les ennemis succombent à la peur pendant 5 tours. (La cible reçoit -40% de défense.\n[*] Supprime tous les bonus et effets de croissance dissipables lorsqu'un effet Peur est ajouté.\n[*] La cible ne peut pas gagner de nouveaux buffs ou de nouveaux effets de croissance pendant la durée de l'effet.\n[*] La cible victime de Peur inflige 250% de dégâts à un allié aléatoire à chaque fois qu'un autre allié lance sa compétence spéciale. Chaque personnage peut déclencher cet effet une fois par tour.)",
-      "Flétrissement: tous les ennemis reçoivent -480 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -480 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Inflige 420% de dégâts et 25 point(s) de folie à tous les ennemis.",
       "Utiliser cette compétence spéciale inflige 45 point(s) de folie au lanceur.",
       "(La folie a une chance d'inverser le ciblage d'une compétence spéciale.\n[*] Quand la folie s'active, les compétences spéciales censées cibler les ennemis visent les alliés, et vice versa.\n[*]Les compétences spéciales censées cibler le lanceur visent une cible aléatoire. Les compétences spéciales censées viser une cible visent le lanceur.\n[*] Quand la folie s'active, les compétences passives et compétences de troupe octroyant des effets supplémentaires ne s'activent pas.\n[*] À 100 points de folie, la compétence spéciale s'active automatiquement quand le mana est plein.\n[*]La folie ne peut pas être dissipée ou purifiée.\n[*] La folie d'un héros peut baisser de 10 à chaque tentative de soin direct par des compétences spéciales, des compétences de soutien, des objets ou des boucliers. Les soins directs des compétences spéciales ne peuvent réduire la folie qu'une fois par utilisation.\n[*] Tous les autres soins réduisent la folie de 1.\n[*] La folie est entièrement supprimée quand une compétence spéciale inversée est lancée.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Inflige 270% de dégâts à tous les ennemis.",
-      "Flétrissement: tous les ennemis reçoivent -240 points d'attaque et -240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -240 points d'attaque et -240 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les ennemis reçoivent[#Dynamic] 405 [#]points de dégâts de brûlure en 3 tours. Le lanceur absorbe 50% des dégâts de brûlure sous forme de santé boostée. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de glace."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Détruit tous les démons des alliés et inflige des dégâts à tous les méga démons.",
       "Rend 65% de PV à l'allié à qui il reste le moins de PV, et 45% de PV aux autres.",
-      "Croissance: tous les alliés reçoivent 300 points d'attaque et 300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: tous les alliés reçoivent 300 points d'attaque et 300 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Inflige 600% de dégâts à la cible.",
       "Bienfait de croissance: inflige 2 fois plus de dégâts supplémentaires pour chaque point d'attaque modifiée. (Les dégâts supplémentaires dépendent de l'attaque modifiée du lanceur au moment où les dégâts sont infligés.\n[*]Jusqu'à 600 points de dégâts supplémentaires.\n[*]Les effets affectant les dégâts infligés affectent les dégâts supplémentaires.\n[*]La défense n'affecte pas les dégâts supplémentaires.\n[*]Les effets affectant l'attaque n'affectent pas les dégâts supplémentaires.)",
-      "Flétrissement: la cible reçoit -500 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible reçoit -500 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible reçoit[#Dynamic] 1068 [#]points de dégâts de sable sur 3 tours."
      ]
     }
@@ -28892,7 +28892,7 @@
       "Cette compétence spéciale ne rate jamais sa cible.",
       "Inflige 500% de dégâts à la cible.",
       "Bienfait de croissance: inflige 2 fois plus de dégâts supplémentaires pour chaque point d'attaque modifiée. (Les dégâts supplémentaires dépendent de l'attaque modifiée du lanceur au moment où les dégâts sont infligés.\n[*]Jusqu'à 600 points de dégâts supplémentaires.\n[*]Les effets affectant les dégâts infligés affectent les dégâts supplémentaires.\n[*]La défense n'affecte pas les dégâts supplémentaires.\n[*]Les effets affectant l'attaque n'affectent pas les dégâts supplémentaires.)",
-      "Flétrissement: la cible reçoit -480 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: la cible reçoit -480 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Éther de glace I 0.9%\n[*]Éther de glace II 0.4%\n[*]Éther de glace III 0.025%\n[*]Éther alpha 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Éther de glace III 0.025%\n[**]Éther alpha 0.01%\n[*]ÉPIQUE\n[**]Éther de glace II 0.4%\n[*]RARE\n[**]Éther de glace I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Éther de nature I 0.9%\n[*]Éther de nature II 0.4%\n[*]Éther de nature III 0.025%\n[*]Éther alpha 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Éther de nature III 0.025%\n[**]Éther alpha 0.01%\n[*]ÉPIQUE\n[**]Éther de nature II 0.4%\n[*]RARE\n[**]Éther de nature I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Éther des ténèbres I 0.9%\n[*]Éther des ténèbres II 0.4%\n[*]Éther des ténèbres III 0.025%\n[*]Éther alpha 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Éther des ténèbres III 0.025%\n[**]Éther alpha 0.01%\n[*]ÉPIQUE\n[**]Éther des ténèbres II 0.4%\n[*]RARE\n[**]Éther des ténèbres I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Éther de feu I 0.9%\n[*]Éther de feu II 0.4%\n[*]Éther de feu III 0.025%\n[*]Éther alpha 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Éther de feu III 0.025%\n[**]Éther alpha 0.01%\n[*]ÉPIQUE\n[**]Éther de feu II 0.4%\n[*]RARE\n[**]Éther de feu I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Éther du sacré I 0.9%\n[*]Éther du sacré II 0.4%\n[*]Éther du sacré III 0.025%\n[*]Éther alpha 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Éther du sacré III 0.025%\n[**]Éther alpha 0.01%\n[*]ÉPIQUE\n[**]Éther du sacré II 0.4%\n[*]RARE\n[**]Éther du sacré I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Un kit d'aventurier 0.5%\n[*]Épée d'entraînement 0.5%\n[*]Habit en lambeaux 0.5%\n[*]Écritures obscures 0.25%\n[*]Dague 0.25%\n[*]Armure de cuir 0.25%\n[*]Pierre d'affûtage 0.25%\n[*]Corde solide 0.25%\n[*]Bouclier de bois 0.25%\n[*]Guide des combats 0.05%\n[*]Chemise de mailles 0.05%\n[*]Fourreau 0.05%\n[*]Bottes montantes 0.05%\n[*]Lame cachée 0.03%\n[*]Orbe divinatoire 0.03%\n[*]Bouclier robuste 0.03%\n[*]Outils de conception de pièges 0.03%\n[*]Cape chaude 0.03%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Guide des combats 0.05%\n[**]Chemise de mailles 0.05%\n[**]Fourreau 0.05%\n[**]Bottes montantes 0.05%\n[**]Lame cachée 0.03%\n[**]Orbe divinatoire 0.03%\n[**]Bouclier robuste 0.03%\n[**]Outils de conception de pièges 0.03%\n[**]Cape chaude 0.03%\n[*]ATYPIQUE\n[**]Écritures obscures 0.25%\n[**]Dague 0.25%\n[**]Armure de cuir 0.25%\n[**]Pierre d'affûtage 0.25%\n[**]Corde solide 0.25%\n[**]Bouclier de bois 0.25%\n[*]COMMUN\n[**]Un kit d'aventurier 0.5%\n[**]Épée d'entraînement 0.5%\n[**]Habit en lambeaux 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Bottes montantes 1.5%\n[*]Boussole 0.2%\n[*]Gants fins 0.2%\n[*]Lame Damas 0.01%\n[*]Recueil de tactiques 0.01%\n[*]Corde solide 1%\n[*]Guide des combats 2%\n[*]Chemise de mailles 2%\n[*]Cape chaude 0.16%\n[*]Télescope puissant 0.06%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ÉPIQUE\n[**]Lame Damas 0.01%\n[**]Recueil de tactiques 0.01%\n[**]Télescope puissant 0.06%\n[*]RARE\n[**]Bottes montantes 1.5%\n[**]Boussole 0.2%\n[**]Gants fins 0.2%\n[**]Guide des combats 2%\n[**]Chemise de mailles 2%\n[**]Cape chaude 0.16%\n[*]ATYPIQUE\n[**]Corde solide 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Bottes montantes 1.5%\n[*]Boussole 0.2%\n[*]Gants fins 0.2%\n[*]Lame Damas 0.01%\n[*]Recueil de tactiques 0.01%\n[*]Corde solide 1%\n[*]Dague 1%\n[*]Fourreau 2%\n[*]Bouclier robuste 0.16%\n[*]Onguent mystérieux 0.06%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ÉPIQUE\n[**]Lame Damas 0.01%\n[**]Recueil de tactiques 0.01%\n[**]Onguent mystérieux 0.06%\n[*]RARE\n[**]Bottes montantes 1.5%\n[**]Boussole 0.2%\n[**]Gants fins 0.2%\n[**]Fourreau 2%\n[**]Bouclier robuste 0.16%\n[*]ATYPIQUE\n[**]Corde solide 1%\n[**]Dague 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Bottes montantes 1.5%\n[*]Boussole 0.2%\n[*]Gants fins 0.2%\n[*]Lame Damas 0.01%\n[*]Recueil de tactiques 0.01%\n[*]Corde solide 1%\n[*]Dague 1%\n[*]Fourreau 2%\n[*]Outils de conception de pièges 0.16%\n[*]Tabard royal 0.06%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ÉPIQUE\n[**]Lame Damas 0.01%\n[**]Recueil de tactiques 0.01%\n[**]Tabard royal 0.06%\n[*]RARE\n[**]Bottes montantes 1.5%\n[**]Boussole 0.2%\n[**]Gants fins 0.2%\n[**]Fourreau 2%\n[**]Outils de conception de pièges 0.16%\n[*]ATYPIQUE\n[**]Corde solide 1%\n[**]Dague 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Bottes montantes 1.5%\n[*]Boussole 0.2%\n[*]Gants fins 0.2%\n[*]Lame Damas 0.01%\n[*]Recueil de tactiques 0.01%\n[*]Écritures obscures 1%\n[*]Chemise de mailles 2%\n[*]Lame cachée 0.16%\n[*]Anneaux mystiques 0.06%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ÉPIQUE\n[**]Lame Damas 0.01%\n[**]Recueil de tactiques 0.01%\n[**]Anneaux mystiques 0.06%\n[*]RARE\n[**]Bottes montantes 1.5%\n[**]Boussole 0.2%\n[**]Gants fins 0.2%\n[**]Chemise de mailles 2%\n[**]Lame cachée 0.16%\n[*]ATYPIQUE\n[**]Écritures obscures 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Bottes montantes 1.5%\n[*]Boussole 0.2%\n[*]Gants fins 0.2%\n[*]Lame Damas 0.01%\n[*]Recueil de tactiques 0.01%\n[*]Écritures obscures 1%\n[*]Chemise de mailles 2%\n[*]Orbe divinatoire 0.16%\n[*]Fléchettes empoisonnées 0.06%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ÉPIQUE\n[**]Lame Damas 0.01%\n[**]Recueil de tactiques 0.01%\n[**]Fléchettes empoisonnées 0.06%\n[*]RARE\n[**]Bottes montantes 1.5%\n[**]Boussole 0.2%\n[**]Gants fins 0.2%\n[**]Chemise de mailles 2%\n[**]Orbe divinatoire 0.16%\n[*]ATYPIQUE\n[**]Écritures obscures 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Emblème de magicien 2.5%\n[*]Emblème de maître magicien 0.1%\n[*]Emblème de sorcier 2.5%\n[*]Emblème de maître sorcier 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Emblème de maître magicien 0.1%\n[**]Emblème de maître sorcier 0.1%\n[*]ÉPIQUE\n[**]Emblème de magicien 2.5%\n[**]Emblème de sorcier 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Emblème de paladin 2.5%\n[*]Emblème de maître paladin 0.1%\n[*]Emblème de druide 2.5%\n[*]Emblème de maître druide 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Emblème de maître paladin 0.1%\n[**]Emblème de maître druide 0.1%\n[*]ÉPIQUE\n[**]Emblème de paladin 2.5%\n[**]Emblème de druide 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Emblème de ranger 2.5%\n[*]Emblème de maître ranger 0.1%\n[*]Emblème de voyou 2.5%\n[*]Emblème de maître voyou 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Emblème de maître ranger 0.1%\n[**]Emblème de maître voyou 0.1%\n[*]ÉPIQUE\n[**]Emblème de ranger 2.5%\n[**]Emblème de voyou 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Emblème de combattant 2.5%\n[*]Emblème de maître combattant 0.1%\n[*]Emblème de barbare 2.5%\n[*]Emblème de maître barbare 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Emblème de maître combattant 0.1%\n[**]Emblème de maître barbare 0.1%\n[*]ÉPIQUE\n[**]Emblème de combattant 2.5%\n[**]Emblème de barbare 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Emblème de moine 2.5%\n[*]Emblème de maître moine 0.1%\n[*]Emblème d'ecclésiastique 2.5%\n[*]Emblème de maître ecclésiastique 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Emblème de maître moine 0.1%\n[**]Emblème de maître ecclésiastique 0.1%\n[*]ÉPIQUE\n[**]Emblème de moine 2.5%\n[**]Emblème d'ecclésiastique 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrunn 0.5%\n[*]Ombre nocturne 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenneh 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Héros entraîneur commun 0.16%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]ATYPIQUE\n[**]Jill 0.033%\n[**]Jenneh 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]COMMUN\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrunn 0.5%\n[**]Ombre nocturne 0.5%\n[**]Hikaru 0.5%\n[**]Maître entraîneur commun 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Minuscule lot de nourriture 2.25%\n[*]Petit lot de nourriture 0.6%\n[*]Lot de nourriture moyen 0.1%\n[*]Grand lot de nourriture 0.04%\n[*]Lot de nourriture géant 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de nourriture géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de nourriture 0.04%\n[*]RARE\n[**]Lot de nourriture moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de nourriture 0.6%\n[**]Héros entraîneur atypique 0.1%\n[*]COMMUN\n[**]Minuscule lot de nourriture 2.25%\n[**]Héros entraîneur commun 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Minuscule lot de nourriture 2.25%\n[*]Petit lot de nourriture 0.6%\n[*]Lot de nourriture moyen 0.1%\n[*]Grand lot de nourriture 0.04%\n[*]Lot de nourriture géant 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de nourriture géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de nourriture 0.04%\n[*]RARE\n[**]Lot de nourriture moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de nourriture 0.6%\n[**]Héros entraîneur atypique 0.1%\n[*]COMMUN\n[**]Minuscule lot de nourriture 2.25%\n[**]Héros entraîneur commun 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Minuscule lot de nourriture 2.25%\n[*]Petit lot de nourriture 0.6%\n[*]Lot de nourriture moyen 0.1%\n[*]Grand lot de nourriture 0.04%\n[*]Lot de nourriture géant 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de nourriture géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de nourriture 0.04%\n[*]RARE\n[**]Lot de nourriture moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de nourriture 0.6%\n[**]Héros entraîneur atypique 0.1%\n[*]COMMUN\n[**]Minuscule lot de nourriture 2.25%\n[**]Héros entraîneur commun 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Minuscule lot de nourriture 2.25%\n[*]Petit lot de nourriture 0.6%\n[*]Lot de nourriture moyen 0.1%\n[*]Grand lot de nourriture 0.04%\n[*]Lot de nourriture géant 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de nourriture géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de nourriture 0.04%\n[*]RARE\n[**]Lot de nourriture moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de nourriture 0.6%\n[**]Héros entraîneur atypique 0.1%\n[*]COMMUN\n[**]Minuscule lot de nourriture 2.25%\n[**]Héros entraîneur commun 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Minuscule lot de nourriture 2.25%\n[*]Petit lot de nourriture 0.6%\n[*]Lot de nourriture moyen 0.1%\n[*]Grand lot de nourriture 0.04%\n[*]Lot de nourriture géant 0.01%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de nourriture géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de nourriture 0.04%\n[*]RARE\n[**]Lot de nourriture moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de nourriture 0.6%\n[**]Héros entraîneur atypique 0.1%\n[*]COMMUN\n[**]Minuscule lot de nourriture 2.25%\n[**]Héros entraîneur commun 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Minuscule lot de fer 2.25%\n[*]Petit lot de fer 0.6%\n[*]Lot de fer moyen 0.1%\n[*]Grand lot de fer 0.04%\n[*]Lot de fer géant 0.01%\n[*]Villageois ordinaire 0.4%\n[*]Miliciens archers 0.4%\n[*]Légionnaires impériaux 0.4%\n[*]Soldats impériaux 0.1%\n[*]Conscrits miliciens 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de fer géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de fer 0.04%\n[*]RARE\n[**]Lot de fer moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de fer 0.6%\n[**]Soldats impériaux 0.1%\n[**]Conscrits miliciens 0.1%\n[*]COMMUN\n[**]Minuscule lot de fer 2.25%\n[**]Villageois ordinaire 0.4%\n[**]Miliciens archers 0.4%\n[**]Légionnaires impériaux 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Minuscule lot de fer 2.25%\n[*]Petit lot de fer 0.6%\n[*]Lot de fer moyen 0.1%\n[*]Grand lot de fer 0.04%\n[*]Lot de fer géant 0.01%\n[*]Villageois ordinaire 0.4%\n[*]Voleurs rebelles 0.4%\n[*]Enchanteurs de Bois-profond 0.4%\n[*]Archers rebelles 0.1%\n[*]Combattants du village 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de fer géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de fer 0.04%\n[*]RARE\n[**]Lot de fer moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de fer 0.6%\n[**]Archers rebelles 0.1%\n[**]Combattants du village 0.1%\n[*]COMMUN\n[**]Minuscule lot de fer 2.25%\n[**]Villageois ordinaire 0.4%\n[**]Voleurs rebelles 0.4%\n[**]Enchanteurs de Bois-profond 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Minuscule lot de fer 2.25%\n[*]Petit lot de fer 0.6%\n[*]Lot de fer moyen 0.1%\n[*]Grand lot de fer 0.04%\n[*]Lot de fer géant 0.01%\n[*]Villageois ordinaire 0.4%\n[*]Guerriers réanimés 0.4%\n[*]Initiés de la guilde 0.4%\n[*]Assassins de la guilde 0.1%\n[*]Légionnaires de la guilde 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de fer géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de fer 0.04%\n[*]RARE\n[**]Lot de fer moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de fer 0.6%\n[**]Assassins de la guilde 0.1%\n[**]Légionnaires de la guilde 0.1%\n[*]COMMUN\n[**]Minuscule lot de fer 2.25%\n[**]Villageois ordinaire 0.4%\n[**]Guerriers réanimés 0.4%\n[**]Initiés de la guilde 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Minuscule lot de fer 2.25%\n[*]Petit lot de fer 0.6%\n[*]Lot de fer moyen 0.1%\n[*]Grand lot de fer 0.04%\n[*]Lot de fer géant 0.01%\n[*]Villageois ordinaire 0.4%\n[*]Combattants barbares 0.4%\n[*]Moines barbares 0.4%\n[*]Berserkers barbares 0.1%\n[*]Mages pyromanciens 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de fer géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de fer 0.04%\n[*]RARE\n[**]Lot de fer moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de fer 0.6%\n[**]Berserkers barbares 0.1%\n[**]Mages pyromanciens 0.1%\n[*]COMMUN\n[**]Minuscule lot de fer 2.25%\n[**]Villageois ordinaire 0.4%\n[**]Combattants barbares 0.4%\n[**]Moines barbares 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Minuscule lot de fer 2.25%\n[*]Petit lot de fer 0.6%\n[*]Lot de fer moyen 0.1%\n[*]Grand lot de fer 0.04%\n[*]Lot de fer géant 0.01%\n[*]Villageois ordinaire 0.4%\n[*]Voleurs repentants 0.4%\n[*]Combattants pieux 0.4%\n[*]Moines exaltés 0.1%\n[*]Mages dévots 0.1%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Lot de fer géant 0.01%\n[*]ÉPIQUE\n[**]Grand lot de fer 0.04%\n[*]RARE\n[**]Lot de fer moyen 0.1%\n[*]ATYPIQUE\n[**]Petit lot de fer 0.6%\n[**]Moines exaltés 0.1%\n[**]Mages dévots 0.1%\n[*]COMMUN\n[**]Minuscule lot de fer 2.25%\n[**]Villageois ordinaire 0.4%\n[**]Voleurs repentants 0.4%\n[**]Combattants pieux 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Carapace de titan 0.58%\n[*]Bec de titan 0.58%\n[*]Croc de titan 0.58%\n[*]Œuf de titan 0.41%\n[*]Plume de titan 0.41%\n[*]Œil de titan 0.41%\n[*]Colonne vertébrale de titan 0.617%\n[*]Queue de titan 0.617%\n[*]Cœur de titan 0.25%\n[*]Crâne de titan 0.25%\n[*]Ouragan 0.25%\n[*]Fléau des valkyries 0.25%\n[*]Bannière de titan 0.25%\n[*]Parchemin d'altération 0.25%\n[*]Harpon géant 0.25%\n[*]Sigrunn 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Ouragan 0.25%\n[**]Fléau des valkyries 0.25%\n[**]Bannière de titan 0.25%\n[**]Parchemin d'altération 0.25%\n[**]Harpon géant 0.25%\n[*]ÉPIQUE\n[**]Cœur de titan 0.25%\n[**]Crâne de titan 0.25%\n[*]RARE\n[**]Colonne vertébrale de titan 0.617%\n[**]Queue de titan 0.617%\n[*]ATYPIQUE\n[**]Œuf de titan 0.41%\n[**]Plume de titan 0.41%\n[**]Œil de titan 0.41%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMMUN\n[**]Carapace de titan 0.58%\n[**]Bec de titan 0.58%\n[**]Croc de titan 0.58%\n[**]Sigrunn 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Carapace de titan 0.58%\n[*]Bec de titan 0.58%\n[*]Croc de titan 0.58%\n[*]Œuf de titan 0.41%\n[*]Plume de titan 0.41%\n[*]Œil de titan 0.41%\n[*]Colonne vertébrale de titan 0.617%\n[*]Queue de titan 0.617%\n[*]Cœur de titan 0.25%\n[*]Crâne de titan 0.25%\n[*]Ouragan 0.25%\n[*]Fléau des valkyries 0.25%\n[*]Bannière de titan 0.25%\n[*]Parchemin d'altération 0.25%\n[*]Harpon géant 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Toubib 0.8%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Ouragan 0.25%\n[**]Fléau des valkyries 0.25%\n[**]Bannière de titan 0.25%\n[**]Parchemin d'altération 0.25%\n[**]Harpon géant 0.25%\n[*]ÉPIQUE\n[**]Cœur de titan 0.25%\n[**]Crâne de titan 0.25%\n[*]RARE\n[**]Colonne vertébrale de titan 0.617%\n[**]Queue de titan 0.617%\n[*]ATYPIQUE\n[**]Œuf de titan 0.41%\n[**]Plume de titan 0.41%\n[**]Œil de titan 0.41%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Toubib 0.8%\n[*]COMMUN\n[**]Carapace de titan 0.58%\n[**]Bec de titan 0.58%\n[**]Croc de titan 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Carapace de titan 0.58%\n[*]Bec de titan 0.58%\n[*]Croc de titan 0.58%\n[*]Œuf de titan 0.41%\n[*]Plume de titan 0.41%\n[*]Œil de titan 0.41%\n[*]Colonne vertébrale de titan 0.617%\n[*]Queue de titan 0.617%\n[*]Cœur de titan 0.25%\n[*]Crâne de titan 0.25%\n[*]Ouragan 0.25%\n[*]Fléau des valkyries 0.25%\n[*]Bannière de titan 0.25%\n[*]Parchemin d'altération 0.25%\n[*]Harpon géant 0.25%\n[*]Ombre nocturne 2%\n[*]Fletcher 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Ouragan 0.25%\n[**]Fléau des valkyries 0.25%\n[**]Bannière de titan 0.25%\n[**]Parchemin d'altération 0.25%\n[**]Harpon géant 0.25%\n[*]ÉPIQUE\n[**]Cœur de titan 0.25%\n[**]Crâne de titan 0.25%\n[*]RARE\n[**]Colonne vertébrale de titan 0.617%\n[**]Queue de titan 0.617%\n[*]ATYPIQUE\n[**]Œuf de titan 0.41%\n[**]Plume de titan 0.41%\n[**]Œil de titan 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]COMMUN\n[**]Carapace de titan 0.58%\n[**]Bec de titan 0.58%\n[**]Croc de titan 0.58%\n[**]Ombre nocturne 2%\n[**]Fletcher 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Carapace de titan 0.58%\n[*]Bec de titan 0.58%\n[*]Croc de titan 0.58%\n[*]Œuf de titan 0.41%\n[*]Plume de titan 0.41%\n[*]Œil de titan 0.41%\n[*]Colonne vertébrale de titan 0.617%\n[*]Queue de titan 0.617%\n[*]Cœur de titan 0.25%\n[*]Crâne de titan 0.25%\n[*]Ouragan 0.25%\n[*]Fléau des valkyries 0.25%\n[*]Bannière de titan 0.25%\n[*]Parchemin d'altération 0.25%\n[*]Harpon géant 0.25%\n[*]Sharan 2%\n[*]Tudan 2%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Ouragan 0.25%\n[**]Fléau des valkyries 0.25%\n[**]Bannière de titan 0.25%\n[**]Parchemin d'altération 0.25%\n[**]Harpon géant 0.25%\n[*]ÉPIQUE\n[**]Cœur de titan 0.25%\n[**]Crâne de titan 0.25%\n[*]RARE\n[**]Colonne vertébrale de titan 0.617%\n[**]Queue de titan 0.617%\n[*]ATYPIQUE\n[**]Œuf de titan 0.41%\n[**]Plume de titan 0.41%\n[**]Œil de titan 0.41%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMMUN\n[**]Carapace de titan 0.58%\n[**]Bec de titan 0.58%\n[**]Croc de titan 0.58%\n[**]Sharan 2%\n[**]Tudan 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Carapace de titan 0.58%\n[*]Bec de titan 0.58%\n[*]Croc de titan 0.58%\n[*]Œuf de titan 0.41%\n[*]Plume de titan 0.41%\n[*]Œil de titan 0.41%\n[*]Colonne vertébrale de titan 0.617%\n[*]Queue de titan 0.617%\n[*]Cœur de titan 0.25%\n[*]Crâne de titan 0.25%\n[*]Ouragan 0.25%\n[*]Fléau des valkyries 0.25%\n[*]Bannière de titan 0.25%\n[*]Parchemin d'altération 0.25%\n[*]Harpon géant 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]LÉGENDAIRE\n[**]Ouragan 0.25%\n[**]Fléau des valkyries 0.25%\n[**]Bannière de titan 0.25%\n[**]Parchemin d'altération 0.25%\n[**]Harpon géant 0.25%\n[*]ÉPIQUE\n[**]Cœur de titan 0.25%\n[**]Crâne de titan 0.25%\n[*]RARE\n[**]Colonne vertébrale de titan 0.617%\n[**]Queue de titan 0.617%\n[*]ATYPIQUE\n[**]Œuf de titan 0.41%\n[**]Plume de titan 0.41%\n[**]Œil de titan 0.41%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMMUN\n[**]Carapace de titan 0.58%\n[**]Bec de titan 0.58%\n[**]Croc de titan 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%\n[*] 0.48 0.48%\n[*]Sigrunn 2%\n[*]Brand 2%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Héros entraîneur rare 0.01%\n[*]ATYPIQUE\n[**]Héros entraîneur atypique 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMMUN\n[**]Héros entraîneur commun 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Toubib 0.8%\n[*] 0.48 0.48%\n[*]Aife 2%\n[*]Derric 2%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Héros entraîneur rare 0.01%\n[*]ATYPIQUE\n[**]Héros entraîneur atypique 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Toubib 0.8%\n[*]COMMUN\n[**]Héros entraîneur commun 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Layla 0.8%\n[*]Silthus 0.8%\n[*]Julius 0.8%\n[*] 0.48 0.48%\n[*]Ombre nocturne 2%\n[*]Fletcher 2%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Héros entraîneur rare 0.01%\n[*]ATYPIQUE\n[**]Héros entraîneur atypique 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]COMMUN\n[**]Héros entraîneur commun 0.48%\n[**]Ombre nocturne 2%\n[**]Fletcher 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%\n[*] 0.48 0.48%\n[*]Sharan 2%\n[*]Tudan 2%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Héros entraîneur rare 0.01%\n[*]ATYPIQUE\n[**]Héros entraîneur atypique 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMMUN\n[**]Héros entraîneur commun 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%\n[*] 0.48 0.48%\n[*]Hikaru 2%\n[*]Kenjiro 2%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Héros entraîneur rare 0.01%\n[*]ATYPIQUE\n[**]Héros entraîneur atypique 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMMUN\n[**]Héros entraîneur commun 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Villageois ordinaire 0.85%\n[*]Miliciens archers 0.85%\n[*]Légionnaires impériaux 0.85%\n[*]Soldats impériaux 0.15%\n[*]Conscrits miliciens 0.15%\n[*]Légionnaires d'élite impériaux 0.05%\n[*]Archers ravageurs 0.05%\n[*]Chevaliers impériaux 0.05%\n[*]Entraîneur 0.85%\n[*]Entraîneur 0.1%\n[*]Entraîneur 0.05%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Légionnaires d'élite impériaux 0.05%\n[**]Archers ravageurs 0.05%\n[**]Chevaliers impériaux 0.05%\n[**]Entraîneur 0.05%\n[*]ATYPIQUE\n[**]Soldats impériaux 0.15%\n[**]Conscrits miliciens 0.15%\n[**]Entraîneur 0.1%\n[*]COMMUN\n[**]Villageois ordinaire 0.85%\n[**]Miliciens archers 0.85%\n[**]Légionnaires impériaux 0.85%\n[**]Entraîneur 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Villageois ordinaire 0.85%\n[*]Voleurs rebelles 0.85%\n[*]Enchanteurs de Bois-profond 0.85%\n[*]Archers rebelles 0.15%\n[*]Combattants du village 0.15%\n[*]Tireurs d'élite rebelles 0.05%\n[*]Ents de Bois-profond 0.05%\n[*]Illusionnistes rebelles 0.05%\n[*]Entraîneur 0.85%\n[*]Entraîneur 0.1%\n[*]Entraîneur 0.05%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Tireurs d'élite rebelles 0.05%\n[**]Ents de Bois-profond 0.05%\n[**]Illusionnistes rebelles 0.05%\n[**]Entraîneur 0.05%\n[*]ATYPIQUE\n[**]Archers rebelles 0.15%\n[**]Combattants du village 0.15%\n[**]Entraîneur 0.1%\n[*]COMMUN\n[**]Villageois ordinaire 0.85%\n[**]Voleurs rebelles 0.85%\n[**]Enchanteurs de Bois-profond 0.85%\n[**]Entraîneur 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Villageois ordinaire 0.85%\n[*]Guerriers réanimés 0.85%\n[*]Initiés de la guilde 0.85%\n[*]Assassins de la guilde 0.15%\n[*]Légionnaires de la guilde 0.15%\n[*]Guerriers réanimés 0.05%\n[*]Chevaliers réanimés 0.05%\n[*]Chevaliers de la guilde 0.05%\n[*]Entraîneur 0.85%\n[*]Entraîneur 0.1%\n[*]Entraîneur 0.05%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Guerriers réanimés 0.05%\n[**]Chevaliers réanimés 0.05%\n[**]Chevaliers de la guilde 0.05%\n[**]Entraîneur 0.05%\n[*]ATYPIQUE\n[**]Assassins de la guilde 0.15%\n[**]Légionnaires de la guilde 0.15%\n[**]Entraîneur 0.1%\n[*]COMMUN\n[**]Villageois ordinaire 0.85%\n[**]Guerriers réanimés 0.85%\n[**]Initiés de la guilde 0.85%\n[**]Entraîneur 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Villageois ordinaire 0.85%\n[*]Moines barbares 0.85%\n[*]Combattants barbares 0.85%\n[*]Berserkers barbares 0.15%\n[*]Mages pyromanciens 0.15%\n[*]Brutes barbares 0.05%\n[*]Minotaures barbares 0.05%\n[*]Mages de bataille pyromanciens 0.05%\n[*]Entraîneur 0.85%\n[*]Entraîneur 0.1%\n[*]Entraîneur 0.05%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Brutes barbares 0.05%\n[**]Minotaures barbares 0.05%\n[**]Mages de bataille pyromanciens 0.05%\n[**]Entraîneur 0.05%\n[*]ATYPIQUE\n[**]Berserkers barbares 0.15%\n[**]Mages pyromanciens 0.15%\n[**]Entraîneur 0.1%\n[*]COMMUN\n[**]Villageois ordinaire 0.85%\n[**]Moines barbares 0.85%\n[**]Combattants barbares 0.85%\n[**]Entraîneur 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Butin d'imposteur",
-     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Villageois ordinaire 0.85%\n[*]Voleurs repentants 0.85%\n[*]Combattants pieux 0.85%\n[*]Moines exaltés 0.15%\n[*]Mages dévots 0.15%\n[*]Combattants dévots 0.05%\n[*]Assassins dévots 0.05%\n[*]Golems gardiens exaltés 0.05%\n[*]Entraîneur 0.85%\n[*]Entraîneur 0.1%\n[*]Entraîneur 0.05%"
+     "text": "Chaque imposteur unique dans votre équipe peut vous rapporter du butin supplémentaire en terminant des étapes.\n[*]Cet imposteur octroie une chance d'obtenir le butin supplémentaire suivant:\n[*]RARE\n[**]Combattants dévots 0.05%\n[**]Assassins dévots 0.05%\n[**]Golems gardiens exaltés 0.05%\n[**]Entraîneur 0.05%\n[*]ATYPIQUE\n[**]Moines exaltés 0.15%\n[**]Mages dévots 0.15%\n[**]Entraîneur 0.1%\n[*]COMMUN\n[**]Villageois ordinaire 0.85%\n[**]Voleurs repentants 0.85%\n[**]Combattants pieux 0.85%\n[**]Entraîneur 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Inflige 600% de dégâts à la cible.",
       "L'attaque contourne les bonus défensifs. (Les contre-attaques sont également concernées.)",
-      "Flétrissement: la cible reçoit -350 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible reçoit -350 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Lien élémentaire redonne 5% de santé à tous les alliés nature pendant 6 tours. Cet effet ne peut pas être dissipé."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1100 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1100 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Après une utilisation réussie, 100% de chances de lancer à nouveau Ailes acérées sur une cible aléatoire.\n[*]Possible jusqu'à 3 fois, la probabilité étant réduite de -35% après chaque utilisation réussie."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 2180 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 2180 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible lance automatiquement Attaque irréfléchie changeante sur un allié aléatoire quand son mana est plein pendant 4 tours. Quand cet effet est déclenché, il passe à l'allié touché et sa durée est réinitialisée.",
       "Tous les ennemis reçoivent -35% de défense pour 4 tours."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 700 points de dégâts. Inflige 20% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible."
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 700 points de dégâts. Inflige 20% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible."
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1440 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1440 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Pendant 3 tours, le mana de la cible et des ennemis proches est réduit de -15% à la fin du tour.",
       "Les soins reçus par la cible et les ennemis proches augmentent de -50% pendant 3 tours."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 860 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 860 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible et les ennemis proches reçoivent 900 points de dégâts de poison en 5 tours. Le lanceur et les alliés se soignent à hauteur de 35% des dégâts de poison."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Si la cible est vaincue par l'attaque, les ennemis proches ne peuvent plus gagner de mana pendant 3 tours.",
       "Tous les alliés ripostent avec 60% des dégâts qu'ils reçoivent pendant 3 tours."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 1020 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible avec Clair de lune, qui inflige jusqu'à 1020 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Réduit le mana de la cible de 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Détruit tous les démons des alliés et inflige des dégâts à tous les méga démons.",
-      "Attaque tous les ennemis avec Clair de lune, qui inflige jusqu'à 2000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque tous les ennemis avec Clair de lune, qui inflige jusqu'à 2000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Tous les alliés reçoivent 5% de mana pour chaque démon éliminé. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1620 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1620 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Invoque un sbire Valkyrhibou pour le lanceur et les alliés proches avec 25% de PV et 45% d'attaque hérités du lanceur.",
       "Si le sbire Valkyrhibou est vaincu, l'effet Suppression totale est appliqué à l'attaquant. (Suppression totale supprime tous les effets, les cumuls, la croissance et le flétrissement. Supprime même les effets et cumuls qui sont normalement obstinés, non dissipables ou non purifiables.)",
       "Après l'utilisation de Suppression totale, l'attaquant passe en forme de fantôme du Valhallhibou pour 3 tours. Cet effet est obstiné.\n[*] Sous cette forme, il reçoit 430 points de dégâts par tour. (En forme de fantôme, le personnage ne peut ni gagner du mana ni être soigné par les compétences spéciales, mais il est immunisé contre les attaques normales, les attaques de compétence spéciale et les compétences passives, effets et charges infligeant des dégâts.\n[*] Immunité aux nouveaux effets de croissance, de flétrissement et de folie.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.\n[*]Inutilisable s'il ne reste plus qu'un ennemi.\n[*]Les titans et les titans mythiques ne sont pas affectés par cet effet.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Retire les bonus de la cible et des ennemis à proximité.",
-      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible et les ennemis à proximité ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 3 tours."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Attaque tous les ennemis avec Clair de lune, qui inflige jusqu'à 1200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette attaque ne manque jamais sa cible.",
+      "Attaque tous les ennemis avec Clair de lune, qui inflige jusqu'à 1200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Tous les ennemis reçoivent[#Dynamic] 924 [#]points de dégâts de saignement sur 4 tours.",
       "Tous les ennemis reçoivent -45% de précision pendant 4 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]Charge de mana x 1:",
       "[**]Inflige 280% de dégâts à la cible.",
       "[**]L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
-      "[**]Croissance: tous les alliés reçoivent 120 points d'attaque et 120 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Croissance: tous les alliés reçoivent 120 points d'attaque et 120 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Charge de mana x 2:",
       "[**]Inflige 430% de dégâts à la cible.",
       "[**]L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
-      "[**]Croissance: tous les alliés reçoivent 210 points d'attaque et 210 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Croissance: tous les alliés reçoivent 210 points d'attaque et 210 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Charge de mana x 3:",
       "[**]Inflige 650% de dégâts à la cible.",
       "[**]L'attaque s'enchaîne sur tous les ennemis qui sont adjacents à tout ennemi touché.",
-      "[**]Croissance: tous les alliés reçoivent 750 points d'attaque et 750 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "[**]Croissance: tous les alliés reçoivent 750 points d'attaque et 750 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
       "[*]Charge de mana x 1:",
       "[**]Inflige 450% de dégâts à la cible.",
-      "[**]Flétrissement: la cible reçoit -200 points d'attaque et -200 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Flétrissement: la cible reçoit -200 points d'attaque et -200 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Charge de mana x 2:",
       "[**]Inflige 600% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "[**]Flétrissement: la cible et les ennemis proches reçoivent -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "[**]Flétrissement: la cible et les ennemis proches reçoivent -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "[*]Charge de mana x 3:",
       "[**]Inflige 800% de dégâts à la cible et des dégâts mineurs à tous les autres ennemis.",
-      "[**]Flétrissement: tous les ennemis reçoivent -650 points d'attaque et -650 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "[**]Flétrissement: tous les ennemis reçoivent -650 points d'attaque et -650 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[***]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[***]Les purifications affaiblissent le flétrissement de 50%.\n[***]Les dissipations affaiblissent la croissance de 50%.\n[***]Limites des scores de capacité modifiés\n[***]Entre 30% et 170% de la valeur originale.\n[***]D'autres bonus et malus peuvent modifier les scores de capacité.\n[***]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 750 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 750 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 750 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 750 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Inflige 450% de dégâts à la cible et aux ennemis proches.",
-      "Croissance: le lanceur et les alliés proches reçoivent 240 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: le lanceur et les alliés proches reçoivent 240 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Le lanceur et les alliés proches renvoient les effets négatifs ainsi que 160% des dégâts aux attaquants, et bloquent les autres effets négatifs des compétences spéciales de feu ennemies pendant 4 tours. Cet effet ne peut pas être dissipé. (Les effets lancés par les personnages, sbires et démons alliés ne peuvent pas être renvoyés.)",
       "Le lanceur reçoit Résurrection gluante pour 4 tours. Cet effet ne peut pas être dissipé.\n[*]Si le lanceur est vaincu alors qu'il est sous l'effet de Résurrection gluante, il renaît sous la forme d'un gluant.\n[*]Le gluant dispose de\n[*] 100% de santé héritée.\n[*] 50% d'attaque.\n[*] 50% de défense.\n[*]Compétence spéciale: Claque gluante (Inflige 350% de dégâts à la cible)\n[*]Cet effet ne peut pas être dissipé.\n[*]Si le gluant n'est pas vaincu au bout de 2 tours, il renaît sous la forme du personnage d'origine. Le personnage d'origine hérite de la santé et du mana du gluant."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Restaure 25% de la santé du lanceur et des alliés à proximité.",
       "Augmente le mana des alliés proches de 30%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
-      "Croissance: les alliés proches reçoivent 360 points d'attaque et 360 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Croissance: les alliés proches reçoivent 360 points d'attaque et 360 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Invoque un méga sbire gluant avec 50% de PV et 40% d'attaque hérités du lanceur."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 4000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 4000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Tous les alliés reçoivent 45% de chances d'esquiver les attaques et les compétences spéciales pendant 5 tours.",
       "Ce personnage reçoit une marque d'immolation qui dure 5 tours. Lorsqu'un ennemi ou un allié subit des dégâts de brûlure, le lanceur reçoit un cumul (maximum: 10). Chaque cumul augmente la génération de mana du lanceur de 7%."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 4400 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 4400 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Tous les alliés reçoivent 45% de chances d'esquiver les compétences spéciales pendant 5 tours. Chaque esquive inflige 500 points de dégâts à l'attaquant.",
       "Ce personnage reçoit une marque d'immolation qui dure 5 tours. Lorsqu'un ennemi ou un allié subit des dégâts de brûlure, le lanceur reçoit un cumul (maximum: 10). Chaque cumul augmente la génération de mana du lanceur de 7%."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 1500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 1500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Les dégâts ignorent les sbires de la cible.",
       "Tous les ennemis reçoivent[#Dynamic] 388 [#]dégâts de poison sur 4 tours.",
       "Tous les ennemis subissent 50% de dégâts supplémentaires des effets et cumuls négatifs pendant 4 tours."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 1650 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 1650 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Les dégâts ignorent les sbires de la cible.",
       "Tous les ennemis reçoivent[#Dynamic] 408 [#]points de dégâts de poison en 4 tours. Le lanceur se soigne à hauteur de 10% des dégâts de poison.",
       "Tous les ennemis subissent 52% de dégâts supplémentaires des effets et cumuls négatifs pendant 4 tours."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "Les dégâts ignorent les sbires de la cible.",
-      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 1080 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 1080 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible résiste aux nouveaux sbires pendant 4 tours."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "Les dégâts ignorent les sbires de la cible.",
-      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 1180 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible avec Frappe de Firestorm, qui inflige jusqu'à 1180 points de dégâts. Inflige 30% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible résiste aux nouveaux sbires pendant 4 tours."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Soigne tous les alliés à hauteur de 30% des dégâts infligés.",
       "Tous les alliés ripostent avec 65% des dégâts qu'ils reçoivent pendant 5 tours."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2600 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2600 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "La santé de tous les alliés est boostée à hauteur de 27% des dégâts infligés. Le maximum de PV peut être dépassé.",
       "Tous les alliés ripostent avec 75% des dégâts qu'ils reçoivent pendant 5 tours."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2200 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Pendant 5 tours, le lanceur vole à tous les ennemis le mana qu'ils génèrent en commençant par une faible quantité qui augmente à chaque tour, jusqu'à ce que la totalité du mana généré soit volée au dernier tour. Cet effet ne peut pas être purifié, mais il est retiré si le lanceur est vaincu.",
       "Pendant 5 tours, à la fin de chaque tour, vole le bonus dissipable le plus récent de chaque ennemi et les redistribue aux aléatoirement aux alliés."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque tous les ennemis avec Frappe de Firestorm, qui inflige jusqu'à 2500 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "Réduit le mana de tous les ennemis de 35%.",
       "Après l'utilisation de la compétence spéciale, augmente le mana du lanceur de 15%. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
       "Pendant 5 tours, à la fin de chaque tour, vole le bonus dissipable le plus récent de chaque ennemi et les redistribue aux aléatoirement aux alliés."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Retire les bonus de la cible et des ennemis à proximité.",
-      "Attaque la cible et les ennemis proches avec Frappe de Firestorm, qui inflige jusqu'à 2000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible et les ennemis proches avec Frappe de Firestorm, qui inflige jusqu'à 2000 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible et les ennemis à proximité ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 3 tours."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Retire les bonus de la cible et des ennemis à proximité.",
-      "Attaque la cible et les ennemis proches avec Frappe de Firestorm, qui inflige jusqu'à 2300 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature.",
+      "Attaque la cible et les ennemis proches avec Frappe de Firestorm, qui inflige jusqu'à 2300 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de nature. Cette compétence spéciale ne manque jamais sa cible.",
       "La cible et les ennemis à proximité ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 3 tours."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Inflige 600% de dégâts à tous les ennemis.",
       "La santé maximale de tous les ennemis est réduite de 800. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 800.)",
       "Récolte les bonus de tous les ennemis.\n[*]La récolte supprime de façon sûre 2 bonus, cumuls positifs ou effets de croissance pour chaque cible. Les effets obstinés, les bonus non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de croissance sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
-      "Flétrissement: tous les ennemis reçoivent -540 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Flétrissement: tous les ennemis reçoivent -540 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Restaure 50% de la santé du lanceur et des alliés à proximité.",
       "Déracine les malus du lanceur et des alliés proches.\n[*]Le déracinement supprime de façon sûre 2 malus, cumuls négatifs ou effets de flétrissement pour chaque cible. Les effets négatifs non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de flétrissement sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
-      "Croissance: tous les alliés reçoivent 170 points d'attaque et 170 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: tous les alliés reçoivent 170 points d'attaque et 170 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Les soins reçus par tous les ennemis augmentent de -80% pendant 4 tours. Cet effet ne peut pas être dissipé.",
       "Retire l'effet négatif purifiable le plus récent de chaque allié, et inflige aléatoirement les effets retirés aux ennemis.",
       "Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 4 tours."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Inflige 330% de dégâts de griffes à tous les ennemis.\n[*]Inflige 400% de dégâts aux ennemis disposant de bonus défensifs, de sbires ou de méga sbires.\n[*]Les ennemis disposant de bonus défensifs, de sbires ou de méga sbires reçoivent -35% de défense pour 5 tours.",
-      "Flétrissement: tous les ennemis reçoivent -300 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: tous les ennemis reçoivent -300 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "Tous les ennemis deviennent provoqués pour 4 tours. Chaque personnage provoqué inflige 1% de dégâts à un ennemi aléatoire à la fin du tour.",
       "Tous les alliés reçoivent 50% d'attaque et une augmentation supplémentaire de 20% à chaque coup subi pendant 4 tours, jusqu'à un maximum de 150%."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "La santé maximale de la cible est réduite de 1600. L'effet est plus puissant sur les cibles dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 1600.)",
       "La cible est réduite au silence pour 3 tours.",
-      "Croissance: les alliés proches reçoivent 540 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
+      "Croissance: les alliés proches reçoivent 540 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Inflige 410% de dégâts à la cible et aux ennemis proches.",
-      "Flétrissement: la cible et les ennemis proches reçoivent -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les effets de flétrissement et de croissance ne peuvent pas être dissipés ou purifiés.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
+      "Flétrissement: la cible et les ennemis proches reçoivent -250 points d'attaque et -250 points de défense. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
       "La cible et les ennemis proches renvoient leurs bonus à un personnage aléatoire de l'équipe adverse pendant 3 tours. (Seuls les bonus dissipables sont renvoyés.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Trompe-la-mort",
-     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à un ennemi aléatoire."
+     "text": "La première fois que ce personnage subit des dégâts d'attaque ou de compétence spéciale qui devraient l'éliminer, jusqu'à 2500 points de dégâts sont renvoyés à l'attaquant.\n[*]L'effet ne s'active pas si ce personnage est le seul membre de son équipe en combat."
     },
     {
      "id": "ransack_on_other_ally_special",

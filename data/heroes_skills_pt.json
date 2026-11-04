@@ -57,7 +57,7 @@
       "Esta habilidade especial nunca erra o alvo.",
       "Causa 495% de dano ao alvo e pouco dano a inimigos próximos.",
       "Rouba todos os reforços dissipáveis do alvo e de todos os inimigos próximos e os distribui aleatoriamente entre os aliados.",
-      "Crescimento: o invocador e os aliados próximos recebem 340 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: o invocador e os aliados próximos recebem 340 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Causa 355% de dano a todos os inimigos.",
       "O ataque ignora contra-ataques e reflexos.",
-      "Atrofia: todos os inimigos recebem -510 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -510 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Ao fim de cada turno, o invocador dispara um Feixe Astral contra um inimigo aleatório por 4 turnos.\n[*] Cada Feixe Astral causa 300% de dano.\n[*] Cada Feixe Astral reduz o limite de vida do inimigo atingido em 300. O efeito é mais forte contra alvos com vida reforçada.",
       "(O limite de vida não pode ser inferior a 30% do limite de vida original.\n[*] A vida reforçada recebe uma redução adicional de 300.)"
      ]
@@ -881,7 +881,7 @@
       "Causa 600% de dano ao alvo.",
       "Quando o alvo tem mais de 50% do mana antes de receber o dano, atinge outro inimigo com mais de 50% do mana antes de receber qualquer dano desta habilidade especial. Quando nenhum outro inimigo tem 50% do mana, atinge um inimigo aleatório. O dano diminui a cada acerto consecutivo. Cada inimigo pode ser atingido uma vez.",
       "Todos os alvos atingidos são silenciados por 4 turnos.",
-      "Atrofia: todos os inimigos recebem -300 de ataque e -300 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -300 de ataque e -300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Aumenta a vida do invocador e dos aliados próximos em 350. A vida reforçada pode exceder o limite de PV.",
-      "Crescimento: o invocador e os aliados próximos recebem 60 de ataque e 60 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: o invocador e os aliados próximos recebem 60 de ataque e 60 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Causa 400% de dano ao alvo e inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -420 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo e os inimigos próximos recebem -420 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo e os inimigos próximos recebem 25% mais dano por 3 turnos. O efeito aumenta em 10% por cada ajudante ou mega-ajudante de todos os inimigos até o limite de 85% no total."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Causa 600% de dano ao alvo.",
       "Quando o alvo tem reforços e é atingido, ele mira em outro inimigo com reforços. Quando nenhum dos outros inimigos tem reforços, ele mira em um inimigo aleatório. O dano diminui a cada acerto consecutivo. Cada inimigo só pode ser atingido uma vez.",
       "Dissipa com segurança 1 reforço de todos os inimigos. (A dissipação segura ignora efeitos secundários, como o dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como habilidades passivas e efeitos da família, ainda podem ser ativados.\n[*]Os reforços mais recentes são dissipados primeiro.)",
-      "Atrofia: todos os inimigos recebem -420 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -420 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Causa 850% de dano ao alvo.",
       "Por 5 turnos, o alvo recebe 100% de todo o dano causado aos aliados dele.",
-      "Crescimento: todos os aliados recebem 660 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 660 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os aliados ganham 35% de geração de mana por 5 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Causa 530% de dano ao alvo.",
       "O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
       "Todos os alvos atingidos recebem 50% mais dano por 5 turnos. O efeito aumenta em 10% por cada ajudante ou mega-ajudante de todos os inimigos até o limite de 100% no total.",
-      "Atrofia: todos os inimigos recebem -540 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -540 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Restaura 30% da vida de todos os aliados.",
-      "Crescimento: todos os aliados recebem 300 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 300 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Reforça a vida de todos os aliados em 450 após 3 turnos, ou imediatamente quando o efeito é removido antes de acabar. A vida reforçada pode exceder o limite de PV."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Causa 450% de dano ao alvo e inimigos próximos.",
       "O alvo e os inimigos próximos recebem[#Dynamic] 792 [#]de dano de Água por 4 turnos. Todos os aliados absorvem como vida reforçada 50% do dano de Água.",
-      "Crescimento: todos os aliados recebem 240 de ataque e 240 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: todos os aliados recebem 240 de ataque e 240 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Causa 450% de dano a todos os inimigos.",
       "Todos os inimigos recebem[#Dynamic] 785 [#]de dano de queimadura por 5 turnos. Todos os aliados absorvem 25% do dano de queimadura como vida reforçada.",
-      "Atrofia: todos os inimigos recebem -420 de ataque e -420 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -420 de ataque e -420 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Causa 470% de dano a todos os inimigos.",
-      "Atrofia: todos os inimigos recebem -420 de ataque e -420 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -420 de ataque e -420 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos ganham -35% de geração de mana por 5 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Destrói todos os demônios de todos os aliados e causa dano a todos os megademônios.",
       "Expurga os males de status de todos os aliados.",
       "Aumenta a vida de todos os aliados em 1550. A vida reforçada pode exceder o limite de PV.",
-      "Crescimento: todos os aliados recebem 480 de ataque e 480 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: todos os aliados recebem 480 de ataque e 480 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Menos de 40 de humildade:",
       "[*]Causa 265% de dano aos inimigos nas bordas da formação do inimigo. Quando só há um inimigo, o dano é duplicado.",
-      "[*]Atrofia: os inimigos nas bordas da formação inimiga recebem -300 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[**]As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[**]Limites para Pontuações de Habilidade modificadas.\n[**]Mínimo de 30% e máximo de 170% do valor original.\n[**]Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[*]Atrofia: os inimigos nas bordas da formação inimiga recebem -300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Expurgos enfraquecem Atrofia em 50%.\n[**]Dissipações enfraquecem Crescimento em 50%.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]Dissipa os reforços dos inimigos nas bordas da formação inimiga.",
       "40 ou mais de humildade:",
       "[*]Dissipa com segurança os reforços dos inimigos nas bordas da formação inimiga. (A dissipação segura ignora efeitos secundários, como o dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como habilidades passivas e efeitos da família, ainda podem ser ativados.)",
       "[*]Causa 360% de dano aos inimigos nas bordas da formação do inimigo. Quando só há um inimigo, o dano é duplicado.",
-      "[*]Atrofia: os inimigos nas bordas da formação inimiga recebem -350 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[**]As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[**]Limites para Pontuações de Habilidade modificadas.\n[**]Mínimo de 30% e máximo de 170% do valor original.\n[**]Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "[*]Atrofia: os inimigos nas bordas da formação inimiga recebem -350 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Expurgos enfraquecem Atrofia em 50%.\n[**]Dissipações enfraquecem Crescimento em 50%.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Menos de 60 de humildade:",
       "[*]Restaura 25% da vida de todos os aliados.",
       "[*]Expurga 1 mal de status de todos os aliados. (Os males de status são expurgados na ordem em que foram recebidos. Os males de status mais recentes são expurgados primeiro.)",
-      "[*]Crescimento: todos os aliados recebem 180 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[*]Crescimento: todos os aliados recebem 180 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Expurgos enfraquecem Atrofia em 50%.\n[**]Dissipações enfraquecem Crescimento em 50%.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]Todos os aliados regeneram 1005 PV por 3 turnos.",
       "60 ou mais de humildade:",
       "[*]Restaura 32% da vida de todos os aliados.",
       "[*]Expurga os males de status de todos os aliados.",
-      "[*]Crescimento: todos os aliados recebem 240 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[*]Crescimento: todos os aliados recebem 240 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[**]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[**]Expurgos enfraquecem Atrofia em 50%.\n[**]Dissipações enfraquecem Crescimento em 50%.\n[**]Limites de modificação das pontuações de habilidade:\n[**]Mínimo de 30% e máximo de 170% dos valores originais.\n[**]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[**]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]Todos os aliados regeneram 1440 PV por 3 turnos.",
       "[*]O invocador ganha 84% de defesa contra habilidades especiais por 3 turnos."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Causa 420% de dano ao inimigo com mais PV. Causa 300% de dano a todos os outros inimigos.",
       "O inimigo com mais PV é silenciado por 3 turnos.",
-      "Atrofia: todos os inimigos recebem -350 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -350 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Destrói todos os ajudantes de todos os inimigos e causa dano aos mega-ajudantes.",
       "Causa 355% de dano a todos os inimigos.",
-      "Atrofia: todos os inimigos recebem -510 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -510 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos recebem[#Dynamic] 129 [#]a[#Dynamic] 317 [#]de dano de maldição por 4 turnos, aumentando a cada turno. Este efeito é persistente. (No primeiro turno, causa[#Dynamic] 129 [#]de dano. O dano aumenta em 35% a cada turno, até o limite de[#Dynamic] 317 [#]de dano por turno.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Causa 355% de dano ao alvo e inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -225 de ataque e -225 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo e os inimigos próximos recebem -225 de ataque e -225 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo e os inimigos próximos refletem os reforços de efeito de status, aplicando-os a um personagem aleatório da equipe adversária por 3 turnos. (Apenas reforços dissipáveis são refletidos.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Causa 200% de dano ao alvo e inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -40 de ataque e -40 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo e os inimigos próximos recebem -40 de ataque e -40 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo e os inimigos próximos recebem -35% de defesa por 3 turnos. Quando o efeito é removido antes de terminar, o alvo afetado recebe[#Dynamic] 124 [#]de dano."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Causa 210% de dano ao alvo e inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -45 de ataque e -45 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo e os inimigos próximos recebem -45 de ataque e -45 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todo o dano recebido pelo alvo e pelos inimigos próximos aumenta em 40% por 3 turnos."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Restaura 25% da vida de todos os aliados.",
-      "Crescimento: todos os aliados recebem 215 de ataque e 215 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 215 de ataque e 215 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os aliados têm 50% de chance de causar 270% de dano a um inimigo aleatório depois que a habilidade especial de qualquer aliado é lançada por 3 turnos. (Cada personagem pode ativar este efeito uma vez por turno.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "Todos os aliados recuperam 1200 de vida reforçada ao longo de 3 turnos. A vida reforçada pode exceder o limite de PV.",
-      "Crescimento: todos os aliados recebem 240 de ataque e 240 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 240 de ataque e 240 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os aliados têm 50% de chance de causar 280% de dano a um inimigo aleatório depois que a habilidade especial de qualquer aliado é lançada por 3 turnos. (Cada personagem pode ativar este efeito uma vez por turno.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Rouba todos os reforços dissipáveis do alvo e os distribui aleatoriamente entre os aliados.",
       "Causa 375% de dano ao alvo.\n[*] Causa mais 50% de dano por reforço de efeito de status transferido, até o limite de 625% de dano no total.",
-      "Atrofia: o alvo recebe -300 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: o alvo recebe -300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Rouba todos os reforços dissipáveis do alvo e os distribui aleatoriamente entre os aliados.",
       "Causa 400% de dano ao alvo.\n[*] Causa mais 50% de dano por reforço de efeito de status transferido, até o limite de 650% de dano no total.",
-      "Atrofia: o alvo recebe -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo recebe -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo fica imune a novos reforços de efeito de status por 2 turnos."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Causa 240% de dano a todos os inimigos.",
-      "Atrofia: todos os inimigos recebem -200 de ataque e -200 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -200 de ataque e -200 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos recebem -30% de geração de mana por 3 turnos. Quando o efeito é removido antes de terminar, o mana do alvo afetado diminui em -5%. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Restaura 38% da vida de todos os aliados.",
-      "Crescimento: todos os aliados recebem 100 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 100 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os aliados refletem os males de status, aplicando-os a um personagem aleatório da equipe adversária por 3 turnos. (Apenas males de status expurgáveis são refletidos.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "Todos os aliados regeneram 1080 PV por 3 turnos.",
-      "Crescimento: todos os aliados recebem 110 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 110 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Remove o mal de status expurgável mais recente de todos os aliados e distribui esses males aleatoriamente entre os inimigos.",
       "Todos os aliados refletem os males de status, aplicando-os a um personagem aleatório da equipe adversária por 3 turnos. (Apenas males de status expurgáveis são refletidos.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Restaura 54% da vida de todos os aliados.",
-      "Crescimento: todos os aliados recebem 450 de ataque e 450 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 450 de ataque e 450 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os aliados recebem 30% de geração de mana por 4 turnos. Quando o efeito é removido antes de acabar, o aliado afetado recebe 10% de mana. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Chance de ativação para cada efeito:",
       "[*]Comida Requintada: 45%",
       "[**]Restaura 50% da vida de todos os aliados.",
-      "[**]Crescimento: todos os aliados recebem 400 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Crescimento: todos os aliados recebem 400 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]Comida Podre: 45%",
       "[**]Causa 350% de dano a todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 965 [#]de dano de veneno por 5 turnos.",
@@ -19992,7 +19992,7 @@
       "Chance de ativação para cada efeito:",
       "[*]Comida Requintada: 45%",
       "[**]Aumenta a vida de todos os aliados em 1800. A vida reforçada pode exceder o limite de PV.",
-      "[**]Crescimento: todos os aliados recebem 700 de ataque e 700 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Crescimento: todos os aliados recebem 700 de ataque e 700 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]Comida Podre: 45%",
       "[**]Causa 550% de dano a todos os inimigos.",
       "[**]Todos os inimigos recebem Veneno Corrosivo por 5 turnos. Queimadura Corrosiva causa[#Dynamic] 378 [#]de dano de Veneno e diminui a geração de mana do alvo em -10% a cada turno. Causa dano adicional contra heróis com ajudantes ou um mega-ajudante. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Crescimento: todos os aliados recebem 355 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 355 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Javali Pintado com 65% de PV e 260% de ataque herdados do invocador.",
       "Quando convocado, o mega-ajudante Javali Pintado dá ao dono imunidade a transferências e dissipações de reforço enquanto o dono tem um mega-ajudante Javali Pintado. (A imunidade também inclui o próprio efeito.\n[*] Também inclui saques.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Causa 470% de dano ao alvo e pouco dano a inimigos próximos.",
-      "Crescimento: o invocador e os aliados próximos recebem 250 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: o invocador e os aliados próximos recebem 250 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo e os inimigos próximos recebem -35% de defesa por 3 turnos. Quando o efeito é removido antes de terminar, o alvo afetado recebe[#Dynamic] 577 [#]de dano."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Atrofia: o alvo recebe -330 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo recebe -330 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um demônio Explosivo Goblin para o alvo e os inimigos próximos. O demônio causa dano ao inimigo com 195% de ataque a cada turno.\n[*] O demônio Explosivo Goblin absorve a cura e desaparece depois de absorver vida equivalente a 20% do limite de vida do dono.",
       "Quando o demônio Goblin Explosivo desaparece após absorver cura suficiente, o dono recebe[#Dynamic] 1269 [#]de dano de queimadura por 3 turnos."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Causa 365% de dano a todos os inimigos.",
-      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Javali Branco com 65% de PV e 250% de ataque herdados do invocador.",
       "Quando convocado, o mega-ajudante Javali Branco dá ao dono a capacidade de contra-atacar com 100% do dano recebido. O efeito se mantém enquanto o dono tem um mega-ajudante Javali Branco e não pode ser dissipado."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Atrofia: todos os inimigos recebem -350 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -350 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Reduz em 700 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 700.)",
       "Todos os inimigos ganham -45% de defesa contra habilidades especiais por 4 turnos."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Reduz em 800 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 800.)",
       "Todos os inimigos recebem -50% defesa contra habilidades especiais por 4 turnos. Quando o efeito é removido antes de acabar, o alvo com o efeito recebe 800 de dano."
      ]
@@ -20379,7 +20379,7 @@
       "O alvo e os inimigos próximos não podem reviver aliados ou a si mesmo por 5 turnos.",
       "O alvo e os inimigos próximos não podem receber novos efeitos de status que os façam reviver durante 5 turnos.",
       "Causa 530% de dano ao alvo e pouco dano a inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -455 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: o alvo e os inimigos próximos recebem -455 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Crescimento: todos os aliados recebem 150 de ataque e 150 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: todos os aliados recebem 150 de ataque e 150 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um ajudante Cenoura para cada aliado. O ajudante herda 25% de PV do invocador.",
       "Quando convocado, o ajudante Cenoura dá 20% de geração de mana ao dono. O efeito se mantém enquanto o dono tem ajudantes Cenoura e não pode ser dissipado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
       "Vínculo Elemental dá a todos os aliados de Luz 40% de defesa contra habilidades especiais por 4 turnos. Este efeito não pode ser dissipado."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Crescimento: o invocador e os aliados próximos recebem 540 de ataque e 540 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: o invocador e os aliados próximos recebem 540 de ataque e 540 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Aberração. O ajudante herda 45% de PV e 180% de ataque do invocador.\n[*]Cada ataque de um mega-ajudante Aberração dá ao alvo o seguinte mal de status:",
       "[**]O alvo recebe[#Dynamic] 552 [#]de dano de Toxina ao longo de 3 turnos. O dano aumenta contra alvos com vida reforçada, ajudantes ou um mega-ajudante. (O dano de Toxina aumenta em 100% contra alvos com vida reforçada.\n[***]O dano de Toxina aumenta em 33% por ajudante ou mega-ajudante do alvo.\n[***]O dano aumenta até o limite de 199%.)",
       "[**]Aplica 10 Insanidade ao alvo.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "Todos os inimigos sucumbem ao medo por 5 turnos. (O alvo recebe -40% de defesa.\n[*] Remove todos os reforços dissipáveis e efeitos Crescimento quando um efeito de status Medo é adicionado.\n[*] O alvo não pode ganhar novos reforços nem efeitos Crescimento enquanto este efeito está ativo.\n[*] O alvo com Medo causa 250% de dano a um aliado aleatório sempre que qualquer outro aliado usa a habilidade especial. Cada personagem pode ativar este efeito uma vez por turno.)",
-      "Atrofia: todos os inimigos recebem -480 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -480 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Causa 420% de dano e aplica 25 Insanidade a todos os inimigos.",
       "Quando lançada, esta habilidade especial aplica 45 Insanidade ao invocador.",
       "(A Insanidade dá a chance de reverter o alvo de uma habilidade especial.\n[*] Quando a Insanidade é ativada, as habilidades especiais com inimigos como alvo passam a ter aliados como alvo, e vice-versa.\n[*] As habilidades especiais lançadas no invocador são lançadas em um alvo aleatório. As habilidades especiais lançadas em um alvo são lançadas no invocador.\n[*] Quando a Insanidade é ativada, as habilidades passivas e habilidades de tropa que concedem efeitos adicionais na invocação não são ativadas.\n[*] Quando a Insanidade chega a 100 e o mana está cheio, uma habilidade especial é lançada automaticamente.\n[*] A Insanidade não pode ser dissipada nem expurgada.\n[*] A Insanidade do herói pode diminuir em 10 a cada tentativa de cura direta por habilidades especiais, habilidades auxiliares, itens ou escudos. Curas diretas de habilidades especiais reduzem a Insanidade apenas uma vez por invocação.\n[*] Todas as outras curas reduzem a Insanidade em 1.\n[*] A Insanidade é completamente removida quando uma habilidade especial reversa é lançada.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Causa 270% de dano a todos os inimigos.",
-      "Atrofia: todos os inimigos recebem -240 de ataque e -240 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -240 de ataque e -240 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos recebem[#Dynamic] 405 [#]de dano de queimadura ao longo de 3 turnos. O invocador absorve 50% do dano de queimadura causado como vida reforçada. Contra personagens de Gelo, este efeito de status não pode ser expurgado e dura mais 2 turnos."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Destrói todos os demônios de todos os aliados e causa dano a todos os megademônios.",
       "Recupera 65% de vida para o aliado com menos PV restantes. Todos os outros aliados recuperam 45% de vida.",
-      "Crescimento: todos os aliados recebem 300 de ataque e 300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: todos os aliados recebem 300 de ataque e 300 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Causa 600% de dano ao alvo.",
       "Dádiva de Crescimento: causa 2x mais dano adicional por cada ponto de ataque modificado. (O dano adicional é baseado no ataque modificado do invocador quando o dano é causado.\n[*] Limite de 600 de dano adicional.\n[*] Os efeitos de status que afetam o dano causado não afetam o dano adicional\n[*] O atributo de defesa não afeta o dano adicional.\n[*] Os efeitos de status que afetam o atributo de ataque não afetam o dano adicional.)",
-      "Atrofia: o alvo recebe -500 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo recebe -500 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo recebe[#Dynamic] 1068 [#]de dano de areia por 3 turnos."
      ]
     }
@@ -28892,7 +28892,7 @@
       "Esta habilidade especial nunca erra o alvo.",
       "Causa 500% de dano ao alvo.",
       "Dádiva de Crescimento: causa 2x mais dano adicional por cada ponto de ataque modificado. (O dano adicional é baseado no ataque modificado do invocador quando o dano é causado.\n[*] Limite de 600 de dano adicional.\n[*] Os efeitos de status que afetam o dano causado não afetam o dano adicional\n[*] O atributo de defesa não afeta o dano adicional.\n[*] Os efeitos de status que afetam o atributo de ataque não afetam o dano adicional.)",
-      "Atrofia: o alvo recebe -480 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: o alvo recebe -480 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Éter de Gelo I 0.9%\n[*]Éter de Gelo II 0.4%\n[*]Éter de Gelo III 0.025%\n[*]Éter Alfa 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Éter de Gelo III 0.025%\n[**]Éter Alfa 0.01%\n[*]ÉPICO\n[**]Éter de Gelo II 0.4%\n[*]RARO\n[**]Éter de Gelo I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Éter de Natureza I 0.9%\n[*]Éter de Natureza II 0.4%\n[*]Éter de Natureza III 0.025%\n[*]Éter Alfa 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Éter de Natureza III 0.025%\n[**]Éter Alfa 0.01%\n[*]ÉPICO\n[**]Éter de Natureza II 0.4%\n[*]RARO\n[**]Éter de Natureza I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Éter de Trevas I 0.9%\n[*]Éter de Trevas II 0.4%\n[*]Éter de Trevas III 0.025%\n[*]Éter Alfa 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Éter de Trevas III 0.025%\n[**]Éter Alfa 0.01%\n[*]ÉPICO\n[**]Éter de Trevas II 0.4%\n[*]RARO\n[**]Éter de Trevas I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Éter de Fogo I 0.9%\n[*]Éter de Fogo II 0.4%\n[*]Éter de Fogo III 0.025%\n[*]Éter Alfa 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Éter de Fogo III 0.025%\n[**]Éter Alfa 0.01%\n[*]ÉPICO\n[**]Éter de Fogo II 0.4%\n[*]RARO\n[**]Éter de Fogo I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Éter de Luz I 0.9%\n[*]Éter de Luz II 0.4%\n[*]Éter de Luz III 0.025%\n[*]Éter Alfa 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Éter de Luz III 0.025%\n[**]Éter Alfa 0.01%\n[*]ÉPICO\n[**]Éter de Luz II 0.4%\n[*]RARO\n[**]Éter de Luz I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Kit do aventureiro 0.5%\n[*]Espada de treino 0.5%\n[*]Roupas resistentes 0.5%\n[*]Escritos arcanos 0.25%\n[*]Adaga 0.25%\n[*]Armadura de couro 0.25%\n[*]Pedra de amolar 0.25%\n[*]Corda forte 0.25%\n[*]Escudo de madeira 0.25%\n[*]Manual de batalha 0.05%\n[*]Cota de malha 0.05%\n[*]Bainha 0.05%\n[*]Botas altas 0.05%\n[*]Lâmina oculta 0.03%\n[*]Orbe da magia 0.03%\n[*]Escudo robusto 0.03%\n[*]Ferramentas de armadilhas 0.03%\n[*]Capa aconchegante 0.03%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Manual de batalha 0.05%\n[**]Cota de malha 0.05%\n[**]Bainha 0.05%\n[**]Botas altas 0.05%\n[**]Lâmina oculta 0.03%\n[**]Orbe da magia 0.03%\n[**]Escudo robusto 0.03%\n[**]Ferramentas de armadilhas 0.03%\n[**]Capa aconchegante 0.03%\n[*]INCOMUM\n[**]Escritos arcanos 0.25%\n[**]Adaga 0.25%\n[**]Armadura de couro 0.25%\n[**]Pedra de amolar 0.25%\n[**]Corda forte 0.25%\n[**]Escudo de madeira 0.25%\n[*]COMUM\n[**]Kit do aventureiro 0.5%\n[**]Espada de treino 0.5%\n[**]Roupas resistentes 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Botas altas 1.5%\n[*]Bússola 0.2%\n[*]Luvas excelentes 0.2%\n[*]Lâmina damasco 0.01%\n[*]Tomo de tática 0.01%\n[*]Corda forte 1%\n[*]Manual de batalha 2%\n[*]Cota de malha 2%\n[*]Capa aconchegante 0.16%\n[*]Telescópio da visão 0.06%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]ÉPICO\n[**]Lâmina damasco 0.01%\n[**]Tomo de tática 0.01%\n[**]Telescópio da visão 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Bússola 0.2%\n[**]Luvas excelentes 0.2%\n[**]Manual de batalha 2%\n[**]Cota de malha 2%\n[**]Capa aconchegante 0.16%\n[*]INCOMUM\n[**]Corda forte 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Botas altas 1.5%\n[*]Bússola 0.2%\n[*]Luvas excelentes 0.2%\n[*]Lâmina damasco 0.01%\n[*]Tomo de tática 0.01%\n[*]Corda forte 1%\n[*]Adaga 1%\n[*]Bainha 2%\n[*]Escudo robusto 0.16%\n[*]Tônico misterioso 0.06%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]ÉPICO\n[**]Lâmina damasco 0.01%\n[**]Tomo de tática 0.01%\n[**]Tônico misterioso 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Bússola 0.2%\n[**]Luvas excelentes 0.2%\n[**]Bainha 2%\n[**]Escudo robusto 0.16%\n[*]INCOMUM\n[**]Corda forte 1%\n[**]Adaga 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Botas altas 1.5%\n[*]Bússola 0.2%\n[*]Luvas excelentes 0.2%\n[*]Lâmina damasco 0.01%\n[*]Tomo de tática 0.01%\n[*]Corda forte 1%\n[*]Adaga 1%\n[*]Bainha 2%\n[*]Ferramentas de armadilhas 0.16%\n[*]Tabardo real 0.06%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]ÉPICO\n[**]Lâmina damasco 0.01%\n[**]Tomo de tática 0.01%\n[**]Tabardo real 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Bússola 0.2%\n[**]Luvas excelentes 0.2%\n[**]Bainha 2%\n[**]Ferramentas de armadilhas 0.16%\n[*]INCOMUM\n[**]Corda forte 1%\n[**]Adaga 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Botas altas 1.5%\n[*]Bússola 0.2%\n[*]Luvas excelentes 0.2%\n[*]Lâmina damasco 0.01%\n[*]Tomo de tática 0.01%\n[*]Escritos arcanos 1%\n[*]Cota de malha 2%\n[*]Lâmina oculta 0.16%\n[*]Anéis místicos 0.06%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]ÉPICO\n[**]Lâmina damasco 0.01%\n[**]Tomo de tática 0.01%\n[**]Anéis místicos 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Bússola 0.2%\n[**]Luvas excelentes 0.2%\n[**]Cota de malha 2%\n[**]Lâmina oculta 0.16%\n[*]INCOMUM\n[**]Escritos arcanos 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Botas altas 1.5%\n[*]Bússola 0.2%\n[*]Luvas excelentes 0.2%\n[*]Lâmina damasco 0.01%\n[*]Tomo de tática 0.01%\n[*]Escritos arcanos 1%\n[*]Cota de malha 2%\n[*]Orbe da magia 0.16%\n[*]Dardos venenosos 0.06%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]ÉPICO\n[**]Lâmina damasco 0.01%\n[**]Tomo de tática 0.01%\n[**]Dardos venenosos 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Bússola 0.2%\n[**]Luvas excelentes 0.2%\n[**]Cota de malha 2%\n[**]Orbe da magia 0.16%\n[*]INCOMUM\n[**]Escritos arcanos 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Emblema de Bruxo 2.5%\n[*]Emblema de Bruxo Mestre 0.1%\n[*]Emblema de Feiticeiro 2.5%\n[*]Emblema de Feiticeiro Mestre 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Emblema de Bruxo Mestre 0.1%\n[**]Emblema de Feiticeiro Mestre 0.1%\n[*]ÉPICO\n[**]Emblema de Bruxo 2.5%\n[**]Emblema de Feiticeiro 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Emblema de Paladino 2.5%\n[*]Emblema de Paladino Mestre 0.1%\n[*]Emblema de Druida 2.5%\n[*]Emblema de Druida Mestre 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Emblema de Paladino Mestre 0.1%\n[**]Emblema de Druida Mestre 0.1%\n[*]ÉPICO\n[**]Emblema de Paladino 2.5%\n[**]Emblema de Druida 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Emblema de Patrulheiro 2.5%\n[*]Emblema de Patrulheiro Mestre 0.1%\n[*]Emblema de Ladino 2.5%\n[*]Emblema de Ladino Mestre 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Emblema de Patrulheiro Mestre 0.1%\n[**]Emblema de Ladino Mestre 0.1%\n[*]ÉPICO\n[**]Emblema de Patrulheiro 2.5%\n[**]Emblema de Ladino 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Emblema de Guerreiro 2.5%\n[*]Emblema de Guerreiro Mestre 0.1%\n[*]Emblema de Bárbaro 2.5%\n[*]Emblema de Bárbaro Mestre 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Emblema de Guerreiro Mestre 0.1%\n[**]Emblema de Bárbaro Mestre 0.1%\n[*]ÉPICO\n[**]Emblema de Guerreiro 2.5%\n[**]Emblema de Bárbaro 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Emblema de Monge 2.5%\n[*]Emblema de Monge Mestre 0.1%\n[*]Emblema de Clérigo 2.5%\n[*]Emblema de Clérigo Mestre 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Emblema de Monge Mestre 0.1%\n[**]Emblema de Clérigo Mestre 0.1%\n[*]ÉPICO\n[**]Emblema de Monge 2.5%\n[**]Emblema de Clérigo 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrid 0.5%\n[*]Sombra da Noite 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenny 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Herói de treino comum 0.16%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]INCOMUM\n[**]Jill 0.033%\n[**]Jenny 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]COMUM\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrid 0.5%\n[**]Sombra da Noite 0.5%\n[**]Hikaru 0.5%\n[**]Treinador mestre comum 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Pacote minúsculo de alimentos 2.25%\n[*]Pacote pequeno de alimentos 0.6%\n[*]Pacote médio de alimentos 0.1%\n[*]Pacote grande de alimentos 0.04%\n[*]Pacote gigante de alimentos 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de alimentos 0.01%\n[*]ÉPICO\n[**]Pacote grande de alimentos 0.04%\n[*]RARO\n[**]Pacote médio de alimentos 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de alimentos 0.6%\n[**]Herói de treino incomum 0.1%\n[*]COMUM\n[**]Pacote minúsculo de alimentos 2.25%\n[**]Herói de treino comum 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Pacote minúsculo de alimentos 2.25%\n[*]Pacote pequeno de alimentos 0.6%\n[*]Pacote médio de alimentos 0.1%\n[*]Pacote grande de alimentos 0.04%\n[*]Pacote gigante de alimentos 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de alimentos 0.01%\n[*]ÉPICO\n[**]Pacote grande de alimentos 0.04%\n[*]RARO\n[**]Pacote médio de alimentos 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de alimentos 0.6%\n[**]Herói de treino incomum 0.1%\n[*]COMUM\n[**]Pacote minúsculo de alimentos 2.25%\n[**]Herói de treino comum 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Pacote minúsculo de alimentos 2.25%\n[*]Pacote pequeno de alimentos 0.6%\n[*]Pacote médio de alimentos 0.1%\n[*]Pacote grande de alimentos 0.04%\n[*]Pacote gigante de alimentos 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de alimentos 0.01%\n[*]ÉPICO\n[**]Pacote grande de alimentos 0.04%\n[*]RARO\n[**]Pacote médio de alimentos 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de alimentos 0.6%\n[**]Herói de treino incomum 0.1%\n[*]COMUM\n[**]Pacote minúsculo de alimentos 2.25%\n[**]Herói de treino comum 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Pacote minúsculo de alimentos 2.25%\n[*]Pacote pequeno de alimentos 0.6%\n[*]Pacote médio de alimentos 0.1%\n[*]Pacote grande de alimentos 0.04%\n[*]Pacote gigante de alimentos 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de alimentos 0.01%\n[*]ÉPICO\n[**]Pacote grande de alimentos 0.04%\n[*]RARO\n[**]Pacote médio de alimentos 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de alimentos 0.6%\n[**]Herói de treino incomum 0.1%\n[*]COMUM\n[**]Pacote minúsculo de alimentos 2.25%\n[**]Herói de treino comum 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Pacote minúsculo de alimentos 2.25%\n[*]Pacote pequeno de alimentos 0.6%\n[*]Pacote médio de alimentos 0.1%\n[*]Pacote grande de alimentos 0.04%\n[*]Pacote gigante de alimentos 0.01%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de alimentos 0.01%\n[*]ÉPICO\n[**]Pacote grande de alimentos 0.04%\n[*]RARO\n[**]Pacote médio de alimentos 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de alimentos 0.6%\n[**]Herói de treino incomum 0.1%\n[*]COMUM\n[**]Pacote minúsculo de alimentos 2.25%\n[**]Herói de treino comum 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Pacote minúsculo de ferro 2.25%\n[*]Pacote pequeno de ferro 0.6%\n[*]Pacote médio de ferro 0.1%\n[*]Pacote grande de ferro 0.04%\n[*]Pacote gigante de ferro 0.01%\n[*]Aldeão Comum 0.4%\n[*]Arqueiros milicianos 0.4%\n[*]Atacantes imperiais 0.4%\n[*]Soldados imperiais 0.1%\n[*]Novatos milicianos 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de ferro 0.01%\n[*]ÉPICO\n[**]Pacote grande de ferro 0.04%\n[*]RARO\n[**]Pacote médio de ferro 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de ferro 0.6%\n[**]Soldados imperiais 0.1%\n[**]Novatos milicianos 0.1%\n[*]COMUM\n[**]Pacote minúsculo de ferro 2.25%\n[**]Aldeão Comum 0.4%\n[**]Arqueiros milicianos 0.4%\n[**]Atacantes imperiais 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Pacote minúsculo de ferro 2.25%\n[*]Pacote pequeno de ferro 0.6%\n[*]Pacote médio de ferro 0.1%\n[*]Pacote grande de ferro 0.04%\n[*]Pacote gigante de ferro 0.01%\n[*]Aldeão Comum 0.4%\n[*]Ladinas rebeldes 0.4%\n[*]Encantadoras da floresta 0.4%\n[*]Arqueiros rebeldes 0.1%\n[*]Combatentes da aldeia 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de ferro 0.01%\n[*]ÉPICO\n[**]Pacote grande de ferro 0.04%\n[*]RARO\n[**]Pacote médio de ferro 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de ferro 0.6%\n[**]Arqueiros rebeldes 0.1%\n[**]Combatentes da aldeia 0.1%\n[*]COMUM\n[**]Pacote minúsculo de ferro 2.25%\n[**]Aldeão Comum 0.4%\n[**]Ladinas rebeldes 0.4%\n[**]Encantadoras da floresta 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Pacote minúsculo de ferro 2.25%\n[*]Pacote pequeno de ferro 0.6%\n[*]Pacote médio de ferro 0.1%\n[*]Pacote grande de ferro 0.04%\n[*]Pacote gigante de ferro 0.01%\n[*]Aldeão Comum 0.4%\n[*]Combatentes Reanimados 0.4%\n[*]Iniciados da guilda 0.4%\n[*]Assassinas da guilda 0.1%\n[*]Atacantes da guilda 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de ferro 0.01%\n[*]ÉPICO\n[**]Pacote grande de ferro 0.04%\n[*]RARO\n[**]Pacote médio de ferro 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de ferro 0.6%\n[**]Assassinas da guilda 0.1%\n[**]Atacantes da guilda 0.1%\n[*]COMUM\n[**]Pacote minúsculo de ferro 2.25%\n[**]Aldeão Comum 0.4%\n[**]Combatentes Reanimados 0.4%\n[**]Iniciados da guilda 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Pacote minúsculo de ferro 2.25%\n[*]Pacote pequeno de ferro 0.6%\n[*]Pacote médio de ferro 0.1%\n[*]Pacote grande de ferro 0.04%\n[*]Pacote gigante de ferro 0.01%\n[*]Aldeão Comum 0.4%\n[*]Guerreiros Bárbaros 0.4%\n[*]Monges Bárbaros 0.4%\n[*]Berserkers bárbaros 0.1%\n[*]Feiticeiros piromantes 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de ferro 0.01%\n[*]ÉPICO\n[**]Pacote grande de ferro 0.04%\n[*]RARO\n[**]Pacote médio de ferro 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de ferro 0.6%\n[**]Berserkers bárbaros 0.1%\n[**]Feiticeiros piromantes 0.1%\n[*]COMUM\n[**]Pacote minúsculo de ferro 2.25%\n[**]Aldeão Comum 0.4%\n[**]Guerreiros Bárbaros 0.4%\n[**]Monges Bárbaros 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Pacote minúsculo de ferro 2.25%\n[*]Pacote pequeno de ferro 0.6%\n[*]Pacote médio de ferro 0.1%\n[*]Pacote grande de ferro 0.04%\n[*]Pacote gigante de ferro 0.01%\n[*]Aldeão Comum 0.4%\n[*]Ladinos monásticos 0.4%\n[*]Guerreiros devotos 0.4%\n[*]Monges exaltados 0.1%\n[*]Feiticeiros devotos 0.1%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Pacote gigante de ferro 0.01%\n[*]ÉPICO\n[**]Pacote grande de ferro 0.04%\n[*]RARO\n[**]Pacote médio de ferro 0.1%\n[*]INCOMUM\n[**]Pacote pequeno de ferro 0.6%\n[**]Monges exaltados 0.1%\n[**]Feiticeiros devotos 0.1%\n[*]COMUM\n[**]Pacote minúsculo de ferro 2.25%\n[**]Aldeão Comum 0.4%\n[**]Ladinos monásticos 0.4%\n[**]Guerreiros devotos 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Carapaça de Titã 0.58%\n[*]Bico de Titã 0.58%\n[*]Presa de Titã 0.58%\n[*]Ovo de Titã 0.41%\n[*]Pluma de Titã 0.41%\n[*]Olho de Titã 0.41%\n[*]Coluna de Titã 0.617%\n[*]Cauda de Titã 0.617%\n[*]Coração de Titã 0.25%\n[*]Crânio de Titã 0.25%\n[*]Furacão 0.25%\n[*]Destruidor de Valquíria 0.25%\n[*]Estandarte de Titã 0.25%\n[*]Pergaminho de alteração 0.25%\n[*]Arpão gigante 0.25%\n[*]Sigrid 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnilde 0.8%\n[*]Olaf 0.8%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Furacão 0.25%\n[**]Destruidor de Valquíria 0.25%\n[**]Estandarte de Titã 0.25%\n[**]Pergaminho de alteração 0.25%\n[**]Arpão gigante 0.25%\n[*]ÉPICO\n[**]Coração de Titã 0.25%\n[**]Crânio de Titã 0.25%\n[*]RARO\n[**]Coluna de Titã 0.617%\n[**]Cauda de Titã 0.617%\n[*]INCOMUM\n[**]Ovo de Titã 0.41%\n[**]Pluma de Titã 0.41%\n[**]Olho de Titã 0.41%\n[**]Toril 0.8%\n[**]Ragnilde 0.8%\n[**]Olaf 0.8%\n[*]COMUM\n[**]Carapaça de Titã 0.58%\n[**]Bico de Titã 0.58%\n[**]Presa de Titã 0.58%\n[**]Sigrid 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Carapaça de Titã 0.58%\n[*]Bico de Titã 0.58%\n[*]Presa de Titã 0.58%\n[*]Ovo de Titã 0.41%\n[*]Pluma de Titã 0.41%\n[*]Olho de Titã 0.41%\n[*]Coluna de Titã 0.617%\n[*]Cauda de Titã 0.617%\n[*]Coração de Titã 0.25%\n[*]Crânio de Titã 0.25%\n[*]Furacão 0.25%\n[*]Destruidor de Valquíria 0.25%\n[*]Estandarte de Titã 0.25%\n[*]Pergaminho de alteração 0.25%\n[*]Arpão gigante 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenny 0.8%\n[*]Brogan 0.8%\n[*]Perfurador 0.8%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Furacão 0.25%\n[**]Destruidor de Valquíria 0.25%\n[**]Estandarte de Titã 0.25%\n[**]Pergaminho de alteração 0.25%\n[**]Arpão gigante 0.25%\n[*]ÉPICO\n[**]Coração de Titã 0.25%\n[**]Crânio de Titã 0.25%\n[*]RARO\n[**]Coluna de Titã 0.617%\n[**]Cauda de Titã 0.617%\n[*]INCOMUM\n[**]Ovo de Titã 0.41%\n[**]Pluma de Titã 0.41%\n[**]Olho de Titã 0.41%\n[**]Jenny 0.8%\n[**]Brogan 0.8%\n[**]Perfurador 0.8%\n[*]COMUM\n[**]Carapaça de Titã 0.58%\n[**]Bico de Titã 0.58%\n[**]Presa de Titã 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Carapaça de Titã 0.58%\n[*]Bico de Titã 0.58%\n[*]Presa de Titã 0.58%\n[*]Ovo de Titã 0.41%\n[*]Pluma de Titã 0.41%\n[*]Olho de Titã 0.41%\n[*]Coluna de Titã 0.617%\n[*]Cauda de Titã 0.617%\n[*]Coração de Titã 0.25%\n[*]Crânio de Titã 0.25%\n[*]Furacão 0.25%\n[*]Destruidor de Valquíria 0.25%\n[*]Estandarte de Titã 0.25%\n[*]Pergaminho de alteração 0.25%\n[*]Arpão gigante 0.25%\n[*]Sombra da Noite 2%\n[*]Flecheiro 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Furacão 0.25%\n[**]Destruidor de Valquíria 0.25%\n[**]Estandarte de Titã 0.25%\n[**]Pergaminho de alteração 0.25%\n[**]Arpão gigante 0.25%\n[*]ÉPICO\n[**]Coração de Titã 0.25%\n[**]Crânio de Titã 0.25%\n[*]RARO\n[**]Coluna de Titã 0.617%\n[**]Cauda de Titã 0.617%\n[*]INCOMUM\n[**]Ovo de Titã 0.41%\n[**]Pluma de Titã 0.41%\n[**]Olho de Titã 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]COMUM\n[**]Carapaça de Titã 0.58%\n[**]Bico de Titã 0.58%\n[**]Presa de Titã 0.58%\n[**]Sombra da Noite 2%\n[**]Flecheiro 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Carapaça de Titã 0.58%\n[*]Bico de Titã 0.58%\n[*]Presa de Titã 0.58%\n[*]Ovo de Titã 0.41%\n[*]Pluma de Titã 0.41%\n[*]Olho de Titã 0.41%\n[*]Coluna de Titã 0.617%\n[*]Cauda de Titã 0.617%\n[*]Coração de Titã 0.25%\n[*]Crânio de Titã 0.25%\n[*]Furacão 0.25%\n[*]Destruidor de Valquíria 0.25%\n[*]Estandarte de Titã 0.25%\n[*]Pergaminho de alteração 0.25%\n[*]Arpão gigante 0.25%\n[*]Sharan 2%\n[*]Tudal 2%\n[*]Jill 0.8%\n[*]Shalikot 0.8%\n[*]Zudak 0.8%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Furacão 0.25%\n[**]Destruidor de Valquíria 0.25%\n[**]Estandarte de Titã 0.25%\n[**]Pergaminho de alteração 0.25%\n[**]Arpão gigante 0.25%\n[*]ÉPICO\n[**]Coração de Titã 0.25%\n[**]Crânio de Titã 0.25%\n[*]RARO\n[**]Coluna de Titã 0.617%\n[**]Cauda de Titã 0.617%\n[*]INCOMUM\n[**]Ovo de Titã 0.41%\n[**]Pluma de Titã 0.41%\n[**]Olho de Titã 0.41%\n[**]Jill 0.8%\n[**]Shalikot 0.8%\n[**]Zudak 0.8%\n[*]COMUM\n[**]Carapaça de Titã 0.58%\n[**]Bico de Titã 0.58%\n[**]Presa de Titã 0.58%\n[**]Sharan 2%\n[**]Tudal 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Carapaça de Titã 0.58%\n[*]Bico de Titã 0.58%\n[*]Presa de Titã 0.58%\n[*]Ovo de Titã 0.41%\n[*]Pluma de Titã 0.41%\n[*]Olho de Titã 0.41%\n[*]Coluna de Titã 0.617%\n[*]Cauda de Titã 0.617%\n[*]Coração de Titã 0.25%\n[*]Crânio de Titã 0.25%\n[*]Furacão 0.25%\n[*]Destruidor de Valquíria 0.25%\n[*]Estandarte de Titã 0.25%\n[*]Pergaminho de alteração 0.25%\n[*]Arpão gigante 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hao 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]LENDÁRIO\n[**]Furacão 0.25%\n[**]Destruidor de Valquíria 0.25%\n[**]Estandarte de Titã 0.25%\n[**]Pergaminho de alteração 0.25%\n[**]Arpão gigante 0.25%\n[*]ÉPICO\n[**]Coração de Titã 0.25%\n[**]Crânio de Titã 0.25%\n[*]RARO\n[**]Coluna de Titã 0.617%\n[**]Cauda de Titã 0.617%\n[*]INCOMUM\n[**]Ovo de Titã 0.41%\n[**]Pluma de Titã 0.41%\n[**]Olho de Titã 0.41%\n[**]Hao 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMUM\n[**]Carapaça de Titã 0.58%\n[**]Bico de Titã 0.58%\n[**]Presa de Titã 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Toril 0.8%\n[*]Ragnilde 0.8%\n[*]Olaf 0.8%\n[*] 0.48 0.48%\n[*]Sigrid 2%\n[*]Brand 2%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Herói de treino raro 0.01%\n[*]INCOMUM\n[**]Herói de treino incomum 0.01%\n[**]Toril 0.8%\n[**]Ragnilde 0.8%\n[**]Olaf 0.8%\n[*]COMUM\n[**]Herói de treino comum 0.48%\n[**]Sigrid 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jenny 0.8%\n[*]Brogan 0.8%\n[*]Perfurador 0.8%\n[*] 0.48 0.48%\n[*]Aife 2%\n[*]Derric 2%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Herói de treino raro 0.01%\n[*]INCOMUM\n[**]Herói de treino incomum 0.01%\n[**]Jenny 0.8%\n[**]Brogan 0.8%\n[**]Perfurador 0.8%\n[*]COMUM\n[**]Herói de treino comum 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Layla 0.8%\n[*]Silthus 0.8%\n[*]Julius 0.8%\n[*] 0.48 0.48%\n[*]Sombra da Noite 2%\n[*]Flecheiro 2%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Herói de treino raro 0.01%\n[*]INCOMUM\n[**]Herói de treino incomum 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]COMUM\n[**]Herói de treino comum 0.48%\n[**]Sombra da Noite 2%\n[**]Flecheiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jill 0.8%\n[*]Shalikot 0.8%\n[*]Zudak 0.8%\n[*] 0.48 0.48%\n[*]Sharan 2%\n[*]Tudal 2%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Herói de treino raro 0.01%\n[*]INCOMUM\n[**]Herói de treino incomum 0.01%\n[**]Jill 0.8%\n[**]Shalikot 0.8%\n[**]Zudak 0.8%\n[*]COMUM\n[**]Herói de treino comum 0.48%\n[**]Sharan 2%\n[**]Tudal 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Hao 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%\n[*] 0.48 0.48%\n[*]Hikaru 2%\n[*]Kenjiro 2%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Herói de treino raro 0.01%\n[*]INCOMUM\n[**]Herói de treino incomum 0.01%\n[**]Hao 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMUM\n[**]Herói de treino comum 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Aldeão Comum 0.85%\n[*]Arqueiros milicianos 0.85%\n[*]Atacantes imperiais 0.85%\n[*]Soldados imperiais 0.15%\n[*]Novatos milicianos 0.15%\n[*]Atacantes de elite imperiais 0.05%\n[*]Arqueiras assoladoras 0.05%\n[*]Cavaleiros imperiais 0.05%\n[*]Tropa de treino 0.85%\n[*]Tropa de treino 0.1%\n[*]Tropa de treino 0.05%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Atacantes de elite imperiais 0.05%\n[**]Arqueiras assoladoras 0.05%\n[**]Cavaleiros imperiais 0.05%\n[**]Tropa de treino 0.05%\n[*]INCOMUM\n[**]Soldados imperiais 0.15%\n[**]Novatos milicianos 0.15%\n[**]Tropa de treino 0.1%\n[*]COMUM\n[**]Aldeão Comum 0.85%\n[**]Arqueiros milicianos 0.85%\n[**]Atacantes imperiais 0.85%\n[**]Tropa de treino 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Aldeão Comum 0.85%\n[*]Ladinas rebeldes 0.85%\n[*]Encantadoras da floresta 0.85%\n[*]Arqueiros rebeldes 0.15%\n[*]Combatentes da aldeia 0.15%\n[*]Atiradoras rebeldes 0.05%\n[*]Ents da floresta 0.05%\n[*]Ilusionistas rebeldes 0.05%\n[*]Tropa de treino 0.85%\n[*]Tropa de treino 0.1%\n[*]Tropa de treino 0.05%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Atiradoras rebeldes 0.05%\n[**]Ents da floresta 0.05%\n[**]Ilusionistas rebeldes 0.05%\n[**]Tropa de treino 0.05%\n[*]INCOMUM\n[**]Arqueiros rebeldes 0.15%\n[**]Combatentes da aldeia 0.15%\n[**]Tropa de treino 0.1%\n[*]COMUM\n[**]Aldeão Comum 0.85%\n[**]Ladinas rebeldes 0.85%\n[**]Encantadoras da floresta 0.85%\n[**]Tropa de treino 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Aldeão Comum 0.85%\n[*]Combatentes Reanimados 0.85%\n[*]Iniciados da guilda 0.85%\n[*]Assassinas da guilda 0.15%\n[*]Atacantes da guilda 0.15%\n[*]Combatentes Reanimados 0.05%\n[*]Cavaleiros reanimados 0.05%\n[*]Cavaleiros da guilda 0.05%\n[*]Tropa de treino 0.85%\n[*]Tropa de treino 0.1%\n[*]Tropa de treino 0.05%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Combatentes Reanimados 0.05%\n[**]Cavaleiros reanimados 0.05%\n[**]Cavaleiros da guilda 0.05%\n[**]Tropa de treino 0.05%\n[*]INCOMUM\n[**]Assassinas da guilda 0.15%\n[**]Atacantes da guilda 0.15%\n[**]Tropa de treino 0.1%\n[*]COMUM\n[**]Aldeão Comum 0.85%\n[**]Combatentes Reanimados 0.85%\n[**]Iniciados da guilda 0.85%\n[**]Tropa de treino 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Aldeão Comum 0.85%\n[*]Monges Bárbaros 0.85%\n[*]Guerreiros Bárbaros 0.85%\n[*]Berserkers bárbaros 0.15%\n[*]Feiticeiros piromantes 0.15%\n[*]Espancadoras bárbaras 0.05%\n[*]Minotauros bárbaros 0.05%\n[*]Magas de batalha piromantes 0.05%\n[*]Tropa de treino 0.85%\n[*]Tropa de treino 0.1%\n[*]Tropa de treino 0.05%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Espancadoras bárbaras 0.05%\n[**]Minotauros bárbaros 0.05%\n[**]Magas de batalha piromantes 0.05%\n[**]Tropa de treino 0.05%\n[*]INCOMUM\n[**]Berserkers bárbaros 0.15%\n[**]Feiticeiros piromantes 0.15%\n[**]Tropa de treino 0.1%\n[*]COMUM\n[**]Aldeão Comum 0.85%\n[**]Monges Bárbaros 0.85%\n[**]Guerreiros Bárbaros 0.85%\n[**]Tropa de treino 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Espólios de Mimese",
-     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Aldeão Comum 0.85%\n[*]Ladinos monásticos 0.85%\n[*]Guerreiros devotos 0.85%\n[*]Monges exaltados 0.15%\n[*]Feiticeiros devotos 0.15%\n[*]Batalhadoras devotas 0.05%\n[*]Assassinas devotas 0.05%\n[*]Constructos guardiões exaltados 0.05%\n[*]Tropa de treino 0.85%\n[*]Tropa de treino 0.1%\n[*]Tropa de treino 0.05%"
+     "text": "Cada mimese diferente da equipe permite receber mais espólios ao completar fases.\n[*]Esta mimese dá a chance de receber os seguintes espólios adicionais:\n[*]RARO\n[**]Batalhadoras devotas 0.05%\n[**]Assassinas devotas 0.05%\n[**]Constructos guardiões exaltados 0.05%\n[**]Tropa de treino 0.05%\n[*]INCOMUM\n[**]Monges exaltados 0.15%\n[**]Feiticeiros devotos 0.15%\n[**]Tropa de treino 0.1%\n[*]COMUM\n[**]Aldeão Comum 0.85%\n[**]Ladinos monásticos 0.85%\n[**]Guerreiros devotos 0.85%\n[**]Tropa de treino 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Causa 600% de dano ao alvo.",
       "O ataque ignora reforços defensivos. (Inclui contra-ataques.)",
-      "Atrofia: o alvo recebe -350 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo recebe -350 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Vínculo elemental recupera 5% de vida de todos os aliados de natureza por 6 turnos. Este efeito não pode ser dissipado."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1100 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1100 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Após um lançamento bem sucedido, tem 100% de chance de lançar Asas Laminadas novamente em um alvo aleatório.\n[*] Pode lançar novamente até 3 vezes, e a chance de lançar novamente diminui em -35% após cada lançamento bem sucedido."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Ataca o alvo com Golpe Lunar, causando até 2180 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo com Golpe Lunar, causando até 2180 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "O alvo invoca automaticamente Ataque Irracional em um aliado aleatório, quando o mana está cheio, por 4 turnos. Quando este efeito é acionado, ele é transferido para o aliado atingido, e o temporizador de duração é reiniciado.",
       "Todos os inimigos recebem -35% de defesa por 4 turnos."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 700 de dano. Causa 20% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos."
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 700 de dano. Causa 20% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos."
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1440 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1440 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Por 3 turnos, reduz o mana do alvo e dos inimigos próximos em -15% ao fim de cada turno.",
       "O alvo e os inimigos próximos recebem -50% mais cura por 3 turnos."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 860 de dano. Causa 30% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 860 de dano. Causa 30% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "O alvo e os inimigos próximos recebem 900 de dano de Veneno por 5 turnos. O invocador e todos os aliados absorvem 35% do dano de Veneno como vida."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Ataca o alvo com Golpe Lunar, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo com Golpe Lunar, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Quando o alvo é derrotado pelo ataque, os inimigos próximos não recebem mana por 3 turnos.",
       "Todos os aliados contra-atacam com 60% do dano recebido por 3 turnos."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Ataca o alvo com Golpe Lunar, causando até 1020 de dano. Causa 30% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo com Golpe Lunar, causando até 1020 de dano. Causa 30% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Reduz o mana do alvo em 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Destrói todos os demônios de todos os aliados e causa dano a todos os megademônios.",
-      "Ataca todos os inimigos com Golpe Lunar, causando até 2000 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca todos os inimigos com Golpe Lunar, causando até 2000 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Todos os aliados recebem 5% de mana por cada demônio destruído. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1620 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1620 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Convoca um ajudante Corujíria para o invocador e os aliados próximos. O ajudante herda 25% de PV e 45% de ataque do invocador.",
       "Quando o ajudante Corujíria é derrotado, Remoção Total é aplicada ao atacante. (Remoção total remove todos os efeitos de status, acumulações e efeitos de Crescimento e Atrofia. Isso inclui efeitos e acumulações normalmente persistentes, indissipáveis ou inexpurgáveis.)",
       "Após a aplicação de Remoção Total, o atacante assume a forma de Fantasma de Corujalla por 3 turnos. Este efeito é persistente.\n[*] Enquanto está na forma de Fantasma de Corujalla, o alvo recebe 430 de dano a cada turno. (Enquanto está na forma de Fantasma, o personagem não pode ganhar mana nem ser curado por habilidades especiais, mas é imune contra ataques normais, ataques de habilidades especiais, habilidades passivas que causem dano, efeitos de status e acumulações.\n[*] Imune a novos efeitos Crescimento, Atrofia e Insanidade.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.\n[*]Não pode ser lançado quando há apenas um inimigo restante na batalha.\n[*]Titãs e Titãs Míticos não são afetados por este efeito de status.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Dissipa os reforços do alvo e dos inimigos próximos.",
-      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1500 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1500 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "O alvo e os inimigos próximos ficam imunes a novos reforços de efeito de status por 3 turnos."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Ataca todos os inimigos com Golpe Lunar, causando até 1200 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Esse ataque nunca erra os alvos.",
+      "Ataca todos os inimigos com Golpe Lunar, causando até 1200 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Todos os inimigos recebem[#Dynamic] 924 [#]de dano de Sangramento por 4 turnos.",
       "Todos os inimigos recebem -45% de precisão por 4 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]x 1 carga de mana:",
       "[**]Causa 280% de dano ao alvo.",
       "[**]O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
-      "[**]Crescimento: todos os aliados recebem 120 de ataque e 120 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Crescimento: todos os aliados recebem 120 de ataque e 120 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]x 2 carga de mana:",
       "[**]Causa 430% de dano ao alvo.",
       "[**]O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
-      "[**]Crescimento: todos os aliados recebem 210 de ataque e 210 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Crescimento: todos os aliados recebem 210 de ataque e 210 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]x 3 carga de mana:",
       "[**]Causa 650% de dano ao alvo.",
       "[**]O ataque afeta em sequência todos os inimigos adjacentes a qualquer inimigo atingido.",
-      "[**]Crescimento: todos os aliados recebem 750 de ataque e 750 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "[**]Crescimento: todos os aliados recebem 750 de ataque e 750 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
       "[*]x 1 carga de mana:",
       "[**]Causa 450% de dano ao alvo.",
-      "[**]Atrofia: o alvo recebe -200 de ataque e -200 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[***]As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[***]Limites para Pontuações de Habilidade modificadas.\n[***]Mínimo de 30% e máximo de 170% do valor original.\n[***]Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Atrofia: o alvo recebe -200 de ataque e -200 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]x 2 carga de mana:",
       "[**]Causa 600% de dano ao alvo e pouco dano a inimigos próximos.",
-      "[**]Atrofia: o alvo e os inimigos próximos recebem -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[***]As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[***]Limites para Pontuações de Habilidade modificadas.\n[***]Mínimo de 30% e máximo de 170% do valor original.\n[***]Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "[**]Atrofia: o alvo e os inimigos próximos recebem -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "[*]x 3 carga de mana:",
       "[**]Causa 800% de dano ao alvo e pouco dano a todos os outros inimigos.",
-      "[**]Atrofia: todos os inimigos recebem -650 de ataque e -650 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[***]As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[***]Limites para Pontuações de Habilidade modificadas.\n[***]Mínimo de 30% e máximo de 170% do valor original.\n[***]Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "[**]Atrofia: todos os inimigos recebem -650 de ataque e -650 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[***]Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[***]Expurgos enfraquecem Atrofia em 50%.\n[***]Dissipações enfraquecem Crescimento em 50%.\n[***]Limites de modificação das pontuações de habilidade:\n[***]Mínimo de 30% e máximo de 170% dos valores originais.\n[***]Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[***]Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 750 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 750 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 750 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 750 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Causa 450% de dano ao alvo e inimigos próximos.",
-      "Crescimento: o invocador e os aliados próximos recebem 240 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: o invocador e os aliados próximos recebem 240 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O invocador e os aliados próximos refletem todos os males de status e 160% de dano de volta para o atacante e bloqueiam outros efeitos negativos de habilidades especiais de inimigos de Fogo por 4 turnos. Este efeito não pode ser dissipado. (Não é possível refletir efeitos de status lançados por personagens, ajudantes e demônios aliados.)",
       "O invocador recebe o efeito de status Ressurreição Gosmenta por 4 turnos. Este efeito não pode ser dissipado.\n[*] Quando o invocador é derrotado e Ressurreição Gosmenta está ativa, ele renasce como uma Gosma.\n[*]Gosma\n[*] 100% de vida herdada\n[*] 50% de ataque\n[*] 50% de defesa\n[*] Habilidade especial: Golpe de Gosma (Causa 350% de dano ao alvo)\n[*] Este efeito não pode ser dissipado.\n[*]Quando a Gosma não é derrotada em 2 turnos, renasce com a forma original do personagem, herdando a vida e o mana da Gosma."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Restaura 25% da vida do invocador e aliados próximos.",
       "Aumenta o mana de todos os aliados próximos em 30%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
-      "Crescimento: os aliados próximos recebem 360 de ataque e 360 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Crescimento: os aliados próximos recebem 360 de ataque e 360 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Convoca um mega-ajudante Gosma com 50% de PV e 40% de ataque herdados do invocador."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 4000 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 4000 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "Todos os aliados recebem 45% de chance de se esquivar de ataques e habilidades especiais por 5 turnos.",
       "Este personagem recebe uma Marca de Imolação por 5 turnos. Sempre que um inimigo ou aliado recebe dano de queimadura, o invocador ganha uma acumulação (máx.: 10). Cada acumulação aumenta em 7% a geração de mana do invocador."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 4400 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 4400 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "Todos os aliados recebem 45% de chance de se esquivar de habilidades especiais por 5 turnos. Cada esquiva causa 500 de dano ao atacante.",
       "Este personagem recebe uma Marca de Imolação por 5 turnos. Sempre que um inimigo ou aliado recebe dano de queimadura, o invocador ganha uma acumulação (máx.: 10). Cada acumulação aumenta em 7% a geração de mana do invocador."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 1500 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 1500 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O dano não afeta os ajudantes do alvo.",
       "Todos os inimigos recebem[#Dynamic] 388 [#]de dano de veneno por 4 turnos.",
       "Todos os inimigos recebem 50% mais dano de males de status e acumulações negativas por 4 turnos."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 1650 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 1650 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O dano não afeta os ajudantes do alvo.",
       "Todos os inimigos recebem[#Dynamic] 408 [#]de dano de veneno por 4 turnos. O invocador absorve 10% do dano de veneno como vida.",
       "Todos os inimigos recebem 52% mais dano de males de status e acumulações negativas por 4 turnos."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "O dano não afeta os ajudantes do alvo.",
-      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 1080 de dano. Causa 30% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 1080 de dano. Causa 30% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O alvo resiste a novos ajudantes por 4 turnos."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "O dano não afeta os ajudantes do alvo.",
-      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 1180 de dano. Causa 30% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo com Golpe de Tempestade de Fogo, causando até 1180 de dano. Causa 30% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O alvo resiste a novos ajudantes por 4 turnos."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "Cura todos os aliados em 30% do dano causado.",
       "Todos os aliados contra-atacam com 65% do dano recebido por 5 turnos."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2600 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2600 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "Reforça a vida de todos os aliados em 27% do dano causado. A vida reforçada pode exceder o limite de PV.",
       "Todos os aliados contra-atacam com 75% do dano recebido por 5 turnos."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2200 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O invocador rouba o mana gerado de todos os inimigos por 5 turnos, começando em um nível baixo que aumenta a cada turno, até o último turno em que todo o mana gerado é roubado. Este efeito não pode ser expurgado, mas é removido quando o invocador é derrotado.",
       "Ao fim de cada turno, rouba o reforço dissipável mais recente de todos os inimigos e o distribui aleatoriamente entre os aliados por 5 turnos."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2500 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca todos os inimigos com Golpe de Tempestade de Fogo, causando até 2500 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "Reduz o mana de todos os inimigos 35%.",
       "Depois que a habilidade especial é lançada, aumenta o mana do invocador em 15%. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
       "Ao fim de cada turno, rouba o reforço dissipável mais recente de todos os inimigos e o distribui aleatoriamente entre os aliados por 5 turnos."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Dissipa os reforços do alvo e dos inimigos próximos.",
-      "Ataca o alvo e os inimigos próximos com Golpe de Tempestade de Fogo, causando até 2000 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo e os inimigos próximos com Golpe de Tempestade de Fogo, causando até 2000 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O alvo e os inimigos próximos ficam imunes a novos reforços de efeito de status por 3 turnos."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Dissipa os reforços do alvo e dos inimigos próximos.",
-      "Ataca o alvo e os inimigos próximos com Golpe de Tempestade de Fogo, causando até 2300 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza.",
+      "Ataca o alvo e os inimigos próximos com Golpe de Tempestade de Fogo, causando até 2300 de dano. Causa 40% mais dano quando o alvo é do elemento Natureza. Essa habilidade especial nunca erra os alvos.",
       "O alvo e os inimigos próximos ficam imunes a novos reforços de efeito de status por 3 turnos."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Causa 600% de dano a todos os inimigos.",
       "Reduz em 800 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 800.)",
       "Ceifa reforços de todos os inimigos.\n[*]A Ceifa remove com segurança 2 reforços, acumulações positivas ou efeitos Crescimento de cada alvo. Isso inclui efeitos persistentes, reforços indissipáveis e efeitos de dança.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Crescimento são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
-      "Atrofia: todos os inimigos recebem -540 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Atrofia: todos os inimigos recebem -540 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Restaura 50% da vida do invocador e aliados próximos.",
       "Extrai males do invocador e dos aliados próximos.\n[*]Extração remove com segurança 2 males, acumulações negativas ou efeitos Atrofia de cada alvo. Isso inclui efeitos de dança e males de status inexpurgáveis.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos efeitos de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Atrofia são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
-      "Crescimento: todos os aliados recebem 170 de ataque e 170 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: todos os aliados recebem 170 de ataque e 170 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos recebem -80% mais cura por 4 turnos. Este efeito não pode ser dissipado.",
       "Remove o mal de status expurgável mais recente de todos os aliados e distribui esses males aleatoriamente entre os inimigos.",
       "Expurga os males de status de todos os aliados ao fim de cada turno por 4 turnos."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Causa 330% dano de Garras a todos os inimigos.\n[*]Causa 400% de dano contra inimigos com reforços defensivos, ajudantes ou mega-ajudantes.\n[*] Os inimigos com reforços defensivos, ajudantes ou mega-ajudantes recebem -35% de defesa por 5 turnos.",
-      "Atrofia: todos os inimigos recebem -300 de ataque. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: todos os inimigos recebem -300 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "Todos os inimigos recebem Provocado por 4 turnos. O personagem Provocado causa 1% de dano a um oponente aleatório ao fim do turno.",
       "Todos os aliados recebem 50% de ataque e mais 20% de aumento cada vez que são atingidos por 4 turnos, até o limite de 150% de ataque."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "Reduz em 1600 o limite de vida do alvo. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 1600.)",
       "O alvo é silenciado por 3 turnos.",
-      "Crescimento: os aliados próximos recebem 540 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Atrofia e Crescimento não podem ser dissipados nem expurgados.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
+      "Crescimento: os aliados próximos recebem 540 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Causa 410% de dano ao alvo e inimigos próximos.",
-      "Atrofia: o alvo e os inimigos próximos recebem -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as Pontuações de Habilidade e se mantêm mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as Pontuações de Habilidade.\n[*] As Pontuações de Habilidade modificadas não podem ser dissipadas nem expurgadas.\n[*]Limites para Pontuações de Habilidade modificadas.\n[*] Mínimo de 30% e máximo de 170% do valor original.\n[*] Outros reforços e males são aplicados às Pontuações de Habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
+      "Atrofia: o alvo e os inimigos próximos recebem -250 de ataque e -250 de defesa. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
       "O alvo e os inimigos próximos refletem os reforços de efeito de status, aplicando-os a um personagem aleatório da equipe adversária por 3 turnos. (Apenas reforços dissipáveis são refletidos.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Vencer a Morte",
-     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano a um inimigo aleatório."
+     "text": "Em vez de receber dano fatal de ataques normais ou habilidades especiais pela primeira vez, este personagem redireciona até 2500 de dano ao atacante.\n[*]Não é ativado quando este personagem é o único membro da equipe na batalha."
     },
     {
      "id": "ransack_on_other_ally_special",

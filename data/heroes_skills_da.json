@@ -57,7 +57,7 @@
       "Denne særlige egenskab rammer aldrig ved siden af.",
       "Giver 495% skade til målet og mindre skade til fjender i nærheden.",
       "Stjæler alle ophævelsesbuffere fra målet og fjender i nærheden og fordeler dem tilfældigt blandt de allierede.",
-      "Vækst: Kasteren og allierede i nærheden får 340 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Kasteren og allierede i nærheden får 340 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Giver 355% i skade til alle fjender.",
       "Angrebet ignorerer modangreb og refleksioner.",
-      "Visne: Alle fjender får -510 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -510 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "I slutningen af hver runde affyrer kasteren en astralstråle mod en tilfældig fjende i 4 runder.\n[*]Hver astralstråle forvolder 300% skade.\n[*]Hver astralstråle reducerer maks. helbred for den ramte fjende med 300. Effekten er større mod mål med forstærket helbred.",
       "(Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 300.)"
      ]
@@ -881,7 +881,7 @@
       "Giver 600% skade til målet.",
       "Hvis målet har over 50% mana inden skaden, bliver en anden fjende med mere end 50% mana inden et angreb med den særlige egenskab angrebet. Hvis ingen af de andre fjender har 50% mana, bliver en tilfældig fjende angrebet. Skaden mindskes ved hvert følgende slag. Hver fjende kan kun rammes én gang.",
       "Alle ramte mål gøres tavse i 4 runde.",
-      "Visne: Alle fjender får -300 angreb og -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -300 angreb og -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Forstærker helbredet hos kasteren og allierede i nærheden med 350. Forstærket helbred kan overstige maks. HP.",
-      "Vækst: Kasteren og allierede i nærheden får 60 angreb og 60 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Kasteren og allierede i nærheden får 60 angreb og 60 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Giver 400% skade til målet og fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -420 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet og alle fjender i nærheden får -420 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Målet og alle fjender i nærheden får 25% mere i skade for hver 3. runder. Effekten forøges af 10% for hver håndlanger eller kæmpehåndlanger, som samtlige fjender har, op til 85% i alt."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Giver 600% skade til målet.",
       "Hvis målet har buffere og bliver ramt, rammes endnu en fjende med buffere. Hvis ingen af fjenderne har buffere, rammes en tilfældig fjende. Skaden reduceres for hvert efterfølgende slag. Hver fjende kan kun rammes én gang.",
       "Ophæver sikkert 1 buffer fra alle fjender. (Sikker fjernelse tilsidesætter sekundære effekter, for eksempel skade ved fjernelse, fra den fjernede statuseffekt-buffere. Eksterne effekter som passive færdigheder og familieeffekter kan stadig være aktive.\n[*]De seneste buffere ophæves først.)",
-      "Visne: Alle fjender får -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Giver 850% skade til målet.",
       "I 5 ture modtager målet 100% af al skade forvoldet mod deres allierede.",
-      "Vækst: Alle allierede får 660 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 660 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle allierede gendanner 35% mana i 5 runder. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Giver 530% skade til målet.",
       "Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
       "Alle ramte mål får 50% mere i skade for hver 5. runder. Effekten forøges af 10% for hver håndlanger eller kæmpehåndlanger, som samtlige fjender har, op til 100% i alt.",
-      "Visne: Alle fjender får -540 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -540 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Gendanner 30% helbred for alle allierede.",
-      "Vækst: Alle allierede får 300 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 300 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Forstærker allieredes helbred med 450 efter 3 runder eller med det samme, hvis effekten fjernes, før varigheden slutter. Forstærket helbred kan overstige maks. HP."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Giver 450% skade til målet og fjender i nærheden.",
       "Målet og fjender i nærheden får[#Dynamic] 792 [#]vandskade i 4 runder. Alle allierede absorberer 50% af den påførte vandskade som boostet helbred.",
-      "Vækst: Alle allierede får 240 angreb og 240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Alle allierede får 240 angreb og 240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Giver 450% i skade til alle fjender.",
       "Alle fjender i nærheden får[#Dynamic] 785 [#]ildskade i 5 runder. Alle allierede absorberer 25% af den påførte ildskade som boostet helbred.",
-      "Visne: Alle fjender får -420 angreb og -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -420 angreb og -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Giver 470% i skade til alle fjender.",
-      "Visne: Alle fjender får -420 angreb og -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -420 angreb og -420 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender gendanner -35% mana i 5 runder. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
       "Rydder statuslidelser fra alle allierede.",
       "Forstærker alle allieredes helbred med 1550. Forstærket helbred kan overstige maks. HP.",
-      "Vækst: Alle allierede får 480 angreb og 480 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Alle allierede får 480 angreb og 480 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Mindre end 40 ydmyghed:",
       "[*]Giver 265% skade imod fjenderne yderst i fjendeformationen. Hvis der kun er en enkelt fjende, fordobles skaden.",
-      "[*]Visne: Fjender i udkanten af fjendens formation modtager -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[*]Visne: Fjender i udkanten af fjendens formation modtager -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Fjernelse svækker visneeffekten med 50%.\n[**]Ophævelse svækker væksteffekten med 50%.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]Ophæver buffere fra alle fjender i udkanten af fjendens formationer.",
       "40 eller mere ydmyghed:",
       "[*]Ophæver på sikker vis buffere fra alle fjender i udkanten af fjendens formation. (Sikker fjernelse tilsidesætter sekundære effekter, for eksempel skade ved fjernelse, fra den fjernede statuseffekt-buffere. Eksterne effekter som passive færdigheder og familieeffekter kan stadig være aktive.)",
       "[*]Giver 360% skade imod fjenderne yderst i fjendeformationen. Hvis der kun er en enkelt fjende, fordobles skaden.",
-      "[*]Visne: Fjender i udkanten af fjendens formation modtager -350 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "[*]Visne: Fjender i udkanten af fjendens formation modtager -350 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Fjernelse svækker visneeffekten med 50%.\n[**]Ophævelse svækker væksteffekten med 50%.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Mindre end 60 ydmyghed:",
       "[*]Gendanner 25% helbred for alle allierede.",
       "[*]Rydder 1 statuslidelse fra alle allierede. (Statuslidelser ryddes i samme rækkefølge, som de er kommet. Den seneste statuslidelse ryddes først.)",
-      "[*]Vækst: Alle allierede får 180 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[*]Vækst: Alle allierede får 180 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Fjernelse svækker visneeffekten med 50%.\n[**]Ophævelse svækker væksteffekten med 50%.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]Alle allierede regenererer 1005 HP i 3 runder.",
       "60 eller mere ydmyghed:",
       "[*]Gendanner 32% helbred for alle allierede.",
       "[*]Rydder statuslidelser fra alle allierede.",
-      "[*]Vækst: Alle allierede får 240 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[*]Vækst: Alle allierede får 240 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[**]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[**]Fjernelse svækker visneeffekten med 50%.\n[**]Ophævelse svækker væksteffekten med 50%.\n[**]Grænser for modificerede evneværdier.\n[**]Min. 30% og maks. 170% af deres oprindelige værdi.\n[**]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[**]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]Alle allierede regenererer 1440 HP i 3 runder.",
       "[*]Kasteren får 84% forsvar mod særlige evner i 3 runder."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Gør 420% skade på fjenden med det højeste HP. Gør 300% skade på alle andre fjender.",
       "Fjenden med flest resterende HP bliver gjort tavs i 3 runder.",
-      "Visne: Alle fjender får -350 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -350 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Ødelægger alle håndlangere fra alle fjender og skader alle kæmpehåndlangere.",
       "Giver 355% skade på alle fjender.",
-      "Visne: Alle fjender får -510 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -510 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender rammes af[#Dynamic] 129 [#]-[#Dynamic] 317 [#]intensiverende forbandet skade i 4 runder. Denne effekt er stædig. (I den første runde bliver[#Dynamic] 129 [#]skade forvoldt. Skaden øges med 35% i hver runde, op til[#Dynamic] 317 [#]skade pr. runde.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Giver 355% skade til målet og fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -225 angreb og -225 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet og alle fjender i nærheden får -225 angreb og -225 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle mål og fjender i nærheden sender statuseffektbuffere tilbage mod en tilfældig figur på modstanderholdet i 3 runder. (Kun buffere, som kan fjernes, tilbagekastes.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Giver 200% skade til målet og fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -40 angreb og -40 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet og alle fjender i nærheden får -40 angreb og -40 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Målet og fjender i nærheden får -35% forsvar i 3 runder. Hvis effekten fjernes, inden den udløber, tager målet med effekten[#Dynamic] 124 [#]skade."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Giver 210% skade til målet og fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -45 angreb og -45 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet og alle fjender i nærheden får -45 angreb og -45 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Al skade, som målet og fjender i nærheden får, øges med 40% i 3 runder."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Gendanner 25% helbred for alle allierede.",
-      "Vækst: Alle allierede får 215 angreb og 215 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 215 angreb og 215 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle allierede har 50% chance for at forvolde 270% skade mod en tilfældig fjende, når en allieret kaster en særlig evne i 3 ture. (Hver figur kan udløse denne effekt én gang pr. runde.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "Alle allierede gendanner 1200 boostet helbred i løbet af 3 runder. Boostet helbred kan overstige maks. HP.",
-      "Vækst: Alle allierede får 240 angreb og 240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 240 angreb og 240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle allierede har 50% chance for at forvolde 280% skade mod en tilfældig fjende, når en allieret kaster en særlig evne i 3 ture. (Hver figur kan udløse denne effekt én gang pr. runde.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Stjæler alle ophævelsesbuffere fra målet og fordeler dem tilfældigt blandt de allierede.",
       "Forvolder 375% skade mod målet.\n[*]Påfører yderligere 50% skade for hver statuseffektbuffer op til 625% skade i alt.",
-      "Visne: Målet får -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Målet får -300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Stjæler alle ophævelsesbuffere fra målet og fordeler dem tilfældigt blandt de allierede.",
       "Forvolder 400% skade mod målet.\n[*]Påfører yderligere 50% skade for hver statuseffektbuffer op til 650% skade i alt.",
-      "Visne: Målet får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Målet er immun over for nye statuseffekt-buffere i 2 runder."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Giver 240% i skade til alle fjender.",
-      "Visne: Alle fjender får -200 angreb og -200 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -200 angreb og -200 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender får -30% managendannelse i 3 runder. Hvis effekten fjernes, inden varigheden slutter, får målet med effekten reduceret sin mana med -5%. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Gendanner 38% helbred for alle allierede.",
-      "Vækst: Alle allierede får 100 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 100 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle allierede sender statuslidelser tilbage mod en tilfældig figur på modstanderholdet i 3 runder. (Kun statuslidelser, som kan renses, tilbagekastes.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "Alle allierede regenererer 1080 HP i 3 runder.",
-      "Vækst: Alle allierede får 110 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 110 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Fjerner den seneste statuslidelse, der kan renses, fra alle allierede og fordeler dem tilfældigt på fjender.",
       "Alle allierede sender statuslidelser tilbage mod en tilfældig figur på modstanderholdet i 3 runder. (Kun statuslidelser, som kan renses, tilbagekastes.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Gendanner 54% helbred for alle allierede.",
-      "Vækst: Alle allierede får 450 angreb og 450 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 450 angreb og 450 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle allierede får 30% managendannelse i 4 runder. Hvis effekten fjernes, inden varigheden slutter, får den allierede med effekten 10% mana. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Aktiveringschance for hver effekt:",
       "[*]Udsøgt mad: 45%",
       "[**]Gendanner 50% helbred for alle allierede.",
-      "[**]Vækst: Alle allierede får 400 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Vækst: Alle allierede får 400 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]Rådden mad: 45%",
       "[**]Giver 350% i skade til alle fjender.",
       "[**]Alle fjender får[#Dynamic] 965 [#]giftskade i 5 runder.",
@@ -19992,7 +19992,7 @@
       "Aktiveringschance for hver effekt:",
       "[*]Udsøgt mad: 45%",
       "[**]Forstærker alle allieredes helbred med 1800. Forstærket helbred kan overstige maks. HP.",
-      "[**]Vækst: Alle allierede får 700 angreb og 700 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Vækst: Alle allierede får 700 angreb og 700 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]Rådden mad: 45%",
       "[**]Giver 550% i skade til alle fjender.",
       "[**]Alle fjender rammes af ætsende gift i 5 runder. Den ætsende gift giver[#Dynamic] 378 [#]giftskade og sænker målets managendannelse med -10% for hver runde. Giver ekstra skade til helte med håndlangere eller kæmpehåndlanger. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Vækst: Alle allierede får 355 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 355 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder plettede vildsvin-kæmpehåndlanger med 65% HP og 260% angreb, nedarvet fra kasteren.",
       "Når den hidkaldes, giver den plettede vildsvin-kæmpehåndlanger sin ejer immunitet over for bufferophævelser og omfordelinger, så længe ejeren har en plettet vildsvin-kæmpehåndlanger. (Immuniteten inkluderer også selv denne effekt.\n[*] Inkluderer også Ransagning.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Giver 470% skade til målet og mindre skade til fjender i nærheden.",
-      "Vækst: Kasteren og allierede i nærheden får 250 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Kasteren og allierede i nærheden får 250 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Målet og fjender i nærheden får -35% forsvar i 3 runder. Hvis effekten fjernes, inden den udløber, tager målet med effekten[#Dynamic] 577 [#]skade."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Visne: Målet får -330 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet får -330 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en eksplosiv goblindjævel til målet og fjender i nærheden. Djævlen skader fjenden med 195% angreb i hver runde.\n[*]Den eksplosive goblindjævel optager helbredelse og forsvinder igen, når den har optaget helbred, der svarer til 20% af sin ejers maksimale helbred.",
       "Når den eksplosive goblindjævel forsvinder, når den har absorberet helbredelse nok, tager ejeren[#Dynamic] 1269 [#]brandskade over 3 runder."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Giver 365% i skade til alle fjender.",
-      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder hvid vildsvin-kæmpehåndlanger med 65% HP og 250% angreb, nedarvet fra kasteren.",
       "Når den hidkaldes, giver det hvide vildsvin-kæmpehåndlangeren sin ejer mulighed for at modangribe med 100% af den modtagne skade, så længe ejeren har en hvid vildsvin-kæmpehåndlanger. Denne effekt kan ikke ophæves."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Visne: Alle fjender får -350 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -350 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Reducerer maks. helbred for alle fjender med 700. Effekten er større mod mål med forstærket helbred. (Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 700.)",
       "Alle fjender får -45% forsvar mod særlige evner i 4 runder."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Reducerer maks. helbred for alle fjender med 800. Effekten er større mod mål med forstærket helbred. (Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 800.)",
       "Alle fjender får -50% forsvar mod særlige evner i 4 runder. Hvis effekten fjernes, inden den udløber, tager målet med effekten 800 skade."
      ]
@@ -20379,7 +20379,7 @@
       "Målet og tilstødende fjender kan ikke genoplive deres allierede eller sig selv i 5 runder.",
       "Målet og tilstødende fjender kan ikke modtage nye statuseffekter, som kan genoplive dem i 5 runder.",
       "Giver 530% skade til målet og mindre skade til fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -455 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Målet og alle fjender i nærheden får -455 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Vækst: Alle allierede får 150 angreb og 150 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Alle allierede får 150 angreb og 150 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en gulerodshåndlanger til hver allieret med 25% HP, nedarvet fra kasteren.",
       "Når den hidkaldes, giver gulerodshåndlangeren 20% managendannelse til sin ejer, så længe ejeren har gulerodshåndlangere. Denne effekt kan ikke ophæves. (Påvirker kun mana, der genereres ved at matche skjolde, eller mana, som forsvarsholdet genvinder, når deres runde slutter.)",
       "Elementlink giver alle hellige allierede 40% forsvar mod særlige evner i 4 runder. Denne virkning kan ikke ophæves."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Vækst: Kasteren og allierede i nærheden får 540 angreb og 540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Kasteren og allierede i nærheden får 540 angreb og 540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en vildfarne kæmpehåndlanger 45% HP og 180% nedarvet fra kasteren.\n[*]Hver træffer fra en vildfaren kæmpehåndlanger giver målet følgende statuslidelser:",
       "[**]Målet modtager[#Dynamic] 552 [#]giftskade over 3 ture. Skade forøges mod mål med forstærket helbred, håndlangere eller kæmpehåndlangere. (Skaden fra gift øges med 100% mod mål med boostet helbred.\n[***]Skaden fra gift øges med 33% pr. håndlanger eller kæmpehåndlanger, som målet ejer.\n[***]Den maksimale øgede skade er 199%.)",
       "[**]Påfører 10 vanvid på målet.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "Alle fjender bukker under for frygt i 5 runder. (Målet får -40% forsvar.\n[*] Fjerner alle fordele der kan fjernes, og vækst, når en frygt-statuseffekt bliver tilføjet.\n[*] Målet kan ikke få nye buffer eller væksteffekter under varigheden.\n[*] Mål med frygt giver 250% skade til en vilkårlig allieret, hver gang en anden allieret bruger sin særlige evne. Hver figur kan udløse denne effekt én gang pr. runde.)",
-      "Visne: Alle fjender får -480 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -480 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Giver 420% i skade til alle fjender og påfører dem 25 vanvid.",
       "Denne specialevne forvolder 45 vanvid på kasteren.",
       "(Vanvid giver en chance for at bytte om på målene, når en særlig evne kastes.\n[*] Når vanvid aktiveres, vil særlige evner, der rettes mod fjender, i stedet blive rettet mod allierede, og vice versa.\n[*] Særlige evner, der rettes mod kasteren, vil blive kastet på et tilfældigt mål. Særlige evner, der rettes mod et mål, vil blive kastet på kasteren.\n[*] Når vanvid aktiveres, vil passive evner og enhedsevner, der giver ekstra effekter ved brug, ikke blive aktiveret.\n[*] Hvis 100 vanvid nås, kastes en særlig evne, når mana er fyldt.\n[*] Vanvid kan ikke ophæves eller fjernes.\n[*] Heltens vanvid kan mindskes med 10 , hver gang den forsøges helbredt direkte af særlige evner, assistentegenskaber, genstande eller skjolde. Direkte helbredelse fra særlige evner mindsker kun vanvid én gang pr. kast.\n[*] Al anden helbredelse mindsker vanvid med 1.\n[*] Vanvid fjernes helt, når en særlig evne kastes på omvendte mål.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Giver 270% i skade til alle fjender.",
-      "Visne: Alle fjender får -240 angreb og -240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -240 angreb og -240 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender får[#Dynamic] 405 [#]ildskade i 3 runder. Kasteren absorberer 50% af den påførte ildskade som boostet helbred. Mod is-figurer kan denne statuseffekt ikke fjernes og varer i 2 ekstra runder."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
       "Gendanner 65% helbred for den allierede med laveste HP. Alle andre alllierede gendanner 45% helbred.",
-      "Vækst: Alle allierede får 300 angreb og 300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Alle allierede får 300 angreb og 300 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Giver 600% skade til målet.",
       "Vækstvelsignelse: Forvolder 2x ekstra skade for hvert point i det modificerede angreb. (Ekstra skade er baseret på det modificerede angreb på kasteren, når skaden er uddelt.\n[*]Op til 600 ekstra skade.\n[*]Statuseffekter, der påvirker den forvoldte skade, påvirker også den ekstra skade.\n[*]Forsvarsstatistikker påvirker ikke ekstra skade.\n[*]Statuseffekter, der påvirker angrebsstatistikken, påvirker ikke den ekstra skade.)",
-      "Visne: Målet modtager -500 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet modtager -500 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Målet får[#Dynamic] 1068 [#]sandskade i 3 runder."
      ]
     }
@@ -28892,7 +28892,7 @@
       "Denne særlige egenskab rammer aldrig ved siden af.",
       "Giver 500% skade til målet.",
       "Vækstvelsignelse: Forvolder 2x ekstra skade for hvert point i det modificerede angreb. (Ekstra skade er baseret på det modificerede angreb på kasteren, når skaden er uddelt.\n[*]Op til 600 ekstra skade.\n[*]Statuseffekter, der påvirker den forvoldte skade, påvirker også den ekstra skade.\n[*]Forsvarsstatistikker påvirker ikke ekstra skade.\n[*]Statuseffekter, der påvirker angrebsstatistikken, påvirker ikke den ekstra skade.)",
-      "Visne: Målet får -480 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Målet får -480 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Isæter I 0.9%\n[*]Isæter II 0.4%\n[*]Isæter III 0.025%\n[*]Alfa-æter 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Isæter III 0.025%\n[**]Alfa-æter 0.01%\n[*]EPISK\n[**]Isæter II 0.4%\n[*]SJÆLDEN\n[**]Isæter I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Naturæter I 0.9%\n[*]Naturæter II 0.4%\n[*]Naturæter III 0.025%\n[*]Alfa-æter 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Naturæter III 0.025%\n[**]Alfa-æter 0.01%\n[*]EPISK\n[**]Naturæter II 0.4%\n[*]SJÆLDEN\n[**]Naturæter I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Mørkeæter I 0.9%\n[*]Mørkeæter II 0.4%\n[*]Mørkeæter III 0.025%\n[*]Alfa-æter 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Mørkeæter III 0.025%\n[**]Alfa-æter 0.01%\n[*]EPISK\n[**]Mørkeæter II 0.4%\n[*]SJÆLDEN\n[**]Mørkeæter I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ildæter I 0.9%\n[*]Ildæter II 0.4%\n[*]Ildæter III 0.025%\n[*]Alfa-æter 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Ildæter III 0.025%\n[**]Alfa-æter 0.01%\n[*]EPISK\n[**]Ildæter II 0.4%\n[*]SJÆLDEN\n[**]Ildæter I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Hellig æter I 0.9%\n[*]Hellig æter II 0.4%\n[*]Hellig æter III 0.025%\n[*]Alfa-æter 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Hellig æter III 0.025%\n[**]Alfa-æter 0.01%\n[*]EPISK\n[**]Hellig æter II 0.4%\n[*]SJÆLDEN\n[**]Hellig æter I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Eventyrers udrustning 0.5%\n[*]Træningssværd 0.5%\n[*]Robust tøj 0.5%\n[*]Magiske skrifter 0.25%\n[*]Dolk 0.25%\n[*]Læderrustning 0.25%\n[*]Slibesten 0.25%\n[*]Stærkt reb 0.25%\n[*]Træskjold 0.25%\n[*]Kampmanual 0.05%\n[*]Ringbrynjeskjorte 0.05%\n[*]Skede 0.05%\n[*]Høje støvler 0.05%\n[*]Skjult klinge 0.03%\n[*]Magisk kugle 0.03%\n[*]Solidt skjold 0.03%\n[*]Fælderedskaber 0.03%\n[*]Varm kappe 0.03%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Kampmanual 0.05%\n[**]Ringbrynjeskjorte 0.05%\n[**]Skede 0.05%\n[**]Høje støvler 0.05%\n[**]Skjult klinge 0.03%\n[**]Magisk kugle 0.03%\n[**]Solidt skjold 0.03%\n[**]Fælderedskaber 0.03%\n[**]Varm kappe 0.03%\n[*]UALMINDELIG\n[**]Magiske skrifter 0.25%\n[**]Dolk 0.25%\n[**]Læderrustning 0.25%\n[**]Slibesten 0.25%\n[**]Stærkt reb 0.25%\n[**]Træskjold 0.25%\n[*]ALMINDELIG\n[**]Eventyrers udrustning 0.5%\n[**]Træningssværd 0.5%\n[**]Robust tøj 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Høje støvler 1.5%\n[*]Kompas 0.2%\n[*]Fine handsker 0.2%\n[*]Damaskusklinge 0.01%\n[*]Taktikkens bog 0.01%\n[*]Stærkt reb 1%\n[*]Kampmanual 2%\n[*]Ringbrynjeskjorte 2%\n[*]Varm kappe 0.16%\n[*]Fjernt skuende teleskop 0.06%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]EPISK\n[**]Damaskusklinge 0.01%\n[**]Taktikkens bog 0.01%\n[**]Fjernt skuende teleskop 0.06%\n[*]SJÆLDEN\n[**]Høje støvler 1.5%\n[**]Kompas 0.2%\n[**]Fine handsker 0.2%\n[**]Kampmanual 2%\n[**]Ringbrynjeskjorte 2%\n[**]Varm kappe 0.16%\n[*]UALMINDELIG\n[**]Stærkt reb 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Høje støvler 1.5%\n[*]Kompas 0.2%\n[*]Fine handsker 0.2%\n[*]Damaskusklinge 0.01%\n[*]Taktikkens bog 0.01%\n[*]Stærkt reb 1%\n[*]Dolk 1%\n[*]Skede 2%\n[*]Solidt skjold 0.16%\n[*]Mystisk tonic 0.06%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]EPISK\n[**]Damaskusklinge 0.01%\n[**]Taktikkens bog 0.01%\n[**]Mystisk tonic 0.06%\n[*]SJÆLDEN\n[**]Høje støvler 1.5%\n[**]Kompas 0.2%\n[**]Fine handsker 0.2%\n[**]Skede 2%\n[**]Solidt skjold 0.16%\n[*]UALMINDELIG\n[**]Stærkt reb 1%\n[**]Dolk 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Høje støvler 1.5%\n[*]Kompas 0.2%\n[*]Fine handsker 0.2%\n[*]Damaskusklinge 0.01%\n[*]Taktikkens bog 0.01%\n[*]Stærkt reb 1%\n[*]Dolk 1%\n[*]Skede 2%\n[*]Fælderedskaber 0.16%\n[*]Royal tabard 0.06%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]EPISK\n[**]Damaskusklinge 0.01%\n[**]Taktikkens bog 0.01%\n[**]Royal tabard 0.06%\n[*]SJÆLDEN\n[**]Høje støvler 1.5%\n[**]Kompas 0.2%\n[**]Fine handsker 0.2%\n[**]Skede 2%\n[**]Fælderedskaber 0.16%\n[*]UALMINDELIG\n[**]Stærkt reb 1%\n[**]Dolk 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Høje støvler 1.5%\n[*]Kompas 0.2%\n[*]Fine handsker 0.2%\n[*]Damaskusklinge 0.01%\n[*]Taktikkens bog 0.01%\n[*]Magiske skrifter 1%\n[*]Ringbrynjeskjorte 2%\n[*]Skjult klinge 0.16%\n[*]Mystiske ringe 0.06%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]EPISK\n[**]Damaskusklinge 0.01%\n[**]Taktikkens bog 0.01%\n[**]Mystiske ringe 0.06%\n[*]SJÆLDEN\n[**]Høje støvler 1.5%\n[**]Kompas 0.2%\n[**]Fine handsker 0.2%\n[**]Ringbrynjeskjorte 2%\n[**]Skjult klinge 0.16%\n[*]UALMINDELIG\n[**]Magiske skrifter 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Høje støvler 1.5%\n[*]Kompas 0.2%\n[*]Fine handsker 0.2%\n[*]Damaskusklinge 0.01%\n[*]Taktikkens bog 0.01%\n[*]Magiske skrifter 1%\n[*]Ringbrynjeskjorte 2%\n[*]Magisk kugle 0.16%\n[*]Giftpile 0.06%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]EPISK\n[**]Damaskusklinge 0.01%\n[**]Taktikkens bog 0.01%\n[**]Giftpile 0.06%\n[*]SJÆLDEN\n[**]Høje støvler 1.5%\n[**]Kompas 0.2%\n[**]Fine handsker 0.2%\n[**]Ringbrynjeskjorte 2%\n[**]Magisk kugle 0.16%\n[*]UALMINDELIG\n[**]Magiske skrifter 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Troldmand – emblem 2.5%\n[*]Troldmand – mesteremblem 0.1%\n[*]Heksemester – emblem 2.5%\n[*]Heksemester – mesteremblem 0.1%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Troldmand – mesteremblem 0.1%\n[**]Heksemester – mesteremblem 0.1%\n[*]EPISK\n[**]Troldmand – emblem 2.5%\n[**]Heksemester – emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Paladin – emblem 2.5%\n[*]Paladin – mesteremblem 0.1%\n[*]Druide – emblem 2.5%\n[*]Druide – mesteremblem 0.1%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Paladin – mesteremblem 0.1%\n[**]Druide – mesteremblem 0.1%\n[*]EPISK\n[**]Paladin – emblem 2.5%\n[**]Druide – emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Vandringsmand – emblem 2.5%\n[*]Vandringsmand – mesteremblem 0.1%\n[*]Rebel – emblem 2.5%\n[*]Rebel – mesteremblem 0.1%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Vandringsmand – mesteremblem 0.1%\n[**]Rebel – mesteremblem 0.1%\n[*]EPISK\n[**]Vandringsmand – emblem 2.5%\n[**]Rebel – emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Kriger – emblem 2.5%\n[*]Kriger – mesteremblem 0.1%\n[*]Barbar – emblem 2.5%\n[*]Barbar – mesteremblem 0.1%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kriger – mesteremblem 0.1%\n[**]Barbar – mesteremblem 0.1%\n[*]EPISK\n[**]Kriger – emblem 2.5%\n[**]Barbar – emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Munk – emblem 2.5%\n[*]Munk – mesteremblem 0.1%\n[*]Gejstlig – emblem 2.5%\n[*]Gejstlig – mesteremblem 0.1%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Munk – mesteremblem 0.1%\n[**]Gejstlig – mesteremblem 0.1%\n[*]EPISK\n[**]Munk – emblem 2.5%\n[**]Gejstlig – emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrunn 0.5%\n[*]Natskygge 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenneh 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Almindelig trænerhelt 0.16%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]UALMINDELIG\n[**]Jill 0.033%\n[**]Jenneh 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]ALMINDELIG\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrunn 0.5%\n[**]Natskygge 0.5%\n[**]Hikaru 0.5%\n[**]Almindelig mestertræner 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]is trænerhelt 0.1%\n[*]Almindelig:\n[**]is trænerhelt 0.9%\n[*]Lillebitte madbundt 2.25%\n[*]Lille madbundt 0.6%\n[*]Medium madbundt 0.1%\n[*]Stort madbundt 0.04%\n[*]Kæmpe madbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe madbundt 0.01%\n[*]EPISK\n[**]Stort madbundt 0.04%\n[*]SJÆLDEN\n[**]Medium madbundt 0.1%\n[*]UALMINDELIG\n[**]Lille madbundt 0.6%\n[**]is trænerhelt 0.1%\n[*]ALMINDELIG\n[**]Lillebitte madbundt 2.25%\n[**]is trænerhelt 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]natur trænerhelt 0.1%\n[*]Almindelig:\n[**]natur trænerhelt 0.9%\n[*]Lillebitte madbundt 2.25%\n[*]Lille madbundt 0.6%\n[*]Medium madbundt 0.1%\n[*]Stort madbundt 0.04%\n[*]Kæmpe madbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe madbundt 0.01%\n[*]EPISK\n[**]Stort madbundt 0.04%\n[*]SJÆLDEN\n[**]Medium madbundt 0.1%\n[*]UALMINDELIG\n[**]Lille madbundt 0.6%\n[**]natur trænerhelt 0.1%\n[*]ALMINDELIG\n[**]Lillebitte madbundt 2.25%\n[**]natur trænerhelt 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Almindelig:\n[**]mørk trænerhelt 0.1%\n[*]Almindelig:\n[**]mørk trænerhelt 0.9%\n[*]Lillebitte madbundt 2.25%\n[*]Lille madbundt 0.6%\n[*]Medium madbundt 0.1%\n[*]Stort madbundt 0.04%\n[*]Kæmpe madbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe madbundt 0.01%\n[*]EPISK\n[**]Stort madbundt 0.04%\n[*]SJÆLDEN\n[**]Medium madbundt 0.1%\n[*]UALMINDELIG\n[**]Lille madbundt 0.6%\n[**]mørk trænerhelt 0.1%\n[*]ALMINDELIG\n[**]Lillebitte madbundt 2.25%\n[**]mørk trænerhelt 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]ild trænerhelt 0.1%\n[*]Almindelig:\n[**]ild trænerhelt 0.9%\n[*]Lillebitte madbundt 2.25%\n[*]Lille madbundt 0.6%\n[*]Medium madbundt 0.1%\n[*]Stort madbundt 0.04%\n[*]Kæmpe madbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe madbundt 0.01%\n[*]EPISK\n[**]Stort madbundt 0.04%\n[*]SJÆLDEN\n[**]Medium madbundt 0.1%\n[*]UALMINDELIG\n[**]Lille madbundt 0.6%\n[**]ild trænerhelt 0.1%\n[*]ALMINDELIG\n[**]Lillebitte madbundt 2.25%\n[**]ild trænerhelt 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]hellig trænerhelt 0.1%\n[*]Almindelig:\n[**]hellig trænerhelt 0.9%\n[*]Lillebitte madbundt 2.25%\n[*]Lille madbundt 0.6%\n[*]Medium madbundt 0.1%\n[*]Stort madbundt 0.04%\n[*]Kæmpe madbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe madbundt 0.01%\n[*]EPISK\n[**]Stort madbundt 0.04%\n[*]SJÆLDEN\n[**]Medium madbundt 0.1%\n[*]UALMINDELIG\n[**]Lille madbundt 0.6%\n[**]hellig trænerhelt 0.1%\n[*]ALMINDELIG\n[**]Lillebitte madbundt 2.25%\n[**]hellig trænerhelt 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]Kejserlige soldator 0.1%\n[**]Milits[-]grønskollinger 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.4%\n[**]Militsbueskytter 0.4%\n[**]Kejserlige angribere 0.4%\n[*]Lillebitte jernbundt 2.25%\n[*]Lille jernbundt 0.6%\n[*]Medium jernbundt 0.1%\n[*]Stort jernbundt 0.04%\n[*]Kæmpe jernbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe jernbundt 0.01%\n[*]EPISK\n[**]Stort jernbundt 0.04%\n[*]SJÆLDEN\n[**]Medium jernbundt 0.1%\n[*]UALMINDELIG\n[**]Lille jernbundt 0.6%\n[**]Kejserlige soldator 0.1%\n[**]Milits[-]grønskollinger 0.1%\n[*]ALMINDELIG\n[**]Lillebitte jernbundt 2.25%\n[**]Almindelig landsbybeboer 0.4%\n[**]Militsbueskytter 0.4%\n[**]Kejserlige angribere 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]Rebelbueskytter 0.1%\n[**]Landsbykæmpere 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.4%\n[**]Rebelslyngel 0.4%\n[**]Dybskovsbesværgere 0.4%\n[*]Lillebitte jernbundt 2.25%\n[*]Lille jernbundt 0.6%\n[*]Medium jernbundt 0.1%\n[*]Stort jernbundt 0.04%\n[*]Kæmpe jernbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe jernbundt 0.01%\n[*]EPISK\n[**]Stort jernbundt 0.04%\n[*]SJÆLDEN\n[**]Medium jernbundt 0.1%\n[*]UALMINDELIG\n[**]Lille jernbundt 0.6%\n[**]Rebelbueskytter 0.1%\n[**]Landsbykæmpere 0.1%\n[*]ALMINDELIG\n[**]Lillebitte jernbundt 2.25%\n[**]Almindelig landsbybeboer 0.4%\n[**]Rebelslyngel 0.4%\n[**]Dybskovsbesværgere 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]Lagsnigmorder 0.1%\n[**]Lagangribere 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.4%\n[**]Reanimerede krigere 0.4%\n[**]Lagindviede 0.4%\n[*]Lillebitte jernbundt 2.25%\n[*]Lille jernbundt 0.6%\n[*]Medium jernbundt 0.1%\n[*]Stort jernbundt 0.04%\n[*]Kæmpe jernbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe jernbundt 0.01%\n[*]EPISK\n[**]Stort jernbundt 0.04%\n[*]SJÆLDEN\n[**]Medium jernbundt 0.1%\n[*]UALMINDELIG\n[**]Lille jernbundt 0.6%\n[**]Lagsnigmorder 0.1%\n[**]Lagangribere 0.1%\n[*]ALMINDELIG\n[**]Lillebitte jernbundt 2.25%\n[**]Almindelig landsbybeboer 0.4%\n[**]Reanimerede krigere 0.4%\n[**]Lagindviede 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]Barbariske bersærkere 0.1%\n[**]Ildhidkaldende magikere 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.4%\n[**]Barbariske kæmpere 0.4%\n[**]Barbariske munke 0.4%\n[*]Lillebitte jernbundt 2.25%\n[*]Lille jernbundt 0.6%\n[*]Medium jernbundt 0.1%\n[*]Stort jernbundt 0.04%\n[*]Kæmpe jernbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe jernbundt 0.01%\n[*]EPISK\n[**]Stort jernbundt 0.04%\n[*]SJÆLDEN\n[**]Medium jernbundt 0.1%\n[*]UALMINDELIG\n[**]Lille jernbundt 0.6%\n[**]Barbariske bersærkere 0.1%\n[**]Ildhidkaldende magikere 0.1%\n[*]ALMINDELIG\n[**]Lillebitte jernbundt 2.25%\n[**]Almindelig landsbybeboer 0.4%\n[**]Barbariske kæmpere 0.4%\n[**]Barbariske munke 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Ualmindelig:\n[**]Ophøjede munke 0.1%\n[**]Gudsfrygtige troldmænd 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.4%\n[**]Monastiske banditter 0.4%\n[**]Trofaste kæmpere 0.4%\n[*]Lillebitte jernbundt 2.25%\n[*]Lille jernbundt 0.6%\n[*]Medium jernbundt 0.1%\n[*]Stort jernbundt 0.04%\n[*]Kæmpe jernbundt 0.01%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Kæmpe jernbundt 0.01%\n[*]EPISK\n[**]Stort jernbundt 0.04%\n[*]SJÆLDEN\n[**]Medium jernbundt 0.1%\n[*]UALMINDELIG\n[**]Lille jernbundt 0.6%\n[**]Ophøjede munke 0.1%\n[**]Gudsfrygtige troldmænd 0.1%\n[*]ALMINDELIG\n[**]Lillebitte jernbundt 2.25%\n[**]Almindelig landsbybeboer 0.4%\n[**]Monastiske banditter 0.4%\n[**]Trofaste kæmpere 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Titanskal 0.58%\n[*]Titannæb 0.58%\n[*]Titantand 0.58%\n[*]Titanæg 0.41%\n[*]Titanfjer 0.41%\n[*]Titanøje 0.41%\n[*]Titanrygsøjle 0.617%\n[*]Titanhale 0.617%\n[*]Titanhjerte 0.25%\n[*]Titankranium 0.25%\n[*]Orkan 0.25%\n[*]Valkyriens Ulykke 0.25%\n[*]Titanbanner 0.25%\n[*]Alterations skriftrulle 0.25%\n[*]Kæmpeharpun 0.25%\n[*]Sigrunn 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Orkan 0.25%\n[**]Valkyriens Ulykke 0.25%\n[**]Titanbanner 0.25%\n[**]Alterations skriftrulle 0.25%\n[**]Kæmpeharpun 0.25%\n[*]EPISK\n[**]Titanhjerte 0.25%\n[**]Titankranium 0.25%\n[*]SJÆLDEN\n[**]Titanrygsøjle 0.617%\n[**]Titanhale 0.617%\n[*]UALMINDELIG\n[**]Titanæg 0.41%\n[**]Titanfjer 0.41%\n[**]Titanøje 0.41%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]ALMINDELIG\n[**]Titanskal 0.58%\n[**]Titannæb 0.58%\n[**]Titantand 0.58%\n[**]Sigrunn 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Titanskal 0.58%\n[*]Titannæb 0.58%\n[*]Titantand 0.58%\n[*]Titanæg 0.41%\n[*]Titanfjer 0.41%\n[*]Titanøje 0.41%\n[*]Titanrygsøjle 0.617%\n[*]Titanhale 0.617%\n[*]Titanhjerte 0.25%\n[*]Titankranium 0.25%\n[*]Orkan 0.25%\n[*]Valkyriens Ulykke 0.25%\n[*]Titanbanner 0.25%\n[*]Alterations skriftrulle 0.25%\n[*]Kæmpeharpun 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Stikker 0.8%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Orkan 0.25%\n[**]Valkyriens Ulykke 0.25%\n[**]Titanbanner 0.25%\n[**]Alterations skriftrulle 0.25%\n[**]Kæmpeharpun 0.25%\n[*]EPISK\n[**]Titanhjerte 0.25%\n[**]Titankranium 0.25%\n[*]SJÆLDEN\n[**]Titanrygsøjle 0.617%\n[**]Titanhale 0.617%\n[*]UALMINDELIG\n[**]Titanæg 0.41%\n[**]Titanfjer 0.41%\n[**]Titanøje 0.41%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Stikker 0.8%\n[*]ALMINDELIG\n[**]Titanskal 0.58%\n[**]Titannæb 0.58%\n[**]Titantand 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Titanskal 0.58%\n[*]Titannæb 0.58%\n[*]Titantand 0.58%\n[*]Titanæg 0.41%\n[*]Titanfjer 0.41%\n[*]Titanøje 0.41%\n[*]Titanrygsøjle 0.617%\n[*]Titanhale 0.617%\n[*]Titanhjerte 0.25%\n[*]Titankranium 0.25%\n[*]Orkan 0.25%\n[*]Valkyriens Ulykke 0.25%\n[*]Titanbanner 0.25%\n[*]Alterations skriftrulle 0.25%\n[*]Kæmpeharpun 0.25%\n[*]Natskygge 2%\n[*]Pilemager 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Orkan 0.25%\n[**]Valkyriens Ulykke 0.25%\n[**]Titanbanner 0.25%\n[**]Alterations skriftrulle 0.25%\n[**]Kæmpeharpun 0.25%\n[*]EPISK\n[**]Titanhjerte 0.25%\n[**]Titankranium 0.25%\n[*]SJÆLDEN\n[**]Titanrygsøjle 0.617%\n[**]Titanhale 0.617%\n[*]UALMINDELIG\n[**]Titanæg 0.41%\n[**]Titanfjer 0.41%\n[**]Titanøje 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]ALMINDELIG\n[**]Titanskal 0.58%\n[**]Titannæb 0.58%\n[**]Titantand 0.58%\n[**]Natskygge 2%\n[**]Pilemager 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Titanskal 0.58%\n[*]Titannæb 0.58%\n[*]Titantand 0.58%\n[*]Titanæg 0.41%\n[*]Titanfjer 0.41%\n[*]Titanøje 0.41%\n[*]Titanrygsøjle 0.617%\n[*]Titanhale 0.617%\n[*]Titanhjerte 0.25%\n[*]Titankranium 0.25%\n[*]Orkan 0.25%\n[*]Valkyriens Ulykke 0.25%\n[*]Titanbanner 0.25%\n[*]Alterations skriftrulle 0.25%\n[*]Kæmpeharpun 0.25%\n[*]Sharan 2%\n[*]Tudan 2%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Orkan 0.25%\n[**]Valkyriens Ulykke 0.25%\n[**]Titanbanner 0.25%\n[**]Alterations skriftrulle 0.25%\n[**]Kæmpeharpun 0.25%\n[*]EPISK\n[**]Titanhjerte 0.25%\n[**]Titankranium 0.25%\n[*]SJÆLDEN\n[**]Titanrygsøjle 0.617%\n[**]Titanhale 0.617%\n[*]UALMINDELIG\n[**]Titanæg 0.41%\n[**]Titanfjer 0.41%\n[**]Titanøje 0.41%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]ALMINDELIG\n[**]Titanskal 0.58%\n[**]Titannæb 0.58%\n[**]Titantand 0.58%\n[**]Sharan 2%\n[**]Tudan 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Titanskal 0.58%\n[*]Titannæb 0.58%\n[*]Titantand 0.58%\n[*]Titanæg 0.41%\n[*]Titanfjer 0.41%\n[*]Titanøje 0.41%\n[*]Titanrygsøjle 0.617%\n[*]Titanhale 0.617%\n[*]Titanhjerte 0.25%\n[*]Titankranium 0.25%\n[*]Orkan 0.25%\n[*]Valkyriens Ulykke 0.25%\n[*]Titanbanner 0.25%\n[*]Alterations skriftrulle 0.25%\n[*]Kæmpeharpun 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]LEGENDARISK\n[**]Orkan 0.25%\n[**]Valkyriens Ulykke 0.25%\n[**]Titanbanner 0.25%\n[**]Alterations skriftrulle 0.25%\n[**]Kæmpeharpun 0.25%\n[*]EPISK\n[**]Titanhjerte 0.25%\n[**]Titankranium 0.25%\n[*]SJÆLDEN\n[**]Titanrygsøjle 0.617%\n[**]Titanhale 0.617%\n[*]UALMINDELIG\n[**]Titanæg 0.41%\n[**]Titanfjer 0.41%\n[**]Titanøje 0.41%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]ALMINDELIG\n[**]Titanskal 0.58%\n[**]Titannæb 0.58%\n[**]Titantand 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]istrænerhelt 0.01%\n[*]Ualmindelig:\n[**]is trænerhelt 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]Almindelig:\n[**]is trænerhelt 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]istrænerhelt 0.01%\n[*]UALMINDELIG\n[**]is trænerhelt 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]ALMINDELIG\n[**]is trænerhelt 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]naturtrænerhelt 0.01%\n[*]Ualmindelig:\n[**]natur trænerhelt 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Stikker 0.8%\n[*]Almindelig:\n[**]natur trænerhelt 0.48%\n[**]Aife 2%\n[**]Derric 2%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]naturtrænerhelt 0.01%\n[*]UALMINDELIG\n[**]natur trænerhelt 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Stikker 0.8%\n[*]ALMINDELIG\n[**]natur trænerhelt 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]mørktrænerhelt 0.01%\n[*]Almindelig:\n[**]mørk trænerhelt 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]Almindelig:\n[**]mørk trænerhelt 0.48%\n[**]Natskygge 2%\n[**]Pilemager 2%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]mørktrænerhelt 0.01%\n[*]UALMINDELIG\n[**]mørk trænerhelt 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]ALMINDELIG\n[**]mørk trænerhelt 0.48%\n[**]Natskygge 2%\n[**]Pilemager 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]ildtrænerhelt 0.01%\n[*]Ualmindelig:\n[**]ild trænerhelt 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]Almindelig:\n[**]ild trænerhelt 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]ildtrænerhelt 0.01%\n[*]UALMINDELIG\n[**]ild trænerhelt 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]ALMINDELIG\n[**]ild trænerhelt 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]hellig trænerhelt 0.01%\n[*]Ualmindelig:\n[**]hellig trænerhelt 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]Almindelig:\n[**]hellig trænerhelt 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]hellig trænerhelt 0.01%\n[*]UALMINDELIG\n[**]hellig trænerhelt 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]ALMINDELIG\n[**]hellig trænerhelt 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]Kejserlige eliteangribere 0.05%\n[**]Hærgende bueskytte 0.05%\n[**]Kejserlige riddere 0.05%\n[**]Træningstrop 0.05%\n[*]Ualmindelig:\n[**]Kejserlige soldator 0.15%\n[**]Milits[-]grønskollinger 0.15%\n[**]Træningstrop 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.85%\n[**]Militsbueskytter 0.85%\n[**]Kejserlige angribere 0.85%\n[**]Træningstrop 0.85%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Kejserlige eliteangribere 0.05%\n[**]Hærgende bueskytte 0.05%\n[**]Kejserlige riddere 0.05%\n[**]Træningstrop 0.05%\n[*]UALMINDELIG\n[**]Kejserlige soldator 0.15%\n[**]Milits[-]grønskollinger 0.15%\n[**]Træningstrop 0.1%\n[*]ALMINDELIG\n[**]Almindelig landsbybeboer 0.85%\n[**]Militsbueskytter 0.85%\n[**]Kejserlige angribere 0.85%\n[**]Træningstrop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]Rebelskarpskytter 0.05%\n[**]Dybskovsente 0.05%\n[**]Rebelillusionist 0.05%\n[**]Træningstrop 0.05%\n[*]Ualmindelig:\n[**]Rebelbueskytter 0.15%\n[**]Landsbykæmpere 0.15%\n[**]Træningstrop 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.85%\n[**]Rebelslyngel 0.85%\n[**]Dybskovsbesværgere 0.85%\n[**]Træningstrop 0.85%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Rebelskarpskytter 0.05%\n[**]Dybskovsente 0.05%\n[**]Rebelillusionist 0.05%\n[**]Træningstrop 0.05%\n[*]UALMINDELIG\n[**]Rebelbueskytter 0.15%\n[**]Landsbykæmpere 0.15%\n[**]Træningstrop 0.1%\n[*]ALMINDELIG\n[**]Almindelig landsbybeboer 0.85%\n[**]Rebelslyngel 0.85%\n[**]Dybskovsbesværgere 0.85%\n[**]Træningstrop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Episk:\n[**]Reanimerede riddere 0.05%\n[*]Sjælden:\n[**]Reanimerede krigere 0.05%\n[**]Lagriddere 0.05%\n[**]Træningstrop 0.05%\n[*]Ualmindelig:\n[**]Lagsnigmorder 0.15%\n[**]Lagangribere 0.15%\n[**]Træningstrop 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.85%\n[**]Reanimerede krigere 0.85%\n[**]Lagindviede 0.85%\n[**]Træningstrop 0.85%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Reanimerede krigere 0.05%\n[**]Reanimerede riddere 0.05%\n[**]Lagriddere 0.05%\n[**]Træningstrop 0.05%\n[*]UALMINDELIG\n[**]Lagsnigmorder 0.15%\n[**]Lagangribere 0.15%\n[**]Træningstrop 0.1%\n[*]ALMINDELIG\n[**]Almindelig landsbybeboer 0.85%\n[**]Reanimerede krigere 0.85%\n[**]Lagindviede 0.85%\n[**]Træningstrop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]Barbariske hammertropper 0.05%\n[**]Barbariske minotaurer 0.05%\n[**]Ildhidkaldende kamptroldmænd 0.05%\n[**]Træningstrop 0.05%\n[*]Ualmindelig:\n[**]Barbariske bersærkere 0.15%\n[**]Ildhidkaldende magikere 0.15%\n[**]Træningstrop 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.85%\n[**]Barbariske munke 0.85%\n[**]Barbariske kæmpere 0.85%\n[**]Træningstrop 0.85%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Barbariske hammertropper 0.05%\n[**]Barbariske minotaurer 0.05%\n[**]Ildhidkaldende kamptroldmænd 0.05%\n[**]Træningstrop 0.05%\n[*]UALMINDELIG\n[**]Barbariske bersærkere 0.15%\n[**]Ildhidkaldende magikere 0.15%\n[**]Træningstrop 0.1%\n[*]ALMINDELIG\n[**]Almindelig landsbybeboer 0.85%\n[**]Barbariske munke 0.85%\n[**]Barbariske kæmpere 0.85%\n[**]Træningstrop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Efterligner-bytte",
-     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Sjælden:\n[**]Gudsfrygtige krigere 0.05%\n[**]Gudsfrygtige snigmordere 0.05%\n[**]Ophøjede vogterkonstruktioner 0.05%\n[**]Træningstrop 0.05%\n[*]Ualmindelig:\n[**]Ophøjede munke 0.15%\n[**]Gudsfrygtige troldmænd 0.15%\n[**]Træningstrop 0.1%\n[*]Almindelig:\n[**]Almindelig landsbybeboer 0.85%\n[**]Monastiske banditter 0.85%\n[**]Trofaste kæmpere 0.85%\n[**]Træningstrop 0.85%"
+     "text": "Hver unikke efterligner på dit hold kan give dig ekstra bytte, når du fuldfører etaper.\n[*]Denne efterligner giver en chance for at få følgende ekstra bytte:\n[*]SJÆLDEN\n[**]Gudsfrygtige krigere 0.05%\n[**]Gudsfrygtige snigmordere 0.05%\n[**]Ophøjede vogterkonstruktioner 0.05%\n[**]Træningstrop 0.05%\n[*]UALMINDELIG\n[**]Ophøjede munke 0.15%\n[**]Gudsfrygtige troldmænd 0.15%\n[**]Træningstrop 0.1%\n[*]ALMINDELIG\n[**]Almindelig landsbybeboer 0.85%\n[**]Monastiske banditter 0.85%\n[**]Trofaste kæmpere 0.85%\n[**]Træningstrop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Giver 600% skade til målet.",
       "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
-      "Visne: Målet får -350 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet får -350 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Elementlink gendanner 5% helbred for alle natur allierede i 6 runder. Denne effekt kan ikke ophæves."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1100 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1100 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Efter et succesfuldt kast er der 100% chance for at kaste klingevinger igen mod et tilfældigt mål.\n[*]Kan kastes igen op til 3 gange, hvor chancen for at kaste igen reduceres med -35% efter hvert succesfulde kast."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Angriber målet med måneopgangs-angreb, som gør op til 2180 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet med måneopgangs-angreb, som gør op til 2180 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet kaster automatisk skiftende tankeløst angreb mod en tilfældig allieret, når mana er fyldt op i starten af en runde i 4 runder. Når denne effekt udløses, skifter den til den ramte allierede, og varigheden genopfriskes.",
       "Alle allierede får -35% forsvar i 4 runder."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 700 skade. Forvolder 20% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af."
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 700 skade. Forvolder 20% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af."
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1440 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1440 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "I 3 runder reduceres mana med -15% for målet og fjender i nærheden i rundens afslutning.",
       "Målet og fjender i nærheden får -50% forøgelse af enhver modtaget helbredelse i 3 runder."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 860 skade. Forvolder 30% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 860 skade. Forvolder 30% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet og fjender i nærheden får 900 giftskade over 5 runder. Kasteren og alle allierede absorberer 35% af den påførte giftskade som helbred."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Angriber målet med måneopgangs-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet med måneopgangs-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Hvis målet besejres af angrebet, kan fjender i nærheden ikke få mana i 3 runder.",
       "Alle allierede udfører modangreb med 60% af den modtagne skade i 3 runder."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Angriber målet med måneopgangs-angreb, som gør op til 1020 skade. Forvolder 30% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet med måneopgangs-angreb, som gør op til 1020 skade. Forvolder 30% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Reducerer mana hos målet med 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
-      "Angriber alle fjender med måneopgangs-angreb, som gør op til 2000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber alle fjender med måneopgangs-angreb, som gør op til 2000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Alle allierede får 5% mana for hver ødelagt djævel. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1620 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1620 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Hidkalder en uglekyrie-håndlanger til kasteren og allierede i nærheden med 25% HP og 45% angreb fra kasteren.",
       "Hvis uglekyrie-håndlangeren besejres, kastes fuld fjernelse på angriberen. (Fuld fjernelse fjerner alle status-, kumulative, vækst- og visne-effekter. Det fjerner endda status- og kumulative effekter, der normalt er stædige, uophævelige eller ikke kan ryddes.)",
       "Efter fuld fjernelse er blevet kastet, tager fjenden form som Uglehallas spøgelse i 3 runder. Denne effekt er stædig.\n[*] Som Uglehallas spøgelse tager målet 430 skade i hver runde. (Når figuren er i en spøgelsesform, kan den ikke få mana, og den kan heller ikke helbredes af særlige evner, men den er immun over for normale angreb, angreb med særlige evner, skadeforårsagende passive effekter, statuseffekter og kumulative effekter.\n[*] Immun over for nye vækst-, vanvids- og skrumpeeffekter.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.\n[*]Kan ikke kastes, hvis der kun er en enkelt fjende tilbage i kampen.\n[*]Titaner og mytiske titaner påvirkes ikke af denne statuseffekt.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Ophæver buffere fra målet og og fjender i nærheden.",
-      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber målet og alle fjender i nærheden med måneopgangs-angreb, som gør op til 1500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet og fjender i nærheden er immune over for nye statuseffekt-buffere i 3 runder."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Angriber alle fjender med måneopgangs-angreb, som gør op til 1200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Dette angreb rammer aldrig ved siden af.",
+      "Angriber alle fjender med måneopgangs-angreb, som gør op til 1200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet helligt. Denne særlige egenskab rammer aldrig ved siden af.",
       "Alle fjender får[#Dynamic] 924 [#]bløderskade i 4 runder.",
       "Alle fjender får -45% præcision i 4 runder. (Chancen for at ramme ved siden af gælder for offensive særlige evner.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]x 1 manaangreb:",
       "[**]Giver 280% skade til målet.",
       "[**]Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
-      "[**]Vækst: Alle allierede får 120 angreb og 120 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Vækst: Alle allierede får 120 angreb og 120 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]x 2 manaangreb:",
       "[**]Giver 430% skade til målet.",
       "[**]Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
-      "[**]Vækst: Alle allierede får 210 angreb og 210 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Vækst: Alle allierede får 210 angreb og 210 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]x 3 manaangreb:",
       "[**]Giver 650% skade til målet.",
       "[**]Angrebet går gennem alle de fjender, der står ved siden af en ramt fjende.",
-      "[**]Vækst: Alle allierede får 750 angreb og 750 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "[**]Vækst: Alle allierede får 750 angreb og 750 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
       "[*]x 1 manaangreb:",
       "[**]Giver 450% skade til målet.",
-      "[**]Visne: Målet får -200 angreb og -200 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Visne: Målet får -200 angreb og -200 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]x 2 manaangreb:",
       "[**]Giver 600% skade til målet og mindre skade til fjender i nærheden.",
-      "[**]Visne: Målet og alle fjender i nærheden får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "[**]Visne: Målet og alle fjender i nærheden får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "[*]x 3 manaangreb:",
       "[**]Giver 800% skade til målet og mindre skade til alle andre fjender.",
-      "[**]Visne: Alle fjender får -650 angreb og -650 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "[**]Visne: Alle fjender får -650 angreb og -650 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[***]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[***]Fjernelse svækker visneeffekten med 50%.\n[***]Ophævelse svækker væksteffekten med 50%.\n[***]Grænser for modificerede evneværdier.\n[***]Min. 30% og maks. 170% af deres oprindelige værdi.\n[***]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[***]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 750 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 750 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 750 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 750 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Giver 450% skade til målet og fjender i nærheden.",
-      "Vækst: Kasteren og allierede i nærheden får 240 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Kasteren og allierede i nærheden får 240 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Kasteren og de allierede i nærheden kaster alle statuslidelser og 160% skade tilbage på angriberen og blokerer andre negative effekter fra fjenders særlige ild-egenskaber i 4 runder. Effekten kan ikke ryddes. (Statuseffekter, der kastes af figurer, håndlangere og djævle på samme side kan ikke tilbagekastes.)",
       "Kasteren får slimgenoplivelse i 4 runder. Denne effekt kan ikke ophæves.\n[*]Hvis kasteren besejres, mens slimgenoplivelsen er aktiv, bliver kasteren genfødt som slim.\n[*]Slim\n[*] 100% nedarvet helbred.\n[*] 50% angreb.\n[*] 50% forsvar.\n[*]Særlig evne: Slimdask (Giver 350% skade til målet).\n[*]Denne effekt kan ikke ophæves.\n[*]Hvis slimen ikke besejres inden for 2 runder, vil den blive genfødt i figurens oprindelige form og arve slimens helbred og mana."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Gendanner 25% helbred til kasteren og allierede i nærheden.",
       "Øger mana hos allierede i nærheden med 30%. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
-      "Vækst: Allierede i nærheden får 360 angreb og 360 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Vækst: Allierede i nærheden får 360 angreb og 360 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Hidkalder en slim-megahåndlanger med 50% HP og 40% angreb, der er arvet fra kasteren."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Angriber målet med Firestorm-angreb, som gør op til 4000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet med Firestorm-angreb, som gør op til 4000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Alle allierede får 45% chance for at undvige angreb og særlige evner i 5 runder.",
       "Denne figur får et offermærke for 5 runde. Hver gang en fjende eller en allieret får en brandskade, får kasteren en stak (maks.: 10). For hver stak forøges kasterens gendannelse af mana med 7%."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Angriber målet med Firestorm-angreb, som gør op til 4400 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet med Firestorm-angreb, som gør op til 4400 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Alle allierede får 45% chance for at undvige særlige evner i 5 runder. Hver undvigelse gør 500 skade på angriberen.",
       "Denne figur får et offermærke for 5 runde. Hver gang en fjende eller en allieret får en brandskade, får kasteren en stak (maks.: 10). For hver stak forøges kasterens gendannelse af mana med 7%."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 1500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 1500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Skaden ignorerer målets håndlangere.",
       "Alle fjender får[#Dynamic] 388 [#]giftskade i 4 runder.",
       "Alle fjender får 50% forøget skade fra statuslidelser og negative kumulative effekter i 4 runder."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 1650 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 1650 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Skaden ignorerer målets håndlangere.",
       "Alle fjender får[#Dynamic] 408 [#]giftskade over 4 runder. Kasteren absorberer 10% af den påførte giftskade som helbred.",
       "Alle fjender får 52% forøget skade fra statuslidelser og negative kumulative effekter i 4 runder."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "Skaden ignorerer målets håndlangere.",
-      "Angriber målet med Firestorm-angreb, som gør op til 1080 skade. Forvolder 30% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet med Firestorm-angreb, som gør op til 1080 skade. Forvolder 30% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet modstår nye håndlangere i 4 runder."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "Skaden ignorerer målets håndlangere.",
-      "Angriber målet med Firestorm-angreb, som gør op til 1180 skade. Forvolder 30% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet med Firestorm-angreb, som gør op til 1180 skade. Forvolder 30% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet modstår nye håndlangere i 4 runder."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Helbreder alle allierede med 30% af tildelt skade.",
       "Alle allierede udfører modangreb med 65% af den modtagne skade i 5 runder."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 2600 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 2600 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Forstærker alle allieredes helbred med 27% af den forvoldte skade. Boostet helbred kan overskride maks. HP.",
       "Alle allierede udfører modangreb med 75% af den modtagne skade i 5 runder."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 2200 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Kasteren stjæler alle fjenders gendannede mana i løbet af 5 runder. Starter lavt og forøges for hver runde, indtil den sidste runde, hvor al gendannet mana stjæles. Denne effekt kan ikke ryddes, men fjernes hvis kasteren besejres.",
       "Stjæler i slutningen af hver runde den seneste ophævelige buffer fra alle fjender og fordeler dem tilfældigt blandt allierede i 5 runder."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Angriber alle fjender med Firestorm-angreb, som gør op til 2500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber alle fjender med Firestorm-angreb, som gør op til 2500 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Reducerer mana hos alle fjender med 35%.",
       "Efter den særlige færdighed er blevet brugt øges kasterens mana med 15%. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
       "Stjæler i slutningen af hver runde den seneste ophævelige buffer fra alle fjender og fordeler dem tilfældigt blandt allierede i 5 runder."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Ophæver buffere fra målet og og fjender i nærheden.",
-      "Angriber målet og fjender i nærheden med Firestorm-angreb, som gør op til 2000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet og alle fjender i nærheden med Firestorm-angreb, som gør op til 2000 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet og fjender i nærheden er immune over for nye statuseffekt-buffere i 3 runder."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Ophæver buffere fra målet og og fjender i nærheden.",
-      "Angriber målet og fjender i nærheden med Firestorm-angreb, som gør op til 2300 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur.",
+      "Angriber målet og alle fjender i nærheden med Firestorm-angreb, som gør op til 2300 skade. Forvolder 40% mere skade, hvis målet tilhører elementet natur. Denne særlige egenskab rammer aldrig ved siden af.",
       "Målet og fjender i nærheden er immune over for nye statuseffekt-buffere i 3 runder."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Giver 600% i skade til alle fjender.",
       "Reducerer maks. helbred for alle fjender med 800. Effekten er større mod mål med forstærket helbred. (Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 800.)",
       "Høster buffere fra alle fjender.\n[*]Høst fjerner sikkert 2 buffere, positive kumulative effekter eller væksteffekter fra hvert mål. Dette omfatter stædige effekter, uophævelige buffere og danseeffekter.\n[*]Kasteren får 7% boostet helbred for hver effekt, der fjernes. Boostet helbred kan overstige maks. helbred.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektbuffere. Eksterne effekter som passive evner og familieeffekter kan stadig aktiveres.\n[*]Væksteffekter fjernes først. Ved andre effekter fjernes den seneste først.",
-      "Visne: Alle fjender får -540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Visne: Alle fjender får -540 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Gendanner 50% helbred til kasteren og allierede i nærheden.",
       "Uproots debuffer fra kasteren og allierede i nærheden.\n[*]Uproot fjerner sikkert 2 debuffs, negative kumulative effekter eller skrumpeeffekter fra hvert mål. Dette inkluderer urenselige statuslidelser og danseeffekter.\n[*]Kasteren modtager 7% forbedret helbred for hver effekt, der fjernes. Forbedret helbred kan overstige maks. HP.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektforstærkere. Eksterne effekter såsom passive egenskaber og familieeffekter kan stadig aktiveres.\n[*]Skrumpeeffekter fjernes først. Ved andre effekter fjernes den seneste først.",
-      "Vækst: Alle allierede får 170 angreb og 170 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Alle allierede får 170 angreb og 170 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -400 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender får -80% forøgelse af enhver modtaget helbredelse i 4 runder. Denne effekt kan ikke ophæves.",
       "Fjerner den seneste statuslidelse, der kan renses, fra alle allierede og fordeler dem tilfældigt på fjender.",
       "Rydder statuslidelser fra alle allierede, når runden slutter i 4 runder."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Forvolder 330% kloskade mod alle fjender i nærheden.\n[*]Forvolder 400% skade mod fjender med forsvarsbuffere, håndlangere eller kæmpehåndlangere.\n[*]Fjender med forsvarsbuffere, håndlangere eller kæmpehåndlangere får -35% forsvar i 5 runder.",
-      "Visne: Alle fjender får -300 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Alle fjender får -300 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle fjender bliver provokerede i 4 runder. De provokerede figurer giver 1% skade til en tilfældig modstander, når runden slutter.",
       "Alle allierede får 50% angreb og yderligere 20% forøgelse, hver gang de bliver ramt i 4 runder, op til 150% angreb."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "Reducerer maks. helbred for målet med 1600. Effekten er større mod mål med forstærket helbred. (Maks. helbred kan ikke blive lavere end 30% af det oprindelige maks. helbred.\n[*] Forstærket helbred reduceres med yderligere 1600.)",
       "Målet gøres tavst i 3 runde.",
-      "Vækst: Allierede i nærheden får 540 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
+      "Vækst: Allierede i nærheden får 540 angreb. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Giver 410% skade til målet og fjender i nærheden.",
-      "Visne: Målet og alle fjender i nærheden får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Visnen og vækst kan ikke fjernes med ophævninger og rensninger.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
+      "Visne: Målet og alle fjender i nærheden får -250 angreb og -250 forsvar. (Visnen og vækst modificerer figurers evneværdier. Effekten forbliver, selv hvis figuren bliver besejret.\n[*]Yderligere visne- og væksteffekter modificerer evneværdierne.\n[*]Fjernelse svækker visneeffekten med 50%.\n[*]Ophævelse svækker væksteffekten med 50%.\n[*]Grænser for modificerede evneværdier.\n[*]Min. 30% og maks. 170% af deres oprindelige værdi.\n[*]Andre buffere og svækkelser bliver pålagt de modificerede evneværdier.\n[*]Denne effekt er mindre effektiv, når den aktiveres af monstre og bosser.)",
       "Alle mål og fjender i nærheden sender statuseffektbuffere tilbage mod en tilfældig figur på modstanderholdet i 3 runder. (Kun buffere, som kan fjernes, tilbagekastes.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Snyd døden",
-     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til en tilfældig fjende."
+     "text": "Første gang denne figur ellers ville have modtaget dødbringende skade fra normale angreb eller særlige evner, omdirigerer den i stedet op til 2500 skade til angriberen.\n[*]Dette sker ikke, hvis denne figur er det eneste medlem af sit team i kamp."
     },
     {
      "id": "ransack_on_other_ally_special",

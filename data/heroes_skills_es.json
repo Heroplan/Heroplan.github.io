@@ -57,7 +57,7 @@
       "Esta habilidad especial nunca falla.",
       "Causa un 495% de daño al objetivo y daño menor a los enemigos cercanos.",
       "Roba todas las bendiciones descartables del objetivo y los enemigos cercanos y las distribuye aleatoriamente entre los aliados.",
-      "Crecimiento: El héroe y los aliados cercanos obtienen 340 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: El héroe y los aliados cercanos obtienen 340 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Causa un 355% de daño a todos los enemigos.",
       "El ataque ignora los contraataques y reflejos.",
-      "Merma: Todos los enemigos obtienen -510 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -510 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Al final de cada turno, el héroe dispara un rayo astral contra un objetivo aleatorio durante 4 turnos.\n[*] Cada rayo astral causa un 300% de daño.\n[*] Cada rayo astral reduce en 300 la vitalidad máxima del enemigo golpeado. El efecto es más fuerte contra objetivos con vitalidad potenciada.",
       "(La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 300 adicional.)"
      ]
@@ -881,7 +881,7 @@
       "Causa un 600% de daño al objetivo.",
       "Si el objetivo tiene más de un 50% de maná antes de recibir daño, ataca a otro enemigo que tenga más del 50% de maná antes de recibir daño de esta habilidad especial. Si ningún otro enemigo tiene un 50% de maná, ataca a un enemigo aleatorio. El daño se reduce con cada golpe consecutivo. Solo puede golpear una vez a cada enemigo.",
       "Se silencia a todos los objetivos golpeados durante 4 turnos.",
-      "Merma: Todos los enemigos obtienen -300 de ataque y -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -300 de ataque y -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Potencia la vitalidad del héroe y de los aliados cercanos en 350. La vitalidad potenciada puede exceder la VIT máxima.",
-      "Crecimiento: El héroe y los aliados cercanos obtienen 60 de ataque y 60 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: El héroe y los aliados cercanos obtienen 60 de ataque y 60 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Causa un 400% de daño al objetivo y a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -420 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo y los enemigos cercanos obtienen -420 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo y los enemigos cercanos reciben un 25% más de daño durante 3 turnos. El efecto aumenta un 10% por cada secuaz o megasecuaz que tengan todos los enemigos hasta un máximo del 85%."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Causa un 600% de daño al objetivo.",
       "Si el objetivo tiene bendiciones y recibe un golpe, selecciona a otro enemigo con bendiciones. Si ningún enemigo tiene bendiciones, selecciona a un enemigo aleatorio. El daño se reduce con cada golpe consecutivo. Solo puede golpear una vez a cada enemigo.",
       "Descarta de forma segura 1 bendición de todos los enemigos. (El descarte seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de la bendición de estado eliminada. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*]Se descartan primero las últimas bendiciones.)",
-      "Merma: Todos los enemigos obtienen -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Causa un 850% de daño al objetivo.",
       "Durante 5 turnos, el objetivo recibe un 100% del daño infligido a sus aliados.",
-      "Crecimiento: Todos los aliados obtienen 660 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 660 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los aliados obtienen un 35% de regeneración de maná durante 5 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Causa un 530% de daño al objetivo.",
       "El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
       "Todos los objetivos golpeados reciben un 50% más de daño durante 5 turnos. El efecto aumenta un 10% por cada secuaz o megasecuaz que tengan todos los enemigos hasta un máximo del 100%.",
-      "Merma: Todos los enemigos obtienen -540 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -540 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Recupera un 30% de vitalidad para todos los aliados.",
-      "Crecimiento: Todos los aliados obtienen 300 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 300 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Potencia la vitalidad de todos los aliados en 450 pasados 3 turnos o inmediatamente si el efecto se elimina antes de que termine. La vitalidad potenciada puede exceder la VIT máxima."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Causa un 450% de daño al objetivo y a los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 792 [#]de daño de agua durante 4 turnos. Todos los aliados absorben un 50% del daño de agua infligido como vitalidad potenciada.",
-      "Crecimiento: Todos los aliados obtienen 240 de ataque y 240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Todos los aliados obtienen 240 de ataque y 240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Causa un 450% de daño a todos los enemigos.",
       "Todos los enemigos reciben[#Dynamic] 785 [#]de daño de quemadura durante 5 turnos. Todos los aliados absorben un 25% del daño de quemadura infligido como vitalidad potenciada.",
-      "Merma: Todos los enemigos obtienen -420 de ataque y -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -420 de ataque y -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Causa un 470% de daño a todos los enemigos.",
-      "Merma: Todos los enemigos obtienen -420 de ataque y -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -420 de ataque y -420 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los enemigos reciben un -35% de regeneración de maná durante 5 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
       "Purifica los estados alterados de todos los aliados.",
       "Potencia la vitalidad de todos los aliados en 1550. La vitalidad potenciada puede exceder la VIT máxima.",
-      "Crecimiento: Todos los aliados obtienen 480 de ataque y 480 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Todos los aliados obtienen 480 de ataque y 480 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Menos de 40 de humildad:",
       "[*]Causa un 265% de daño a los enemigos en los márgenes de la formación enemiga. Si solo queda un enemigo, el daño se duplica.",
-      "[*]Merma: Los enemigos en los márgenes de la formación enemiga obtienen un -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[*]Merma: Los enemigos en los márgenes de la formación enemiga obtienen un -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Purificar debilita la merma un 50%.\n[**]Descartar debilita el crecimiento un 50%.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]Descarta las bendiciones de los enemigos en los márgenes de la formación enemiga.",
       "40 o más humildad:",
       "[*]Descarta las bendiciones de los enemigos en los márgenes de la formación enemiga de forma segura. (El descarte seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de la bendición de estado eliminada. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.)",
       "[*]Causa un 360% de daño a los enemigos en los márgenes de la formación enemiga. Si solo queda un enemigo, el daño se duplica.",
-      "[*]Merma: Los enemigos en los márgenes de la formación enemiga obtienen un -350 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "[*]Merma: Los enemigos en los márgenes de la formación enemiga obtienen un -350 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Purificar debilita la merma un 50%.\n[**]Descartar debilita el crecimiento un 50%.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Menos de 60 de humildad:",
       "[*]Recupera un 25% de vitalidad para todos los aliados.",
       "[*]Purifica 1 estado alterado de todos los aliados. (Los estados alterados se purifican en el orden en el que se han recibido; los más recientes se purifican primero.)",
-      "[*]Crecimiento: Todos los aliados obtienen 180 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[*]Crecimiento: Todos los aliados obtienen 180 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Purificar debilita la merma un 50%.\n[**]Descartar debilita el crecimiento un 50%.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]Todos los aliados recuperan 1005 VIT durante 3 turnos.",
       "60 o más humildad:",
       "[*]Recupera un 32% de vitalidad para todos los aliados.",
       "[*]Purifica los estados alterados de todos los aliados.",
-      "[*]Crecimiento: Todos los aliados obtienen 240 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[*]Crecimiento: Todos los aliados obtienen 240 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[**]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[**]Purificar debilita la merma un 50%.\n[**]Descartar debilita el crecimiento un 50%.\n[**]Límites de la modificación de las puntuaciones de habilidad\n[**]Un mínimo del 30% y un máximo del 170% de su valor original.\n[**]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[**]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]Todos los aliados recuperan 1440 VIT durante 3 turnos.",
       "[*]El héroe recibe un 84% de defensa contra habilidades especiales durante 3 turnos."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Inflige un 420% de daño al enemigo al que le quede más VIT. Inflige un 300% de daño a los demás enemigos.",
       "Silencia al enemigo al que le quede más VIT durante 3 turnos.",
-      "Merma: Todos los enemigos obtienen -350 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -350 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Destruye a todos los secuaces de todos los enemigos e inflige daño a los megasecuaces.",
       "Inflige un 355% de daño a todos los enemigos.",
-      "Merma: Todos los enemigos obtienen -510 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -510 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los enemigos reciben[#Dynamic] 129 [#]-[#Dynamic] 317 [#]de daño de maldición creciente cada turno durante 4 turnos. Este efecto es obstinado. (En el primer turno, se inflige[#Dynamic] 129 [#]de daño. El daño aumenta un 35% cada turno hasta un máximo de[#Dynamic] 317 [#]de daño por turno.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Causa un 355% de daño al objetivo y a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -225 de ataque y -225 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo y los enemigos cercanos obtienen -225 de ataque y -225 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo y los enemigos cercanos reflejan las bendiciones de estado a un personaje aleatorio del equipo contrario durante 3 turnos. (Solo se reflejan las bendiciones descartables.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Causa un 200% de daño al objetivo y a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -40 de ataque y -40 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo y los enemigos cercanos obtienen -40 de ataque y -40 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo y los enemigos cercanos obtienen un -35% de defensa durante 3 turnos. Si el efecto se elimina antes de que termine, el objetivo que lo tenga recibe[#Dynamic] 124 [#]de daño."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Causa un 210% de daño al objetivo y a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -45 de ataque y -45 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo y los enemigos cercanos obtienen -45 de ataque y -45 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todo el daño que reciben el objetivo y los enemigos cercanos aumenta un 40% durante 3 turnos."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Recupera un 25% de vitalidad para todos los aliados.",
-      "Crecimiento: Todos los aliados obtienen 215 de ataque y 215 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 215 de ataque y 215 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los aliados tienen un 50% de probabilidad de infligir un 270% de daño a un enemigo aleatorio después de que se lance cualquier habilidad especial de un aliado durante 3 turnos. (Cada personaje puede activar este efecto una vez por turno.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "Todos los aliados regeneran 1200 de vitalidad potenciada durante 3 turnos. La vitalidad potenciada puede exceder la VIT máxima.",
-      "Crecimiento: Todos los aliados obtienen 240 de ataque y 240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 240 de ataque y 240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los aliados tienen un 50% de probabilidad de infligir un 280% de daño a un enemigo aleatorio después de que se lance cualquier habilidad especial de un aliado durante 3 turnos. (Cada personaje puede activar este efecto una vez por turno.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Roba todas las bendiciones descartables del objetivo y las distribuye aleatoriamente entre los aliados.",
       "Causa un 375% de daño al objetivo.\n[*] Causa un 50% de daño adicional por bendición de estado transferida, hasta un 625% de daño en total.",
-      "Merma: El objetivo obtiene -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: El objetivo obtiene -300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Roba todas las bendiciones descartables del objetivo y las distribuye aleatoriamente entre los aliados.",
       "Causa un 400% de daño al objetivo.\n[*] Causa un 50% de daño adicional por bendición de estado transferida, hasta un 650% de daño en total.",
-      "Merma: El objetivo obtiene -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo obtiene -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo es inmune a las nuevas bendiciones de estado durante 2 turnos."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Causa un 240% de daño a todos los enemigos.",
-      "Merma: Todos los enemigos obtienen -200 de ataque y -200 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -200 de ataque y -200 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los enemigos obtienen un -30% de regeneración de maná durante 3 turnos. Si el efecto se elimina antes de que termine, el maná del objetivo que lo tenga se reduce un -5%. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Recupera un 38% de vitalidad para todos los aliados.",
-      "Crecimiento: Todos los aliados obtienen 100 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 100 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los aliados reflejan los estados alterados a un personaje aleatorio del equipo contrario durante 3 turnos. (Solo se reflejan los estados alterados purificables.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "Todos los aliados recuperan 1080 VIT durante 3 turnos.",
-      "Crecimiento: Todos los aliados obtienen 110 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 110 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Quita el último estado alterado purificable de todos los aliados y lo distribuye aleatoriamente entre los enemigos.",
       "Todos los aliados reflejan los estados alterados a un personaje aleatorio del equipo contrario durante 3 turnos. (Solo se reflejan los estados alterados purificables.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Recupera un 54% de vitalidad para todos los aliados.",
-      "Crecimiento: Todos los aliados obtienen 450 de ataque y 450 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 450 de ataque y 450 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los aliados obtienen un 30% de regeneración de maná durante 4 turnos. Si el efecto se elimina antes de que termine, el aliado que lo tenga recibe un 10% de maná. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Probabilidad de que cada efecto se active:",
       "[*]Comida exquisita: 45%",
       "[**]Recupera un 50% de vitalidad para todos los aliados.",
-      "[**]Crecimiento: Todos los aliados obtienen 400 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Crecimiento: Todos los aliados obtienen 400 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]Comida podrida: 45%",
       "[**]Causa un 350% de daño a todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 965 [#]de daño de veneno durante 5 turnos.",
@@ -19992,7 +19992,7 @@
       "Probabilidad de que cada efecto se active:",
       "[*]Comida exquisita: 45%",
       "[**]Potencia la vitalidad de todos los aliados en 1800. La vitalidad potenciada puede exceder la VIT máxima.",
-      "[**]Crecimiento: Todos los aliados obtienen 700 de ataque y 700 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Crecimiento: Todos los aliados obtienen 700 de ataque y 700 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]Comida podrida: 45%",
       "[**]Causa un 550% de daño a todos los enemigos.",
       "[**]Todos los enemigos reciben veneno corrosivo durante 5 turnos. Este inflige[#Dynamic] 378 [#]de daño de veneno y reduce la regeneración de maná del objetivo en un -10% cada turno. Inflige daño extra a los héroes con secuaces o un megasecuaz. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Crecimiento: Todos los aliados obtienen 355 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 355 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz jabalí moteado con un 65% de VIT y un 260% de ataque heredados del héroe.",
       "Al invocarse, mientras lo tenga, el megasecuaz de jabalí moteado otorga a su dueño inmunidad a los descartes y reasignaciones de bendiciones. (La inmunidad también incluye este efecto.\n[*] También incluye saqueo.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Causa un 470% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "Crecimiento: El héroe y los aliados cercanos obtienen 250 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: El héroe y los aliados cercanos obtienen 250 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo y los enemigos cercanos obtienen un -35% de defensa durante 3 turnos. Si el efecto se elimina antes de que termine, el objetivo que lo tenga recibe[#Dynamic] 577 [#]de daño."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Merma: El objetivo obtiene -330 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo obtiene -330 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un demonio duende explosivo para el objetivo y los enemigos cercanos que daña al enemigo con un 195% de ataque cada turno.\n[*] El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 20% de la vitalidad máxima de su dueño.",
       "Cuando el demonio duende explosivo desaparece tras absorber suficiente curación, el dueño recibe[#Dynamic] 1269 [#]de daño de quemadura durante 3 turnos."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Causa un 365% de daño a todos los enemigos.",
-      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz jabalí blanco con un 65% de VIT y un 250% de ataque heredados del héroe.",
       "Al invocarse, mientras lo tenga, el megasecuaz de jabalí blanco otorga a su dueño la habilidad de contraatacar con un 100% del daño recibido. Este efecto no se puede descartar."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Merma: Todos los enemigos obtienen -350 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -350 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Reduce la vitalidad máxima de todos los enemigos en 700. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 700 adicional.)",
       "Todos los enemigos reciben un -45% de defensa contra habilidades especiales durante 4 turnos."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Reduce la vitalidad máxima de todos los enemigos en 800. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 800 adicional.)",
       "Todos los enemigos obtienen un -50% de defensa contra habilidades especiales durante 4 turnos. Si el efecto se elimina antes de que termine, el objetivo que lo tenga recibe 800 de daño."
      ]
@@ -20379,7 +20379,7 @@
       "Ni el objetivo ni los enemigos cercanos pueden resucitar ni hacer que lo hagan sus aliados durante 5 turnos.",
       "Ni el objetivo ni los enemigos cercanos pueden recibir efectos de estado nuevos que fueran a hacerlos resucitar durante 5 turnos.",
       "Causa un 530% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -455 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: El objetivo y los enemigos cercanos obtienen -455 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Crecimiento: Todos los aliados obtienen 150 de ataque y 150 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Todos los aliados obtienen 150 de ataque y 150 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un secuaz zanahoria para todos los aliados con un 25% de VIT heredada del héroe.",
       "Al invocarse, mientras lo tenga, el secuaz zanahoria otorga un 20% de regeneración de maná a su dueño. Este efecto no se puede descartar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
       "El enlace de elemento proporciona a todos los aliados sagrados un 40% de defensa contra habilidades especiales durante 4 turnos. Este efecto no se puede descartar."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Crecimiento: El héroe y los aliados cercanos obtienen 540 de ataque y 540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: El héroe y los aliados cercanos obtienen 540 de ataque y 540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz aberrante con un 45% de VIT y un 180% de ataque heredados del héroe.\n[*]Cada golpe de un megasecuaz aberrante otorga al objetivo el siguiente estado alterado:",
       "[**]El objetivo recibe[#Dynamic] 552 [#]de daño de toxina durante 3 turnos. El daño aumenta contra objetivos con vitalidad potenciada, secuaces o un megasecuaz. (El daño de toxina aumenta un 100% contra objetivos con vitalidad potenciada.\n[***]El daño de toxina aumenta un 33% por cada secuaz o megasecuaz que tenga el objetivo.\n[***]El daño puede aumentar hasta un máximo del 199%.)",
       "[**]Inflige 10 de demencia al objetivo.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "Todos los enemigos sucumben al miedo durante 5 turnos. (El objetivo obtiene un -40% de defensa.\n[*] Elimina todas las bendiciones descartables y efectos de crecimiento al aplicarse miedo.\n[*] El objetivo no puede obtener nuevas bendiciones ni efectos de crecimiento mientras dure.\n[*] El objetivo con miedo inflige un 250% de daño a un aliado aleatorio cada vez que otro aliado usa su habilidad especial. Cada personaje solo puede activar este efecto una vez por turno.)",
-      "Merma: Todos los enemigos obtienen -480 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -480 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Inflige un 420% de daño y 25 de demencia a todos los enemigos.",
       "Usar esta habilidad especial inflige 45 de demencia al héroe.",
       "(La demencia añade una probabilidad de invertir los objetivos de las habilidades especiales.\n[*] Cuando se activa la demencia, las habilidades especiales que se usan contra objetivos enemigos en su lugar se usarán contra aliados, y viceversa.\n[*] Las habilidades especiales que afectan al héroe que las usa afectarán, en su lugar, a un objetivo aleatorio, y las dirigidas contra un objetivo afectarán al héroe.\n[*] Cuando se activa la demencia, las habilidades pasivas y de tropas que otorgan efectos extras al usarse no se activarán.\n[*] Al llegar a 100 de demencia, se usa una habilidad especial de forma automática cuando se tiene todo el maná.\n[*] La demencia no se puede descartar ni purificar.\n[*] La demencia de un héroe se puede reducir en 10 cada vez que se intenta una curación directa a través de las habilidades especiales, las habilidades de ayuda, los objetos o los escudos. Las curaciones directas de las habilidades especiales reducen la demencia solo una vez por uso.\n[*] Todas las demás curaciones reducen la demencia un 1.\n[*] La demencia se elimina por completo cuando se lanza una habilidad especial inversa.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Causa un 270% de daño a todos los enemigos.",
-      "Merma: Todos los enemigos obtienen -240 de ataque y -240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -240 de ataque y -240 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los enemigos reciben[#Dynamic] 405 [#]de daño de quemadura durante 3 turnos. El héroe absorbe un 50% del daño de quemadura infligido como vitalidad potenciada. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes de hielo."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
       "Devuelve un 65% de vitalidad al aliado al que le quede menos VIT. Los demás aliados recuperan un 45% de vitalidad.",
-      "Crecimiento: Todos los aliados obtienen 300 de ataque y 300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Todos los aliados obtienen 300 de ataque y 300 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Causa un 600% de daño al objetivo.",
       "Bendición de crecimiento: Inflige x 2 de daño extra por cada punto de ataque modificado. (El daño extra se basa en el ataque modificado del héroe en el momento de infligir daño.\n[*] Hasta un máximo de 600 de daño extra adicional.\n[*] Los efectos de estado que afectan al daño infligido también influyen en el daño extra.\n[*] La estadística de defensa no influye en el daño extra.\n[*] Los efectos de estado que afectan al ataque no influyen en el daño extra.)",
-      "Merma: El objetivo obtiene -500 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo obtiene -500 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo recibe[#Dynamic] 1068 [#]de daño de arena durante 3 turnos."
      ]
     }
@@ -28892,7 +28892,7 @@
       "Esta habilidad especial nunca falla.",
       "Causa un 500% de daño al objetivo.",
       "Bendición de crecimiento: Inflige x 2 de daño extra por cada punto de ataque modificado. (El daño extra se basa en el ataque modificado del héroe en el momento de infligir daño.\n[*] Hasta un máximo de 600 de daño extra adicional.\n[*] Los efectos de estado que afectan al daño infligido también influyen en el daño extra.\n[*] La estadística de defensa no influye en el daño extra.\n[*] Los efectos de estado que afectan al ataque no influyen en el daño extra.)",
-      "Merma: El objetivo obtiene -480 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: El objetivo obtiene -480 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Éter de hielo I 0.9%\n[*]Éter de hielo II 0.4%\n[*]Éter de hielo III 0.025%\n[*]Éter alfa 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Éter de hielo III 0.025%\n[**]Éter alfa 0.01%\n[*]ÉPICO\n[**]Éter de hielo II 0.4%\n[*]RARO\n[**]Éter de hielo I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Éter de naturaleza I 0.9%\n[*]Éter de naturaleza II 0.4%\n[*]Éter de naturaleza III 0.025%\n[*]Éter alfa 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Éter de naturaleza III 0.025%\n[**]Éter alfa 0.01%\n[*]ÉPICO\n[**]Éter de naturaleza II 0.4%\n[*]RARO\n[**]Éter de naturaleza I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Éter oscuro I 0.9%\n[*]Éter oscuro II 0.4%\n[*]Éter oscuro III 0.025%\n[*]Éter alfa 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Éter oscuro III 0.025%\n[**]Éter alfa 0.01%\n[*]ÉPICO\n[**]Éter oscuro II 0.4%\n[*]RARO\n[**]Éter oscuro I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Éter de fuego I 0.9%\n[*]Éter de fuego II 0.4%\n[*]Éter de fuego III 0.025%\n[*]Éter alfa 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Éter de fuego III 0.025%\n[**]Éter alfa 0.01%\n[*]ÉPICO\n[**]Éter de fuego II 0.4%\n[*]RARO\n[**]Éter de fuego I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Éter sagrado I 0.9%\n[*]Éter sagrado II 0.4%\n[*]Éter sagrado III 0.025%\n[*]Éter alfa 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Éter sagrado III 0.025%\n[**]Éter alfa 0.01%\n[*]ÉPICO\n[**]Éter sagrado II 0.4%\n[*]RARO\n[**]Éter sagrado I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Kit del aventurero 0.5%\n[*]Espada de práctica 0.5%\n[*]Ropa rugosa 0.5%\n[*]Escritos arcanos 0.25%\n[*]Daga 0.25%\n[*]Armadura de cuero 0.25%\n[*]Piedra de afilar 0.25%\n[*]Cuerda fuerte 0.25%\n[*]Escudo de madera 0.25%\n[*]Manual de batalla 0.05%\n[*]Camisa de Chainmail 0.05%\n[*]Funda 0.05%\n[*]Botas altas 0.05%\n[*]Espada oculta 0.03%\n[*]Orbe de la magia 0.03%\n[*]Escudo robusto 0.03%\n[*]Herramientas de trampas 0.03%\n[*]Capa cálida 0.03%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Manual de batalla 0.05%\n[**]Camisa de Chainmail 0.05%\n[**]Funda 0.05%\n[**]Botas altas 0.05%\n[**]Espada oculta 0.03%\n[**]Orbe de la magia 0.03%\n[**]Escudo robusto 0.03%\n[**]Herramientas de trampas 0.03%\n[**]Capa cálida 0.03%\n[*]POCO COMÚN\n[**]Escritos arcanos 0.25%\n[**]Daga 0.25%\n[**]Armadura de cuero 0.25%\n[**]Piedra de afilar 0.25%\n[**]Cuerda fuerte 0.25%\n[**]Escudo de madera 0.25%\n[*]COMÚN\n[**]Kit del aventurero 0.5%\n[**]Espada de práctica 0.5%\n[**]Ropa rugosa 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Botas altas 1.5%\n[*]Brújula 0.2%\n[*]Guantes finos 0.2%\n[*]Espada de Damasco 0.01%\n[*]Tomo de tácticas 0.01%\n[*]Cuerda fuerte 1%\n[*]Manual de batalla 2%\n[*]Camisa de Chainmail 2%\n[*]Capa cálida 0.16%\n[*]Telescopio Farsight 0.06%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]ÉPICO\n[**]Espada de Damasco 0.01%\n[**]Tomo de tácticas 0.01%\n[**]Telescopio Farsight 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Brújula 0.2%\n[**]Guantes finos 0.2%\n[**]Manual de batalla 2%\n[**]Camisa de Chainmail 2%\n[**]Capa cálida 0.16%\n[*]POCO COMÚN\n[**]Cuerda fuerte 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Botas altas 1.5%\n[*]Brújula 0.2%\n[*]Guantes finos 0.2%\n[*]Espada de Damasco 0.01%\n[*]Tomo de tácticas 0.01%\n[*]Cuerda fuerte 1%\n[*]Daga 1%\n[*]Funda 2%\n[*]Escudo robusto 0.16%\n[*]Tónico misterioso 0.06%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]ÉPICO\n[**]Espada de Damasco 0.01%\n[**]Tomo de tácticas 0.01%\n[**]Tónico misterioso 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Brújula 0.2%\n[**]Guantes finos 0.2%\n[**]Funda 2%\n[**]Escudo robusto 0.16%\n[*]POCO COMÚN\n[**]Cuerda fuerte 1%\n[**]Daga 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Botas altas 1.5%\n[*]Brújula 0.2%\n[*]Guantes finos 0.2%\n[*]Espada de Damasco 0.01%\n[*]Tomo de tácticas 0.01%\n[*]Cuerda fuerte 1%\n[*]Daga 1%\n[*]Funda 2%\n[*]Herramientas de trampas 0.16%\n[*]Tabardo real 0.06%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]ÉPICO\n[**]Espada de Damasco 0.01%\n[**]Tomo de tácticas 0.01%\n[**]Tabardo real 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Brújula 0.2%\n[**]Guantes finos 0.2%\n[**]Funda 2%\n[**]Herramientas de trampas 0.16%\n[*]POCO COMÚN\n[**]Cuerda fuerte 1%\n[**]Daga 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Botas altas 1.5%\n[*]Brújula 0.2%\n[*]Guantes finos 0.2%\n[*]Espada de Damasco 0.01%\n[*]Tomo de tácticas 0.01%\n[*]Escritos arcanos 1%\n[*]Camisa de Chainmail 2%\n[*]Espada oculta 0.16%\n[*]Anillos místicos 0.06%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]ÉPICO\n[**]Espada de Damasco 0.01%\n[**]Tomo de tácticas 0.01%\n[**]Anillos místicos 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Brújula 0.2%\n[**]Guantes finos 0.2%\n[**]Camisa de Chainmail 2%\n[**]Espada oculta 0.16%\n[*]POCO COMÚN\n[**]Escritos arcanos 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Botas altas 1.5%\n[*]Brújula 0.2%\n[*]Guantes finos 0.2%\n[*]Espada de Damasco 0.01%\n[*]Tomo de tácticas 0.01%\n[*]Escritos arcanos 1%\n[*]Camisa de Chainmail 2%\n[*]Orbe de la magia 0.16%\n[*]Dardos venenosos 0.06%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]ÉPICO\n[**]Espada de Damasco 0.01%\n[**]Tomo de tácticas 0.01%\n[**]Dardos venenosos 0.06%\n[*]RARO\n[**]Botas altas 1.5%\n[**]Brújula 0.2%\n[**]Guantes finos 0.2%\n[**]Camisa de Chainmail 2%\n[**]Orbe de la magia 0.16%\n[*]POCO COMÚN\n[**]Escritos arcanos 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Emblema del brujo 2.5%\n[*]Emblema maestro del brujo 0.1%\n[*]Emblema del hechicero 2.5%\n[*]Emblema maestro del hechicero 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Emblema maestro del brujo 0.1%\n[**]Emblema maestro del hechicero 0.1%\n[*]ÉPICO\n[**]Emblema del brujo 2.5%\n[**]Emblema del hechicero 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Emblema del paladín 2.5%\n[*]Emblema maestro del paladín 0.1%\n[*]Emblema del druida 2.5%\n[*]Emblema maestro del druida 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Emblema maestro del paladín 0.1%\n[**]Emblema maestro del druida 0.1%\n[*]ÉPICO\n[**]Emblema del paladín 2.5%\n[**]Emblema del druida 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Emblema del guardabosques 2.5%\n[*]Emblema maestro del guardabosques 0.1%\n[*]Emblema del rebelde 2.5%\n[*]Emblema maestro del rebelde 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Emblema maestro del guardabosques 0.1%\n[**]Emblema maestro del rebelde 0.1%\n[*]ÉPICO\n[**]Emblema del guardabosques 2.5%\n[**]Emblema del rebelde 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Emblema del luchador 2.5%\n[*]Emblema maestro del luchador 0.1%\n[*]Emblema del bárbaro 2.5%\n[*]Emblema maestro del bárbaro 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Emblema maestro del luchador 0.1%\n[**]Emblema maestro del bárbaro 0.1%\n[*]ÉPICO\n[**]Emblema del luchador 2.5%\n[**]Emblema del bárbaro 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Emblema del monje 2.5%\n[*]Emblema maestro del monje 0.1%\n[*]Emblema del clérigo 2.5%\n[*]Emblema maestro del clérigo 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Emblema maestro del monje 0.1%\n[**]Emblema maestro del clérigo 0.1%\n[*]ÉPICO\n[**]Emblema del monje 2.5%\n[**]Emblema del clérigo 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrunn 0.5%\n[*]Nightshade 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenneh 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Entrenador de héroes común 0.16%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]POCO COMÚN\n[**]Jill 0.033%\n[**]Jenneh 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]COMÚN\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrunn 0.5%\n[**]Nightshade 0.5%\n[**]Hikaru 0.5%\n[**]Entrenador maestro común 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Paquete diminuto de comida 2.25%\n[*]Paquete pequeño de comida 0.6%\n[*]Paquete mediano de comida 0.1%\n[*]Paquete grande de comida 0.04%\n[*]Paquete gigante de comida 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de comida 0.01%\n[*]ÉPICO\n[**]Paquete grande de comida 0.04%\n[*]RARO\n[**]Paquete mediano de comida 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de comida 0.6%\n[**]Entrenador de héroes poco común 0.1%\n[*]COMÚN\n[**]Paquete diminuto de comida 2.25%\n[**]Entrenador de héroes común 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Paquete diminuto de comida 2.25%\n[*]Paquete pequeño de comida 0.6%\n[*]Paquete mediano de comida 0.1%\n[*]Paquete grande de comida 0.04%\n[*]Paquete gigante de comida 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de comida 0.01%\n[*]ÉPICO\n[**]Paquete grande de comida 0.04%\n[*]RARO\n[**]Paquete mediano de comida 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de comida 0.6%\n[**]Entrenador de héroes poco común 0.1%\n[*]COMÚN\n[**]Paquete diminuto de comida 2.25%\n[**]Entrenador de héroes común 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Paquete diminuto de comida 2.25%\n[*]Paquete pequeño de comida 0.6%\n[*]Paquete mediano de comida 0.1%\n[*]Paquete grande de comida 0.04%\n[*]Paquete gigante de comida 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de comida 0.01%\n[*]ÉPICO\n[**]Paquete grande de comida 0.04%\n[*]RARO\n[**]Paquete mediano de comida 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de comida 0.6%\n[**]Entrenador de héroes poco común 0.1%\n[*]COMÚN\n[**]Paquete diminuto de comida 2.25%\n[**]Entrenador de héroes común 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Paquete diminuto de comida 2.25%\n[*]Paquete pequeño de comida 0.6%\n[*]Paquete mediano de comida 0.1%\n[*]Paquete grande de comida 0.04%\n[*]Paquete gigante de comida 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de comida 0.01%\n[*]ÉPICO\n[**]Paquete grande de comida 0.04%\n[*]RARO\n[**]Paquete mediano de comida 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de comida 0.6%\n[**]Entrenador de héroes poco común 0.1%\n[*]COMÚN\n[**]Paquete diminuto de comida 2.25%\n[**]Entrenador de héroes común 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.1 0.1%\n[*] 0.9 0.9%\n[*]Paquete diminuto de comida 2.25%\n[*]Paquete pequeño de comida 0.6%\n[*]Paquete mediano de comida 0.1%\n[*]Paquete grande de comida 0.04%\n[*]Paquete gigante de comida 0.01%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de comida 0.01%\n[*]ÉPICO\n[**]Paquete grande de comida 0.04%\n[*]RARO\n[**]Paquete mediano de comida 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de comida 0.6%\n[**]Entrenador de héroes poco común 0.1%\n[*]COMÚN\n[**]Paquete diminuto de comida 2.25%\n[**]Entrenador de héroes común 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Paquete diminuto de hierro 2.25%\n[*]Paquete pequeño de hierro 0.6%\n[*]Paquete mediano de hierro 0.1%\n[*]Paquete grande de hierro 0.04%\n[*]Paquete gigante de hierro 0.01%\n[*]Aldeano común 0.4%\n[*]Arqueros de la milicia 0.4%\n[*]Artilleros imperiales 0.4%\n[*]Soldados imperiales 0.1%\n[*]Novatos de la milicia 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de hierro 0.01%\n[*]ÉPICO\n[**]Paquete grande de hierro 0.04%\n[*]RARO\n[**]Paquete mediano de hierro 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de hierro 0.6%\n[**]Soldados imperiales 0.1%\n[**]Novatos de la milicia 0.1%\n[*]COMÚN\n[**]Paquete diminuto de hierro 2.25%\n[**]Aldeano común 0.4%\n[**]Arqueros de la milicia 0.4%\n[**]Artilleros imperiales 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Paquete diminuto de hierro 2.25%\n[*]Paquete pequeño de hierro 0.6%\n[*]Paquete mediano de hierro 0.1%\n[*]Paquete grande de hierro 0.04%\n[*]Paquete gigante de hierro 0.01%\n[*]Aldeano común 0.4%\n[*]Mercenarios rebeldes 0.4%\n[*]Encantadores de Deepwood 0.4%\n[*]Arqueros rebeldes 0.1%\n[*]Luchadores de la aldea 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de hierro 0.01%\n[*]ÉPICO\n[**]Paquete grande de hierro 0.04%\n[*]RARO\n[**]Paquete mediano de hierro 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de hierro 0.6%\n[**]Arqueros rebeldes 0.1%\n[**]Luchadores de la aldea 0.1%\n[*]COMÚN\n[**]Paquete diminuto de hierro 2.25%\n[**]Aldeano común 0.4%\n[**]Mercenarios rebeldes 0.4%\n[**]Encantadores de Deepwood 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Paquete diminuto de hierro 2.25%\n[*]Paquete pequeño de hierro 0.6%\n[*]Paquete mediano de hierro 0.1%\n[*]Paquete grande de hierro 0.04%\n[*]Paquete gigante de hierro 0.01%\n[*]Aldeano común 0.4%\n[*]Luchadores reanimados 0.4%\n[*]Iniciados del gremio 0.4%\n[*]Asesinos del gremio 0.1%\n[*]Artilleros del gremio 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de hierro 0.01%\n[*]ÉPICO\n[**]Paquete grande de hierro 0.04%\n[*]RARO\n[**]Paquete mediano de hierro 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de hierro 0.6%\n[**]Asesinos del gremio 0.1%\n[**]Artilleros del gremio 0.1%\n[*]COMÚN\n[**]Paquete diminuto de hierro 2.25%\n[**]Aldeano común 0.4%\n[**]Luchadores reanimados 0.4%\n[**]Iniciados del gremio 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Paquete diminuto de hierro 2.25%\n[*]Paquete pequeño de hierro 0.6%\n[*]Paquete mediano de hierro 0.1%\n[*]Paquete grande de hierro 0.04%\n[*]Paquete gigante de hierro 0.01%\n[*]Aldeano común 0.4%\n[*]Luchadores bárbaros 0.4%\n[*]Monjes bárbaros 0.4%\n[*]Berserkers bárbaros 0.1%\n[*]Hechiceros incendiarios 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de hierro 0.01%\n[*]ÉPICO\n[**]Paquete grande de hierro 0.04%\n[*]RARO\n[**]Paquete mediano de hierro 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de hierro 0.6%\n[**]Berserkers bárbaros 0.1%\n[**]Hechiceros incendiarios 0.1%\n[*]COMÚN\n[**]Paquete diminuto de hierro 2.25%\n[**]Aldeano común 0.4%\n[**]Luchadores bárbaros 0.4%\n[**]Monjes bárbaros 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Paquete diminuto de hierro 2.25%\n[*]Paquete pequeño de hierro 0.6%\n[*]Paquete mediano de hierro 0.1%\n[*]Paquete grande de hierro 0.04%\n[*]Paquete gigante de hierro 0.01%\n[*]Aldeano común 0.4%\n[*]Mercenarios monásticos 0.4%\n[*]Luchadores devotos 0.4%\n[*]Monjes sublimes 0.1%\n[*]Hechiceros devotos 0.1%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Paquete gigante de hierro 0.01%\n[*]ÉPICO\n[**]Paquete grande de hierro 0.04%\n[*]RARO\n[**]Paquete mediano de hierro 0.1%\n[*]POCO COMÚN\n[**]Paquete pequeño de hierro 0.6%\n[**]Monjes sublimes 0.1%\n[**]Hechiceros devotos 0.1%\n[*]COMÚN\n[**]Paquete diminuto de hierro 2.25%\n[**]Aldeano común 0.4%\n[**]Mercenarios monásticos 0.4%\n[**]Luchadores devotos 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Caparazón de titán 0.58%\n[*]Pico de titán 0.58%\n[*]Colmillo de titán 0.58%\n[*]Huevo de titán 0.41%\n[*]Pluma de titán 0.41%\n[*]Ojo de titán 0.41%\n[*]Columna de titán 0.617%\n[*]Cola de titán 0.617%\n[*]Corazón de titán 0.25%\n[*]Calavera de titán 0.25%\n[*]Huracán 0.25%\n[*]Pesadilla de valquiria 0.25%\n[*]Estandarte de titán 0.25%\n[*]Pergamino de alteración 0.25%\n[*]Arpón gigante 0.25%\n[*]Sigrunn 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Huracán 0.25%\n[**]Pesadilla de valquiria 0.25%\n[**]Estandarte de titán 0.25%\n[**]Pergamino de alteración 0.25%\n[**]Arpón gigante 0.25%\n[*]ÉPICO\n[**]Corazón de titán 0.25%\n[**]Calavera de titán 0.25%\n[*]RARO\n[**]Columna de titán 0.617%\n[**]Cola de titán 0.617%\n[*]POCO COMÚN\n[**]Huevo de titán 0.41%\n[**]Pluma de titán 0.41%\n[**]Ojo de titán 0.41%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMÚN\n[**]Caparazón de titán 0.58%\n[**]Pico de titán 0.58%\n[**]Colmillo de titán 0.58%\n[**]Sigrunn 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Caparazón de titán 0.58%\n[*]Pico de titán 0.58%\n[*]Colmillo de titán 0.58%\n[*]Huevo de titán 0.41%\n[*]Pluma de titán 0.41%\n[*]Ojo de titán 0.41%\n[*]Columna de titán 0.617%\n[*]Cola de titán 0.617%\n[*]Corazón de titán 0.25%\n[*]Calavera de titán 0.25%\n[*]Huracán 0.25%\n[*]Pesadilla de valquiria 0.25%\n[*]Estandarte de titán 0.25%\n[*]Pergamino de alteración 0.25%\n[*]Arpón gigante 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Needler 0.8%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Huracán 0.25%\n[**]Pesadilla de valquiria 0.25%\n[**]Estandarte de titán 0.25%\n[**]Pergamino de alteración 0.25%\n[**]Arpón gigante 0.25%\n[*]ÉPICO\n[**]Corazón de titán 0.25%\n[**]Calavera de titán 0.25%\n[*]RARO\n[**]Columna de titán 0.617%\n[**]Cola de titán 0.617%\n[*]POCO COMÚN\n[**]Huevo de titán 0.41%\n[**]Pluma de titán 0.41%\n[**]Ojo de titán 0.41%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]COMÚN\n[**]Caparazón de titán 0.58%\n[**]Pico de titán 0.58%\n[**]Colmillo de titán 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Caparazón de titán 0.58%\n[*]Pico de titán 0.58%\n[*]Colmillo de titán 0.58%\n[*]Huevo de titán 0.41%\n[*]Pluma de titán 0.41%\n[*]Ojo de titán 0.41%\n[*]Columna de titán 0.617%\n[*]Cola de titán 0.617%\n[*]Corazón de titán 0.25%\n[*]Calavera de titán 0.25%\n[*]Huracán 0.25%\n[*]Pesadilla de valquiria 0.25%\n[*]Estandarte de titán 0.25%\n[*]Pergamino de alteración 0.25%\n[*]Arpón gigante 0.25%\n[*]Nightshade 2%\n[*]Fletcher 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Huracán 0.25%\n[**]Pesadilla de valquiria 0.25%\n[**]Estandarte de titán 0.25%\n[**]Pergamino de alteración 0.25%\n[**]Arpón gigante 0.25%\n[*]ÉPICO\n[**]Corazón de titán 0.25%\n[**]Calavera de titán 0.25%\n[*]RARO\n[**]Columna de titán 0.617%\n[**]Cola de titán 0.617%\n[*]POCO COMÚN\n[**]Huevo de titán 0.41%\n[**]Pluma de titán 0.41%\n[**]Ojo de titán 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]COMÚN\n[**]Caparazón de titán 0.58%\n[**]Pico de titán 0.58%\n[**]Colmillo de titán 0.58%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Caparazón de titán 0.58%\n[*]Pico de titán 0.58%\n[*]Colmillo de titán 0.58%\n[*]Huevo de titán 0.41%\n[*]Pluma de titán 0.41%\n[*]Ojo de titán 0.41%\n[*]Columna de titán 0.617%\n[*]Cola de titán 0.617%\n[*]Corazón de titán 0.25%\n[*]Calavera de titán 0.25%\n[*]Huracán 0.25%\n[*]Pesadilla de valquiria 0.25%\n[*]Estandarte de titán 0.25%\n[*]Pergamino de alteración 0.25%\n[*]Arpón gigante 0.25%\n[*]Sharan 2%\n[*]Tudan 2%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Huracán 0.25%\n[**]Pesadilla de valquiria 0.25%\n[**]Estandarte de titán 0.25%\n[**]Pergamino de alteración 0.25%\n[**]Arpón gigante 0.25%\n[*]ÉPICO\n[**]Corazón de titán 0.25%\n[**]Calavera de titán 0.25%\n[*]RARO\n[**]Columna de titán 0.617%\n[**]Cola de titán 0.617%\n[*]POCO COMÚN\n[**]Huevo de titán 0.41%\n[**]Pluma de titán 0.41%\n[**]Ojo de titán 0.41%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMÚN\n[**]Caparazón de titán 0.58%\n[**]Pico de titán 0.58%\n[**]Colmillo de titán 0.58%\n[**]Sharan 2%\n[**]Tudan 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Caparazón de titán 0.58%\n[*]Pico de titán 0.58%\n[*]Colmillo de titán 0.58%\n[*]Huevo de titán 0.41%\n[*]Pluma de titán 0.41%\n[*]Ojo de titán 0.41%\n[*]Columna de titán 0.617%\n[*]Cola de titán 0.617%\n[*]Corazón de titán 0.25%\n[*]Calavera de titán 0.25%\n[*]Huracán 0.25%\n[*]Pesadilla de valquiria 0.25%\n[*]Estandarte de titán 0.25%\n[*]Pergamino de alteración 0.25%\n[*]Arpón gigante 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]LEGENDARIO\n[**]Huracán 0.25%\n[**]Pesadilla de valquiria 0.25%\n[**]Estandarte de titán 0.25%\n[**]Pergamino de alteración 0.25%\n[**]Arpón gigante 0.25%\n[*]ÉPICO\n[**]Corazón de titán 0.25%\n[**]Calavera de titán 0.25%\n[*]RARO\n[**]Columna de titán 0.617%\n[**]Cola de titán 0.617%\n[*]POCO COMÚN\n[**]Huevo de titán 0.41%\n[**]Pluma de titán 0.41%\n[**]Ojo de titán 0.41%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMÚN\n[**]Caparazón de titán 0.58%\n[**]Pico de titán 0.58%\n[**]Colmillo de titán 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%\n[*] 0.48 0.48%\n[*]Sigrunn 2%\n[*]Brand 2%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Entrenador de héroes raro 0.01%\n[*]POCO COMÚN\n[**]Entrenador de héroes poco común 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMÚN\n[**]Entrenador de héroes común 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Needler 0.8%\n[*] 0.48 0.48%\n[*]Aife 2%\n[*]Derric 2%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Entrenador de héroes raro 0.01%\n[*]POCO COMÚN\n[**]Entrenador de héroes poco común 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]COMÚN\n[**]Entrenador de héroes común 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Layla 0.8%\n[*]Silthus 0.8%\n[*]Julius 0.8%\n[*] 0.48 0.48%\n[*]Nightshade 2%\n[*]Fletcher 2%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Entrenador de héroes raro 0.01%\n[*]POCO COMÚN\n[**]Entrenador de héroes poco común 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]COMÚN\n[**]Entrenador de héroes común 0.48%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%\n[*] 0.48 0.48%\n[*]Sharan 2%\n[*]Tudan 2%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Entrenador de héroes raro 0.01%\n[*]POCO COMÚN\n[**]Entrenador de héroes poco común 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMÚN\n[**]Entrenador de héroes común 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*] 0.01 0.01%\n[*] 0.01 0.01%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%\n[*] 0.48 0.48%\n[*]Hikaru 2%\n[*]Kenjiro 2%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Entrenador de héroes raro 0.01%\n[*]POCO COMÚN\n[**]Entrenador de héroes poco común 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMÚN\n[**]Entrenador de héroes común 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Aldeano común 0.85%\n[*]Arqueros de la milicia 0.85%\n[*]Artilleros imperiales 0.85%\n[*]Soldados imperiales 0.15%\n[*]Novatos de la milicia 0.15%\n[*]Artilleros de élite imperiales 0.05%\n[*]Arqueros devastadores 0.05%\n[*]Caballeros imperiales 0.05%\n[*]Tropa entrenadora 0.85%\n[*]Tropa entrenadora 0.1%\n[*]Tropa entrenadora 0.05%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Artilleros de élite imperiales 0.05%\n[**]Arqueros devastadores 0.05%\n[**]Caballeros imperiales 0.05%\n[**]Tropa entrenadora 0.05%\n[*]POCO COMÚN\n[**]Soldados imperiales 0.15%\n[**]Novatos de la milicia 0.15%\n[**]Tropa entrenadora 0.1%\n[*]COMÚN\n[**]Aldeano común 0.85%\n[**]Arqueros de la milicia 0.85%\n[**]Artilleros imperiales 0.85%\n[**]Tropa entrenadora 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Aldeano común 0.85%\n[*]Mercenarios rebeldes 0.85%\n[*]Encantadores de Deepwood 0.85%\n[*]Arqueros rebeldes 0.15%\n[*]Luchadores de la aldea 0.15%\n[*]Francotiradores rebeldes 0.05%\n[*]Ents de Deepwood 0.05%\n[*]Ilusionistas rebeldes 0.05%\n[*]Tropa entrenadora 0.85%\n[*]Tropa entrenadora 0.1%\n[*]Tropa entrenadora 0.05%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Francotiradores rebeldes 0.05%\n[**]Ents de Deepwood 0.05%\n[**]Ilusionistas rebeldes 0.05%\n[**]Tropa entrenadora 0.05%\n[*]POCO COMÚN\n[**]Arqueros rebeldes 0.15%\n[**]Luchadores de la aldea 0.15%\n[**]Tropa entrenadora 0.1%\n[*]COMÚN\n[**]Aldeano común 0.85%\n[**]Mercenarios rebeldes 0.85%\n[**]Encantadores de Deepwood 0.85%\n[**]Tropa entrenadora 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Aldeano común 0.85%\n[*]Luchadores reanimados 0.85%\n[*]Iniciados del gremio 0.85%\n[*]Asesinos del gremio 0.15%\n[*]Artilleros del gremio 0.15%\n[*]Luchadores reanimados 0.05%\n[*]Caballeros reanimados 0.05%\n[*]Caballeros del gremio 0.05%\n[*]Tropa entrenadora 0.85%\n[*]Tropa entrenadora 0.1%\n[*]Tropa entrenadora 0.05%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Luchadores reanimados 0.05%\n[**]Caballeros reanimados 0.05%\n[**]Caballeros del gremio 0.05%\n[**]Tropa entrenadora 0.05%\n[*]POCO COMÚN\n[**]Asesinos del gremio 0.15%\n[**]Artilleros del gremio 0.15%\n[**]Tropa entrenadora 0.1%\n[*]COMÚN\n[**]Aldeano común 0.85%\n[**]Luchadores reanimados 0.85%\n[**]Iniciados del gremio 0.85%\n[**]Tropa entrenadora 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Aldeano común 0.85%\n[*]Monjes bárbaros 0.85%\n[*]Luchadores bárbaros 0.85%\n[*]Berserkers bárbaros 0.15%\n[*]Hechiceros incendiarios 0.15%\n[*]Maulers bárbaros 0.05%\n[*]Minotauros bárbaros 0.05%\n[*]Magos de batalla incendiarios 0.05%\n[*]Tropa entrenadora 0.85%\n[*]Tropa entrenadora 0.1%\n[*]Tropa entrenadora 0.05%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Maulers bárbaros 0.05%\n[**]Minotauros bárbaros 0.05%\n[**]Magos de batalla incendiarios 0.05%\n[**]Tropa entrenadora 0.05%\n[*]POCO COMÚN\n[**]Berserkers bárbaros 0.15%\n[**]Hechiceros incendiarios 0.15%\n[**]Tropa entrenadora 0.1%\n[*]COMÚN\n[**]Aldeano común 0.85%\n[**]Monjes bárbaros 0.85%\n[**]Luchadores bárbaros 0.85%\n[**]Tropa entrenadora 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Botín de copia",
-     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Aldeano común 0.85%\n[*]Mercenarios monásticos 0.85%\n[*]Luchadores devotos 0.85%\n[*]Monjes sublimes 0.15%\n[*]Hechiceros devotos 0.15%\n[*]Luchadores devotos 0.05%\n[*]Asesinos devotos 0.05%\n[*]Construcción guardián sublime 0.05%\n[*]Tropa entrenadora 0.85%\n[*]Tropa entrenadora 0.1%\n[*]Tropa entrenadora 0.05%"
+     "text": "Cada copia única de tu equipo puede proporcionarte botín extra al completar fases.\n[*]Esta copia otorga la probabilidad de conseguir el siguiente botín extra:\n[*]RARO\n[**]Luchadores devotos 0.05%\n[**]Asesinos devotos 0.05%\n[**]Construcción guardián sublime 0.05%\n[**]Tropa entrenadora 0.05%\n[*]POCO COMÚN\n[**]Monjes sublimes 0.15%\n[**]Hechiceros devotos 0.15%\n[**]Tropa entrenadora 0.1%\n[*]COMÚN\n[**]Aldeano común 0.85%\n[**]Mercenarios monásticos 0.85%\n[**]Luchadores devotos 0.85%\n[**]Tropa entrenadora 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Causa un 600% de daño al objetivo.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "Merma: El objetivo obtiene -350 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo obtiene -350 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Enlace de elemento recupera un 5% de VIT para los aliados de naturaleza durante 6 turnos. Este efecto no se puede descartar."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1100 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1100 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Tras usarse con éxito, tiene un 100% de probabilidad de volver a usar Alas de cuchilla contra un objetivo aleatorio.\n[*] Puede volver a usar la habilidad hasta 3 veces, y la probabilidad de volver a usarla se reduce un -35% después de cada uso con éxito."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Ataca al objetivo con Golpe lunar e inflige hasta 2180 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo con Golpe lunar e inflige hasta 2180 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "El objetivo lanza automáticamente Ataque salvaje cambiante sobre un aliado aleatorio cuando el maná está lleno al comienzo de un turno durante 4 turnos. Al activarse este efecto, cambia al aliado golpeado y se reinicia.",
       "Todos los enemigos reciben -35% de defensa durante 4 turnos."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 700 de daño. Inflige un 20% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar."
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 700 de daño. Inflige un 20% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar."
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1440 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1440 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Durante 3 turnos, reduce el maná del objetivo y los enemigos cercanos un -15% al final del turno.",
       "El objetivo y los enemigos cercanos obtienen un aumento de un -50% en cualquier curación recibida durante 3 turnos."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 860 de daño. Inflige un 30% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 860 de daño. Inflige un 30% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "El objetivo y los enemigos cercanos reciben 900 de daño de veneno durante 5 turnos. El héroe y todos los aliados absorben un 35% del daño de veneno infligido como vitalidad."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Ataca al objetivo con Golpe lunar e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo con Golpe lunar e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Si el ataque derrota al objetivo, los enemigos cercanos no pueden obtener maná durante 3 turnos.",
       "Todos los aliados contraatacan con un 60% del daño recibido durante 3 turnos."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Ataca al objetivo con Golpe lunar e inflige hasta 1020 de daño. Inflige un 30% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo con Golpe lunar e inflige hasta 1020 de daño. Inflige un 30% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Reduce el maná del objetivo en un 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
-      "Ataca a todos los enemigos con Golpe lunar e inflige hasta 2000 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca a todos los enemigos con Golpe lunar e inflige hasta 2000 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Todos los aliados obtienen un 5% de maná por cada demonio destruido. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1620 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1620 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Invoca un secuaz buhoquiria para el héroe y los aliados cercanos con un 25% de VIT y un 45% de ataque heredados del héroe.",
       "Si se derrota al secuaz buhoquiria, se lanza Eliminación completa contra el atacante. (Eliminación completa elimina todos los efectos de estado, acumulaciones y efectos de crecimiento y merma. Elimina incluso los efectos de estado y las acumulaciones que son obstinados y no se pueden descartar o purificar.)",
       "Después de lanzarse Eliminación completa, el atacante cambia a la forma de fantasma del Buhohalla durante 3 turnos. Este efecto es obstinado.\n[*] El objetivo recibe 430 de daño cada turno mientras está en esta forma. (Mientras está en forma fantasma, este personaje no puede obtener maná ni puede curarse con habilidades especiales, pero es inmune a los ataques normales y los de habilidades especiales, así como a las habilidades pasivas, los efectos de estado y las acumulaciones que infligen daño.\n[*] Es inmune a los nuevos efectos de crecimiento, merma y demencia.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.\n[*]No se puede lanzar si solo queda un enemigo en la batalla.\n[*]A los titanes y titanes míticos no les afecta este efecto de estado.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Descarta las bendiciones del objetivo y de los enemigos cercanos.",
-      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1500 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1500 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "El objetivo y los enemigos cercanos son inmunes a las nuevas bendiciones de estado durante 3 turnos."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Ataca a todos los enemigos con Golpe lunar e inflige hasta 1200 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Este ataque no puede fallar.",
+      "Ataca a todos los enemigos con Golpe lunar e inflige hasta 1200 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Todos los enemigos reciben[#Dynamic] 924 [#]de daño de sangrado durante 4 turnos.",
       "Todos los enemigos obtienen un -45% de precisión durante 4 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]x 1 de carga de maná:",
       "[**]Causa un 280% de daño al objetivo.",
       "[**]El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
-      "[**]Crecimiento: Todos los aliados obtienen 120 de ataque y 120 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Crecimiento: Todos los aliados obtienen 120 de ataque y 120 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]x 2 de carga de maná:",
       "[**]Causa un 430% de daño al objetivo.",
       "[**]El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
-      "[**]Crecimiento: Todos los aliados obtienen 210 de ataque y 210 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Crecimiento: Todos los aliados obtienen 210 de ataque y 210 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]x 3 de carga de maná:",
       "[**]Causa un 650% de daño al objetivo.",
       "[**]El ataque se encadena por todos los enemigos adyacentes a cualquier enemigo golpeado.",
-      "[**]Crecimiento: Todos los aliados obtienen 750 de ataque y 750 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "[**]Crecimiento: Todos los aliados obtienen 750 de ataque y 750 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
       "[*]x 1 de carga de maná:",
       "[**]Causa un 450% de daño al objetivo.",
-      "[**]Merma: El objetivo obtiene -200 de ataque y -200 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Merma: El objetivo obtiene -200 de ataque y -200 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]x 2 de carga de maná:",
       "[**]Causa un 600% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "[**]Merma: El objetivo y los enemigos cercanos obtienen -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "[**]Merma: El objetivo y los enemigos cercanos obtienen -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "[*]x 3 de carga de maná:",
       "[**]Inflige un 800% de daño al objetivo y daño menor a los demás enemigos.",
-      "[**]Merma: Todos los enemigos obtienen -650 de ataque y -650 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "[**]Merma: Todos los enemigos obtienen -650 de ataque y -650 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[***]Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[***]Purificar debilita la merma un 50%.\n[***]Descartar debilita el crecimiento un 50%.\n[***]Límites de la modificación de las puntuaciones de habilidad\n[***]Un mínimo del 30% y un máximo del 170% de su valor original.\n[***]Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[***]Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 750 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 750 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 750 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 750 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Causa un 450% de daño al objetivo y a los enemigos cercanos.",
-      "Crecimiento: El héroe y los aliados cercanos obtienen 240 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: El héroe y los aliados cercanos obtienen 240 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El héroe y los aliados cercanos reflejan todos los estados alterados y un 160% de daño al atacante y bloquean otros efectos negativos de las habilidades especiales de fuego de los enemigos durante 4 turnos. Este efecto no se puede descartar. (No se pueden reflejar los efectos de estado aplicados por personajes, secuaces y demonios del mismo bando.)",
       "El héroe recibe el efecto de estado Resurrección viscosa durante 4 turnos. Este efecto no se puede descartar.\n[*] Si cae derrotado mientras el efecto esté activo, renacerá como viscosidad.\n[*]Viscosidad\n[*] 100% de vitalidad heredada.\n[*] 50% de ataque.\n[*] 50% de defensa.\n[*] Habilidad especial: Manotazo viscoso (Causa un 350% de daño al objetivo).\n[*] Este efecto no se puede descartar.\n[*]Si no se derrota a la viscosidad en 2 turnos, renacerá en su forma original y heredará la vitalidad y el maná de la viscosidad."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Recupera un 25% de vitalidad para el héroe y los aliados cercanos.",
       "Aumenta el maná de los aliados cercanos en un 30%. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
-      "Crecimiento: Los aliados cercanos obtienen 360 de ataque y 360 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Crecimiento: Los aliados cercanos obtienen 360 de ataque y 360 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Invoca un megasecuaz viscoso con un 50% de VIT y un 40% de ataque heredados del héroe."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 4000 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 4000 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "Todos los aliados obtienen un 45% de probabilidad de esquivar los ataques y las habilidades especiales durante 5 turnos.",
       "Este personaje recibe una marca de inmolación durante 5 turnos. Cada vez que un enemigo o un aliado reciben daño de quemadura, el héroe obtiene una acumulación (máx.: 10). Cada acumulación aumenta un 7% la regeneración de maná del héroe."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 4400 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 4400 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "Todos los aliados obtienen un 45% de probabilidad de esquivar las habilidades especiales durante 5 turnos. Cada vez que se esquiva una, causa 500 de daño al atacante.",
       "Este personaje recibe una marca de inmolación durante 5 turnos. Cada vez que un enemigo o un aliado reciben daño de quemadura, el héroe obtiene una acumulación (máx.: 10). Cada acumulación aumenta un 7% la regeneración de maná del héroe."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 1500 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 1500 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El daño ignora a los secuaces del objetivo.",
       "Todos los enemigos reciben[#Dynamic] 388 [#]de daño de veneno durante 4 turnos.",
       "Todos los enemigos reciben un 50% más de daño de los estados alterados y las acumulaciones negativas durante 4 turnos."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 1650 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 1650 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El daño ignora a los secuaces del objetivo.",
       "Todos los enemigos reciben[#Dynamic] 408 [#]de daño de veneno durante 4 turnos. El héroe absorbe un 10% del daño de veneno infligido como vitalidad.",
       "Todos los enemigos reciben un 52% más de daño de los estados alterados y las acumulaciones negativas durante 4 turnos."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "El daño ignora a los secuaces del objetivo.",
-      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 1080 de daño. Inflige un 30% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 1080 de daño. Inflige un 30% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El objetivo resiste a los nuevos secuaces durante 4 turnos."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "El daño ignora a los secuaces del objetivo.",
-      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 1180 de daño. Inflige un 30% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo con Golpe de tormenta de fuego e inflige hasta 1180 de daño. Inflige un 30% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El objetivo resiste a los nuevos secuaces durante 4 turnos."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "Cura a todos los aliados un 30% del daño causado.",
       "Todos los aliados contraatacan con un 65% del daño recibido durante 5 turnos."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2600 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2600 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "Potencia la vitalidad de todos los aliados en un 27% del daño causado. La vitalidad potenciada puede exceder la VIT máxima.",
       "Todos los aliados contraatacan con un 75% del daño recibido durante 5 turnos."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2200 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El héroe roba el maná generado de todos los objetivos de menos a más durante 5 turnos hasta que, en el último turno, roba todo el maná generado. Este efecto no se puede purificar, pero se elimina si el héroe cae derrotado.",
       "Al final de cada turno, roba la última bendición descartable de todos los enemigos y las distribuye aleatoriamente entre los aliados durante 5 turnos."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2500 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca a todos los enemigos con Golpe de tormenta de fuego e inflige hasta 2500 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "Reduce el maná de todos los enemigos en un 35%.",
       "Tras lanzarse la habilidad especial, aumenta el maná del héroe en un 15%. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
       "Al final de cada turno, roba la última bendición descartable de todos los enemigos y las distribuye aleatoriamente entre los aliados durante 5 turnos."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Descarta las bendiciones del objetivo y de los enemigos cercanos.",
-      "Ataca al objetivo y los enemigos cercanos con Golpe de tormenta de fuego e inflige hasta 2000 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe de tormenta de fuego e inflige hasta 2000 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El objetivo y los enemigos cercanos son inmunes a las nuevas bendiciones de estado durante 3 turnos."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Descarta las bendiciones del objetivo y de los enemigos cercanos.",
-      "Ataca al objetivo y los enemigos cercanos con Golpe de tormenta de fuego e inflige hasta 2300 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza.",
+      "Ataca al objetivo y los enemigos cercanos con Golpe de tormenta de fuego e inflige hasta 2300 de daño. Inflige un 40% más de daño si el objetivo es del elemento naturaleza. Esta habilidad especial no puede fallar.",
       "El objetivo y los enemigos cercanos son inmunes a las nuevas bendiciones de estado durante 3 turnos."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Causa un 600% de daño a todos los enemigos.",
       "Reduce la vitalidad máxima de todos los enemigos en 800. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 800 adicional.)",
       "Cosecha bendiciones de todos los enemigos.\n[*]La cosecha elimina de forma segura hasta 2 bendiciones, acumulaciones positivas o efectos de crecimiento de cada objetivo. Se incluyen los efectos obstinados, las bendiciones indescartables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de crecimiento se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
-      "Merma: Todos los enemigos obtienen -540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Merma: Todos los enemigos obtienen -540 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Recupera un 50% de vitalidad para el héroe y los aliados cercanos.",
       "Arranca de raíz las mermas del héroe y los aliados cercanos.\n[*]Arrancar de raíz elimina de forma segura hasta 2 mermas, acumulaciones negativas o efectos de merma de cada objetivo. Se incluyen los estados alterados impurificables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones de estado eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de merma se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
-      "Crecimiento: Todos los aliados obtienen 170 de ataque y 170 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Todos los aliados obtienen 170 de ataque y 170 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Todos los enemigos obtienen un aumento de un -80% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar.",
       "Quita el último estado alterado purificable de todos los aliados y lo distribuye aleatoriamente entre los enemigos.",
       "Purifica los estados alterados de todos los aliados al final de cada turno durante 4 turnos."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Inflige un 330% de daño desgarrador a todos los enemigos.\n[*]Inflige un 400% de daño a los enemigos con bendiciones de defensa, secuaces o megasecuaces.\n[*] Los enemigos con bendiciones de defensa, secuaces o megasecuaces reciben un -35% de defensa durante 5 turnos.",
-      "Merma: Todos los enemigos obtienen -300 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: Todos los enemigos obtienen -300 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "Provoca a todos los enemigos durante 4 turnos. Los personajes provocados infligen un 1% de daño a un enemigo aleatorio al final del turno.",
       "Todos los aliados obtienen un 50% de ataque y un 20% más cada vez que son golpeados durante 4 turnos hasta un 150% de ataque."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "Reduce la vitalidad máxima del objetivo en 1600. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 1600 adicional.)",
       "Se silencia al objetivo durante 3 turnos.",
-      "Crecimiento: Los aliados cercanos obtienen 540 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
+      "Crecimiento: Los aliados cercanos obtienen 540 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Causa un 410% de daño al objetivo y a los enemigos cercanos.",
-      "Merma: El objetivo y los enemigos cercanos obtienen -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Los efectos de merma y crecimiento no se pueden descartar ni purificar.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
+      "Merma: El objetivo y los enemigos cercanos obtienen -250 de ataque y -250 de defensa. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
       "El objetivo y los enemigos cercanos reflejan las bendiciones de estado a un personaje aleatorio del equipo contrario durante 3 turnos. (Solo se reflejan las bendiciones descartables.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Engaño a la muerte",
-     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño a un enemigo aleatorio."
+     "text": "La primera vez que este personaje vaya a recibir una cantidad de daño que lo derrotaría de ataques normales o habilidades especiales, en su lugar redirige hasta un 2500 de ese daño al atacante.\n[*]No se activa si este personaje es el único miembro de su equipo en la batalla."
     },
     {
      "id": "ransack_on_other_ally_special",

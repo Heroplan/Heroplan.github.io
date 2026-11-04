@@ -57,7 +57,7 @@
       "This Special Skill never misses its targets.",
       "Deals 495% damage to the target and minor damage to nearby enemies.",
       "Steals all dispellable buffs from the target and nearby enemies and randomly distributes them on allies.",
-      "Growth: The caster and nearby allies get 340 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: The caster and nearby allies get 340 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -658,7 +658,7 @@
      "lines": [
       "Deals 355% damage to all enemies.",
       "The attack bypasses counterattacks and reflection.",
-      "Wither: All enemies get -510 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -510 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "At the end of each turn, the caster shoots an Astral Beam at a random enemy for 4 turns.\n[*]Each Astral Beam deals 300% damage.\n[*]Each Astral Beam reduces the Max Health of the hit enemy by 300. The effect is stronger against targets with boosted health.",
       "(Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 300.)"
      ]
@@ -881,7 +881,7 @@
       "Deals 600% damage to the target.",
       "If the target had more than 50% mana before receiving damage, targets another enemy who had over 50% mana before receiving any damage from this Special Skill. If none of the other enemies had 50% mana, targets a random enemy. The damage is reduced on each consecutive hit. Each enemy can only be hit once.",
       "All hit targets get silenced for 4 turns.",
-      "Wither: All enemies get -300 attack and -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -300 attack and -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -917,7 +917,7 @@
      "id": "astral_pastries",
      "lines": [
       "Boosts health of the caster and nearby allies by 350. Boosted health can exceed max HP.",
-      "Growth: The caster and nearby allies get 60 attack and 60 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: The caster and nearby allies get 60 attack and 60 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -989,7 +989,7 @@
      "id": "twilight_star_strike",
      "lines": [
       "Deals 400% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -420 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -420 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies receive 25% increased damage for 3 turns. The effect is increased by 10% for each Minion or Mega Minion owned by all enemies, up to 85% in total."
      ]
     }
@@ -1028,7 +1028,7 @@
       "Deals 600% damage to the target.",
       "If the target has buffs and is hit, targets another enemy with buffs. If none of the other enemies have buffs, targets a random enemy. The damage is reduced on each consecutive hit. Each enemy can only be hit once.",
       "Safely dispels 1 buff from all enemies. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]The latest buffs are dispelled first.)",
-      "Wither: All enemies get -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1065,7 +1065,7 @@
      "lines": [
       "Deals 850% damage to the target.",
       "For 5 turns, the target receives 100% of all damage dealt to their allies.",
-      "Growth: All allies get 660 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 660 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies get 35% mana generation for 5 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -1104,7 +1104,7 @@
       "Deals 530% damage to the target.",
       "The attack chains through all the enemies who are adjacent to any hit enemy.",
       "All hit targets receive 50% increased damage for 5 turns. The effect is increased by 10% for each Minion or Mega Minion owned by all enemies, up to 100% in total.",
-      "Wither: All enemies get -540 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -540 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1214,7 +1214,7 @@
      "id": "lunar_bloom",
      "lines": [
       "Recovers 30% health for all allies.",
-      "Growth: All allies get 300 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 300 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Boosts health of all allies by 450 after 3 turns, or immediately if the effect is removed before the duration ends. Boosted health can exceed max HP."
      ]
     }
@@ -1290,7 +1290,7 @@
      "lines": [
       "Deals 450% damage to the target and nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 792 [#]Water damage over 4 turns. All allies absorb 50% of dealt Water damage as boosted health.",
-      "Growth: All allies get 240 attack and 240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 240 attack and 240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1365,7 +1365,7 @@
      "lines": [
       "Deals 450% damage to all enemies.",
       "All enemies receive[#Dynamic] 785 [#]Burn damage over 5 turns. All allies absorb 25% of dealt Burn damage as boosted health.",
-      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -1401,7 +1401,7 @@
      "id": "power_of_the_void",
      "lines": [
       "Deals 470% damage to all enemies.",
-      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -420 attack and -420 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies get -35% mana generation for 5 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -3084,7 +3084,7 @@
       "Destroys all Fiends from all allies and damages all Mega Fiends.",
       "Cleanses status ailments from all allies.",
       "Boosts health of all allies by 1550. Boosted health can exceed max HP.",
-      "Growth: All allies get 480 attack and 480 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 480 attack and 480 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -3827,12 +3827,12 @@
      "lines": [
       "Less than 40 Humility:",
       "[*]Deals 265% damage to the enemies on the edges of the enemy formation. If there is only one enemy, the damage is doubled.",
-      "[*]Wither: Enemies on the edges of the enemy formation get -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Wither and Growth can't be removed with dispels or cleanses.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
+      "[*]Wither: Enemies on the edges of the enemy formation get -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Cleansing weakens Wither by 50%.\n[**]Dispelling weakens Growth by 50%.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
       "[*]Dispels buffs from the enemies on the edges of the enemy formation.",
       "40 or more Humility:",
       "[*]Safely dispels buffs from the enemies on the edges of the enemy formation. (Safe dispel bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.)",
       "[*]Deals 360% damage to the enemies on the edges of the enemy formation. If there is only one enemy, the damage is doubled.",
-      "[*]Wither: Enemies on the edges of the enemy formation get -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Wither and Growth can't be removed with dispels or cleanses.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)"
+      "[*]Wither: Enemies on the edges of the enemy formation get -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Cleansing weakens Wither by 50%.\n[**]Dispelling weakens Growth by 50%.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -4129,12 +4129,12 @@
       "Less than 60 Humility:",
       "[*]Recovers 25% health for all allies.",
       "[*]Cleanses 1 status ailment from all allies. (Status ailments are cleansed in the order they have been received. The latest status ailments are cleansed first.)",
-      "[*]Growth: All allies get 180 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Wither and Growth can't be removed with dispels or cleanses.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
+      "[*]Growth: All allies get 180 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Cleansing weakens Wither by 50%.\n[**]Dispelling weakens Growth by 50%.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
       "[*]All allies regenerate 1005 HP over 3 turns.",
       "60 or more Humility:",
       "[*]Recovers 32% health for all allies.",
       "[*]Cleanses status ailments from all allies.",
-      "[*]Growth: All allies get 240 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Wither and Growth can't be removed with dispels or cleanses.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
+      "[*]Growth: All allies get 240 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[**]Additional Wither and Growth effects modify the Ability Scores further.\n[**]Cleansing weakens Wither by 50%.\n[**]Dispelling weakens Growth by 50%.\n[**]Limits for modified Ability Scores.\n[**]Min 30% and max 170% of their original values.\n[**]Other buffs and debuffs are applied to modified Ability Scores.\n[**]This effect is less effective when activated by monsters and bosses.)",
       "[*]All allies regenerate 1440 HP over 3 turns.",
       "[*]The caster gets 84% defense against Special Skills for 3 turns."
      ]
@@ -8632,7 +8632,7 @@
      "lines": [
       "Deals 420% damage to the enemy with the highest remaining HP. Deals 300% damage to all other enemies.",
       "The enemy that had the highest remaining HP gets silenced for 3 turns.",
-      "Wither: All enemies get -350 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -350 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -19424,7 +19424,7 @@
      "lines": [
       "Destroys all Minions from all enemies and damages Mega Minions.",
       "Deals 355% damage to all enemies.",
-      "Wither: All enemies get -510 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -510 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies receive[#Dynamic] 129 [#]-[#Dynamic] 317 [#]increasing Curse damage each turn for 4 turns. This effect is Stubborn. (On the first turn,[#Dynamic] 129 [#]damage is dealt. The damage increases by 35% each turn, up to[#Dynamic] 317 [#]damage per turn.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
@@ -19450,7 +19450,7 @@
      "id": "poisonous_mist",
      "lines": [
       "Deals 355% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -225 attack and -225 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -225 attack and -225 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies reflect status effect buffs to a random character on the opposing team for 3 turns. (Only dispellable buffs are reflected.)"
      ]
     }
@@ -19550,7 +19550,7 @@
      "id": "hammer_thump",
      "lines": [
       "Deals 200% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -40 attack and -40 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -40 attack and -40 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies get -35% defense for 3 turns. If the effect is removed before the duration ends, the target with the effect suffers[#Dynamic] 124 [#]damage."
      ]
     }
@@ -19581,7 +19581,7 @@
      "id": "candle_thump",
      "lines": [
       "Deals 210% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -45 attack and -45 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -45 attack and -45 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All damage the target and nearby enemies receive is increased by 40% for 3 turns."
      ]
     }
@@ -19607,7 +19607,7 @@
      "id": "the_eagles_blessing_mayhem",
      "lines": [
       "Recovers 25% health for all allies.",
-      "Growth: All allies get 215 attack and 215 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 215 attack and 215 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies have 50% chance to deal 270% damage to a random enemy after any subsequent allied Special Skill is cast for 3 turns. (Each character can trigger this effect once per turn.)"
      ]
     }
@@ -19638,7 +19638,7 @@
      "id": "the_eagles_enchantment_mayhem",
      "lines": [
       "All allies regenerate 1200 boosted health over 3 turns. Boosted health can exceed max HP.",
-      "Growth: All allies get 240 attack and 240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 240 attack and 240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies have 50% chance to deal 280% damage to a random enemy after any subsequent allied Special Skill is cast for 3 turns. (Each character can trigger this effect once per turn.)"
      ]
     }
@@ -19665,7 +19665,7 @@
      "lines": [
       "Steals all dispellable buffs from the target and randomly distributes them on allies.",
       "Deals 375% damage to the target.\n[*]Deals additional 50% damage per transferred status effect buff, up to 625% damage in total.",
-      "Wither: The target gets -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: The target gets -300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -19696,7 +19696,7 @@
      "lines": [
       "Steals all dispellable buffs from the target and randomly distributes them on allies.",
       "Deals 400% damage to the target.\n[*]Deals additional 50% damage per transferred status effect buff, up to 650% damage in total.",
-      "Wither: The target gets -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target gets -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target is immune to new status effect buffs for 2 turns."
      ]
     }
@@ -19843,7 +19843,7 @@
      "id": "shady_concerto",
      "lines": [
       "Deals 240% damage to all enemies.",
-      "Wither: All enemies get -200 attack and -200 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -200 attack and -200 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies get -30% mana generation for 3 turns. If the effect is removed before the duration ends, the mana of the target with the effect is reduced by -5% mana. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -19869,7 +19869,7 @@
      "id": "magic_mirror_of_power",
      "lines": [
       "Recovers 38% health for all allies.",
-      "Growth: All allies get 100 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 100 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies reflect status ailments to a random character on the opposing team for 3 turns. (Only cleansable status ailments are reflected.)"
      ]
     }
@@ -19900,7 +19900,7 @@
      "id": "magic_perfume_of_power",
      "lines": [
       "All allies regenerate 1080 HP over 3 turns.",
-      "Growth: All allies get 110 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 110 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Lifts the latest cleansable status ailment from all allies and randomly distributes them on enemies.",
       "All allies reflect status ailments to a random character on the opposing team for 3 turns. (Only cleansable status ailments are reflected.)"
      ]
@@ -19927,7 +19927,7 @@
      "id": "spirits_of_the_mountain",
      "lines": [
       "Recovers 54% health for all allies.",
-      "Growth: All allies get 450 attack and 450 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 450 attack and 450 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All allies get 30% mana generation for 4 turns. If the effect is removed before the duration ends, the ally with the effect gets 10% mana. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
     }
@@ -19955,7 +19955,7 @@
       "Activation chance for each effect:",
       "[*]Exquisite Food: 45%",
       "[**]Recovers 50% health for all allies.",
-      "[**]Growth: All allies get 400 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Growth: All allies get 400 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]Rotten Food: 45%",
       "[**]Deals 350% damage to all enemies.",
       "[**]All enemies receive[#Dynamic] 965 [#]Poison damage over 5 turns.",
@@ -19992,7 +19992,7 @@
       "Activation chance for each effect:",
       "[*]Exquisite Food: 45%",
       "[**]Boosts health of all allies by 1800. Boosted health can exceed max HP.",
-      "[**]Growth: All allies get 700 attack and 700 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Growth: All allies get 700 attack and 700 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]Rotten Food: 45%",
       "[**]Deals 550% damage to all enemies.",
       "[**]All enemies receive Corrosive Poison for 5 turns. The Corrosive Poison deals[#Dynamic] 378 [#]Poison damage and lowers the target's mana generation by -10% each turn. Deals extra damage against heroes with Minions or a Mega Minion. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)",
@@ -20021,7 +20021,7 @@
     {
      "id": "flute_of_enchantment",
      "lines": [
-      "Growth: All allies get 355 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 355 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a Spotted Boar Mega Minion with 65% HP and 260% attack inherited from the caster.",
       "When summoned, the Spotted Boar Mega Minion gives its owner immunity to buff dispels and reallocations for as long as the owner has a Spotted Boar Mega Minion. (The immunity also includes this effect itself.\n[*] Also includes Ransack.)"
      ]
@@ -20216,7 +20216,7 @@
      "id": "chords_of_havoc",
      "lines": [
       "Deals 470% damage to the target and minor damage to nearby enemies.",
-      "Growth: The caster and nearby allies get 250 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: The caster and nearby allies get 250 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies get -35% defense for 3 turns. If the effect is removed before the duration ends, the target with the effect suffers[#Dynamic] 577 [#]damage."
      ]
     }
@@ -20266,7 +20266,7 @@
     {
      "id": "goblin_explosives",
      "lines": [
-      "Wither: The target gets -330 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target gets -330 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a Goblin Explosive Fiend for the target and nearby enemies. The Fiend damages the enemy with 195% attack every turn.\n[*]The Goblin Explosive Fiend absorbs healing and disappears when it has absorbed health equal to 20% of its owner's max health.",
       "When the Goblin Explosive Fiend disappears after it has absorbed enough healing, the owner receives[#Dynamic] 1269 [#]Burn damage over 3 turns."
      ]
@@ -20293,7 +20293,7 @@
      "id": "boar_of_fury",
      "lines": [
       "Deals 365% damage to all enemies.",
-      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a White Boar Mega Minion with 65% HP and 250% attack inherited from the caster.",
       "When summoned, the White Boar Mega Minion gives its owner the ability to counterattack with 100% of the damage received for as long as the owner has a White Boar Mega Minion. This effect can't be dispelled."
      ]
@@ -20319,7 +20319,7 @@
     {
      "id": "goblin_serenade",
      "lines": [
-      "Wither: All enemies get -350 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -350 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Reduces max health of all enemies by 700. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 700.)",
       "All enemies get -45% defense against Special Skills for 4 turns."
      ]
@@ -20350,7 +20350,7 @@
     {
      "id": "goblin_bribe",
      "lines": [
-      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Reduces max health of all enemies by 800. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 800.)",
       "All enemies get -50% defense against Special Skills for 4 turns. If the effect is removed before the duration ends, the target with the effect suffers 800 damage."
      ]
@@ -20379,7 +20379,7 @@
       "The target and nearby enemies can't revive their allies or themselves for 5 turns.",
       "The target and nearby enemies can't receive new status effects that would resurrect them for 5 turns.",
       "Deals 530% damage to the target and minor damage to nearby enemies.",
-      "Wither: The target and nearby enemies get -455 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: The target and nearby enemies get -455 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -22494,7 +22494,7 @@
     {
      "id": "bounty_of_the_spring",
      "lines": [
-      "Growth: All allies get 150 attack and 150 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: All allies get 150 attack and 150 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a Carrot Minion for each ally with 25% HP inherited from the caster.",
       "When summoned, the Carrot Minion gives 20% mana generation for its owner for as long as the owner has Carrot Minions. This effect can't be dispelled. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)",
       "Element Link gives all Holy allies 40% defense against Special Skills for 4 turns. This effect can't be dispelled."
@@ -23775,7 +23775,7 @@
     {
      "id": "mutated_specimen_mayhem",
      "lines": [
-      "Growth: The caster and nearby allies get 540 attack and 540 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: The caster and nearby allies get 540 attack and 540 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons an Aberration Mega Minion with 45% HP and 180% attack inherited from the caster.\n[*]Each hit from an Aberration Mega Minion gives the target the following status ailment:",
       "[**]The target receives[#Dynamic] 552 [#]Toxin damage over 3 turns. Damage is increased against targets with boosted health, Minions or a Mega Minion. (The Toxin damage is increased by 100% against targets with boosted health.\n[***]The Toxin damage is increased by 33% per Minion or Mega Minion owned by target.\n[***]Maximum increased damage is 199%.)",
       "[**]Inflicts 10 Insanity on the target.",
@@ -23872,7 +23872,7 @@
      "id": "staff_of_domination_mayhem",
      "lines": [
       "All enemies succumb to Fear for 5 turns. (The target gets -40% defense.\n[*] Removes all dispellable buffs and Growth effects when a Fear status effect is added.\n[*] The target cannot gain new buffs or Growth effects for the duration.\n[*] Target with Fear deals 250% damage to random ally each time any other ally casts their Special Skill. Each character can trigger this effect once per turn.)",
-      "Wither: All enemies get -480 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -480 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Deals 420% damage to all enemies and inflicts 25 Insanity on them.",
       "Casting this Special Skill inflicts 45 Insanity on the caster.",
       "(Insanity adds a chance of reversing the targeting of a Special Skill.\n[*] When Insanity activates, Special Skills that target enemies will target allies instead, and vice versa.\n[*] Special Skills aimed at the caster will be cast on a random target. Special Skills aimed at a target will be cast on the caster.\n[*] When Insanity activates, Passive Skills and Troop Abilities that grant extra effects on cast won't activate.\n[*] Reaching 100 Insanity automatically casts a Special Skill when mana is full.\n[*] Insanity cannot be dispelled or cleansed.\n[*] Hero's Insanity can be lowered by 10 each time a direct heal is attempted by Special Skills, Assist Skills, Items or Shields. Direct heals from Special Skills lower Insanity only once per cast.\n[*] All other healing lowers Insanity by 1.\n[*] Insanity is completely removed when a reversed Special Skill is cast.)"
@@ -24640,7 +24640,7 @@
      "id": "slash_and_burn_mayhem",
      "lines": [
       "Deals 270% damage to all enemies.",
-      "Wither: All enemies get -240 attack and -240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -240 attack and -240 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies receive[#Dynamic] 405 [#]Burn damage over 3 turns. The caster absorbs 50% of dealt Burn damage as boosted health. Against Ice characters, this status effect becomes uncleansable and lasts 2 turns longer."
      ]
     }
@@ -27548,7 +27548,7 @@
      "lines": [
       "Destroys all Fiends from all allies and damages all Mega Fiends.",
       "Recovers 65% health for the ally with the lowest remaining HP. All other allies recover 45% health.",
-      "Growth: All allies get 300 attack and 300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 300 attack and 300 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -28665,7 +28665,7 @@
      "lines": [
       "Deals 600% damage to the target.",
       "Growth Boon: Deals 2x extra damage for each point of modified attack. (Extra damage is based on the modified attack on caster when damage is dealt.\n[*]Up to maximum 600 additional extra damage.\n[*]Status effects affecting damage dealt do affect the extra damage.\n[*]Defense stat does not affect the extra damage.\n[*]Status effects affecting attack stat do not affect the extra damage.)",
-      "Wither: The target gets -500 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target gets -500 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target receives[#Dynamic] 1068 [#]Sand damage over 3 turns."
      ]
     }
@@ -28892,7 +28892,7 @@
       "This Special Skill never misses its targets.",
       "Deals 500% damage to the target.",
       "Growth Boon: Deals 2x extra damage for each point of modified attack. (Extra damage is based on the modified attack on caster when damage is dealt.\n[*]Up to maximum 600 additional extra damage.\n[*]Status effects affecting damage dealt do affect the extra damage.\n[*]Defense stat does not affect the extra damage.\n[*]Status effects affecting attack stat do not affect the extra damage.)",
-      "Wither: The target gets -480 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: The target gets -480 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -29946,7 +29946,7 @@
     {
      "id": "mimic_aether_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Ice Aether I 0.9%\n[*]Ice Aether II 0.4%\n[*]Ice Aether III 0.025%\n[*]Alpha Aether 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Ice Aether III 0.025%\n[**]Alpha Aether 0.01%\n[*]EPIC\n[**]Ice Aether II 0.4%\n[*]RARE\n[**]Ice Aether I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -29976,7 +29976,7 @@
     {
      "id": "mimic_aether_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Nature Aether I 0.9%\n[*]Nature Aether II 0.4%\n[*]Nature Aether III 0.025%\n[*]Alpha Aether 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Nature Aether III 0.025%\n[**]Alpha Aether 0.01%\n[*]EPIC\n[**]Nature Aether II 0.4%\n[*]RARE\n[**]Nature Aether I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30006,7 +30006,7 @@
     {
      "id": "mimic_aether_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Dark Aether I 0.9%\n[*]Dark Aether II 0.4%\n[*]Dark Aether III 0.025%\n[*]Alpha Aether 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Dark Aether III 0.025%\n[**]Alpha Aether 0.01%\n[*]EPIC\n[**]Dark Aether II 0.4%\n[*]RARE\n[**]Dark Aether I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30036,7 +30036,7 @@
     {
      "id": "mimic_aether_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Fire Aether I 0.9%\n[*]Fire Aether II 0.4%\n[*]Fire Aether III 0.025%\n[*]Alpha Aether 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Fire Aether III 0.025%\n[**]Alpha Aether 0.01%\n[*]EPIC\n[**]Fire Aether II 0.4%\n[*]RARE\n[**]Fire Aether I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30066,7 +30066,7 @@
     {
      "id": "mimic_aether_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Holy Aether I 0.9%\n[*]Holy Aether II 0.4%\n[*]Holy Aether III 0.025%\n[*]Alpha Aether 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Holy Aether III 0.025%\n[**]Alpha Aether 0.01%\n[*]EPIC\n[**]Holy Aether II 0.4%\n[*]RARE\n[**]Holy Aether I 0.9%"
     },
     {
      "id": "never_miss_special",
@@ -30096,7 +30096,7 @@
     {
      "id": "mimic_ascension_epic_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Adventurer's Kit 0.5%\n[*]Practice Sword 0.5%\n[*]Rugged Clothes 0.5%\n[*]Arcane Scripts 0.25%\n[*]Dagger 0.25%\n[*]Leather Armor 0.25%\n[*]Sharpening Stone 0.25%\n[*]Strong Rope 0.25%\n[*]Wooden Shield 0.25%\n[*]Battle Manual 0.05%\n[*]Chainmail Shirt 0.05%\n[*]Scabbard 0.05%\n[*]Tall Boots 0.05%\n[*]Hidden Blade 0.03%\n[*]Orb of Magic 0.03%\n[*]Sturdy Shield 0.03%\n[*]Trap Tools 0.03%\n[*]Warm Cape 0.03%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Battle Manual 0.05%\n[**]Chainmail Shirt 0.05%\n[**]Scabbard 0.05%\n[**]Tall Boots 0.05%\n[**]Hidden Blade 0.03%\n[**]Orb of Magic 0.03%\n[**]Sturdy Shield 0.03%\n[**]Trap Tools 0.03%\n[**]Warm Cape 0.03%\n[*]UNCOMMON\n[**]Arcane Scripts 0.25%\n[**]Dagger 0.25%\n[**]Leather Armor 0.25%\n[**]Sharpening Stone 0.25%\n[**]Strong Rope 0.25%\n[**]Wooden Shield 0.25%\n[*]COMMON\n[**]Adventurer's Kit 0.5%\n[**]Practice Sword 0.5%\n[**]Rugged Clothes 0.5%"
     },
     {
      "id": "never_miss_special",
@@ -30125,7 +30125,7 @@
     {
      "id": "mimic_ascension_item_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Tall Boots 1.5%\n[*]Compass 0.2%\n[*]Fine Gloves 0.2%\n[*]Damascus Blade 0.01%\n[*]Tome of Tactics 0.01%\n[*]Strong Rope 1%\n[*]Battle Manual 2%\n[*]Chainmail Shirt 2%\n[*]Warm Cape 0.16%\n[*]Farsight Telescope 0.06%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]EPIC\n[**]Damascus Blade 0.01%\n[**]Tome of Tactics 0.01%\n[**]Farsight Telescope 0.06%\n[*]RARE\n[**]Tall Boots 1.5%\n[**]Compass 0.2%\n[**]Fine Gloves 0.2%\n[**]Battle Manual 2%\n[**]Chainmail Shirt 2%\n[**]Warm Cape 0.16%\n[*]UNCOMMON\n[**]Strong Rope 1%"
     },
     {
      "id": "never_miss_special",
@@ -30155,7 +30155,7 @@
     {
      "id": "mimic_ascension_item_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Tall Boots 1.5%\n[*]Compass 0.2%\n[*]Fine Gloves 0.2%\n[*]Damascus Blade 0.01%\n[*]Tome of Tactics 0.01%\n[*]Strong Rope 1%\n[*]Dagger 1%\n[*]Scabbard 2%\n[*]Sturdy Shield 0.16%\n[*]Mysterious Tonic 0.06%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]EPIC\n[**]Damascus Blade 0.01%\n[**]Tome of Tactics 0.01%\n[**]Mysterious Tonic 0.06%\n[*]RARE\n[**]Tall Boots 1.5%\n[**]Compass 0.2%\n[**]Fine Gloves 0.2%\n[**]Scabbard 2%\n[**]Sturdy Shield 0.16%\n[*]UNCOMMON\n[**]Strong Rope 1%\n[**]Dagger 1%"
     },
     {
      "id": "never_miss_special",
@@ -30185,7 +30185,7 @@
     {
      "id": "mimic_ascension_item_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Tall Boots 1.5%\n[*]Compass 0.2%\n[*]Fine Gloves 0.2%\n[*]Damascus Blade 0.01%\n[*]Tome of Tactics 0.01%\n[*]Strong Rope 1%\n[*]Dagger 1%\n[*]Scabbard 2%\n[*]Trap Tools 0.16%\n[*]Royal Tabard 0.06%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]EPIC\n[**]Damascus Blade 0.01%\n[**]Tome of Tactics 0.01%\n[**]Royal Tabard 0.06%\n[*]RARE\n[**]Tall Boots 1.5%\n[**]Compass 0.2%\n[**]Fine Gloves 0.2%\n[**]Scabbard 2%\n[**]Trap Tools 0.16%\n[*]UNCOMMON\n[**]Strong Rope 1%\n[**]Dagger 1%"
     },
     {
      "id": "never_miss_special",
@@ -30215,7 +30215,7 @@
     {
      "id": "mimic_ascension_item_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Tall Boots 1.5%\n[*]Compass 0.2%\n[*]Fine Gloves 0.2%\n[*]Damascus Blade 0.01%\n[*]Tome of Tactics 0.01%\n[*]Arcane Scripts 1%\n[*]Chainmail Shirt 2%\n[*]Hidden Blade 0.16%\n[*]Mystic Rings 0.06%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]EPIC\n[**]Damascus Blade 0.01%\n[**]Tome of Tactics 0.01%\n[**]Mystic Rings 0.06%\n[*]RARE\n[**]Tall Boots 1.5%\n[**]Compass 0.2%\n[**]Fine Gloves 0.2%\n[**]Chainmail Shirt 2%\n[**]Hidden Blade 0.16%\n[*]UNCOMMON\n[**]Arcane Scripts 1%"
     },
     {
      "id": "never_miss_special",
@@ -30245,7 +30245,7 @@
     {
      "id": "mimic_ascension_item_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Tall Boots 1.5%\n[*]Compass 0.2%\n[*]Fine Gloves 0.2%\n[*]Damascus Blade 0.01%\n[*]Tome of Tactics 0.01%\n[*]Arcane Scripts 1%\n[*]Chainmail Shirt 2%\n[*]Orb of Magic 0.16%\n[*]Poison Darts 0.06%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]EPIC\n[**]Damascus Blade 0.01%\n[**]Tome of Tactics 0.01%\n[**]Poison Darts 0.06%\n[*]RARE\n[**]Tall Boots 1.5%\n[**]Compass 0.2%\n[**]Fine Gloves 0.2%\n[**]Chainmail Shirt 2%\n[**]Orb of Magic 0.16%\n[*]UNCOMMON\n[**]Arcane Scripts 1%"
     },
     {
      "id": "never_miss_special",
@@ -30275,7 +30275,7 @@
     {
      "id": "mimic_emblem_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Wizard Emblem 2.5%\n[*]Master Wizard Emblem 0.1%\n[*]Sorcerer Emblem 2.5%\n[*]Master Sorcerer Emblem 0.1%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Master Wizard Emblem 0.1%\n[**]Master Sorcerer Emblem 0.1%\n[*]EPIC\n[**]Wizard Emblem 2.5%\n[**]Sorcerer Emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30305,7 +30305,7 @@
     {
      "id": "mimic_emblem_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Paladin Emblem 2.5%\n[*]Master Paladin Emblem 0.1%\n[*]Druid Emblem 2.5%\n[*]Master Druid Emblem 0.1%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Master Paladin Emblem 0.1%\n[**]Master Druid Emblem 0.1%\n[*]EPIC\n[**]Paladin Emblem 2.5%\n[**]Druid Emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30335,7 +30335,7 @@
     {
      "id": "mimic_emblem_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Ranger Emblem 2.5%\n[*]Master Ranger Emblem 0.1%\n[*]Rogue Emblem 2.5%\n[*]Master Rogue Emblem 0.1%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Master Ranger Emblem 0.1%\n[**]Master Rogue Emblem 0.1%\n[*]EPIC\n[**]Ranger Emblem 2.5%\n[**]Rogue Emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30365,7 +30365,7 @@
     {
      "id": "mimic_emblem_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Fighter Emblem 2.5%\n[*]Master Fighter Emblem 0.1%\n[*]Barbarian Emblem 2.5%\n[*]Master Barbarian Emblem 0.1%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Master Fighter Emblem 0.1%\n[**]Master Barbarian Emblem 0.1%\n[*]EPIC\n[**]Fighter Emblem 2.5%\n[**]Barbarian Emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30395,7 +30395,7 @@
     {
      "id": "mimic_emblem_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Monk Emblem 2.5%\n[*]Master Monk Emblem 0.1%\n[*]Cleric Emblem 2.5%\n[*]Master Cleric Emblem 0.1%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Master Monk Emblem 0.1%\n[**]Master Cleric Emblem 0.1%\n[*]EPIC\n[**]Monk Emblem 2.5%\n[**]Cleric Emblem 2.5%"
     },
     {
      "id": "never_miss_special",
@@ -30425,7 +30425,7 @@
     {
      "id": "mimic_experience_rare_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Sharan 0.5%\n[*]Aife 0.5%\n[*]Sigrunn 0.5%\n[*]Nightshade 0.5%\n[*]Hikaru 0.5%\n[*]Jill 0.033%\n[*]Jenneh 0.033%\n[*]Toril 0.033%\n[*]Julius 0.033%\n[*]Sha Ji 0.033%\n[*]Common Trainer Hero 0.16%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]UNCOMMON\n[**]Jill 0.033%\n[**]Jenneh 0.033%\n[**]Toril 0.033%\n[**]Julius 0.033%\n[**]Sha Ji 0.033%\n[*]COMMON\n[**]Sharan 0.5%\n[**]Aife 0.5%\n[**]Sigrunn 0.5%\n[**]Nightshade 0.5%\n[**]Hikaru 0.5%\n[**]Common Master Trainer 0.16%"
     },
     {
      "id": "never_miss_special",
@@ -30459,7 +30459,7 @@
     {
      "id": "mimic_food_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Ice Trainer Hero 0.1%\n[*]Common:\n[**]Ice Trainer Hero 0.9%\n[*]Tiny Food Bundle 2.25%\n[*]Small Food Bundle 0.6%\n[*]Medium Food Bundle 0.1%\n[*]Large Food Bundle 0.04%\n[*]Giant Food Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Food Bundle 0.01%\n[*]EPIC\n[**]Large Food Bundle 0.04%\n[*]RARE\n[**]Medium Food Bundle 0.1%\n[*]UNCOMMON\n[**]Small Food Bundle 0.6%\n[**]Ice Trainer Hero 0.1%\n[*]COMMON\n[**]Tiny Food Bundle 2.25%\n[**]Ice Trainer Hero 0.9%"
     }
    ],
    "skills": [
@@ -30489,7 +30489,7 @@
     {
      "id": "mimic_food_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Nature Trainer Hero 0.1%\n[*]Common:\n[**]Nature Trainer Hero 0.9%\n[*]Tiny Food Bundle 2.25%\n[*]Small Food Bundle 0.6%\n[*]Medium Food Bundle 0.1%\n[*]Large Food Bundle 0.04%\n[*]Giant Food Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Food Bundle 0.01%\n[*]EPIC\n[**]Large Food Bundle 0.04%\n[*]RARE\n[**]Medium Food Bundle 0.1%\n[*]UNCOMMON\n[**]Small Food Bundle 0.6%\n[**]Nature Trainer Hero 0.1%\n[*]COMMON\n[**]Tiny Food Bundle 2.25%\n[**]Nature Trainer Hero 0.9%"
     }
    ],
    "skills": [
@@ -30519,7 +30519,7 @@
     {
      "id": "mimic_food_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Dark Trainer Hero 0.1%\n[*]Common:\n[**]Dark Trainer Hero 0.9%\n[*]Tiny Food Bundle 2.25%\n[*]Small Food Bundle 0.6%\n[*]Medium Food Bundle 0.1%\n[*]Large Food Bundle 0.04%\n[*]Giant Food Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Food Bundle 0.01%\n[*]EPIC\n[**]Large Food Bundle 0.04%\n[*]RARE\n[**]Medium Food Bundle 0.1%\n[*]UNCOMMON\n[**]Small Food Bundle 0.6%\n[**]Dark Trainer Hero 0.1%\n[*]COMMON\n[**]Tiny Food Bundle 2.25%\n[**]Dark Trainer Hero 0.9%"
     }
    ],
    "skills": [
@@ -30549,7 +30549,7 @@
     {
      "id": "mimic_food_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Fire Trainer Hero 0.1%\n[*]Common:\n[**]Fire Trainer Hero 0.9%\n[*]Tiny Food Bundle 2.25%\n[*]Small Food Bundle 0.6%\n[*]Medium Food Bundle 0.1%\n[*]Large Food Bundle 0.04%\n[*]Giant Food Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Food Bundle 0.01%\n[*]EPIC\n[**]Large Food Bundle 0.04%\n[*]RARE\n[**]Medium Food Bundle 0.1%\n[*]UNCOMMON\n[**]Small Food Bundle 0.6%\n[**]Fire Trainer Hero 0.1%\n[*]COMMON\n[**]Tiny Food Bundle 2.25%\n[**]Fire Trainer Hero 0.9%"
     }
    ],
    "skills": [
@@ -30579,7 +30579,7 @@
     {
      "id": "mimic_food_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Holy Trainer Hero 0.1%\n[*]Common:\n[**]Holy Trainer Hero 0.9%\n[*]Tiny Food Bundle 2.25%\n[*]Small Food Bundle 0.6%\n[*]Medium Food Bundle 0.1%\n[*]Large Food Bundle 0.04%\n[*]Giant Food Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Food Bundle 0.01%\n[*]EPIC\n[**]Large Food Bundle 0.04%\n[*]RARE\n[**]Medium Food Bundle 0.1%\n[*]UNCOMMON\n[**]Small Food Bundle 0.6%\n[**]Holy Trainer Hero 0.1%\n[*]COMMON\n[**]Tiny Food Bundle 2.25%\n[**]Holy Trainer Hero 0.9%"
     }
    ],
    "skills": [
@@ -30609,7 +30609,7 @@
     {
      "id": "mimic_iron_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Imperial Soldiers 0.1%\n[**]Militia Rookies 0.1%\n[*]Common:\n[**]Common Villagers 0.4%\n[**]Militia Archers 0.4%\n[**]Imperial Strikers 0.4%\n[*]Tiny Iron Bundle 2.25%\n[*]Small Iron Bundle 0.6%\n[*]Medium Iron Bundle 0.1%\n[*]Large Iron Bundle 0.04%\n[*]Giant Iron Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Iron Bundle 0.01%\n[*]EPIC\n[**]Large Iron Bundle 0.04%\n[*]RARE\n[**]Medium Iron Bundle 0.1%\n[*]UNCOMMON\n[**]Small Iron Bundle 0.6%\n[**]Imperial Soldiers 0.1%\n[**]Militia Rookies 0.1%\n[*]COMMON\n[**]Tiny Iron Bundle 2.25%\n[**]Common Villagers 0.4%\n[**]Militia Archers 0.4%\n[**]Imperial Strikers 0.4%"
     }
    ],
    "skills": [
@@ -30639,7 +30639,7 @@
     {
      "id": "mimic_iron_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Rebel Archers 0.1%\n[**]Village Fighters 0.1%\n[*]Common:\n[**]Common Villagers 0.4%\n[**]Rebel Rogues 0.4%\n[**]Deepwood Enchanters 0.4%\n[*]Tiny Iron Bundle 2.25%\n[*]Small Iron Bundle 0.6%\n[*]Medium Iron Bundle 0.1%\n[*]Large Iron Bundle 0.04%\n[*]Giant Iron Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Iron Bundle 0.01%\n[*]EPIC\n[**]Large Iron Bundle 0.04%\n[*]RARE\n[**]Medium Iron Bundle 0.1%\n[*]UNCOMMON\n[**]Small Iron Bundle 0.6%\n[**]Rebel Archers 0.1%\n[**]Village Fighters 0.1%\n[*]COMMON\n[**]Tiny Iron Bundle 2.25%\n[**]Common Villagers 0.4%\n[**]Rebel Rogues 0.4%\n[**]Deepwood Enchanters 0.4%"
     }
    ],
    "skills": [
@@ -30669,7 +30669,7 @@
     {
      "id": "mimic_iron_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Guild Assassins 0.1%\n[**]Guild Strikers 0.1%\n[*]Common:\n[**]Common Villagers 0.4%\n[**]Reanimated Fighters 0.4%\n[**]Guild Initiates 0.4%\n[*]Tiny Iron Bundle 2.25%\n[*]Small Iron Bundle 0.6%\n[*]Medium Iron Bundle 0.1%\n[*]Large Iron Bundle 0.04%\n[*]Giant Iron Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Iron Bundle 0.01%\n[*]EPIC\n[**]Large Iron Bundle 0.04%\n[*]RARE\n[**]Medium Iron Bundle 0.1%\n[*]UNCOMMON\n[**]Small Iron Bundle 0.6%\n[**]Guild Assassins 0.1%\n[**]Guild Strikers 0.1%\n[*]COMMON\n[**]Tiny Iron Bundle 2.25%\n[**]Common Villagers 0.4%\n[**]Reanimated Fighters 0.4%\n[**]Guild Initiates 0.4%"
     }
    ],
    "skills": [
@@ -30699,7 +30699,7 @@
     {
      "id": "mimic_iron_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Barbaric Berserkers 0.1%\n[**]Firecaller Wizards 0.1%\n[*]Common:\n[**]Common Villagers 0.4%\n[**]Barbaric Fighters 0.4%\n[**]Barbaric Monks 0.4%\n[*]Tiny Iron Bundle 2.25%\n[*]Small Iron Bundle 0.6%\n[*]Medium Iron Bundle 0.1%\n[*]Large Iron Bundle 0.04%\n[*]Giant Iron Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Iron Bundle 0.01%\n[*]EPIC\n[**]Large Iron Bundle 0.04%\n[*]RARE\n[**]Medium Iron Bundle 0.1%\n[*]UNCOMMON\n[**]Small Iron Bundle 0.6%\n[**]Barbaric Berserkers 0.1%\n[**]Firecaller Wizards 0.1%\n[*]COMMON\n[**]Tiny Iron Bundle 2.25%\n[**]Common Villagers 0.4%\n[**]Barbaric Fighters 0.4%\n[**]Barbaric Monks 0.4%"
     }
    ],
    "skills": [
@@ -30729,7 +30729,7 @@
     {
      "id": "mimic_iron_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Uncommon:\n[**]Exalted Monks 0.1%\n[**]Devout Wizards 0.1%\n[*]Common:\n[**]Common Villagers 0.4%\n[**]Monastic Rogues 0.4%\n[**]Devout Fighters 0.4%\n[*]Tiny Iron Bundle 2.25%\n[*]Small Iron Bundle 0.6%\n[*]Medium Iron Bundle 0.1%\n[*]Large Iron Bundle 0.04%\n[*]Giant Iron Bundle 0.01%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Giant Iron Bundle 0.01%\n[*]EPIC\n[**]Large Iron Bundle 0.04%\n[*]RARE\n[**]Medium Iron Bundle 0.1%\n[*]UNCOMMON\n[**]Small Iron Bundle 0.6%\n[**]Exalted Monks 0.1%\n[**]Devout Wizards 0.1%\n[*]COMMON\n[**]Tiny Iron Bundle 2.25%\n[**]Common Villagers 0.4%\n[**]Monastic Rogues 0.4%\n[**]Devout Fighters 0.4%"
     }
    ],
    "skills": [
@@ -30759,7 +30759,7 @@
     {
      "id": "mimic_titanpart_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Titan Shell 0.58%\n[*]Titan Beak 0.58%\n[*]Titan Fang 0.58%\n[*]Titan Egg 0.41%\n[*]Titan Plume 0.41%\n[*]Titan Eye 0.41%\n[*]Titan Spine 0.617%\n[*]Titan Tail 0.617%\n[*]Titan Heart 0.25%\n[*]Titan Skull 0.25%\n[*]Hurricane 0.25%\n[*]Valkyrie's Bane 0.25%\n[*]Titan Banner 0.25%\n[*]Scroll of Alteration 0.25%\n[*]Giant Harpoon 0.25%\n[*]Sigrunn 2%\n[*]Brand 2%\n[*]Toril 0.8%\n[*]Ragnhild 0.8%\n[*]Olaf 0.8%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Hurricane 0.25%\n[**]Valkyrie's Bane 0.25%\n[**]Titan Banner 0.25%\n[**]Scroll of Alteration 0.25%\n[**]Giant Harpoon 0.25%\n[*]EPIC\n[**]Titan Heart 0.25%\n[**]Titan Skull 0.25%\n[*]RARE\n[**]Titan Spine 0.617%\n[**]Titan Tail 0.617%\n[*]UNCOMMON\n[**]Titan Egg 0.41%\n[**]Titan Plume 0.41%\n[**]Titan Eye 0.41%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMMON\n[**]Titan Shell 0.58%\n[**]Titan Beak 0.58%\n[**]Titan Fang 0.58%\n[**]Sigrunn 2%\n[**]Brand 2%"
     }
    ],
    "skills": [
@@ -30789,7 +30789,7 @@
     {
      "id": "mimic_titanpart_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Titan Shell 0.58%\n[*]Titan Beak 0.58%\n[*]Titan Fang 0.58%\n[*]Titan Egg 0.41%\n[*]Titan Plume 0.41%\n[*]Titan Eye 0.41%\n[*]Titan Spine 0.617%\n[*]Titan Tail 0.617%\n[*]Titan Heart 0.25%\n[*]Titan Skull 0.25%\n[*]Hurricane 0.25%\n[*]Valkyrie's Bane 0.25%\n[*]Titan Banner 0.25%\n[*]Scroll of Alteration 0.25%\n[*]Giant Harpoon 0.25%\n[*]Aife 2%\n[*]Derric 2%\n[*]Jenneh 0.8%\n[*]Brogan 0.8%\n[*]Needler 0.8%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Hurricane 0.25%\n[**]Valkyrie's Bane 0.25%\n[**]Titan Banner 0.25%\n[**]Scroll of Alteration 0.25%\n[**]Giant Harpoon 0.25%\n[*]EPIC\n[**]Titan Heart 0.25%\n[**]Titan Skull 0.25%\n[*]RARE\n[**]Titan Spine 0.617%\n[**]Titan Tail 0.617%\n[*]UNCOMMON\n[**]Titan Egg 0.41%\n[**]Titan Plume 0.41%\n[**]Titan Eye 0.41%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]COMMON\n[**]Titan Shell 0.58%\n[**]Titan Beak 0.58%\n[**]Titan Fang 0.58%\n[**]Aife 2%\n[**]Derric 2%"
     }
    ],
    "skills": [
@@ -30819,7 +30819,7 @@
     {
      "id": "mimic_titanpart_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Titan Shell 0.58%\n[*]Titan Beak 0.58%\n[*]Titan Fang 0.58%\n[*]Titan Egg 0.41%\n[*]Titan Plume 0.41%\n[*]Titan Eye 0.41%\n[*]Titan Spine 0.617%\n[*]Titan Tail 0.617%\n[*]Titan Heart 0.25%\n[*]Titan Skull 0.25%\n[*]Hurricane 0.25%\n[*]Valkyrie's Bane 0.25%\n[*]Titan Banner 0.25%\n[*]Scroll of Alteration 0.25%\n[*]Giant Harpoon 0.25%\n[*]Nightshade 2%\n[*]Fletcher 2%\n[*]Julius 0.8%\n[*]Layla 0.8%\n[*]Silthus 0.8%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Hurricane 0.25%\n[**]Valkyrie's Bane 0.25%\n[**]Titan Banner 0.25%\n[**]Scroll of Alteration 0.25%\n[**]Giant Harpoon 0.25%\n[*]EPIC\n[**]Titan Heart 0.25%\n[**]Titan Skull 0.25%\n[*]RARE\n[**]Titan Spine 0.617%\n[**]Titan Tail 0.617%\n[*]UNCOMMON\n[**]Titan Egg 0.41%\n[**]Titan Plume 0.41%\n[**]Titan Eye 0.41%\n[**]Julius 0.8%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[*]COMMON\n[**]Titan Shell 0.58%\n[**]Titan Beak 0.58%\n[**]Titan Fang 0.58%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     }
    ],
    "skills": [
@@ -30849,7 +30849,7 @@
     {
      "id": "mimic_titanpart_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Titan Shell 0.58%\n[*]Titan Beak 0.58%\n[*]Titan Fang 0.58%\n[*]Titan Egg 0.41%\n[*]Titan Plume 0.41%\n[*]Titan Eye 0.41%\n[*]Titan Spine 0.617%\n[*]Titan Tail 0.617%\n[*]Titan Heart 0.25%\n[*]Titan Skull 0.25%\n[*]Hurricane 0.25%\n[*]Valkyrie's Bane 0.25%\n[*]Titan Banner 0.25%\n[*]Scroll of Alteration 0.25%\n[*]Giant Harpoon 0.25%\n[*]Sharan 2%\n[*]Tudan 2%\n[*]Jill 0.8%\n[*]Shaarkot 0.8%\n[*]Zudak 0.8%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Hurricane 0.25%\n[**]Valkyrie's Bane 0.25%\n[**]Titan Banner 0.25%\n[**]Scroll of Alteration 0.25%\n[**]Giant Harpoon 0.25%\n[*]EPIC\n[**]Titan Heart 0.25%\n[**]Titan Skull 0.25%\n[*]RARE\n[**]Titan Spine 0.617%\n[**]Titan Tail 0.617%\n[*]UNCOMMON\n[**]Titan Egg 0.41%\n[**]Titan Plume 0.41%\n[**]Titan Eye 0.41%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMMON\n[**]Titan Shell 0.58%\n[**]Titan Beak 0.58%\n[**]Titan Fang 0.58%\n[**]Sharan 2%\n[**]Tudan 2%"
     }
    ],
    "skills": [
@@ -30879,7 +30879,7 @@
     {
      "id": "mimic_titanpart_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Titan Shell 0.58%\n[*]Titan Beak 0.58%\n[*]Titan Fang 0.58%\n[*]Titan Egg 0.41%\n[*]Titan Plume 0.41%\n[*]Titan Eye 0.41%\n[*]Titan Spine 0.617%\n[*]Titan Tail 0.617%\n[*]Titan Heart 0.25%\n[*]Titan Skull 0.25%\n[*]Hurricane 0.25%\n[*]Valkyrie's Bane 0.25%\n[*]Titan Banner 0.25%\n[*]Scroll of Alteration 0.25%\n[*]Giant Harpoon 0.25%\n[*]Hikaru 2%\n[*]Kenjiro 2%\n[*]Hou 0.8%\n[*]Sha Ji 0.8%\n[*]Nash 0.8%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]LEGENDARY\n[**]Hurricane 0.25%\n[**]Valkyrie's Bane 0.25%\n[**]Titan Banner 0.25%\n[**]Scroll of Alteration 0.25%\n[**]Giant Harpoon 0.25%\n[*]EPIC\n[**]Titan Heart 0.25%\n[**]Titan Skull 0.25%\n[*]RARE\n[**]Titan Spine 0.617%\n[**]Titan Tail 0.617%\n[*]UNCOMMON\n[**]Titan Egg 0.41%\n[**]Titan Plume 0.41%\n[**]Titan Eye 0.41%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMMON\n[**]Titan Shell 0.58%\n[**]Titan Beak 0.58%\n[**]Titan Fang 0.58%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     }
    ],
    "skills": [
@@ -30904,7 +30904,7 @@
     {
      "id": "mimic_training_hero_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Ice Trainer Hero 0.01%\n[*]Uncommon:\n[**]Ice Trainer Hero 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]Common:\n[**]Ice Trainer Hero 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Ice Trainer Hero 0.01%\n[*]UNCOMMON\n[**]Ice Trainer Hero 0.01%\n[**]Toril 0.8%\n[**]Ragnhild 0.8%\n[**]Olaf 0.8%\n[*]COMMON\n[**]Ice Trainer Hero 0.48%\n[**]Sigrunn 2%\n[**]Brand 2%"
     },
     {
      "id": "never_miss_special",
@@ -30934,7 +30934,7 @@
     {
      "id": "mimic_training_hero_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Nature Trainer Hero 0.01%\n[*]Uncommon:\n[**]Nature Trainer Hero 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]Common:\n[**]Nature Trainer Hero 0.48%\n[**]Aife 2%\n[**]Derric 2%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Nature Trainer Hero 0.01%\n[*]UNCOMMON\n[**]Nature Trainer Hero 0.01%\n[**]Jenneh 0.8%\n[**]Brogan 0.8%\n[**]Needler 0.8%\n[*]COMMON\n[**]Nature Trainer Hero 0.48%\n[**]Aife 2%\n[**]Derric 2%"
     },
     {
      "id": "never_miss_special",
@@ -30964,7 +30964,7 @@
     {
      "id": "mimic_training_hero_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Dark Trainer Hero 0.01%\n[*]Uncommon:\n[**]Dark Trainer Hero 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]Common:\n[**]Dark Trainer Hero 0.48%\n[**]Nightshade 2%\n[**]Fletcher 2%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Dark Trainer Hero 0.01%\n[*]UNCOMMON\n[**]Dark Trainer Hero 0.01%\n[**]Layla 0.8%\n[**]Silthus 0.8%\n[**]Julius 0.8%\n[*]COMMON\n[**]Dark Trainer Hero 0.48%\n[**]Nightshade 2%\n[**]Fletcher 2%"
     },
     {
      "id": "never_miss_special",
@@ -30994,7 +30994,7 @@
     {
      "id": "mimic_training_hero_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Fire Trainer Hero 0.01%\n[*]Uncommon:\n[**]Fire Trainer Hero 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]Common:\n[**]Fire Trainer Hero 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Fire Trainer Hero 0.01%\n[*]UNCOMMON\n[**]Fire Trainer Hero 0.01%\n[**]Jill 0.8%\n[**]Shaarkot 0.8%\n[**]Zudak 0.8%\n[*]COMMON\n[**]Fire Trainer Hero 0.48%\n[**]Sharan 2%\n[**]Tudan 2%"
     },
     {
      "id": "never_miss_special",
@@ -31024,7 +31024,7 @@
     {
      "id": "mimic_training_hero_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Holy Trainer Hero 0.01%\n[*]Uncommon:\n[**]Holy Trainer Hero 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]Common:\n[**]Holy Trainer Hero 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Holy Trainer Hero 0.01%\n[*]UNCOMMON\n[**]Holy Trainer Hero 0.01%\n[**]Hou 0.8%\n[**]Sha Ji 0.8%\n[**]Nash 0.8%\n[*]COMMON\n[**]Holy Trainer Hero 0.48%\n[**]Hikaru 2%\n[**]Kenjiro 2%"
     },
     {
      "id": "never_miss_special",
@@ -31054,7 +31054,7 @@
     {
      "id": "mimic_troop_blue",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Imperial Elite Strikers 0.05%\n[**]Ravager Archers 0.05%\n[**]Imperial Knights 0.05%\n[**]Trainer Troop 0.05%\n[*]Uncommon:\n[**]Imperial Soldiers 0.15%\n[**]Militia Rookies 0.15%\n[**]Trainer Troop 0.1%\n[*]Common:\n[**]Common Villagers 0.85%\n[**]Militia Archers 0.85%\n[**]Imperial Strikers 0.85%\n[**]Trainer Troop 0.85%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Imperial Elite Strikers 0.05%\n[**]Ravager Archers 0.05%\n[**]Imperial Knights 0.05%\n[**]Trainer Troop 0.05%\n[*]UNCOMMON\n[**]Imperial Soldiers 0.15%\n[**]Militia Rookies 0.15%\n[**]Trainer Troop 0.1%\n[*]COMMON\n[**]Common Villagers 0.85%\n[**]Militia Archers 0.85%\n[**]Imperial Strikers 0.85%\n[**]Trainer Troop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31084,7 +31084,7 @@
     {
      "id": "mimic_troop_green",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Rebel Sharpshooters 0.05%\n[**]Deepwood Ents 0.05%\n[**]Rebel Illusionists 0.05%\n[**]Trainer Troop 0.05%\n[*]Uncommon:\n[**]Rebel Archers 0.15%\n[**]Village Fighters 0.15%\n[**]Trainer Troop 0.1%\n[*]Common:\n[**]Common Villagers 0.85%\n[**]Rebel Rogues 0.85%\n[**]Deepwood Enchanters 0.85%\n[**]Trainer Troop 0.85%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Rebel Sharpshooters 0.05%\n[**]Deepwood Ents 0.05%\n[**]Rebel Illusionists 0.05%\n[**]Trainer Troop 0.05%\n[*]UNCOMMON\n[**]Rebel Archers 0.15%\n[**]Village Fighters 0.15%\n[**]Trainer Troop 0.1%\n[*]COMMON\n[**]Common Villagers 0.85%\n[**]Rebel Rogues 0.85%\n[**]Deepwood Enchanters 0.85%\n[**]Trainer Troop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31114,7 +31114,7 @@
     {
      "id": "mimic_troop_purple",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Epic:\n[**]Reanimated Knights 0.05%\n[*]Rare:\n[**]Reanimated Fighters 0.05%\n[**]Guild Knights 0.05%\n[**]Trainer Troop 0.05%\n[*]Uncommon:\n[**]Guild Assassins 0.15%\n[**]Guild Strikers 0.15%\n[**]Trainer Troop 0.1%\n[*]Common:\n[**]Common Villagers 0.85%\n[**]Reanimated Fighters 0.85%\n[**]Guild Initiates 0.85%\n[**]Trainer Troop 0.85%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Reanimated Fighters 0.05%\n[**]Reanimated Knights 0.05%\n[**]Guild Knights 0.05%\n[**]Trainer Troop 0.05%\n[*]UNCOMMON\n[**]Guild Assassins 0.15%\n[**]Guild Strikers 0.15%\n[**]Trainer Troop 0.1%\n[*]COMMON\n[**]Common Villagers 0.85%\n[**]Reanimated Fighters 0.85%\n[**]Guild Initiates 0.85%\n[**]Trainer Troop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31144,7 +31144,7 @@
     {
      "id": "mimic_troop_red",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Barbaric Maulers 0.05%\n[**]Barbaric Minotaurs 0.05%\n[**]Firecaller Battlemages 0.05%\n[**]Trainer Troop 0.05%\n[*]Uncommon:\n[**]Barbaric Berserkers 0.15%\n[**]Firecaller Wizards 0.15%\n[**]Trainer Troop 0.1%\n[*]Common:\n[**]Common Villagers 0.85%\n[**]Barbaric Monks 0.85%\n[**]Barbaric Fighters 0.85%\n[**]Trainer Troop 0.85%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Barbaric Maulers 0.05%\n[**]Barbaric Minotaurs 0.05%\n[**]Firecaller Battlemages 0.05%\n[**]Trainer Troop 0.05%\n[*]UNCOMMON\n[**]Barbaric Berserkers 0.15%\n[**]Firecaller Wizards 0.15%\n[**]Trainer Troop 0.1%\n[*]COMMON\n[**]Common Villagers 0.85%\n[**]Barbaric Monks 0.85%\n[**]Barbaric Fighters 0.85%\n[**]Trainer Troop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -31174,7 +31174,7 @@
     {
      "id": "mimic_troop_yellow",
      "title": "Mimic Loot",
-     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]Rare:\n[**]Devout Battlers 0.05%\n[**]Devout Assassins 0.05%\n[**]Exalted Guardian Constructs 0.05%\n[**]Trainer Troop 0.05%\n[*]Uncommon:\n[**]Exalted Monks 0.15%\n[**]Devout Wizards 0.15%\n[**]Trainer Troop 0.1%\n[*]Common:\n[**]Common Villagers 0.85%\n[**]Monastic Rogues 0.85%\n[**]Devout Fighters 0.85%\n[**]Trainer Troop 0.85%"
+     "text": "Each unique Mimic on your team can give you extra loot when completing stages.\n[*]This Mimic grants a chance for the following extra loot:\n[*]RARE\n[**]Devout Battlers 0.05%\n[**]Devout Assassins 0.05%\n[**]Exalted Guardian Constructs 0.05%\n[**]Trainer Troop 0.05%\n[*]UNCOMMON\n[**]Exalted Monks 0.15%\n[**]Devout Wizards 0.15%\n[**]Trainer Troop 0.1%\n[*]COMMON\n[**]Common Villagers 0.85%\n[**]Monastic Rogues 0.85%\n[**]Devout Fighters 0.85%\n[**]Trainer Troop 0.85%"
     },
     {
      "id": "never_miss_special",
@@ -33866,7 +33866,7 @@
      "lines": [
       "Deals 600% damage to the target.",
       "The attack bypasses defensive buffs. (This includes counterattacks.)",
-      "Wither: The target gets -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target gets -350 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Element Link recovers 5% health for all Nature allies for 6 turns. This effect can't be dispelled."
      ]
     }
@@ -40235,7 +40235,7 @@
     {
      "id": "blade_wings",
      "lines": [
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1100 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1100 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "After a successful cast, has a 100% chance to recast Blade Wings on a random target.\n[*]Can recast up to 3 times and the chance to recast is reduced by -35% after every successful cast."
      ]
     }
@@ -40260,7 +40260,7 @@
     {
      "id": "song_of_hoot_and_holler",
      "lines": [
-      "Attacks the target with Moonrise Strike, dealing up to 2180 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target with Moonrise Strike, dealing up to 2180 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "The target automatically casts Shifting Mindless Attack on a random ally when mana is full at the start of a turn during 4 turns. When this effect is triggered, it shifts to the hit ally and the duration is refreshed.",
       "All enemies get -35% defense for 4 turns."
      ]
@@ -40286,7 +40286,7 @@
     {
      "id": "jack_of_owl_trades",
      "lines": [
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 700 damage. Deals 20% more damage if the target is of the Holy element."
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 700 damage. Deals 20% more damage if the target is of the Holy element. This Special Skill never misses its targets."
      ]
     }
    ]
@@ -40310,7 +40310,7 @@
     {
      "id": "royal_assault",
      "lines": [
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1440 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1440 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "For 3 turns, reduces the mana of the target and nearby enemies by -15% at the end of the turn.",
       "The target and nearby enemies get -50% increase for any healing received for 3 turns."
      ]
@@ -40336,7 +40336,7 @@
     {
      "id": "scroll_of_spite",
      "lines": [
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 860 damage. Deals 30% more damage if the target is of the Holy element.",
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 860 damage. Deals 30% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "The target and nearby enemies receive 900 Poison damage over 5 turns. The caster and all allies absorb 35% of dealt Poison damage as health."
      ]
     }
@@ -40389,7 +40389,7 @@
     {
      "id": "battleclaw_strike",
      "lines": [
-      "Attacks the target with Moonrise Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target with Moonrise Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "If the target is defeated by the attack, then nearby enemies can't gain mana for 3 turns.",
       "All allies counterattack with 60% of the damage received for 3 turns."
      ]
@@ -40442,7 +40442,7 @@
     {
      "id": "ill_fated_experiment",
      "lines": [
-      "Attacks the target with Moonrise Strike, dealing up to 1020 damage. Deals 30% more damage if the target is of the Holy element.",
+      "Attacks the target with Moonrise Strike, dealing up to 1020 damage. Deals 30% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "Reduces the mana of the target by 10%."
      ]
     }
@@ -40468,7 +40468,7 @@
      "id": "poleaxe_of_the_law",
      "lines": [
       "Destroys all Fiends from all allies and damages all Mega Fiends.",
-      "Attacks all enemies with Moonrise Strike, dealing up to 2000 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks all enemies with Moonrise Strike, dealing up to 2000 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "All allies get 5% mana for each destroyed Fiend. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)"
      ]
     }
@@ -40520,7 +40520,7 @@
     {
      "id": "vengeance_of_owlhalla_mayhem",
      "lines": [
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1620 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1620 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "Summons Owlkyrie Minion for the caster and nearby allies. The Minion inherits 25% HP and 45% attack from the caster.",
       "If the Owlkyrie Minion is defeated, Full Removal is cast on the attacker. (Full Removal removes all status effects, stacks and Growth and Wither effects. Removes even status effects and stacks that are otherwise Stubborn, undispellable or uncleansable.)",
       "After the Full Removal is cast, the attacker shifts into Owlhalla Ghost form for 3 turns. This effect is Stubborn.\n[*] While in Owlhalla Ghost form the target receives 430 damage each turn. (While in a Ghost form, character can't gain mana and can't be healed by Special Skills, but is immune to normal attacks, Special Skill attacks, damage dealing passives, status effects and stacks.\n[*] Immune to new Growth, Wither and Insanity effects.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.\n[*]Can't be cast if there's only one enemy left in battle.\n[*]Titans and Mythic Titans are not affected by this status effect.)"
@@ -40575,7 +40575,7 @@
      "id": "for_queen_and_hollow",
      "lines": [
       "Dispels buffs from the target and nearby enemies.",
-      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1500 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1500 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "The target and nearby enemies are immune to new status effect buffs for 3 turns."
      ]
     }
@@ -40600,7 +40600,7 @@
     {
      "id": "swooping_talon",
      "lines": [
-      "Attacks all enemies with Moonrise Strike, dealing up to 1200 damage. Deals 40% more damage if the target is of the Holy element.",
+      "Attacks all enemies with Moonrise Strike, dealing up to 1200 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "All enemies receive[#Dynamic] 924 [#]Bleed damage over 4 turns.",
       "All enemies get -45% accuracy for 4 turns. (Chance to miss also applies to offensive Special Skills.)"
      ]
@@ -41542,15 +41542,15 @@
       "[*]x 1 Mana Charge:",
       "[**]Deals 280% damage to the target.",
       "[**]The attack chains through all the enemies who are adjacent to any hit enemy.",
-      "[**]Growth: All allies get 120 attack and 120 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Growth: All allies get 120 attack and 120 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]x 2 Mana Charge:",
       "[**]Deals 430% damage to the target.",
       "[**]The attack chains through all the enemies who are adjacent to any hit enemy.",
-      "[**]Growth: All allies get 210 attack and 210 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Growth: All allies get 210 attack and 210 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]x 3 Mana Charge:",
       "[**]Deals 650% damage to the target.",
       "[**]The attack chains through all the enemies who are adjacent to any hit enemy.",
-      "[**]Growth: All allies get 750 attack and 750 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)"
+      "[**]Growth: All allies get 750 attack and 750 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -41681,13 +41681,13 @@
       "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
       "[*]x 1 Mana Charge:",
       "[**]Deals 450% damage to the target.",
-      "[**]Wither: The target gets -200 attack and -200 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Wither: The target gets -200 attack and -200 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]x 2 Mana Charge:",
       "[**]Deals 600% damage to the target and minor damage to nearby enemies.",
-      "[**]Wither: The target and nearby enemies get -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
+      "[**]Wither: The target and nearby enemies get -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)",
       "[*]x 3 Mana Charge:",
       "[**]Deals 800% damage to the target and minor damage to all other enemies.",
-      "[**]Wither: All enemies get -650 attack and -650 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Wither and Growth can't be removed with dispels or cleanses.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)"
+      "[**]Wither: All enemies get -650 attack and -650 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[***]Additional Wither and Growth effects modify the Ability Scores further.\n[***]Cleansing weakens Wither by 50%.\n[***]Dispelling weakens Growth by 50%.\n[***]Limits for modified Ability Scores.\n[***]Min 30% and max 170% of their original values.\n[***]Other buffs and debuffs are applied to modified Ability Scores.\n[***]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -49885,7 +49885,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49918,7 +49918,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 750 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 750 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -49949,7 +49949,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -49981,7 +49981,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50012,7 +50012,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50043,7 +50043,7 @@
     {
      "id": "cheat_death_epic_and_rare_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 750 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 750 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special_epic_and_rare",
@@ -50074,7 +50074,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50106,7 +50106,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50138,7 +50138,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50169,7 +50169,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50232,7 +50232,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50265,7 +50265,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50297,7 +50297,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -50330,7 +50330,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",
@@ -51500,7 +51500,7 @@
      "id": "building_blocks_bulklug_mayhem",
      "lines": [
       "Deals 450% damage to the target and nearby enemies.",
-      "Growth: The caster and nearby allies get 240 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: The caster and nearby allies get 240 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The caster and the nearby allies reflect all status ailments and 160% damage back to the attacker and block other negative effects from enemies' Fire Special Skills for 4 turns. This effect can't be dispelled. (Status effects cast by characters, Minions and Fiends on the same side cannot be reflected.)",
       "The caster receives Slime Revive for 4 turns. This effect can't be dispelled.\n[*]If defeated while Slime Revive is active, the caster will be reborn as a Slime.\n[*]Slime\n[*] 100% inherited health\n[*] 50% attack\n[*] 50% defense\n[*]Special Skill: Slime Slap (Deals 350% damage to the target)\n[*]This effect can't be dispelled.\n[*]If the Slime is not defeated in 2 turns, it will be reborn as the character's original form, inheriting the Slime's health and mana."
      ]
@@ -52261,7 +52261,7 @@
      "lines": [
       "Recovers 25% health for the caster and nearby allies.",
       "Increases the mana of nearby allies by 30%. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
-      "Growth: Nearby allies get 360 attack and 360 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Growth: Nearby allies get 360 attack and 360 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "Summons a Slime Mega Minion with 50% HP and 40% attack inherited from the caster."
      ]
     }
@@ -54243,7 +54243,7 @@
     {
      "id": "mana_immolation_mayhem",
      "lines": [
-      "Attacks the target with Firestorm Strike, dealing up to 4000 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks the target with Firestorm Strike, dealing up to 4000 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "All allies get 45% chance to dodge attacks and Special Skills for 5 turns.",
       "This character gets a Mark of Immolation for 5 turns. Whenever an enemy or an ally receives Burn damage, the caster gains a stack (Max: 10). Each stack increases mana generation of the caster by 7%."
      ]
@@ -54282,7 +54282,7 @@
     {
      "id": "mana_immolation_soul_seeker_mayhem",
      "lines": [
-      "Attacks the target with Firestorm Strike, dealing up to 4400 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks the target with Firestorm Strike, dealing up to 4400 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "All allies get 45% chance to dodge Special Skills for 5 turns. Each dodge damages the attacker for 500 damage.",
       "This character gets a Mark of Immolation for 5 turns. Whenever an enemy or an ally receives Burn damage, the caster gains a stack (Max: 10). Each stack increases mana generation of the caster by 7%."
      ]
@@ -54558,7 +54558,7 @@
     {
      "id": "blazing_venom",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 1500 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 1500 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "Damage bypasses target's Minions.",
       "All enemies receive[#Dynamic] 388 [#]Poison damage over 4 turns.",
       "All enemies take 50% increased damage from status ailments and negative stacks for 4 turns."
@@ -54598,7 +54598,7 @@
     {
      "id": "curing_venom",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 1650 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 1650 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "Damage bypasses target's Minions.",
       "All enemies receive[#Dynamic] 408 [#]Poison damage over 4 turns. The caster absorbs 10% of dealt Poison damage as health.",
       "All enemies take 52% increased damage from status ailments and negative stacks for 4 turns."
@@ -54956,7 +54956,7 @@
      "id": "poetic_justice",
      "lines": [
       "Damage bypasses target's Minions.",
-      "Attacks the target with Firestorm Strike, dealing up to 1080 damage. Deals 30% more damage if the target is of the Nature element.",
+      "Attacks the target with Firestorm Strike, dealing up to 1080 damage. Deals 30% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "The target resists new Minions for 4 turns."
      ]
     }
@@ -54995,7 +54995,7 @@
      "id": "undead_penance_poetic",
      "lines": [
       "Damage bypasses target's Minions.",
-      "Attacks the target with Firestorm Strike, dealing up to 1180 damage. Deals 30% more damage if the target is of the Nature element.",
+      "Attacks the target with Firestorm Strike, dealing up to 1180 damage. Deals 30% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "The target resists new Minions for 4 turns."
      ]
     }
@@ -55033,7 +55033,7 @@
     {
      "id": "spearwand_gale",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "Heals all allies for 30% of damage dealt.",
       "All allies counterattack with 65% of the damage received for 5 turns."
      ]
@@ -55072,7 +55072,7 @@
     {
      "id": "regal_spearhead",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 2600 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 2600 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "Boosts all allies' health by 27% of damage dealt. Boosted health can exceed max HP.",
       "All allies counterattack with 75% of the damage received for 5 turns."
      ]
@@ -55266,7 +55266,7 @@
     {
      "id": "dwarven_kings_levy",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 2200 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "The caster steals generated mana of all enemies over 5 turns starting low and increasing every turn until on the last turn all the generated mana is stolen. This effect can't be cleansed, but it gets removed if the caster is defeated.",
       "At the end of each turn, steals the latest dispellable buff from all enemies and distributes them randomly among allies for 5 turns."
      ]
@@ -55305,7 +55305,7 @@
     {
      "id": "dwarven_traders_deal_mayhem",
      "lines": [
-      "Attacks all enemies with Firestorm Strike, dealing up to 2500 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks all enemies with Firestorm Strike, dealing up to 2500 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "Reduces the mana of all enemies by 35%.",
       "After the Special Skill has been cast, increases the mana of the caster by 15%. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
       "At the end of each turn, steals the latest dispellable buff from all enemies and distributes them randomly among allies for 5 turns."
@@ -55508,7 +55508,7 @@
      "id": "master_plan",
      "lines": [
       "Dispels buffs from the target and nearby enemies.",
-      "Attacks the target and nearby enemies with Firestorm Strike, dealing up to 2000 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks the target and nearby enemies with Firestorm Strike, dealing up to 2000 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "The target and nearby enemies are immune to new status effect buffs for 3 turns."
      ]
     }
@@ -55547,7 +55547,7 @@
      "id": "cursed_plan",
      "lines": [
       "Dispels buffs from the target and nearby enemies.",
-      "Attacks the target and nearby enemies with Firestorm Strike, dealing up to 2300 damage. Deals 40% more damage if the target is of the Nature element.",
+      "Attacks the target and nearby enemies with Firestorm Strike, dealing up to 2300 damage. Deals 40% more damage if the target is of the Nature element. This Special Skill never misses its targets.",
       "The target and nearby enemies are immune to new status effect buffs for 3 turns."
      ]
     }
@@ -58005,7 +58005,7 @@
       "Deals 600% damage to all enemies.",
       "Reduces max health of all enemies by 800. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 800.)",
       "Harvests buffs from all enemies.\n[*]Harvest safely removes 2 buffs, positive Stacks or Growth effects from each target. This includes Stubborn effects, undispellable buffs and Dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Growth effects are removed first. Other effects, the latest is removed first.",
-      "Wither: All enemies get -540 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Wither: All enemies get -540 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -58107,7 +58107,7 @@
      "lines": [
       "Recovers 50% health for the caster and nearby allies.",
       "Uproots debuffs from the caster and nearby allies.\n[*]Uproot safely removes 2 debuffs, negative Stacks or Wither effects from each target. This includes uncleansable status ailments and dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Wither effects are removed first. Other effects, the latest is removed first.",
-      "Growth: All allies get 170 attack and 170 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: All allies get 170 attack and 170 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -58993,7 +58993,7 @@
     {
      "id": "feline_constellation",
      "lines": [
-      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies get -80% increase for any healing received for 4 turns. This effect can't be dispelled.",
       "Lifts the latest cleansable status ailment from all allies and randomly distributes them on enemies.",
       "Cleanses status ailments from all allies at the end of each turn for 4 turns."
@@ -59027,7 +59027,7 @@
      "id": "ignited_defiance_mayhem",
      "lines": [
       "Deals 330% Clawing damage to all enemies.\n[*]Deals 400% damage against enemies with any defensive buffs, Minions or Mega Minions.\n[*]Enemies with any defensive buffs, Minions or Mega Minions receive -35% defense for 5 turns.",
-      "Wither: All enemies get -300 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: All enemies get -300 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "All enemies become Provoked for 4 turns. The Provoked character deals 1% damage to a random opponent at the end of the turn.",
       "All allies get 50% attack, and a further 20% increase every time they are hit during 4 turns, up to 150% attack."
      ]
@@ -59258,7 +59258,7 @@
      "lines": [
       "Reduces max health of the target by 1600. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 1600.)",
       "The target gets silenced for 3 turns.",
-      "Growth: Nearby allies get 540 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
+      "Growth: Nearby allies get 540 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)"
      ]
     }
    ]
@@ -60568,7 +60568,7 @@
      "id": "poisonous_vapors",
      "lines": [
       "Deals 410% damage to the target and nearby enemies.",
-      "Wither: The target and nearby enemies get -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Wither and Growth can't be removed with dispels or cleanses.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
+      "Wither: The target and nearby enemies get -250 attack and -250 defense. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
       "The target and nearby enemies reflect status effect buffs to a random character on the opposing team for 3 turns. (Only dispellable buffs are reflected.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
@@ -61447,7 +61447,7 @@
     {
      "id": "cheat_death_mayhem",
      "title": "Cheat Death",
-     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to a random enemy."
+     "text": "The first time this character would receive fatal damage from normal attacks or Special Skills, they instead redirect up to 2500 damage to the attacker.\n[*]Does not activate if this character is the only member of their team in battle."
     },
     {
      "id": "ransack_on_other_ally_special",

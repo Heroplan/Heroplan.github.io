@@ -586,6 +586,7 @@ const HIGHLIGHT_GROUP_MARKUP = {
     elementpurple: '[##elementpurple]',
     elementred: '[##elementred]',
     elementyellow: '[##elementyellow]',
+    elementorange: '[##elementorange]',
     special: '[#!]',
 };
 
@@ -1618,15 +1619,17 @@ function renderDetailsInModal(hero, context = {}) {
         const starHeaderPattern = /^[\s*]+$/;
 
         // ▼▼▼ 定义颜色映射表 ▼▼▼
+        // 颜色一律取 theme.css 的 `--term-*` 变量：日间是可读深色、夜间是原亮色，
+        // 且切主题时 inline 样式跟着变量走，不需要重渲染。
         const colorNameMap = {
-            'purple': '#e290ff', // 暗黑系 (紫)
-            'green': '#70e92f',  // 自然系 (绿)
-            'red': '#ef3838ff',    // 烈火系 (红，与负数同色)
-            'yellow': '#f2e33a', // 神圣系 (黄)
-            'blue': '#41d8fe',   // 冰雪系 (蓝)
-            'orange': '#ff7800ff'   // 被动天赋 (橙)
+            'purple': 'var(--term-purple)', // 暗黑系 (紫) / 史诗档名
+            'green': 'var(--term-green)',  // 自然系 (绿)
+            'red': 'var(--term-red)',    // 烈火系 (红，与负数同色)
+            'yellow': 'var(--term-yellow)', // 神圣系 (黄) / 稀有档名
+            'blue': 'var(--term-blue)',   // 冰雪系 (蓝) / 罕见档名
+            'orange': 'var(--term-orange)'   // 被动天赋 (橙) / 传奇档名
         };
-        const specialColor = '#2d81e2ff'; // [#!] 词条使用的颜色
+        const specialColor = 'var(--term-special)'; // [#!] 词条使用的颜色
 
         // 检查是否启用了高亮技能词条
         const shouldHighlight = getCookie('highlightSkillTerms') !== 'false';
@@ -1654,7 +1657,7 @@ function renderDetailsInModal(hero, context = {}) {
                     if (starMatch) {
                         const star = starMatch[1];      // 包含前导空格和星号
                         const content = starMatch[2];   // 星号后的内容（包括空格）
-                        const orangeColor = '#ff7800ff';
+                        const orangeColor = 'var(--term-orange)';
                         // 返回带样式的列表项，不进行其他高亮处理
                         return `<li style="text-decoration: underline dashed ${orangeColor};"><span style="color: ${orangeColor};">${star}</span>${content}</li>`;
                     }
@@ -1741,7 +1744,7 @@ function renderDetailsInModal(hero, context = {}) {
 
                     // 每次循环都先处理 element 标签
                     cleanItem = cleanItem.replace(innermostElementPattern, (match, colorName, text) => {
-                        const color = colorNameMap[colorName] || '#FFFFFF';
+                        const color = colorNameMap[colorName] || 'inherit';
                         // 将最内层的标签替换为HTML，这样外层标签的内容就变成了 "...<span>...</span>..."
                         return `<span style="color: ${color};">${text}</span>`;
                     });

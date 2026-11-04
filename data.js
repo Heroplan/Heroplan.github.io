@@ -1,7 +1,7 @@
 // data.js: 存放所有静态数据和常量映射表。
 
 // --- 硬编码日期 (用于特殊筛选) ---
-const oneClickMaxDate = '2026-09-15';
+const oneClickMaxDate = '2026-11-14';
 const purchaseCostumeDate = '2026-10-08';
 const soulExchange = {
   "Date": "2026-08-29",

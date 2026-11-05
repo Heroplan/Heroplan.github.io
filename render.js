@@ -3113,6 +3113,19 @@ function renderDetailsInModal(hero, context = {}) {
                     // 检查是否立绘光效
                     const showCircleRay = getCookie('showCircleRay') !== 'false';
                     let raysImage = null;
+
+                    // circle_rays 贴图是正方形，尺寸只认英雄卡（1024×1024）的渲染边长，
+                    // 一旦按立绘画布的竖长比例给宽高就会被拉成椭圆。
+                    // 光环取卡片的 80%：贴图里的圆环几乎撑满整张方图，100% 会把背景铺满。
+                    const RAYS_CARD_RATIO = 0.8;
+                    const syncRaysToCard = () => {
+                        if (!raysImage) return;
+                        const side = Math.round(cardBgImage.clientWidth * RAYS_CARD_RATIO);
+                        if (!side) return;
+                        raysImage.style.width = side + 'px';
+                        raysImage.style.height = side + 'px';
+                    };
+
                     if (showCircleRay) {
                         // 创建光效图片（作为子元素）
                         /*
@@ -3133,7 +3146,7 @@ function renderDetailsInModal(hero, context = {}) {
                         raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;
                         raysImage.className = 'rays-background';
                         raysImage.style.position = 'absolute';
-                        raysImage.style.top = '60%';
+                        raysImage.style.top = '50%';
                         raysImage.style.left = '50%';
                         raysImage.style.transform = 'translate(-50%, -50%)';
                         raysImage.style.zIndex = '1';
@@ -3147,6 +3160,7 @@ function renderDetailsInModal(hero, context = {}) {
                         const brightnessLevel = 1.2; // 1 为默认亮度，值越大，亮度越高
                         raysImage.style.filter = `${colorFilter} brightness(${brightnessLevel})`;
                         portraitContainer.appendChild(raysImage);
+                        cardBgImage.addEventListener('load', syncRaysToCard);
                     }
 
                     // ---------- 2. 立绘位：根据是否有动态立绘，选择 canvas 或 avatar 图片 ----------
@@ -3156,13 +3170,8 @@ function renderDetailsInModal(hero, context = {}) {
                     if (hasAnimation) {
                         try {
                             _activeAnimationPlayer = await createHeroAnimationPlayer(portraitContainer, hero.heroId, {
-                                // 让 canvas 尺寸确定后，同步光效尺寸（与静态逻辑一致）
-                                onCanvasResize: (w, h) => {
-                                    if (raysImage) {
-                                        raysImage.style.width = w + 'px';
-                                        raysImage.style.height = h + 'px';
-                                    }
-                                }
+                                // canvas 尺寸（含窗口 resize）变化时，光效仍按英雄卡取正方形尺寸
+                                onCanvasResize: syncRaysToCard
                             });
                         } catch (e) {
                             console.error('[立绘动画] 加载失败，回退到静态立绘：', e);
@@ -3214,8 +3223,7 @@ function renderDetailsInModal(hero, context = {}) {
                             this.style.height = finalHeight + 'px';
 
                             if (showCircleRay) {
-                                raysImage.style.width = finalWidth + 'px';
-                                raysImage.style.height = finalHeight + 'px';
+                                syncRaysToCard();
                             }
 
                             setTimeout(() => {
@@ -3227,6 +3235,7 @@ function renderDetailsInModal(hero, context = {}) {
 
                     // ---------- 3. 将外层容器挂到模态框并显示 ----------
                     imageModalContent.appendChild(portraitContainer);
+                    syncRaysToCard();
 
                     // 显示立绘模态框并添加到堆栈
                     imageModal.classList.add('show-hero-portrait');

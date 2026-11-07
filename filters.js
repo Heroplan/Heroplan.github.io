@@ -371,7 +371,7 @@ function populateFilters() {
         const lang = state.currentLang;
 
         if (key.startsWith('skillTag_')) {
-            // 排序顺序同样来自 langs_json/sort_order.json（键名 = 筛选器类型）
+            // 排序顺序同样来自 data/sort_order.json（键名 = 筛选器类型）
             values.sort((a, b) => {
                 const ia = Lang.orderIndex(key, a);   // 9999 = 未收录
                 const ib = Lang.orderIndex(key, b);
@@ -381,7 +381,7 @@ function populateFilters() {
                 return a.localeCompare(b, locale, sortOptions);
             });
         } else if (key === 'speed' || key === 'element' || key === 'class' || key === 'aetherpower' || key === 'costume') {
-            // 「先排序后翻译」：用语言无关的 ID 顺序（langs_json/sort_order.json），
+            // 「先排序后翻译」：用语言无关的 ID 顺序（data/sort_order.json），
             // 不再依赖 language.js 的 speedOrder_<码> / colorOrder_<码> 数组。
             const _tbl = { speed: 'speed', element: 'element', class: 'class', aetherpower: 'aether_power', costume: 'costume' }[key];
             const _idKey = { speed: 'speedId', element: 'elementId', class: 'classId', aetherpower: 'aetherPowerId' }[key];

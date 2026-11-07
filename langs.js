@@ -3,7 +3,7 @@
  * 设计口径（定）：
  *   ① 数据里一律存 **ID**（element/rarity/class/speed/aetherGift/family/source/specialId…），
  *      显示时才查 `langs_json/<表>_<码>.json` 翻译；
- *   ② **先排序后翻译** —— 排序用语言无关的 `langs_json/sort_order.json`（ID 顺序），
+ *   ② **先排序后翻译** —— 排序用语言无关的 `data/sort_order.json`（ID 顺序），
  *      不再需要 language.js 里 20×speedOrder / 20×colorOrder 那些硬编码数组；
  *   ③ i18n 拆到 `langs_json/i18n_<码>.json`；切语言时 `loadAll()` 再调一次即可（**无需整页重载**，
  *      见 `ui.js::changeLanguage`；表按文件缓存 ⇒ 切回已加载过的语言是纯内存操作）；
@@ -67,12 +67,10 @@
 
     // 版本串来自 asset_ver.js 的 window.AV（每个文件的内容哈希，拼法见 utils.js::av）
     // ⇒ 未改动的表命中缓存、改动过的立刻失效；没有登记时 av() 自动退回 Date.now()。
-    function url(p) { return av('langs_json/' + p); }
-
     function getJSON(p) {
         if (_cache[p]) return Promise.resolve(_cache[p]);
         // ⚠ 不再用 `cache: 'no-cache'`：URL 已按内容哈希变化，强制复验只会白白多打一次请求
-        return fetch(url(p))
+        return fetch(av(p))
             .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + p); return r.json(); })
             .then(function (j) { _cache[p] = j; return j; });
     }
@@ -80,9 +78,9 @@
     /** 载入某语言的全部表 + i18n + 排序表（启动时调一次；**切换语言时再调一次**即可无缝切换） */
     function loadAll(lang) {
         _lang = lang;
-        var jobs = TABLES.map(function (t) { return getJSON(t + '_' + lang + '.json').catch(function () { return {}; }); });
-        jobs.push(getJSON('i18n_' + lang + '.json').catch(function () { return {}; }));
-        jobs.push(getJSON('sort_order.json').catch(function () { return {}; }));
+        var jobs = TABLES.map(function (t) { return getJSON('langs_json/' + t + '_' + lang + '.json').catch(function () { return {}; }); });
+        jobs.push(getJSON('langs_json/i18n_' + lang + '.json').catch(function () { return {}; }));
+        jobs.push(getJSON('data/sort_order.json').catch(function () { return {}; }));
         return Promise.all(jobs).then(function (res) {
             // ⚠ 必须在这里把表按「表名」存下来：`getJSON` 的缓存键是文件名（含 .json），
             //   而 t()/idOf()/get() 用的是表名（不含 .json）—— 直接查 _cache 会永远落空。

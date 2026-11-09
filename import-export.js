@@ -401,7 +401,6 @@ function handleImportConfirm() {
                 saveTeams(importedTeams);
             }
         } else if (key === 'favoriteColors') {
-            // 保持原逻辑
             if (mode === 'append') {
                 const existing = getCookie(key) ? JSON.parse(getCookie(key)) : [];
                 const imported = JSON.parse(importedValueStr);

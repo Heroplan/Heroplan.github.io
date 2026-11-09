@@ -60133,7 +60133,7 @@
    "familyBonus": [
     "Helter blir sterkere når de er sammen med andre unike helter i samme familie.",
     "Bonus for 1 / 2 / 3 helter:",
-    "[*]Denne figuren tar -30%/ -40%/ -50% skade fra statuseffekter.",
+    "[*]Denne figuren tar -70%/ -80%/ -90% skade fra statuseffekter.",
     "Hendelseshelt-bonus",
     "Medlemmene av denne familien har ekstra fordeler i Riddernes kamp-hendelsen."
    ],
@@ -60142,6 +60142,11 @@
      "id": "extend_ailment_duration_on_special_rare",
      "title": "Forleng lidelsevarighet",
      "text": "Når denne figuren bruker spesialferdigheten sin, økes varigheten til den siste lidelsen på alle fiender med 1 runder."
+    },
+    {
+     "id": "mana_generation_modifier_all_enemies_more_sources",
+     "title": "Hindre mana",
+     "text": "Reduserer økt mengde mana fra spesialferdigheter, passive ferdigheter, familiebonuser og statuseffekter med -80%. Denne effekten påføres alle fiender i kampen."
     }
    ],
    "skills": [
@@ -60161,7 +60166,7 @@
    "familyBonus": [
     "Helter blir sterkere når de er sammen med andre unike helter i samme familie.",
     "Bonus for 1 / 2 / 3 helter:",
-    "[*]Denne figuren tar -30%/ -40%/ -50% skade fra statuseffekter.",
+    "[*]Denne figuren tar -70%/ -80%/ -90% skade fra statuseffekter.",
     "Hendelseshelt-bonus",
     "Medlemmene av denne familien har ekstra fordeler i Riddernes kamp-hendelsen."
    ],
@@ -60170,6 +60175,11 @@
      "id": "extend_ailment_duration_on_special",
      "title": "Forleng lidelsevarighet",
      "text": "Når denne figuren bruker spesialferdigheten sin, økes varigheten til alle lidelser på alle fiender med 1 runder."
+    },
+    {
+     "id": "mana_generation_modifier_all_enemies_more_sources",
+     "title": "Hindre mana",
+     "text": "Reduserer økt mengde mana fra spesialferdigheter, passive ferdigheter, familiebonuser og statuseffekter med -80%. Denne effekten påføres alle fiender i kampen."
     }
    ],
    "skills": [
@@ -60189,7 +60199,7 @@
    "familyBonus": [
     "Helter blir sterkere når de er sammen med andre unike helter i samme familie.",
     "Bonus for 1 / 2 / 3 helter:",
-    "[*]Denne figuren tar -30%/ -40%/ -50% skade fra statuseffekter.",
+    "[*]Denne figuren tar -70%/ -80%/ -90% skade fra statuseffekter.",
     "Hendelseshelt-bonus",
     "Medlemmene av denne familien har ekstra fordeler i Riddernes kamp-hendelsen."
    ],
@@ -60198,6 +60208,11 @@
      "id": "extend_ailment_duration_on_special",
      "title": "Forleng lidelsevarighet",
      "text": "Når denne figuren bruker spesialferdigheten sin, økes varigheten til alle lidelser på alle fiender med 1 runder."
+    },
+    {
+     "id": "mana_generation_modifier_all_enemies_more_sources",
+     "title": "Hindre mana",
+     "text": "Reduserer økt mengde mana fra spesialferdigheter, passive ferdigheter, familiebonuser og statuseffekter med -80%. Denne effekten påføres alle fiender i kampen."
     }
    ],
    "skills": [
@@ -60218,7 +60233,7 @@
    "familyBonus": [
     "Helter blir sterkere når de er sammen med andre unike helter i samme familie.",
     "Bonus for 1 / 2 / 3 helter:",
-    "[*]Denne figuren tar -30%/ -40%/ -50% skade fra statuseffekter.",
+    "[*]Denne figuren tar -70%/ -80%/ -90% skade fra statuseffekter.",
     "Hendelseshelt-bonus",
     "Medlemmene av denne familien har ekstra fordeler i Riddernes kamp-hendelsen."
    ],
@@ -60227,6 +60242,11 @@
      "id": "extend_ailment_duration_on_special_rare",
      "title": "Forleng lidelsevarighet",
      "text": "Når denne figuren bruker spesialferdigheten sin, økes varigheten til den siste lidelsen på alle fiender med 1 runder."
+    },
+    {
+     "id": "mana_generation_modifier_all_enemies_more_sources",
+     "title": "Hindre mana",
+     "text": "Reduserer økt mengde mana fra spesialferdigheter, passive ferdigheter, familiebonuser og statuseffekter med -80%. Denne effekten påføres alle fiender i kampen."
     }
    ],
    "skills": [
@@ -60245,7 +60265,7 @@
    "familyBonus": [
     "Helter blir sterkere når de er sammen med andre unike helter i samme familie.",
     "Bonus for 1 / 2 / 3 helter:",
-    "[*]Denne figuren tar -30%/ -40%/ -50% skade fra statuseffekter.",
+    "[*]Denne figuren tar -70%/ -80%/ -90% skade fra statuseffekter.",
     "Hendelseshelt-bonus",
     "Medlemmene av denne familien har ekstra fordeler i Riddernes kamp-hendelsen."
    ],
@@ -60254,6 +60274,11 @@
      "id": "extend_ailment_duration_on_special",
      "title": "Forleng lidelsevarighet",
      "text": "Når denne figuren bruker spesialferdigheten sin, økes varigheten til alle lidelser på alle fiender med 1 runder."
+    },
+    {
+     "id": "mana_generation_modifier_all_enemies_more_sources",
+     "title": "Hindre mana",
+     "text": "Reduserer økt mengde mana fra spesialferdigheter, passive ferdigheter, familiebonuser og statuseffekter med -80%. Denne effekten påføres alle fiender i kampen."
     }
    ],
    "skills": [
@@ -60886,7 +60911,7 @@
      "id": "petal_slash",
      "lines": [
       "Påfør 300% skade på målet.",
-      "Fremkaller 2 lekesoldatdjevler på målet. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 500 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)"
+      "Fremkaller 2 lekesoldatdjevler på målet. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.\n[*]Hver lekesoldatdjevel reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 500 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)"
      ]
     }
    ]

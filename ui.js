@@ -250,7 +250,7 @@ function applyLanguage(lang) {
         if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
     }
 
-    // 5.1 「活动日历」：不再用站点自带的 calendar.webp，直接跳 EP-BASE 的同语言当月月历。
+    // 5.1 「活动日历」：直接跳 EP-BASE 的同语言当月月历。
     //     站点码与 EP-BASE locale 只差中文两码；月份用本机当前年月
     //     （`/calendar/<YYYYMM>` 只认已发布的月份，更早的会 404）。
     const calendarBtn = document.getElementById('calendar-btn');
@@ -263,11 +263,13 @@ function applyLanguage(lang) {
 
     // 6. SEO：Meta Description + canonical + Open Graph / Twitter
     //
-    // ⚠ 多语言 SEO 的关键：20 个语言版本用 `?lang=<码>` 区分
-    //   （见 index.html 里的 `rel="alternate" hreflang`），每个语言版本必须
-    //   **把 canonical 指向自身**；若一律指向站点根，Google 会把 20 个版本判成
+    // ⚠ 多语言 SEO 的关键：20 个语言版各有**独立静态入口** `/<码>/`（见 index.html 的
+    //   `rel="alternate" hreflang` 与 _tools/build_lang_pages.py），每个语言版必须
+    //   **把 canonical 指向自身路径**；若一律指向站点根，Google 会把 20 个版本判成
     //   同一页面、hreflang 注解随之失效。
-    //   ⚠ 依赖 JS 执行（爬虫需渲染）。title/description 同理。
+    //   ⚠ canonical 跟随**地址路径**（可抓取的那个实体），不是 cookie 推导出的渲染语言：
+    //     根页 `/` 是 x-default，即便回访 cookie 渲染成简中，canonical 仍自指根；
+    //     语言页 `/<码>/` 自指该路径。切换语言时 syncLanguageUrl 已先把路径改好。
     const metaDesc = document.getElementById('meta-description');
     if (metaDesc && langDict.metaDescription) metaDesc.setAttribute('content', langDict.metaDescription);
 
@@ -275,7 +277,8 @@ function applyLanguage(lang) {
         const el = document.getElementById(id);
         if (el && val) el.setAttribute(attr, val);
     };
-    const canonicalUrl = SEO_ORIGIN + '?lang=' + lang;
+    const pathLang = (typeof Lang !== 'undefined' && Lang.langFromPath) ? Lang.langFromPath(window.location.pathname) : null;
+    const canonicalUrl = pathLang ? SEO_ORIGIN + pathLang + '/' : SEO_ORIGIN;
     const seoTitle = langDict.pageTitle || document.title;
     const seoDesc = langDict.metaDescription || '';
 
@@ -308,16 +311,19 @@ function toggleTheme() {
 }
 
 /**
- * 同步 URL 的 `?lang=`（canonical 自指 / hreflang / 分享链接都依赖它）。
+ * 同步 URL 到当前语言的路径版 `/<码>/`（canonical 自指 / hreflang / 刷新都依赖它）。
  * ⚠ 不重载的前提下必须自己改，否则刷新或分享出去的还是旧语言。
+ *   只改路径 + 摘掉遗留的 `lang`/`hl` 参数，业务参数（`view`/`pool`/`hero`/`bfavs`…）与 hash 原样保留。
  */
 function syncLanguageUrl(lang) {
     try {
         const u = new URL(window.location.href);
-        u.searchParams.set('lang', lang);
+        u.pathname = '/' + lang + '/';
+        u.searchParams.delete('lang');
+        u.searchParams.delete('hl');
         // ⚠ 第二个参数不能传 `null`：那会把 `history.state`（视图深链接用的 `{view:'lottery'}`）一起抹掉，
         //   于是切完语言后 `setMainViewHistory` 的 push/replace 判据和 `handlePopState` 的派发都失忆。
-        history.replaceState(history.state || { view: currentMainViewName() }, '', u.toString());
+        history.replaceState(history.state || { view: currentMainViewName() }, '', u.pathname + u.search + u.hash);
     } catch (e) { /* URL 同步失败不影响切换本身 */ }
 }
 
@@ -371,11 +377,11 @@ function refreshActiveViewAfterLanguageChange() {
 /**
  * 切换并保存语言（**无缝**：不整页重载）。
  *
- * 新架构（数据存 ID + 显示时才过字典 + 排序表语言无关）已经具备不重载切换的条件，
- * 但切换时必须**显式补做**旧实现由 reload 免费拿到的几件事：
+ * 数据存 ID + 显示时才过字典 + 排序表语言无关 ⇒ 具备不重载切换的条件；
+ * 但切换时必须**显式补做**以下本由整页 reload 完成的步骤：
  *   ① 重取按语言分片的数据并重建英雄显示字段（`reloadLanguageData`）；
- *   ② `applyLanguage()` 刷 DOM 文案 / `<html lang>` / RTL / title / meta / canonical；
- *   ③ `history.replaceState` 同步 `?lang=`；
+ *   ② `history.replaceState` 把地址同步到 `/<码>/`（先于 applyLanguage，canonical 才读得到新路径）；
+ *   ③ `applyLanguage()` 刷 DOM 文案 / `<html lang>` / RTL / title / meta / canonical；
  *   ④ 重刷筛选器标签并保住已选条件；
  *   ⑤ 重渲染列表与当前子视图。
  *
@@ -393,8 +399,8 @@ async function changeLanguage(lang) {
 
     try {
         await reloadLanguageData(lang);
-        applyLanguage(lang);
         syncLanguageUrl(lang);
+        applyLanguage(lang);
         refreshFiltersAfterLanguageChange();
         applyFiltersAndRender();
         refreshActiveViewAfterLanguageChange();
@@ -454,8 +460,8 @@ function updateResultsHeader() {
             message = langDict.resultsCountTextFiltered(count);
             showResetButton = true;
         } else {
-            // 未筛选时显示本地化的「共 N 位」，不再带「英雄 (包含服装)」后缀；
-            // totalHeroesCountText 自带一层括号（原本用于跟在标题后），这里去掉
+            // 未筛选时显示本地化的「共 N 位」（不带「英雄 (包含服装)」后缀）；
+            // totalHeroesCountText 自带一层括号，这里去掉
             message = String(langDict.totalHeroesCountText(count)).replace(/^\(|\)$/g, '');
             showResetButton = false;
         }

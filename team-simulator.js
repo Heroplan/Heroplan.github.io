@@ -60,7 +60,7 @@ function adjustTeamDisplayHeight() {
 
 
 /**
- * 获取英雄的技能类别数组，用于标签汇总 (修改为调用中央函数)。
+ * 获取英雄的技能类别数组，用于标签汇总。
  * @param {object} hero - 英雄对象。
  * @returns {string[]} 技能类别字符串数组。
  */
@@ -410,7 +410,7 @@ function updateTeamTags() {
 
     const sortedTags = uniqueTags;
 
-    // --- 【核心修正】条件渲染逻辑 ---
+    // --- 条件渲染逻辑 ---
     if (sortedTags.length === 0) {
         summaryContainer.innerHTML = `<div class="no-tags-message">${i18n[state.currentLang].noTeamTags}</div>`;
     } else {
@@ -464,7 +464,7 @@ function renderSavedTeams(teams, isSharedView = false) {
         const row = document.createElement('div');
         row.className = 'saved-team-row is-clickable';
 
-        // ▼▼▼【修改】使用新的HTML结构来添加背景色▼▼▼
+        // ▼▼▼使用新的HTML结构来添加背景色▼▼▼
         let avatarsHTML = team.heroes.map(id => {
             if (!id) return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-outline); width: 36px; height: 36px; display: inline-block;"></div>`;
             const hero = resolveHeroByIdentity(id);
@@ -480,7 +480,6 @@ function renderSavedTeams(teams, isSharedView = false) {
                 return `<div class="saved-team-avatar" style="border: 1px dashed var(--md-sys-color-error); width: 36px; height: 36px; display: inline-block;">?</div>`;
             }
         }).join('');
-        // ▲▲▲【修改结束】▲▲▲
 
         let buttonHTML = '';
         if (isSharedView) {

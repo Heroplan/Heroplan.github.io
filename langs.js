@@ -59,6 +59,17 @@
         return (base && LANGS.indexOf(base) >= 0) ? base : null;
     }
 
+    /**
+     * 从 URL 路径解析语言码：`/cn/`、`/cn`、`/cn/index.html` → `'cn'`；其余 → `null`。
+     * 20 个语言版各有独立静态入口 `<码>/index.html`（见 _tools/build_lang_pages.py），
+     * 路径里的语言是**最高优先级**的显式意图（压过 `?lang=`/cookie/浏览器）。
+     * ⚠ 只认站点 20 码本身（路径目录只为这 20 码生成）；别名走 `?hl=`/normalizeCode，不在路径里认。
+     */
+    function langFromPath(pathname) {
+        var m = /^\/([a-z]{2})(?:\/|\/index\.html)?$/.exec(String(pathname || ''));
+        return (m && LANGS.indexOf(m[1]) >= 0) ? m[1] : null;
+    }
+
     var _cache = {};        // 文件名 -> object（fetch 缓存，键含 .json）
     var _tables = {};       // 表名 -> object（**当前语言**的表，键不含 .json）
     var _i18n = null;       // 当前语言 UI 文案
@@ -134,7 +145,7 @@
     global.Lang = {
         LANGS: LANGS, TABLES: TABLES,
         loadAll: loadAll, t: t, idOf: idOf, i18n: i18n, orderIndex: orderIndex,
-        normalizeCode: normalizeCode, sortOrder: sortOrder, orderIndex: orderIndex,
+        normalizeCode: normalizeCode, langFromPath: langFromPath, sortOrder: sortOrder, orderIndex: orderIndex,
         get: function (table) { return _tables[table] || {}; },
         lang: function () { return _lang; }
     };

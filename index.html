@@ -5,6 +5,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- 语言页住在 `/<码>/` 子目录，但所有资源/取数都相对站点根 ⇒ 用 base 把相对 URL 钉在根。
+         根页也加：无缝切语言把地址改成 `/<码>/` 后（不重载），相对 fetch/img 仍须从根解析。
+         ⚠ 站内没有纯 fragment 导航（语言菜单为真实 href 并由 JS 拦截），base 不会把 `#x` 带偏。 -->
+    <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <style>
@@ -139,10 +143,10 @@
         /* 书写方向：**首屏之前**就把 `<html dir>` 定下来，避免阿拉伯语用户先看到 LTR 再翻转。
            （ui.js::applyLanguage 后面还会再设一次，两处口径一致：RTL 语言见 RTL_LANGS。）
 
-           优先级与 main.js 一致：cookie → URL（`lang` 优先，`hl` 兜底）→ 浏览器语言。
+           优先级与 main.js 一致：**路径 `/<码>/` → URL 参数（`lang` 优先，`hl` 兜底）→ cookie → 浏览器语言**。
            ⚠ 只按**站点支持的**语言判方向 —— 20 种语言里只有 `ar` 是 RTL。
-             旧实现把 `he`/`fa`/`ur` 也当 RTL，但站点会把这些回落成英文 ⇒
-             **英文内容配 RTL 版式是错的**，故改为"不支持就不动方向"。
+             不支持的语言（如 `he`/`fa`/`ur`）会回落成英文内容 ⇒
+             **英文内容配 RTL 版式是错的**，不支持就不动方向。
            ⚠ 这里的 SUPPORTED/ALIAS 是 langs.js::normalizeCode 的**首屏内联副本**
              （首屏不能等 langs.js 加载）。改动语言列表时**两处都要改**。 */
         (function () {
@@ -160,33 +164,39 @@
                 var b = v.split('-')[0];
                 return SUPPORTED.indexOf(b) >= 0 ? b : '';
             }
+            // 路径式语言入口（langs.js::langFromPath 的首屏内联副本）：`/cn/`、`/cn`、`/cn/index.html` → cn。
+            var pm = location.pathname.match(/^\/([a-z]{2})(?:\/|\/index\.html)?$/);
+            var pathLang = (pm && SUPPORTED.indexOf(pm[1]) >= 0) ? pm[1] : '';
             var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
             var q = new URLSearchParams(location.search);
-            // ⚠ 优先级必须与 main.js 的语言解析块一致：**URL 参数 > Cookie > 浏览器语言**。
+            // ⚠ 优先级必须与 main.js 的语言解析块一致：**路径 > URL 参数 > Cookie > 浏览器语言**。
             //   爬虫的渲染会话可能带着上次访问留下的 cookie，若 cookie 优先，`?lang=da` 会被渲染成
-            //   别的语言、canonical 也跟着指错 ⇒ GSC 判成"备用网页（有适当的规范标记）"。
+            //   别的语言、canonical 跟着指错 ⇒ GSC 判成"备用网页（有适当的规范标记）"。
             var urlLang = norm(q.get('lang')) || norm(q.get('hl'));
-            var lang = urlLang
+            var explicit = pathLang || urlLang;
+            var lang = explicit
                 || norm(m ? decodeURIComponent(m[1]) : '')
                 || norm(navigator.language);
             document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             // canonical 自指也在首屏先改掉，不等 ui.js::applyLanguage ⇒ 渲染时间线更早，
-            // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**：
-            // 根页（无 `lang`/`hl`）保持自指根，否则根会被判成某个语言版的副本。
-            // 写法与 ui.js 的 `SEO_ORIGIN + '?lang=' + lang` 逐字一致（两处不一致会互相覆盖）。
-            if (urlLang) {
+            // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**（路径或参数）：
+            // 根页（无路径语言、无 `lang`/`hl`）保持自指根（x-default），否则根会被判成某个语言版的副本。
+            // 旧 `?lang=` 链接也指向路径版 `/<码>/` ⇒ 把规范信号集中到独立静态入口。
+            // 写法与 ui.js 的 `SEO_ORIGIN + pathLang + '/'` 逐字一致（两处不一致会互相覆盖）。
+            if (explicit) {
                 var canon = document.getElementById('canonical-link');
-                if (canon) canon.setAttribute('href', 'https://heroplan.github.io/?lang=' + urlLang);
+                if (canon) canon.setAttribute('href', 'https://heroplan.github.io/' + explicit + '/');
             }
         })();
     </script>
 
     <!-- ══════════════════════════════════════════════════════════════════════
-         SEO（静态兜底 = 简体中文；其余 19 种语言由 ui.js::applyLanguage 用
-         `i18n_<码>.json` 的 pageTitle / metaDescription 动态替换 <title> 与
-         <meta id="meta-description">）。
+         SEO（根页静态兜底 = 简体中文，作为 x-default；20 个语言版各有独立静态页
+         `/<码>/index.html`，由 `_tools/build_lang_pages.py` 以本文件为模板生成，
+         首字节即带本语言的 title / description / canonical / hreflang / SEO 区块）。
+         运行时 ui.js::applyLanguage 仍会按当前语言更新 title/meta/canonical（无缝切换不重载）。
          ⚠ 改文案请改 `_tools/_seo_text.py`（20 语言单一数据源）后跑 `--apply`，
-           不要只改这里——否则 20 种语言会不一致。
+           再跑 `build_lang_pages.py` 重新生成语言页——否则 20 种语言会不一致。
          ══════════════════════════════════════════════════════════════════════ -->
     <title>帝国与谜题英雄资料库 | 全英雄数据 · 立绘 · 未来英雄 | Heroplan</title>
     <meta id="meta-description" name="description"
@@ -197,29 +207,30 @@
     <meta name="author" content="Heroplan">
 
     <!-- 语言版本互指（20 种游戏内语言 + x-default）。
-         ⚠ 语言用 `?lang=<码>` 传递（见 main.js 的 `urlParams.get('lang')`）；
-           每个语言版本在运行时把 canonical 指向自身（ui.js::applyLanguage），
-           否则 hreflang 会被判成"同一页面"而失效。 -->
-    <link rel="alternate" hreflang="zh-Hans" href="https://heroplan.github.io/?lang=cn">
-    <link rel="alternate" hreflang="zh-Hant" href="https://heroplan.github.io/?lang=tc">
-    <link rel="alternate" hreflang="en" href="https://heroplan.github.io/?lang=en">
-    <link rel="alternate" hreflang="ja" href="https://heroplan.github.io/?lang=ja">
-    <link rel="alternate" hreflang="ko" href="https://heroplan.github.io/?lang=ko">
-    <link rel="alternate" hreflang="fr" href="https://heroplan.github.io/?lang=fr">
-    <link rel="alternate" hreflang="de" href="https://heroplan.github.io/?lang=de">
-    <link rel="alternate" hreflang="es" href="https://heroplan.github.io/?lang=es">
-    <link rel="alternate" hreflang="pt" href="https://heroplan.github.io/?lang=pt">
-    <link rel="alternate" hreflang="it" href="https://heroplan.github.io/?lang=it">
-    <link rel="alternate" hreflang="ru" href="https://heroplan.github.io/?lang=ru">
-    <link rel="alternate" hreflang="ar" href="https://heroplan.github.io/?lang=ar">
-    <link rel="alternate" hreflang="tr" href="https://heroplan.github.io/?lang=tr">
-    <link rel="alternate" hreflang="pl" href="https://heroplan.github.io/?lang=pl">
-    <link rel="alternate" hreflang="nl" href="https://heroplan.github.io/?lang=nl">
-    <link rel="alternate" hreflang="sv" href="https://heroplan.github.io/?lang=sv">
-    <link rel="alternate" hreflang="da" href="https://heroplan.github.io/?lang=da">
-    <link rel="alternate" hreflang="no" href="https://heroplan.github.io/?lang=no">
-    <link rel="alternate" hreflang="fi" href="https://heroplan.github.io/?lang=fi">
-    <link rel="alternate" hreflang="id" href="https://heroplan.github.io/?lang=id">
+         ⚠ 每个语言版有**独立静态入口** `/<码>/`（_tools/build_lang_pages.py 生成），
+           首字节即带本语言的 lang/dir/title/description/canonical。
+           每个语言页 canonical 自指其路径（ui.js::applyLanguage 与首屏脚本同口径），
+           否则 hreflang 会被判成"同一页面"而失效。根页 `/` = x-default。 -->
+    <link rel="alternate" hreflang="zh-Hans" href="https://heroplan.github.io/cn/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroplan.github.io/tc/">
+    <link rel="alternate" hreflang="en" href="https://heroplan.github.io/en/">
+    <link rel="alternate" hreflang="ja" href="https://heroplan.github.io/ja/">
+    <link rel="alternate" hreflang="ko" href="https://heroplan.github.io/ko/">
+    <link rel="alternate" hreflang="fr" href="https://heroplan.github.io/fr/">
+    <link rel="alternate" hreflang="de" href="https://heroplan.github.io/de/">
+    <link rel="alternate" hreflang="es" href="https://heroplan.github.io/es/">
+    <link rel="alternate" hreflang="pt" href="https://heroplan.github.io/pt/">
+    <link rel="alternate" hreflang="it" href="https://heroplan.github.io/it/">
+    <link rel="alternate" hreflang="ru" href="https://heroplan.github.io/ru/">
+    <link rel="alternate" hreflang="ar" href="https://heroplan.github.io/ar/">
+    <link rel="alternate" hreflang="tr" href="https://heroplan.github.io/tr/">
+    <link rel="alternate" hreflang="pl" href="https://heroplan.github.io/pl/">
+    <link rel="alternate" hreflang="nl" href="https://heroplan.github.io/nl/">
+    <link rel="alternate" hreflang="sv" href="https://heroplan.github.io/sv/">
+    <link rel="alternate" hreflang="da" href="https://heroplan.github.io/da/">
+    <link rel="alternate" hreflang="no" href="https://heroplan.github.io/no/">
+    <link rel="alternate" hreflang="fi" href="https://heroplan.github.io/fi/">
+    <link rel="alternate" hreflang="id" href="https://heroplan.github.io/id/">
     <link rel="alternate" hreflang="x-default" href="https://heroplan.github.io/">
     <link rel="canonical" id="canonical-link" href="https://heroplan.github.io/" />
 
@@ -235,9 +246,24 @@
     <meta name="twitter:title" id="tw-title" content="帝国与谜题英雄资料库 | Heroplan">
     <meta name="twitter:description" id="tw-description"
         content="Heroplan 是《帝国与谜题》全语言英雄资料库：20 种游戏内语言、全英雄立绘、未来英雄预览与多种玩家工具。">
-    <!-- 自定义 Web 字体已移除（原为跨源 `s1.hdslb.com` 字体 CSS，失败还回退 Google Fonts）：
-         它是 PSI 实测「渲染阻塞预估 8760ms」与跨源请求的主因，且字体 swap 造成 CLS。
-         现一律使用系统字体（见 style.css 的 font-family 栈），观感几乎无差异。 -->
+
+    <!-- 结构化数据（WebApplication）：根页 = 简中；语言页由 build_lang_pages.py 按语言重写本块。 -->
+    <script type="application/ld+json" id="seo-jsonld">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Heroplan",
+        "alternateName": "帝国与谜题英雄资料库",
+        "url": "https://heroplan.github.io/",
+        "description": "Heroplan 是《帝国与谜题》全语言英雄资料库：支持 20 种游戏内语言查询全英雄的属性、技能、家族与服装，提供全英雄立绘与动态立绘、未来英雄预览、高级技能筛选、属性计算器及抽奖/队伍/聊天模拟器。",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "zh-Hans",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
     <link rel="stylesheet" href="theme.css?v=20261104a">
     <link rel="stylesheet" href="style.css?v=20261028b">
     <link rel="stylesheet" href="talent-tree.css?v=20261028b">
@@ -252,7 +278,7 @@
         });
     </script>
     <script>
-        /* 统计脚本不参与首屏渲染 ⇒ 挪到 head 末尾，并等页面 load 完再注入，
+        /* 统计脚本不参与首屏渲染 ⇒ 放在 head 末尾，并等页面 load 完再注入，
            免得跟数据/立绘抢带宽；`_hmt` 数组先行，hm.js 加载后会自己消费。 */
         var _hmt = _hmt || [];
         window.addEventListener("load", function () {
@@ -272,7 +298,7 @@
     <div class="main-container">
         <header>
             <div class="header-top-row">
-                <h1 data-lang-key="headerTitle"><a href=".">《帝国与谜题》英雄资料库</a></h1>
+                <h1 data-lang-key="headerTitle"><a href="/">帝国与谜题英雄资料库</a></h1>
                 <div class="header-buttons">
                     <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
                         <img src="imgs/other/gift.webp" alt="Redeem Codes"
@@ -313,26 +339,26 @@
                             <span>🌐</span>
                         </button>
                         <div id="lang-options" class="hidden">
-                            <a href="#" class="lang-option" data-lang="cn">🇨🇳 简体中文</a>
-                            <a href="#" class="lang-option" data-lang="tc">🇭🇰 繁體中文</a>
-                            <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
-                            <a href="#" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
-                            <a href="#" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
-                            <a href="#" class="lang-option" data-lang="fr">🇫🇷 Français</a>
-                            <a href="#" class="lang-option" data-lang="de">🇩🇪 Deutsch</a>
-                            <a href="#" class="lang-option" data-lang="es">🇪🇸 Español</a>
-                            <a href="#" class="lang-option" data-lang="pt">🇵🇹 Português</a>
-                            <a href="#" class="lang-option" data-lang="it">🇮🇹 Italiano</a>
-                            <a href="#" class="lang-option" data-lang="ru">🇷🇺 Русский</a>
-                            <a href="#" class="lang-option" data-lang="ar">🇸🇦 العربية</a>
-                            <a href="#" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a>
-                            <a href="#" class="lang-option" data-lang="pl">🇵🇱 Polski</a>
-                            <a href="#" class="lang-option" data-lang="nl">🇳🇱 Nederlands</a>
-                            <a href="#" class="lang-option" data-lang="sv">🇸🇪 Svenska</a>
-                            <a href="#" class="lang-option" data-lang="da">🇩🇰 Dansk</a>
-                            <a href="#" class="lang-option" data-lang="no">🇳🇴 Norsk</a>
-                            <a href="#" class="lang-option" data-lang="fi">🇫🇮 Suomi</a>
-                            <a href="#" class="lang-option" data-lang="id">🇮🇩 Indonesia</a>
+                            <a href="/cn/" class="lang-option" data-lang="cn">🇨🇳 简体中文</a>
+                            <a href="/tc/" class="lang-option" data-lang="tc">🇭🇰 繁體中文</a>
+                            <a href="/en/" class="lang-option" data-lang="en">🇺🇸 English</a>
+                            <a href="/ja/" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="/ko/" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
+                            <a href="/fr/" class="lang-option" data-lang="fr">🇫🇷 Français</a>
+                            <a href="/de/" class="lang-option" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="/es/" class="lang-option" data-lang="es">🇪🇸 Español</a>
+                            <a href="/pt/" class="lang-option" data-lang="pt">🇵🇹 Português</a>
+                            <a href="/it/" class="lang-option" data-lang="it">🇮🇹 Italiano</a>
+                            <a href="/ru/" class="lang-option" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="/ar/" class="lang-option" data-lang="ar">🇸🇦 العربية</a>
+                            <a href="/tr/" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a>
+                            <a href="/pl/" class="lang-option" data-lang="pl">🇵🇱 Polski</a>
+                            <a href="/nl/" class="lang-option" data-lang="nl">🇳🇱 Nederlands</a>
+                            <a href="/sv/" class="lang-option" data-lang="sv">🇸🇪 Svenska</a>
+                            <a href="/da/" class="lang-option" data-lang="da">🇩🇰 Dansk</a>
+                            <a href="/no/" class="lang-option" data-lang="no">🇳🇴 Norsk</a>
+                            <a href="/fi/" class="lang-option" data-lang="fi">🇫🇮 Suomi</a>
+                            <a href="/id/" class="lang-option" data-lang="id">🇮🇩 Indonesia</a>
                         </div>
                     </div>
                     <a id="github-btn" href="https://github.com/Heroplan/Heroplan.github.io" target="_blank"
@@ -960,7 +986,7 @@
         </div>
     </div>
 
-    <!-- 新增：兑换码模态框 -->
+    <!-- 兑换码模态框 -->
     <div id="redeem-codes-modal-overlay" class="hidden"></div>
     <div id="redeem-codes-modal" class="hidden">
         <div class="filters-modal-header">
@@ -981,25 +1007,25 @@
 
     <!-- 数据档版本表（window.AV：每个 json 的内容哈希，主站 pre-commit 钩子增量维护）。
          必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
-         （av() 退回 Date.now()，等于回到"不缓存"的旧行为）。 -->
-    <script src="./asset_ver.js?v=20261107a" defer></script>
-    <script src="./i18n_funcs.js?v=20261028b" defer></script>
-    <script src="./langs.js?v=20261107a" defer></script>
+         （av() 退回 Date.now()，等于不缓存）。 -->
+    <script src="./asset_ver.js?v=20261109a" defer></script>
+    <script src="./i18n_funcs.js?v=20261109a" defer></script>
+    <script src="./langs.js?v=20261109a" defer></script>
     <script src="./lz-string.min.js?v=20261028b" defer></script>
-    <script src="./talent-tree.js?v=20261029a" defer></script>
+    <script src="./talent-tree.js?v=20261109a" defer></script>
     <script src="./data.js?v=20261105a" defer></script>
-    <script src="./eva1-parser.js?v=20261028b" defer></script>
-    <script src="./utils.js?v=20261103b" defer></script>
-    <script src="./state.js?v=20261028b" defer></script>
-    <script src="./ui.js?v=20261029a" defer></script>
-    <script src="./filters.js?v=20261107a" defer></script>
-    <script src="./render.js?v=20261105a" defer></script>
-    <script src="./special-views.js?v=20261028b" defer></script>
-    <script src="./lottery-simulator.js?v=20261030c" defer></script>
-    <script src="./team-simulator.js?v=20261028b" defer></script>
+    <script src="./eva1-parser.js?v=20261109a" defer></script>
+    <script src="./utils.js?v=20261109a" defer></script>
+    <script src="./state.js?v=20261109a" defer></script>
+    <script src="./ui.js?v=20261109a" defer></script>
+    <script src="./filters.js?v=20261109a" defer></script>
+    <script src="./render.js?v=20261109a" defer></script>
+    <script src="./special-views.js?v=20261109a" defer></script>
+    <script src="./lottery-simulator.js?v=20261109a" defer></script>
+    <script src="./team-simulator.js?v=20261109a" defer></script>
     <script src="./chat-simulator.js?v=20261104b" defer></script>
-    <script src="./import-export.js?v=20261028b" defer></script>
-    <script src="./main.js?v=20261030b" defer></script>
+    <script src="./import-export.js?v=20261109a" defer></script>
+    <script src="./main.js?v=20261109a" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

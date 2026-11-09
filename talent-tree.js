@@ -1,11 +1,10 @@
 ﻿/**
  * ==========================================================================
  * 天赋树系统模块 (Talent Tree System Module)
- * V2 - 修正了路径切换逻辑，完全复刻参考文件的交互行为
  * ==========================================================================
  */
 const TalentTree = (() => {
-    // 【新增】模块级变量，用于存储当前职业的key，解决图标路径问题
+    // 模块级变量：存储当前职业的 key，供职业图标路径使用
     let currentClassKey = 'ranger'; 
 
     // --- 模块私有变量 ---
@@ -28,7 +27,7 @@ const TalentTree = (() => {
     let selectedNodes = new Set();
     let currentContainer = null;
     let onStatsChangeCallback = () => { };
-    let talentTermsDict = {}; // 【新增】用于存储当前语言的天赋术语字典
+    let talentTermsDict = {}; // 当前语言的天赋术语字典
     // 给"三围属性点"定价的尺子，只用来把 `+15` 与 `+3%` 放到同一量纲上比大小
     // ⚠ 不是战力口径：游戏里天赋每点的战力是**固定加成**（见 filters.js::calculateHeroStats 的
     //   `talent_power = 点数 × 5`，且战力只吃天赋前的三围）⇒ 这里的系数与选路无关的战力互不影响。
@@ -40,7 +39,7 @@ const TalentTree = (() => {
     // --- 内部辅助函数 ---
 
     function _setupTalentData(classKey) {
-        // 【修正】当设置天赋数据时，同时在模块变量中保存当前职业的key
+        // 设置天赋数据时，同时在模块变量中保存当前职业的 key
         currentClassKey = classKey;
         if (!classData[classKey]) {
             console.error(`未找到职业 '${classKey}' 的天赋数据`);
@@ -110,7 +109,7 @@ const TalentTree = (() => {
             conn.classList.toggle('active', isConnActive);
         });
 
-        // 【修正】回调时，同时传递属性加成对象和已选择的节点数量
+        // 回调时，同时传递属性加成对象和已选择的节点数量
         let spendablePoints = selectedNodes.size;
         if (selectedNodes.has('26_1')) {
             spendablePoints--; // 最终天赋节点不计入消耗
@@ -118,7 +117,7 @@ const TalentTree = (() => {
         onStatsChangeCallback(_calculateBonuses(), spendablePoints);
     }
 
-    // ---【逻辑复刻】从参考文件完整移植的交互逻辑函数 ---
+    // --- 交互逻辑函数 ---
 
     const _findForkNode = (startNodeId) => {
         let q = [startNodeId];
@@ -151,7 +150,7 @@ const TalentTree = (() => {
     };
 
     const _getSmartPath = (targetNodeId) => {
-        // 【核心修正】使用递归算法，智能寻找连接到已选节点的最短路径
+        // 递归寻找连接到已选节点的最短路径
 
         // 内部递归辅助函数
         function findShortestPath(nodeId) {
@@ -295,7 +294,7 @@ const TalentTree = (() => {
 
 
     /**
-     * 【已修正】根据策略自动选择天赋路径，并根据天赋等级进行裁剪
+     * 根据策略自动选择天赋路径，并根据天赋等级进行裁剪
      * @param {string} strategy - 策略字符串, e.g., 'atk-def-hp'
      * @param {boolean} manaPriority - 是否优先选择法力
      * @param {string} talentLevel - 天赋等级 ('none', 'talent20', 'talent25')
@@ -412,7 +411,7 @@ const TalentTree = (() => {
             winningPath.forEach(id => picked.add(id));
         });
 
-        // 【新增逻辑】如果选择的是20天赋，则移除所有20级以后的节点
+        // 如果选择的是20天赋，则移除所有20级以后的节点
         if (talentLevel === 'talent20') {
             const nodesToRemove = [];
             for (const nodeId of picked) {
@@ -488,7 +487,7 @@ const TalentTree = (() => {
         nodeDiv.id = `node-${nodeId}`;
         nodeDiv.className = `talent-node ${nodeInfo.type}`;
 
-        // 【修正】调用翻译函数来生成节点的title提示文本
+        // 调用翻译函数来生成节点的 title 提示文本
         nodeDiv.title = _getTranslatedNodeText(nodeInfo);
 
         const imageLayers = _getNodeImageLayers(nodeId, nodeInfo);
@@ -511,7 +510,7 @@ const TalentTree = (() => {
     }
 
     /**
-     * 【已修正】获取节点图标的图层信息
+     * 获取节点图标的图层信息
      * @param {string} nodeId 
      * @param {object} nodeInfo 
      * @returns {Array<object>}
@@ -521,7 +520,7 @@ const TalentTree = (() => {
         const level = parseInt(nodeId.split('_')[0]);
         const text = nodeInfo.text;
 
-        // 【核心修正】将判断条件从 <= 25 扩展为 >= 21，以包含26级的终极天赋节点
+        // 21 级及以上（含 26 级终极天赋节点）使用 node_master 底图
         images.push({ src: `imgs/talents/${(level >= 21) ? 'node_master' : 'node'}.webp`, class: 'node-img-base' });
 
         const statKeywordMap = { '攻击': 'attack.webp', '防御': 'defense.webp', '生命': 'health.webp', '法力': 'mana.webp', '治疗': 'healing.webp', '暴击': 'critical.webp' };
@@ -552,7 +551,7 @@ const TalentTree = (() => {
     }
     
     /**
-     * 【新增】根据字典翻译节点描述文本
+     * 根据字典翻译节点描述文本
      * @param {object} nodeInfo 
      * @returns {string} 翻译后的完整节点文本
      */
@@ -616,7 +615,7 @@ const TalentTree = (() => {
             currentContainer = container;
             onStatsChangeCallback = callback || (() => { });
 
-            // 【修正】保存传入的翻译字典
+            // 保存传入的翻译字典
             talentTermsDict = termsDict || {};
 
             const classKey = heroClassName || 'ranger';

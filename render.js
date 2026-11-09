@@ -2,14 +2,6 @@
 
 
 
-// ⚠ 旧的 `getSkinInfo(hero)` 已删除：它的两个返回值都是**重复推导** ——
-//   · `baseName`：用 `window.langData.name[码]` 做最长前缀匹配 ⇒ 与 `hero.name`
-//     （`loadData`/`reloadLanguageData` 里 `_tPrefix('heroes_name', heroId)`）**逐条相同**
-//     （实测 20 语言 × 2121 英雄零不一致）；
-//   · `skinIdentifier`：硬编码 `classicMap`，**只覆盖 cn/tc**，其余 18 语言回落英文
-//     （如 `ja` 出 "Toon" 而非 "アニメ風"）⇒ 改为查 `costume_type_<码>.json` 字典
-//     （`Lang.t('costume_type', getCostumeIconName(hero))`），顺带修掉该本地化缺陷。
-
 /**
  * 根据皮肤标识符获取对应的图标文件名。
  * @param {string} skinIdentifier - 皮肤标识符 (e.g., 'C1', 'Toon')。
@@ -361,17 +353,16 @@ function renderTable(heroes) {
                 // 4. 返回包含多个图标的单元格
                 return `<td class="col-types">${iconsHtml}</td>`;
             } else if (key === 'name') {
-                // 名字直接用字典值。旧站在这里做「元素后缀 / 服装后缀」清洗，但现在的名字
-                // 全部来自 `langs_json/heroes_name_<码>.json`，**本身就不带这些后缀**
-                // （实测 20 语言 × 全部条目零命中）⇒ 整段清洗逻辑已移除。
+                // 名字直接用字典值：名字全部来自 `langs_json/heroes_name_<码>.json`，
+                // **本身就不带「元素后缀 / 服装后缀」**，无需清洗。
                 const displayName = hero.name || '';
 
                 // 非英文界面时，**仅列表**在名字后附英文名，便于跨语言识别；
                 // 详情页不加（见 renderDetailsInModal 的 nameBlockHTML）。英文界面下两者相同 ⇒ 自动不重复。
                 // ⚠ 判据就是「英文名 ≠ 显示名」，**不要**改成「界面语言 ≠ en 就一律附」：fi/de/pl 的官方名
-                //   有 1208/1205/1129 条（共 1384）本来就是英文，那些行按本判据不附括号是**预期行为**
-                //   （用户 2026-10-20 试过后明确要求保持"不一样才显示"；改成按语言会让 fi 出现 `Niki (Niki)`）。
-                //   副作用认知：Mimic 的 42 条在每种语言都已译 ⇒ 看起来"只有 Mimic 带括号"。
+                //   大量本来就是英文，那些行按本判据不附括号是**预期行为**
+                //   （改成按语言会让 fi 出现 `Niki (Niki)`）。
+                //   Mimic 的名字在每种语言都已译 ⇒ 看起来"只有 Mimic 带括号"。
                 const _enSuffix = (hero.english_name && hero.english_name !== displayName)
                     ? `<span class="hero-en-name">(${hero.english_name})</span>` : '';
                 content = `${displayName}${_enSuffix}`;
@@ -491,14 +482,14 @@ function renderTable(heroes) {
 }
 
 /**
- * 根据用户的最新规则，从技能描述中生成一个通用搜索词条。
+ * 从技能描述中生成一个通用搜索词条。
  * 规则：移除所有符号和数值，用单个空格代替，并清理多余的空格。
  * @param {string} text - 原始技能描述文本。
  * @returns {string} - 处理后的通用搜索词条。
  */
 function generateGeneralSearchTerm(text) {
     if (!text) return '';
-    // 【核心】使用 \p{L} 和 u 标志来正确处理所有非字母字符。
+    // 使用 \p{L} 和 u 标志来正确处理所有非字母字符。
     // \p{L} -> 匹配任何语言的字母 (包括汉字)。
     // [^\p{L}] -> 匹配任何【非】字母的字符 (因此包括数字、所有中英文标点、所有符号)。
     // + -> 匹配一个或多个连续的非字母字符。
@@ -786,7 +777,7 @@ function applyKeywordHighlighting(text, lang, filterType, noParen) {
         //   ⇒ 这里绝不能再按"单行"去认括号，否则内层括号会被误当成注释。
         else if (filterType === 'effects' && !noParen) {
             let textToModify = text.trim();
-            // 新增规则：如果以).或）。结尾，先移除最后的句点
+            // 如果以).或）。结尾，先移除最后的句点
             if (textToModify.endsWith(').') || textToModify.endsWith('）。')) {
                 textToModify = textToModify.slice(0, -1); // 移除最后的句点
             }
@@ -1522,17 +1513,15 @@ function renderDetailsInModal(hero, context = {}) {
     // --- 生成被动技能图标(包含两种来源) ---
     let passiveSkillsHtml = '';
 
-    // `hero.passiveSkills` 在新数据里是 `[{id,title,text}]`（旧数据是纯字符串数组）⇒ 统一取 `id`
-    //   当图标 key（旧实现直接拿对象去查表 ⇒ 恒 undefined，头像被动图标一直不显示）。
+    // `hero.passiveSkills` 在新数据里是 `[{id,title,text}]`（旧数据是纯字符串数组）⇒ 统一取 `id` 当图标 key。
     const _pid = (x) => (x && typeof x === 'object') ? (x.id || '') : String(x || '');
     const basePassives = (hero.passiveSkills || []).map(_pid).filter(Boolean);
     const costumePassives = (hero.costumeBonusPassiveSkillIds || []).map(_pid).filter(Boolean);
 
-    // **展示逆序**（2026-10-19 用户口径）：普通被动与服装奖励被动**各自内部**倒序，服装奖励留在下面。
+    // **展示逆序**：普通被动与服装奖励被动**各自内部**倒序，服装奖励留在下面。
     //   ⚠ `hero.passiveSkills` 里**已经追加了**服装奖励被动（生成器合并的结果，含"从第一套服装继承"那种
     //   本行没有 `costumeBonusPassiveSkillIds` 字段的情况）⇒ 必须按 `costumeBonusPassiveSkillIds`
     //   先拆组再分别翻，整条倒序会把服装奖励顶到第一位。
-    //   判别样本：`magic_telonius_costume_brew`、`forest_god_zeline_costume_cute`。
     //   数据与导出侧仍是官方配置数组原序（`passive_desc_gen.ORDER_MODE = 'config'`），只在渲染时翻。
     const _bonusSet = new Set(costumePassives);
     const _orderedPassives = [
@@ -1809,8 +1798,8 @@ function renderDetailsInModal(hero, context = {}) {
         // 我们导出的词条把「子行」并入同一字符串（`\n` + `[*]`）⇒ 先按行拆开、再逐行渲染：
         //   · `[*]` 行渲染成「橙色 *」的子行（与被动里 `*` 开头行的样式一致）；
         //   · 括号 `(...)` 仍留在同一行内（同词条）；
-        //   · 顺带修掉「`[##elementorange]…[#]` 内含 `[*]`」导致高亮正则 `[^\[\]]*` 匹配失败、
-        //     颜色标记裸露成 `[##elementorange]…` 的问题（construct_bonechill_costume_bedrock）。
+        //   · 注意「`[##elementorange]…[#]` 内含 `[*]`」会导致高亮正则 `[^\[\]]*` 匹配失败、
+        //     颜色标记裸露成 `[##elementorange]…`（construct_bonechill_costume_bedrock）。
         // 我们导出的词条里，子行有两种承载方式：
         //   ① 并入同一字符串（`\n` + `[*]`）—— 如 passiveSkills[].text；
         //   ② 拆成**数组的独立元素**且以 `[*]` 开头 —— 如 familyBonus。
@@ -1829,15 +1818,13 @@ function renderDetailsInModal(hero, context = {}) {
         //   规则：从左往右找第一个**配对完整**的括号；同时满足两条才算注释块：
         //     ① 闭括号是**本行最后一个字符**（允许后面跟 `.` / `。` / 空白）；
         //     ② 开括号在**行首**——位于串首、前面是空白，或本行在它前面只有 `[*]`/`[**]` 子行标记。
-        //   ②是 2026-10-22 补的：我们的导出里注释块一律是"正文 (…)"（`skill_desc_gen._wrap_extra`
+        //   ②的依据：我们的导出里注释块一律是"正文 (…)"（`skill_desc_gen._wrap_extra`
         //   写死 `EXTRA_OPEN=' ('`），而**官方原文自带**的行内括号紧贴前一个词，比如俄语的复数提示
-        //   `на 4 ходов(а).`、波兰语 `obrażeń(y)`、简中`（最多： 10 层）`。只按①判会把它们切成虚线子行
-        //   （用户报的"俄语词条缺失/多出 `* а.`"）。第②条里"只有子行标记"那一半不能省：
-        //   阿语等有 480 条 `[*](…)` 形式的真注释，只认空白会把它们错杀回正文。
-        //   全量核对站点导出 20 语言 392,435 条词条：加②后保留 38,135 条真注释块，
-        //   只把 1,959 条"紧贴词尾的官方行内括号"改回正文（ru 626 / pl 1150 / ja 99 / cn 31 / tc 23 …）。
+        //   `на 4 ходов(а).`、波兰语 `obrażeń(y)`、简中`（最多： 10 层）`。只按①判会把它们切成虚线子行。
+        //   第②条里"只有子行标记"那一半不能省：阿语等有 `[*](…)` 形式的真注释，
+        //   只认空白会把它们错杀回正文。
         //   ⇒ `使所有盟友（包括自己）获得增益。` 这种**句中**括号本来就因①不成立而不受影响。
-        //   ⚠ 注释块**可以跨行**（旧实现按单行找配对，会把内层括号误判成注释，就是用户报的那个 bug）。
+        //   ⚠ 注释块**可以跨行**：按单行找配对会把内层括号误判成注释。
         const _matchParen = (s, start) => {
             let depth = 0;
             for (let i = start; i < s.length; i++) {
@@ -1900,12 +1887,9 @@ function renderDetailsInModal(hero, context = {}) {
             //   （谦逊分组后的词条本来就有缩进，括号块跟它一样深就看不出差别）
             let lastWasSub = !!startLvl;
             // 上一条产出行的**层级**（主词条 = 0、`[*]` = 1、`[**]` = 2 …）。
-            // 括号注释块的缩进 = 本层级 + 1 级（每级 1.4em）—— 
-            //   「`ninja_peridot_costume_herbalist` 最后那句明明着色和下划线了，为什么没有比主词条多缩进」
-            //   「`goblin_kettle_costume_field_cook` 成长为主词条，下面的都着色了但缩进都是一样的」。
-            //   旧实现把缩进**写死两档**（`.paren-note` 1.4em / `.paren-note-sub` 2.8em），
-            //   只覆盖"宿主是主词条"和"宿主是 `[*]`"两种；层级化之后宿主是 `[**]` 时括号块
-            //   仍是 2.8em ⇒ 与宿主**平齐**，从属关系看不出来。
+            // 括号注释块的缩进 = 本层级 + 1 级（每级 1.4em）。
+            //   不能把缩进**写死两档**（`.paren-note` 1.4em / `.paren-note-sub` 2.8em）：
+            //   宿主是 `[**]` 时括号块会与宿主**平齐**，从属关系看不出来。
             //   `forceSub=true` 时由调用方传入**上一条 `<li>` 的末尾层级**（`startLvl`），
             //   否则"整条只有括号、并入上一条"的元素（如 `[*](…括号说明…)`）会退回一级。
             let lastLvl = startLvl || 0;
@@ -1942,18 +1926,16 @@ function renderDetailsInModal(hero, context = {}) {
                     return;
                 }
                 // 括号注释块：去掉 `(` `)`，整块套虚线 + 左侧多缩进。
-                // ⚠ （`ghost_xiwang_gui`「2 个额外说明合并为一个括号了 但缩进却不一样
-                //   应该为同一级别」）：块内各行**缩进必须一致** —— 原来第 2 行起套 `.skill-subline`
-                //   （+1.4em）比第 1 行深，看着像两级。现在除首行外只加 `<br>` + `* ` 项目符，
-                //   **不再加缩进类**；虚线由 `.paren-note` 直接继承（也省掉 `.paren-note .skill-subline`
+                // ⚠ 块内各行**缩进必须一致**：除首行外只加 `<br>` + `* ` 项目符，
+                //   **不加缩进类**（套 `.skill-subline` 会让第 2 行起比第 1 行深 +1.4em，看着像两级）；
+                //   虚线由 `.paren-note` 直接继承（也省掉 `.paren-note .skill-subline`
                 //   那条 inherit 规则的作用）。
                 const hadContent = hasContent;
                 let body = '', bodyHas = false;
                 p.text.split('\n').map(s => s.trim()).filter(s => s !== '').forEach((l, i) => {
                     const r = _one(l);
-                    // 行头 = `.paren-mark` 的 `*` + **一个空格**（「补上」）
-                    //   —— 首行原来直接 `*内容`（无空格），与续行 `* 内容`、与 `[*]` 子行的
-                    //   `* ${h}` 都不一致；现在块内**所有行**统一成 `* 内容`。
+                    // 行头 = `.paren-mark` 的 `*` + **一个空格**：块内**所有行**统一成 `* 内容`，
+                    //   与续行、与 `[*]` 子行的 `* ${h}` 一致。
                     const _head = `<span class="paren-mark">*</span> `;
                     if (i === 0) {                          // 第一行接着 `*` 同行显示
                         if (!headDone && !hadContent) { headDone = true; open = r.open; }
@@ -1977,9 +1959,9 @@ function renderDetailsInModal(hero, context = {}) {
         };
 
         // `[*]` 数组元素要不要并进上一条 `<li>` —— **按列表类型分**：
-        //   · `familyBonus`：`[*]` 是「奖励表头」下的子项 ⇒ **并进上一条**（用户点名要求）；
+        //   · `familyBonus`：`[*]` 是「奖励表头」下的子项 ⇒ **并进上一条**；
         //   · `effects`（`skills[].lines`）：**每个数组元素各自成一个 `<li>`**
-        //     —— 旧站就是这么拍的（`谦逊低于 40 时：` / `[*]对目标…` … 共 7 条扁平行），
+        //     （如 `谦逊低于 40 时：` / `[*]对目标…` 各成一条扁平行）——
         //     谦逊这种选择性的技能要按词条分组元素，不能被当成 2 个大组别元素。
         //   · `passives` 传进来的是单元素数组（子行在字符串内用 `\n[*]`）⇒ 这里不涉及。
         const _mergeSubItems = (filterType === 'familyBonus');
@@ -2028,8 +2010,7 @@ function renderDetailsInModal(hero, context = {}) {
 
     // 使用所有三个变量来构建最终的HTML
     // ▼ 统一使用主英雄名作为筛选填充值 ▼
-    // 旧站会在这里去掉名字末尾的「元素后缀」（dark/holy/ice/nature/fire）；但现有名字字典
-    // （含英文名 1384 条）里该正则**零命中** ⇒ 清理逻辑已移除，直接用原名。
+    // 名字字典条目本身不带「元素后缀」（dark/holy/ice/nature/fire）⇒ 直接用原名，不做清洗。
     const cleanedFilterValue = displayName;
     const cleanedIdentityName = identityName || '';
 
@@ -2071,9 +2052,7 @@ function renderDetailsInModal(hero, context = {}) {
         ? hero.familyBonus
         : ((state.families_bonus.find(f => String(f.name || '').toLowerCase() === String(hero.family || '').toLowerCase()) || {}).bonus || []);
 
-    // 被动技能 / 家族奖励的**大图标**（
-    //   「被动奖励和家族奖励要大图标展示，右边渲染被动名，下一元素是被动词条」；
-    //   后续又反馈「图标太大、标题文字要加大」⇒ 图标 40px、名字 `.big-skill-name`）。
+    // 被动技能 / 家族奖励的**大图标**（图标 40px、名字 `.big-skill-name`）：
     //   图标名走 `PassiveSkillIconCollection`（`data/PassiveSkillIconCollection.json`，由 `utils.js::loadData` 取）；
     //   `resist_*` 仍是「盾牌底 + 原图标」两层。
     //   没有图标定义 / `NULL_SPRITE` 占位 ⇒ 返回 ''（调用方只剩名字，不留破图）。
@@ -2120,11 +2099,11 @@ function renderDetailsInModal(hero, context = {}) {
     //    标题下面再加一行「大图标 + 家族名」，下一元素是家族奖励词条 ──
     //    大图标旁的家族名走**官方 `family_title` 表**（`langs_json/family_title_<码>.json`，
     //    如 `asgard → 阿斯加德王国`），不是 `family` 表里的分组短名（`S3 - 阿斯加德`）；
-    //    表外家族（123 条之外）回退 `getDisplayName`。
-    //    ⚠ 二次调整：
-    //      ① 「家族奖励」那行的**家族名隐藏**（原来"小图标 + 家族名"和下面的大图标行重复，
+    //    表外家族回退 `getDisplayName`。
+    //    ⚠ 两处口径：
+    //      ① 「家族奖励」那行的**家族名隐藏**（与下面的大图标行重复，
     //         `langDict.modalFamilyBonus('')` ⇒ 只留标题，模板已支持空家族名）；
-    //      ② 大图标那行的**家族名标题改为可点** ⇒ **一键筛选该家族**
+    //      ② 大图标那行的**家族名标题可点** ⇒ **一键筛选该家族**
     //         （复用 `.skill-type-tag` 的点击逻辑，见 `modalContent.addEventListener('click')`）。
     const _familyTitleTable = (typeof Lang !== 'undefined') ? Lang.get('family_title') : {};
     const familyTitleName = (hero.family && _familyTitleTable[hero.family])
@@ -2143,7 +2122,7 @@ function renderDetailsInModal(hero, context = {}) {
         </div>` : '';
 
     // ── 「服装奖励」下拉──
-    // 只有带服装奖励表的英雄（688/702 个服装）才显示；**默认 = 最多套**。
+    // 只有带服装奖励表的英雄才显示；**默认 = 最多套**。
     // 选项 = 「无」+ 每一套对应的**服装图标 + 服装名**（`C1/C2/卡通/玻璃/英姿`，按当前语言）。
     // ⚠ 原生 `<select>` 的 `<option>` 放不了图片 ⇒ 用一排小按钮当选择器。
     // ⚠ 这只影响**详情页**显示；列表属性仍按"该英雄自身的服装顺序"算（见 filters.js::calculateHeroStats）。
@@ -2468,7 +2447,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // 2. 绑定事件到整个header
         header.addEventListener('click', () => {
-            // 【核心修改】移除了之前限制点击区域的if判断，现在整个header都可触发
+            // 整个 header 都可触发（不限点击区域）
             const isCurrentlyCollapsed = contentElement.classList.contains('collapsed');
 
             contentElement.classList.toggle('collapsed', !isCurrentlyCollapsed);
@@ -2960,7 +2939,7 @@ function renderDetailsInModal(hero, context = {}) {
                     // 清空之前的内容
                     imageModalContent.innerHTML = '';
 
-                    // ▼▼▼ 新增：释放上一次可能残留的动态立绘播放器 ▼▼▼
+                    // ▼▼▼ 释放上一次可能残留的动态立绘播放器 ▼▼▼
                     disposeActiveAnimationPlayer();
 
                     // ---------- 判断该英雄是否有动态立绘 ----------
@@ -3166,7 +3145,7 @@ function renderDetailsInModal(hero, context = {}) {
                     // ---------- 2. 立绘位：根据是否有动态立绘，选择 canvas 或 avatar 图片 ----------
                     // 两者共用同一位置（z-index=2），尺寸规则也完全一致（85vw × 85vh）
 
-                    // ▼▼▼ 动态立绘路径（新增）▼▼▼
+                    // ▼▼▼ 动态立绘路径 ▼▼▼
                     if (hasAnimation) {
                         try {
                             _activeAnimationPlayer = await createHeroAnimationPlayer(portraitContainer, hero.heroId, {
@@ -3182,7 +3161,7 @@ function renderDetailsInModal(hero, context = {}) {
                         }
                     }
 
-                    // ▼▼▼ 静态立绘路径（原有逻辑）▼▼▼
+                    // ▼▼▼ 静态立绘路径 ▼▼▼
                     if (!hasAnimation) {
                         // 创建英雄立绘图片
                         const heroImage = document.createElement('img');
@@ -3261,7 +3240,7 @@ function renderDetailsInModal(hero, context = {}) {
 }
 
 /**
- * 渲染兑换码模态框内容（升级版）
+ * 渲染兑换码模态框内容
  */
 function renderRedeemCodesModal() {
     const langDict = i18n[state.currentLang];

@@ -319,7 +319,6 @@ function toggleFavorite(hero) {
  * 此函数会遍历所有英雄数据，提取出所有唯一的星级、颜色、职业等，并动态创建筛选按钮。
  */
 function populateFilters() {
-    // 这部分构建映射的逻辑不变，请保留
     listHeroes().forEach(hero => {
         const skillInfo = heroSkillTypes(hero);       // 新数据 {分类:[标签]}；旧数据自动归一
         for (const categoryName in skillInfo) {
@@ -381,8 +380,7 @@ function populateFilters() {
                 return a.localeCompare(b, locale, sortOptions);
             });
         } else if (key === 'speed' || key === 'element' || key === 'class' || key === 'aetherpower' || key === 'costume') {
-            // 「先排序后翻译」：用语言无关的 ID 顺序（data/sort_order.json），
-            // 不再依赖 language.js 的 speedOrder_<码> / colorOrder_<码> 数组。
+            // 「先排序后翻译」：用语言无关的 ID 顺序（data/sort_order.json）。
             const _tbl = { speed: 'speed', element: 'element', class: 'class', aetherpower: 'aether_power', costume: 'costume' }[key];
             const _idKey = { speed: 'speedId', element: 'elementId', class: 'classId', aetherpower: 'aetherPowerId' }[key];
             const _ord = {};
@@ -442,8 +440,8 @@ function populateFilters() {
         updateFilterButtonUI(key);
     });
 
-    // 「显示活动名称」已改为 `index.html` 里的静态控件（右栏·英雄立绘光效上方），
-    // 接线挪到 `main.js` 的静态复选框区 ⇒ 这里不再动态生成，也避免每次 populateFilters
+    // 「显示活动名称」是 `index.html` 里的静态控件（右栏·英雄立绘光效上方），
+    // 接线在 `main.js` 的静态复选框区 ⇒ 这里不动态生成，避免每次 populateFilters
     // 都给同一个 checkbox 再叠一层 change 监听器。
     setTimeout(() => {
         initializeNameAutocomplete();
@@ -486,7 +484,7 @@ function getIconForFilter(filterType, optionValue) {
         case 'skillTag_debuff':
             const chineseKey = String(optionValue);   // 标签本来就是 CN 键
 
-            // 2. ▼▼▼▼▼【核心修改】移除文件名中的所有斜杠字符 ▼▼▼▼▼
+            // 2. ▼▼▼▼▼ 移除文件名中的所有斜杠字符 ▼▼▼▼▼
             const sanitizedFilename = chineseKey.replace(/\//g, '');
 
             // 3. 使用处理过的安全文件名构建路径
@@ -544,7 +542,7 @@ function openMultiSelectModal(filterType, title) {
     const modalContent = modal.querySelector('#multi-select-modal-content');
     const langDict = i18n[state.currentLang] || {};
 
-    // ▼▼▼▼▼ 【修正】使用 state. 前缀访问全局状态 ▼▼▼▼▼
+    // ▼▼▼▼▼ 使用 state. 前缀访问全局状态 ▼▼▼▼▼
     const options = state.availableOptions[filterType];
     const currentSelections = new Set([...(state.multiSelectFilters[filterType] || [])]);
 
@@ -908,7 +906,7 @@ function applyFiltersAndRender() {
     };
 
     // 3. 执行筛选
-    // 「收藏」范围判据**预计算**成下标集合（否则在回调里逐英雄重建 ⇒ O(n²×m)，曾慢 7~13×）。
+    // 「收藏」范围判据**预计算**成下标集合（否则在回调里逐英雄重建 ⇒ O(n²×m)）。
     let favoriteIndexSet = null;
     if (filterScope === 'favorites') {
         favoriteIndexSet = state.temporaryFavorites
@@ -975,7 +973,7 @@ function applyFiltersAndRender() {
             if (!selectedValues.includes(String(heroValue))) return false;
         }
 
-        // 新的技能标签筛选逻辑
+        // 技能标签筛选逻辑
         const heroAllSkillTags = new Set(heroSkillTags(hero));
         const skillTagKeys = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
         for (const key of skillTagKeys) {
@@ -1071,7 +1069,7 @@ function applyFiltersAndRender() {
             if (aIsFeatured && !bIsFeatured) return -1;
             if (!aIsFeatured && bIsFeatured) return 1;
 
-            // --- 规则2 (新增): 如果配置了 entitiesToChooseFrom，则“可选”的英雄排第二 ---
+            // --- 规则2: 如果配置了 entitiesToChooseFrom，则“可选”的英雄排第二 ---
             // 这个规则只在两个英雄都“未被精选”时生效
             if (poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
                 const aIsEligible = poolConfig.entitiesToChooseFrom.includes(a.heroId);
@@ -1148,8 +1146,7 @@ function applyFiltersAndRender() {
  *
  * ⚠⚠ **只允许挂一次监听器**：`populateFilters()` 结尾会 `setTimeout(() => initializeNameAutocomplete(), 100)`，
  *   而 `populateFilters()` 会被重复调用（切语言、重刷筛选…）⇒ 每次都给 `#name-input` /
- *   `#clear-input` / `document` **再叠一层监听器**。表现：点一次 ✕ 会渲染 N 次
- *   （实测 2/3/4 次 × ~800ms；用户会话里累积到 ~14 次 ⇒ 卡 11 秒）。
+ *   `#clear-input` / `document` **再叠一层监听器**，点一次 ✕ 会渲染 N 次。
  *   这些元素都是 index.html 里的静态节点，不会被重建 ⇒ 挂一次永远有效。
  */
 let _nameAutocompleteReady = false;
@@ -1159,7 +1156,7 @@ function initializeNameAutocomplete() {
     const autocompleteList = document.getElementById('name-autocomplete-list');
     const clearButton = document.getElementById('clear-input'); // 获取清除按钮
     // ⚠ **搜索语言选择已废弃** —— 不论 cookie 如何，一律按 `current`
-    //   （= 当前界面语言）处理 ⇒ 选择器元素与监听逻辑一并移除。
+    //   （= 当前界面语言）处理。
 
     if (!nameInput || !autocompleteList) return;
     _nameAutocompleteReady = true;      // 静态节点 ⇒ 挂一次即可，后续调用直接跳过
@@ -1358,9 +1355,7 @@ function initializeNameAutocomplete() {
 /**
  * 获取英雄名字候选建议（支持任意位置匹配）
  *
- * ⚠ 旧的 `searchLang`（额外名称语言）参数已废弃 —— 名字一律用**当前界面语言**，
- *   相关的「按另一语言字典重取名字」分支与「元素后缀清理」都已移除
- *   （后缀清理在现有名字字典里 20 语言零命中，见 `_tools/_chk_name_suffix.js`）。
+ * ⚠ 旧的 `searchLang`（额外名称语言）参数已废弃 —— 名字一律用**当前界面语言**。
  * @param {string} searchTerm - 用户输入的搜索词
  */
 function getHeroNameSuggestions(searchTerm) {

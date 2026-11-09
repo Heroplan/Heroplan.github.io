@@ -5,7 +5,7 @@
  * 短名 → 内部视图名（`history.state.view` 用的那套，也是 `setMainViewHistory` / `applyMainView` 的入参）：
  *   地址要短要好读（`?view=lottery`），内部名沿用既有标志（`lotterySimulator`），两者靠下面这张表换。
  * ⚠ 新增视图要同时改这张表、`applyMainView` 的派发与 `main.js` 的解析。
- *   现有 2121 个 heroId 与这些短名零冲突（heroId 都是 `color_class_name` / `seasonN_xxx` 形态）。
+ *   heroId 都是 `color_class_name` / `seasonN_xxx` 形态，与这些短名零冲突。
  */
 const VIEW_NAME_BY_URL_KEYWORD = {
     wanted: 'wanted',
@@ -273,7 +273,7 @@ function initAndShowFarmingGuideView() {
                 let value = row[key] || '';
 
                 if (key === 'item') {
-                    // 修复：恢复第一列物品图标的渲染
+                    // 第一列物品图标渲染为图片
                     if (value) {
                         return `<td data-col-index="${colIndex}"><img loading="lazy" src="imgs/farm/${value}.webp" decoding="async" alt="${value}" class="farm-item-image"></td>`;
                         return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;
@@ -306,7 +306,7 @@ function initAndShowFarmingGuideView() {
                 return;
             }
 
-            // 原有的高亮逻辑保持不变
+            // 单元格高亮
             const cell = event.target.closest('td');
             if (cell) applyHighlight(cell);
         });
@@ -432,7 +432,7 @@ function showSoulExchangeModal() {
 
     scrollContainer.innerHTML = ''; // 清空之前的内容
 
-    // ▼▼▼ 辅助函数增加一个 options 参数，用于控制显示细节 ▼▼▼
+    // ▼▼▼ 辅助函数：options 参数控制显示细节 ▼▼▼
     const createSoulExchangeCard = (hero, options = {}) => {
         const card = document.createElement('div');
         card.className = `summary-hero-card ${getColorGlowClass(hero.elementId)}`;
@@ -522,7 +522,7 @@ function showSoulExchangeModal() {
         scrollContainer.appendChild(heroesContainer);
     });
 
-    // 显示弹窗的逻辑保持不变
+    // 显示弹窗
     setTimeout(() => { scrollContainer.scrollTop = 0; }, 0);
     summaryModal.classList.remove('hidden');
     overlay.classList.remove('hidden');

@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<!-- 静态默认 = 简体中文（按**书写系统**声明，与 hreflang `zh-Hans` 一致）；
+     ui.js::applyLanguage 会按当前语言改写 `lang`（cn→zh-Hans / tc→zh-Hant）。 -->
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 语言页住在 `/<码>/` 子目录，但所有资源/取数都相对站点根 ⇒ 用 base 把相对 URL 钉在根。
+         根页也加：无缝切语言把地址改成 `/<码>/` 后（不重载），相对 fetch/img 仍须从根解析。
+         ⚠ 站内没有纯 fragment 导航（语言菜单为真实 href 并由 JS 拦截），base 不会把 `#x` 带偏。 -->
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <style>
+        /* 确保背景颜色变量能被立即使用 */
+        :root {
+            --md-sys-color-background: #FEFBFF;
+            /* 默认亮色主题背景 */
+        }
+
+        html.dark-theme {
+            --md-sys-color-background: #141218;
+            /* 暗色主题背景 */
+        }
+
+        #page-loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* 直接使用上面定义的变量 */
+            background-color: var(--md-sys-color-background);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader-spinner {
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            border-top-color: #4A90E2;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1.2s linear infinite;
+        }
+
+        .js-loading .header-buttons,
+        .js-loading .main-container,
+        .js-loading .floating-action-buttons,
+        .js-loading footer {
+            visibility: hidden;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!-- 预加载星星、标准天赋节点图标和突破图标，以防止布局跳动。 -->
+    <link rel="preload" href="imgs/other/ascension_bar.webp" as="image">
+    <link rel="preload" href="imgs/other/ascension_bar_limitbreak.webp" as="image">
+    <link rel="preload" href="imgs/talents/node.webp" as="image">
+    <link rel="preload" href="imgs/talents/node_master.webp" as="image">
+    <link rel="preload" href="imgs/other/star.webp" as="image">
+    <link rel="preload" href="imgs/other/view_avatar.webp" as="image">
+    <script>
+        window.ENABLE_DEBUG_LOGGING = false;
+        // 检测UA是否包含 'iPad'| 'iPhone' 字符串，并添加相应的类
+        if (/ipad|iphone/i.test(navigator.userAgent)) {
+            document.documentElement.classList.add('is-ios'); // 添加到 <html> 标签上
+        }
+        (function () {
+            try {
+                const themeCookie = document.cookie.match(/;?\s*theme=([^;]*)/);
+                let theme = themeCookie ? themeCookie[1] : null;
+                if (!theme) {
+                    const hour = new Date().getHours();
+                    theme = (hour >= 20 || hour < 8) ? 'dark' : 'light';
+                }
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark-theme');
+                }
+            } catch (e) { }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const today = new Date();
+            const supabase = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const hours = String(today.getHours()).padStart(2, '0');
+            const minutes = String(today.getMinutes()).padStart(2, '0');
+            const version = `${supabase}${mm}${dd}${hours}${minutes}`;
+
+            // 需要进行缓存破坏处理的本地资源文件
+            const localAssets = [
+                { selector: 'link[href="style.css"]', attribute: 'href' },
+                { selector: 'link[href="talent-tree.css"]', attribute: 'href' },
+                { selector: 'script[src="./talent-tree.js"]', attribute: 'src' },
+                { selector: 'script[src="./i18n_funcs.js"]', attribute: 'src' },
+                { selector: 'script[src="./langs.js"]', attribute: 'src' },
+                { selector: 'script[src="./data.js"]', attribute: 'src' },
+                { selector: 'script[src="./utils.js"]', attribute: 'src' },
+                { selector: 'script[src="./state.js"]', attribute: 'src' },
+                { selector: 'script[src="./ui.js"]', attribute: 'src' },
+                { selector: 'script[src="./filters.js"]', attribute: 'src' },
+                { selector: 'script[src="./render.js"]', attribute: 'src' },
+                { selector: 'script[src="./special-views.js"]', attribute: 'src' },
+                { selector: 'script[src="./lottery-simulator.js"]', attribute: 'src' },
+                { selector: 'script[src="./team-simulator.js"]', attribute: 'src' },
+                { selector: 'script[src="./chat-simulator.js"]', attribute: 'src' },
+                { selector: 'script[src="./import-export.js"]', attribute: 'src' },
+                { selector: 'script[src="./main.js"]', attribute: 'src' },
+                { selector: 'script[src="./lottery.json"]', attribute: 'src' },
+                { selector: 'script[src="./lottery_config.json"]', attribute: 'src' },
+                { selector: 'script[src="./lottery_config_extra.json"]', attribute: 'src' },
+                                                            ];
+
+            // 延迟执行，确保DOM元素已加载
+            document.addEventListener('DOMContentLoaded', function () {
+                localAssets.forEach(asset => {
+                    const element = document.querySelector(asset.selector);
+                    if (element) {
+                        const currentValue = element.getAttribute(asset.attribute);
+                        // 避免重复添加版本号
+                        if (currentValue && !currentValue.includes('?v=')) {
+                            element.setAttribute(asset.attribute, `${currentValue}?v=${version}`);
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+
+    <script>
+        /* 书写方向：**首屏之前**就把 `<html dir>` 定下来，避免阿拉伯语用户先看到 LTR 再翻转。
+           （ui.js::applyLanguage 后面还会再设一次，两处口径一致：RTL 语言见 RTL_LANGS。）
+
+           优先级与 main.js 一致：**路径 `/<码>/` → URL 参数（`lang` 优先，`hl` 兜底）→ cookie → 浏览器语言**。
+           ⚠ 只按**站点支持的**语言判方向 —— 20 种语言里只有 `ar` 是 RTL。
+             不支持的语言（如 `he`/`fa`/`ur`）会回落成英文内容 ⇒
+             **英文内容配 RTL 版式是错的**，不支持就不动方向。
+           ⚠ 这里的 SUPPORTED/ALIAS 是 langs.js::normalizeCode 的**首屏内联副本**
+             （首屏不能等 langs.js 加载）。改动语言列表时**两处都要改**。 */
+        (function () {
+            var SUPPORTED = 'cn tc en ja ko fr de es pt it ru ar tr pl nl sv da no fi id'.split(' ');
+            var ALIAS = {
+                'zh-hans': 'cn', 'zh-cn': 'cn', 'zh-sg': 'cn', 'zh-my': 'cn',
+                'zh-hant': 'tc', 'zh-tw': 'tc', 'zh-hk': 'tc', 'zh-mo': 'tc',
+                'in': 'id', 'nb': 'no', 'nn': 'no', 'pt-br': 'pt', 'pt-pt': 'pt'
+            };
+            function norm(v) {
+                if (!v) return '';
+                v = String(v).trim().toLowerCase();
+                if (SUPPORTED.indexOf(v) >= 0) return v;
+                if (ALIAS[v]) return ALIAS[v];
+                var b = v.split('-')[0];
+                return SUPPORTED.indexOf(b) >= 0 ? b : '';
+            }
+            // 路径式语言入口（langs.js::langFromPath 的首屏内联副本）：`/cn/`、`/cn`、`/cn/index.html` → cn。
+            var pm = location.pathname.match(/^\/([a-z]{2})(?:\/|\/index\.html)?$/);
+            var pathLang = (pm && SUPPORTED.indexOf(pm[1]) >= 0) ? pm[1] : '';
+            var m = document.cookie.match(/(?:^|;\s*)language=([^;]*)/);
+            var q = new URLSearchParams(location.search);
+            // ⚠ 优先级必须与 main.js 的语言解析块一致：**路径 > URL 参数 > Cookie > 浏览器语言**。
+            //   爬虫的渲染会话可能带着上次访问留下的 cookie，若 cookie 优先，`?lang=da` 会被渲染成
+            //   别的语言、canonical 跟着指错 ⇒ GSC 判成"备用网页（有适当的规范标记）"。
+            var urlLang = norm(q.get('lang')) || norm(q.get('hl'));
+            var explicit = pathLang || urlLang;
+            var lang = explicit
+                || norm(m ? decodeURIComponent(m[1]) : '')
+                || norm(navigator.language);
+            document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            // canonical 自指也在首屏先改掉，不等 ui.js::applyLanguage ⇒ 渲染时间线更早，
+            // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**（路径或参数）：
+            // 根页（无路径语言、无 `lang`/`hl`）保持自指根（x-default），否则根会被判成某个语言版的副本。
+            // 旧 `?lang=` 链接也指向路径版 `/<码>/` ⇒ 把规范信号集中到独立静态入口。
+            // 写法与 ui.js 的 `SEO_ORIGIN + pathLang + '/'` 逐字一致（两处不一致会互相覆盖）。
+            if (explicit) {
+                var canon = document.getElementById('canonical-link');
+                if (canon) canon.setAttribute('href', 'https://heroplan.github.io/' + explicit + '/');
+            }
+        })();
+    </script>
+
+    <!-- ══════════════════════════════════════════════════════════════════════
+         SEO（根页静态兜底 = 简体中文，作为 x-default；20 个语言版各有独立静态页
+         `/<码>/index.html`，由 `_tools/build_lang_pages.py` 以本文件为模板生成，
+         首字节即带本语言的 title / description / canonical / hreflang / SEO 区块）。
+         运行时 ui.js::applyLanguage 仍会按当前语言更新 title/meta/canonical（无缝切换不重载）。
+         ⚠ 改文案请改 `_tools/_seo_text.py`（20 语言单一数据源）后跑 `--apply`，
+           再跑 `build_lang_pages.py` 重新生成语言页——否则 20 种语言会不一致。
+         ══════════════════════════════════════════════════════════════════════ -->
+    <title>Empires &amp; Puzzles sankaritietokanta | Kuvat ja tulevat sankarit | Heroplan</title>
+    <meta id="meta-description" name="description"
+        content="Heroplan — Empires &amp; Puzzlesin monikielinen sankaritietokanta: kaikkien sankarien tilastot, kyvyt ja kuvat pelin 20 kielellä, tulevat sankarit, suodattimet ja simulaattorit.">
+    <meta name="keywords"
+        content="帝国与谜题, 帝國與謎題, Empires & Puzzles, 英雄资料库, 英雄数据库, 英雄数据, 全语言, 英雄立绘, 立绘, 动态立绘, 未来英雄, 未发布英雄, 英雄技能, 特殊技能, 被动技能, 家族加成, 服装, 属性计算器, 战力计算, 天赋模拟器, 极限突破, 抽奖模拟器, 队伍模拟器, 聊天模拟器, 材料出处, 通缉任务, 活动日历, 兑换码, 攻略, Heroplan, Juno">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Heroplan">
+
+    <!-- 语言版本互指（20 种游戏内语言 + x-default）。
+         ⚠ 每个语言版有**独立静态入口** `/<码>/`（_tools/build_lang_pages.py 生成），
+           首字节即带本语言的 lang/dir/title/description/canonical。
+           每个语言页 canonical 自指其路径（ui.js::applyLanguage 与首屏脚本同口径），
+           否则 hreflang 会被判成"同一页面"而失效。根页 `/` = x-default。 -->
+    <link rel="alternate" hreflang="zh-Hans" href="https://heroplan.github.io/cn/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroplan.github.io/tc/">
+    <link rel="alternate" hreflang="en" href="https://heroplan.github.io/en/">
+    <link rel="alternate" hreflang="ja" href="https://heroplan.github.io/ja/">
+    <link rel="alternate" hreflang="ko" href="https://heroplan.github.io/ko/">
+    <link rel="alternate" hreflang="fr" href="https://heroplan.github.io/fr/">
+    <link rel="alternate" hreflang="de" href="https://heroplan.github.io/de/">
+    <link rel="alternate" hreflang="es" href="https://heroplan.github.io/es/">
+    <link rel="alternate" hreflang="pt" href="https://heroplan.github.io/pt/">
+    <link rel="alternate" hreflang="it" href="https://heroplan.github.io/it/">
+    <link rel="alternate" hreflang="ru" href="https://heroplan.github.io/ru/">
+    <link rel="alternate" hreflang="ar" href="https://heroplan.github.io/ar/">
+    <link rel="alternate" hreflang="tr" href="https://heroplan.github.io/tr/">
+    <link rel="alternate" hreflang="pl" href="https://heroplan.github.io/pl/">
+    <link rel="alternate" hreflang="nl" href="https://heroplan.github.io/nl/">
+    <link rel="alternate" hreflang="sv" href="https://heroplan.github.io/sv/">
+    <link rel="alternate" hreflang="da" href="https://heroplan.github.io/da/">
+    <link rel="alternate" hreflang="no" href="https://heroplan.github.io/no/">
+    <link rel="alternate" hreflang="fi" href="https://heroplan.github.io/fi/">
+    <link rel="alternate" hreflang="id" href="https://heroplan.github.io/id/">
+    <link rel="alternate" hreflang="x-default" href="https://heroplan.github.io/">
+    <link rel="canonical" id="canonical-link" href="https://heroplan.github.io/fi/" />
+
+    <!-- Open Graph / Twitter（默认简中；运行时按当前语言更新，见 ui.js::applyLanguage） -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Heroplan">
+    <meta property="og:locale" id="og-locale" content="fi_FI">
+    <meta property="og:title" id="og-title" content="Empires &amp; Puzzles sankaritietokanta | Kuvat ja tulevat sankarit | Heroplan">
+    <meta property="og:description" id="og-description" content="Heroplan — Empires &amp; Puzzlesin monikielinen sankaritietokanta: kaikkien sankarien tilastot, kyvyt ja kuvat pelin 20 kielellä, tulevat sankarit, suodattimet ja simulaattorit.">
+    <meta property="og:url" id="og-url" content="https://heroplan.github.io/fi/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" id="tw-title" content="Empires &amp; Puzzles sankaritietokanta | Kuvat ja tulevat sankarit | Heroplan">
+    <meta name="twitter:description" id="tw-description" content="Heroplan — Empires &amp; Puzzlesin monikielinen sankaritietokanta: kaikkien sankarien tilastot, kyvyt ja kuvat pelin 20 kielellä, tulevat sankarit, suodattimet ja simulaattorit.">
+
+    <!-- 结构化数据（WebApplication）：根页 = 简中；语言页由 build_lang_pages.py 按语言重写本块。 -->
+    <script type="application/ld+json" id="seo-jsonld">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Heroplan",
+    "alternateName": "Empires & Puzzles sankaritietokanta",
+    "url": "https://heroplan.github.io/fi/",
+    "description": "Heroplan — Empires & Puzzlesin monikielinen sankaritietokanta: kaikkien sankarien tilastot, kyvyt ja kuvat pelin 20 kielellä, tulevat sankarit, suodattimet ja simulaattorit.",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "fi",
+    "isAccessibleForFree": true,
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    }
+}
+    </script>
+    <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
+    <link rel="stylesheet" href="theme.css?v=20261104a">
+    <link rel="stylesheet" href="style.css?v=20261028b">
+    <link rel="stylesheet" href="talent-tree.css?v=20261028b">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-LPVF61FMD9', {
+            cookie_domain: 'none',
+            cookie_flags: 'SameSite=None;Secure'
+        });
+    </script>
+    <script>
+        /* 统计脚本不参与首屏渲染 ⇒ 放在 head 末尾，并等页面 load 完再注入，
+           免得跟数据/立绘抢带宽；`_hmt` 数组先行，hm.js 加载后会自己消费。 */
+        var _hmt = _hmt || [];
+        window.addEventListener("load", function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d9d317ef382dafc61c3891f01c561672";
+            document.head.appendChild(hm);
+        }, { once: true });
+    </script>
+
+</head>
+
+<body class="js-loading">
+    <div id="page-loader-overlay">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <div class="main-container">
+        <header>
+            <div class="header-top-row">
+                <h1 data-lang-key="headerTitle"><a href="/">Empires &amp; Puzzles sankaritietokanta</a></h1>
+                <div class="header-buttons">
+                    <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
+                        <img src="imgs/other/gift.webp" alt="Redeem Codes"
+                            style="width: 24px; height: 24px; object-fit: contain;">
+                        <span id="redeem-code-count" class="badge"></span>
+                    </button>
+                    <button id="show-lottery-simulator-btn" class="theme-toggle-btn" title="抽奖模拟器">
+                        <img src="imgs/lottery/icon/lottery.webp" alt="抽奖模拟器"
+                            style="width: 28px; height: 28px; object-fit: contain;">
+                    </button>
+                    <button id="show-team-simulator-btn" class="theme-toggle-btn" title="队伍模拟器">
+                        <img src="imgs/event/war.webp" alt="队伍模拟器"
+                            style="width: 28px; height: 28px; object-fit: contain;">
+                    </button>
+                    <button id="show-chat-simulator-btn" class="theme-toggle-btn" title="聊天模拟器">
+                        <span style="font-size: 1.5rem;">🎨</span>
+                    </button>
+                    <button id="show-farming-guide-btn" class="theme-toggle-btn" title="材料出处指南">
+                        <img src="imgs/farm/Adventurer's Kit.webp" alt="Farming"
+                            style="width: 24px; height: 24px; object-fit: contain;">
+                    </button>
+                    <button id="show-wanted-mission-btn" class="theme-toggle-btn">
+                        <img src="imgs/farm/wanted.webp" alt="通缉任务"
+                            style="width: 24px; height: 24px; object-fit: contain;">
+                    </button>
+                    <!-- 活动日历：静态 href 只是无 JS 时的兜底，applyLanguage() 会改写成
+                         https://ep-base.com/<EPBASE locale>/calendar/<当前年月> -->
+                    <a id="calendar-btn" href="https://ep-base.com/en/calendar" target="_blank" rel="noopener"
+                        class="theme-toggle-btn">
+                        <span>📅</span>
+                    </a>
+                    <button id="theme-toggle-btn" class="theme-toggle-btn">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                    <div class="lang-selector-container">
+                        <button id="lang-select-btn" class="lang-toggle-btn">
+                            <span>🌐</span>
+                        </button>
+                        <div id="lang-options" class="hidden">
+                            <a href="/cn/" class="lang-option" data-lang="cn">🇨🇳 简体中文</a>
+                            <a href="/tc/" class="lang-option" data-lang="tc">🇭🇰 繁體中文</a>
+                            <a href="/en/" class="lang-option" data-lang="en">🇺🇸 English</a>
+                            <a href="/ja/" class="lang-option" data-lang="ja">🇯🇵 日本語</a>
+                            <a href="/ko/" class="lang-option" data-lang="ko">🇰🇷 한국어</a>
+                            <a href="/fr/" class="lang-option" data-lang="fr">🇫🇷 Français</a>
+                            <a href="/de/" class="lang-option" data-lang="de">🇩🇪 Deutsch</a>
+                            <a href="/es/" class="lang-option" data-lang="es">🇪🇸 Español</a>
+                            <a href="/pt/" class="lang-option" data-lang="pt">🇵🇹 Português</a>
+                            <a href="/it/" class="lang-option" data-lang="it">🇮🇹 Italiano</a>
+                            <a href="/ru/" class="lang-option" data-lang="ru">🇷🇺 Русский</a>
+                            <a href="/ar/" class="lang-option" data-lang="ar">🇸🇦 العربية</a>
+                            <a href="/tr/" class="lang-option" data-lang="tr">🇹🇷 Türkçe</a>
+                            <a href="/pl/" class="lang-option" data-lang="pl">🇵🇱 Polski</a>
+                            <a href="/nl/" class="lang-option" data-lang="nl">🇳🇱 Nederlands</a>
+                            <a href="/sv/" class="lang-option" data-lang="sv">🇸🇪 Svenska</a>
+                            <a href="/da/" class="lang-option" data-lang="da">🇩🇰 Dansk</a>
+                            <a href="/no/" class="lang-option" data-lang="no">🇳🇴 Norsk</a>
+                            <a href="/fi/" class="lang-option" data-lang="fi">🇫🇮 Suomi</a>
+                            <a href="/id/" class="lang-option" data-lang="id">🇮🇩 Indonesia</a>
+                        </div>
+                    </div>
+                    <a id="github-btn" href="https://github.com/Heroplan/Heroplan.github.io" target="_blank"
+                        class="theme-toggle-btn" title="GitHub">
+                        <img src="imgs/other/github.svg"
+                            alt="GitHub" style="width: 24px; height: 24px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+            <div class="header-info-container">
+                <div class="header-info-content">
+                    <span>
+                        <span data-lang-key="sponsoredBy"></span>
+                        <strong style="color: var(--md-sys-color-error);">SilverMan 奈托 诸子百家-jj</strong>
+                    </span>
+
+                    <span>
+                        <span data-lang-key="translatedBy"></span>
+                        <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="donation-list-container-wrapper">
+                <div class="donation-list-container">
+                    <h2 class="donation-list-title" data-lang-key="donationListTitle"></h2>
+                    <div class="donation-list-wrapper">
+                        <div id="donation-list-box" class="donation-list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="last-updated"></p>
+        </header>
+
+        <section class="seo-text-hidden">
+            <h2 data-lang-key="seoHeading">Empires &amp; Puzzles sankaritietokanta · Tiedot 20 kielellä · Kuvat · Tulevat sankarit · Pelaajan työkalut</h2>
+            <p data-lang-key="seoPara1"><strong>Heroplan</strong> kattaa <strong>kaikki sankarit</strong> Empires &amp; Puzzlesissa ja <strong>tukee pelin kaikkia 20 kieltä</strong> — 简体中文, 繁體中文, English, 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский, العربية, Türkçe, Polski, Nederlands, Svenska, Dansk, Norsk, Suomi ja Indonesia. Vaihda kieltä ja lue sankarien nimet, erikoiskyvyt ja passiiviset kyvyt omalla kielelläsi. Jokaisesta sankarista näkyvät harvinaisuus, elementti, mananopeus, luokka, perhe, alkuperä ja asut sekä hyökkäys, puolustus, elämä ja voima tasolla 80 / LB1 / LB2. Kaikki sankaritiedot johdetaan pelin <strong>virallisista määritystiedostoista</strong>.</p>
+            <p data-lang-key="seoPara2">Sivusto tarjoaa <strong>täydellisen sankarikuvagallerian</strong>: avaa mikä tahansa sankari ja katso tarkka staattinen kuva, ja tuetuille hahmoille toistetaan pelin <strong>animoitu kuva</strong>. <strong>Tulevien sankarien esikatselu</strong> listaa vielä julkaisemattomat sankarit virallisen julkaisupäivän mukaan, joten voit suunnitella resursseja etukäteen (suosikit avautuvat, kun sankari julkaistaan). Haussa voit nimen, harvinaisuuden, elementin, mananopeuden, luokan, perheen ja alkuperän lisäksi tehdä yhdistettyjä hakuja <strong>erikoiskykyjen tekstiin</strong>, <strong>passiivisten kykyjen tekstiin</strong> ja kykykategorioihin; <strong>tilastolaskuri</strong> muuntaa tarkat arvot heti limit breakien (LB1/LB2) ja talenttien (+20/+25) mukaan.</p>
+            <p data-lang-key="seoPara3">Tietokannan lisäksi mukana on useita työkaluja: <strong>summon-simulaattori</strong> toistaa poolin todennäköisyydet ja summon-historian; <strong>joukkuesimulaattori</strong> rakentaa kokoonpanoja, jotka voit jakaa liittoumallesi; <strong>chat-simulaattori</strong> luo chat-tekstejä omilla väreillä ja pelin emojeilla; <strong>farmausoppaan</strong> ja <strong>etsintäkuulutettujen tehtävien</strong> taulukot löytävät pudotusvaiheet nopeasti; <strong>tapahtumakalenteri</strong> ja <strong>lunastuskoodit</strong> pitävät sinut ajan tasalla määräaikaisesta sisällöstä. Tallenna suosikkisankarisi ja jaa lista linkillä, vie asetukset tai tuo ne ja valitse vaalea tai tumma teema.</p>
+        </section>
+        <div id="team-simulator-wrapper" class="hidden">
+            <div id="team-display-header">
+                <h4 data-lang-key="teamDisplayTitle">阵容配置</h4>
+                <div class="collapse-arrow"></div>
+            </div>
+            <div id="team-simulator-display">
+                <div class="team-display-desktop-header">
+                    <h3 data-lang-key="teamDisplayTitle">阵容配置</h3>
+                </div>
+                <div id="team-tags-summary-container"></div>
+                <div id="team-display-grid">
+                    <div class="team-hero-slot" data-pos="1"></div>
+                    <div class="team-hero-slot" data-pos="2"></div>
+                    <div class="team-hero-slot" data-pos="3"></div>
+                    <div class="team-hero-slot" data-pos="4"></div>
+                    <div class="team-hero-slot" data-pos="5"></div>
+                    <div class="team-info-slot" data-info-pos="1"></div>
+                    <div class="team-info-slot" data-info-pos="2"></div>
+                    <div class="team-info-slot" data-info-pos="3"></div>
+                    <div class="team-info-slot" data-info-pos="4"></div>
+                    <div class="team-info-slot" data-info-pos="5"></div>
+                </div>
+            </div>
+            <div id="saved-teams-panel">
+                <div class="saved-teams-actions">
+                    <button id="clear-team-btn" class="action-button secondary-button"
+                        data-lang-key="clearTeamBtn">清空阵容</button>
+                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn">保存队伍</button>
+                    <button id="share-team-list-btn" class="action-button"
+                        data-lang-key="shareTeamListBtn">分享列表</button>
+                </div>
+                <div id="saved-teams-list-container">
+                    <div class="saved-teams-header">
+                        <div class="saved-teams-tabs">
+                            <button id="tab-my-teams" class="tab-button" data-lang-key="myTeamsTab">我的队伍</button>
+                            <button id="tab-shared-teams" class="tab-button" data-lang-key="sharedTeamsTab"
+                                style="display: none;">分享的队伍</button>
+                        </div>
+                        <div class="collapse-arrow"></div>
+                    </div>
+
+                    <div id="saved-teams-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="summon-animation-overlay" class="hidden">
+            <div id="summon-hero-reveal-container">
+                <img id="summon-hero-full-art" src="" alt="Summoned Hero" loading="lazy">
+            </div>
+            <div id="summon-result-card">
+            </div>
+        </div>
+
+        <div id="summon-summary-modal-overlay" class="hidden"></div>
+        <div id="summon-summary-modal" class="hidden">
+            <h3 data-lang-key="summonResultsTitle">召唤结果</h3>
+            <div id="summon-summary-scroll-container">
+            </div>
+            <button id="summary-close-btn" class="action-button" data-lang-key="summonSummaryOkBtn">OK</button>
+        </div>
+        <div id="main-content-area">
+            <div id="lottery-simulator-wrapper" class="hidden">
+                <div id="lottery-simulator-display">
+                    <div class="lottery-main-content">
+                        <div class="lottery-mobile-tabs">
+                            <button class="tab-button active" data-tab-target="#lottery-activity-list-container"
+                                data-lang-key="lotteryTabActivity">活动列表</button>
+                            <button class="tab-button" data-tab-target="#lottery-portal-container"
+                                data-lang-key="lotteryTabSummon">召唤</button>
+                            <button class="tab-button" data-tab-target="#summon-history-panel"
+                                data-lang-key="lotteryTabHistory">历史记录</button>
+                        </div>
+
+                        <div id="lottery-activity-list-container" class="lottery-panel active">
+                            <ul id="lottery-activity-list">
+                            </ul>
+                        </div>
+
+                        <div id="lottery-portal-container" class="lottery-panel">
+                            <div id="lottery-background-image"></div>
+                            <div class="lottery-content-overlay">
+                                <button id="toggle-animation-btn" class="theme-toggle-btn">▶️</button>
+                                <button id="toggle-sound-btn" class="theme-toggle-btn">
+                                    <span class="sound-on-icon">🔊</span>
+                                    <span class="sound-off-icon">🔇</span>
+                                </button>
+                                <h3 id="lottery-pool-title"></h3>
+                                <div class="lottery-featured-area">
+                                    <div id="featured-heroes-left" class="featured-heroes-column"></div>
+                                    <div id="lottery-hero-display-area"></div>
+                                    <div id="featured-heroes-right" class="featured-heroes-column"></div>
+                                </div>
+                                <div id="summon-actions-container">
+                                    <button id="single-summon-btn" class="summon-btn">
+                                        <span class="summon-amount" data-lang-key="summonOnce">召唤x1</span>
+                                        <div class="summon-cost">
+                                            <img src="imgs/coins/diamond.webp" alt="钻石">
+                                            <span class="gem-price">400</span>
+                                        </div>
+                                    </button>
+                                    <button id="ten-summon-btn" class="summon-btn hidden">
+                                        <span class="summon-amount" data-lang-key="summonTen">召唤x10</span>
+                                        <div class="summon-cost">
+                                            <img src="imgs/coins/diamond.webp" alt="钻石">
+                                            <span class="gem-price">3400</span>
+                                        </div>
+                                    </button>
+                                    <button id="thirty-summon-btn" class="summon-btn hidden">
+                                        <span class="summon-amount" data-lang-key="summonThirty">召唤x30</span>
+                                        <div class="summon-cost">
+                                            <img src="imgs/coins/diamond.webp" alt="钻石">
+                                            <span class="gem-price">9400</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="summon-history-panel" class="lottery-panel">
+                            <div class="summon-history-header">
+                                <h4 id="summon-history-title" data-lang-key="summonHistoryTitle">召唤历史记录</h4>
+                                <div class="summon-history-controls">
+                                    <div class="history-view-toggle">
+                                        <input type="checkbox" id="toggle-history-view-checkbox"
+                                            class="toggle-switch-checkbox">
+                                        <label for="toggle-history-view-checkbox" class="toggle-switch-label"></label>
+                                        <span class="toggle-label-text"
+                                            data-lang-key="toggleShowAllHistoryLabel">显示全部记录</span>
+                                    </div>
+                                    <button id="clear-history-btn" class="action-button"
+                                        data-lang-key="clearHistoryBtn">清空</button>
+                                </div>
+                                <div class="collapse-arrow"></div>
+                            </div>
+                            <div id="summon-history-list-container">
+                                <div id="summon-history-list">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 列表上方便捷栏：按钮文案/计数/高亮由 ui.js::updateFilterButtonUI 下发
+                 （与筛选页面 `#btn-filter-<类型>` 共用同一套字典键），此处静态文本为简中兜底 -->
+            <div id="quick-search-bar" class="quick-search-bar">
+                <div class="quick-search-row quick-search-desktop">
+                    <div class="quick-search-name-field">
+                        <label for="quick-name-input" data-lang-key="nameLabel">名称:</label>
+                        <div class="quick-search-name-control">
+                            <input type="text" id="quick-name-input" class="quick-search-input" autocomplete="off">
+                            <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
+                        </div>
+                    </div>
+                    <div class="quick-search-buttons">
+                        <button type="button" class="quick-filter-button" data-filter="filterScope">筛选范围</button>
+                        <button type="button" class="quick-filter-button" data-filter="rarity">稀有度</button>
+                        <button type="button" class="quick-filter-button" data-filter="element">元素</button>
+                        <button type="button" class="quick-filter-button" data-filter="costume">服装类型</button>
+                        <button type="button" class="quick-filter-button" data-filter="family">家族</button>
+                        <button type="button" class="quick-filter-button" data-filter="source">起源</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_base">基础技能</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_special">特殊效果</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_buff">增益效果</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_debuff">负面效果</button>
+                    </div>
+                </div>
+                <div class="quick-search-row quick-search-mobile">
+                    <div class="quick-search-name-field">
+                        <label for="quick-name-input-mobile" data-lang-key="nameLabel">名称:</label>
+                        <div class="quick-search-name-control">
+                            <input type="text" id="quick-name-input-mobile" class="quick-search-input" autocomplete="off">
+                            <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
+                        </div>
+                    </div>
+                    <div class="quick-search-buttons">
+                        <button type="button" class="quick-filter-button" data-filter="rarity">稀有度</button>
+                        <button type="button" class="quick-filter-button" data-filter="element">元素</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results-wrapper">
+                <div class="results-header">
+                    <h3 id="results-count"></h3>
+                </div>
+                <div id="hero-table-view">
+                    <table class="manual-table" id="hero-table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="wanted-mission-view" class="hidden">
+                    <table class="manual-table wanted-mission-table" id="wanted-mission-table"></table>
+                </div>
+                <div id="farming-guide-view" class="hidden">
+                    <table class="manual-table farming-guide-table" id="farming-guide-table"></table>
+                </div>
+                <div id="chat-simulator-view" class="hidden">
+                    <div class="chat-simulator-container">
+                        <div class="chat-simulator-panel chat-panel-io">
+                            <h3 data-lang-key="chatPanelTitleIO">输入与预览</h3>
+                            <div id="chat-simulator-preview-wrapper">
+                                <div id="chat-simulator-preview"></div>
+                            </div>
+                            <div id="io-splitter"></div>
+                            <textarea id="chat-simulator-input"></textarea>
+                            <button id="chat-simulator-copy-btn" class="action-button"
+                                data-lang-key="chatCopyBtn">复制内容</button>
+                        </div>
+
+                        <div class="chat-simulator-panel chat-panel-colors">
+                            <h3 data-lang-key="chatPanelTitleColors">选择颜色<button
+                                    class="panel-toggle-btn expanded">▼</button></h3>
+                            <div class="panel-content">
+                                <div id="custom-color-picker">
+                                    <div id="sv-box">
+                                        <div id="sv-cursor"></div>
+                                    </div>
+                                    <div id="hue-slider">
+                                        <div id="hue-cursor"></div>
+                                    </div>
+                                </div>
+                                <div id="color-controls-wrapper">
+                                    <div id="color-preview-box"></div>
+                                    <div id="color-input-group">
+                                        <input type="text" id="color-hex-code" readonly>
+                                        <button id="insert-color-btn" class="action-button"
+                                            data-lang-key="chatInsertColorBtn">插入</button>
+                                        <button id="favorite-color-btn" class="action-button chat-favorite-btn"
+                                            title="收藏此颜色" data-lang-key="chatFavoriteColorBtn">⭐</button>
+                                    </div>
+                                </div>
+                                <div id="favorite-colors-container">
+                                    <h4 data-lang-key="chatFavoriteColorsTitle">已收藏的颜色</h4>
+                                    <div id="favorite-colors-grid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-simulator-panel chat-panel-emojis">
+                            <h3 data-lang-key="chatPanelTitleEmojis">选择表情<button
+                                    class="panel-toggle-btn expanded">▼</button></h3>
+                            <div class="panel-content">
+                                <div id="emoji-grid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="hidden"></div>
+    <div id="modal" class="hidden">
+        <div id="modal-content"></div>
+    </div>
+
+    <div id="filters-modal-overlay" class="hidden"></div>
+    <div id="filters-modal" class="hidden">
+        <div id="filters-modal-content">
+            <div class="filters-modal-header">
+                <h2 data-lang-key="filterHeroes">筛选英雄</h2>
+                <button id="close-filters-modal-btn" class="close-btn">❌</button>
+            </div>
+
+            <div class="filters-grid">
+
+                <div class="filter-card">
+                    <div class="filter-header" id="standard-filters-header">
+                        <div class="filter-title-container">
+                            <h2 data-lang-key="standardFilters">标准筛选</h2>
+                        </div>
+                        <button class="toggle-button" data-target="standard-filters-content">▼</button>
+                    </div>
+                    <div id="standard-filters-content" class="filter-content">
+                        <div class="filter-item">
+                            <label for="name-input" data-lang-key="nameLabel">名称:</label>
+                            <div class="autocomplete-container">
+                                <input type="text" id="name-input" autocomplete="off">
+                                <div id="name-autocomplete-list" class="autocomplete-list hidden"></div>
+                                <button type="button" id="clear-input" class="clear-button">×</button>
+                            </div>
+                        </div>
+                        <div id="standard-filters-container" class="filter-buttons-container">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-card">
+                    <div class="filter-header" id="advanced-filters-header">
+                        <div class="filter-title-container">
+                            <h2 data-lang-key="advancedFilters">高级筛选</h2>
+                            <button id="advanced-filter-help-btn" class="help-btn">?</button>
+                        </div>
+                        <button class="toggle-button" data-target="advanced-filters-content">▼</button>
+                    </div>
+                    <div id="advanced-filters-content" class="filter-content">
+                        <div class="filter-item">
+                            <label for="type-input" data-lang-key="skillTypeLabel">特殊技能类别:</label>
+                            <input type="text" id="type-input" data-lang-key-placeholder="skillTypePlaceholder"
+                                placeholder="例如：增益,异常,治疗">
+                        </div>
+                        <div class="filter-item">
+                            <label for="effects-input" data-lang-key="skillTextLabel">特殊技能文本:</label>
+                            <input type="text" id="effects-input" placeholder="">
+                        </div>
+                        <div class="filter-item">
+                            <label for="passives-input" data-lang-key="passiveSkillLabel">被动技能文本:</label>
+                            <input type="text" id="passives-input" placeholder="">
+                        </div>
+                        <div class="filter-item">
+                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">一键搜索技能词条</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container" style="flex-grow:1;">
+                                    <input type="checkbox" id="enable-skill-quick-search-checkbox" checked>
+                                    <label for="enable-skill-quick-search-checkbox" class="checkbox-label"
+                                        data-lang-key="enableSkillQuickSearchToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <label for="highlight-skill-terms-checkbox" data-lang-key="highlightSkillTermsLabel">高亮技能词条</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container" style="flex-grow:1;">
+                                    <input type="checkbox" id="highlight-skill-terms-checkbox" checked>
+                                    <label for="highlight-skill-terms-checkbox" class="checkbox-label"
+                                        data-lang-key="highlightSkillTermsToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <label for="show-skill-types-in-details-checkbox" data-lang-key="showSkillTypesInDetailsLabel">详情页显示技能类别</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="show-skill-types-in-details-checkbox" checked>
+                                    <label for="show-skill-types-in-details-checkbox" class="checkbox-label"
+                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-item">
+                            <label for="show-skill-types-in-team-checkbox" data-lang-key="showSkillTypesInTeamLabel">队伍模拟器显示技能类别</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="show-skill-types-in-team-checkbox" checked>
+                                    <label for="show-skill-types-in-team-checkbox" class="checkbox-label"
+                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-item">
+                            <label for="show-event-name-checkbox" data-lang-key="showEventNameLabel">显示活动名称</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="show-event-name-checkbox" checked>
+                                    <label for="show-event-name-checkbox" class="checkbox-label"
+                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-item">
+                            <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">英雄立绘中显示元素光效</label>
+                            <div class="input-with-help">
+                                <div class="checkbox-container">
+                                    <input type="checkbox" id="show-circle-ray-checkbox" checked>
+                                    <label for="show-circle-ray-checkbox" class="checkbox-label"
+                                        data-lang-key="showCircleRayToggle">启用</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                            <div class="horizontal-filter-group">
+                                <!-- 查看平衡数据英雄：只列"存在平衡数据(第二表)"的英雄 -->
+                                <div class="filter-item">
+                                    <label>
+                                        <img src="imgs/event/emoji_spritesheet_234.webp" class="event-icon" alt="Balanced Heroes" onerror="this.style.display='none'" />
+                                        <span data-lang-key="balanceHeroesList">查看平衡数据英雄</span>
+                                    </label>
+                                    <div class="input-with-right-button">
+                                        <button id="filter-balance-heroes-btn" class="action-button-right" data-lang-key="filterButtonLabel">筛选</button>
+                                    </div>
+                                </div>
+                                <div class="filter-item">
+                                    <label>
+                                        <img src="imgs/event/academy10.webp" class="event-icon" alt="Hero Academy" />
+                                        <span data-lang-key="heroAcademyEventLabel">英雄学院列表:</span>
+                                    </label>
+                                    <div class="input-with-right-button">
+                                        <span id="hero-academy-date-display" class="date-display-box"></span>
+                                        <button id="filter-hero-academy-btn" class="action-button-right" data-lang-key="filterButtonLabel">筛选</button>
+                                    </div>
+                                </div>
+                                <div class="filter-item">
+                                    <label>
+                                        <img src="imgs/event/herocoach.webp" class="event-icon" alt="Hero Coach" />
+                                        <span data-lang-key="oneClickMaxEventLabel">一键满级活动:</span>
+                                    </label>
+                                    <div class="input-with-right-button">
+                                        <span id="one-click-max-date-display" class="date-display-box"></span>
+                                        <button id="filter-hero-730-btn" class="action-button-right"
+                                            data-lang-key="filterButtonLabel">筛选</button>
+                                    </div>
+                                </div>
+                                <div class="filter-item">
+                                    <label>
+                                        <img src="imgs/event/visiting_outfitter.webp" class="event-icon"
+                                            alt="Visiting Outfitter" />
+                                        <span data-lang-key="purchaseCostumeEventLabel">购买服装活动:</span>
+                                    </label>
+                                    <div class="input-with-right-button">
+                                        <span id="purchase-costume-date-display" class="date-display-box"></span>
+                                        <button id="filter-costume-548-btn" class="action-button-right"
+                                            data-lang-key="filterButtonLabel">筛选</button>
+                                    </div>
+                                </div>
+                                <div class="filter-item">
+                                    <label>
+                                        <img src="imgs/event/soulexchange.webp" class="event-icon"
+                                            alt="Soul Exchange" />
+                                        <span data-lang-key="soulExchangeEventLabel">灵魂交换活动:</span>
+                                    </label>
+                                    <div class="input-with-right-button">
+                                        <span id="soul-exchange-date-display" class="date-display-box"></span>
+                                        <button id="show-soul-exchange-btn" class="action-button-right"
+                                            data-lang-key="showListBtnLabel">展示列表</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
+                            <div class="default-stat-selectors">
+                                <div class="details-selector-item">
+                                    <label for="default-limit-break-select"
+                                        data-lang-key="limitBreakSetting">突破设置</label>
+                                    <select id="default-limit-break-select">
+                                        <option value="none" data-lang-key="noLimitBreak">无突破</option>
+                                        <option value="lb1" data-lang-key="lb1">LB1</option>
+                                        <option value="lb2" data-lang-key="lb2">LB2</option>
+                                    </select>
+                                </div>
+                                <div class="details-selector-item">
+                                    <label for="default-talent-select" data-lang-key="talentSetting">天赋设置</label>
+                                    <select id="default-talent-select">
+                                        <option value="none" data-lang-key="noTalent">无天赋</option>
+                                        <option value="talent20" data-lang-key="talent20">20天赋</option>
+                                        <option value="talent25" data-lang-key="talent25">25天赋</option>
+                                    </select>
+                                </div>
+                                <div class="details-selector-item">
+                                    <label for="default-talent-strategy-select"
+                                        data-lang-key="prioritySetting">天赋优先级</label>
+                                    <select id="default-talent-strategy-select">
+                                        <option value="atk-def-hp" data-lang-key="attackPriority"></option>
+                                        <option value="atk-hp-def" data-lang-key="attackPriority2"></option>
+                                        <option value="def-hp-atk" data-lang-key="defensePriority"></option>
+                                        <option value="def-atk-hp" data-lang-key="defensePriority2"></option>
+                                        <option value="hp-def-atk" data-lang-key="healthPriority"></option>
+                                        <option value="hp-atk-def" data-lang-key="healthPriority2"></option>
+                                    </select>
+                                </div>
+                                <div class="details-selector-item">
+                                    <label for="default-mana-priority-checkbox"
+                                        data-lang-key="manaPriorityLabel">法力节点</label>
+                                    <div class="input-with-help">
+                                        <div class="checkbox-container" style="flex-grow:1;">
+                                            <input type="checkbox" id="default-mana-priority-checkbox">
+                                            <label for="default-mana-priority-checkbox" class="checkbox-label"
+                                                data-lang-key="manaPriorityToggle">优先选择</label>
+                                        </div>
+                                        <button id="lb-talent-help-btn" class="help-btn">?</button>
+                                    </div>
+                                </div>
+                                <div class="details-selector-item">
+                                    <label for="show-lb-talent-details-checkbox"
+                                        data-lang-key="showLbTalentDetailsLabel">在详情页显示突破天赋</label>
+                                    <div class="input-with-help">
+                                        <div class="checkbox-container" style="flex-grow:1;">
+                                            <input type="checkbox" id="show-lb-talent-details-checkbox" checked>
+                                            <label for="show-lb-talent-details-checkbox" class="checkbox-label"
+                                                data-lang-key="showLbTalentDetailsToggle">显示</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-filter-grid">
+                            <div class="filter-item-compact">
+                                <label for="power-input" data-lang-key="minPower">战力</label>
+                                <input type="number" id="power-input" min="0" value="">
+                            </div>
+                            <div class="filter-item-compact">
+                                <label for="attack-input" data-lang-key="minAttack">攻击</label>
+                                <input type="number" id="attack-input" min="0" value="">
+                            </div>
+                            <div class="filter-item-compact">
+                                <label for="defense-input" data-lang-key="minDefense">防御</label>
+                                <input type="number" id="defense-input" min="0" value="">
+                            </div>
+                            <div class="filter-item-compact">
+                                <label for="health-input" data-lang-key="minHealth">生命</label>
+                                <input type="number" id="health-input" min="0" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="filter-actions">
+            <button id="open-game-heroes-btn" class="action-button" data-lang-key="openGameHeroes">打开游戏英雄列表</button>
+            <button id="export-settings-btn" class="action-button" data-lang-key="exportSettings">导出设置</button>
+            <button id="import-settings-btn" class="action-button" data-lang-key="importSettings">导入设置</button>
+            <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
+            <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>
+            <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
+            <button id="toggle-donate-btn" class="action-button" data-lang-key="hideDonate" hidden>隐藏赞助</button>
+        </div>
+    </div>
+    </div>
+
+    <div id="help-modal-overlay" class="hidden"></div>
+    <div id="help-modal" class="hidden"></div>
+    <div id="lb-talent-help-modal-overlay" class="hidden"></div>
+    <div id="lb-talent-help-modal" class="hidden"></div>
+    <div id="multi-select-modal-overlay" class="hidden"></div>
+    <div id="multi-select-modal" class="hidden">
+        <div id="multi-select-modal-content">
+        </div>
+    </div>
+
+    <div id="image-modal-overlay" class="hidden"></div>
+    <div id="image-modal" class="hidden">
+        <div id="image-modal-content"></div>
+    </div>
+    <div id="import-settings-modal-overlay" class="hidden"></div>
+    <div id="import-settings-modal" class="hidden">
+        <div id="import-settings-modal-content">
+        </div>
+    </div>
+    <div id="export-settings-modal-overlay" class="hidden"></div>
+    <div id="export-settings-modal" class="hidden">
+        <div id="export-settings-modal-content">
+        </div>
+    </div>
+    <div id="elemental-modal-overlay" class="hidden"></div>
+    <div id="elemental-modal" class="hidden">
+        <div id="elemental-modal-content">
+            <h3 data-lang-key="selectElementTitle">请选择元素</h3>
+            <div class="elemental-selection-container">
+                <img src="imgs/element/red.webp" class="elemental-icon" data-element="red" alt="红色">
+                <img src="imgs/element/green.webp" class="elemental-icon" data-element="green" alt="绿色">
+                <img src="imgs/element/blue.webp" class="elemental-icon" data-element="blue" alt="蓝色">
+                <img src="imgs/element/yellow.webp" class="elemental-icon" data-element="yellow" alt="黄色">
+                <img src="imgs/element/purple.webp" class="elemental-icon" data-element="purple" alt="紫色">
+            </div>
+        </div>
+    </div>
+    <div id="probability-modal-overlay" class="hidden"></div>
+    <div id="probability-modal" class="hidden">
+        <div id="probability-modal-content">
+        </div>
+    </div>
+
+    <!-- 兑换码模态框 -->
+    <div id="redeem-codes-modal-overlay" class="hidden"></div>
+    <div id="redeem-codes-modal" class="hidden">
+        <div class="filters-modal-header">
+            <h2 data-lang-key="redeemCodesModalTitle"></h2>
+            <button id="close-redeem-codes-modal-btn" class="close-btn">✖</button>
+        </div>
+        <div id="redeem-codes-content">
+        </div>
+        <div class="modal-footer">
+            <button class="close-bottom-btn" id="redeem-codes-footer-close-btn"
+                data-lang-key="detailsCloseBtn"></button>
+        </div>
+    </div>
+
+    <div class="floating-action-buttons">
+        <button id="open-filters-btn">🔍</button>
+    </div>
+
+    <!-- 数据档版本表（window.AV：每个 json 的内容哈希，主站 pre-commit 钩子增量维护）。
+         必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
+         （av() 退回 Date.now()，等于不缓存）。 -->
+    <script src="./asset_ver.js?v=20261109a" defer></script>
+    <script src="./i18n_funcs.js?v=20261109a" defer></script>
+    <script src="./langs.js?v=20261109a" defer></script>
+    <script src="./lz-string.min.js?v=20261028b" defer></script>
+    <script src="./talent-tree.js?v=20261109a" defer></script>
+    <script src="./data.js?v=20261105a" defer></script>
+    <script src="./eva1-parser.js?v=20261109a" defer></script>
+    <script src="./utils.js?v=20261109a" defer></script>
+    <script src="./state.js?v=20261109a" defer></script>
+    <script src="./ui.js?v=20261109a" defer></script>
+    <script src="./filters.js?v=20261109a" defer></script>
+    <script src="./render.js?v=20261109a" defer></script>
+    <script src="./special-views.js?v=20261109a" defer></script>
+    <script src="./lottery-simulator.js?v=20261109a" defer></script>
+    <script src="./team-simulator.js?v=20261109a" defer></script>
+    <script src="./chat-simulator.js?v=20261104b" defer></script>
+    <script src="./import-export.js?v=20261109a" defer></script>
+    <script src="./main.js?v=20261109a" defer></script>
+    <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
+    <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
+    <!-- 友情链接分组框区域 -->
+    <div class="friendship-links">
+        <p data-lang-key="friendshipThanks">感谢以下网站：</p>
+        <div class="links-grid" id="dynamic-links-grid">
+        </div>
+    </div>
+</body>
+<div id="animation-blocker-overlay"></div>
+
+<style>
+/* 友情链接分组框样式 */
+.friendship-links {
+    text-align: center;
+    margin-top: 8px;
+    padding: 16px 12px 12px 12px;
+    border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.friendship-links p {
+    margin: 0 0 16px 0;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: var(--md-sys-color-error);
+}
+
+.links-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.link-card {
+    color: var(--md-sys-color-on-primary-container);
+    background-color: var(--md-sys-color-primary-container);
+    border: 1px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    padding: 8px 20px;
+    transition: all 0.2s ease;
+}
+
+.link-card:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-card a {
+    color: inherit; /* 继承父级颜色，即 --md-sys-color-on-primary-container */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.link-card a:hover {
+    text-decoration: underline;
+}
+
+/* 移动端自适应 */
+@media (max-width: 600px) {
+    .link-card {
+        padding: 6px 16px;
+    }
+    .link-card a {
+        font-size: 0.85rem;
+        white-space: normal;
+        word-break: keep-all;
+    }
+    .links-grid {
+        gap: 12px;
+    }
+}
+</style>
+
+<!-- 页脚 HTML 结构 -->
+<footer>
+    <div>
+        <p>
+            <span data-lang-key="footerGameName">《帝国与谜题》</span>
+            <span style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span>
+            <span data-lang-key="footerPlatform">英雄数据查询平台</span>
+        </p>
+        <p class="footer-credit" data-lang-key="footerCredit">© 2025 - 2026 heroplan.github.io | 非官方资料站</p>
+    </div>
+
+</footer>
+
+<script>
+    // 动态生成友情链接卡片
+    (function () {
+        const links = [
+            { name: "Heroplan.io (R.I.P.)", url: "https://heroplan.io", desc: "The founding website of the Heroplan project — now offline" },
+            { name: "Heroplan Data", url: "https://github.com/cvl75/heroplan_data", desc: "Data source for the Heroplan project" },
+            { name: "The Raven's Cave", url: "http://www.theravenscave.com", desc: "An excellent website used for a long time" },
+            { name: "Fandom", url: "https://empiresandpuzzles.fandom.com/wiki", desc: "Fandom Wiki" },
+            { name: "BBCamp", url: "https://bbcamp.info", desc: "The website of the calendar creator" },
+            { name: "EPBASE", url: "https://ep-base.com", desc: "The website of the calendar creator" },
+            { name: "Empuzzled", url: "https://empuzzled.com", desc: "A comprehensive encyclopedia website" },
+            { name: "Empires & Puzzles Discord", url: "https://discord.gg/empires-puzzles", desc: "Official Discord" }
+        ];
+
+        const gridContainer = document.getElementById('dynamic-links-grid');
+        if (gridContainer) {
+            links.forEach(link => {
+                const card = document.createElement('div');
+                card.className = 'link-card';
+                const anchor = document.createElement('a');
+                anchor.href = link.url;
+                anchor.textContent = link.name;
+                anchor.target = '_blank';
+                anchor.rel = 'noopener noreferrer';
+                if (link.desc) {
+                    anchor.title = link.desc;
+                }
+                card.appendChild(anchor);
+                gridContainer.appendChild(card);
+            });
+        }
+    })();
+</script>
+</html>

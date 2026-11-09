@@ -40372,7 +40372,8 @@
         "baseDefense": 687,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "extend_ailment_duration_on_special"
+          "extend_ailment_duration_on_special",
+          "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Monk",
         "aetherGift": "aether_rage"
@@ -40390,7 +40391,8 @@
         "baseDefense": 698,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "extend_ailment_duration_on_special"
+          "extend_ailment_duration_on_special",
+          "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Paladin",
         "aetherGift": "aether_attack"
@@ -40408,7 +40410,8 @@
         "baseDefense": 705,
         "manaSpeedId": "fast",
         "passiveSkills": [
-          "extend_ailment_duration_on_special"
+          "extend_ailment_duration_on_special",
+          "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Druid",
         "aetherGift": "aether_regen"
@@ -40426,7 +40429,8 @@
         "baseDefense": 393,
         "manaSpeedId": "slow",
         "passiveSkills": [
-          "extend_ailment_duration_on_special_rare"
+          "extend_ailment_duration_on_special_rare",
+          "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Barbarian",
         "aetherGift": "aether_fiend_resist"
@@ -40519,7 +40523,8 @@
         "baseDefense": 324,
         "manaSpeedId": "average",
         "passiveSkills": [
-          "extend_ailment_duration_on_special_rare"
+          "extend_ailment_duration_on_special_rare",
+          "mana_generation_modifier_all_enemies_more_sources"
         ],
         "classType": "Cleric",
         "aetherGift": "aether_attack"
@@ -49990,5 +49995,5 @@
       }
     ]
   },
-  "charactersConfigId": 892450201
+  "charactersConfigId": -220428240
 }

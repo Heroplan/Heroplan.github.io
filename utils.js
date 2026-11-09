@@ -7,8 +7,7 @@
  * 钩子在提交时增量重算）。这样缓存是**按文件各自**判断的：
  *   · 文件没变 ⇒ 哈希不变 ⇒ URL 不变 ⇒ 命中缓存，一次请求都不发；
  *   · 文件变了 ⇒ 哈希变 ⇒ URL 变 ⇒ 立刻拿到新内容，不存在"等缓存过期"的陈旧窗口。
- * ⚠ 旧写法是 `?v=${Date.now()}`：URL 每次都不同 ⇒ 浏览器缓存与 Pages 的 CDN 全被作废，
- *   实测每次访问重复下载 5.17 MB（技能正文单档 2.6~4.2 MB）。
+ * ⚠ 别改回 `?v=${Date.now()}`：URL 每次都不同 ⇒ 浏览器缓存与 Pages 的 CDN 全被作废。
  * ⚠ 没登记在表里（或 `asset_ver.js` 没加载到）时**退回 `Date.now()`** ⇒ 顶多少缓存，
  *   不会取到错数据，也不会因为这张表缺失而整站取数失败。
  * @param {string} rel 站点根起的相对路径，如 'data/characters.json'。
@@ -185,14 +184,8 @@ function getSkillTagsForHero(hero) {
 }
 
 
-// ⚠ 已删除的「额外名称语言」整条链（原「搜索语言」功能的残留）：
-//   · `window.langData` + `loadExtraNameData()` —— 最后一个读取方 `render.js::getSkinInfo`
-//     已随本次清理删除 ⇒ 零读取方。且它拉的 3 个文件（`heroes_name_*` / `heroes_name_fancy_*` /
-//     `skill_name_*`）**`Lang.loadAll()` 本来就拉**（都在 `TABLES` 里）⇒ 属重复请求。
-//   · `applyHeroNames` / `applyFancyNames` / `applySkillNames` / `applyCustomLanguageNames`
-//     —— 只能由已废弃的 `savedLang !== 'current'` 分支到达 ⇒ 不可达。
-//   名字 / fancy 名 / 技能名的翻译统一由 `Lang.loadAll()` + `_tPrefix()` 负责
-//   （见 `loadData` / `reloadLanguageData`）。
+// 名字 / fancy 名 / 技能名的翻译统一由 `Lang.loadAll()` + `_tPrefix()` 负责
+// （见 `loadData` / `reloadLanguageData`）。
 
 /**
  * 从「平衡数据」档取出某英雄的**平衡版**技能三件套。
@@ -406,8 +399,7 @@ function _tPrefix(table, id) {
  * 英雄的**规范身份键**（收藏 / 分享 / 队伍存储等一切持久化标识）。
  * ⚠ **不要**用 `${english_name}-${costume_id}` 当身份键：`english_name` 会回退到
  *   **父英雄名**（见 `_tPrefix`），而元素变体英雄（如 `mimic_aether_blue/green/…`）
- *   英文名相同且 `costume_id` 均为 0 ⇒ 键完全相同 ⇒ 收藏 1 个会命中一整组
- *   （曾实测 10 组 / 72 个英雄）。
+ *   英文名相同且 `costume_id` 均为 0 ⇒ 键完全相同 ⇒ 收藏 1 个会命中一整组。
  */
 function heroIdentity(hero) {
     if (!hero) return '';
@@ -423,9 +415,10 @@ const HERO_URL_PARAM = 'hero';
  *   · `keepOtherParams = true`（**地址栏**）：只加/换 `hero`，其余参数原样留着
  *     （`lang`、`view=lottery` 这类主视图、`bfavs` 这类分享态都保得住 ⇒ 地址与屏上一致，
  *      复制地址栏就等于分享这只英雄 + 当前所在视图）。返回**相对**地址，供 pushState 用。
- *   · `keepOtherParams = false`（**分享链接**）：只带 `hero` 一个参数。
- *     ⚠ 故意不带 `lang`：英雄数据存的是语言无关的身份键，带上等于把分享者的语言强加给对方
- *       （`?lang=` 的优先级还高于 cookie）。也不带视图/筛选，接收方落到干净的列表 + 这只英雄。
+ *   · `keepOtherParams = false`（**分享链接**）：只带 `hero` 一个参数，且固定落在**站点根**。
+ *     ⚠ 故意不带语言（既不带 `lang`，也不带当前 `/<码>/` 路径）：英雄数据存的是语言无关的身份键，
+ *       带上等于把分享者的语言强加给对方（路径/`?lang=` 的优先级还高于 cookie）。
+ *       也不带视图/筛选，接收方落到干净的列表 + 这只英雄，按自己的 cookie / 浏览器语言渲染。
  * @param {string} identity - `heroIdentity(hero)`
  * @param {boolean} keepOtherParams
  * @returns {string}
@@ -433,7 +426,7 @@ const HERO_URL_PARAM = 'hero';
 function heroUrl(identity, keepOtherParams) {
     const enc = encodeURIComponent(identity || '');
     if (!keepOtherParams) {
-        return window.location.origin + window.location.pathname + '?' + HERO_URL_PARAM + '=' + enc;
+        return window.location.origin + '/?' + HERO_URL_PARAM + '=' + enc;
     }
     const u = new URL(window.location.href);
     u.searchParams.set(HERO_URL_PARAM, identity || '');
@@ -460,8 +453,6 @@ function _costumeSlot(heroId, ord) {
     // ⚠ 不要再按 id 里的 `toon`/`glass`/`stylish` 关键字覆写：`getCostumeIconName`
     //   还会对「classic 3★」再做一次 `+1` 映射，两处叠加会把 `stylish` 顶到 6
     //   ⇒ 查不到 → 回退成 `C1`（`dwarven_smasher_costume_stylish`）。
-    //   实测：序号法 + 那次 +1 与"按 id 关键字"在 240 个带类型名的服装里 **238 个一致**，
-    //   不一致的 2 个（`*_costume_cute` 排在第 1 位）旧站也是按序号出的。
     return ord;
 }
 
@@ -488,8 +479,7 @@ function isExcludedById(heroId) {
  * 「默认隐藏」判据（运行时动态判定，不落盘）。
  * 命中 ⇒ `hero.hidden = true` ⇒ 默认不进列表（`state.showHiddenHeroes` 可切回来）。
  *
- * 以前是 `data/hero_order.json` 里写死的 `hidden` 名单，缺点是每次配置更新都要重算一遍、
- * 且容易和"固定段"口径打架；现在规则就这一处，改关键字改这里即可。
+ * 规则就这一处，改关键字改这里即可。
  *
  * 判据（两条取并集）：
  *   ① id 含 `trainer` / `guestip` / `temp1`
@@ -546,7 +536,7 @@ function _cmpAutoOrder(ha, hb) {
 // `data/heroes_skills_<码>.json` 达 **2.6~4MB/语言**，而首屏表格并不需要它
 // （表格只用 `heroes_skill_types.json` 的标签 + `characters.json` 的三围），
 // 只有**详情弹窗**和**高级筛选（技能/被动文本）**才用得上。
-// 实测它是 LCP 20.3s 的主因 ⇒ 这里只发起请求、不 await，首屏渲染后再补齐。
+// 这里只发起请求、不 await，首屏渲染后再补齐。
 let _skillsPromise = null;
 let _balSkillsPromise = null;
 let _skillsHydrated = false;
@@ -569,8 +559,7 @@ let HERO_DYNAMIC_PARAMS_BALANCED = null;
 /**
  * 被动技能 id → 图标 sprite 名，来自 `data/PassiveSkillIconCollection.json`
  * （`7.提取被动图标映射表.bat` 从 `data.unity3d` 里那个同名 MonoBehaviour 直接提出来写进站点数据目录）。
- * 以前它是 `data.js` 里的 477 行内联字面量（占 data.js 2/3 体积、且每次改动都要换 data.js 的戳）
- * ⇒ 现在按语言无关的数据档随其它档一起取，未加载/取失败时是空对象，调用方按"没有图标定义"处理。
+ * 按语言无关的数据档随其它档一起取，未加载/取失败时是空对象，调用方按"没有图标定义"处理。
  */
 let PassiveSkillIconCollection = {};
 
@@ -611,7 +600,7 @@ async function loadData(lang) {
             fetch(av('data/heroes_dynamic.json')).catch(() => null),
             // 平衡正文那批数值的同款参数表（`--site-export-balanced` 附带）；允许缺失
             fetch(av('data/heroes_dynamic_balanced.json')).catch(() => null),
-            // 被动图标映射（语言无关；原来内联在 data.js，现随数据档一起取）
+            // 被动图标映射（语言无关，随数据档一起取）
             fetch(av('data/PassiveSkillIconCollection.json')).catch(() => null)
         ]);
         const orderDoc = await orderRes.json();
@@ -636,7 +625,7 @@ async function loadData(lang) {
             PassiveSkillIconCollection = {};
         }
 
-        // ②.5 旧的反查表补丁已移除：运算一律用规范 ID，显示才过字典。
+        // ②.5 运算一律用规范 ID，显示才过字典。
         (function augmentReverseMaps() {
             const add = (map, table, valFn) => {
                 if (typeof map === 'undefined' || !map) return;
@@ -702,7 +691,7 @@ async function loadData(lang) {
             //   （与生成器 `passive_desc_gen._costume_rule_of` 同口径）。
             // 表按「每套 stages 阶连续」排布 ⇒ 套数 = len//stages，stages = 3(≤3★) / 4(≥4★)。
             // `costumeListSets` = **该英雄自身的服装顺序**（同父英雄下按发布日期编 1/2/…）——
-            //   列表属性用它才能复现"英雄发布当时"的属性（旧数据 638/638 逐字段吻合）；
+            //   列表属性用它才能复现"英雄发布当时"的属性；
             //   详情页则用"服装奖励"下拉选的值（默认最多套）。
             const _cbRarity = c.rarity || 5;
             const _cbStages = (_cbRarity >= 4) ? 4 : 3;
@@ -725,10 +714,8 @@ async function loadData(lang) {
             // 服装奖励被动的 id 集合（展示时要把它们留在普通被动**下面**）：
             //   ① 本行配置的 `costumeBonusPassiveSkillIds`；
             //   ② **从第一套服装继承**的那类 —— 本行没有该字段，但生成档 `heroes_skills_<码>.json` 的
-            //     `passiveSkills` 比本行配置多出来的那几条就是它（实测：205 行有字段的 bonus 全部连续在尾部；
-            //     另有 10 行没字段但生成档多出尾部词条，全是 `*_costume_cute`）。
-            //   ② 与"`extra_` 前缀"口径等价（5 语言 × 2121 行 0 处不一致，且 `extra_` 从不出现在非服装英雄身上），
-            //     留在这儿当交叉验证的依据。
+            //     `passiveSkills` 比本行配置多出来的那几条就是它（追加在尾部）。
+            //   ② 与"`extra_` 前缀"口径等价（`extra_` 从不出现在非服装英雄身上）。
             // ⚠ ②要靠生成档 ⇒ 这里**算不了**（正文是首屏之后才补齐的，见 `hydrateSkills`）：
             //   此刻只写①，②由 `hydrateSkills` / `reloadLanguageData` 拿到生成档后补上。
             const _pidOf = x => (x && typeof x === 'object' ? (x.id || '') : String(x || ''));
@@ -737,7 +724,7 @@ async function loadData(lang) {
             const hero = {
                 heroId: hid,
                 specialId: c.specialId || '',
-                // 服装英雄自带的 specialId 基本没有图标（实测 702 个服装只有 7 个有，且都是通用 `tackle`）
+                // 服装英雄自带的 specialId 基本没有图标
                 // ⇒ 技能图标回退到**本体英雄**的 specialId（服装英雄的技能图标用父英雄的）。
                 parent_specialId: isCostume ? ((byId[c.parentHeroId] || {}).specialId || '') : '',
                 rarity: c.rarity,
@@ -759,7 +746,7 @@ async function loadData(lang) {
                 // 粗分类（construct→covenant、goblin→goblinvillage），按它匹配会整桶落空。
                 originId: c.origin || '',
                 // 官方 `summonExclusiveTag`（Wardrobe1 / Wardrobe2 / 缺省=None）：奖池桶的
-                // `includedCostume` 判定依据（反编译 BucketIncludedEntryConfiguration.IsCostumeIncluded）。
+                // `includedCostume` 判定依据。
                 // `None` 在枚举里就是 0 ⇒ 入库时统一成 ''，判定处不用再区分 "None" / 缺字段。
                 exclusiveTag: (c.summonExclusiveTag && c.summonExclusiveTag !== 'None') ? c.summonExclusiveTag : '',
                 source: Lang.t('source', srcId),
@@ -836,7 +823,7 @@ async function loadData(lang) {
 /**
  * 把「生成档比本行配置多出来的被动」并进 `hero.costumeBonusPassiveSkillIds`。
  * 这些多出来的就是**从第一套服装继承**的服装奖励 —— 本行配置没有 `costumeBonusPassiveSkillIds`
- * 字段（实测 10 行，全是 `*_costume_cute`），但生成档的 `passiveSkills` 把它们追加在尾部。
+ * 字段，但生成档的 `passiveSkills` 把它们追加在尾部。
  * ⚠ 生成档是首屏之后才补齐的 ⇒ 只能在两条补齐路径里调（`hydrateSkills` / `reloadLanguageData`）。
  * Set 并集 ⇒ 重复调用幂等。
  */
@@ -886,10 +873,9 @@ function hydrateSkills(skills, balSkills) {
 /**
  * 首屏渲染后调用：把延后加载的技能正文补齐。
  * ⚠ **并发调用必须等到同一份工作完成**，不能"第二个调用者立刻返回"：
- *   旧写法是进函数就把 `_skillsHydrated` 置 true（把"已补齐"和"正在补齐"混成一个标志），
- *   于是 `openDetailsModal()` 自己那句 `await ensureSkillsLoaded()` 变成**空枪** ——
- *   首屏那条链已经把标志位置了，它立刻拿到 false 就去渲染 ⇒ 详情的特殊/被动技能与家族加成全空
- *   （实测被动区只有 10 字符 vs 补齐后 91 字符）。`?view=` 分享链接和**所有点击进详情**的路径都中招。
+ *   不能把"已补齐"和"正在补齐"混成一个标志（进函数就把 `_skillsHydrated` 置 true），
+ *   否则 `openDetailsModal()` 的 `await ensureSkillsLoaded()` 变成**空枪**，立刻拿到 false 就去渲染
+ *   ⇒ 详情的特殊/被动技能与家族加成全空（`?view=` 分享链接与所有点击进详情的路径）。
  * @returns {Promise<boolean>} 是否**由本次调用完成补齐**（已补齐或已放弃时返回 false；
  *          失败会留下控制台日志，详情缺文本但不影响首屏）
  */

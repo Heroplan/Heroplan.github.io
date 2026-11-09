@@ -1,7 +1,5 @@
 // lottery-simulator.js: 抽奖模拟器的所有逻辑
-// ⚠ 抽奖池标题已**分离到 `langs_json/lottery_title_<码>.json`**：
-//   原来这里硬编码了 cn/tc/en 三份（其余 17 语言只能回落英文），现由
-//   `_tools/_lottery_titles.py` 从官方语言字典生成 20 份，经 `langs.js` 的 TABLES 载入。
+// 抽奖池标题在 `langs_json/lottery_title_<码>.json`（由 `_tools/_lottery_titles.py` 从官方字典生成 20 份），经 `langs.js` 的 TABLES 载入。
 // 将需要从外部文件（如 main.js）调用的函数组织起来，避免污染全局作用域
 const LotterySimulator = {
     initialize: initializeLotterySimulator,
@@ -32,8 +30,7 @@ let bonusTranslations = {};
  */
 /**
  * 只重渲染奖池标题（语言切换路径用）。
- * ⚠ 标题原先**只**在 `handleActivityClick` 里写一次 ⇒ 无缝切语言时卡池列表/精选/历史都刷新了，
- *   唯独 `#lottery-pool-title` 停在旧语言（用户报的"带参数进抽奖后标题没跟着换语言"就是它）。
+ * 标题在 `handleActivityClick` 里写一次；无缝切语言时须由这里补刷，否则 `#lottery-pool-title` 停在旧语言。
  */
 function refreshPoolTitle() {
     const el = document.getElementById('lottery-pool-title');
@@ -58,26 +55,13 @@ function getMaxAllowedCostumeId(poolConfig) {
     return Infinity;
 }
 
-// --- 官方服装口径（libil2cpp.so 2026-10-04 版，dump.cs 同版本） ---
-// `SummonExclusiveTagType { None=0, Wardrobe1=1, Wardrobe2=2 }`（dump.cs:253198）
-// `IncludedCostumeType { None=0, Exclusive=1, NonExclusive=2 }`（dump.cs:253186 附近）
-//
-// ① `BucketIncludedEntryConfiguration.IsCostumeIncluded` RVA 0x1C6C518 —— 只对服装角色调用
-//    （本体恒通过），按桶的 `includedCostume` 判：
-//      None      → 服装全部排除
-//      Exclusive → 服装 tag == None，或 tag == 产品 `SummonExclusiveTag`
-//      NonExclusive → 服装 tag == None
-// ② `BucketIncludedEntryConfiguration.IsCharacterIncluded` RVA 0x1C6BE68 ——
-//    `minParentCharacterCostumeCount` 不区分本体/服装：父角色 = 服装的 `ParentPlayerCharacterId`、
-//    本体取自己 `Id`，再要求 `GetAvailableCostumeConfigs(parentId, time, product).Count >= N`（0x1C6C090）。
-// ③ `GetAvailableCostumeConfigs` RVA 0x1DFC0FC —— 产品 tag == None 时不筛 tag（0x1DFC344 分支），
-//    否则只收 tag == None 或 == 产品 tag 的服装，且必须 `CanBeReceived(time)`（0x1DFC398）。
-// ④ `CostumeSummonProductDefinition.Init` RVA 0x1C594F4 —— 产品 tag 不是序列化字段，而是拿产品 id 比
-//    `shopConfig.lottery.costumeSummonId`（→Wardrobe1）/ `costume2SummonId`（→Wardrobe2），其余产品为 None。
-// ⑤ 选精选英雄：基类 `LotteryProductDefinitionV1.IsHeroEligibleForSelection` RVA 0x1CBC880
-//    （Deluxe/Ascension 等未覆写）里 `IsCostume()` 直接不合格 ⇒ 服装一律不能选；
-//    `AllianceEventSummon` 覆写 RVA 0x1C52A90 放宽成 `IsCostume() && !IncludeCostumes` 才不合格。
-//    两者并起来 = 服装只在 `includeCostumes` 为真时可选。它只管"选进精选位"，不筛抽取桶。
+// --- 官方服装规则（RVA 取证见 技能描述生成/HANDOFF.md §7FG） ---
+// 枚举：SummonExclusiveTagType { None=0, Wardrobe1=1, Wardrobe2=2 }；IncludedCostumeType { None=0, Exclusive=1, NonExclusive=2 }。
+// ① includedCostume（只对服装角色判，本体恒通过）：None → 全排除；Exclusive → tag==None 或 ==产品 SummonExclusiveTag；NonExclusive → tag==None。
+// ② minParentCharacterCostumeCount：父角色（服装取 ParentPlayerCharacterId、本体取自己 Id）的可获得服装数 >= N。
+// ③ 可获得服装数 = 全量池里 tag==None 或 ==产品 tag、且 CanBeReceived(time) 的服装数；产品 tag==None 时不筛 tag。
+// ④ 产品 SummonExclusiveTag 按产品 id 映射：costumeSummonId → Wardrobe1、costume2SummonId → Wardrobe2，其余 None。
+// ⑤ 精选位：服装只在 includeCostumes 为真时可选（只管选进精选位，不筛抽取桶）。
 
 /** 英雄的官方服装标签（`None` 归一成 ''） */
 function heroExclusiveTag(hero) {
@@ -336,7 +320,7 @@ function getSimHeroPool() {
 }
 
 // 「已经出过任何服装的本体英雄 id」集合。按 `state.allHeroes` 数组身份缓存：
-//   换语言 / 重载数据时它是新数组 ⇒ 自动重建，不必手动失效；模拟里每发一次奖励都要查，别每次重扫 2121 行。
+//   换语言 / 重载数据时它是新数组 ⇒ 自动重建，不必手动失效；模拟里每发一次奖励都要查，别每次重扫全表。
 let _costumeParentCache = { src: null, set: null };
 function costumeParentIdSet() {
     if (_costumeParentCache.src !== state.allHeroes) {
@@ -494,18 +478,12 @@ function filterByDateCutoff(heroes, baseDate) {
     });
 }
 
-/** 按官方桶的年龄限制筛选英雄。
- *  E1（`BucketIncludedEntryConfiguration.IsCharacterIncluded(..., lotteryStartTime, ...)` @0x1C6BE68，
- *  返回 true 的路径在 @0x1C6C410 `mov r7,#1`，两处提前返回都是 `r7=0`）：
- *    OldestCharacterAgeInDays(+0x20) ≥1  ⇒  `heroDate <  start − N*86400` 时**拒绝**
- *                                          ⇒ 只收"开池前 N 天**以内**发布"的英雄（新英雄桶）
- *    YoungestCharacterAgeInDays(+0x1C) ≥1 ⇒  `heroDate >  start − N*86400` 时**拒绝**
- *                                          ⇒ 只收"开池前已满 N 天"的英雄（老英雄桶）
- *  两侧边界都**含等号**（拒绝用严格不等号）；`N < 1`（含 0/缺省）不生效（`cmp r1,#1; blt`）。
- *  base 传**开池日**（`getBaseDateForAgeRules`）或按英雄取开池日的函数
- *  （`getAnchorResolver`：超级元素池五色各开一档），不是今天。
- *  ⚠ 2026-10-29 曾把这两个方向改成"oldest 收更老 / youngest 收更新"，那是把分支目标
- *    `0x1C6C414` 误读成"继续检查"造成的——按上面证据回退，别再改回去。
+/** 按官方桶的年龄限制筛选英雄（取证见 技能描述生成/HANDOFF.md §7DR）。
+ *    OldestCharacterAgeInDays ≥1  ⇒  只收"开池前 N 天**以内**发布"的英雄（`heroDate >= start − N`，新英雄桶）
+ *    YoungestCharacterAgeInDays ≥1 ⇒  只收"开池前已满 N 天"的英雄（`heroDate <= start − N`，老英雄桶）
+ *  两侧边界都**含等号**；`N < 1`（含 0/缺省）不生效。
+ *  base 传**开池日**（`getBaseDateForAgeRules`）或按英雄取开池日的函数（`getAnchorResolver`：超级元素池五色各开一档），不是今天。
+ *  ⚠ 方向勿改反：oldest 收"以内"、youngest 收"已满 N 天"。
  */
 function filterByAge(heroes, baseDate, oldestDays, youngestDays) {
     let filtered = heroes;
@@ -541,10 +519,8 @@ function parseReleaseDate(dateStr) {
 }
 
 /** 池子里不该出现"开池日还没发布"的英雄。
- *  官方 `OldestCharacterAgeInDays` 只有**下界**（`date >= 开池日 − N`，E1
- *  `BucketIncludedEntryConfiguration.IsCharacterIncluded` @0x1C6BE68），但那时角色还不存在
- *  ⇒ 站点自己加上界：`state.allHeroes` 里带着 97 个 `2200-…` 哨兵日期（未发布）以及已排期还没到的
- *  英雄，不挡的话实测 `lottery_black_default` 多 97 个、`lottery_harvest_default` 多 166 个。
+ *  官方 `OldestCharacterAgeInDays` 只有**下界**（`date >= 开池日 − N`），站点自己加上界：
+ *  `state.allHeroes` 里带着 `2200-…` 哨兵日期（未发布）以及已排期还没到的英雄，不挡会被当成"最近发布"收进池子。
  *  没有发布日期的英雄按官方 `CanBeReceivedDate = 0` ⇒ 视为早已发布，不挡。 */
 function filterReleasedByAnchor(heroes, anchorDate) {
     if (!anchorDate) return heroes;
@@ -557,9 +533,9 @@ function filterReleasedByAnchor(heroes, anchorDate) {
 }
 
 /**
- * 当期月英（HOTM）本体 = **站点原有判据**：`hotm` 家族里"已过发布日期、最新、且没有任何服装"的那个本体。
+ * 当期月英（HOTM）本体 = `hotm` 家族里"已过发布日期、最新、且没有任何服装"的那个本体。
  * 官方 `IsCharacterIncluded` 的 `activeMonthlyCharacterEventId` 与 `uniqueEvents` 的 MonthlyHero 窗口
- * 都是**按月平铺**的（每月 1 日 07:00 换人），而那只英雄的发布日期就是同一天 ⇒ 不必把 114 条窗口带进配置，
+ * 都是**按月平铺**的（每月 1 日 07:00 换人），而那只英雄的发布日期就是同一天 ⇒ 不必把窗口表带进配置，
  * 按发布日期取最新即可与官方同期命中。
  * @param {object} hotmInfo - `summonPoolDetails.hotm`（用它的 `family` 前缀）
  * @returns {object|null} 没有符合条件的人选时返回 null（此时不排任何人）
@@ -615,10 +591,9 @@ function _hasBucketAgeRules(extraRules) {
 }
 
 /** 奖池自身的"开池时刻"（官方 `lotteryStartTime`）；超级元素池按当前选中颜色取。
- *  E1：`BucketIncludedEntryConfiguration.IsCharacterIncluded(..., lotteryStartTime, ...)` @0x1C6BE68
- *  里的年龄限制全部以 **开池时刻** 为基准（不是"今天"）：
- *      OldestCharacterAgeInDays(+0x20) ≥1 ⇒ CanBeReceivedDate(+0x48) <  start − N*86400
- *      YoungestCharacterAgeInDays(+0x1C) ≥1 ⇒ CanBeReceivedDate(+0x48) >  start − N*86400
+ *  官方 `IsCharacterIncluded` 的年龄限制全部以 **开池时刻** 为基准（不是"今天"）：
+ *      OldestCharacterAgeInDays ≥1 ⇒ CanBeReceivedDate <  start − N 天
+ *      YoungestCharacterAgeInDays ≥1 ⇒ CanBeReceivedDate >  start − N 天
  *  `startDate` 由 `5.更新奖池.py` 从官方条目写进 lottery_config.json。
  *  ⚠ 超级元素池**没有**统一 `startDate`（五色各是独立 product、各开各的档），
  *    没选颜色时这里返回 null ⇒ 上层要用 `getAnchorResolver()` 按英雄所属颜色取。
@@ -658,13 +633,11 @@ function parseYmd(s) {
  * 年龄/收录规则的**锚点解析器**：返回 `(hero) => Date`。
  *
  * 超级元素池是"五色各开一档"——官方每个颜色是独立 product（`lottery_super_elemental_<色>`）、
- * 各有自己的 `lotteryStartTime`，配置里就是 `startDateByColor`（实测 2026 年 red 06-20 /
- * purple 07-01 / yellow 08-10 / green 09-10 / blue 10-02）。
+ * 各有自己的 `lotteryStartTime`，配置里就是 `startDateByColor`。
  * ⚠ 不能把五色统一成一个日期：`youngestCharacterAgeInDays=60` 是"开池日 60 天前就已发布"，
- *   取最早那档统一 ⇒ 其余四色的 60 天线被一起提前，"全部色"视图实测少收 68 个英雄
- *   （blue 329→354、green 355→379、purple 342→350、yellow 323→334、red 357→357）。
+ *   取最早那档统一 ⇒ 其余四色的 60 天线被一起提前，"全部色"视图会少收英雄。
  * 单色视图本来就用该色自己的日期 ⇒ 两种视图口径一致。
- * 英雄取不到颜色（只有 5 个彩虹训练师 `elementId='all'`，元素池的桶不收训练师）时退回恒定锚点。
+ * 英雄取不到颜色（彩虹训练师 `elementId='all'`，元素池的桶不收训练师）时退回恒定锚点。
  */
 function getAnchorResolver(poolConfig) {
     const byColor = poolConfig && poolConfig.startDateByColor;
@@ -857,9 +830,8 @@ function getHeroPoolForBucketWithExtra(bucketString, bucketIndex, poolConfig) {
 /**
  * 服装召唤（`CostumeSummon`）的抽取池：官方桶规则 = 家族筛选 + `includedCostume` +
  * `minParentCharacterCostumeCount`（两个池的 4 个桶规则完全一致，取 index 0 即可）。
- * 旧实现按 `costume_id === 2` / `costume_id <= 1` 猜"第几套"，与实际标签不符：
- * 站点 2121 行里第 1 套标签 None 354 / Wardrobe1 66 / Wardrobe2 2，第 2 套 Wardrobe1 66 / Wardrobe2 46，
- * 第 3 套起全是 Wardrobe1 ⇒ 猜"第 2 套"会把 66 件 Wardrobe1 也放进 wardrobe2 池。
+ * 按 `includedCostume` 标签筛，不能按 `costume_id` 猜"第几套"——costume_id 与
+ * Exclusive/NonExclusive 标签不对应（RVA 取证见 技能描述生成/HANDOFF.md §7FG）。
  */
 function buildCostumeSummonPool(poolConfig) {
     const families = (Array.isArray(poolConfig.AssociatedFamilies) && poolConfig.AssociatedFamilies.length)
@@ -1058,8 +1030,8 @@ function getFilteredMasterPool() {
             // `lotteryEntries[].startDate` 写入；五色是轮转开的，官方每个颜色是独立 product
             // `lottery_super_elemental_<色>`、各有 `lotteryStartTime` ⇒ 没有"整池开池日"这回事，
             // 配置里也**不再写**统一的 `startDate`，见 §7DU）。
-            // 官方规则是"开池那天算起，非活动家族的英雄要满 N 天才进池"，原先写死"今天 − N 天"
-            // ⇒ 活动开几天后池子会自己缩水，和游戏里不一致（用户 2026-10-29 报）。
+            // 官方规则是"开池那天算起，非活动家族的英雄要满 N 天才进池"；若写死"今天 − N 天"，
+            // 活动开几天后池子会自己缩水，和游戏里不一致。
             const _cutoffOf = (hero) => {
                 const b = anchorOf(hero);
                 return b ? new Date(b.getTime() - days * 86400000) : null;
@@ -1567,8 +1539,8 @@ function renderActivityList() {
  */
 /**
  * 奖池 → 地址参数值：官方标题键 `lottery.title.<x>` 去掉前缀后的 `<x>`
- *   （就是 `langs_json/lottery_title_<码>.json` 里的键后缀，用户在奖池标题上看到的那份 ID）。
- * 实测 52 个在售池（`amount === 1`）的后缀互不重复 ⇒ 能唯一定位。
+ *   （就是 `langs_json/lottery_title_<码>.json` 里的键后缀，即奖池标题显示的 ID）。
+ * 在售池（`amount === 1`）的后缀互不重复 ⇒ 能唯一定位。
  */
 function poolUrlKeyOf(poolConfig) {
     const k = String(getPoolTitleKey(poolConfig) || '');
@@ -1989,23 +1961,11 @@ function featuredSlotCount(pool) {
 }
 
 /**
- * 官方精选英雄的**展示顺序**。证据（libil2cpp.so，dump.cs 同版本 2026-10-04）：
- *   `SummonViewController.SetFeaturedPortraitsIfNeeded` RVA 0x1ACBA54 ——
- *     OrderByDescending(Rarity) → ThenByDescending(Id == 宣传位) →
- *     ThenByDescending(CanBeReceivedDate) → ThenBy(NameKey)
- *     键取自 `FeaturedSummonEntity` 字段 0x10/0x8/0x20/0x3C（反编译 `FeaturedSummonEntity..ctor` 0x1AD4ADC）
- *   宣传位 = `LotteryProductDefinition.GetAdvertisedEntry` RVA 0x1C3E20C：列表非空时**直接返回 ids[0]**，
- *     也就是配置 `featuredHeroes` 的第 0 项；它只在同稀有度里把这位"钉"到最前，跨稀有度仍按稀有度。
- *   `GetAllFeatureableEntities` RVA 0x1AD0DC0 只是 LINQ `Where + Select` ⇒ **不改顺序**，只剔除取不到配置的 id。
- *   LINQ 的 OrderBy 是**稳定**排序 ⇒ 四个键全等时回到配置原序（这里靠 `Array.prototype.sort` 的稳定性，ES2019 起保证）。
- *
- * ⚠ **皮肤也参与排序**（2026-10-17 用游戏内截图复核后推翻了我原先的读法）：
- *   谓词 0x1AD3CFC / 0x1AD3D6C 确实把 `parentHeroId` 非空的条目排除在 A/B 两个分组之外，
- *   但两张实测样本都表明**展示顺序仍按同一套比较器排**：
- *     · `lottery_season_untold_tales2`（3 格全皮肤）配置 `[holy, omen, guardian]` → 游戏 `[holy, guardian, omen]`
- *       = 宣传位 + `canBeReceivedDate` 降序（2026-10-16 / 2026-02-18 / 2025-10-15）；
- *     · `lottery_covenant_default` 6 格里的 `elemental_desmond_costume_assassin` 也按自身日期(2026-09-10)参与排序。
- *   ⇒ 只有"站点取不到这条 id 的配置"时才退回配置原序（那种情况官方 `GetAllFeatureableEntities` 会把它剔除）。
+ * 官方精选英雄的**展示顺序**（取证见 HANDOFF.md §8）。比较器四个键依次：
+ *   Rarity 降序 → 是否宣传位降序 → CanBeReceivedDate 降序 → NameKey（id 头部家族段）升序。
+ * 宣传位 = 配置 `featuredHeroes` 的第 0 项，只在同稀有度里置顶，跨稀有度仍按稀有度。
+ * 稳定排序 ⇒ 四个键全等时回到配置原序（靠 `Array.prototype.sort` 的稳定性，ES2019 起保证）。
+ * 皮肤也参与排序（按自身日期）；只有"站点取不到这条 id 的配置"时才整表退回配置原序。
  */
 function orderFeaturedIdsByOfficialRule(idList) {
     state.featuredPortraitsReadByRow = false;
@@ -2025,9 +1985,8 @@ function orderFeaturedIdsByOfficialRule(idList) {
         const da = ha.releaseDate || '';
         const db = hb.releaseDate || '';
         if (da !== db) return da < db ? 1 : -1;
-        // 官方第四键 = NameKey.Id，而 `Language.GetHeroNameKey` RVA 0x1B94B70 的实现是
-        //   key = 前缀 + id.Substring(0, id.IndexOf("_", 4))（找不到就整串）⇒ 比的是"id 头部的家族段"，不是整条 id。
-        //   另有一条 `Contains(常量)` 的特殊分支（常量真值未取，命中的是皮肤那一类 ⇒ 走不到）。
+        // 第四键 = id 头部的家族段：取第 4 个字符之后第一个 '_' 以前的部分（找不到就整串），
+        //   不是整条 id（见 officialNameKey）。
         const ka = officialNameKey(ha.heroId);
         const kb = officialNameKey(hb.heroId);
         if (ka !== kb) return ka < kb ? -1 : 1;
@@ -2035,19 +1994,15 @@ function orderFeaturedIdsByOfficialRule(idList) {
         if (ha.heroId !== hb.heroId) return ha.heroId < hb.heroId ? -1 : 1;
         return 0;
     };
-    // **分组**（`v29`/`v36` = 谓词 0x1AD3CFC / 0x1AD3D6C）：一组 = 皮肤（`parentHeroId` 非空），另一组 = 非皮肤。
-    // `v40`：条目多的那组先写格子；**平手时先写皮肤组**（S2 池 2 皮肤 + 2 本体，截图实测皮肤占左边两格；
-    // 谓词 `b__99_0` 的返回值在伪代码里被优化掉了 ⇒ 极性只能靠这个样本定）。
-    // 另一组从 `max(L, ceil(N/2))` 格起（`v94`；横排时就是 `L`）。
+    // **分组**：一组 = 皮肤（`parentHeroId` 非空），另一组 = 非皮肤。
+    // 条目多的那组先写格子；**平手时先写皮肤组**。
+    // 另一组从 `max(L, ceil(N/2))` 格起（横排时就是 `L`）。
     const isCostume = id => !!state.heroesByIdMap.get(id).parentHeroId;
     const costumes = idList.filter(isCostume);
     const others = idList.filter(id => !isCostume(id));
     const first = costumes.length >= others.length ? costumes : others;
     const second = first === costumes ? others : costumes;
-    // `v87`（选横排还是竖排表）：站点按**总展示数 ∈ {2, 4}** 判 ⇒ 横排表 = sib[0,1,2,3,…] 逐行左右交替。
-    //   反编译里这个判据挂在 `v86` 上（我读成"多的那组的条数"），但用户实测**"无论什么情况，2 个都是左右各一"**
-    //   ⇒ 1 本体 + 1 皮肤（两组各 1，`v86` 只等于 1）也必须是横排 ⇒ 判据实际等价于**总展示数**。
-    //   在"只有一组非空"的常见池子上两种读法同值，差别只出现在混合池 ⇒ 以实测为准。
+    // 选横排还是竖排表：按**总展示数 ∈ {2, 4}** 判 ⇒ 横排表逐行左右交替（1 本体 + 1 皮肤也算 2 ⇒ 左右各一）。
     // 结果：2 个 = 左右各一、3 个 = 单列竖排、4 个 = 2×2、6 个 = 两列各 3。
     state.featuredPortraitsReadByRow = idList.length === 2 || idList.length === 4;
     // 两组各自的条数 ⇒ 交给 `featuredLitCellIndices` 算"第二组从第几格起"（会出现左 2 右 1 这种留空格的形状）
@@ -2056,10 +2011,10 @@ function orderFeaturedIdsByOfficialRule(idList) {
 }
 
 /**
- * 官方"被点亮的格子序号"：第一组占 `0 .. L-1`，第二组从 `v94` 起 ——
- *   `v94 = 横排 ? L : max(L, ceil(N/2))`（`N` = 该主题格子表的长度）
- * ⇒ 例：默认容器（N=6，half=3）里 **2 个本体 + 1 个皮肤** 会点亮 0、1、3 格 =
- *   左列上两格 + 右列第一格 = **左 2 右 1**，中间第 2 格留空（官方 `HideAllFeaturedPortraits()` 后不写它就一直是关的）。
+ * 官方"被点亮的格子序号"：第一组占 `0 .. L-1`，第二组从 `横排 ? L : max(L, ceil(N/2))` 起
+ *   （`N` = 该主题格子表的长度）。
+ * ⇒ 例：默认容器（N=6）里 **2 个本体 + 1 个皮肤** 点亮 0、1、3 格 =
+ *   左列上两格 + 右列第一格 = **左 2 右 1**，第 2 格留空。
  * 返回长度 = 实体数的数组：第 i 个实体的格子序号。
  */
 function featuredLitCellIndices(pool) {
@@ -2073,39 +2028,25 @@ function featuredLitCellIndices(pool) {
     return out.filter(c => c < seq.length);
 }
 
-/** `Language.GetHeroNameKey`（0x1B94B70）里决定 `ThenBy` 的那段：取第 4 个字符之后第一个 '_' 以前的部分。 */
+/** 官方 NameKey：取 id 第 4 个字符之后第一个 '_' 以前的部分（找不到就整串），用作排序第四键。 */
 function officialNameKey(heroId) {
     const i = heroId.indexOf('_', 4);
     return i < 0 ? heroId : heroId.slice(0, i);
 }
 
 /**
- * 官方格子的**读取方向**（同一个 0x1ACBA54 + 从 bundle 里扫出的各主题格子表）：
- *   portraits = GetCustomFeaturedPortraits() ?? (竖排 ? _featuredPortraitsInVerticalOrder : _featuredPortraitsInHorizontalOrder)
- *   ⇒ **有自定义表的主题根本不看横排/竖排那个分支**，直接用自定义表的顺序。各主题的表是扫序列化字节得到的
- *   （脚本 `配置数据更新/逆向取证/_all_lists.py`；bundle 无 TypeTree，AssetStudioCLI 也只认类名）：
- *     · 默认容器（`SummonViewController` 两张 6 元素表）= 2 列 × 3 行，x = ±120、y = -260/-520/-780，
- *       横排表 = 子节点 [0,1,2,3,4,5]（逐行左右交替）、竖排表 = [0,2,4,1,3,5]（先填满一列 3 格）
- *     · `AtlantisShowcaseController`（S2 主题）= **4 格一行**：`HeroLeft(100,-130) HeroLeftSmall(270,-120)
- *       HeroRightSmall(-270,-120) HeroRight(-100,-130)`；但这四个 x 是**边锚**的偏移，不是中心锚：
- *       HeroLeft/HeroLeftSmall 的 anchor=(0,1)（左上角起算，x 越大越靠内），HeroRight/HeroRightSmall 的
- *       anchor=(1,1)（右上角起算，x 越负越靠内）⇒ 屏幕 L→R 恰好等于序列化表序（见下）。
- *     · `LeagueShowcaseController` = 6 格，但顺序是**先右列 3 格再左列 3 格**（站点暂无 League 池，未接）
- *     · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排 3 格等效）
- *   默认容器的 6 格是中心锚（±120），实测 x>0 在屏幕上**偏左**（容器镜像）⇒ 横排表第 0 项落在站点左列，
- *   与盟约截图一致；S2 是边锚，不能把这条套过来。
- *   选横排表的判据 `v86 == 4`：`v86` = 展示条目数。
+ * 官方格子的**读取方向**（取证见 HANDOFF.md §8）：有自定义表的主题直接用自定义表序，不看横排/竖排分支。
+ *   · 默认容器 = 2 列 × 3 行；横排表逐行左右交替、竖排表先填满一列 3 格。中心锚 ⇒ 横排表第 0 项落在站点左列。
+ *   · S2（Atlantis）= 4 格一行，边锚 ⇒ 屏幕 L→R 等于表序（站点左列 = 表项 0、1，右列 = 表项 2、3），
+ *     不能套默认容器的镜像口径。
+ *   · League = 6 格先右列后左列（站点暂无 League 池，未接）；Underwild / EventLimitedPool = 3 格单列。
+ *   选横排表的判据 = 展示条目数 ∈ {2, 4}。
  */
 /*
- * 各主题的**格子表**（站点坐标 = [列(0=左), 行(0=顶)]）：
- *   · 默认容器 `SummonViewController`：两张 6 元素表（偏移 0x0E8 = 横排、0x134 = 竖排，按 dump.cs 声明顺序），
- *     几何 = 2 列 × 3 行（x = ±120、y = -260/-520/-780），子节点序 = (右,左)×行1..行3
- *     ⇒ 横排 = sib[0,1,2,3,4,5]（逐行左右交替）、竖排 = sib[0,2,4,1,3,5]（先填满一列 3 格）
- *   · `AtlantisShowcaseController`（S2）= 4 格一行，引擎按 `_customFeaturedPortraits` 表序依次填
- *     （`ConfigureFeaturedPortraits` 0x1AD06D0：entity[i] → portraits[startIndex+i]），边锚又让表序
- *     恰好等于屏幕 L→R ⇒ 站点左列 = 表项 0、1，右列 = 表项 2、3（不是默认容器那种 2×2 行列交替）。
- *   · `LeagueShowcaseController` = 6 格但**先填右列**（站点暂无 League 池，未接）
- *   · `UnderwildShowcaseController` / `EventLimitedPoolSummonPreview` = 3 格单列（与默认竖排前 3 格同形）
+ * 各主题的格子表（站点坐标 = [列(0=左), 行(0=顶)]；几何取证见 HANDOFF.md §8）：
+ *   · 默认容器 = 2 列 × 3 行：横排逐行左右交替、竖排先填满一列 3 格。
+ *   · S2（Atlantis）= 4 格一行，表序即屏幕 L→R ⇒ 左列 = 表项 0、1，右列 = 表项 2、3（不是 2×2 行列交替）。
+ *   · League = 6 格先填右列（站点暂无 League 池，未接）；Underwild / EventLimitedPool = 3 格单列。
  */
 const FEATURED_CELL_SEQUENCES = {
     default: {
@@ -2228,7 +2169,7 @@ function addHeroToFeaturedSlot(selectedHero) {
             return;
         }
     }
-    // 官方精选位资格（基类 0x1CBC880 / AllianceEventSummon 覆写 0x1C52A90）：
+    // 官方精选位资格（IsHeroEligibleForSelection，RVA 取证见 技能描述生成/HANDOFF.md §7FG）：
     // 服装角色只有在产品 `includeCostumes` 为真时才允许被选为精选英雄。
     if (poolConfig && selectedHero.costume_id && poolConfig.includeCostumes !== true) {
         alert("该英雄无法在此奖池中被选为精选英雄。");
@@ -2830,7 +2771,7 @@ function renderSummonHistory() {
         titleElement.innerHTML = langDict.summonHistoryTitleCurrent(currentPoolName, totalPulls);
     }
 
-    // 3. 【核心修正】生成与官方样式完全一致的 Tooltip
+    // 3. 生成与官方样式完全一致的 Tooltip
     if (!state.showAllSummonHistory && historyToRender.length > 0) {
         const stats = calculateAndFormatProbabilities(historyToRender, state.currentSummonData);
 
@@ -3005,10 +2946,9 @@ function saveHistoryToLocalStorage() {
 }
 
 /**
- * 旧存档键名兼容（就地、幂等）。
- * 2026-10-20 把英雄模型字段统一成官方口径：`star`→`rarity`、`colorId`→`elementId`、`color`→`element`
- * （对齐 `data/characters.json` 的 `rarity` / `element`，去掉 `ID_FIELD` 那层转换定义）。
- * 而 `localStorage.summonHistory` 存的是**整份英雄对象** ⇒ 老记录只有旧键，
+ * 旧存档键名兼容（就地、幂等）：`star`→`rarity`、`colorId`→`elementId`、`color`→`element`
+ * （已对齐 `data/characters.json` 的 `rarity` / `element`）。
+ * `localStorage.summonHistory` 存的是**整份英雄对象** ⇒ 老记录只有旧键，
  * 不补就会渲染成空星星、没有元素底色。
  */
 function migrateLegacyHeroKeys(hero) {

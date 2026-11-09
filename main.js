@@ -4,13 +4,16 @@
  * 页面加载完成后执行的主函数。
  */
 document.addEventListener('DOMContentLoaded', async function () {
+    // 图片长缓存（sw.js）：非安全上下文（如局域网 IP 预览）注册会失败，静默降级走 HTTP 缓存。
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(function () { });
+    }
     await initializeApp();
 });
 
 /**
  * 从词条里的 `[#Dynamic]…[#]` 标记找出所有「攻击力参与计算」的伤害数值，并算好系数。
  *
- * **完全抛弃**旧站那一套「技能标签门控 + 关键词组合 + 排除词」的启发式识别，
  * 只认生成器打的 `[#Dynamic]` 标记（`skill_desc_gen` 的 `lang_markup.mark_dynamic`）——
  * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是导出时那个攻击力下的展示值。
  * 重算优先用 `data/heroes_dynamic.json` 里的 `(分子, 分母, 回合)` 走官方式，缺参数才退回
@@ -92,10 +95,7 @@ function loadFilterCollapseStates() {
         const toggleButton = header.querySelector('.toggle-button');
         if (toggleButton) {
             const targetId = toggleButton.dataset.target;
-            // 注意：这里的 cookie key 需要和保存时的一致。
-            // 在你的 addEventListeners 中，cookie key 是 targetId + '_state'
-            // 但在你的 render.js 中，data-cookie 属性直接就是 'modal_settings_state'
-            // 为了统一和稳健，我们应该以 addEventListeners 中的逻辑为准。
+            // cookie key 必须与保存逻辑一致：addEventListeners 中用 targetId + '_state'
             const cookieName = targetId + '_state';
             const savedState = getCookie(cookieName);
             const contentElement = document.getElementById(targetId);
@@ -136,15 +136,15 @@ async function initializeApp() {
 
                 if (hasModalOpen && !wasModalOpen) {
                     // 'modal-open' 类刚刚被添加
-                    // console.log("检测到 modal-open 添加，准备添加 padding-right..."); // <-- 新增日志
+                    // console.log("检测到 modal-open 添加，准备添加 padding-right...");
                     if (window.innerWidth > document.documentElement.clientWidth) {
                         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-                        // console.log(`计算出滚动条宽度为: ${scrollbarWidth}px`); // <-- 新增日志
+                        // console.log(`计算出滚动条宽度为: ${scrollbarWidth}px`);
                         body.style.paddingRight = `${scrollbarWidth}px`;
                     }
                 } else if (!hasModalOpen && wasModalOpen) {
                     // 'modal-open' 类刚刚被移除
-                    // console.log("检测到 modal-open 移除，准备移除 padding-right..."); // <-- 新增日志
+                    // console.log("检测到 modal-open 移除，准备移除 padding-right...");
                     body.style.paddingRight = '';
                 }
             }
@@ -184,15 +184,15 @@ async function initializeApp() {
 
     const language = getCookie('language');
     // ⚠ **搜索语言选择已废弃** ⇒ 不再读写 `search_lang` /
-    //   `searchLanguageUpdated`，一律按当前界面语言处理（相关迁移逻辑整块移除）。
+    //   `searchLanguageUpdated`，一律按当前界面语言处理。
 
     const languageCookie = getCookie('language');
 
     let langToUse = 'en';
 
     // ⚠ 这里**不能**用 `i18n[码]` 判存在：`i18n` 要等 `loadAll()`（在 `loadData` 里）才填，
-    //    此刻还是 `langs.js` 预初始化出来的空对象 ⇒ Cookie / URL 的语言**永远被判为无效**
-    //    （重构回归：旧 `language.js` 在加载时就填好了 20 种语言）。改用 `Lang.LANGS` 白名单。
+    //    此刻还是 `langs.js` 预初始化出来的空对象 ⇒ Cookie / URL 的语言**永远被判为无效**。
+    //    改用 `Lang.LANGS` 白名单。
     const _knownLang = (c) => !!c && (typeof Lang !== 'undefined') && Lang.LANGS.indexOf(c) >= 0;
     // 外部语言标签归一化：`zh-Hant` → `tc`、`ja-JP` → `ja`；
     // **站点不支持的语言返回 null**（如 `hl=he` 希伯来语）⇒ 自然回落到下一级。
@@ -201,14 +201,17 @@ async function initializeApp() {
 
     // URL 参数：`lang`（本站口径）优先，`hl`（Google 界面语言参数）兜底。
     const urlLang = _normLang(langFromUrl) || _normLang(hlFromUrl);
+    // 路径式语言入口 `/<码>/`（独立静态页，见 _tools/build_lang_pages.py）是**最高优先级**：
+    // 它比 `?lang=` 更接近"可抓取实体"，爬虫/刷新都落在它上面。
+    const pathLang = (typeof Lang !== 'undefined' && Lang.langFromPath) ? Lang.langFromPath(window.location.pathname) : null;
 
-    // 1. 优先使用 URL 里**显式写的语言**（分享链接、爬虫带过来的 `?lang=`/`?hl=`）。
-    //    ⚠ 顺序曾是"Cookie 优先"，对 SEO 有实际危害：爬虫渲染 `?lang=da` 时若带着上次访问留下的
+    // 1. 优先使用 URL 里**显式写的语言**（路径 `/<码>/` > 参数 `?lang=`/`?hl=`）。
+    //    ⚠ 顺序勿改成"Cookie 优先"，对 SEO 有实际危害：爬虫渲染 `?lang=da` 时若带着上次访问留下的
     //      `language` cookie，页面会被渲染成另一种语言、canonical 也跟着指到别的语言版
     //      ⇒ GSC 判成"备用网页（有适当的规范标记）"、这条 URL 不被单独收录。
     //      显式写在地址里的意图必须说了算；回访用户的 cookie 仍在第 2 级生效（地址不带语言时照旧）。
-    if (urlLang) {
-        langToUse = urlLang;
+    if (pathLang || urlLang) {
+        langToUse = pathLang || urlLang;
     }
 
     // 2. 其次使用 Cookie
@@ -322,6 +325,26 @@ async function initializeApp() {
         // 印尼语
         else if (browserLang.startsWith('id')) {
             langToUse = 'id';
+        }
+    }
+
+    // 路径式语言入口归一：把地址收敛成 canonical 形态 `/<码>/`（**不重载**，先于 applyLanguage，
+    //   这样首屏 canonical 立刻自指静态入口）。覆盖两类：
+    //   · 旧 `?lang=`/`?hl=` 链接（含已被 Google 收录的那批）⇒ 换成路径版，规范信号集中到独立入口；
+    //   · `/cn`、`/cn/index.html` 这类变体 ⇒ 收敛成 `/cn/`。
+    //   业务参数（view/pool/hero/bfavs…）与 hash 原样保留；首屏此刻 history.state 多为 null。
+    {
+        const _pu = new URL(window.location.href);
+        const _pLang = (typeof Lang !== 'undefined' && Lang.langFromPath) ? Lang.langFromPath(_pu.pathname) : null;
+        const _want = _pLang || urlLang;
+        if (_want) {
+            const _target = '/' + _want + '/';
+            const _hadQueryLang = _pu.searchParams.has('lang') || _pu.searchParams.has('hl');
+            _pu.searchParams.delete('lang');
+            _pu.searchParams.delete('hl');
+            if (_pu.pathname !== _target || _hadQueryLang) {
+                history.replaceState(history.state, '', _target + _pu.search + _pu.hash);
+            }
         }
     }
 
@@ -532,7 +555,7 @@ async function initializeApp() {
     //     仅在相关筛选已有输入时才重渲染，避免无谓的长任务。
     //     ⚠ 把这个 promise 留在 `skillsReady` 里给下面 `?view=` 用 —— **不能再调一次
     //     ensureSkillsLoaded()**：它进函数就把 `_skillsHydrated` 置位，第二次并发调用会立刻
-    //     返回 false（正文还没挂上），详情弹窗照样是空的（就是这个 bug 的成因）。
+    //     返回 false（正文还没挂上），详情弹窗照样是空的。
     let skillsReady = Promise.resolve();
     if (typeof ensureSkillsLoaded === 'function') {
         skillsReady = ensureSkillsLoaded().then(ok => {
@@ -690,7 +713,7 @@ async function initializeApp() {
         });
     }
 
-    // 「显示活动名称」：原由 populateFilters() 动态生成，现是右栏的静态控件（utils.js 按 id 读取）
+    // 「显示活动名称」：右栏的静态控件（utils.js 按 id 读取）
     const showEventNameCheckbox = document.getElementById('show-event-name-checkbox');
     if (showEventNameCheckbox) {
         const eventNameCookie = getCookie('showEventNameState');
@@ -761,14 +784,16 @@ function addEventListeners() {
         }
     });
     langOptions.addEventListener('click', (e) => {
-        e.preventDefault();
         const target = e.target.closest('.lang-option');
-        if (target) {
-            const newLang = target.getAttribute('data-lang');
-            // 无缝切换 ⇒ 下拉框不会因重载消失，这里**显式收起**
-            if (langOptions) langOptions.classList.add('hidden');
-            if (newLang && newLang !== state.currentLang) changeLanguage(newLang);
-        }
+        if (!target) return;
+        // 菜单项现在是真实 `href="/<码>/"`（可抓取）：普通左键走无缝切换；
+        // Ctrl/⌘/Shift/中键等修饰点击放行给浏览器原生"新标签打开"，不拦截。
+        if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        const newLang = target.getAttribute('data-lang');
+        // 无缝切换 ⇒ 下拉框不会因重载消失，这里**显式收起**
+        if (langOptions) langOptions.classList.add('hidden');
+        if (newLang && newLang !== state.currentLang) changeLanguage(newLang);
     });
     // “查看最新”按钮
     uiElements.resultsHeader.addEventListener('click', (event) => {
@@ -850,7 +875,8 @@ function addEventListeners() {
         if (teams.length === 0) { alert(langDict.noTeamsToShare); return; }
 
         const binaryStr = encodeTeamsToBinary(teams);
-        const url = `${window.location.origin}${window.location.pathname}?bsharedTeams=${binaryStr}&lang=${state.currentLang}`;
+        // 分享链接语言中立：固定根路径 + 只带业务参数，不带 `lang`/语言路径（接收方按自己的语言渲染）。
+        const url = `${window.location.origin}/?bsharedTeams=${binaryStr}`;
 
         copyTextToClipboard(url).then(() => {
             const btn = document.getElementById('share-team-list-btn');
@@ -879,7 +905,8 @@ function addEventListeners() {
         }
 
         const binaryStr = encodeFavoritesToBinary(favorites);
-        const url = `${window.location.origin}${window.location.pathname}?bfavs=${binaryStr}&lang=${state.currentLang}`;
+        // 分享链接语言中立：固定根路径 + 只带业务参数，不带 `lang`/语言路径。
+        const url = `${window.location.origin}/?bfavs=${binaryStr}`;
 
         copyTextToClipboard(url).then(() => {
             const originalText = shareFavoritesBtn.innerText;
@@ -1048,7 +1075,7 @@ function addEventListeners() {
             if (!showSoulExchangeBtn.disabled) {
                 // ▼▼▼ 在显示列表前，先关闭筛选框 ▼▼▼
                 closeFiltersModal();
-                // ▼▼▼ 新增 setTimeout 以解决执行时机问题 ▼▼▼
+                // ▼▼▼ 用 setTimeout 解决执行时机问题 ▼▼▼
                 setTimeout(() => {
                     showSoulExchangeModal();
                 }, 100);
@@ -1173,7 +1200,6 @@ function addEventListeners() {
                     contentElement.classList.toggle('collapsed', isCollapsing);
                     toggleButton.classList.toggle('expanded', !isCollapsing);
 
-                    // 完全移植自原版 script.js 的逻辑
                     const cookieName = targetId + '_state';
                     const currentState = isCollapsing ? 'collapsed' : 'expanded';
                     setCookie(cookieName, currentState, 365);
@@ -1356,7 +1382,7 @@ function handleTeamGridClick(event) {
                 // 交换英雄
                 [state.teamSlots[state.selectedForSwapIndex], state.teamSlots[targetIndex]] = [state.teamSlots[targetIndex], state.teamSlots[state.selectedForSwapIndex]];
             } else if (action === 'move') {
-                // 【新增】移动英雄到空位
+                // 移动英雄到空位
                 state.teamSlots[targetIndex] = state.teamSlots[state.selectedForSwapIndex];
                 state.teamSlots[state.selectedForSwapIndex] = null;
             }
@@ -1525,7 +1551,7 @@ function sortDonationListByLanguage(originalList) {
 
     // 如果用户语言无效或不在映射中，返回原始顺序
     if (!userLang || !langDonorsMap[userLang]) {
-        return [...originalList]; // 返回副本避免修改原数组[1](@ref)
+        return [...originalList]; // 返回副本避免修改原数组
     }
 
     // 获取当前语言的捐赠者

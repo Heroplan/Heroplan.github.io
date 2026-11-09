@@ -53,8 +53,8 @@ const state = {
     sharedTeamsDataFromUrl: [],     // 从URL解析出的分享队伍数据
 
     // --- 抽奖模拟器状态 (位于 state.js) ---
-    lotterySimulatorActive: false,    // 新增：抽奖模拟器是否激活
-    lotteryAnimationMode: 'full',    // 新增：动画模式的状态，默认为 'full'
+    lotterySimulatorActive: false,    // 抽奖模拟器是否激活
+    lotteryAnimationMode: 'full',    // 动画模式的状态，默认为 'full'
     isEditingFeaturedHero: false,   // 是否正在编辑某个精選英雄卡槽
     editingSlotIndex: null,         // 正在编辑的卡槽的索引 (0, 1, 2...)
 
@@ -68,6 +68,6 @@ const state = {
     _tempImportedSettings: null,    // 临时存储从代码中解析出的待导入设置
     skillTagToCategoryMap: {}, // 为技能标签分类映射表提供一个初始空对象
 
-    modalContext: {}, // 新增：用于存储模态框的上下文，例如关闭时的回调
+    modalContext: {}, // 用于存储模态框的上下文，例如关闭时的回调
     selectedElementalColor: null,
 };

@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Tuottaa 630% vauriota kohteelle.",
-      "Tuottaa 945% vauriota erikoistaidoilla puhdistavia tai häivyttäviä hahmoja vastaan.\n[*]Vain erikoistaidoista tulevat suorat häivytykset ja puhdistukset huomioidaan. Poistovaikutuksia, passiivisia taitoja, käskyläisiä, perhevaikutuksia, kykyjä ja tilaefektejä ei huomioida.",
-      "Kaikkien liittolaisten tehosteiden kesto nollautuu.",
+      "Tuottaa 760% vauriota erikoistaidoilla puhdistavia tai häivyttäviä hahmoja vastaan.\n[*]Vain erikoistaidoista tulevat suorat häivytykset ja puhdistukset huomioidaan. Poistovaikutuksia, passiivisia taitoja, käskyläisiä, perhevaikutuksia, kykyjä ja tilaefektejä ei huomioida.",
       "Kaikki liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 3 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[*] Koskee myös ryöstämistä.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Tuottaa 350% vauriota kohteelle ja lähellä oleville vihollisille.",
-      "Loitsija ja lähellä olevat liittolaiset saavat 45%:n mahdollisuuden väistää erikoistaitoja 3 vuoron ajaksi. Jokainen onnistunut väistö antaa liittolaiselle +24% manaa.",
+      "Loitsija ja lähellä olevat liittolaiset saavat 45%:n mahdollisuuden väistää erikoistaitoja 3 vuoron ajaksi. Jokainen onnistunut väistö antaa liittolaiselle +10% manaa.",
       "Elementtiyhteys antaa kaikille luonnon liittolaisille 60% puolustusta tulta vastaan 4 vuoron ajaksi. Vaikutusta ei voi häivyttää."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Erikoistaidolla on erilainen vaikutus riippuen siitä, onko siihen ladattu 100%, 200% vai 300% manaa:",
       "[*]x 1 manalataus:",
-      "[**]Palauttaa 25% loitsijan terveyttä.",
-      "[**]Loitsija voi 25%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 2 vuoron ajaksi.",
-      "[**]Loitsija on immuuni tehosteiden häivytyksille ja siirroille 2 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[***]Koskee myös ryöstämistä.)",
+      "[**]Palauttaa 20% liittolaisten terveyttä.",
+      "[**]Kaikki liittolaiset voivat 20%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 2 vuoron ajaksi.",
+      "[**]Kaikki liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 2 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[***]Koskee myös ryöstämistä.)",
       "[*]x 2 manalataus:",
-      "[**]Palauttaa 30% loitsijan ja lähellä olevien liittolaisten terveyttä.",
-      "[**]Loitsija ja lähellä olevat liittolaiset voivat 30%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 3 vuoron ajaksi.",
-      "[**]Loitsija ja lähellä olevat liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 3 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[***]Koskee myös ryöstämistä.)",
+      "[**]Palauttaa 40% liittolaisten terveyttä.",
+      "[**]Kaikki liittolaiset voivat 30%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 3 vuoron ajaksi.",
+      "[**]Kaikki liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 3 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[***]Koskee myös ryöstämistä.)",
       "[*]x 3 manalataus:",
-      "[**]Palauttaa 35% liittolaisten terveyttä.",
-      "[**]Kaikki liittolaiset voivat 35%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 5 vuoron ajaksi.",
+      "[**]Palauttaa 60% liittolaisten terveyttä.",
+      "[**]Kaikki liittolaiset voivat 40%:n todennäköisyydellä vähentää kaiken kärsityn vaurion arvoon 1 5 vuoron ajaksi.",
       "[**]Kaikki liittolaiset ovat immuuneja tehosteiden häivytyksille ja siirroille 5 vuoron ajan. (Immuniteetti koskee myös tätä vaikutusta itseään.\n[***]Koskee myös ryöstämistä.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Ryöstää kohteen varastaen 400 terveyttä ja tehosteen. (\n[*]Varastaa kohteelta turvallisesti yhden tilaefektitehosteen. Tämä koskee myös tehosteita, joita ei voi häivyttää, sekä tanssiefektejä.\n[*]Turvallinen varastaminen ohittaa poistettujen tehosteiden toissijaiset vaikutukset, kuten poistosta johtuvan vaurion. Passiiviset taidot ja perhevaikutukset voivat silti aktivoitua.)",
-      "Tuottaa 350% vauriota kohteelle.",
-      "Onnistuneen loitsimisen jälkeen on 50%:n mahdollisuus loitsia Kruuna vai klaava? uudelleen satunnaiseen kohteeseen.\n[*]Voidaan loitsia uudelleen enintään 3 kertaa."
+      "Tuottaa 400% vauriota kohteelle.",
+      "Onnistuneen loitsimisen jälkeen on 50%:n mahdollisuus loitsia Kruuna vai klaava? uudelleen satunnaiseen kohteeseen.\n[*]Voidaan loitsia uudelleen enintään 2 kertaa."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Tuottaa 500% vauriota kaikille vihollisille.\n[*] Tuottaa 5% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 550%.",
+      "Tuottaa 490% vauriota kaikille vihollisille.\n[*] Tuottaa 10% lisävauriota jokaista vihollisten omistamaa riiviötä ja megariiviötä kohti. Yhteisvaurio on enintään 590%.",
       "Kerää tehosteita kaikilta vihollisilta.\n[*]Sadonkorjuu poistaa kultakin kohteelta turvallisesti 2 tehostetta, positiivista kasaumaa tai kasvuefektiä. Tämä koskee myös sitkeitä efektejä, tehosteita, joita ei voi häivyttää, sekä tanssitilaefektejä.\n[*]Loitsija saa 7% tehostettua terveyttä jokaisesta poistetusta efektistä. Tehostettu terveys voi ylittää maksimiterveyden.\n[*]Turvallinen poisto ohittaa poistettujen tilaefektitehosteiden toissijaiset efektit, kuten poistosta johtuvan vaurion. Ulkoiset efektit, kuten passiiviset taidot ja perhevaikutukset, voivat silti aktivoitua.\n[*]Kasvuefektit poistetaan ensin. Muista efekteistä uusin poistetaan ensin.",
       "Kaikki viholliset saavat -40% puolustusta ja -5%:n vähennyksen aina, kun heihin osutaan 5 vuoron aikana. Alaraja on -65% puolustusta."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Tuottaa 550% vauriota kohteelle.",
       "Hyökkäys ohittaa puolustustehosteet. (Koskee myös vastahyökkäyksiä.)",
-      "50%:n mahdollisuus tuottaa 500% vauriota satunnaiselle eri viholliselle. (Tämä vaikutus kohdistuu samaan viholliseen, johon ensimmäinen osui, jos muita mahdollisia kohteita ei ole.)",
+      "50%:n mahdollisuus tuottaa 550% vauriota satunnaiselle eri viholliselle. (Tämä vaikutus kohdistuu samaan viholliseen, johon ensimmäinen osui, jos muita mahdollisia kohteita ei ole.)",
       "Kutsuu musta villisika -megakäskyläisen, joka perii loitsijalta 65% terveyttä ja 280% hyökkäystä.",
       "Kohde, johon musta villisika -megakäskyläinen osuu, ei voi puhdistaa tai siirtää vaivojaan erikoistaidoilla 4 vuoroon. (Tämä vaikutus estää myös itsensä puhdistamisen ja siirtämisen.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Tuottaa 315% vauriota kaikille vihollisille.",
+      "Tuottaa 310% vauriota kaikille vihollisille.",
       "Kasvusiunaus: Tuottaa 2x lisävauriota jokaista muokattua hyökkäyspistettä kohti. (Lisävaurio perustuu loitsijan mukautettuun hyökkäykseen vaurion tekohetkellä.\n[*]Yhteensä enintään 600 lisävauriota.\n[*]Tuotettuun vaurioon vaikuttavat tilaefektit vaikuttavat myös lisävaurioon.\n[*]Puolustusominaisuus ei vaikuta lisävaurioon.\n[*]Hyökkäysominaisuuteen vaikuttavat tilaefektit eivät vaikuta lisävaurioon.)",
-      "Kaikki viholliset kärsivät[#Dynamic] 668 [#]palovauriota 4 vuoron aikana. Loitsija imee 20% tuotetusta palovauriosta terveytenä.",
+      "Kaikki viholliset kärsivät[#Dynamic] 860 [#]palovauriota 4 vuoron aikana. Loitsija imee 10% tuotetusta palovauriosta terveytenä.",
       "Häivyttää kaikilta vihollisilta tehosteita jokaisen vuoron lopussa 4 vuoron ajan."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Palauttaa 50% liittolaisten terveyttä.",
-      "Jokeri: Kaikki liittolaiset saavat 5 vuoron ajan joka vuorolla joko 500 terveyttä takaisin tai 1000 tehostettua terveyttä. (Jokeri antaa joka vuorolla mahdollisuuden, että tästä efektistä tulee voimakkaampi.\n[*]Tällä jokeriefektillä on 50%:n mahdollisuus parantaa 100% lisäterveyttä sillä vuorolla. Kun lisäterveyttä parannetaan, efekti antaa tehostettua terveyttä.)",
-      "Puhdistaa kaikilta liittolaisilta 1 vaivan jokaisen vuoron lopussa 5 vuoron ajan. Vaikutusta ei voi häivyttää.",
+      "Jokeri: Kaikki liittolaiset saavat 5 vuoron ajan joka vuorolla joko 200 terveyttä takaisin tai 600 tehostettua terveyttä. (Jokeri antaa joka vuorolla mahdollisuuden, että tästä efektistä tulee voimakkaampi.\n[*]Tällä jokeriefektillä on 50%:n mahdollisuus parantaa 200% lisäterveyttä sillä vuorolla. Kun lisäterveyttä parannetaan, efekti antaa tehostettua terveyttä.)",
+      "Puhdistaa kaikilta liittolaisilta 1 vaivan jokaisen vuoron lopussa 5 vuoron ajan.",
       "Kaikki liittolaiset saavat 65% puolustusta 5 vuoron ajaksi."
      ]
     }

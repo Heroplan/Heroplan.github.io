@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Skadar målet med 630%.",
-      "Ger 945% skada mot karaktärer som rensar eller avbryter med hjälp av specialförmågor.\n[*]Endast direkta avbrytnings- och rensningseffekter från specialförmågor räknas. Det utesluter borttagningseffekter, passiva förmågor, undersåtar, familjeeffekter, talanger och statuseffekter.",
-      "Bonusarnas varaktighet nollställs för alla allierade.",
+      "Ger 760% skada mot karaktärer som rensar eller avbryter med hjälp av specialförmågor.\n[*]Endast direkta avbrytnings- och rensningseffekter från specialförmågor räknas. Det utesluter borttagningseffekter, passiva förmågor, undersåtar, familjeeffekter, talanger och statuseffekter.",
       "Alla allierade är immuna mot att få bonusar avbrutna och överförda i 3 rundor. (Immuniteten inkluderar även den här effekten.\n[*] Inkluderar även plundring.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Skadar målet och fiender i närheten med 350%.",
-      "Användaren och allierade i närheten får 45% chans att undvika specialförmågor i 3 rundor. Varje undvikning ger +24% mana till den allierade.",
+      "Användaren och allierade i närheten får 45% chans att undvika specialförmågor i 3 rundor. Varje undvikning ger +10% mana till den allierade.",
       "Elementlänk ger alla naturallierade 60% försvar mot eld under 4 rundor. Denna effekt kan ej avbrytas."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
       "[*] 1 st manaladdningar",
-      "[**]Anfallaren återfår 25% hälsa.",
-      "[**]Användaren har 25% chans att minska skada som tas till 1 under 2 rundor.",
-      "[**]Anfallaren är immun mot att få bonusar avbrutna och överförda i 2 rundor. (Immuniteten inkluderar även den här effekten.\n[***]Inkluderar även plundring.)",
+      "[**]Alla allierade återfår 20% hälsa.",
+      "[**]Alla allierade har 20% chans att minska skada som tas till 1 under 2 rundor.",
+      "[**]Alla allierade är immuna mot att få bonusar avbrutna och överförda i 2 rundor. (Immuniteten inkluderar även den här effekten.\n[***]Inkluderar även plundring.)",
       "[*] 2 st manaladdningar",
-      "[**]Återger 30% hälsa till anfallaren och allierade i närheten.",
-      "[**]Användaren och allierade i närheten har 30% chans att sänka mottagen skada till 1 i 3 rundor.",
-      "[**]Anfallaren och allierade i närheten är immuna mot att få bonusar avbrutna och överförda i 3 rundor. (Immuniteten inkluderar även den här effekten.\n[***]Inkluderar även plundring.)",
+      "[**]Alla allierade återfår 40% hälsa.",
+      "[**]Alla allierade har 30% chans att minska skada som tas till 1 under 3 rundor.",
+      "[**]Alla allierade är immuna mot att få bonusar avbrutna och överförda i 3 rundor. (Immuniteten inkluderar även den här effekten.\n[***]Inkluderar även plundring.)",
       "[*] 3 st manaladdningar",
-      "[**]Alla allierade återfår 35% hälsa.",
-      "[**]Alla allierade har 35% chans att minska skada som tas till 1 under 5 rundor.",
+      "[**]Alla allierade återfår 60% hälsa.",
+      "[**]Alla allierade har 40% chans att minska skada som tas till 1 under 5 rundor.",
       "[**]Alla allierade är immuna mot att få bonusar avbrutna och överförda i 5 rundor. (Immuniteten inkluderar även den här effekten.\n[***]Inkluderar även plundring.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Plundrar målet och stjäl 400 hälsa och en bonus. (\n[*]Stjäl riskfritt en statuseffektbonus från fienden – även sådana som inte kan avbrytas och danseffekter.\n[*]Riskfria stölder kringgår sekundära effekter, såsom skada vid borttagning, hos borttagna bonusar. Passiva förmågor och familjeeffekter kan fortfarande aktiveras.)",
-      "Gör 350% skada mot målet.",
-      "Har 50% chans att kasta om Krona eller klave? på ett slumpmässigt mål efter en lyckad användning.\n[*]Kan kastas om upp till 3 gånger."
+      "Gör 400% skada mot målet.",
+      "Har 50% chans att kasta om Krona eller klave? på ett slumpmässigt mål efter en lyckad användning.\n[*]Kan kastas om upp till 2 gånger."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Gör 500% skada mot alla fiender.\n[*] Gör 5% extra skada för varje odjur eller megaodjur som fienden äger, upp till sammanlagt 550% skada.",
+      "Gör 490% skada mot alla fiender.\n[*] Gör 10% extra skada för varje odjur eller megaodjur som fienden äger, upp till sammanlagt 590% skada.",
       "Skördar bonusar från alla fiender.\n[*]Skörd tar riskfritt bort 2 bonusar, positiva staplar eller tillväxteffekter från varje mål. Det här gäller envisa effekter, danseffekter och bonusar som inte kan avbrytas.\n[*]Användaren får 7% ökad hälsa per effekt som tas bort. Ökad hälsa kan överskrida maxhälsan.\n[*]Riskfri borttagning ignorerar sekundäreffekter, som skada vid borttagning, från de borttagna statuseffektsbonusarna. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.\n[*]Tillväxteffekter tas bort först. För andra effekter tas de bort i turordning, med den senaste först.",
       "Alla fiender får -40% försvar och ytterligare -5% mindre varje gång de blir träffade under 5 rundor, ner till -65% försvar."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Skadar målet med 550%.",
       "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
-      "Har 50% chans att göra 500% skada på en slumpmässig annan fiende. (Den här effekten riktar sig mot samma fiende som den första träffen om det inte finns några andra giltiga mål.)",
+      "Har 50% chans att göra 550% skada på en slumpmässig annan fiende. (Den här effekten riktar sig mot samma fiende som den första träffen om det inte finns några andra giltiga mål.)",
       "Åkallar en svart megavildsvin-undersåte med 65% hälsa och 280% attack som ärvs från anfallaren.",
       "Målet som träffas av den svarta megavildsvin-undersåten kan inte få sina negativa statuseffekter renade eller överförda av specialförmågor under 4 rundor. (Effekten gör även att den inte kan renas eller överföras.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Alla fiender tar 315% skada.",
+      "Alla fiender tar 310% skada.",
       "Tillväxtfavör: Gör 2x extra skada för varje modifierat attackpoäng. (Extra skada baseras på användarens modifierade attack när skadan görs.\n[*]Upp till 600 extra skada.\n[*]Statuseffekter som påverkar utdelad skada påverkar extraskadan.\n[*]Försvarsattributet påverkar inte extraskadan.\n[*]Statuseffekter som påverkar attackattributet påverkar inte extraskadan.)",
-      "Alla fiender tar[#Dynamic] 668 [#]eldskada under 4 rundor. Användaren absorberar 20% av den gjorda eldskadan som hälsa.",
+      "Alla fiender tar[#Dynamic] 860 [#]eldskada under 4 rundor. Användaren absorberar 10% av den gjorda eldskadan som hälsa.",
       "Tar bort bonusar från alla fiender vid slutet av varje runda i 4 rundor."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Alla allierade återfår 50% hälsa.",
-      "Vild: Alla allierade återfår 500 hälsa eller får 1000 ökad hälsa i 5 rundor. (Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att läka 100% extra hälsa den rundan. När extra hälsa läks ger effekten ökad hälsa.)",
-      "Renar 1 negativ statuseffekt från alla allierade i slutet av varje runda i 5 rundor. Effekten kan inte avbrytas.",
+      "Vild: Alla allierade återfår 200 hälsa eller får 600 ökad hälsa i 5 rundor. (Vild ger chansen att den här effekten blir mäktigare varje runda.\n[*]Den här vilda effekten har 50% chans att läka 200% extra hälsa den rundan. När extra hälsa läks ger effekten ökad hälsa.)",
+      "Rensar 1 negativ statuseffekt från alla allierade i slutet av varje runda i 5 rundor.",
       "Alla allierade får 65% försvar i 5 rundor."
      ]
     }

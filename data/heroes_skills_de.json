@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Fügt dem Ziel 630% Schaden zu.",
-      "Verursacht 945% Schaden gegen Charaktere, die Statuseffekte mit Spezialfähigkeiten reinigen oder entfernen.\n[*]Es werden nur direkte Bann- und Reinigungseffekte von Spezialfähigkeiten berücksichtigt. Dies schließt Effekte zum Entfernen, Passive, Lakaien, Familieneffekte, Talente und Statuseffekte aus.",
-      "Die Dauer von Boni wird für alle Verbündeten zurückgesetzt.",
+      "Verursacht 760% Schaden gegen Charaktere, die Statuseffekte mit Spezialfähigkeiten reinigen oder entfernen.\n[*]Es werden nur direkte Bann- und Reinigungseffekte von Spezialfähigkeiten berücksichtigt. Dies schließt Effekte zum Entfernen, Passive, Lakaien, Familieneffekte, Talente und Statuseffekte aus.",
       "Alle Verbündeten sind für 3 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[*] Umfasst auch Ausrauben.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 350% Schaden zu.",
-      "Der Wirker und Verbündete in der Nähe erhalten 45% Chance, Spezialfähigkeiten für 3 Züge auszuweichen. Jedes Ausweichen gewährt dem ausgewichenen Verbündeten 24% Mana.",
+      "Der Wirker und Verbündete in der Nähe erhalten 45% Chance, Spezialfähigkeiten für 3 Züge auszuweichen. Jedes Ausweichen gewährt dem ausgewichenen Verbündeten 10% Mana.",
       "Elementare Verbindung verleiht allen Natur-Verbündeten 60% Verteidigung gegen Feuer für 4 Züge. Der Effekt kann nicht gebannt werden."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200%/ 300% Mana aufgeladen ist:",
       "[*] 1 x Manaaufladung:",
-      "[**]Heilt 25% Leben für den Wirker.",
-      "[**]Für den Wirker besteht eine Chance von 25%, den erhaltenen Schaden 2 Züge lang auf 1 zu senken.",
-      "[**]Der Wirker ist 2 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[***]Umfasst auch Ausrauben.)",
+      "[**]Heilt alle Verbündeten um 20%.",
+      "[**]Alle Verbündeten haben eine Chance von 20%, den erhaltenen Schaden 2 Züge lang auf 1 zu senken.",
+      "[**]Alle Verbündeten sind für 2 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[***]Umfasst auch Ausrauben.)",
       "[*] 2 x Manaaufladung:",
-      "[**]Heilt den Wirker und alle nahen Verbündeten um 30%.",
-      "[**]Der Wirker und Verbündete in der Nähe haben eine Chance von 30%, den erhaltenen Schaden 3 Züge lang auf 1 zu senken.",
-      "[**]Der Wirker und nahe Verbündete sind 3 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[***]Umfasst auch Ausrauben.)",
+      "[**]Heilt alle Verbündeten um 40%.",
+      "[**]Alle Verbündeten haben eine Chance von 30%, den erhaltenen Schaden 3 Züge lang auf 1 zu senken.",
+      "[**]Alle Verbündeten sind für 3 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[***]Umfasst auch Ausrauben.)",
       "[*] 3 x Manaaufladung:",
-      "[**]Heilt alle Verbündeten um 35%.",
-      "[**]Alle Verbündeten haben eine Chance von 35%, den erhaltenen Schaden 5 Züge lang auf 1 zu senken.",
+      "[**]Heilt alle Verbündeten um 60%.",
+      "[**]Alle Verbündeten haben eine Chance von 40%, den erhaltenen Schaden 5 Züge lang auf 1 zu senken.",
       "[**]Alle Verbündeten sind für 5 Züge gegen Boni-Entfernungen und Verschiebungen immun. (Die Immunität umfasst auch diesen Effekt selbst.\n[***]Umfasst auch Ausrauben.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Raubt das Ziel aus und stiehlt ihm 400 Leben und einen Bonus. (\n[*] Stiehlt einen Statuseffektbonus des Ziels. Dazu zählen auch nicht entfernbare Boni und Tanzeffekte.\n[*] Beim sicheren Stehlen werden sekundäre Effekte wie Schaden bei Entfernung von den entfernten Boni ignoriert. Passive Fähigkeiten und Familieneffekte können noch aktiviert werden.)",
-      "Verursacht 350% Schaden am Ziel.",
-      "Hat nach einem erfolgreichen Wirken eine Chance von 50%, Kopf oder Zahl? erneut auf ein zufälliges Ziel zu wirken.\n[*]Kann bis zu 3 -mal erneut gewirkt werden."
+      "Verursacht 400% Schaden am Ziel.",
+      "Hat nach einem erfolgreichen Wirken eine Chance von 50%, Kopf oder Zahl? erneut auf ein zufälliges Ziel zu wirken.\n[*]Kann bis zu 2 -mal erneut gewirkt werden."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Fügt allen Gegnern 500% Schaden zu.\n[*] Verursacht zusätzlich 5% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 550% Schaden insgesamt.",
+      "Fügt allen Gegnern 490% Schaden zu.\n[*] Verursacht zusätzlich 10% Schaden für jeden Feind oder Mega-Feind von Gegnern – bis zu 590% Schaden insgesamt.",
       "Sammelt Buffs von allen Gegnern.\n[*]Ernte entfernt 2 Boni, positive Stapel oder Wachstumseffekte sicher von jedem Ziel. Dazu zählen auch hartnäckige Effekte, nicht entfernbare Boni und Tanzeffekte.\n[*]Der Wirker erhält 7% verstärktes Leben für jeden entfernten Effekt. Das verstärkte Leben kann die max. LP übersteigen.\n[*]Durch sicheres Entfernen werden sekundäre Effekte wie Schaden bei Entfernung umgangen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.\n[*]Wachstumseffekte werden zuerst entfernt. Für alle anderen Effekte gilt: Der letzte wird zuerst entfernt.",
       "Alle Gegner erhalten -40% Verteidigung und eine weitere -5%ige Verringerung für jedes Mal, das sie während 5 Zügen getroffen werden, bis zu -65% Verteidigung."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Fügt dem Ziel 550% Schaden zu.",
       "Der Angriff umgeht Defensivboni. (Schließt auch Gegenangriffe ein.)",
-      "Fügt mit einer Chance von 50% einem zufälligen anderen Gegner 500% Schaden zu. (Dieser Effekt zielt auf denselben Gegner wie der erste Treffer, wenn es keine anderen gültigen Ziele gibt.)",
+      "Fügt mit einer Chance von 50% einem zufälligen anderen Gegner 550% Schaden zu. (Dieser Effekt zielt auf denselben Gegner wie der erste Treffer, wenn es keine anderen gültigen Ziele gibt.)",
       "Beschwört einen schwarzen Mega-Wildschwein-Lakaien mit 65% LP und 280% Angriff des Wirkers.",
       "Das Ziel, das von dem schwarzen Mega-Wildschwein-Lakaien getroffen wird, kann für 4 Züge keine negativen Statusänderungen aus Spezialfähigkeiten erhalten oder verschoben werden. (Dieser Effekt verhindert auch die Selbstreinigung und -verschiebung.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Verursacht 315% Schaden bei allen Gegnern.",
+      "Verursacht 310% Schaden bei allen Gegnern.",
       "Wachstumssegen: Verursacht 2x zusätzlichen Schaden für jeden Punkt des modifizierten Angriffs. (Der zusätzliche Schaden richtet sich nach dem veränderten Angriff des Wirkers zum Zeitpunkt, wenn der Schaden verursacht wird.\n[*]Bis zu maximal 600 zusätzlicher Schaden.\n[*]Statuseffekte, die den verursachten Schaden beeinflussen, wirken sich auf den zusätzlichen Schaden aus.\n[*]Der Verteidigungsstatus wirkt sich nicht auf den zusätzlichen Schaden aus.\n[*]Statuseffekte, die den Angriffsstatus beeinflussen, wirken sich nicht auf den zusätzlichen Schaden aus.)",
-      "Alle Gegner erleiden[#Dynamic] 668 [#]Brandschaden über 4 Züge. Der Wirker absorbiert 20% des zugefügten Brandschadens als Leben.",
+      "Alle Gegner erleiden[#Dynamic] 860 [#]Brandschaden über 4 Züge. Der Wirker absorbiert 10% des zugefügten Brandschadens als Leben.",
       "Entfernt 4 Züge lang am Ende jedes Zugs Boni von allen Gegnern."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Heilt alle Verbündeten um 50%.",
-      "Wild: Für 5 Runden regenerieren alle Verbündeten 500 LP oder erhalten jede Runde 1000 verstärktes Leben. (Wild fügt jede Runde eine Chance hinzu, dass dieser Effekt mächtiger wird.\n[*]Dieser Wild-Effekt hat eine Chance von 50%, 100% zusätzliche LP in dieser Runde zu heilen. Wenn zusätzliche LP geheilt werden, gewährt der Effekt verstärktes Leben.)",
-      "Reinigt am Ende des Zugs 1 negative Statusänderung für alle Verbündeten für 5 Züge. Dieser Effekt kann nicht gebannt werden.",
+      "Wild: Für 5 Runden regenerieren alle Verbündeten 200 LP oder erhalten jede Runde 600 verstärktes Leben. (Wild fügt jede Runde eine Chance hinzu, dass dieser Effekt mächtiger wird.\n[*]Dieser Wild-Effekt hat eine Chance von 50%, 200% zusätzliche LP in dieser Runde zu heilen. Wenn zusätzliche LP geheilt werden, gewährt der Effekt verstärktes Leben.)",
+      "Bereinigt 1 negative Statusänderung bei allen Verbündeten am Ende jedes Zuges für 5 Züge.",
       "Alle Verbündeten erhalten 65% Verteidigung für 5 Züge."
      ]
     }

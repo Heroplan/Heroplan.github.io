@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Inflige 630% de dégâts à la cible.",
-      "Inflige 945% de dégâts aux personnages qui purifient ou dissipent avec leurs compétences spéciales.\n[*]Seuls les effets de purification et de dissipation directs des compétences spéciales sont pris en compte. Cela exclut les suppressions, les compétences passives, les sbires, les effets de famille, les talents et les effets de statut.",
-      "La durée des bonus est réinitialisée pour tous les alliés.",
+      "Inflige 760% de dégâts aux personnages qui purifient ou dissipent avec leurs compétences spéciales.\n[*]Seuls les effets de purification et de dissipation directs des compétences spéciales sont pris en compte. Cela exclut les suppressions, les compétences passives, les sbires, les effets de famille, les talents et les effets de statut.",
       "Tous les alliés sont immunisés contre les retraits et les transferts de bonus pendant 3 tours. (L'immunité concerne également cet effet.\n[*] Concerne également Pillage.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Inflige 350% de dégâts à la cible et aux ennemis proches.",
-      "Le lanceur et les alliés proches reçoivent 45% de chances d'esquiver les compétences spéciales pendant 3 tours. Chaque esquive octroie +24% de mana à l'allié.",
+      "Le lanceur et les alliés proches reçoivent 45% de chances d'esquiver les compétences spéciales pendant 3 tours. Chaque esquive octroie +10% de mana à l'allié.",
       "Lien élémentaire donne à tous les alliés Nature 60% de défense contre feu pour 4 tours. Cet effet ne peut pas être dissipé."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
       "[*]Charge de mana x 1:",
-      "[**]Restaure 25% de la santé du lanceur.",
-      "[**]Le lanceur a 25% de chances de diminuer n'importe quel dégât reçu à 1 pendant 2 tours.",
-      "[**]Le lanceur est immunisé contre les retraits et les transferts de bonus pendant 2 tours. (L'immunité concerne également cet effet.\n[***]Concerne également Pillage.)",
+      "[**]Restaure 20% de la santé de tous les alliés.",
+      "[**]Tous les alliés ont 20% de chances que les dégâts qu'ils reçoivent soient réduits à 1 pendant 2 tours.",
+      "[**]Tous les alliés sont immunisés contre les retraits et les transferts de bonus pendant 2 tours. (L'immunité concerne également cet effet.\n[***]Concerne également Pillage.)",
       "[*]Charge de mana x 2:",
-      "[**]Restaure 30% de la santé du lanceur et des alliés à proximité.",
-      "[**]Le lanceur et les alliés proches ont 30% de chances que les dégâts qu'ils reçoivent soient réduits à 1 pendant 3 tours.",
-      "[**]Le lanceur et les alliés proches sont immunisés contre les retraits et les transferts de bonus pendant 3 tours. (L'immunité concerne également cet effet.\n[***]Concerne également Pillage.)",
+      "[**]Restaure 40% de la santé de tous les alliés.",
+      "[**]Tous les alliés ont 30% de chances que les dégâts qu'ils reçoivent soient réduits à 1 pendant 3 tours.",
+      "[**]Tous les alliés sont immunisés contre les retraits et les transferts de bonus pendant 3 tours. (L'immunité concerne également cet effet.\n[***]Concerne également Pillage.)",
       "[*]Charge de mana x 3:",
-      "[**]Restaure 35% de la santé de tous les alliés.",
-      "[**]Tous les alliés ont 35% de chances que les dégâts qu'ils reçoivent soient réduits à 1 pendant 5 tours.",
+      "[**]Restaure 60% de la santé de tous les alliés.",
+      "[**]Tous les alliés ont 40% de chances que les dégâts qu'ils reçoivent soient réduits à 1 pendant 5 tours.",
       "[**]Tous les alliés sont immunisés contre les retraits et les transferts de bonus pendant 5 tours. (L'immunité concerne également cet effet.\n[***]Concerne également Pillage.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Pille la cible pour lui voler 400 PV et un bonus. (\n[*]Vole de façon sûre un effet appliqué positif de la cible. Il peut s'agir d'un bonus non dissipable ou d'un effet de danse.\n[*]Le vol sûr contourne les effets secondaires comme les dégâts lors du vol. Les compétences passives et les effets de famille peuvent toujours s'activer.)",
-      "Inflige 350% de dégâts à la cible.",
-      "Chaque lancer réussi dispose de 50% de chances de relancer Pile ou face sur une cible aléatoire.\n[*]Peut être réactivé jusqu'à 3 fois."
+      "Inflige 400% de dégâts à la cible.",
+      "Chaque lancer réussi dispose de 50% de chances de relancer Pile ou face sur une cible aléatoire.\n[*]Peut être réactivé jusqu'à 2 fois."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Inflige 500% de dégâts à tous les ennemis.\n[*] Inflige 5% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 550%.",
+      "Inflige 490% de dégâts à tous les ennemis.\n[*] Inflige 10% de dégâts supplémentaires par démon ou méga démon possédé par les ennemis, avec un maximum de 590%.",
       "Récolte les bonus de tous les ennemis.\n[*]La récolte supprime de façon sûre 2 bonus, cumuls positifs ou effets de croissance pour chaque cible. Les effets obstinés, les bonus non dissipables et les effets de danse sont également concernés.\n[*]La santé du lanceur est boostée de 7% pour chaque effet supprimé. Le maximum de PV peut être dépassé.\n[*]La suppression sûre contourne les effets secondaires comme les dégâts lors de la suppression. Les effets externes comme les compétences passives et les effets de famille peuvent toujours s'activer.\n[*]Les effets de croissance sont supprimés en premier. Les autres effets sont ensuite supprimés en commençant par le plus récent.",
       "Tous les ennemis reçoivent -40% de défense et une réduction supplémentaire de -5% à chaque coup subi pendant 5 tours, jusqu'à un maximum de -65%."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Inflige 550% de dégâts à la cible.",
       "L'attaque contourne les bonus défensifs. (Les contre-attaques sont également concernées.)",
-      "50% de chances d'infliger 500% de dégâts à un autre ennemi aléatoire. (Cet effet vise le même ennemi que le premier coup s'il n'y a pas d'autre cible valable.)",
+      "50% de chances d'infliger 550% de dégâts à un autre ennemi aléatoire. (Cet effet vise le même ennemi que le premier coup s'il n'y a pas d'autre cible valable.)",
       "Invoque un sbire méga sanglier noir avec 65% de PV et 280% d'attaque hérités du lanceur.",
       "La cible touchée par le sbire méga sanglier noir ne peut pas purifier ni transférer ses effets négatifs avec ses compétences spéciales pendant 4 tours. (Cet effet empêche également sa propre purification ou son transfert.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Inflige 315% de dégâts à tous les ennemis.",
+      "Inflige 310% de dégâts à tous les ennemis.",
       "Bienfait de croissance: inflige 2 fois plus de dégâts supplémentaires pour chaque point d'attaque modifiée. (Les dégâts supplémentaires dépendent de l'attaque modifiée du lanceur au moment où les dégâts sont infligés.\n[*]Jusqu'à 600 points de dégâts supplémentaires.\n[*]Les effets affectant les dégâts infligés affectent les dégâts supplémentaires.\n[*]La défense n'affecte pas les dégâts supplémentaires.\n[*]Les effets affectant l'attaque n'affectent pas les dégâts supplémentaires.)",
-      "Tous les ennemis reçoivent[#Dynamic] 668 [#]points de dégâts de brûlure en 4 tours. Le lanceur absorbe et se soigne à hauteur de 20% des dégâts de brûlure.",
+      "Tous les ennemis reçoivent[#Dynamic] 860 [#]points de dégâts de brûlure en 4 tours. Le lanceur absorbe et se soigne à hauteur de 10% des dégâts de brûlure.",
       "Dissipe les bonus de tous les ennemis à la fin de chaque tour pendant 4 tours."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Restaure 50% de la santé de tous les alliés.",
-      "Sauvage: pendant 5 tours, tous les alliés récupèrent 500 PV ou 1000 de santé boostée à chaque tour. (Sauvage augmente chaque tour les chances que cet effet soit plus puissant.\n[*]Cet effet Sauvage a 50% de chances de rendre 100% de PV supplémentaires pendant ce tour. Lorsque des PV supplémentaires sont soignés, l'effet octroie de la santé boostée.)",
-      "Purifie 1 effet négatif de tous les alliés à la fin de chaque tour pendant 5 tours. Cet effet ne peut pas être dissipé.",
+      "Sauvage: pendant 5 tours, tous les alliés récupèrent 200 PV ou 600 de santé boostée à chaque tour. (Sauvage augmente chaque tour les chances que cet effet soit plus puissant.\n[*]Cet effet Sauvage a 50% de chances de rendre 200% de PV supplémentaires pendant ce tour. Lorsque des PV supplémentaires sont soignés, l'effet octroie de la santé boostée.)",
+      "Purifie 1 effet négatif de tous les alliés à la fin de chaque tour pendant 5 tours.",
       "Tous les alliés reçoivent 65% de défense pour 5 tours."
      ]
     }

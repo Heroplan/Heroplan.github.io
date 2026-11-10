@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Påfør 630% skade på målet.",
-      "Påfører 945% skade mot figurer som renser eller fjerner med spesialferdigheter.\n[*]Kun ved direkte fjerning og rensning fra spesialferdigheter. Dette ekskluderer effekter som fjerner, passive effekter, effekter fra undersåtter, familieeffekter, talenter og statuseffekter.",
-      "Varigheten til økninger tilbakestilles for alle allierte.",
+      "Påfører 760% skade mot figurer som renser eller fjerner med spesialferdigheter.\n[*]Kun ved direkte fjerning og rensning fra spesialferdigheter. Dette ekskluderer effekter som fjerner, passive effekter, effekter fra undersåtter, familieeffekter, talenter og statuseffekter.",
       "Alle allierte er immune mot fjerning og flytting av økninger i 3 runder. (Immuniteten inkluderer også selve denne effekten.\n[*] Inkluderer også ransake.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Påfører 350% skade på målet og fiender i nærheten.",
-      "Brukeren og allierte i nærheten får 45% sjanse til å unnvike spesialferdigheter i 3 runder. Hver unnvikelse gir +24% mana til den allierte.",
+      "Brukeren og allierte i nærheten får 45% sjanse til å unnvike spesialferdigheter i 3 runder. Hver unnvikelse gir +10% mana til den allierte.",
       "Elementlink gir alle natur-allierte 60% forsvar mot ild i 4 runder. Denne effekten kan ikke fjernes."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% / 300% mana:",
       "[*]x 1 manaladning",
-      "[**]Få tilbake 25% helse for brukeren.",
-      "[**]Brukeren har 25% mulighet til å redusere all mottatt skade i 1 i 2 runder.",
-      "[**]Brukeren er immun mot fjerning og flytting av økninger i 2 runder. (Immuniteten inkluderer også selve denne effekten.\n[***]Inkluderer også ransake.)",
+      "[**]Få tilbake 20% helse til alle allierte.",
+      "[**]Alle allierte har 20% mulighet til å redusere all mottatt skade i 1 i 2 runder.",
+      "[**]Alle allierte er immune mot fjerning og flytting av økninger i 2 runder. (Immuniteten inkluderer også selve denne effekten.\n[***]Inkluderer også ransake.)",
       "[*]x 2 manaladning",
-      "[**]Få tilbake 30% helse for brukeren og allierte i nærheten.",
-      "[**]Brukeren og allierte i nærheten har 30% sjanse til å redusere all mottatt skade til 1 i 3 runder.",
-      "[**]Brukeren og allierte i nærheten er immune mot fjerning og flytting av økninger i 3 runder. (Immuniteten inkluderer også selve denne effekten.\n[***]Inkluderer også ransake.)",
+      "[**]Få tilbake 40% helse til alle allierte.",
+      "[**]Alle allierte har 30% mulighet til å redusere all mottatt skade i 1 i 3 runder.",
+      "[**]Alle allierte er immune mot fjerning og flytting av økninger i 3 runder. (Immuniteten inkluderer også selve denne effekten.\n[***]Inkluderer også ransake.)",
       "[*]x 3 manaladning",
-      "[**]Få tilbake 35% helse til alle allierte.",
-      "[**]Alle allierte har 35% mulighet til å redusere all mottatt skade i 1 i 5 runder.",
+      "[**]Få tilbake 60% helse til alle allierte.",
+      "[**]Alle allierte har 40% mulighet til å redusere all mottatt skade i 1 i 5 runder.",
       "[**]Alle allierte er immune mot fjerning og flytting av økninger i 5 runder. (Immuniteten inkluderer også selve denne effekten.\n[***]Inkluderer også ransake.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Ransaker målet for å stjele 400 helse og en økning. (\n[*]Stjeler på en trygg måte én statuseffektøkning fra målet. Dette inkluderer økninger som ikke kan fjernes og danseeffekter.\n[*]Trygg stjeling forbigår sekundære effekter, som skade ved fjerning, fra de fjernede økningene. Passive ferdigheter og familieeffekter kan fortsatt aktiveres.)",
-      "Påfører 350% skade på fienden.",
-      "Etter vellykket bruk: Har en 50% sjanse til å bruke Kron eller mynt? på et tilfeldig mål.\n[*]Kan brukes på nytt inntil 3 ganger."
+      "Påfører 400% skade på fienden.",
+      "Etter vellykket bruk: Har en 50% sjanse til å bruke Kron eller mynt? på et tilfeldig mål.\n[*]Kan brukes på nytt inntil 2 ganger."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Gjør 500% skade på alle fiender.\n[*] Gjør ytterligere 5% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 550% skade.",
+      "Gjør 490% skade på alle fiender.\n[*] Gjør ytterligere 10% skade for hver djevel eller megadjevel eid av fiendene, opptil totalt 590% skade.",
       "Innhøster økninger fra alle fiender.\n[*]Innhøsting fjerner trygt 2 økninger, positive stabler eller veksteffekter fra hvert mål. Dette inkluderer sta effekter, økninger som ikke kan fjernes og danseeffekter.\n[*]Brukeren mottar 7% økt helse for hver effekt fjernet. Økt helse kan overskride maksimal HP.\n[*]Trygg fjerning forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuseffektøkningene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.\n[*]Veksteffekter fjernes først. For andre effekter fjernes den siste først.",
       "Alle fiender får -40% forsvar, og ytterligere -5% reduksjon hver gang de treffes i 5 runder, ned til -65% forsvar."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Påfør 550% skade på målet.",
       "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
-      "Har 50% sjanse til å påføre 500% skade på en tilfeldig forskjellig fiende. (Denne effekten sikter seg inn på samme fiende som den første truffet, hvis det ikke er noen andre gyldige mål.)",
+      "Har 50% sjanse til å påføre 550% skade på en tilfeldig forskjellig fiende. (Denne effekten sikter seg inn på samme fiende som den første truffet, hvis det ikke er noen andre gyldige mål.)",
       "Påkaller en svart villsvin-megaundersått med 65% HP og 280% angrep nedarvet fra brukeren.",
       "Målet truffet av svart villsvin-megaundersåtten kan ikke få statuslidelsene sine fjernet eller flyttet fra seg av spesialferdigheter i 4 runder. (Denne effekten hindrer også rensing og flytting av seg selv.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Påfører 315% skade på alle fiender.",
+      "Påfører 310% skade på alle fiender.",
       "Vekstvelsignelse: Påfører 2x ekstra skade for hvert punkt med modifisert angrep. (Ekstra skade er basert på det modifiserte angrepet på bruker når skade påføres.\n[*]Opptil maksimalt 600 ytterligere ekstra skade.\n[*]Statuseffekter som påvirker skade påført, påvirker ekstra skade.\n[*]Forsvarstall påvirker ikke ekstra skade.\n[*]Statuseffekter som påvirker angrepstall, påvirker ikke ekstra skade.)",
-      "Alle fiender tar[#Dynamic] 668 [#]brannskade over 4 runder. Brukeren absorberer 20% av påført brannskade som helse.",
+      "Alle fiender tar[#Dynamic] 860 [#]brannskade over 4 runder. Brukeren absorberer 10% av påført brannskade som helse.",
       "Fjerner økninger fra alle fiender ved slutten av hver tur, i 4 runder."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Få tilbake 50% helse til alle allierte.",
-      "Vill: I 5 runder vil alle allierte enten få tilbake 500 HP eller motta 1000 økt helse hver runde. (Vill legger til en sjanse hver runde for at denne effekten blir kraftigere.\n[*]Denne Vill-effekten har en 50% sjanse til å helbrede 100% ekstra HP den runden. Når ekstra HP helbredes, gir effekten også økt helse.)",
-      "Renser bort 1 statuslidelse fra alle allierte etter hver runde i 5 runder. Denne effekten kan ikke fjernes.",
+      "Vill: I 5 runder vil alle allierte enten få tilbake 200 HP eller motta 600 økt helse hver runde. (Vill legger til en sjanse hver runde for at denne effekten blir kraftigere.\n[*]Denne Vill-effekten har en 50% sjanse til å helbrede 200% ekstra HP den runden. Når ekstra HP helbredes, gir effekten også økt helse.)",
+      "Renser bort 1 statuslidelse fra alle allierte etter hver tur i 5 turer.",
       "Alle allierte får 65% forsvar i 5 runder."
      ]
     }

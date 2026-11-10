@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Hedefe% 630 hasar verir.",
-      "Özel Yetenek kullanarak arındıran veya bozan karakterlere karşı% 945 hasar verir.\n[*]Yalnızca Özel Yeteneklerden gelen doğrudan Bozma ve Arındırma efektleri dikkate alınır. Buna Kaldırma efektleri, Pasifler, Hizmetkarlar, Aile efektleri, Beceriler ve Durum efektleri dâhil değildir.",
-      "Buff'ların süresi, tüm müttefikler için sıfırlanır.",
+      "Özel Yetenek kullanarak arındıran veya bozan karakterlere karşı% 760 hasar verir.\n[*]Yalnızca Özel Yeteneklerden gelen doğrudan Bozma ve Arındırma efektleri dikkate alınır. Buna Kaldırma efektleri, Pasifler, Hizmetkarlar, Aile efektleri, Beceriler ve Durum efektleri dâhil değildir.",
       "Tüm müttefikler 3 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[*] Yağmalamayı da içerir.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Hedefe ve civardaki düşmanlara% 350 hasar verir.",
-      "Eylemci ve yakındaki müttefikler, 3 tur boyunca Özel Yetenekleri savuşturmak için% 45 şans kazanır. Her savuşturma, müttefike% 24 mana verir.",
+      "Eylemci ve yakındaki müttefikler, 3 tur boyunca Özel Yetenekleri savuşturmak için% 45 şans kazanır. Her savuşturma, müttefike% 10 mana verir.",
       "Element Bağlantısı tüm Doğa müttefiklerine 4 tur boyunca Ateş karşıtı% 60 savunma sağlar. Bu efekt bozulamaz."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Özel Yetenek% 100 /% 200 /% 300 mana ile doldurulduğunda farklı bir efekt verir:",
       "[*] 1 kat Mana Hücumu:",
-      "[**]Eylemci için% 25 sağlık yeniler.",
-      "[**]Eylemci 2 tur boyunca% 25 şansla alınan tüm hasarı 1 'e düşürür.",
-      "[**]Eylemcinin 2 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklığı bulunur. (Bağışıklık bu efektin kendisini de kapsar.\n[***]Yağmalamayı da içerir.)",
+      "[**]Tüm müttefikler için% 20 sağlık yeniler.",
+      "[**]Tüm müttefikler 2 tur boyunca% 20 şansla alınan tüm hasarı 1 'e düşürür.",
+      "[**]Tüm müttefikler 2 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[***]Yağmalamayı da içerir.)",
       "[*] 2 kat Mana Hücumu:",
-      "[**]Eylemci ve yakındaki müttefikler için% 30 sağlık onarır.",
-      "[**]Eylemci ve yakındaki müttefikler 3 tur boyunca% 30 şansla alınan tüm hasarı 1 'e düşürür.",
-      "[**]Eylemci ve yakındaki müttefikler 3 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[***]Yağmalamayı da içerir.)",
+      "[**]Tüm müttefikler için% 40 sağlık yeniler.",
+      "[**]Tüm müttefikler 3 tur boyunca% 30 şansla alınan tüm hasarı 1 'e düşürür.",
+      "[**]Tüm müttefikler 3 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[***]Yağmalamayı da içerir.)",
       "[*] 3 kat Mana Hücumu:",
-      "[**]Tüm müttefikler için% 35 sağlık yeniler.",
-      "[**]Tüm müttefikler 5 tur boyunca% 35 şansla alınan tüm hasarı 1 'e düşürür.",
+      "[**]Tüm müttefikler için% 60 sağlık yeniler.",
+      "[**]Tüm müttefikler 5 tur boyunca% 40 şansla alınan tüm hasarı 1 'e düşürür.",
       "[**]Tüm müttefikler 5 tur boyunca buff bozulmalarına ve yeniden dağıtmalara karşı bağışıklık kazanır. (Bağışıklık bu efektin kendisini de kapsar.\n[***]Yağmalamayı da içerir.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Hedefi Yağmalayarak 400 sağlık ve bir buff çalar. (\n[*]Hedeften bir durum efekti buff'ını güvenli bir şekilde çalar. Buna bozulamayan buff'lar ve Dans efektleri dâhildir.\n[*]Güvenli çalma, kaldırılan buff'ın kaldırmadan sonra hasar gibi ikincil efektlerini atlatır. Pasif yetenekler ve aile efektleri yine de etkinleşebilir.)",
-      "Hedefe% 350 hasar verir.",
-      "Başarılı bir uygulamadan sonra% 50 şansla rastgele bir hedefe tekrar Yazı mı, Tura mı? uygular.\n[*]En fazla 3 kez tekrar uygulayabilir."
+      "Hedefe% 400 hasar verir.",
+      "Başarılı bir uygulamadan sonra% 50 şansla rastgele bir hedefe tekrar Yazı mı, Tura mı? uygular.\n[*]En fazla 2 kez tekrar uygulayabilir."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Tüm düşmanlara% 500 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 5 hasar verir, toplamda en fazla% 550 hasar verebilir.",
+      "Tüm düşmanlara% 490 hasar verir.\n[*] Düşmanların sahip olduğu her Canavar veya Mega Canavar için ek% 10 hasar verir, toplamda en fazla% 590 hasar verebilir.",
       "Tüm düşmanlardan buff toplar.\n[*]Hasat her bir hedeften 2 buff'ı, olumlu İstifi veya Büyüme efektini güvenle kaldırır. Buna İnatçı efektler, bozulamayan buff'lar ve Dans efektleri de dâhildir.\n[*]Eylemci, kaldırılan her efekt için% 7 artırılmış sağlık alır. Artırılmış sağlık, maks. SP'yi geçebilir.\n[*]Güvenli kaldırma, kaldırılan durum efekti buff'larındaki kaldırınca hasar alma gibi ikincil efektleri atlatır. Pasif yetenekler ve aile efektleri gibi dış efektler yine de etkinleşebilir.\n[*]İlk önce büyüme efektleri kaldırılır. Diğer efektlerde, en son uygulanan ilk önce kaldırılır.",
       "Tüm düşmanlar 5 tur boyunca% -40 savunma ve her vurulduklarında% -5 düşüş alır. Minimum% -65 savunma olabilir."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Hedefe% 550 hasar verir.",
       "Saldırı, savunma buff'larını atlatır. (Buna kontrataklar da dâhildir.)",
-      "Rastgele farklı bir düşmana% 50 şansla% 500 hasar verir. (Bu efekt, başka geçerli hedef yoksa ilk vuruştakiyle aynı düşmanı hedef alır.)",
+      "Rastgele farklı bir düşmana% 50 şansla% 550 hasar verir. (Bu efekt, başka geçerli hedef yoksa ilk vuruştakiyle aynı düşmanı hedef alır.)",
       "Eylemciden devralınan% 65 SP ve% 280 saldırıya sahip bir Siyah Domuz Mega Hizmetkârı çağırır.",
       "Siyah Domuz Mega Hizmetkarı tarafından vurulan hedef, 4 tur boyunca durum engellerini Özel Yeteneklerden arındıramazlar veya yeniden dağıtamazlar. (Bu efekt aynı zamanda kendini arındırmayı ve kendine yeniden dağıtmayı da önler.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Tüm düşmanlara% 315 hasar verir.",
+      "Tüm düşmanlara% 310 hasar verir.",
       "Büyüme Lütfu: Her değiştirilen saldırı puanı için 2x ekstra hasar verir. (Ekstra hasar, hasar verildiğinde eylemcideki değiştirilmiş saldırıya göre verilir. En fazla 600 ek ekstra hasar\n[*]Verilen hasarı etkileyen durum efektleri ekstra hasarı etkiler.\n[*]Savunma istatistiği, ekstra hasarı etkilemez.\n[*]Saldırı istatistiğini etkileyen durum efektleri, ekstra hasarı etkilemez.)",
-      "Tüm düşmanlar 4 tur boyunca[#Dynamic] 668 [#]Yakma hasarı alır. Eylemci, verilen Yakma hasarının% 20 kadarını sağlık olarak emer.",
+      "Tüm düşmanlar 4 tur boyunca[#Dynamic] 860 [#]Yakma hasarı alır. Eylemci, verilen Yakma hasarının% 10 kadarını sağlık olarak emer.",
       "4 tur boyunca her turun sonunda tüm düşmanlardaki buff'ları bozar."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Tüm müttefikler için% 50 sağlık yeniler.",
-      "Joker: 5 tur boyunca tüm müttefikler her tur 500 SP yeniler veya 1000 güçlendirilmiş sağlık alır. (Joker her tur bu efekte daha fazla güçlü olma şansı ekler.\n[*]Bu Joker efekti, o turda% 50 şansla% 100 ekstra SP iyileştirir. Ekstra SP iyileştirildiğinde efekt güçlendirilmiş sağlık verir.)",
-      "5 tur boyunca tur sonunda tüm müttefiklerden 1 durum engelini arındırır. Bu efekt bozulamaz.",
+      "Joker: 5 tur boyunca tüm müttefikler her tur 200 SP yeniler veya 600 güçlendirilmiş sağlık alır. (Joker her tur bu efekte daha fazla güçlü olma şansı ekler.\n[*]Bu Joker efekti, o turda% 50 şansla% 200 ekstra SP iyileştirir. Ekstra SP iyileştirildiğinde efekt güçlendirilmiş sağlık verir.)",
+      "5 tur boyunca tur sonunda tüm müttefiklerden 1 durum engelini arındırır.",
       "Tüm müttefikler 5 tur boyunca% 65 savunma alır."
      ]
     }

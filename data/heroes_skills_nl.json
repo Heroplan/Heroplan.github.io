@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Het doelwit lijdt 630% schade.",
-      "Brengt 945% schade toe aan personages die zuiveren of verwijderen met behulp van speciale vaardigheden.\n[*]Alleen rechtstreekse zuiverings- of verwijderingseffecten door speciale vaardigheden tellen mee. Niet inbegrepen zijn verwijderingseffecten, passieve vaardigheidseffecten, volgelingen, familie-effecten, talenten en statuseffecten.",
-      "De duur van de buffs wordt voor alle bondgenoten gereset.",
+      "Brengt 760% schade toe aan personages die zuiveren of verwijderen met behulp van speciale vaardigheden.\n[*]Alleen rechtstreekse zuiverings- of verwijderingseffecten door speciale vaardigheden tellen mee. Niet inbegrepen zijn verwijderingseffecten, passieve vaardigheidseffecten, volgelingen, familie-effecten, talenten en statuseffecten.",
       "Alle bondgenoten zijn 3 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[*] Is ook inclusief plundering.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 350% schade.",
-      "De spreukspreker en bondgenoten in de buurt krijgen 45% kans om 3 beurten lang speciale vaardigheden te ontwijken. Elke ontwijking levert de bondgenoot +24% mana op.",
+      "De spreukspreker en bondgenoten in de buurt krijgen 45% kans om 3 beurten lang speciale vaardigheden te ontwijken. Elke ontwijking levert de bondgenoot +10% mana op.",
       "Elementenlink geeft alle Natuur-bondgenoten 4 beurten lang 60% verdediging tegen Vuur. Dit effect kan niet ongedaan worden gemaakt."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Speciale vaardigheid heeft een ander effect als deze is opgeladen met 100% / 200% / 300% mana:",
       "[*]x 1 manalading:",
-      "[**]Herstelt 25% van de gezondheid voor de spreukspreker.",
-      "[**]De spreukspreker maakt 25% kans om ontvangen schade 2 beurten lang tot 1 te reduceren.",
-      "[**]De spreukspreker is gedurende 2 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[***]Is ook inclusief plundering.)",
+      "[**]Alle bondgenoten genezen 20%.",
+      "[**]Alle bondgenoten maken 20% kans om ontvangen schade 2 beurten lang tot 1 te reduceren.",
+      "[**]Alle bondgenoten zijn 2 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[***]Is ook inclusief plundering.)",
       "[*]x 2 manalading:",
-      "[**]De held en bondgenoten in de buurt genezen 30%.",
-      "[**]De spreukspreker en bondgenoten in de buurt maken 30% kans om ontvangen schade 3 beurten lang tot 1 te reduceren.",
-      "[**]De spreukspreker en bondgenoten in de buurt zijn 3 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[***]Is ook inclusief plundering.)",
+      "[**]Alle bondgenoten genezen 40%.",
+      "[**]Alle bondgenoten maken 30% kans om ontvangen schade 3 beurten lang tot 1 te reduceren.",
+      "[**]Alle bondgenoten zijn 3 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[***]Is ook inclusief plundering.)",
       "[*]x 3 manalading:",
-      "[**]Alle bondgenoten genezen 35%.",
-      "[**]Alle bondgenoten maken 35% kans om ontvangen schade 5 beurten lang tot 1 te reduceren.",
+      "[**]Alle bondgenoten genezen 60%.",
+      "[**]Alle bondgenoten maken 40% kans om ontvangen schade 5 beurten lang tot 1 te reduceren.",
       "[**]Alle bondgenoten zijn 5 beurten immuun voor effecten die oppeppers ongedaan maken of verplaatsen. (De immuniteit geldt ook voor dit effect zelf.\n[***]Is ook inclusief plundering.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Plundert het doelwit, steelt 400 gezondheid en een oppepper. (\n[*]Steelt veilig één statuseffectoppepper van het doelwit. Dit is inclusief niet-verwijderbare oppeppers en danseffecten.\n[*]Veilig stelen omzeilt secundaire effecten zoals schade na verwijdering uit verwijderde oppeppers. Effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.)",
-      "Het doelwit lijdt 350% schade.",
-      "Heeft na een succesvol gebruik 50% kans om kop of munt? opnieuw toe te passen op een willekeurig doelwit.\n[*]Kan maximaal 3 keer opnieuw worden toegepast."
+      "Het doelwit lijdt 400% schade.",
+      "Heeft na een succesvol gebruik 50% kans om kop of munt? opnieuw toe te passen op een willekeurig doelwit.\n[*]Kan maximaal 2 keer opnieuw worden toegepast."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Brengt 500% schade toe aan alle vijanden.\n[*] Brengt een extra 5% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 550% schade in totaal.",
+      "Brengt 490% schade toe aan alle vijanden.\n[*] Brengt een extra 10% schade toe voor elke demon of megademon die in het bezit is van de vijanden, tot maximaal 590% schade in totaal.",
       "Oogst oppeppers van alle vijanden.\n[*]Met oogsten worden maximaal 2 oppeppers, positieve cumulatieve effecten of groei-effecten veilig verwijderd van elk doelwit. Dit is inclusief hardnekkige effecten, niet-verwijderbare oppeppers en danseffecten.\n[*]De spreukspreker ontvangt een boost van 7% gezondheid voor elk verwijderd effect. De verhoogde gezondheid kan hoger zijn dan de maximale gezondheid.\n[*]Veilig verwijderen omzeilt secundaire effecten, zoals schade bij verwijdering, die optreden bij het verwijderen van oppeppers door statuseffecten. Externe effecten zoals passieve vaardigheden en familie-effecten kunnen nog steeds actief zijn.\n[*]Groei-effecten worden het eerst verwijderd. Bij andere effecten wordt het laatste effect het eerst verwijderd.",
       "Alle vijanden krijgen 5 beurten lang -40% verdediging, en -5% extra afname elke keer dat ze worden geraakt, tot maximaal -65% minder verdediging."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Het doelwit lijdt 550% schade.",
       "De aanval negeert alle verdedigende oppeppers. (Dit geldt ook voor tegenaanvallen.)",
-      "Heeft 50% kans om 500% schade toe te brengen aan een willekeurige, andere vijand. (Dit effect richt zich op dezelfde vijand als de eerste treffer als er geen andere geldige doelwitten zijn.)",
+      "Heeft 50% kans om 550% schade toe te brengen aan een willekeurige, andere vijand. (Dit effect richt zich op dezelfde vijand als de eerste treffer als er geen andere geldige doelwitten zijn.)",
       "Roept een zwart everzwijn-megavolgeling aan die 65% van de gezondheid en 280% van de aanvalskracht erft van de spreukspreker.",
       "Het doelwit dat geraakt wordt door de zwart everzwijn-megavolgeling kan gedurende 4 beurten geen statusaandoeningen zuiveren of verplaatsen met an speciale vaardigheden. (Dit effect voorkomt ook zuivering of verplaatsing van het effect zelf.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Alle vijanden lijden 315% schade.",
+      "Alle vijanden lijden 310% schade.",
       "Groeigunst: brengt 2x extra schade toe voor elk punt van aangepaste aanval. (Extra schade is gebaseerd op de aangepaste aanval van de spreukspreker wanneer de schade wordt toegebracht.\n[*]Tot maximaal 600 extra schade.\n[*]Statuseffecten die invloed hebben op de toegebrachte schade, hebben invloed op de extra schade.\n[*]Verdedigingsstatistiek heeft geen invloed op de extra schade.\n[*]Statuseffecten die invloed hebben op aanvalsstatistiek, hebben geen invloed op de extra schade.)",
-      "Aan alle vijanden wordt gedurende 4 beurten[#Dynamic] 668 [#]vuurschade toegebracht. De spreukspeker absorbeert 20% van de toegebrachte vuurschade als gezondheid.",
+      "Aan alle vijanden wordt gedurende 4 beurten[#Dynamic] 860 [#]vuurschade toegebracht. De spreukspeker absorbeert 10% van de toegebrachte vuurschade als gezondheid.",
       "Verwijdert 4 beurten lang aan het eind van elke beurt oppeppers van alle vijanden."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Alle bondgenoten genezen 50%.",
-      "Wild: gedurende 5 beurten hergenereren alle bondgenoten 500 gezondheid of krijgen ze elke beurt 1000 verhoogde gezondheid. (Wild voegt elke beurt een kans toe dat dit effect krachtiger wordt.\n[*]Dit wilde effect heeft een kans van 50% om 100% extra te genezen tijdens die beurt. Bij extra genezing, geeft het effect verhoogde gezondheid.)",
-      "Zuivert 5 beurten lang aan het eind van elke beurt 1 statusaandoening van alle bondgenoten. Dit effect kan niet ongedaan worden gemaakt.",
+      "Wild: gedurende 5 beurten hergenereren alle bondgenoten 200 gezondheid of krijgen ze elke beurt 600 verhoogde gezondheid. (Wild voegt elke beurt een kans toe dat dit effect krachtiger wordt.\n[*]Dit wilde effect heeft een kans van 50% om 200% extra te genezen tijdens die beurt. Bij extra genezing, geeft het effect verhoogde gezondheid.)",
+      "Zuivert 5 beurten lang aan het eind van elke beurt 1 statuseaandoening van alle bondgenoten.",
       "Alle bondgenoten hebben 5 beurten lang 65% verdedigende kracht."
      ]
     }

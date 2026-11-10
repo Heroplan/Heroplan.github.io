@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Deals 630% damage to the target.",
-      "Deals 945% damage against characters that cleanse or dispel using Special Skills.\n[*]Only direct Dispel and Cleanse effects from Special Skills are considered. This excludes Remove effects, Passives, Minions, Family effects, Talents and Status effects.",
-      "The duration of buffs is reset for all allies.",
+      "Deals 760% damage against characters that cleanse or dispel using Special Skills.\n[*]Only direct Dispel and Cleanse effects from Special Skills are considered. This excludes Remove effects, Passives, Minions, Family effects, Talents and Status effects.",
       "All allies are immune to buff dispels and reallocations for 3 turns. (The immunity also includes this effect itself.\n[*] Also includes Ransack.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Deals 350% damage to the target and nearby enemies.",
-      "The caster and nearby allies get 45% chance to dodge Special Skills for 3 turns. Each dodge gives +24% mana to the ally.",
+      "The caster and nearby allies get 45% chance to dodge Special Skills for 3 turns. Each dodge gives +10% mana to the ally.",
       "Element Link gives all Nature allies 60% defense against Fire for 4 turns. This effect can't be dispelled."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
       "[*]x 1 Mana Charge:",
-      "[**]Recovers 25% health for the caster.",
-      "[**]The caster has a 25% chance to drop any received damage to 1 for 2 turns.",
-      "[**]The caster is immune to buff dispels and reallocations for 2 turns. (The immunity also includes this effect itself.\n[***]Also includes Ransack.)",
+      "[**]Recovers 20% health for all allies.",
+      "[**]All allies have a 20% chance to drop any received damage to 1 for 2 turns.",
+      "[**]All allies are immune to buff dispels and reallocations for 2 turns. (The immunity also includes this effect itself.\n[***]Also includes Ransack.)",
       "[*]x 2 Mana Charge:",
-      "[**]Recovers 30% health for the caster and nearby allies.",
-      "[**]The caster and nearby allies have a 30% chance to drop any received damage to 1 for 3 turns.",
-      "[**]The caster and nearby allies are immune to buff dispels and reallocations for 3 turns. (The immunity also includes this effect itself.\n[***]Also includes Ransack.)",
+      "[**]Recovers 40% health for all allies.",
+      "[**]All allies have a 30% chance to drop any received damage to 1 for 3 turns.",
+      "[**]All allies are immune to buff dispels and reallocations for 3 turns. (The immunity also includes this effect itself.\n[***]Also includes Ransack.)",
       "[*]x 3 Mana Charge:",
-      "[**]Recovers 35% health for all allies.",
-      "[**]All allies have a 35% chance to drop any received damage to 1 for 5 turns.",
+      "[**]Recovers 60% health for all allies.",
+      "[**]All allies have a 40% chance to drop any received damage to 1 for 5 turns.",
       "[**]All allies are immune to buff dispels and reallocations for 5 turns. (The immunity also includes this effect itself.\n[***]Also includes Ransack.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Ransacks the target, stealing 400 health and a buff. (\n[*]Safely steals one status effect buff from the target. This includes undispellable buffs and Dance effects.\n[*]Safe stealing bypasses secondary effects, such as damage on removal, from the removed buffs. Passive skills and family effects can still activate.)",
-      "Deals 350% damage to the target.",
-      "After a successful cast, has a 50% chance to recast Heads or Tails? on a random target.\n[*]Can recast up to 3 times."
+      "Deals 400% damage to the target.",
+      "After a successful cast, has a 50% chance to recast Heads or Tails? on a random target.\n[*]Can recast up to 2 times."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Deals 500% damage to all enemies.\n[*] Deals additional 5% damage for each Fiend or Mega Fiend owned by the enemies, up to 550% damage in total.",
+      "Deals 490% damage to all enemies.\n[*] Deals additional 10% damage for each Fiend or Mega Fiend owned by the enemies, up to 590% damage in total.",
       "Harvests buffs from all enemies.\n[*]Harvest safely removes 2 buffs, positive Stacks or Growth effects from each target. This includes Stubborn effects, undispellable buffs and Dance effects.\n[*]The caster receives 7% boosted health for each effect removed. Boosted health can exceed max HP.\n[*]Safe removal bypasses secondary effects, such as damage on removal, from the removed status effect buffs. External effects such as passive skills and family effects can still activate.\n[*]Growth effects are removed first. Other effects, the latest is removed first.",
       "All enemies get -40% defense, and a further -5% decrease every time they are hit for 5 turns, down to -65% defense."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Deals 550% damage to the target.",
       "The attack bypasses defensive buffs. (This includes counterattacks.)",
-      "Has 50% chance to deal 500% damage to a random different enemy. (This effect targets the same enemy as the first hit if there are no other valid targets.)",
+      "Has 50% chance to deal 550% damage to a random different enemy. (This effect targets the same enemy as the first hit if there are no other valid targets.)",
       "Summons a Black Boar Mega Minion with 65% HP and 280% attack inherited from the caster.",
       "The target hit by Black Boar Mega Minion can't get their status ailments cleansed or reallocated by Special Skills for 4 turns. (This effect also prevents cleansing and reallocating of itself.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Deals 315% damage to all enemies.",
+      "Deals 310% damage to all enemies.",
       "Growth Boon: Deals 2x extra damage for each point of modified attack. (Extra damage is based on the modified attack on caster when damage is dealt.\n[*]Up to maximum 600 additional extra damage.\n[*]Status effects affecting damage dealt do affect the extra damage.\n[*]Defense stat does not affect the extra damage.\n[*]Status effects affecting attack stat do not affect the extra damage.)",
-      "All enemies receive[#Dynamic] 668 [#]Burn damage over 4 turns. The caster absorbs 20% of dealt Burn damage as health.",
+      "All enemies receive[#Dynamic] 860 [#]Burn damage over 4 turns. The caster absorbs 10% of dealt Burn damage as health.",
       "Dispels buffs from all enemies at the end of each turn for 4 turns."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Recovers 50% health for all allies.",
-      "Wild: For 5 turns, all allies either regenerate 500 HP or receive 1000 boosted health each turn. (Wild adds a chance each turn for this effect to be more powerful.\n[*]This Wild effect has a 50% chance to heal extra 100% HP that turn. When extra HP is healed the effect gives boosted health.)",
-      "Cleanses 1 status ailment from all allies at the end of each turn for 5 turns. This effect can't be dispelled.",
+      "Wild: For 5 turns, all allies either regenerate 200 HP or receive 600 boosted health each turn. (Wild adds a chance each turn for this effect to be more powerful.\n[*]This Wild effect has a 50% chance to heal extra 200% HP that turn. When extra HP is healed the effect gives boosted health.)",
+      "Cleanses 1 status ailment from all allies at the end of each turn for 5 turns.",
       "All allies get 65% defense for 5 turns."
      ]
     }

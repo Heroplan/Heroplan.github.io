@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Zadaje 630% obrażeń celowi.",
-      "Zadaje 945% obrażeń postaciom, które oczyszczają lub odwołują umiejętnościami specjalnymi.\n[*]Pod uwagę brane są tylko bezpośrednie efekty odwołania i oczyszczenia z umiejętności specjalnych. Wyklucza to efekty usuwające, umiejętności pasywne, pomocników, efekty rodzin, talenty i efekty ze statusu.",
-      "Czas trwania ulepszeń zostaje zresetowany dla wszystkich sojuszników.",
+      "Zadaje 760% obrażeń postaciom, które oczyszczają lub odwołują umiejętnościami specjalnymi.\n[*]Pod uwagę brane są tylko bezpośrednie efekty odwołania i oczyszczenia z umiejętności specjalnych. Wyklucza to efekty usuwające, umiejętności pasywne, pomocników, efekty rodzin, talenty i efekty ze statusu.",
       "Wszyscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 3 tur(y). (Odporność obejmuje również ten efekt.\n[*] Obejmuje także ograbienie.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Zadaje 350% obrażeń celowi i pobliskim wrogom.",
-      "Rzucający i pobliscy sojusznicy zyskują 45% szans na uniknięcie umiejętności specjalnych na okres 3 tur. Każdy unik zapewnia +24% many sojusznikowi.",
+      "Rzucający i pobliscy sojusznicy zyskują 45% szans na uniknięcie umiejętności specjalnych na okres 3 tur. Każdy unik zapewnia +10% many sojusznikowi.",
       "Spoiwo żywiołów daje wszystkim sojusznikom natury 60% do obrony przeciw ogniowi przez 4 tur(y). Efekt nie może być odwołany czarami."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
       "[*]Ładunek many x 1:",
-      "[**]Odzyskuje 25% zdrowia dla bohatera.",
-      "[**]Bohater ma 25% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez 2 tur(y).",
-      "[**]Bohater staje się odporny na odczarowanie i przeniesienie wzmocnień przez 2 tur(y). (Odporność obejmuje również ten efekt.\n[***]Obejmuje także ograbienie.)",
+      "[**]Regeneruje 20% zdrowia wszystkich sojuszników.",
+      "[**]Wszyscy sojusznicy mają 20% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez 2 tur(y).",
+      "[**]Wszyscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 2 tur(y). (Odporność obejmuje również ten efekt.\n[***]Obejmuje także ograbienie.)",
       "[*]Ładunek many x 2:",
-      "[**]Regeneruje 30% zdrowia bohatera i pobliskich sojuszników.",
-      "[**]Rzucający i pobliscy sojusznicy mają 30% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez okres 3 tur.",
-      "[**]Bohater i pobliscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 3 tur(y). (Odporność obejmuje również ten efekt.\n[***]Obejmuje także ograbienie.)",
+      "[**]Regeneruje 40% zdrowia wszystkich sojuszników.",
+      "[**]Wszyscy sojusznicy mają 30% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez 3 tur(y).",
+      "[**]Wszyscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 3 tur(y). (Odporność obejmuje również ten efekt.\n[***]Obejmuje także ograbienie.)",
       "[*]Ładunek many x 3:",
-      "[**]Regeneruje 35% zdrowia wszystkich sojuszników.",
-      "[**]Wszyscy sojusznicy mają 35% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez 5 tur(y).",
+      "[**]Regeneruje 60% zdrowia wszystkich sojuszników.",
+      "[**]Wszyscy sojusznicy mają 40% szans na niwelowanie otrzymanych obrażeń do 1 pkt przez 5 tur(y).",
       "[**]Wszyscy sojusznicy stają się odporni na odczarowanie i przeniesienie wzmocnień przez 5 tur(y). (Odporność obejmuje również ten efekt.\n[***]Obejmuje także ograbienie.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Ograbia cel, wykradając zdrowie równe 400 i wzmocnienie. (\n[*]Bezpiecznie kradnie z celu jedno wzmocnienie ze statusu. Obejmuje to nieoczyszczalne wzmocnienia i efekty tańca.\n[*]Bezpieczna kradzież pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane wzmocnienia. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.)",
-      "Zadaje celowi 350% obrażeń.",
-      "Po udanym użyciu ma 50% szans na ponowne rzucenie orzeł czy reszka? na losowy cel.\n[*]Można użyć ponownie do 3 razy."
+      "Zadaje celowi 400% obrażeń.",
+      "Po udanym użyciu ma 50% szans na ponowne rzucenie orzeł czy reszka? na losowy cel.\n[*]Można użyć ponownie do 2 razy."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Zadaje 500% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowe 5% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 550% obrażeń.",
+      "Zadaje 490% obrażeń wszystkim wrogom.\n[*] Zadaje dodatkowe 10% obrażeń za każdego potwora lub mega potwora posiadanego przez wrogów, łącznie do 590% obrażeń.",
       "Zabiera wzmocnienia ze wszystkich wrogów.\n[*]Żniwo bezpiecznie usuwa z każdego celu do 2 wzmocnień, pozytywnych kumulacji lub efektów wzrostu. Obejmuje to wzmocnienia i efekty tańca, które są nieustępliwe lub których nie można rozproszyć.\n[*]Rzucający zyskuje 7% wzmocnionego zdrowia za każdy usunięty efekt. Wzmocnione zdrowie może przekroczyć maks. PŻ.\n[*]Bezpieczne usunięcie pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane wzmocnienia statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.\n[*]W pierwszej kolejności usuwane są efekty wzrostu. W przypadku pozostałych efektów najpierw usuwany jest ostatni efekt.",
       "Wszyscy wrogowie mają -40% obrony, która obniża się o dodatkowe -5% za każde otrzymane trafienie przez 5 tur(y). Obrona może obniżyć się maksymalnie do -65%."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Zadaje 550% obrażeń celowi.",
       "Atak pomija efekty obronne. (Obejmuje to także kontrataki.)",
-      "Ma 50% szans na zadanie 500% obrażeń dowolnemu innemu wrogowi. (Jeśli nie ma innych celów, efekt ten wybiera za cel pierwszego wroga, na którego został skierowany.)",
+      "Ma 50% szans na zadanie 550% obrażeń dowolnemu innemu wrogowi. (Jeśli nie ma innych celów, efekt ten wybiera za cel pierwszego wroga, na którego został skierowany.)",
       "Wzywa mega pomocnika czarnego dzika z 65% PŻ i 280% ataku przejętymi od rzucającego.",
       "Cel trafiony przez mega pomocnika czarnego dzika nie może oczyścić ani przenieść dolegliwości ze statusu za pomocą umiejętności specjalnych przez 4 tur(y). (Efekt ten uniemożliwia również jego oczyszczenie lub przeniesienie.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Zadaje 315% obrażeń wszystkim przeciwnikom.",
+      "Zadaje 310% obrażeń wszystkim przeciwnikom.",
       "Dar wzrostu: zadaje 2x dodatkowych obrażeń za każdy punkt zmodyfikowanego ataku. (Obrażenia dodatkowe są zależne od zmodyfikowanego ataku rzucającego w chwili zadania obrażeń.\n[*]Maksymalnie do 600 obrażeń dodatkowych.\n[*]Efekty ze statusu wpływające na zadawane obrażenia mają wpływ na obrażenia dodatkowe.\n[*]Obrona nie wpływa na obrażenia dodatkowe.\n[*]Efekty ze statusu wpływające na atak nie mają wpływu na obrażenia dodatkowe.)",
-      "Wszyscy wrogowie odnoszą[#Dynamic] 668 [#]pkt. obrażeń od oparzeń przez okres 4 tur. Rzucający pochłania 20% zadanych obrażeń od oparzeń w postaci PŻ.",
+      "Wszyscy wrogowie odnoszą[#Dynamic] 860 [#]pkt. obrażeń od oparzeń przez okres 4 tur. Rzucający pochłania 10% zadanych obrażeń od oparzeń w postaci PŻ.",
       "Odwołuje wzmocnienia wszystkich wrogów na końcu każdej tury przez 4 tur(y)."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Regeneruje 50% zdrowia wszystkich sojuszników.",
-      "Dzicz: Przez 5 tur(y) wszyscy sojusznicy regenerują 500 PŻ lub otrzymują 1000 pkt. wzmocnionego zdrowia co turę. (Dzicz co turę zapewnia szansę, że ten efekt będzie potężniejszy.\n[*]Ten efekt Dziczy ma 50% szans na uleczenie 100% dodatkowych PŻ. Po uleczeniu dodatkowych PŻ, efekt zapewnia wzmocnione zdrowie.)",
-      "Przez 5 tur(y) na koniec każdej tury oczyszcza 1 dolegliwość ze statusu wszystkich sojuszników. Odwołanie tego efektu nie jest możliwe.",
+      "Dzicz: Przez 5 tur(y) wszyscy sojusznicy regenerują 200 PŻ lub otrzymują 600 pkt. wzmocnionego zdrowia co turę. (Dzicz co turę zapewnia szansę, że ten efekt będzie potężniejszy.\n[*]Ten efekt Dziczy ma 50% szans na uleczenie 200% dodatkowych PŻ. Po uleczeniu dodatkowych PŻ, efekt zapewnia wzmocnione zdrowie.)",
+      "Na koniec każdej tury oczyszcza 1 dolegliwość ze statusu wszystkich sojuszników przez 5 tur(y).",
       "Wszyscy sojusznicy otrzymują 65% do obrony przez 5 tur(y)."
      ]
     }

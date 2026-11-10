@@ -6547,8 +6547,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Infligge 630% di danni al bersaglio.",
-      "Infligge il 945% di danni contro i personaggi che eseguono rimozioni o annullamenti utilizzando le Abilità speciali.\n[*]Vengono considerati solo gli effetti diretti di annullamento e rimozione dati dalle Abilità speciali. Sono esclusi effetti di rimozione, abilità passive, servitori, effetti delle famiglie, talenti ed effetti di stato.",
-      "La durata delle magie benefiche viene azzerata per tutti gli alleati.",
+      "Infligge il 760% di danni contro i personaggi che eseguono rimozioni o annullamenti utilizzando le Abilità speciali.\n[*]Vengono considerati solo gli effetti diretti di annullamento e rimozione dati dalle Abilità speciali. Sono esclusi effetti di rimozione, abilità passive, servitori, effetti delle famiglie, talenti ed effetti di stato.",
       "Tutti gli alleati sono immuni dall'annullamento delle magie benefiche e dalle riallocazioni per 3 turni. (L'immunità include anche questo stesso effetto.\n[*] Include anche il saccheggio.)"
      ]
     }
@@ -15955,7 +15954,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Infligge 350% di danni al bersaglio e ai nemici vicini.",
-      "L'evocatore e gli alleati vicini ottengono il 45% di probabilità di schivare le Abilità speciali per 3 turni. Ogni schivata conferisce +24% di mana all'alleato.",
+      "L'evocatore e gli alleati vicini ottengono il 45% di probabilità di schivare le Abilità speciali per 3 turni. Ogni schivata conferisce +10% di mana all'alleato.",
       "Collegamento elementale fornisce a tutti gli alleati Natura 60% Difesa da Fuoco per 4 turni. Questo effetto non può essere annullato."
      ]
     }
@@ -42042,16 +42041,16 @@
      "lines": [
       "L'Abilità speciale ha un effetto diverso quando viene caricata con il 100% / 200% / 300% di mana:",
       "[*]Carica di mana x 1:",
-      "[**]Fa recuperare il 25% di Salute all'evocatore.",
-      "[**]L'evocatore ha il 25% di probabilità di ridurre a 1 qualsiasi danno subito per 2 turni.",
-      "[**]L'evocatore è immune dall'annullamento delle magie benefiche e dalle riallocazioni per 2 turni. (L'immunità include anche questo stesso effetto.\n[***]Include anche il saccheggio.)",
+      "[**]Fa recuperare il 20% di Salute a tutti gli alleati.",
+      "[**]Tutti gli alleati hanno un 20% di probabilità di ridurre a 1 qualsiasi danno subito per 2 turni.",
+      "[**]Tutti gli alleati sono immuni dall'annullamento delle magie benefiche e dalle riallocazioni per 2 turni. (L'immunità include anche questo stesso effetto.\n[***]Include anche il saccheggio.)",
       "[*]Carica di mana x 2:",
-      "[**]Fa recuperare il 30% di Salute all'evocatore e agli alleati vicini.",
-      "[**]L'evocatore e gli alleati vicini hanno il 30% di probabilità di ridurre a 1 qualsiasi danno subito per 3 turni.",
-      "[**]L'evocatore e gli alleati vicini sono immuni dall'annullamento delle magie benefiche e dalle riallocazioni per 3 turni. (L'immunità include anche questo stesso effetto.\n[***]Include anche il saccheggio.)",
+      "[**]Fa recuperare il 40% di Salute a tutti gli alleati.",
+      "[**]Tutti gli alleati hanno un 30% di probabilità di ridurre a 1 qualsiasi danno subito per 3 turni.",
+      "[**]Tutti gli alleati sono immuni dall'annullamento delle magie benefiche e dalle riallocazioni per 3 turni. (L'immunità include anche questo stesso effetto.\n[***]Include anche il saccheggio.)",
       "[*]Carica di mana x 3:",
-      "[**]Fa recuperare il 35% di Salute a tutti gli alleati.",
-      "[**]Tutti gli alleati hanno un 35% di probabilità di ridurre a 1 qualsiasi danno subito per 5 turni.",
+      "[**]Fa recuperare il 60% di Salute a tutti gli alleati.",
+      "[**]Tutti gli alleati hanno un 40% di probabilità di ridurre a 1 qualsiasi danno subito per 5 turni.",
       "[**]Tutti gli alleati sono immuni dall'annullamento delle magie benefiche e dalle riallocazioni per 5 turni. (L'immunità include anche questo stesso effetto.\n[***]Include anche il saccheggio.)"
      ]
     }
@@ -50329,8 +50328,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Saccheggia il bersaglio, rubando 400 Salute e una magia benefica. (\n[*]Ruba in sicurezza una magia benefica degli effetti di stato dal bersaglio. Questo include magie benefiche non annullabili ed effetti di Danza.\n[*] Il furto sicuro ignora gli effetti secondari, come i danni alla rimozione, delle magie benefiche rimosse. Le abilità passive e gli effetti delle famiglie possono comunque attivarsi.)",
-      "Infligge il 350% di danni al bersaglio.",
-      "Dopo il lancio andato a buon fine, ha il 50% di probabilità di lanciare nuovamente Testa o Croce? su un bersaglio casuale.\n[*]Può lanciare nuovamente fino a 3 volte."
+      "Infligge il 400% di danni al bersaglio.",
+      "Dopo il lancio andato a buon fine, ha il 50% di probabilità di lanciare nuovamente Testa o Croce? su un bersaglio casuale.\n[*]Può lanciare nuovamente fino a 2 volte."
      ]
     }
    ]
@@ -58711,7 +58710,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Infligge il 500% di danni a tutti i nemici.\n[*] Infligge il 5% di danni aggiuntivi per ogni demone o demone Mega posseduto dai nemici, fino al 550% di danni in totale.",
+      "Infligge il 490% di danni a tutti i nemici.\n[*] Infligge il 10% di danni aggiuntivi per ogni demone o demone Mega posseduto dai nemici, fino al 590% di danni in totale.",
       "Raccoglie magie benefiche da tutti i nemici.\n[*]Raccolto rimuove in modo sicuro 2 magie benefiche, iterazioni positive o effetti di Crescita da ogni bersaglio. Questo include effetti persistenti, magie benefiche non annullabili ed effetti di Danza.\n[*] L'evocatore riceve il 7% di Salute potenziata per ogni effetto rimosso. La Salute potenziata può superare gli HP massimi.\n[*] La rimozione sicura ignora gli effetti secondari, come i danni alla rimozione, delle magie benefiche degli effetti di stato rimosse. Gli effetti esterni, come le abilità passive e gli effetti delle famiglie, possono comunque attivarsi.\n[*] Gli effetti di Crescita vengono rimossi per primi. Tra gli altri effetti, viene rimosso prima il più recente.",
       "Tutti i nemici ricevono il -40% di Difesa, che diminuisce del -5% ogni volta che vengono colpiti nel corso di 5 turni, fino a un massimo del -65%."
      ]
@@ -60869,7 +60868,7 @@
      "lines": [
       "Infligge 550% di danni al bersaglio.",
       "L'attacco supera le magie benefiche difensive. (Include i contrattacchi.)",
-      "Ha il 50% di probabilità di infliggere il 500% di danni a un nemico diverso a caso. (Questo effetto bersaglia lo stesso nemico del primo colpo, se non ci sono altri bersagli validi.)",
+      "Ha il 50% di probabilità di infliggere il 550% di danni a un nemico diverso a caso. (Questo effetto bersaglia lo stesso nemico del primo colpo, se non ci sono altri bersagli validi.)",
       "Chiama un servitore Mega cinghiale nero con il 65% di HP e il 280% di Attacco ereditati dall'evocatore.",
       "Il bersaglio colpito dal servitore Mega cinghiale nero non può rimuovere né riallocare i propri disturbi tramite le Abilità speciali per 4 turni. (Questo effetto impedisce anche la rimozione e la riallocazione a sé stessi.)"
      ]
@@ -60966,9 +60965,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Infligge 315% di danni a tutti i nemici.",
+      "Infligge 310% di danni a tutti i nemici.",
       "Beneficio della Crescita: infligge danni extra x 2 per ogni punto di Attacco modificato. (I danni extra si basano sull'attacco modificato dell'evocatore quando viene inflitto il danno.\n[*] Fino a un massimo di 600 danni extra.\n[*] Gli effetti di stato che influenzano i danni inflitti si applicano anche ai danni extra.\n[*] La statistica Difesa non influisce sui danni extra.\n[*] Gli effetti di stato che influenzano la statistica Attacco non si applicano ai danni extra.)",
-      "Tutti i nemici subiscono[#Dynamic] 668 [#]danni da ustione nel corso di 4 turni. L'evocatore assorbe il 20% di danni da ustione inflitti come Salute.",
+      "Tutti i nemici subiscono[#Dynamic] 860 [#]danni da ustione nel corso di 4 turni. L'evocatore assorbe il 10% di danni da ustione inflitti come Salute.",
       "Annulla le magie benefiche da tutti i nemici alla fine di ogni turno per 4 turni."
      ]
     }
@@ -61186,8 +61185,8 @@
      "id": "frothy_stein",
      "lines": [
       "Fa recuperare il 50% di Salute a tutti gli alleati.",
-      "Selvaggio: per 5 turni, tutti gli alleati rigenerano 500 HP oppure ricevono 1000 Salute potenziata a ogni turno. (Selvaggio aggiunge una probabilità a ogni turno che questo effetto sia più potente.\n[*]L'effetto Selvaggio ha una probabilità del 50% di curare il 100% di HP extra in quel turno. Quando cura HP extra, l'effetto conferisce Salute potenziata.)",
-      "Annulla 1 disturbo di tutti gli alleati al termine di ogni turno, per 5 turni. Questo effetto non può essere annullato.",
+      "Selvaggio: per 5 turni, tutti gli alleati rigenerano 200 HP oppure ricevono 600 Salute potenziata a ogni turno. (Selvaggio aggiunge una probabilità a ogni turno che questo effetto sia più potente.\n[*]L'effetto Selvaggio ha una probabilità del 50% di curare il 200% di HP extra in quel turno. Quando cura HP extra, l'effetto conferisce Salute potenziata.)",
+      "Annulla 1 disturbo di tutti gli alleati al termine di ogni turno, per 5 turni.",
       "Tutti gli alleati ricevono 65% Difesa per 5 turni."
      ]
     }

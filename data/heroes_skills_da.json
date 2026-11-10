@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Giver 630% skade til målet.",
-      "Giver 945% skade mod figurer, der renser eller ophæver effekter ved hjælp af særlige evner.\n[*]Kun særlige egenskab, der er deciderede ophævelses- eller renselseseffekter, bliver påvirket. Ekskluderer fjernelseseffekter, passive evner, håndlangere, familieeffekter, talenter og statuseffekter.",
-      "Buff-varighed nulstilles for alle allierede.",
+      "Giver 760% skade mod figurer, der renser eller ophæver effekter ved hjælp af særlige evner.\n[*]Kun særlige egenskab, der er deciderede ophævelses- eller renselseseffekter, bliver påvirket. Ekskluderer fjernelseseffekter, passive evner, håndlangere, familieeffekter, talenter og statuseffekter.",
       "Alle allierede er immune over for ophævelser af buffere og omfordelinger i 3 runder. (Immuniteten inkluderer også selv denne effekt.\n[*] Inkluderer også Ransagning.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Giver 350% skade til målet og fjender i nærheden.",
-      "Kasteren og allierede i nærheden får 45% chance for at undvige særlige evner i 3 runder. Hver undvigelse giver +24% mana til den allierede.",
+      "Kasteren og allierede i nærheden får 45% chance for at undvige særlige evner i 3 runder. Hver undvigelse giver +10% mana til den allierede.",
       "Elementlink giver alle natur-allierede 60% forsvar mod ild i 4 runder. Denne virkning kan ikke ophæves."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Særlige evner har en anden effekt, når mana er på 100%/ 200%/ 300%:",
       "[*]x 1 manaangreb:",
-      "[**]Gendanner 25% helbred for kasteren.",
-      "[**]Kasteren har en 25% chance for at sænke al modtaget skade til 1 i 2 runder.",
-      "[**]Kasteren er immun over for ophævelser af buffere og omfordelinger i 2 runder. (Immuniteten inkluderer også selv denne effekt.\n[***]Inkluderer også Ransagning.)",
+      "[**]Gendanner 20% helbred for alle allierede.",
+      "[**]Alle allierede har en 20% chance for at sænke al modtaget skade til 1 i 2 runder.",
+      "[**]Alle allierede er immune over for ophævelser af buffere og omfordelinger i 2 runder. (Immuniteten inkluderer også selv denne effekt.\n[***]Inkluderer også Ransagning.)",
       "[*]x 2 manaangreb:",
-      "[**]Gendanner 30% helbred til kasteren og allierede i nærheden.",
-      "[**]Kasteren og allierede i nærheden har 30% chance for at sænke al modtaget skade til 1 i 3 runder.",
-      "[**]Kasteren og allierede i nærheden er immune over for ophævelser af buffere og omfordelinger i 3 runder. (Immuniteten inkluderer også selv denne effekt.\n[***]Inkluderer også Ransagning.)",
+      "[**]Gendanner 40% helbred for alle allierede.",
+      "[**]Alle allierede har en 30% chance for at sænke al modtaget skade til 1 i 3 runder.",
+      "[**]Alle allierede er immune over for ophævelser af buffere og omfordelinger i 3 runder. (Immuniteten inkluderer også selv denne effekt.\n[***]Inkluderer også Ransagning.)",
       "[*]x 3 manaangreb:",
-      "[**]Gendanner 35% helbred for alle allierede.",
-      "[**]Alle allierede har en 35% chance for at sænke al modtaget skade til 1 i 5 runder.",
+      "[**]Gendanner 60% helbred for alle allierede.",
+      "[**]Alle allierede har en 40% chance for at sænke al modtaget skade til 1 i 5 runder.",
       "[**]Alle allierede er immune over for ophævelser af buffere og omfordelinger i 5 runder. (Immuniteten inkluderer også selv denne effekt.\n[***]Inkluderer også Ransagning.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Ransager målet, stjæler 400 helbred og en buffer. (\n[*]Stjæler på sikker vis en statuseffektbuffer fra målet. Dette omfatter uophævelige buffere og danseeffekter.\n[*]Ved at stjæle på sikker vis kan man omgå sekundære effekter fra de fjernede buffere, såsom skade ved fjernelse. Passive evner og familieeffekter kan stadig aktiveres.)",
-      "Giver 350% skade til målet.",
-      "Efter et vellykket kast er der 50% chance for at kaste Plat eller krone? igen på et tilfældigt mål.\n[*]Kan kastes igen op til 3 gange."
+      "Giver 400% skade til målet.",
+      "Efter et vellykket kast er der 50% chance for at kaste Plat eller krone? igen på et tilfældigt mål.\n[*]Kan kastes igen op til 2 gange."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Gør 500% skade på alle fjender.\n[*] Gør yderligere 5% skade for hver af fjendens djævle eller megadjævle, op til 550% skade i alt.",
+      "Gør 490% skade på alle fjender.\n[*] Gør yderligere 10% skade for hver af fjendens djævle eller megadjævle, op til 590% skade i alt.",
       "Høster buffere fra alle fjender.\n[*]Høst fjerner sikkert 2 buffere, positive kumulative effekter eller væksteffekter fra hvert mål. Dette omfatter stædige effekter, uophævelige buffere og danseeffekter.\n[*]Kasteren får 7% boostet helbred for hver effekt, der fjernes. Boostet helbred kan overstige maks. helbred.\n[*]Sikker fjernelse omgår sekundære effekter, såsom skade ved fjernelse, fra de fjernede statuseffektbuffere. Eksterne effekter som passive evner og familieeffekter kan stadig aktiveres.\n[*]Væksteffekter fjernes først. Ved andre effekter fjernes den seneste først.",
       "Alle fjender får -40% forsvar og yderligere -5% reducering, hver gang de bliver ramt i 5 runder, ned til -65% forsvar."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Giver 550% skade til målet.",
       "Angrebet omgår forsvarsbuffere. (Dette inkluderer modangreb)",
-      "Har 50% for at påføre 500% skade til en anden tilfældig fjende. (Effekten påvirker den samme fjende som det første angreb, hvis der ikke er andre mål.)",
+      "Har 50% for at påføre 550% skade til en anden tilfældig fjende. (Effekten påvirker den samme fjende som det første angreb, hvis der ikke er andre mål.)",
       "Hidkalder sort vildsvin-kæmpehåndlanger med 65% HP og 280% angreb, nedarvet fra kasteren.",
       "Målet, der bliver ramt af den sorte vildsvins-kæmpehåndlanger, kan ikke få deres statuslidelser renset eller omfordelt af særlige evner i 4 runder. (Denne effekt forhindrer også rensning og omfordeling af sig selv.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Giver 315% i skade til alle fjender.",
+      "Giver 310% i skade til alle fjender.",
       "Vækstvelsignelse: Forvolder 2x ekstra skade for hvert point i det modificerede angreb. (Ekstra skade er baseret på det modificerede angreb på kasteren, når skaden er uddelt.\n[*]Op til 600 ekstra skade.\n[*]Statuseffekter, der påvirker den forvoldte skade, påvirker også den ekstra skade.\n[*]Forsvarsstatistikker påvirker ikke ekstra skade.\n[*]Statuseffekter, der påvirker angrebsstatistikken, påvirker ikke den ekstra skade.)",
-      "Alle fjender får[#Dynamic] 668 [#]ildskade over 4 runder. Kasteren absorberer 20% af den påførte ildskade som helbred.",
+      "Alle fjender får[#Dynamic] 860 [#]ildskade over 4 runder. Kasteren absorberer 10% af den påførte ildskade som helbred.",
       "Ophæver buffere på alle fjender i nærheden i slutningen af hver runde i 4 runder."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Gendanner 50% helbred for alle allierede.",
-      "Vild: I 5 runder regenererer alle allierede enten 500 HP eller får 1000 boostet helbred i hver runde. (Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at helbrede 100% HP i den runde. Når ekstra HP helbredes, giver effekten boostet helbred.)",
-      "Rydder 1 statuslidelse fra alle allierede, når runden slutter, i 5 runder. Denne effekt kan ikke ophæves.",
+      "Vild: I 5 runder regenererer alle allierede enten 200 HP eller får 600 boostet helbred i hver runde. (Vild giver hver runde en chance for, at denne effekt bliver kraftigere.\n[*]Denne Vild-effekt har en 50% chance for at helbrede 200% HP i den runde. Når ekstra HP helbredes, giver effekten boostet helbred.)",
+      "Rydder 1 statuslidelse fra alle allierede i slutningen af hver runde i 5 runder.",
       "Alle allierede får 65% forsvar i 5 runder."
      ]
     }

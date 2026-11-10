@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Causa un 630% de daño al objetivo.",
-      "Inflige un 945% de daño a personajes cuyas habilidades especiales llevan a cabo descartes o purificaciones.\n[*]Solo se tienen en cuenta los descartes y las purificaciones que se llevan a cabo mediante habilidades especiales. Están excluidos los efectos de eliminación, las habilidades pasivas, los secuaces, los efectos de familia, los talentos y los efectos de estado.",
-      "Se reinicia la duración de las bendiciones de todos los aliados.",
+      "Inflige un 760% de daño a personajes cuyas habilidades especiales llevan a cabo descartes o purificaciones.\n[*]Solo se tienen en cuenta los descartes y las purificaciones que se llevan a cabo mediante habilidades especiales. Están excluidos los efectos de eliminación, las habilidades pasivas, los secuaces, los efectos de familia, los talentos y los efectos de estado.",
       "Todos los aliados son inmunes a descartes y reasignaciones de bendiciones durante 3 turnos. (La inmunidad también incluye este efecto.\n[*] También incluye saqueo.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Causa un 350% de daño al objetivo y a los enemigos cercanos.",
-      "El héroe y los aliados cercanos obtienen un 45% de probabilidad de esquivar las habilidades especiales durante 3 turnos. Cada esquiva otorga un 24% de maná al aliado.",
+      "El héroe y los aliados cercanos obtienen un 45% de probabilidad de esquivar las habilidades especiales durante 3 turnos. Cada esquiva otorga un 10% de maná al aliado.",
       "El enlace de elemento proporciona a todos los aliados de naturaleza un 60% de defensa contra fuego durante 4 turnos. Este efecto no se puede descartar."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
       "[*]x 1 de carga de maná:",
-      "[**]Recupera un 25% de vitalidad para el héroe.",
-      "[**]El héroe tiene un 25% de probabilidad de reducir cualquier daño recibido a 1 durante 2 turnos.",
-      "[**]El héroe es inmune a descartes y reasignaciones de bendiciones durante 2 turnos. (La inmunidad también incluye este efecto.\n[***]También incluye saqueo.)",
+      "[**]Recupera un 20% de vitalidad para todos los aliados.",
+      "[**]Todos los aliados tienen un 20% de probabilidad de reducir cualquier daño recibido a 1 durante 2 turnos.",
+      "[**]Todos los aliados son inmunes a descartes y reasignaciones de bendiciones durante 2 turnos. (La inmunidad también incluye este efecto.\n[***]También incluye saqueo.)",
       "[*]x 2 de carga de maná:",
-      "[**]Recupera un 30% de vitalidad para el héroe y los aliados cercanos.",
-      "[**]El héroe y los aliados cercanos tienen un 30% de probabilidad de reducir cualquier daño recibido a 1 durante 3 turnos.",
-      "[**]El héroe y los aliados cercanos son inmunes a descartes y reasignaciones de bendiciones durante 3 turnos. (La inmunidad también incluye este efecto.\n[***]También incluye saqueo.)",
+      "[**]Recupera un 40% de vitalidad para todos los aliados.",
+      "[**]Todos los aliados tienen un 30% de probabilidad de reducir cualquier daño recibido a 1 durante 3 turnos.",
+      "[**]Todos los aliados son inmunes a descartes y reasignaciones de bendiciones durante 3 turnos. (La inmunidad también incluye este efecto.\n[***]También incluye saqueo.)",
       "[*]x 3 de carga de maná:",
-      "[**]Recupera un 35% de vitalidad para todos los aliados.",
-      "[**]Todos los aliados tienen un 35% de probabilidad de reducir cualquier daño recibido a 1 durante 5 turnos.",
+      "[**]Recupera un 60% de vitalidad para todos los aliados.",
+      "[**]Todos los aliados tienen un 40% de probabilidad de reducir cualquier daño recibido a 1 durante 5 turnos.",
       "[**]Todos los aliados son inmunes a descartes y reasignaciones de bendiciones durante 5 turnos. (La inmunidad también incluye este efecto.\n[***]También incluye saqueo.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Saquea al objetivo y le roba 400 de vitalidad y una bendición. (\n[*] Roba de forma segura una bendición de estado del objetivo. Se incluyen las bendiciones indescartables y los efectos de danza.\n[*] El robo seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse habilidades pasivas y efectos de familia.)",
-      "Inflige un 350% de daño al objetivo.",
-      "Después de cada uso con éxito, tiene una probabilidad del 50% de volver a lanzar ¿Cara o cruz? a un objetivo aleatorio.\n[*] Puede volver a lanzarla hasta 3 veces."
+      "Inflige un 400% de daño al objetivo.",
+      "Después de cada uso con éxito, tiene una probabilidad del 50% de volver a lanzar ¿Cara o cruz? a un objetivo aleatorio.\n[*] Puede volver a lanzarla hasta 2 veces."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Inflige un 500% de daño a todos los enemigos.\n[*] Inflige un 5% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 550% de daño en total.",
+      "Inflige un 490% de daño a todos los enemigos.\n[*] Inflige un 10% de daño adicional por cada demonio o megademonio que tengan los enemigos hasta un 590% de daño en total.",
       "Cosecha bendiciones de todos los enemigos.\n[*]La cosecha elimina de forma segura hasta 2 bendiciones, acumulaciones positivas o efectos de crecimiento de cada objetivo. Se incluyen los efectos obstinados, las bendiciones indescartables y los efectos de danza.\n[*] La vitalidad del héroe se potencia un 7% por cada efecto eliminado. La vitalidad potenciada puede exceder la VIT máxima.\n[*] La eliminación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.\n[*] Los efectos de crecimiento se eliminan primero. En el caso de los demás efectos, se elimina primero el último aplicado.",
       "Todos los enemigos reciben un -40% de defensa y una disminución adicional de un -5% cada vez que son golpeados durante 5 turnos hasta un -65% de defensa."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Causa un 550% de daño al objetivo.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "Tiene un 50% de probabilidad de infligir un 500% de daño a un enemigo diferente aleatorio. (Si no hay más objetivos válidos, este efecto se dirige al mismo enemigo al que se golpeó primero.)",
+      "Tiene un 50% de probabilidad de infligir un 550% de daño a un enemigo diferente aleatorio. (Si no hay más objetivos válidos, este efecto se dirige al mismo enemigo al que se golpeó primero.)",
       "Invoca un megasecuaz jabalí negro con un 65% de VIT y un 280% de ataque heredados del héroe.",
       "El objetivo golpeado por el megasecuaz jabalí negro no puede purificar ni reasignar sus estados alterados con habilidades especiales durante 4 turnos. (Este efecto también impide su propia purificación o reasignación.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Causa un 315% de daño a todos los enemigos.",
+      "Causa un 310% de daño a todos los enemigos.",
       "Bendición de crecimiento: Inflige x 2 de daño extra por cada punto de ataque modificado. (El daño extra se basa en el ataque modificado del héroe en el momento de infligir daño.\n[*] Hasta un máximo de 600 de daño extra adicional.\n[*] Los efectos de estado que afectan al daño infligido también influyen en el daño extra.\n[*] La estadística de defensa no influye en el daño extra.\n[*] Los efectos de estado que afectan al ataque no influyen en el daño extra.)",
-      "Todos los enemigos reciben[#Dynamic] 668 [#]de daño de quemadura durante 4 turnos. El héroe absorbe un 20% del daño de quemadura infligido como vitalidad.",
+      "Todos los enemigos reciben[#Dynamic] 860 [#]de daño de quemadura durante 4 turnos. El héroe absorbe un 10% del daño de quemadura infligido como vitalidad.",
       "Descarta las bendiciones de todos los enemigos al final de cada turno durante 4 turnos."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Recupera un 50% de vitalidad para todos los aliados.",
-      "Salvaje: Durante 5 turnos, todos los aliados regeneran 500 de VIT o reciben 1000 de vitalidad potenciada cada turno. (Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de curar un 100% de VIT ese turno. Cuando se cura VIT extra, el efecto otorga vitalidad potenciada.)",
-      "Purifica 1 estado alterado de todos los aliados al final de cada turno durante 5 turnos. Este efecto no se puede descartar.",
+      "Salvaje: Durante 5 turnos, todos los aliados regeneran 200 de VIT o reciben 600 de vitalidad potenciada cada turno. (Salvaje hace que tengas una probabilidad cada turno de que el efecto sea más poderoso.\n[*] Este efecto salvaje tiene un 50% de probabilidad de curar un 200% de VIT ese turno. Cuando se cura VIT extra, el efecto otorga vitalidad potenciada.)",
+      "Purifica 1 estado alterado de todos los aliados al final de cada turno durante 5 turnos.",
       "Todos los aliados reciben un 65% de defensa durante 5 turnos."
      ]
     }

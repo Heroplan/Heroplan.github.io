@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Menimbulkan kerusakan 630% pada sasaran.",
-      "Menimbulkan 945% kerusakan terhadap karakter yang membersihkan atau mengenyahkan dengan Keahlian Khusus.\n[*]Hanya efek Pengenyahan dan Pembersihan langsung dari Keahlian Khusus yang dipertimbangkan. Ini tidak termasuk efek Penghapusan, Pasif, Antek, Keluarga, Bakat, dan efek Status.",
-      "Durasi genjotan direset untuk semua sekutu.",
+      "Menimbulkan 760% kerusakan terhadap karakter yang membersihkan atau mengenyahkan dengan Keahlian Khusus.\n[*]Hanya efek Pengenyahan dan Pembersihan langsung dari Keahlian Khusus yang dipertimbangkan. Ini tidak termasuk efek Penghapusan, Pasif, Antek, Keluarga, Bakat, dan efek Status.",
       "Semua sekutu kebal terhadap pengenyahan genjotan dan realokasi selama 3 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[*] Juga termasuk Geledah.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Menimbulkan kerusakan 350% pada sasaran dan musuh terdekat.",
-      "Perapal dan sekutu terdekat berpeluang 45% untuk berkelit dari Keahlian Khusus selama 3 giliran. Setiap kelitan memberikan +24% mana ke sekutu.",
+      "Perapal dan sekutu terdekat berpeluang 45% untuk berkelit dari Keahlian Khusus selama 3 giliran. Setiap kelitan memberikan +10% mana ke sekutu.",
       "Dinamika Elemen memberi semua sekutu Alam pertahanan 60% terhadap elemen Api selama 4 giliran. Efek ini tidak bisa dienyahkan."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
       "[*]x 1 Daya Mana:",
-      "[**]Memulihkan kesehatan perapal sebesar 25%.",
-      "[**]Perapal memiliki peluang 25% untuk menurunkan kerusakan yang diterima menjadi 1 selama 2 giliran.",
-      "[**]Perapal kebal terhadap pengenyahan genjotan dan realokasi selama 2 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[***]Juga termasuk Geledah.)",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 20%.",
+      "[**]Semua sekutu berpeluang 20% untuk menurunkan kerusakan yang diterima menjadi 1 selama 2 giliran.",
+      "[**]Semua sekutu kebal terhadap pengenyahan genjotan dan realokasi selama 2 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[***]Juga termasuk Geledah.)",
       "[*]x 2 Daya Mana:",
-      "[**]Memulihkan kesehatan perapal dan sekutu terdekat sebesar 30%.",
-      "[**]Perapal dan sekutu terdekat berpeluang 30% untuk menurunkan kerusakan yang diterima menjadi 1 selama 3 giliran.",
-      "[**]Perapal dan sekutu terdekat kebal terhadap pengenyahan genjotan dan realokasi selama 3 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[***]Juga termasuk Geledah.)",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 40%.",
+      "[**]Semua sekutu berpeluang 30% untuk menurunkan kerusakan yang diterima menjadi 1 selama 3 giliran.",
+      "[**]Semua sekutu kebal terhadap pengenyahan genjotan dan realokasi selama 3 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[***]Juga termasuk Geledah.)",
       "[*]x 3 Daya Mana:",
-      "[**]Memulihkan kesehatan semua sekutu sebesar 35%.",
-      "[**]Semua sekutu berpeluang 35% untuk menurunkan kerusakan yang diterima menjadi 1 selama 5 giliran.",
+      "[**]Memulihkan kesehatan semua sekutu sebesar 60%.",
+      "[**]Semua sekutu berpeluang 40% untuk menurunkan kerusakan yang diterima menjadi 1 selama 5 giliran.",
       "[**]Semua sekutu kebal terhadap pengenyahan genjotan dan realokasi selama 5 giliran. (Kekebalan juga termasuk efek ini sendiri.\n[***]Juga termasuk Geledah.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Menggeledah sasaran, mencuri 400 kesehatan dan genjotan. (\n[*]Dengan aman mencuri satu genjotan efek status dari sasaran. Ini termasuk genjotan yang tidak bisa dienyahkan dan efek Tarian.\n[*]Pencurian aman mengabaikan efek sekunder, seperti kerusakan saat dihapus, dari genjotan yang dihapus. Keahlian pasif dan efek keluarga masih dapat diaktifkan.)",
-      "Menimbulkan 350% kerusakan kepada sasaran.",
-      "Setelah berhasil merapal, berpeluang 50% untuk merapalkan kembali Kepala atau Ekor? pada sasaran acak.\n[*]Bisa merapal ulang hingga 3 kali."
+      "Menimbulkan 400% kerusakan kepada sasaran.",
+      "Setelah berhasil merapal, berpeluang 50% untuk merapalkan kembali Kepala atau Ekor? pada sasaran acak.\n[*]Bisa merapal ulang hingga 2 kali."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Menimbulkan 500% kerusakan kepada semua musuh.\n[*] Menimbulkan 5% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 550%.",
+      "Menimbulkan 490% kerusakan kepada semua musuh.\n[*] Menimbulkan 10% kerusakan tambahan untuk setiap Iblis atau Iblis Mega milik musuh, hingga total kerusakan 590%.",
       "Panen genjotan dari semua musuh.\n[*]Panen dengan aman menghapus 2 genjotan, Tumpukan positif, atau efek Bertumbuh dari setiap sasaran. Ini termasuk efek Bandel, genjotan yang tidak bisa dienyahkan, dan efek Tarian.\n[*]Perapal menerima 7% peningkatan kesehatan untuk setiap efek yang dihapus. Peningkatan kesehatan dapat melebihi HP maks.\n[*]Penghapusan yang aman melewati efek sekunder, seperti kerusakan saat menghapus, dari genjotan efek status yang dihapus. Efek eksternal seperti keterampilan pasif dan efek keluarga masih bisa aktif.\n[*]Efek Bertumbuh dihapus terlebih dahulu. Efek lainnya dihapus dari yang terbaru.",
       "Pertahanan semua musuh naik -40% dan turun -5% lagi setiap kali terkena serangan selama 5 giliran, hingga pertahanan -65%."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Menimbulkan kerusakan 550% pada sasaran.",
       "Serangan itu menembus genjotan defensif. (Ini termasuk serangan balik.)",
-      "Berpeluang 50% untuk menimbulkan kerusakan 500% ke musuh acak lainnya. (Efek ini menarget musuh yang sama dengan pukulan pertama jika tidak ada sasaran valid lainnya.)",
+      "Berpeluang 50% untuk menimbulkan kerusakan 550% ke musuh acak lainnya. (Efek ini menarget musuh yang sama dengan pukulan pertama jika tidak ada sasaran valid lainnya.)",
       "Memanggil Antek Mega Celeng Hitam dengan 65% HP dan 280% serangan yang diwarisi dari perapal.",
       "Sasaran yang terkena Antek Mega Celeng Hitam status pelemahannya tidak bisa dibersihkan atau direalokasi oleh Keahlian Khusus selama 4 giliran. (Efek ini juga mencegah membersihkan dan realokasi diri sendiri.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Menimbulkan kerusakan 315% pada semua musuh.",
+      "Menimbulkan kerusakan 310% pada semua musuh.",
       "Anugerah Bertumbuh: Menimbulkan 2x kerusakan ekstra untuk setiap titik serangan yang dimodifikasi. (Kerusakan ekstra didasarkan pada serangan yang dimodifikasi pada pengguna ketika kerusakan ditimbulkan.\n[*]Hingga maksimum 600 kerusakan ekstra tambahan.\n[*]Efek status yang memengaruhi kerusakan yang ditimbulkan akan memengaruhi kerusakan ekstra.\n[*]Statistik pertahanan tidak memengaruhi kerusakan ekstra.\n[*]Efek status yang memengaruhi statistik serangan tidak memengaruhi kerusakan ekstra.)",
-      "Semua musuh mengalami[#Dynamic] 668 [#]kerusakan Terbakar selama 4 giliran. Perapal menyerap 20% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
+      "Semua musuh mengalami[#Dynamic] 860 [#]kerusakan Terbakar selama 4 giliran. Perapal menyerap 10% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
       "Mengenyahkan genjotan dari semua musuh pada akhir giliran selama 4 giliran."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 50%.",
-      "Liar: Selama 5 giliran, semua sekutu meregenerasi 500 HP atau menerima 1000 peningkatan kesehatan di setiap giliran. (Liar menambahkan peluang di setiap giliran untuk membuat efek ini lebih kuat.\n[*]Efek Liar ini berpeluang 50% untuk menyembuhkan 100% HP tambahan pada giliran itu. Saat HP tambahan disembuhkan, efeknya memberikan peningkatan kesehatan.)",
-      "Membersihkan 1 status pelemahan pada akhir giliran untuk semua sekutu selama 5 giliran. Efek ini tidak bisa dienyahkan.",
+      "Liar: Selama 5 giliran, semua sekutu meregenerasi 200 HP atau menerima 600 peningkatan kesehatan di setiap giliran. (Liar menambahkan peluang di setiap giliran untuk membuat efek ini lebih kuat.\n[*]Efek Liar ini berpeluang 50% untuk menyembuhkan 200% HP tambahan pada giliran itu. Saat HP tambahan disembuhkan, efeknya memberikan peningkatan kesehatan.)",
+      "Membersihkan 1 status pelemahan pada akhir tiap giliran untuk semua sekutu selama 5 giliran.",
       "Semua sekutu mendapat 65% pertahanan selama 5 giliran."
      ]
     }

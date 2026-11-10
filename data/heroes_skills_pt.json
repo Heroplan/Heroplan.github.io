@@ -6513,8 +6513,7 @@
      "id": "spectacular_spirals",
      "lines": [
       "Causa 630% de dano ao alvo.",
-      "Causa 945% de dano contra personagens que expurgam ou dissipam usando habilidades especiais.\n[*]Só os efeitos diretos de dissipação e expurgo de habilidades especiais são levados em consideração. Isso exclui efeitos de remoção, habilidades passivas, ajudantes, efeitos da família, talentos e efeitos de status.",
-      "A duração dos reforços é restaurada ao valor inicial para todos os aliados.",
+      "Causa 760% de dano contra personagens que expurgam ou dissipam usando habilidades especiais.\n[*]Só os efeitos diretos de dissipação e expurgo de habilidades especiais são levados em consideração. Isso exclui efeitos de remoção, habilidades passivas, ajudantes, efeitos da família, talentos e efeitos de status.",
       "Todos os aliados ficam imunes a transferências e dissipações de reforços por 3 turnos. (A imunidade também inclui o próprio efeito.\n[*] Também inclui saques.)"
      ]
     }
@@ -15875,7 +15874,7 @@
      "id": "lurk_in_shadows",
      "lines": [
       "Causa 350% de dano ao alvo e inimigos próximos.",
-      "O invocador e os aliados próximos recebem 45% de chance de se esquivar de habilidades especiais por 3 turnos. Cada esquiva dá +24% de mana ao aliado.",
+      "O invocador e os aliados próximos recebem 45% de chance de se esquivar de habilidades especiais por 3 turnos. Cada esquiva dá +10% de mana ao aliado.",
       "Vínculo elemental dá a todos os aliados de natureza 60% de defesa contra fogo por 4 turnos. Este efeito não efeito não pode ser dissipado."
      ]
     }
@@ -41864,16 +41863,16 @@
      "lines": [
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
       "[*]x 1 carga de mana:",
-      "[**]Restaura 25% da vida do invocador.",
-      "[**]O invocador tem 25% de chance de reduzir a 1 qualquer dano recebido por 2 turnos.",
-      "[**]O invocador fica imune a transferências e dissipações de reforços por 2 turnos. (A imunidade também inclui o próprio efeito.\n[***]Também inclui saques.)",
+      "[**]Restaura 20% da vida de todos os aliados.",
+      "[**]Todos os inmigos têm 20% de chance de reduzir a 1 qualquer dano recebido por 2 turnos.",
+      "[**]Todos os aliados ficam imunes a transferências e dissipações de reforços por 2 turnos. (A imunidade também inclui o próprio efeito.\n[***]Também inclui saques.)",
       "[*]x 2 carga de mana:",
-      "[**]Restaura 30% da vida do invocador e aliados próximos.",
-      "[**]O invocador e os aliados próximos têm 30% de chance de reduzir a 1 qualquer dano recebido por 3 turnos.",
-      "[**]O invocador e os aliados próximos ficam imunes a transferências e dissipações de reforços por 3 turnos. (A imunidade também inclui o próprio efeito.\n[***]Também inclui saques.)",
+      "[**]Restaura 40% da vida de todos os aliados.",
+      "[**]Todos os inmigos têm 30% de chance de reduzir a 1 qualquer dano recebido por 3 turnos.",
+      "[**]Todos os aliados ficam imunes a transferências e dissipações de reforços por 3 turnos. (A imunidade também inclui o próprio efeito.\n[***]Também inclui saques.)",
       "[*]x 3 carga de mana:",
-      "[**]Restaura 35% da vida de todos os aliados.",
-      "[**]Todos os inmigos têm 35% de chance de reduzir a 1 qualquer dano recebido por 5 turnos.",
+      "[**]Restaura 60% da vida de todos os aliados.",
+      "[**]Todos os inmigos têm 40% de chance de reduzir a 1 qualquer dano recebido por 5 turnos.",
       "[**]Todos os aliados ficam imunes a transferências e dissipações de reforços por 5 turnos. (A imunidade também inclui o próprio efeito.\n[***]Também inclui saques.)"
      ]
     }
@@ -50151,8 +50150,8 @@
      "id": "heads_or_tails",
      "lines": [
       "Saqueia o alvo, roubando 400 de vida e um reforço. (\n[*] Rouba com segurança um reforço de efeito de status do alvo. Isso inclui efeitos de dança e reforços indissipáveis.\n[*] O roubo com segurança ignora os efeitos secundários, como dano ao remover, dos reforços removidos. Habilidades passivas e efeitos de família ainda podem ser ativados.)",
-      "Causa 350% de dano ao alvo.",
-      "Após um lançamento bem sucedido, tem 50% de chance de lançar Cara ou coroa? normalmente em um alvo aleatório.\n[*] Pode lançar novamente até 3 vezes."
+      "Causa 400% de dano ao alvo.",
+      "Após um lançamento bem sucedido, tem 50% de chance de lançar Cara ou coroa? normalmente em um alvo aleatório.\n[*] Pode lançar novamente até 2 vezes."
      ]
     }
    ]
@@ -58513,7 +58512,7 @@
     {
      "id": "potato_plunder",
      "lines": [
-      "Causa 500% de dano a todos os inimigos.\n[*] Causa 5% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 550% de dano no total.",
+      "Causa 490% de dano a todos os inimigos.\n[*] Causa 10% de dano adicional por cada demônio ou megademônio dos inimigos, até o limite de 590% de dano no total.",
       "Ceifa reforços de todos os inimigos.\n[*]A Ceifa remove com segurança 2 reforços, acumulações positivas ou efeitos Crescimento de cada alvo. Isso inclui efeitos persistentes, reforços indissipáveis e efeitos de dança.\n[*] O invocador recebe 7% de vida reforçada por cada efeito removido. A vida reforçada pode exceder o limite de PV.\n[*] A remoção segura ignora os efeitos secundários, como dano ao remover, dos reforços de efeito de status removidos. Efeitos externos, como efeitos passivos e de família, ainda podem ser ativados.\n[*] Os efeitos Crescimento são removidos primeiro. Entre outros efeitos, o mais recente é removido primeiro.",
       "Todos os inimigos ganham -40% de defesa e mais -5% de redução cada vez que são atingidos por 5 turnos, até o limite de -65% de defesa."
      ]
@@ -60625,7 +60624,7 @@
      "lines": [
       "Causa 550% de dano ao alvo.",
       "O ataque ignora reforços defensivos. (Inclui contra-ataques.)",
-      "Tem 50% de chance de causar 500% de dano a outro inimigo aleatório. (Este efeito tem como alvo o mesmo inimigo que o primeiro acerto quando não existem outros alvos válidos.)",
+      "Tem 50% de chance de causar 550% de dano a outro inimigo aleatório. (Este efeito tem como alvo o mesmo inimigo que o primeiro acerto quando não existem outros alvos válidos.)",
       "Convoca um mega-ajudante Javali Preto com 65% de PV e 280% de ataque herdados do invocador.",
       "Os males de status do alvo atingido pelo mega-ajudante Javali Negro não podem ser expurgados nem transferidos por Habilidades Especiais por 4 turnos. (Este efeito também impede o próprio expurgo ou transferência.)"
      ]
@@ -60722,9 +60721,9 @@
     {
      "id": "divya_agni_disarmament",
      "lines": [
-      "Causa 315% de dano a todos os inimigos.",
+      "Causa 310% de dano a todos os inimigos.",
       "Dádiva de Crescimento: causa 2x mais dano adicional por cada ponto de ataque modificado. (O dano adicional é baseado no ataque modificado do invocador quando o dano é causado.\n[*] Limite de 600 de dano adicional.\n[*] Os efeitos de status que afetam o dano causado não afetam o dano adicional\n[*] O atributo de defesa não afeta o dano adicional.\n[*] Os efeitos de status que afetam o atributo de ataque não afetam o dano adicional.)",
-      "Todos os inimigos recebem[#Dynamic] 668 [#]de dano de Sangramento por 4 turnos. O invocador absorve 20% do dano de Sangramento como vida.",
+      "Todos os inimigos recebem[#Dynamic] 860 [#]de dano de Sangramento por 4 turnos. O invocador absorve 10% do dano de Sangramento como vida.",
       "Dissipa reforços de todos os inimigos ao fim de cada turno por 4 turnos."
      ]
     }
@@ -60942,8 +60941,8 @@
      "id": "frothy_stein",
      "lines": [
       "Restaura 50% da vida de todos os aliados.",
-      "Selvagem: por 5 turnos, todos os aliados recuperam 500 PV ou recebem 1000 de vida reforçada a cada turno. (A cada turno, Selvagem tem a chance de tornar o efeito mais poderoso.\n[*] Este efeito Selvagem tem 50% de chance de restaurar mais 100% PV nesse turno. Ao restaurar mais PV, o efeito dá vida reforçada.)",
-      "Expurga 1 mal de status de todos os aliados ao fim de cada turno por 5 turnos. Este efeito não pode ser dissipado.",
+      "Selvagem: por 5 turnos, todos os aliados recuperam 200 PV ou recebem 600 de vida reforçada a cada turno. (A cada turno, Selvagem tem a chance de tornar o efeito mais poderoso.\n[*] Este efeito Selvagem tem 50% de chance de restaurar mais 200% PV nesse turno. Ao restaurar mais PV, o efeito dá vida reforçada.)",
+      "Expurga 1 mal de status de todos os aliados ao fim de cada turno por 5 turnos.",
       "Todos os aliados ganham 65% de defesa por 5 turnos."
      ]
     }

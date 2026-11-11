@@ -1046,6 +1046,41 @@ function addEventListeners() {
         });
     }
 
+    // --- 英雄学院图标长按：切换「显示隐藏英雄」 ---
+    const heroAcademyIcon = document.getElementById('hero-academy-icon');
+    if (heroAcademyIcon) {
+        let academyLongPressTimer = null;
+        const ACADEMY_LONG_PRESS = 800; // 长按阈值（毫秒）
+        const startAcademyPress = () => {
+            if (academyLongPressTimer) clearTimeout(academyLongPressTimer);
+            academyLongPressTimer = setTimeout(() => {
+                academyLongPressTimer = null;
+                state.showHiddenHeroes = !state.showHiddenHeroes;
+                applyFiltersAndRender();
+                const langDict = i18n[state.currentLang] || {};
+                const message = state.showHiddenHeroes ? langDict.hiddenHeroesShown : langDict.hiddenHeroesHidden;
+                if (typeof showCopyToast === 'function' && message) showCopyToast(message);
+            }, ACADEMY_LONG_PRESS);
+        };
+        const endAcademyPress = () => {
+            if (academyLongPressTimer) {
+                clearTimeout(academyLongPressTimer);
+                academyLongPressTimer = null;
+            }
+        };
+        heroAcademyIcon.addEventListener('mousedown', startAcademyPress);
+        heroAcademyIcon.addEventListener('mouseup', endAcademyPress);
+        heroAcademyIcon.addEventListener('mouseleave', endAcademyPress);
+        heroAcademyIcon.addEventListener('touchstart', startAcademyPress, { passive: true });
+        heroAcademyIcon.addEventListener('touchend', endAcademyPress);
+        heroAcademyIcon.addEventListener('touchcancel', endAcademyPress);
+        heroAcademyIcon.addEventListener('contextmenu', (e) => e.preventDefault());
+        heroAcademyIcon.draggable = false;
+        heroAcademyIcon.style.userSelect = 'none';
+        heroAcademyIcon.style.webkitUserSelect = 'none';
+        heroAcademyIcon.style.webkitTouchCallout = 'none';
+    }
+
     if (filterInputs.filterHero730Btn) {
         filterInputs.filterHero730Btn.addEventListener('click', () => {
             resetAllFilters();

@@ -54,7 +54,7 @@
             ]
         },
         {
-            "source": "/(cn|tc|en|ja|ko|fr|de|es|pt|it|ru|ar|tr|pl|nl|sv|da|no|fi|id)/?",
+            "source": "/(cn|tc|en|ja|ko|fr|de|es|pt|it|ru|ar|tr|pl|nl|sv|da|no|fi|id)",
             "headers": [
                 {
                     "key": "Cache-Control",
@@ -71,7 +71,7 @@
             ]
         },
         {
-            "source": "/(.*\\.html$|^/$)",
+            "source": "/(.*).html",
             "headers": [
                 {
                     "key": "Cache-Control",

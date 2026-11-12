@@ -351,7 +351,7 @@ window.AV = {
   "langs_json/i18n_sv.json": "df54ec63",
   "langs_json/i18n_tc.json": "6154689b",
   "langs_json/i18n_tr.json": "cfcc695f",
-  "data/characters.json": "3f2d9b24",
-  "data/heroes_skill_types.json": "f9f95843",
-  "lottery_config.json": "d15b2445",
+  "data/characters.json": "846b6825",
+  "data/heroes_skill_types.json": "4acc2a29",
+  "lottery_config.json": "ae8cdc2c",
 };

@@ -352,6 +352,6 @@ window.AV = {
   "data/heroes_skills_sv.json": "9f1a4f21",
   "data/heroes_skills_tc.json": "043a268a",
   "data/heroes_skills_tr.json": "1b32f4e4",
-  "lottery_config.json": "cba27b84",
   "data/heroes_skill_types.json": "e7ae40e0",
+  "lottery_config.json": "d2abdca6",
 };

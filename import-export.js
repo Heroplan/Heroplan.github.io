@@ -6,14 +6,12 @@
  */
 function initializeExportModalListeners() {
     const modal = document.getElementById('export-settings-modal');
-    const overlay = document.getElementById('export-settings-modal-overlay');
     const content = document.getElementById('export-settings-modal-content');
 
-    if (!modal || !overlay || !content) return;
+    if (!modal || !content) return;
 
     // 关闭模态框的通用函数
     const closeModal = () => { if (!modal.classList.contains('hidden')) history.back(); };
-    overlay.addEventListener('click', closeModal);
     content.addEventListener('click', e => e.stopPropagation()); // 阻止事件冒泡到遮罩层
 
     // 使用事件委托处理所有点击事件
@@ -40,12 +38,10 @@ function initializeExportModalListeners() {
  */
 function initializeImportModalListeners() {
     const modal = document.getElementById('import-settings-modal');
-    const overlay = document.getElementById('import-settings-modal-overlay');
     const content = document.getElementById('import-settings-modal-content');
-    if (!modal || !overlay || !content) return;
+    if (!modal || !content) return;
 
     const closeModal = () => { if (!modal.classList.contains('hidden')) history.back(); };
-    overlay.addEventListener('click', closeModal);
     content.addEventListener('click', e => e.stopPropagation());
 
     // 使用事件委托处理所有点击事件
@@ -84,9 +80,8 @@ const otherSettingKeys = [
  */
 function openExportModal() {
     const modal = document.getElementById('export-settings-modal');
-    const overlay = document.getElementById('export-settings-modal-overlay');
     const content = document.getElementById('export-settings-modal-content');
-    if (!modal || !overlay || !content) return;
+    if (!modal || !content) return;
 
     const langDict = i18n[state.currentLang] || {};
 
@@ -131,7 +126,7 @@ function openExportModal() {
 
     // 渲染模态框内容
     content.innerHTML = `
-        <div class="multi-select-header"><h3>${langDict.exportModalTitle}</h3><button class="close-btn" id="close-export-modal-btn">✖</button></div>
+        <div class="multi-select-header"><h3 id="export-settings-modal-title">${langDict.exportModalTitle}</h3><button class="close-btn" id="close-export-modal-btn">✖</button></div>
         <p>${langDict.exportItems}</p>
         <div style="margin: 1rem 0;">
             <div><label style="cursor:pointer; font-weight: bold;"><input type="checkbox" id="export-select-all" checked> ${langDict.selectAll}</label></div>
@@ -148,7 +143,7 @@ function openExportModal() {
         </div>`;
 
     modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    modal.showModal();
     history.pushState({ modal: 'exportSettings' }, null);
     state.modalStack.push('exportSettings');
 }
@@ -160,7 +155,6 @@ function openExportModal() {
  */
 function openImportModal() {
     const modal = document.getElementById('import-settings-modal');
-    const overlay = document.getElementById('import-settings-modal-overlay');
     const content = document.getElementById('import-settings-modal-content');
     if (!modal) return;
 
@@ -168,7 +162,7 @@ function openImportModal() {
     const langDict = i18n[state.currentLang] || {};
 
     content.innerHTML = `
-        <div class="multi-select-header"><h3>${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn">✖</button></div>
+        <div class="multi-select-header"><h3 id="import-settings-modal-title">${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn">✖</button></div>
         <p>${langDict.importInstructions}</p>
         <textarea id="import-settings-textarea" style="width: 100%; height: 120px; resize: vertical;"></textarea>
         <input type="file" id="file-importer-input" class="hidden" accept=".txt,text/plain">
@@ -179,7 +173,7 @@ function openImportModal() {
         <div id="import-options-container" class="hidden" style="margin-top:1rem;"></div>`;
 
     modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    modal.showModal();
     history.pushState({ modal: 'importSettings' }, null);
     state.modalStack.push('importSettings');
 }
@@ -417,8 +411,9 @@ function handleImportConfirm() {
     }
 
     state._tempImportedSettings = null; // 清理临时数据
-    document.getElementById('import-settings-modal').classList.add('hidden');
-    document.getElementById('import-settings-modal-overlay').classList.add('hidden');
+    const importModal = document.getElementById('import-settings-modal');
+    importModal.close();
+    importModal.classList.add('hidden');
     alert(langDict.importSettingsSuccess(mode, counters));
     window.location.reload(); // 刷新页面以应用所有设置
 }

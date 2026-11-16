@@ -50151,6 +50151,7 @@
      "lines": [
       "Saquea al objetivo y le roba 400 de vitalidad y una bendición. (\n[*] Roba de forma segura una bendición de estado del objetivo. Se incluyen las bendiciones indescartables y los efectos de danza.\n[*] El robo seguro ignora los efectos secundarios (por ejemplo, el daño con la eliminación) de las bendiciones eliminadas. Pueden activarse habilidades pasivas y efectos de familia.)",
       "Inflige un 400% de daño al objetivo.",
+      "El objetivo recibe un -24% de defensa durante 2 turnos.",
       "Después de cada uso con éxito, tiene una probabilidad del 50% de volver a lanzar ¿Cara o cruz? a un objetivo aleatorio.\n[*] Puede volver a lanzarla hasta 2 veces."
      ]
     }
@@ -60622,9 +60623,9 @@
     {
      "id": "heavy_duty_hammer_flurry",
      "lines": [
-      "Causa un 550% de daño al objetivo.",
+      "Causa un 600% de daño al objetivo.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
-      "Tiene un 50% de probabilidad de infligir un 550% de daño a un enemigo diferente aleatorio. (Si no hay más objetivos válidos, este efecto se dirige al mismo enemigo al que se golpeó primero.)",
+      "Tiene un 50% de probabilidad de infligir un 600% de daño a un enemigo diferente aleatorio. (Si no hay más objetivos válidos, este efecto se dirige al mismo enemigo al que se golpeó primero.)",
       "Invoca un megasecuaz jabalí negro con un 65% de VIT y un 280% de ataque heredados del héroe.",
       "El objetivo golpeado por el megasecuaz jabalí negro no puede purificar ni reasignar sus estados alterados con habilidades especiales durante 4 turnos. (Este efecto también impide su propia purificación o reasignación.)"
      ]

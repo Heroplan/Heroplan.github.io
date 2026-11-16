@@ -257,9 +257,6 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
         }
     };
     document.getElementById('summary-close-btn').addEventListener('click', closeSummaryModal);
-    if (uiElements.summonSummaryModalOverlay) {
-        uiElements.summonSummaryModalOverlay.addEventListener('click', closeSummaryModal);
-    }
 
     const toggleHistoryCheckbox = document.getElementById('toggle-history-view-checkbox');
     if (toggleHistoryCheckbox) {
@@ -290,16 +287,6 @@ function initializeLotterySimulator(allPoolsConfig, summonTypesConfig, extraConf
         });
     });
 
-    document.addEventListener('keydown', function (event) {
-        if (state.lotterySimulatorActive && event.key === 'Enter') {
-            event.preventDefault();
-            const activeElement = document.activeElement;
-            const isInputFocused = activeElement &&
-                (activeElement.tagName === 'INPUT' ||
-                    activeElement.tagName === 'TEXTAREA' ||
-                    activeElement.isContentEditable);
-        }
-    });
 }
 
 /**
@@ -1594,9 +1581,8 @@ async function handleActivityClick(poolId) {
 
     if (poolConfig.productType === 'SuperElementalSummon') {
         const elementalModal = document.getElementById('elemental-modal');
-        const elementalOverlay = document.getElementById('elemental-modal-overlay');
         elementalModal.classList.remove('hidden');
-        elementalOverlay.classList.remove('hidden');
+        elementalModal.showModal();
         document.body.classList.add('modal-open');
 
         const userChoice = await new Promise(resolve => {
@@ -1605,8 +1591,8 @@ async function handleActivityClick(poolId) {
                 const target = event.target.closest('.elemental-icon');
                 if (target && target.dataset.element) {
                     elementalContainer.removeEventListener('click', handler);
+                    elementalModal.close();
                     elementalModal.classList.add('hidden');
-                    elementalOverlay.classList.add('hidden');
                     document.body.classList.remove('modal-open');
                     resolve(target.dataset.element);
                 }
@@ -2594,10 +2580,9 @@ function showSingleSummonAnimation(hero, animationViewport, isBonusDraw = false)
  * @param {Array} results - 包含所有抽奖结果的数组，每个元素是 {hero, bucket}
  */
 function showSummaryModal(results) {
-    const overlay = document.getElementById('summon-summary-modal-overlay');
     const summaryModal = document.getElementById('summon-summary-modal');
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
-    if (!overlay || !summaryModal || !scrollContainer) {
+    if (!summaryModal || !scrollContainer) {
         return;
     }
 
@@ -2676,19 +2661,19 @@ function showSummaryModal(results) {
                 card.classList.add('is-clickable');
                 card.addEventListener('click', () => {
                     // 先隐藏当前的总结弹窗
-                    document.getElementById('summon-summary-modal').classList.add('hidden');
-                    document.getElementById('summon-summary-modal-overlay').classList.add('hidden');
+                    const summaryEl = document.getElementById('summon-summary-modal');
+                    summaryEl.close();
+                    summaryEl.classList.add('hidden');
 
                     // 打开英雄详情，并传入一个 onClose 回调函数
                     openDetailsModal(targetHero, {
                         onClose: () => {
                             // 当详情弹窗关闭时，这个函数会被调用
                             const summaryModal = document.getElementById('summon-summary-modal');
-                            const summaryOverlay = document.getElementById('summon-summary-modal-overlay');
-                            if (summaryModal && summaryOverlay) {
+                            if (summaryModal) {
                                 // 重新显示总结弹窗
                                 summaryModal.classList.remove('hidden');
-                                summaryOverlay.classList.remove('hidden');
+                                summaryModal.showModal();
                                 // 确保页面依然处于模态框打开状态
                                 document.body.classList.add('modal-open');
                             }
@@ -2711,7 +2696,7 @@ function showSummaryModal(results) {
     }, 0);
 
     summaryModal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    summaryModal.showModal();
     document.body.classList.add('modal-open');
     // ▼▼▼ 将弹窗状态推入浏览器历史记录 ▼▼▼
     history.pushState({ modal: 'summonSummary' }, null);
@@ -3109,8 +3094,6 @@ function toggleLotterySimulator() {
     const isActive = state.lotterySimulatorActive;
 
     const wrapper = document.getElementById('lottery-simulator-wrapper');
-    const button = document.getElementById('show-lottery-simulator-btn');
-    const langDict = i18n[state.currentLang] || {};
 
     if (isActive) {
         if (state.teamSimulatorActive) {
@@ -3124,8 +3107,6 @@ function toggleLotterySimulator() {
         }
         uiElements.heroTableView.classList.remove('hidden');
         wrapper.classList.remove('hidden');
-        button.classList.add('simulator-exit-btn');
-        button.title = langDict.returnToList;
         uiElements.headerInfoContainer.classList.add('hidden');
         uiElements.donationlistcontainer.classList.add('hidden');
         document.body.classList.add('lottery-mode-active');
@@ -3165,16 +3146,16 @@ function toggleLotterySimulator() {
         setMainViewHistory('lotterySimulator');
     } else {
         wrapper.classList.add('hidden');
-        button.classList.remove('simulator-exit-btn');
-        button.title = langDict.lotterySimulatorTitle;
         uiElements.headerInfoContainer.classList.remove('hidden');
-        uiElements.donationlistcontainer.classList.remove('hidden');
+        if (!isDonateHidden()) uiElements.donationlistcontainer.classList.remove('hidden');
         document.body.classList.remove('lottery-mode-active');
         state.activeHeroSubset = null;
         applyFiltersAndRender();
         // 主动退出 ⇒ 地址回到列表（带条件，见 special-views.js::syncViewUrlAfterToggle）
         if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
     }
+    // 按钮红态/提示统一由视图状态推导（含另外四个视图按钮的互斥复位）
+    if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
 }
 
 /**
@@ -3182,10 +3163,9 @@ function toggleLotterySimulator() {
  * @param {Array} results - 本次单抽获得的所有英雄结果
  */
 function showSinglePullResultsModal(results) {
-    const overlay = document.getElementById('summon-summary-modal-overlay');
     const summaryModal = document.getElementById('summon-summary-modal');
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
-    if (!overlay || !summaryModal || !scrollContainer) return;
+    if (!summaryModal || !scrollContainer) return;
 
     const langDict = i18n[state.currentLang] || {};
     const modalTitle = summaryModal.querySelector('h3');
@@ -3268,7 +3248,7 @@ function showSinglePullResultsModal(results) {
 
     // 打开模态框
     summaryModal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    summaryModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'summonSummary' }, null);
     state.modalStack.push('summonSummary');

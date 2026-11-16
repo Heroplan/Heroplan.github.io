@@ -46,25 +46,16 @@ const uiElements = {
 
     // 模态框 (Modal)
     modal: document.getElementById('modal'),
-    modalOverlay: document.getElementById('modal-overlay'),
     modalContent: document.getElementById('modal-content'),
     filtersModal: document.getElementById('filters-modal'),
-    filtersModalOverlay: document.getElementById('filters-modal-overlay'),
     closeFiltersModalBtn: document.getElementById('close-filters-modal-btn'),
     helpModal: document.getElementById('help-modal'),
-    helpModalOverlay: document.getElementById('help-modal-overlay'),
     lbTalentHelpModal: document.getElementById('lb-talent-help-modal'),
-    lbTalentHelpModalOverlay: document.getElementById('lb-talent-help-modal-overlay'),
     multiSelectModal: document.getElementById('multi-select-modal'),
-    multiSelectModalOverlay: document.getElementById('multi-select-modal-overlay'),
     exportSettingsModal: document.getElementById('export-settings-modal'),
-    exportSettingsModalOverlay: document.getElementById('export-settings-modal-overlay'),
     importSettingsModal: document.getElementById('import-settings-modal'),
-    importSettingsModalOverlay: document.getElementById('import-settings-modal-overlay'),
     summonSummaryModal: document.getElementById('summon-summary-modal'),
-    summonSummaryModalOverlay: document.getElementById('summon-summary-modal-overlay'),
     redeemCodesModal: document.getElementById('redeem-codes-modal'),
-    redeemCodesModalOverlay: document.getElementById('redeem-codes-modal-overlay'),
 
     // 筛选器输入框 (在filters.js中定义并赋值)
     filterInputs: {},
@@ -249,6 +240,8 @@ function applyLanguage(lang) {
         const element = document.getElementById(id);
         if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
     }
+    // 上面的循环会把"返回"提示覆盖回普通标题：视图按钮处于红态时按当前视图状态重同步
+    if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
 
     // 5.1 「活动日历」：直接跳 EP-BASE 的同语言当月月历。
     //     站点码与 EP-BASE locale 只差中文两码；月份用本机当前年月
@@ -564,7 +557,7 @@ async function openDetailsModal(hero, context = {}) {
     }
     renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');
-    uiElements.modalOverlay.classList.remove('hidden');
+    uiElements.modal.showModal();
     document.body.classList.add('modal-open');
     uiElements.modal.scrollTop = 0;
     // 地址栏同步成"这只英雄"的地址：**保留当前所有参数**，只加/换 `hero`
@@ -585,7 +578,7 @@ function closeDetailsModal() {
 
 function openFiltersModal() {
     uiElements.filtersModal.classList.remove('hidden');
-    uiElements.filtersModalOverlay.classList.remove('hidden');
+    uiElements.filtersModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'filters' }, null);
     state.modalStack.push('filters');
@@ -603,7 +596,7 @@ function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
     const introHTML = introKey ? `<p>${langDict[introKey]}</p>` : '';
     const listHTML = listKeys.map(key => langDict[key] || '').join('');
     modalElement.innerHTML = `
-        <h3>${langDict[titleKey]}</h3>
+        <h3 id="${modalElement.id}-title">${langDict[titleKey]}</h3>
         ${introHTML}
         <ul>${listHTML}</ul>
         <div class="modal-footer">
@@ -619,9 +612,8 @@ function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
 function openHelpModal() {
     renderHelpModalContent(uiElements.helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']); //, 'filterHelpExact'
     uiElements.helpModal.classList.add('stacked-modal');
-    uiElements.helpModalOverlay.classList.add('stacked-modal-overlay');
     uiElements.helpModal.classList.remove('hidden');
-    uiElements.helpModalOverlay.classList.remove('hidden');
+    uiElements.helpModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'help' }, null);
     state.modalStack.push('help');
@@ -634,9 +626,8 @@ function closeHelpModal() {
 function openLbTalentHelpModal() {
     renderHelpModalContent(uiElements.lbTalentHelpModal, 'lbTalentHelpTitle', null, ['lbTalentHelpLine2']);
     uiElements.lbTalentHelpModal.classList.add('stacked-modal');
-    uiElements.lbTalentHelpModalOverlay.classList.add('stacked-modal-overlay');
     uiElements.lbTalentHelpModal.classList.remove('hidden');
-    uiElements.lbTalentHelpModalOverlay.classList.remove('hidden');
+    uiElements.lbTalentHelpModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'lbTalentHelp' }, null);
     state.modalStack.push('lbTalentHelp');
@@ -660,7 +651,7 @@ function updateRedeemCodeCount() {
 function openRedeemCodesModal() {
     renderRedeemCodesModal(); // 动态生成内容
     uiElements.redeemCodesModal.classList.remove('hidden');
-    uiElements.redeemCodesModalOverlay.classList.remove('hidden');
+    uiElements.redeemCodesModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'redeemCodes' }, null);
     state.modalStack.push('redeemCodes');
@@ -687,30 +678,11 @@ function scrollToTableTop() {
  */
 function closeHeroPortraitModal() {
     const imageModal = document.getElementById('image-modal');
-    const imageModalOverlay = document.getElementById('image-modal-overlay');
-
+    // 统一走 history.back()：popstate 的 heroPortrait 分支负责关弹窗、释放立绘播放器、弹栈。
+    // 立即置 hidden：容器与立绘图片各挂了一个本函数，点击冒泡会同步触发两次，
+    // 若等 popstate 异步置 hidden 作守卫会连退两级历史（把详情页也关掉）。
     if (imageModal && !imageModal.classList.contains('hidden')) {
         imageModal.classList.add('hidden');
-        imageModalOverlay.classList.add('hidden');
-
-        // 移除尺寸控制类
-        imageModal.classList.remove('show-hero-portrait');
-
-        // 释放动态立绘播放器
-        if (typeof disposeActiveAnimationPlayer === 'function') {
-            disposeActiveAnimationPlayer();
-        }
-
-        // 从堆栈中移除立绘模态框状态
-        if (state.modalStack.length > 0 && state.modalStack[state.modalStack.length - 1] === 'heroPortrait') {
-            state.modalStack.pop();
-            // 更新 lastModal 变量
-            lastModal = state.modalStack.length > 0 ? state.modalStack[state.modalStack.length - 1] : null;
-        }
-
-        // 检查是否还有其他模态框打开
-        if (state.modalStack.length === 0) {
-            document.body.classList.remove('modal-open');
-        }
+        history.back();
     }
 }

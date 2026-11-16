@@ -222,16 +222,16 @@ function balancedToggleHTML(hero, section) {
 var _tableRenderGen = 0;        // 渲染代号：防止上一次未完成的续渲继续往新结果里追加
 const TABLE_ROW_CHUNK = 60;     // 每批渲染的行数（约一屏多一点）
 
-function scheduleChunk(fn) {
-    if (typeof requestIdleCallback === 'function') requestIdleCallback(fn, { timeout: 200 });
-    else setTimeout(fn, 0);
+function yieldToMain() {
+    if (typeof scheduler !== 'undefined' && typeof scheduler.yield === 'function') return scheduler.yield();
+    return new Promise(resolve => setTimeout(resolve, 0));
 }
 
 /**
  * 渲染主列表的英雄表格。
  * @param {object[]} heroes - 要渲染的英雄对象数组。
  */
-function renderTable(heroes) {
+async function renderTable(heroes) {
     const heroTable = uiElements.heroTable;
     if (!heroTable) return;
 
@@ -294,7 +294,7 @@ function renderTable(heroes) {
         return;
     }
 
-    const rows = heroes.map((hero, rowIdx) => {
+    const buildRow = (hero, rowIdx) => {
         const isHeroFavorite = isFavorite(hero);
         const cellsHTML = colKeys.map(key => {
             let content = '';
@@ -445,7 +445,7 @@ function renderTable(heroes) {
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
-                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="${rowIdx < TABLE_ROW_CHUNK ? 'eager' : 'lazy'}" decoding="async"${rowIdx < TABLE_ROW_CHUNK ? ' fetchpriority="high"' : ''} onerror="this.src='imgs/not_found.webp'">
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="${rowIdx < TABLE_ROW_CHUNK ? 'eager' : 'lazy'}" decoding="async"${rowIdx < 2 ? ' fetchpriority="high"' : ''} onerror="this.src='imgs/not_found.webp'">
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
@@ -459,26 +459,28 @@ function renderTable(heroes) {
             return `<td class="col-${key}">${content}</td>`;
         }).join('');
         return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
-    });
+    };
 
-    // ── 分块渲染：首屏若干行先同步画出（加快 LCP），其余在空闲时续渲（缩短长任务 ⇒ 改善 INP）──
+    // ── 分块构建 + 续渲：首屏一批同步画出（LCP），其余每批让出主线程（INP）──
     const gen = ++_tableRenderGen;
-    tbody.innerHTML = rows.slice(0, TABLE_ROW_CHUNK).join('');
+    const total = heroes.length;
+    let i = 0;
+    const firstEnd = Math.min(TABLE_ROW_CHUNK, total);
+    const firstBatch = [];
+    for (; i < firstEnd; i++) firstBatch.push(buildRow(heroes[i], i));
+    tbody.innerHTML = firstBatch.join('');
     adjustStickyHeaders();
     scrollToTableTop();
 
-    if (rows.length > TABLE_ROW_CHUNK) {
-        let i = TABLE_ROW_CHUNK;
-        const step = () => {
-            if (gen !== _tableRenderGen) return;   // 已有更新的渲染 ⇒ 放弃本次续渲
-            const end = Math.min(i + TABLE_ROW_CHUNK, rows.length);
-            tbody.insertAdjacentHTML('beforeend', rows.slice(i, end).join(''));
-            i = end;
-            if (i < rows.length) scheduleChunk(step);
-            else adjustStickyHeaders();
-        };
-        scheduleChunk(step);
+    while (i < total) {
+        await yieldToMain();
+        if (gen !== _tableRenderGen) return;   // 已有更新的渲染 ⇒ 放弃本次续渲
+        const end = Math.min(i + TABLE_ROW_CHUNK, total);
+        const batch = [];
+        for (; i < end; i++) batch.push(buildRow(heroes[i], i));
+        tbody.insertAdjacentHTML('beforeend', batch.join(''));
     }
+    if (total > TABLE_ROW_CHUNK) adjustStickyHeaders();
 }
 
 /**
@@ -1355,7 +1357,7 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
         pause();
         drawFrame(currentLayers(), currentBounds());
         fitCanvasToViewport();
-        if (hasAnim) play();
+        if (hasAnim && !matchMedia('(prefers-reduced-motion: reduce)').matches) play();
     }
 
     // 初始播放 default_clip
@@ -2931,10 +2933,9 @@ function renderDetailsInModal(hero, context = {}) {
                     if (_portraitClickLock) return;
                     _portraitClickLock = true;
                     const imageModal = document.getElementById('image-modal');
-                    const imageModalOverlay = document.getElementById('image-modal-overlay');
                     const imageModalContent = document.getElementById('image-modal-content');
 
-                    if (!imageModal || !imageModalOverlay || !imageModalContent) return;
+                    if (!imageModal || !imageModalContent) return;
 
                     // 清空之前的内容
                     imageModalContent.innerHTML = '';
@@ -3218,8 +3219,9 @@ function renderDetailsInModal(hero, context = {}) {
 
                     // 显示立绘模态框并添加到堆栈
                     imageModal.classList.add('show-hero-portrait');
+                    imageModal.setAttribute('aria-label', hero.name);
                     imageModal.classList.remove('hidden');
-                    imageModalOverlay.classList.remove('hidden');
+                    imageModal.showModal();
 
                     // 将立绘模态框加入到模态框堆栈
                     history.pushState({ modal: 'heroPortrait' }, null);

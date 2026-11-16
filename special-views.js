@@ -71,8 +71,11 @@ function setMainViewHistory(viewName) {
         pool: poolParam
     });
     if (currentState.view && mainViews.includes(currentState.view)) {
+        // 视图间切换是 replace：沿用原条目的 push 标记，退出时才知道该 back 还是原地替换
+        if (currentState.viewPushed) st.viewPushed = true;
         history.replaceState(st, '', url);
     } else {
+        st.viewPushed = true;
         history.pushState(st, '', url);
     }
 }
@@ -94,7 +97,35 @@ function clearMainViewHistory() {
  *   历史栈白多一条、后退语义跟着变。0ms 定时器跑在本次调用栈之后，那时目标视图已经就位。
  */
 function syncViewUrlAfterToggle() {
-    setTimeout(() => { if (currentMainViewName() === 'list') clearMainViewHistory(); }, 0);
+    setTimeout(() => {
+        if (currentMainViewName() !== 'list') return;
+        if (history.state && history.state.viewPushed) {
+            // 本条视图记录是 push 出来的 ⇒ back 弹掉它；原地 replace 会留下第二条"列表"死记录
+            _exitBackFromView = 'list';
+            _exitBackPending = true;
+            history.back();
+        } else {
+            clearMainViewHistory();
+        }
+    }, 0);
+}
+
+let _exitBackPending = false;
+let _exitBackFromView = null;
+
+/**
+ * 图标"退出"的统一入口：本条视图记录是自己 push 的就用 back 弹掉（前进/后退栈不留死记录）；
+ * 深链接冷启动没有可回的列表条目，只能原地 replace。back 的渲染与过渡由 popstate → applyMainView 负责。
+ */
+function exitMainViewToList() {
+    if (_exitBackPending) return;
+    if (history.state && history.state.viewPushed) {
+        _exitBackFromView = currentMainViewName();
+        _exitBackPending = true;
+        history.back();
+        return;
+    }
+    runViewTransition(showHeroListViewUI);
 }
 
 /**
@@ -112,21 +143,96 @@ function currentMainViewName() {
 }
 
 /**
+ * 同步右上角视图按钮的"开关"外观：视图激活时按钮变红、提示换成"返回"，再点一次即回列表。
+ * 所有会改变主视图的入口（进入/退出/切语言）末尾都调它，保证按钮状态与视图一致。
+ */
+function refreshMainViewButtons() {
+    const current = currentMainViewName();
+    const langDict = i18n[state.currentLang] || {};
+    const entries = [
+        ['show-wanted-mission-btn', 'wanted', 'showWantedMissionTitle'],
+        ['show-farming-guide-btn', 'farming', 'showFarmingGuideTitle'],
+        ['show-chat-simulator-btn', 'chat', 'showChatSimulatorTitle'],
+        ['show-team-simulator-btn', 'teamSimulator', 'showTeamSimulatorTitle'],
+        ['show-lottery-simulator-btn', 'lotterySimulator', 'showLotterySimulatorTitle']
+    ];
+    entries.forEach(([id, view, titleKey]) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const active = current === view;
+        btn.classList.toggle('simulator-exit-btn', active);
+        const title = active ? langDict.returnToList : langDict[titleKey];
+        if (title) {
+            btn.title = title;
+            if (btn.hasAttribute('aria-label')) btn.setAttribute('aria-label', title);
+        }
+    });
+}
+
+/**
+ * 视图切换的渐进增强包装：支持 View Transitions 且未要求减少动态时做整页交叉淡入淡出，
+ * 否则同步执行原逻辑。视图函数之间会互相调用（互斥退出），忙标志保证一次用户动作只起一个过渡。
+ */
+let _viewTransitionBusy = false;
+let _viewTransitionGen = 0;
+function runViewTransition(update) {
+    // 过渡回调是延迟执行的：连点时后发的同步切换先落地，旧回调必须作废，否则视图会被回切
+    const gen = ++_viewTransitionGen;
+    const guarded = () => { if (gen === _viewTransitionGen) update(); };
+    if (_viewTransitionBusy) { guarded(); return; }
+    if (typeof document.startViewTransition !== 'function'
+        || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        guarded();
+        focusActiveViewHeading();
+        return;
+    }
+    _viewTransitionBusy = true;
+    const transition = document.startViewTransition(guarded);
+    transition.finished
+        .catch(() => { })
+        .finally(() => { _viewTransitionBusy = false; focusActiveViewHeading(); });
+}
+
+/** 过渡结束后把焦点送到新视图的标题；焦点已在新视图内（如聊天输入框）则不抢占。 */
+function focusActiveViewHeading() {
+    // 有模态弹窗开着时背景是 inert 的，焦点归弹窗管
+    if (document.querySelector('dialog.modal-dialog[open]')) return;
+    const vis = el => el && !el.classList.contains('hidden');
+    const view = [uiElements.wantedMissionView, uiElements.farmingGuideView, uiElements.chatSimulatorView,
+    uiElements.teamSimulatorWrapper, uiElements.lotterySimulatorWrapper, uiElements.heroTableView].find(vis);
+    if (!view || view.contains(document.activeElement)) return;
+    const heading = [...view.querySelectorAll('h1, h2, h3')].find(h => h.getBoundingClientRect().width > 0) || view;
+    if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+    heading.focus({ preventScroll: true });
+}
+
+/**
  * 打开指定主视图（**只做打开**，历史/地址由调用方或视图函数自己负责）。
  * 冷启动深链接（`main.js`）和浏览器前进后退（`handlePopState`）都走这里，避免两套派发漂移。
  * @param {string} viewName
  */
 function applyMainView(viewName) {
-    switch (viewName) {
-        case 'wanted': initAndShowWantedMissionView(); break;
-        case 'farming': initAndShowFarmingGuideView(); break;
-        case 'chat': initAndShowChatSimulatorView(); break;
-        // 两个模拟器是"开关"语义：只在没开的时候开，别把已开着的关掉
-        case 'teamSimulator': if (!state.teamSimulatorActive) toggleTeamSimulator(); break;
-        case 'lotterySimulator': if (!state.lotterySimulatorActive) LotterySimulator.toggle(); break;
-        default:
-            if (currentMainViewName() !== 'list') closeAllMainViews();
+    if (_exitBackPending) {
+        _exitBackPending = false;
+        const cur = currentMainViewName();
+        // back 落地前用户又切了视图 ⇒ 这条 popstate 已过时，别把用户的新操作打回去
+        if (viewName === 'list' && cur !== 'list' && cur !== _exitBackFromView) return;
     }
+    runViewTransition(() => {
+        switch (viewName) {
+            case 'wanted': initAndShowWantedMissionView(); break;
+            case 'farming': initAndShowFarmingGuideView(); break;
+            case 'chat': initAndShowChatSimulatorView(); break;
+            // 两个模拟器是"开关"语义：只在没开的时候开，别把已开着的关掉
+            case 'teamSimulator': if (!state.teamSimulatorActive) toggleTeamSimulator(); break;
+            case 'lotterySimulator': if (!state.lotterySimulatorActive) LotterySimulator.toggle(); break;
+            default:
+                if (currentMainViewName() !== 'list') closeAllMainViews();
+                // 已在列表也要清一次：进抽奖时 handleActivityClick 会先把 pool 写进**当时还在的列表条目**，
+                // back 落回这条被污染的列表条目时没人清它（UI 已是列表 ⇒ 不走 showHeroListViewUI）
+                else clearMainViewHistory();
+        }
+    });
 }
 
 /**
@@ -184,6 +290,7 @@ function showHeroListViewUI() {
     clearMainViewHistory();
 
     updateResultsHeader(); // 更新结果头部信息
+    refreshMainViewButtons();
 }
 
 /**
@@ -244,6 +351,7 @@ function initAndShowWantedMissionView() {
     setTimeout(adjustStickyHeaders, 0);
     // 更新浏览器历史记录，以便后退按钮可以返回列表视图
     setMainViewHistory('wanted');
+    refreshMainViewButtons();
 }
 
 /**
@@ -345,6 +453,7 @@ function initAndShowFarmingGuideView() {
 
     setTimeout(adjustStickyHeaders, 0);
     setMainViewHistory('farming');
+    refreshMainViewButtons();
 }
 
 /**
@@ -405,6 +514,7 @@ function initAndShowChatSimulatorView() {
 
     setTimeout(adjustStickyHeaders, 0);
     setMainViewHistory('chat');
+    refreshMainViewButtons();
 }
 
 /**
@@ -413,11 +523,10 @@ function initAndShowChatSimulatorView() {
 
 function showSoulExchangeModal() {
 
-    const overlay = uiElements.summonSummaryModalOverlay;
     const summaryModal = uiElements.summonSummaryModal;
     // 直接通过ID获取，确保稳健性
     const scrollContainer = document.getElementById('summon-summary-scroll-container');
-    if (!overlay || !summaryModal || !scrollContainer) {
+    if (!summaryModal || !scrollContainer) {
         return;
     }
     summaryModal.classList.remove('single-pull-result-view', 'summon-result-view');
@@ -477,12 +586,12 @@ function showSoulExchangeModal() {
             if (targetHero) {
                 card.classList.add('is-clickable');
                 card.addEventListener('click', () => {
+                    summaryModal.close();
                     summaryModal.classList.add('hidden');
-                    overlay.classList.add('hidden');
                     openDetailsModal(targetHero, {
                         onClose: () => {
                             summaryModal.classList.remove('hidden');
-                            overlay.classList.remove('hidden');
+                            summaryModal.showModal();
                             document.body.classList.add('modal-open');
                         }
                     });
@@ -525,7 +634,7 @@ function showSoulExchangeModal() {
     // 显示弹窗
     setTimeout(() => { scrollContainer.scrollTop = 0; }, 0);
     summaryModal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    summaryModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'summonSummary' }, null);
     state.modalStack.push('summonSummary');

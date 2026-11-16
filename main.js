@@ -751,26 +751,48 @@ function loadStaticCollapseStates() {
 }
 
 /**
+ * 原生 <dialog> 的统一关闭入口。
+ * Esc 与 closedby="any" 的轻 dismiss 都触发 cancel：preventDefault 后走 history.back()，
+ * 与现有 pushState/popstate 模态栈保持同一契约（pending 防 Esc 连发导致多次后退）。
+ * elemental-modal 是必选流程，禁止 dismiss；Safari 无 closedby 时用指针双外侧判定回退。
+ */
+function setupModalDialogs() {
+    const supportsClosedBy = 'closedBy' in HTMLDialogElement.prototype;
+    document.querySelectorAll('dialog.modal-dialog').forEach(dialog => {
+        let pending = false;
+        const dismiss = () => {
+            if (pending || dialog.id === 'elemental-modal' || dialog.classList.contains('hidden')) return;
+            pending = true;
+            history.back();
+        };
+        dialog.addEventListener('cancel', e => { e.preventDefault(); dismiss(); });
+        dialog.addEventListener('close', () => { pending = false; });
+        dialog.addEventListener('show', () => { pending = false; });
+        if (!supportsClosedBy) {
+            let downOutside = false;
+            const outside = e => {
+                const r = dialog.getBoundingClientRect();
+                return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+            };
+            dialog.addEventListener('pointerdown', e => { downOutside = outside(e); });
+            dialog.addEventListener('pointerup', e => { if (downOutside && outside(e)) dismiss(); });
+        }
+    });
+}
+
+/**
  * 绑定页面上所有主要的事件监听器。
  */
 function addEventListeners() {
-    // --- 为图片展示弹窗添加关闭事件 ---
-    const imageModal = document.getElementById('image-modal');
-    const imageModalOverlay = document.getElementById('image-modal-overlay');
-
-    if (imageModalOverlay) {
-        imageModalOverlay.addEventListener('click', function (event) {
-            history.back();
-        });
-    }
+    setupModalDialogs();
     const {
-        themeToggleButton, langSelectBtn, langOptions, openFiltersBtn, closeFiltersModalBtn, filtersModalOverlay,
+        themeToggleButton, langSelectBtn, langOptions, openFiltersBtn, closeFiltersModalBtn,
         showWantedMissionBtn, showFarmingGuideBtn, showTeamSimulatorBtn,
         heroTable, teamDisplayGrid, myTeamsTabBtn, sharedTeamsTabBtn,
         openFavoritesBtn, shareFavoritesBtn, resetFiltersBtn,
-        modalOverlay, advancedFilterHelpBtn, helpModalOverlay,
-        lbTalentHelpBtn, lbTalentHelpModalOverlay,
-        exportSettingsBtn, importSettingsBtn, multiSelectModalOverlay, showRedeemCodesBtn
+        advancedFilterHelpBtn,
+        lbTalentHelpBtn,
+        exportSettingsBtn, importSettingsBtn, showRedeemCodesBtn
     } = uiElements;
 
     // --- 主界面UI事件 ---
@@ -795,6 +817,35 @@ function addEventListeners() {
         if (langOptions) langOptions.classList.add('hidden');
         if (newLang && newLang !== state.currentLang) changeLanguage(newLang);
     });
+    // --- 语言资源预取（提速 SPA 无缝切换）---
+    // 左键切语言是文档内 fetch、不加载新文档 ⇒ 不用 speculation rules（指南明确 SPA 禁用），
+    // 改为悬停/聚焦语言项时低优先级预取该语言实际要 fetch 的 JSON，切换时命中 HTTP 缓存。
+    const _prefetchedLangs = new Set();
+    const _canPrefetch = () => {
+        const c = navigator.connection;
+        return !(c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || '')));
+    };
+    function prefetchLangResources(lang) {
+        if (!lang || lang === state.currentLang || _prefetchedLangs.has(lang) || !_canPrefetch()) return;
+        _prefetchedLangs.add(lang);
+        const urls = Lang.TABLES.map(t => 'langs_json/' + t + '_' + lang + '.json');
+        urls.push('langs_json/i18n_' + lang + '.json',
+            'data/heroes_skills_' + lang + '.json',
+            'data/heroes_skills_balanced_' + lang + '.json');
+        urls.forEach(u => { fetch(av(u), { priority: 'low' }).catch(() => { }); });
+    }
+    let _prefetchTimer = null;
+    langOptions.addEventListener('pointerover', (e) => {
+        const opt = e.target.closest('.lang-option');
+        if (!opt) return;
+        clearTimeout(_prefetchTimer);
+        _prefetchTimer = setTimeout(() => prefetchLangResources(opt.getAttribute('data-lang')), 200);
+    });
+    langOptions.addEventListener('pointerout', () => clearTimeout(_prefetchTimer));
+    langOptions.addEventListener('focusin', (e) => {
+        const opt = e.target.closest('.lang-option');
+        if (opt) prefetchLangResources(opt.getAttribute('data-lang'));
+    });
     // “查看最新”按钮
     uiElements.resultsHeader.addEventListener('click', (event) => {
         if (event.target.id === 'view-latest-btn') {
@@ -811,25 +862,25 @@ function addEventListeners() {
         }
     });
 
-    // --- 特殊视图切换事件 ---
-    showWantedMissionBtn.addEventListener('click', () => initAndShowWantedMissionView());
-    showFarmingGuideBtn.addEventListener('click', () => initAndShowFarmingGuideView());
+    // --- 特殊视图切换事件（开关语义：已在本视图时再点一次 = 回列表） ---
+    showWantedMissionBtn.addEventListener('click', () => {
+        if (currentMainViewName() === 'wanted') exitMainViewToList();
+        else runViewTransition(() => initAndShowWantedMissionView());
+    });
+    showFarmingGuideBtn.addEventListener('click', () => {
+        if (currentMainViewName() === 'farming') exitMainViewToList();
+        else runViewTransition(() => initAndShowFarmingGuideView());
+    });
     addChatSimulatorEventListeners();
     showRedeemCodesBtn.addEventListener('click', openRedeemCodesModal);
 
     // --- 模态框事件 ---
     openFiltersBtn.addEventListener('click', openFiltersModal);
     closeFiltersModalBtn.addEventListener('click', closeFiltersModal);
-    filtersModalOverlay.addEventListener('click', closeFiltersModal);
-    modalOverlay.addEventListener('click', closeDetailsModal);
-    multiSelectModalOverlay.addEventListener('click', () => { if (uiElements.multiSelectModal && !uiElements.multiSelectModal.classList.contains('hidden')) history.back(); });
     advancedFilterHelpBtn.addEventListener('click', openHelpModal);
-    helpModalOverlay.addEventListener('click', closeHelpModal);
     lbTalentHelpBtn.addEventListener('click', openLbTalentHelpModal);
-    lbTalentHelpModalOverlay.addEventListener('click', closeLbTalentHelpModal);
     document.getElementById('close-redeem-codes-modal-btn').addEventListener('click', closeRedeemCodesModal);
     document.getElementById('redeem-codes-footer-close-btn').addEventListener('click', closeRedeemCodesModal);
-    uiElements.redeemCodesModalOverlay.addEventListener('click', closeRedeemCodesModal);
     // 更新兑换码数量
     updateRedeemCodeCount();
 
@@ -845,7 +896,7 @@ function addEventListeners() {
     heroTable.querySelector('thead').addEventListener('click', handleTableHeaderClick);
 
     // --- 队伍模拟器事件 ---
-    showTeamSimulatorBtn.addEventListener('click', toggleTeamSimulator);
+    showTeamSimulatorBtn.addEventListener('click', () => runViewTransition(toggleTeamSimulator));
     teamDisplayGrid.addEventListener('click', handleTeamGridClick);
     document.addEventListener('click', handleGlobalClickForSwapCancel);
     myTeamsTabBtn.addEventListener('click', () => switchTeamTab(false));
@@ -1280,7 +1331,7 @@ function addEventListeners() {
 
     const showLotterySimulatorBtn = document.getElementById('show-lottery-simulator-btn');
     if (showLotterySimulatorBtn) {
-        showLotterySimulatorBtn.addEventListener('click', LotterySimulator.toggle);
+        showLotterySimulatorBtn.addEventListener('click', () => runViewTransition(LotterySimulator.toggle));
     }
 
     // --- 聊天模拟器面板折叠事件 (移动端) ---
@@ -1474,33 +1525,32 @@ function handlePopState(event) {
 
         // --- 特殊情况：处理堆叠式模态框（例如，在抽奖结果上打开英雄详情）---
         if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
+            uiElements.modal.close();
             uiElements.modal.classList.add('hidden');
-            uiElements.modalOverlay.classList.add('hidden');
             state.modalContext.onClose(); // 调用回调以恢复下层模态框
             return; // `onClose` 已处理状态，直接返回
         }
 
         // --- 标准模态框关闭逻辑 ---
-        let modal, overlay;
+        let modal;
         switch (modalType) {
-            case 'details': modal = uiElements.modal; overlay = uiElements.modalOverlay; break;
-            case 'filters': modal = uiElements.filtersModal; overlay = uiElements.filtersModalOverlay; break;
-            case 'help': modal = uiElements.helpModal; overlay = uiElements.helpModalOverlay; break;
-            case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; overlay = uiElements.lbTalentHelpModalOverlay; break;
-            case 'multiSelect': modal = uiElements.multiSelectModal; overlay = uiElements.multiSelectModalOverlay; break;
-            case 'importSettings': modal = uiElements.importSettingsModal; overlay = uiElements.importSettingsModalOverlay; break;
-            case 'exportSettings': modal = uiElements.exportSettingsModal; overlay = uiElements.exportSettingsModalOverlay; break;
-            case 'summonSummary': modal = uiElements.summonSummaryModal; overlay = uiElements.summonSummaryModalOverlay; break;
-            case 'redeemCodes': modal = uiElements.redeemCodesModal; overlay = uiElements.redeemCodesModalOverlay; break;
+            case 'details': modal = uiElements.modal; break;
+            case 'filters': modal = uiElements.filtersModal; break;
+            case 'help': modal = uiElements.helpModal; break;
+            case 'lbTalentHelp': modal = uiElements.lbTalentHelpModal; break;
+            case 'multiSelect': modal = uiElements.multiSelectModal; break;
+            case 'importSettings': modal = uiElements.importSettingsModal; break;
+            case 'exportSettings': modal = uiElements.exportSettingsModal; break;
+            case 'summonSummary': modal = uiElements.summonSummaryModal; break;
+            case 'redeemCodes': modal = uiElements.redeemCodesModal; break;
             case 'heroPortrait':
                 modal = document.getElementById('image-modal');
-                overlay = document.getElementById('image-modal-overlay');
                 if (modal) modal.classList.remove('show-hero-portrait');
+                if (typeof disposeActiveAnimationPlayer === 'function') disposeActiveAnimationPlayer();
                 break;
         }
 
-        if (modal) modal.classList.add('hidden');
-        if (overlay) overlay.classList.add('hidden');
+        if (modal) { modal.close(); modal.classList.add('hidden'); }
 
         // 仅当最后一个模态框关闭时，才恢复页面滚动
         if (state.modalStack.length === 0) {
@@ -1697,11 +1747,14 @@ function toggleDonate() {
  */
 function updateDonateButton() {
     const button = document.getElementById('toggle-donate-btn');
+    const langDict = i18n[state.currentLang];
+    const isHidden = isDonateHidden();
     if (button) {
-        const langDict = i18n[state.currentLang];
-        const isHidden = isDonateHidden();
         button.textContent = isHidden ? langDict.showDonate : langDict.hideDonate;
     }
+    // 跑马灯属自动播放动效（WCAG 2.2.2）：此按钮就是它的可见"隐藏"控制
+    const container = document.querySelector('.donation-list-container-wrapper');
+    if (container) container.classList.toggle('hidden', isHidden);
 }
 
 /**

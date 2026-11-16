@@ -109,7 +109,7 @@ function updateChatPreview() {
             html += `<img loading="lazy" src="imgs/emoticons/${emojiName}.webp" decoding="async" alt="${token}" style="width: 20px; height: 20px; vertical-align: middle;">`;
         } else {
             // 普通文本，应用当前颜色
-            const textWithBreaks = token.replace(/\n/g, '<br>');
+            const textWithBreaks = escapeHtml(token).replace(/\n/g, '<br>');
             html += `<span style="color: ${currentColor};">${textWithBreaks}</span>`;
         }
     });
@@ -127,7 +127,12 @@ function addChatSimulatorEventListeners() {
     if (!showChatSimulatorBtn) return;
 
     showChatSimulatorBtn.addEventListener('click', () => {
-        initAndShowChatSimulatorView(); // 切换到聊天模拟器视图
+        // 开关语义：已在聊天模拟器时再点一次 = 回列表（一次性初始化逻辑只在进入时走）
+        if (currentMainViewName() === 'chat') {
+            exitMainViewToList();
+            return;
+        }
+        runViewTransition(() => initAndShowChatSimulatorView()); // 切换到聊天模拟器视图
 
         // 使用标志位确保初始化逻辑只执行一次
         if (state.isSimulatorInitialized) return;

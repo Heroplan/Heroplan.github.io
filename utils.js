@@ -18,6 +18,11 @@ function av(rel) {
     return rel + '?v=' + v;
 }
 
+/** 用户可控文本（聊天输入、分享链接队伍名等）拼进 innerHTML 前必须过这里。 */
+function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 /**
  * 设置一个 Cookie。
  * @param {string} name - Cookie 的名称。

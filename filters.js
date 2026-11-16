@@ -538,7 +538,6 @@ function resetAllFilters() {
  */
 function openMultiSelectModal(filterType, title) {
     const modal = uiElements.multiSelectModal;
-    const overlay = uiElements.multiSelectModalOverlay;
     const modalContent = modal.querySelector('#multi-select-modal-content');
     const langDict = i18n[state.currentLang] || {};
 
@@ -585,7 +584,7 @@ function openMultiSelectModal(filterType, title) {
         : '';
 
     modalContent.innerHTML = `
-        <div class="multi-select-header"><h3>${title}</h3>${searchHTML}<button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
+        <div class="multi-select-header"><h3 id="multi-select-modal-title">${title}</h3>${searchHTML}<button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
         <div class="multi-select-options-grid">${optionsHTML}</div>
         <div class="multi-select-empty hidden" id="multi-select-empty">${langDict.noMatchingResults || ''}</div>
         <div class="multi-select-footer">
@@ -648,7 +647,7 @@ function openMultiSelectModal(filterType, title) {
 
     // --- 通用模态框逻辑 ---
     modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    modal.showModal();
     document.body.classList.add('modal-open');
     modalContent.scrollTop = 0;
     // 打开即聚焦筛选框（只有选项很多的类型才有）⇒ 直接打字就能缩小范围。
@@ -1236,6 +1235,8 @@ function initializeNameAutocomplete() {
                     applyFiltersAndRender();
                 }
             } else if (e.key === 'Escape') {
+                // 候选列表开着时 Esc 只关列表：preventDefault 阻止原生 dialog 的 cancel 把整个筛选弹窗关掉
+                e.preventDefault();
                 closeAutocompleteList();
             }
         }

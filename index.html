@@ -10,6 +10,7 @@
          ⚠ 站内没有纯 fragment 导航（语言菜单为真实 href 并由 JS 拦截），base 不会把 `#x` 带偏。 -->
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <style>
         /* 确保背景颜色变量能被立即使用 */
@@ -44,6 +45,10 @@
             width: 60px;
             height: 60px;
             animation: spin 1.2s linear infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader-spinner { animation: none; }
         }
 
         .js-loading .header-buttons,
@@ -264,8 +269,8 @@
     }
     </script>
     <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
-    <link rel="stylesheet" href="theme.css?v=20261104a">
-    <link rel="stylesheet" href="style.css?v=20261028b">
+    <link rel="stylesheet" href="theme.css?v=20261116a">
+    <link rel="stylesheet" href="style.css?v=20261116a">
     <link rel="stylesheet" href="talent-tree.css?v=20261028b">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
     <script>
@@ -291,6 +296,8 @@
 </head>
 
 <body class="js-loading">
+    <a href="#main-content" class="skip-link" data-lang-key="skipToContent">跳到主要内容</a>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <div id="page-loader-overlay">
         <div class="loader-spinner"></div>
     </div>
@@ -299,7 +306,8 @@
         <header>
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href="/">帝国与谜题英雄资料库</a></h1>
-                <div class="header-buttons">
+                <nav class="header-buttons" aria-labelledby="main-nav-label">
+                    <span id="main-nav-label" class="visually-hidden" data-lang-key="mainNavLabel">站点导航</span>
                     <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
                         <img src="imgs/other/gift.webp" alt="Redeem Codes"
                             style="width: 24px; height: 24px; object-fit: contain;">
@@ -366,7 +374,7 @@
                         <img src="imgs/other/github.svg"
                             alt="GitHub" style="width: 24px; height: 24px; object-fit: contain;">
                     </a>
-                </div>
+                </nav>
             </div>
             <div class="header-info-container">
                 <div class="header-info-content">
@@ -393,6 +401,7 @@
             <p id="last-updated"></p>
         </header>
 
+        <main id="main-content" tabindex="-1">
         <section class="seo-text-hidden">
             <h2 data-lang-key="seoHeading">《帝国与谜题》全语言英雄资料库 · 立绘展示 · 未来英雄预览 · 玩家工具箱</h2>
             <p data-lang-key="seoPara1">
@@ -461,13 +470,12 @@
             </div>
         </div>
 
-        <div id="summon-summary-modal-overlay" class="hidden"></div>
-        <div id="summon-summary-modal" class="hidden">
-            <h3 data-lang-key="summonResultsTitle">召唤结果</h3>
+        <dialog id="summon-summary-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="summon-summary-title">
+            <h3 id="summon-summary-title" data-lang-key="summonResultsTitle">召唤结果</h3>
             <div id="summon-summary-scroll-container">
             </div>
             <button id="summary-close-btn" class="action-button" data-lang-key="summonSummaryOkBtn">OK</button>
-        </div>
+        </dialog>
         <div id="main-content-area">
             <div id="lottery-simulator-wrapper" class="hidden">
                 <div id="lottery-simulator-display">
@@ -559,7 +567,7 @@
                     <div class="quick-search-name-field">
                         <label for="quick-name-input" data-lang-key="nameLabel">名称:</label>
                         <div class="quick-search-name-control">
-                            <input type="text" id="quick-name-input" class="quick-search-input" autocomplete="off">
+                            <input type="text" id="quick-name-input" class="quick-search-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                             <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
                         </div>
                     </div>
@@ -580,7 +588,7 @@
                     <div class="quick-search-name-field">
                         <label for="quick-name-input-mobile" data-lang-key="nameLabel">名称:</label>
                         <div class="quick-search-name-control">
-                            <input type="text" id="quick-name-input-mobile" class="quick-search-input" autocomplete="off">
+                            <input type="text" id="quick-name-input-mobile" class="quick-search-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                             <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
                         </div>
                     </div>
@@ -664,18 +672,17 @@
                 </div>
             </div>
         </div>
+        </main>
     </div>
 
-    <div id="modal-overlay" class="hidden"></div>
-    <div id="modal" class="hidden">
+    <dialog id="modal" class="modal-dialog hidden" closedby="any" aria-labelledby="modal-title-h2">
         <div id="modal-content"></div>
-    </div>
+    </dialog>
 
-    <div id="filters-modal-overlay" class="hidden"></div>
-    <div id="filters-modal" class="hidden">
+    <dialog id="filters-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="filters-modal-title">
         <div id="filters-modal-content">
             <div class="filters-modal-header">
-                <h2 data-lang-key="filterHeroes">筛选英雄</h2>
+                <h2 id="filters-modal-title" data-lang-key="filterHeroes">筛选英雄</h2>
                 <button id="close-filters-modal-btn" class="close-btn">❌</button>
             </div>
 
@@ -692,7 +699,7 @@
                         <div class="filter-item">
                             <label for="name-input" data-lang-key="nameLabel">名称:</label>
                             <div class="autocomplete-container">
-                                <input type="text" id="name-input" autocomplete="off">
+                                <input type="text" id="name-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                                 <div id="name-autocomplete-list" class="autocomplete-list hidden"></div>
                                 <button type="button" id="clear-input" class="clear-button">×</button>
                             </div>
@@ -714,15 +721,15 @@
                         <div class="filter-item">
                             <label for="type-input" data-lang-key="skillTypeLabel">特殊技能类别:</label>
                             <input type="text" id="type-input" data-lang-key-placeholder="skillTypePlaceholder"
-                                placeholder="例如：增益,异常,治疗">
+                                placeholder="例如：增益,异常,治疗" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
                             <label for="effects-input" data-lang-key="skillTextLabel">特殊技能文本:</label>
-                            <input type="text" id="effects-input" placeholder="">
+                            <input type="text" id="effects-input" placeholder="" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
                             <label for="passives-input" data-lang-key="passiveSkillLabel">被动技能文本:</label>
-                            <input type="text" id="passives-input" placeholder="">
+                            <input type="text" id="passives-input" placeholder="" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
                             <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">一键搜索技能词条</label>
@@ -940,37 +947,29 @@
             <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
             <button id="toggle-donate-btn" class="action-button" data-lang-key="hideDonate" hidden>隐藏赞助</button>
         </div>
-    </div>
-    </div>
+    </dialog>
 
-    <div id="help-modal-overlay" class="hidden"></div>
-    <div id="help-modal" class="hidden"></div>
-    <div id="lb-talent-help-modal-overlay" class="hidden"></div>
-    <div id="lb-talent-help-modal" class="hidden"></div>
-    <div id="multi-select-modal-overlay" class="hidden"></div>
-    <div id="multi-select-modal" class="hidden">
+    <dialog id="help-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="help-modal-title"></dialog>
+    <dialog id="lb-talent-help-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="lb-talent-help-modal-title"></dialog>
+    <dialog id="multi-select-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="multi-select-modal-title">
         <div id="multi-select-modal-content">
         </div>
-    </div>
+    </dialog>
 
-    <div id="image-modal-overlay" class="hidden"></div>
-    <div id="image-modal" class="hidden">
+    <dialog id="image-modal" class="modal-dialog hidden" closedby="any">
         <div id="image-modal-content"></div>
-    </div>
-    <div id="import-settings-modal-overlay" class="hidden"></div>
-    <div id="import-settings-modal" class="hidden">
+    </dialog>
+    <dialog id="import-settings-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="import-settings-modal-title">
         <div id="import-settings-modal-content">
         </div>
-    </div>
-    <div id="export-settings-modal-overlay" class="hidden"></div>
-    <div id="export-settings-modal" class="hidden">
+    </dialog>
+    <dialog id="export-settings-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="export-settings-modal-title">
         <div id="export-settings-modal-content">
         </div>
-    </div>
-    <div id="elemental-modal-overlay" class="hidden"></div>
-    <div id="elemental-modal" class="hidden">
+    </dialog>
+    <dialog id="elemental-modal" class="modal-dialog hidden" aria-labelledby="elemental-modal-title">
         <div id="elemental-modal-content">
-            <h3 data-lang-key="selectElementTitle">请选择元素</h3>
+            <h3 id="elemental-modal-title" data-lang-key="selectElementTitle">请选择元素</h3>
             <div class="elemental-selection-container">
                 <img src="imgs/element/red.webp" class="elemental-icon" data-element="red" alt="红色">
                 <img src="imgs/element/green.webp" class="elemental-icon" data-element="green" alt="绿色">
@@ -979,18 +978,16 @@
                 <img src="imgs/element/purple.webp" class="elemental-icon" data-element="purple" alt="紫色">
             </div>
         </div>
-    </div>
-    <div id="probability-modal-overlay" class="hidden"></div>
-    <div id="probability-modal" class="hidden">
+    </dialog>
+    <dialog id="probability-modal" class="modal-dialog hidden" closedby="any">
         <div id="probability-modal-content">
         </div>
-    </div>
+    </dialog>
 
     <!-- 兑换码模态框 -->
-    <div id="redeem-codes-modal-overlay" class="hidden"></div>
-    <div id="redeem-codes-modal" class="hidden">
+    <dialog id="redeem-codes-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="redeem-codes-modal-title">
         <div class="filters-modal-header">
-            <h2 data-lang-key="redeemCodesModalTitle"></h2>
+            <h2 id="redeem-codes-modal-title" data-lang-key="redeemCodesModalTitle"></h2>
             <button id="close-redeem-codes-modal-btn" class="close-btn">✖</button>
         </div>
         <div id="redeem-codes-content">
@@ -999,7 +996,7 @@
             <button class="close-bottom-btn" id="redeem-codes-footer-close-btn"
                 data-lang-key="detailsCloseBtn"></button>
         </div>
-    </div>
+    </dialog>
 
     <div class="floating-action-buttons">
         <button id="open-filters-btn">🔍</button>
@@ -1008,24 +1005,24 @@
     <!-- 数据档版本表（window.AV：每个 json 的内容哈希，主站 pre-commit 钩子增量维护）。
          必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
          （av() 退回 Date.now()，等于不缓存）。 -->
-    <script src="./asset_ver.js?v=20261115a" defer></script>
+    <script src="./asset_ver.js?v=20261116a" defer></script>
     <script src="./i18n_funcs.js?v=20261111a" defer></script>
     <script src="./langs.js?v=20261109a" defer></script>
     <script src="./lz-string.min.js?v=20261028b" defer></script>
     <script src="./talent-tree.js?v=20261109a" defer></script>
     <script src="./data.js?v=20261105a" defer></script>
     <script src="./eva1-parser.js?v=20261109a" defer></script>
-    <script src="./utils.js?v=20261109a" defer></script>
+    <script src="./utils.js?v=20261116a" defer></script>
     <script src="./state.js?v=20261109a" defer></script>
-    <script src="./ui.js?v=20261109a" defer></script>
-    <script src="./filters.js?v=20261109a" defer></script>
-    <script src="./render.js?v=20261109a" defer></script>
-    <script src="./special-views.js?v=20261109a" defer></script>
-    <script src="./lottery-simulator.js?v=20261109a" defer></script>
-    <script src="./team-simulator.js?v=20261109a" defer></script>
-    <script src="./chat-simulator.js?v=20261104b" defer></script>
-    <script src="./import-export.js?v=20261109a" defer></script>
-    <script src="./main.js?v=20261111a" defer></script>
+    <script src="./ui.js?v=20261116a" defer></script>
+    <script src="./filters.js?v=20261116a" defer></script>
+    <script src="./render.js?v=20261116a" defer></script>
+    <script src="./special-views.js?v=20261116a" defer></script>
+    <script src="./lottery-simulator.js?v=20261116a" defer></script>
+    <script src="./team-simulator.js?v=20261116a" defer></script>
+    <script src="./chat-simulator.js?v=20261116a" defer></script>
+    <script src="./import-export.js?v=20261116a" defer></script>
+    <script src="./main.js?v=20261116a" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

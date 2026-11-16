@@ -83,16 +83,12 @@ function toggleTeamSimulator() {
     if (isActive && state.lotterySimulatorActive) {
         LotterySimulator.toggle();
     }
-    const { teamSimulatorWrapper, showTeamSimulatorBtn, headerInfoContainer, heroTableView, wantedMissionView, farmingGuideView, chatSimulatorView, myTeamsTabBtn, sharedTeamsTabBtn } = uiElements;
+    const { teamSimulatorWrapper, headerInfoContainer, heroTableView, wantedMissionView, farmingGuideView, chatSimulatorView, myTeamsTabBtn, sharedTeamsTabBtn } = uiElements;
 
     if (state.teamSimulatorActive) {
         headerInfoContainer.classList.add('hidden');
         uiElements.donationlistcontainer.classList.add('hidden');
         if (teamSimulatorWrapper) teamSimulatorWrapper.classList.remove('hidden');
-        if (showTeamSimulatorBtn) {
-            showTeamSimulatorBtn.classList.add('simulator-exit-btn');
-            showTeamSimulatorBtn.title = i18n[state.currentLang].returnToList;
-        }
         heroTableView.classList.remove('hidden');
         wantedMissionView.classList.add('hidden');
         farmingGuideView.classList.add('hidden');
@@ -108,12 +104,8 @@ function toggleTeamSimulator() {
         document.body.classList.add('team-mode-active');
 
     } else {
-        if (showTeamSimulatorBtn) {
-            showTeamSimulatorBtn.classList.remove('simulator-exit-btn');
-            showTeamSimulatorBtn.title = "队伍模拟器";
-        }
         headerInfoContainer.classList.remove('hidden');
-        uiElements.donationlistcontainer.classList.remove('hidden');
+        if (!isDonateHidden()) uiElements.donationlistcontainer.classList.remove('hidden');
         if (teamSimulatorWrapper) teamSimulatorWrapper.classList.add('hidden');
         state.multiSelectFilters.filterScope = ['all'];
         updateFilterButtonUI('filterScope');
@@ -122,6 +114,8 @@ function toggleTeamSimulator() {
         // 主动退出 ⇒ 地址回到列表（带条件，见 special-views.js::syncViewUrlAfterToggle）
         if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
     }
+    // 按钮红态/提示统一由视图状态推导（含另外四个视图按钮的互斥复位）
+    if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
 }
 
 /**
@@ -491,7 +485,7 @@ function renderSavedTeams(teams, isSharedView = false) {
 
         row.innerHTML = `
             <div class="team-row-main-content">
-                <div class="saved-team-name" title="${team.name}">${team.name}</div>
+                <div class="saved-team-name" title="${escapeHtml(team.name)}">${escapeHtml(team.name)}</div>
                 <div class="saved-team-avatars">${avatarsHTML}</div>
             </div>
             ${buttonHTML}`;

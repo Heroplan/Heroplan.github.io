@@ -23,10 +23,6 @@ body.lottery-mode-active #view-balance-heroes-btn{display: none}
 .skip-link{position:fixed;top:8px;inset-inline-start:8px;z-index:10000;transform:translateY(-200%);padding:8px 16px;background:var(--md-sys-color-surface);color:var(--md-sys-color-on-surface);border:2px solid var(--focus-ring);border-radius:8px;text-decoration:none;font-weight:bold;}
 .skip-link:focus-visible{transform:translateY(0);}
 #main-content:focus-visible{outline:none;}
-@media (prefers-reduced-motion: reduce){
-.hero-avatar-rank-container.animate-rank-in,.summon-animation-element.anim-hero-art,.anim-light-img,.bonus-summon-overlay,.rays-background,.hero-portrait-container::before,.summary-hero-card.star-5-marquee::before,.hero-avatar-container.star-5-marquee::before,#donation-list-box.is-scrolling{animation:none;}
-.action-button,.action-button-right,.close-btn,.close-bottom-btn,#open-filters-btn,.favorite-toggle-icon,.skill-type-tag,.reset-tag,.help-btn,.toggle-button,.favorite-color-item,.remove-favorite-btn,#emoji-grid img,.panel-toggle-btn,.quick-search-clear,.clear-button,.hero-action-icon,.collapse-arrow,.featured-hero-slot,#clear-history-btn,.elemental-icon,.hero-avatar-container-modal,.summary-hero-card,.autocomplete-item,.autocomplete-avatar,.chat-simulator-panel,.filter-button,.quick-filter-button,.multi-select-option,.simulator-exit-btn,#modal .favorite-btn,#modal .share-btn{transition-property:background-color,color,border-color,box-shadow,opacity,filter;}
-}
 .donation-list-wrapper:hover #donation-list-box.is-scrolling{animation-play-state:paused;}
 dialog.modal-dialog{inset:auto;margin:0;border:0;padding:0;background:transparent;color:inherit;opacity:0;transition-property:opacity,scale,display,overlay;transition-duration:0.25s;transition-timing-function:ease-out;transition-behavior:allow-discrete;}
 @media (prefers-reduced-motion:no-preference){dialog.modal-dialog{scale:0.96;}}

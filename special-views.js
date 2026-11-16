@@ -272,7 +272,8 @@ function saveCurrentViewScrollPosition() {
  */
 function showHeroListViewUI() {
     saveCurrentViewScrollPosition(); // 保存当前视图的位置
-    applyFiltersAndRender(); // 重新应用筛选并渲染英雄列表
+    // 列表已渲染且筛选结果未变 ⇒ 跳过整表重渲：退出特殊页重建 2000+ 行会阻塞主线程、点击延迟/丢失
+    if (!isListRenderFresh()) applyFiltersAndRender();
 
     // 显示英雄列表，隐藏其他所有特殊视图
     uiElements.heroTableView.classList.remove('hidden');

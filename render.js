@@ -221,6 +221,16 @@ function balancedToggleHTML(hero, section) {
 // 其余行在浏览器空闲时续渲 —— 每批都很短，主线程能及时让出。
 var _tableRenderGen = 0;        // 渲染代号：防止上一次未完成的续渲继续往新结果里追加
 const TABLE_ROW_CHUNK = 60;     // 每批渲染的行数（约一屏多一点）
+var _lastRenderedHeroesRef = null; // 上次完整渲染的筛选结果数组引用：退出特殊视图时据此跳过冗余整表重渲
+const VT_THRESHOLD = 120;       // 行数超过此值启用虚拟滚动：DOM 只留可见窗口，初始/重渲/退出/滚动均 O(可见行数)
+const VT_OVERSCAN = 8;          // 可见区上下各多渲染的缓冲行数
+var _vtRowH = 57;               // 行高（实测 uniform；首次渲染后按实际校正）
+var _vtHeroes = null;           // 虚拟滚动当前完整结果数组（null=未启用，走全量分块渲染）
+var _vtBuildRow = null;         // 当前 buildRow 闭包（供滚动重绘复用）
+var _vtColspan = 0;
+var _vtRange = null;            // 当前窗口 [start,end)
+var _vtScrollBound = false;
+var _vtRafPending = false;
 
 function yieldToMain() {
     if (typeof scheduler !== 'undefined' && typeof scheduler.yield === 'function') return scheduler.yield();
@@ -264,7 +274,7 @@ async function renderTable(heroes) {
     let thead = heroTable.querySelector('thead');
     if (!thead) thead = heroTable.appendChild(document.createElement('thead'));
 
-    thead.innerHTML = '<tr>' + colKeys.map(key => {
+    thead.innerHTML = '<tr aria-rowindex="1">' + colKeys.map(key => {
         const isSortable = sortableKeys.includes(key);
         let sortIndicator = '';
         if (isSortable && state.currentSort.key === key) {
@@ -290,6 +300,7 @@ async function renderTable(heroes) {
     if (!tbody) tbody = heroTable.appendChild(document.createElement('tbody'));
 
     if (heroes.length === 0) {
+        _vtHeroes = null; _vtRange = null;
         tbody.innerHTML = `<tr><td colspan="${colKeys.length}" class="empty-results-message">${langDict.noResults}</td></tr>`;
         return;
     }
@@ -458,8 +469,18 @@ async function renderTable(heroes) {
 
             return `<td class="col-${key}">${content}</td>`;
         }).join('');
-        return `<tr class="table-row" data-hero-id="${hero.originalIndex}">${cellsHTML}</tr>`;
+        return `<tr class="table-row" data-hero-id="${hero.originalIndex}" aria-rowindex="${rowIdx + 2}">${cellsHTML}</tr>`;
     };
+
+    heroTable.setAttribute('aria-rowcount', String(heroes.length + 1));
+
+    // 大列表虚拟滚动：DOM 只留可见窗口 + 上下 spacer 维持滚动高度，根治 2000+ 行的布局/重建成本
+    if (heroes.length > VT_THRESHOLD) {
+        renderVirtualized(heroes, buildRow, colKeys.length);
+        _lastRenderedHeroesRef = heroes;
+        return;
+    }
+    _vtHeroes = null; _vtRange = null;   // 小列表全量渲染，关闭虚拟滚动
 
     // ── 分块构建 + 续渲：首屏一批同步画出（LCP），其余每批让出主线程（INP）──
     const gen = ++_tableRenderGen;
@@ -481,6 +502,85 @@ async function renderTable(heroes) {
         tbody.insertAdjacentHTML('beforeend', batch.join(''));
     }
     if (total > TABLE_ROW_CHUNK) adjustStickyHeaders();
+    _lastRenderedHeroesRef = heroes;   // 本批结果已完整落 DOM（中途被 gen 守卫放弃则不标记 ⇒ 下次仍重渲）
+}
+
+/**
+ * 列表 DOM 是否已最新、可跳过整表重渲：当前筛选结果与上次完整渲染是同一数组引用、
+ * 行数与 DOM 吻合、且不在模拟器模式。特殊视图进出只切 .hidden 不改筛选 ⇒ 引用不变 ⇒
+ * 退出时跳过重建 2000+ 行（否则阻塞主线程数百毫秒，表现为退出后点击延迟/丢失）。
+ * 筛选/排序/语言/设置变化都会产生新引用或直接重渲 ⇒ 判据自动失效，不会漏更新。
+ */
+function isListRenderFresh() {
+    const heroes = state.filteredHeroes;
+    if (!heroes || heroes.length === 0 || heroes !== _lastRenderedHeroesRef) return false;
+    if (state.teamSimulatorActive || state.lotterySimulatorActive) return false;
+    const tbody = uiElements.heroTable && uiElements.heroTable.querySelector('tbody');
+    if (!tbody) return false;
+    if (_vtHeroes === heroes) return true;                        // 虚拟滚动：窗口已按当前数组渲染
+    return tbody.querySelectorAll('tr').length === heroes.length;  // 全量渲染：行数吻合
+}
+
+// ── 虚拟滚动：只渲染可见窗口，上下用 spacer 行撑起总滚动高度（行高 uniform）──
+function vtComputeRange() {
+    const wrapper = uiElements.resultsWrapper;
+    const total = _vtHeroes.length;
+    const scrollTop = wrapper ? wrapper.scrollTop : 0;
+    const viewH = wrapper ? wrapper.clientHeight : 600;
+    const visible = Math.ceil(viewH / _vtRowH);
+    const start = Math.max(0, Math.floor(scrollTop / _vtRowH) - VT_OVERSCAN);
+    const end = Math.min(total, start + visible + VT_OVERSCAN * 2);
+    return [start, end];
+}
+
+function vtPaint() {
+    const tbody = uiElements.heroTable && uiElements.heroTable.querySelector('tbody');
+    if (!tbody || !_vtHeroes || !_vtBuildRow) return;
+    const [start, end] = vtComputeRange();
+    _vtRange = [start, end];
+    const total = _vtHeroes.length;
+    const topH = start * _vtRowH;
+    const botH = (total - end) * _vtRowH;
+    const parts = [];
+    if (topH > 0) parts.push(`<tr class="vt-spacer" aria-hidden="true"><td colspan="${_vtColspan}" style="height:${topH}px"></td></tr>`);
+    for (let i = start; i < end; i++) parts.push(_vtBuildRow(_vtHeroes[i], i));
+    if (botH > 0) parts.push(`<tr class="vt-spacer" aria-hidden="true"><td colspan="${_vtColspan}" style="height:${botH}px"></td></tr>`);
+    tbody.innerHTML = parts.join('');
+}
+
+function vtOnScroll() {
+    if (!_vtHeroes || _vtRafPending) return;
+    // 列表被特殊视图隐藏(display:none)时 scrollTop 会归零并触发 scroll：此时重绘会把窗口
+    // 重置到顶部，退出恢复滚动时再整窗重建 ⇒ 图标 img 节点被重建出现 alt 占位闪现。隐藏期间保持窗口不动。
+    if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
+    _vtRafPending = true;
+    requestAnimationFrame(() => {
+        _vtRafPending = false;
+        if (!_vtHeroes) return;
+        if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
+        const [s, e] = vtComputeRange();
+        if (_vtRange && s === _vtRange[0] && e === _vtRange[1]) return;   // 窗口未变 ⇒ 不重绘
+        vtPaint();
+    });
+}
+
+function renderVirtualized(heroes, buildRow, colspan) {
+    _vtHeroes = heroes;
+    _vtBuildRow = buildRow;
+    _vtColspan = colspan;
+    const wrapper = uiElements.resultsWrapper;
+    if (wrapper) wrapper.scrollTop = 0;   // 新结果回到顶部
+    vtPaint();
+    const firstRow = uiElements.heroTable.querySelector('tbody tr.table-row');
+    if (firstRow) {
+        const h = firstRow.offsetHeight;
+        if (h > 0 && h !== _vtRowH) { _vtRowH = h; vtPaint(); }   // 按实际行高校正（跨语言微差）
+    }
+    adjustStickyHeaders();
+    if (!_vtScrollBound && wrapper) {
+        _vtScrollBound = true;
+        wrapper.addEventListener('scroll', vtOnScroll, { passive: true });
+    }
 }
 
 /**

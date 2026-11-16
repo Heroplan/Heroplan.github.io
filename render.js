@@ -1357,7 +1357,7 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
         pause();
         drawFrame(currentLayers(), currentBounds());
         fitCanvasToViewport();
-        if (hasAnim && !matchMedia('(prefers-reduced-motion: reduce)').matches) play();
+        if (hasAnim) play();
     }
 
     // 初始播放 default_clip

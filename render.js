@@ -1493,13 +1493,19 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
  */
 function showCopyToast(message) {
     let toast = document.getElementById('copy-toast');
+    const canPopover = typeof HTMLElement !== 'undefined' && 'showPopover' in HTMLElement.prototype;
     if (!toast) {
         toast = document.createElement('div');
         toast.id = 'copy-toast';
         Object.assign(toast.style, {
             position: 'fixed',
+            inset: 'auto',
             left: '50%',
             bottom: '12%',
+            margin: '0',
+            border: '0',
+            width: 'auto',
+            height: 'auto',
             transform: 'translateX(-50%) translateY(10px)',
             background: 'rgba(20, 20, 20, 0.88)',
             color: '#fff',
@@ -1509,27 +1515,39 @@ function showCopyToast(message) {
             lineHeight: '1.2',
             zIndex: '99999',
             pointerEvents: 'none',
-            opacity: '0',
-            transition: 'opacity 0.25s ease, transform 0.25s ease',
+            opacity: '1',
+            transition: 'transform 0.25s ease',
             whiteSpace: 'nowrap',
             maxWidth: '90vw',
             overflow: 'hidden',
             textOverflow: 'ellipsis'
         });
+        // manual popover ⇒ 进入 top layer，画在 <dialog showModal()> 及其 ::backdrop 之上；
+        // 不锁焦点、不挡交互。详情弹窗开着时复制 ID 的提示否则会被 top layer 完全盖住。
+        if (canPopover) toast.setAttribute('popover', 'manual');
         document.body.appendChild(toast);
     }
 
     toast.textContent = message;
 
-    requestAnimationFrame(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateX(-50%) translateY(0)';
-    });
+    if (canPopover) {
+        try { if (!toast.matches(':popover-open')) toast.showPopover(); } catch (e) { /* 旧浏览器回退普通 fixed */ }
+    }
+    // 显示期 opacity 恒为 1 且不参与过渡（只让 transform 滑入）：可见性是静态值，
+    // 不依赖 rAF / 过渡完成，后台标签或渲染节流时计算值也不会停在 0。
+    toast.style.transition = 'transform 0.25s ease';
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
 
     clearTimeout(toast._hideTimer);
+    clearTimeout(toast._popHideTimer);
     toast._hideTimer = setTimeout(() => {
+        toast.style.transition = 'transform 0.25s ease, opacity 0.25s ease';
         toast.style.opacity = '0';
         toast.style.transform = 'translateX(-50%) translateY(10px)';
+        toast._popHideTimer = setTimeout(() => {
+            if (canPopover) { try { toast.hidePopover(); } catch (e) { } }
+        }, 300);
     }, 1600);
 }
 

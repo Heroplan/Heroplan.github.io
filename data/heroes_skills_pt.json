@@ -61522,24 +61522,23 @@
   {
    "familyBonus": [
     "No início da batalha, cada membro desta família aplica uma recompensa a um inimigo aleatório por 6 turnos. O efeito não pode ser expurgado.\n[*]Bônus por 1 / 2 / 3 heróis:",
-    "[*]A recompensa é ativada quando o inimigo recebe 2500 / 2000 / 1500 dano cumulativo.\n[*] A recompensa causa 1500 de dano ao inimigo quando ativada.\n[*]Quando os heróis defensores lançam habilidades especiais, priorizam os inimigos com recompensa.",
-    "[*] Cada inimigo pode ter apenas uma recompensa. Em vez de receber uma segunda recompensa, o dano ao ativar aumenta em 1000.\n[*] A recompensa é removida quando é ativada ou quando sua duração chega ao fim."
+    "[*]A recompensa é ativada quando o inimigo recebe 2500 / 2250 / 2000 dano cumulativo.\n[*] A recompensa causa 1000 de dano ao inimigo quando ativada.\n[*]Quando os heróis defensores lançam habilidades especiais, priorizam os inimigos com recompensa.",
+    "[*] Cada inimigo pode ter apenas uma recompensa. Em vez de receber uma segunda recompensa, o dano ao ativar aumenta em 250.\n[*] A recompensa é removida quando é ativada ou quando sua duração chega ao fim."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Determinação Verdadeira",
-     "text": "Quanto menos aliados estão no campo de batalha, mais poderoso este personagem fica.\n[*]Bônus por 5 / 4 / 3 / 2 / 1 aliados restantes:\n[*] 0% / 10% / 25% / 50% / 100% de ataque\n[*] 0% / 10% / 25% / 50% / 100% de defesa"
+     "text": "Quanto menos aliados estão no campo de batalha, mais poderoso este personagem fica.\n[*]Bônus por 5 / 4 / 3 / 2 / 1 aliados restantes:\n[*] 0% / 5% / 10% / 25% / 50% de ataque\n[*] 0% / 5% / 10% / 25% / 50% de defesa"
     }
    ],
    "skills": [
     {
      "id": "so_long_suckers",
      "lines": [
-      "Rouba 20% de mana do alvo e dos inimigos próximos e distribui entre os aliados. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
-      "Desfere 6 golpes com 300% de dano distribuído aleatoriamente entre o alvo e os inimigos próximos.",
-      "Acumulação (máx.: 10): cada acerto adiciona uma acumulação de sangramento, que causa[#Dynamic] 70 [#]de dano de sangramento por turno. (O expurgo reduz 1 acumulação negativa.)",
-      "Causa dano extra contra Luz."
+      "Rouba todos os reforços dissipáveis do alvo e de todos os inimigos próximos e os distribui aleatoriamente entre os aliados.",
+      "Desfere 6 golpes com 235% de dano distribuído aleatoriamente entre o alvo e os inimigos próximos.",
+      "Acumulação (máx.: 10): cada acerto adiciona uma acumulação de sangramento, que causa[#Dynamic] 124 [#]de dano de sangramento por turno. (O expurgo reduz 1 acumulação negativa.)"
      ]
     }
    ]
@@ -61549,23 +61548,23 @@
   {
    "familyBonus": [
     "No início da batalha, cada membro desta família aplica uma recompensa a um inimigo aleatório por 6 turnos. O efeito não pode ser expurgado.\n[*]Bônus por 1 / 2 / 3 heróis:",
-    "[*]A recompensa é ativada quando o inimigo recebe 2500 / 2000 / 1500 dano cumulativo.\n[*] A recompensa causa 1500 de dano ao inimigo quando ativada.\n[*]Quando os heróis defensores lançam habilidades especiais, priorizam os inimigos com recompensa.",
-    "[*] Cada inimigo pode ter apenas uma recompensa. Em vez de receber uma segunda recompensa, o dano ao ativar aumenta em 1000.\n[*] A recompensa é removida quando é ativada ou quando sua duração chega ao fim."
+    "[*]A recompensa é ativada quando o inimigo recebe 2500 / 2250 / 2000 dano cumulativo.\n[*] A recompensa causa 1000 de dano ao inimigo quando ativada.\n[*]Quando os heróis defensores lançam habilidades especiais, priorizam os inimigos com recompensa.",
+    "[*] Cada inimigo pode ter apenas uma recompensa. Em vez de receber uma segunda recompensa, o dano ao ativar aumenta em 250.\n[*] A recompensa é removida quando é ativada ou quando sua duração chega ao fim."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Determinação Verdadeira",
-     "text": "Quanto menos aliados estão no campo de batalha, mais poderoso este personagem fica.\n[*]Bônus por 5 / 4 / 3 / 2 / 1 aliados restantes:\n[*] 0% / 10% / 25% / 50% / 100% de ataque\n[*] 0% / 10% / 25% / 50% / 100% de defesa"
+     "text": "Quanto menos aliados estão no campo de batalha, mais poderoso este personagem fica.\n[*]Bônus por 5 / 4 / 3 / 2 / 1 aliados restantes:\n[*] 0% / 5% / 10% / 25% / 50% de ataque\n[*] 0% / 5% / 10% / 25% / 50% de defesa"
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Desfere 2 golpes com 600% de dano distribuído aleatoriamente entre o alvo e os inimigos próximos.",
+      "Desfere 2 golpes com 525% de dano distribuído aleatoriamente entre o alvo e os inimigos próximos.",
       "Acumulação (máx.: 10): cada acerto adiciona uma acumulação de queimadura, que causa[#Dynamic] 175 [#]de dano de queimadura por turno. (O expurgo reduz 1 acumulação negativa.)",
-      "Causa dano extra contra Natureza."
+      "O invocador e os aliados próximos ficam imunes a novos efeitos negativos de mana por 3 turnos. (Isso inclui males que afetam a geração de mana e reduções diretas de mana.)"
      ]
     }
    ]

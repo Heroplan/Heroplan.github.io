@@ -61522,24 +61522,23 @@
   {
    "familyBonus": [
     "Savaşın başında bu ailenin her üyesi 6 tur boyunca rastgele bir düşmanın başına Ödül koyar. Efekt arındırılamaz.\n[*] 1 / 2 / 3 Kahraman için bonus:",
-    "[*]Düşman 2500 / 2000 / 1500 biriken hasar alırsa Ödül etkinleşir.\n[*] Ödül etkinleştiğinde düşmana 1500 hasar verir.\n[*]Savunan kahramanlar Özel Yeteneklerini kullandıklarında başında Ödül olan düşmanlara öncelik verirler.",
-    "[*] Her bir düşmanın başında bir Ödül olabilir. Yeni bir tane alırlarsa etkinleştirildiğinde verilen hasar bunun yerine 1000 artar.\n[*] Ödül, etkinleştirildiğinde veya süresi dolduğunda kaldırılır."
+    "[*]Düşman 2500 / 2250 / 2000 biriken hasar alırsa Ödül etkinleşir.\n[*] Ödül etkinleştiğinde düşmana 1000 hasar verir.\n[*]Savunan kahramanlar Özel Yeteneklerini kullandıklarında başında Ödül olan düşmanlara öncelik verirler.",
+    "[*] Her bir düşmanın başında bir Ödül olabilir. Yeni bir tane alırlarsa etkinleştirildiğinde verilen hasar bunun yerine 250 artar.\n[*] Ödül, etkinleştirildiğinde veya süresi dolduğunda kaldırılır."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Gerçek Cesaret",
-     "text": "Bu karakter, savaş alanında ne kadar az müttefik olursa o kadar güçlenir.\n[*]Kalan 5 / 4 / 3 / 2 / 1 müttefik için bonus:\n[*]% 0 /% 10 /% 25 /% 50 /% 100 saldırı.\n[*]% 0 /% 10 /% 25 /% 50 /% 100 savunma."
+     "text": "Bu karakter, savaş alanında ne kadar az müttefik olursa o kadar güçlenir.\n[*]Kalan 5 / 4 / 3 / 2 / 1 müttefik için bonus:\n[*]% 0 /% 5 /% 10 /% 25 /% 50 saldırı.\n[*]% 0 /% 5 /% 10 /% 25 /% 50 savunma."
     }
    ],
    "skills": [
     {
      "id": "so_long_suckers",
      "lines": [
-      "Hedeften ve yakındaki düşmanlardan% 20 mana alır ve onu müttefiklere dağıtır. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
-      "Hedefe ve yakındaki düşmanlara rastgele% 300 hasar veren 6 vuruş gerçekleştirir.",
-      "İstif (Maks: 10): Her darbe, tur başına[#Dynamic] 70 [#]Kanama hasarı veren bir Kanama İstifi ekler. (Arındırma, olumsuz istifleri 1 azaltır.)",
-      "Kutsala ekstra hasar verir."
+      "Hedeften ve yakındaki düşmanlardan tüm bozulabilir buff'ları çalar ve onları rastgele müttefiklere dağıtır.",
+      "Hedefe ve yakındaki düşmanlara rastgele% 235 hasar veren 6 vuruş gerçekleştirir.",
+      "İstif (Maks: 10): Her darbe, tur başına[#Dynamic] 124 [#]Kanama hasarı veren bir Kanama İstifi ekler. (Arındırma, olumsuz istifleri 1 azaltır.)"
      ]
     }
    ]
@@ -61549,23 +61548,23 @@
   {
    "familyBonus": [
     "Savaşın başında bu ailenin her üyesi 6 tur boyunca rastgele bir düşmanın başına Ödül koyar. Efekt arındırılamaz.\n[*] 1 / 2 / 3 Kahraman için bonus:",
-    "[*]Düşman 2500 / 2000 / 1500 biriken hasar alırsa Ödül etkinleşir.\n[*] Ödül etkinleştiğinde düşmana 1500 hasar verir.\n[*]Savunan kahramanlar Özel Yeteneklerini kullandıklarında başında Ödül olan düşmanlara öncelik verirler.",
-    "[*] Her bir düşmanın başında bir Ödül olabilir. Yeni bir tane alırlarsa etkinleştirildiğinde verilen hasar bunun yerine 1000 artar.\n[*] Ödül, etkinleştirildiğinde veya süresi dolduğunda kaldırılır."
+    "[*]Düşman 2500 / 2250 / 2000 biriken hasar alırsa Ödül etkinleşir.\n[*] Ödül etkinleştiğinde düşmana 1000 hasar verir.\n[*]Savunan kahramanlar Özel Yeteneklerini kullandıklarında başında Ödül olan düşmanlara öncelik verirler.",
+    "[*] Her bir düşmanın başında bir Ödül olabilir. Yeni bir tane alırlarsa etkinleştirildiğinde verilen hasar bunun yerine 250 artar.\n[*] Ödül, etkinleştirildiğinde veya süresi dolduğunda kaldırılır."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Gerçek Cesaret",
-     "text": "Bu karakter, savaş alanında ne kadar az müttefik olursa o kadar güçlenir.\n[*]Kalan 5 / 4 / 3 / 2 / 1 müttefik için bonus:\n[*]% 0 /% 10 /% 25 /% 50 /% 100 saldırı.\n[*]% 0 /% 10 /% 25 /% 50 /% 100 savunma."
+     "text": "Bu karakter, savaş alanında ne kadar az müttefik olursa o kadar güçlenir.\n[*]Kalan 5 / 4 / 3 / 2 / 1 müttefik için bonus:\n[*]% 0 /% 5 /% 10 /% 25 /% 50 saldırı.\n[*]% 0 /% 5 /% 10 /% 25 /% 50 savunma."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Hedefe ve yakındaki düşmanlara rastgele% 600 hasar veren 2 vuruş gerçekleştirir.",
+      "Hedefe ve yakındaki düşmanlara rastgele% 525 hasar veren 2 vuruş gerçekleştirir.",
       "İstif (Maks: 10): Her darbe, tur başına[#Dynamic] 175 [#]Yakma hasarı veren bir Yakma İstifi ekler. (Arındırma, olumsuz istifleri 1 azaltır.)",
-      "Doğaya ekstra hasar verir."
+      "Eylemcinin ve yakındaki müttefiklerin 3 tur boyunca yeni olumsuz mana efektlerine karşı bağışıklığı bulunur. (Buna mana üretimini ve doğrudan mana azaltmayı etkileyen her iki engel dâhildir.)"
      ]
     }
    ]

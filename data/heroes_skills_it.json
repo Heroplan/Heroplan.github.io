@@ -61766,24 +61766,23 @@
   {
    "familyBonus": [
     "All'inizio della battaglia, ogni membro di questa famiglia assegna una Taglia a un nemico casuale per 6 turni. L'effetto non può essere rimosso.\n[*]Bonus per 1 / 2 / 3 Eroi:",
-    "[*]Taglia si attiva se il nemico subisce 2500 / 2000 / 1500 danni cumulativi.\n[*] Quando si attiva, Taglia infligge 1500 danni al nemico.\n[*]Quando gli Eroi in difesa lanciano le proprie Abilità speciali, danno la priorità ai nemici con una Taglia.",
-    "[*] Ogni nemico può avere una sola Taglia. Se dovesse riceverne un'altra, i danni all'attivazione aumenteranno invece di 1000.\n[*] La Taglia viene rimossa quando si attiva o al termine della sua durata."
+    "[*]Taglia si attiva se il nemico subisce 2500 / 2250 / 2000 danni cumulativi.\n[*] Quando si attiva, Taglia infligge 1000 danni al nemico.\n[*]Quando gli Eroi in difesa lanciano le proprie Abilità speciali, danno la priorità ai nemici con una Taglia.",
+    "[*] Ogni nemico può avere una sola Taglia. Se dovesse riceverne un'altra, i danni all'attivazione aumenteranno invece di 250.\n[*] La Taglia viene rimossa quando si attiva o al termine della sua durata."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Grinta",
-     "text": "Questo personaggio diventa più potente man mano che diminuisce il numero di alleati sul campo di battaglia.\n[*]Bonus per 5 / 4 / 3 / 2 / 1 alleati rimasti:\n[*] 0% / 10% / 25% / 50% / 100% di Attacco.\n[*] 0% / 10% / 25% / 50% / 100% di Difesa."
+     "text": "Questo personaggio diventa più potente man mano che diminuisce il numero di alleati sul campo di battaglia.\n[*]Bonus per 5 / 4 / 3 / 2 / 1 alleati rimasti:\n[*] 0% / 5% / 10% / 25% / 50% di Attacco.\n[*] 0% / 5% / 10% / 25% / 50% di Difesa."
     }
    ],
    "skills": [
     {
      "id": "so_long_suckers",
      "lines": [
-      "Ruba il 20% di mana al bersaglio e ai nemici vicini e lo distribuisce agli alleati. (Quando un personaggio ha ricevuto 5 aggiunte dirette di mana da abilità speciali in un singolo turno, tutte le successive aggiunte dirette di mana date da abilità speciali avranno potenza ridotta per quel personaggio.)",
-      "Infligge 6 colpi da 300% di danni distribuiti casualmente fra il bersaglio e i nemici vicini.",
-      "Iterazione (max: 10): ogni colpo aggiunge un'iterazione di Sanguinamento, che infligge[#Dynamic] 70 [#]danni da sanguinamento a ogni turno. (La rimozione riduce di 1 le iterazioni negative.)",
-      "Infligge danni extra contro Sacro."
+      "Ruba tutte le magie benefiche annullabili dal bersaglio e dai nemici vicini, e le distribuisce casualmente tra gli alleati.",
+      "Infligge 6 colpi da 235% di danni distribuiti casualmente fra il bersaglio e i nemici vicini.",
+      "Iterazione (max: 10): ogni colpo aggiunge un'iterazione di Sanguinamento, che infligge[#Dynamic] 124 [#]danni da sanguinamento a ogni turno. (La rimozione riduce di 1 le iterazioni negative.)"
      ]
     }
    ]
@@ -61793,23 +61792,23 @@
   {
    "familyBonus": [
     "All'inizio della battaglia, ogni membro di questa famiglia assegna una Taglia a un nemico casuale per 6 turni. L'effetto non può essere rimosso.\n[*]Bonus per 1 / 2 / 3 Eroi:",
-    "[*]Taglia si attiva se il nemico subisce 2500 / 2000 / 1500 danni cumulativi.\n[*] Quando si attiva, Taglia infligge 1500 danni al nemico.\n[*]Quando gli Eroi in difesa lanciano le proprie Abilità speciali, danno la priorità ai nemici con una Taglia.",
-    "[*] Ogni nemico può avere una sola Taglia. Se dovesse riceverne un'altra, i danni all'attivazione aumenteranno invece di 1000.\n[*] La Taglia viene rimossa quando si attiva o al termine della sua durata."
+    "[*]Taglia si attiva se il nemico subisce 2500 / 2250 / 2000 danni cumulativi.\n[*] Quando si attiva, Taglia infligge 1000 danni al nemico.\n[*]Quando gli Eroi in difesa lanciano le proprie Abilità speciali, danno la priorità ai nemici con una Taglia.",
+    "[*] Ogni nemico può avere una sola Taglia. Se dovesse riceverne un'altra, i danni all'attivazione aumenteranno invece di 250.\n[*] La Taglia viene rimossa quando si attiva o al termine della sua durata."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Grinta",
-     "text": "Questo personaggio diventa più potente man mano che diminuisce il numero di alleati sul campo di battaglia.\n[*]Bonus per 5 / 4 / 3 / 2 / 1 alleati rimasti:\n[*] 0% / 10% / 25% / 50% / 100% di Attacco.\n[*] 0% / 10% / 25% / 50% / 100% di Difesa."
+     "text": "Questo personaggio diventa più potente man mano che diminuisce il numero di alleati sul campo di battaglia.\n[*]Bonus per 5 / 4 / 3 / 2 / 1 alleati rimasti:\n[*] 0% / 5% / 10% / 25% / 50% di Attacco.\n[*] 0% / 5% / 10% / 25% / 50% di Difesa."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Infligge 2 colpi da 600% di danni distribuiti casualmente fra il bersaglio e i nemici vicini.",
+      "Infligge 2 colpi da 525% di danni distribuiti casualmente fra il bersaglio e i nemici vicini.",
       "Iterazione (max: 10): ogni colpo aggiunge un'iterazione di Ustione, che infligge[#Dynamic] 175 [#]danni da ustione a ogni turno. (La rimozione riduce di 1 le iterazioni negative.)",
-      "Infligge danni extra contro Natura."
+      "L'evocatore e gli alleati vicini sono immuni dai nuovi effetti negativi sul mana per 3 turni. (Questo include sia i disturbi che influenzano la generazione di mana che le riduzioni dirette di mana.)"
      ]
     }
    ]

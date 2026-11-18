@@ -331,7 +331,6 @@ window.AV = {
   "langs_json/i18n_tc.json": "c254f327",
   "langs_json/i18n_tr.json": "2cf808f0",
   "data/costume_bonuses.json": "acca8677",
-  "lottery_config.json": "092016b2",
   "data/characters.json": "99013f79",
   "data/heroes_skill_types.json": "f8454808",
   "data/heroes_skills_ar.json": "d310a658",
@@ -374,4 +373,5 @@ window.AV = {
   "langs_json/odds_sv.json": "4c6bd5aa",
   "langs_json/odds_tc.json": "f03d0ab8",
   "langs_json/odds_tr.json": "dd53a0e3",
+  "lottery_config.json": "c476544f",
 };

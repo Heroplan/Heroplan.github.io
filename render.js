@@ -305,7 +305,7 @@ async function renderTable(heroes) {
         return;
     }
 
-    const buildRow = (hero, rowIdx) => {
+    const buildRow = (hero, rowIdx, avatarPriority) => {
         const isHeroFavorite = isFavorite(hero);
         const cellsHTML = colKeys.map(key => {
             let content = '';
@@ -456,7 +456,7 @@ async function renderTable(heroes) {
                 return `<td class="col-image">
                             <div class="hero-avatar-container ${heroColorClass}">
                                 <div class="hero-avatar-background" style="background: ${gradientBg};"></div>
-                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="${rowIdx < TABLE_ROW_CHUNK ? 'eager' : 'lazy'}" decoding="async"${rowIdx < 2 ? ' fetchpriority="high"' : ''} onerror="this.src='imgs/not_found.webp'">
+                                <img src="${imageSrc}" class="hero-avatar-image" alt="${hero.name}" loading="${rowIdx < TABLE_ROW_CHUNK ? 'eager' : 'lazy'}" decoding="async"${avatarPriority ? ` fetchpriority="${avatarPriority}"` : (rowIdx < 2 ? ' fetchpriority="high"' : '')} onerror="this.src='imgs/not_found.webp'">
                                 ${costumeIconHtml}
                             </div>
                         </td>`;
@@ -537,13 +537,28 @@ function vtPaint() {
     const tbody = uiElements.heroTable && uiElements.heroTable.querySelector('tbody');
     if (!tbody || !_vtHeroes || !_vtBuildRow) return;
     const [start, end] = vtComputeRange();
+    // 移除节点不会中止在途图片请求：快速拖动滚动条时中间窗口的请求会占满同域连接池，
+    // 停在深处的当前窗口只能排队。撤换前主动取消被丢弃行的未完成请求；重叠行保留，
+    // 重建后同 src 的 img 会复用仍在途/已缓存的资源。
+    if (_vtRange) {
+        tbody.querySelectorAll('tr.table-row').forEach(tr => {
+            const idx = (+tr.getAttribute('aria-rowindex') || 0) - 2;
+            if (idx >= start && idx < end) return;
+            tr.querySelectorAll('img').forEach(im => { if (!im.complete) im.removeAttribute('src'); });
+        });
+    }
     _vtRange = [start, end];
     const total = _vtHeroes.length;
     const topH = start * _vtRowH;
     const botH = (total - end) * _vtRowH;
+    const wrapper = uiElements.resultsWrapper;
+    const scrollTop = wrapper ? wrapper.scrollTop : 0;
+    const viewH = wrapper ? wrapper.clientHeight : 600;
+    const visStart = Math.floor(scrollTop / _vtRowH);
+    const visEnd = Math.ceil((scrollTop + viewH) / _vtRowH);
     const parts = [];
     if (topH > 0) parts.push(`<tr class="vt-spacer" aria-hidden="true"><td colspan="${_vtColspan}" style="height:${topH}px"></td></tr>`);
-    for (let i = start; i < end; i++) parts.push(_vtBuildRow(_vtHeroes[i], i));
+    for (let i = start; i < end; i++) parts.push(_vtBuildRow(_vtHeroes[i], i, (i >= visStart && i < visEnd) ? 'high' : 'low'));
     if (botH > 0) parts.push(`<tr class="vt-spacer" aria-hidden="true"><td colspan="${_vtColspan}" style="height:${botH}px"></td></tr>`);
     tbody.innerHTML = parts.join('');
 }

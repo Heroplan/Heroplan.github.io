@@ -148,11 +148,13 @@
 
     function selectSummonPoolByUrlParam(param) {
         if (!param || !state.allSummonPools) return false;
-        let id = null;
-        for (const pid in state.allSummonPools) {
-            if (poolUrlKeyOf(state.allSummonPools[pid]) === param) { id = pid; break; }
+        // 真正池 ID 优先（地址栏现行口径）；旧分享链接的标题键后缀仍兼容。
+        let id = state.allSummonPools[param] ? param : null;
+        if (!id) {
+            for (const pid in state.allSummonPools) {
+                if (poolUrlKeyOf(state.allSummonPools[pid]) === param) { id = pid; break; }
+            }
         }
-        if (!id && state.allSummonPools[param]) id = param;
         if (!id) return false;
         handleActivityClick(id);
         return true;
@@ -179,10 +181,6 @@
     /** 从官方数据 + cosmetic 表构建在售池配置（列表顺序沿用 displayMeta.order）。 */
     function buildPools() {
         const pools = officialData.pools || {};
-        const playerSelected = {};
-        ((officialData.lottery || {}).playerSelectedFeaturedEntityConfigs || []).forEach(c => {
-            playerSelected[c.summonId] = c;
-        });
         const out = {};
         const order = (displayMeta.order && displayMeta.order.length)
             ? displayMeta.order
@@ -203,15 +201,9 @@
             const hasV1 = Array.isArray(p.bucketWeights) && /^(ShadowSummon|TitanHunterSummon|PickupSummon)$/.test(p.productType);
             if (!hasIec && !hasV1 && !engine.resolveAggregate(id)) return;
             const meta = (displayMeta.pools || {})[id] || {};
-            const ps = playerSelected[id] || {};
-            let selSlots = ps.amountOfSelectableFeaturedSlots || 0;
-            let selChoose = ps.entitiesToChooseFrom || [];
-            // League 官方无 playerSelected 配置：自选候选=精选家族中精选桶稀有度的英雄，
-            // 槽数对齐 LeagueShowcaseController 的 6 格精选位。
-            if (!selSlots && p.productType === 'LeagueSummon') {
-                const cand = engine.getSelectableFeaturedCandidates(id, nowSeconds());
-                if (cand && cand.length) { selChoose = cand; selSlots = 6; }
-            }
+            const ps = engine.getPlayerSelectedConfig(id, nowSeconds()) || {};
+            const selSlots = ps.amountOfSelectableFeaturedSlots || 0;
+            const selChoose = ps.entitiesToChooseFrom || [];
             const bulk10 = findBulk(baseId, 10, pools);
             const bulk30 = findBulk(baseId, 30, pools);
             out[id] = {
@@ -438,8 +430,9 @@
         poolConfig.enginePoolId = poolConfig.id;
 
         if (typeof urlWithParams === 'function') {
-            const pk = poolUrlKeyOf(poolConfig);
-            history.replaceState(Object.assign({}, history.state, { pool: pk || null }), '', urlWithParams({ pool: pk || null }));
+            // 地址栏一律用真正池 ID（如 lottery_league_default），不用标题键后缀。
+            const pk = poolConfig.id || null;
+            history.replaceState(Object.assign({}, history.state, { pool: pk }), '', urlWithParams({ pool: pk }));
         }
 
         // 超级元素：用户选色 ⇒ 引擎切到该色独立产品
@@ -990,13 +983,15 @@
     function addHeroToFeaturedSlot(selectedHero) {
         const poolConfig = state.currentSummonData;
         const d = i18n[state.currentLang] || {};
-        if (poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
+        const explicitList = poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0;
+        if (explicitList) {
+            // 官方显式自选名单：IsValid 只校验成员资格（名单含第一套服装），名单即权威。
             if (!poolConfig.entitiesToChooseFrom.includes(selectedHero.heroId)) {
                 alert(d.featuredHeroNotAllowed || '该英雄无法在此奖池中被选为精选英雄。');
                 return;
             }
-        }
-        if (poolConfig && selectedHero.costume_id && poolConfig.includeCostumes !== true) {
+        } else if (poolConfig && selectedHero.costume_id && poolConfig.includeCostumes !== true) {
+            // 无显式名单的开放精选：服装须 includeCostumes 为真（官方 IsHeroEligibleForSelection）。
             alert(d.featuredHeroNotAllowed || '该英雄无法在此奖池中被选为精选英雄。');
             return;
         }

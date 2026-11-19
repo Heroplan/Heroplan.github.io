@@ -157,7 +157,7 @@ async function initializeApp() {
     // 1. 处理URL参数和Cookie，确定语言
     const urlParams = new URLSearchParams(window.location.search);
     const viewParamFromUrl = urlParams.get('view');
-    // 奖池定位参数：值 = 官方标题键 `lottery.title.<x>` 的后缀（见 lottery-ui.js::poolUrlKeyOf）
+    // 奖池定位参数：值 = 真正池 ID（如 lottery_league_default）；旧标题键后缀链接仍兼容（见 lottery-ui.js::selectSummonPoolByUrlParam）
     const poolParamFromUrl = urlParams.get('pool');
     // `?view=` 命中 `VIEW_NAME_BY_URL_KEYWORD`（见 special-views.js）就是"主视图"深链接；
     // 只写了 `?pool=` 也当作进抽奖视图（分享某个池子时不必再带上 view）。

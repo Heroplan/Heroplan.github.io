@@ -493,23 +493,16 @@
     return last ? (last.featuredFamilies || null) : null;
   };
 
-  // 精选桶默认空、靠玩家自选的池（League）：候选 = runtimeFilter 命中且稀有度==精选桶稀有度的已发布英雄。
-  // 官方精选桶只收 expectedFeatured/玩家自选（桶过滤末步 IsFeatured→false），故候选不入桶、仅供网格点选。
-  Engine.prototype.getSelectableFeaturedCandidates = function (poolId, time) {
-    const ctx = this.buildContext(poolId, time, {});
-    if (!ctx || ctx.featuredIdx < 0 || !ctx.runtimeFilter) return null;
-    if (!isNullOrEmpty(ctx.expectedFeatured)) return null;
-    const fb = ctx.iec.bucketIncludedEntryConfigs.find(b => b.index === ctx.featuredIdx);
-    if (!fb) return null;
-    const ids = [];
-    for (const id of this.idx.order) {
-      const h = this.idx.heroes[id];
-      if (!h || h.rarity !== fb.rarity) continue;
-      if (this.idx.isCostume(h)) continue;
-      if (!this.idx.canBeReceived(h, ctx.effectiveTime, 0)) continue;
-      if (ctx.runtimeFilter(h)) ids.push(id);
-    }
-    return ids;
+  // 官方 ShopConfiguration.GetPlayerSelectedFeaturedEntityConfig：League 读当期联赛条目的
+  // playerSelectableFeaturedEntityConfig（entitiesToChooseFrom 含第一套服装），其余池读全局
+  // playerSelectedFeaturedEntityConfigs。精选桶只收 expectedFeatured/玩家自选，候选不入桶、仅供网格点选。
+  Engine.prototype.getPlayerSelectedConfig = function (poolId, time) {
+    const product = this.resolveProduct(poolId);
+    if (!product) return null;
+    const active = this.getActiveLottery(product, time);
+    const entry = active && active.entry;
+    if (entry && entry.playerSelectableFeaturedEntityConfig) return entry.playerSelectableFeaturedEntityConfig;
+    return this.playerSelectedBySummonId[product.sourceProductId || product.id] || null;
   };
 
   // GetPreviewPriority（仅影响桶内展示排序，不影响概率）

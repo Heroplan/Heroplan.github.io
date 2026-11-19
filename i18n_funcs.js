@@ -1,5 +1,4 @@
-/* i18n_funcs.js —— language.js 里**函数型**的 i18n 条目（JSON 无法序列化，故单独放这里）。
- * 由 _tools/gen_i18n_funcs.js 从 _archive/language.js 自动导出；
+/* i18n_funcs.js —— **函数型**的 i18n 条目（JSON 无法序列化，故单独放这里）。
  * langs.js 在载入 i18n_<码>.json 之后把它们合并进 window.i18n[<码>]。 */
 window.I18N_FUNCS = {
   "cn": {

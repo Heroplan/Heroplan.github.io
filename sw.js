@@ -1,7 +1,7 @@
-/* 图片长缓存 Service Worker（口径见 HANDOFF.md「图片长缓存」节）。
+/* 图片长缓存 Service Worker。
    策略：/imgs/ 走 CacheStorage cache-first；site_ver.json 是部署版本门——
    版本没变 ⇒ 命中即返回（零网络、跨会话长期有效）；版本变了 ⇒ 带 ETag/Last-Modified
-   条件复验一次（304 不重下，200 才换字节）。版本号由主站 pre-commit 钩子在 imgs/ 变动时递增。
+   条件复验一次（304 不重下，200 才换字节）。
    只接管 /imgs/ 的 GET；HTML/JS/JSON 一律不碰（它们各有 ?v= 戳 / av() 内容哈希）。 */
 const IMG_CACHE = 'hp-img-v1';
 const META_CACHE = 'hp-img-meta-v1';

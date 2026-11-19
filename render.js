@@ -56,7 +56,6 @@ function getFormattedHeroNameHTML(hero) {
  *   **键存在 = 该节与常规不同 = 该节要显示按钮**；`hero._normalSnapshot` 存常规版用于切回。
  * ⚠ `passiveSkills` 是对象数组、`effects` 是字符串数组，两者**分别**切换、互不牵连。
  */
-const BALANCED_SECTIONS = ['effects', 'passiveSkills', 'familyBonus', 'stats'];
 // 属性节的字段（切换三围时要整体换掉，战力 power 与 lb1/lb2 一并重算）
 const BALANCED_STAT_KEYS = ['attack', 'defense', 'health', 'power', 'lb1', 'lb2'];
 
@@ -140,7 +139,7 @@ function modalCostumeSets(hero) {
  * `TalentTree` 闭包里，而 `renderDetailsInModal` 重建整块内容时会按**筛选面板的全局默认值**重置它们。
  * ⇒ 原地重渲染（切换平衡数据）前必须先读出来，再作为 `context.tier` 传回去。
  * `nodes` 只在**当前树 ≠ 预设自动路径**（= 用户手点过，或档位与树不一致）时才带；
- *   完全一致就别钉住，否则换破限档/服装时自动路径不再按新档位重算（§7DH 的行为会被冻住）。
+ *   完全一致就别钉住，否则换破限档/服装时自动路径不按新档位重算。
  *   「无天赋」的自动路径是**空集** ⇒ 树里哪怕只有一个节点也属于手动状态，同样要钉住。
  * @returns {{lb:string,talent:string,strategy:string,manaPriority:boolean,costume:number,nodes:string[]|null}|null}
  *          「突破与天赋详情」面板没开 ⇒ 没有这些控件 ⇒ null
@@ -224,7 +223,7 @@ const TABLE_ROW_CHUNK = 60;     // 每批渲染的行数（约一屏多一点）
 var _lastRenderedHeroesRef = null; // 上次完整渲染的筛选结果数组引用：退出特殊视图时据此跳过冗余整表重渲
 const VT_THRESHOLD = 120;       // 行数超过此值启用虚拟滚动：DOM 只留可见窗口，初始/重渲/退出/滚动均 O(可见行数)
 const VT_OVERSCAN = 8;          // 可见区上下各多渲染的缓冲行数
-var _vtRowH = 57;               // 行高（实测 uniform；首次渲染后按实际校正）
+var _vtRowH = 57;               // 行高（uniform；首次渲染后按实际校正）
 var _vtHeroes = null;           // 虚拟滚动当前完整结果数组（null=未启用，走全量分块渲染）
 var _vtBuildRow = null;         // 当前 buildRow 闭包（供滚动重绘复用）
 var _vtColspan = 0;
@@ -685,8 +684,7 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
 // --- 关键词高亮逻辑 ---
 
 /**
- * 关键字词表来自 `langs_json/highlight_<码>.json`（`_tools/gen_highlight_terms.py`
- * 从游戏本地化表生成），组名 → 渲染标记。
+ * 关键字词表来自 `langs_json/highlight_<码>.json`，组名 → 渲染标记。
  */
 const HIGHLIGHT_GROUP_MARKUP = {
     elementblue: '[##elementblue]',
@@ -1059,7 +1057,7 @@ function applyKeywordHighlighting(text, lang, filterType, noParen) {
 // ============================================================
 
 const HERO_ANIM_BASE = 'imgs/animation/';
-const HERO_ANIM_PAD = 20;           // 与 compose_hero.py 的 MESH_PAD 保持一致
+const HERO_ANIM_PAD = 20;
 
 let _heroAnimationIndexCache = null;   // index.json 缓存
 let _activeAnimationPlayer = null;     // 当前激活的播放器实例
@@ -1377,8 +1375,7 @@ async function createHeroAnimationPlayer(container, heroId, options = {}) {
                 drawImg = tc;
             }
             // HSVRangeHandler._hue/_saturation/_value：像素级 HSV 调整
-            // （口径与 compose_hero._apply_tint_fill 一致：hue 绝对替换、
-            // sat/val 乘原值，未驱动分量保留原色）。
+            // （hue 绝对替换、sat/val 乘原值，未驱动分量保留原色）。
             if (L.hsv && L.hsv.some(function (v) { return v != null; })) {
                 const tc = document.createElement('canvas');
                 tc.width = img.width; tc.height = img.height;
@@ -1654,10 +1651,10 @@ function renderDetailsInModal(hero, context = {}) {
     const costumePassives = (hero.costumeBonusPassiveSkillIds || []).map(_pid).filter(Boolean);
 
     // **展示逆序**：普通被动与服装奖励被动**各自内部**倒序，服装奖励留在下面。
-    //   ⚠ `hero.passiveSkills` 里**已经追加了**服装奖励被动（生成器合并的结果，含"从第一套服装继承"那种
+    //   ⚠ `hero.passiveSkills` 里**已经追加了**服装奖励被动（含"从第一套服装继承"那种
     //   本行没有 `costumeBonusPassiveSkillIds` 字段的情况）⇒ 必须按 `costumeBonusPassiveSkillIds`
     //   先拆组再分别翻，整条倒序会把服装奖励顶到第一位。
-    //   数据与导出侧仍是官方配置数组原序（`passive_desc_gen.ORDER_MODE = 'config'`），只在渲染时翻。
+    //   数据与导出侧仍是官方配置数组原序，只在渲染时翻。
     const _bonusSet = new Set(costumePassives);
     const _orderedPassives = [
         ...basePassives.filter(id => !_bonusSet.has(id)).reverse(),
@@ -1768,7 +1765,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // `[*]` = **子行标记**（缩进 + 保留未着色的 `*`，见下方外层组装）；行首 `*` 才是"括号补充说明"的虚线标记。
         // `opts.noParen=true` ⇒ 括号注释由外层 `_renderEntryInner` 在**整条**范围内统一处理，
-        //   这里不再按单行认括号（否则内层括号会被误判）。
+        //   这里不按单行认括号（否则内层括号会被误判）。
         const _renderOneCore = (item, opts) => {
             const noParen = !!(opts && opts.noParen);
             // ▼▼▼ 行首 `*`：括号补充说明行（橙色 * + 虚线下划线）▼▼▼
@@ -1953,8 +1950,8 @@ function renderDetailsInModal(hero, context = {}) {
         //   规则：从左往右找第一个**配对完整**的括号；同时满足两条才算注释块：
         //     ① 闭括号是**本行最后一个字符**（允许后面跟 `.` / `。` / 空白）；
         //     ② 开括号在**行首**——位于串首、前面是空白，或本行在它前面只有 `[*]`/`[**]` 子行标记。
-        //   ②的依据：我们的导出里注释块一律是"正文 (…)"（`skill_desc_gen._wrap_extra`
-        //   写死 `EXTRA_OPEN=' ('`），而**官方原文自带**的行内括号紧贴前一个词，比如俄语的复数提示
+        //   ②的依据：导出词条里注释块一律是"正文 (…)"（开括号前固定一个空格），
+        //   而**官方原文自带**的行内括号紧贴前一个词，比如俄语的复数提示
         //   `на 4 ходов(а).`、波兰语 `obrażeń(y)`、简中`（最多： 10 层）`。只按①判会把它们切成虚线子行。
         //   第②条里"只有子行标记"那一半不能省：阿语等有 `[*](…)` 形式的真注释，
         //   只认空白会把它们错杀回正文。
@@ -2014,7 +2011,7 @@ function renderDetailsInModal(hero, context = {}) {
         // 三条排版口径：
         //   ① 括号注释块**去掉前后括号**，只留橙色 `*` + 着色虚线下划线；
         //   ② 注释块**比它所说明的那一行多缩进一级**（`.paren-note` 的 padding 由内联给出）；
-        //   ③ 词条**开头不产生空行**（整条都是 `[*]` 子行时，第一行不再补 `<br>`）。
+        //   ③ 词条**开头不产生空行**（整条都是 `[*]` 子行时，第一行不补 `<br>`）。
         const _renderEntryInner = (raw, forceSub, startLvl) => {
             // `forceSub=true` ⇒ 这段内容要**接到已有 `<li>` 后面** ⇒ 第一行也要补 `<br>`（否则会和上文黏在一起）
             let open = null, inner = '', headDone = false, hasContent = !!forceSub;
@@ -2029,7 +2026,7 @@ function renderDetailsInModal(hero, context = {}) {
             //   否则"整条只有括号、并入上一条"的元素（如 `[*](…括号说明…)`）会退回一级。
             let lastLvl = startLvl || 0;
             // 层级标记 = `[` + N 个 `*` + `]`（`[*]` 一级 / `[**]` 二级 …）。
-            // 这样"子词条 / 说明词条 / 新词条"各有各的深度，不再全挤成 `[*]`。
+            // 这样"子词条 / 说明词条 / 新词条"各有各的深度，不会全挤成 `[*]`。
             const _LVL_RE = /^\[(\*+)\]\s*/;
             const _subCls = (lvl) => 'skill-subline' + (lvl > 1 ? (' skill-subline-l' + lvl) : '');
             const _one = (line) => {
@@ -2110,7 +2107,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // ── 官方 `[*]` 是**行内 token**（`…持续 2 回合。 [*]每回合结束时…` / `([*]安全地偷取…`），
         //   而本站只按「**行首** `[*]`」识别子行 ⇒ 渲染前先归一到行首。
-        //   生成器侧已归一（`skill_desc_gen.norm_sublines`），这里是**防御层**：
+        //   数据侧通常已归一，这里是**防御层**：
         //   旧档 / 手工数据 / 其它来源也不会把 `[*]` 裸露给用户
         //   ⚠ 必须放在 `_isPureParen` / `_renderEntryInner` **之前**（两者都按行首判据工作）。
         const _normBullets = (s) => String(s)
@@ -2266,7 +2263,7 @@ function renderDetailsInModal(hero, context = {}) {
         if (hero.family === 'classic') { if (hero.rarity === 3 && cid > 1) cid += 1; }
         if (hero.family !== 'classic') { if (cid === 2) cid = 3; }
         // 档位 → 服装类型键（与 `getCostumeIconName` 同一套映射）；
-        // 类型名走 `langs_json/costume_type_<码>.json`（20 语言，见 _tools/_costume_names.py 的推导）
+        // 类型名走 `langs_json/costume_type_<码>.json`（20 语言）
         const keys = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };
         const icons = { 1: 'c1', 2: 'c2', 3: 'toon', 4: 'glass', 5: 'stylish' };
         const key = keys[cid] || 'c1';
@@ -2872,8 +2869,8 @@ function renderDetailsInModal(hero, context = {}) {
         // 4. 最后，调用一次 handleTreeAndStatUpdate 来确保天赋树的显示和段位图标都与正确的设置同步
         handleTreeAndStatUpdate();
     } else {
-        // 没开"突破与天赋详情"面板 ⇒ 属性栏原来直接显示 `hero.displayStats`（那是**列表口径** =
-        // 该英雄自身的服装顺序）；这里改用 `initialStats`（含「服装奖励」下拉的档位），保持与详情页一致。
+        // 没开"突破与天赋详情"面板 ⇒ 属性栏不用 `hero.displayStats`（那是**列表口径** =
+        // 该英雄自身的服装顺序），而用 `initialStats`（含「服装奖励」下拉的档位），保持与详情页一致。
         const grid = modalContent.querySelectorAll('.details-stats-grid > div p');
         if (grid.length >= 4) {
             grid[0].innerHTML = `💪 ${initialStats.power || 0}`;
@@ -3078,7 +3075,7 @@ function renderDetailsInModal(hero, context = {}) {
 
                     // ---------- 判断该英雄是否有动态立绘 ----------
                     // 读取 imgs/animation/index.json，判断 heroId 是否在列表中
-                    // 有则走 canvas 精灵动画；无则回退到原来的静态立绘逻辑
+                    // 有则走 canvas 精灵动画；无则回退到静态立绘逻辑
                     let hasAnimation = false;
                     if (hero.heroId) {
                         const animIndex = await loadHeroAnimationIndex();
@@ -3241,19 +3238,6 @@ function renderDetailsInModal(hero, context = {}) {
 
                     if (showCircleRay) {
                         // 创建光效图片（作为子元素）
-                        /*
-                        // 可以定义不同家族对应的光效范围
-                        const getRaysRangeForFamily = (family) => {
-                            const ranges = {
-                                'magic_carpet': { min: 46, max: 47 },
-                                // 其他家族的特殊范围
-                                // 'other_family': { min: 48, max: 50 },
-                            };
-                            return ranges[family] || { min: 1, max: 45 };
-                        };
-                        const range = getRaysRangeForFamily(hero.family);
-                        const randomRaysNumber = Math.floor(Math.random() * (range.max - range.min + 1)) + range.min;
-                        */
                         const randomRaysNumber = Math.floor(Math.random() * 94) + 1;
                         raysImage = document.createElement('img');
                         raysImage.src = `imgs/circle_rays/${randomRaysNumber}.webp`;

@@ -3,7 +3,7 @@
 // 用途：用户点「打开游戏英雄列表」，选一个 .eva1 存档，本站解析出该玩家
 //       已拥有的英雄（含服装），据此筛选并展示英雄列表。
 //
-// 容器结构（玩家存档 profile 帧，与 配置数据更新/eva1_pts_decode.py 一致）：
+// 容器结构（玩家存档 profile 帧）：
 //   [int8 1]            帧标志
 //   [str8 版本]          客户端版本，如 "v381.26"
 //   [keyed 对象]         baseVersion / baseHash / operations
@@ -23,7 +23,7 @@
 (function (global) {
     'use strict';
 
-    // 类型码（与 eva1.py 相同）
+    // 类型码
     var END = 0xFF;
     var T_NULL = 0x00, T_FALSE = 0x01, T_TRUE = 0x02;
     var T_INT8 = 0x03, T_INT16 = 0x04, T_INT32 = 0x05, T_INT64 = 0x06;

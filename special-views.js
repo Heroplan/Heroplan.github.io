@@ -85,7 +85,7 @@ function setMainViewHistory(viewName) {
  * 只在用户主动点"退出"的两个分支里调用；`handlePopState` 里不需要（浏览器已把地址恢复好了）。
  */
 function clearMainViewHistory() {
-    // 退出视图时把它自己的子参数一起清掉（`pool` = 抽奖选中的奖池，见 lottery-simulator.js）
+    // 退出视图时把它自己的子参数一起清掉（`pool` = 抽奖选中的奖池，见 lottery-ui.js）
     history.replaceState({ view: 'list' }, '', urlWithParams({ view: null, pool: null }));
 }
 

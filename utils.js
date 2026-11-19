@@ -3,8 +3,8 @@
 /**
  * 数据档（`data/*.json`、`langs_json/*.json`）的统一取数 URL。
  *
- * 版本来自 `asset_ver.js` 里的 `window.AV`（每个文件的**内容哈希**，由主站仓库的 pre-commit
- * 钩子在提交时增量重算）。这样缓存是**按文件各自**判断的：
+ * 版本来自 `asset_ver.js` 里的 `window.AV`（每个文件的**内容哈希**）。
+ * 这样缓存是**按文件各自**判断的：
  *   · 文件没变 ⇒ 哈希不变 ⇒ URL 不变 ⇒ 命中缓存，一次请求都不发；
  *   · 文件变了 ⇒ 哈希变 ⇒ URL 变 ⇒ 立刻拿到新内容，不存在"等缓存过期"的陈旧窗口。
  * ⚠ 别改回 `?v=${Date.now()}`：URL 每次都不同 ⇒ 浏览器缓存与 Pages 的 CDN 全被作废。
@@ -196,8 +196,8 @@ function getSkillTagsForHero(hero) {
  * 从「平衡数据」档取出某英雄的**平衡版**技能三件套。
  *
  * 档格式与常规 `heroes_skills_<码>.json` 完全相同（`{hid:[{familyBonus,passiveSkills,skills}]}`），
- * 但它是**差异档**：只包含第二表有定义、且**与常规不同**的节（生成器 `--site-export-balanced`
- * 逐节比对后过滤）。⇒ **键存在与否就是"该节要不要显示切换按钮"的判据**：
+ * 但它是**差异档**：只包含第二表有定义、且**与常规不同**的节（逐节比对后过滤）。
+ * ⇒ **键存在与否就是"该节要不要显示切换按钮"的判据**：
  *   · 有 `skills`        ⇒ 「✨ 技能效果:」旁加按钮
  *   · 有 `passiveSkills` ⇒ 「🧿 被动技能:」旁加按钮
  *   · 三节都与常规相同   ⇒ 该英雄整个不在档里 ⇒ 不加按钮
@@ -228,7 +228,7 @@ function balancedFieldsFrom(balSkills, hid) {
  *      `passivesSearchPool`/`familyBonus`）；
  *   ③ hero 对象上用 `Lang.t()` 写死的显示字段（name/fancy_name/skill/element/class/
  *      speed/source/AetherPower）与 `state.family_values`。
- *   旧实现靠**整页重载**重跑 loadData；无缝切换必须在这里等价重刷，否则列表/详情仍是旧语言。
+ *   无缝切换必须在这里等价重刷 loadData 固化的内容，否则列表/详情仍是旧语言。
  *
  * 只改**显示字段**，不动任何 ID（`heroId`/`elementId`/`classId`/`speedId`/`sourceId`/`aetherPowerId`），
  * 与 `loadData` 的口径完全一致（含最长前缀回退 `_tPrefix`）。
@@ -240,7 +240,7 @@ async function reloadLanguageData(lang) {
     if (!res.ok) throw new Error('heroes_skills HTTP ' + res.status);
     const skills = await res.json();
     // 平衡数据档：与常规档**同步重载**（否则切语言后按钮切换的还是旧语言的平衡文本）。
-    // ⚠ 该档可能不存在（生成器未跑 --site-export-balanced）⇒ 缺失时降级为 null，不算失败。
+    // ⚠ 该档可能不存在 ⇒ 缺失时降级为 null，不算失败。
     const balRes = await fetch(av('data/heroes_skills_balanced_' + lang + '.json'))
         .catch(() => null);
     const balSkills = (balRes && balRes.ok) ? await balRes.json() : null;
@@ -465,7 +465,7 @@ function _costumeSlot(heroId, ord) {
  * 英雄 id 命中这些关键字（如 `_temp1`）⇒ **不进列表**。
  * 与"默认隐藏"**分开**：那是 `isHiddenHero()` 运行时判定的可切换隐藏，
  * 这里是**硬排除**（`hero.excluded`），任何情况下都不展示（含抽奖奖池）。
- * 消费点：`filters.js::listHeroes()` / `applyFiltersAndRender()`、`lottery-simulator.js::getSimHeroPool()`。
+ * 消费点：`filters.js::listHeroes()` / `applyFiltersAndRender()`。
  * 想加/减关键字就改这里。
  * ⚠ 别写成 `_temp`：那会把 `oriental_female_templar*`、`ninja_cobalt_costume_tempest`
  *   这些正常英雄一起排掉（`_templar` / `_tempest` 里都含 `_temp`）。
@@ -514,7 +514,6 @@ function _cmpStr(a, b) {
 
 /**
  * 自动段（固定段以外的英雄）排序键：【发布日期 → 战力(低→高) → 英雄ID】。
- * 与 `data/hero_order.json` 的生成脚本 `_tools/_hero_order.py` 自检口径一致。
  */
 function _cmpAutoOrder(ha, hb) {
     if (!ha || !hb) return 0;
@@ -526,7 +525,7 @@ function _cmpAutoOrder(ha, hb) {
 /**
  * 从服务器加载核心数据。
  *
- * 数据源（全部来自官方配置 + 我们导出的词条，**不再用 data_{cn,en,tc}.json**）：
+ * 数据源（官方配置 + 导出词条）：
  *   data/hero_order.json         英雄序号表**只存固定段 1953**（收藏位图按此下标）；
  *                                其余序号由本函数运行时按【日期→战力→id】追加，hidden 动态判定
  *   data/characters.json         官方英雄配置（id/rarity/基础三维/element/family/manaSpeedId/classType/aetherGift…）
@@ -580,7 +579,7 @@ function applyDynSpec(attack, num, den, turns) {
 }
 
 async function loadData(lang) {
-    // ⚠ 「搜索语言 / 额外名称语言」选择已废弃 —— 名字与技能名一律按**当前界面语言**。
+    // ⚠ 名字与技能名一律按**当前界面语言**。
     try {
         // ① 语言表（i18n + 各词表 + 排序表）
         await Lang.loadAll(lang);
@@ -601,9 +600,9 @@ async function loadData(lang) {
             fetch(av('data/costume_bonuses.json')).catch(() => null),
             // 平衡版角色定义（第二表完整定义，`heroes` 按 id 键）：切三围时按**完整定义**算，允许缺失。
             fetch(av('data/characters_balanced.json')).catch(() => null),
-            // 动态伤害的 (分子,分母,回合) 参数表（语言无关，生成器 `--site-export` 附带）；允许缺失 ⇒ 退回比例式
+            // 动态伤害的 (分子,分母,回合) 参数表（语言无关）；允许缺失 ⇒ 退回比例式
             fetch(av('data/heroes_dynamic.json')).catch(() => null),
-            // 平衡正文那批数值的同款参数表（`--site-export-balanced` 附带）；允许缺失
+            // 平衡正文那批数值的同款参数表；允许缺失
             fetch(av('data/heroes_dynamic_balanced.json')).catch(() => null),
             // 被动图标映射（语言无关，随数据档一起取）
             fetch(av('data/PassiveSkillIconCollection.json')).catch(() => null)
@@ -630,18 +629,6 @@ async function loadData(lang) {
             PassiveSkillIconCollection = {};
         }
 
-        // ②.5 运算一律用规范 ID，显示才过字典。
-        (function augmentReverseMaps() {
-            const add = (map, table, valFn) => {
-                if (typeof map === 'undefined' || !map) return;
-                const m = Lang.get(table);
-                for (const id in m) {
-                    const txt = m[id];
-                    if (txt && map[txt] === undefined) map[txt] = valFn(id);
-                }
-            };
-        })();
-
         // ③ family → source
         const fam2src = {};
         for (const sid in srcDoc) {
@@ -656,7 +643,7 @@ async function loadData(lang) {
         heroes.forEach(h => { byId[h.id] = h; });
         const seen = new Set(order);
         // 固定段以外的英雄：**运行时**按【日期 → 战力(低→高) → 英雄ID】升序追加
-        // （配置里只保留固定段 1953，后续序号自动算，不再落盘）
+        // （配置里只保留固定段 1953，后续序号运行时自动算）
         const restIds = heroes.map(h => h.id).filter(x => !seen.has(x));
         restIds.sort((a, b) => _cmpAutoOrder(byId[a], byId[b]));
         const ids = order.filter(x => byId[x]).concat(restIds);
@@ -693,7 +680,6 @@ async function loadData(lang) {
             const isCostume = !!c.parentHeroId;
             // ── 服装奖励（`data/costume_bonuses.json`）──
             // 只有**服装英雄**（有 parentHeroId）才有；规则取**父英雄**的 `costumeBonusesId`
-            //   （与生成器 `passive_desc_gen._costume_rule_of` 同口径）。
             // 表按「每套 stages 阶连续」排布 ⇒ 套数 = len//stages，stages = 3(≤3★) / 4(≥4★)。
             // `costumeListSets` = **该英雄自身的服装顺序**（同父英雄下按发布日期编 1/2/…）——
             //   列表属性用它才能复现"英雄发布当时"的属性；
@@ -750,10 +736,6 @@ async function loadData(lang) {
                 // `includedOrigins`/`excludedOrigins` 抄的是官方值；`sourceId` 是站点归并后的
                 // 粗分类（construct→covenant、goblin→goblinvillage），按它匹配会整桶落空。
                 originId: c.origin || '',
-                // 官方 `summonExclusiveTag`（Wardrobe1 / Wardrobe2 / 缺省=None）：奖池桶的
-                // `includedCostume` 判定依据。
-                // `None` 在枚举里就是 0 ⇒ 入库时统一成 ''，判定处不用再区分 "None" / 缺字段。
-                exclusiveTag: (c.summonExclusiveTag && c.summonExclusiveTag !== 'None') ? c.summonExclusiveTag : '',
                 source: Lang.t('source', srcId),
                 elementId: elementId, element: Lang.t('element', elementId),
                 classId: classId, class: Lang.t('class', classId),
@@ -793,7 +775,7 @@ async function loadData(lang) {
                 attack: s.attack, defense: s.defense, health: s.health, power: s.power,
                 lb1: s.lb1, lb2: s.lb2
             };
-            // 英文名（收藏/分享/图标等沿用；最长前缀匹配，与旧实现一致）
+            // 英文名（收藏/分享/图标等沿用；最长前缀匹配）
             let en = '';
             const keys = Object.keys(enNames).filter(k => hid.startsWith(k));
             if (keys.length) en = enNames[keys.reduce((a, b) => a.length > b.length ? a : b)];
@@ -810,6 +792,8 @@ async function loadData(lang) {
         });
 
         state.allHeroes = list;
+        // 官方角色定义（heroes 数组 + balancedHeroes）：抽奖引擎直接消费这份。
+        state.charactersConfig = charsDoc.charactersConfig;
         state.families_bonus = [];            // 家族加成改由每个英雄的 familyBonus 提供
         state.family_values = familyValues;   // getDisplayName(family/source) 用
         return true;

@@ -12,17 +12,14 @@ const uiElements = {
     eva1ImporterInput: document.getElementById('eva1-importer-input'),
     resetFiltersBtn: document.getElementById('reset-filters-btn'),
     advancedFilterHelpBtn: document.getElementById('advanced-filter-help-btn'),
-    skillTypeHelpBtn: document.getElementById('skill-type-help-btn'),
     lbTalentHelpBtn: document.getElementById('lb-talent-help-btn'),
     exportSettingsBtn: document.getElementById('export-settings-btn'),
     importSettingsBtn: document.getElementById('import-settings-btn'),
-    toggleDonateBtn: document.getElementById('toggle-donate-btn'),
 
     // 视图切换按钮
     showWantedMissionBtn: document.getElementById('show-wanted-mission-btn'),
     showFarmingGuideBtn: document.getElementById('show-farming-guide-btn'),
     showTeamSimulatorBtn: document.getElementById('show-team-simulator-btn'),
-    showChatSimulatorBtn: document.getElementById('show-chat-simulator-btn'),
     showRedeemCodesBtn: document.getElementById('show-redeem-codes-btn'),
 
     // 容器与视图
@@ -257,7 +254,7 @@ function applyLanguage(lang) {
     // 6. SEO：Meta Description + canonical + Open Graph / Twitter
     //
     // ⚠ 多语言 SEO 的关键：20 个语言版各有**独立静态入口** `/<码>/`（见 index.html 的
-    //   `rel="alternate" hreflang` 与 _tools/build_lang_pages.py），每个语言版必须
+    //   `rel="alternate" hreflang`），每个语言版必须
     //   **把 canonical 指向自身路径**；若一律指向站点根，Google 会把 20 个版本判成
     //   同一页面、hreflang 注解随之失效。
     //   ⚠ canonical 跟随**地址路径**（可抓取的那个实体），不是 cookie 推导出的渲染语言：
@@ -467,7 +464,7 @@ function updateResultsHeader() {
 
         // --- 查看最新 按钮逻辑 ---
         // 仅在未应用任何筛选时显示「查看最新」按钮；一旦有筛选（含英雄学院10列表临时筛选）
-        // 「查看最新」不再显示，header 改由上面的 showResetButton 分支呈现「重置」tag。
+        // 有筛选时不显示「查看最新」，header 由上面的 showResetButton 分支呈现「重置」tag。
         if (!filtersAreActive) {
             const latestBtn = document.createElement('span');
             latestBtn.id = 'view-latest-btn';

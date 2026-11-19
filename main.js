@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 /**
  * 从词条里的 `[#Dynamic]…[#]` 标记找出所有「攻击力参与计算」的伤害数值，并算好系数。
  *
- * 只认生成器打的 `[#Dynamic]` 标记（`skill_desc_gen` 的 `lang_markup.mark_dynamic`）——
+ * 只认词条里的 `[#Dynamic]` 标记 ——
  * 标记出现在哪条词条里，哪条就是动态伤害；标记里的数值就是导出时那个攻击力下的展示值。
  * 重算优先用 `data/heroes_dynamic.json` 里的 `(分子, 分母, 回合)` 走官方式，缺参数才退回
  * `系数 = 标记值 / refAttack` 的比例式（详见 render.js::updateDynamicDoTDisplay）。
@@ -27,9 +27,8 @@ function parseAndStoreDoTInfo(hero) {
     // 只要求有攻击力基准：技能正文未到（首帧延后加载）时被动/家族段仍可能已带标记
     if (!hero.attack) return;
 
-    // ⚠ 系数基准必须是**生成器算这些数值时用的那个攻击力**：
-    //   生成器对"攻击缩放型伤害"用的是 `hero_attack_at_max` = **L80 × 服装奖励（最多套满阶）**
-    //   （见 passive_desc_gen.hero_attack_at_max / costume_bonus_level 的默认档）。
+    // ⚠ 系数基准必须是**这些数值导出时用的那个攻击力**：
+    //   "攻击缩放型伤害"用的是 **L80 × 服装奖励（最多套满阶）** 的攻击力。
     //   用裸 `hero.attack` 会让系数偏大 ⇒ 一开服装奖励数值就整体飘高。
     const _refCb = (typeof costumeBonusEntry === 'function')
         ? costumeBonusEntry(hero, hero.costumeMaxSets || 0) : null;
@@ -44,7 +43,7 @@ function parseAndStoreDoTInfo(hero) {
     const refAttackBalanced = (_balDef && typeof computeHeroStats === 'function')
         ? _anchor(computeHeroStats(_balDef).attack) : refAttackNormal;
 
-    // 标记内容 = `值`（生成器 `lang_markup.mark_dynamic` 打的就是纯数值）。
+    // 标记内容 = 纯数值。
     // 三段一起扫，顺序必须与各段 DOM 的文档顺序一致：技能段 = `hero.effects`；
     // 被动段 = `orderedPassiveItems(hero)`（本体组逆序 + 服装奖励组逆序）；家族段 = `hero.familyBonus`。
     const DYNAMIC_RE = /\[#Dynamic\]\s*([^\[\]]*?)\s*\[#\]/g;
@@ -158,7 +157,7 @@ async function initializeApp() {
     // 1. 处理URL参数和Cookie，确定语言
     const urlParams = new URLSearchParams(window.location.search);
     const viewParamFromUrl = urlParams.get('view');
-    // 奖池定位参数：值 = 官方标题键 `lottery.title.<x>` 的后缀（见 lottery-simulator.js::poolUrlKeyOf）
+    // 奖池定位参数：值 = 官方标题键 `lottery.title.<x>` 的后缀（见 lottery-ui.js::poolUrlKeyOf）
     const poolParamFromUrl = urlParams.get('pool');
     // `?view=` 命中 `VIEW_NAME_BY_URL_KEYWORD`（见 special-views.js）就是"主视图"深链接；
     // 只写了 `?pool=` 也当作进抽奖视图（分享某个池子时不必再带上 view）。
@@ -183,8 +182,6 @@ async function initializeApp() {
     }
 
     const language = getCookie('language');
-    // ⚠ **搜索语言选择已废弃** ⇒ 不再读写 `search_lang` /
-    //   `searchLanguageUpdated`，一律按当前界面语言处理。
 
     const languageCookie = getCookie('language');
 
@@ -201,7 +198,7 @@ async function initializeApp() {
 
     // URL 参数：`lang`（本站口径）优先，`hl`（Google 界面语言参数）兜底。
     const urlLang = _normLang(langFromUrl) || _normLang(hlFromUrl);
-    // 路径式语言入口 `/<码>/`（独立静态页，见 _tools/build_lang_pages.py）是**最高优先级**：
+    // 路径式语言入口 `/<码>/`（独立静态页）是**最高优先级**：
     // 它比 `?lang=` 更接近"可抓取实体"，爬虫/刷新都落在它上面。
     const pathLang = (typeof Lang !== 'undefined' && Lang.langFromPath) ? Lang.langFromPath(window.location.pathname) : null;
 
@@ -401,20 +398,16 @@ async function initializeApp() {
         filterCostume548Btn: document.getElementById('filter-costume-548-btn'),
     });
 
-    // ▼▼▼ 加载抽奖配置文件 ▼▼▼
+    // ▼▼▼ 加载抽奖配置文件（官方无损数据 + 站点展示元数据） ▼▼▼
     try {
-        const [poolsResponse, typesResponse, extraResponse] = await Promise.all([
-            fetch(av('lottery.json')),                  // 读取 lottery.json
-            fetch(av('lottery_config.json')),           // 读取 lottery_config.json
-            fetch(av('lottery_config_extra.json'))      // 读取 lottery_config_extra.json
+        const [officialResponse, displayResponse] = await Promise.all([
+            fetch(av('lottery_official.json')),   // 官方 lottery 字段无损导出
+            fetch(av('lottery_display.json'))     // 站点自有展示段（banner/lotterybg/limitedPool）
         ]);
-        const allPoolsConfig = await poolsResponse.json();
-        const summonTypesConfig = await typesResponse.json();
-        const extraConfig = await extraResponse.json();
-        //console.log("[main.js] extraConfig 加载成功:", extraConfig);
+        const officialData = await officialResponse.json();
+        const displayMeta = await displayResponse.json();
 
-        // 将组合后的标题字典传递给初始化函数
-        LotterySimulator.initialize(allPoolsConfig, summonTypesConfig, extraConfig);
+        LotterySimulator.initialize(officialData, displayMeta);
 
     } catch (error) {
         console.error("加载抽奖配置文件失败:", error);
@@ -1631,7 +1624,7 @@ function populateOriginToFamiliesMap() {
  * @returns {Array} 排序后的捐赠名单
  */
 function sortDonationListByLanguage(originalList) {
-    // 搜索语言已废弃 ⇒ 一律用当前界面语言
+    // 一律用当前界面语言
     const userLang = state.currentLang;
 
     // 如果用户语言无效或不在映射中，返回原始顺序

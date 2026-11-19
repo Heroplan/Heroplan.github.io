@@ -366,7 +366,7 @@ function populateFilters() {
         const locale = { cn: 'zh-CN', tc: 'zh-TW' }[state.currentLang] || 'en-US';
         const sortOptions = state.currentLang === 'tc' ? { usage: 'sort', collation: 'stroke' } : { usage: 'sort' };
 
-        // 搜索语言已废弃 ⇒ 排序一律按当前界面语言
+        // 排序一律按当前界面语言
         const lang = state.currentLang;
 
         if (key.startsWith('skillTag_')) {
@@ -1154,8 +1154,7 @@ function initializeNameAutocomplete() {
     const nameInput = document.getElementById('name-input');
     const autocompleteList = document.getElementById('name-autocomplete-list');
     const clearButton = document.getElementById('clear-input'); // 获取清除按钮
-    // ⚠ **搜索语言选择已废弃** —— 不论 cookie 如何，一律按 `current`
-    //   （= 当前界面语言）处理。
+    // ⚠ 不论 cookie 如何，一律按 `current`（= 当前界面语言）处理。
 
     if (!nameInput || !autocompleteList) return;
     _nameAutocompleteReady = true;      // 静态节点 ⇒ 挂一次即可，后续调用直接跳过
@@ -1251,7 +1250,7 @@ function initializeNameAutocomplete() {
 
     // 更新候选建议
     function updateAutocompleteSuggestions(searchTerm) {
-        // 搜索语言已废弃 ⇒ 一律用当前界面语言
+        // 一律用当前界面语言
         currentSuggestions = getHeroNameSuggestions(searchTerm);
         showAutocompleteSuggestions(currentSuggestions, searchTerm);
     }
@@ -1341,11 +1340,6 @@ function initializeNameAutocomplete() {
         return `${beforeMatch}<span class="autocomplete-highlight">${matchText}</span>${afterMatch}`;
     }
 
-    // 转义正则表达式特殊字符
-    function escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-
     // 关闭候选列表
     function closeAutocompleteList() {
         autocompleteList.classList.add('hidden');
@@ -1356,7 +1350,7 @@ function initializeNameAutocomplete() {
 /**
  * 获取英雄名字候选建议（支持任意位置匹配）
  *
- * ⚠ 旧的 `searchLang`（额外名称语言）参数已废弃 —— 名字一律用**当前界面语言**。
+ * ⚠ 名字一律用**当前界面语言**。
  * @param {string} searchTerm - 用户输入的搜索词
  */
 function getHeroNameSuggestions(searchTerm) {

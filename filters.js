@@ -647,6 +647,7 @@ function openMultiSelectModal(filterType, title) {
 
     // --- 通用模态框逻辑 ---
     modal.classList.remove('hidden');
+    cancelModalClose(modal);
     modal.showModal();
     document.body.classList.add('modal-open');
     modalContent.scrollTop = 0;
@@ -654,8 +655,8 @@ function openMultiSelectModal(filterType, title) {
     // ⚠ 只在桌面聚焦：手机上自动聚焦会弹起软键盘，把刚打开的选项列表挡住。
     //   阈值与 CSS 的移动端断点一致（max-width: 768px）。
     if (searchInput && window.innerWidth > 768) searchInput.focus();
-    document.getElementById('close-multi-select-modal-top').addEventListener('click', () => history.back());
-    document.getElementById('close-multi-select-modal-bottom').addEventListener('click', () => history.back());
+    document.getElementById('close-multi-select-modal-top').addEventListener('click', () => { if (!modal.classList.contains('hidden') && !modal.classList.contains('closing')) history.back(); });
+    document.getElementById('close-multi-select-modal-bottom').addEventListener('click', () => { if (!modal.classList.contains('hidden') && !modal.classList.contains('closing')) history.back(); });
     history.pushState({ modal: 'multiSelect' }, null);
     state.modalStack.push('multiSelect');
 }

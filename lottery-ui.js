@@ -325,7 +325,7 @@
         if (summaryCloseBtn) {
             summaryCloseBtn.addEventListener('click', () => {
                 const m = document.getElementById('summon-summary-modal');
-                if (m && !m.classList.contains('hidden')) history.back();
+                if (m && !m.classList.contains('hidden') && !m.classList.contains('closing')) history.back();
             });
         }
 
@@ -446,6 +446,7 @@
         if (poolConfig.productType === 'SuperElementalSummon') {
             const elementalModal = document.getElementById('elemental-modal');
             elementalModal.classList.remove('hidden');
+            cancelModalClose(elementalModal);
             elementalModal.showModal();
             document.body.classList.add('modal-open');
             const userChoice = await new Promise(resolve => {
@@ -1224,6 +1225,7 @@
                             const sm = document.getElementById('summon-summary-modal');
                             if (sm) {
                                 sm.classList.remove('hidden');
+                                cancelModalClose(sm);
                                 sm.showModal();
                                 document.body.classList.add('modal-open');
                             }
@@ -1248,6 +1250,7 @@
         results.forEach(result => scrollContainer.appendChild(buildResultCard(result, true)));
         setTimeout(() => { scrollContainer.scrollTop = 0; }, 0);
         summaryModal.classList.remove('hidden');
+        cancelModalClose(summaryModal);
         summaryModal.showModal();
         document.body.classList.add('modal-open');
         history.pushState({ modal: 'summonSummary' }, null);

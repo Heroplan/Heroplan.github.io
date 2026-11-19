@@ -63,3 +63,4 @@ p,li{text-wrap:pretty}
 .probability-tooltip .probability-asterisks li,.probability-tooltip .probability-disclaimer li,.probability-tooltip li.probability-desc{display:block;white-space:normal;word-break:break-word;border-bottom:none;font-size:.7em;font-weight:normal;color:#b9c4d6;line-height:1.45;padding:2px}
 .probability-tooltip .probability-asterisks,.probability-tooltip .probability-disclaimer,.probability-tooltip .probability-tooltip .probability-bonus li{display:block;white-space:normal;word-break:break-word;border-bottom:none;font-weight:normal;color:#b9c4d6;line-height:1.45;padding:2px}
 .probability-bonus{margin:6px 10px}
+dialog.modal-dialog.closing{opacity:0;scale:0.96}dialog.modal-dialog.closing::backdrop{background-color:transparent}

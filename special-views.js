@@ -592,6 +592,7 @@ function showSoulExchangeModal() {
                     openDetailsModal(targetHero, {
                         onClose: () => {
                             summaryModal.classList.remove('hidden');
+                            cancelModalClose(summaryModal);
                             summaryModal.showModal();
                             document.body.classList.add('modal-open');
                         }
@@ -635,6 +636,7 @@ function showSoulExchangeModal() {
     // 显示弹窗
     setTimeout(() => { scrollContainer.scrollTop = 0; }, 0);
     summaryModal.classList.remove('hidden');
+    cancelModalClose(summaryModal);
     summaryModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'summonSummary' }, null);

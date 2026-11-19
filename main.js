@@ -744,6 +744,37 @@ function loadStaticCollapseStates() {
 }
 
 /**
+ * 动画关闭 dialog：先加 .closing 在**仍保持 showModal** 的状态下淡出（外部依旧 inert，
+ * 淡出期间点不到下层表格），淡出结束才真正 close()+hidden。
+ * 直接 close() 会立即解除模态：CSS 退场的 0.25s 里外部可点；且 .hidden 的 visibility:hidden
+ * 会被 .overlays-visible{visibility:visible} 覆盖 ⇒ 框和底色已消失而星星/被动图标残留。
+ */
+function closeModalAnimated(dialog, after) {
+    if (dialog._closeTimer) return;
+    if (!dialog.open || dialog.classList.contains('hidden')) {
+        if (dialog.open) dialog.close();
+        dialog.classList.add('hidden');
+        if (after) after();
+        return;
+    }
+    dialog.classList.add('closing');
+    dialog._closeTimer = setTimeout(() => {
+        dialog._closeTimer = null;
+        if (!dialog.classList.contains('closing')) return;
+        dialog.classList.remove('closing');
+        dialog.close();
+        dialog.classList.add('hidden');
+        if (after) after();
+    }, 280);
+}
+
+function cancelModalClose(dialog) {
+    if (!dialog) return;
+    if (dialog._closeTimer) { clearTimeout(dialog._closeTimer); dialog._closeTimer = null; }
+    dialog.classList.remove('closing');
+}
+
+/**
  * 原生 <dialog> 的统一关闭入口。
  * Esc 与 closedby="any" 的轻 dismiss 都触发 cancel：preventDefault 后走 history.back()，
  * 与现有 pushState/popstate 模态栈保持同一契约（pending 防 Esc 连发导致多次后退）。
@@ -754,7 +785,7 @@ function setupModalDialogs() {
     document.querySelectorAll('dialog.modal-dialog').forEach(dialog => {
         let pending = false;
         const dismiss = () => {
-            if (pending || dialog.id === 'elemental-modal' || dialog.classList.contains('hidden')) return;
+            if (pending || dialog.id === 'elemental-modal' || dialog.classList.contains('hidden') || dialog.classList.contains('closing')) return;
             pending = true;
             history.back();
         };
@@ -1518,9 +1549,8 @@ function handlePopState(event) {
 
         // --- 特殊情况：处理堆叠式模态框（例如，在抽奖结果上打开英雄详情）---
         if (modalType === 'details' && state.modalContext && typeof state.modalContext.onClose === 'function') {
-            uiElements.modal.close();
-            uiElements.modal.classList.add('hidden');
-            state.modalContext.onClose(); // 调用回调以恢复下层模态框
+            const onClose = state.modalContext.onClose;
+            closeModalAnimated(uiElements.modal, onClose); // 淡出结束再恢复下层模态框
             return; // `onClose` 已处理状态，直接返回
         }
 
@@ -1543,7 +1573,7 @@ function handlePopState(event) {
                 break;
         }
 
-        if (modal) { modal.close(); modal.classList.add('hidden'); }
+        if (modal) closeModalAnimated(modal);
 
         // 仅当最后一个模态框关闭时，才恢复页面滚动
         if (state.modalStack.length === 0) {

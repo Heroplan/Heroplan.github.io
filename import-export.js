@@ -11,7 +11,7 @@ function initializeExportModalListeners() {
     if (!modal || !content) return;
 
     // 关闭模态框的通用函数
-    const closeModal = () => { if (!modal.classList.contains('hidden')) history.back(); };
+    const closeModal = () => { if (!modal.classList.contains('hidden') && !modal.classList.contains('closing')) history.back(); };
     content.addEventListener('click', e => e.stopPropagation()); // 阻止事件冒泡到遮罩层
 
     // 使用事件委托处理所有点击事件
@@ -41,7 +41,7 @@ function initializeImportModalListeners() {
     const content = document.getElementById('import-settings-modal-content');
     if (!modal || !content) return;
 
-    const closeModal = () => { if (!modal.classList.contains('hidden')) history.back(); };
+    const closeModal = () => { if (!modal.classList.contains('hidden') && !modal.classList.contains('closing')) history.back(); };
     content.addEventListener('click', e => e.stopPropagation());
 
     // 使用事件委托处理所有点击事件
@@ -143,6 +143,7 @@ function openExportModal() {
         </div>`;
 
     modal.classList.remove('hidden');
+    cancelModalClose(modal);
     modal.showModal();
     history.pushState({ modal: 'exportSettings' }, null);
     state.modalStack.push('exportSettings');
@@ -173,6 +174,7 @@ function openImportModal() {
         <div id="import-options-container" class="hidden" style="margin-top:1rem;"></div>`;
 
     modal.classList.remove('hidden');
+    cancelModalClose(modal);
     modal.showModal();
     history.pushState({ modal: 'importSettings' }, null);
     state.modalStack.push('importSettings');

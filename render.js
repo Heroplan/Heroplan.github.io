@@ -3338,6 +3338,7 @@ function renderDetailsInModal(hero, context = {}) {
                     imageModal.classList.add('show-hero-portrait');
                     imageModal.setAttribute('aria-label', hero.name);
                     imageModal.classList.remove('hidden');
+                    cancelModalClose(imageModal);
                     imageModal.showModal();
 
                     // 将立绘模态框加入到模态框堆栈

@@ -554,6 +554,7 @@ async function openDetailsModal(hero, context = {}) {
     }
     renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');
+    cancelModalClose(uiElements.modal);
     uiElements.modal.showModal();
     document.body.classList.add('modal-open');
     uiElements.modal.scrollTop = 0;
@@ -570,11 +571,12 @@ async function openDetailsModal(hero, context = {}) {
 }
 
 function closeDetailsModal() {
-    if (!uiElements.modal.classList.contains('hidden')) history.back();
+    if (!uiElements.modal.classList.contains('hidden') && !uiElements.modal.classList.contains('closing')) history.back();
 }
 
 function openFiltersModal() {
     uiElements.filtersModal.classList.remove('hidden');
+    cancelModalClose(uiElements.filtersModal);
     uiElements.filtersModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'filters' }, null);
@@ -582,7 +584,7 @@ function openFiltersModal() {
 }
 
 function closeFiltersModal() {
-    if (!uiElements.filtersModal.classList.contains('hidden')) history.back();
+    if (!uiElements.filtersModal.classList.contains('hidden') && !uiElements.filtersModal.classList.contains('closing')) history.back();
 }
 
 /**
@@ -610,6 +612,7 @@ function openHelpModal() {
     renderHelpModalContent(uiElements.helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']); //, 'filterHelpExact'
     uiElements.helpModal.classList.add('stacked-modal');
     uiElements.helpModal.classList.remove('hidden');
+    cancelModalClose(uiElements.helpModal);
     uiElements.helpModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'help' }, null);
@@ -617,13 +620,14 @@ function openHelpModal() {
 }
 
 function closeHelpModal() {
-    if (!uiElements.helpModal.classList.contains('hidden')) history.back();
+    if (!uiElements.helpModal.classList.contains('hidden') && !uiElements.helpModal.classList.contains('closing')) history.back();
 }
 
 function openLbTalentHelpModal() {
     renderHelpModalContent(uiElements.lbTalentHelpModal, 'lbTalentHelpTitle', null, ['lbTalentHelpLine2']);
     uiElements.lbTalentHelpModal.classList.add('stacked-modal');
     uiElements.lbTalentHelpModal.classList.remove('hidden');
+    cancelModalClose(uiElements.lbTalentHelpModal);
     uiElements.lbTalentHelpModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'lbTalentHelp' }, null);
@@ -631,7 +635,7 @@ function openLbTalentHelpModal() {
 }
 
 function closeLbTalentHelpModal() {
-    if (!uiElements.lbTalentHelpModal.classList.contains('hidden')) history.back();
+    if (!uiElements.lbTalentHelpModal.classList.contains('hidden') && !uiElements.lbTalentHelpModal.classList.contains('closing')) history.back();
 }
 
 /**
@@ -648,6 +652,7 @@ function updateRedeemCodeCount() {
 function openRedeemCodesModal() {
     renderRedeemCodesModal(); // 动态生成内容
     uiElements.redeemCodesModal.classList.remove('hidden');
+    cancelModalClose(uiElements.redeemCodesModal);
     uiElements.redeemCodesModal.showModal();
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'redeemCodes' }, null);
@@ -655,7 +660,7 @@ function openRedeemCodesModal() {
 }
 
 function closeRedeemCodesModal() {
-    if (!uiElements.redeemCodesModal.classList.contains('hidden')) history.back();
+    if (!uiElements.redeemCodesModal.classList.contains('hidden') && !uiElements.redeemCodesModal.classList.contains('closing')) history.back();
 }
 
 /**

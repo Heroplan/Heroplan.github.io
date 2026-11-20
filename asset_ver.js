@@ -1,4 +1,4 @@
-/* 自动生成，勿手改：每个 JSON 数据档的内容哈希（见 `_tools/gen_asset_ver.py`）。
+/* 自动生成，勿手改：每个 JSON 数据档的内容哈希。
    由主站仓库的 pre-commit 钩子增量更新；取数 URL 由 utils.js::av() 读这张表。 */
 window.AV = {
   "data/hero_order.json": "2286e658",
@@ -372,5 +372,5 @@ window.AV = {
   "data/heroes_skills_sv.json": "97b9ce1f",
   "data/heroes_skills_tc.json": "d8addd68",
   "data/heroes_skills_tr.json": "3728bcd6",
-  "lottery_official.json": "4d0ea171",
+  "lottery_official.json": "e665dfe7",
 };

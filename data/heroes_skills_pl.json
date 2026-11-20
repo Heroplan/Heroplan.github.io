@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Na początku walki każdy członek tej rodziny wyznacza nagrodę za losowego wroga i efekt ten utrzymuje się przez okres 6 tur. Oczyszczenie tego efektu nie jest możliwe.\n[*]Premia za 1 / 2 / 3 bohaterów:",
-    "[*]Dar aktywuje się, jeżeli wróg otrzyma 2500 / 2250 / 2000 pkt. łącznych obrażeń.\n[*] Dar zadaje 1000 pkt. obrażeń wrogowi po aktywacji.\n[*]Gdy broniący bohaterowie rzucają swoje umiejętności specjalne, priorytetowo obierają wrogów z darem.",
-    "[*] Każdy wróg może mieć tylko jeden dar. Jeżeli otrzyma on nowy, obrażenia przy aktywacji zostają zwiększone o 250 pkt.\n[*] Dar zostanie usunięty w momencie aktywacji lub po zakończeniu działania."
+    "[*]Dar aktywuje się, jeżeli wróg otrzyma 2500 / 2250 / 2000 pkt. łącznych obrażeń.\n[*] Dar zadaje 1200 pkt. obrażeń wrogowi po aktywacji.\n[*]Gdy broniący bohaterowie rzucają swoje umiejętności specjalne, priorytetowo obierają wrogów z darem.",
+    "[*] Każdy wróg może mieć tylko jeden dar. Jeżeli otrzyma on nowy, obrażenia przy aktywacji zostają zwiększone o 300 pkt.\n[*] Dar zostanie usunięty w momencie aktywacji lub po zakończeniu działania."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Prawdziwe męstwo",
-     "text": "Ta postać staje się potężniejsza, gdy na polu bitwy znajduje się mniej sojuszników.\n[*]Premia za 5 / 4 / 3 / 2 / 1 pozostałych sojuszników:\n[*] 0% / 5% / 10% / 25% / 50% ataku.\n[*] 0% / 5% / 10% / 25% / 50% obrony."
+     "text": "Ta postać staje się potężniejsza, gdy na polu bitwy znajduje się mniej sojuszników.\n[*]Premia za 5 / 4 / 3 / 2 / 1 pozostałych sojuszników:\n[*] 0% / 20% / 30% / 40% / 50% ataku.\n[*] 0% / 20% / 30% / 40% / 50% obrony."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Zabiera wszystkie odwoływalne efekty wybranemu przeciwnikowi i pobliskim wrogom oraz losowo rozprowadza je na wszystkich sojuszników.",
-      "Trafia 6 razy, zadając losowo 235% obrażeń celowi i pobliskim wrogom.",
-      "Kumulacja (maks.: 10): Każde trafienie dodaje kumulację krwawienia, która zadaje[#Dynamic] 124 [#]pkt. obrażeń od krwawienia co turę. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)"
+      "Trafia 6 razy, zadając losowo 260% obrażeń celowi i pobliskim wrogom.",
+      "Kumulacja (maks.: 10): Każde trafienie dodaje kumulację krwawienia, która zadaje[#Dynamic] 160 [#]pkt. obrażeń od krwawienia co turę. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)",
+      "Wszystkie trafione cele otrzymują -35% do celności przez okres 4 tur. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Na początku walki każdy członek tej rodziny wyznacza nagrodę za losowego wroga i efekt ten utrzymuje się przez okres 6 tur. Oczyszczenie tego efektu nie jest możliwe.\n[*]Premia za 1 / 2 / 3 bohaterów:",
-    "[*]Dar aktywuje się, jeżeli wróg otrzyma 2500 / 2250 / 2000 pkt. łącznych obrażeń.\n[*] Dar zadaje 1000 pkt. obrażeń wrogowi po aktywacji.\n[*]Gdy broniący bohaterowie rzucają swoje umiejętności specjalne, priorytetowo obierają wrogów z darem.",
-    "[*] Każdy wróg może mieć tylko jeden dar. Jeżeli otrzyma on nowy, obrażenia przy aktywacji zostają zwiększone o 250 pkt.\n[*] Dar zostanie usunięty w momencie aktywacji lub po zakończeniu działania."
+    "[*]Dar aktywuje się, jeżeli wróg otrzyma 2500 / 2250 / 2000 pkt. łącznych obrażeń.\n[*] Dar zadaje 1200 pkt. obrażeń wrogowi po aktywacji.\n[*]Gdy broniący bohaterowie rzucają swoje umiejętności specjalne, priorytetowo obierają wrogów z darem.",
+    "[*] Każdy wróg może mieć tylko jeden dar. Jeżeli otrzyma on nowy, obrażenia przy aktywacji zostają zwiększone o 300 pkt.\n[*] Dar zostanie usunięty w momencie aktywacji lub po zakończeniu działania."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Prawdziwe męstwo",
-     "text": "Ta postać staje się potężniejsza, gdy na polu bitwy znajduje się mniej sojuszników.\n[*]Premia za 5 / 4 / 3 / 2 / 1 pozostałych sojuszników:\n[*] 0% / 5% / 10% / 25% / 50% ataku.\n[*] 0% / 5% / 10% / 25% / 50% obrony."
+     "text": "Ta postać staje się potężniejsza, gdy na polu bitwy znajduje się mniej sojuszników.\n[*]Premia za 5 / 4 / 3 / 2 / 1 pozostałych sojuszników:\n[*] 0% / 20% / 30% / 40% / 50% ataku.\n[*] 0% / 20% / 30% / 40% / 50% obrony."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Trafia 2 razy, zadając losowo 525% obrażeń celowi i pobliskim wrogom.",
-      "Kumulacja (maks.: 10): Każde trafienie dodaje kumulację podpalenia, która zadaje[#Dynamic] 175 [#]pkt. obrażeń od podpalenia co turę. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)",
-      "Rzucający i pobliscy sojusznicy są odporni na nowe negatywne efekty many przez 3 tur(y). (Obejmuje to dolegliwości wpływające na generowanie many oraz bezpośrednie zmniejszenia many.)"
+      "Ta umiejętność specjalna nigdy nie chybia obranego celu.",
+      "Trafia 2 razy, zadając losowo 550% obrażeń celowi i pobliskim wrogom.",
+      "Kumulacja (maks.: 10): Każde trafienie dodaje kumulację podpalenia, która zadaje[#Dynamic] 285 [#]pkt. obrażeń od podpalenia co turę. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)",
+      "Rzucający i pobliscy sojusznicy zyskują 50% do ataku i dodatkowe 20% za każde otrzymane trafienie przez 3 tur(y). Atak może wzrosnąć maksymalnie do 150%."
      ]
     }
    ]

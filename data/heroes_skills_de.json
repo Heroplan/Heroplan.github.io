@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Zu Beginn des Kampfes belegt jedes Mitglied dieser Familie einen zufälligen Gegner für 6 Runden mit einem Kopfgeld. Der Effekt kann nicht gereinigt werden.\n[*]Bonus für 1 / 2 / 3 Helden:",
-    "[*]Kopfgeld wird aktiviert, wenn der Gegner 2500 / 2250 / 2000 kumulativen Schaden erhält.\n[*] Kopfgeld fügt dem Gegner bei Aktivierung 1000 Schaden zu.\n[*]Wenn die verteidigenden Helden ihre Spezialfähigkeiten wirken, priorisieren sie Gegner mit Kopfgeld.",
-    "[*] Jeder Gegner kann nur ein Kopfgeld haben. Wenn sie ein neues erhalten würden, wird der Schaden bei Aktivierung stattdessen um 250 erhöht.\n[*] Kopfgeld wird entfernt, wenn es aktiviert wird oder seine Dauer endet."
+    "[*]Kopfgeld wird aktiviert, wenn der Gegner 2500 / 2250 / 2000 kumulativen Schaden erhält.\n[*] Kopfgeld fügt dem Gegner bei Aktivierung 1200 Schaden zu.\n[*]Wenn die verteidigenden Helden ihre Spezialfähigkeiten wirken, priorisieren sie Gegner mit Kopfgeld.",
+    "[*] Jeder Gegner kann nur ein Kopfgeld haben. Wenn sie ein neues erhalten würden, wird der Schaden bei Aktivierung stattdessen um 300 erhöht.\n[*] Kopfgeld wird entfernt, wenn es aktiviert wird oder seine Dauer endet."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Wahrer Mut",
-     "text": "Dieser Charakter wird stärker, je weniger Verbündete es auf dem Schlachtfeld gibt.\n[*]Bonus für 5 / 4 / 3 / 2 / 1 verbleibende Verbündete:\n[*] 0%/ 5%/ 10%/ 25%/ 50% Angriff.\n[*] 0%/ 5%/ 10%/ 25%/ 50% Verteidigung."
+     "text": "Dieser Charakter wird stärker, je weniger Verbündete es auf dem Schlachtfeld gibt.\n[*]Bonus für 5 / 4 / 3 / 2 / 1 verbleibende Verbündete:\n[*] 0%/ 20%/ 30%/ 40%/ 50% Angriff.\n[*] 0%/ 20%/ 30%/ 40%/ 50% Verteidigung."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Stiehlt alle bannbaren Boni vom Ziel und nahen Feinden und verteilt sie zufällig auf Verbündete.",
-      "Verursacht 6 Treffer mit 235% Schaden, der zufällig auf das Ziel und nahe Gegner aufgeteilt wird.",
-      "Stapel (Max.: 10): Jeder Treffer fügt einen Blutungsstapel hinzu, der[#Dynamic] 124 [#]Blutungsschaden pro Runde verursacht. (Reinigen verringert negative Stapel um 1.)"
+      "Verursacht 6 Treffer mit 260% Schaden, der zufällig auf das Ziel und nahe Gegner aufgeteilt wird.",
+      "Stapel (Max.: 10): Jeder Treffer fügt einen Blutungsstapel hinzu, der[#Dynamic] 160 [#]Blutungsschaden pro Runde verursacht. (Reinigen verringert negative Stapel um 1.)",
+      "Alle getroffenen Ziele erhalten -35% Genauigkeit für 4 Züge. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Zu Beginn des Kampfes belegt jedes Mitglied dieser Familie einen zufälligen Gegner für 6 Runden mit einem Kopfgeld. Der Effekt kann nicht gereinigt werden.\n[*]Bonus für 1 / 2 / 3 Helden:",
-    "[*]Kopfgeld wird aktiviert, wenn der Gegner 2500 / 2250 / 2000 kumulativen Schaden erhält.\n[*] Kopfgeld fügt dem Gegner bei Aktivierung 1000 Schaden zu.\n[*]Wenn die verteidigenden Helden ihre Spezialfähigkeiten wirken, priorisieren sie Gegner mit Kopfgeld.",
-    "[*] Jeder Gegner kann nur ein Kopfgeld haben. Wenn sie ein neues erhalten würden, wird der Schaden bei Aktivierung stattdessen um 250 erhöht.\n[*] Kopfgeld wird entfernt, wenn es aktiviert wird oder seine Dauer endet."
+    "[*]Kopfgeld wird aktiviert, wenn der Gegner 2500 / 2250 / 2000 kumulativen Schaden erhält.\n[*] Kopfgeld fügt dem Gegner bei Aktivierung 1200 Schaden zu.\n[*]Wenn die verteidigenden Helden ihre Spezialfähigkeiten wirken, priorisieren sie Gegner mit Kopfgeld.",
+    "[*] Jeder Gegner kann nur ein Kopfgeld haben. Wenn sie ein neues erhalten würden, wird der Schaden bei Aktivierung stattdessen um 300 erhöht.\n[*] Kopfgeld wird entfernt, wenn es aktiviert wird oder seine Dauer endet."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Wahrer Mut",
-     "text": "Dieser Charakter wird stärker, je weniger Verbündete es auf dem Schlachtfeld gibt.\n[*]Bonus für 5 / 4 / 3 / 2 / 1 verbleibende Verbündete:\n[*] 0%/ 5%/ 10%/ 25%/ 50% Angriff.\n[*] 0%/ 5%/ 10%/ 25%/ 50% Verteidigung."
+     "text": "Dieser Charakter wird stärker, je weniger Verbündete es auf dem Schlachtfeld gibt.\n[*]Bonus für 5 / 4 / 3 / 2 / 1 verbleibende Verbündete:\n[*] 0%/ 20%/ 30%/ 40%/ 50% Angriff.\n[*] 0%/ 20%/ 30%/ 40%/ 50% Verteidigung."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Verursacht 2 Treffer mit 525% Schaden, der zufällig auf das Ziel und nahe Gegner aufgeteilt wird.",
-      "Stapel (Max.: 10): Jeder Treffer fügt einen Brandstapel hinzu, der[#Dynamic] 175 [#]Brandschaden pro Runde verursacht. (Reinigen verringert negative Stapel um 1.)",
-      "Der Wirker und Verbündete in der Nähe sind für 3 Züge immun gegen neue negative Manaeffekte. (Dies umfasst sowohl Beeinträchtigungen der Manaerzeugung als auch direkte Manareduzierungen.)"
+      "Diese Spezialfähigkeit verfehlt ihre Ziele nie.",
+      "Verursacht 2 Treffer mit 550% Schaden, der zufällig auf das Ziel und nahe Gegner aufgeteilt wird.",
+      "Stapel (Max.: 10): Jeder Treffer fügt einen Brandstapel hinzu, der[#Dynamic] 285 [#]Brandschaden pro Runde verursacht. (Reinigen verringert negative Stapel um 1.)",
+      "Der Wirker und nahe Verbündete erhalten 50% Angriff und eine weitere 20% Erhöhung jedes Mal, wenn sie während 3 Runden getroffen werden, bis zu 150% Angriff."
      ]
     }
    ]

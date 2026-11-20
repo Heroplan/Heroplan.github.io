@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Ved kampens begyndelse placerer hvert medlem af denne familie en dusør på en tilfældig fjende i 6 runder. Effekten kan ikke fjernes.\n[*]Bonus for 1 / 2 / 3 helte:",
-    "[*]Dusør aktiveres, hvis fjenden tager 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør gør 1000 skade på fjenden ved aktivering.\n[*]Når de forsvarende helte kaster deres særlige evner, vil de prioritere fjender med en dusør.",
-    "[*] Hver fjende kan kun have én dusør. Hvis de skulle modtage en ny, forøges skaden i stedet med 250 ved aktivering.\n[*] Dusøren fjernes ved aktivering eller når den udløber."
+    "[*]Dusør aktiveres, hvis fjenden tager 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør gør 1200 skade på fjenden ved aktivering.\n[*]Når de forsvarende helte kaster deres særlige evner, vil de prioritere fjender med en dusør.",
+    "[*] Hver fjende kan kun have én dusør. Hvis de skulle modtage en ny, forøges skaden i stedet med 300 ved aktivering.\n[*] Dusøren fjernes ved aktivering eller når den udløber."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Ægte mod",
-     "text": "Denne figur bliver stærkere, jo færre allierede der er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 resterende allierede:\n[*] 0%/ 5%/ 10%/ 25%/ 50% angreb.\n[*] 0%/ 5%/ 10%/ 25%/ 50% forsvar."
+     "text": "Denne figur bliver stærkere, jo færre allierede der er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 resterende allierede:\n[*] 0%/ 20%/ 30%/ 40%/ 50% angreb.\n[*] 0%/ 20%/ 30%/ 40%/ 50% forsvar."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Stjæler alle ophævelsesbuffere fra målet og fjender i nærheden og fordeler dem tilfældigt blandt de allierede.",
-      "Udeler 6 træffere med 235% skade tilfældigt fordelt mellem målet og fjender i nærheden.",
-      "Kumulativ (Maks.: 10): Hver træffer tilføjer en kumulativ blodskade, som gør[#Dynamic] 124 [#]blodskade per runde. (Fjernelse reducerer negative kumulative effekter med 1.)"
+      "Udeler 6 træffere med 260% skade tilfældigt fordelt mellem målet og fjender i nærheden.",
+      "Kumulativ (Maks.: 10): Hver træffer tilføjer en kumulativ blodskade, som gør[#Dynamic] 160 [#]blodskade per runde. (Fjernelse reducerer negative kumulative effekter med 1.)",
+      "Alle ramte mål får -35% præcision i 4 ture. (Chancen for at ramme ved siden af gælder for offensive særlige evner.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Ved kampens begyndelse placerer hvert medlem af denne familie en dusør på en tilfældig fjende i 6 runder. Effekten kan ikke fjernes.\n[*]Bonus for 1 / 2 / 3 helte:",
-    "[*]Dusør aktiveres, hvis fjenden tager 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør gør 1000 skade på fjenden ved aktivering.\n[*]Når de forsvarende helte kaster deres særlige evner, vil de prioritere fjender med en dusør.",
-    "[*] Hver fjende kan kun have én dusør. Hvis de skulle modtage en ny, forøges skaden i stedet med 250 ved aktivering.\n[*] Dusøren fjernes ved aktivering eller når den udløber."
+    "[*]Dusør aktiveres, hvis fjenden tager 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør gør 1200 skade på fjenden ved aktivering.\n[*]Når de forsvarende helte kaster deres særlige evner, vil de prioritere fjender med en dusør.",
+    "[*] Hver fjende kan kun have én dusør. Hvis de skulle modtage en ny, forøges skaden i stedet med 300 ved aktivering.\n[*] Dusøren fjernes ved aktivering eller når den udløber."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Ægte mod",
-     "text": "Denne figur bliver stærkere, jo færre allierede der er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 resterende allierede:\n[*] 0%/ 5%/ 10%/ 25%/ 50% angreb.\n[*] 0%/ 5%/ 10%/ 25%/ 50% forsvar."
+     "text": "Denne figur bliver stærkere, jo færre allierede der er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 resterende allierede:\n[*] 0%/ 20%/ 30%/ 40%/ 50% angreb.\n[*] 0%/ 20%/ 30%/ 40%/ 50% forsvar."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Udeler 2 træffere med 525% skade tilfældigt fordelt mellem målet og fjender i nærheden.",
-      "Kumulativ (Maks.: 10): Hver træffer tilføjer en kumulativ ildskade, som gør[#Dynamic] 175 [#]ildskade per runde. (Fjernelse reducerer negative kumulative effekter med 1.)",
-      "Kasteren og allierede i nærheden er immune over for nye negative manaeffekter i 3 runder. (Det inkluderer begge lidelser, der påvirker managendannelse og direkte manareduktion.)"
+      "Denne særlige egenskab rammer aldrig ved siden af.",
+      "Udeler 2 træffere med 550% skade tilfældigt fordelt mellem målet og fjender i nærheden.",
+      "Kumulativ (Maks.: 10): Hver træffer tilføjer en kumulativ ildskade, som gør[#Dynamic] 285 [#]ildskade per runde. (Fjernelse reducerer negative kumulative effekter med 1.)",
+      "Kasteren og allierede i nærheden får 50% angreb og yderligere 20% forøgelse, hver gang de bliver ramt i 3 runder, op til 150% angreb."
      ]
     }
    ]

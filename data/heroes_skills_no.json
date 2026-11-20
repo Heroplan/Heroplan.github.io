@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Ved starten av kampen plasserer hvert medlem av denne familien en dusør på en tilfeldig fiende i 6 runder. Effekten kan ikke renses.\n[*]Bonus for 1 / 2 / 3 helter:",
-    "[*]Dusør aktiveres hvis fienden tar 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør påfører fienden 1000 skade når aktivert.\n[*]Når forsvarende helter bruker spesialferdighetene sine, prioriterer de fiender med en dusør.",
-    "[*] Hver fiende kan kun ha én dusør. Dersom de mottar en ny, vil skaden ved aktiveringen økes med 250 i stedet.\n[*] Dusør fjernes når den aktiveres eller når varigheten er over."
+    "[*]Dusør aktiveres hvis fienden tar 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør påfører fienden 1200 skade når aktivert.\n[*]Når forsvarende helter bruker spesialferdighetene sine, prioriterer de fiender med en dusør.",
+    "[*] Hver fiende kan kun ha én dusør. Dersom de mottar en ny, vil skaden ved aktiveringen økes med 300 i stedet.\n[*] Dusør fjernes når den aktiveres eller når varigheten er over."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Jernvilje",
-     "text": "Denne figuren blir sterkere jo færre allierte det er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 gjenværende allierte:\n[*] 0%/ 5%/ 10%/ 25%/ 50% angrep.\n[*] 0%/ 5%/ 10%/ 25%/ 50% forsvar."
+     "text": "Denne figuren blir sterkere jo færre allierte det er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 gjenværende allierte:\n[*] 0%/ 20%/ 30%/ 40%/ 50% angrep.\n[*] 0%/ 20%/ 30%/ 40%/ 50% forsvar."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Stjeler alle fjernbare økninger fra målet og fiender i nærheten, og fordeler dem tilfeldig til allierte.",
-      "Påfører 6 treff med 235% skade fordelt tilfeldig blant målet og fiender i nærheten.",
-      "Stabel (Maks.: 10): Hvert treff legger til en blødestabel, som påfører[#Dynamic] 124 [#]blødeskade per runde. (Rensing reduserer negative stabler med 1.)"
+      "Påfører 6 treff med 260% skade fordelt tilfeldig blant målet og fiender i nærheten.",
+      "Stabel (Maks.: 10): Hvert treff legger til en blødestabel, som påfører[#Dynamic] 160 [#]blødeskade per runde. (Rensing reduserer negative stabler med 1.)",
+      "Alle trufne mål får -35% treffsikkerhet i 4 runder. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Ved starten av kampen plasserer hvert medlem av denne familien en dusør på en tilfeldig fiende i 6 runder. Effekten kan ikke renses.\n[*]Bonus for 1 / 2 / 3 helter:",
-    "[*]Dusør aktiveres hvis fienden tar 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør påfører fienden 1000 skade når aktivert.\n[*]Når forsvarende helter bruker spesialferdighetene sine, prioriterer de fiender med en dusør.",
-    "[*] Hver fiende kan kun ha én dusør. Dersom de mottar en ny, vil skaden ved aktiveringen økes med 250 i stedet.\n[*] Dusør fjernes når den aktiveres eller når varigheten er over."
+    "[*]Dusør aktiveres hvis fienden tar 2500 / 2250 / 2000 kumulativ skade.\n[*] Dusør påfører fienden 1200 skade når aktivert.\n[*]Når forsvarende helter bruker spesialferdighetene sine, prioriterer de fiender med en dusør.",
+    "[*] Hver fiende kan kun ha én dusør. Dersom de mottar en ny, vil skaden ved aktiveringen økes med 300 i stedet.\n[*] Dusør fjernes når den aktiveres eller når varigheten er over."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Jernvilje",
-     "text": "Denne figuren blir sterkere jo færre allierte det er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 gjenværende allierte:\n[*] 0%/ 5%/ 10%/ 25%/ 50% angrep.\n[*] 0%/ 5%/ 10%/ 25%/ 50% forsvar."
+     "text": "Denne figuren blir sterkere jo færre allierte det er på slagmarken.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 gjenværende allierte:\n[*] 0%/ 20%/ 30%/ 40%/ 50% angrep.\n[*] 0%/ 20%/ 30%/ 40%/ 50% forsvar."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Påfører 2 treff med 525% skade fordelt tilfeldig blant målet og fiender i nærheten.",
-      "Stabel (Maks.: 10): Hvert treff legger til en brannstabel, som påfører[#Dynamic] 175 [#]brannskade per runde. (Rensing reduserer negative stabler med 1.)",
-      "Brukeren og allierte i nærheten er immune mot nye negative manaeffekter i 3 runder. (Dette inkluderer både lidelser som påvirker managenerering, og direkte manareduksjoner.)"
+      "Denne spesialferdigheten bommer aldri på målet sitt.",
+      "Påfører 2 treff med 550% skade fordelt tilfeldig blant målet og fiender i nærheten.",
+      "Stabel (Maks.: 10): Hvert treff legger til en brannstabel, som påfører[#Dynamic] 285 [#]brannskade per runde. (Rensing reduserer negative stabler med 1.)",
+      "Brukeren og allierte i nærheten får 50% angrep og ytterligere 20% økning hver gang de treffes gjennom 3 runder, opptil 150% angrep."
      ]
     }
    ]

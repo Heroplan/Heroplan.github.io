@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Au début de la bataille, chaque membre de cette famille place une prime sur un ennemi aléatoire pendant 6 tours. L'effet ne peut pas être purifié.\n[*]Bonus pour 1 / 2 / 3 héros:",
-    "[*]La prime s'active si l'ennemi subit 2500 / 2250 / 2000 points de dégâts cumulés.\n[*] La prime inflige 1000 points de dégâts à l'ennemi lorsqu'elle est activée.\n[*]Lorsque les héros défenseurs lancent leur compétence spéciale, ils ciblent en priorité les ennemis avec une prime.",
-    "[*] Chaque ennemi ne peut avoir qu'une seule prime. S'il en reçoit une autre, les dégâts de l'activation sont augmentés de 250 à la place.\n[*] La prime est supprimée lorsqu'elle est activée ou une fois sa durée écoulée."
+    "[*]La prime s'active si l'ennemi subit 2500 / 2250 / 2000 points de dégâts cumulés.\n[*] La prime inflige 1200 points de dégâts à l'ennemi lorsqu'elle est activée.\n[*]Lorsque les héros défenseurs lancent leur compétence spéciale, ils ciblent en priorité les ennemis avec une prime.",
+    "[*] Chaque ennemi ne peut avoir qu'une seule prime. S'il en reçoit une autre, les dégâts de l'activation sont augmentés de 300 à la place.\n[*] La prime est supprimée lorsqu'elle est activée ou une fois sa durée écoulée."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Vrai courage",
-     "text": "Ce personnage gagne en puissance lorsqu'il y a moins d'alliés sur le champ de bataille.\n[*]Bonus pour 5 / 4 / 3 / 2 / 1 alliés restants:\n[*] 0%/ 5%/ 10%/ 25%/ 50% d'attaque.\n[*] 0%/ 5%/ 10%/ 25%/ 50% de défense."
+     "text": "Ce personnage gagne en puissance lorsqu'il y a moins d'alliés sur le champ de bataille.\n[*]Bonus pour 5 / 4 / 3 / 2 / 1 alliés restants:\n[*] 0%/ 20%/ 30%/ 40%/ 50% d'attaque.\n[*] 0%/ 20%/ 30%/ 40%/ 50% de défense."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Vole tous les bonus dissipables de la cible et des ennemis proches, et les octroie aléatoirement aux alliés.",
-      "Inflige 6 coups à 235% de dégâts de façon aléatoire à la cible et aux ennemis proches.",
-      "Cumul (max: 10): chaque coup ajoute un cumul de saignement qui inflige[#Dynamic] 124 [#]points de dégâts de saignement par tour. (La purification réduit les cumuls négatifs de 1.)"
+      "Inflige 6 coups à 260% de dégâts de façon aléatoire à la cible et aux ennemis proches.",
+      "Cumul (max: 10): chaque coup ajoute un cumul de saignement qui inflige[#Dynamic] 160 [#]points de dégâts de saignement par tour. (La purification réduit les cumuls négatifs de 1.)",
+      "Toutes les cibles touchées reçoivent -35% de précision pendant 4 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Au début de la bataille, chaque membre de cette famille place une prime sur un ennemi aléatoire pendant 6 tours. L'effet ne peut pas être purifié.\n[*]Bonus pour 1 / 2 / 3 héros:",
-    "[*]La prime s'active si l'ennemi subit 2500 / 2250 / 2000 points de dégâts cumulés.\n[*] La prime inflige 1000 points de dégâts à l'ennemi lorsqu'elle est activée.\n[*]Lorsque les héros défenseurs lancent leur compétence spéciale, ils ciblent en priorité les ennemis avec une prime.",
-    "[*] Chaque ennemi ne peut avoir qu'une seule prime. S'il en reçoit une autre, les dégâts de l'activation sont augmentés de 250 à la place.\n[*] La prime est supprimée lorsqu'elle est activée ou une fois sa durée écoulée."
+    "[*]La prime s'active si l'ennemi subit 2500 / 2250 / 2000 points de dégâts cumulés.\n[*] La prime inflige 1200 points de dégâts à l'ennemi lorsqu'elle est activée.\n[*]Lorsque les héros défenseurs lancent leur compétence spéciale, ils ciblent en priorité les ennemis avec une prime.",
+    "[*] Chaque ennemi ne peut avoir qu'une seule prime. S'il en reçoit une autre, les dégâts de l'activation sont augmentés de 300 à la place.\n[*] La prime est supprimée lorsqu'elle est activée ou une fois sa durée écoulée."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Vrai courage",
-     "text": "Ce personnage gagne en puissance lorsqu'il y a moins d'alliés sur le champ de bataille.\n[*]Bonus pour 5 / 4 / 3 / 2 / 1 alliés restants:\n[*] 0%/ 5%/ 10%/ 25%/ 50% d'attaque.\n[*] 0%/ 5%/ 10%/ 25%/ 50% de défense."
+     "text": "Ce personnage gagne en puissance lorsqu'il y a moins d'alliés sur le champ de bataille.\n[*]Bonus pour 5 / 4 / 3 / 2 / 1 alliés restants:\n[*] 0%/ 20%/ 30%/ 40%/ 50% d'attaque.\n[*] 0%/ 20%/ 30%/ 40%/ 50% de défense."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Inflige 2 coups à 525% de dégâts de façon aléatoire à la cible et aux ennemis proches.",
-      "Cumul (max: 10): chaque coup ajoute un cumul de brûlure qui inflige[#Dynamic] 175 [#]points de dégâts de brûlure par tour. (La purification réduit les cumuls négatifs de 1.)",
-      "Le lanceur et les alliés proches sont immunisés contre les nouveaux effets négatifs affectant le mana pendant 3 tours. (Concerne à la fois les effets affectant la génération de mana et les réductions de mana directes.)"
+      "Cette compétence spéciale ne rate jamais sa cible.",
+      "Inflige 2 coups à 550% de dégâts de façon aléatoire à la cible et aux ennemis proches.",
+      "Cumul (max: 10): chaque coup ajoute un cumul de brûlure qui inflige[#Dynamic] 285 [#]points de dégâts de brûlure par tour. (La purification réduit les cumuls négatifs de 1.)",
+      "Le lanceur et les alliés proches reçoivent 50% d'attaque et une augmentation supplémentaire de 20% à chaque coup subi pendant 3 tours, jusqu'à un maximum de 150%."
      ]
     }
    ]

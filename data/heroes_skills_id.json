@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Di awal pertempuran, setiap anggota keluarga ini memasang Hadiah Buruan pada musuh acak selama 6 giliran. Efek tidak dapat dibersihkan.\n[*]Bonus untuk 1 / 2 / 3 Pahlawan:",
-    "[*]Hadiah Buruan aktif jika musuh menerima 2500 / 2250 / 2000 kerusakan kumulatif.\n[*] Hadiah Buruan menimbulkan 1000 kerusakan pada musuh saat diaktifkan.\n[*]Saat Pahlawan yang bertahan merapal Keahlian Khusus, mereka akan memprioritaskan musuh yang memiliki Hadiah Buruan.",
-    "[*] Setiap musuh hanya bisa memiliki satu Hadiah Buruan. Jika mereka akan menerima yang baru, kerusakan saat pengaktifan ditingkatkan sebesar 250.\n[*] Hadiah Buruan akan dihapus saat aktif atau setelah durasinya berakhir."
+    "[*]Hadiah Buruan aktif jika musuh menerima 2500 / 2250 / 2000 kerusakan kumulatif.\n[*] Hadiah Buruan menimbulkan 1200 kerusakan pada musuh saat diaktifkan.\n[*]Saat Pahlawan yang bertahan merapal Keahlian Khusus, mereka akan memprioritaskan musuh yang memiliki Hadiah Buruan.",
+    "[*] Setiap musuh hanya bisa memiliki satu Hadiah Buruan. Jika mereka akan menerima yang baru, kerusakan saat pengaktifan ditingkatkan sebesar 300.\n[*] Hadiah Buruan akan dihapus saat aktif atau setelah durasinya berakhir."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Kegigihan Sejati",
-     "text": "Semakin sedikit sekutu di medan tempur, semakin kuat karakter ini.\n[*]Bonus untuk 5 / 4 / 3 / 2 / 1 sekutu tersisa:\n[*] 0% / 5% / 10% / 25% / 50% serangan.\n[*] 0% / 5% / 10% / 25% / 50% pertahanan."
+     "text": "Semakin sedikit sekutu di medan tempur, semakin kuat karakter ini.\n[*]Bonus untuk 5 / 4 / 3 / 2 / 1 sekutu tersisa:\n[*] 0% / 20% / 30% / 40% / 50% serangan.\n[*] 0% / 20% / 30% / 40% / 50% pertahanan."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Mencuri semua genjotan yang bisa dienyahkan dari sasaran dan musuh terdekat dan secara acak membagikannya kepada sekutu.",
-      "Memberikan 6 pukulan dengan kerusakan 235% secara acak pada sasaran dan musuh terdekat.",
-      "Tumpukan (Maks: 10): Setiap pukulan menambahkan satu Tumpukan Berdarah, yang menimbulkan[#Dynamic] 124 [#]kerusakan Berdarah per giliran. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)"
+      "Memberikan 6 pukulan dengan kerusakan 260% secara acak pada sasaran dan musuh terdekat.",
+      "Tumpukan (Maks: 10): Setiap pukulan menambahkan satu Tumpukan Berdarah, yang menimbulkan[#Dynamic] 160 [#]kerusakan Berdarah per giliran. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)",
+      "Semua sasaran yang terkena mendapat akurasi -35% selama 4 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Di awal pertempuran, setiap anggota keluarga ini memasang Hadiah Buruan pada musuh acak selama 6 giliran. Efek tidak dapat dibersihkan.\n[*]Bonus untuk 1 / 2 / 3 Pahlawan:",
-    "[*]Hadiah Buruan aktif jika musuh menerima 2500 / 2250 / 2000 kerusakan kumulatif.\n[*] Hadiah Buruan menimbulkan 1000 kerusakan pada musuh saat diaktifkan.\n[*]Saat Pahlawan yang bertahan merapal Keahlian Khusus, mereka akan memprioritaskan musuh yang memiliki Hadiah Buruan.",
-    "[*] Setiap musuh hanya bisa memiliki satu Hadiah Buruan. Jika mereka akan menerima yang baru, kerusakan saat pengaktifan ditingkatkan sebesar 250.\n[*] Hadiah Buruan akan dihapus saat aktif atau setelah durasinya berakhir."
+    "[*]Hadiah Buruan aktif jika musuh menerima 2500 / 2250 / 2000 kerusakan kumulatif.\n[*] Hadiah Buruan menimbulkan 1200 kerusakan pada musuh saat diaktifkan.\n[*]Saat Pahlawan yang bertahan merapal Keahlian Khusus, mereka akan memprioritaskan musuh yang memiliki Hadiah Buruan.",
+    "[*] Setiap musuh hanya bisa memiliki satu Hadiah Buruan. Jika mereka akan menerima yang baru, kerusakan saat pengaktifan ditingkatkan sebesar 300.\n[*] Hadiah Buruan akan dihapus saat aktif atau setelah durasinya berakhir."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Kegigihan Sejati",
-     "text": "Semakin sedikit sekutu di medan tempur, semakin kuat karakter ini.\n[*]Bonus untuk 5 / 4 / 3 / 2 / 1 sekutu tersisa:\n[*] 0% / 5% / 10% / 25% / 50% serangan.\n[*] 0% / 5% / 10% / 25% / 50% pertahanan."
+     "text": "Semakin sedikit sekutu di medan tempur, semakin kuat karakter ini.\n[*]Bonus untuk 5 / 4 / 3 / 2 / 1 sekutu tersisa:\n[*] 0% / 20% / 30% / 40% / 50% serangan.\n[*] 0% / 20% / 30% / 40% / 50% pertahanan."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Memberikan 2 pukulan dengan kerusakan 525% secara acak pada sasaran dan musuh terdekat.",
-      "Tumpukan (Maks: 10): Setiap pukulan menambahkan satu Tumpukan Pembakaran, yang menimbulkan[#Dynamic] 175 [#]kerusakan Pembakaran per giliran. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)",
-      "Perapal dan sekutu terdekat kebal terhadap efek mana negatif yang baru selama 3 giliran. (Ini termasuk pelemahan yang memengaruhi generasi mana dan pengurangan mana langsung.)"
+      "Keahlian Khusus ini tidak pernah meleset dari sasaran.",
+      "Memberikan 2 pukulan dengan kerusakan 550% secara acak pada sasaran dan musuh terdekat.",
+      "Tumpukan (Maks: 10): Setiap pukulan menambahkan satu Tumpukan Pembakaran, yang menimbulkan[#Dynamic] 285 [#]kerusakan Pembakaran per giliran. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)",
+      "Perapal dan sekutu terdekat mendapat 50% serangan dan bertambah 20% setiap kali mereka terkena hantaman selama 3 giliran, hingga 150% serangan."
      ]
     }
    ]

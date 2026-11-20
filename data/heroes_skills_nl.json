@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Aan het begin van het gevecht plaatst elk lid van deze familie een premie op een willekeurige vijand voor 6 beurten. Het effect kan niet worden gezuiverd.\n[*]Bonus voor 1 / 2 / 3 helden:",
-    "[*]De premie wordt geactiveerd als de vijand 2500 / 2250 / 2000 cumulatieve schade oploopt.\n[*] De premie brengt 1000 schade toe aan de vijand wanneer die wordt geactiveerd.\n[*]Wanneer verdedigende helden hun speciale vaardigheden inzetten, geven ze voorrang aan vijanden met een premie.",
-    "[*] Elke vijand kan maar één premie hebben. Bij een nieuwe wordt de schade bij activering in plaats daarvan verhoogd met 250.\n[*] De premie wordt verwijderd wanneer die wordt geactiveerd of zodra de duur ervan afloopt."
+    "[*]De premie wordt geactiveerd als de vijand 2500 / 2250 / 2000 cumulatieve schade oploopt.\n[*] De premie brengt 1200 schade toe aan de vijand wanneer die wordt geactiveerd.\n[*]Wanneer verdedigende helden hun speciale vaardigheden inzetten, geven ze voorrang aan vijanden met een premie.",
+    "[*] Elke vijand kan maar één premie hebben. Bij een nieuwe wordt de schade bij activering in plaats daarvan verhoogd met 300.\n[*] De premie wordt verwijderd wanneer die wordt geactiveerd of zodra de duur ervan afloopt."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Ware doorzetting",
-     "text": "Dit personage wordt sterker naarmate er minder bondgenoten op het slagveld zijn.\n[*]Bonus voor 5 / 4 / 3 / 2 / 1 overgebleven bondgenoten:\n[*] 0% / 5% / 10% / 25% / 50% aanval.\n[*] 0% / 5% / 10% / 25% / 50% verdediging."
+     "text": "Dit personage wordt sterker naarmate er minder bondgenoten op het slagveld zijn.\n[*]Bonus voor 5 / 4 / 3 / 2 / 1 overgebleven bondgenoten:\n[*] 0% / 20% / 30% / 40% / 50% aanval.\n[*] 0% / 20% / 30% / 40% / 50% verdediging."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Steelt alle oppeppers die ongedaan kunnen worden gemaakt van het doelwit en alle vijanden in de buurt, en verdeelt ze willekeurig over alle bondgenoten.",
-      "Brengt 6 treffers van 235% schade toe, willekeurig verdeeld onder het doelwit en vijanden in de buurt.",
-      "Cumulatief (max.: 10): Elke treffer voegt een bloedstapel toe die[#Dynamic] 124 [#]bloedschade per beurt toebrengt. (Zuivering vermindert negatieve stapels met 1.)"
+      "Brengt 6 treffers van 260% schade toe, willekeurig verdeeld onder het doelwit en vijanden in de buurt.",
+      "Cumulatief (max.: 10): Elke treffer voegt een bloedstapel toe die[#Dynamic] 160 [#]bloedschade per beurt toebrengt. (Zuivering vermindert negatieve stapels met 1.)",
+      "Het getroffen doelwitten krijgen 4 beurten lang -35% trefzekerheid. (Miskansen gelden ook voor offensieve Speciale vaardigheden.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Aan het begin van het gevecht plaatst elk lid van deze familie een premie op een willekeurige vijand voor 6 beurten. Het effect kan niet worden gezuiverd.\n[*]Bonus voor 1 / 2 / 3 helden:",
-    "[*]De premie wordt geactiveerd als de vijand 2500 / 2250 / 2000 cumulatieve schade oploopt.\n[*] De premie brengt 1000 schade toe aan de vijand wanneer die wordt geactiveerd.\n[*]Wanneer verdedigende helden hun speciale vaardigheden inzetten, geven ze voorrang aan vijanden met een premie.",
-    "[*] Elke vijand kan maar één premie hebben. Bij een nieuwe wordt de schade bij activering in plaats daarvan verhoogd met 250.\n[*] De premie wordt verwijderd wanneer die wordt geactiveerd of zodra de duur ervan afloopt."
+    "[*]De premie wordt geactiveerd als de vijand 2500 / 2250 / 2000 cumulatieve schade oploopt.\n[*] De premie brengt 1200 schade toe aan de vijand wanneer die wordt geactiveerd.\n[*]Wanneer verdedigende helden hun speciale vaardigheden inzetten, geven ze voorrang aan vijanden met een premie.",
+    "[*] Elke vijand kan maar één premie hebben. Bij een nieuwe wordt de schade bij activering in plaats daarvan verhoogd met 300.\n[*] De premie wordt verwijderd wanneer die wordt geactiveerd of zodra de duur ervan afloopt."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Ware doorzetting",
-     "text": "Dit personage wordt sterker naarmate er minder bondgenoten op het slagveld zijn.\n[*]Bonus voor 5 / 4 / 3 / 2 / 1 overgebleven bondgenoten:\n[*] 0% / 5% / 10% / 25% / 50% aanval.\n[*] 0% / 5% / 10% / 25% / 50% verdediging."
+     "text": "Dit personage wordt sterker naarmate er minder bondgenoten op het slagveld zijn.\n[*]Bonus voor 5 / 4 / 3 / 2 / 1 overgebleven bondgenoten:\n[*] 0% / 20% / 30% / 40% / 50% aanval.\n[*] 0% / 20% / 30% / 40% / 50% verdediging."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Brengt 2 treffers van 525% schade toe, willekeurig verdeeld onder het doelwit en vijanden in de buurt.",
-      "Cumulatief (max.: 10): Elke treffer voegt een vuurstapel toe die[#Dynamic] 175 [#]vuurschade per beurt toebrengt. (Zuivering vermindert negatieve stapels met 1.)",
-      "De spreukspreker en bondgenoten in de buurt zijn 3 beurten lang immuun voor nieuwe negatieve mana-effecten. (Dit geldt voor effecten die manarecuperatie beïnvloeden en die mana rechtstreeks verlagen.)"
+      "Deze speciale vaardigheid mist nooit zijn doelen.",
+      "Brengt 2 treffers van 550% schade toe, willekeurig verdeeld onder het doelwit en vijanden in de buurt.",
+      "Cumulatief (max.: 10): Elke treffer voegt een vuurstapel toe die[#Dynamic] 285 [#]vuurschade per beurt toebrengt. (Zuivering vermindert negatieve stapels met 1.)",
+      "De spreukspreker en bondgenoten in de buurt krijgen 3 beurten lang 50% aanvalskracht, en 20% extra elke keer dat ze worden geraakt, tot maximaal 150% aanvalskracht."
      ]
     }
    ]

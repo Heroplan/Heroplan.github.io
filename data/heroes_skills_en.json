@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "At the start of the battle, each member of this family puts a Bounty on a random enemy for 6 turns. The effect cannot be cleansed.\n[*]Bonus for 1 / 2 / 3 Heroes:",
-    "[*]Bounty activates if the enemy receives 2500 / 2250 / 2000 cumulative damage.\n[*] Bounty deals 1000 damage to the enemy when activated.\n[*]When defending Heroes cast their Special Skills, they will prioritize enemies with a Bounty.",
-    "[*] Each enemy can only have one Bounty. If they would receive a new one, the damage on activation is increased by 250 instead.\n[*] Bounty will be removed when it activates or once its duration ends."
+    "[*]Bounty activates if the enemy receives 2500 / 2250 / 2000 cumulative damage.\n[*] Bounty deals 1200 damage to the enemy when activated.\n[*]When defending Heroes cast their Special Skills, they will prioritize enemies with a Bounty.",
+    "[*] Each enemy can only have one Bounty. If they would receive a new one, the damage on activation is increased by 300 instead.\n[*] Bounty will be removed when it activates or once its duration ends."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "True Grit",
-     "text": "This character gets more powerful the fewer allies there are on the battlefield.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 remaining allies:\n[*] 0% / 5% / 10% / 25% / 50% attack.\n[*] 0% / 5% / 10% / 25% / 50% defense."
+     "text": "This character gets more powerful the fewer allies there are on the battlefield.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 remaining allies:\n[*] 0% / 20% / 30% / 40% / 50% attack.\n[*] 0% / 20% / 30% / 40% / 50% defense."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Steals all dispellable buffs from the target and nearby enemies and randomly distributes them on allies.",
-      "Deals 6 hits of 235% damage randomly among the target and nearby enemies.",
-      "Stack (Max: 10): Each hit adds a Bleed Stack, which deals[#Dynamic] 124 [#]Bleed damage per turn. (Cleansing reduces negative stacks by 1.)"
+      "Deals 6 hits of 260% damage randomly among the target and nearby enemies.",
+      "Stack (Max: 10): Each hit adds a Bleed Stack, which deals[#Dynamic] 160 [#]Bleed damage per turn. (Cleansing reduces negative stacks by 1.)",
+      "All hit targets get -35% accuracy for 4 turns. (Chance to miss also applies to offensive Special Skills.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "At the start of the battle, each member of this family puts a Bounty on a random enemy for 6 turns. The effect cannot be cleansed.\n[*]Bonus for 1 / 2 / 3 Heroes:",
-    "[*]Bounty activates if the enemy receives 2500 / 2250 / 2000 cumulative damage.\n[*] Bounty deals 1000 damage to the enemy when activated.\n[*]When defending Heroes cast their Special Skills, they will prioritize enemies with a Bounty.",
-    "[*] Each enemy can only have one Bounty. If they would receive a new one, the damage on activation is increased by 250 instead.\n[*] Bounty will be removed when it activates or once its duration ends."
+    "[*]Bounty activates if the enemy receives 2500 / 2250 / 2000 cumulative damage.\n[*] Bounty deals 1200 damage to the enemy when activated.\n[*]When defending Heroes cast their Special Skills, they will prioritize enemies with a Bounty.",
+    "[*] Each enemy can only have one Bounty. If they would receive a new one, the damage on activation is increased by 300 instead.\n[*] Bounty will be removed when it activates or once its duration ends."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "True Grit",
-     "text": "This character gets more powerful the fewer allies there are on the battlefield.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 remaining allies:\n[*] 0% / 5% / 10% / 25% / 50% attack.\n[*] 0% / 5% / 10% / 25% / 50% defense."
+     "text": "This character gets more powerful the fewer allies there are on the battlefield.\n[*]Bonus for 5 / 4 / 3 / 2 / 1 remaining allies:\n[*] 0% / 20% / 30% / 40% / 50% attack.\n[*] 0% / 20% / 30% / 40% / 50% defense."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Deals 2 hits of 525% damage randomly among the target and nearby enemies.",
-      "Stack (Max: 10): Each hit adds a Burn Stack, which deals[#Dynamic] 175 [#]Burn damage per turn. (Cleansing reduces negative stacks by 1.)",
-      "Caster and nearby allies are immune to new negative mana effects for 3 turns. (This includes both ailments affecting mana generation and direct mana reductions.)"
+      "This Special Skill never misses its targets.",
+      "Deals 2 hits of 550% damage randomly among the target and nearby enemies.",
+      "Stack (Max: 10): Each hit adds a Burn Stack, which deals[#Dynamic] 285 [#]Burn damage per turn. (Cleansing reduces negative stacks by 1.)",
+      "The caster and nearby allies get 50% attack, and a further 20% increase every time they are hit during 3 turns, up to 150% attack."
      ]
     }
    ]

@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Al comienzo de la batalla, cada miembro de esta familia coloca un botín sobre un enemigo aleatorio durante 6 turnos. El efecto no se puede purificar.\n[*]Bonificación para 1 / 2 / 3 héroes:",
-    "[*]El botín se activa si el enemigo recibe 2500 / 2250 / 2000 de daño acumulativo.\n[*] El botín inflige 1000 de daño al enemigo al activarse.\n[*]Cuando los héroes defensores lanzan sus habilidades especiales, atacarán a los enemigos con un botín.",
-    "[*] Cada enemigo solo puede tener un botín. Si recibieran uno nuevo, el daño al activarse aumenta en 250 en su lugar.\n[*] El botín se eliminará cuando se active o cuando termine su duración."
+    "[*]El botín se activa si el enemigo recibe 2500 / 2250 / 2000 de daño acumulativo.\n[*] El botín inflige 1200 de daño al enemigo al activarse.\n[*]Cuando los héroes defensores lanzan sus habilidades especiales, atacarán a los enemigos con un botín.",
+    "[*] Cada enemigo solo puede tener un botín. Si recibieran uno nuevo, el daño al activarse aumenta en 300 en su lugar.\n[*] El botín se eliminará cuando se active o cuando termine su duración."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Tesón real",
-     "text": "Este personaje se vuelve más poderoso cuantos menos aliados haya en el campo de batalla.\n[*]Bonificación por 5 / 4 / 3 / 2 / 1 aliados:\n[*] Un 0%/ 5%/ 10%/ 25%/ 50% de ataque.\n[*] Un 0%/ 5%/ 10%/ 25%/ 50% de defensa."
+     "text": "Este personaje se vuelve más poderoso cuantos menos aliados haya en el campo de batalla.\n[*]Bonificación por 5 / 4 / 3 / 2 / 1 aliados:\n[*] Un 0%/ 20%/ 30%/ 40%/ 50% de ataque.\n[*] Un 0%/ 20%/ 30%/ 40%/ 50% de defensa."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Roba todas las bendiciones descartables del objetivo y los enemigos cercanos y las distribuye aleatoriamente entre los aliados.",
-      "Inflige 6 golpes de 235% de daño repartidos de forma aleatoria entre el objetivo y los enemigos cercanos.",
-      "Acumulación (máx.: 10): Cada golpe añade una acumulación de sangrado, que inflige[#Dynamic] 124 [#]de daño de sangrado por turno. (La purificación reduce las acumulaciones negativas en 1.)"
+      "Inflige 6 golpes de 260% de daño repartidos de forma aleatoria entre el objetivo y los enemigos cercanos.",
+      "Acumulación (máx.: 10): Cada golpe añade una acumulación de sangrado, que inflige[#Dynamic] 160 [#]de daño de sangrado por turno. (La purificación reduce las acumulaciones negativas en 1.)",
+      "Todos los objetivos golpeados obtienen un -35% de precisión durante 4 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Al comienzo de la batalla, cada miembro de esta familia coloca un botín sobre un enemigo aleatorio durante 6 turnos. El efecto no se puede purificar.\n[*]Bonificación para 1 / 2 / 3 héroes:",
-    "[*]El botín se activa si el enemigo recibe 2500 / 2250 / 2000 de daño acumulativo.\n[*] El botín inflige 1000 de daño al enemigo al activarse.\n[*]Cuando los héroes defensores lanzan sus habilidades especiales, atacarán a los enemigos con un botín.",
-    "[*] Cada enemigo solo puede tener un botín. Si recibieran uno nuevo, el daño al activarse aumenta en 250 en su lugar.\n[*] El botín se eliminará cuando se active o cuando termine su duración."
+    "[*]El botín se activa si el enemigo recibe 2500 / 2250 / 2000 de daño acumulativo.\n[*] El botín inflige 1200 de daño al enemigo al activarse.\n[*]Cuando los héroes defensores lanzan sus habilidades especiales, atacarán a los enemigos con un botín.",
+    "[*] Cada enemigo solo puede tener un botín. Si recibieran uno nuevo, el daño al activarse aumenta en 300 en su lugar.\n[*] El botín se eliminará cuando se active o cuando termine su duración."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Tesón real",
-     "text": "Este personaje se vuelve más poderoso cuantos menos aliados haya en el campo de batalla.\n[*]Bonificación por 5 / 4 / 3 / 2 / 1 aliados:\n[*] Un 0%/ 5%/ 10%/ 25%/ 50% de ataque.\n[*] Un 0%/ 5%/ 10%/ 25%/ 50% de defensa."
+     "text": "Este personaje se vuelve más poderoso cuantos menos aliados haya en el campo de batalla.\n[*]Bonificación por 5 / 4 / 3 / 2 / 1 aliados:\n[*] Un 0%/ 20%/ 30%/ 40%/ 50% de ataque.\n[*] Un 0%/ 20%/ 30%/ 40%/ 50% de defensa."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Inflige 2 golpes de 525% de daño repartidos de forma aleatoria entre el objetivo y los enemigos cercanos.",
-      "Acumulación (máx.: 10): Cada golpe añade una acumulación de quemadura, que inflige[#Dynamic] 175 [#]de daño de quemadura por turno. (La purificación reduce las acumulaciones negativas en 1.)",
-      "El héroe y los aliados cercanos son inmunes a los efectos de maná negativos nuevos durante 3 turnos. (Incluye tanto las alteraciones que afectan a la regeneración de maná como a las que afectan a las reducciones de maná directas.)"
+      "Esta habilidad especial nunca falla.",
+      "Inflige 2 golpes de 550% de daño repartidos de forma aleatoria entre el objetivo y los enemigos cercanos.",
+      "Acumulación (máx.: 10): Cada golpe añade una acumulación de quemadura, que inflige[#Dynamic] 285 [#]de daño de quemadura por turno. (La purificación reduce las acumulaciones negativas en 1.)",
+      "El héroe y los aliados cercanos obtienen un 50% de ataque y un 20% más cada vez que son golpeados durante 3 turnos hasta un 150% de ataque."
      ]
     }
    ]

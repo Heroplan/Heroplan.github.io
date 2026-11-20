@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "Taistelun alussa jokainen tämän perheen jäsen asettaa palkkion satunnaiselle viholliselle 6 vuoron ajaksi. Vaikutusta ei voida puhdistaa.\n[*]Bonus 1 / 2 / 3 sankarista:",
-    "[*]Palkkio aktivoituu, jos vihollinen kärsii yhteensä 2500 / 2250 / 2000 vauriota.\n[*] Palkkio tuottaa aktivoituessaan 1000 vauriota viholliselle.\n[*]Kun puolustavat sankarit käyttävät erikoistaitojaan, ensisijaisia kohteita ovat viholliset, joilla on palkkio.",
-    "[*] Jokaisella vihollisella voi olla vain yksi palkkio. Uudet palkkiot vain nostavat aktivoinnista aiheutuvaa vauriota 250 pisteellä.\n[*] Palkkio poistuu, kun se aktivoituu tai sen kesto päättyy."
+    "[*]Palkkio aktivoituu, jos vihollinen kärsii yhteensä 2500 / 2250 / 2000 vauriota.\n[*] Palkkio tuottaa aktivoituessaan 1200 vauriota viholliselle.\n[*]Kun puolustavat sankarit käyttävät erikoistaitojaan, ensisijaisia kohteita ovat viholliset, joilla on palkkio.",
+    "[*] Jokaisella vihollisella voi olla vain yksi palkkio. Uudet palkkiot vain nostavat aktivoinnista aiheutuvaa vauriota 300 pisteellä.\n[*] Palkkio poistuu, kun se aktivoituu tai sen kesto päättyy."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Kova kuin kivi",
-     "text": "Tämä hahmo on sitä vahvempi mitä vähemmän liittolaisia taistelukentällä on.\n[*]Bonus 5 / 4 / 3 / 2 / 1 jäljellä olevasta liittolaisesta:\n[*] 0%/ 5%/ 10%/ 25%/ 50% hyökkäystä.\n[*] 0%/ 5%/ 10%/ 25%/ 50% puolustusta."
+     "text": "Tämä hahmo on sitä vahvempi mitä vähemmän liittolaisia taistelukentällä on.\n[*]Bonus 5 / 4 / 3 / 2 / 1 jäljellä olevasta liittolaisesta:\n[*] 0%/ 20%/ 30%/ 40%/ 50% hyökkäystä.\n[*] 0%/ 20%/ 30%/ 40%/ 50% puolustusta."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Varastaa kaikki häivytettävät tehosteet kohteelta ja lähellä olevilta vihollisilta ja jakaa ne sattumanvaraisesti liittolaisille.",
-      "Tuottaa 6 iskua, joista kukin tuottaa satunnaisesti 235% vauriota kohteelle ja lähellä oleville vihollisille.",
-      "Kasauma (maksimi: 10): Kukin isku lisää verenvuotokasauman, joka tuottaa[#Dynamic] 124 [#]verenvuotovauriota joka vuorolla. (Puhdistus poistaa 1 negatiivista kasaumaa.)"
+      "Tuottaa 6 iskua, joista kukin tuottaa satunnaisesti 260% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Kasauma (maksimi: 10): Kukin isku lisää verenvuotokasauman, joka tuottaa[#Dynamic] 160 [#]verenvuotovauriota joka vuorolla. (Puhdistus poistaa 1 negatiivista kasaumaa.)",
+      "Kaikki osutut kohteet saavat -35% tarkkuutta 4 vuoron ajaksi. (Myös hyökkäävät erikoistaidot voivat mennä ohi.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "Taistelun alussa jokainen tämän perheen jäsen asettaa palkkion satunnaiselle viholliselle 6 vuoron ajaksi. Vaikutusta ei voida puhdistaa.\n[*]Bonus 1 / 2 / 3 sankarista:",
-    "[*]Palkkio aktivoituu, jos vihollinen kärsii yhteensä 2500 / 2250 / 2000 vauriota.\n[*] Palkkio tuottaa aktivoituessaan 1000 vauriota viholliselle.\n[*]Kun puolustavat sankarit käyttävät erikoistaitojaan, ensisijaisia kohteita ovat viholliset, joilla on palkkio.",
-    "[*] Jokaisella vihollisella voi olla vain yksi palkkio. Uudet palkkiot vain nostavat aktivoinnista aiheutuvaa vauriota 250 pisteellä.\n[*] Palkkio poistuu, kun se aktivoituu tai sen kesto päättyy."
+    "[*]Palkkio aktivoituu, jos vihollinen kärsii yhteensä 2500 / 2250 / 2000 vauriota.\n[*] Palkkio tuottaa aktivoituessaan 1200 vauriota viholliselle.\n[*]Kun puolustavat sankarit käyttävät erikoistaitojaan, ensisijaisia kohteita ovat viholliset, joilla on palkkio.",
+    "[*] Jokaisella vihollisella voi olla vain yksi palkkio. Uudet palkkiot vain nostavat aktivoinnista aiheutuvaa vauriota 300 pisteellä.\n[*] Palkkio poistuu, kun se aktivoituu tai sen kesto päättyy."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Kova kuin kivi",
-     "text": "Tämä hahmo on sitä vahvempi mitä vähemmän liittolaisia taistelukentällä on.\n[*]Bonus 5 / 4 / 3 / 2 / 1 jäljellä olevasta liittolaisesta:\n[*] 0%/ 5%/ 10%/ 25%/ 50% hyökkäystä.\n[*] 0%/ 5%/ 10%/ 25%/ 50% puolustusta."
+     "text": "Tämä hahmo on sitä vahvempi mitä vähemmän liittolaisia taistelukentällä on.\n[*]Bonus 5 / 4 / 3 / 2 / 1 jäljellä olevasta liittolaisesta:\n[*] 0%/ 20%/ 30%/ 40%/ 50% hyökkäystä.\n[*] 0%/ 20%/ 30%/ 40%/ 50% puolustusta."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Tuottaa 2 iskua, joista kukin tuottaa satunnaisesti 525% vauriota kohteelle ja lähellä oleville vihollisille.",
-      "Kasauma (maksimi: 10): Kukin isku lisää palokasauman, joka tuottaa[#Dynamic] 175 [#]palovauriota joka vuorolla. (Puhdistus poistaa 1 negatiivista kasaumaa.)",
-      "Loitsija ja lähellä olevat liittolaiset ovat immuuneja uusille negatiivisille manaefekteille 3 vuoron ajan. (Tämä koskee sekä manatuotantoa vähentäviä vaivoja että suoria manavähennyksiä.)"
+      "Tämä erikoistaito osuu aina kohteisiinsa.",
+      "Tuottaa 2 iskua, joista kukin tuottaa satunnaisesti 550% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Kasauma (maksimi: 10): Kukin isku lisää palokasauman, joka tuottaa[#Dynamic] 285 [#]palovauriota joka vuorolla. (Puhdistus poistaa 1 negatiivista kasaumaa.)",
+      "Loitsija ja lähellä olevat liittolaiset saavat 50% hyökkäystä ja 20%:n lisäyksen aina, kun heihin osutaan 3 vuoron aikana, yhteensä enintään 150% hyökkäystä."
      ]
     }
    ]

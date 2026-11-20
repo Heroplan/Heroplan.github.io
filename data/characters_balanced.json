@@ -1,4 +1,26 @@
 {
- "balancedHeroIds": [],
- "heroes": {}
+ "balancedHeroIds": [
+  "vegetable_taterian"
+ ],
+ "heroes": {
+  "vegetable_taterian": {
+   "rarity": 5,
+   "specialId": "potato_plunder",
+   "canBeReceivedDate": "2026-11-29 07:00:00",
+   "origin": "RecurringFarmland",
+   "id": "vegetable_taterian",
+   "element": "Yellow",
+   "family": "vegetable",
+   "baseHealth": 1137,
+   "baseAttack": 684,
+   "baseDefense": 670,
+   "manaSpeedId": "slow",
+   "passiveSkills": [
+    "summon_seedling_parasite_per_turn_veggie",
+    "resist_special_blocking_with_mana_mayhem"
+   ],
+   "classType": "Barbarian",
+   "aetherGift": "aether_attack"
+  }
+ }
 }

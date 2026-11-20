@@ -61522,14 +61522,14 @@
   {
    "familyBonus": [
     "I början av striden sätter varje medlem i den här familjen ett pris på en slumpmässig fiendes huvud i 6 rundor. Effekten kan inte rensas.\n[*]Bonus för 1 / 2 / 3 hjältar:",
-    "[*]Priset aktiveras om fienden tar 2500 / 2250 / 2000 sammanlagd skada.\n[*] Priset gör 1000 skada mot fienden när det aktiveras.\n[*]När försvarande hjältar använder sina specialförmågor prioriterar de fiender med ett pris på sitt huvud.",
-    "[*] Varje fiende kan bara ha ett pris på sitt huvud. Om en fiende skulle få ett nytt stiger skadan vid aktivering med 250 istället.\n[*] Priset tas bort när det aktiveras eller när varaktigheten tar slut."
+    "[*]Priset aktiveras om fienden tar 2500 / 2250 / 2000 sammanlagd skada.\n[*] Priset gör 1200 skada mot fienden när det aktiveras.\n[*]När försvarande hjältar använder sina specialförmågor prioriterar de fiender med ett pris på sitt huvud.",
+    "[*] Varje fiende kan bara ha ett pris på sitt huvud. Om en fiende skulle få ett nytt stiger skadan vid aktivering med 300 istället.\n[*] Priset tas bort när det aktiveras eller när varaktigheten tar slut."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Äkta beslutsamhet",
-     "text": "Den här karaktären blir kraftfullare ju färre allierade som finns på slagfältet.\n[*]Bonus för 5 / 4 / 3 / 2 / 1 återstående allierade:\n[*] 0%/ 5%/ 10%/ 25%/ 50% attack.\n[*] 0%/ 5%/ 10%/ 25%/ 50% försvar."
+     "text": "Den här karaktären blir kraftfullare ju färre allierade som finns på slagfältet.\n[*]Bonus för 5 / 4 / 3 / 2 / 1 återstående allierade:\n[*] 0%/ 20%/ 30%/ 40%/ 50% attack.\n[*] 0%/ 20%/ 30%/ 40%/ 50% försvar."
     }
    ],
    "skills": [
@@ -61537,8 +61537,9 @@
      "id": "so_long_suckers",
      "lines": [
       "Stjäl alla bonusar som kan avbrytas från målet och fiender i närheten och fördelar dem slumpmässigt på allierade.",
-      "Gör 6 träffar som gör 235% skada mot målet och fiender i närheten.",
-      "Stapel (max: 10): Varje träff lägger till en blödningsstapel som gör[#Dynamic] 124 [#]blödningsskada per runda. (Rening minskar negativa staplar med 1.)"
+      "Gör 6 träffar som gör 260% skada mot målet och fiender i närheten.",
+      "Stapel (max: 10): Varje träff lägger till en blödningsstapel som gör[#Dynamic] 160 [#]blödningsskada per runda. (Rening minskar negativa staplar med 1.)",
+      "Alla träffade mål får -35% träffsäkerhet i 4 rundor. (Chansen att missa gäller även offensiva specialförmågor.)"
      ]
     }
    ]
@@ -61548,23 +61549,24 @@
   {
    "familyBonus": [
     "I början av striden sätter varje medlem i den här familjen ett pris på en slumpmässig fiendes huvud i 6 rundor. Effekten kan inte rensas.\n[*]Bonus för 1 / 2 / 3 hjältar:",
-    "[*]Priset aktiveras om fienden tar 2500 / 2250 / 2000 sammanlagd skada.\n[*] Priset gör 1000 skada mot fienden när det aktiveras.\n[*]När försvarande hjältar använder sina specialförmågor prioriterar de fiender med ett pris på sitt huvud.",
-    "[*] Varje fiende kan bara ha ett pris på sitt huvud. Om en fiende skulle få ett nytt stiger skadan vid aktivering med 250 istället.\n[*] Priset tas bort när det aktiveras eller när varaktigheten tar slut."
+    "[*]Priset aktiveras om fienden tar 2500 / 2250 / 2000 sammanlagd skada.\n[*] Priset gör 1200 skada mot fienden när det aktiveras.\n[*]När försvarande hjältar använder sina specialförmågor prioriterar de fiender med ett pris på sitt huvud.",
+    "[*] Varje fiende kan bara ha ett pris på sitt huvud. Om en fiende skulle få ett nytt stiger skadan vid aktivering med 300 istället.\n[*] Priset tas bort när det aktiveras eller när varaktigheten tar slut."
    ],
    "passiveSkills": [
     {
      "id": "true_grit",
      "title": "Äkta beslutsamhet",
-     "text": "Den här karaktären blir kraftfullare ju färre allierade som finns på slagfältet.\n[*]Bonus för 5 / 4 / 3 / 2 / 1 återstående allierade:\n[*] 0%/ 5%/ 10%/ 25%/ 50% attack.\n[*] 0%/ 5%/ 10%/ 25%/ 50% försvar."
+     "text": "Den här karaktären blir kraftfullare ju färre allierade som finns på slagfältet.\n[*]Bonus för 5 / 4 / 3 / 2 / 1 återstående allierade:\n[*] 0%/ 20%/ 30%/ 40%/ 50% attack.\n[*] 0%/ 20%/ 30%/ 40%/ 50% försvar."
     }
    ],
    "skills": [
     {
      "id": "not_so_fast_fellas",
      "lines": [
-      "Gör 2 träffar som gör 525% skada mot målet och fiender i närheten.",
-      "Stapel (max: 10): Varje träff lägger till en brännskadestapel som gör[#Dynamic] 175 [#]eldskada per runda. (Rening minskar negativa staplar med 1.)",
-      "Användaren och allierade i närheten är immuna mot nya negativa manaeffekter i 3 rundor. (Det här inkluderar både negativa effekter som påverkar manaskapande och direkta manaminskningar.)"
+      "Den här specialförmågan missar aldrig.",
+      "Gör 2 träffar som gör 550% skada mot målet och fiender i närheten.",
+      "Stapel (max: 10): Varje träff lägger till en brännskadestapel som gör[#Dynamic] 285 [#]eldskada per runda. (Rening minskar negativa staplar med 1.)",
+      "Användaren och allierade i närheten får 50% attack och ytterligare 20% mer varje gång de blir träffade under 3 rundor, upp till 150%."
      ]
     }
    ]

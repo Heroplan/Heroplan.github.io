@@ -160,6 +160,17 @@
         return true;
     }
 
+    // 默认选池：?pool= 优先，否则第一个池。toggle 与 initialize 共用 ——
+    // 配置落地前视图可能已被打开（撤遮罩后抽奖配置仍在途），initialize 要补上这次选择。
+    function selectDefaultPoolIfNeeded() {
+        if (!state.allSummonPools) return false;
+        const poolParam = new URLSearchParams(window.location.search).get('pool');
+        if (poolParam && selectSummonPoolByUrlParam(poolParam)) return true;
+        const firstPoolId = Object.keys(state.allSummonPools)[0];
+        if (firstPoolId) { handleActivityClick(firstPoolId); return true; }
+        return false;
+    }
+
     // ────────────────────────────────────────────────────────────────────
     // 初始化
     // ────────────────────────────────────────────────────────────────────
@@ -301,9 +312,12 @@
             });
         }
 
-        refreshLotteryTranslations();
+        // 标题字典/odds 文案延后加载：启动时视图不可见 ⇒ 不取，
+        // 视图打开时 toggleLotterySimulator 里的 refreshLotteryTranslations() 按需发起。
         state.allSummonPools = buildPools();
         renderActivityList();
+        // 配置在途时视图可能已被打开（toggle 不再等 initialize）⇒ 补上默认选池
+        if (state.lotterySimulatorActive && !state.currentSummonData) selectDefaultPoolIfNeeded();
         loadHistoryFromLocalStorage();
         renderSummonHistory();
         migrateLegacyHistoryPoolKeys();
@@ -379,6 +393,27 @@
     // ────────────────────────────────────────────────────────────────────
     // 活动列表
     // ────────────────────────────────────────────────────────────────────
+    // banner/背景是 CSS background-image，挂不上 fetchpriority ⇒ 用 preload link 提优先级。
+    const _poolImgPreloaded = new Set();
+    function preloadPoolImages(pool, priority) {
+        if (!pool) return;
+        const c = navigator.connection;
+        if (c && (c.saveData || /(^|-)2g$/.test(c.effectiveType || ''))) return;
+        const urls = [];
+        if (pool.banner) urls.push('imgs/lottery/banner/' + pool.banner + '.webp');
+        if (pool.lotterybg) urls.push('imgs/lottery/lotterybg/' + pool.lotterybg + '.webp');
+        urls.forEach(u => {
+            if (_poolImgPreloaded.has(u)) return;
+            _poolImgPreloaded.add(u);
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = u;
+            link.fetchPriority = priority;
+            document.head.appendChild(link);
+        });
+    }
+
     function renderActivityList() {
         const listContainer = document.getElementById('lottery-activity-list');
         if (!listContainer || !state.allSummonPools) return;
@@ -386,6 +421,8 @@
         Object.values(state.allSummonPools).forEach(pool => {
             const li = document.createElement('li');
             li.dataset.poolId = pool.id;
+            // 列表会被重建（延后词表落地补刷标题等）⇒ 选中态从 state 恢复，不能只靠点击时打的 class
+            if (state.currentSummonData && pool.id === state.currentSummonData.id) li.classList.add('active');
             const displayName = esc(getPoolDisplayName(pool));
             if (pool.banner) {
                 li.style.backgroundImage = `url('imgs/lottery/banner/${pool.banner}.webp')`;
@@ -398,6 +435,7 @@
                 li.innerHTML = displayName + ' (No Banner)';
             }
             li.addEventListener('click', () => handleActivityClick(pool.id));
+            li.addEventListener('pointerenter', () => preloadPoolImages(pool, 'low'), { once: true });
             listContainer.appendChild(li);
         });
     }
@@ -425,6 +463,7 @@
 
         const poolConfig = state.allSummonPools?.[poolId];
         if (!poolConfig) return;
+        preloadPoolImages(poolConfig, 'high');
         state.currentSummonData = poolConfig;
         state.selectedElementalColor = null;
         poolConfig.enginePoolId = poolConfig.id;
@@ -1661,19 +1700,21 @@
             document.body.classList.add('lottery-mode-active');
             refreshLotteryTranslations();
             renderActivityList();
+            // 延后词表（lottery_title）可能尚未落地（启动后立刻开视图）⇒ 落地后补刷标题
+            if (typeof Lang !== 'undefined' && Lang.ensureDeferred) {
+                Lang.ensureDeferred().then(() => {
+                    if (!state.lotterySimulatorActive) return;
+                    refreshLotteryTranslations();
+                    renderActivityList();
+                    refreshPoolTitle();
+                });
+            }
             resetAllFilters();
             const activityList = document.getElementById('lottery-activity-list-container');
             const historyList = document.getElementById('summon-history-list-container');
             if (activityList) activityList.scrollTop = 0;
             if (historyList) historyList.scrollTop = 0;
-            if (state.allSummonPools) {
-                const poolParam = new URLSearchParams(window.location.search).get('pool');
-                const firstPoolId = Object.keys(state.allSummonPools)[0];
-                if (!(poolParam && selectSummonPoolByUrlParam(poolParam))) {
-                    if (firstPoolId) handleActivityClick(firstPoolId);
-                    else applyFiltersAndRender();
-                }
-            } else applyFiltersAndRender();
+            if (!selectDefaultPoolIfNeeded()) applyFiltersAndRender();
             setMainViewHistory('lotterySimulator');
         } else {
             wrapper.classList.add('hidden');

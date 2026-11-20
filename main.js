@@ -364,11 +364,11 @@ async function initializeApp() {
     // 2.5 i18n 已随 loadData 载入 ⇒ 再套一次文案（首次调用只设了 state.currentLang）
     applyLanguage(state.currentLang);
 
-    // 3. 数据后处理
+    // 3. 数据后处理（只留首屏必需的两项：行号 + 精选标记；
+    //    DoT 系数只有详情弹窗用，点开该英雄时按需算，见 render.js::renderDetailsInModal）
     populateOriginToFamiliesMap();
     state.allHeroes.forEach((hero, index) => {
         hero.originalIndex = index;
-        parseAndStoreDoTInfo(hero);
         // ▼▼▼ 如果英雄没有发布日期，则添加特殊标记 ▼▼▼
         if (!hero['Release date'] && !hero.specialId) {
             hero.isFeaturedOnly = true;
@@ -397,22 +397,6 @@ async function initializeApp() {
         filterHero730Btn: document.getElementById('filter-hero-730-btn'),
         filterCostume548Btn: document.getElementById('filter-costume-548-btn'),
     });
-
-    // ▼▼▼ 加载抽奖配置文件（官方无损数据 + 站点展示元数据） ▼▼▼
-    try {
-        const [officialResponse, displayResponse] = await Promise.all([
-            fetch(av('lottery_official.json')),   // 官方 lottery 字段无损导出
-            fetch(av('lottery_display.json'))     // 站点自有展示段（banner/lotterybg/limitedPool）
-        ]);
-        const officialData = await officialResponse.json();
-        const displayMeta = await displayResponse.json();
-
-        LotterySimulator.initialize(officialData, displayMeta);
-
-    } catch (error) {
-        console.error("加载抽奖配置文件失败:", error);
-        // 即使抽奖文件加载失败，也让网站继续运行
-    }
 
     // 从Cookie恢复用户之前的设置
     uiElements.filterInputs.defaultLimitBreakSelect.value = getCookie('defaultLB') || 'none';
@@ -495,6 +479,8 @@ async function initializeApp() {
     if (bsharedTeamsFromUrl) {
         // 新二进制格式
         try {
+            // 解码函数也在懒加载的队伍脚本里 ⇒ 先注入再解码（分享队伍深链接：队伍视图就是首屏）
+            await ensureViewScripts('team');
             const sharedData = decodeTeamsFromBinary(bsharedTeamsFromUrl);
             if (Array.isArray(sharedData) && sharedData.length > 0) {
                 state.sharedTeamsDataFromUrl = sharedData.map(team => ({
@@ -530,6 +516,7 @@ async function initializeApp() {
                     uiElements.myTeamsTabBtn.classList.remove('active');
                 }
             }
+            await ensureViewScripts('team');   // 分享队伍深链接：队伍视图就是首屏，脚本按需注入后再开
             toggleTeamSimulator();
         } catch (e) {
             console.error("从URL处理分享的队伍失败", e);
@@ -543,22 +530,63 @@ async function initializeApp() {
         applyFiltersAndRender();
     }
 
-    // 7.5 技能正文（2.6~4MB/语言）延后补齐：首屏表格已渲染完，此时再解析并挂到英雄对象上，
-    //     供**详情弹窗**与**高级筛选（技能/被动文本）**使用（首屏表格本身不需要它）。
+    // 首屏已渲染 ⇒ 立刻撤遮罩（LCP 元素被全屏遮罩挡住不算候选，撤得越早 LCP 越早）。
+    // 后面的深链接视图切换在同一同步段内执行，中间不会插入绘制，不会闪一下表格。
+    uiElements.pageLoader.classList.add('hidden');
+    document.body.classList.remove('js-loading');
+    const animationBlocker = document.getElementById('animation-blocker-overlay');
+    if (animationBlocker) {
+        animationBlocker.classList.add('hidden');
+    }
+
+    // DoT 系数不做批量预算：只有详情弹窗消费，点开哪只就地算哪只
+    // （render.js::renderDetailsInModal 的按需兜底），首屏与后台都不付这份 CPU。
+
+    // 7.5 技能正文（2.6~4MB/语言）与延后词表（skill_name/fancy/family_title/lottery_title/highlight，
+    //     ~256KB）延后补齐：启动时**不发请求**，首屏渲染完后等 idle 再低优先级发起
+    //     （2s 兜底上限，避免繁忙页面一直排不上；Safari 无 requestIdleCallback ⇒ setTimeout 回退）。
+    //     用户抢先开详情/抽奖时，各自入口的 ensure 会立即按默认优先级发起，不受这里限制。
     //     仅在相关筛选已有输入时才重渲染，避免无谓的长任务。
-    //     ⚠ 把这个 promise 留在 `skillsReady` 里给下面 `?view=` 用 —— **不能再调一次
-    //     ensureSkillsLoaded()**：它进函数就把 `_skillsHydrated` 置位，第二次并发调用会立刻
-    //     返回 false（正文还没挂上），详情弹窗照样是空的。
+    //     ⚠ 把这个 promise 留在 `skillsReady` 里给下面 `?hero=` 深链接用（等补齐再开弹窗）。
     let skillsReady = Promise.resolve();
     if (typeof ensureSkillsLoaded === 'function') {
-        skillsReady = ensureSkillsLoaded().then(ok => {
-            if (!ok) return;
-            const fi = uiElements.filterInputs || {};
-            const needRerender =
-                (fi.effects && fi.effects.value && fi.effects.value.trim()) ||
-                (fi.passives && fi.passives.value && fi.passives.value.trim());
-            if (needRerender) applyFiltersAndRender();
+        skillsReady = new Promise(resolve => {
+            const run = () => Promise.all([
+                ensureSkillsLoaded('low'),
+                (typeof ensureDeferredTables === 'function') ? ensureDeferredTables('low') : Promise.resolve(false)
+            ]).then(([ok]) => {
+                if (ok) {
+                    const fi = uiElements.filterInputs || {};
+                    const needRerender =
+                        (fi.effects && fi.effects.value && fi.effects.value.trim()) ||
+                        (fi.passives && fi.passives.value && fi.passives.value.trim());
+                    if (needRerender) applyFiltersAndRender();
+                }
+                resolve();
+            });
+            if (window.requestIdleCallback) requestIdleCallback(run, { timeout: 2000 });
+            else setTimeout(run, 300);
         });
+    }
+
+    // ▼▼▼ 加载抽奖配置文件（官方无损数据 + 站点展示元数据） ▼▼▼
+    // 抽奖不是首屏视图 ⇒ 这段网络移到首屏渲染+撤遮罩**之后**才 await，
+    // 不再把 LCP 拖到抽奖配置落地之后；深链接/测试仍等 initializeApp 整体完成，语义不变。
+    // 抽奖脚本同样懒加载：启动链不含它们，这里注入执行后再 initialize（allSummonPools 语义保住）。
+    try {
+        await ensureViewScripts('lottery');
+        const [officialResponse, displayResponse] = await Promise.all([
+            fetch(av('lottery_official.json')),   // 官方 lottery 字段无损导出
+            fetch(av('lottery_display.json'))     // 站点自有展示段（banner/lotterybg/limitedPool）
+        ]);
+        const officialData = await officialResponse.json();
+        const displayMeta = await displayResponse.json();
+
+        LotterySimulator.initialize(officialData, displayMeta);
+
+    } catch (error) {
+        console.error("加载抽奖配置文件失败:", error);
+        // 即使抽奖文件加载失败，也让网站继续运行
     }
 
     if (heroFromUrl && !zfavsFromUrl && !favsFromUrl) {
@@ -627,13 +655,6 @@ async function initializeApp() {
             const toggleBtn = emojiPanel.querySelector('.panel-toggle-btn');
             if (toggleBtn) toggleBtn.classList.remove('expanded');
         }
-    }
-    // 同步移除加载遮罩、js-loading类和点击阻断层
-    uiElements.pageLoader.classList.add('hidden');
-    document.body.classList.remove('js-loading');
-    const animationBlocker = document.getElementById('animation-blocker-overlay');
-    if (animationBlocker) {
-        animationBlocker.classList.add('hidden');
     }
 
     // 渲染捐赠者列表
@@ -895,7 +916,12 @@ function addEventListeners() {
         if (currentMainViewName() === 'farming') exitMainViewToList();
         else runViewTransition(() => initAndShowFarmingGuideView());
     });
-    addChatSimulatorEventListeners();
+    // 聊天脚本懒加载：按钮绑定留在启动侧（视图脚本落地前按钮也要能点），
+    // 首次点击注入脚本后再交给真处理函数（开关语义与一次性控件初始化都在它里面）。
+    document.getElementById('show-chat-simulator-btn').addEventListener('click', () => {
+        if (typeof handleChatSimulatorButtonClick === 'function') { handleChatSimulatorButtonClick(); return; }
+        runWhenViewReady('chat', () => handleChatSimulatorButtonClick());
+    });
     showRedeemCodesBtn.addEventListener('click', openRedeemCodesModal);
 
     // --- 模态框事件 ---
@@ -920,7 +946,11 @@ function addEventListeners() {
     heroTable.querySelector('thead').addEventListener('click', handleTableHeaderClick);
 
     // --- 队伍模拟器事件 ---
-    showTeamSimulatorBtn.addEventListener('click', () => runViewTransition(toggleTeamSimulator));
+    showTeamSimulatorBtn.addEventListener('click', () => {
+        // 已加载（含已激活）⇒ 同步开关，与旧行为逐拍一致；未加载 ⇒ 注入后再开
+        if (typeof toggleTeamSimulator === 'function') { runViewTransition(toggleTeamSimulator); return; }
+        runWhenViewReady('team', () => runViewTransition(toggleTeamSimulator));
+    });
     teamDisplayGrid.addEventListener('click', handleTeamGridClick);
     document.addEventListener('click', handleGlobalClickForSwapCancel);
     myTeamsTabBtn.addEventListener('click', () => switchTeamTab(false));
@@ -1355,7 +1385,11 @@ function addEventListeners() {
 
     const showLotterySimulatorBtn = document.getElementById('show-lottery-simulator-btn');
     if (showLotterySimulatorBtn) {
-        showLotterySimulatorBtn.addEventListener('click', () => runViewTransition(LotterySimulator.toggle));
+        showLotterySimulatorBtn.addEventListener('click', () => {
+            // 已加载（含已激活）⇒ 同步开关；未加载 ⇒ 注入后再开（initialize 在启动收尾已注过一次）
+            if (typeof LotterySimulator !== 'undefined') { runViewTransition(LotterySimulator.toggle); return; }
+            runWhenViewReady('lottery', () => runViewTransition(LotterySimulator.toggle));
+        });
     }
 
     // --- 聊天模拟器面板折叠事件 (移动端) ---

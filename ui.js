@@ -177,7 +177,7 @@ function applyLanguage(lang) {
         // 3.1 特殊处理 H1 里的链接
         if (key === 'headerTitle' && el.tagName === 'H1') {
             const link = el.querySelector('a');
-            if (link) link.textContent = langDict[key];
+            if (link && langDict[key] !== undefined && link.textContent !== langDict[key]) link.textContent = langDict[key];
             return; // 处理完直接跳过后续逻辑
         }
 
@@ -193,11 +193,15 @@ function applyLanguage(lang) {
             }
             else if (el.tagName === 'OPTION') {
                 // Option 标签修改文本
-                el.textContent = translation;
+                if (el.textContent !== translation) el.textContent = translation;
             }
-            else {
-                // 其他标签 (div, span, label, p) 使用 innerHTML 支持富文本
-                el.innerHTML = translation;
+            else if (String(translation).indexOf('<') >= 0) {
+                // 富文本条目（少数）才走 HTML 解析；纯文本用 textContent，
+                // 否则每次套文案 ~180 个条目各触发一次 ParseHTML（移动端实测数百毫秒长任务）。
+                if (el.innerHTML !== translation) el.innerHTML = translation;
+            }
+            else if (el.textContent !== translation) {
+                el.textContent = translation;
             }
         }
     });
@@ -547,10 +551,13 @@ function updateFilterButtonUI(filterType) {
 // --- 模态框管理 ---
 async function openDetailsModal(hero, context = {}) {
     state.modalContext = context; // 在打开模态框时存储上下文
-    // 技能正文是「延后加载」的（2.6~4MB/语言，为不拖慢首屏而移出关键路径）⇒
-    // 打开详情前确保已补齐；`hydrateSkills` 是**就地**改英雄对象，故 hero 引用无需重新取。
+    // 技能正文与延后词表都是「延后加载」的（为不拖慢首屏而移出关键路径）⇒
+    // 打开详情前确保已补齐；水合是**就地**改英雄对象，故 hero 引用无需重新取。
     if (typeof ensureSkillsLoaded === 'function') {
         await ensureSkillsLoaded();
+    }
+    if (typeof ensureDeferredTables === 'function') {
+        await ensureDeferredTables();
     }
     renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');

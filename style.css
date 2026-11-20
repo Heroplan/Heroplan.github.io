@@ -64,3 +64,6 @@ p,li{text-wrap:pretty}
 .probability-tooltip .probability-asterisks,.probability-tooltip .probability-disclaimer,.probability-tooltip .probability-tooltip .probability-bonus li{display:block;white-space:normal;word-break:break-word;border-bottom:none;font-weight:normal;color:#b9c4d6;line-height:1.45;padding:2px}
 .probability-bonus{margin:6px 10px}
 dialog.modal-dialog.closing{opacity:0;scale:0.96}dialog.modal-dialog.closing::backdrop{background-color:transparent}
+
+/* 首屏表格从空到 60 行会撑高页面、把页脚推下去（CLS）⇒ 加载期先占住一屏高度 */
+#hero-table-view{min-height:100vh}

@@ -118,10 +118,11 @@ function applyBalancedSections(hero) {
     if ('stats' in b && on.stats) applyBalancedStats(hero);
     else restoreNormalStats(hero);
     refreshBalancedDisplayStats(hero);
-    // ⚠ 动态数值(`[#Dynamic]`→`<span class="dynamic-value">`)是按**当前正文**解析、且以该档的
-    //   满级攻击力为系数基准 ⇒ 换文本后解析表必须重建（否则 span 会错位、参数也选错一张表）。
-    //   这里做而不是只在按钮里做：切语言时正文按 `_balancedOn` 重新套用，同样要跟着重解析。
-    if (typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
+    // ⚠ 动态数值(`[#Dynamic]`→`<span class="dynamic-value">`)是按**当前正文**解析的 ⇒
+    //   换文本后旧解析表作废（否则 span 会错位、参数也选错一张表）。
+    //   只置空不重算：消费方只有详情弹窗，随后的 renderDetailsInModal 会按需重解析；
+    //   切语言对全量英雄调本函数，就地重算等于批量付 2173 次属性重算+正则扫描。
+    hero.dynamicDoTEffects = undefined;
 }
 
 /** 服装奖励选择器当前档位；控件不存在（该英雄无服装奖励表）⇒ 按该英雄的最多套。 */
@@ -181,7 +182,7 @@ function toggleBalancedData(hero, section) {
     hero._balancedOn[section] = !hero._balancedOn[section];
     // 重渲染前留住用户在详情页手选的档位（否则整块内容按筛选面板默认值重建 ⇒ 档位被抹掉）
     const tier = readModalTierSettings(hero);
-    applyBalancedSections(hero);        // 内部会重解析动态数值（见该函数注释）
+    applyBalancedSections(hero);        // 内部作废 DoT 解析缓存，下面重渲染时按需重解析
     if (typeof renderDetailsInModal === 'function') renderDetailsInModal(hero, { tier: tier });
 }
 
@@ -1605,6 +1606,8 @@ function renderDetailsInModal(hero, context = {}) {
     // 兜底：`displayStats` 平时由 `applyFiltersAndRender` 预计算，但从队伍模拟器/分享链接等
     //   入口打开详情时该英雄可能不在 `filteredHeroes` 里 ⇒ 这里懒算一次，避免模板读 undefined 崩溃。
     if (hero && !hero.displayStats) refreshBalancedDisplayStats(hero);
+    // DoT 系数不预算：点开哪只就地算哪只（同上 displayStats 兜底）；算过的沿用缓存
+    if (hero && !hero.dynamicDoTEffects && typeof parseAndStoreDoTInfo === 'function') parseAndStoreDoTInfo(hero);
     const langDict = i18n[state.currentLang];
     const { modalContent, filterInputs } = uiElements;
     const classIcon = String(hero.classId || hero.class).toLowerCase();

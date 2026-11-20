@@ -116,151 +116,152 @@ function updateChatPreview() {
     chatSimulatorPreview.innerHTML = html;
 }
 
-// --- 主事件监听器设置函数 ---
+/**
+ * 聊天模拟器按钮的点击处理（绑定在启动侧 main.js —— 本脚本懒加载，落地前按钮也要能点）。
+ * 开关语义：已在聊天视图再点一次 = 回列表。
+ */
+function handleChatSimulatorButtonClick() {
+    if (currentMainViewName() === 'chat') {
+        exitMainViewToList();
+        return;
+    }
+    openChatSimulatorView();
+}
 
 /**
- * 为聊天模拟器的所有组件绑定事件监听器。
- * 此函数只在第一次打开聊天模拟器时执行一次。
+ * 打开聊天视图 + 一次性控件初始化（isSimulatorInitialized 守卫）。
+ * 按钮与深链接（applyMainView）共用 —— 只走 initAndShowChatSimulatorView 的话
+ * 输入/取色/表情控件全没绑定，深链接进来的聊天页打字无预览。
  */
-function addChatSimulatorEventListeners() {
-    const showChatSimulatorBtn = document.getElementById('show-chat-simulator-btn');
-    if (!showChatSimulatorBtn) return;
+function openChatSimulatorView() {
+    runViewTransition(() => initAndShowChatSimulatorView()); // 切换到聊天模拟器视图
 
-    showChatSimulatorBtn.addEventListener('click', () => {
-        // 开关语义：已在聊天模拟器时再点一次 = 回列表（一次性初始化逻辑只在进入时走）
-        if (currentMainViewName() === 'chat') {
-            exitMainViewToList();
-            return;
-        }
-        runViewTransition(() => initAndShowChatSimulatorView()); // 切换到聊天模拟器视图
+    // 使用标志位确保初始化逻辑只执行一次
+    if (state.isSimulatorInitialized) return;
+    const previewWrapper = document.getElementById('chat-simulator-preview-wrapper');
+    const savedHeight = getCookie('chatPreviewHeight');
+    if (savedHeight && previewWrapper) {
+        previewWrapper.style.flexBasis = savedHeight;
+        // 以下两行确保 flex-basis 生效
+        previewWrapper.style.flexGrow = '0';
+        previewWrapper.style.flexShrink = '0';
+    }
 
-        // 使用标志位确保初始化逻辑只执行一次
-        if (state.isSimulatorInitialized) return;
-        const previewWrapper = document.getElementById('chat-simulator-preview-wrapper');
-        const savedHeight = getCookie('chatPreviewHeight');
-        if (savedHeight && previewWrapper) {
-            previewWrapper.style.flexBasis = savedHeight;
-            // 以下两行确保 flex-basis 生效
-            previewWrapper.style.flexGrow = '0';
-            previewWrapper.style.flexShrink = '0';
-        }
+    const favoriteColorBtn = document.getElementById('favorite-color-btn');
+    const favoriteColorsGrid = document.getElementById('favorite-colors-grid');
+    const chatSimulatorInput = document.getElementById('chat-simulator-input');
+    const insertColorBtn = document.getElementById('insert-color-btn');
+    const chatSimulatorCopyBtn = document.getElementById('chat-simulator-copy-btn');
+    const emojiGrid = document.getElementById('emoji-grid');
+    const svBox = document.getElementById('sv-box');
+    const hueSlider = document.getElementById('hue-slider');
+    const splitter = document.getElementById('io-splitter');
 
-        const favoriteColorBtn = document.getElementById('favorite-color-btn');
-        const favoriteColorsGrid = document.getElementById('favorite-colors-grid');
-        const chatSimulatorInput = document.getElementById('chat-simulator-input');
-        const insertColorBtn = document.getElementById('insert-color-btn');
-        const chatSimulatorCopyBtn = document.getElementById('chat-simulator-copy-btn');
-        const emojiGrid = document.getElementById('emoji-grid');
-        const svBox = document.getElementById('sv-box');
-        const hueSlider = document.getElementById('hue-slider');
-        const splitter = document.getElementById('io-splitter');
+    let favoriteColors = getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : [];
 
-        let favoriteColors = getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : [];
+    // 渲染已收藏的颜色
+    function renderFavoriteColors() {
+        if (!favoriteColorsGrid) return;
+        favoriteColorsGrid.innerHTML = '';
+        favoriteColors.forEach(color => {
+            const item = document.createElement('div');
+            item.className = 'favorite-color-item';
+            item.style.backgroundColor = color;
+            item.dataset.color = color;
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'remove-favorite-btn';
+            removeBtn.innerHTML = '&times;';
+            removeBtn.title = '移除此颜色';
+            item.appendChild(removeBtn);
 
-        // 渲染已收藏的颜色
-        function renderFavoriteColors() {
-            if (!favoriteColorsGrid) return;
-            favoriteColorsGrid.innerHTML = '';
-            favoriteColors.forEach(color => {
-                const item = document.createElement('div');
-                item.className = 'favorite-color-item';
-                item.style.backgroundColor = color;
-                item.dataset.color = color;
-                const removeBtn = document.createElement('button');
-                removeBtn.className = 'remove-favorite-btn';
-                removeBtn.innerHTML = '&times;';
-                removeBtn.title = '移除此颜色';
-                item.appendChild(removeBtn);
-
-                item.addEventListener('click', (e) => {
-                    if (e.target !== removeBtn) {
-                        insertTextAtCursor(chatSimulatorInput, `[${item.dataset.color}]`);
-                    }
-                });
-                removeBtn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // 阻止冒泡到item的点击事件
-                    favoriteColors = favoriteColors.filter(c => c !== color);
-                    setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
-                    renderFavoriteColors();
-                });
-                favoriteColorsGrid.appendChild(item);
-            });
-        }
-
-        // 收藏当前颜色按钮
-        if (favoriteColorBtn) {
-            favoriteColorBtn.addEventListener('click', () => {
-                const currentColor = document.getElementById('color-hex-code').value;
-                if (currentColor && !favoriteColors.includes(currentColor)) {
-                    favoriteColors.unshift(currentColor);
-                    setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
-                    renderFavoriteColors();
+            item.addEventListener('click', (e) => {
+                if (e.target !== removeBtn) {
+                    insertTextAtCursor(chatSimulatorInput, `[${item.dataset.color}]`);
                 }
             });
-        }
-
-        // 绑定核心输入和按钮事件
-        if (chatSimulatorInput) chatSimulatorInput.addEventListener('input', updateChatPreview);
-        if (insertColorBtn) insertColorBtn.addEventListener('click', () => {
-            const colorCode = `[${document.getElementById('color-hex-code').value}]`;
-            insertTextAtCursor(chatSimulatorInput, colorCode);
+            removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // 阻止冒泡到item的点击事件
+                favoriteColors = favoriteColors.filter(c => c !== color);
+                setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                renderFavoriteColors();
+            });
+            favoriteColorsGrid.appendChild(item);
         });
-        if (chatSimulatorCopyBtn) {
-            chatSimulatorCopyBtn.addEventListener('click', () => {
-                if (!chatSimulatorInput.value) return;
-                copyTextToClipboard(chatSimulatorInput.value).then(() => {
-                    const originalText = chatSimulatorCopyBtn.innerText;
-                    const langDict = i18n[state.currentLang] || {};
-                    chatSimulatorCopyBtn.innerText = langDict.chatCopied || 'Copied!';
-                    chatSimulatorCopyBtn.disabled = true;
-                    setTimeout(() => {
-                        chatSimulatorCopyBtn.innerText = originalText;
-                        chatSimulatorCopyBtn.disabled = false;
-                    }, 2000);
-                }).catch(err => { console.error('复制失败:', err); alert('复制失败。'); });
-            });
-        }
+    }
 
-        // 填充表情符号网格
-        if (emojiGrid && emojiGrid.children.length === 0) {
-            emojiList.forEach(emojiName => {
-                const img = document.createElement('img');
-                img.src = `imgs/emoticons/${emojiName}.webp`;
-                img.alt = `:${emojiName}:`;
-                img.title = `:${emojiName}:`;
-                img.addEventListener('click', () => insertTextAtCursor(chatSimulatorInput, `:${emojiName}:`));
-                emojiGrid.appendChild(img);
-            });
-        }
+    // 收藏当前颜色按钮
+    if (favoriteColorBtn) {
+        favoriteColorBtn.addEventListener('click', () => {
+            const currentColor = document.getElementById('color-hex-code').value;
+            if (currentColor && !favoriteColors.includes(currentColor)) {
+                favoriteColors.unshift(currentColor);
+                setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                renderFavoriteColors();
+            }
+        });
+    }
 
-        // --- 颜色选择器拖动逻辑 ---
-        const handleHueMove = (e) => { e.preventDefault(); const rect = hueSlider.getBoundingClientRect(); const y = (e.clientY || e.touches[0].clientY) - rect.top; state.hsv.h = Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); };
-        const handleSVMove = (e) => { e.preventDefault(); const rect = svBox.getBoundingClientRect(); const x = (e.clientX || e.touches[0].clientX) - rect.left; const y = (e.clientY || e.touches[0].clientY) - rect.top; state.hsv.s = Math.max(0, Math.min(1, x / rect.width)); state.hsv.v = 1 - Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); };
-        const stopDragging = () => { state.isDraggingHue = false; state.isDraggingSV = false; };
-
-        hueSlider.addEventListener('mousedown', (e) => { state.isDraggingHue = true; handleHueMove(e); });
-        svBox.addEventListener('mousedown', (e) => { state.isDraggingSV = true; handleSVMove(e); });
-        window.addEventListener('mousemove', (e) => { if (state.isDraggingHue) handleHueMove(e); if (state.isDraggingSV) handleSVMove(e); });
-        window.addEventListener('mouseup', stopDragging);
-        hueSlider.addEventListener('touchstart', (e) => { state.isDraggingHue = true; handleHueMove(e); }, { passive: false });
-        svBox.addEventListener('touchstart', (e) => { state.isDraggingSV = true; handleSVMove(e); }, { passive: false });
-        window.addEventListener('touchmove', (e) => { if (state.isDraggingHue) handleHueMove(e); if (state.isDraggingSV) handleSVMove(e); }, { passive: false });
-        window.addEventListener('touchend', stopDragging);
-
-        // --- 上下拖动条逻辑 ---
-        if (splitter && previewWrapper && chatSimulatorInput) {
-            let isDraggingSplitter = false;
-            const onDragStart = (e) => { e.preventDefault(); isDraggingSplitter = true; window.addEventListener('mousemove', onDragMove); window.addEventListener('mouseup', onDragEnd); window.addEventListener('touchmove', onDragMove, { passive: false }); window.addEventListener('touchend', onDragEnd); };
-            const onDragMove = (e) => { if (!isDraggingSplitter) return; e.preventDefault(); const clientY = e.touches ? e.touches[0].clientY : e.clientY; const panel = splitter.parentElement; const panelRect = panel.getBoundingClientRect(); const newPreviewHeight = clientY - panelRect.top - (splitter.offsetHeight / 2); const minHeight = 50; if (newPreviewHeight >= minHeight && (panel.offsetHeight - newPreviewHeight - splitter.offsetHeight) >= minHeight) { previewWrapper.style.flexBasis = `${newPreviewHeight}px`; } };
-            const onDragEnd = () => { if (!isDraggingSplitter) return; isDraggingSplitter = false; if (previewWrapper.style.flexBasis) setCookie('chatPreviewHeight', previewWrapper.style.flexBasis, 365); window.removeEventListener('mousemove', onDragMove); window.removeEventListener('mouseup', onDragEnd); window.removeEventListener('touchmove', onDragMove); window.removeEventListener('touchend', onDragEnd); };
-            splitter.addEventListener('mousedown', onDragStart);
-            splitter.addEventListener('touchstart', onDragStart, { passive: false });
-        }
-
-
-        // 首次加载时更新UI
-        updateColorPickerUI();
-        renderFavoriteColors();
-        state.isSimulatorInitialized = true;
+    // 绑定核心输入和按钮事件
+    if (chatSimulatorInput) chatSimulatorInput.addEventListener('input', updateChatPreview);
+    if (insertColorBtn) insertColorBtn.addEventListener('click', () => {
+        const colorCode = `[${document.getElementById('color-hex-code').value}]`;
+        insertTextAtCursor(chatSimulatorInput, colorCode);
     });
+    if (chatSimulatorCopyBtn) {
+        chatSimulatorCopyBtn.addEventListener('click', () => {
+            if (!chatSimulatorInput.value) return;
+            copyTextToClipboard(chatSimulatorInput.value).then(() => {
+                const originalText = chatSimulatorCopyBtn.innerText;
+                const langDict = i18n[state.currentLang] || {};
+                chatSimulatorCopyBtn.innerText = langDict.chatCopied || 'Copied!';
+                chatSimulatorCopyBtn.disabled = true;
+                setTimeout(() => {
+                    chatSimulatorCopyBtn.innerText = originalText;
+                    chatSimulatorCopyBtn.disabled = false;
+                }, 2000);
+            }).catch(err => { console.error('复制失败:', err); alert('复制失败。'); });
+        });
+    }
+
+    // 填充表情符号网格
+    if (emojiGrid && emojiGrid.children.length === 0) {
+        emojiList.forEach(emojiName => {
+            const img = document.createElement('img');
+            img.src = `imgs/emoticons/${emojiName}.webp`;
+            img.alt = `:${emojiName}:`;
+            img.title = `:${emojiName}:`;
+            img.addEventListener('click', () => insertTextAtCursor(chatSimulatorInput, `:${emojiName}:`));
+            emojiGrid.appendChild(img);
+        });
+    }
+
+    // --- 颜色选择器拖动逻辑 ---
+    const handleHueMove = (e) => { e.preventDefault(); const rect = hueSlider.getBoundingClientRect(); const y = (e.clientY || e.touches[0].clientY) - rect.top; state.hsv.h = Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); };
+    const handleSVMove = (e) => { e.preventDefault(); const rect = svBox.getBoundingClientRect(); const x = (e.clientX || e.touches[0].clientX) - rect.left; const y = (e.clientY || e.touches[0].clientY) - rect.top; state.hsv.s = Math.max(0, Math.min(1, x / rect.width)); state.hsv.v = 1 - Math.max(0, Math.min(1, y / rect.height)); updateColorPickerUI(); };
+    const stopDragging = () => { state.isDraggingHue = false; state.isDraggingSV = false; };
+
+    hueSlider.addEventListener('mousedown', (e) => { state.isDraggingHue = true; handleHueMove(e); });
+    svBox.addEventListener('mousedown', (e) => { state.isDraggingSV = true; handleSVMove(e); });
+    window.addEventListener('mousemove', (e) => { if (state.isDraggingHue) handleHueMove(e); if (state.isDraggingSV) handleSVMove(e); });
+    window.addEventListener('mouseup', stopDragging);
+    hueSlider.addEventListener('touchstart', (e) => { state.isDraggingHue = true; handleHueMove(e); }, { passive: false });
+    svBox.addEventListener('touchstart', (e) => { state.isDraggingSV = true; handleSVMove(e); }, { passive: false });
+    window.addEventListener('touchmove', (e) => { if (state.isDraggingHue) handleHueMove(e); if (state.isDraggingSV) handleSVMove(e); }, { passive: false });
+    window.addEventListener('touchend', stopDragging);
+
+    // --- 上下拖动条逻辑 ---
+    if (splitter && previewWrapper && chatSimulatorInput) {
+        let isDraggingSplitter = false;
+        const onDragStart = (e) => { e.preventDefault(); isDraggingSplitter = true; window.addEventListener('mousemove', onDragMove); window.addEventListener('mouseup', onDragEnd); window.addEventListener('touchmove', onDragMove, { passive: false }); window.addEventListener('touchend', onDragEnd); };
+        const onDragMove = (e) => { if (!isDraggingSplitter) return; e.preventDefault(); const clientY = e.touches ? e.touches[0].clientY : e.clientY; const panel = splitter.parentElement; const panelRect = panel.getBoundingClientRect(); const newPreviewHeight = clientY - panelRect.top - (splitter.offsetHeight / 2); const minHeight = 50; if (newPreviewHeight >= minHeight && (panel.offsetHeight - newPreviewHeight - splitter.offsetHeight) >= minHeight) { previewWrapper.style.flexBasis = `${newPreviewHeight}px`; } };
+        const onDragEnd = () => { if (!isDraggingSplitter) return; isDraggingSplitter = false; if (previewWrapper.style.flexBasis) setCookie('chatPreviewHeight', previewWrapper.style.flexBasis, 365); window.removeEventListener('mousemove', onDragMove); window.removeEventListener('mouseup', onDragEnd); window.removeEventListener('touchmove', onDragMove); window.removeEventListener('touchend', onDragEnd); };
+        splitter.addEventListener('mousedown', onDragStart);
+        splitter.addEventListener('touchstart', onDragStart, { passive: false });
+    }
+
+
+    // 首次加载时更新UI
+    updateColorPickerUI();
+    renderFavoriteColors();
+    state.isSimulatorInitialized = true;
 }

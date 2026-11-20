@@ -27,6 +27,11 @@
                   'aether_power', 'family_title', 'source', 'family', 'skill_types', 'costume_type',
                   'lottery_title', 'highlight'];
 
+    // 首屏表格用不到的表：详情弹窗（skill_name/heroes_name_fancy/family_title/highlight）
+    // 与抽奖视图（lottery_title）才消费 ⇒ 移出 loadAll 的 await，
+    // 由 ensureDeferred() 在首屏后 idle（低优先级）或开详情/抽奖时按需取。
+    var DEFERRED_TABLES = ['skill_name', 'heroes_name_fancy', 'family_title', 'lottery_title', 'highlight'];
+
     // ── 外部语言标签 → 站点语言码 ────────────────────────────────────────
     // 用途：`?hl=<标签>` 别名（`hl` 是 Google 的"界面语言"参数，属于事实标准；
     // 见 main.js 的 URL 参数解析）。也用于浏览器 `navigator.language` 之外的通用标签。
@@ -71,37 +76,68 @@
     var _tables = {};       // 表名 -> object（**当前语言**的表，键不含 .json）
     var _i18n = null;       // 当前语言 UI 文案
     var _sortOrder = null;  // 语言无关排序表
+    var _lang = null;       // 当前语言码（延后表落地时校验，防旧语言覆盖）
+    var _deferredEnsure = null;  // 延后表"正在补齐"memo（与 loadAll 同生命周期）
 
     // 版本串来自 asset_ver.js 的 window.AV（每个文件的内容哈希，拼法见 utils.js::av）
     // ⇒ 未改动的表命中缓存、改动过的立刻失效；没有登记时 av() 自动退回 Date.now()。
-    function getJSON(p) {
+    function getJSON(p, priority) {
         if (_cache[p]) return Promise.resolve(_cache[p]);
         // ⚠ URL 已按内容哈希变化，`cache: 'no-cache'` 强制复验只会白白多打一次请求
-        return fetch(av(p))
+        return fetch(av(p), priority ? { priority: priority } : undefined)
             .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' ' + p); return r.json(); })
             .then(function (j) { _cache[p] = j; return j; });
     }
 
-    /** 载入某语言的全部表 + i18n + 排序表（启动时调一次；**切换语言时再调一次**即可无缝切换） */
+    /** 载入某语言的首屏必需表 + i18n + 排序表（启动时调一次；切换语言时再调一次即可无缝切换）。
+     *  延后表（DEFERRED_TABLES）命中缓存则直接就位，否则留给 ensureDeferred() 补齐。 */
     function loadAll(lang) {
-        var jobs = TABLES.map(function (t) { return getJSON('langs_json/' + t + '_' + lang + '.json').catch(function () { return {}; }); });
+        _lang = lang;
+        _deferredEnsure = null;
+        var critical = TABLES.filter(function (t) { return DEFERRED_TABLES.indexOf(t) < 0; });
+        var jobs = critical.map(function (t) { return getJSON('langs_json/' + t + '_' + lang + '.json').catch(function () { return {}; }); });
         jobs.push(getJSON('langs_json/i18n_' + lang + '.json').catch(function () { return {}; }));
         jobs.push(getJSON('data/sort_order.json').catch(function () { return {}; }));
         return Promise.all(jobs).then(function (res) {
             // ⚠ 必须在这里把表按「表名」存下来：`getJSON` 的缓存键是文件名（含 .json），
             //   而 t()/idOf()/get() 用的是表名（不含 .json）—— 直接查 _cache 会永远落空。
             _tables = {};
-            TABLES.forEach(function (tb, i) { _tables[tb] = res[i] || {}; });
-            _i18n = res[TABLES.length] || {};
+            critical.forEach(function (tb, i) { _tables[tb] = res[i] || {}; });
+            DEFERRED_TABLES.forEach(function (tb) {
+                var c = _cache['langs_json/' + tb + '_' + lang + '.json'];
+                if (c) _tables[tb] = c;
+            });
+            _i18n = res[critical.length] || {};
             // 函数型 i18n 条目（JSON 存不下）由 i18n_funcs.js 提供，合并进来
             var fns = (global.I18N_FUNCS || {})[lang];
             if (fns) for (var k in fns) _i18n[k] = fns[k];
-            _sortOrder = res[TABLES.length + 1] || {};
+            _sortOrder = res[critical.length + 1] || {};
             // 兼容既有调用点：别处都写 `i18n[state.currentLang]`
             global.i18n = {};
             global.i18n[lang] = _i18n;
             return true;
         });
+    }
+
+    /** 补齐延后表（幂等）：idle 背景传 'low'，开详情/抽奖等用户等待的路径省略。
+     *  全部就位返回 false（无事可做）；本次补齐返回 true。失败按空表处理（与 loadAll 同口径）。 */
+    function ensureDeferred(priority) {
+        var lang = _lang;
+        if (!lang) return Promise.resolve(false);
+        var missing = DEFERRED_TABLES.filter(function (tb) { return !_tables[tb]; });
+        if (!missing.length) return Promise.resolve(false);
+        if (_deferredEnsure) return _deferredEnsure;
+        _deferredEnsure = Promise.all(missing.map(function (tb) {
+            return getJSON('langs_json/' + tb + '_' + lang + '.json', priority).catch(function () { return {}; });
+        })).then(function (res) {
+            // 下载期间换了语言 ⇒ 旧语言表不填当前 _tables（缓存仍按文件名保留）；
+            //   memo 也只清自己这一代的，别动新语言的在途补齐。
+            if (_lang !== lang) return false;
+            _deferredEnsure = null;
+            missing.forEach(function (tb, i) { _tables[tb] = res[i] || {}; });
+            return true;
+        });
+        return _deferredEnsure;
     }
 
     /** 取词：t('element','red') → 当前语言的显示文本；查不到回退到 ID 本身 */
@@ -132,8 +168,9 @@
     }
 
     global.Lang = {
-        LANGS: LANGS, TABLES: TABLES,
-        loadAll: loadAll, t: t, idOf: idOf, orderIndex: orderIndex,
+        LANGS: LANGS, TABLES: TABLES, DEFERRED_TABLES: DEFERRED_TABLES,
+        loadAll: loadAll, ensureDeferred: ensureDeferred,
+        t: t, idOf: idOf, orderIndex: orderIndex,
         normalizeCode: normalizeCode, langFromPath: langFromPath, sortOrder: sortOrder,
         get: function (table) { return _tables[table] || {}; }
     };

@@ -97,8 +97,14 @@ function clearMainViewHistory() {
  *   历史栈白多一条、后退语义跟着变。0ms 定时器跑在本次调用栈之后，那时目标视图已经就位。
  */
 function syncViewUrlAfterToggle() {
-    setTimeout(() => {
+    const settle = () => {
         if (currentMainViewName() !== 'list') return;
+        // 还在途的只有两种：懒加载脚本未落地（轮询等）、过渡回调未落地（视图终态未定）。
+        // ⚠ 别等整个动画：busy 横跨动画全程，等它会把地址变更拖到退出动画结束之后；
+        //   回调落地即可判——本函数就是从回调里调出来的，那时视图已切换，地址应随点击即变。
+        //   在途时不能直接跳过：跳过会丢掉本次清理，地址永远留在 ?view=（刷新又跳回旧视图）。
+        if (_lazyViewPending > 0 || (_viewTransitionBusy && !_vtUpdateLanded)) { setTimeout(settle, 50); return; }
+        if (_exitBackPending) return;   // 已有清理在 back 途中，别叠第二次 back
         if (history.state && history.state.viewPushed) {
             // 本条视图记录是 push 出来的 ⇒ back 弹掉它；原地 replace 会留下第二条"列表"死记录
             _exitBackFromView = 'list';
@@ -107,7 +113,8 @@ function syncViewUrlAfterToggle() {
         } else {
             clearMainViewHistory();
         }
-    }, 0);
+    };
+    setTimeout(settle, 0);
 }
 
 let _exitBackPending = false;
@@ -119,6 +126,7 @@ let _exitBackFromView = null;
  */
 function exitMainViewToList() {
     if (_exitBackPending) return;
+    _lazyViewSeq++;   // 回列表也是新意图：作废还在等脚本的打开（history.back 路径不经过渡包装）
     if (history.state && history.state.viewPushed) {
         _exitBackFromView = currentMainViewName();
         _exitBackPending = true;
@@ -169,16 +177,65 @@ function refreshMainViewButtons() {
     });
 }
 
+// ────────────────────────────────────────────────────────────────────
+// 懒加载视图脚本（抽奖/队伍/聊天）：不在启动 defer 链里，首次打开才注入执行。
+// index.html 里对应 <script type="application/x-lazy-view"> 数据块（浏览器不下载不执行），
+// 这里把 src 原样抄进真 <script>，按数据块先后顺序串行加载（engine → odds → ui 有依赖）。
+// ────────────────────────────────────────────────────────────────────
+const _viewScriptPromise = {};
+const VIEW_READY = {
+    lottery: () => typeof LotterySimulator !== 'undefined',
+    team: () => typeof toggleTeamSimulator === 'function',
+    chat: () => typeof handleChatSimulatorButtonClick === 'function'
+};
+function ensureViewScripts(view) {
+    // 测试沙箱直接 eval 全部脚本（无数据块）⇒ 全局已在即视为就绪
+    if (VIEW_READY[view]()) return Promise.resolve();
+    if (_viewScriptPromise[view]) return _viewScriptPromise[view];
+    const tags = Array.from(document.querySelectorAll(
+        'script[type="application/x-lazy-view"][data-view="' + view + '"]'));
+    if (!tags.length) return Promise.reject(new Error('[lazy-view] 找不到 ' + view + ' 的脚本数据块'));
+    const p = tags.reduce((chain, tag) => chain.then(() => new Promise((resolve, reject) => {
+        const s = document.createElement('script');
+        s.src = tag.getAttribute('src');
+        s.onload = resolve;
+        s.onerror = () => reject(new Error('[lazy-view] 加载失败 ' + s.src));
+        document.head.appendChild(s);
+    })), Promise.resolve());
+    _viewScriptPromise[view] = p;
+    p.catch(() => { delete _viewScriptPromise[view]; });   // 失败可重试（下次点击重新注入）
+    return p;
+}
+
+// 加载期间用户可能又切了视图 ⇒ 每次打开/过渡动作递增序号，脚本落地后序号已旧就放弃这次打开。
+let _lazyViewSeq = 0;
+let _lazyViewPending = 0;
+function runWhenViewReady(view, open) {
+    const seq = ++_lazyViewSeq;
+    _lazyViewPending++;
+    return ensureViewScripts(view).then(() => {
+        if (seq !== _lazyViewSeq) return;
+        open();
+    }).catch(err => console.error('[lazy-view]', err))
+        .finally(() => { _lazyViewPending--; });
+}
+
 /**
  * 视图切换的渐进增强包装：支持 View Transitions 且未要求减少动态时做整页交叉淡入淡出，
  * 否则同步执行原逻辑。视图函数之间会互相调用（互斥退出），忙标志保证一次用户动作只起一个过渡。
  */
 let _viewTransitionBusy = false;
 let _viewTransitionGen = 0;
+// 最新一次过渡的回调是否已落地（执行或被 gen 作废）。busy 要等动画播完才释放，
+// 但视图终态在回调落地那一刻就定了 ⇒ 地址清理等这个标志，不等 busy。
+let _vtUpdateLanded = true;
 function runViewTransition(update) {
+    // 任何已落地的视图动作都作废还在等脚本的懒加载打开（后发意图优先）
+    _lazyViewSeq++;
     // 过渡回调是延迟执行的：连点时后发的同步切换先落地，旧回调必须作废，否则视图会被回切
     const gen = ++_viewTransitionGen;
-    const guarded = () => { if (gen === _viewTransitionGen) update(); };
+    _vtUpdateLanded = false;
+    const guarded = () => { if (gen === _viewTransitionGen) update(); _vtUpdateLanded = true; };
     if (_viewTransitionBusy) { guarded(); return; }
     if (typeof document.startViewTransition !== 'function'
         || matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -190,7 +247,7 @@ function runViewTransition(update) {
     const transition = document.startViewTransition(guarded);
     transition.finished
         .catch(() => { })
-        .finally(() => { _viewTransitionBusy = false; focusActiveViewHeading(); });
+        .finally(() => { _viewTransitionBusy = false; _vtUpdateLanded = true; focusActiveViewHeading(); });
 }
 
 /** 过渡结束后把焦点送到新视图的标题；焦点已在新视图内（如聊天输入框）则不抢占。 */
@@ -218,14 +275,30 @@ function applyMainView(viewName) {
         // back 落地前用户又切了视图 ⇒ 这条 popstate 已过时，别把用户的新操作打回去
         if (viewName === 'list' && cur !== 'list' && cur !== _exitBackFromView) return;
     }
+    // 懒加载视图：等脚本落地再开。过渡要包住"落地后的打开动作"本身，
+    // 不能包在外层等加载（否则过渡会在视图还没切时就拍新快照）。
+    if (viewName === 'lotterySimulator') {
+        runWhenViewReady('lottery', () => runViewTransition(() => {
+            if (!state.lotterySimulatorActive) LotterySimulator.toggle();
+        }));
+        return;
+    }
+    if (viewName === 'teamSimulator') {
+        runWhenViewReady('team', () => runViewTransition(() => {
+            if (!state.teamSimulatorActive) toggleTeamSimulator();
+        }));
+        return;
+    }
+    if (viewName === 'chat') {
+        // 与按钮同一条打开路径（含一次性控件初始化）：只调 initAndShowChatSimulatorView
+        // 会漏绑输入/取色/表情控件，深链接进来的聊天页打字无预览
+        runWhenViewReady('chat', () => openChatSimulatorView());
+        return;
+    }
     runViewTransition(() => {
         switch (viewName) {
             case 'wanted': initAndShowWantedMissionView(); break;
             case 'farming': initAndShowFarmingGuideView(); break;
-            case 'chat': initAndShowChatSimulatorView(); break;
-            // 两个模拟器是"开关"语义：只在没开的时候开，别把已开着的关掉
-            case 'teamSimulator': if (!state.teamSimulatorActive) toggleTeamSimulator(); break;
-            case 'lotterySimulator': if (!state.lotterySimulatorActive) LotterySimulator.toggle(); break;
             default:
                 if (currentMainViewName() !== 'list') closeAllMainViews();
                 // 已在列表也要清一次：进抽奖时 handleActivityClick 会先把 pool 写进**当时还在的列表条目**，

@@ -9,6 +9,25 @@
          根页也加：无缝切语言把地址改成 `/<码>/` 后（不重载），相对 fetch/img 仍须从根解析。
          ⚠ 站内没有纯 fragment 导航（语言菜单为真实 href 并由 JS 拦截），base 不会把 `#x` 带偏。 -->
     <base href="/">
+    <!-- 关键路径数据档预载：characters/skill_types/hero_order 的下载提前到 HTML 解析期，
+         与脚本链、语言表并行。href 必须与 utils.js::av() 的内容哈希一致 ⇒ 现场读 window.AV，
+         asset_ver.js 须先于本段同步加载（很小，gzip 后约 4KB）。
+         ⚠ 别再往这里加档：preload 默认 High，加多了会挤掉 defer 脚本链（Low）的带宽，
+         脚本链晚到 ⇒ 启动反而更慢（语言表/小数据档预载均实测零和或负收益）。
+         其余数据档由 utils.js::loadData 与语言表并行发起。 -->
+    <script src="./asset_ver.js?v=20261119d"></script>
+    <script>
+        (function () {
+            if (!window.AV) return;
+            ['data/characters.json', 'data/heroes_skill_types.json', 'data/hero_order.json'].forEach(function (p) {
+                if (!window.AV[p]) return;
+                var l = document.createElement('link');
+                l.rel = 'preload'; l.as = 'fetch'; l.crossOrigin = 'anonymous';
+                l.href = p + '?v=' + window.AV[p];
+                document.head.appendChild(l);
+            });
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -214,7 +233,7 @@
     </script>
     <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
     <link rel="stylesheet" href="theme.css?v=20261116a">
-    <link rel="stylesheet" href="style.css?v=20261119m">
+    <link rel="stylesheet" href="style.css?v=20261120a">
     <link rel="stylesheet" href="talent-tree.css?v=20261028b">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
     <script>
@@ -931,26 +950,29 @@
     <!-- 数据档版本表（window.AV：每个 json 的内容哈希）。
          必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
          （av() 退回 Date.now()，等于不缓存）。 -->
-    <script src="./asset_ver.js?v=20261119d" defer></script>
     <script src="./i18n_funcs.js?v=20261119c" defer></script>
-    <script src="./langs.js?v=20261119c" defer></script>
+    <script src="./langs.js?v=20261120a" defer></script>
     <script src="./lz-string.min.js?v=20261028b" defer></script>
     <script src="./talent-tree.js?v=20261119c" defer></script>
     <script src="./data.js?v=20261105a" defer></script>
     <script src="./eva1-parser.js?v=20261119c" defer></script>
-    <script src="./utils.js?v=20261119d" defer></script>
+    <script src="./utils.js?v=20261120a" defer></script>
     <script src="./state.js?v=20261119b" defer></script>
-    <script src="./ui.js?v=20261119d" defer></script>
+    <script src="./ui.js?v=20261120a" defer></script>
     <script src="./filters.js?v=20261119d" defer></script>
-    <script src="./render.js?v=20261119d" defer></script>
-    <script src="./special-views.js?v=20261119b" defer></script>
-    <script src="./lottery-engine.js?v=20261119d" defer></script>
-    <script src="./lottery-odds.js?v=20261119g" defer></script>
-    <script src="./lottery-ui.js?v=20261119l" defer></script>
-    <script src="./team-simulator.js?v=20261116a" defer></script>
-    <script src="./chat-simulator.js?v=20261116a" defer></script>
+    <script src="./render.js?v=20261120a" defer></script>
+    <script src="./special-views.js?v=20261120a" defer></script>
+    <!-- 视图脚本懒加载（抽奖/队伍/聊天）：type 为非 JS MIME ⇒ 浏览器只当数据块存着，
+         不下载也不执行；首次打开对应视图时 special-views.js::ensureViewScripts 按这里的
+         先后顺序注入真 <script>（src 原样照抄）。?v= 戳留在原地，pre-commit 钩子照常逐引用换戳。
+         ⚠ 顺序即依赖顺序（engine → odds → ui），别调换。 -->
+    <script type="application/x-lazy-view" data-view="lottery" src="./lottery-engine.js?v=20261119d"></script>
+    <script type="application/x-lazy-view" data-view="lottery" src="./lottery-odds.js?v=20261119g"></script>
+    <script type="application/x-lazy-view" data-view="lottery" src="./lottery-ui.js?v=20261120a"></script>
+    <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261116a"></script>
+    <script type="application/x-lazy-view" data-view="chat" src="./chat-simulator.js?v=20261120a"></script>
     <script src="./import-export.js?v=20261119a" defer></script>
-    <script src="./main.js?v=20261119e" defer></script>
+    <script src="./main.js?v=20261120a" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

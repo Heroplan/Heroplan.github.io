@@ -89,6 +89,54 @@
             .then(function (j) { _cache[p] = j; return j; });
     }
 
+    /** 语言页构建期把 i18n 字典整份内联进 HTML（`#i18n-inline`）⇒ 首屏不必再拉
+     *  `langs_json/i18n_<码>.json`。只有 data-lang 与当前语言一致时才采用（切语言仍走 fetch）。 */
+    function inlineDict(lang) {
+        var el = (typeof document !== 'undefined') && document.getElementById('i18n-inline');
+        if (!el || (el.getAttribute('data-lang') || '') !== lang) return null;
+        try {
+            var dict = JSON.parse(el.textContent || '{}');
+            return (dict && typeof dict === 'object' && Object.keys(dict).length) ? dict : null;
+        } catch (e) { return null; }
+    }
+
+    /** 只载 UI 字典（几十 KB / 语言页内联）并把 `i18n[lang]` 就位 —— 切语言时先做这一步，
+     *  用户点完就能立刻换界面文案，不必等 heroes_name/skill_name/sort_order 那一堆表。
+     *  随后 `loadAll()` 会重写 `global.i18n`（同语言同内容），不冲突。 */
+    function loadI18n(lang) {
+        var inl = inlineDict(lang);
+        var p = inl ? Promise.resolve(inl)
+                    : getJSON('langs_json/i18n_' + lang + '.json').catch(function () { return {}; });
+        return p.then(function (dict) {
+            var d = dict || {};
+            var fns = (global.I18N_FUNCS || {})[lang];
+            if (fns) for (var k in fns) d[k] = fns[k];
+            global.i18n = global.i18n || {};
+            global.i18n[lang] = d;
+            return d;
+        });
+    }
+
+    /** 只载「名词/属性」这类**首屏必需**表 + 排序表（不含 i18n、不含延后表）。
+     *  切语言的分段加载用：界面文案（loadI18n）→ 英雄名/属性（本函数）→ 技能正文档（ensureSkillsLoaded）。 */
+    function loadCore(lang) {
+        _lang = lang;
+        _deferredEnsure = null;
+        var critical = TABLES.filter(function (t) { return DEFERRED_TABLES.indexOf(t) < 0; });
+        var jobs = critical.map(function (t) { return getJSON('langs_json/' + t + '_' + lang + '.json').catch(function () { return {}; }); });
+        jobs.push(getJSON('data/sort_order.json').catch(function () { return {}; }));
+        return Promise.all(jobs).then(function (res) {
+            _tables = {};
+            critical.forEach(function (tb, i) { _tables[tb] = res[i] || {}; });
+            DEFERRED_TABLES.forEach(function (tb) {
+                var c = _cache['langs_json/' + tb + '_' + lang + '.json'];
+                if (c) _tables[tb] = c;
+            });
+            _sortOrder = res[critical.length] || {};
+            return true;
+        });
+    }
+
     /** 载入某语言的首屏必需表 + i18n + 排序表（启动时调一次；切换语言时再调一次即可无缝切换）。
      *  延后表（DEFERRED_TABLES）命中缓存则直接就位，否则留给 ensureDeferred() 补齐。 */
     function loadAll(lang) {
@@ -96,7 +144,10 @@
         _deferredEnsure = null;
         var critical = TABLES.filter(function (t) { return DEFERRED_TABLES.indexOf(t) < 0; });
         var jobs = critical.map(function (t) { return getJSON('langs_json/' + t + '_' + lang + '.json').catch(function () { return {}; }); });
-        jobs.push(getJSON('langs_json/i18n_' + lang + '.json').catch(function () { return {}; }));
+        // i18n 优先用构建期内联的字典（语言页自带），省掉一次 20~29KB 的请求；
+        // 没有内联（根页/切到别的语言）时照旧 fetch。
+        var inl = inlineDict(lang);
+        jobs.push(inl ? Promise.resolve(inl) : getJSON('langs_json/i18n_' + lang + '.json').catch(function () { return {}; }));
         jobs.push(getJSON('data/sort_order.json').catch(function () { return {}; }));
         return Promise.all(jobs).then(function (res) {
             // ⚠ 必须在这里把表按「表名」存下来：`getJSON` 的缓存键是文件名（含 .json），
@@ -169,7 +220,7 @@
 
     global.Lang = {
         LANGS: LANGS, TABLES: TABLES, DEFERRED_TABLES: DEFERRED_TABLES,
-        loadAll: loadAll, ensureDeferred: ensureDeferred,
+        loadAll: loadAll, loadI18n: loadI18n, loadCore: loadCore, ensureDeferred: ensureDeferred,
         t: t, idOf: idOf, orderIndex: orderIndex,
         normalizeCode: normalizeCode, langFromPath: langFromPath, sortOrder: sortOrder,
         get: function (table) { return _tables[table] || {}; }

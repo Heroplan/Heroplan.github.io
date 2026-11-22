@@ -126,7 +126,7 @@ let _exitBackFromView = null;
  */
 function exitMainViewToList() {
     if (_exitBackPending) return;
-    _lazyViewSeq++;   // 回列表也是新意图：作废还在等脚本的打开（history.back 路径不经过渡包装）
+    cancelPendingViewLoad();   // 回列表也是新意图：作废还在等配置的打开（history.back 路径不经过渡包装）
     if (history.state && history.state.viewPushed) {
         _exitBackFromView = currentMainViewName();
         _exitBackPending = true;
@@ -210,14 +210,260 @@ function ensureViewScripts(view) {
 // 加载期间用户可能又切了视图 ⇒ 每次打开/过渡动作递增序号，脚本落地后序号已旧就放弃这次打开。
 let _lazyViewSeq = 0;
 let _lazyViewPending = 0;
-function runWhenViewReady(view, open) {
-    const seq = ++_lazyViewSeq;
+
+// ────────────────────────────────────────────────────────────────────
+// 视图「所需配置」就位门控（**不含图片**：视图里的头像/立绘照旧边开边加载）
+//   脚本没注入、抽奖奖池/标题词表还没到 ⇒ 先把**目标视图自己的骨架**摆上屏、视图内转圈，
+//   配置就位后还原骨架再真正打开 —— 用户看到的是「这个视图在加载」，而不是首页在加载。
+//   与详情弹窗"骨架先上屏、数据后补"同一口径，别把一张空视图先甩给用户。
+// ────────────────────────────────────────────────────────────────────
+let _viewLoadSeq = 0;
+
+// 抽奖：奖池（lottery_official/display 解析后 buildPools）与奖池标题（延后词表）都算配置；
+// 其余视图的配置在 data.js 关键路径里同步可用，无需等待。
+function lotteryConfigReady() {
+    // allSummonPools 是 poolId → 奖池 的对象（buildPools 产物），不是数组
+    const pools = state.allSummonPools;
+    if (!pools || typeof pools !== 'object' || !Object.keys(pools).length) return false;
+    if (typeof Lang !== 'undefined' && Lang.get) {
+        const titles = Lang.get('lottery_title');
+        if (!titles || !Object.keys(titles).length) return false;
+    }
+    return true;
+}
+const VIEW_CONFIG_READY = { lottery: lotteryConfigReady };
+
+function isViewReady(view) {
+    if (VIEW_READY[view] && !VIEW_READY[view]()) return false;
+    const cfg = VIEW_CONFIG_READY[view];
+    return cfg ? cfg() : true;
+}
+
+/** 轮询等到条件成立；到点即返回（不 reject），调用方按"就绪与否"自行决定 */
+function waitFor(cond, timeoutMs) {
+    const t0 = Date.now();
+    return new Promise(resolve => {
+        const tick = () => {
+            let ok = false;
+            try { ok = !!cond(); } catch (e) { ok = false; }
+            if (ok || Date.now() - t0 >= timeoutMs) { resolve(ok); return; }
+            setTimeout(tick, 100);
+        };
+        tick();
+    });
+}
+
+function ensureViewReady(view) {
+    const boot = [ensureViewScripts(view)];
+    if (view === 'lottery') {
+        // 抽奖配置 promise 要等首屏渲染后才挂上 ⇒ 先等它出现，再等它落地（含奖池 buildPools）
+        boot.push(waitFor(() => !!window.__lotteryConfigReady, 10000).then(() => window.__lotteryConfigReady));
+        if (typeof Lang !== 'undefined' && Lang.ensureDeferred) boot.push(Lang.ensureDeferred());
+    }
+    return Promise.race([
+        Promise.all(boot.map(p => Promise.resolve(p).catch(() => null)))
+            // 配置落地后奖池/词表还要一拍才对得上 ⇒ 再给 2s 收敛窗口
+            .then(() => waitFor(() => isViewReady(view), 2000)),
+        // 兜底：真拖太久（弱网/单文件失败）也不能让用户一直看转圈，到点照旧开视图
+        new Promise(r => setTimeout(r, 15000))
+    ]);
+}
+
+// ── 等待期占位：**用目标视图自己的骨架**摆屏，不再把首页表格盖成一块 ——
+//   用户口径：进特殊视图要等（脚本/配置）时，看到的是「这个视图在加载」，不是首页在加载。
+//   骨架只借 DOM 显示，不动 `state.*Active`；就绪后先把骨架还原成 hidden，再走真正的 open()
+//   （open 里的 toggle 都是状态驱动的，不会被临时显示骗过去）。
+const VIEW_SHELL = {
+    lottery: { host: '#lottery-simulator-wrapper', slot: '#lottery-activity-list-container', inline: false },
+    team: { host: '#team-simulator-wrapper', slot: '#team-simulator-display', inline: false },
+    // 嵌入型视图的「结果表头」里写着视图标题 + 返回，而这段是 open() 时才写进去的
+    // ⇒ 骨架期先按同一份内容占位（`headerTitle`），否则就绪后表头上屏会把下面的面板顶下去。
+    chat: { host: '#chat-simulator-view', slot: '.chat-simulator-container', inline: true, headerTitle: 'chatSimulatorTitle', headerTitleFallback: '聊天模拟器' },
+    wanted: { host: '#wanted-mission-view', slot: null, inline: true, headerTitle: 'wantedMissionTableTitle' },
+    farming: { host: '#farming-guide-view', slot: null, inline: true, headerTitle: 'farmingGuideTableTitle' }
+};
+let _pendingShell = null;   // { view, host, slot, ov, cls, undo }
+
+// 抽奖/队伍是**整页替换**型：真打开时会把页头的「赞助/制作」块与捐赠榜收掉、给 body 打上
+// `lottery-mode-active` / `team-mode-active`（抽奖还靠它隐掉快捷筛选栏）。
+// 等待期必须**先按打开态隐藏这些元素再上骨架** —— 否则配置到了再收这块页头，
+// 主内容整体上跳一大截（用户看到的"加载完才有明显布局跳动"就是这个）。
+// 只做**显示态**，不碰 `state.*Active`，也不跑视图里的数据活。
+const VIEW_OPEN_STATE = {
+    lottery: { mode: 'lottery-mode-active', hideHeaderInfo: true },
+    team: { mode: 'team-mode-active', hideHeaderInfo: true },
+    chat: { mode: null, hideHeaderInfo: false },
+    wanted: { mode: null, hideHeaderInfo: false },
+    farming: { mode: null, hideHeaderInfo: false }
+};
+
+function _applyOpenState(view) {
+    const cfg = VIEW_OPEN_STATE[view];
+    if (!cfg) return null;
+    const undo = [];
+    if (cfg.mode && !document.body.classList.contains(cfg.mode)) {
+        document.body.classList.add(cfg.mode);
+        undo.push(() => document.body.classList.remove(cfg.mode));
+    }
+    if (cfg.hideHeaderInfo) {
+        ['.header-info-container', '.donation-list-container-wrapper'].forEach(sel => {
+            const el = document.querySelector(sel);
+            if (!el || el.classList.contains('hidden')) return;   // 捐赠榜可能被用户关了，别擅自打开
+            el.classList.add('hidden');
+            undo.push(() => el.classList.remove('hidden'));
+        });
+    }
+    return () => undo.forEach(f => f());
+}
+
+function _hidePendingShell() {
+    if (!_pendingShell) return;
+    const { host, ov, cls, undo, headerBackup } = _pendingShell;
+    _pendingShell = null;
+    window.removeEventListener('scroll', _placePendingSpinner, true);
+    window.removeEventListener('resize', _placePendingSpinner);
+    if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+    host.classList.remove('pending-view-shell');
+    host.classList.add('hidden');        // 还原默认：真正打开由 open() 负责
+    if (cls) document.body.classList.remove(cls);
+    if (headerBackup) _restorePendingHeader(headerBackup);
+    if (undo) undo();                   // 打开态隐藏元素复原（随后 open() 会在同一拍重新做一遍）
+}
+
+/** 骨架期把「结果表头」按目标视图的标题 + 返回占位，几何与打开后一致（否则表头上屏会把面板顶下去）。 */
+function _paintPendingHeader(cfg) {
+    const el = document.getElementById('results-count');
+    if (!el) return null;
+    const backup = { html: el.innerHTML };
+    const dict = (typeof i18n !== 'undefined' && i18n[state.currentLang]) || {};
+    el.textContent = '';
+    const titleEl = document.createElement('span');
+    titleEl.textContent = dict[cfg.headerTitle] || cfg.headerTitleFallback || '';
+    el.appendChild(titleEl);
+    const returnTag = document.createElement('span');
+    returnTag.className = 'reset-tag';
+    returnTag.textContent = dict.returnToList || '返回';
+    el.appendChild(returnTag);
+    return backup;
+}
+
+function _restorePendingHeader(backup) {
+    const el = document.getElementById('results-count');
+    if (el && backup) el.innerHTML = backup.html;
+}
+
+/** 只收掉转圈与跟随监听，**保留骨架的显示态**（视图容器仍可见、页头仍收起、mode class 还在）。 */
+function _detachPendingOverlay() {
+    if (!_pendingShell) return null;
+    const st = _pendingShell;
+    _pendingShell = null;
+    window.removeEventListener('scroll', _placePendingSpinner, true);
+    window.removeEventListener('resize', _placePendingSpinner);
+    if (st.ov && st.ov.parentNode) st.ov.parentNode.removeChild(st.ov);
+    return st;
+}
+
+/**
+ * 打开已交给 open()，而 open() 常被 `runViewTransition` 推给 View Transitions 的过渡回调
+ * ⇒ 若这时就把骨架还原成列表，过渡的"旧快照"会是列表、下一帧视图才回来 —— 就是用户看到的
+ * 「转圈消失瞬间下面弹上来、内容出现后又落回去」。
+ * 所以：骨架的显示态一直留到**视图真正 active** 之后再收尾；迟迟没 active（打开失败）
+ * 才复原，避免把页面卡在打开的隐藏态。
+ */
+function _schedulePendingCleanup(st, view) {
+    if (!st) return;
+    const t0 = performance.now();
+    const finish = revert => {
+        if (st.host) st.host.classList.remove('pending-view-shell');
+        if (st.cls) document.body.classList.remove(st.cls);
+        if (revert && st.headerBackup) _restorePendingHeader(st.headerBackup);
+        if (revert && st.undo) st.undo();
+    };
+    const tick = () => {
+        const active = (typeof currentMainViewName === 'function') && currentMainViewName() !== 'list';
+        if (active) { requestAnimationFrame(() => finish(false)); return; }
+        if (performance.now() - t0 > 1500) { finish(true); return; }
+        requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+}
+
+// 转圈按「视图内容槽在视口内的可见部分」居中：既不会压住视图自己的标签栏，
+// 也不会因为槽比一屏还高（聊天/队伍）把转圈丢到屏幕外。
+function _placePendingSpinner() {
+    const s = _pendingShell;
+    if (!s) return;
+    const slot = (s.slot && s.host.querySelector(s.slot)) || s.host;
+    const r = slot.getBoundingClientRect();
+    const vh = window.innerHeight || 800;
+    const top = Math.max(0, r.top);
+    const height = Math.max(160, Math.min(vh, r.bottom) - top);
+    s.ov.style.top = top + 'px';
+    s.ov.style.left = r.left + 'px';
+    s.ov.style.width = r.width + 'px';
+    s.ov.style.height = height + 'px';
+}
+
+function _showPendingShell(view) {
+    const cfg = VIEW_SHELL[view];
+    if (!cfg) return;
+    if (_pendingShell && _pendingShell.view === view) return;   // 连点同一个视图，复用骨架
+    _hidePendingShell();
+    const host = document.querySelector(cfg.host);
+    if (!host) return;
+    const cls = cfg.inline ? 'view-pending-inline' : null;
+    const undo = cfg.inline ? null : _applyOpenState(view);   // 先隐藏，再上骨架（次序不能反）
+    const headerBackup = cfg.headerTitle ? _paintPendingHeader(cfg) : null;
+    host.classList.remove('hidden');
+    host.classList.add('pending-view-shell');
+    if (cls) document.body.classList.add(cls);
+    const ov = document.createElement('div');
+    ov.className = 'view-loading-overlay';
+    ov.setAttribute('role', 'status');
+    ov.innerHTML = '<div class="loader-spinner"></div><span class="visually-hidden">加载中…</span>';
+    // 挂到 body 而不是视图容器：视图切换带 opacity/transform 过渡，会把它变成定位/层叠上下文，
+    // 转圈会被挤到容器中线（聊天/队伍容器高过一屏就跑到屏幕外）。挂 body 才是真正的视口坐标。
+    document.body.appendChild(ov);
+    _pendingShell = { view, host, slot: cfg.slot || null, ov, cls, undo, headerBackup };
+    _placePendingSpinner();
+    window.addEventListener('scroll', _placePendingSpinner, true);
+    window.addEventListener('resize', _placePendingSpinner);
+}
+
+/** 任何已落地的视图动作（含回列表/前进后退）都作废还在等配置的打开，并收掉它的占位骨架 */
+function cancelPendingViewLoad() {
+    _lazyViewSeq++;
+    _viewLoadSeq++;
+    _hidePendingShell();
+}
+
+/**
+ * 打开懒加载/带异步配置的主视图：配置已齐 ⇒ 同步直开（不多闪一帧）；
+ * 未齐 ⇒ 先摆出该视图的骨架 + 视图内转圈，就绪后还原骨架再开视图。
+ */
+function openViewWithLoading(view, open) {
+    if (isViewReady(view)) { open(); return; }
+    const seq = ++_viewLoadSeq;
     _lazyViewPending++;
-    return ensureViewScripts(view).then(() => {
-        if (seq !== _lazyViewSeq) return;
+    // 防眨眼：配置只差一点点（延后词表等）时先静等 150ms，别为一次 30ms 的等待闪一屏骨架
+    const shellTimer = setTimeout(() => {
+        if (seq !== _viewLoadSeq || isViewReady(view)) return;
+        // 首屏还在加载（首屏遮罩本来就在）⇒ 不叠骨架，等首屏撤了再说
+        if (document.body.classList.contains('js-loading')) return;
+        _showPendingShell(view);
+    }, 150);
+    ensureViewReady(view).then(() => {
+        clearTimeout(shellTimer);
+        if (seq !== _viewLoadSeq) return;
+        const shellState = _detachPendingOverlay();   // 只收转圈：骨架显示态留到视图 active
         open();
-    }).catch(err => console.error('[lazy-view]', err))
+        _schedulePendingCleanup(shellState, view);
+    }).catch(err => console.error('[view-load]', err))
         .finally(() => { _lazyViewPending--; });
+}
+
+function runWhenViewReady(view, open) {
+    openViewWithLoading(view, open);
 }
 
 /**
@@ -230,8 +476,8 @@ let _viewTransitionGen = 0;
 // 但视图终态在回调落地那一刻就定了 ⇒ 地址清理等这个标志，不等 busy。
 let _vtUpdateLanded = true;
 function runViewTransition(update) {
-    // 任何已落地的视图动作都作废还在等脚本的懒加载打开（后发意图优先）
-    _lazyViewSeq++;
+    // 任何已落地的视图动作都作废还在等脚本/配置的懒加载打开（后发意图优先）
+    cancelPendingViewLoad();
     // 过渡回调是延迟执行的：连点时后发的同步切换先落地，旧回调必须作废，否则视图会被回切
     const gen = ++_viewTransitionGen;
     _vtUpdateLanded = false;

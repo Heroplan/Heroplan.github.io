@@ -161,6 +161,14 @@ function applyLanguage(lang) {
     document.documentElement.setAttribute('dir', dir);
     document.body.setAttribute('data-dir', dir);
 
+    // 1.6 页头「赞助 / 制作」块的最小高度按语言给：CJK 四门只排 1 行（24px），其余排 3 行（60px）。
+    //     语言页由 build_lang_pages 在构建期写死（首帧即终态）；这里管运行时切语言。
+    const HEADER_INFO_ONE_LINE = ['cn', 'tc', 'ja', 'ko'];
+    document.documentElement.style.setProperty(
+        '--header-info-min-height',
+        HEADER_INFO_ONE_LINE.indexOf(lang) >= 0 ? '24px' : '60px'
+    );
+
     document.body.setAttribute('data-lang', lang);
 
     // 2. 更新状态和页面标题
@@ -372,41 +380,73 @@ function refreshActiveViewAfterLanguageChange() {
  * 切换并保存语言（**无缝**：不整页重载）。
  *
  * 数据存 ID + 显示时才过字典 + 排序表语言无关 ⇒ 具备不重载切换的条件；
- * 但切换时必须**显式补做**以下本由整页 reload 完成的步骤：
- *   ① 重取按语言分片的数据并重建英雄显示字段（`reloadLanguageData`）；
- *   ② `history.replaceState` 把地址同步到 `/<码>/`（先于 applyLanguage，canonical 才读得到新路径）；
- *   ③ `applyLanguage()` 刷 DOM 文案 / `<html lang>` / RTL / title / meta / canonical；
- *   ④ 重刷筛选器标签并保住已选条件；
- *   ⑤ 重渲染列表与当前子视图。
+ * 分段顺序**与首访一致**（用户 2026-11-22 口径）：
+ *   ① 界面文案：只等 UI 字典（`Lang.loadI18n`，语言页内联即同帧 / 根页 ~24KB）→ `applyLanguage()`；
+ *   ② 英雄数据：`Lang.loadCore` 名词/属性表（~50KB）→ `reloadLanguageNames()` → 列表先上屏 → **解禁 + 撤遮罩**；
+ *   ③ 技能数据：延后词表 + `heroes_skills_<码>.json`（3.6MB 解码）→ `reloadLanguageSkills()`，后台补齐。
+ * 切换期间 `body.lang-switching` 上「结果区懒加载遮罩 + 透明整屏拦截层」⇒ 不能在半切换状态下乱点。
  *
- * ⚠ 任一步失败 ⇒ 回退到整页重载，避免停留在"半切换"的错乱状态。
+ * ⚠ ② 之前任一步失败 ⇒ 回退到整页重载，避免停留在"半切换"的错乱状态。
  * @param {string} lang - 新的语言代码。
  */
+let _langSwitchGen = 0;   // 保留给日志/调试；技能正文换代由 utils 的 `_skillsGen` / Lang 的 `_lang` 自行作废
+
+/** 等一帧真正合成上屏（两次 rAF + 一轮宏任务）。
+ *  文案换完紧接着就是「重建名称 → 批量渲染」的长任务；不主动让帧，浏览器会把这两步
+ *  合成在同一个任务里 ⇒ 用户看到的是「转圈结束，文字和表格一起出现」，而不是"文字先换、表格后到"。 */
+function _nextPaint() {
+    return new Promise(function (resolve) {
+        if (typeof requestAnimationFrame !== 'function') { setTimeout(resolve, 0); return; }
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () { setTimeout(resolve, 0); });
+        });
+    });
+}
+
 async function changeLanguage(lang) {
     if (!lang || lang === state.currentLang) return;
     if (state._switchingLang) return;          // 连点保护
     state._switchingLang = true;
+    _langSwitchGen++;
 
     setCookie('language', lang, 365);
     const loader = document.getElementById('page-loader-overlay');
-    if (loader) loader.classList.remove('hidden');
+    // 切换期间禁止操作：遮罩仍只盖结果区，另加一层透明整屏拦截层吃掉指针事件（CSS 见 index.html 的 body.lang-switching）
+    document.body.classList.add('lang-switching');
 
     try {
-        await reloadLanguageData(lang);
+        // 点击即给反馈：结果区转圈立刻上（它只盖表格区，页头文案随后仍会先换成目标语言）
+        if (loader) loader.classList.remove('hidden');
+        // ① 界面文案：只等 UI 字典（语言页内联 ⇒ 同帧；根页一次 ~24KB）⇒ 点了就换页头/按钮/筛选器
+        await Lang.loadI18n(lang);
         syncLanguageUrl(lang);
         applyLanguage(lang);
+        refreshFiltersAfterLanguageChange();
+        // 关键：先让「文案已换」这一帧真正画出来，再去做重建名词/批量渲染的长任务。
+        await _nextPaint();
+        // ② 英雄名/属性：只等名词/属性表（`langs_json/*_<码>.json` 那 9 张 + sort_order，原始 ~75~87KB，
+        //    线上压缩后 ~25KB）⇒ 重建名字后列表先上屏（等效首访「表格有内容即撤遮罩」）
+        await reloadLanguageNames(lang);
         refreshFiltersAfterLanguageChange();
         applyFiltersAndRender();
         refreshActiveViewAfterLanguageChange();
     } catch (err) {
         console.error('[lang] 无缝切换失败，回退整页重载：', err);
+        state._switchingLang = false;
+        document.body.classList.remove('lang-switching');
         window.location.reload();
         return;
-    } finally {
-        state._switchingLang = false;
     }
 
+    // 列表已是新语言 ⇒ 解禁 + 撤遮罩；技能正文（3.6MB/语言）像首访一样放后台，不再挡操作
+    state._switchingLang = false;
+    document.body.classList.remove('lang-switching');
     if (loader) loader.classList.add('hidden');
+
+    // ③ 技能数据：延后词表 + heroes_skills_<码>.json ⇒ 详情/技能搜索随后就绪
+    //    ⚠ 不再二次 applyFiltersAndRender()：技能正文只影响详情与「搜技能」，列表条数/几何不变，
+    //      重渲染反而可能把用户正在看的滚动位置弹回顶部。
+    await reloadLanguageSkills(lang);
 }
 
 /**
@@ -549,17 +589,25 @@ function updateFilterButtonUI(filterType) {
 }
 
 // --- 模态框管理 ---
+// 详情弹窗的打开序号：等待技能档期间用户又点了别的英雄 ⇒ 旧的这次直接放弃渲染。
+let _detailsOpenSeq = 0;
+
 async function openDetailsModal(hero, context = {}) {
     state.modalContext = context; // 在打开模态框时存储上下文
-    // 技能正文与延后词表都是「延后加载」的（为不拖慢首屏而移出关键路径）⇒
-    // 打开详情前确保已补齐；水合是**就地**改英雄对象，故 hero 引用无需重新取。
-    if (typeof ensureSkillsLoaded === 'function') {
-        await ensureSkillsLoaded();
+    const seq = ++_detailsOpenSeq;
+
+    // ① **先上屏**：技能正文与延后词表都是「延后加载」的（2.6~4MB/语言，见 utils.js），
+    //    等它们到齐再 showModal 的话，用户点一下要干等到下载完 —— 那正是移动端 INP 的
+    //    大坑（点击→下一帧被整段 await 挡住）。现在立刻开出弹窗骨架（名字 + 转圈），
+    //    正文到达后再填进去；数据本来就绪时 await 只走微任务，骨架不会闪。
+    const _mc = document.getElementById('modal-content');
+    if (_mc) {
+        _mc.innerHTML = `
+            <div style="min-height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px;">
+                <div class="loader-spinner" aria-hidden="true"></div>
+                <p style="margin: 0; font-weight: 600;">${(typeof escapeHtml === 'function' ? escapeHtml(hero && hero.name || '') : '')}</p>
+            </div>`;
     }
-    if (typeof ensureDeferredTables === 'function') {
-        await ensureDeferredTables();
-    }
-    renderDetailsInModal(hero, context); // 渲染内容
     uiElements.modal.classList.remove('hidden');
     cancelModalClose(uiElements.modal);
     uiElements.modal.showModal();
@@ -575,6 +623,17 @@ async function openDetailsModal(hero, context = {}) {
         { modal: 'details', hero: _hid, view: (typeof currentMainViewName === 'function' ? currentMainViewName() : 'list') },
         '', _hid ? heroUrl(_hid, true) : null); // 添加历史记录
     state.modalStack.push('details'); // 入栈
+
+    // ② 补齐技能正文 / 延后词表（水合是**就地**改英雄对象，故 hero 引用无需重新取）
+    if (typeof ensureSkillsLoaded === 'function') {
+        await ensureSkillsLoaded();
+    }
+    if (typeof ensureDeferredTables === 'function') {
+        await ensureDeferredTables();
+    }
+    if (seq !== _detailsOpenSeq) return;   // 期间又打开了别的详情 ⇒ 这次作废，别覆盖新弹窗
+    renderDetailsInModal(hero, context); // 渲染内容
+    uiElements.modal.scrollTop = 0;
 }
 
 function closeDetailsModal() {

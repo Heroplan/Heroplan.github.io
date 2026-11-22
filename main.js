@@ -1,5 +1,9 @@
 // main.js: 应用程序的主入口和事件协调中心。
 
+// ⚠ 语言菜单的早期拦截（点击发生在 `addEventListeners()` 绑定之前时不吃成整页跳转）
+//   挂在 index.html 的 head 内联脚本里（`__pendingLang`）——那里比 main.js 更早，见该脚本注释。
+//   本文件只负责「应用就绪后把加载期记下的语言意图交给 changeLanguage()」。
+
 /**
  * 页面加载完成后执行的主函数。
  */
@@ -9,6 +13,25 @@ document.addEventListener('DOMContentLoaded', async function () {
         navigator.serviceWorker.register('sw.js').catch(function () { });
     }
     await initializeApp();
+    window.__appReady = true;
+    // 加载期点过语言 ⇒ 此刻应用已就绪：走无缝切换（界面文案先换、表格随后），
+    // 而不是让那次点击变成整页跳转。
+    var pendingLang = window.__pendingLang;
+    if (pendingLang) {
+        window.__pendingLang = null;
+        window.__earlyLangOverride = null;
+        if (typeof changeLanguage === 'function' && pendingLang !== state.currentLang) {
+            changeLanguage(pendingLang);
+        } else {
+            // 初始化已经是按目标语言跑的（`__earlyLangOverride`）⇒ 只需把地址收敛成 `/<码>/`
+            if (typeof syncLanguageUrl === 'function') {
+                try { syncLanguageUrl(pendingLang); } catch (e) { }
+            }
+            document.body.classList.remove('lang-switching');
+            var pendingLoader = document.getElementById('page-loader-overlay');
+            if (pendingLoader) pendingLoader.classList.add('hidden');
+        }
+    }
 });
 
 /**
@@ -345,6 +368,12 @@ async function initializeApp() {
         }
     }
 
+    // 加载期点过语言（index.html head 的早期拦截记下了 `__earlyLangOverride`）⇒
+    // 首屏初始化**直接按新语言**走：文案、名字表、表格首帧就是目标语言，用户不必等表格出来才看到语言变化。
+    if (window.__earlyLangOverride && _knownLang(window.__earlyLangOverride)) {
+        langToUse = window.__earlyLangOverride;
+    }
+
     // 应用语言
     applyLanguage(langToUse);
 
@@ -573,21 +602,25 @@ async function initializeApp() {
     // 抽奖不是首屏视图 ⇒ 这段网络移到首屏渲染+撤遮罩**之后**才 await，
     // 不再把 LCP 拖到抽奖配置落地之后；深链接/测试仍等 initializeApp 整体完成，语义不变。
     // 抽奖脚本同样懒加载：启动链不含它们，这里注入执行后再 initialize（allSummonPools 语义保住）。
-    try {
-        await ensureViewScripts('lottery');
-        const [officialResponse, displayResponse] = await Promise.all([
-            fetch(av('lottery_official.json')),   // 官方 lottery 字段无损导出
-            fetch(av('lottery_display.json'))     // 站点自有展示段（banner/lotterybg/limitedPool）
-        ]);
-        const officialData = await officialResponse.json();
-        const displayMeta = await displayResponse.json();
+    // 落地前用户点「抽奖」⇒ special-views.js 的 openViewWithLoading 会先转圈等它（配置没到不开空视图）。
+    window.__lotteryConfigReady = (async () => {
+        try {
+            await ensureViewScripts('lottery');
+            const [officialResponse, displayResponse] = await Promise.all([
+                fetch(av('lottery_official.json')),   // 官方 lottery 字段无损导出
+                fetch(av('lottery_display.json'))     // 站点自有展示段（banner/lotterybg/limitedPool）
+            ]);
+            const officialData = await officialResponse.json();
+            const displayMeta = await displayResponse.json();
 
-        LotterySimulator.initialize(officialData, displayMeta);
+            LotterySimulator.initialize(officialData, displayMeta);
 
-    } catch (error) {
-        console.error("加载抽奖配置文件失败:", error);
-        // 即使抽奖文件加载失败，也让网站继续运行
-    }
+        } catch (error) {
+            console.error("加载抽奖配置文件失败:", error);
+            // 即使抽奖文件加载失败，也让网站继续运行
+        }
+    })();
+    await window.__lotteryConfigReady;
 
     if (heroFromUrl && !zfavsFromUrl && !favsFromUrl) {
         // `?hero=<身份>`（或旧写法 `?view=<身份>`，英雄详情分享链接）：**等技能正文补齐再开弹窗**，
@@ -910,17 +943,21 @@ function addEventListeners() {
     // --- 特殊视图切换事件（开关语义：已在本视图时再点一次 = 回列表） ---
     showWantedMissionBtn.addEventListener('click', () => {
         if (currentMainViewName() === 'wanted') exitMainViewToList();
-        else runViewTransition(() => initAndShowWantedMissionView());
+        else openViewWithLoading('wanted', () => runViewTransition(() => initAndShowWantedMissionView()));
     });
     showFarmingGuideBtn.addEventListener('click', () => {
         if (currentMainViewName() === 'farming') exitMainViewToList();
-        else runViewTransition(() => initAndShowFarmingGuideView());
+        else openViewWithLoading('farming', () => runViewTransition(() => initAndShowFarmingGuideView()));
     });
     // 聊天脚本懒加载：按钮绑定留在启动侧（视图脚本落地前按钮也要能点），
     // 首次点击注入脚本后再交给真处理函数（开关语义与一次性控件初始化都在它里面）。
     document.getElementById('show-chat-simulator-btn').addEventListener('click', () => {
         if (typeof handleChatSimulatorButtonClick === 'function') { handleChatSimulatorButtonClick(); return; }
-        runWhenViewReady('chat', () => handleChatSimulatorButtonClick());
+        // 骨架期聊天容器已按打开态可见 ⇒ 不能走 toggle 语义（currentMainViewName() 会判成"已在本视图"→直接关掉）
+        openViewWithLoading('chat', () => {
+            if (typeof openChatSimulatorView === 'function') openChatSimulatorView();
+            else handleChatSimulatorButtonClick();
+        });
     });
     showRedeemCodesBtn.addEventListener('click', openRedeemCodesModal);
 
@@ -947,9 +984,11 @@ function addEventListeners() {
 
     // --- 队伍模拟器事件 ---
     showTeamSimulatorBtn.addEventListener('click', () => {
-        // 已加载（含已激活）⇒ 同步开关，与旧行为逐拍一致；未加载 ⇒ 注入后再开
-        if (typeof toggleTeamSimulator === 'function') { runViewTransition(toggleTeamSimulator); return; }
-        runWhenViewReady('team', () => runViewTransition(toggleTeamSimulator));
+        // 已加载（含已激活）⇒ 同步开关，与旧行为逐拍一致；未加载 ⇒ 先转圈等脚本落地再开
+        if (typeof toggleTeamSimulator === 'function' && isViewReady('team')) {
+            runViewTransition(toggleTeamSimulator); return;
+        }
+        openViewWithLoading('team', () => runViewTransition(toggleTeamSimulator));
     });
     teamDisplayGrid.addEventListener('click', handleTeamGridClick);
     document.addEventListener('click', handleGlobalClickForSwapCancel);
@@ -1386,9 +1425,11 @@ function addEventListeners() {
     const showLotterySimulatorBtn = document.getElementById('show-lottery-simulator-btn');
     if (showLotterySimulatorBtn) {
         showLotterySimulatorBtn.addEventListener('click', () => {
-            // 已加载（含已激活）⇒ 同步开关；未加载 ⇒ 注入后再开（initialize 在启动收尾已注过一次）
-            if (typeof LotterySimulator !== 'undefined') { runViewTransition(LotterySimulator.toggle); return; }
-            runWhenViewReady('lottery', () => runViewTransition(LotterySimulator.toggle));
+            // 已加载且配置到位（含已激活）⇒ 同步开关；否则先转圈等脚本/奖池配置落地再开
+            if (typeof LotterySimulator !== 'undefined' && isViewReady('lottery')) {
+                runViewTransition(LotterySimulator.toggle); return;
+            }
+            openViewWithLoading('lottery', () => runViewTransition(LotterySimulator.toggle));
         });
     }
 
@@ -1800,6 +1841,16 @@ function toggleDonate() {
 }
 
 /**
+ * 抽奖/队伍视图（含"等待骨架"）打开期间：页头赞助块与捐赠榜由视图自己收起
+ * （`lottery-mode-active` / `team-mode-active`，骨架期也会打上）。
+ * 异步数据回调要据此让位，不能把这两块翻出来。
+ */
+function isHeaderCollapsedByView() {
+    return document.body.classList.contains('lottery-mode-active')
+        || document.body.classList.contains('team-mode-active');
+}
+
+/**
  * 更新赞助按钮的显示文本
  */
 function updateDonateButton() {
@@ -1811,7 +1862,9 @@ function updateDonateButton() {
     }
     // 跑马灯属自动播放动效（WCAG 2.2.2）：此按钮就是它的可见"隐藏"控制
     const container = document.querySelector('.donation-list-container-wrapper');
-    if (container) container.classList.toggle('hidden', isHidden);
+    // 抽奖/队伍（含等待骨架）打开态下这块由视图自己收着：捐赠者数据异步到达时若这里把它翻出来，
+    // 会看到「捐赠榜闪一下又消失」（骨架期尤其明显）。
+    if (container) container.classList.toggle('hidden', isHidden || isHeaderCollapsedByView());
 }
 
 /**

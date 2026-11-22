@@ -15,7 +15,7 @@
          ⚠ 别再往这里加档：preload 默认 High，加多了会挤掉 defer 脚本链（Low）的带宽，
          脚本链晚到 ⇒ 启动反而更慢（语言表/小数据档预载均实测零和或负收益）。
          其余数据档由 utils.js::loadData 与语言表并行发起。 -->
-    <script src="./asset_ver.js?v=20261120c"></script>
+    <script src="./asset_ver.js?v=20261122a"></script>
     <script>
         (function () {
             if (!window.AV) return;
@@ -43,18 +43,46 @@
             /* 暗色主题背景 */
         }
 
+        /* 首屏遮罩：**只盖结果区（表格所在的那块），页头与筛选栏照常上屏**（用户 2026-11-22 口径 ②）。
+           遮罩是 `#results-wrapper` 的绝对定位子元素 ⇒ 只覆盖表格区；结果区的加载占位是 75vh，
+           所以转圈正好落在表格中央。H1 不再被遮罩挡住 ⇒ LCP 回到首绘（移动端探针 ~730ms）。
+           撤遮罩时机不变，见 main.js §7：`applyFiltersAndRender()` 之后**同一同步段**里撤，
+           此时首批行（虚拟滚动整窗 / 分块首批 60 行）已经进了 tbody ⇒「表格有内容可显示即撤」。 */
+        #results-wrapper {
+            position: relative;   /* 遮罩的定位基准 */
+        }
+
         #page-loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            position: absolute;
+            inset: 0;
             /* 直接使用上面定义的变量 */
             background-color: var(--md-sys-color-background);
             z-index: 99999;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        /* 切语言期间**禁止操作**，但画面**不全屏遮挡**：
+           结果区仍是原来的「只盖表格」遮罩（页头/赞助块照常可见）；
+           页头与按钮的点击由一层**透明**的整屏拦截层吃掉（`#lang-switch-blocker`），不改变画面。 */
+        body.lang-switching #page-loader-overlay {
+            pointer-events: auto;
+        }
+        body.lang-switching #lang-switch-blocker {
+            display: block;
+        }
+        body.lang-switching {
+            cursor: progress;
+        }
+
+        #lang-switch-blocker {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            display: none;
+            background: transparent;
+            pointer-events: auto;
         }
 
         .loader-spinner {
@@ -66,11 +94,87 @@
             animation: spin 1.2s linear infinite;
         }
 
-        .js-loading .header-buttons,
-        .js-loading .main-container,
-        .js-loading .floating-action-buttons,
-        .js-loading footer {
+        /* 移动端结果区是 75vh，超出首屏 ⇒ 转圈按整块居中会掉到屏幕下缘；按「可视区中部」上提。 */
+        @media (max-width: 900px) {
+            #page-loader-overlay {
+                align-items: flex-start;
+                padding-top: 24vh;
+            }
+        }
+
+        /* ── 特殊视图「脚本/配置未就绪」的占位：摆目标视图自己的骨架、骨架内转圈 ──
+           抽奖/队伍是整页替换型 ⇒ 等待期由 JS 先按"打开态"隐掉页头赞助块与捐赠榜、
+           打上 lottery-mode-active / team-mode-active（与真打开完全同布局，避免就绪后上跳）；
+           聊天/通缉/攻略嵌在结果区里 ⇒ 只收掉结果区自己的快捷栏与表格；
+           结果表头**保留**（骨架期由 JS 按目标视图的标题 + 返回占位，几何与打开后一致）。 */
+        body.view-pending-inline #quick-search-bar,
+        body.view-pending-inline #hero-table-view,
+        body.view-pending-inline #lottery-simulator-wrapper,
+        body.view-pending-inline #team-simulator-wrapper {
+            display: none;
+        }
+
+        .pending-view-shell {
+            position: relative;
+        }
+
+        /* 队伍视图的「我的队伍」是打开时才渲染的（空态/列表都会长高 56px 上下）⇒
+           骨架期先给它等高留白，就绪后列表填进来，下面的英雄表不再被顶下去。 */
+        .pending-view-shell #saved-teams-list {
+            min-height: 56px;
+        }
+
+        /* 转圈按「视图内容槽在视口内的可见部分」定位（top/left/width/height 由 JS 写入），
+           视图自己的标题栏/标签栏照常上屏，槽高于一屏时也不会把转圈丢到屏幕外。 */
+        .view-loading-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        /* 结果区由遮罩挡住，页头保持可见。悬浮按钮压不到遮罩上，加载期先不显示；
+           footer 里的打赏名单是数据到了才填（会改高度）⇒ 也留到撤遮罩之后（都只是 visibility，不改布局）。 */
+        body.js-loading .floating-action-buttons,
+        body.js-loading footer {
             visibility: hidden;
+        }
+
+        /* 表格内容虽然在遮罩下面看不见，但 layout-shift 不认「被挡住」：
+           首批行插进来时 tbody 从 0 长到全量（探针实测 CLS 0.036）⇒ 加载期把表格也设成
+           visibility:hidden（只占位、不参与 CLS），撤遮罩同一帧转可见，那一帧已经是最终几何。
+           页头三处文案与结果区占位是「首帧即最终高度」的另一半（见 HANDOFF §24.11）。 */
+        body.js-loading #hero-table-view {
+            visibility: hidden;
+        }
+
+        /* ⚠ 页头三块的高度要「首帧即终态」：遮罩只盖内容区 ⇒ 页头若在 i18n 到了之后长高，
+           下面的内容区（含遮罩）整体下移，就是一次实打实的 CLS（探针实测 0.15）。
+           这块的最小高度**按语言**给（`--header-info-min-height`，由 build_lang_pages 写进各语言页、
+           ui.js::applyLanguage 在运行时切语言时同步改）：
+           简中/繁中/日/韩 在 412px 下就 1 行（24px），其余语言 3 行（60px）——
+           一律按 60px 预留会让 1 行语言多出 36px 空白，看着像块被撑高了。 */
+        .header-info-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: var(--header-info-min-height, 24px);
+        }
+
+        /* 加载期占位 = 完成后的高度（#results-wrapper 是 max-height:75vh 的滚动容器，
+           内容足够时正好 75vh）⇒ 撤遮罩后底部（footer / 友情链接）不跳动。 */
+        body.js-loading #results-wrapper {
+            min-height: 75vh;
+        }
+
+        /* 「最后更新」那行是数据到了才填的；空着时高度 0、填上后长出一行 ⇒ 主内容下移。
+           先按一行占位（各语言单行/双行都不会超出）。 */
+        #last-updated {
+            min-height: 1.2em;
         }
 
         @keyframes spin {
@@ -145,6 +249,29 @@
             var lang = explicit
                 || norm(m ? decodeURIComponent(m[1]) : '')
                 || norm(navigator.language);
+            // ── 根页按 cookie 跳到静态语言页 ────────────────────────────────
+            // 根页的静态字节只有简中兜底；用户上次明确选过语言（cookie `language` 非空，
+            // 见 main.js 的 languageUpdated 逻辑：没选过的用户该 cookie 是空的）时，
+            // 直接看根页会「首帧中文 → 运行时换语言」——既闪文案，页头/快捷筛选栏还要重排（CLS）。
+            // 跳到 `/<码>/` 后，首字节就是目标语言：文案与版式首帧即终态。
+            // ⚠ 只在根页、且地址里没有显式语言参数（路径 / `lang` / `hl`）时跳；
+            //   爬虫不带这个 cookie，因此不会被重定向、根页仍作 x-default 自指。
+            //   search / hash 原样带走 ⇒ 深链接（`?view=lottery&pool=…`）不破。
+            var cookieLang = norm(m ? decodeURIComponent(m[1]) : '');
+            var atRoot = location.pathname === '/' || location.pathname === '/index.html';
+            // 没有 cookie（首次访问）时按**浏览器语言**落到对应的静态语言页：
+            //   `navigator.language` 只在根页、且地址里没有显式语言参数时参与判断。
+            // ⚠ 爬虫必须排除：Googlebot 的 `navigator.language` 常是 en-US，一旦重定向，
+            //   根页就会被当成 `/en/` 的副本、x-default 失效。UA 里带 bot/crawler/spider 等一律不跳。
+            var _ua = navigator.userAgent || '';
+            var _isBot = /bot|crawler|spider|slurp|headlesschrome|lighthouse|phantomjs/i.test(_ua);
+            var wantLang = cookieLang || norm(navigator.language);
+            if (!explicit && atRoot && !_isBot && wantLang && wantLang !== 'cn') {
+                var target = '/' + wantLang + '/' + location.search + location.hash;
+                // jsdom 等受限环境没有 location.replace / 会报未实现 ⇒ 继续渲染（不跳），
+                // 测试与爬虫口径都不受影响。
+                try { location.replace(target); return; } catch (e1) { }
+            }
             document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             // canonical 自指也在首屏先改掉，不等 ui.js::applyLanguage ⇒ 渲染时间线更早，
             // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**（路径或参数）：
@@ -155,6 +282,51 @@
                 var canon = document.getElementById('canonical-link');
                 if (canon) canon.setAttribute('href', 'https://heroplan.github.io/' + explicit + '/');
             }
+        })();
+    </script>
+
+    <script>
+        /* 语言菜单的**早期拦截**（2026-11-22）：语言项是真实 `<a href="/<码>/">`（可抓取、可中键新标签），
+           但 main.js 的 `addEventListeners()` 要等 `initializeApp()` 里数据加载完才绑定 ⇒
+           在此之前点语言项会被浏览器当成**整页跳转**，用户看到「文案没先换、等整页（含表格）加载完才换」。
+           这里在 head 就挂**捕获阶段**的委托：先吃掉点击、记下目标语言；应用就绪后由 main.js 首屏流程
+           调 `changeLanguage()` 走无缝三段式（文案 → 英雄数据 → 技能数据）。 */
+        (function () {
+            document.addEventListener('click', function (e) {
+                if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+                var t = e.target && e.target.closest ? e.target.closest('.lang-option') : null;
+                if (!t) return;
+                e.preventDefault();
+                e.stopPropagation();
+                var opts = document.getElementById('lang-options');
+                if (opts) opts.classList.add('hidden');
+                var code = t.getAttribute('data-lang');
+                if (!code) return;
+                var cur = (window.state && window.state.currentLang) || '';
+                if (window.__appReady && typeof changeLanguage === 'function' && code !== cur) {
+                    changeLanguage(code);
+                    return;
+                }
+                if (code === cur) return;
+                // 应用还没就绪：记下意图 + 立刻进「切换中」态（结果区遮罩 + 透明整屏拦截层）
+                window.__pendingLang = code;
+                // 让初始化流程直接按新语言走（`main.js::initializeApp` 会读这个覆盖值）
+                window.__earlyLangOverride = code;
+                try {
+                    document.cookie = 'language=' + code + '; path=/; max-age=31536000; SameSite=Lax';
+                } catch (e) { }
+                // 先只取 UI 字典 ⇒ 一到就**先把界面文案换掉**（英雄表数据随后由初始化/切换流程加载）
+                if (window.Lang && typeof window.Lang.loadI18n === 'function') {
+                    window.Lang.loadI18n(code).then(function () {
+                        if (window.__earlyLangOverride === code && typeof window.applyLanguage === 'function') {
+                            try { window.applyLanguage(code); } catch (e) { }
+                        }
+                    }, function () { });
+                }
+                if (document.body) document.body.classList.add('lang-switching');
+                var loader = document.getElementById('page-loader-overlay');
+                if (loader) loader.classList.remove('hidden');
+            }, true);
         })();
     </script>
 
@@ -256,21 +428,22 @@
         }, { once: true });
     </script>
 
+    <script type="application/json" id="i18n-inline" data-lang="ko">{"metaDescription": "Heroplan은 '엠파이어 & 퍼즐' (Empires & Puzzles) 전 언어 영웅 데이터베이스입니다. 게임 내 20개 언어로 모든 영웅의 능력치·스킬·일러스트를 검색하고, 출시 예정 영웅 미리보기, 고급 스킬 검색, 능력치 계산기와 시뮬레이터를 제공합니다.", "seoHeading": "'엠파이어 &amp; 퍼즐' 전 언어 영웅 데이터베이스 · 일러스트 · 출시 예정 영웅 · 플레이어 도구", "seoPara1": "\u003cstrong>Heroplan\u003c/strong>은 '엠파이어 &amp; 퍼즐'(Empires &amp; Puzzles)의 \u003cstrong>모든 영웅\u003c/strong>을 수록하고 \u003cstrong>게임 내 20개 언어를 완전히 지원\u003c/strong>합니다 — 简体中文, 繁體中文, English, 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский, العربية, Türkçe, Polski, Nederlands, Svenska, Dansk, Norsk, Suomi, Indonesia. 언어를 바꾸면 영웅 이름과 특수 스킬, 패시브 스킬 전문을 모국어로 볼 수 있습니다. 각 영웅은 등급, 속성, 마나 속도, 클래스, 가문, 출처, 코스튬과 함께 레벨 80 / LB1 / LB2의 공격력·방어력·체력·전투력을 제공합니다.모든 영웅 데이터는 게임의 \u003cstrong>공식 설정 파일\u003c/strong>에서 파싱해 생성합니다.", "seoPara2": "\u003cstrong>전체 영웅 일러스트 갤러리\u003c/strong>를 제공합니다. 영웅 상세 페이지에서 고해상도 정지 일러스트를 볼 수 있고, 지원되는 캐릭터는 게임 내 \u003cstrong>애니메이션 일러스트\u003c/strong>가 재생됩니다. \u003cstrong>출시 예정 영웅 미리보기\u003c/strong>는 공식 출시일 순으로 미출시 영웅을 보여 주어 자원을 미리 계획할 수 있습니다(즐겨찾기는 출시 시점에 해제됩니다). 검색은 이름·등급·속성·마나 속도·클래스·가문·출처 같은 기본 조건 외에 \u003cstrong>특수 스킬 본문\u003c/strong>, \u003cstrong>패시브 스킬 본문\u003c/strong>, 스킬 분류를 조합한 복합 검색을 지원합니다. \u003cstrong>능력치 계산기\u003c/strong>는 한계 돌파(LB1/LB2)와 특성(+20/+25) 단계별 정확한 수치를 즉시 환산합니다.", "seoPara3": "데이터베이스 외에도 다양한 도구가 내장되어 있습니다. 【\u003cstrong>소환 시뮬레이터\u003c/strong>】로 가챠 확률과 소환 기록을 재현하고, 【\u003cstrong>팀 시뮬레이터\u003c/strong>】로 편성을 구성해 동맹에 공유하며, 【\u003cstrong>채팅 시뮬레이터\u003c/strong>】로 사용자 지정 색상과 게임 이모지를 넣은 채팅 문구를 만들 수 있습니다. 【\u003cstrong>재료 획득 가이드\u003c/strong>】와 【\u003cstrong>현상 수배 임무\u003c/strong>】 표로 드롭 스테이지를 빠르게 찾고, 【\u003cstrong>이벤트 캘린더\u003c/strong>】와 【\u003cstrong>교환 코드\u003c/strong>】로 기간 한정 콘텐츠를 놓치지 마세요. 즐겨찾기한 영웅 조합을 링크로 공유하고, 설정을 내보내기/가져오기 할 수 있으며, 라이트/다크 테마도 지원합니다.", "pageTitle": "엠파이어 & 퍼즐 영웅 데이터베이스 | 전체 영웅·일러스트·출시 예정 | Heroplan", "headerTitle": "엠파이어 & 퍼즐 영웅 데이터베이스", "sponsoredBy": "후원", "translatedBy": "제작", "donationListTitle": "모든 기부자에게 감사드립니다!", "filterHeroes": "영웅 필터링", "standardFilters": "기본 필터", "nameLabel": "이름:", "noMatchingResults": "일치하는 결과가 없습니다", "avatarLabel": "아바타", "namePlaceholder": "영웅 이름 입력", "costumeTypeLabel": "코스튬:", "rarityLabel": "희귀도", "elementLabel": "속성", "speedLabel": "마나 속도", "classLabel": "클래스", "familyLabel": "패밀리", "sourceLabel": "기원:", "aetherPowerLabel": "에테르 파워:", "showEventNameLabel": "이벤트 이름 표시", "filterScopeLabel": "필터 범위:", "filterScope_all": "모두", "filterScope_hero": "영웅", "filterScope_skin": "코스튬", "filterScope_favorites": "즐겨찾기", "clearSelection": "선택 초기화", "advancedFilters": "고급 필터", "skillTypeLabel": "스킬 유형:", "skillTypePlaceholder": "예: 버프, 이상, 치유", "skillTextLabel": "스킬 텍스트:", "passiveSkillLabel": "패시브 텍스트:", "enableSkillQuickSearchLabel": "빠른 스킬 검색: ", "cnSkill_baseLabel": "스킬 기본:", "cnSkill_specialLabel": "특수 효과:", "cnSkill_buffLabel": "버프:", "cnSkill_debuffLabel": "디버프:", "enableSkillQuickSearchToggle": "활성화", "filterBy": "필터 기준:", "all": "모두", "hero": "영웅", "skin": "코스튬", "favorites": "즐겨찾기", "heroAcademyEventLabel": "영웅 아카데미 10:", "viewBalancedHeroes": "밸런스 데이터 영웅 보기", "oneClickMaxEventLabel": "영웅 코치:", "purchaseCostumeEventLabel": "재봉사 방문:", "soulExchangeEventLabel": "영혼 교환:", "showListBtnLabel": "목록 표시", "soulExchangeModalTitle": "영혼 교환 목록", "filterButtonLabel": "필터", "minPower": "파워", "minAttack": "공격", "minDefense": "방어", "minHealth": "생명력", "resetFilters": "필터 초기화", "hideDonate": "기부 숨기기", "showDonate": "기부 표시", "exportSettings": "설정 내보내기", "importSettings": "설정 가져오기", "setting_heroFavorites": "즐겨찾는 영웅", "setting_savedTeams": "저장된 팀", "setting_favoriteColors": "즐겨찾는 채팅 색상", "setting_otherSettings": "UI 및 일반 설정", "exportModalTitle": "설정 내보내기", "importModalTitle": "설정 가져오기", "exportItems": "내보낼 항목 선택:", "importItems": "가져올 항목 선택:", "selectAll": "모두 선택", "exportSelected": "내보내기 코드 생성", "analyzeCode": "코드 분석", "importSelected": "선택 항목 가져오기", "exportResultTitle": "내보내기 코드 (복사하여 안전하게 보관하십시오):", "noDataToExport": "내보낼 데이터가 없습니다.", "noDataInCode": "코드에서 가져올 수 있는 데이터를 찾을 수 없거나 코드가 손상되었습니다.", "importInstructions": "이전에 내보낸 설정 코드를 아래에 붙여넣으십시오:", "importModeOverwrite": "덮어쓰기 모드: 현재 모든 설정을 삭제하고 가져온 설정으로 대체합니다.", "importModeAppend": "추가 모드: 기존 설정을 유지하고 가져온 설정을 병합합니다 (예: 즐겨찾기 및 저장된 팀은 병합되고 중복 제거됩니다).", "importConfirmBtn": "가져오기 확인", "importCancelBtn": "취소", "importError": "가져오기 실패! 코드가 유효하지 않거나 손상되었습니다. 코드가 완전한지 확인하십시오.", "saveToFile": "파일로 저장", "importFromFile": "파일에서 가져오기", "shareFavorites": "즐겨찾기 공유", "openFavorites": "즐겨찾기 열기", "shareFavoritesCopied": "목록이 복사되었습니다!", "footerGameName": "엠파이어 &amp; 퍼즐", "footerPlatform": "영웅 데이터 플랫폼", "footerCredit": "© 2025 - 2026 heroplan.github.io | 비공식 팬 사이트", "favoritesListEmpty": "즐겨찾기 목록이 비어 있습니다. 영웅을 추가하거나 필터를 재설정하십시오", "resultsReset": "재설정", "noResults": "일치하는 영웅을 찾을 수 없습니다", "modalHeroDetails": "ℹ️ 영웅 세부 정보", "closeBtnTitle": "닫기", "modalOrigin": "기원", "modalCoreStats": "📊 핵심 스탯", "limitBreakSetting": "한계 돌파:", "noLimitBreak": "없음", "lb1": "🔼 LB1", "lb2": "⏫ LB2", "talentSetting": "특성:", "costumeBonusSetting": "코스튬 보너스:", "costumeSetsNone": "없음", "noTalent": "특성 없음", "talent20": "20 특성", "talent25": "25 특성", "prioritySetting": "특성 우선 순위:", "attackPriority": "공격 > 방어 > 생명력", "defensePriority": "방어 > 생명력 > 공격", "attackPriority2": "공격 > 생명력 > 방어", "healthPriority": "생명력 > 방어 > 공격", "defensePriority2": "방어 > 공격 > 생명력", "healthPriority2": "생명력 > 공격 > 방어", "manaPriorityLabel": "마나 노드:", "manaPriorityToggle": "우선", "showLbTalentDetailsLabel": "세부 정보에 LB/특성 설정 표시:", "showLbTalentDetailsToggle": "표시", "modalTalentSettingsTitle": "한계 돌파, 특성 및 코스튬 설정", "customTalentTitle": "사용자 정의 특성", "talentTreeTitle": "클래스 특성 트리", "modalSettings": "설정", "defaultStatSettingsTitle": "LB 특성 설정", "toggleCollapse": "클릭하여 접기/펼치기", "modalSkillDetails": "📖 스킬 세부 정보", "modalSkillName": "📄 이름:", "modalSpeed": "⌛ 속도:", "modalSkillType": "🏷️ 스킬 태그:", "modalSpecialSkill": "✨ 스킬 효과:", "modalPassiveSkill": "🧿 패시브 스킬:", "modalSkin": "코스튬:", "none": "없음", "detailsCloseBtn": "닫기", "shareButtonTitle": "공유", "favoriteButtonTitle": "즐겨찾기", "favoriteLockedTitle": "아직 미출시되어 즐겨찾기할 수 없습니다", "favColumnHeader": "☆", "favHeaderTitle": "모두 즐겨찾기 추가/해제", "confirmFavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에 추가하시겠습니까?", "confirmUnfavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에서 제거하시겠습니까?", "filterHelpTitle": "고급 필터 구문", "filterHelpIntro": "'스킬 텍스트/패시브 텍스트' 필드에서 다음 연산자를 사용하여 복잡한 쿼리를 수행할 수 있습니다:", "filterHelpOr": "\u003cli>\u003cstrong>| (OR):\u003c/strong> 지정된 키워드 중 하나라도 포함하는 영웅을 찾습니다. 예: \u003ccode>치유|부활\u003c/code>은 '치유' 또는 '부활'이 있는 영웅을 찾습니다.\u003c/li>", "filterHelpAnd": "\u003cli>\u003cstrong>공백 (AND):\u003c/strong> 모든 키워드를 포함해야 하는 영웅을 찾습니다. 예: \u003ccode>공격 증가\u003c/code>는 '공격'과 '증가'를 모두 포함하는 영웅을 찾습니다.\u003c/li>", "filterHelpNot": "\u003cli>\u003cstrong>! (NOT):\u003c/strong> 특정 키워드가 있는 영웅을 제외합니다. 예: \u003ccode>!치유\u003c/code>는 스킬에 '치유'가 없는 모든 영웅을 찾습니다.\u003c/li>", "filterHelpGroup": "\u003cli>\u003cstrong>() (그룹화/단일 행 일치):\u003c/strong> 괄호를 사용하여 복잡한 그룹화를 수행하고 \u003cstrong style='color: var(--md-sys-color-error);'>단일 스킬 행 내에서 일치하도록 강제합니다\u003c/strong>. 예: \u003ccode>(저항 치유)\u003c/code>는 스킬 설명의 \u003cstrong style='color: var(--md-sys-color-error);'>단일 행\u003c/strong>에 '저항'과 '치유'가 모두 포함된 영웅을 정확히 찾습니다.\u003c/li>", "filterHelpExact": "\u003cli>\u003cstrong>[] (정확한 일치):\u003c/strong> 대괄호를 사용하여 \u003cstrong style='color: var(--md-sys-color-error);'>단일 스킬 유형 행에서 정확한 일치를 강제합니다\u003c/strong>. 예: \u003ccode>[정화]\u003c/code>는 정확한 유형 '정화'를 가진 영웅을 찾으며 '정화자'는 찾지 않습니다.\u003c/li>", "filterHelpExample": "\u003cli>\u003cstrong>결합 예:\u003c/strong> \u003ccode>((면역|반사) 버프)\u003c/code>는 면역 또는 반사 버프를 제공하는 영웅을 찾습니다 (모든 조건이 동일한 행에서 충족되어야 함).\u003c/li>", "noFavoritesToShare": "공유할 즐겨찾기가 없습니다.", "copyLinkFailed": "링크 복사에 실패했습니다. 수동으로 복사해 보십시오.", "wantedMissionTableTitle": "지명 임무 테이블", "farmingGuideTableTitle": "파밍 위치 가이드", "questHeaderDaily": "일일", "questHeaderRed": "빨강", "questHeaderGreen": "초록", "questHeaderBlue": "파랑", "questHeaderPurple": "보라", "questHeaderYellow": "노랑", "toggleThemeTitle": "주간/야간 모드 전환", "toggleLanguageTitle": "언어 전환", "showLotterySimulatorTitle": "소환 시뮬레이터", "showTeamSimulatorTitle": "팀 시뮬레이터", "showChatSimulatorTitle": "채팅 시뮬레이터", "showFarmingGuideTitle": "파밍 가이드", "showWantedMissionTitle": "지명 임무 테이블 표시", "openFiltersTitle": "필터 열기", "calendarTitle": "이벤트 달력 보기", "filterSyntaxTitle": "필터 구문 도움말", "lotterySimulatorTitle": "소환 시뮬레이터", "returnToList": "돌아가기", "teamDisplayTitle": "팀 구성", "noTeamTags": "팀에 스킬 태그가 없습니다", "saveTeamBtn": "팀 저장", "shareTeamListBtn": "목록 공유", "savedTeamsTitle": "저장된 팀", "promptTeamName": "팀 이름을 입력하세요:", "teamNameRequired": "팀 이름은 비워둘 수 없습니다.", "noHeroesInTeam": "저장할 팀에 영웅이 없습니다.", "removeTeamBtnTitle": "이 팀 제거", "noSavedTeams": "저장된 팀이 없습니다.", "shareTeamListCopied": "링크가 복사되었습니다!", "noTeamsToShare": "공유할 팀이 없습니다.", "clearTeamBtn": "팀 비우기", "confirmClearTeam": "현재 팀을 비우시겠습니까? 저장되지 않은 모든 변경 사항이 손실됩니다.", "importTeamBtn": "가져오기", "importedBtn": "가져옴", "teamImportedBtn": "가져옴", "sharedTeamsTitle": "공유된 팀", "myTeamsTab": "내 팀", "sharedTeamsTab": "공유된 팀", "summaryTagsTitle": "스킬 태그 요약", "chatSimulatorTitle": "채팅 시뮬레이터", "chatPanelTitleColors": "색상 선택", "chatFavoriteColorBtn": "⭐", "chatFavoriteColorsTitle": "즐겨찾는 색상", "chatPanelTitleEmojis": "이모지 선택", "chatPanelTitleIO": "입력 및 미리보기", "chatInsertColorBtn": "추가", "chatCopyBtn": "내용 복사", "chatCopied": "복사됨!", "talentTerms": {"攻击": "공격", "防御": "방어", "生命": "생명력", "法力": "마나", "治疗": "치유", "暴击": "치명타", "游侠天赋": "레인저 특성", "战士天赋": "전사 특성", "圣骑天赋": "성기사 특성", "野蛮人天赋": "야만인 특성", "牧师天赋": "성직자 특성", "德鲁伊天赋": "드루이드 특성", "僧侣天赋": "승려 특성", "盗贼天赋": "도적 특성", "术士天赋": "마법사 특성", "巫师天赋": "흑마법사 특성", "游侠终极天赋": "레인저 궁극 특성", "战士终极天赋": "전사 궁극 특성", "圣骑士终极天赋": "성기사 궁극 특성", "野蛮人终极天赋": "야만인 궁극 특성", "牧师终极天赋": "성직자 궁극 특성", "德鲁伊终极天赋": "드루이드 궁극 특성", "僧侣终极天赋": "승려 궁극 특성", "盗贼终极天赋": "도적 궁극 특성", "术士终极天赋": "마법사 궁극 특성", "巫师终极天赋": "흑마법사 궁극 특성"}, "bonusAndCostTitle": "보너스 및 비용", "attackBonusLabel": "공격:", "defenseBonusLabel": "방어:", "healthBonusLabel": "생명력:", "manaBonusLabel": "마나:", "healingBonusLabel": "치유:", "critBonusLabel": "치명타:", "noBonusLabel": "획득한 속성 보너스가 없습니다", "emblemCostLabel": "엠블럼:", "foodCostLabel": "식량:", "ironCostLabel": "철:", "masterEmblemCostLabel": "마스터 엠블럼:", "lbTalentHelpTitle": "한계 돌파 및 특성 설정 도움말", "lbTalentHelpLine2": "마나 우선은 마나 노드에 최우선 순위를 부여하여 특성 경로에서 항상 선택되도록 합니다.", "viewLatest": "최신 보기", "modalAttributeTalentBtn": "스탯/특성", "modalSkillTagsHeader": "📖 스킬 세부 정보", "switchBalancedData": "밸런스 데이터 전환", "restoreDefaultData": "기본 데이터 복원", "modalSkillDetailsBtn": "스킬 태그", "modalSkillEffectBtn": "스킬 효과", "modalPassiveBtn": "패시브 스킬", "modalFamilyBonusBtn": "가족 보너스", "summonOnce": "소환", "summonTen": "10회 소환", "summonThirty": "30회 소환", "confirmClearHistory": "모든 소환 기록을 지우시겠습니까?", "toggleShowAllHistoryLabel": "전체 기록 표시", "confirmClearCurrentHistory": "현재 이벤트의 소환 기록을 지우시겠습니까?", "summonHistoryTitleAll": "전체 소환 기록", "calculatedProbabilitiesTitle": "이 이벤트 소환의 계산된 확률", "noSummonHistory": "소환 기록이 없습니다", "clearHistoryBtn": "지우기", "summonResultsTitle": "소환 결과", "skipAnimation": "애니메이션 건너뛰기", "lotteryTabActivity": "이벤트", "lotteryTabSummon": "소환", "summonHistoryTitle": "소환 기록", "lotteryTabHistory": "기록", "probabilityInfoTitle": "확률 세부 정보", "StageGuideTitle": "스테이지 가이드", "probabilityInfoIntro": "현재 풀의 소환 확률:", "lottery_bucket_translations": {"heroes_ex_s1_3": "비고전 영웅 (3성)", "heroes_ex_s1_4": "비고전 영웅 (4성)", "heroes_ex_s1_5": "비고전 영웅 (비특별) (5성)", "heroes_s1_3": "고전 영웅 (3성)", "heroes_s1_4": "고전 영웅 (4성)", "heroes_s1_5": "고전 영웅 (5성)", "heroes_event_3": "이벤트 영웅 (3성)", "heroes_event_4": "이벤트 영웅 (4성)", "heroes_event_5": "이벤트 영웅 (비특별) (5성)", "heroes_listed_3": "목록 영웅 (3성)", "heroes_listed_4": "목록 영웅 (4성)", "heroes_listed_5": "목록 영웅 (비특별) (5성)", "heroes_extraAssociatedFamilies_3": "추가 가족 영웅 (3성)", "heroes_extraAssociatedFamilies_4": "추가 가족 영웅 (4성)", "heroes_extraAssociatedFamilies_5": "추가 가족 영웅 (5성)", "featuredHero": "특별 영웅 (5성)", "trainer_3": "트레이너 (3성)", "trainer_4": "트레이너 (4성)"}, "lottery_bonus_translations": {"bonusProbabilityTitle": "보너스 확률", "hotm": "이달의 영웅 확률", "MysteryHero": "미스터리 영웅 확률", "LegendsSummonMysteryHero": "전설 소환 미스터리 영웅 확률", "additionalDrawWeights": "총 소환 확률", "bonusLegendaryHeroChancePerMil": "보너스 확률", "bonusLegendaryHeroType": "보너스 영웅 유형", "bonusLegendaryProbabilityTitle": "보너스 전설 영웅", "bonusLegendaryHeroPullAmount": "보너스 소환 횟수"}, "lottery_bonus_values": {"eventHeroesOnly": "이벤트 영웅만", "NonClassicHero": "비고전 영웅"}, "selectElementTitle": "원소 선택", "noMysteryBonusNotice": "이 소환에는 비밀 영웅의 보너스 소환 기회가 포함되지 않습니다.", "includesTrainerNotice": "* 이 풀에는 트레이너가 포함됩니다", "summonSummaryOkBtn": "확인", "playMode_full": "전체 애니메이션 재생", "playMode_skip": "애니메이션 건너뛰기, 결과 표시", "playMode_silent": "기록에 직접 저장, 팝업 없음", "muteSound": "음소거", "unmuteSound": "음소거 해제", "featuredHeroRequired": "소환하기 전에 아래 표의 ⬆️ 아이콘을 사용하여 최소 한 명의 특별 영웅을 설정하십시오.", "mustSelect5StarHero": "5성 영웅을 선택하십시오.", "featuredSlotsFull": "모든 특별 영웅 슬롯이 가득 찼습니다. 특별 영웅의 아바타를 두 번 클릭하면 제거할 수 있습니다.", "w3kLimitedPoolTitle": "3K 한정 풀 보기", "showRedeemCodesTitle": "사용 가능한 코드 보기", "redeemCodesModalTitle": "사용 가능한 코드", "redeemBtn": "교환", "highlightSkillTermsLabel": "스킬 용어 강조:", "highlightSkillTermsToggle": "활성화", "showSkillTypesInDetailsLabel": "세부 정보에 스킬 유형 표시:", "showSkillTypesInTeamLabel": "팀에 스킬 유형 표시:", "showSkillTypesToggle": "활성화", "showCircleRayLabel": "영웅 아바타에 광선 표시:", "showCircleRayToggle": "활성화", "friendshipThanks": "다음 웹사이트에 감사드립니다:", "effectsTranslateLabel": "특수 스킬 번역", "effectsResetLabel": "원문으로 복원", "effectsTranslating": "번역 중...", "effectsComplete": "번역 완료", "effectsFailed": "번역 실패, 다시 시도하세요", "effectsOriginal": "원문 표시", "effectsNoContent": "번역할 내용이 없습니다", "openGameHeroes": "게임 영웅 목록 열기", "gameHeroesParserMissing": "파서 모듈이 로드되지 않았습니다. 페이지를 새로 고친 후 다시 시도하세요.", "gameHeroesParseFailed": "이 저장 파일을 분석할 수 없습니다. 게임의 .eva1 저장 파일을 선택했는지 확인하세요.", "gameHeroesReadFailed": "파일을 읽지 못했습니다. 다시 시도하세요.", "balancedToggle": "밸런스 데이터로 전환", "balancedRestore": "기본값으로 복원", "balanceHeroesList": "밸런스 데이터 영웅", "hiddenHeroesShown": "👁 숨겨진 영웅 표시됨", "hiddenHeroesHidden": "🙈 숨겨진 영웅 다시 숨김", "skipToContent": "본문으로 건너뛰기", "mainNavLabel": "사이트 탐색"}</script>
+    <style>:root{--header-info-min-height:24px}</style>
 </head>
 
 <body class="js-loading">
-    <a href="#main-content" class="skip-link" data-lang-key="skipToContent">跳到主要内容</a>
+    <!-- 切语言期间「禁止操作」用的透明拦截层：整屏吃掉指针事件，但不遮挡画面（遮罩仍只在结果区） -->
+    <div id="lang-switch-blocker" aria-hidden="true"></div>
+    <a href="#main-content" class="skip-link" data-lang-key="skipToContent">본문으로 건너뛰기</a>
     <div id="scroll-progress" aria-hidden="true"></div>
-    <div id="page-loader-overlay">
-        <div class="loader-spinner"></div>
-    </div>
 
     <div class="main-container">
         <header>
             <div class="header-top-row">
                 <h1 data-lang-key="headerTitle"><a href="/">엠파이어 &amp; 퍼즐 영웅 데이터베이스</a></h1>
                 <nav class="header-buttons" aria-labelledby="main-nav-label">
-                    <span id="main-nav-label" class="visually-hidden" data-lang-key="mainNavLabel">站点导航</span>
+                    <span id="main-nav-label" class="visually-hidden" data-lang-key="mainNavLabel">사이트 탐색</span>
                     <button id="show-redeem-codes-btn" class="theme-toggle-btn" title="显示兑换码">
                         <img src="imgs/other/gift.webp" alt="Redeem Codes"
                             style="width: 24px; height: 24px; object-fit: contain;">
@@ -342,19 +515,19 @@
             <div class="header-info-container">
                 <div class="header-info-content">
                     <span>
-                        <span data-lang-key="sponsoredBy"></span>
+                        <span data-lang-key="sponsoredBy">후원</span>
                         <strong style="color: var(--md-sys-color-error);">SilverMan 奈托 诸子百家-jj</strong>
                     </span>
 
                     <span>
-                        <span data-lang-key="translatedBy"></span>
+                        <span data-lang-key="translatedBy">제작</span>
                         <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
                     </span>
                 </div>
             </div>
             <div class="donation-list-container-wrapper">
                 <div class="donation-list-container">
-                    <h2 class="donation-list-title" data-lang-key="donationListTitle"></h2>
+                    <h2 class="donation-list-title" data-lang-key="donationListTitle">모든 기부자에게 감사드립니다!</h2>
                     <div class="donation-list-wrapper">
                         <div id="donation-list-box" class="donation-list">
                         </div>
@@ -373,12 +546,12 @@
         </section>
         <div id="team-simulator-wrapper" class="hidden">
             <div id="team-display-header">
-                <h4 data-lang-key="teamDisplayTitle">阵容配置</h4>
+                <h4 data-lang-key="teamDisplayTitle">팀 구성</h4>
                 <div class="collapse-arrow"></div>
             </div>
             <div id="team-simulator-display">
                 <div class="team-display-desktop-header">
-                    <h3 data-lang-key="teamDisplayTitle">阵容配置</h3>
+                    <h3 data-lang-key="teamDisplayTitle">팀 구성</h3>
                 </div>
                 <div id="team-tags-summary-container"></div>
                 <div id="team-display-grid">
@@ -397,17 +570,17 @@
             <div id="saved-teams-panel">
                 <div class="saved-teams-actions">
                     <button id="clear-team-btn" class="action-button secondary-button"
-                        data-lang-key="clearTeamBtn">清空阵容</button>
-                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn">保存队伍</button>
+                        data-lang-key="clearTeamBtn">팀 비우기</button>
+                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn">팀 저장</button>
                     <button id="share-team-list-btn" class="action-button"
-                        data-lang-key="shareTeamListBtn">分享列表</button>
+                        data-lang-key="shareTeamListBtn">목록 공유</button>
                 </div>
                 <div id="saved-teams-list-container">
                     <div class="saved-teams-header">
                         <div class="saved-teams-tabs">
-                            <button id="tab-my-teams" class="tab-button" data-lang-key="myTeamsTab">我的队伍</button>
+                            <button id="tab-my-teams" class="tab-button" data-lang-key="myTeamsTab">내 팀</button>
                             <button id="tab-shared-teams" class="tab-button" data-lang-key="sharedTeamsTab"
-                                style="display: none;">分享的队伍</button>
+                                style="display: none;">공유된 팀</button>
                         </div>
                         <div class="collapse-arrow"></div>
                     </div>
@@ -420,10 +593,10 @@
 
 
         <dialog id="summon-summary-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="summon-summary-title">
-            <h3 id="summon-summary-title" data-lang-key="summonResultsTitle">召唤结果</h3>
+            <h3 id="summon-summary-title" data-lang-key="summonResultsTitle">소환 결과</h3>
             <div id="summon-summary-scroll-container">
             </div>
-            <button id="summary-close-btn" class="action-button" data-lang-key="summonSummaryOkBtn">OK</button>
+            <button id="summary-close-btn" class="action-button" data-lang-key="summonSummaryOkBtn">확인</button>
         </dialog>
         <div id="main-content-area">
             <div id="lottery-simulator-wrapper" class="hidden">
@@ -431,11 +604,11 @@
                     <div class="lottery-main-content">
                         <div class="lottery-mobile-tabs">
                             <button class="tab-button active" data-tab-target="#lottery-activity-list-container"
-                                data-lang-key="lotteryTabActivity">活动列表</button>
+                                data-lang-key="lotteryTabActivity">이벤트</button>
                             <button class="tab-button" data-tab-target="#lottery-portal-container"
-                                data-lang-key="lotteryTabSummon">召唤</button>
+                                data-lang-key="lotteryTabSummon">소환</button>
                             <button class="tab-button" data-tab-target="#summon-history-panel"
-                                data-lang-key="lotteryTabHistory">历史记录</button>
+                                data-lang-key="lotteryTabHistory">기록</button>
                         </div>
 
                         <div id="lottery-activity-list-container" class="lottery-panel active">
@@ -459,21 +632,21 @@
                                 </div>
                                 <div id="summon-actions-container">
                                     <button id="single-summon-btn" class="summon-btn">
-                                        <span class="summon-amount" data-lang-key="summonOnce">召唤x1</span>
+                                        <span class="summon-amount" data-lang-key="summonOnce">소환</span>
                                         <div class="summon-cost">
                                             <img src="imgs/coins/diamond.webp" alt="钻石">
                                             <span class="gem-price">400</span>
                                         </div>
                                     </button>
                                     <button id="ten-summon-btn" class="summon-btn hidden">
-                                        <span class="summon-amount" data-lang-key="summonTen">召唤x10</span>
+                                        <span class="summon-amount" data-lang-key="summonTen">10회 소환</span>
                                         <div class="summon-cost">
                                             <img src="imgs/coins/diamond.webp" alt="钻石">
                                             <span class="gem-price">3400</span>
                                         </div>
                                     </button>
                                     <button id="thirty-summon-btn" class="summon-btn hidden">
-                                        <span class="summon-amount" data-lang-key="summonThirty">召唤x30</span>
+                                        <span class="summon-amount" data-lang-key="summonThirty">30회 소환</span>
                                         <div class="summon-cost">
                                             <img src="imgs/coins/diamond.webp" alt="钻石">
                                             <span class="gem-price">9400</span>
@@ -485,17 +658,17 @@
 
                         <div id="summon-history-panel" class="lottery-panel">
                             <div class="summon-history-header">
-                                <h4 id="summon-history-title" data-lang-key="summonHistoryTitle">召唤历史记录</h4>
+                                <h4 id="summon-history-title" data-lang-key="summonHistoryTitle">소환 기록</h4>
                                 <div class="summon-history-controls">
                                     <div class="history-view-toggle">
                                         <input type="checkbox" id="toggle-history-view-checkbox"
                                             class="toggle-switch-checkbox">
                                         <label for="toggle-history-view-checkbox" class="toggle-switch-label"></label>
                                         <span class="toggle-label-text"
-                                            data-lang-key="toggleShowAllHistoryLabel">显示全部记录</span>
+                                            data-lang-key="toggleShowAllHistoryLabel">전체 기록 표시</span>
                                     </div>
                                     <button id="clear-history-btn" class="action-button"
-                                        data-lang-key="clearHistoryBtn">清空</button>
+                                        data-lang-key="clearHistoryBtn">지우기</button>
                                 </div>
                                 <div class="collapse-arrow"></div>
                             </div>
@@ -514,41 +687,46 @@
             <div id="quick-search-bar" class="quick-search-bar">
                 <div class="quick-search-row quick-search-desktop">
                     <div class="quick-search-name-field">
-                        <label for="quick-name-input" data-lang-key="nameLabel">名称:</label>
+                        <label for="quick-name-input" data-lang-key="nameLabel">이름:</label>
                         <div class="quick-search-name-control">
                             <input type="text" id="quick-name-input" class="quick-search-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                             <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
                         </div>
                     </div>
                     <div class="quick-search-buttons">
-                        <button type="button" class="quick-filter-button" data-filter="filterScope">筛选范围</button>
-                        <button type="button" class="quick-filter-button" data-filter="rarity">稀有度</button>
-                        <button type="button" class="quick-filter-button" data-filter="element">元素</button>
-                        <button type="button" class="quick-filter-button" data-filter="costume">服装类型</button>
-                        <button type="button" class="quick-filter-button" data-filter="family">家族</button>
-                        <button type="button" class="quick-filter-button" data-filter="source">起源</button>
-                        <button type="button" class="quick-filter-button" data-filter="skillTag_base">基础技能</button>
-                        <button type="button" class="quick-filter-button" data-filter="skillTag_special">特殊效果</button>
-                        <button type="button" class="quick-filter-button" data-filter="skillTag_buff">增益效果</button>
-                        <button type="button" class="quick-filter-button" data-filter="skillTag_debuff">负面效果</button>
+                        <button type="button" class="quick-filter-button" data-filter="filterScope">필터 범위</button>
+                        <button type="button" class="quick-filter-button" data-filter="rarity">희귀도</button>
+                        <button type="button" class="quick-filter-button" data-filter="element">속성</button>
+                        <button type="button" class="quick-filter-button" data-filter="costume">코스튬</button>
+                        <button type="button" class="quick-filter-button" data-filter="family">패밀리</button>
+                        <button type="button" class="quick-filter-button" data-filter="source">기원</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_base">스킬 기본</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_special">특수 효과</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_buff">버프</button>
+                        <button type="button" class="quick-filter-button" data-filter="skillTag_debuff">디버프</button>
                     </div>
                 </div>
                 <div class="quick-search-row quick-search-mobile">
                     <div class="quick-search-name-field">
-                        <label for="quick-name-input-mobile" data-lang-key="nameLabel">名称:</label>
+                        <label for="quick-name-input-mobile" data-lang-key="nameLabel">이름:</label>
                         <div class="quick-search-name-control">
                             <input type="text" id="quick-name-input-mobile" class="quick-search-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                             <button type="button" class="quick-search-clear" data-lang-key-title="clearHistoryBtn" aria-label="清空">×</button>
                         </div>
                     </div>
                     <div class="quick-search-buttons">
-                        <button type="button" class="quick-filter-button" data-filter="rarity">稀有度</button>
-                        <button type="button" class="quick-filter-button" data-filter="element">元素</button>
+                        <button type="button" class="quick-filter-button" data-filter="rarity">희귀도</button>
+                        <button type="button" class="quick-filter-button" data-filter="element">속성</button>
                     </div>
                 </div>
             </div>
 
             <div id="results-wrapper">
+                <!-- 加载遮罩：只盖结果区（页头/筛选栏照常上屏）。位置/尺寸见上面 `#page-loader-overlay` 注释。 -->
+                <div id="page-loader-overlay" role="status" aria-live="polite">
+                    <div class="loader-spinner"></div>
+                    <span class="visually-hidden">加载中…</span>
+                </div>
                 <div class="results-header">
                     <h3 id="results-count"></h3>
                 </div>
@@ -569,14 +747,14 @@
                 <div id="chat-simulator-view" class="hidden">
                     <div class="chat-simulator-container">
                         <div class="chat-simulator-panel chat-panel-io">
-                            <h3 data-lang-key="chatPanelTitleIO">输入与预览</h3>
+                            <h3 data-lang-key="chatPanelTitleIO">입력 및 미리보기</h3>
                             <div id="chat-simulator-preview-wrapper">
                                 <div id="chat-simulator-preview"></div>
                             </div>
                             <div id="io-splitter"></div>
                             <textarea id="chat-simulator-input"></textarea>
                             <button id="chat-simulator-copy-btn" class="action-button"
-                                data-lang-key="chatCopyBtn">复制内容</button>
+                                data-lang-key="chatCopyBtn">내용 복사</button>
                         </div>
 
                         <div class="chat-simulator-panel chat-panel-colors">
@@ -596,13 +774,13 @@
                                     <div id="color-input-group">
                                         <input type="text" id="color-hex-code" readonly>
                                         <button id="insert-color-btn" class="action-button"
-                                            data-lang-key="chatInsertColorBtn">插入</button>
+                                            data-lang-key="chatInsertColorBtn">추가</button>
                                         <button id="favorite-color-btn" class="action-button chat-favorite-btn"
                                             title="收藏此颜色" data-lang-key="chatFavoriteColorBtn">⭐</button>
                                     </div>
                                 </div>
                                 <div id="favorite-colors-container">
-                                    <h4 data-lang-key="chatFavoriteColorsTitle">已收藏的颜色</h4>
+                                    <h4 data-lang-key="chatFavoriteColorsTitle">즐겨찾는 색상</h4>
                                     <div id="favorite-colors-grid">
                                     </div>
                                 </div>
@@ -631,7 +809,7 @@
     <dialog id="filters-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="filters-modal-title">
         <div id="filters-modal-content">
             <div class="filters-modal-header">
-                <h2 id="filters-modal-title" data-lang-key="filterHeroes">筛选英雄</h2>
+                <h2 id="filters-modal-title" data-lang-key="filterHeroes">영웅 필터링</h2>
                 <button id="close-filters-modal-btn" class="close-btn">❌</button>
             </div>
 
@@ -640,13 +818,13 @@
                 <div class="filter-card">
                     <div class="filter-header" id="standard-filters-header">
                         <div class="filter-title-container">
-                            <h2 data-lang-key="standardFilters">标准筛选</h2>
+                            <h2 data-lang-key="standardFilters">기본 필터</h2>
                         </div>
                         <button class="toggle-button" data-target="standard-filters-content">▼</button>
                     </div>
                     <div id="standard-filters-content" class="filter-content">
                         <div class="filter-item">
-                            <label for="name-input" data-lang-key="nameLabel">名称:</label>
+                            <label for="name-input" data-lang-key="nameLabel">이름:</label>
                             <div class="autocomplete-container">
                                 <input type="text" id="name-input" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                                 <div id="name-autocomplete-list" class="autocomplete-list hidden"></div>
@@ -661,86 +839,86 @@
                 <div class="filter-card">
                     <div class="filter-header" id="advanced-filters-header">
                         <div class="filter-title-container">
-                            <h2 data-lang-key="advancedFilters">高级筛选</h2>
+                            <h2 data-lang-key="advancedFilters">고급 필터</h2>
                             <button id="advanced-filter-help-btn" class="help-btn">?</button>
                         </div>
                         <button class="toggle-button" data-target="advanced-filters-content">▼</button>
                     </div>
                     <div id="advanced-filters-content" class="filter-content">
                         <div class="filter-item">
-                            <label for="type-input" data-lang-key="skillTypeLabel">特殊技能类别:</label>
+                            <label for="type-input" data-lang-key="skillTypeLabel">스킬 유형:</label>
                             <input type="text" id="type-input" data-lang-key-placeholder="skillTypePlaceholder"
                                 placeholder="例如：增益,异常,治疗" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
-                            <label for="effects-input" data-lang-key="skillTextLabel">特殊技能文本:</label>
+                            <label for="effects-input" data-lang-key="skillTextLabel">스킬 텍스트:</label>
                             <input type="text" id="effects-input" placeholder="" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
-                            <label for="passives-input" data-lang-key="passiveSkillLabel">被动技能文本:</label>
+                            <label for="passives-input" data-lang-key="passiveSkillLabel">패시브 텍스트:</label>
                             <input type="text" id="passives-input" placeholder="" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
                         <div class="filter-item">
-                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">一键搜索技能词条</label>
+                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">빠른 스킬 검색: </label>
                             <div class="input-with-help">
                                 <div class="checkbox-container" style="flex-grow:1;">
                                     <input type="checkbox" id="enable-skill-quick-search-checkbox" checked>
                                     <label for="enable-skill-quick-search-checkbox" class="checkbox-label"
-                                        data-lang-key="enableSkillQuickSearchToggle">启用</label>
+                                        data-lang-key="enableSkillQuickSearchToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
                         <div class="filter-item">
-                            <label for="highlight-skill-terms-checkbox" data-lang-key="highlightSkillTermsLabel">高亮技能词条</label>
+                            <label for="highlight-skill-terms-checkbox" data-lang-key="highlightSkillTermsLabel">스킬 용어 강조:</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container" style="flex-grow:1;">
                                     <input type="checkbox" id="highlight-skill-terms-checkbox" checked>
                                     <label for="highlight-skill-terms-checkbox" class="checkbox-label"
-                                        data-lang-key="highlightSkillTermsToggle">启用</label>
+                                        data-lang-key="highlightSkillTermsToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="filter-item">
-                            <label for="show-skill-types-in-details-checkbox" data-lang-key="showSkillTypesInDetailsLabel">详情页显示技能类别</label>
+                            <label for="show-skill-types-in-details-checkbox" data-lang-key="showSkillTypesInDetailsLabel">세부 정보에 스킬 유형 표시:</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-skill-types-in-details-checkbox" checked>
                                     <label for="show-skill-types-in-details-checkbox" class="checkbox-label"
-                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                        data-lang-key="showSkillTypesToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="filter-item">
-                            <label for="show-skill-types-in-team-checkbox" data-lang-key="showSkillTypesInTeamLabel">队伍模拟器显示技能类别</label>
+                            <label for="show-skill-types-in-team-checkbox" data-lang-key="showSkillTypesInTeamLabel">팀에 스킬 유형 표시:</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-skill-types-in-team-checkbox" checked>
                                     <label for="show-skill-types-in-team-checkbox" class="checkbox-label"
-                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                        data-lang-key="showSkillTypesToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="filter-item">
-                            <label for="show-event-name-checkbox" data-lang-key="showEventNameLabel">显示活动名称</label>
+                            <label for="show-event-name-checkbox" data-lang-key="showEventNameLabel">이벤트 이름 표시</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-event-name-checkbox" checked>
                                     <label for="show-event-name-checkbox" class="checkbox-label"
-                                        data-lang-key="showSkillTypesToggle">启用</label>
+                                        data-lang-key="showSkillTypesToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="filter-item">
-                            <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">英雄立绘中显示元素光效</label>
+                            <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">영웅 아바타에 광선 표시:</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-circle-ray-checkbox" checked>
                                     <label for="show-circle-ray-checkbox" class="checkbox-label"
-                                        data-lang-key="showCircleRayToggle">启用</label>
+                                        data-lang-key="showCircleRayToggle">활성화</label>
                                 </div>
                             </div>
                         </div>
@@ -752,55 +930,55 @@
                                 <div class="filter-item">
                                     <label>
                                         <img src="imgs/event/emoji_spritesheet_234.webp" class="event-icon" alt="Balanced Heroes" onerror="this.style.display='none'" />
-                                        <span data-lang-key="balanceHeroesList">查看平衡数据英雄</span>
+                                        <span data-lang-key="balanceHeroesList">밸런스 데이터 영웅</span>
                                     </label>
                                     <div class="input-with-right-button">
-                                        <button id="filter-balance-heroes-btn" class="action-button-right" data-lang-key="filterButtonLabel">筛选</button>
+                                        <button id="filter-balance-heroes-btn" class="action-button-right" data-lang-key="filterButtonLabel">필터</button>
                                     </div>
                                 </div>
                                 <div class="filter-item">
                                     <label>
                                         <img id="hero-academy-icon" src="imgs/event/academy10.webp" class="event-icon" alt="Hero Academy" />
-                                        <span data-lang-key="heroAcademyEventLabel">英雄学院列表:</span>
+                                        <span data-lang-key="heroAcademyEventLabel">영웅 아카데미 10:</span>
                                     </label>
                                     <div class="input-with-right-button">
                                         <span id="hero-academy-date-display" class="date-display-box"></span>
-                                        <button id="filter-hero-academy-btn" class="action-button-right" data-lang-key="filterButtonLabel">筛选</button>
+                                        <button id="filter-hero-academy-btn" class="action-button-right" data-lang-key="filterButtonLabel">필터</button>
                                     </div>
                                 </div>
                                 <div class="filter-item">
                                     <label>
                                         <img src="imgs/event/herocoach.webp" class="event-icon" alt="Hero Coach" />
-                                        <span data-lang-key="oneClickMaxEventLabel">一键满级活动:</span>
+                                        <span data-lang-key="oneClickMaxEventLabel">영웅 코치:</span>
                                     </label>
                                     <div class="input-with-right-button">
                                         <span id="one-click-max-date-display" class="date-display-box"></span>
                                         <button id="filter-hero-730-btn" class="action-button-right"
-                                            data-lang-key="filterButtonLabel">筛选</button>
+                                            data-lang-key="filterButtonLabel">필터</button>
                                     </div>
                                 </div>
                                 <div class="filter-item">
                                     <label>
                                         <img src="imgs/event/visiting_outfitter.webp" class="event-icon"
                                             alt="Visiting Outfitter" />
-                                        <span data-lang-key="purchaseCostumeEventLabel">购买服装活动:</span>
+                                        <span data-lang-key="purchaseCostumeEventLabel">재봉사 방문:</span>
                                     </label>
                                     <div class="input-with-right-button">
                                         <span id="purchase-costume-date-display" class="date-display-box"></span>
                                         <button id="filter-costume-548-btn" class="action-button-right"
-                                            data-lang-key="filterButtonLabel">筛选</button>
+                                            data-lang-key="filterButtonLabel">필터</button>
                                     </div>
                                 </div>
                                 <div class="filter-item">
                                     <label>
                                         <img src="imgs/event/soulexchange.webp" class="event-icon"
                                             alt="Soul Exchange" />
-                                        <span data-lang-key="soulExchangeEventLabel">灵魂交换活动:</span>
+                                        <span data-lang-key="soulExchangeEventLabel">영혼 교환:</span>
                                     </label>
                                     <div class="input-with-right-button">
                                         <span id="soul-exchange-date-display" class="date-display-box"></span>
                                         <button id="show-soul-exchange-btn" class="action-button-right"
-                                            data-lang-key="showListBtnLabel">展示列表</button>
+                                            data-lang-key="showListBtnLabel">목록 표시</button>
                                     </div>
                                 </div>
                             </div>
@@ -811,53 +989,53 @@
                             <div class="default-stat-selectors">
                                 <div class="details-selector-item">
                                     <label for="default-limit-break-select"
-                                        data-lang-key="limitBreakSetting">突破设置</label>
+                                        data-lang-key="limitBreakSetting">한계 돌파:</label>
                                     <select id="default-limit-break-select">
-                                        <option value="none" data-lang-key="noLimitBreak">无突破</option>
-                                        <option value="lb1" data-lang-key="lb1">LB1</option>
-                                        <option value="lb2" data-lang-key="lb2">LB2</option>
+                                        <option value="none" data-lang-key="noLimitBreak">없음</option>
+                                        <option value="lb1" data-lang-key="lb1">🔼 LB1</option>
+                                        <option value="lb2" data-lang-key="lb2">⏫ LB2</option>
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
-                                    <label for="default-talent-select" data-lang-key="talentSetting">天赋设置</label>
+                                    <label for="default-talent-select" data-lang-key="talentSetting">특성:</label>
                                     <select id="default-talent-select">
-                                        <option value="none" data-lang-key="noTalent">无天赋</option>
-                                        <option value="talent20" data-lang-key="talent20">20天赋</option>
-                                        <option value="talent25" data-lang-key="talent25">25天赋</option>
+                                        <option value="none" data-lang-key="noTalent">특성 없음</option>
+                                        <option value="talent20" data-lang-key="talent20">20 특성</option>
+                                        <option value="talent25" data-lang-key="talent25">25 특성</option>
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
                                     <label for="default-talent-strategy-select"
-                                        data-lang-key="prioritySetting">天赋优先级</label>
+                                        data-lang-key="prioritySetting">특성 우선 순위:</label>
                                     <select id="default-talent-strategy-select">
-                                        <option value="atk-def-hp" data-lang-key="attackPriority"></option>
-                                        <option value="atk-hp-def" data-lang-key="attackPriority2"></option>
-                                        <option value="def-hp-atk" data-lang-key="defensePriority"></option>
-                                        <option value="def-atk-hp" data-lang-key="defensePriority2"></option>
-                                        <option value="hp-def-atk" data-lang-key="healthPriority"></option>
-                                        <option value="hp-atk-def" data-lang-key="healthPriority2"></option>
+                                        <option value="atk-def-hp" data-lang-key="attackPriority">공격 > 방어 > 생명력</option>
+                                        <option value="atk-hp-def" data-lang-key="attackPriority2">공격 > 생명력 > 방어</option>
+                                        <option value="def-hp-atk" data-lang-key="defensePriority">방어 > 생명력 > 공격</option>
+                                        <option value="def-atk-hp" data-lang-key="defensePriority2">방어 > 공격 > 생명력</option>
+                                        <option value="hp-def-atk" data-lang-key="healthPriority">생명력 > 방어 > 공격</option>
+                                        <option value="hp-atk-def" data-lang-key="healthPriority2">생명력 > 공격 > 방어</option>
                                     </select>
                                 </div>
                                 <div class="details-selector-item">
                                     <label for="default-mana-priority-checkbox"
-                                        data-lang-key="manaPriorityLabel">法力节点</label>
+                                        data-lang-key="manaPriorityLabel">마나 노드:</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="default-mana-priority-checkbox">
                                             <label for="default-mana-priority-checkbox" class="checkbox-label"
-                                                data-lang-key="manaPriorityToggle">优先选择</label>
+                                                data-lang-key="manaPriorityToggle">우선</label>
                                         </div>
                                         <button id="lb-talent-help-btn" class="help-btn">?</button>
                                     </div>
                                 </div>
                                 <div class="details-selector-item">
                                     <label for="show-lb-talent-details-checkbox"
-                                        data-lang-key="showLbTalentDetailsLabel">在详情页显示突破天赋</label>
+                                        data-lang-key="showLbTalentDetailsLabel">세부 정보에 LB/특성 설정 표시:</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="show-lb-talent-details-checkbox" checked>
                                             <label for="show-lb-talent-details-checkbox" class="checkbox-label"
-                                                data-lang-key="showLbTalentDetailsToggle">显示</label>
+                                                data-lang-key="showLbTalentDetailsToggle">표시</label>
                                         </div>
                                     </div>
                                 </div>
@@ -866,19 +1044,19 @@
 
                         <div class="stat-filter-grid">
                             <div class="filter-item-compact">
-                                <label for="power-input" data-lang-key="minPower">战力</label>
+                                <label for="power-input" data-lang-key="minPower">파워</label>
                                 <input type="number" id="power-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="attack-input" data-lang-key="minAttack">攻击</label>
+                                <label for="attack-input" data-lang-key="minAttack">공격</label>
                                 <input type="number" id="attack-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="defense-input" data-lang-key="minDefense">防御</label>
+                                <label for="defense-input" data-lang-key="minDefense">방어</label>
                                 <input type="number" id="defense-input" min="0" value="">
                             </div>
                             <div class="filter-item-compact">
-                                <label for="health-input" data-lang-key="minHealth">生命</label>
+                                <label for="health-input" data-lang-key="minHealth">생명력</label>
                                 <input type="number" id="health-input" min="0" value="">
                             </div>
                         </div>
@@ -888,13 +1066,13 @@
             </div>
         </div>
         <div class="filter-actions">
-            <button id="open-game-heroes-btn" class="action-button" data-lang-key="openGameHeroes">打开游戏英雄列表</button>
-            <button id="export-settings-btn" class="action-button" data-lang-key="exportSettings">导出设置</button>
-            <button id="import-settings-btn" class="action-button" data-lang-key="importSettings">导入设置</button>
-            <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">打开收藏</button>
-            <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">分享收藏</button>
-            <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">重置筛选</button>
-            <button id="toggle-donate-btn" class="action-button" data-lang-key="hideDonate" hidden>隐藏赞助</button>
+            <button id="open-game-heroes-btn" class="action-button" data-lang-key="openGameHeroes">게임 영웅 목록 열기</button>
+            <button id="export-settings-btn" class="action-button" data-lang-key="exportSettings">설정 내보내기</button>
+            <button id="import-settings-btn" class="action-button" data-lang-key="importSettings">설정 가져오기</button>
+            <button id="open-favorites-btn" class="action-button" data-lang-key="openFavorites">즐겨찾기 열기</button>
+            <button id="share-favorites-btn" class="action-button" data-lang-key="shareFavorites">즐겨찾기 공유</button>
+            <button id="reset-filters-btn" class="action-button" data-lang-key="resetFilters">필터 초기화</button>
+            <button id="toggle-donate-btn" class="action-button" data-lang-key="hideDonate" hidden>기부 숨기기</button>
         </div>
     </dialog>
 
@@ -918,7 +1096,7 @@
     </dialog>
     <dialog id="elemental-modal" class="modal-dialog hidden" aria-labelledby="elemental-modal-title">
         <div id="elemental-modal-content">
-            <h3 id="elemental-modal-title" data-lang-key="selectElementTitle">请选择元素</h3>
+            <h3 id="elemental-modal-title" data-lang-key="selectElementTitle">원소 선택</h3>
             <div class="elemental-selection-container">
                 <img src="imgs/element/red.webp" class="elemental-icon" data-element="red" alt="红色">
                 <img src="imgs/element/green.webp" class="elemental-icon" data-element="green" alt="绿色">
@@ -932,14 +1110,14 @@
     <!-- 兑换码模态框 -->
     <dialog id="redeem-codes-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="redeem-codes-modal-title">
         <div class="filters-modal-header">
-            <h2 id="redeem-codes-modal-title" data-lang-key="redeemCodesModalTitle"></h2>
+            <h2 id="redeem-codes-modal-title" data-lang-key="redeemCodesModalTitle">사용 가능한 코드</h2>
             <button id="close-redeem-codes-modal-btn" class="close-btn">✖</button>
         </div>
         <div id="redeem-codes-content">
         </div>
         <div class="modal-footer">
             <button class="close-bottom-btn" id="redeem-codes-footer-close-btn"
-                data-lang-key="detailsCloseBtn"></button>
+                data-lang-key="detailsCloseBtn">닫기</button>
         </div>
     </dialog>
 
@@ -951,17 +1129,17 @@
          必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
          （av() 退回 Date.now()，等于不缓存）。 -->
     <script src="./i18n_funcs.js?v=20261119c" defer></script>
-    <script src="./langs.js?v=20261120a" defer></script>
+    <script src="./langs.js?v=20261122b" defer></script>
     <script src="./lz-string.min.js?v=20261028b" defer></script>
     <script src="./talent-tree.js?v=20261119c" defer></script>
     <script src="./data.js?v=20261105a" defer></script>
     <script src="./eva1-parser.js?v=20261119c" defer></script>
-    <script src="./utils.js?v=20261120a" defer></script>
+    <script src="./utils.js?v=20261122b" defer></script>
     <script src="./state.js?v=20261119b" defer></script>
-    <script src="./ui.js?v=20261120a" defer></script>
-    <script src="./filters.js?v=20261119d" defer></script>
+    <script src="./ui.js?v=20261122b" defer></script>
+    <script src="./filters.js?v=20261122b" defer></script>
     <script src="./render.js?v=20261120a" defer></script>
-    <script src="./special-views.js?v=20261120a" defer></script>
+    <script src="./special-views.js?v=20261122b" defer></script>
     <!-- 视图脚本懒加载（抽奖/队伍/聊天）：type 为非 JS MIME ⇒ 浏览器只当数据块存着，
          不下载也不执行；首次打开对应视图时 special-views.js::ensureViewScripts 按这里的
          先后顺序注入真 <script>（src 原样照抄）。?v= 戳留在原地，pre-commit 钩子照常逐引用换戳。
@@ -972,12 +1150,12 @@
     <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261116a"></script>
     <script type="application/x-lazy-view" data-view="chat" src="./chat-simulator.js?v=20261120a"></script>
     <script src="./import-export.js?v=20261119a" defer></script>
-    <script src="./main.js?v=20261120a" defer></script>
+    <script src="./main.js?v=20261122b" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->
     <div class="friendship-links">
-        <p data-lang-key="friendshipThanks">感谢以下网站：</p>
+        <p data-lang-key="friendshipThanks">다음 웹사이트에 감사드립니다:</p>
         <div class="links-grid" id="dynamic-links-grid">
         </div>
     </div>
@@ -1055,11 +1233,11 @@
 <footer>
     <div>
         <p>
-            <span data-lang-key="footerGameName">《帝国与谜题》</span>
+            <span data-lang-key="footerGameName">엠파이어 &amp;amp; 퍼즐</span>
             <span style="color: var(--md-sys-color-tertiary-container);">(Empires & Puzzles)</span>
-            <span data-lang-key="footerPlatform">英雄数据查询平台</span>
+            <span data-lang-key="footerPlatform">영웅 데이터 플랫폼</span>
         </p>
-        <p class="footer-credit" data-lang-key="footerCredit">© 2025 - 2026 heroplan.github.io | 非官方资料站</p>
+        <p class="footer-credit" data-lang-key="footerCredit">© 2025 - 2026 heroplan.github.io | 비공식 팬 사이트</p>
     </div>
 
 </footer>

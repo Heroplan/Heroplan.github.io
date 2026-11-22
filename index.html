@@ -15,7 +15,7 @@
          ⚠ 别再往这里加档：preload 默认 High，加多了会挤掉 defer 脚本链（Low）的带宽，
          脚本链晚到 ⇒ 启动反而更慢（语言表/小数据档预载均实测零和或负收益）。
          其余数据档由 utils.js::loadData 与语言表并行发起。 -->
-    <script src="./asset_ver.js?v=20261120c"></script>
+    <script src="./asset_ver.js?v=20261122a"></script>
     <script>
         (function () {
             if (!window.AV) return;
@@ -43,18 +43,46 @@
             /* 暗色主题背景 */
         }
 
+        /* 首屏遮罩：**只盖结果区（表格所在的那块），页头与筛选栏照常上屏**（用户 2026-11-22 口径 ②）。
+           遮罩是 `#results-wrapper` 的绝对定位子元素 ⇒ 只覆盖表格区；结果区的加载占位是 75vh，
+           所以转圈正好落在表格中央。H1 不再被遮罩挡住 ⇒ LCP 回到首绘（移动端探针 ~730ms）。
+           撤遮罩时机不变，见 main.js §7：`applyFiltersAndRender()` 之后**同一同步段**里撤，
+           此时首批行（虚拟滚动整窗 / 分块首批 60 行）已经进了 tbody ⇒「表格有内容可显示即撤」。 */
+        #results-wrapper {
+            position: relative;   /* 遮罩的定位基准 */
+        }
+
         #page-loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            position: absolute;
+            inset: 0;
             /* 直接使用上面定义的变量 */
             background-color: var(--md-sys-color-background);
             z-index: 99999;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        /* 切语言期间**禁止操作**，但画面**不全屏遮挡**：
+           结果区仍是原来的「只盖表格」遮罩（页头/赞助块照常可见）；
+           页头与按钮的点击由一层**透明**的整屏拦截层吃掉（`#lang-switch-blocker`），不改变画面。 */
+        body.lang-switching #page-loader-overlay {
+            pointer-events: auto;
+        }
+        body.lang-switching #lang-switch-blocker {
+            display: block;
+        }
+        body.lang-switching {
+            cursor: progress;
+        }
+
+        #lang-switch-blocker {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            display: none;
+            background: transparent;
+            pointer-events: auto;
         }
 
         .loader-spinner {
@@ -66,11 +94,87 @@
             animation: spin 1.2s linear infinite;
         }
 
-        .js-loading .header-buttons,
-        .js-loading .main-container,
-        .js-loading .floating-action-buttons,
-        .js-loading footer {
+        /* 移动端结果区是 75vh，超出首屏 ⇒ 转圈按整块居中会掉到屏幕下缘；按「可视区中部」上提。 */
+        @media (max-width: 900px) {
+            #page-loader-overlay {
+                align-items: flex-start;
+                padding-top: 24vh;
+            }
+        }
+
+        /* ── 特殊视图「脚本/配置未就绪」的占位：摆目标视图自己的骨架、骨架内转圈 ──
+           抽奖/队伍是整页替换型 ⇒ 等待期由 JS 先按"打开态"隐掉页头赞助块与捐赠榜、
+           打上 lottery-mode-active / team-mode-active（与真打开完全同布局，避免就绪后上跳）；
+           聊天/通缉/攻略嵌在结果区里 ⇒ 只收掉结果区自己的快捷栏与表格；
+           结果表头**保留**（骨架期由 JS 按目标视图的标题 + 返回占位，几何与打开后一致）。 */
+        body.view-pending-inline #quick-search-bar,
+        body.view-pending-inline #hero-table-view,
+        body.view-pending-inline #lottery-simulator-wrapper,
+        body.view-pending-inline #team-simulator-wrapper {
+            display: none;
+        }
+
+        .pending-view-shell {
+            position: relative;
+        }
+
+        /* 队伍视图的「我的队伍」是打开时才渲染的（空态/列表都会长高 56px 上下）⇒
+           骨架期先给它等高留白，就绪后列表填进来，下面的英雄表不再被顶下去。 */
+        .pending-view-shell #saved-teams-list {
+            min-height: 56px;
+        }
+
+        /* 转圈按「视图内容槽在视口内的可见部分」定位（top/left/width/height 由 JS 写入），
+           视图自己的标题栏/标签栏照常上屏，槽高于一屏时也不会把转圈丢到屏幕外。 */
+        .view-loading-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            pointer-events: none;
+        }
+
+        /* 结果区由遮罩挡住，页头保持可见。悬浮按钮压不到遮罩上，加载期先不显示；
+           footer 里的打赏名单是数据到了才填（会改高度）⇒ 也留到撤遮罩之后（都只是 visibility，不改布局）。 */
+        body.js-loading .floating-action-buttons,
+        body.js-loading footer {
             visibility: hidden;
+        }
+
+        /* 表格内容虽然在遮罩下面看不见，但 layout-shift 不认「被挡住」：
+           首批行插进来时 tbody 从 0 长到全量（探针实测 CLS 0.036）⇒ 加载期把表格也设成
+           visibility:hidden（只占位、不参与 CLS），撤遮罩同一帧转可见，那一帧已经是最终几何。
+           页头三处文案与结果区占位是「首帧即最终高度」的另一半（见 HANDOFF §24.11）。 */
+        body.js-loading #hero-table-view {
+            visibility: hidden;
+        }
+
+        /* ⚠ 页头三块的高度要「首帧即终态」：遮罩只盖内容区 ⇒ 页头若在 i18n 到了之后长高，
+           下面的内容区（含遮罩）整体下移，就是一次实打实的 CLS（探针实测 0.15）。
+           这块的最小高度**按语言**给（`--header-info-min-height`，由 build_lang_pages 写进各语言页、
+           ui.js::applyLanguage 在运行时切语言时同步改）：
+           简中/繁中/日/韩 在 412px 下就 1 行（24px），其余语言 3 行（60px）——
+           一律按 60px 预留会让 1 行语言多出 36px 空白，看着像块被撑高了。 */
+        .header-info-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: var(--header-info-min-height, 24px);
+        }
+
+        /* 加载期占位 = 完成后的高度（#results-wrapper 是 max-height:75vh 的滚动容器，
+           内容足够时正好 75vh）⇒ 撤遮罩后底部（footer / 友情链接）不跳动。 */
+        body.js-loading #results-wrapper {
+            min-height: 75vh;
+        }
+
+        /* 「最后更新」那行是数据到了才填的；空着时高度 0、填上后长出一行 ⇒ 主内容下移。
+           先按一行占位（各语言单行/双行都不会超出）。 */
+        #last-updated {
+            min-height: 1.2em;
         }
 
         @keyframes spin {
@@ -145,6 +249,29 @@
             var lang = explicit
                 || norm(m ? decodeURIComponent(m[1]) : '')
                 || norm(navigator.language);
+            // ── 根页按 cookie 跳到静态语言页 ────────────────────────────────
+            // 根页的静态字节只有简中兜底；用户上次明确选过语言（cookie `language` 非空，
+            // 见 main.js 的 languageUpdated 逻辑：没选过的用户该 cookie 是空的）时，
+            // 直接看根页会「首帧中文 → 运行时换语言」——既闪文案，页头/快捷筛选栏还要重排（CLS）。
+            // 跳到 `/<码>/` 后，首字节就是目标语言：文案与版式首帧即终态。
+            // ⚠ 只在根页、且地址里没有显式语言参数（路径 / `lang` / `hl`）时跳；
+            //   爬虫不带这个 cookie，因此不会被重定向、根页仍作 x-default 自指。
+            //   search / hash 原样带走 ⇒ 深链接（`?view=lottery&pool=…`）不破。
+            var cookieLang = norm(m ? decodeURIComponent(m[1]) : '');
+            var atRoot = location.pathname === '/' || location.pathname === '/index.html';
+            // 没有 cookie（首次访问）时按**浏览器语言**落到对应的静态语言页：
+            //   `navigator.language` 只在根页、且地址里没有显式语言参数时参与判断。
+            // ⚠ 爬虫必须排除：Googlebot 的 `navigator.language` 常是 en-US，一旦重定向，
+            //   根页就会被当成 `/en/` 的副本、x-default 失效。UA 里带 bot/crawler/spider 等一律不跳。
+            var _ua = navigator.userAgent || '';
+            var _isBot = /bot|crawler|spider|slurp|headlesschrome|lighthouse|phantomjs/i.test(_ua);
+            var wantLang = cookieLang || norm(navigator.language);
+            if (!explicit && atRoot && !_isBot && wantLang && wantLang !== 'cn') {
+                var target = '/' + wantLang + '/' + location.search + location.hash;
+                // jsdom 等受限环境没有 location.replace / 会报未实现 ⇒ 继续渲染（不跳），
+                // 测试与爬虫口径都不受影响。
+                try { location.replace(target); return; } catch (e1) { }
+            }
             document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
             // canonical 自指也在首屏先改掉，不等 ui.js::applyLanguage ⇒ 渲染时间线更早，
             // 也更接近"爬虫不执行 JS"那一轮的信号。**只认地址里显式写的语言**（路径或参数）：
@@ -155,6 +282,51 @@
                 var canon = document.getElementById('canonical-link');
                 if (canon) canon.setAttribute('href', 'https://heroplan.github.io/' + explicit + '/');
             }
+        })();
+    </script>
+
+    <script>
+        /* 语言菜单的**早期拦截**（2026-11-22）：语言项是真实 `<a href="/<码>/">`（可抓取、可中键新标签），
+           但 main.js 的 `addEventListeners()` 要等 `initializeApp()` 里数据加载完才绑定 ⇒
+           在此之前点语言项会被浏览器当成**整页跳转**，用户看到「文案没先换、等整页（含表格）加载完才换」。
+           这里在 head 就挂**捕获阶段**的委托：先吃掉点击、记下目标语言；应用就绪后由 main.js 首屏流程
+           调 `changeLanguage()` 走无缝三段式（文案 → 英雄数据 → 技能数据）。 */
+        (function () {
+            document.addEventListener('click', function (e) {
+                if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+                var t = e.target && e.target.closest ? e.target.closest('.lang-option') : null;
+                if (!t) return;
+                e.preventDefault();
+                e.stopPropagation();
+                var opts = document.getElementById('lang-options');
+                if (opts) opts.classList.add('hidden');
+                var code = t.getAttribute('data-lang');
+                if (!code) return;
+                var cur = (window.state && window.state.currentLang) || '';
+                if (window.__appReady && typeof changeLanguage === 'function' && code !== cur) {
+                    changeLanguage(code);
+                    return;
+                }
+                if (code === cur) return;
+                // 应用还没就绪：记下意图 + 立刻进「切换中」态（结果区遮罩 + 透明整屏拦截层）
+                window.__pendingLang = code;
+                // 让初始化流程直接按新语言走（`main.js::initializeApp` 会读这个覆盖值）
+                window.__earlyLangOverride = code;
+                try {
+                    document.cookie = 'language=' + code + '; path=/; max-age=31536000; SameSite=Lax';
+                } catch (e) { }
+                // 先只取 UI 字典 ⇒ 一到就**先把界面文案换掉**（英雄表数据随后由初始化/切换流程加载）
+                if (window.Lang && typeof window.Lang.loadI18n === 'function') {
+                    window.Lang.loadI18n(code).then(function () {
+                        if (window.__earlyLangOverride === code && typeof window.applyLanguage === 'function') {
+                            try { window.applyLanguage(code); } catch (e) { }
+                        }
+                    }, function () { });
+                }
+                if (document.body) document.body.classList.add('lang-switching');
+                var loader = document.getElementById('page-loader-overlay');
+                if (loader) loader.classList.remove('hidden');
+            }, true);
         })();
     </script>
 
@@ -257,11 +429,10 @@
 </head>
 
 <body class="js-loading">
+    <!-- 切语言期间「禁止操作」用的透明拦截层：整屏吃掉指针事件，但不遮挡画面（遮罩仍只在结果区） -->
+    <div id="lang-switch-blocker" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link" data-lang-key="skipToContent">跳到主要内容</a>
     <div id="scroll-progress" aria-hidden="true"></div>
-    <div id="page-loader-overlay">
-        <div class="loader-spinner"></div>
-    </div>
 
     <div class="main-container">
         <header>
@@ -340,19 +511,19 @@
             <div class="header-info-container">
                 <div class="header-info-content">
                     <span>
-                        <span data-lang-key="sponsoredBy"></span>
+                        <span data-lang-key="sponsoredBy">赞助</span>
                         <strong style="color: var(--md-sys-color-error);">SilverMan 奈托 诸子百家-jj</strong>
                     </span>
 
                     <span>
-                        <span data-lang-key="translatedBy"></span>
+                        <span data-lang-key="translatedBy">制作</span>
                         <strong style="color: var(--md-sys-color-tertiary);">Juno</strong>
                     </span>
                 </div>
             </div>
             <div class="donation-list-container-wrapper">
                 <div class="donation-list-container">
-                    <h2 class="donation-list-title" data-lang-key="donationListTitle"></h2>
+                    <h2 class="donation-list-title" data-lang-key="donationListTitle">感谢所有捐赠者的支持！</h2>
                     <div class="donation-list-wrapper">
                         <div id="donation-list-box" class="donation-list">
                         </div>
@@ -553,6 +724,11 @@
             </div>
 
             <div id="results-wrapper">
+                <!-- 加载遮罩：只盖结果区（页头/筛选栏照常上屏）。位置/尺寸见上面 `#page-loader-overlay` 注释。 -->
+                <div id="page-loader-overlay" role="status" aria-live="polite">
+                    <div class="loader-spinner"></div>
+                    <span class="visually-hidden">加载中…</span>
+                </div>
                 <div class="results-header">
                     <h3 id="results-count"></h3>
                 </div>
@@ -955,17 +1131,17 @@
          必须排在最前：langs.js / utils.js 取数时经 av() 读它。没加载到也不致命
          （av() 退回 Date.now()，等于不缓存）。 -->
     <script src="./i18n_funcs.js?v=20261119c" defer></script>
-    <script src="./langs.js?v=20261120a" defer></script>
+    <script src="./langs.js?v=20261122b" defer></script>
     <script src="./lz-string.min.js?v=20261028b" defer></script>
     <script src="./talent-tree.js?v=20261119c" defer></script>
     <script src="./data.js?v=20261105a" defer></script>
     <script src="./eva1-parser.js?v=20261119c" defer></script>
-    <script src="./utils.js?v=20261120a" defer></script>
+    <script src="./utils.js?v=20261122b" defer></script>
     <script src="./state.js?v=20261119b" defer></script>
-    <script src="./ui.js?v=20261120a" defer></script>
-    <script src="./filters.js?v=20261119d" defer></script>
+    <script src="./ui.js?v=20261122b" defer></script>
+    <script src="./filters.js?v=20261122b" defer></script>
     <script src="./render.js?v=20261120a" defer></script>
-    <script src="./special-views.js?v=20261120a" defer></script>
+    <script src="./special-views.js?v=20261122b" defer></script>
     <!-- 视图脚本懒加载（抽奖/队伍/聊天）：type 为非 JS MIME ⇒ 浏览器只当数据块存着，
          不下载也不执行；首次打开对应视图时 special-views.js::ensureViewScripts 按这里的
          先后顺序注入真 <script>（src 原样照抄）。?v= 戳留在原地，pre-commit 钩子照常逐引用换戳。
@@ -976,7 +1152,7 @@
     <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261116a"></script>
     <script type="application/x-lazy-view" data-view="chat" src="./chat-simulator.js?v=20261120a"></script>
     <script src="./import-export.js?v=20261119a" defer></script>
-    <script src="./main.js?v=20261120a" defer></script>
+    <script src="./main.js?v=20261122b" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

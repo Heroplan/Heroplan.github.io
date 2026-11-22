@@ -234,7 +234,75 @@ function balancedFieldsFrom(balSkills, hid) {
  * 与 `loadData` 的口径完全一致（含最长前缀回退 `_tPrefix`）。
  * @param {string} lang 目标语言码
  */
+/**
+ * **切语言 · 第一段：英雄名与属性**（对应首访「先出列表」的那一步）。
+ * 只等 `Lang.loadCore`（heroes_name / element / class / speed / source / aether_power / family /
+ * skill_types / costume_type / sort_order），把英雄对象上的名字与属性字段换成新语言；
+ * 技能正文（`effects`/`passives`/`passivesSearchPool`/`familyBonus`/`_balanced`）**不动**，
+ * 那是第三段 `reloadLanguageSkills()` 的事。
+ *
+ * ⚠ 必须先作废上一语言的技术正文缓存与世代：否则旧的 `_skillsPromise` 会被当成"已水合"。
+ * @param {string} lang 目标语言码
+ */
+async function reloadLanguageNames(lang) {
+    _skillsLang = lang;
+    _skillsGen++;
+    _skillsPromise = null;
+    _balSkillsPromise = null;
+    _skillsEnsure = null;
+    _skillsHydrated = false;
+    await Lang.loadCore(lang);
+    const familyValues = {};
+    (state.allHeroes || []).forEach(hero => {
+        const hid = hero.heroId;
+        // ── 显示字段（与 loadData 同口径；fancy_name / skill 依赖延后词表 ⇒ 留给第三段）──
+        hero.name = _tPrefix('heroes_name', hid);
+        hero.element = Lang.t('element', hero.elementId);
+        hero.class = Lang.t('class', hero.classId);
+        hero.speed = Lang.t('speed', hero.speedId);
+        hero.source = Lang.t('source', hero.sourceId);
+        hero.AetherPower = Lang.t('aether_power', hero.aetherPowerId);
+        if (hero.family != null && !(hero.family in familyValues)) {
+            familyValues[hero.family] = Lang.t('family', hero.family);
+        }
+    });
+    state.family_values = familyValues;
+}
+
+/**
+ * **切语言 · 第二段：技能正文**（对应首访「表格先上屏、技能正文再补齐」）。
+ * 依次等：延后词表（skill_name / heroes_name_fancy / family_title / lottery_title / highlight）
+ * ⇒ 就地重写 `fancy_name` / `skill` ⇒ `ensureSkillsLoaded()` 拿 `heroes_skills_<码>.json`（3.6MB 解码）
+ * ⇒ `hydrateSkills` 写回 effects / passives / familyBonus / _balanced。
+ * 失败不抛：技能正文缺了只是详情文本空，不该把整次切语言判死。
+ * @param {string} lang 目标语言码
+ */
+async function reloadLanguageSkills(lang) {
+    try {
+        await Lang.ensureDeferred();
+    } catch (e) { /* 延后词表失败 ⇒ skill/fancy 落 ID 回退，不阻塞 */ }
+    (state.allHeroes || []).forEach(hero => {
+        hero.fancy_name = _tPrefix('heroes_name_fancy', hero.heroId);
+        hero.skill = Lang.t('skill_name', hero.specialId || '');
+    });
+    try {
+        await ensureSkillsLoaded();
+    } catch (e) {
+        console.error('[lang] 技能正文补齐失败：', e);
+    }
+}
+
+/** 既有两段都跑一遍（保留旧调用点的语义）。 */
 async function reloadLanguageData(lang) {
+    await reloadLanguageNames(lang);
+    await reloadLanguageSkills(lang);
+}
+
+/**
+ * **旧版实现**（保留作参考，勿再调用）：一次性 await 全部内容。
+ * @param {string} lang 目标语言码
+ */
+async function _reloadLanguageDataAllAtOnce(lang) {
     // 作废旧语言的延后补齐：在途下载按世代丢弃；若本函数中途失败，
     // ensureSkillsLoaded() 还能按新语言重新发起（_skillsHydrated 尚未置位）。
     _skillsLang = lang;
@@ -398,16 +466,31 @@ function heroSkillTags(hero) {
 /**
  * 取词（**最长前缀匹配**）：服装英雄没有自己的名字条目 ⇒ 回退到其本体条目
  * （例 `nordic_chained_werewolf_costume_raccoon` → `nordic_chained_werewolf`）。
+ *
+ * ⚠ 实现必须 **按 id 自身的长度递减查字典**（O(id 长度) 次属性查找），
+ *   不要遍历整张词表（`for (const k in m)`）——每只英雄×2 张表×2000+ 只，
+ *   在 4x CPU 降速的移动端实测占掉启动长任务的 ~1.2s（2026-11-22 修复）。
+ * 结果按「词表对象 + id」缓存：切语言时 Lang.get 会换成新对象 ⇒ WeakMap 自然失效。
  */
+const _tPrefixCache = new WeakMap();
 function _tPrefix(table, id) {
     if (!id) return '';
     const m = Lang.get(table);
-    if (m[id] !== undefined) return m[id];
-    let best = '', bestLen = -1;
-    for (const k in m) {
-        if (k.length > bestLen && id.startsWith(k)) { best = k; bestLen = k.length; }
+    if (!m) return id;
+    let cache = _tPrefixCache.get(m);
+    if (!cache) { cache = new Map(); _tPrefixCache.set(m, cache); }
+    const hit = cache.get(id);
+    if (hit !== undefined) return hit;
+    let val = m[id];
+    if (val === undefined) {
+        val = id;                       // 全无命中 ⇒ 原样返回 id
+        for (let i = id.length - 1; i > 0; i--) {
+            const v = m[id.slice(0, i)];
+            if (v !== undefined) { val = v; break; }   // 从长到短 ⇒ 第一个命中就是最长前缀
+        }
     }
-    return best ? m[best] : id;
+    cache.set(id, val);
+    return val;
 }
 
 /**
@@ -802,9 +885,13 @@ async function loadData(lang) {
                 lb1: s.lb1, lb2: s.lb2
             };
             // 英文名（收藏/分享/图标等沿用；最长前缀匹配）
+            // ⚠ 同样按 id 自身长度递减查，别 Object.keys().filter(startsWith) —— 那是
+            //   每只英雄扫一遍整张表（2000+×N，启动长任务的另一半）。
             let en = '';
-            const keys = Object.keys(enNames).filter(k => hid.startsWith(k));
-            if (keys.length) en = enNames[keys.reduce((a, b) => a.length > b.length ? a : b)];
+            for (let k = hid.length; k > 0; k--) {
+                const cand = enNames[hid.slice(0, k)];
+                if (cand !== undefined) { en = cand; break; }
+            }
             hero.english_name = en || hid;
             // 平衡数据：开关初始全关 + 记下"常规版"基线（切换时按节取 `_balanced` / 这里的值）
             hero._balancedOn = {};

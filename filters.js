@@ -879,6 +879,21 @@ function calculateHeroStats(hero, settings) {
 }
 
 /**
+ * 排序用的 Collator（按语言缓存）。
+ * ⚠ `String.prototype.localeCompare` 每次调用都要重新组一个比较器；2000+ 行的
+ *   sort 里那是几万次构造 ⇒ 直接复用 `Intl.Collator().compare`（2026-11-22，INP）。
+ */
+const _collatorCache = new Map();
+function _sortCollator(lang) {
+    let c = _collatorCache.get(lang);
+    if (c) return c;
+    const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[lang];
+    c = new Intl.Collator(locale, lang === 'tc' ? { collation: 'stroke' } : {});
+    _collatorCache.set(lang, c);
+    return c;
+}
+
+/**
  * 核心函数：应用所有筛选条件并重新渲染结果
  */
 function applyFiltersAndRender() {
@@ -904,6 +919,13 @@ function applyFiltersAndRender() {
         strategy: filterInputs.defaultTalentStrategySelect.value,
         manaPriority: filterInputs.defaultManaPriorityCheckbox.checked
     };
+
+    // ⚠ 两项「按需才算」的开关（2026-11-22，INP）：
+    //   · 属性筛选没设阈值时，筛选循环里不必逐只算三围（下面第 4 步会给最终结果算一次）；
+    //   · 没有选任何技能标签时，不必给每只英雄重建标签集合。
+    const needStatsInFilter = powerFilter > 0 || attackFilter > 0 || defenseFilter > 0 || healthFilter > 0;
+    const anySkillTagFilter = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff']
+        .some(k => (state.multiSelectFilters[k] || []).length > 0);
 
     // 3. 执行筛选
     // 「收藏」范围判据**预计算**成下标集合（否则在回调里逐英雄重建 ⇒ O(n²×m)）。
@@ -973,23 +995,27 @@ function applyFiltersAndRender() {
             if (!selectedValues.includes(String(heroValue))) return false;
         }
 
-        // 技能标签筛选逻辑
-        const heroAllSkillTags = new Set(heroSkillTags(hero));
-        const skillTagKeys = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
-        for (const key of skillTagKeys) {
-            const selections = state.multiSelectFilters[key];
-            if (selections && selections.length > 0) {
-                const hasMatch = selections.some(tag => heroAllSkillTags.has(tag));
-                if (!hasMatch) return false;
+        // 技能标签筛选逻辑（未选任何标签 ⇒ 整段跳过，免掉每只英雄重建 Set）
+        if (anySkillTagFilter) {
+            const heroAllSkillTags = new Set(heroSkillTags(hero));
+            const skillTagKeys = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff'];
+            for (const key of skillTagKeys) {
+                const selections = state.multiSelectFilters[key];
+                if (selections && selections.length > 0) {
+                    const hasMatch = selections.some(tag => heroAllSkillTags.has(tag));
+                    if (!hasMatch) return false;
+                }
             }
         }
 
-        // 属性筛选（基于计算后的属性）
-        const calculatedStats = calculateHeroStats(hero, defaultSettings);
-        if (powerFilter > 0 && calculatedStats.power < powerFilter) return false;
-        if (attackFilter > 0 && calculatedStats.attack < attackFilter) return false;
-        if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
-        if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
+        // 属性筛选（基于计算后的属性；没设阈值就不算）
+        if (needStatsInFilter) {
+            const calculatedStats = calculateHeroStats(hero, defaultSettings);
+            if (powerFilter > 0 && calculatedStats.power < powerFilter) return false;
+            if (attackFilter > 0 && calculatedStats.attack < attackFilter) return false;
+            if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
+            if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
+        }
 
         // --- 「查看平衡数据英雄」：只保留**存在平衡数据**的英雄（`hero._balanced` 非空）---
         if (state.temporaryBalancedHeroes && !hero._balanced) return false;
@@ -1122,8 +1148,7 @@ function applyFiltersAndRender() {
         } else {
             valA = String(valA || '');
             valB = String(valB || '');
-            const locale = { cn: 'zh-CN', tc: 'zh-TW', en: 'en-US' }[state.currentLang];
-            comparison = valA.localeCompare(valB, locale, state.currentLang === 'tc' ? { collation: 'stroke' } : {});
+            comparison = _sortCollator(state.currentLang).compare(valA, valB);
         }
 
         // 应用排序方向

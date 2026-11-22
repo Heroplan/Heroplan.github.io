@@ -205,7 +205,11 @@ html.dark-theme .filter-button:hover,html.dark-theme .quick-filter-button:hover{
 .loader-spinner{
   border-color:rgba(47,107,214,.16);
   border-top-color:var(--md-sys-color-primary);
-  animation-duration:1s;
+  /* 进度反馈动画：显式声明循环与运行态，并提示提前合成，
+     主线程忙于渲染/切语言时也能继续转（而不是等首帧后才开始）。 */
+  animation:spin 1s linear infinite;
+  animation-play-state:running;
+  will-change:transform;
 }
 html.dark-theme .loader-spinner{border-color:rgba(125,177,255,.18);border-top-color:var(--md-sys-color-primary)}
 
@@ -241,6 +245,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     animation-iteration-count:1 !important;
     transition-duration:.01ms !important;
     scroll-behavior:auto !important;
+  }
+}
+
+/* 例外：加载转圈是「进度反馈」而非装饰动画，减少动态模式下也必须持续旋转，
+   否则用户会以为卡死。放在上面那条全局降级之后，用同优先级 !important + 更高特异度覆盖。 */
+@media (prefers-reduced-motion: reduce){
+  .loader-spinner{
+    animation:spin 1s linear infinite !important;
+    animation-play-state:running !important;
   }
 }
 

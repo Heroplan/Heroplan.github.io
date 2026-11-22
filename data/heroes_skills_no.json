@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Påfører 430% skade på målet 2 tilfeldige fiender.",
-      "Alle fiender som treffes, tar {MINPERTURNDAMAGE}–{MAXPERTURNDAMAGE} økt forbannelsesskade hver runde i 4 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Alle fiender som treffes, tar[#Dynamic] 126 [#]–[#Dynamic] 365 [#]økt forbannelsesskade hver runde i 4 runder. Denne effekten er sta. (Den første gangen påføres[#Dynamic] 126 [#]skade. Skaden øker med 42% hver runde, opptil[#Dynamic] 365 [#]skade per runde.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Stabel (Maks: 10): Hvert treff gir målet -5% forsvar. (Rensing reduserer negative stabler med 1.)"
      ]
     }

@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Menimbulkan kerusakan 430% ke sasaran dan 2 musuh acak.",
-      "Semua sasaran yang terkena menerima {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} kerusakan Kutukan yang bertambah besar pada tiap giliran selama 4 giliran. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
+      "Semua sasaran yang terkena menerima[#Dynamic] 126 [#]-[#Dynamic] 365 [#]kerusakan Kutukan yang bertambah besar pada tiap giliran selama 4 giliran. Efek ini Bandel. (Pada giliran pertama,[#Dynamic] 126 [#]kerusakan ditimbulkan. Kerusakan bertambah sebesar 42% di setiap giliran, hingga[#Dynamic] 365 [#]kerusakan per giliran.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Tumpukan (Maks: 10): Setiap pukulan memberikan pertahanan -5% kepada sasarannya. (Pembersihan mengurangi tumpukan negatif sebanyak 1.)"
      ]
     }

@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Forvolder 430% skade mod målet og 2 tilfældige fjender.",
-      "Alle træffermål modtager {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} intensiverende forbandet skade i 4 runder. Denne effekt er stædig. (Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
+      "Alle træffermål modtager[#Dynamic] 126 [#]-[#Dynamic] 365 [#]intensiverende forbandet skade i 4 runder. Denne effekt er stædig. (I den første runde bliver[#Dynamic] 126 [#]skade forvoldt. Skaden øges med 42% i hver runde, op til[#Dynamic] 365 [#]skade pr. runde.\n[*]Hvert forsøg på at ophæve, rydde eller omfordele en stædig effekt reducerer varigheden med 1 runde eller reducerer aktiveringer med 1.)",
       "Kumulativ (Maks.: 10): Hver træffer giver målet -5% defense. (Fjernelse reducerer negative kumulative effekter med 1.)"
      ]
     }

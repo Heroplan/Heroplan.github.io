@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Inflige 430% de dégâts à la cible et à 2 ennemis aléatoires.",
-      "Toutes les cibles touchées subissent {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} points de dégâts de malédiction sur 4 tours, qui augmentent à chaque tour. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
+      "Toutes les cibles touchées subissent[#Dynamic] 126 [#]-[#Dynamic] 365 [#]points de dégâts de malédiction sur 4 tours, qui augmentent à chaque tour. Cet effet est obstiné. (Pendant le premier tour,[#Dynamic] 126 [#]points de dégâts sont infligés. Les dégâts augmentent de 42% à chaque tour, jusqu'à[#Dynamic] 365 [#]points de dégâts par tour.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Cumul (max: 10): chaque coup confère -5% de défense à sa cible. (La purification réduit les cumuls négatifs de 1.)"
      ]
     }

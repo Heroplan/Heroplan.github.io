@@ -60806,7 +60806,7 @@
      "id": "envious_curse",
      "lines": [
       "Infligge il 430% di danni al bersaglio e a 2 nemici casuali.",
-      "Tutti i bersagli colpiti subiscono da {MINPERTURNDAMAGE} a {MAXPERTURNDAMAGE} danni da Maledizione crescenti a ogni turno per 4 turni. Questo effetto è persistente. (Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
+      "Tutti i bersagli colpiti subiscono da[#Dynamic] 126 [#]a[#Dynamic] 365 [#]danni da Maledizione crescenti a ogni turno per 4 turni. Questo effetto è persistente. (Nel primo turno vengono inflitti[#Dynamic] 126 [#]danni. I danni aumentano del 42% a ogni turno, fino a un massimo di[#Dynamic] 365 [#]danni per turno.\n[*]Ogni tentativo di annullare, rimuovere o riallocare un effetto persistente riduce la durata di 1 turno o diminuisce di 1 le attivazioni rimaste.)",
       "Iterazione (max: 10): ogni colpo conferisce il -5% di Difesa al suo bersaglio. (La rimozione riduce di 1 le iterazioni negative.)"
      ]
     }

@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Deals 430% damage to the target and 2 random enemies.",
-      "All hit targets receive {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} increasing Curse damage each turn for 4 turns. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
+      "All hit targets receive[#Dynamic] 126 [#]-[#Dynamic] 365 [#]increasing Curse damage each turn for 4 turns. This effect is Stubborn. (On the first turn,[#Dynamic] 126 [#]damage is dealt. The damage increases by 42% each turn, up to[#Dynamic] 365 [#]damage per turn.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "Stack (Max: 10): Each hit gives its target -5% defense. (Cleansing reduces negative stacks by 1.)"
      ]
     }

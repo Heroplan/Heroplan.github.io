@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Tuottaa 430% vauriota kohteelle ja 2 satunnaiselle viholliselle.",
-      "Kaikki osutut kohteet kärsivät {MINPERTURNDAMAGE}–{MAXPERTURNDAMAGE} kasvavaa kirousvauriota joka vuorolla 4 vuoron ajan. Tämä vaikutus on sitkeä. (Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
+      "Kaikki osutut kohteet kärsivät[#Dynamic] 126 [#]–[#Dynamic] 365 [#]kasvavaa kirousvauriota joka vuorolla 4 vuoron ajan. Tämä vaikutus on sitkeä. (Ensimmäisellä vuorolla vauriota tulee[#Dynamic] 126 [#]. Vaurio kasvaa 42% joka vuorolla, yhteensä enintään[#Dynamic] 365 [#]vauriota vuoroa kohden.\n[*]Jokainen yritys häivyttää, puhdistaa tai siirtää sitkeä efekti lyhentää sen kestoa yhdellä vuorolla tai vähentää jäljellä olevia aktivointeja yhdellä.)",
       "Kasauma (maksimi: 10): Kohde saa jokaisesta iskusta -5% puolustusta. (Puhdistus poistaa 1 negatiivista kasaumaa.)"
      ]
     }

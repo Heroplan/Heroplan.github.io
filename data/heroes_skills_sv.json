@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Gör 430% skada mot målet och 2 slumpmässiga fiender.",
-      "Alla träffade mål tar {MINPERTURNDAMAGE}–{MAXPERTURNDAMAGE} stigande förbannelseskada varje runda i 4 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Alla träffade mål tar[#Dynamic] 126 [#]–[#Dynamic] 365 [#]stigande förbannelseskada varje runda i 4 rundor. Den här effekten är envis. (Den första rundan gör effekten[#Dynamic] 126 [#]skada. Skadan stiger med 42% varje runda, upp till[#Dynamic] 365 [#]skada per runda.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Stapel (max: 10): Varje träff ger målet -5% försvar. (Rening minskar negativa staplar med 1.)"
      ]
     }

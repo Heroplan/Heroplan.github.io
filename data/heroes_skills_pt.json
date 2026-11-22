@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Causa 430% de dano ao alvo e 2 inimigos aleatórios.",
-      "Todos os alvos atingidos recebem {MINPERTURNDAMAGE} a {MAXPERTURNDAMAGE} de dano de maldição por 4 turnos, aumentando a cada turno. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
+      "Todos os alvos atingidos recebem[#Dynamic] 126 [#]a[#Dynamic] 365 [#]de dano de maldição por 4 turnos, aumentando a cada turno. Este efeito é persistente. (No primeiro turno, causa[#Dynamic] 126 [#]de dano. O dano aumenta em 42% a cada turno, até o limite de[#Dynamic] 365 [#]de dano por turno.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Acumulação (máx.: 10): cada acerto dá -5% de defesa ao alvo. (O expurgo reduz 1 acumulação negativa.)"
      ]
     }

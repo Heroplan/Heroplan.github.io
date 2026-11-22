@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Verursacht 430% Schaden am Ziel und an 2 zufälligen Gegnern.",
-      "Alle Ziele erleiden für 4 Züge {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} erhöhten, steigenden Fluchschaden. Dieser Effekt ist hartnäckig. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
+      "Alle Ziele erleiden für 4 Züge[#Dynamic] 126 [#]-[#Dynamic] 365 [#]erhöhten, steigenden Fluchschaden. Dieser Effekt ist hartnäckig. (Im ersten Zug wird[#Dynamic] 126 [#]Schaden verursacht. Der Schaden steigt in jedem Zug um 42% bis zu einem Maximum von[#Dynamic] 365 [#]Schaden pro Zug.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Stapel (Max.: 10): Jeder Treffer gibt seinem Ziel -5% Verteidigung. (Reinigen verringert negative Stapel um 1.)"
      ]
     }

@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Inflige 430% de daño al objetivo y a 2 enemigos aleatorios.",
-      "Todos los objetivos golpeados reciben {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} de daño de maldición creciente cada turno durante 4 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
+      "Todos los objetivos golpeados reciben[#Dynamic] 126 [#]-[#Dynamic] 365 [#]de daño de maldición creciente cada turno durante 4 turnos. Este efecto es obstinado. (En el primer turno, se inflige[#Dynamic] 126 [#]de daño. El daño aumenta un 42% cada turno hasta un máximo de[#Dynamic] 365 [#]de daño por turno.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Acumulación (máx.: 10): Cada golpe otorga a su objetivo un -5% de defensa. (La purificación reduce las acumulaciones negativas en 1.)"
      ]
     }

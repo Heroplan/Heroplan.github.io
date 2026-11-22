@@ -60562,7 +60562,7 @@
      "id": "envious_curse",
      "lines": [
       "Zadaje 430% obrażeń celowi i 2 losowym wrogom.",
-      "Wszystkie trafione cele odnoszą {MINPERTURNDAMAGE}-{MAXPERTURNDAMAGE} pkt. narastających obrażeń od klątwy przez okres 4 tur. Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
+      "Wszystkie trafione cele odnoszą[#Dynamic] 126 [#]-[#Dynamic] 365 [#]pkt. narastających obrażeń od klątwy przez okres 4 tur. Ten efekt jest nieustępliwy. (W pierwszej turze zadanych zostaje[#Dynamic] 126 [#]pkt. obrażeń. Obrażenia rosną co turę o 42% , do maksymalnie[#Dynamic] 365 [#]pkt. obrażeń na turę.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Kumulacja (maks.: 10): Każde trafienie daje celowi -5% obrony. (Oczyszczenie zmniejsza liczbę negatywnych kumulacji o 1.)"
      ]
     }

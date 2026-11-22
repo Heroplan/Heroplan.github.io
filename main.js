@@ -1795,31 +1795,40 @@ function renderDonationList(sortedDonationList) {
     });
 
     const originalListWidth = container.scrollWidth;
-    const wrapperWidth = wrapper.offsetWidth;
+    // 页头被聊天/刷图/通缉视图临时隐藏时 offsetWidth 为 0，用一个保守目标宽度，
+    // 保证回到列表后名单仍够铺满一屏、动画不会出现空白。
+    const wrapperWidth = wrapper.offsetWidth ||
+        Math.min(1200, Math.max(320, Math.round(window.innerWidth * 0.8)));
 
-    // 根据列表长度判断是否需要滚动
-    if (originalListWidth > wrapperWidth) {
-        // 列表本身已经够长，为了无缝循环，复制一次即可
-        const donorsToRender = [...sortedDonationList, ...sortedDonationList];
-
-        container.innerHTML = ''; // 清空并重新渲染
-        donorsToRender.forEach(donorName => {
-            const donationItem = document.createElement('span');
-            donationItem.classList.add('donation-item');
-            donationItem.textContent = donorName;
-            container.appendChild(donationItem);
-        });
-
-        const totalWidth = container.scrollWidth;
-        const duration = totalWidth / 50; // 假设每秒滚动50像素
-        container.style.animationDuration = `${duration}s`;
-
-        return true; // 返回 true 表示列表已准备好滚动
-    } else {
-        // 列表太短，不进行任何复制和动画
-        container.style.animationDuration = '0s';
-        return false; // 返回 false 表示不需要滚动
+    // 始终滚动：名单不够长时先重复到至少一屏宽，再复制一倍做 -50% 无缝循环。
+    // 这样无论 20 种语言的名单长短、桌面还是手机，跑马灯都不会停住。
+    if (!sortedDonationList.length || !wrapperWidth) {
+        container.style.setProperty('animation-duration', '0s', 'important');
+        return false;
     }
+
+    const repeatTimes = Math.max(1, Math.ceil(wrapperWidth / Math.max(originalListWidth, 1)));
+    const halfItems = [];
+    for (let i = 0; i < repeatTimes; i++) halfItems.push(...sortedDonationList);
+    const donorsToRender = [...halfItems, ...halfItems];
+
+    container.innerHTML = '';
+    donorsToRender.forEach(donorName => {
+        const donationItem = document.createElement('span');
+        donationItem.classList.add('donation-item');
+        donationItem.textContent = donorName;
+        container.appendChild(donationItem);
+    });
+
+    const totalWidth = container.scrollWidth;
+    const halfWidth = totalWidth / 2;
+    const duration = Math.max(6, halfWidth / 50); // 最低 6s，避免短名单转得过快
+    // 用 inline !important 压过「减少动态效果」里 `animation-duration:.01ms !important`，
+    // 让跑马灯在移动端开启减弱动画时仍按正常速度滚动；悬停暂停由 CSS 单独控制。
+    container.style.setProperty('animation-duration', `${duration}s`, 'important');
+    container.style.setProperty('animation-iteration-count', 'infinite', 'important');
+
+    return true; // 始终返回 true，由调用方加 is-scrolling
 }
 
 /**

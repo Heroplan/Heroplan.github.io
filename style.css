@@ -408,3 +408,22 @@ html[dir="rtl"] #donation-list-box.is-scrolling{animation-name:scroll-right}
   .panel-toggle-btn{display:none}
   .chat-panel-colors .panel-content,.chat-panel-emojis .panel-content{flex:1 1 auto;min-height:0;overflow-y:auto}
 }
+
+/* ==== 方案 2：移动端立绘舞台（2026-11-22） ==== */
+@media (max-width: 768px){
+  /* 背景铺满立绘本身的高宽，不再被固定方卡限制；横向裁切由 cover 处理 */
+  .hero-portrait-stage .hero-card-bg{
+    top:0 !important;
+    left:0 !important;
+    transform:none !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:none !important;
+    max-height:none !important;
+    object-fit:cover;
+    border-radius:18px !important;
+  }
+  /* 取消立绘的 8% 视觉下移，避免底部越过舞台 */
+  .hero-portrait-stage .hero-animation-canvas,
+  .hero-portrait-stage .hero-portrait-image{transform:none !important}
+}

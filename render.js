@@ -3188,7 +3188,7 @@ function renderDetailsInModal(hero, context = {}) {
 
                     // 创建英雄立绘外层容器
                     const portraitContainer = document.createElement('div');
-                    portraitContainer.className = 'hero-portrait-container';
+                    portraitContainer.className = 'hero-portrait-container hero-portrait-stage';
                     portraitContainer.style.position = 'relative';
                     portraitContainer.style.display = 'inline-block';
                     portraitContainer.style.maxWidth = '85vw';
@@ -3231,9 +3231,23 @@ function renderDetailsInModal(hero, context = {}) {
                     // 一旦按立绘画布的竖长比例给宽高就会被拉成椭圆。
                     // 光环取卡片的 80%：贴图里的圆环几乎撑满整张方图，100% 会把背景铺满。
                     const RAYS_CARD_RATIO = 0.8;
+                    const RAYS_STAGE_RATIO = 0.95;
                     const syncRaysToCard = () => {
                         if (!raysImage) return;
-                        const side = Math.round(cardBgImage.clientWidth * RAYS_CARD_RATIO);
+                        // 移动端：背景已按立绘舞台 cover 铺满，光环改取舞台短边，避免圆环撑出画面
+                        // 桌面端：沿用原来的方卡边长口径
+                        const stageMode = window.matchMedia('(max-width: 768px)').matches;
+                        let side;
+                        if (stageMode) {
+                            // 用视觉盒而不是 clientWidth：inline-block 的 clientWidth 会被
+                            // 绝对定位的背景卡撑大，导致光环按错误边长计算
+                            const box = portraitContainer.getBoundingClientRect();
+                            const w = box.width, h = box.height;
+                            if (!w || !h) return;
+                            side = Math.round(Math.min(w, h) * RAYS_STAGE_RATIO);
+                        } else {
+                            side = Math.round(cardBgImage.clientWidth * RAYS_CARD_RATIO);
+                        }
                         if (!side) return;
                         raysImage.style.width = side + 'px';
                         raysImage.style.height = side + 'px';
@@ -3343,6 +3357,8 @@ function renderDetailsInModal(hero, context = {}) {
                     imageModal.classList.remove('hidden');
                     cancelModalClose(imageModal);
                     imageModal.showModal();
+                    // dialog 打开后才真正有布局尺寸；下一帧再按舞台短边校正一次光环
+                    requestAnimationFrame(() => syncRaysToCard());
 
                     // 将立绘模态框加入到模态框堆栈
                     history.pushState({ modal: 'heroPortrait' }, null);

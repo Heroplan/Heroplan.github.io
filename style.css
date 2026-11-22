@@ -67,3 +67,274 @@ dialog.modal-dialog.closing{opacity:0;scale:0.96}dialog.modal-dialog.closing::ba
 
 /* 首屏表格从空到 60 行会撑高页面、把页脚推下去（CLS）⇒ 加载期先占住一屏高度 */
 #hero-table-view{min-height:100vh}
+
+
+/* ==== V2 UI 润色层（2026-11-22）：设计令牌 / 布局节奏 / 交互动效 / 亮色配色收口 ==== */
+:root{
+  --v2-r-sm:8px; --v2-r-md:12px; --v2-r-lg:16px;
+  --v2-ease:cubic-bezier(.22,.61,.36,1);
+  --v2-t-fast:130ms; --v2-t:200ms; --v2-t-slow:280ms;
+  --v2-shadow-1:0 1px 2px rgba(16,24,40,.04), 0 2px 6px rgba(16,24,40,.05);
+  --v2-shadow-2:0 6px 18px rgba(16,24,40,.09);
+  --v2-ring:0 0 0 3px rgba(47,107,214,.20);
+}
+html.dark-theme{
+  --v2-shadow-1:0 1px 2px rgba(0,0,0,.30), 0 2px 6px rgba(0,0,0,.28);
+  --v2-shadow-2:0 8px 22px rgba(0,0,0,.45);
+  --v2-ring:0 0 0 3px rgba(125,177,255,.26);
+}
+
+/* —— 基础排版 —— */
+body{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* —— 页头控件 —— */
+.theme-toggle-btn,.lang-toggle-btn{
+  background-color:var(--md-sys-color-surface);
+  box-shadow:var(--v2-shadow-1);
+  transition:background-color var(--v2-t-fast) var(--v2-ease),
+             box-shadow var(--v2-t-fast) var(--v2-ease),
+             transform var(--v2-t-fast) var(--v2-ease);
+}
+.theme-toggle-btn:hover,.lang-toggle-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:var(--v2-shadow-2);
+}
+.theme-toggle-btn:active,.lang-toggle-btn:active{transform:translateY(0) scale(.96)}
+
+/* —— 页头信息条 / 捐赠条：白卡片 + 细边 + 轻阴影 ——
+   注意：用 inset 阴影画 1px 边，而不是 border —— 这两块是 width:auto，
+   加 border 会让盒子高度/宽度各涨 2px，破坏与基线一致的版式。 */
+.header-info-container,.donation-list-container{
+  background-color:var(--md-sys-color-surface);
+  border-radius:var(--v2-r-md);
+  box-shadow:inset 0 0 0 1px var(--md-sys-color-outline-variant), var(--v2-shadow-1);
+}
+.donation-list-title{color:var(--md-sys-color-on-surface)}
+.donation-item{
+  box-shadow:none;
+  background:transparent;
+  transition:transform var(--v2-t-fast) var(--v2-ease);
+}
+.donation-item:hover{transform:translateY(-1px)}
+/* 捐赠名单：把 100% 饱和的纯色换成可读的哑光色板（亮色/暗色各自一套） */
+.donation-item:nth-child(6n+1){color:#B23A3A}
+.donation-item:nth-child(6n+2){color:#A8631F}
+.donation-item:nth-child(6n+3){color:#2E7D46}
+.donation-item:nth-child(6n+4){color:#2A5FA8}
+.donation-item:nth-child(6n+5){color:#7048B6}
+.donation-item:nth-child(6n+6){color:#8A3E86}
+html.dark-theme .donation-item:nth-child(6n+1){color:#FFA3A3}
+html.dark-theme .donation-item:nth-child(6n+2){color:#F3B87A}
+html.dark-theme .donation-item:nth-child(6n+3){color:#8FE3A8}
+html.dark-theme .donation-item:nth-child(6n+4){color:#9CC4FF}
+html.dark-theme .donation-item:nth-child(6n+5){color:#C9AEFF}
+html.dark-theme .donation-item:nth-child(6n+6){color:#F2A9E0}
+
+/* —— 筛选卡 / 结果区 —— */
+.filter-card{
+  border-color:var(--md-sys-color-outline-variant);
+  border-radius:var(--v2-r-md);
+  box-shadow:var(--v2-shadow-1);
+  transition:box-shadow var(--v2-t) var(--v2-ease)
+}
+.filter-card:hover{box-shadow:var(--v2-shadow-2)}
+#results-wrapper{
+  border-color:var(--md-sys-color-outline-variant);
+  border-radius:var(--v2-r-md);
+  box-shadow:var(--v2-shadow-1);
+}
+.results-header{
+  background-color:var(--md-sys-color-surface);
+  border-bottom:1px solid var(--md-sys-color-outline-variant);
+}
+
+/* —— 表格：表头着色、斑马纹、悬停 —— */
+#hero-table thead th{
+  background-color:var(--md-sys-color-surface-variant);
+  color:var(--md-sys-color-on-surface-variant);
+}
+#hero-table tbody tr{transition:background-color var(--v2-t-fast) var(--v2-ease)}
+#hero-table tbody tr:nth-child(even){background-color:rgba(16,24,40,.025)}
+html.dark-theme #hero-table tbody tr:nth-child(even){background-color:rgba(255,255,255,.028)}
+#hero-table tbody tr:hover{background-color:rgba(47,107,214,.06)}
+html.dark-theme #hero-table tbody tr:hover{background-color:rgba(125,177,255,.09)}
+
+/* —— 按钮：统一 hover / 按下反馈 —— */
+.filter-button,.quick-filter-button{
+  background-color:var(--md-sys-color-surface);
+  border-color:var(--md-sys-color-outline-variant);
+  box-shadow:0 1px 1px rgba(16,24,40,.03);
+  transition:background-color var(--v2-t-fast) var(--v2-ease),
+             border-color var(--v2-t-fast) var(--v2-ease),
+             box-shadow var(--v2-t-fast) var(--v2-ease),
+             transform var(--v2-t-fast) var(--v2-ease);
+}
+.action-button{
+  transition:background-color var(--v2-t-fast) var(--v2-ease),
+             box-shadow var(--v2-t-fast) var(--v2-ease),
+             transform var(--v2-t-fast) var(--v2-ease);
+}
+.action-button:hover{box-shadow:var(--v2-shadow-1);transform:translateY(-1px)}
+.filter-button:hover,.quick-filter-button:hover{
+  border-color:rgba(47,107,214,.45);
+  box-shadow:var(--v2-shadow-1);
+  transform:translateY(-1px);
+}
+.filter-button:active,.quick-filter-button:active,.action-button:active{transform:translateY(0) scale(.985)}
+.filter-button.active,.quick-filter-button.active{
+  background-color:var(--md-sys-color-primary-container);
+  border-color:var(--md-sys-color-primary);
+  box-shadow:0 0 0 1px var(--md-sys-color-primary) inset;
+}
+html.dark-theme .filter-button:hover,html.dark-theme .quick-filter-button:hover{border-color:rgba(125,177,255,.55)}
+
+/* —— 圆形 FAB —— */
+#open-filters-btn{
+  box-shadow:0 6px 18px rgba(47,107,214,.30);
+  transition:transform var(--v2-t-fast) var(--v2-ease),
+             box-shadow var(--v2-t-fast) var(--v2-ease),
+             filter var(--v2-t-fast) var(--v2-ease);
+}
+#open-filters-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(47,107,214,.36)}
+#open-filters-btn:active{transform:scale(.95);box-shadow:0 3px 10px rgba(47,107,214,.30)}
+
+/* —— 加载转圈：用主题色描边，更细更稳 —— */
+.loader-spinner{
+  border-color:rgba(47,107,214,.16);
+  border-top-color:var(--md-sys-color-primary);
+  animation-duration:1s;
+}
+html.dark-theme .loader-spinner{border-color:rgba(125,177,255,.18);border-top-color:var(--md-sys-color-primary)}
+
+/* —— 弹窗 / 下拉入场动画 —— */
+/* 注意：弹窗本体带 transform: translate(-50%,-50%) 负责居中，
+   动画只能动 opacity，且不能带 fill（否则动画终态 transform:none 会覆盖居中）。 */
+@keyframes v2-overlay-in{from{opacity:0}to{opacity:1}}
+@keyframes v2-fade-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+#modal:not(.hidden),#filters-modal:not(.hidden),#settings-modal:not(.hidden),
+#team-modal:not(.hidden),#multi-select-modal:not(.hidden){
+  animation:v2-overlay-in var(--v2-t) var(--v2-ease);
+}
+#lang-options:not(.hidden){animation:v2-fade-in var(--v2-t) var(--v2-ease)}
+
+/* —— 友情链接 / 页脚 —— */
+body .friendship-links p{color:var(--md-sys-color-on-surface-variant)}
+body footer{
+  background-color:var(--md-sys-color-surface);
+  border-top:1px solid var(--md-sys-color-outline-variant);
+  color:var(--md-sys-color-on-surface-variant);
+}
+
+/* —— 键盘可达性 —— */
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--md-sys-color-primary);
+  outline-offset:2px;
+}
+
+/* —— 尊重系统「减少动态效果」—— */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+
+/* ==== V2 称谓修正（2026-11-22）：友情链接卡（index.html 尾部 <style> 同特异度在后，需抬特异度）==== */
+body .links-grid .link-card{
+  background-color:var(--md-sys-color-surface);
+  color:var(--md-sys-color-on-surface);
+  border:1px solid var(--md-sys-color-outline-variant);
+  border-radius:999px;
+  box-shadow:var(--v2-shadow-1);
+  transition:background-color var(--v2-t-fast) var(--v2-ease),
+             border-color var(--v2-t-fast) var(--v2-ease),
+             box-shadow var(--v2-t-fast) var(--v2-ease),
+             transform var(--v2-t-fast) var(--v2-ease);
+}
+body .links-grid .link-card a{color:inherit}
+body .links-grid .link-card:hover{
+  background-color:var(--md-sys-color-primary-container);
+  border-color:var(--md-sys-color-primary);
+  box-shadow:var(--v2-shadow-2);
+  transform:translateY(-2px);
+}
+#name-input{background-color:var(--md-sys-color-surface)}
+
+
+/* 表头单词断行修正：德语长词曾被拆成「Elemen t」，改为按音节断词 */
+#hero-table thead th{hyphens:auto}
+
+
+
+/* ==== V2 润色层 2（2026-11-22）：性能收敛 + 细节美化（仍然只动颜色/阴影/过渡，不动盒子）==== */
+
+/* —— 性能：把 transition:all 收窄成会变的属性 ——
+   原文件 28 处 transition:all，任意属性变化都会尝试过渡（含 layout 相关属性），
+   收窄后只对颜色/边框/阴影/位移/透明度做过渡。这里只补最热的控件，
+   不覆盖原规则的时长与缓动（只改 transition-property）。 */
+.autocomplete-item,
+.multi-select-option,
+.tab-button,
+.tab-link,
+.lottery-mobile-tabs .tab-button,
+.help-btn,
+.reset-tag,
+.close-bottom-btn,
+#modal .favorite-btn,
+#modal .share-btn,
+#modal .close-btn,
+#filters-modal .close-btn{
+  transition-property:background-color,border-color,color,box-shadow,transform,opacity;
+}
+
+/* —— 性能：触屏设备中和 hover ——
+   触屏 tap 会留下 :hover，导致行一直高亮、按钮一直抬起；hover:hover 设备不受影响。 */
+@media (hover: none){
+  #hero-table tbody tr:hover{background-color:transparent}
+  .theme-toggle-btn:hover,.lang-toggle-btn:hover,
+  .filter-button:hover,.quick-filter-button:hover,.action-button:hover,
+  .donation-item:hover,#open-filters-btn:hover,.link-card:hover{transform:none}
+}
+
+/* —— 美化：表格悬停加一条主色竖线（inset，零布局；RTL 反向） —— */
+@media (hover: hover){
+  #hero-table tbody tr:hover{box-shadow:inset 3px 0 0 var(--md-sys-color-primary)}
+  html[dir="rtl"] #hero-table tbody tr:hover{box-shadow:inset -3px 0 0 var(--md-sys-color-primary)}
+}
+
+/* —— 美化：表头底部发丝线，滚动时表头与行内容有清晰交界 —— */
+#hero-table thead th{box-shadow:inset 0 -1px 0 var(--md-sys-color-outline-variant)}
+
+/* —— 美化：结果计数用等宽数字，位数变化不抖 —— */
+.results-header{font-variant-numeric:tabular-nums}
+
+/* —— 美化：FAB 加一层很轻的纵向渐变，比纯色更有体积感（静态绘制，不参与动画） —— */
+#open-filters-btn{background-image:linear-gradient(180deg,#4180EA 0%,#2F6BD6 100%)}
+html.dark-theme #open-filters-btn{background-image:linear-gradient(180deg,#8FBCFF 0%,#4E86E8 100%)}
+
+/* —— 美化：弹窗阴影分层更柔（原 0 10px 30px rgba(0,0,0,.2) 偏重） —— */
+#modal,#filters-modal{
+  box-shadow:0 18px 48px rgba(16,24,40,.18), 0 2px 8px rgba(16,24,40,.08);
+}
+html.dark-theme #modal,html.dark-theme #filters-modal{
+  box-shadow:0 18px 48px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35);
+}
+
+/* —— 美化：语言下拉浮层阴影更现代 —— */
+#lang-options{box-shadow:0 12px 28px rgba(16,24,40,.14), 0 2px 6px rgba(16,24,40,.06)}
+html.dark-theme #lang-options{box-shadow:0 12px 28px rgba(0,0,0,.5)}
+
+/* —— 美化：选中文本用品牌蓝，暗色用浅主色 —— */
+::selection{background-color:rgba(47,107,214,.22);color:inherit}
+html.dark-theme ::selection{background-color:rgba(125,177,255,.28);color:inherit}
+
+
+/* ==== V2 润色层 3（2026-11-22）：筛选按钮从纯白改为极浅冷色，与白卡片分层（纯颜色，不影响盒子）==== */
+.filter-button,.quick-filter-button{background-color:#F4F8FE}
+html.dark-theme .filter-button,html.dark-theme .quick-filter-button{background-color:#2C2F36}

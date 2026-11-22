@@ -1643,12 +1643,22 @@ function handlePopState(event) {
             case 'redeemCodes': modal = uiElements.redeemCodesModal; break;
             case 'heroPortrait':
                 modal = document.getElementById('image-modal');
-                if (modal) modal.classList.remove('show-hero-portrait');
-                if (typeof disposeActiveAnimationPlayer === 'function') disposeActiveAnimationPlayer();
+                // 不要在开始淡出时就 dispose：那会先把 canvas 立绘抽掉，
+                // 背景卡和光环还在 280ms 退场里 → 看起来像逐层关闭。
+                // 等淡出结束再拆播放器并复位类名，三层一起消失。
                 break;
         }
 
-        if (modal) closeModalAnimated(modal);
+        if (modal) {
+            if (modalType === 'heroPortrait') {
+                closeModalAnimated(modal, () => {
+                    modal.classList.remove('show-hero-portrait');
+                    if (typeof disposeActiveAnimationPlayer === 'function') disposeActiveAnimationPlayer();
+                });
+            } else {
+                closeModalAnimated(modal);
+            }
+        }
 
         // 仅当最后一个模态框关闭时，才恢复页面滚动
         if (state.modalStack.length === 0) {

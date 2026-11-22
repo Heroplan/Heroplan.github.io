@@ -351,3 +351,60 @@ html.dark-theme ::selection{background-color:rgba(125,177,255,.28);color:inherit
 /* ==== V2 润色层 3（2026-11-22）：筛选按钮从纯白改为极浅冷色，与白卡片分层（纯颜色，不影响盒子）==== */
 .filter-button,.quick-filter-button{background-color:#F4F8FE}
 html.dark-theme .filter-button,html.dark-theme .quick-filter-button{background-color:#2C2F36}
+
+/* ==== P1 修复层（2026-11-22）：只修审计确认的遮挡/换行/空状态，不动列宽基线 ==== */
+
+/* 1) 详情弹窗：顶层按钮下移，标题整体下移一行；窄屏才生效，桌面对齐不变 */
+@media (max-width: 768px){
+  #modal .details-header h2{margin-top:2.75rem}
+}
+
+/* 2) 队伍模拟器底部三个按钮：长语言不再撑破行，允许换行且可收缩 */
+.saved-teams-actions{flex-wrap:wrap}
+.saved-teams-actions .action-button{flex:1 1 auto;min-width:0}
+
+/* 3) 悬浮筛选按钮 RTL 镜像；移动端 56px / 18px 边距（不改其它元素宽度） */
+html[dir="rtl"] .floating-action-buttons{right:auto;left:25px}
+@media (max-width: 768px){
+  .floating-action-buttons{bottom:18px;right:18px;gap:12px}
+  #open-filters-btn{width:56px;height:56px;font-size:24px}
+  html[dir="rtl"] .floating-action-buttons{right:auto;left:18px}
+}
+
+/* 4) 抽奖活动卡：底部 44px 压暗保证白字可读；选中环改主题蓝，去掉红/黄圈 */
+#lottery-activity-list li{position:relative}
+#lottery-activity-list li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:44px;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0));border-radius:inherit}
+#lottery-activity-list li.active{box-shadow:inset 0 0 0 3px var(--md-sys-color-primary);filter:brightness(1.08)}
+
+/* 5) 聊天模拟器空预览：提示文案挂在 data-empty 上，多语言随字典走 */
+#chat-simulator-preview:empty::before{content:attr(data-empty);display:block;color:rgba(255,255,255,.62);text-shadow:none;font-weight:400}
+
+/* 6) 兑换码空状态 */
+.redeem-empty{margin:1.5rem 0;padding:1.25rem 1rem;text-align:center;color:var(--md-sys-color-on-surface-variant);background:var(--md-sys-color-surface-variant);border:1px dashed var(--md-sys-color-outline);border-radius:10px}
+
+/* 7) 捐赠跑马灯：左右 24px 渐隐；RTL 反向滚动 */
+.donation-list-wrapper{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 24px,#000 calc(100% - 24px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 24px,#000 calc(100% - 24px),transparent 100%)}
+@keyframes scroll-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+html[dir="rtl"] #donation-list-box.is-scrolling{animation-name:scroll-right}
+
+/* 8) 页头「2026」徽章与文字留 6px，垂直居中 */
+#view-balance-heroes-btn .event-icon{margin-inline-end:6px;vertical-align:middle}
+
+/* 9) 帮助弹窗标题获得焦点时不描边（视觉干净，键盘仍可定位） */
+#help-modal h3:focus{outline:none}
+
+/* ==== 聊天模拟器移动端：改抽奖模拟器式 3 合页（2026-11-22） ==== */
+.chat-mobile-tabs{display:none}
+@media (max-width: 768px){
+  .chat-mobile-tabs{display:flex;width:100%;border-bottom:1px solid var(--md-sys-color-outline);margin-bottom:0.5rem;flex-shrink:0}
+  .chat-mobile-tabs .tab-button{flex:1;padding:0.75rem 0.5rem;background:none;border:none;border-bottom:3px solid transparent;color:var(--md-sys-color-on-surface-variant);font-size:1rem;font-weight:500;cursor:pointer;text-align:center;transition:all 0.2s ease-in-out}
+  .chat-mobile-tabs .tab-button.active{color:var(--md-sys-color-primary);border-bottom-color:var(--md-sys-color-primary);font-weight:700}
+
+  .chat-simulator-container{flex-direction:column;overflow:hidden;height:100%}
+  .chat-simulator-panel{display:none;flex:1 1 auto;min-width:0;min-height:0;overflow:hidden}
+  .chat-simulator-panel.active{display:flex}
+  .chat-panel-io{min-height:0}
+  /* 页签已替代折叠面板，隐藏旧的下拉箭头，避免两种交互混在一起 */
+  .panel-toggle-btn{display:none}
+  .chat-panel-colors .panel-content,.chat-panel-emojis .panel-content{flex:1 1 auto;min-height:0;overflow-y:auto}
+}

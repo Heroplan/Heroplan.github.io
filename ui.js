@@ -242,12 +242,17 @@ function applyLanguage(lang) {
         'show-team-simulator-btn': 'showTeamSimulatorTitle',
         'show-chat-simulator-btn': 'showChatSimulatorTitle',
         'show-farming-guide-btn': 'showFarmingGuideTitle',
-        'show-redeem-codes-btn': 'showRedeemCodesTitle'
+        'show-redeem-codes-btn': 'showRedeemCodesTitle',
+        'toggle-animation-btn': 'toggleAnimationTitle',
+        'toggle-sound-btn': 'toggleSoundTitle'
     };
 
     for (const id in titles) {
         const element = document.getElementById(id);
-        if (element && langDict[titles[id]]) element.title = langDict[titles[id]];
+        if (element && langDict[titles[id]]) {
+            element.title = langDict[titles[id]];
+            element.setAttribute('aria-label', langDict[titles[id]]);
+        }
     }
     // 上面的循环会把"返回"提示覆盖回普通标题：视图按钮处于红态时按当前视图状态重同步
     if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
@@ -683,6 +688,15 @@ function openHelpModal() {
     document.body.classList.add('modal-open');
     history.pushState({ modal: 'help' }, null);
     state.modalStack.push('help');
+
+    // 打开时永远从标题开始：某些浏览器会把焦点落在底部关闭按钮上，弹窗自动滚到底
+    uiElements.helpModal.scrollTop = 0;
+    const helpHeading = uiElements.helpModal.querySelector('h3');
+    if (helpHeading) {
+        helpHeading.setAttribute('tabindex', '-1');
+        helpHeading.focus({ preventScroll: true });
+    }
+    uiElements.helpModal.scrollTop = 0;
 }
 
 function closeHelpModal() {

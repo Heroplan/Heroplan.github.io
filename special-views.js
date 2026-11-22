@@ -297,6 +297,22 @@ const VIEW_OPEN_STATE = {
     farming: { mode: null, hideHeaderInfo: false }
 };
 
+// 聊天/刷图这类 inline 视图：打开时收起页头「赞助/捐赠」，回列表或去通缉页时恢复。
+// 只记录**本次由我们藏起来**的元素，用户自己关掉的捐赠榜不会被重新打开。
+let _headerChromeHiddenEls = [];
+function _hideHeaderChrome() {
+    ['.header-info-container', '.donation-list-container-wrapper'].forEach(sel => {
+        const el = document.querySelector(sel);
+        if (!el || el.classList.contains('hidden')) return;
+        el.classList.add('hidden');
+        _headerChromeHiddenEls.push(el);
+    });
+}
+function _restoreHeaderChrome() {
+    _headerChromeHiddenEls.forEach(el => el.classList.remove('hidden'));
+    _headerChromeHiddenEls = [];
+}
+
 function _applyOpenState(view) {
     const cfg = VIEW_OPEN_STATE[view];
     if (!cfg) return null;
@@ -591,6 +607,7 @@ function saveCurrentViewScrollPosition() {
  */
 function showHeroListViewUI() {
     saveCurrentViewScrollPosition(); // 保存当前视图的位置
+    _restoreHeaderChrome();
     // 列表已渲染且筛选结果未变 ⇒ 跳过整表重渲：退出特殊页重建 2000+ 行会阻塞主线程、点击延迟/丢失
     if (!isListRenderFresh()) applyFiltersAndRender();
 
@@ -624,6 +641,7 @@ function initAndShowWantedMissionView() {
     if (state.teamSimulatorActive) toggleTeamSimulator();
     if (uiElements.chatSimulatorView) uiElements.chatSimulatorView.classList.add('hidden');
     saveCurrentViewScrollPosition();
+    _hideHeaderChrome();
 
     const { wantedMissionTable, heroTableView, farmingGuideView, wantedMissionView, resultsWrapper, resultsCountEl } = uiElements;
 
@@ -682,6 +700,7 @@ function initAndShowFarmingGuideView() {
     if (state.teamSimulatorActive) toggleTeamSimulator();
     if (uiElements.chatSimulatorView) uiElements.chatSimulatorView.classList.add('hidden');
     saveCurrentViewScrollPosition();
+    _hideHeaderChrome();
 
     const { farmingGuideTable, heroTableView, wantedMissionView, farmingGuideView, resultsWrapper, resultsCountEl } = uiElements;
 
@@ -812,6 +831,7 @@ function initAndShowChatSimulatorView() {
     if (state.lotterySimulatorActive) LotterySimulator.toggle();
     if (state.teamSimulatorActive) toggleTeamSimulator();
     saveCurrentViewScrollPosition();
+    _hideHeaderChrome();
 
     // 切换视图可见性
     uiElements.heroTableView.classList.add('hidden');

@@ -261,7 +261,7 @@ async function renderTable(heroes) {
     const noColon = s => String(s == null ? '' : s).replace(/:\s*$/, '');
     const headers = {
         fav: favHeaderIcon, image: langDict.avatarLabel, name: noColon(langDict.nameLabel),
-        element: noColon(langDict.elementLabel), rarity: noColon(langDict.rarityLabel),
+        element: noColon(langDict.elementLabelShort || langDict.elementLabel), rarity: noColon(langDict.rarityLabel),
         class: noColon(langDict.classLabel), speed: noColon(langDict.speedLabel),
         power: langDict.minPower, attack: langDict.minAttack,
         defense: langDict.minDefense, health: langDict.minHealth,
@@ -3370,6 +3370,12 @@ function renderRedeemCodesModal() {
     const contentEl = document.getElementById('redeem-codes-content');
 
     contentEl.innerHTML = '';
+
+    // 没有可兑换码时给一句明确空状态，避免弹窗空白像加载失败
+    if (!Array.isArray(redeemcodes) || redeemcodes.length === 0) {
+        contentEl.innerHTML = `<p class="redeem-empty">${langDict.redeemEmptyState || ''}</p>`;
+        return;
+    }
 
     redeemcodes.forEach(codeData => {
         const isRedeemed = state.redeemedCodes.has(codeData.code);

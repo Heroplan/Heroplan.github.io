@@ -114,6 +114,8 @@ function updateChatPreview() {
         }
     });
     chatSimulatorPreview.innerHTML = html;
+    // `:empty` 只能显示空画布；把提示文案挂到 data-empty 上交给 CSS 呈现（多语言随字典走）
+    chatSimulatorPreview.dataset.empty = rawText ? '' : (i18n[state.currentLang] || {}).chatPreviewEmpty || '';
 }
 
 /**
@@ -203,6 +205,25 @@ function openChatSimulatorView() {
 
     // 绑定核心输入和按钮事件
     if (chatSimulatorInput) chatSimulatorInput.addEventListener('input', updateChatPreview);
+    updateChatPreview(); // 初始化空预览提示（不依赖用户先打字）
+
+    // 移动端三合一页签：与抽奖模拟器同口径，CSS 只在小屏把非 active 面板收起
+    const chatTabs = document.querySelectorAll('.chat-mobile-tabs .tab-button');
+    const chatPanels = document.querySelectorAll('.chat-simulator-panel');
+    chatTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            if (tab.classList.contains('active')) return;
+            chatTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            chatPanels.forEach(p => p.classList.remove('active'));
+            const targetPanel = document.querySelector('.' + tab.dataset.chatPanel);
+            if (targetPanel) targetPanel.classList.add('active');
+        });
+    });
     if (insertColorBtn) insertColorBtn.addEventListener('click', () => {
         const colorCode = `[${document.getElementById('color-hex-code').value}]`;
         insertTextAtCursor(chatSimulatorInput, colorCode);

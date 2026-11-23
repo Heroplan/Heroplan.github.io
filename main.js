@@ -2066,3 +2066,203 @@ function decodeFavoritesFromBinary(binaryStr) {
         return [];
     }
 }
+/* ==== 突破 / 天赋 / 天赋优先级：站内居中下拉菜单 ==== */
+/* 原生 <select> 的展开列表由系统绘制，CSS 无法把 option 调居中；这里保留原生 select 的
+   值、disabled 与 change 事件，只额外生成一层居中的 MD3 触发器和选项菜单。 */
+(function () {
+  'use strict';
+  var TARGET_IDS = ['default-limit-break-select', 'default-talent-select', 'default-talent-strategy-select', 'modal-limit-break-select', 'modal-talent-select', 'modal-talent-strategy-select'];
+  var activeClose = null;
+
+  function enhance(select) {
+    if (!select || select.dataset.md3SelectReady === '1') return;
+    select.dataset.md3SelectReady = '1';
+
+    var wrap = document.createElement('div');
+    wrap.className = 'md3-select';
+    select.parentNode.insertBefore(wrap, select);
+    wrap.appendChild(select);
+    select.classList.add('md3-select-native');
+    select.setAttribute('tabindex', '-1');
+
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'md3-select-trigger';
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    var labelEl = select.id ? document.querySelector('label[for="' + select.id + '"]') : null;
+    if (labelEl) {
+      if (!labelEl.id) labelEl.id = select.id + '-label';
+      trigger.setAttribute('aria-labelledby', labelEl.id);
+    }
+    wrap.appendChild(trigger);
+
+    var menu = document.createElement('div');
+    menu.className = 'md3-select-menu';
+    menu.setAttribute('role', 'listbox');
+    menu.hidden = true;
+    var host = select.closest('dialog') || document.body;
+    if (host.tagName === 'DIALOG') menu.classList.add('in-dialog');
+    host.appendChild(menu);
+
+    var isOpen = false;
+
+    function currentText() {
+      var opt = select.options[select.selectedIndex];
+      return opt ? opt.textContent.trim() : '';
+    }
+
+    function sync() {
+      trigger.textContent = currentText();
+      trigger.disabled = !!select.disabled;
+      wrap.classList.toggle('disabled', !!select.disabled);
+    }
+
+    function rebuild() {
+      menu.innerHTML = '';
+      Array.prototype.forEach.call(select.options, function (opt) {
+        var item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'md3-select-option';
+        item.setAttribute('role', 'option');
+        item.setAttribute('aria-selected', opt.selected ? 'true' : 'false');
+        item.textContent = opt.textContent.trim();
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          select.value = opt.value;
+          sync();
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          rebuild();
+          close();
+          trigger.focus({ preventScroll: true });
+        });
+        menu.appendChild(item);
+      });
+    }
+
+    function place() {
+      var rect = trigger.getBoundingClientRect();
+      var host = menu.parentElement;
+      var inDialog = host && host.tagName === 'DIALOG';
+      var hostRect = host.getBoundingClientRect();
+      var originX = hostRect.left + (host.clientLeft || 0);
+      var originY = hostRect.top + (host.clientTop || 0);
+      menu.style.width = Math.round(rect.width) + 'px';
+      menu.style.left = Math.round(rect.left - originX + (inDialog ? host.scrollLeft : 0)) + 'px';
+      menu.style.maxHeight = '260px';
+      menu.hidden = false;
+      var natural = menu.scrollHeight;
+      var limitBottom = inDialog ? hostRect.bottom : window.innerHeight;
+      var limitTop = inDialog ? hostRect.top : 0;
+      var below = limitBottom - rect.bottom - 8;
+      var above = rect.top - limitTop - 8;
+      var openUp = below < Math.min(natural, 180) && above > below;
+      var maxH = Math.max(80, Math.min(260, openUp ? above : below));
+      menu.style.maxHeight = maxH + 'px';
+      var height = Math.min(natural, maxH);
+      menu.style.top = Math.round((openUp ? rect.top - originY - height - 4 : rect.bottom - originY + 4) + (inDialog ? host.scrollTop : 0)) + 'px';
+    }
+
+    function close() {
+      if (!isOpen) return;
+      isOpen = false;
+      wrap.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+      if (activeClose === close) activeClose = null;
+    }
+
+    function open() {
+      if (select.disabled) return;
+      if (activeClose) activeClose();
+      isOpen = true;
+      activeClose = close;
+      wrap.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+      rebuild();
+      place();
+      requestAnimationFrame(function () {
+        var cur = menu.querySelector('.md3-select-option[aria-selected="true"]') || menu.firstElementChild;
+        if (cur) cur.focus({ preventScroll: true });
+      });
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (isOpen) close(); else open();
+    });
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (!isOpen) open();
+      } else if (e.key === 'Escape') {
+        close();
+      }
+    });
+    menu.addEventListener('keydown', function (e) {
+      var items = Array.prototype.slice.call(menu.querySelectorAll('.md3-select-option'));
+      var idx = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        var next = e.key === 'ArrowDown' ? Math.min(idx + 1, items.length - 1) : Math.max(idx - 1, 0);
+        if (items[next]) items[next].focus();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+        trigger.focus({ preventScroll: true });
+      } else if (e.key === 'Tab') {
+        close();
+      }
+    });
+
+    document.addEventListener('pointerdown', function (e) {
+      if (isOpen && !wrap.contains(e.target) && !menu.contains(e.target)) close();
+    }, true);
+    window.addEventListener('resize', close);
+    window.addEventListener('scroll', function (e) {
+      if (isOpen && !menu.contains(e.target)) close();
+    }, true);
+
+    if (host.tagName === 'DIALOG') {
+      host.addEventListener('close', close);
+      host.addEventListener('cancel', close);
+    }
+    select.addEventListener('focus', open);
+    select.addEventListener('change', function () {
+      sync();
+      if (isOpen) { rebuild(); place(); }
+    });
+
+    if (typeof MutationObserver === 'function') {
+      new MutationObserver(function () {
+        sync();
+        if (isOpen) { rebuild(); place(); }
+      }).observe(select, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['disabled'] });
+    }
+
+    sync();
+    setTimeout(sync, 120);
+  }
+
+  function init() {
+    TARGET_IDS.forEach(function (id) { enhance(document.getElementById(id)); });
+  }
+
+  var scanTimer = null;
+  function scheduleScan() {
+    if (scanTimer) return;
+    scanTimer = setTimeout(function () { scanTimer = null; init(); }, 0);
+  }
+  if (typeof MutationObserver === 'function' && document.body) {
+    new MutationObserver(scheduleScan).observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+
+})();

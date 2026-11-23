@@ -1813,66 +1813,9 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   transform:none;
   filter:none;
 }
-/* ==== 详情页按钮底色（2026-11-23）：按 MD3 层级区分，不再整片灰底 ==== */
-/* 顶部页签：与详情页其他可点击标签统一为 outlined 按钮 */
-#modal .scroll-btn.action-button{
-  background-color:transparent;
-  border-color:var(--md-sys-color-outline);
-  color:var(--md-sys-color-primary);
-  box-shadow:none;
-}
-@media (hover:hover){
-  #modal .scroll-btn.action-button:hover{
-    background-color:transparent;
-    background-image:var(--md-state-hover-layer);
-    border-color:var(--md-sys-color-primary);
-    color:var(--md-sys-color-primary);
-    box-shadow:var(--v2-shadow-1);
-    transform:none;
-  }
-}
-
-/* 英雄名：与详情页其他可点击标签统一为 outlined 按钮 */
-#modal .hero-title-block .hero-main-name.skill-type-tag{
-  background-color:transparent;
-  border-color:var(--md-sys-color-outline);
-  color:var(--md-sys-color-primary);
-  box-shadow:none;
-}
-@media (hover:hover){
-  #modal .hero-title-block .hero-main-name.skill-type-tag:hover{
-    background-color:transparent;
-    background-image:var(--md-state-hover-layer);
-    border-color:var(--md-sys-color-primary) !important;
-    color:var(--md-sys-color-primary);
-    box-shadow:var(--v2-shadow-1) !important;
-    transform:none;
-  }
-}
-
-/* 职业/家族/来源/技能等小标签：透明底 + outline，去掉浑浊的灰底 */
-#modal .hero-info-block.skill-type-tag,
-#modal .uniform-style .skill-value.skill-type-tag,
-#modal .skill-types-container .skill-type-tag,
-#modal .big-skill-name.skill-type-tag{
-  background-color:transparent;
-  border-color:var(--md-sys-color-outline);
-  color:var(--md-sys-color-primary);
-  box-shadow:none;
-}
-@media (hover:hover){
-  #modal .hero-info-block.skill-type-tag:hover,
-  #modal .uniform-style .skill-value.skill-type-tag:hover,
-  #modal .skill-types-container .skill-type-tag:hover,
-  #modal .big-skill-name.skill-type-tag:hover{
-    background-color:transparent !important;
-    background-image:var(--md-state-hover-layer);
-    border-color:var(--md-sys-color-primary) !important;
-    color:var(--md-sys-color-primary) !important;
-    box-shadow:var(--v2-shadow-1) !important;
-    transform:none !important;
-  }
-}
+/* ==== 详情页按钮底:恢复 MD3 表面填充 ==== */
+/* 顶部页签 / 英雄名 / 信息标签 / 被动与家族标题都回到各自的基础 MD3 填充样式，
+   不再额外覆盖成 transparent；层级仍由 --filter-control-bg 与 primary 色区分。 */
 
 /* ==== 详情页“法力速度优先”：与筛选页同款 MD3 开关 ==== */
 #modal .modal-talent-settings-grid .details-toggle-item{
@@ -2013,25 +1956,7 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   color:var(--md-sys-color-on-surface);
 }
 
-/* 被动技能 / 家族奖励标题：统一为透明底 outline 按钮 */
-#modal-passives-section .skill-header-container .big-skill-name.skill-type-tag,
-#modal-family-bonus-section .skill-header-container .big-skill-name.skill-type-tag{
-  background-color:transparent;
-  border-color:var(--md-sys-color-outline);
-  color:var(--md-sys-color-primary);
-  box-shadow:none;
-}
-@media (hover:hover){
-  #modal-passives-section .skill-header-container .big-skill-name.skill-type-tag:hover,
-  #modal-family-bonus-section .skill-header-container .big-skill-name.skill-type-tag:hover{
-    background-color:transparent;
-    background-image:var(--md-state-hover-layer);
-    border-color:var(--md-sys-color-primary);
-    color:var(--md-sys-color-primary);
-    box-shadow:var(--v2-shadow-1);
-    text-decoration:none;
-  }
-}
+/* 被动技能 / 家族奖励标题沿用上面的基础 MD3 填充，不再覆盖成透明底 */
 
 /* 详情页法力速度优先：文字留在 35px 控件内，与下拉框同高同宽 */
 #modal .modal-talent-settings-grid .details-toggle-item{
@@ -2125,4 +2050,239 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 .md3-select-option[aria-selected="true"]{background-color:var(--md-sys-color-primary-container);color:var(--md-sys-color-on-primary-container);font-weight:600;}
 
 .md3-select-menu.in-dialog{position:absolute;z-index:6200;}
+
+/* ==== MD3 主题选择器（顶部日/夜 + 5 套配色） ==== */
+.theme-picker-container{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+}
+.theme-picker-trigger{
+  position:relative;
+}
+.theme-picker-trigger svg{
+  width:22px;
+  height:22px;
+}
+.theme-picker-trigger .theme-trigger-icon{
+  width:24px;
+  height:24px;
+  object-fit:contain;
+  display:block;
+}
+.theme-picker-menu{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  width:min(320px,calc(100vw - 24px));
+  padding:10px;
+  box-sizing:border-box;
+  border:1px solid var(--md-sys-color-outline-variant);
+  border-radius:18px;
+  background-color:var(--md-sys-color-surface-container);
+  color:var(--md-sys-color-on-surface);
+  box-shadow:0 14px 40px rgba(0,0,0,.24);
+  text-align:start;
+}
+.theme-picker-menu.hidden{
+  display:none;
+}
+.theme-picker-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:2px 4px 9px;
+}
+.theme-picker-header strong{
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.theme-picker-close{
+  width:28px;
+  height:28px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:var(--md-sys-color-on-surface-variant);
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+}
+.theme-picker-close:hover{
+  background-color:var(--md-sys-color-surface-container-high);
+  color:var(--md-sys-color-on-surface);
+}
+.theme-picker-close:focus-visible{
+  outline:2px solid var(--md-sys-color-primary);
+  outline-offset:2px;
+}
+.theme-picker-mode{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4px;
+  padding:3px;
+  border:1px solid var(--md-sys-color-outline-variant);
+  border-radius:12px;
+  background-color:var(--md-sys-color-surface-container-high);
+}
+.theme-picker-mode button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:36px;
+  padding:0 10px;
+  border:0;
+  border-radius:9px;
+  background:transparent;
+  color:var(--md-sys-color-on-surface-variant);
+  font-size:.72rem;
+  font-weight:650;
+  cursor:pointer;
+  transition:background-color .18s ease,color .18s ease,box-shadow .18s ease;
+}
+.theme-picker-mode button svg{
+  width:15px;
+  height:15px;
+}
+.theme-picker-mode button[aria-pressed="true"]{
+  background-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
+  box-shadow:0 2px 7px rgba(0,0,0,.16);
+}
+.theme-picker-mode button:hover{
+  background-color:var(--md-sys-color-surface-container);
+}
+.theme-picker-mode button[aria-pressed="true"]:hover{
+  background-color:var(--md-sys-color-primary);
+}
+.theme-picker-mode button:focus-visible,
+.theme-option:focus-visible{
+  outline:2px solid var(--md-sys-color-primary);
+  outline-offset:2px;
+}
+.theme-picker-list{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  margin-top:8px;
+  max-height:min(58vh,520px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:var(--md-sys-color-outline) transparent;
+}
+.theme-option{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  width:100%;
+  min-height:48px;
+  padding:6px 8px;
+  border:0;
+  border-radius:12px;
+  background:transparent;
+  color:var(--md-sys-color-on-surface);
+  text-align:start;
+  cursor:pointer;
+  transition:background-color .18s ease,color .18s ease;
+}
+.theme-option:hover{
+  background-color:var(--md-sys-color-surface-container-high);
+}
+.theme-option[aria-pressed="true"]{
+  background-color:var(--md-sys-color-primary-container);
+  color:var(--md-sys-color-on-primary-container);
+}
+.theme-option[aria-pressed="true"]:hover{
+  background-color:var(--md-sys-color-primary-container);
+}
+.theme-option-preview{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  flex:0 0 46px;
+  width:46px;
+  height:30px;
+  border:1px solid var(--md-sys-color-outline-variant);
+  border-radius:8px;
+  overflow:hidden;
+}
+.theme-option-half{
+  display:grid;
+  place-items:center;
+}
+.theme-option-half i{
+  display:block;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  box-shadow:0 1px 2px rgba(0,0,0,.18);
+}
+.theme-option-copy{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  gap:2px;
+}
+.theme-option-copy strong{
+  font-size:.76rem;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:-.01em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.theme-option-copy small{
+  font-size:.62rem;
+  line-height:1.2;
+  color:var(--md-sys-color-on-surface-variant);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.theme-option[aria-pressed="true"] .theme-option-copy small{
+  color:var(--md-sys-color-on-primary-container);
+  opacity:.72;
+}
+.theme-option-check{
+  display:grid;
+  place-items:center;
+  flex:0 0 20px;
+  width:20px;
+  height:20px;
+  margin-inline-start:auto;
+  border:1px solid var(--md-sys-color-outline-variant);
+  border-radius:50%;
+  color:transparent;
+}
+.theme-option-check svg{
+  width:12px;
+  height:12px;
+}
+.theme-option[aria-pressed="true"] .theme-option-check{
+  border-color:var(--md-sys-color-primary);
+  background-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
+}
+
+@media (max-width:600px){
+  .theme-picker-menu{
+    width:min(304px,calc(100vw - 20px));
+    padding:9px;
+    border-radius:16px;
+  }
+  .theme-option{
+    min-height:46px;
+    padding:5px 7px;
+  }
+}
+
 

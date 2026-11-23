@@ -880,7 +880,7 @@ function addEventListeners() {
     } = uiElements;
 
     // --- 主界面UI事件 ---
-    themeToggleButton.addEventListener('click', toggleTheme);
+    // 主题按钮由 ui.js::setupThemePicker() 直接绑定（弹层 + 日/夜 + 5 套配色）。
     langSelectBtn.addEventListener('click', (e) => { e.stopPropagation(); langOptions.classList.toggle('hidden'); });
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.lang-selector-container')) {

@@ -231,7 +231,7 @@ function applyLanguage(lang) {
 
     // 5. 处理特定 ID 的 Title (工具栏按钮等)
     const titles = {
-        'theme-toggle-btn': 'toggleThemeTitle',
+        'theme-toggle-btn': 'themePickerTitle',
         'lang-select-btn': 'toggleLanguageTitle',
         'show-wanted-mission-btn': 'showWantedMissionTitle',
         'open-filters-btn': 'openFiltersTitle',
@@ -296,6 +296,9 @@ function applyLanguage(lang) {
     _setAttr('og-locale', 'content', OG_LOCALE[lang] || lang);
     _setAttr('tw-title', 'content', seoTitle);
     _setAttr('tw-description', 'content', seoDesc);
+
+    // 主题弹层里的 5 个名称跟随界面语言（cn/tc 用中文名，其余用英文名）。
+    if (typeof renderThemePickerOptions === 'function') renderThemePickerOptions();
 }
 
 /**
@@ -305,6 +308,7 @@ function applyLanguage(lang) {
 function applyTheme(theme) {
     if (theme === 'dark') document.documentElement.classList.add('dark-theme');
     else document.documentElement.classList.remove('dark-theme');
+    updateThemePickerUI();
 }
 
 /**
@@ -316,6 +320,240 @@ function toggleTheme() {
     applyTheme(newTheme);
     setCookie('theme', newTheme, 365);
 }
+
+/* ── MD3 配色主题（配置驱动） ─────────────────────────────────────────
+   theme.css 中的 `html.theme-<id>` 负责实际色值；这里只管选择、持久化
+   和主题弹层 UI。固定语义色（辉光/词条）不随这里切换。 */
+const MD3_THEME_DATA = window.HEROPLAN_MD3_THEMES || null;
+const MD3_THEME_NAME_TC = {
+    'classic-blue': '經典',
+    'holy': '神聖',
+    'dark': '暗黑',
+    'fire': '烈火',
+    'nature': '自然',
+    'ice': '冰雪',
+    'aurora-indigo': '極光靛藍',
+    'ocean-teal': '深海青藍',
+    'soft-violet': '柔和紫羅蘭',
+    'rose-quartz': '玫瑰石英',
+    'graphite-blue': '石墨藍灰'
+};
+
+function currentMdThemeId() {
+    const themes = MD3_THEME_DATA && MD3_THEME_DATA.themes;
+    const fallback = (MD3_THEME_DATA && MD3_THEME_DATA.defaultTheme) || 'classic-blue';
+    const current = document.documentElement.getAttribute('data-md-theme');
+    return (themes && Object.prototype.hasOwnProperty.call(themes, current)) ? current : fallback;
+}
+
+function currentUiLang() {
+    return (typeof state !== 'undefined' && state.currentLang) ? state.currentLang : 'cn';
+}
+
+function mdThemeDisplayName(themeId, theme) {
+    const lang = currentUiLang();
+    const localized = theme.nameI18n && theme.nameI18n[lang];
+    if (localized) return localized;
+    if (lang === 'cn') return theme.nameZh || theme.name || themeId;
+    if (lang === 'tc') return MD3_THEME_NAME_TC[themeId] || theme.nameZh || theme.name || themeId;
+    return theme.name || themeId;
+}
+
+function mdThemeSecondaryName(themeId, theme) {
+    const lang = currentUiLang();
+    if (lang === 'cn' || lang === 'tc') return theme.name || 'Material 3';
+    return 'Material 3';
+}
+
+function renderThemePickerOptions() {
+    const list = document.getElementById('theme-picker-list');
+    const themes = MD3_THEME_DATA && MD3_THEME_DATA.themes;
+    if (!list || !themes) return;
+
+    const current = currentMdThemeId();
+    list.innerHTML = '';
+    Object.entries(themes).forEach(([themeId, theme]) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'theme-option';
+        button.dataset.themeId = themeId;
+        button.setAttribute('aria-pressed', String(themeId === current));
+
+        const preview = document.createElement('span');
+        preview.className = 'theme-option-preview';
+        preview.setAttribute('aria-hidden', 'true');
+        preview.innerHTML =
+            '<span class="theme-option-half" style="background:' + theme.light.background + '">' +
+                '<i style="background:' + theme.light.primary + '"></i>' +
+            '</span>' +
+            '<span class="theme-option-half" style="background:' + theme.dark.background + '">' +
+                '<i style="background:' + theme.dark.primary + '"></i>' +
+            '</span>';
+
+        const copy = document.createElement('span');
+        copy.className = 'theme-option-copy';
+        const strong = document.createElement('strong');
+        strong.textContent = mdThemeDisplayName(themeId, theme);
+        const small = document.createElement('small');
+        small.textContent = mdThemeSecondaryName(themeId, theme);
+        copy.appendChild(strong);
+        copy.appendChild(small);
+
+        const check = document.createElement('span');
+        check.className = 'theme-option-check';
+        check.setAttribute('aria-hidden', 'true');
+        check.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>';
+
+        button.appendChild(preview);
+        button.appendChild(copy);
+        button.appendChild(check);
+
+        button.addEventListener('click', () => applyColorTheme(themeId));
+        list.appendChild(button);
+    });
+}
+
+function updateThemePickerUI() {
+    const menu = document.getElementById('theme-picker-menu');
+    if (!menu) return;
+    const isDark = document.documentElement.classList.contains('dark-theme');
+    menu.querySelectorAll('[data-theme-mode]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.themeMode === (isDark ? 'dark' : 'light')));
+    });
+    const current = currentMdThemeId();
+    menu.querySelectorAll('.theme-option').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.themeId === current));
+    });
+}
+
+/**
+ * 把固定定位的主题弹层夹在视口内：
+ * 优先与按钮右缘对齐，空间不够就向左收；下方不够高时翻到按钮上方。
+ */
+function positionThemePickerMenu() {
+    const menu = document.getElementById('theme-picker-menu');
+    const button = document.getElementById('theme-toggle-btn');
+    if (!menu || !button || menu.classList.contains('hidden')) return;
+    const margin = 8;
+    const width = Math.min(320, window.innerWidth - margin * 2);
+    menu.style.width = width + 'px';
+    const rect = button.getBoundingClientRect();
+    const menuHeight = menu.offsetHeight;
+    let left = document.documentElement.dir === 'rtl' ? rect.left : rect.right - width;
+    const maxLeft = window.innerWidth - width - margin;
+    if (left < margin) left = Math.min(Math.max(rect.left, margin), maxLeft);
+    left = Math.max(margin, Math.min(left, maxLeft));
+    let top = rect.bottom + 10;
+    if (top + menuHeight > window.innerHeight - margin) {
+        top = Math.max(margin, rect.top - menuHeight - 10);
+    }
+    menu.style.left = left + 'px';
+    menu.style.top = top + 'px';
+}
+
+function applyColorTheme(themeId, persist = true) {
+    const themes = MD3_THEME_DATA && MD3_THEME_DATA.themes;
+    if (!themes) return;
+    const fallback = MD3_THEME_DATA.defaultTheme || 'aurora-indigo';
+    const next = Object.prototype.hasOwnProperty.call(themes, themeId) ? themeId : fallback;
+
+    Object.keys(themes).forEach(id => {
+        document.documentElement.classList.toggle('theme-' + id, id === next);
+    });
+    document.documentElement.setAttribute('data-md-theme', next);
+    if (persist && typeof setCookie === 'function') setCookie('md_theme', next, 365);
+    updateThemePickerUI();
+}
+
+function setThemeMode(mode, persist = true) {
+    const next = mode === 'dark' ? 'dark' : 'light';
+    applyTheme(next);
+    if (persist && typeof setCookie === 'function') setCookie('theme', next, 365);
+}
+
+function toggleThemePicker(force) {
+    const menu = document.getElementById('theme-picker-menu');
+    const button = document.getElementById('theme-toggle-btn');
+    if (!menu || !button) return;
+    const willOpen = typeof force === 'boolean' ? force : menu.classList.contains('hidden');
+    if (willOpen) {
+        renderThemePickerOptions();
+        updateThemePickerUI();
+        menu.classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+        positionThemePickerMenu();
+    } else {
+        menu.classList.add('hidden');
+        button.setAttribute('aria-expanded', 'false');
+    }
+}
+
+function closeThemePicker() {
+    toggleThemePicker(false);
+}
+
+function setupThemePicker() {
+    const container = document.querySelector('.theme-picker-container');
+    const button = document.getElementById('theme-toggle-btn');
+    const menu = document.getElementById('theme-picker-menu');
+    if (!container || !button || !menu) return;
+
+    // Firefox: header-buttons 上的 translateY 会让 position:fixed 的弹层相对它定位。
+    // 把弹层挂到 body，保证所有浏览器都按视口定位。
+    if (menu.parentElement !== document.body) document.body.appendChild(menu);
+
+    button.addEventListener('click', event => {
+        event.stopPropagation();
+        toggleThemePicker();
+    });
+
+    const closeButton = document.getElementById('theme-picker-close');
+    if (closeButton) {
+        closeButton.addEventListener('click', event => {
+            event.stopPropagation();
+            closeThemePicker();
+            button.focus();
+        });
+    }
+
+    menu.addEventListener('click', event => {
+        event.stopPropagation();
+        const modeButton = event.target.closest('[data-theme-mode]');
+        if (modeButton) {
+            setThemeMode(modeButton.dataset.themeMode);
+            return;
+        }
+        const themeButton = event.target.closest('.theme-option');
+        if (themeButton) {
+            applyColorTheme(themeButton.dataset.themeId);
+        }
+    });
+
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.theme-picker-container')) closeThemePicker();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !menu.classList.contains('hidden')) {
+            closeThemePicker();
+            button.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (!menu.classList.contains('hidden')) positionThemePickerMenu();
+    });
+    window.addEventListener('scroll', () => {
+        if (!menu.classList.contains('hidden')) closeThemePicker();
+    }, { passive: true });
+
+    // 首屏快照如果已经有早期脚本写入的 class，这里补齐所有主题 class 并同步 UI。
+    applyColorTheme(currentMdThemeId(), false);
+    renderThemePickerOptions();
+    updateThemePickerUI();
+}
+
+setupThemePicker();
 
 /**
  * 同步 URL 到当前语言的路径版 `/<码>/`（canonical 自指 / hreflang / 刷新都依赖它）。

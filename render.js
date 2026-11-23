@@ -285,7 +285,7 @@ async function renderTable(heroes) {
         if (key === 'fav') {
             if (state.teamSimulatorActive || state.lotterySimulatorActive) return `<th class="col-fav"></th>`; // 模拟器模式下为空
             const favHeaderClass = shouldPredictFavoriteAll ? 'favorited' : '';
-            headerText = shouldPredictFavoriteAll ? '★' : '☆';
+            headerText = '⭐';
             return `<th class="col-fav favorite-all-header ${favHeaderClass}" title="${langDict.favHeaderTitle}">${headerText}</th>`;
         }
         // 移动端稀有度列窄、列名又长 ⇒ 用 star.webp 代替文字（CSS 断点切换，桌面仍是文字）
@@ -316,7 +316,7 @@ async function renderTable(heroes) {
                 const icons = { power: '💪', attack: '⚔️', defense: '🛡️', health: '❤️' };
                 content = `${icons[key]} ${displayStats[key] || 0}`;
             } else if (key === 'rarity') {
-                content = `${hero[key] || ''}⭐`;
+                content = `${hero[key] || ''}<img loading="lazy" src="imgs/other/star.webp" decoding="async" class="rarity-star-icon" alt="⭐">`;
             } else if (key === 'types') {
                 // 技能标签列：渲染成图标
                 const skillTags = getSkillTagsForHero(hero);

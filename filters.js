@@ -570,10 +570,12 @@ function openMultiSelectModal(filterType, title) {
             displayText = langDict[optionValue] || optionValue;
         }
 
-        const starSuffix = filterType === 'rarity' ? '⭐' : '';
+        const starSuffix = filterType === 'rarity'
+            ? '<img loading="lazy" src="imgs/other/star.webp" decoding="async" class="filter-rarity-star-icon" alt="⭐">'
+            : '';
 
         // data-value 始终是简体中文，而 <span> 中显示的是翻译后的文本
-        return `<div class="multi-select-option ${isSelected ? 'selected' : ''}" data-value="${optionValue}">${iconHTML}<span>${displayText}${starSuffix}</span></div>`;
+        return `<div class="multi-select-option ${isSelected ? 'selected' : ''} ${filterType === 'rarity' ? 'rarity-filter-option' : ''}" data-value="${optionValue}">${iconHTML}<span>${displayText}${starSuffix}</span></div>`;
 
     }).join('');
 

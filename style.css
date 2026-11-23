@@ -2264,6 +2264,26 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   color:var(--md-sys-color-on-primary);
 }
 
+/* 稀有度星标，与移动端表头共用 star.webp */
+.manual-table td.col-rarity .rarity-star-icon{
+  display:inline-block;
+  width:14px;
+  height:14px;
+  margin-left:2px;
+  vertical-align:-2px;
+}
+.multi-select-option .filter-rarity-star-icon{
+  display:inline-block;
+  width:1.1rem;
+  height:1.1rem;
+  margin-left:2px;
+  vertical-align:-2px;
+}
+.multi-select-option.rarity-filter-option span{
+  font-size:1.1rem;
+  font-weight:600;
+}
+
 @media (max-width:600px){
   .theme-picker-menu{
     width:min(304px,calc(100vw - 20px));

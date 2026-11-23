@@ -5,8 +5,6 @@ window.AV = {
   "data/characters_balanced.json": "8b10bfe7",
   "data/costume_bonuses.json": "60e532af",
   "data/hero_order.json": "2286e658",
-  "data/heroes_dynamic.json": "e8b6f6b8",
-  "data/heroes_dynamic_balanced.json": "e110789c",
   "data/heroes_skill_types.json": "d85657ac",
   "data/heroes_skills_ar.json": "ba3e26fd",
   "data/heroes_skills_balanced_ar.json": "947f876e",
@@ -372,4 +370,6 @@ window.AV = {
   "langs_json/i18n_tc.json": "5f158b6b",
   "langs_json/i18n_tr.json": "81c220b1",
   "lottery_official.json": "a13c11d9",
+  "data/heroes_dynamic.json": "2c19d34e",
+  "data/heroes_dynamic_balanced.json": "05b780c4",
 };

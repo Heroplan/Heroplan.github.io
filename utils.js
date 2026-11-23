@@ -676,6 +676,28 @@ function applyDynSpec(attack, num, den, turns) {
     return Math.trunc((a - (a % b)) / b) * (turns || 1);
 }
 
+/**
+ * 复合动态伤害：`terms` = `[[分子, 分母, 回合, 缩放分子, 缩放分母, 重复次数], …]`。
+ * 每项 = `floor(floor(攻击×分子/(1000×分母))×缩放分子/缩放分母)×回合×重复次数`，再求和。
+ * 用于单系数表达不了的官方口径：共振/荒野的二次缩放、上限=基础+每段×段数、复合 DoT 上限
+ * （两次取整合并成一次必然在某些攻击值上差 1）。全程整数取模，避免浮点临界差 1。
+ */
+function applyDynTerms(attack, terms) {
+    let total = 0;
+    (terms || []).forEach(t => {
+        const n = t[0] || 0, d = t[1] || 1, tu = t[2] || 1, sn = t[3] || 1, sd = t[4] || 1, k = t[5] || 1;
+        if (!n) return;
+        const a = (attack || 0) * n, b = 1000 * d;
+        let per = Math.trunc((a - (a % b)) / b);
+        if (sn !== 1 || sd !== 1) {
+            const x = per * sn, y = sd;
+            per = Math.trunc((x - (x % y)) / y);
+        }
+        total += per * tu * k;
+    });
+    return total;
+}
+
 async function loadData(lang) {
     // ⚠ 名字与技能名一律按**当前界面语言**。
     try {

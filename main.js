@@ -95,9 +95,11 @@ function parseAndStoreDoTInfo(hero) {
                     refAttack: refAttack,          // 导出这些数值时用的攻击力（该档的 L80 × 服装奖励最多套）
                     coefficient: value / refAttack,
                     // 官方重算参数：值 = floor(攻击×分子/(1000×分母))×回合（缺档 ⇒ null ⇒ 退回比例式）
-                    num: spec ? spec[0] : null,
-                    den: spec ? spec[1] : null,
-                    turns: spec ? spec[2] : null
+                    // 复合口径（共振/荒野二次缩放、上限=基础+每段×段数）是 `{"t": [[分子,分母,回合,缩放分子,缩放分母,次数], …]}`
+                    num: (spec && !Array.isArray(spec)) ? null : (spec ? spec[0] : null),
+                    den: (spec && !Array.isArray(spec)) ? null : (spec ? spec[1] : null),
+                    turns: (spec && !Array.isArray(spec)) ? null : (spec ? spec[2] : null),
+                    terms: (spec && !Array.isArray(spec) && Array.isArray(spec.t)) ? spec.t : null
                 });
             }
         });

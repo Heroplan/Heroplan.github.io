@@ -673,11 +673,14 @@ function updateDynamicDoTDisplay(hero, currentAttack) {
             // 缺参数 ⇒ 退回 `floor(攻击 × v0 / A0)`：截断压在总量上，误差 0~(回合−1)，且依赖 `refAttack` 锚点。
             const v0 = dotInfo.originalDamage, A0 = dotInfo.refAttack;
             const num = dotInfo.num, den = dotInfo.den, t = dotInfo.turns;
-            target.textContent = (num && den && t)
-                ? applyDynSpec(currentAttack, num, den, t)
-                : (A0 && v0)
-                    ? Math.floor(currentAttack * v0 / A0)
-                    : Math.round(dotInfo.coefficient * currentAttack);
+            const terms = dotInfo.terms;
+            target.textContent = terms
+                ? applyDynTerms(currentAttack, terms)
+                : (num && den && t)
+                    ? applyDynSpec(currentAttack, num, den, t)
+                    : (A0 && v0)
+                        ? Math.floor(currentAttack * v0 / A0)
+                        : Math.round(dotInfo.coefficient * currentAttack);
         });
     });
 }

@@ -659,20 +659,27 @@
       if (buckets[bi].weight >= 1) buckets[bi].entries.push({ id: hero.id, priority });
     };
     if (pt === "PickupSummon") {
-      const heroes = getSafeDonationCurrentHeroes(this.idx, effectiveTime, null, 0);
+      // 官方 PickupLotteryProductDefinition.FillBuckets（0x2A7F210）传给 GetSafeDonationCurrentHeroes
+      // 的谓词（DisplayClass14_0.<FillBuckets>b__0 @0x2A7FA54）：
+      //   Rarity >= 3 && (IsSeason1ParentCharacter || featured.Contains(id) || additional.Contains(id))
+      // IsSeason1ParentCharacter（0x2BB8DEC，vtable slot20）＝ `!IsCostume && IsFromMapSeason(...,Season1)`
+      // ＝ 非服装且 Origin=="Season1"；注意谓词里没有 IsSeason1Costume（0x2BB8E24），
+      // 所以 S1 服装一律不入选：GetSafeDonationCurrentHeroes 的「换最新服装」分支同样要求
+      // predicate(costume)==true，服装会被挡掉，返回的是 S1 本体英雄。
       const extraPoolId = entry && entry.extraHeroesPoolId;
       const extra = this.resolveExtraHeroPool(extraPoolId);
       const advertised = entry && entry.featuredHeroes && entry.featuredHeroes[0];
+      const inSummonPool = (h) => (h.rarity || 0) >= 3
+        && ((!h.parentHeroId && safeEquals(h.origin, "Season1"))
+          || expectedFeatured.indexOf(h.id) >= 0
+          || extra.indexOf(h.id) >= 0);
+      const heroes = getSafeDonationCurrentHeroes(this.idx, effectiveTime, inSummonPool, 0);
       for (const hero of heroes) {
         if (expectedFeatured.indexOf(hero.id) >= 0) {
           add(hero, featuredIdx >= 0 ? featuredIdx : buckets.length - 1, advertised === hero.id ? 3 : 2);
         } else {
           add(hero, hero.rarity - 3, 1);
         }
-      }
-      for (const id of extra) {
-        const h = this.idx.get(id);
-        if (h && this.idx.canBeReceived(h, effectiveTime, 0)) add(h, h.rarity - 3, 0);
       }
     } else if (pt === "ShadowSummon") {
       const heroes = getSafeDonationCurrentHeroes(this.idx, effectiveTime, null, 0);

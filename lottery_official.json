@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-21 03:04:48",
+    "generatedAt": "2026-11-23 06:45:27",
     "poolCount": 54
   },
   "pools": {
@@ -1585,16 +1585,6 @@
         "lotteryEntries": [
           {
             "productId": "lottery_hotm_event_default",
-            "id": "lottery_hotm_event_2026_10_26",
-            "startDate": "2026-10-26 07:00:00",
-            "endDate": "2026-10-30 07:00:00",
-            "featuredHeroes": [
-              "champions_marjatta",
-              "fire_god_anzogh_costume_expeditioner"
-            ]
-          },
-          {
-            "productId": "lottery_hotm_event_default",
             "id": "lottery_hotm_event_2026_11_23",
             "startDate": "2026-11-22 07:00:00",
             "endDate": "2026-11-26 07:00:00",
@@ -1835,20 +1825,6 @@
         "productType": "CovenantSummon",
         "enabled": true,
         "lotteryEntries": [
-          {
-            "productId": "lottery_covenant_default",
-            "id": "lottery_covenant_2026_11_07",
-            "startDate": "2026-11-07 07:00:00",
-            "endDate": "2026-11-11 07:00:00",
-            "featuredHeroes": [
-              "construct_nautica_costume_astronomer",
-              "construct_ferrus_costume_shipyard",
-              "construct_nepant",
-              "scoundrel_clim",
-              "beauty_beast_beauty",
-              "vegetable_garlacteus"
-            ]
-          },
           {
             "productId": "lottery_covenant_default",
             "id": "lottery_covenant_2026_11_21",
@@ -2475,17 +2451,6 @@
         "lotteryEntries": [
           {
             "productId": "lottery_season_underwild",
-            "id": "lottery_season_underwild_2026_12_3",
-            "startDate": "2026-10-28 07:00:00",
-            "endDate": "2026-11-01 07:00:00",
-            "featuredHeroes": [
-              "s4_captain_nemo_costume_machinist",
-              "s4_lughaidh_costume_deathless",
-              "s4_aouda_costume_lotus"
-            ]
-          },
-          {
-            "productId": "lottery_season_underwild",
             "id": "lottery_season_underwild_2026_12_31",
             "startDate": "2026-11-21 07:00:00",
             "endDate": "2026-11-25 07:00:00",
@@ -2873,28 +2838,6 @@
     "pickupLottery": {
       "enabled": true,
       "lotteryEntries": [
-        {
-          "productId": "lottery_pickup_default",
-          "id": "pickup255",
-          "startDate": "2026-11-20 07:00:00",
-          "endDate": "2026-11-21 07:00:00",
-          "featuredHeroes": [
-            "beowulf_ecgtheow",
-            "tales2_thrivaldi"
-          ],
-          "extraHeroesPoolId": "default"
-        },
-        {
-          "productId": "lottery_pickup_default",
-          "id": "pickup256",
-          "startDate": "2026-11-21 07:00:00",
-          "endDate": "2026-11-22 07:00:00",
-          "featuredHeroes": [
-            "tales1_domiventus_costume_supreme",
-            "astral_dwarf_sedille"
-          ],
-          "extraHeroesPoolId": "default"
-        },
         {
           "productId": "lottery_pickup_default",
           "id": "pickup257",

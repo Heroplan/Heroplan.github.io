@@ -2415,7 +2415,7 @@ function renderDetailsInModal(hero, context = {}) {
                     ${specialSkillIconHTML}
                     <div class="skill-name-speed-block">
                         <p class="uniform-style">${langDict.modalSkillName} <span class="skill-value">${hero.skill && hero.skill !== 'nan' ? hero.skill : langDict.none}</span></p>
-                        <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speed}">${hero.speed || langDict.none}</span></p>
+                        <p class="uniform-style">${langDict.modalSpeed} <span class="skill-value skill-type-tag" data-filter-type="speed" data-filter-value="${hero.speedId || hero.speed}">${hero.speed || langDict.none}</span></p>
                     </div>
                 </div>
                 ${skillTypesSection}
@@ -2951,9 +2951,24 @@ function renderDetailsInModal(hero, context = {}) {
         const target = event.target.closest('.skill-type-tag');
         if (!target) return;
 
-        const filterType = target.dataset.filterType;
+        let filterType = target.dataset.filterType;
         let filterValue = target.dataset.filterValue;
         if (!filterType || filterValue === undefined) return;
+
+        // 技能类别标签改走**基础筛选**：按标签所属分类填对应的 skillTag_*，
+        // 不再写入高级筛选的 `[类别]`（`[]` 精确语法已废弃）。
+        if (filterType === 'types') {
+            const category = state.skillTagToCategoryMap && state.skillTagToCategoryMap[filterValue];
+            const categoryToFilter = {
+                '基础技能': 'skillTag_base',
+                '特殊效果': 'skillTag_special',
+                '增益效果': 'skillTag_buff',
+                '负面效果': 'skillTag_debuff'
+            };
+            const baseFilter = categoryToFilter[category];
+            if (!baseFilter) return;
+            filterType = baseFilter;
+        }
 
         // 禁用“家族奖励”快速搜索功能
         if (filterType === 'familyBonus') {
@@ -2979,10 +2994,6 @@ function renderDetailsInModal(hero, context = {}) {
             // i 是不区分大小写标志。
             const elementKeywordsRegex = /\b(elementred|elementpurple|elementgreen|elementyellow|elementblue|elementorange)\b/gi;
             switch (filterType) {
-                case 'types':
-                    // 如果点击的是技能“类别”，则使用方括号[]进行完全匹配
-                    uiElements.filterInputs.types.value = `[${filterValue}]`;
-                    break;
                 case 'effects':
                 case 'passives':
                     // 如果点击的是技能或被动“描述”，则使用圆括号()进行单句匹配

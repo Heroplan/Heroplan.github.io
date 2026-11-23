@@ -1783,6 +1783,14 @@ function sortDonationListByLanguage(originalList) {
  * 该函数根据列表内容长度智能调整滚动速度和名单总长度，以实现无缝、自然的滚动效果。
  */
 let _donationListLayoutStale = false;
+const DONATION_ITEM_COLORS = [
+    'hsl(0, 100%, 50%)',
+    'hsl(30, 100%, 50%)',
+    'hsl(120, 100%, 50%)',
+    'hsl(210, 100%, 50%)',
+    'hsl(270, 100%, 50%)',
+    'hsl(300, 100%, 50%)'
+];
 function renderDonationList(sortedDonationList) {
     const wrapper = document.querySelector('.donation-list-wrapper');
     const container = document.getElementById('donation-list-box');
@@ -1821,13 +1829,20 @@ function renderDonationList(sortedDonationList) {
     const repeatTimes = Math.max(1, Math.ceil(wrapperWidth / Math.max(originalListWidth, 1)));
     const halfItems = [];
     for (let i = 0; i < repeatTimes; i++) halfItems.push(...sortedDonationList);
+    // 颜色按 DOM 顺序每 6 项循环一次。让半份长度成为 6 的整数倍，
+    // 滚到 -50% 接回第二份开头时颜色相位正好回到红色，接缝不会跳色；
+    // 同一个名字在重复的不同位置也可以拿到不同颜色。
+    while (halfItems.length % DONATION_ITEM_COLORS.length !== 0) {
+        halfItems.push(...sortedDonationList);
+    }
     const donorsToRender = [...halfItems, ...halfItems];
 
     container.innerHTML = '';
-    donorsToRender.forEach(donorName => {
+    donorsToRender.forEach((donorName, index) => {
         const donationItem = document.createElement('span');
         donationItem.classList.add('donation-item');
         donationItem.textContent = donorName;
+        donationItem.style.color = DONATION_ITEM_COLORS[index % DONATION_ITEM_COLORS.length];
         container.appendChild(donationItem);
     });
 

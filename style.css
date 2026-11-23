@@ -155,26 +155,15 @@ body{
   border-radius:var(--v2-r-md);
   box-shadow:inset 0 0 0 1px var(--md-sys-color-outline-variant), var(--v2-shadow-1);
 }
-.donation-list-title{color:var(--md-sys-color-on-surface)}
+.donation-list-container{background-color:var(--md-sys-color-surface-variant)}
+.donation-list-title{color:var(--md-sys-color-on-surface-variant)}
 .donation-item{
   box-shadow:none;
   background:transparent;
   transition:transform var(--v2-t-fast) var(--v2-ease);
 }
 .donation-item:hover{transform:translateY(-1px)}
-/* 捐赠名单：把 100% 饱和的纯色换成可读的哑光色板（亮色/暗色各自一套） */
-.donation-item:nth-child(6n+1){color:#B23A3A}
-.donation-item:nth-child(6n+2){color:#A8631F}
-.donation-item:nth-child(6n+3){color:#2E7D46}
-.donation-item:nth-child(6n+4){color:#2A5FA8}
-.donation-item:nth-child(6n+5){color:#7048B6}
-.donation-item:nth-child(6n+6){color:#8A3E86}
-html.dark-theme .donation-item:nth-child(6n+1){color:#FFA3A3}
-html.dark-theme .donation-item:nth-child(6n+2){color:#F3B87A}
-html.dark-theme .donation-item:nth-child(6n+3){color:#8FE3A8}
-html.dark-theme .donation-item:nth-child(6n+4){color:#9CC4FF}
-html.dark-theme .donation-item:nth-child(6n+5){color:#C9AEFF}
-html.dark-theme .donation-item:nth-child(6n+6){color:#F2A9E0}
+/* 赞助名单恢复 8dc9496f 的纯色配色：不再用低饱和哑光色板覆盖 */
 
 /* —— 筛选卡 / 结果区 —— */
 .filter-card{
@@ -1084,6 +1073,8 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   border-radius:8px;
   font-size:.8rem;
   font-weight:600;
+  background-color:var(--md-sys-color-surface-variant);
+  border-color:var(--md-sys-color-outline-variant);
 }
 @media (hover:hover){
   .scroll-btn.action-button:hover{
@@ -1130,7 +1121,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   min-width:40px;
   flex:0 0 40px;
   height:40px;
-  background-color:var(--filter-control-bg);
+  background-color:var(--md-sys-color-surface-variant);
   border:1px solid var(--md-sys-color-outline-variant);
   border-radius:50%;
   box-shadow:0 1px 1px rgba(16,24,40,.03);
@@ -1479,7 +1470,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   padding:5px 12px;
   border:1px solid var(--md-sys-color-outline-variant);
   border-radius:10px;
-  background-color:var(--filter-control-bg);
+  background-color:var(--md-sys-color-surface-variant);
   color:var(--md-sys-color-primary);
   font-family:inherit;
   font-size:1.1rem;
@@ -1537,7 +1528,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   padding:6px 18px;
   border:1px solid var(--md-sys-color-outline-variant);
   border-radius:14px;
-  background-color:var(--filter-control-bg);
+  background-color:var(--md-sys-color-surface-variant);
   color:var(--md-sys-color-primary);
   font-family:inherit;
   font-size:1.8rem;
@@ -1556,7 +1547,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
 }
 @media (hover:hover){
   #modal .hero-title-block .hero-main-name.skill-type-tag:hover{
-    background-color:var(--filter-control-bg);
+    background-color:var(--md-sys-color-surface-variant);
     background-image:var(--md-state-hover-layer);
     border-color:var(--md-sys-color-primary) !important;
     color:var(--md-sys-color-primary);
@@ -1577,7 +1568,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   padding:4px 10px;
   border:1px solid var(--md-sys-color-outline-variant);
   border-radius:10px;
-  background-color:var(--filter-control-bg);
+  background-color:var(--md-sys-color-surface-variant);
   color:var(--md-sys-color-primary);
   font-weight:600;
   white-space:normal;
@@ -1585,7 +1576,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
 }
 @media (hover:hover){
   #modal .hero-info-block.skill-type-tag:hover{
-    background-color:var(--filter-control-bg) !important;
+    background-color:var(--md-sys-color-surface-variant) !important;
     background-image:var(--md-state-hover-layer);
     border-color:var(--md-sys-color-primary) !important;
     color:var(--md-sys-color-primary) !important;
@@ -1606,7 +1597,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   padding:2px 10px;
   border:1px solid var(--md-sys-color-outline-variant);
   border-radius:8px;
-  background-color:var(--filter-control-bg);
+  background-color:var(--md-sys-color-surface-variant);
   color:var(--md-sys-color-primary);
   font-weight:600;
   line-height:1.3;
@@ -1614,7 +1605,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
 }
 @media (hover:hover){
   #modal .uniform-style .skill-value.skill-type-tag:hover{
-    background-color:var(--filter-control-bg) !important;
+    background-color:var(--md-sys-color-surface-variant) !important;
     background-image:var(--md-state-hover-layer);
     border-color:var(--md-sys-color-primary);
     color:var(--md-sys-color-primary) !important;
@@ -1634,7 +1625,7 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
 /* 技能标签区的 chip 与信息标签同口径：8% state layer，不整块填主色 */
 @media (hover:hover){
   #modal .skill-types-container .skill-type-tag:hover{
-    background-color:var(--filter-control-bg) !important;
+    background-color:var(--md-sys-color-surface-variant) !important;
     background-image:var(--md-state-hover-layer);
     border-color:var(--md-sys-color-primary) !important;
     color:var(--md-sys-color-primary) !important;

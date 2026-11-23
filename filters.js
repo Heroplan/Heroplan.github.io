@@ -662,7 +662,7 @@ function openMultiSelectModal(filterType, title) {
 }
 
 /**
- * 解析复杂的文本查询，支持 AND, OR, NOT, (), []。
+ * 解析复杂的文本查询，支持 AND, OR, NOT, ()。
  * @param {string|string[]} data - 要搜索的文本或文本数组。
  * @param {string} query - 用户的查询字符串。
  * @returns {boolean} 是否匹配。
@@ -678,20 +678,7 @@ function matchesComplexQuery(data, query) {
         expr = expr.trim();
         if (!expr) return true;
 
-        // 优先级 1：精确匹配。最先处理，防止内容被后续逻辑错误解析。
-        if (expr.startsWith('![')) {
-            if (expr.endsWith(']')) {
-                // 处理 `![完整字符串]`
-                return text.trim() !== expr.substring(2, expr.length - 1).trim();
-            }
-        } else if (expr.startsWith('[')) {
-            if (expr.endsWith(']')) {
-                // 处理 `[完整字符串]`
-                return text.trim() === expr.substring(1, expr.length - 1).trim();
-            }
-        }
-
-        // 优先级 2：处理分组圆括号 `()`
+        // 优先级 1：处理分组圆括号 `()`
         if (expr.startsWith('(') && expr.endsWith(')')) {
             let balance = 0,
                 validOuter = true;
@@ -706,7 +693,7 @@ function matchesComplexQuery(data, query) {
             if (validOuter && balance === 0) return evaluate(expr.substring(1, expr.length - 1), text);
         }
 
-        // 优先级 3：处理 OR `|`
+        // 优先级 2：处理 OR `|`
         let balance = 0;
         for (let i = 0; i < expr.length; i++) {
             if (expr[i] === '(') balance++;
@@ -716,7 +703,7 @@ function matchesComplexQuery(data, query) {
             }
         }
 
-        // 优先级 4：处理 AND (空格)
+        // 优先级 3：处理 AND (空格)
         const andTerms = [];
         let currentTerm = '';
         balance = 0;
@@ -736,17 +723,16 @@ function matchesComplexQuery(data, query) {
         if (currentTerm) andTerms.push(currentTerm);
         if (andTerms.length > 1) return andTerms.every(term => evaluate(term, text));
 
-        // 优先级 5：处理普通 NOT `!` 及默认的包含匹配
+        // 优先级 4：处理普通 NOT `!` 及默认的包含匹配
         if (expr.startsWith('!')) {
             const term = expr.substring(1).trim();
-            // 此处的 ![...] 已在优先级1处理，这里只处理 !term
             return !text.includes(term);
         }
 
         return text.includes(expr);
     }
 
-    const usePerLineSearch = /[()\[\]]/.test(lowerCaseQuery);
+    const usePerLineSearch = /[()]/.test(lowerCaseQuery);
     return usePerLineSearch ?
         dataAsArray.some(line => evaluate(lowerCaseQuery, line)) :
         evaluate(lowerCaseQuery, dataAsArray.join(' '));
@@ -764,9 +750,13 @@ function areFiltersActive() {
         (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
         (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
         (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+        (filterInputs.powerMax && filterInputs.powerMax.value.trim() !== '') ||
         (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+        (filterInputs.attackMax && filterInputs.attackMax.value.trim() !== '') ||
         (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
-        (filterInputs.health && filterInputs.health.value.trim() !== '')) {
+        (filterInputs.defenseMax && filterInputs.defenseMax.value.trim() !== '') ||
+        (filterInputs.health && filterInputs.health.value.trim() !== '') ||
+        (filterInputs.healthMax && filterInputs.healthMax.value.trim() !== '')) {
         return true;
     }
 
@@ -806,9 +796,13 @@ function isOnlySpecificScopeFilterActive(scopeName) {
         (filterInputs.effects && filterInputs.effects.value.trim() !== '') ||
         (filterInputs.passives && filterInputs.passives.value.trim() !== '') ||
         (filterInputs.power && filterInputs.power.value.trim() !== '') ||
+        (filterInputs.powerMax && filterInputs.powerMax.value.trim() !== '') ||
         (filterInputs.attack && filterInputs.attack.value.trim() !== '') ||
+        (filterInputs.attackMax && filterInputs.attackMax.value.trim() !== '') ||
         (filterInputs.defense && filterInputs.defense.value.trim() !== '') ||
-        (filterInputs.health && filterInputs.health.value.trim() !== '')) {
+        (filterInputs.defenseMax && filterInputs.defenseMax.value.trim() !== '') ||
+        (filterInputs.health && filterInputs.health.value.trim() !== '') ||
+        (filterInputs.healthMax && filterInputs.healthMax.value.trim() !== '')) {
         return false;
     }
     for (const key in state.multiSelectFilters) {
@@ -894,6 +888,18 @@ function _sortCollator(lang) {
 }
 
 /**
+ * 读取可选数值过滤输入：空值返回 null（表示该方向不限），否则返回数字。
+ * 注意不能沿用“0 视为未设置”的旧判断：范围筛选里的 0 是有效边界。
+ */
+function optionalFilterNumber(input) {
+    if (!input) return null;
+    const raw = String(input.value == null ? '' : input.value).trim();
+    if (raw === '') return null;
+    const n = Number(raw);
+    return Number.isFinite(n) ? n : null;
+}
+
+/**
  * 核心函数：应用所有筛选条件并重新渲染结果
  */
 function applyFiltersAndRender() {
@@ -908,10 +914,14 @@ function applyFiltersAndRender() {
     const passivesFilter = filterInputs.passives ? filterInputs.passives.value.trim() : '';
     const skillTypeFilter = filterInputs.types ? filterInputs.types.value.trim() : '';
     const filterScope = (state.multiSelectFilters.filterScope && state.multiSelectFilters.filterScope[0]) || 'all';
-    const powerFilter = filterInputs.power ? (Number(filterInputs.power.value) || 0) : 0;
-    const attackFilter = filterInputs.attack ? (Number(filterInputs.attack.value) || 0) : 0;
-    const defenseFilter = filterInputs.defense ? (Number(filterInputs.defense.value) || 0) : 0;
-    const healthFilter = filterInputs.health ? (Number(filterInputs.health.value) || 0) : 0;
+    const powerMin = optionalFilterNumber(filterInputs.power);
+    const powerMax = optionalFilterNumber(filterInputs.powerMax);
+    const attackMin = optionalFilterNumber(filterInputs.attack);
+    const attackMax = optionalFilterNumber(filterInputs.attackMax);
+    const defenseMin = optionalFilterNumber(filterInputs.defense);
+    const defenseMax = optionalFilterNumber(filterInputs.defenseMax);
+    const healthMin = optionalFilterNumber(filterInputs.health);
+    const healthMax = optionalFilterNumber(filterInputs.healthMax);
 
     const defaultSettings = {
         lb: filterInputs.defaultLimitBreakSelect.value,
@@ -923,7 +933,8 @@ function applyFiltersAndRender() {
     // ⚠ 两项「按需才算」的开关（2026-11-22，INP）：
     //   · 属性筛选没设阈值时，筛选循环里不必逐只算三围（下面第 4 步会给最终结果算一次）；
     //   · 没有选任何技能标签时，不必给每只英雄重建标签集合。
-    const needStatsInFilter = powerFilter > 0 || attackFilter > 0 || defenseFilter > 0 || healthFilter > 0;
+    const needStatsInFilter = [powerMin, powerMax, attackMin, attackMax,
+        defenseMin, defenseMax, healthMin, healthMax].some(v => v !== null);
     const anySkillTagFilter = ['skillTag_base', 'skillTag_special', 'skillTag_buff', 'skillTag_debuff']
         .some(k => (state.multiSelectFilters[k] || []).length > 0);
 
@@ -982,7 +993,25 @@ function applyFiltersAndRender() {
         // 被动：搜「正文 + 标题」（`passivesSearchPool` 由 utils.js 组装；老数据没有则退回正文）
         if (passivesFilter && !matchesComplexQuery(hero.passivesSearchPool || hero.passives, passivesFilter)) return false;
         if (skillTypeFilter) {
-            const skillTypesToSearch = getSkillTagsForHero(hero);
+            // 技能类别标签形如「状态-净化状态异常」；帮助中的示例只写类别词片段（如“净化”）。
+            // 额外加入去前缀后的完整片段、分词与 CJK 子串，保证 `[净化]` 这类片段式完全匹配可用。
+            const skillTypesToSearch = getSkillTagsForHero(hero).flatMap(tag => {
+                const full = String(tag || '');
+                const variants = [full];
+                const frag = full.replace(/^[^-]+-\s*/, '');
+                if (frag && frag !== full) {
+                    variants.push(frag);
+                    frag.split(/[\s\-\/]+/).filter(Boolean).forEach(w => {
+                        if (w.length > 1) variants.push(w);
+                    });
+                    if (!/\s/.test(frag)) {
+                        for (let i = 0; i < frag.length; i++) {
+                            for (let j = i + 2; j <= frag.length; j++) variants.push(frag.slice(i, j));
+                        }
+                    }
+                }
+                return variants;
+            });
             if (!matchesComplexQuery(skillTypesToSearch, skillTypeFilter)) return false;
         }
 
@@ -1008,13 +1037,17 @@ function applyFiltersAndRender() {
             }
         }
 
-        // 属性筛选（基于计算后的属性；没设阈值就不算）
+        // 属性范围筛选（最低/最高均可不填；两端都按计算后的属性比较）
         if (needStatsInFilter) {
             const calculatedStats = calculateHeroStats(hero, defaultSettings);
-            if (powerFilter > 0 && calculatedStats.power < powerFilter) return false;
-            if (attackFilter > 0 && calculatedStats.attack < attackFilter) return false;
-            if (defenseFilter > 0 && calculatedStats.defense < defenseFilter) return false;
-            if (healthFilter > 0 && calculatedStats.health < healthFilter) return false;
+            if (powerMin !== null && calculatedStats.power < powerMin) return false;
+            if (powerMax !== null && calculatedStats.power > powerMax) return false;
+            if (attackMin !== null && calculatedStats.attack < attackMin) return false;
+            if (attackMax !== null && calculatedStats.attack > attackMax) return false;
+            if (defenseMin !== null && calculatedStats.defense < defenseMin) return false;
+            if (defenseMax !== null && calculatedStats.defense > defenseMax) return false;
+            if (healthMin !== null && calculatedStats.health < healthMin) return false;
+            if (healthMax !== null && calculatedStats.health > healthMax) return false;
         }
 
         // --- 「查看平衡数据英雄」：只保留**存在平衡数据**的英雄（`hero._balanced` 非空）---
@@ -1193,6 +1226,7 @@ function initializeNameAutocomplete() {
     if (clearButton) {
         clearButton.addEventListener('click', function () {
             nameInput.value = '';
+            if (typeof window.syncQuickNameFromFilter === 'function') window.syncQuickNameFromFilter();
             nameInput.focus();
             closeAutocompleteList();
             applyFiltersAndRender(); // 重新应用筛选（显示所有英雄）
@@ -1298,6 +1332,7 @@ function initializeNameAutocomplete() {
         if (currentSuggestions[index]) {
             const selected = currentSuggestions[index];
             nameInput.value = selected.fillValue || selected.name;
+            if (typeof window.syncQuickNameFromFilter === 'function') window.syncQuickNameFromFilter();
             closeAutocompleteList();
             applyFiltersAndRender();
         }
@@ -1339,6 +1374,7 @@ function initializeNameAutocomplete() {
 
             item.addEventListener('click', () => {
                 nameInput.value = suggestion.fillValue || suggestion.name;
+                if (typeof window.syncQuickNameFromFilter === 'function') window.syncQuickNameFromFilter();
                 closeAutocompleteList();
                 applyFiltersAndRender();
             });

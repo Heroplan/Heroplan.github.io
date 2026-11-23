@@ -680,7 +680,7 @@ function renderHelpModalContent(modalElement, titleKey, introKey, listKeys) {
 }
 
 function openHelpModal() {
-    renderHelpModalContent(uiElements.helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']); //, 'filterHelpExact'
+    renderHelpModalContent(uiElements.helpModal, 'filterHelpTitle', 'filterHelpIntro', ['filterHelpAnd', 'filterHelpOr', 'filterHelpNot', 'filterHelpGroup', 'filterHelpExample']);
     uiElements.helpModal.classList.add('stacked-modal');
     uiElements.helpModal.classList.remove('hidden');
     cancelModalClose(uiElements.helpModal);

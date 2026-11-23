@@ -1367,6 +1367,15 @@
                 : `${currentPoolName} (${totalPulls})`;
         }
 
+        // 无历史时禁用“清空”，与队伍空态的禁用态保持一致。
+        const clearHistoryBtn = document.getElementById('clear-history-btn');
+        if (clearHistoryBtn) {
+            const hasHistory = historyToRender.length > 0;
+            clearHistoryBtn.disabled = !hasHistory;
+            clearHistoryBtn.classList.toggle('disabled', !hasHistory);
+            clearHistoryBtn.setAttribute('aria-disabled', String(!hasHistory));
+        }
+
         // 统计行的标签全部来自异步文案表：未就绪时先不建浮层，等 loadOddsDict 落地后的重画补上，
         // 否则会先显示 odds.hero.* 原始键再被替换。
         if (!state.showAllSummonHistory && historyToRender.length > 0 && state.currentSummonData

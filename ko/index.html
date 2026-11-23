@@ -15,7 +15,7 @@
          ⚠ 别再往这里加档：preload 默认 High，加多了会挤掉 defer 脚本链（Low）的带宽，
          脚本链晚到 ⇒ 启动反而更慢（语言表/小数据档预载均实测零和或负收益）。
          其余数据档由 utils.js::loadData 与语言表并行发起。 -->
-    <script src="./asset_ver.js?v=20261122c"></script>
+    <script src="./asset_ver.js?v=20261123a"></script>
     <script>
         (function () {
             if (!window.AV) return;
@@ -404,8 +404,8 @@
 }
     </script>
     <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
-    <link rel="stylesheet" href="theme.css?v=20261122a">
-    <link rel="stylesheet" href="style.css?v=20261122d">
+    <link rel="stylesheet" href="theme.css?v=20261123c">
+    <link rel="stylesheet" href="style.css?v=20261123zb">
     <link rel="stylesheet" href="talent-tree.css?v=20261028b">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
     <script>
@@ -428,7 +428,7 @@
         }, { once: true });
     </script>
 
-    <script type="application/json" id="i18n-inline" data-lang="ko">{"metaDescription": "Heroplan은 '엠파이어 & 퍼즐' (Empires & Puzzles) 전 언어 영웅 데이터베이스입니다. 게임 내 20개 언어로 모든 영웅의 능력치·스킬·일러스트를 검색하고, 출시 예정 영웅 미리보기, 고급 스킬 검색, 능력치 계산기와 시뮬레이터를 제공합니다.", "seoHeading": "'엠파이어 &amp; 퍼즐' 전 언어 영웅 데이터베이스 · 일러스트 · 출시 예정 영웅 · 플레이어 도구", "seoPara1": "\u003cstrong>Heroplan\u003c/strong>은 '엠파이어 &amp; 퍼즐'(Empires &amp; Puzzles)의 \u003cstrong>모든 영웅\u003c/strong>을 수록하고 \u003cstrong>게임 내 20개 언어를 완전히 지원\u003c/strong>합니다 — 简体中文, 繁體中文, English, 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский, العربية, Türkçe, Polski, Nederlands, Svenska, Dansk, Norsk, Suomi, Indonesia. 언어를 바꾸면 영웅 이름과 특수 스킬, 패시브 스킬 전문을 모국어로 볼 수 있습니다. 각 영웅은 등급, 속성, 마나 속도, 클래스, 가문, 출처, 코스튬과 함께 레벨 80 / LB1 / LB2의 공격력·방어력·체력·전투력을 제공합니다.모든 영웅 데이터는 게임의 \u003cstrong>공식 설정 파일\u003c/strong>에서 파싱해 생성합니다.", "seoPara2": "\u003cstrong>전체 영웅 일러스트 갤러리\u003c/strong>를 제공합니다. 영웅 상세 페이지에서 고해상도 정지 일러스트를 볼 수 있고, 지원되는 캐릭터는 게임 내 \u003cstrong>애니메이션 일러스트\u003c/strong>가 재생됩니다. \u003cstrong>출시 예정 영웅 미리보기\u003c/strong>는 공식 출시일 순으로 미출시 영웅을 보여 주어 자원을 미리 계획할 수 있습니다(즐겨찾기는 출시 시점에 해제됩니다). 검색은 이름·등급·속성·마나 속도·클래스·가문·출처 같은 기본 조건 외에 \u003cstrong>특수 스킬 본문\u003c/strong>, \u003cstrong>패시브 스킬 본문\u003c/strong>, 스킬 분류를 조합한 복합 검색을 지원합니다. \u003cstrong>능력치 계산기\u003c/strong>는 한계 돌파(LB1/LB2)와 특성(+20/+25) 단계별 정확한 수치를 즉시 환산합니다.", "seoPara3": "데이터베이스 외에도 다양한 도구가 내장되어 있습니다. 【\u003cstrong>소환 시뮬레이터\u003c/strong>】로 가챠 확률과 소환 기록을 재현하고, 【\u003cstrong>팀 시뮬레이터\u003c/strong>】로 편성을 구성해 동맹에 공유하며, 【\u003cstrong>채팅 시뮬레이터\u003c/strong>】로 사용자 지정 색상과 게임 이모지를 넣은 채팅 문구를 만들 수 있습니다. 【\u003cstrong>재료 획득 가이드\u003c/strong>】와 【\u003cstrong>현상 수배 임무\u003c/strong>】 표로 드롭 스테이지를 빠르게 찾고, 【\u003cstrong>이벤트 캘린더\u003c/strong>】와 【\u003cstrong>교환 코드\u003c/strong>】로 기간 한정 콘텐츠를 놓치지 마세요. 즐겨찾기한 영웅 조합을 링크로 공유하고, 설정을 내보내기/가져오기 할 수 있으며, 라이트/다크 테마도 지원합니다.", "pageTitle": "엠파이어 & 퍼즐 영웅 데이터베이스 | 전체 영웅·일러스트·출시 예정 | Heroplan", "headerTitle": "엠파이어 & 퍼즐 영웅 데이터베이스", "sponsoredBy": "후원", "translatedBy": "제작", "donationListTitle": "모든 기부자에게 감사드립니다!", "filterHeroes": "영웅 필터링", "standardFilters": "기본 필터", "nameLabel": "이름:", "noMatchingResults": "일치하는 결과가 없습니다", "avatarLabel": "아바타", "namePlaceholder": "영웅 이름 입력", "costumeTypeLabel": "코스튬:", "rarityLabel": "희귀도", "elementLabel": "속성", "speedLabel": "마나 속도", "classLabel": "클래스", "familyLabel": "패밀리", "sourceLabel": "기원:", "aetherPowerLabel": "에테르 파워:", "showEventNameLabel": "이벤트 이름 표시", "filterScopeLabel": "필터 범위:", "filterScope_all": "모두", "filterScope_hero": "영웅", "filterScope_skin": "코스튬", "filterScope_favorites": "즐겨찾기", "clearSelection": "선택 초기화", "advancedFilters": "고급 필터", "skillTypeLabel": "스킬 유형:", "skillTypePlaceholder": "예: 버프, 이상, 치유", "skillTextLabel": "스킬 텍스트:", "passiveSkillLabel": "패시브 텍스트:", "enableSkillQuickSearchLabel": "빠른 스킬 검색: ", "cnSkill_baseLabel": "스킬 기본:", "cnSkill_specialLabel": "특수 효과:", "cnSkill_buffLabel": "버프:", "cnSkill_debuffLabel": "디버프:", "enableSkillQuickSearchToggle": "활성화", "filterBy": "필터 기준:", "all": "모두", "hero": "영웅", "skin": "코스튬", "favorites": "즐겨찾기", "heroAcademyEventLabel": "영웅 아카데미 10:", "viewBalancedHeroes": "밸런스 데이터 영웅 보기", "oneClickMaxEventLabel": "영웅 코치:", "purchaseCostumeEventLabel": "재봉사 방문:", "soulExchangeEventLabel": "영혼 교환:", "showListBtnLabel": "목록 표시", "soulExchangeModalTitle": "영혼 교환 목록", "filterButtonLabel": "필터", "minPower": "파워", "minAttack": "공격", "minDefense": "방어", "minHealth": "생명력", "resetFilters": "필터 초기화", "hideDonate": "기부 숨기기", "showDonate": "기부 표시", "exportSettings": "설정 내보내기", "importSettings": "설정 가져오기", "setting_heroFavorites": "즐겨찾는 영웅", "setting_savedTeams": "저장된 팀", "setting_favoriteColors": "즐겨찾는 채팅 색상", "setting_otherSettings": "UI 및 일반 설정", "exportModalTitle": "설정 내보내기", "importModalTitle": "설정 가져오기", "exportItems": "내보낼 항목 선택:", "importItems": "가져올 항목 선택:", "selectAll": "모두 선택", "exportSelected": "내보내기 코드 생성", "analyzeCode": "코드 분석", "importSelected": "선택 항목 가져오기", "exportResultTitle": "내보내기 코드 (복사하여 안전하게 보관하십시오):", "noDataToExport": "내보낼 데이터가 없습니다.", "noDataInCode": "코드에서 가져올 수 있는 데이터를 찾을 수 없거나 코드가 손상되었습니다.", "importInstructions": "이전에 내보낸 설정 코드를 아래에 붙여넣으십시오:", "importModeOverwrite": "덮어쓰기 모드: 현재 모든 설정을 삭제하고 가져온 설정으로 대체합니다.", "importModeAppend": "추가 모드: 기존 설정을 유지하고 가져온 설정을 병합합니다 (예: 즐겨찾기 및 저장된 팀은 병합되고 중복 제거됩니다).", "importConfirmBtn": "가져오기 확인", "importCancelBtn": "취소", "importError": "가져오기 실패! 코드가 유효하지 않거나 손상되었습니다. 코드가 완전한지 확인하십시오.", "saveToFile": "파일로 저장", "importFromFile": "파일에서 가져오기", "shareFavorites": "즐겨찾기 공유", "openFavorites": "즐겨찾기 열기", "shareFavoritesCopied": "목록이 복사되었습니다!", "footerGameName": "엠파이어 &amp; 퍼즐", "footerPlatform": "영웅 데이터 플랫폼", "footerCredit": "© 2025 - 2026 heroplan.github.io | 비공식 팬 사이트", "favoritesListEmpty": "즐겨찾기 목록이 비어 있습니다. 영웅을 추가하거나 필터를 재설정하십시오", "resultsReset": "재설정", "noResults": "일치하는 영웅을 찾을 수 없습니다", "modalHeroDetails": "ℹ️ 영웅 세부 정보", "closeBtnTitle": "닫기", "modalOrigin": "기원", "modalCoreStats": "📊 핵심 스탯", "limitBreakSetting": "한계 돌파:", "noLimitBreak": "없음", "lb1": "🔼 LB1", "lb2": "⏫ LB2", "talentSetting": "특성:", "costumeBonusSetting": "코스튬 보너스:", "costumeSetsNone": "없음", "noTalent": "특성 없음", "talent20": "20 특성", "talent25": "25 특성", "prioritySetting": "특성 우선 순위:", "attackPriority": "공격 > 방어 > 생명력", "defensePriority": "방어 > 생명력 > 공격", "attackPriority2": "공격 > 생명력 > 방어", "healthPriority": "생명력 > 방어 > 공격", "defensePriority2": "방어 > 공격 > 생명력", "healthPriority2": "생명력 > 공격 > 방어", "manaPriorityLabel": "마나 노드:", "manaPriorityToggle": "우선", "showLbTalentDetailsLabel": "세부 정보에 LB/특성 설정 표시:", "showLbTalentDetailsToggle": "표시", "modalTalentSettingsTitle": "한계 돌파, 특성 및 코스튬 설정", "customTalentTitle": "사용자 정의 특성", "talentTreeTitle": "클래스 특성 트리", "modalSettings": "설정", "defaultStatSettingsTitle": "LB 특성 설정", "toggleCollapse": "클릭하여 접기/펼치기", "modalSkillDetails": "📖 스킬 세부 정보", "modalSkillName": "📄 이름:", "modalSpeed": "⌛ 속도:", "modalSkillType": "🏷️ 스킬 태그:", "modalSpecialSkill": "✨ 스킬 효과:", "modalPassiveSkill": "🧿 패시브 스킬:", "modalSkin": "코스튬:", "none": "없음", "detailsCloseBtn": "닫기", "shareButtonTitle": "공유", "favoriteButtonTitle": "즐겨찾기", "favoriteLockedTitle": "아직 미출시되어 즐겨찾기할 수 없습니다", "favColumnHeader": "☆", "favHeaderTitle": "모두 즐겨찾기 추가/해제", "confirmFavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에 추가하시겠습니까?", "confirmUnfavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에서 제거하시겠습니까?", "filterHelpTitle": "고급 필터 구문", "filterHelpIntro": "'스킬 텍스트/패시브 텍스트' 필드에서 다음 연산자를 사용하여 복잡한 쿼리를 수행할 수 있습니다:", "filterHelpOr": "\u003cli>\u003cstrong>| (OR):\u003c/strong> 지정된 키워드 중 하나라도 포함하는 영웅을 찾습니다. 예: \u003ccode>치유|부활\u003c/code>은 '치유' 또는 '부활'이 있는 영웅을 찾습니다.\u003c/li>", "filterHelpAnd": "\u003cli>\u003cstrong>공백 (AND):\u003c/strong> 모든 키워드를 포함해야 하는 영웅을 찾습니다. 예: \u003ccode>공격 증가\u003c/code>는 '공격'과 '증가'를 모두 포함하는 영웅을 찾습니다.\u003c/li>", "filterHelpNot": "\u003cli>\u003cstrong>! (NOT):\u003c/strong> 특정 키워드가 있는 영웅을 제외합니다. 예: \u003ccode>!치유\u003c/code>는 스킬에 '치유'가 없는 모든 영웅을 찾습니다.\u003c/li>", "filterHelpGroup": "\u003cli>\u003cstrong>() (그룹화/단일 행 일치):\u003c/strong> 괄호를 사용하여 복잡한 그룹화를 수행하고 \u003cstrong style='color: var(--md-sys-color-error);'>단일 스킬 행 내에서 일치하도록 강제합니다\u003c/strong>. 예: \u003ccode>(저항 치유)\u003c/code>는 스킬 설명의 \u003cstrong style='color: var(--md-sys-color-error);'>단일 행\u003c/strong>에 '저항'과 '치유'가 모두 포함된 영웅을 정확히 찾습니다.\u003c/li>", "filterHelpExact": "\u003cli>\u003cstrong>[] (정확한 일치):\u003c/strong> 대괄호를 사용하여 \u003cstrong style='color: var(--md-sys-color-error);'>단일 스킬 유형 행에서 정확한 일치를 강제합니다\u003c/strong>. 예: \u003ccode>[정화]\u003c/code>는 정확한 유형 '정화'를 가진 영웅을 찾으며 '정화자'는 찾지 않습니다.\u003c/li>", "filterHelpExample": "\u003cli>\u003cstrong>결합 예:\u003c/strong> \u003ccode>((면역|반사) 버프)\u003c/code>는 면역 또는 반사 버프를 제공하는 영웅을 찾습니다 (모든 조건이 동일한 행에서 충족되어야 함).\u003c/li>", "noFavoritesToShare": "공유할 즐겨찾기가 없습니다.", "copyLinkFailed": "링크 복사에 실패했습니다. 수동으로 복사해 보십시오.", "wantedMissionTableTitle": "지명 임무 테이블", "farmingGuideTableTitle": "파밍 위치 가이드", "questHeaderDaily": "일일", "questHeaderRed": "빨강", "questHeaderGreen": "초록", "questHeaderBlue": "파랑", "questHeaderPurple": "보라", "questHeaderYellow": "노랑", "toggleThemeTitle": "주간/야간 모드 전환", "toggleLanguageTitle": "언어 전환", "showLotterySimulatorTitle": "소환 시뮬레이터", "showTeamSimulatorTitle": "팀 시뮬레이터", "showChatSimulatorTitle": "채팅 시뮬레이터", "showFarmingGuideTitle": "파밍 가이드", "showWantedMissionTitle": "지명 임무 테이블 표시", "openFiltersTitle": "필터 열기", "calendarTitle": "이벤트 달력 보기", "filterSyntaxTitle": "필터 구문 도움말", "lotterySimulatorTitle": "소환 시뮬레이터", "returnToList": "돌아가기", "teamDisplayTitle": "팀 구성", "noTeamTags": "팀에 스킬 태그가 없습니다", "saveTeamBtn": "팀 저장", "shareTeamListBtn": "목록 공유", "savedTeamsTitle": "저장된 팀", "promptTeamName": "팀 이름을 입력하세요:", "teamNameRequired": "팀 이름은 비워둘 수 없습니다.", "noHeroesInTeam": "저장할 팀에 영웅이 없습니다.", "removeTeamBtnTitle": "이 팀 제거", "noSavedTeams": "저장된 팀이 없습니다.", "shareTeamListCopied": "링크가 복사되었습니다!", "noTeamsToShare": "공유할 팀이 없습니다.", "clearTeamBtn": "팀 비우기", "confirmClearTeam": "현재 팀을 비우시겠습니까? 저장되지 않은 모든 변경 사항이 손실됩니다.", "importTeamBtn": "가져오기", "importedBtn": "가져옴", "teamImportedBtn": "가져옴", "sharedTeamsTitle": "공유된 팀", "myTeamsTab": "내 팀", "sharedTeamsTab": "공유된 팀", "summaryTagsTitle": "스킬 태그 요약", "chatSimulatorTitle": "채팅 시뮬레이터", "chatPanelTitleColors": "색상 선택", "chatFavoriteColorBtn": "⭐", "chatFavoriteColorsTitle": "즐겨찾는 색상", "chatPanelTitleEmojis": "이모지 선택", "chatPanelTitleIO": "입력 및 미리보기", "chatInsertColorBtn": "추가", "chatCopyBtn": "내용 복사", "chatCopied": "복사됨!", "talentTerms": {"攻击": "공격", "防御": "방어", "生命": "생명력", "法力": "마나", "治疗": "치유", "暴击": "치명타", "游侠天赋": "레인저 특성", "战士天赋": "전사 특성", "圣骑天赋": "성기사 특성", "野蛮人天赋": "야만인 특성", "牧师天赋": "성직자 특성", "德鲁伊天赋": "드루이드 특성", "僧侣天赋": "승려 특성", "盗贼天赋": "도적 특성", "术士天赋": "마법사 특성", "巫师天赋": "흑마법사 특성", "游侠终极天赋": "레인저 궁극 특성", "战士终极天赋": "전사 궁극 특성", "圣骑士终极天赋": "성기사 궁극 특성", "野蛮人终极天赋": "야만인 궁극 특성", "牧师终极天赋": "성직자 궁극 특성", "德鲁伊终极天赋": "드루이드 궁극 특성", "僧侣终极天赋": "승려 궁극 특성", "盗贼终极天赋": "도적 궁극 특성", "术士终极天赋": "마법사 궁극 특성", "巫师终极天赋": "흑마법사 궁극 특성"}, "bonusAndCostTitle": "보너스 및 비용", "attackBonusLabel": "공격:", "defenseBonusLabel": "방어:", "healthBonusLabel": "생명력:", "manaBonusLabel": "마나:", "healingBonusLabel": "치유:", "critBonusLabel": "치명타:", "noBonusLabel": "획득한 속성 보너스가 없습니다", "emblemCostLabel": "엠블럼:", "foodCostLabel": "식량:", "ironCostLabel": "철:", "masterEmblemCostLabel": "마스터 엠블럼:", "lbTalentHelpTitle": "한계 돌파 및 특성 설정 도움말", "lbTalentHelpLine2": "마나 우선은 마나 노드에 최우선 순위를 부여하여 특성 경로에서 항상 선택되도록 합니다.", "viewLatest": "최신 보기", "modalAttributeTalentBtn": "스탯/특성", "modalSkillTagsHeader": "📖 스킬 세부 정보", "switchBalancedData": "밸런스 데이터 전환", "restoreDefaultData": "기본 데이터 복원", "modalSkillDetailsBtn": "스킬 태그", "modalSkillEffectBtn": "스킬 효과", "modalPassiveBtn": "패시브 스킬", "modalFamilyBonusBtn": "가족 보너스", "summonOnce": "소환", "summonTen": "10회 소환", "summonThirty": "30회 소환", "confirmClearHistory": "모든 소환 기록을 지우시겠습니까?", "toggleShowAllHistoryLabel": "전체 기록 표시", "confirmClearCurrentHistory": "현재 이벤트의 소환 기록을 지우시겠습니까?", "summonHistoryTitleAll": "전체 소환 기록", "calculatedProbabilitiesTitle": "이 이벤트 소환의 계산된 확률", "noSummonHistory": "소환 기록이 없습니다", "clearHistoryBtn": "지우기", "summonResultsTitle": "소환 결과", "skipAnimation": "애니메이션 건너뛰기", "lotteryTabActivity": "이벤트", "lotteryTabSummon": "소환", "summonHistoryTitle": "소환 기록", "lotteryTabHistory": "기록", "probabilityInfoTitle": "확률 세부 정보", "StageGuideTitle": "스테이지 가이드", "probabilityInfoIntro": "현재 풀의 소환 확률:", "lottery_bucket_translations": {"heroes_ex_s1_3": "비고전 영웅 (3성)", "heroes_ex_s1_4": "비고전 영웅 (4성)", "heroes_ex_s1_5": "비고전 영웅 (비특별) (5성)", "heroes_s1_3": "고전 영웅 (3성)", "heroes_s1_4": "고전 영웅 (4성)", "heroes_s1_5": "고전 영웅 (5성)", "heroes_event_3": "이벤트 영웅 (3성)", "heroes_event_4": "이벤트 영웅 (4성)", "heroes_event_5": "이벤트 영웅 (비특별) (5성)", "heroes_listed_3": "목록 영웅 (3성)", "heroes_listed_4": "목록 영웅 (4성)", "heroes_listed_5": "목록 영웅 (비특별) (5성)", "heroes_extraAssociatedFamilies_3": "추가 가족 영웅 (3성)", "heroes_extraAssociatedFamilies_4": "추가 가족 영웅 (4성)", "heroes_extraAssociatedFamilies_5": "추가 가족 영웅 (5성)", "featuredHero": "특별 영웅 (5성)", "trainer_3": "트레이너 (3성)", "trainer_4": "트레이너 (4성)"}, "lottery_bonus_translations": {"bonusProbabilityTitle": "보너스 확률", "hotm": "이달의 영웅 확률", "MysteryHero": "미스터리 영웅 확률", "LegendsSummonMysteryHero": "전설 소환 미스터리 영웅 확률", "additionalDrawWeights": "총 소환 확률", "bonusLegendaryHeroChancePerMil": "보너스 확률", "bonusLegendaryHeroType": "보너스 영웅 유형", "bonusLegendaryProbabilityTitle": "보너스 전설 영웅", "bonusLegendaryHeroPullAmount": "보너스 소환 횟수"}, "lottery_bonus_values": {"eventHeroesOnly": "이벤트 영웅만", "NonClassicHero": "비고전 영웅"}, "selectElementTitle": "원소 선택", "noMysteryBonusNotice": "이 소환에는 비밀 영웅의 보너스 소환 기회가 포함되지 않습니다.", "includesTrainerNotice": "* 이 풀에는 트레이너가 포함됩니다", "summonSummaryOkBtn": "확인", "playMode_full": "전체 애니메이션 재생", "playMode_skip": "애니메이션 건너뛰기, 결과 표시", "playMode_silent": "기록에 직접 저장, 팝업 없음", "muteSound": "음소거", "unmuteSound": "음소거 해제", "featuredHeroRequired": "소환하기 전에 아래 표의 ⬆️ 아이콘을 사용하여 최소 한 명의 특별 영웅을 설정하십시오.", "mustSelect5StarHero": "5성 영웅을 선택하십시오.", "featuredSlotsFull": "모든 특별 영웅 슬롯이 가득 찼습니다. 특별 영웅의 아바타를 두 번 클릭하면 제거할 수 있습니다.", "w3kLimitedPoolTitle": "3K 한정 풀 보기", "showRedeemCodesTitle": "사용 가능한 코드 보기", "redeemCodesModalTitle": "사용 가능한 코드", "redeemBtn": "교환", "highlightSkillTermsLabel": "스킬 용어 강조:", "highlightSkillTermsToggle": "활성화", "showSkillTypesInDetailsLabel": "세부 정보에 스킬 유형 표시:", "showSkillTypesInTeamLabel": "팀에 스킬 유형 표시:", "showSkillTypesToggle": "활성화", "showCircleRayLabel": "영웅 아바타에 광선 표시:", "showCircleRayToggle": "활성화", "friendshipThanks": "다음 웹사이트에 감사드립니다:", "effectsTranslateLabel": "특수 스킬 번역", "effectsResetLabel": "원문으로 복원", "effectsTranslating": "번역 중...", "effectsComplete": "번역 완료", "effectsFailed": "번역 실패, 다시 시도하세요", "effectsOriginal": "원문 표시", "effectsNoContent": "번역할 내용이 없습니다", "openGameHeroes": "게임 영웅 목록 열기", "gameHeroesParserMissing": "파서 모듈이 로드되지 않았습니다. 페이지를 새로 고친 후 다시 시도하세요.", "gameHeroesParseFailed": "이 저장 파일을 분석할 수 없습니다. 게임의 .eva1 저장 파일을 선택했는지 확인하세요.", "gameHeroesReadFailed": "파일을 읽지 못했습니다. 다시 시도하세요.", "balancedToggle": "밸런스 데이터로 전환", "balancedRestore": "기본값으로 복원", "balanceHeroesList": "밸런스 데이터 영웅", "hiddenHeroesShown": "👁 숨겨진 영웅 표시됨", "hiddenHeroesHidden": "🙈 숨겨진 영웅 다시 숨김", "skipToContent": "본문으로 건너뛰기", "mainNavLabel": "사이트 탐색", "elementLabelShort": "속성", "redeemEmptyState": "현재 사용 가능한 교환 코드가 없습니다.", "chatPreviewEmpty": "아래에 입력하면 여기에 미리 보기가 표시됩니다", "toggleAnimationTitle": "애니메이션 전환", "toggleSoundTitle": "소리 전환"}</script>
+    <script type="application/json" id="i18n-inline" data-lang="ko">{"metaDescription": "Heroplan은 '엠파이어 & 퍼즐' (Empires & Puzzles) 전 언어 영웅 데이터베이스입니다. 게임 내 20개 언어로 모든 영웅의 능력치·스킬·일러스트를 검색하고, 출시 예정 영웅 미리보기, 고급 스킬 검색, 능력치 계산기와 시뮬레이터를 제공합니다.", "seoHeading": "'엠파이어 &amp; 퍼즐' 전 언어 영웅 데이터베이스 · 일러스트 · 출시 예정 영웅 · 플레이어 도구", "seoPara1": "\u003cstrong>Heroplan\u003c/strong>은 '엠파이어 &amp; 퍼즐'(Empires &amp; Puzzles)의 \u003cstrong>모든 영웅\u003c/strong>을 수록하고 \u003cstrong>게임 내 20개 언어를 완전히 지원\u003c/strong>합니다 — 简体中文, 繁體中文, English, 日本語, 한국어, Français, Deutsch, Español, Português, Italiano, Русский, العربية, Türkçe, Polski, Nederlands, Svenska, Dansk, Norsk, Suomi, Indonesia. 언어를 바꾸면 영웅 이름과 특수 스킬, 패시브 스킬 전문을 모국어로 볼 수 있습니다. 각 영웅은 등급, 속성, 마나 속도, 클래스, 가문, 출처, 코스튬과 함께 레벨 80 / LB1 / LB2의 공격력·방어력·체력·전투력을 제공합니다.모든 영웅 데이터는 게임의 \u003cstrong>공식 설정 파일\u003c/strong>에서 파싱해 생성합니다.", "seoPara2": "\u003cstrong>전체 영웅 일러스트 갤러리\u003c/strong>를 제공합니다. 영웅 상세 페이지에서 고해상도 정지 일러스트를 볼 수 있고, 지원되는 캐릭터는 게임 내 \u003cstrong>애니메이션 일러스트\u003c/strong>가 재생됩니다. \u003cstrong>출시 예정 영웅 미리보기\u003c/strong>는 공식 출시일 순으로 미출시 영웅을 보여 주어 자원을 미리 계획할 수 있습니다(즐겨찾기는 출시 시점에 해제됩니다). 검색은 이름·등급·속성·마나 속도·클래스·가문·출처 같은 기본 조건 외에 \u003cstrong>특수 스킬 본문\u003c/strong>, \u003cstrong>패시브 스킬 본문\u003c/strong>, 스킬 분류를 조합한 복합 검색을 지원합니다. \u003cstrong>능력치 계산기\u003c/strong>는 한계 돌파(LB1/LB2)와 특성(+20/+25) 단계별 정확한 수치를 즉시 환산합니다.", "seoPara3": "데이터베이스 외에도 다양한 도구가 내장되어 있습니다. 【\u003cstrong>소환 시뮬레이터\u003c/strong>】로 가챠 확률과 소환 기록을 재현하고, 【\u003cstrong>팀 시뮬레이터\u003c/strong>】로 편성을 구성해 동맹에 공유하며, 【\u003cstrong>채팅 시뮬레이터\u003c/strong>】로 사용자 지정 색상과 게임 이모지를 넣은 채팅 문구를 만들 수 있습니다. 【\u003cstrong>재료 획득 가이드\u003c/strong>】와 【\u003cstrong>현상 수배 임무\u003c/strong>】 표로 드롭 스테이지를 빠르게 찾고, 【\u003cstrong>이벤트 캘린더\u003c/strong>】와 【\u003cstrong>교환 코드\u003c/strong>】로 기간 한정 콘텐츠를 놓치지 마세요. 즐겨찾기한 영웅 조합을 링크로 공유하고, 설정을 내보내기/가져오기 할 수 있으며, 라이트/다크 테마도 지원합니다.", "pageTitle": "엠파이어 & 퍼즐 영웅 데이터베이스 | 전체 영웅·일러스트·출시 예정 | Heroplan", "headerTitle": "엠파이어 & 퍼즐 영웅 데이터베이스", "sponsoredBy": "후원", "translatedBy": "제작", "donationListTitle": "모든 기부자에게 감사드립니다!", "filterHeroes": "영웅 필터링", "standardFilters": "기본 필터", "nameLabel": "이름:", "noMatchingResults": "일치하는 결과가 없습니다", "avatarLabel": "아바타", "namePlaceholder": "영웅 이름 입력", "costumeTypeLabel": "코스튬:", "rarityLabel": "희귀도", "elementLabel": "속성", "speedLabel": "마나 속도", "classLabel": "클래스", "familyLabel": "패밀리", "sourceLabel": "기원:", "aetherPowerLabel": "에테르 파워:", "showEventNameLabel": "이벤트 이름 표시", "filterScopeLabel": "필터 범위:", "filterScope_all": "모두", "filterScope_hero": "영웅", "filterScope_skin": "코스튬", "filterScope_favorites": "즐겨찾기", "clearSelection": "선택 초기화", "advancedFilters": "고급 필터", "skillTypeLabel": "스킬 유형:", "skillTypePlaceholder": "예: 강화, 상태 이상, 치유", "skillTextLabel": "스킬 텍스트:", "passiveSkillLabel": "패시브 텍스트:", "enableSkillQuickSearchLabel": "빠른 스킬 검색", "cnSkill_baseLabel": "스킬 기본:", "cnSkill_specialLabel": "특수 효과:", "cnSkill_buffLabel": "버프:", "cnSkill_debuffLabel": "디버프:", "enableSkillQuickSearchToggle": "활성화", "filterBy": "필터 기준:", "all": "모두", "hero": "영웅", "skin": "코스튬", "favorites": "즐겨찾기", "heroAcademyEventLabel": "영웅 아카데미 10:", "viewBalancedHeroes": "밸런스 데이터 영웅 보기", "oneClickMaxEventLabel": "영웅 코치:", "purchaseCostumeEventLabel": "재봉사 방문:", "soulExchangeEventLabel": "영혼 교환:", "showListBtnLabel": "목록 표시", "soulExchangeModalTitle": "영혼 교환 목록", "filterButtonLabel": "필터", "minPower": "파워", "minAttack": "공격", "minDefense": "방어", "minHealth": "생명력", "rangeMin": "최소", "rangeMax": "최대", "resetFilters": "필터 초기화", "hideDonate": "기부 숨기기", "showDonate": "기부 표시", "exportSettings": "설정 내보내기", "importSettings": "설정 가져오기", "setting_heroFavorites": "즐겨찾는 영웅", "setting_savedTeams": "저장된 팀", "setting_favoriteColors": "즐겨찾는 채팅 색상", "setting_otherSettings": "UI 및 일반 설정", "exportModalTitle": "설정 내보내기", "importModalTitle": "설정 가져오기", "exportItems": "내보낼 항목 선택:", "importItems": "가져올 항목 선택:", "selectAll": "모두 선택", "exportSelected": "내보내기 코드 생성", "analyzeCode": "코드 분석", "importSelected": "선택 항목 가져오기", "exportResultTitle": "내보내기 코드 (복사하여 안전하게 보관하십시오):", "noDataToExport": "내보낼 데이터가 없습니다.", "noDataInCode": "코드에서 가져올 수 있는 데이터를 찾을 수 없거나 코드가 손상되었습니다.", "importInstructions": "이전에 내보낸 설정 코드를 아래에 붙여넣으십시오:", "importModeOverwrite": "덮어쓰기 모드: 현재 모든 설정을 삭제하고 가져온 설정으로 대체합니다.", "importModeAppend": "추가 모드: 기존 설정을 유지하고 가져온 설정을 병합합니다 (예: 즐겨찾기 및 저장된 팀은 병합되고 중복 제거됩니다).", "importConfirmBtn": "가져오기 확인", "importCancelBtn": "취소", "importError": "가져오기 실패! 코드가 유효하지 않거나 손상되었습니다. 코드가 완전한지 확인하십시오.", "saveToFile": "파일로 저장", "importFromFile": "파일에서 가져오기", "shareFavorites": "즐겨찾기 공유", "openFavorites": "즐겨찾기 열기", "shareFavoritesCopied": "목록이 복사되었습니다!", "footerGameName": "엠파이어 &amp; 퍼즐", "footerPlatform": "영웅 데이터 플랫폼", "footerCredit": "© 2025 - 2026 heroplan.github.io | 비공식 팬 사이트", "favoritesListEmpty": "즐겨찾기 목록이 비어 있습니다. 영웅을 추가하거나 필터를 재설정하십시오", "resultsReset": "재설정", "noResults": "일치하는 영웅을 찾을 수 없습니다", "modalHeroDetails": "ℹ️ 영웅 세부 정보", "closeBtnTitle": "닫기", "modalOrigin": "기원", "modalCoreStats": "📊 핵심 스탯", "limitBreakSetting": "한계 돌파:", "noLimitBreak": "없음", "lb1": "🔼 LB1", "lb2": "⏫ LB2", "talentSetting": "특성:", "costumeBonusSetting": "코스튬 보너스:", "costumeSetsNone": "없음", "noTalent": "특성 없음", "talent20": "20 특성", "talent25": "25 특성", "prioritySetting": "특성 우선 순위:", "attackPriority": "공격 > 방어 > 생명력", "defensePriority": "방어 > 생명력 > 공격", "attackPriority2": "공격 > 생명력 > 방어", "healthPriority": "생명력 > 방어 > 공격", "defensePriority2": "방어 > 공격 > 생명력", "healthPriority2": "생명력 > 공격 > 방어", "manaPriorityLabel": "마나 속도 우선", "manaPriorityToggle": "우선", "showLbTalentDetailsLabel": "세부 정보에 LB/특성 설정 표시", "showLbTalentDetailsToggle": "표시", "modalTalentSettingsTitle": "한계 돌파, 특성 및 코스튬 설정", "customTalentTitle": "사용자 정의 특성", "talentTreeTitle": "클래스 특성 트리", "modalSettings": "설정", "defaultStatSettingsTitle": "LB 특성 설정", "toggleCollapse": "클릭하여 접기/펼치기", "modalSkillDetails": "📖 스킬 세부 정보", "modalSkillName": "📄 이름:", "modalSpeed": "⌛ 속도:", "modalSkillType": "🏷️ 스킬 태그:", "modalSpecialSkill": "✨ 스킬 효과:", "modalPassiveSkill": "🧿 패시브 스킬:", "modalSkin": "코스튬:", "none": "없음", "detailsCloseBtn": "닫기", "shareButtonTitle": "공유", "favoriteButtonTitle": "즐겨찾기", "favoriteLockedTitle": "아직 미출시되어 즐겨찾기할 수 없습니다", "favColumnHeader": "☆", "favHeaderTitle": "모두 즐겨찾기 추가/해제", "confirmFavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에 추가하시겠습니까?", "confirmUnfavoriteAll": "현재 목록의 모든 영웅을 즐겨찾기에서 제거하시겠습니까?", "filterHelpTitle": "고급 필터 구문", "filterHelpIntro": "'스킬 유형/스킬 텍스트/패시브 텍스트' 필드에서 다음 연산자를 사용하여 복잡한 쿼리를 수행할 수 있습니다:", "filterHelpOr": "\u003cli>\u003cstrong>| (OR):\u003c/strong> 지정된 키워드 중 하나라도 포함하는 영웅을 찾습니다. 예: \u003ccode>치유|부활\u003c/code>.\u003c/li>", "filterHelpAnd": "\u003cli>\u003cstrong>공백 (AND):\u003c/strong> 모든 키워드를 포함해야 하는 영웅을 찾습니다. 예: \u003ccode>공격 증가\u003c/code>.\u003c/li>", "filterHelpNot": "\u003cli>\u003cstrong>! (NOT):\u003c/strong> 특정 키워드가 있는 영웅을 제외합니다. 예: \u003ccode>!치유\u003c/code>.\u003c/li>", "filterHelpGroup": "\u003cli>\u003cstrong>() (그룹화/단일 행 일치):\u003c/strong> 괄호를 사용하여 복잡한 그룹화를 수행하고 \u003cstrong style='color: var(--md-sys-color-error);'>단일 스킬 행 내에서 일치하도록 강제합니다\u003c/strong>. 예: \u003ccode>(저항 치유)\u003c/code>.\u003c/li>", "filterHelpExample": "\u003cli>\u003cstrong>결합 예:\u003c/strong> \u003ccode>((면역|반사) 강화)\u003c/code>.\u003c/li>", "noFavoritesToShare": "공유할 즐겨찾기가 없습니다.", "copyLinkFailed": "링크 복사에 실패했습니다. 수동으로 복사해 보십시오.", "wantedMissionTableTitle": "지명 임무 테이블", "farmingGuideTableTitle": "파밍 위치 가이드", "questHeaderDaily": "일일", "questHeaderRed": "빨강", "questHeaderGreen": "초록", "questHeaderBlue": "파랑", "questHeaderPurple": "보라", "questHeaderYellow": "노랑", "toggleThemeTitle": "주간/야간 모드 전환", "toggleLanguageTitle": "언어 전환", "showLotterySimulatorTitle": "소환 시뮬레이터", "showTeamSimulatorTitle": "팀 시뮬레이터", "showChatSimulatorTitle": "채팅 시뮬레이터", "showFarmingGuideTitle": "파밍 가이드", "showWantedMissionTitle": "지명 임무 테이블 표시", "openFiltersTitle": "필터 열기", "calendarTitle": "이벤트 달력 보기", "filterSyntaxTitle": "필터 구문 도움말", "lotterySimulatorTitle": "소환 시뮬레이터", "returnToList": "돌아가기", "teamDisplayTitle": "팀 구성", "noTeamTags": "팀에 스킬 태그가 없습니다", "saveTeamBtn": "팀 저장", "shareTeamListBtn": "목록 공유", "savedTeamsTitle": "저장된 팀", "promptTeamName": "팀 이름을 입력하세요:", "teamNameRequired": "팀 이름은 비워둘 수 없습니다.", "noHeroesInTeam": "저장할 팀에 영웅이 없습니다.", "removeTeamBtnTitle": "이 팀 제거", "noSavedTeams": "저장된 팀이 없습니다.", "shareTeamListCopied": "링크가 복사되었습니다!", "noTeamsToShare": "공유할 팀이 없습니다.", "clearTeamBtn": "팀 비우기", "confirmClearTeam": "현재 팀을 비우시겠습니까? 저장되지 않은 모든 변경 사항이 손실됩니다.", "importTeamBtn": "가져오기", "importedBtn": "가져옴", "teamImportedBtn": "가져옴", "sharedTeamsTitle": "공유된 팀", "myTeamsTab": "내 팀", "sharedTeamsTab": "공유된 팀", "summaryTagsTitle": "스킬 태그 요약", "chatSimulatorTitle": "채팅 시뮬레이터", "chatPanelTitleColors": "색상 선택", "chatFavoriteColorBtn": "⭐", "chatFavoriteColorsTitle": "즐겨찾는 색상", "chatPanelTitleEmojis": "이모지 선택", "chatPanelTitleIO": "입력 및 미리보기", "chatInsertColorBtn": "추가", "chatCopyBtn": "내용 복사", "chatCopied": "복사됨!", "talentTerms": {"攻击": "공격", "防御": "방어", "生命": "생명력", "法力": "마나", "治疗": "치유", "暴击": "치명타", "游侠天赋": "레인저 특성", "战士天赋": "전사 특성", "圣骑天赋": "성기사 특성", "野蛮人天赋": "야만인 특성", "牧师天赋": "성직자 특성", "德鲁伊天赋": "드루이드 특성", "僧侣天赋": "승려 특성", "盗贼天赋": "도적 특성", "术士天赋": "마법사 특성", "巫师天赋": "흑마법사 특성", "游侠终极天赋": "레인저 궁극 특성", "战士终极天赋": "전사 궁극 특성", "圣骑士终极天赋": "성기사 궁극 특성", "野蛮人终极天赋": "야만인 궁극 특성", "牧师终极天赋": "성직자 궁극 특성", "德鲁伊终极天赋": "드루이드 궁극 특성", "僧侣终极天赋": "승려 궁극 특성", "盗贼终极天赋": "도적 궁극 특성", "术士终极天赋": "마법사 궁극 특성", "巫师终极天赋": "흑마법사 궁극 특성"}, "bonusAndCostTitle": "보너스 및 비용", "attackBonusLabel": "공격:", "defenseBonusLabel": "방어:", "healthBonusLabel": "생명력:", "manaBonusLabel": "마나:", "healingBonusLabel": "치유:", "critBonusLabel": "치명타:", "noBonusLabel": "획득한 속성 보너스가 없습니다", "emblemCostLabel": "엠블럼:", "foodCostLabel": "식량:", "ironCostLabel": "철:", "masterEmblemCostLabel": "마스터 엠블럼:", "lbTalentHelpTitle": "한계 돌파 및 특성 설정 도움말", "lbTalentHelpLine2": "활성화하면 마나 속도 노드가 포함된 특성 분기에서 항상 해당 분기를 선택합니다. 나머지 분기는 선택한 능력치 우선 순위를 따릅니다.", "viewLatest": "최신 보기", "modalAttributeTalentBtn": "스탯/특성", "modalSkillTagsHeader": "📖 스킬 세부 정보", "switchBalancedData": "밸런스 데이터 전환", "restoreDefaultData": "기본 데이터 복원", "modalSkillDetailsBtn": "스킬 태그", "modalSkillEffectBtn": "스킬 효과", "modalPassiveBtn": "패시브 스킬", "modalFamilyBonusBtn": "가족 보너스", "summonOnce": "소환", "summonTen": "10회 소환", "summonThirty": "30회 소환", "confirmClearHistory": "모든 소환 기록을 지우시겠습니까?", "toggleShowAllHistoryLabel": "전체 기록 표시", "confirmClearCurrentHistory": "현재 이벤트의 소환 기록을 지우시겠습니까?", "summonHistoryTitleAll": "전체 소환 기록", "calculatedProbabilitiesTitle": "이 이벤트 소환의 계산된 확률", "noSummonHistory": "소환 기록이 없습니다", "clearHistoryBtn": "지우기", "summonResultsTitle": "소환 결과", "skipAnimation": "애니메이션 건너뛰기", "lotteryTabActivity": "이벤트", "lotteryTabSummon": "소환", "summonHistoryTitle": "소환 기록", "lotteryTabHistory": "기록", "probabilityInfoTitle": "확률 세부 정보", "StageGuideTitle": "스테이지 가이드", "probabilityInfoIntro": "현재 풀의 소환 확률:", "lottery_bucket_translations": {"heroes_ex_s1_3": "비고전 영웅 (3성)", "heroes_ex_s1_4": "비고전 영웅 (4성)", "heroes_ex_s1_5": "비고전 영웅 (비특별) (5성)", "heroes_s1_3": "고전 영웅 (3성)", "heroes_s1_4": "고전 영웅 (4성)", "heroes_s1_5": "고전 영웅 (5성)", "heroes_event_3": "이벤트 영웅 (3성)", "heroes_event_4": "이벤트 영웅 (4성)", "heroes_event_5": "이벤트 영웅 (비특별) (5성)", "heroes_listed_3": "목록 영웅 (3성)", "heroes_listed_4": "목록 영웅 (4성)", "heroes_listed_5": "목록 영웅 (비특별) (5성)", "heroes_extraAssociatedFamilies_3": "추가 가족 영웅 (3성)", "heroes_extraAssociatedFamilies_4": "추가 가족 영웅 (4성)", "heroes_extraAssociatedFamilies_5": "추가 가족 영웅 (5성)", "featuredHero": "특별 영웅 (5성)", "trainer_3": "트레이너 (3성)", "trainer_4": "트레이너 (4성)"}, "lottery_bonus_translations": {"bonusProbabilityTitle": "보너스 확률", "hotm": "이달의 영웅 확률", "MysteryHero": "미스터리 영웅 확률", "LegendsSummonMysteryHero": "전설 소환 미스터리 영웅 확률", "additionalDrawWeights": "총 소환 확률", "bonusLegendaryHeroChancePerMil": "보너스 확률", "bonusLegendaryHeroType": "보너스 영웅 유형", "bonusLegendaryProbabilityTitle": "보너스 전설 영웅", "bonusLegendaryHeroPullAmount": "보너스 소환 횟수"}, "lottery_bonus_values": {"eventHeroesOnly": "이벤트 영웅만", "NonClassicHero": "비고전 영웅"}, "selectElementTitle": "원소 선택", "noMysteryBonusNotice": "이 소환에는 비밀 영웅의 보너스 소환 기회가 포함되지 않습니다.", "includesTrainerNotice": "* 이 풀에는 트레이너가 포함됩니다", "summonSummaryOkBtn": "확인", "playMode_full": "전체 애니메이션 재생", "playMode_skip": "애니메이션 건너뛰기, 결과 표시", "playMode_silent": "기록에 직접 저장, 팝업 없음", "muteSound": "음소거", "unmuteSound": "음소거 해제", "featuredHeroRequired": "소환하기 전에 아래 표의 ⬆️ 아이콘을 사용하여 최소 한 명의 특별 영웅을 설정하십시오.", "mustSelect5StarHero": "5성 영웅을 선택하십시오.", "featuredSlotsFull": "모든 특별 영웅 슬롯이 가득 찼습니다. 특별 영웅의 아바타를 두 번 클릭하면 제거할 수 있습니다.", "w3kLimitedPoolTitle": "3K 한정 풀 보기", "showRedeemCodesTitle": "사용 가능한 코드 보기", "redeemCodesModalTitle": "사용 가능한 코드", "redeemBtn": "교환", "highlightSkillTermsLabel": "스킬 용어 강조", "highlightSkillTermsToggle": "활성화", "showSkillTypesInDetailsLabel": "세부 정보에 스킬 유형 표시", "showSkillTypesInTeamLabel": "팀에 스킬 유형 표시", "showSkillTypesToggle": "활성화", "showCircleRayLabel": "영웅 아바타에 광선 표시", "showCircleRayToggle": "활성화", "friendshipThanks": "다음 웹사이트에 감사드립니다:", "effectsTranslateLabel": "특수 스킬 번역", "effectsResetLabel": "원문으로 복원", "effectsTranslating": "번역 중...", "effectsComplete": "번역 완료", "effectsFailed": "번역 실패, 다시 시도하세요", "effectsOriginal": "원문 표시", "effectsNoContent": "번역할 내용이 없습니다", "openGameHeroes": "게임 영웅 목록 열기", "gameHeroesParserMissing": "파서 모듈이 로드되지 않았습니다. 페이지를 새로 고친 후 다시 시도하세요.", "gameHeroesParseFailed": "이 저장 파일을 분석할 수 없습니다. 게임의 .eva1 저장 파일을 선택했는지 확인하세요.", "gameHeroesReadFailed": "파일을 읽지 못했습니다. 다시 시도하세요.", "balancedToggle": "밸런스 데이터로 전환", "balancedRestore": "기본값으로 복원", "balanceHeroesList": "밸런스 데이터 영웅", "hiddenHeroesShown": "👁 숨겨진 영웅 표시됨", "hiddenHeroesHidden": "🙈 숨겨진 영웅 다시 숨김", "skipToContent": "본문으로 건너뛰기", "mainNavLabel": "사이트 탐색", "elementLabelShort": "속성", "redeemEmptyState": "현재 사용 가능한 교환 코드가 없습니다.", "chatPreviewEmpty": "아래에 입력하면 여기에 미리 보기가 표시됩니다", "toggleAnimationTitle": "애니메이션 전환", "toggleSoundTitle": "소리 전환"}</script>
     <style>:root{--header-info-min-height:24px}</style>
 </head>
 
@@ -570,9 +570,9 @@
             <div id="saved-teams-panel">
                 <div class="saved-teams-actions">
                     <button id="clear-team-btn" class="action-button secondary-button"
-                        data-lang-key="clearTeamBtn">팀 비우기</button>
-                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn">팀 저장</button>
-                    <button id="share-team-list-btn" class="action-button"
+                        data-lang-key="clearTeamBtn" disabled>팀 비우기</button>
+                    <button id="save-team-btn" class="action-button" data-lang-key="saveTeamBtn" disabled>팀 저장</button>
+                    <button id="share-team-list-btn" class="action-button secondary-button"
                         data-lang-key="shareTeamListBtn">목록 공유</button>
                 </div>
                 <div id="saved-teams-list-container">
@@ -667,7 +667,7 @@
                                         <span class="toggle-label-text"
                                             data-lang-key="toggleShowAllHistoryLabel">전체 기록 표시</span>
                                     </div>
-                                    <button id="clear-history-btn" class="action-button"
+                                    <button id="clear-history-btn" class="action-button secondary-button"
                                         data-lang-key="clearHistoryBtn">지우기</button>
                                 </div>
                                 <div class="collapse-arrow"></div>
@@ -818,7 +818,7 @@
         <div id="filters-modal-content">
             <div class="filters-modal-header">
                 <h2 id="filters-modal-title" data-lang-key="filterHeroes">영웅 필터링</h2>
-                <button id="close-filters-modal-btn" class="close-btn">❌</button>
+                <button id="close-filters-modal-btn" class="close-btn">✖</button>
             </div>
 
             <div class="filters-grid">
@@ -866,8 +866,9 @@
                             <label for="passives-input" data-lang-key="passiveSkillLabel">패시브 텍스트:</label>
                             <input type="text" id="passives-input" placeholder="" autocorrect="off" autocapitalize="none" spellcheck="false" enterkeyhint="search">
                         </div>
-                        <div class="filter-item">
-                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">빠른 스킬 검색: </label>
+                        <div class="advanced-toggle-grid">
+                        <div class="filter-item toggle-item">
+                            <label for="enable-skill-quick-search-checkbox" data-lang-key="enableSkillQuickSearchLabel">빠른 스킬 검색</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container" style="flex-grow:1;">
                                     <input type="checkbox" id="enable-skill-quick-search-checkbox" checked>
@@ -876,8 +877,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="filter-item">
-                            <label for="highlight-skill-terms-checkbox" data-lang-key="highlightSkillTermsLabel">스킬 용어 강조:</label>
+                        <div class="filter-item toggle-item">
+                            <label for="highlight-skill-terms-checkbox" data-lang-key="highlightSkillTermsLabel">스킬 용어 강조</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container" style="flex-grow:1;">
                                     <input type="checkbox" id="highlight-skill-terms-checkbox" checked>
@@ -887,8 +888,8 @@
                             </div>
                         </div>
 
-                        <div class="filter-item">
-                            <label for="show-skill-types-in-details-checkbox" data-lang-key="showSkillTypesInDetailsLabel">세부 정보에 스킬 유형 표시:</label>
+                        <div class="filter-item toggle-item">
+                            <label for="show-skill-types-in-details-checkbox" data-lang-key="showSkillTypesInDetailsLabel">세부 정보에 스킬 유형 표시</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-skill-types-in-details-checkbox" checked>
@@ -898,8 +899,8 @@
                             </div>
                         </div>
                         
-                        <div class="filter-item">
-                            <label for="show-skill-types-in-team-checkbox" data-lang-key="showSkillTypesInTeamLabel">팀에 스킬 유형 표시:</label>
+                        <div class="filter-item toggle-item">
+                            <label for="show-skill-types-in-team-checkbox" data-lang-key="showSkillTypesInTeamLabel">팀에 스킬 유형 표시</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-skill-types-in-team-checkbox" checked>
@@ -909,7 +910,7 @@
                             </div>
                         </div>
                         
-                        <div class="filter-item">
+                        <div class="filter-item toggle-item">
                             <label for="show-event-name-checkbox" data-lang-key="showEventNameLabel">이벤트 이름 표시</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
@@ -920,8 +921,8 @@
                             </div>
                         </div>
 
-                        <div class="filter-item">
-                            <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">영웅 아바타에 광선 표시:</label>
+                        <div class="filter-item toggle-item">
+                            <label for="show-circle-ray-checkbox" data-lang-key="showCircleRayLabel">영웅 아바타에 광선 표시</label>
                             <div class="input-with-help">
                                 <div class="checkbox-container">
                                     <input type="checkbox" id="show-circle-ray-checkbox" checked>
@@ -930,12 +931,13 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
 
                         <div
                             style="border-top: 1px dashed var(--md-sys-color-outline); margin-top: 1rem; padding-top: 1rem;">
                             <div class="horizontal-filter-group">
                                 <!-- 查看平衡数据英雄：只列"存在平衡数据(第二表)"的英雄 -->
-                                <div class="filter-item">
+                                <div class="filter-item no-date-filter-item">
                                     <label>
                                         <img src="imgs/event/emoji_spritesheet_234.webp" class="event-icon" alt="Balanced Heroes" onerror="this.style.display='none'" />
                                         <span data-lang-key="balanceHeroesList">밸런스 데이터 영웅</span>
@@ -1024,21 +1026,24 @@
                                         <option value="hp-atk-def" data-lang-key="healthPriority2">생명력 > 공격 > 방어</option>
                                     </select>
                                 </div>
-                                <div class="details-selector-item">
-                                    <label for="default-mana-priority-checkbox"
-                                        data-lang-key="manaPriorityLabel">마나 노드:</label>
+                                <div class="toggle-bottom-row">
+                                <div class="details-selector-item toggle-item">
+                                    <div class="toggle-label-row">
+                                        <label for="default-mana-priority-checkbox"
+                                            data-lang-key="manaPriorityLabel">마나 속도 우선</label>
+                                        <button id="lb-talent-help-btn" class="help-btn" type="button">?</button>
+                                    </div>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="default-mana-priority-checkbox">
                                             <label for="default-mana-priority-checkbox" class="checkbox-label"
                                                 data-lang-key="manaPriorityToggle">우선</label>
                                         </div>
-                                        <button id="lb-talent-help-btn" class="help-btn">?</button>
                                     </div>
                                 </div>
-                                <div class="details-selector-item">
+                                <div class="details-selector-item toggle-item">
                                     <label for="show-lb-talent-details-checkbox"
-                                        data-lang-key="showLbTalentDetailsLabel">세부 정보에 LB/특성 설정 표시:</label>
+                                        data-lang-key="showLbTalentDetailsLabel">세부 정보에 LB/특성 설정 표시</label>
                                     <div class="input-with-help">
                                         <div class="checkbox-container" style="flex-grow:1;">
                                             <input type="checkbox" id="show-lb-talent-details-checkbox" checked>
@@ -1047,25 +1052,62 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="stat-filter-grid">
-                            <div class="filter-item-compact">
-                                <label for="power-input" data-lang-key="minPower">파워</label>
-                                <input type="number" id="power-input" min="0" value="">
+                            <div class="filter-item-compact stat-range-item">
+                                <span class="stat-range-title" id="power-range-title" data-lang-key="minPower">파워</span>
+                                <div class="stat-range-fields" role="group" aria-labelledby="power-range-title">
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMin">최소</span>
+                                        <input type="number" id="power-input" min="0" value="">
+                                    </label>
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMax">최대</span>
+                                        <input type="number" id="power-max-input" min="0" value="">
+                                    </label>
+                                </div>
                             </div>
-                            <div class="filter-item-compact">
-                                <label for="attack-input" data-lang-key="minAttack">공격</label>
-                                <input type="number" id="attack-input" min="0" value="">
+                            <div class="filter-item-compact stat-range-item">
+                                <span class="stat-range-title" id="attack-range-title" data-lang-key="minAttack">공격</span>
+                                <div class="stat-range-fields" role="group" aria-labelledby="attack-range-title">
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMin">최소</span>
+                                        <input type="number" id="attack-input" min="0" value="">
+                                    </label>
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMax">최대</span>
+                                        <input type="number" id="attack-max-input" min="0" value="">
+                                    </label>
+                                </div>
                             </div>
-                            <div class="filter-item-compact">
-                                <label for="defense-input" data-lang-key="minDefense">방어</label>
-                                <input type="number" id="defense-input" min="0" value="">
+                            <div class="filter-item-compact stat-range-item">
+                                <span class="stat-range-title" id="defense-range-title" data-lang-key="minDefense">방어</span>
+                                <div class="stat-range-fields" role="group" aria-labelledby="defense-range-title">
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMin">최소</span>
+                                        <input type="number" id="defense-input" min="0" value="">
+                                    </label>
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMax">최대</span>
+                                        <input type="number" id="defense-max-input" min="0" value="">
+                                    </label>
+                                </div>
                             </div>
-                            <div class="filter-item-compact">
-                                <label for="health-input" data-lang-key="minHealth">생명력</label>
-                                <input type="number" id="health-input" min="0" value="">
+                            <div class="filter-item-compact stat-range-item">
+                                <span class="stat-range-title" id="health-range-title" data-lang-key="minHealth">생명력</span>
+                                <div class="stat-range-fields" role="group" aria-labelledby="health-range-title">
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMin">최소</span>
+                                        <input type="number" id="health-input" min="0" value="">
+                                    </label>
+                                    <label class="stat-range-field">
+                                        <span class="stat-range-caption" data-lang-key="rangeMax">최대</span>
+                                        <input type="number" id="health-max-input" min="0" value="">
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1144,9 +1186,9 @@
     <script src="./eva1-parser.js?v=20261119c" defer></script>
     <script src="./utils.js?v=20261122b" defer></script>
     <script src="./state.js?v=20261119b" defer></script>
-    <script src="./ui.js?v=20261122c" defer></script>
-    <script src="./filters.js?v=20261122b" defer></script>
-    <script src="./render.js?v=20261122b" defer></script>
+    <script src="./ui.js?v=20261123a" defer></script>
+    <script src="./filters.js?v=20261123d" defer></script>
+    <script src="./render.js?v=20261123b" defer></script>
     <script src="./special-views.js?v=20261122c" defer></script>
     <!-- 视图脚本懒加载（抽奖/队伍/聊天）：type 为非 JS MIME ⇒ 浏览器只当数据块存着，
          不下载也不执行；首次打开对应视图时 special-views.js::ensureViewScripts 按这里的
@@ -1154,11 +1196,11 @@
          ⚠ 顺序即依赖顺序（engine → odds → ui），别调换。 -->
     <script type="application/x-lazy-view" data-view="lottery" src="./lottery-engine.js?v=20261119d"></script>
     <script type="application/x-lazy-view" data-view="lottery" src="./lottery-odds.js?v=20261119g"></script>
-    <script type="application/x-lazy-view" data-view="lottery" src="./lottery-ui.js?v=20261120a"></script>
-    <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261116a"></script>
+    <script type="application/x-lazy-view" data-view="lottery" src="./lottery-ui.js?v=20261123d"></script>
+    <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261123d"></script>
     <script type="application/x-lazy-view" data-view="chat" src="./chat-simulator.js?v=20261122a"></script>
     <script src="./import-export.js?v=20261119a" defer></script>
-    <script src="./main.js?v=20261123a" defer></script>
+    <script src="./main.js?v=20261123d" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->

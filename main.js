@@ -412,9 +412,13 @@ async function initializeApp() {
         effects: document.getElementById('effects-input'),
         passives: document.getElementById('passives-input'),
         power: document.getElementById('power-input'),
+        powerMax: document.getElementById('power-max-input'),
         attack: document.getElementById('attack-input'),
+        attackMax: document.getElementById('attack-max-input'),
         defense: document.getElementById('defense-input'),
+        defenseMax: document.getElementById('defense-max-input'),
         health: document.getElementById('health-input'),
+        healthMax: document.getElementById('health-max-input'),
         defaultLimitBreakSelect: document.getElementById('default-limit-break-select'),
         defaultTalentSelect: document.getElementById('default-talent-select'),
         defaultTalentStrategySelect: document.getElementById('default-talent-strategy-select'),
@@ -1072,7 +1076,7 @@ function addEventListeners() {
     const { filterInputs } = uiElements;
 
     // 1. 为需要延迟触发的文本/数字输入框绑定事件
-    ['name', 'types', 'effects', 'passives', 'power', 'attack', 'defense', 'health'].forEach(key => {
+    ['name', 'types', 'effects', 'passives', 'power', 'powerMax', 'attack', 'attackMax', 'defense', 'defenseMax', 'health', 'healthMax'].forEach(key => {
         if (filterInputs[key]) {
             filterInputs[key].addEventListener('input', debouncedRender);
         }
@@ -1095,6 +1099,11 @@ function addEventListeners() {
     const setQuickNameValue = value => {
         quickNameInputs.forEach(input => { if (input.value !== value) input.value = value; });
         updateQuickClearButtons();
+    };
+    // 供其它模块在“代码直接改 #name-input”后调用（如详情页点英雄名、清空、选候选词），
+    // 否则快捷栏没有收到 input 事件，会保留旧值。
+    window.syncQuickNameFromFilter = () => {
+        if (nameFilterInput) setQuickNameValue(nameFilterInput.value);
     };
     // 把名字写回筛选页面的输入框并派发 input ⇒ 走原有监听链（防抖搜索 + 其它同步逻辑）
     const pushNameToFilter = value => {

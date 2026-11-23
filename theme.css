@@ -1,13 +1,107 @@
-:root{ --hero-color-red: #ff7a4c; --hero-glow-red: 0 0 8px 2px #ff7a4c; --hero-color-blue: #41d8fe; --hero-glow-blue: 0 0 8px 2px #41d8fe; --hero-color-green: #70e92f; --hero-glow-green: 0 0 8px 2px #70e92f; --hero-color-yellow: #f2e33a; --hero-glow-yellow: 0 0 8px 2px #f2e33a; --hero-color-purple: #e290ff; --hero-glow-purple: 0 0 8px 2px #e290ff; --hero-color-white: #E0E0E0; --hero-glow-white: 0 0 8px 2px #FFFFFF; --hero-color-black: #424242; --hero-glow-black: 0 0 8px 2px #616161; --md-sys-color-primary: #2F6BD6; --md-sys-color-on-primary: #FFFFFF; --md-sys-color-primary-container: #DCE9FB; --md-sys-color-on-primary-container: #10336B; --md-sys-color-secondary: #5A6878; --md-sys-color-on-secondary: #FFFFFF; --md-sys-color-secondary-container: #E9EEF5; --md-sys-color-on-secondary-container: #2A2F38; --md-sys-color-tertiary: #1857B6; --md-sys-color-on-tertiary: #FFFFFF; --md-sys-color-tertiary-container: #0B7A5A; --md-sys-color-on-tertiary-container: #E6F4F0; --md-sys-color-background: #F4F6FA; --md-sys-color-on-background: #1A1E26; --md-sys-color-surface: #FFFFFF; --md-sys-color-on-surface: #1A1E26; --md-sys-color-surface-variant: #ECF1F8; --md-sys-color-on-surface-variant: #4B5563; --md-sys-color-outline: #D5DCE7; --md-sys-color-outline-variant: #E4E9F1; --md-sys-color-shadow: rgba(16, 24, 40, 0.10); --md-sys-color-inverse-surface: #2E3138; --md-sys-color-inverse-on-surface: #F5F7FF; --md-sys-color-inverse-primary: #B8D4FF; --md-sys-color-error: #C63B3B; --md-sys-color-on-error: #FFFFFF; --md-sys-color-error-container: #FFE5E5; --md-sys-color-on-error-container: #410002; --focus-ring: #1A5FB4;
+:root{
+  --hero-color-red:#ff7a4c; --hero-glow-red:0 0 8px 2px #ff7a4c;
+  --hero-color-blue:#41d8fe; --hero-glow-blue:0 0 8px 2px #41d8fe;
+  --hero-color-green:#70e92f; --hero-glow-green:0 0 8px 2px #70e92f;
+  --hero-color-yellow:#f2e33a; --hero-glow-yellow:0 0 8px 2px #f2e33a;
+  --hero-color-purple:#e290ff; --hero-glow-purple:0 0 8px 2px #e290ff;
+  --hero-color-white:#E0E0E0; --hero-glow-white:0 0 8px 2px #FFFFFF;
+  --hero-color-black:#424242; --hero-glow-black:0 0 8px 2px #616161;
+
+  /* EP 品牌蓝保留为亮色主色；其余角色按 Material Color Utilities
+     SchemeTonalSpot(seed #2F6BD6) 生成，补齐 surface 容器层级。 */
+  --md-sys-color-primary:#2F6BD6;
+  --md-sys-color-on-primary:#FFFFFF;
+  --md-sys-color-primary-container:#D9E2FF;
+  --md-sys-color-on-primary-container:#001944;
+  --md-sys-color-secondary:#575E71;
+  --md-sys-color-on-secondary:#FFFFFF;
+  --md-sys-color-secondary-container:#DBE2F9;
+  --md-sys-color-on-secondary-container:#141B2C;
+  --md-sys-color-tertiary:#725572;
+  --md-sys-color-on-tertiary:#FFFFFF;
+  --md-sys-color-tertiary-container:#FDD7FA;
+  --md-sys-color-on-tertiary-container:#2A132C;
+  --md-sys-color-error:#BA1A1A;
+  --md-sys-color-on-error:#FFFFFF;
+  --md-sys-color-error-container:#FFDAD6;
+  --md-sys-color-on-error-container:#410002;
+  --md-sys-color-background:#F4F3FA;
+  --md-sys-color-on-background:#1A1B20;
+  --md-sys-color-surface:#FAF8FF;
+  --md-sys-color-on-surface:#1A1B20;
+  --md-sys-color-surface-variant:#E1E2EC;
+  --md-sys-color-on-surface-variant:#44464F;
+  --md-sys-color-outline:#757780;
+  --md-sys-color-outline-variant:#C5C6D0;
+  --md-sys-color-shadow:rgba(0,0,0,.12);
+  --md-sys-color-scrim:#000000;
+  --md-sys-color-inverse-surface:#2F3036;
+  --md-sys-color-inverse-on-surface:#F1F0F7;
+  --md-sys-color-inverse-primary:#AFC6FF;
+  --md-sys-color-surface-dim:#DAD9E0;
+  --md-sys-color-surface-bright:#FAF8FF;
+  --md-sys-color-surface-container-lowest:#FFFFFF;
+  --md-sys-color-surface-container-low:#F4F3FA;
+  --md-sys-color-surface-container:#EEEDF4;
+  --md-sys-color-surface-container-high:#E8E7EF;
+  --md-sys-color-surface-container-highest:#E2E2E9;
+  --focus-ring:#2F6BD6;
+
   /* 词条着色 (元素词/暴击等术语/稀有度档名) 的单一来源: 日间用可读深色, 夜间沿用原亮色。
      render.js 的 colorNameMap / specialColor 只引用这些变量, 所以切主题不需要重渲染。 */
-  --term-red:#c62828; --term-green:#2e7d32; --term-blue:#0277bd; --term-yellow:#b8860b; --term-purple:#8e24aa; --term-orange:#c1440e; --term-special:#1565c0;} html.dark-theme{ --md-sys-color-primary: #7DB1FF;--md-sys-color-on-primary: #003A8C;--md-sys-color-primary-container: #2A5AB2;--md-sys-color-on-primary-container: #D4E5FF; --md-sys-color-secondary: #B8BBC4;--md-sys-color-on-secondary: #3A3D44;--md-sys-color-secondary-container: #51545C;--md-sys-color-on-secondary-container: #E8E9EC; --md-sys-color-tertiary: #257cff;--md-sys-color-on-tertiary: #2A4740;--md-sys-color-tertiary-container: #63fa63;--md-sys-color-on-tertiary-container: #D4E8E3; --md-sys-color-error: #FF8A8A;--md-sys-color-on-error: #690000;--md-sys-color-error-container: #930000;--md-sys-color-on-error-container: #FFE5E5; --md-sys-color-background: #1A1C20;--md-sys-color-on-background: #E4E5E7;--md-sys-color-surface: #24262B;--md-sys-color-on-surface: #E4E5E7;--md-sys-color-surface-variant: #3C3E44;--md-sys-color-on-surface-variant: #C5C7CD; --md-sys-color-outline: #8E9097;--md-sys-color-outline-variant: #43464E;--md-sys-color-shadow: #000000;--md-sys-color-inverse-surface: #E4E5E7;--md-sys-color-inverse-on-surface: #2E3035;--md-sys-color-inverse-primary: #4A90E2; --focus-ring: #B8D4FF;
-  --term-red:#ef3838; --term-green:#70e92f; --term-blue:#41d8fe; --term-yellow:#f2e33a; --term-purple:#e290ff; --term-orange:#ff7800; --term-special:#2d81e2;}
+  --term-red:#c62828; --term-green:#2e7d32; --term-blue:#0277bd;
+  --term-yellow:#b8860b; --term-purple:#8e24aa; --term-orange:#c1440e;
+  --term-special:#1565c0;
+}
+
+html.dark-theme{
+  --md-sys-color-primary:#AFC6FF;
+  --md-sys-color-on-primary:#142F60;
+  --md-sys-color-primary-container:#2E4578;
+  --md-sys-color-on-primary-container:#D9E2FF;
+  --md-sys-color-secondary:#BFC6DC;
+  --md-sys-color-on-secondary:#293042;
+  --md-sys-color-secondary-container:#404659;
+  --md-sys-color-on-secondary-container:#DBE2F9;
+  --md-sys-color-tertiary:#DFBBDE;
+  --md-sys-color-on-tertiary:#412742;
+  --md-sys-color-tertiary-container:#593D5A;
+  --md-sys-color-on-tertiary-container:#FDD7FA;
+  --md-sys-color-error:#FFB4AB;
+  --md-sys-color-on-error:#690005;
+  --md-sys-color-error-container:#93000A;
+  --md-sys-color-on-error-container:#FFDAD6;
+  --md-sys-color-background:#121318;
+  --md-sys-color-on-background:#E2E2E9;
+  --md-sys-color-surface:#1E1F25;
+  --md-sys-color-on-surface:#E2E2E9;
+  --md-sys-color-surface-variant:#44464F;
+  --md-sys-color-on-surface-variant:#C5C6D0;
+  --md-sys-color-outline:#8F9099;
+  --md-sys-color-outline-variant:#44464F;
+  --md-sys-color-shadow:rgba(0,0,0,.45);
+  --md-sys-color-scrim:#000000;
+  --md-sys-color-inverse-surface:#E2E2E9;
+  --md-sys-color-inverse-on-surface:#2F3036;
+  --md-sys-color-inverse-primary:#465D91;
+  --md-sys-color-surface-dim:#121318;
+  --md-sys-color-surface-bright:#38393F;
+  --md-sys-color-surface-container-lowest:#0C0E13;
+  --md-sys-color-surface-container-low:#1A1B20;
+  --md-sys-color-surface-container:#1E1F25;
+  --md-sys-color-surface-container-high:#282A2F;
+  --md-sys-color-surface-container-highest:#33353A;
+  --focus-ring:#AFC6FF;
+
+  --term-red:#ef3838; --term-green:#70e92f; --term-blue:#41d8fe;
+  --term-yellow:#f2e33a; --term-purple:#e290ff; --term-orange:#ff7800;
+  --term-special:#2d81e2;
+}
+
 :root{color-scheme:light;accent-color:var(--md-sys-color-primary)}
 html.dark-theme{color-scheme:dark}
 
-
-/* 亮色辉光柔化：头像辉光在 #F4F6FA 底上过曝，收敛半径与透明度；夜间维持原亮度 */
+/* 亮色辉光柔化：头像辉光在浅色底上过曝，收敛半径与透明度；夜间维持原亮度 */
 html:not(.dark-theme){
   --hero-glow-red:0 0 6px 1px rgba(255,122,76,.55);
   --hero-glow-blue:0 0 6px 1px rgba(65,216,254,.55);

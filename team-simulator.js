@@ -116,6 +116,7 @@ function toggleTeamSimulator() {
     }
     // 按钮红态/提示统一由视图状态推导（含另外四个视图按钮的互斥复位）
     if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
+    syncTeamActionButtons();
 }
 
 /**
@@ -336,7 +337,25 @@ function renderTeamDisplay() {
         }
     }
     updateTeamTags();
+    syncTeamActionButtons();
     adjustTeamDisplayHeight();
+}
+
+/**
+ * 同步队伍操作按钮的可用状态：
+ * 空阵容时「保存队伍」不可用，避免主操作按钮一直高亮。
+ */
+function syncTeamActionButtons() {
+    const saveBtn = document.getElementById('save-team-btn');
+    const clearBtn = document.getElementById('clear-team-btn');
+    if (!saveBtn && !clearBtn) return;
+    const hasHero = Array.isArray(state.teamSlots) && state.teamSlots.some(slot => slot && slot.hero);
+    [saveBtn, clearBtn].forEach(btn => {
+        if (!btn) return;
+        btn.disabled = !hasHero;
+        btn.classList.toggle('disabled', !hasHero);
+        btn.setAttribute('aria-disabled', String(!hasHero));
+    });
 }
 
 /**

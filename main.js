@@ -699,13 +699,9 @@ async function initializeApp() {
     // 渲染捐赠者列表
     const sortedDonationList = sortDonationListByLanguage(donationList);
     const shouldScroll = renderDonationList(sortedDonationList);
-    // 启动捐赠列表滚动动画（无需阻断层）
-    if (shouldScroll) {
-        const container = document.getElementById('donation-list-box');
-        if (container) {
-            container.classList.add('is-scrolling');
-        }
-    }
+    // 启动捐赠列表滚动动画。不要在隐藏状态下直接加 is-scrolling：动画会在视图隐藏期间
+    // 先跑掉一段，回到主页时从中间相位开始，表现为跑马灯跳位/错位。
+    if (shouldScroll) syncDonationMarquee();
     // 检查赞助显示状态并相应处理
     // 如果cookie不存在（默认显示赞助）或者cookie存在且值为false，则加载赞助脚本
     if (!isDonateHidden()) {
@@ -1786,6 +1782,7 @@ function sortDonationListByLanguage(originalList) {
  * 动态渲染捐赠者列表。
  * 该函数根据列表内容长度智能调整滚动速度和名单总长度，以实现无缝、自然的滚动效果。
  */
+let _donationListLayoutStale = false;
 function renderDonationList(sortedDonationList) {
     const wrapper = document.querySelector('.donation-list-wrapper');
     const container = document.getElementById('donation-list-box');
@@ -1794,6 +1791,9 @@ function renderDonationList(sortedDonationList) {
         console.error('找不到捐赠者列表的容器元素。');
         return false; // 返回 false 表示未成功渲染，以便外部逻辑判断
     }
+
+    // 在校验/测量时记录"当时页头是收起的"：回到主页后需要按真实宽度重排并从头启动动画。
+    if (wrapper.offsetWidth === 0) _donationListLayoutStale = true;
 
     // 清空旧内容，先渲染一次原始名单以测量长度
     container.innerHTML = '';
@@ -1843,6 +1843,44 @@ function renderDonationList(sortedDonationList) {
 }
 
 /**
+ * 按当前真实可见宽度同步捐赠跑马灯：
+ * - 页头收起（聊天/通缉/刷图/抽奖/队伍）时不启动动画，避免隐藏期间空转；
+ * - 回到列表后按真实宽度重排，并从头启动，避免从隐藏期间的中途相位继续。
+ */
+function syncDonationMarquee() {
+    const wrapper = document.querySelector('.donation-list-wrapper');
+    const container = document.getElementById('donation-list-box');
+    if (!wrapper || !container) return;
+
+    if (wrapper.offsetWidth === 0) {
+        container.classList.remove('is-scrolling');
+        _donationListLayoutStale = true;
+        return;
+    }
+
+    if (_donationListLayoutStale) {
+        _donationListLayoutStale = false;
+        if (typeof donationList !== 'undefined'
+            && typeof sortDonationListByLanguage === 'function') {
+            renderDonationList(sortDonationListByLanguage(donationList));
+        }
+    }
+
+    if (!container.children.length) {
+        container.classList.remove('is-scrolling');
+        return;
+    }
+
+    // 移除后强制 reflow 再挂上：确保从头开始，而不是接着隐藏期间已走过的动画相位。
+    container.classList.remove('is-scrolling');
+    void container.offsetWidth;
+    container.classList.add('is-scrolling');
+}
+// 供 special-views / 队伍 / 抽奖等懒加载视图在恢复页头后调用。
+window.syncDonationMarquee = syncDonationMarquee;
+window.addEventListener('donation-marquee-sync', syncDonationMarquee);
+
+/**
  * 检查赞助是否被隐藏
  */
 function isDonateHidden() {
@@ -1876,8 +1914,16 @@ function toggleDonate() {
  * 异步数据回调要据此让位，不能把这两块翻出来。
  */
 function isHeaderCollapsedByView() {
-    return document.body.classList.contains('lottery-mode-active')
-        || document.body.classList.contains('team-mode-active');
+    if (document.body.classList.contains('lottery-mode-active')
+        || document.body.classList.contains('team-mode-active')) {
+        return true;
+    }
+    // 聊天/通缉/刷图等 inline 特殊视图也会收起页头。异步回调（如捐赠名单渲染完成后）
+    // 调 updateDonateButton() 时若只判断 lottery/team，会把已隐藏的捐赠榜重新翻出来。
+    return ['wanted-mission-view', 'farming-guide-view', 'chat-simulator-view'].some(id => {
+        const el = document.getElementById(id);
+        return !!el && !el.classList.contains('hidden');
+    });
 }
 
 /**
@@ -1895,6 +1941,7 @@ function updateDonateButton() {
     // 抽奖/队伍（含等待骨架）打开态下这块由视图自己收着：捐赠者数据异步到达时若这里把它翻出来，
     // 会看到「捐赠榜闪一下又消失」（骨架期尤其明显）。
     if (container) container.classList.toggle('hidden', isHidden || isHeaderCollapsedByView());
+    if (typeof syncDonationMarquee === 'function') syncDonationMarquee();
 }
 
 /**

@@ -102,6 +102,7 @@ function toggleTeamSimulator() {
         renderActiveTabList();
         setMainViewHistory('teamSimulator');
         document.body.classList.add('team-mode-active');
+        window.dispatchEvent(new Event('donation-marquee-sync'));
 
     } else {
         headerInfoContainer.classList.remove('hidden');
@@ -111,6 +112,7 @@ function toggleTeamSimulator() {
         updateFilterButtonUI('filterScope');
         applyFiltersAndRender();
         document.body.classList.remove('team-mode-active');
+        window.dispatchEvent(new Event('donation-marquee-sync'));
         // 主动退出 ⇒ 地址回到列表（带条件，见 special-views.js::syncViewUrlAfterToggle）
         if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
     }

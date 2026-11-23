@@ -1707,6 +1707,7 @@
             uiElements.headerInfoContainer.classList.add('hidden');
             uiElements.donationlistcontainer.classList.add('hidden');
             document.body.classList.add('lottery-mode-active');
+            window.dispatchEvent(new Event('donation-marquee-sync'));
             refreshLotteryTranslations();
             renderActivityList();
             // 延后词表（lottery_title）可能尚未落地（启动后立刻开视图）⇒ 落地后补刷标题
@@ -1733,6 +1734,7 @@
             state.activeHeroSubset = null;
             applyFiltersAndRender();
             if (typeof syncViewUrlAfterToggle === 'function') syncViewUrlAfterToggle();
+            window.dispatchEvent(new Event('donation-marquee-sync'));
         }
         if (typeof refreshMainViewButtons === 'function') refreshMainViewButtons();
     }

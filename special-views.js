@@ -300,6 +300,10 @@ const VIEW_OPEN_STATE = {
 // 聊天/刷图这类 inline 视图：打开时收起页头「赞助/捐赠」，回列表或去通缉页时恢复。
 // 只记录**本次由我们藏起来**的元素，用户自己关掉的捐赠榜不会被重新打开。
 let _headerChromeHiddenEls = [];
+function _syncDonationMarquee() {
+    // 跨脚本用事件而不是直接引用函数：main.js 的初始化作用域不保证对外可见。
+    window.dispatchEvent(new Event('donation-marquee-sync'));
+}
 function _hideHeaderChrome() {
     ['.header-info-container', '.donation-list-container-wrapper'].forEach(sel => {
         const el = document.querySelector(sel);
@@ -307,6 +311,7 @@ function _hideHeaderChrome() {
         el.classList.add('hidden');
         _headerChromeHiddenEls.push(el);
     });
+    _syncDonationMarquee();
 }
 function _restoreHeaderChrome() {
     _headerChromeHiddenEls.forEach(el => el.classList.remove('hidden'));
@@ -334,7 +339,7 @@ function _applyOpenState(view) {
 
 function _hidePendingShell() {
     if (!_pendingShell) return;
-    const { host, ov, cls, undo, headerBackup } = _pendingShell;
+    const { host, ov, cls, undo, headerBackup, headerChrome } = _pendingShell;
     _pendingShell = null;
     window.removeEventListener('scroll', _placePendingSpinner, true);
     window.removeEventListener('resize', _placePendingSpinner);
@@ -344,6 +349,7 @@ function _hidePendingShell() {
     if (cls) document.body.classList.remove(cls);
     if (headerBackup) _restorePendingHeader(headerBackup);
     if (undo) undo();                   // 打开态隐藏元素复原（随后 open() 会在同一拍重新做一遍）
+    if (headerChrome) _restoreHeaderChrome();
 }
 
 /** 骨架期把「结果表头」按目标视图的标题 + 返回占位，几何与打开后一致（否则表头上屏会把面板顶下去）。 */
@@ -394,6 +400,7 @@ function _schedulePendingCleanup(st, view) {
         if (st.cls) document.body.classList.remove(st.cls);
         if (revert && st.headerBackup) _restorePendingHeader(st.headerBackup);
         if (revert && st.undo) st.undo();
+        if (revert && st.headerChrome) _restoreHeaderChrome();
     };
     const tick = () => {
         const active = (typeof currentMainViewName === 'function') && currentMainViewName() !== 'list';
@@ -429,6 +436,13 @@ function _showPendingShell(view) {
     if (!host) return;
     const cls = cfg.inline ? 'view-pending-inline' : null;
     const undo = cfg.inline ? null : _applyOpenState(view);   // 先隐藏，再上骨架（次序不能反）
+    // 聊天是懒加载的 inline 视图：骨架出现时页头/赞助必须和结果区同一拍收起，
+    // 不能只收赞助而把旧列表留着，否则看起来像“顶部先消失、页面后切换”。
+    let headerChrome = false;
+    if (view === 'chat') {
+        _hideHeaderChrome();
+        headerChrome = true;
+    }
     const headerBackup = cfg.headerTitle ? _paintPendingHeader(cfg) : null;
     host.classList.remove('hidden');
     host.classList.add('pending-view-shell');
@@ -440,7 +454,7 @@ function _showPendingShell(view) {
     // 挂到 body 而不是视图容器：视图切换带 opacity/transform 过渡，会把它变成定位/层叠上下文，
     // 转圈会被挤到容器中线（聊天/队伍容器高过一屏就跑到屏幕外）。挂 body 才是真正的视口坐标。
     document.body.appendChild(ov);
-    _pendingShell = { view, host, slot: cfg.slot || null, ov, cls, undo, headerBackup };
+    _pendingShell = { view, host, slot: cfg.slot || null, ov, cls, undo, headerBackup, headerChrome };
     _placePendingSpinner();
     window.addEventListener('scroll', _placePendingSpinner, true);
     window.addEventListener('resize', _placePendingSpinner);
@@ -628,6 +642,8 @@ function showHeroListViewUI() {
 
     updateResultsHeader(); // 更新结果头部信息
     refreshMainViewButtons();
+    // 聊天/通缉/刷图收起过页头：回来后按真实宽度重排并从头启动捐赠跑马灯。
+    _syncDonationMarquee();
 }
 
 /**

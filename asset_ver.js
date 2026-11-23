@@ -1,11 +1,9 @@
 /* 自动生成，勿手改：每个 JSON 数据档的内容哈希。取数 URL 由 utils.js::av() 读这张表。 */
 window.AV = {
   "data/PassiveSkillIconCollection.json": "225b90fa",
-  "data/characters.json": "307b5570",
   "data/characters_balanced.json": "8b10bfe7",
   "data/costume_bonuses.json": "60e532af",
   "data/hero_order.json": "2286e658",
-  "data/heroes_skill_types.json": "d85657ac",
   "data/heroes_skills_ar.json": "ba3e26fd",
   "data/heroes_skills_balanced_ar.json": "947f876e",
   "data/heroes_skills_balanced_cn.json": "239e5c89",
@@ -349,7 +347,6 @@ window.AV = {
   "langs_json/speed_tc.json": "d7aff5ce",
   "langs_json/speed_tr.json": "3fb74f36",
   "lottery_display.json": "2b7df97d",
-  "lottery_official.json": "a13c11d9",
   "data/heroes_dynamic.json": "2c19d34e",
   "data/heroes_dynamic_balanced.json": "05b780c4",
   "langs_json/i18n_ar.json": "fd06a5fc",
@@ -372,4 +369,7 @@ window.AV = {
   "langs_json/i18n_sv.json": "fb2aee3c",
   "langs_json/i18n_tc.json": "23fdcf27",
   "langs_json/i18n_tr.json": "9b9f59c0",
+  "data/characters.json": "e0d544d3",
+  "data/heroes_skill_types.json": "9b8ae106",
+  "lottery_official.json": "51e8839b",
 };

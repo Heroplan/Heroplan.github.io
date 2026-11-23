@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-23 06:45:27",
+    "generatedAt": "2026-11-23 13:50:55",
     "poolCount": 54
   },
   "pools": {
@@ -1781,16 +1781,6 @@
         "lotteryEntries": [
           {
             "productId": "lottery_black_default",
-            "id": "lottery_black_2025",
-            "startDate": "2025-11-24 07:00:00",
-            "endDate": "2025-12-01 07:00:00",
-            "featuredHeroes": [
-              "scoundrel_lane",
-              "scoundrel_duval"
-            ]
-          },
-          {
-            "productId": "lottery_black_default",
             "id": "lottery_black_2026",
             "startDate": "2026-11-23 07:00:00",
             "endDate": "2026-11-30 07:00:00",
@@ -1886,6 +1876,18 @@
               "villain_toxicandra_costume_rose",
               "elemental_griffex_costume_camera"
             ]
+          },
+          {
+            "productId": "lottery_deluxe_ascension_default",
+            "id": "lottery_deluxe_instantpower_2026_12_04",
+            "startDate": "2026-12-04 07:00:00",
+            "endDate": "2026-12-09 07:00:00",
+            "featuredHeroes": [
+              "institute_ellery",
+              "magic_carpet_amelia",
+              "mahayoddha_bonga",
+              "beowulf_wiglaf"
+            ]
           }
         ]
       },
@@ -1962,8 +1964,8 @@
             "startDate": "2026-12-05 07:00:00",
             "endDate": "2026-12-09 07:00:00",
             "featuredHeroes": [
-              "astral_demon_ushal",
-              "astral_demon_zondalath"
+              "astral_demon_isharra",
+              "astral_demon_azaghim"
             ]
           }
         ]
@@ -2230,6 +2232,53 @@
               "shadow_cthuwu",
               "s2_fiji_mermaid_costume_hunter"
             ]
+          },
+          {
+            "productId": "lottery_titan_hunter_default",
+            "id": "titan_hunter_2026_12_06",
+            "startDate": "2026-12-06 07:00:00",
+            "endDate": "2026-12-10 07:00:00",
+            "featuredHeroes": [
+              "titan_hunter_juniper",
+              "titan_hunter_ingrith"
+            ],
+            "includedHeroes": [
+              "faun_isidore",
+              "s4_phileas_fogg_costume_engineer",
+              "ice_god_athena_costume_wargoddess",
+              "easter_jasper_costume_fisherman",
+              "goblin_darkfeather",
+              "tales1_gestalt_costume_pearls",
+              "ballerina_daroga",
+              "ice_god_perseus_costume_frozen",
+              "guardian_elephant",
+              "elemental_gastille",
+              "elemental_ash",
+              "ballerina_armand",
+              "goblin_grimsteel",
+              "astral_dwarf_haumri",
+              "elemental_farrah",
+              "s2_rugged_fisherman_costume_sake_master",
+              "castle_raven_franz",
+              "s3_jott",
+              "guardian_jackal_assassin_costume_bones",
+              "tales1_sharkhai_costume_butcher",
+              "kingdom_sun_shangxiang",
+              "s3_almur_costume_lord",
+              "tales2_dain",
+              "monster_hunter_bogart",
+              "magic_sergei",
+              "tales1_bagreg_costume_scout",
+              "astral_dwarf_chires",
+              "s3_nordri_costume_explorer",
+              "beachparty_dolrak",
+              "knights_treevil",
+              "christmas_buster",
+              "bard_zarel",
+              "ballerina_swan_maiden",
+              "shadow_cthuwu",
+              "s2_fiji_mermaid_costume_hunter"
+            ]
           }
         ]
       },
@@ -2242,12 +2291,6 @@
             "id": "lottery_legendary_wave_two_m",
             "startDate": "2026-11-19 07:00:00",
             "endDate": "2026-11-23 07:00:00"
-          },
-          {
-            "productId": "lottery_legendary_troop_default",
-            "id": "lottery_legendary_wave_one_n",
-            "startDate": "2026-12-03 07:00:00",
-            "endDate": "2026-12-07 07:00:00"
           }
         ]
       },
@@ -2763,9 +2806,9 @@
             "startDate": "2026-12-03 07:00:00",
             "endDate": "2026-12-07 07:00:00",
             "featuredHeroes": [
-              "tales2_regin_costume_omen",
-              "tales2_ott_costume_herbalist",
-              "tales2_gandr_costume_guardian"
+              "tales2_svafa_costume_spirit_hunter",
+              "tales2_bragi_costume_stone",
+              "tales2_regin_costume_omen"
             ]
           },
           {
@@ -2840,17 +2883,6 @@
       "lotteryEntries": [
         {
           "productId": "lottery_pickup_default",
-          "id": "pickup257",
-          "startDate": "2026-11-22 07:00:00",
-          "endDate": "2026-11-23 07:00:00",
-          "featuredHeroes": [
-            "astral_dwarf_quari",
-            "astral_lemonwood"
-          ],
-          "extraHeroesPoolId": "default"
-        },
-        {
-          "productId": "lottery_pickup_default",
           "id": "pickup258",
           "startDate": "2026-11-23 07:00:00",
           "endDate": "2026-11-24 07:00:00",
@@ -2923,6 +2955,83 @@
           "featuredHeroes": [
             "forsaken_khatrox",
             "magic_carpet_lilli"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup265",
+          "startDate": "2026-12-01 07:00:00",
+          "endDate": "2026-12-02 07:00:00",
+          "featuredHeroes": [
+            "astral_dwarf_gongoth",
+            "circus_emilio_costume_frog"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup266",
+          "startDate": "2026-12-02 07:00:00",
+          "endDate": "2026-12-03 07:00:00",
+          "featuredHeroes": [
+            "s5_hathor_costume_starlit",
+            "magic_becky_costume_gothic"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup267",
+          "startDate": "2026-12-03 07:00:00",
+          "endDate": "2026-12-04 07:00:00",
+          "featuredHeroes": [
+            "kingdom_zhuge_liang_costume_crane",
+            "astral_dwarf_orcur"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup268",
+          "startDate": "2026-12-04 07:00:00",
+          "endDate": "2026-12-05 07:00:00",
+          "featuredHeroes": [
+            "goblin_grimsteel",
+            "beachparty_davey_wavey"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup269",
+          "startDate": "2026-12-05 07:00:00",
+          "endDate": "2026-12-06 07:00:00",
+          "featuredHeroes": [
+            "villain_toxicandra_costume_rose",
+            "shadow_asketel"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup270",
+          "startDate": "2026-12-06 07:00:00",
+          "endDate": "2026-12-07 07:00:00",
+          "featuredHeroes": [
+            "magic_carpet_naeem",
+            "garrison_dima"
+          ],
+          "extraHeroesPoolId": "default"
+        },
+        {
+          "productId": "lottery_pickup_default",
+          "id": "pickup271",
+          "startDate": "2026-12-07 07:00:00",
+          "endDate": "2026-12-08 07:00:00",
+          "featuredHeroes": [
+            "elemental_doxan_costume_hacker",
+            "s4_hulda_costume_nurse"
           ],
           "extraHeroesPoolId": "default"
         }
@@ -8446,9 +8555,9 @@
         "startTime": "2026-12-03 07:00:00",
         "endTime": "2026-12-08 07:00:00",
         "featuredCharacters": [
-          "castle_boar_feidlimid",
-          "castle_boar_deilwen",
-          "castle_wolf_esme_costume_abjurer"
+          "castle_boar_moccos",
+          "castle_raven_lewena_costume_firebrand",
+          "castle_boar_feidlimid"
         ]
       }
     ],

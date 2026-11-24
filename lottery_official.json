@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-23 13:50:55",
+    "generatedAt": "2026-11-24 08:42:58",
     "poolCount": 54
   },
   "pools": {
@@ -2141,53 +2141,6 @@
         "lotteryEntries": [
           {
             "productId": "lottery_titan_hunter_default",
-            "id": "titan_hutner_2026_11_08",
-            "startDate": "2026-11-08 07:00:00",
-            "endDate": "2026-11-12 07:00:00",
-            "featuredHeroes": [
-              "titan_hunter_orson",
-              "titan_hunter_ingrith"
-            ],
-            "includedHeroes": [
-              "faun_isidore",
-              "s4_phileas_fogg_costume_engineer",
-              "ice_god_athena_costume_wargoddess",
-              "easter_jasper_costume_fisherman",
-              "goblin_darkfeather",
-              "tales1_gestalt_costume_pearls",
-              "ballerina_daroga",
-              "ice_god_perseus_costume_frozen",
-              "guardian_elephant",
-              "elemental_gastille",
-              "elemental_ash",
-              "ballerina_armand",
-              "goblin_grimsteel",
-              "astral_dwarf_haumri",
-              "elemental_farrah",
-              "s2_rugged_fisherman_costume_sake_master",
-              "castle_raven_franz",
-              "s3_jott",
-              "guardian_jackal_assassin_costume_bones",
-              "tales1_sharkhai_costume_butcher",
-              "kingdom_sun_shangxiang",
-              "s3_almur_costume_lord",
-              "tales2_dain",
-              "monster_hunter_bogart",
-              "magic_sergei",
-              "tales1_bagreg_costume_scout",
-              "astral_dwarf_chires",
-              "s3_nordri_costume_explorer",
-              "beachparty_dolrak",
-              "knights_treevil",
-              "christmas_buster",
-              "bard_zarel",
-              "ballerina_swan_maiden",
-              "shadow_cthuwu",
-              "s2_fiji_mermaid_costume_hunter"
-            ]
-          },
-          {
-            "productId": "lottery_titan_hunter_default",
             "id": "titan_hunter_2026_11_24",
             "startDate": "2026-11-24 07:00:00",
             "endDate": "2026-11-28 07:00:00",
@@ -2883,17 +2836,6 @@
       "lotteryEntries": [
         {
           "productId": "lottery_pickup_default",
-          "id": "pickup258",
-          "startDate": "2026-11-23 07:00:00",
-          "endDate": "2026-11-24 07:00:00",
-          "featuredHeroes": [
-            "magic_milena_costume_ice",
-            "ninja_oniwakamaru"
-          ],
-          "extraHeroesPoolId": "default"
-        },
-        {
-          "productId": "lottery_pickup_default",
           "id": "pickup259",
           "startDate": "2026-11-25 07:00:00",
           "endDate": "2026-11-26 07:00:00",
@@ -3040,10 +2982,17 @@
         {
           "id": "default",
           "heroesIds": [
-            "s2_ariel",
-            "s3_odin",
-            "s4_xnolphod",
-            "s5_el_naddaha"
+            "s5_hathor",
+            "s5_set",
+            "s5_khepri",
+            "s5_ahmose",
+            "s5_bastet",
+            "s5_tetisheri",
+            "s5_papyros",
+            "s5_khonshu",
+            "s5_el_naddaha",
+            "s5_anubis",
+            "s5_sneferu"
           ]
         }
       ]
@@ -8500,12 +8449,6 @@
     "allianceQuestSummonEnabled": true,
     "treasureQuestsAsMajorEventEnabled": true,
     "uniqueEvents": [
-      {
-        "id": "CovenantQuest2",
-        "type": "CovenantQuest",
-        "startTime": "2026-11-21 07:00:00",
-        "endTime": "2026-11-24 07:00:00"
-      },
       {
         "id": "Christmas2026",
         "type": "Seasonal",

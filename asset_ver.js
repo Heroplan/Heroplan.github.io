@@ -371,5 +371,5 @@ window.AV = {
   "langs_json/i18n_tr.json": "9b9f59c0",
   "data/characters.json": "e0d544d3",
   "data/heroes_skill_types.json": "9b8ae106",
-  "lottery_official.json": "51e8839b",
+  "lottery_official.json": "b6dbaaf0",
 };

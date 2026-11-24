@@ -270,6 +270,18 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   outline-offset:2px;
 }
 
+/* 弹窗/立绘容器自身获得焦点时不画整圈描边，避免被误认为图片上的蓝色边框；内部按钮仍保留键盘焦点提示 */
+dialog.modal-dialog:focus,
+dialog.modal-dialog:focus-visible,
+#image-modal-content:focus,
+#image-modal-content:focus-visible,
+.hero-portrait-container:focus,
+.hero-portrait-container:focus-visible,
+.hero-portrait-image:focus,
+.hero-portrait-image:focus-visible{
+  outline:none !important;
+}
+
 /* —— 尊重系统「减少动态效果」—— */
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{

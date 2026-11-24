@@ -2953,7 +2953,10 @@ function renderDetailsInModal(hero, context = {}) {
     }
 
     // 为技能标签点击筛选功能
-    modalContent.addEventListener('click', (event) => {
+    // ⚠ 用 onclick 而不是 addEventListener：modalContent 是常驻节点，
+    // 每次打开详情都 addEventListener 会不断累积监听器；连续筛选时一次点击会触发
+    // 多次 resetAllFilters / closeDetailsModal / applyFiltersAndRender，Chrome 会卡死崩溃。
+    modalContent.onclick = (event) => {
         // ▼▼▼ 在抽奖或队伍模拟器模式下，禁用此功能 ▼▼▼
         if (state.lotterySimulatorActive || state.teamSimulatorActive) {
             return; // 直接退出
@@ -3028,7 +3031,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         closeDetailsModal();
         applyFiltersAndRender();
-    });
+    };
 
     // --- 检查立绘是否存在并绑定点击事件 ---
     const avatarContainer = modalContent.querySelector('.hero-avatar-container-modal');

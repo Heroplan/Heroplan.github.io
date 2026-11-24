@@ -929,6 +929,8 @@ async function loadData(lang) {
         state.allHeroes = list;
         // 官方角色定义（heroes 数组 + balancedHeroes）：抽奖引擎直接消费这份。
         state.charactersConfig = charsDoc.charactersConfig;
+        // 抽奖等按需视图可能比英雄数据先打开：广播数据就绪，让它们重算奖池子集并刷新列表。
+        window.dispatchEvent(new Event('heroes-data-ready'));
         state.families_bonus = [];            // 家族加成改由每个英雄的 familyBonus 提供
         state.family_values = familyValues;   // getDisplayName(family/source) 用
         return true;

@@ -317,7 +317,8 @@
         state.allSummonPools = buildPools();
         renderActivityList();
         // 配置在途时视图可能已被打开（toggle 不再等 initialize）⇒ 补上默认选池
-        if (state.lotterySimulatorActive && !state.currentSummonData) selectDefaultPoolIfNeeded();
+        // 若已经有当前池，则重算子集并刷新列表（覆盖“数据/奖池比视图晚到”的情况）
+        if (state.lotterySimulatorActive) refreshActiveLotteryHeroes();
         loadHistoryFromLocalStorage();
         renderSummonHistory();
         migrateLegacyHistoryPoolKeys();
@@ -590,6 +591,9 @@
     /** 官方池内容（桶成员并集 → 站点英雄），供英雄表复用。 */
     function getPoolSubset(poolConfig) {
         if (!poolConfig) return [];
+        // 视图在英雄数据/映射之前打开时，heroesByIdMap 可能还是空 Map；
+        // 这里按需补建一次，避免 get() 全部 miss ⇒ 奖池子集为空 ⇒ 主表空白。
+        if (!state.heroesByIdMap || !state.heroesByIdMap.size) buildHeroMaps();
         const built = engine.buildBuckets(poolConfig.enginePoolId, nowSeconds(), currentOpts());
         if (!built) return [];
         const ids = new Set();
@@ -612,6 +616,30 @@
         }
         return heroes;
     }
+
+    /** 数据/奖池重算后，把当前奖池的英雄子集重新套回主表并刷新精选位。
+     *  抽奖视图可能比英雄数据先打开：若在数据到达前就算过 activeHeroSubset，
+     *  之后即使数据加载完成，主表也会一直空白，必须在这里重算一次。 */
+    function refreshActiveLotteryHeroes() {
+        if (!state.lotterySimulatorActive) return false;
+        if (state.currentSummonData) {
+            if (!state.allHeroes || !state.allHeroes.length) return false;
+            // 奖池子集是按 heroesByIdMap 查的；视图早于数据打开时 map 可能还是空的，
+            // 数据就绪后必须重建 map，再重算子集，否则刷新出来仍是空列表。
+            buildHeroMaps();
+            state.activeHeroSubset = getPoolSubset(state.currentSummonData);
+            applyFiltersAndRender();
+            renderFeaturedHeroes();
+            return true;
+        }
+        return selectDefaultPoolIfNeeded();
+    }
+
+    // 数据由 utils.js::loadData 分批/按语言重新载入；抽奖脚本可能先于数据到位，
+    // 收到就绪广播后重新算子集，避免“数据已加载但列表一直空白”。
+    window.addEventListener('heroes-data-ready', () => {
+        if (state.lotterySimulatorActive) refreshActiveLotteryHeroes();
+    });
 
     // ────────────────────────────────────────────────────────────────────
     // 官方概率浮层
@@ -1737,6 +1765,9 @@
             if (activityList) activityList.scrollTop = 0;
             if (historyList) historyList.scrollTop = 0;
             if (!selectDefaultPoolIfNeeded()) applyFiltersAndRender();
+            // 首次进入可能刚好碰到英雄数据/奖池在途；这里再按当前池重算一次，
+            // 避免 activeHeroSubset 为空导致主表空白且之后不再刷新。
+            refreshActiveLotteryHeroes();
             setMainViewHistory('lotterySimulator');
         } else {
             wrapper.classList.add('hidden');

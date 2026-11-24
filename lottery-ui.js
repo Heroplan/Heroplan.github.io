@@ -881,6 +881,12 @@
         return entities || configured;
     }
 
+    /** 奖池是否支持玩家自选精选英雄（自选槽 / 显式自选名单）。不支持 ⇒ 精选位只读。 */
+    function poolAllowsSelfSelectFeatured(pool) {
+        return !!pool && ((pool.amountOfSelectableFeaturedSlots || 0) > 0
+            || ((pool.entitiesToChooseFrom || []).length > 0));
+    }
+
     function officialNameKey(heroId) {
         const i = heroId.indexOf('_', 4);
         return i < 0 ? heroId : heroId.slice(0, i);
@@ -965,8 +971,10 @@
         const columns = [[], []];
         rightColumn.style.display = cellMap.some(c => c[0] === 1) ? '' : 'none';
         const selSlots = state.currentSummonData.amountOfSelectableFeaturedSlots || 0;
-        const isSelfSelect = selSlots > 0 || (state.currentSummonData.entitiesToChooseFrom || []).length > 0;
+        const isSelfSelect = poolAllowsSelfSelectFeatured(state.currentSummonData);
         const isFixedSlot = i => isSelfSelect && i >= selSlots;
+        // 只有自选槽可以双击移除；固定精选池（pickup/季节池等）整块只读。
+        const canRemoveSlot = i => isSelfSelect && !isFixedSlot(i);
         for (let i = 0; i < numFeatured; i++) {
             const slot = document.createElement('div');
             slot.className = 'featured-hero-slot';
@@ -990,7 +998,7 @@
             }
             slot.addEventListener('dblclick', () => {
                 const h = state.customFeaturedHeroes[i];
-                if (h && !h.isFeaturedOnly && !isFixedSlot(i)) {
+                if (h && canRemoveSlot(i) && !h.isFeaturedOnly) {
                     removeHeroFromFeaturedSlot(i);
                 }
             });
@@ -1021,6 +1029,8 @@
 
     function addHeroToFeaturedSlot(selectedHero) {
         const poolConfig = state.currentSummonData;
+        // 固定精选池（无自选槽 / 无自选名单）：禁用"修改精选英雄"，精选位完全按官方配置。
+        if (!poolAllowsSelfSelectFeatured(poolConfig)) return;
         const d = i18n[state.currentLang] || {};
         const explicitList = poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0;
         if (explicitList) {
@@ -1049,6 +1059,8 @@
     }
 
     function removeHeroFromFeaturedSlot(slotIndex) {
+        // 固定精选池只读：双击头像也不允许清空官方精选位。
+        if (!poolAllowsSelfSelectFeatured(state.currentSummonData)) return;
         if (state.customFeaturedHeroes[slotIndex]) {
             state.customFeaturedHeroes[slotIndex] = null;
             renderFeaturedHeroes();

@@ -238,6 +238,19 @@ function yieldToMain() {
 }
 
 /**
+ * 当前抽奖池是否支持玩家自选精选英雄（官方 playerSelectedFeaturedEntityConfig：
+ * amountOfSelectableFeaturedSlots>0 或 entitiesToChooseFrom 非空）。
+ * 不支持时，精选位完全由官方配置决定 ⇒ 禁用模拟器的"添加/移除精选英雄"功能，
+ * 列表收藏位恢复成普通收藏星号（★/☆ 可点切换收藏）。
+ */
+function lotteryFeaturedSelfSelectEnabled() {
+    const pool = state.currentSummonData;
+    if (!pool) return false;
+    return (pool.amountOfSelectableFeaturedSlots || 0) > 0
+        || ((pool.entitiesToChooseFrom || []).length > 0);
+}
+
+/**
  * 渲染主列表的英雄表格。
  * @param {object[]} heroes - 要渲染的英雄对象数组。
  */
@@ -387,36 +400,29 @@ async function renderTable(heroes) {
                 let icon;
                 let cssClass = '';
                 let favTitle = '';
+                // 该格语义：'featured' = ⬆️ 加入精选/队伍；'favorite' = ★/☆ 收藏。
+                // 详情弹窗的收藏按钮只同步 'favorite' 格，不会把 ⬆️ 覆盖成星号。
+                let favKind = 'favorite';
 
-                if (state.teamSimulatorActive || state.lotterySimulatorActive) {
+                const simPool = state.currentSummonData;
+                const chooseList = (simPool && Array.isArray(simPool.entitiesToChooseFrom)) ? simPool.entitiesToChooseFrom : [];
+                // 自选精选池里，只有真正能进精选槽的英雄（5★ 且在 entitiesToChooseFrom 名单内）才显示 ⬆️；
+                // 其余英雄仍显示列表原本的收藏星号，收藏状态照常可点。
+                const canAddToFeatured = state.lotterySimulatorActive
+                    && lotteryFeaturedSelfSelectEnabled()
+                    && hero.rarity === 5
+                    && (chooseList.length === 0 || chooseList.includes(hero.heroId));
+
+                if (state.teamSimulatorActive) {
                     icon = '⬆️';
-                    if (state.lotterySimulatorActive) {
-                        // 检查英雄是否已被添加
-                        let isDisabled = false;
-
-                        // 规则1: 英雄不是5星则禁用
-                        if (hero.rarity !== 5) {
-                            isDisabled = true;
-                        }
-
-                        // 规则2: 如果尚未被禁用，再检查是否已被添加
-                        if (!isDisabled && state.customFeaturedHeroes) {
-                            isDisabled = state.customFeaturedHeroes.some(fh => fh && fh.heroId === hero.heroId);
-                        }
-
-                        // 规则3: 如果尚未被禁用，再检查是否在允许列表中
-                        const poolConfig = state.currentSummonData;
-                        if (!isDisabled && poolConfig && poolConfig.entitiesToChooseFrom && poolConfig.entitiesToChooseFrom.length > 0) {
-                            if (!poolConfig.entitiesToChooseFrom.includes(hero.heroId)) {
-                                isDisabled = true;
-                            }
-                        }
-
-                        // 最终根据 isDisabled 的结果来决定是否添加 'disabled' 类
-                        if (isDisabled) {
-                            cssClass = 'disabled';
-                        }
-                    }
+                    favKind = 'featured';
+                } else if (canAddToFeatured) {
+                    favKind = 'featured';
+                    icon = '⬆️';
+                    // 已在精选槽里的英雄置灰，不可重复添加
+                    const inFeatured = (state.customFeaturedHeroes || [])
+                        .some(fh => fh && fh.heroId === hero.heroId);
+                    if (inFeatured) cssClass = 'disabled';
                 } else {
                     const isHeroFavorite = isFavorite(hero);
                     if (isFavoritable(hero)) {
@@ -430,7 +436,7 @@ async function renderTable(heroes) {
                             + (hero.releaseDate ? ` (${String(hero.releaseDate).slice(0, 10)})` : '');
                     }
                 }
-                return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}"${favTitle ? ` title="${favTitle}"` : ''}>${icon}</span></td>`;
+                return `<td class="col-fav"><span class="favorite-toggle-icon ${cssClass}" data-hero-id="${hero.originalIndex}" data-fav-kind="${favKind}"${favTitle ? ` title="${favTitle}"` : ''}>${icon}</span></td>`;
             } else if (key === 'image') {
                 const gradientBg = getHeroColorLightGradient(hero.elementId);
                 let imageSrc; // 先声明变量
@@ -2911,8 +2917,9 @@ function renderDetailsInModal(hero, context = {}) {
             if (!isFavoritable(hero)) return;
             toggleFavorite(hero);
             updateFavoriteButton();
+            // 表格该格若是 ⬆️（加入精选/队伍）就不去动它；是 ★/☆ 才同步收藏状态。
             const tableStar = document.querySelector(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`);
-            if (tableStar) {
+            if (tableStar && tableStar.dataset.favKind !== 'featured') {
                 tableStar.textContent = isFavorite(hero) ? '★' : '☆';
                 tableStar.classList.toggle('favorited', isFavorite(hero));
             }

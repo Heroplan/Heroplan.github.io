@@ -1493,10 +1493,13 @@ function handleTableBodyClick(event) {
         const heroId = parseInt(target.dataset.heroId, 10);
         const hero = state.allHeroes.find(h => h.originalIndex === heroId);
         if (hero) {
-            if (state.lotterySimulatorActive) {
-                LotterySimulator.addHeroToFeaturedSlot(hero);
-            } else if (state.teamSimulatorActive) {
+            // 该格是 ⬆️ 才走"加精选/加队伍"；★/☆ 一律是收藏开关。
+            const isFeaturedCell = target.dataset.favKind === 'featured';
+            if (state.teamSimulatorActive) {
                 addHeroToTeam(hero);
+            } else if (isFeaturedCell && state.lotterySimulatorActive) {
+                // addHeroToFeaturedSlot 内部还会再判一次奖池是否支持自选（固定精选池直接返回）
+                LotterySimulator.addHeroToFeaturedSlot(hero);
             } else {
                 toggleFavorite(hero);
                 target.textContent = isFavorite(hero) ? '★' : '☆';

@@ -136,20 +136,17 @@ function getSavedTeams() {
 
     // 2. 迁移旧 Cookie 数据
     try {
-        const teamsJSON = getCookie('savedTeams');
-        if (teamsJSON) {
-            const teams = JSON.parse(teamsJSON);
-            if (Array.isArray(teams)) {
-                if (teams.length > 0) {
-                    localStorage.setItem(NEW_KEY, encodeTeamsToBinary(teams));
-                } else {
-                    localStorage.setItem(NEW_KEY, '');
-                }
-                console.log('已存队伍已迁移到二进制格式');
-                // 清除旧 Cookie，避免重复迁移
-                setCookie('savedTeams', '', -1);
-                return teams;
+        const teams = getCookieJSON('savedTeams', null);
+        if (Array.isArray(teams)) {
+            if (teams.length > 0) {
+                localStorage.setItem(NEW_KEY, encodeTeamsToBinary(teams));
+            } else {
+                localStorage.setItem(NEW_KEY, '');
             }
+            console.log('已存队伍已迁移到二进制格式');
+            // 清除旧 Cookie，避免重复迁移
+            deleteCookie('savedTeams');
+            return teams;
         }
     } catch (e) {
         console.error("从Cookie迁移已存队伍失败", e);

@@ -24,19 +24,83 @@ function escapeHtml(s) {
 }
 
 /**
+ * Cookie 读写统一入口。
+ *
+ * 背景：旧实现直接把值拼进 document.cookie，带 JSON 的偏好（收藏颜色等）
+ * 遇到分号/空格/非 ASCII 会被截断；读取时也没有解码。这里统一：
+ *   · 名称和值都 encodeURIComponent / decodeURIComponent；
+ *   · 兼容旧 Cookie：解码失败时按原文返回；
+ *   · 天数 <= 0 视为删除，未传天数保持会话 Cookie；
+ *   · HTTPS 下自动带 Secure，全部限定 SameSite=Lax、Path=/。
+ */
+function _cookieDecode(value) {
+    try {
+        return decodeURIComponent(value);
+    } catch (e) {
+        return value;
+    }
+}
+
+function _cookieSecureSuffix() {
+    try {
+        return location.protocol === 'https:' ? '; Secure' : '';
+    } catch (e) {
+        return '';
+    }
+}
+
+/**
+ * 读取 Cookie 名称列表（名称同样兼容编码后的值）。
+ * @returns {string[]}
+ */
+function getCookieNames() {
+    if (typeof document === 'undefined') return [];
+    let raw = '';
+    try {
+        raw = document.cookie || '';
+    } catch (e) {
+        return [];
+    }
+    if (!raw) return [];
+    return raw.split(';').map(part => {
+        const eq = part.indexOf('=');
+        const name = (eq < 0 ? part : part.slice(0, eq)).replace(/^\s+/, '').trim();
+        return _cookieDecode(name);
+    }).filter(Boolean);
+}
+
+/**
  * 设置一个 Cookie。
  * @param {string} name - Cookie 的名称。
- * @param {string} value - Cookie 的值。
- * @param {number} days - Cookie 的有效天数。
+ * @param {string|number|boolean} value - Cookie 的值。
+ * @param {number|string} [days] - 有效天数；<=0 删除，省略则为会话 Cookie。
+ * @returns {boolean} 是否写入成功。
  */
 function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        let date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
+    if (!name || typeof document === 'undefined') return false;
+
+    const cookieName = encodeURIComponent(String(name));
+    const cookieValue = encodeURIComponent(value !== null && value !== undefined ? String(value) : '');
+    let cookie = `${cookieName}=${cookieValue}; Path=/; SameSite=Lax${_cookieSecureSuffix()}`;
+
+    if (days !== undefined && days !== null && days !== '') {
+        const numericDays = Number(days);
+        if (Number.isFinite(numericDays)) {
+            if (numericDays <= 0) {
+                cookie += '; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            } else {
+                cookie += `; Max-Age=${Math.floor(numericDays * 24 * 60 * 60)}; Expires=${new Date(Date.now() + numericDays * 24 * 60 * 60 * 1000).toUTCString()}`;
+            }
+        }
     }
-    document.cookie = name + "=" + (value !== null && value !== undefined ? value : "") + expires + "; path=/; SameSite=Lax";
+
+    try {
+        document.cookie = cookie;
+        return true;
+    } catch (e) {
+        console.warn('[cookie] 写入失败', name, e);
+        return false;
+    }
 }
 
 /**
@@ -45,14 +109,71 @@ function setCookie(name, value, days) {
  * @returns {string|null} 如果找到则返回 Cookie 的值，否则返回 null。
  */
 function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    if (!name || typeof document === 'undefined') return null;
+
+    let rawCookie = '';
+    try {
+        rawCookie = document.cookie || '';
+    } catch (e) {
+        return null;
+    }
+    if (!rawCookie) return null;
+
+    const targetName = String(name);
+    const targetEncoded = encodeURIComponent(targetName);
+    const parts = rawCookie.split(';');
+
+    for (const part of parts) {
+        const eq = part.indexOf('=');
+        if (eq < 0) continue;
+        const rawName = part.slice(0, eq).replace(/^\s+/, '');
+        if (rawName !== targetEncoded && rawName !== targetName) continue;
+        return _cookieDecode(part.slice(eq + 1));
     }
     return null;
+}
+
+/**
+ * 删除 Cookie（兼容旧 setCookie(name, '', -1) 的语义）。
+ * @param {string} name
+ * @returns {boolean}
+ */
+function deleteCookie(name) {
+    return setCookie(name, '', -1);
+}
+
+/**
+ * 读取 JSON Cookie；解析失败返回 fallback，避免一个坏 Cookie 让整页抛异常。
+ * @template T
+ * @param {string} name
+ * @param {T} [fallback=null]
+ * @returns {T|any}
+ */
+function getCookieJSON(name, fallback = null) {
+    const raw = getCookie(name);
+    if (raw === null || raw === '') return fallback;
+    try {
+        return JSON.parse(raw);
+    } catch (e) {
+        console.warn('[cookie] JSON 解析失败', name, e);
+        return fallback;
+    }
+}
+
+/**
+ * 写入 JSON Cookie。
+ * @param {string} name
+ * @param {*} value
+ * @param {number|string} [days]
+ * @returns {boolean}
+ */
+function setCookieJSON(name, value, days) {
+    try {
+        return setCookie(name, JSON.stringify(value), days);
+    } catch (e) {
+        console.warn('[cookie] JSON 序列化失败', name, e);
+        return false;
+    }
 }
 
 /**

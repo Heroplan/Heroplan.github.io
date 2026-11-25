@@ -159,7 +159,9 @@ function openChatSimulatorView() {
     const hueSlider = document.getElementById('hue-slider');
     const splitter = document.getElementById('io-splitter');
 
-    let favoriteColors = getCookie('favoriteColors') ? JSON.parse(getCookie('favoriteColors')) : [];
+    let favoriteColors = getCookieJSON('favoriteColors', []);
+    if (!Array.isArray(favoriteColors)) favoriteColors = [];
+    favoriteColors = favoriteColors.filter(color => typeof color === 'string' && color.trim());
 
     // 渲染已收藏的颜色
     function renderFavoriteColors() {
@@ -184,7 +186,7 @@ function openChatSimulatorView() {
             removeBtn.addEventListener('click', (e) => {
                 e.stopPropagation(); // 阻止冒泡到item的点击事件
                 favoriteColors = favoriteColors.filter(c => c !== color);
-                setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                setCookieJSON('favoriteColors', favoriteColors, 365);
                 renderFavoriteColors();
             });
             favoriteColorsGrid.appendChild(item);
@@ -197,7 +199,7 @@ function openChatSimulatorView() {
             const currentColor = document.getElementById('color-hex-code').value;
             if (currentColor && !favoriteColors.includes(currentColor)) {
                 favoriteColors.unshift(currentColor);
-                setCookie('favoriteColors', JSON.stringify(favoriteColors), 365);
+                setCookieJSON('favoriteColors', favoriteColors, 365);
                 renderFavoriteColors();
             }
         });

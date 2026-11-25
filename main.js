@@ -202,7 +202,8 @@ async function initializeApp() {
     // 强制使用一次自动获取显示语言
     const languageUpdated = getCookie('languageUpdated');
     if (languageUpdated != '1') {
-        setCookie('language', '', '');
+        // 用删除代替“写空值会话 Cookie”：首次访问不需要在浏览器里留下空的 language 项。
+        deleteCookie('language');
         setCookie('languageUpdated', '1', '365');
     }
 

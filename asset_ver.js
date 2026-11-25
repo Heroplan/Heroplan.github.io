@@ -371,5 +371,5 @@ window.AV = {
   "data/heroes_skills_sv.json": "02d18dab",
   "data/heroes_skills_tc.json": "3c2986c1",
   "data/heroes_skills_tr.json": "26e34351",
-  "data/heroes_skill_types.json": "b1bf6f44",
+  "data/heroes_skill_types.json": "680c1b8e",
 };

@@ -236,9 +236,12 @@ var _vtRafPending = false;
 var _cardHeroes = null;
 var _cardLayout = { cols: 5, cardW: 0, cardH: 150, gap: 6, padX: 6 };
 var _cardRange = null;
+var _cardNodes = new Map();      // index → 已建卡片节点；滚动只增删边界，不重建整个窗口
+var _cardGrid = null;
+var _cardNodeStartRow = null;
 var _cardScrollBound = false;
 var _cardRafPending = false;
-const CARD_OVERSCAN_ROWS = 3;
+const CARD_OVERSCAN_ROWS = 4;
 const CARD_BASE_PAD = 8;
 
 function yieldToMain() {
@@ -283,8 +286,8 @@ async function renderTable(heroes) {
 
     if (uiElements.heroCardView) {
         uiElements.heroCardView.classList.add('hidden');
+        resetHeroCardNodes();
         _cardHeroes = null;
-        _cardRange = null;
     }
     heroTable.classList.remove('hidden');
 
@@ -717,19 +720,41 @@ function heroCardComputeRange() {
     };
 }
 
-function heroCardPaint() {
+function resetHeroCardNodes() {
+    const view = uiElements.heroCardView;
+    if (view) {
+        view.querySelectorAll('.hero-card img').forEach(im => {
+            if (!im.complete) im.removeAttribute('src');
+        });
+        view.innerHTML = '';
+    }
+    _cardNodes.clear();
+    _cardGrid = null;
+    _cardNodeStartRow = null;
+    _cardRange = null;
+}
+
+/** 用显式网格坐标固定每张卡的绝对行/列：窗口起点变化时只改坐标，不重建卡片和图片。 */
+function placeHeroCardNode(node, index, startRow, cols) {
+    node.style.gridRow = String(Math.floor(index / cols) - startRow + 1);
+    node.style.gridColumn = String(index % cols + 1);
+}
+
+function heroCardPaint(forceRebuild) {
     const view = uiElements.heroCardView;
     if (!view) return;
     const langDict = i18n[state.currentLang] || {};
     const total = _cardHeroes ? _cardHeroes.length : 0;
 
     if (total === 0) {
-        _cardRange = null;
+        resetHeroCardNodes();
         view.style.paddingTop = CARD_BASE_PAD + 'px';
         view.style.paddingBottom = CARD_BASE_PAD + 'px';
         view.innerHTML = `<div class="hero-card-empty empty-results-message">${escapeHtml(langDict.noResults || '')}</div>`;
         return;
     }
+
+    if (forceRebuild) resetHeroCardNodes();
 
     const range = heroCardComputeRange();
     _cardRange = [range.start, range.end];
@@ -738,12 +763,52 @@ function heroCardPaint() {
     view.style.paddingTop = topH + 'px';
     view.style.paddingBottom = botH + 'px';
 
-    const cards = [];
-    for (let i = range.start; i < range.end; i++) {
-        const inViewport = i >= range.visibleStart * _cardLayout.cols && i < range.visibleEnd * _cardLayout.cols;
-        cards.push(buildHeroCard(_cardHeroes[i], i, inViewport ? 'high' : 'low'));
+    if (!_cardGrid || !_cardGrid.isConnected) {
+        view.innerHTML = '<div class="hero-card-grid"></div>';
+        _cardGrid = view.firstElementChild;
+        _cardNodes.clear();
+        _cardNodeStartRow = null;
     }
-    view.innerHTML = `<div class="hero-card-grid">${cards.join('')}</div>`;
+    const grid = _cardGrid;
+    const cols = _cardLayout.cols;
+
+    // 1) 移除窗口外的卡片；先撤掉未完成图片的 src，避免快速滚动时旧请求占用连接池。
+    for (const [idx, node] of Array.from(_cardNodes)) {
+        if (idx >= range.start && idx < range.end) continue;
+        node.querySelectorAll('img').forEach(im => { if (!im.complete) im.removeAttribute('src'); });
+        node.remove();
+        _cardNodes.delete(idx);
+    }
+
+    // 2) 起点行变了：保留的卡片只更新相对网格坐标，图片/DOM 原样保留。
+    if (_cardNodeStartRow !== range.startRow) {
+        for (const [idx, node] of _cardNodes) placeHeroCardNode(node, idx, range.startRow, cols);
+        _cardNodeStartRow = range.startRow;
+    }
+
+    // 3) 只补新增的边界卡片；按索引升序插入，保持键盘 Tab 顺序。
+    const missing = [];
+    for (let i = range.start; i < range.end; i++) {
+        if (!_cardNodes.has(i)) missing.push(i);
+    }
+    if (missing.length) {
+        const cards = missing.map(i => {
+            const inViewport = i >= range.visibleStart * cols && i < range.visibleEnd * cols;
+            return buildHeroCard(_cardHeroes[i], i, inViewport ? 'high' : 'low');
+        }).join('');
+        const temp = document.createElement('div');
+        temp.innerHTML = cards;
+        const sorted = Array.from(_cardNodes.keys()).sort((a, b) => a - b);
+        let cursor = 0;
+        for (const node of Array.from(temp.children)) {
+            const idx = Number(node.dataset.cardIndex);
+            while (cursor < sorted.length && sorted[cursor] < idx) cursor++;
+            const refNode = cursor < sorted.length ? _cardNodes.get(sorted[cursor]) : null;
+            placeHeroCardNode(node, idx, range.startRow, cols);
+            grid.insertBefore(node, refNode || null);
+            _cardNodes.set(idx, node);
+        }
+    }
 }
 
 function heroCardOnScroll() {
@@ -756,14 +821,6 @@ function heroCardOnScroll() {
         if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
         const range = heroCardComputeRange();
         if (_cardRange && range.start === _cardRange[0] && range.end === _cardRange[1]) return;
-        // 离开窗口的卡片图片先取消，避免快速滚动时中间窗口的请求占满同域连接池。
-        if (_cardRange) {
-            uiElements.heroCardView.querySelectorAll('.hero-card').forEach(card => {
-                const idx = parseInt(card.dataset.cardIndex, 10);
-                if (idx >= range.start && idx < range.end) return;
-                card.querySelectorAll('img').forEach(im => { if (!im.complete) im.removeAttribute('src'); });
-            });
-        }
         heroCardPaint();
     });
 }
@@ -776,8 +833,7 @@ function renderCards(heroes) {
     _cardLayout = computeHeroCardLayout();
     applyHeroCardLayout(_cardLayout);
     if (wrapper) wrapper.scrollTop = 0;
-    _cardRange = null;
-    heroCardPaint();
+    heroCardPaint(true);
     if (!_cardScrollBound && wrapper) {
         _cardScrollBound = true;
         wrapper.addEventListener('scroll', heroCardOnScroll, { passive: true });
@@ -789,7 +845,7 @@ function refreshHeroCardLayout() {
     if (state.listViewMode !== 'cards' || !_cardHeroes) return;
     _cardLayout = computeHeroCardLayout();
     applyHeroCardLayout(_cardLayout);
-    heroCardPaint();
+    heroCardPaint(true);
 }
 
 // ── 虚拟滚动：只渲染可见窗口，上下用 spacer 行撑起总滚动高度（行高 uniform）──

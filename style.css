@@ -177,6 +177,8 @@ body{
   border-color:var(--md-sys-color-outline-variant);
   border-radius:var(--v2-r-md);
   box-shadow:var(--v2-shadow-1);
+  /* 表格/卡片虚拟滚动都会改内容高度，禁用滚动锚定避免浏览器自行修正 scrollTop。 */
+  overflow-anchor:none;
 }
 .results-header{
   background-color:var(--md-sys-color-surface);
@@ -2326,6 +2328,8 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   padding-right:var(--hero-card-pad-x,6px);
   padding-top:8px;
   padding-bottom:8px;
+  /* 虚拟窗口变高度/换卡时不触发浏览器滚动锚定，否则移动端会在跨行时自行修正 scrollTop。 */
+  overflow-anchor:none;
 }
 .hero-card-grid{
   display:grid;

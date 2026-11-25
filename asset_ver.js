@@ -351,7 +351,6 @@ window.AV = {
   "langs_json/speed_tc.json": "d7aff5ce",
   "langs_json/speed_tr.json": "3fb74f36",
   "lottery_display.json": "2b7df97d",
-  "lottery_official.json": "db71102b",
   "langs_json/i18n_ar.json": "142b1680",
   "langs_json/i18n_cn.json": "06babdc0",
   "langs_json/i18n_da.json": "32153ef0",
@@ -372,4 +371,5 @@ window.AV = {
   "langs_json/i18n_sv.json": "97400d01",
   "langs_json/i18n_tc.json": "04af9968",
   "langs_json/i18n_tr.json": "92b6fa86",
+  "lottery_official.json": "f10152a5",
 };

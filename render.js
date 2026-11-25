@@ -643,8 +643,21 @@ function buildHeroCard(hero, index, priority) {
         : '';
     const favoritable = typeof isFavoritable === 'function' ? isFavoritable(hero) : true;
     const favorited = typeof isFavorite === 'function' ? isFavorite(hero) : false;
+    // 卡片与表格同口径：模拟器里能"加精选 / 加队伍"的英雄显示 ⬆️；
+    // 其余（含固定精选池、低星、名单外英雄）仍是收藏星号 / 未发布锁标。
+    const cardPool = state.currentSummonData;
+    const cardChooseList = (cardPool && Array.isArray(cardPool.entitiesToChooseFrom)) ? cardPool.entitiesToChooseFrom : [];
+    const cardAddToFeatured = state.lotterySimulatorActive
+        && lotteryFeaturedSelfSelectEnabled()
+        && hero.rarity === 5
+        && (cardChooseList.length === 0 || cardChooseList.includes(hero.heroId));
     let favoriteIcon = '';
-    if (favoritable) {
+    if (state.teamSimulatorActive) {
+        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite" data-hero-id="${hero.originalIndex}" data-fav-kind="featured">⬆️</span>`;
+    } else if (cardAddToFeatured) {
+        const inFeatured = (state.customFeaturedHeroes || []).some(fh => fh && fh.heroId === hero.heroId);
+        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${inFeatured ? ' disabled' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="featured">⬆️</span>`;
+    } else if (favoritable) {
         const title = escapeHtml(langDict.favoriteButtonTitle || '');
         favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${favorited ? ' favorited' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">${favorited ? '★' : '☆'}</span>`;
     } else {
@@ -3258,12 +3271,12 @@ function renderDetailsInModal(hero, context = {}) {
             if (!isFavoritable(hero)) return;
             toggleFavorite(hero);
             updateFavoriteButton();
-            // 表格该格若是 ⬆️（加入精选/队伍）就不去动它；是 ★/☆ 才同步收藏状态。
-            const tableStar = document.querySelector(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`);
-            if (tableStar && tableStar.dataset.favKind !== 'featured') {
-                tableStar.textContent = isFavorite(hero) ? '★' : '☆';
-                tableStar.classList.toggle('favorited', isFavorite(hero));
-            }
+            // 表格/卡片该格若是 ⬆️（加入精选/队伍）就不去动它；是 ★/☆ 才同步收藏状态。
+            document.querySelectorAll(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`).forEach(node => {
+                if (node.dataset.favKind === 'featured') return;
+                node.textContent = isFavorite(hero) ? '★' : '☆';
+                node.classList.toggle('favorited', isFavorite(hero));
+            });
         });
         updateFavoriteButton();
     }

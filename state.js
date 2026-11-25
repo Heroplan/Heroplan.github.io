@@ -15,6 +15,13 @@ const state = {
     // 默认 false；后续"切换展示 2200 英雄"的开关只需改这个值并重新 applyFiltersAndRender()。
     showHiddenHeroes: false,
     currentSort: { key: 'Release date', direction: 'desc' }, // 当前表格排序规则
+    // 主列表视图：'table' = 表格列表，'cards' = 头像卡片网格。默认读用户上次选择。
+    listViewMode: (typeof getCookie === 'function' && getCookie('listViewMode') === 'cards') ? 'cards' : 'table',
+    heroCardZoom: (() => {
+        const raw = parseInt(typeof getCookie === 'function' ? getCookie('heroCardZoom') : '', 10);
+        if (!Number.isFinite(raw)) return 100;
+        return Math.min(140, Math.max(80, raw));
+    })(),
 
     // --- 临时筛选状态 ---
     temporaryFavorites: null, // 用于临时存储分享链接中的收藏列表

@@ -984,6 +984,10 @@ function addEventListeners() {
     // --- 英雄列表表格交互事件 ---
     heroTable.querySelector('tbody').addEventListener('click', handleTableBodyClick);
     heroTable.querySelector('thead').addEventListener('click', handleTableHeaderClick);
+    if (uiElements.heroCardView) {
+        uiElements.heroCardView.addEventListener('click', handleTableBodyClick);
+    }
+    initializeHeroViewSwitch();
 
     // --- 队伍模拟器事件 ---
     showTeamSimulatorBtn.addEventListener('click', () => {
@@ -1475,6 +1479,9 @@ function addEventListeners() {
     // --- 浏览器历史与窗口事件 ---
     window.addEventListener('popstate', handlePopState);
     window.addEventListener('resize', adjustStickyHeaders);
+    window.addEventListener('resize', debounce(() => {
+        if (state.listViewMode === 'cards') refreshHeroCardLayout();
+    }, 150));
 }
 
 /**
@@ -1511,14 +1518,53 @@ function handleTableBodyClick(event) {
             }
         }
     } else {
-        // 处理行的点击
-        const row = target.closest('.table-row');
+        // 处理行/卡片的点击
+        const row = target.closest('.table-row, .hero-card');
         if (row) {
             const heroId = parseInt(row.dataset.heroId, 10);
             const selectedHero = state.allHeroes.find(h => h.originalIndex === heroId);
             if (selectedHero) openDetailsModal(selectedHero);
         }
     }
+}
+
+/**
+ * 初始化表格/卡片视图切换。
+ * 只切换呈现层，仍复用 applyFiltersAndRender，保证筛选、排序、收藏页面同步。
+ */
+function initializeHeroViewSwitch() {
+    const switcher = uiElements.heroViewSwitch;
+    if (!switcher) return;
+    switcher.addEventListener('click', event => {
+        const btn = event.target.closest('.hero-view-switch-btn');
+        if (!btn || !btn.dataset.viewMode) return;
+        const mode = btn.dataset.viewMode === 'cards' ? 'cards' : 'table';
+        if (mode === state.listViewMode) return;
+        state.listViewMode = mode;
+        setCookie('listViewMode', mode, 365);
+        if (typeof syncHeroViewSwitch === 'function') syncHeroViewSwitch();
+        applyFiltersAndRender();
+    });
+
+    const range = uiElements.heroCardZoomRange;
+    if (!range) return;
+    let zoomRaf = 0;
+    const applyZoom = persist => {
+        const value = Math.min(140, Math.max(80, parseInt(range.value, 10) || 100));
+        state.heroCardZoom = value;
+        if (uiElements.heroCardZoomValue) uiElements.heroCardZoomValue.textContent = `${value}%`;
+        range.setAttribute('aria-valuetext', `${value}%`);
+        if (persist) setCookie('heroCardZoom', String(value), 365);
+        if (state.listViewMode !== 'cards' || typeof refreshHeroCardLayout !== 'function') return;
+        if (zoomRaf) cancelAnimationFrame(zoomRaf);
+        zoomRaf = requestAnimationFrame(() => {
+            zoomRaf = 0;
+            refreshHeroCardLayout();
+        });
+    };
+    range.addEventListener('input', () => applyZoom(false));
+    range.addEventListener('change', () => applyZoom(true));
+    syncHeroViewSwitch();
 }
 
 /**

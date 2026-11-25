@@ -232,6 +232,15 @@ var _vtRange = null;            // 当前窗口 [start,end)
 var _vtScrollBound = false;
 var _vtRafPending = false;
 
+// 卡片视图：按“行窗口”虚拟化，避免 2000+ 张头像卡一次性建 DOM。
+var _cardHeroes = null;
+var _cardLayout = { cols: 5, cardW: 0, cardH: 150, gap: 6, padX: 6 };
+var _cardRange = null;
+var _cardScrollBound = false;
+var _cardRafPending = false;
+const CARD_OVERSCAN_ROWS = 3;
+const CARD_BASE_PAD = 8;
+
 function yieldToMain() {
     if (typeof scheduler !== 'undefined' && typeof scheduler.yield === 'function') return scheduler.yield();
     return new Promise(resolve => setTimeout(resolve, 0));
@@ -259,6 +268,25 @@ async function renderTable(heroes) {
     if (!heroTable) return;
 
     updateResultsHeader(); // 首先更新结果头部信息
+    syncHeroViewSwitch();
+
+    // 卡片视图只换列表内部的呈现方式；筛选/排序结果、特殊视图容器和详情打开路径都复用原逻辑。
+    if (state.listViewMode === 'cards' && uiElements.heroCardView) {
+        heroTable.classList.add('hidden');
+        uiElements.heroCardView.classList.remove('hidden');
+        _vtHeroes = null;
+        _vtRange = null;
+        renderCards(heroes);
+        _lastRenderedHeroesRef = heroes;
+        return;
+    }
+
+    if (uiElements.heroCardView) {
+        uiElements.heroCardView.classList.add('hidden');
+        _cardHeroes = null;
+        _cardRange = null;
+    }
+    heroTable.classList.remove('hidden');
 
     const langDict = i18n[state.currentLang];
     const heroesToProcess = heroes.filter(h => h.english_name);
@@ -521,10 +549,247 @@ function isListRenderFresh() {
     const heroes = state.filteredHeroes;
     if (!heroes || heroes.length === 0 || heroes !== _lastRenderedHeroesRef) return false;
     if (state.teamSimulatorActive || state.lotterySimulatorActive) return false;
+    if (state.listViewMode === 'cards') {
+        return !!uiElements.heroCardView
+            && !uiElements.heroCardView.classList.contains('hidden')
+            && _cardHeroes === heroes;
+    }
     const tbody = uiElements.heroTable && uiElements.heroTable.querySelector('tbody');
     if (!tbody) return false;
     if (_vtHeroes === heroes) return true;                        // 虚拟滚动：窗口已按当前数组渲染
     return tbody.querySelectorAll('tr').length === heroes.length;  // 全量渲染：行数吻合
+}
+
+/** 同步表格/卡片切换按钮的选中态。 */
+function syncHeroViewSwitch() {
+    const switcher = uiElements.heroViewSwitch;
+    if (!switcher) return;
+    const mode = state.listViewMode === 'cards' ? 'cards' : 'table';
+    switcher.querySelectorAll('.hero-view-switch-btn').forEach(btn => {
+        const active = btn.dataset.viewMode === mode;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    if (uiElements.heroCardZoom) {
+        uiElements.heroCardZoom.hidden = mode !== 'cards';
+        if (uiElements.heroCardZoomRange) {
+            uiElements.heroCardZoomRange.value = String(state.heroCardZoom || 100);
+        }
+        if (uiElements.heroCardZoomValue) {
+            uiElements.heroCardZoomValue.textContent = `${state.heroCardZoom || 100}%`;
+        }
+    }
+}
+
+/** 卡片网格响应式列数；缩放条会同时改变目标卡片宽度、列数与 166:225 的卡片高度。 */
+function computeHeroCardLayout() {
+    const view = uiElements.heroCardView;
+    const wrapper = uiElements.resultsWrapper;
+    const width = Math.max(280, (view && view.clientWidth) || (wrapper && wrapper.clientWidth) || 360);
+    const narrow = width <= 560;
+    const medium = !narrow && width <= 900;
+    const baseMaxCols = narrow ? 5 : (medium ? 6 : 9);
+    const baseMinCardW = narrow ? 64 : (medium ? 92 : 125);
+    const gap = narrow ? 6 : (medium ? 8 : 12);
+    const padX = narrow ? 6 : 10;
+    const zoom = Math.min(140, Math.max(80, Number(state.heroCardZoom) || 100)) / 100;
+    const maxCols = Math.max(2, Math.round(baseMaxCols / zoom));
+    const minCardW = baseMinCardW * zoom;
+    const contentW = Math.max(1, width - padX * 2);
+    const cols = Math.min(maxCols, Math.max(2, Math.floor((contentW + gap) / (minCardW + gap))));
+    const cardW = Math.max(1, (contentW - gap * (cols - 1)) / cols);
+    // 卡片使用 166:225 的头像原图比例，文字底框叠在头像下半部，不再额外占高度。
+    const cardH = Math.max(1, (cardW - 4) * 225 / 166 + 4);
+    return { cols, cardW, cardH, gap, padX, zoom };
+}
+
+function applyHeroCardLayout(layout) {
+    const view = uiElements.heroCardView;
+    if (!view) return;
+    view.style.setProperty('--hero-card-columns', String(layout.cols));
+    view.style.setProperty('--hero-card-gap', layout.gap + 'px');
+    view.style.setProperty('--hero-card-height', layout.cardH + 'px');
+    view.style.setProperty('--hero-card-pad-x', layout.padX + 'px');
+    view.style.setProperty('--hero-card-width', layout.cardW + 'px');
+}
+
+function getHeroCardImageSrc(hero) {
+    if (String(hero.family).toLowerCase() === 'trainer') return hero.image;
+    return hero.heroId ? `imgs/hero_icon/${hero.heroId}.webp` : getLocalImagePath(hero.image);
+}
+
+/** 卡片头像沿用详情页的矩形原图、渐变底与角标，但不加被动/突破/天赋/立绘图标。 */
+function buildHeroCard(hero, index, priority) {
+    const langDict = i18n[state.currentLang] || {};
+    const displayName = String(hero.name || '');
+    const power = (hero.displayStats && hero.displayStats.power) || hero.power || 0;
+    const glowClass = getColorGlowClass(hero.elementId);
+    const gradientBg = getHeroColorLightGradient(hero.elementId);
+    const imageSrc = getHeroCardImageSrc(hero);
+    const classIcon = hero.class
+        ? `<img loading="lazy" src="imgs/classes/${String(hero.classId || hero.class).toLowerCase()}.webp" decoding="async" class="hero-card-class-icon" alt="${escapeHtml(hero.class)}" title="${escapeHtml(hero.class)}">`
+        : '';
+    const familyIcon = hero.family
+        ? `<img loading="lazy" src="imgs/family/${String(hero.family).toLowerCase()}.webp" decoding="async" class="hero-card-family-icon" alt="${escapeHtml(hero.family)}" onerror="this.style.display='none'">`
+        : '';
+    const costumeName = (typeof getCostumeIconName === 'function') ? getCostumeIconName(hero) : '';
+    const costumeIcon = costumeName
+        ? `<img loading="lazy" src="imgs/costume/${escapeHtml(costumeName)}.webp" decoding="async" class="hero-card-costume-icon" alt="costume" title="${escapeHtml(langDict.modalSkin || 'costume')}" onerror="this.style.display='none'">`
+        : '';
+    const elementId = String(hero.elementId || '').trim().toLowerCase();
+    const elementIcon = elementId
+        ? `<img loading="lazy" src="imgs/element/${elementId}.webp" decoding="async" class="hero-card-element-icon" alt="${escapeHtml(elementId)}" title="${escapeHtml(elementId)}" onerror="this.style.display='none'">`
+        : '';
+    const favoritable = typeof isFavoritable === 'function' ? isFavoritable(hero) : true;
+    const favorited = typeof isFavorite === 'function' ? isFavorite(hero) : false;
+    let favoriteIcon = '';
+    if (favoritable) {
+        const title = escapeHtml(langDict.favoriteButtonTitle || '');
+        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${favorited ? ' favorited' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">${favorited ? '★' : '☆'}</span>`;
+    } else {
+        const title = escapeHtml((langDict.favoriteLockedTitle || '') + (hero.releaseDate ? ` (${String(hero.releaseDate).slice(0, 10)})` : ''));
+        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite favorite-upcoming" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">🔒</span>`;
+    }
+    let stars = '';
+    if (hero.rarity && hero.rarity > 0) {
+        stars = '<span class="hero-card-stars" aria-hidden="true">';
+        for (let i = 0; i < hero.rarity; i++) {
+            stars += '<img loading="lazy" src="imgs/other/star.webp" decoding="async" class="hero-card-star" alt="">';
+        }
+        stars += '</span>';
+    }
+    const loading = priority === 'high' ? 'eager' : 'lazy';
+    const fetchPriority = priority === 'high' ? ' fetchpriority="high"' : '';
+    return `<button type="button" class="hero-card ${glowClass}" data-hero-id="${hero.originalIndex}" data-card-index="${index}" aria-label="${escapeHtml(displayName)} ${escapeHtml(String(power))}">
+        <span class="hero-avatar-container-modal hero-card-avatar">
+            <span class="hero-avatar-background-modal" style="background: ${gradientBg};"></span>
+            <img src="${imageSrc}" class="hero-avatar-image-modal" alt="${escapeHtml(displayName)}" loading="${loading}" decoding="async"${fetchPriority} onerror="this.src='imgs/not_found.webp'">
+            <span class="hero-card-avatar-overlays">
+                <span class="hero-card-top-row">
+                    ${classIcon}
+                    ${stars}
+                </span>
+                ${familyIcon}
+                ${elementIcon}
+                ${costumeIcon}
+                ${favoriteIcon}
+            </span>
+            <span class="hero-card-info">
+                <span class="hero-card-name" title="${escapeHtml(displayName)}">${escapeHtml(displayName)}</span>
+                <span class="hero-card-power">
+                    <span class="hero-card-power-label">${escapeHtml(langDict.minPower || '')}</span>
+                    <span class="hero-card-power-value">${escapeHtml(String(power))}</span>
+                </span>
+            </span>
+        </span>
+    </button>`;
+}
+
+function heroCardComputeRange() {
+    const view = uiElements.heroCardView;
+    const wrapper = uiElements.resultsWrapper;
+    const total = _cardHeroes ? _cardHeroes.length : 0;
+    if (!view || !wrapper || !total) {
+        return { start: 0, end: 0, startRow: 0, endRow: 0, totalRows: 0, pitch: 0, visibleStart: 0, visibleEnd: 0 };
+    }
+    const { cols, cardH, gap } = _cardLayout;
+    const pitch = cardH + gap;
+    const totalRows = Math.ceil(total / cols);
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const viewRect = view.getBoundingClientRect();
+    // 扣掉结果头/切换条占用的顶部：viewTop 固定为 view 在内容坐标里的起点。
+    const viewTop = Math.max(0, viewRect.top - wrapperRect.top + wrapper.scrollTop);
+    const localScroll = Math.max(0, wrapper.scrollTop - viewTop);
+    const viewH = wrapper.clientHeight || 600;
+    const visibleStart = Math.max(0, Math.floor(localScroll / pitch));
+    const visibleEnd = Math.min(totalRows, Math.ceil((localScroll + viewH) / pitch));
+    const startRow = Math.max(0, visibleStart - CARD_OVERSCAN_ROWS);
+    const endRow = Math.min(totalRows, visibleEnd + CARD_OVERSCAN_ROWS);
+    return {
+        start: startRow * cols,
+        end: Math.min(total, endRow * cols),
+        startRow,
+        endRow,
+        totalRows,
+        pitch,
+        visibleStart,
+        visibleEnd
+    };
+}
+
+function heroCardPaint() {
+    const view = uiElements.heroCardView;
+    if (!view) return;
+    const langDict = i18n[state.currentLang] || {};
+    const total = _cardHeroes ? _cardHeroes.length : 0;
+
+    if (total === 0) {
+        _cardRange = null;
+        view.style.paddingTop = CARD_BASE_PAD + 'px';
+        view.style.paddingBottom = CARD_BASE_PAD + 'px';
+        view.innerHTML = `<div class="hero-card-empty empty-results-message">${escapeHtml(langDict.noResults || '')}</div>`;
+        return;
+    }
+
+    const range = heroCardComputeRange();
+    _cardRange = [range.start, range.end];
+    const topH = range.startRow * range.pitch + CARD_BASE_PAD;
+    const botH = (range.totalRows - range.endRow) * range.pitch + CARD_BASE_PAD;
+    view.style.paddingTop = topH + 'px';
+    view.style.paddingBottom = botH + 'px';
+
+    const cards = [];
+    for (let i = range.start; i < range.end; i++) {
+        const inViewport = i >= range.visibleStart * _cardLayout.cols && i < range.visibleEnd * _cardLayout.cols;
+        cards.push(buildHeroCard(_cardHeroes[i], i, inViewport ? 'high' : 'low'));
+    }
+    view.innerHTML = `<div class="hero-card-grid">${cards.join('')}</div>`;
+}
+
+function heroCardOnScroll() {
+    if (!_cardHeroes || _cardRafPending) return;
+    if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
+    _cardRafPending = true;
+    requestAnimationFrame(() => {
+        _cardRafPending = false;
+        if (!_cardHeroes) return;
+        if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
+        const range = heroCardComputeRange();
+        if (_cardRange && range.start === _cardRange[0] && range.end === _cardRange[1]) return;
+        // 离开窗口的卡片图片先取消，避免快速滚动时中间窗口的请求占满同域连接池。
+        if (_cardRange) {
+            uiElements.heroCardView.querySelectorAll('.hero-card').forEach(card => {
+                const idx = parseInt(card.dataset.cardIndex, 10);
+                if (idx >= range.start && idx < range.end) return;
+                card.querySelectorAll('img').forEach(im => { if (!im.complete) im.removeAttribute('src'); });
+            });
+        }
+        heroCardPaint();
+    });
+}
+
+function renderCards(heroes) {
+    const view = uiElements.heroCardView;
+    const wrapper = uiElements.resultsWrapper;
+    if (!view) return;
+    _cardHeroes = heroes;
+    _cardLayout = computeHeroCardLayout();
+    applyHeroCardLayout(_cardLayout);
+    if (wrapper) wrapper.scrollTop = 0;
+    _cardRange = null;
+    heroCardPaint();
+    if (!_cardScrollBound && wrapper) {
+        _cardScrollBound = true;
+        wrapper.addEventListener('scroll', heroCardOnScroll, { passive: true });
+    }
+}
+
+/** 窗口宽度变化后重算列数；保留当前滚动位置，重新计算可见窗口。 */
+function refreshHeroCardLayout() {
+    if (state.listViewMode !== 'cards' || !_cardHeroes) return;
+    _cardLayout = computeHeroCardLayout();
+    applyHeroCardLayout(_cardLayout);
+    heroCardPaint();
 }
 
 // ── 虚拟滚动：只渲染可见窗口，上下用 spacer 行撑起总滚动高度（行高 uniform）──

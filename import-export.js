@@ -82,6 +82,8 @@ const OTHER_SETTING_COOKIE_KEYS = [
     'chatPreviewHeight', 'teamDisplayCollapsed', 'savedTeamsCollapsed', 'collapseStates',
     'chatPanelColorsCollapsed', 'chatPanelEmojisCollapsed', 'highlightSkillTerms',
     'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam', 'showCircleRay',
+    'listViewMode',
+    'heroCardZoom',
     'modal_settings_state', 'modal_custom_talent_state',
     'lotterySoundEnabled', 'lotteryAnimationMode', 'lotteryShowAllHistory'
 ];

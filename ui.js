@@ -724,6 +724,7 @@ function updateResultsHeader() {
         uiElements.resultsCountEl.innerHTML = '';
         let message = '';
         let showResetButton = false;
+        let mergeCountIntoLatest = false;
 
         if (state.temporaryOwnedHeroes) {
             // 「打开游戏英雄列表」：页头显示「游戏英雄列表共 N 位英雄」+ 重置 tag
@@ -745,10 +746,13 @@ function updateResultsHeader() {
             // 未筛选时显示本地化的「共 N 位」（不带「英雄 (包含服装)」后缀）；
             // totalHeroesCountText 自带一层括号，这里去掉
             message = String(langDict.totalHeroesCountText(count)).replace(/^\(|\)$/g, '');
+            // 未筛选时页头还有「查看最新」按钮：按钮直接显示总数，
+            // 「查看最新」保留在 title/aria-label 里说明点击用途，省掉一条独立数量文案。
+            mergeCountIntoLatest = true;
             showResetButton = false;
         }
 
-        if (message) {
+        if (message && !mergeCountIntoLatest) {
             const messageSpan = document.createElement('span');
             messageSpan.innerHTML = message;
             uiElements.resultsCountEl.appendChild(messageSpan);
@@ -761,8 +765,10 @@ function updateResultsHeader() {
             const latestBtn = document.createElement('span');
             latestBtn.id = 'view-latest-btn';
             latestBtn.className = 'reset-tag'; // 复用样式
-            latestBtn.textContent = langDict.viewLatest;
-            latestBtn.title = langDict.viewLatest;
+            const latestLabel = langDict.viewLatest || '';
+            latestBtn.textContent = mergeCountIntoLatest ? message : latestLabel;
+            latestBtn.title = mergeCountIntoLatest ? `${latestLabel} · ${message}` : latestLabel;
+            if (mergeCountIntoLatest) latestBtn.setAttribute('aria-label', `${latestLabel} · ${message}`);
             uiElements.resultsCountEl.appendChild(latestBtn);
         }
         // --- 查看最新 按钮逻辑结束 ---

@@ -237,8 +237,6 @@ var _cardHeroes = null;
 var _cardLayout = { cols: 5, cardW: 0, cardH: 150, gap: 6, padX: 6 };
 var _cardRange = null;
 var _cardNodes = new Map();      // index → 已建卡片节点；滚动只增删边界，不重建整个窗口
-var _cardGrid = null;
-var _cardNodeStartRow = null;
 var _cardScrollBound = false;
 var _cardRafPending = false;
 const CARD_OVERSCAN_ROWS = 4;
@@ -688,7 +686,16 @@ function buildHeroCard(hero, index, priority) {
     </button>`;
 }
 
-function heroCardComputeRange() {
+function heroCardViewportHeight() {
+    const wrapper = uiElements.resultsWrapper;
+    const actual = wrapper ? wrapper.clientHeight : 0;
+    // 结果区 CSS 上限是 75vh；清空卡片节点的瞬间 wrapper 会临时塌缩，
+    // 因此虚拟窗口不能只信此刻的 clientHeight。
+    const capacity = Math.round((window.innerHeight || 844) * 0.75);
+    return Math.max(280, actual || 0, capacity || 600);
+}
+
+function heroCardComputeRange(viewHOverride) {
     const view = uiElements.heroCardView;
     const wrapper = uiElements.resultsWrapper;
     const total = _cardHeroes ? _cardHeroes.length : 0;
@@ -703,7 +710,7 @@ function heroCardComputeRange() {
     // 扣掉结果头/切换条占用的顶部：viewTop 固定为 view 在内容坐标里的起点。
     const viewTop = Math.max(0, viewRect.top - wrapperRect.top + wrapper.scrollTop);
     const localScroll = Math.max(0, wrapper.scrollTop - viewTop);
-    const viewH = wrapper.clientHeight || 600;
+    const viewH = (viewHOverride > 0) ? viewHOverride : (wrapper.clientHeight || 600);
     const visibleStart = Math.max(0, Math.floor(localScroll / pitch));
     const visibleEnd = Math.min(totalRows, Math.ceil((localScroll + viewH) / pitch));
     const startRow = Math.max(0, visibleStart - CARD_OVERSCAN_ROWS);
@@ -720,24 +727,35 @@ function heroCardComputeRange() {
     };
 }
 
-function resetHeroCardNodes() {
+function resetHeroCardNodes(resetSize = true) {
     const view = uiElements.heroCardView;
     if (view) {
         view.querySelectorAll('.hero-card img').forEach(im => {
             if (!im.complete) im.removeAttribute('src');
         });
         view.innerHTML = '';
+        if (resetSize) {
+            view.style.height = '';
+            view.style.padding = '';
+        }
     }
     _cardNodes.clear();
-    _cardGrid = null;
-    _cardNodeStartRow = null;
     _cardRange = null;
 }
 
-/** 用显式网格坐标固定每张卡的绝对行/列：窗口起点变化时只改坐标，不重建卡片和图片。 */
-function placeHeroCardNode(node, index, startRow, cols) {
-    node.style.gridRow = String(Math.floor(index / cols) - startRow + 1);
-    node.style.gridColumn = String(index % cols + 1);
+/** 卡片全局绝对定位：坐标只由它在完整结果中的索引决定，滚动换窗口时已有卡片绝不移动。 */
+function placeHeroCardNode(node, index, cols, rtl, viewWidth) {
+    const { cardW, cardH, gap, padX } = _cardLayout;
+    const row = Math.floor(index / cols);
+    const col = index % cols;
+    node.style.position = 'absolute';
+    node.style.top = `${CARD_BASE_PAD + row * (cardH + gap)}px`;
+    node.style.width = `${cardW}px`;
+    node.style.height = `${cardH}px`;
+    node.style.right = 'auto';
+    node.style.left = rtl
+        ? `${viewWidth - padX - cardW - col * (cardW + gap)}px`
+        : `${padX + col * (cardW + gap)}px`;
 }
 
 function heroCardPaint(forceRebuild) {
@@ -748,29 +766,22 @@ function heroCardPaint(forceRebuild) {
 
     if (total === 0) {
         resetHeroCardNodes();
-        view.style.paddingTop = CARD_BASE_PAD + 'px';
-        view.style.paddingBottom = CARD_BASE_PAD + 'px';
         view.innerHTML = `<div class="hero-card-empty empty-results-message">${escapeHtml(langDict.noResults || '')}</div>`;
         return;
     }
 
-    if (forceRebuild) resetHeroCardNodes();
-
-    const range = heroCardComputeRange();
+    // 先按稳定视口高度算窗口；旧节点全部保留着，wrapper 不会在清空瞬间塌缩。
+    const range = heroCardComputeRange(heroCardViewportHeight());
+    if (forceRebuild) resetHeroCardNodes(false);
     _cardRange = [range.start, range.end];
-    const topH = range.startRow * range.pitch + CARD_BASE_PAD;
-    const botH = (range.totalRows - range.endRow) * range.pitch + CARD_BASE_PAD;
-    view.style.paddingTop = topH + 'px';
-    view.style.paddingBottom = botH + 'px';
-
-    if (!_cardGrid || !_cardGrid.isConnected) {
-        view.innerHTML = '<div class="hero-card-grid"></div>';
-        _cardGrid = view.firstElementChild;
-        _cardNodes.clear();
-        _cardNodeStartRow = null;
-    }
-    const grid = _cardGrid;
     const cols = _cardLayout.cols;
+    const { cardH, gap } = _cardLayout;
+    // 可视窗口只决定 DOM 里放哪些卡；内容总高度仅由完整结果行数决定，滚动中保持不变。
+    view.style.position = 'relative';
+    view.style.padding = '0';
+    view.style.height = `${Math.max(0, range.totalRows * range.pitch - gap) + CARD_BASE_PAD * 2}px`;
+    const viewWidth = view.clientWidth;
+    const rtl = getComputedStyle(view).direction === 'rtl';
 
     // 1) 移除窗口外的卡片；先撤掉未完成图片的 src，避免快速滚动时旧请求占用连接池。
     for (const [idx, node] of Array.from(_cardNodes)) {
@@ -780,13 +791,7 @@ function heroCardPaint(forceRebuild) {
         _cardNodes.delete(idx);
     }
 
-    // 2) 起点行变了：保留的卡片只更新相对网格坐标，图片/DOM 原样保留。
-    if (_cardNodeStartRow !== range.startRow) {
-        for (const [idx, node] of _cardNodes) placeHeroCardNode(node, idx, range.startRow, cols);
-        _cardNodeStartRow = range.startRow;
-    }
-
-    // 3) 只补新增的边界卡片；按索引升序插入，保持键盘 Tab 顺序。
+    // 2) 只补新增的边界卡片；绝对坐标来自完整索引，保留的卡片及其图片原样不动。
     const missing = [];
     for (let i = range.start; i < range.end; i++) {
         if (!_cardNodes.has(i)) missing.push(i);
@@ -804,8 +809,8 @@ function heroCardPaint(forceRebuild) {
             const idx = Number(node.dataset.cardIndex);
             while (cursor < sorted.length && sorted[cursor] < idx) cursor++;
             const refNode = cursor < sorted.length ? _cardNodes.get(sorted[cursor]) : null;
-            placeHeroCardNode(node, idx, range.startRow, cols);
-            grid.insertBefore(node, refNode || null);
+            placeHeroCardNode(node, idx, cols, rtl, viewWidth);
+            view.insertBefore(node, refNode || null);
             _cardNodes.set(idx, node);
         }
     }
@@ -819,7 +824,7 @@ function heroCardOnScroll() {
         _cardRafPending = false;
         if (!_cardHeroes) return;
         if (uiElements.heroTableView && uiElements.heroTableView.classList.contains('hidden')) return;
-        const range = heroCardComputeRange();
+        const range = heroCardComputeRange(heroCardViewportHeight());
         if (_cardRange && range.start === _cardRange[0] && range.end === _cardRange[1]) return;
         heroCardPaint();
     });
@@ -841,11 +846,26 @@ function renderCards(heroes) {
 }
 
 /** 窗口宽度变化后重算列数；保留当前滚动位置，重新计算可见窗口。 */
+function heroCardLayoutEqual(a, b) {
+    if (!a || !b) return false;
+    return a.cols === b.cols &&
+        Math.abs(a.cardW - b.cardW) < 0.01 &&
+        Math.abs(a.cardH - b.cardH) < 0.01 &&
+        a.gap === b.gap &&
+        a.padX === b.padX &&
+        a.zoom === b.zoom;
+}
+
 function refreshHeroCardLayout() {
     if (state.listViewMode !== 'cards' || !_cardHeroes) return;
-    _cardLayout = computeHeroCardLayout();
-    applyHeroCardLayout(_cardLayout);
-    heroCardPaint(true);
+    const prev = _cardLayout;
+    const next = computeHeroCardLayout();
+    const same = heroCardLayoutEqual(prev, next);
+    _cardLayout = next;
+    if (!same) applyHeroCardLayout(next);
+    // 手机浏览器工具栏收起时只改变视口高度，卡片宽度、列数和总滚动高度都不变；
+    // 这时只增量补边界卡，绝不能整窗清空重建，否则会闪一下再跳。
+    heroCardPaint(!same);
 }
 
 // ── 虚拟滚动：只渲染可见窗口，上下用 spacer 行撑起总滚动高度（行高 uniform）──

@@ -2323,6 +2323,7 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 
 #hero-card-view{
   display:block;
+  position:relative;
   box-sizing:border-box;
   padding-left:var(--hero-card-pad-x,6px);
   padding-right:var(--hero-card-pad-x,6px);

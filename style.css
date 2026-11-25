@@ -2368,6 +2368,22 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   transform:translateY(-2px);
   box-shadow:0 8px 18px rgba(0,0,0,.28);
 }
+.hero-card::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:34%;
+  z-index:2;
+  pointer-events:none;
+  background:linear-gradient(
+    to top,
+    color-mix(in srgb, var(--md-sys-color-surface-container-low) 94%, transparent) 0%,
+    color-mix(in srgb, var(--md-sys-color-surface-container-low) 82%, transparent) 46%,
+    transparent 100%
+  );
+}
 .hero-card:focus-visible{
   outline:3px solid var(--focus-ring);
   outline-offset:3px;
@@ -2405,17 +2421,17 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 .hero-card-top-row{
   position:absolute;
   top:4%;
-  left:4%;
-  right:4%;
+  left:2%;
+  right:2%;
   z-index:4;
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   justify-content:space-between;
   gap:2px;
 }
 .hero-card-class-icon{
   position:static;
-  width:22%;
+  width:15%;
   max-width:none;
   height:auto;
   flex:0 0 auto;
@@ -2424,8 +2440,8 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 }
 .hero-card-family-icon{
   position:absolute;
-  top:30%;
-  left:4%;
+  top:25%;
+  left:1%;
   translate:0 -50%;
   width:18%;
   max-width:none;
@@ -2435,8 +2451,8 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 }
 .hero-card-element-icon{
   position:absolute;
-  top:47%;
-  left:4%;
+  top:40%;
+  left:1%;
   right:auto;
   bottom:auto;
   translate:0 -50%;
@@ -2448,9 +2464,9 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 }
 .hero-card-costume-icon{
   position:absolute;
-  top:30%;
-  right:4%;
-  left:auto;
+  top:54%;
+  left:1%;
+  right:auto;
   translate:0 -50%;
   width:18%;
   max-width:none;
@@ -2460,7 +2476,7 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 }
 .hero-card-favorite{
   position:absolute;
-  top:47%;
+  top:40%;
   right:4%;
   z-index:7;
   pointer-events:auto;
@@ -2486,7 +2502,7 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   flex:1 1 auto;
   flex-direction:row;
   justify-content:flex-end;
-  align-items:flex-start;
+  align-items:center;
   gap:0;
   min-width:0;
   z-index:4;
@@ -2501,51 +2517,53 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   filter:drop-shadow(1px 1px 1px rgba(0,0,0,.8));
 }
 .hero-card-info{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:calc(var(--hero-card-width,100px) * .03);
-  z-index:6;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-end;
-  gap:calc(var(--hero-card-width,100px) * .02);
-  padding:0 calc(var(--hero-card-width,100px) * .03);
-  box-sizing:border-box;
-  background:none;
+  display:contents;
 }
 .hero-card-name{
+  position:absolute;
+  left:50%;
+  bottom:calc(var(--hero-card-width,100px) * .03);
+  translate:-50% 0;
+  z-index:6;
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:2;
-  width:auto;
+  -webkit-line-clamp:3;
+  width:100%;
   max-width:100%;
   min-height:0;
   max-height:none;
   margin:0;
-  padding:.12em .58em;
+  padding:0;
   box-sizing:border-box;
   overflow:hidden;
   overflow-wrap:anywhere;
   white-space:normal;
-  border:1px solid color-mix(in srgb, var(--md-sys-color-outline) 55%, transparent);
-  border-radius:999px;
-  background:color-mix(in srgb, var(--md-sys-color-surface-variant) 80%, transparent);
+  border:0;
+  border-radius:0;
+  background:none;
   color:var(--md-sys-color-primary);
-  font-size:max(9px,calc(var(--hero-card-width,100px) * .09));
+  font-size:max(10.5px,calc(var(--hero-card-width,100px) * .10));
   font-weight:700;
   line-height:1.15;
   text-align:center;
   text-shadow:none;
 }
 .hero-card-power{
+  position:absolute;
+  top:25%;
+  right:4%;
+  left:auto;
+  bottom:auto;
+  translate:0 -50%;
+  z-index:6;
   display:inline-flex;
+  flex-wrap:wrap;
   align-items:center;
   justify-content:center;
   gap:.22em;
-  max-width:100%;
-  min-height:2.15em;
+  row-gap:0;
+  max-width:none;
+  min-height:1.55em;
   margin:0;
   padding:.1em .55em;
   box-sizing:border-box;
@@ -2553,17 +2571,18 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   border-radius:999px;
   background:color-mix(in srgb, var(--md-sys-color-surface-variant) 80%, transparent);
   color:var(--md-sys-color-primary);
-  font-size:max(6.5px,calc(var(--hero-card-width,100px) * .066));
+  font-size:max(9px,calc(var(--hero-card-width,100px) * .09));
   font-variant-numeric:tabular-nums;
   line-height:1.1;
   white-space:nowrap;
 }
 .hero-card-power-label{
+  display:none;
   color:inherit;
   font-size:1em;
   font-weight:700;
-  letter-spacing:.02em;
-  text-transform:uppercase;
+  letter-spacing:.01em;
+  text-transform:none;
 }
 .hero-card-power-value{
   color:inherit;

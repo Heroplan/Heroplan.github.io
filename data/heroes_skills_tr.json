@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Düşman oluşumunun sol kenarından başlayarak tüm düşmanlara% 350 hasar verir. Her ardışık vuruşta hasar azalır. (Hasar, her ardışık darbede% 10 azalır.)",
-      "Tüm düşmanlar 3 turda% -35 savunma ve her vurulduklarında% -5 düşüş alır. Minimum% -50 savunma olabilir.",
+      "Tüm düşmanlar 3 tur boyunca% -35 savunma alır.",
       "Tüm düşmanlar yeni durum efekti buff'larına karşı 3 tur boyunca bağışıklık kazanır."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "6 tur boyunca tüm düşmanlar için Beceri Yeteneği etkinleştirmeyi engeller.",
-      "Tüm düşmanlara% 320 hasar verir.",
+      "Tüm düşmanlara% 280 hasar verir.",
       "Tüm düşmanlar 6 tur boyunca Ateş karşıtı% -24 savunma alır."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Eylemci, hedeften% 20 mana çalar. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
-      "Eylemciden devralınan% 15 SP ve% 15 saldırıya sahip bir Elf Hizmetkarı çağırır.",
+      "Eylemci, hedeften% 15 mana çalar. (Bir karakter tek bir tur sırasında Özel Yeteneklerden 5 doğrudan mana eklemesi aldıktan sonra Özel Yetenekler tarafından gerçekleştirilen sonraki doğrudan mana eklemelerinin o karakter üzerinde daha az etkisi olur.)",
+      "Eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
       "Hedef bir Hediye Bombası alır. 3 tur sonra Bomba patlayarak hedefe ve yakındaki düşmanlara[#Dynamic] 451 [#]hasar verir. Ayrıca Bomba, hedef yenildiğinde de patlar."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Hedefe% 450 hasar verir.",
+      "Hedefe% 500 hasar verir.",
       "Eylemci 4 tur boyunca, düşmanların eylemci tarafındaki müttefiklerin Özel Yetenekler kullanmasını engelleyen Alay Etme özelliğini alır. (Alay, tüm düşmanların Alayı olmayan müttefiklerine Özel Yetenek uygulamasını önler.)",
       "Eylemci 4 tur boyunca alınan hasara% 100 oranında kontratak yapar.",
-      "Eylemciden devralınan% 35 SP ve% 35 saldırıya sahip bir Kar Ruhu Hizmetkârı çağırır."
+      "Eylemciden devralınan% 20 SP ve% 20 saldırıya sahip bir Kar Ruhu Hizmetkârı çağırır."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Tüm müttefikler için% 35 sağlık yeniler.",
-      "Her müttefik için eylemciden devralınan% 12 SP ve% 12 saldırıya sahip bir Elf Hizmetkarı çağırır.",
+      "Her müttefik için eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
       "Tüm müttefikler 4 tur boyunca% 25 savunma alır."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Hedefe ve yakındaki düşmanlara% 300 hasar verir.\n[*]Panodaki her Buz kalkanı başına% 20 ek hasar verir, toplamda maksimum% 460 hasar olabilir.",
-      "Eylemci ve yakındaki müttefikler için eylemciden devralınan% 20 SP ve% 20 saldırıya sahip bir Elf Hizmetkarı çağırır.",
-      "Hedef ve yakındaki düşmanlar, 4 tur boyunca% -20 savunma ve panodaki her Buz kalkanı başına% -5 düşüş alır, maksimum% -60 savunma olabilir.",
+      "Hedefe ve yakındaki düşmanlara% 370 hasar verir.\n[*]Panodaki her Buz kalkanı başına% 10 ek hasar verir, toplamda maksimum% 450 hasar olabilir.",
+      "Eylemci ve yakındaki müttefikler için eylemciden devralınan% 10 SP ve% 10 saldırıya sahip bir Elf Hizmetkarı çağırır.",
+      "Hedef ve yakındaki düşmanlar, 4 tur boyunca% -15 savunma ve panodaki her Buz kalkanı başına% -5 düşüş alır, maksimum% -55 savunma olabilir.",
       "Hedef ve yakındaki düşmanlar% -15 isabetlilik alır, ayrıca 4 tur boyunca panodaki her Buz kalkanı için% -5 düşüş alırlar. En fazla% -55 isabetlilik olur."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Hedefe% 540 hasar verir.",
       "Düşmanların ne kadar Mega Canavarı ve Canavarı varsa o kadar rastgele düşmana% 180 ek hasar verir. Hasar, her ardışık darbede azaltılır.",
       "Tüm düşmanlar için bir Tütsü Canavarı çağırır. Canavar, düşmanlara her turda% 84 saldırıyla hasar verir.\n[*]Tütsü Canavarı şifayı emer. Hedefinin maks. sağlığının% 35 kadarına denk şifa emince ortadan kaybolur.",
-      "Tütsü Canavarı çağrıldığında hedefine tüm kaynaklardan verilen hasarı% 50 artırır. Hedef Tütsü Canavarına sahip olduğu sürece efekt devam eder. Bu efekt arındırılamaz.",
       "Element Bağlantısı, tüm Buz müttefikleri için eylemciden devralınan% 10 SP ve% 15 saldırıya sahip bir Buz Hizmetkarı çağırır."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Hedefe ve civardaki düşmanlara% 420 hasar verir.",
-      "Hedef ve yakındaki düşmanlar için birer Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 1500 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)",
+      "Hedefe ve civardaki düşmanlara% 380 hasar verir.",
+      "Hedef ve yakındaki düşmanlar için birer Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 20 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -60 olacak şekilde% -20 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 700 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)",
       "Bir Hizmetkârı ya da Canavarı olan tüm düşmanlar, 3 tur boyunca[#Dynamic] 525 [#]Ayaz hasarı alır."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Hedefe ve rastgele 2 düşmana% 650 hasar verir.\n[*]Her bir vuruşla bir Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 1500 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)",
-      "Vurulan tüm hedefler 5 tur boyunca susturulur.",
-      "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 1500 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.)"
+      "Hedefe ve civardaki düşmanlara% 650 hasar verir.",
+      "Hedef ve yakındaki düşmanlar için birer Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 20 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -60 olacak şekilde% -20 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 700 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)",
+      "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 10 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +150 olmak üzere% +50 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 700 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Hedefe ve civardaki düşmanlara% 230 hasar verir.",
-      "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 500 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, yeni Mega Canavarları engeller.)"
+      "Hedefe ve civardaki düşmanlara% 300 hasar verir.",
+      "Eylemci ve yakındaki müttefikler için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 5 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +150 olmak üzere% +50 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 250 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, yeni Mega Canavarları engeller.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Tüm müttefiklerin tüm Canavarlarını yok eder ve Mega Canavarlara hasar verir.",
-      "Her bir müttefik için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 2 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +300 olmak üzere% +100 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 1500 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.)",
-      "Tüm müttefiklerin sağlığı, müttefiklerin sahip olduğu her Hizmetkar için 200 SP artırılır.",
+      "Her bir müttefik için bir Oyuncak Asker Hizmetkârı çağırır. (Oyuncak Asker Hizmetkârı, eylemciden miras alınan% 10 SP'ye sahiptir.\n[*]Her bir Oyuncak Asker Hizmetkârı, sahibinin saldırısını en fazla% +150 olmak üzere% +50 artırır. Bu efekt bozulamaz.\n[*]Oyuncak Asker Hizmetkârı, her 3 turdan sonra patlayarak rastgele bir düşmana 700 hasar verir.\n[*]Oyuncak Asker Hizmetkârı, Mega Canavarlarla değiştirilemez.)",
+      "Tüm müttefiklerin sağlığı, müttefiklerin sahip olduğu her Hizmetkar için 130 SP artırılır.",
+      "Tüm müttefiklerin 4 tur boyunca yeni olumsuz mana efektlerine karşı bağışıklığı bulunur. (Buna mana üretimini ve doğrudan mana azaltmayı etkileyen her iki engel dâhildir.)",
       "Tüm müttefiklerden durum engellerini arındırır."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Hedefe% 300 hasar verir.",
-      "Hedef için 2 Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 1 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -75 olacak şekilde% -25 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 500 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)"
+      "Hedefe% 400 hasar verir.",
+      "Hedef için 2 Oyuncak Asker Canavarı çağırır. (Oyuncak Asker Canavarı şifayı emer. Hedefinin maks. sağlığının% 5 oranına denk şifa emince ortadan kaybolur.\n[*]Her bir Oyuncak Asker Canavarı, hedefinin savunmasını en az% -60 olacak şekilde% -20 azaltır. Bu efekt arındırılamaz.\n[*]Oyuncak Asker Canavarı, 3 turdan sonra patlayarak hedefine 250 hasar verir.\n[*]Oyuncak Asker Canavarı, Mega Hizmetkârlarla değiştirilemez.)"
      ]
     }
    ]

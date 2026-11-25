@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Menimbulkan 350% kerusakan ke semua musuh mulai dari tepi kiri formasi musuh. Kerusakannya berkurang seiring tiap pukulan beruntun. (Kerusakannya berkurang 10% seiring tiap pukulan beruntun.)",
-      "Semua musuh mendapat -35% pertahanan dan turun -5% lagi setiap kali terkena serangan selama 3 giliran, hingga -50% pertahanan.",
+      "Semua musuh mendapat -35% pertahanan selama 3 giliran.",
       "Semua musuh kebal terhadap genjotan efek status baru selama 3 giliran."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Memblokir aktivasi Keahlian Bakat semua musuh selama 6 giliran.",
-      "Menimbulkan kerusakan 320% pada semua musuh.",
+      "Menimbulkan kerusakan 280% pada semua musuh.",
       "Semua musuhh mendapat pertahanan -24% melawan Api selama 6 giliran."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Perapal mencuri 20% mana dari sasaran. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
-      "Memanggil Antek Elf dengan 15% HP dan 15% serangan yang diwarisi dari perapal.",
+      "Perapal mencuri 15% mana dari sasaran. (Setelah karakter menerima 5 tambahan mana langsung dari Keahlian Khusus selama satu giliran, semua tambahan mana langsung berikutnya yang dilakukan oleh Keahlian Khusus akan mengurangi kekuatan karakter tersebut.)",
+      "Memanggil Antek Elf dengan 10% HP dan 10% serangan yang diwarisi dari perapal.",
       "Sasaran menerima Bom Kado. Setelah 3 giliran, Bom Kado meledak dan menimbulkan kerusakan[#Dynamic] 451 [#]kepada sasaran dan sasaran terdekat. Bom Kado juga meledak jika sasaran kalah."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Menimbulkan kerusakan 450% pada sasaran.",
+      "Menimbulkan kerusakan 500% pada sasaran.",
       "Perapal mendapat Cela yang membuat musuh tidak bisa menggunakan Keahlian Khusus pada sekutu perapal selama 4 giliran. (Ejek mencegah semua musuh agar tidak menggunakan Keahlian Khusus pada sekutu mereka yang tidak memiliki Ejek.)",
       "Perapal menyerang balik dengan 100% kerusakan yang diterima selama 4 giliran.",
-      "Memanggil Antek Sprite Salju dengan 35% HP dan 35% serangan yang diwarisi dari perapal."
+      "Memanggil Antek Sprite Salju dengan 20% HP dan 20% serangan yang diwarisi dari perapal."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 35%.",
-      "Memanggil Antek Elf untuk tiap sekutu dengan 12% HP dan 12% serangan yang diwarisi dari perapal.",
+      "Memanggil Antek Elf untuk tiap sekutu dengan 10% HP dan 10% serangan yang diwarisi dari perapal.",
       "Semua sekutu mendapat 25% pertahanan selama 4 giliran."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Menimbulkan kerusakan 300% ke sasaran dan musuh terdekat.\n[*]Menimbulkan kerusakan tambahan 20% per perisai Es pada papan, sampai total kerusakan 460%.",
-      "Memanggil Antek Elf untuk perapal dan sekutu terdekat dengan 20% HP dan 20% serangan yang diwarisi dari perapal.",
-      "Sasaran dan musuh terdekat menerima pertahanan -20% , dan turun -5% lagi per perisai Es yang dipakai selama 4 giliran, hingga pertahanan -60%.",
+      "Menimbulkan kerusakan 370% ke sasaran dan musuh terdekat.\n[*]Menimbulkan kerusakan tambahan 10% per perisai Es pada papan, sampai total kerusakan 450%.",
+      "Memanggil Antek Elf untuk perapal dan sekutu terdekat dengan 10% HP dan 10% serangan yang diwarisi dari perapal.",
+      "Sasaran dan musuh terdekat menerima pertahanan -15% , dan turun -5% lagi per perisai Es yang dipakai selama 4 giliran, hingga pertahanan -55%.",
       "Sasaran dan musuh terdekat mendapat akurasi -15% , dan penurunan -5% lebih lanjut per perisai Es yang dipakai selama 4 giliran, hingga akurasi -55%."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Menimbulkan kerusakan 540% pada sasaran.",
       "Menimbulkan 180% kerusakan tambahan ke musuh acak sebanyak Iblis Mega dan Iblis milik musuh. Kerusakan berkurang di setiap pukulan beruntun.",
       "Memanggil Iblis Dupa untuk semua musuh. Iblis menimbulkan kerusakan pada musuh dengan 84% serangan tiap giliran.\n[*]Iblis Dupa menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 35% dari kesehatan maksimum sasarannya.",
-      "Saat dipanggil, Iblis Dupa meningkatkan kerusakan yang ditimbulkan kepada sasarannya dari semua sumber sebesar 50%. Efek berlangsung selama sasaran memiliki Iblis Dupa. Efek ini tidak bisa dibersihkan.",
       "Dinamika Elemen memanggil Antek Es untuk semua sekutu Es dengan 10% HP dan 15% serangan yang diwarisi dari perapal."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Menimbulkan kerusakan 420% pada sasaran dan musuh terdekat.",
-      "Memanggil Iblis Prajurit Mainan untuk sasaran dan musuh terdekat. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 1500 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)",
+      "Menimbulkan kerusakan 380% pada sasaran dan musuh terdekat.",
+      "Memanggil Iblis Prajurit Mainan untuk sasaran dan musuh terdekat. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 20% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -20% , maks. -60%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 700 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)",
       "Semua musuh yang punya Antek atau Iblis mengalami[#Dynamic] 525 [#]kerusakan Beku selama 3 giliran."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Menimbulkan 650% kerusakan pada sasaran dan 2 musuh acak.\n[*]Memanggil Iblis Prajurit Mainan dengan tiap pukulan. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 1500 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)",
-      "Semua sasaran yang terkena dibungkam selama 5 giliran.",
-      "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat. (Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 1500 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.)"
+      "Menimbulkan kerusakan 650% pada sasaran dan musuh terdekat.",
+      "Memanggil Iblis Prajurit Mainan untuk sasaran dan musuh terdekat. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 20% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -20% , maks. -60%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 700 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)",
+      "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat. (Antek Prajurit Mainan memiliki 10% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +50% , maks. +150%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 700 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Menimbulkan kerusakan 230% pada sasaran dan musuh terdekat.",
-      "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat. (Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 500 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan memblokir Iblis Mega baru.)"
+      "Menimbulkan kerusakan 300% pada sasaran dan musuh terdekat.",
+      "Memanggil Antek Prajurit Mainan untuk perapal dan sekutu terdekat. (Antek Prajurit Mainan memiliki 5% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +50% , maks. +150%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 250 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan memblokir Iblis Mega baru.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Membinasakan semua Iblis dari semua sekutu dan merusak semua Iblis Mega.",
-      "Memanggil Antek Prajurit Mainan untuk setiap sekutu. (Antek Prajurit Mainan memiliki 2% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +100% , maks. +300%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 1500 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.)",
-      "Kesehatan sekutu naik 200 HP untuk setiap Antek milik sekutu.",
+      "Memanggil Antek Prajurit Mainan untuk setiap sekutu. (Antek Prajurit Mainan memiliki 10% HP yang diwarisi dari perapal.\n[*]Setiap Antek Prajurit Mainan meningkatkan serangan pemiliknya sebesar +50% , maks. +150%. Efek ini tidak bisa dienyahkan.\n[*]Antek Prajurit Mainan meledak setelah 3 giliran, menimbulkan 700 kerusakan pada satu musuh acak.\n[*]Antek Prajurit Mainan tidak dapat diganti dengan Iblis Mega.)",
+      "Kesehatan sekutu naik 130 HP untuk setiap Antek milik sekutu.",
+      "Semua sekutu kebal terhadap efek mana negatif yang baru selama 4 giliran. (Ini termasuk pelemahan yang memengaruhi generasi mana dan pengurangan mana langsung.)",
       "Membersihkan status pelemahan dari semua sekutu."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Menimbulkan kerusakan 300% pada sasaran.",
-      "Memanggil 2 Iblis Prajurit Mainan untuk sasaran. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 1% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -25% , maks. -75%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 500 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)"
+      "Menimbulkan kerusakan 400% pada sasaran.",
+      "Memanggil 2 Iblis Prajurit Mainan untuk sasaran. (Iblis Prajurit Mainan menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 5% dari kesehatan maksimum sasarannya.\n[*]Setiap Iblis Prajurit Mainan mengurangi pertahanan sasarannya sebesar -20% , maks. -60%. Efek ini tidak bisa dibersihkan.\n[*]Iblis Prajurit Mainan meledak setelah 3 giliran, memberikan 250 kerusakan ke sasarannya.\n[*]Iblis Prajurit Mainan tidak dapat diganti dengan Antek Mega.)"
      ]
     }
    ]

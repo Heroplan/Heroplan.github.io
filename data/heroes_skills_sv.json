@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Gör 350% skada mot alla fiender från vänster kant av fiendeformationen. Skadan sjunker för varje efterföljande träff. (Skadan sänks med 10% för varje efterföljande träff.)",
-      "Alla fiender får -35% försvar och ytterligare -5% mindre varje gång de blir träffade i 3 rundor, ner till -50% försvar.",
+      "Alla fiender får -35% försvar i 3 rundor.",
       "Alla fiender är immuna mot nya bonusar med statuseffekter under 3 rundor."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blockerar aktivering av talangförmåga för alla fiender i 6 rundor.",
-      "Alla fiender tar 320% skada.",
+      "Alla fiender tar 280% skada.",
       "Alla fiender får -24% försvar mot eld under 6 rundor."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Användaren stjäl 20% mana från målet. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
-      "Åkallar en tomteundersåte med 15% hälsa och 15% attack som ärvs från anfallaren.",
+      "Användaren stjäl 15% mana från målet. (Efter att en karaktär har fått 5 direkta manatillskott från specialförmågor under en och samma runda blir alla andra direkta manatillskott från specialförmågor svagare mot den karaktären.)",
+      "Åkallar en tomteundersåte med 10% hälsa och 10% attack som ärvs från anfallaren.",
       "Målet får en julklappsbomb. Efter 3 rundor exploderar julklappsbomben och gör[#Dynamic] 451 [#]skada på målet och på fiender i närheten. Julklappsbomben exploderar också när målet dör."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Skadar målet med 450%.",
+      "Skadar målet med 500%.",
       "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 4 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
       "Anfallaren motanfaller med 100% av skadan de tagit emot i 4 rundor.",
-      "Åkallar en snöandeundersåte med 35% hälsa och 35% attack som ärvs från anfallaren."
+      "Åkallar en snöandeundersåte med 20% hälsa och 20% attack som ärvs från anfallaren."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Alla allierade återfår 35% hälsa.",
-      "Åkallar en tomteundersåte till varje allierad, med 12% hälsa och 12% attack som ärvs från anfallaren.",
+      "Åkallar en tomteundersåte till varje allierad, med 10% hälsa och 10% attack som ärvs från anfallaren.",
       "Alla allierade får 25% försvar i 4 rundor."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Gör 300% skada på målet och fiender i närheten.\n[*]Gör ytterligare 20% skada för varje issköld på brädet, upp till totalt 460% skada.",
-      "Åkallar en tomteundersåte till anfallaren och allierade i närheten, med 20% hälsa och 20% attack som ärvs från anfallaren.",
-      "Målet och fiender i närheten får -20% försvar och ytterligare -5% minskning per issköld på brädet under 4 rundor, upp till -60% försvar.",
+      "Gör 370% skada på målet och fiender i närheten.\n[*]Gör ytterligare 10% skada för varje issköld på brädet, upp till totalt 450% skada.",
+      "Åkallar en tomteundersåte till anfallaren och allierade i närheten, med 10% hälsa och 10% attack som ärvs från anfallaren.",
+      "Målet och fiender i närheten får -15% försvar och ytterligare -5% minskning per issköld på brädet under 4 rundor, upp till -55% försvar.",
       "Målet och fiender i närheten får -15% träffsäkerhet, och ytterligare -5% mindre per issköld på brädet i 4 rundor, upp till -55% träffsäkerhet."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Skadar målet med 540%.",
       "Gör 180% extra skada på så många slumpvalda fiender som det finns megaodjur och odjur ägda av fiender. Skadan sjunker för varje fortlöpande träff.",
       "Åkallar ett rökelseodjur på alla fiender. Odjuret skadar fienderna med 84% attack varje runda.\n[*]Rökelseodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 35% av målets maximala hälsa.",
-      "När rökelseodjuret åkallas får det sitt mål att ta 50% mer skada av alla så länge som målet har rökelseodjur. Effekten kan inte rensas.",
       "Elementlänk åkallar en isundersåte till alla isallierade med 10% HP och 15% attack som ärvs från anfallaren."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Skadar målet och fiender i närheten med 420%.",
-      "Åkallar ett leksakssoldatsodjur på målet och fiender i närheten. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 1500 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)",
+      "Skadar målet och fiender i närheten med 380%.",
+      "Åkallar ett leksakssoldatsodjur på målet och fiender i närheten. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 20% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -20%, ned till -60%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 700 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)",
       "Alla fiender med en undersåte eller ett odjur tar[#Dynamic] 525 [#]frostskada över 3 rundor."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Gör 650% skada mot målet och 2 slumpmässiga fiender.\n[*]Åkallar ett leksakssoldatsodjur för varje träff. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 1500 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)",
-      "Alla mål som träffas tystas i 5 rundor.",
-      "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten. (Leksakssoldatsundersåten har 2% HP som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 1500 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten kan inte ersättas av megaodjur.)"
+      "Skadar målet och fiender i närheten med 650%.",
+      "Åkallar ett leksakssoldatsodjur på målet och fiender i närheten. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 20% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -20%, ned till -60%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 700 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)",
+      "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten. (Leksakssoldatsundersåten har 10% HP som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +50%, upp till +150%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 700 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten kan inte ersättas av megaodjur.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Skadar målet och fiender i närheten med 230%.",
-      "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten. (Leksakssoldatsundersåten har 2% hälsa som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 500 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten blockerar nya megaodjur.)"
+      "Skadar målet och fiender i närheten med 300%.",
+      "Åkallar en leksakssoldatsundersåte till användaren och allierade i närheten. (Leksakssoldatsundersåten har 5% hälsa som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +50%, upp till +150%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 250 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten blockerar nya megaodjur.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Förstör alla allierades odjur och skadar alla megaodjur.",
-      "Åkallar en leksakssoldatsundersåte till varje allierad. (Leksakssoldatsundersåten har 2% HP som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +100%, upp till +300%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 1500 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten kan inte ersättas av megaodjur.)",
-      "Alla allierades hälsa ökar med 200 HP för varje undersåte de allierade har.",
+      "Åkallar en leksakssoldatsundersåte till varje allierad. (Leksakssoldatsundersåten har 10% HP som ärvs från användaren.\n[*]Varje leksakssoldatsundersåte höjer sin ägares anfall med +50%, upp till +150%. Effekten kan inte avbrytas.\n[*]Leksakssoldatsundersåten exploderar efter 3 rundor och gör 700 skada på en slumpmässig fiende.\n[*]Leksakssoldatsundersåten kan inte ersättas av megaodjur.)",
+      "Alla allierades hälsa ökar med 130 HP för varje undersåte de allierade har.",
+      "Alla allierade är immuna mot negativa manaeffekter i 4 rundor. (Det här inkluderar både negativa effekter som påverkar manaskapande och direkta manaminskningar.)",
       "Rensar negativa statuseffekter från alla allierade."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Skadar målet med 300%.",
-      "Åkallar 2 leksakssoldatsodjur på målet. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 1% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -25%, ned till -75%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 500 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)"
+      "Skadar målet med 400%.",
+      "Åkallar 2 leksakssoldatsodjur på målet. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 5% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -20%, ned till -60%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 250 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)"
      ]
     }
    ]

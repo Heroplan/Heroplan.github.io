@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Gør 350% skade på alle fjender, der starter fra venstre kant af fjendens formation. Skaden reduceres for hvert efterfølgende hit. (Skaden reduceres med 10% for hvert efterfølgende slag.)",
-      "Alle fjender får -35% forsvar og yderligere -5% reducering, hver gang de bliver ramt i 3 runder, ned til -50% forsvar.",
+      "Alle allierede får -35% forsvar i 3 runder.",
       "Alle fjender er immune over for nye statuseffekt-buffere i 3 runder."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blokerer talentevne-aktivering for alle fjender i 6 runder.",
-      "Giver 320% i skade til alle fjender.",
+      "Giver 280% i skade til alle fjender.",
       "Alle fjender får -24% forsvar mod ild i 6 runder."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Kasteren stjæler 20% mana fra målet. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
-      "Hidkalder en elverhåndlanger med 15% HP og 15% angreb, nedarvet fra kasteren.",
+      "Kasteren stjæler 15% mana fra målet. (Når en figur har modtaget 5 direkte mana-tilføjelser fra særlige evner i løbet af en enkelt tur, vil alle efterfølgende direkte mana-tilføjelser udført af særlige evner have reduceret effekt på denne figur.)",
+      "Hidkalder en elverhåndlanger med 10% HP og 10% angreb, nedarvet fra kasteren.",
       "Målet får en gavebombe. Gavebomben eksploderer efter 3 runder og påfører[#Dynamic] 451 [#]skade til målet og fjender i nærheden. Gavebomben eksploderer også, når målet besejres."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Giver 450% skade til målet.",
+      "Giver 500% skade til målet.",
       "Kasteren får hån, der forhindrer fjender fra at bruge særlig evneer på kasterens allierede i 4 runder. (Hån forhindrer alle fjender i at bruge særlige evner på allierede, der ikke har hån.)",
       "Kasteren udfører modangreb med 100% af den modtagne i 4 runder.",
-      "Hidkalder en snefehåndlanger med 35% HP og 35% angreb, nedarvet fra kasteren."
+      "Hidkalder en snefehåndlanger med 20% HP og 20% angreb, nedarvet fra kasteren."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Gendanner 35% helbred for alle allierede.",
-      "Hidkalder en elverhåndlanger til hver allieret med 12% HP og 12% angreb, nedarvet fra kasteren.",
+      "Hidkalder en elverhåndlanger til hver allieret med 10% HP og 10% angreb, nedarvet fra kasteren.",
       "Alle allierede får 25% forsvar i 4 runder."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Forvolder målet og fjender i nærheden 300% skade.\n[*]Forvolder yderligere 20% skade for hvert is-skjold på brættet, op til 460% skade i alt.",
-      "Hidkalder en elverhåndlanger til kasteren og allierede i nærheden med 20% HP og 20% angreb, nedarvet fra kasteren.",
-      "Målet og fjender i nærheden får -20% forsvar og et yderligere fald på -5% for hvert is-skjold på brættet i 4 runder, op til -60% forsvar.",
+      "Forvolder målet og fjender i nærheden 370% skade.\n[*]Forvolder yderligere 10% skade for hvert is-skjold på brættet, op til 450% skade i alt.",
+      "Hidkalder en elverhåndlanger til kasteren og allierede i nærheden med 10% HP og 10% angreb, nedarvet fra kasteren.",
+      "Målet og fjender i nærheden får -15% forsvar og et yderligere fald på -5% for hvert is-skjold på brættet i 4 runder, op til -55% forsvar.",
       "Målet og fjender i nærheden får -15% præcision og et yderligere fald på -5% for hvert is-skjold på brættet i 4 runder, op til -55% præcision."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Giver 540% skade til målet.",
       "Gør yderligere 180% skade på samme antal tilfældige fjender, som der er megadjævle og djævle ejet af fjender. Skaden reduceres for hvert følgende slag.",
       "Hidkalder en røgelsesdjævel til alle fjender. Djævlen skader fjenderne med 84% angreb i hver runde.\n[*]Røgelsesdjævlen optager helbredelse. Den forsvinder igen, når den har optaget den mængde helbred, der svarer til 35% af målets maksimale helbred.",
-      "Når den hidkaldes, forøger røgelsesdjævlen al skade, der forvoldes på dens mål fra alle kilder, med 50%. Effekten varer ved, så længe målet har røgelsesdjævle. Denne effekt kan ikke ophæves.",
       "Elementlink hidkalder en ishåndlanger til alle is-allierede med 10% HP og 15% angreb, nedarvet fra kasteren."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Giver 420% skade til målet og fjender i nærheden.",
-      "Hidkalder en legetøjssoldatdjævel til målet og alle fjender i nærheden. (Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke ryddes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 1500 skade på dens mål.\n[*]Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere.)",
+      "Giver 380% skade til målet og fjender i nærheden.",
+      "Hidkalder en legetøjssoldatdjævel til målet og alle fjender i nærheden. (Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 20% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -20% ned til -60%. Denne effekt kan ikke ryddes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 700 skade på dens mål.\n[*]Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere.)",
       "Alle fjender med en håndlanger eller en djævel modtager[#Dynamic] 525 [#]frostskade i 3 runder."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Giver 650% skade til målet og 2 tilfældige fjender.\n[*]Hidkalder en legetøjssoldatdjævel for hver træffer. (Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke ryddes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 1500 skade på dens mål.\n[*]Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere.)",
-      "Alle ramte mål gøres tavse i 5 runde.",
-      "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden. (Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 1500 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.)"
+      "Giver 650% skade til målet og fjender i nærheden.",
+      "Hidkalder en legetøjssoldatdjævel til målet og alle fjender i nærheden. (Legetøjssoldatdjævel absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 20% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -20% ned til -60%. Denne effekt kan ikke ryddes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 700 skade på dens mål.\n[*]Legetøjssoldatdjævel kan ikke erstattes af megahåndlangere.)",
+      "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden. (Legetøjssoldathåndlanger har 10% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +50%, op til +150%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 700 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Giver 230% skade til målet og fjender i nærheden.",
-      "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden. (Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 500 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlangeren blokerer nye megadjævle.)"
+      "Giver 300% skade til målet og fjender i nærheden.",
+      "Hidkalder en legetøjssoldathåndlanger til kasteren og allierede i nærheden. (Legetøjssoldathåndlanger har 5% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +50%, op til +150%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 250 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlangeren blokerer nye megadjævle.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Ødelægger alle djævle fra alle allierede og skader alle kæmpedjævle.",
-      "Hidkalder en legetøjssoldathåndlanger til hver allieret. (Legetøjssoldathåndlanger har 2% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +100%, op til +300%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 1500 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.)",
-      "Helbred boostes for alle allierede med 200 HP for hver håndlanger, de allierede har.",
+      "Hidkalder en legetøjssoldathåndlanger til hver allieret. (Legetøjssoldathåndlanger har 10% HP arvet fra kasteren.\n[*]Hver legetøjssoldat-håndlanger forøger sin ejers angreb med +50%, op til +150%. Denne effekt kan ikke ophæves.\n[*]Legetøjssoldathåndlangeren eksploderer efter 3 runder og gør 700 skade på en tilfældig fjende.\n[*]Legetøjssoldathåndlanger kan ikke erstattes af megadjævle.)",
+      "Helbred boostes for alle allierede med 130 HP for hver håndlanger, de allierede har.",
+      "Alle allierede er immune over for nye negative manaeffekter i 4 runder. (Det inkluderer begge lidelser, der påvirker managendannelse og direkte manareduktion.)",
       "Rydder statuslidelser fra alle allierede."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Giver 300% skade til målet.",
-      "Hidkalder 2 legetøjssoldatdjævle til målet. (Legetøjssoldatdjævlen absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 1% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -25% ned til -75%. Denne effekt kan ikke fjernes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 500 skade på dens mål.\n[*]Legetøjssoldatdjævlen kan ikke erstattes af kæmpehåndlangere.)"
+      "Giver 400% skade til målet.",
+      "Hidkalder 2 legetøjssoldatdjævle til målet. (Legetøjssoldatdjævlen absorberer helbredelse. Den forsvinder igen, når den har absorberet den mængde helbred, der svarer til 5% af målets maksimale helbred.\n[*]Hver legetøjssoldatdjævel reducerer sit måls forsvar med -20% ned til -60%. Denne effekt kan ikke fjernes.\n[*]Legetøjssoldatdjævlen eksploderer efter 3 runder og gør 250 skade på dens mål.\n[*]Legetøjssoldatdjævlen kan ikke erstattes af kæmpehåndlangere.)"
      ]
     }
    ]

@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Inflige un 350% de daño a todos los enemigos empezando por el margen izquierdo de la formación enemiga. El daño se reduce con cada golpe consecutivo. (El daño se reduce un 10% con cada golpe consecutivo.)",
-      "Todos los enemigos reciben un -35% de defensa y una disminución adicional de un -5% cada vez que son golpeados durante 3 turnos hasta un -50% de defensa.",
+      "Todos los enemigos reciben -35% de defensa durante 3 turnos.",
       "Todos los enemigos son inmunes a las nuevas bendiciones de estado durante 3 turnos."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Bloquea la activación de la habilidad de talento de todos los enemigos durante 6 turnos.",
-      "Causa un 320% de daño a todos los enemigos.",
+      "Causa un 280% de daño a todos los enemigos.",
       "Todos los enemigos reciben un -24% de defensa contra fuego durante 6 turnos."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "El héroe roba un 20% de maná del objetivo. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
-      "Invoca un secuaz elfo con un 15% de VIT y un 15% de ataque heredados del héroe.",
+      "El héroe roba un 15% de maná del objetivo. (Cuando un personaje recibe 5 de maná directamente mediante habilidades especiales durante un turno, el maná que reciba directamente mediante habilidades especiales tendrá un poder reducido en el personaje.)",
+      "Invoca un secuaz elfo con un 10% de VIT y un 10% de ataque heredados del héroe.",
       "El objetivo recibe un regalo bomba que explota pasados 3 turnos e inflige[#Dynamic] 451 [#]de daño al objetivo y a los enemigos cercanos. El regalo bomba también explota cuando se derrota al objetivo."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Causa un 450% de daño al objetivo.",
+      "Causa un 500% de daño al objetivo.",
       "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 4 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
       "El héroe contraataca con un 100% del daño recibido durante 4 turnos.",
-      "Invoca un secuaz hada de nieve con un 35% de VIT y un 35% de ataque heredados del héroe."
+      "Invoca un secuaz hada de nieve con un 20% de VIT y un 20% de ataque heredados del héroe."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Recupera un 35% de vitalidad para todos los aliados.",
-      "Invoca un secuaz elfo para todos los aliados con un 12% de VIT y un 12% de ataque heredados del héroe.",
+      "Invoca un secuaz elfo para todos los aliados con un 10% de VIT y un 10% de ataque heredados del héroe.",
       "Todos los aliados reciben un 25% de defensa durante 4 turnos."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Causa un 300% de daño al objetivo y los enemigos cercanos.\n[*] Causa un 20% de daño adicional por cada escudo de hielo en el tablero, hasta un 460% de daño en total.",
-      "Invoca un secuaz elfo para el héroe y los aliados cercanos con un 20% de VIT y un 20% de ataque heredados del héroe.",
-      "El objetivo y los enemigos cercanos reciben -20% de defensa y una reducción adicional del -5% por cada escudo de hielo en el tablero durante 4 turnos, hasta un -60% de defensa.",
+      "Causa un 370% de daño al objetivo y los enemigos cercanos.\n[*] Causa un 10% de daño adicional por cada escudo de hielo en el tablero, hasta un 450% de daño en total.",
+      "Invoca un secuaz elfo para el héroe y los aliados cercanos con un 10% de VIT y un 10% de ataque heredados del héroe.",
+      "El objetivo y los enemigos cercanos reciben -15% de defensa y una reducción adicional del -5% por cada escudo de hielo en el tablero durante 4 turnos, hasta un -55% de defensa.",
       "El objetivo y los enemigos cercanos reciben -15% de precisión y un -5% de reducción adicional por cada escudo de hielo en el tablero, hasta un -55% en total, durante 4 turnos."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Causa un 540% de daño al objetivo.",
       "Inflige un 180% de daño adicional a tantos enemigos aleatorios como megademonios y demonios tengan los enemigos. El daño se reduce con cada golpe consecutivo.",
       "Invoca un demonio incienso para todos los enemigos que daña a los enemigos con un 84% de ataque cada turno.\n[*] El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 35% de la vitalidad máxima de su objetivo.",
-      "Al invocarse, mientras lo tenga, el demonio incienso aumenta el daño que recibe su objetivo de todas las fuentes en un 50%. Este efecto no se puede purificar.",
       "El enlace de elemento invoca un secuaz de hielo para todos los aliados de hielo con un 10% de VIT y un 15% de ataque heredados del héroe."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Causa un 420% de daño al objetivo y a los enemigos cercanos.",
-      "Invoca un demonio soldado de juguete para el objetivo y los enemigos cercanos. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 1500 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)",
+      "Causa un 380% de daño al objetivo y a los enemigos cercanos.",
+      "Invoca un demonio soldado de juguete para el objetivo y los enemigos cercanos. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 20% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -20%, hasta un -60%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 700 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)",
       "Todos los enemigos que tengan un secuaz o un demonio reciben[#Dynamic] 525 [#]de daño de escarcha durante 3 turnos."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Inflige un 650% de daño al objetivo y a 2 enemigos aleatorios.\n[*] Invoca un demonio soldado de juguete con cada golpe. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 1500 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)",
-      "Se silencia a todos los objetivos golpeados durante 5 turnos.",
-      "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos. (El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 1500 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete no puede ser reemplazado por megademonios.)"
+      "Causa un 650% de daño al objetivo y a los enemigos cercanos.",
+      "Invoca un demonio soldado de juguete para el objetivo y los enemigos cercanos. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 20% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -20%, hasta un -60%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 700 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)",
+      "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos. (El secuaz soldado de juguete tiene un 10% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +50%, hasta un +150%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 700 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete no puede ser reemplazado por megademonios.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Causa un 230% de daño al objetivo y a los enemigos cercanos.",
-      "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos. (El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 500 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete bloquea a los megademonios nuevos.)"
+      "Causa un 300% de daño al objetivo y a los enemigos cercanos.",
+      "Invoca a un secuaz soldado de juguete para el héroe y los aliados cercanos. (El secuaz soldado de juguete tiene un 5% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +50%, hasta un +150%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 250 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete bloquea a los megademonios nuevos.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Destruye a todos los demonios de todos los aliados e inflige daño a todos los megademonios.",
-      "Invoca a un secuaz soldado de juguete para cada aliado. (El secuaz soldado de juguete tiene un 2% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +100%, hasta un +300%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 1500 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete no puede ser reemplazado por megademonios.)",
-      "La vitalidad de todos los aliados aumenta en 200 por cada secuaz que tengan.",
+      "Invoca a un secuaz soldado de juguete para cada aliado. (El secuaz soldado de juguete tiene un 10% de VIT heredado del héroe.\n[*]Cada secuaz soldado de juguete aumenta el ataque de su dueño un +50%, hasta un +150%. Este efecto no se puede descartar.\n[*]El secuaz soldado de juguete explota tras 3 turnos, lo que inflige un 700 de daño a un enemigo aleatorio.\n[*]El secuaz soldado de juguete no puede ser reemplazado por megademonios.)",
+      "La vitalidad de todos los aliados aumenta en 130 por cada secuaz que tengan.",
+      "Todos los aliados son inmunes a los efectos de maná negativos nuevos durante 4 turnos. (Incluye tanto las alteraciones que afectan a la regeneración de maná como a las que afectan a las reducciones de maná directas.)",
       "Purifica los estados alterados de todos los aliados."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Causa un 300% de daño al objetivo.",
-      "Invoca a 2 demonios soldado de juguete para el objetivo. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 1% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -25%, hasta un -75%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 500 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)"
+      "Causa un 400% de daño al objetivo.",
+      "Invoca a 2 demonios soldado de juguete para el objetivo. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 5% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -20%, hasta un -60%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 250 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)"
      ]
     }
    ]

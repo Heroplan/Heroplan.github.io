@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Inflige 350% de dégâts à tous les ennemis en commençant par le bord gauche de la formation. Les dégâts diminuent à chaque coup consécutif. (Les dégâts sont réduits de 10% à chaque coup consécutif.)",
-      "Tous les ennemis reçoivent -35% de défense et une réduction supplémentaire de -5% à chaque coup subi pendant 3 tours, jusqu'à un maximum de -50%.",
+      "Tous les ennemis reçoivent -35% de défense pour 3 tours.",
       "Les ennemis ne peuvent pas recevoir de nouveaux bonus d'effets appliqués pendant 3 tours."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Bloque l'activation des compétences de talent de tous les ennemis pendant 6 tours.",
-      "Inflige 320% de dégâts à tous les ennemis.",
+      "Inflige 280% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent -24% de défense contre le feu pour 6 tours."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Le lanceur vole 20% du mana de la cible. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
-      "Invoque un sbire lutin avec 15% de PV et 15% d'attaque hérités du lanceur.",
+      "Le lanceur vole 15% du mana de la cible. (Quand un personnage reçoit 5 bonus de mana directs en un seul tour grâce à des compétences spéciales, les bonus de mana des compétences spéciales sont moins efficaces pour ce personnage.)",
+      "Invoque un sbire lutin avec 10% de PV et 10% d'attaque hérités du lanceur.",
       "La cible reçoit une bombe cadeau. Après 3 tours, elle explose en infligeant[#Dynamic] 451 [#]points de dégâts à la cible et aux ennemis proches. La bombe cadeau explose également si la cible est vaincue."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Inflige 450% de dégâts à la cible.",
+      "Inflige 500% de dégâts à la cible.",
       "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 4 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
       "Le lanceur riposte avec 100% des dégâts qu'ils reçoivent pendant 4 tours.",
-      "Invoque un sbire esprit des neiges avec 35% de PV et 35% d'attaque hérités du lanceur."
+      "Invoque un sbire esprit des neiges avec 20% de PV et 20% d'attaque hérités du lanceur."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Restaure 35% de la santé de tous les alliés.",
-      "Invoque un sbire lutin pour chaque allié avec 12% de PV et 12% d'attaque hérités du lanceur.",
+      "Invoque un sbire lutin pour chaque allié avec 10% de PV et 10% d'attaque hérités du lanceur.",
       "Tous les alliés reçoivent 25% de défense pour 4 tours."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Inflige 300% de dégâts à la cible et aux ennemis proches.\n[*]Inflige 20% de dégâts supplémentaires pour chaque bouclier de glace sur le plateau, jusqu'à un total de 460%.",
-      "Invoque un sbire lutin pour le lanceur et les alliés proches avec 20% de PV et 20% d'attaque hérités du lanceur.",
-      "La cible et les ennemis proches reçoivent -20% de défense, ainsi qu'une réduction supplémentaire de -5% pour chaque bouclier de glace sur le plateau pendant 4 tours, jusqu'à un maximum de -60%.",
+      "Inflige 370% de dégâts à la cible et aux ennemis proches.\n[*]Inflige 10% de dégâts supplémentaires pour chaque bouclier de glace sur le plateau, jusqu'à un total de 450%.",
+      "Invoque un sbire lutin pour le lanceur et les alliés proches avec 10% de PV et 10% d'attaque hérités du lanceur.",
+      "La cible et les ennemis proches reçoivent -15% de défense, ainsi qu'une réduction supplémentaire de -5% pour chaque bouclier de glace sur le plateau pendant 4 tours, jusqu'à un maximum de -55%.",
       "Pendant 4 tours, la cible et les ennemis proches reçoivent -15% de précision, avec une réduction supplémentaire de -5% pour chaque bouclier de glace sur le plateau, jusqu'à un maximum de -55%."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Inflige 540% de dégâts à la cible.",
       "Inflige 180% de dégâts supplémentaires à un nombre d'ennemis aléatoire égal au nombre de méga démons et démons ennemis. Les dégâts diminuent à chaque coup.",
       "Invoque un démon d'encens pour tous les ennemis. Il inflige des dégâts à l'ennemi à hauteur de 84% d'attaque à chaque tour.\n[*]Le démon d'encens absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 35% de la santé maximum de sa cible.",
-      "Lorsqu'il est invoqué, le démon d'encens augmente de 50% les dégâts que sa cible subit de toutes les sources. Cet effet dure tant que la cible possède des démons d'encens. Cet effet ne peut pas être purifié.",
       "Lien élémentaire invoque un sbire de glace pour tous les alliés de glace avec 10% de PV et 15% d'attaque hérités du lanceur."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Inflige 420% de dégâts à la cible et aux ennemis proches.",
-      "Invoque un démon soldat jouet pour la cible et les ennemis proches. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 1% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -25%, jusqu'à -75%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 1500 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)",
+      "Inflige 380% de dégâts à la cible et aux ennemis proches.",
+      "Invoque un démon soldat jouet pour la cible et les ennemis proches. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 20% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -20%, jusqu'à -60%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 700 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)",
       "Tous les ennemis qui possèdent un sbire ou un démon reçoivent[#Dynamic] 525 [#]points de dégâts de givre sur 3 tours."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Inflige 650% de dégâts à la cible et 2 ennemis aléatoires.\n[*]Invoque un démon soldat jouet à chaque coup. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 1% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -25%, jusqu'à -75%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 1500 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)",
-      "Les cibles touchées sont réduites au silence pour 5 tours.",
-      "Invoque un sbire soldat jouet pour le lanceur et les alliés proches. (Le sbire soldat jouet a 2% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +100%, jusqu'à +300%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 1500 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet ne peut pas être remplacé par des méga démons.)"
+      "Inflige 650% de dégâts à la cible et aux ennemis proches.",
+      "Invoque un démon soldat jouet pour la cible et les ennemis proches. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 20% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -20%, jusqu'à -60%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 700 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)",
+      "Invoque un sbire soldat jouet pour le lanceur et les alliés proches. (Le sbire soldat jouet a 10% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +50%, jusqu'à +150%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 700 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet ne peut pas être remplacé par des méga démons.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Inflige 230% de dégâts à la cible et aux ennemis proches.",
-      "Invoque un sbire soldat jouet pour le lanceur et les alliés proches. (Le sbire soldat jouet a 2% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +100%, jusqu'à +300%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 500 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet bloque les nouveaux méga démons.)"
+      "Inflige 300% de dégâts à la cible et aux ennemis proches.",
+      "Invoque un sbire soldat jouet pour le lanceur et les alliés proches. (Le sbire soldat jouet a 5% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +50%, jusqu'à +150%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 250 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet bloque les nouveaux méga démons.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Détruit tous les démons des alliés et inflige des dégâts à tous les méga démons.",
-      "Invoque un sbire soldat jouet pour chaque allié. (Le sbire soldat jouet a 2% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +100%, jusqu'à +300%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 1500 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet ne peut pas être remplacé par des méga démons.)",
-      "Les PV de tous les alliés sont boostés de 200 pour chaque sbire dans l'équipe alliée.",
+      "Invoque un sbire soldat jouet pour chaque allié. (Le sbire soldat jouet a 10% de PV hérités du lanceur.\n[*]Chaque sbire soldat jouet augmente l'attaque de son propriétaire de +50%, jusqu'à +150%. Cet effet ne peut pas être dissipé.\n[*]Le sbire soldat jouet explose après 3 tours, infligeant 700 dégâts à un ennemi aléatoire.\n[*]Le sbire soldat jouet ne peut pas être remplacé par des méga démons.)",
+      "Les PV de tous les alliés sont boostés de 130 pour chaque sbire dans l'équipe alliée.",
+      "Tous les alliés sont immunisés contre les nouveaux effets négatifs affectant le mana pendant 4 tours. (Concerne à la fois les effets affectant la génération de mana et les réductions de mana directes.)",
       "Purifie les effets négatifs de tous les alliés."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Inflige 300% de dégâts à la cible.",
-      "Invoque 2 démons soldats jouets pour la cible. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 1% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -25%, jusqu'à -75%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 500 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)"
+      "Inflige 400% de dégâts à la cible.",
+      "Invoque 2 démons soldats jouets pour la cible. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 5% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -20%, jusqu'à -60%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 250 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)"
      ]
     }
    ]

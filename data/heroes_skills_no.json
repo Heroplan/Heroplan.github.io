@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Påfører alle fiender 350% skade fra den venstre kanten til fiendens formasjon. Skaden er redusert for hvert etterfølgende treff. (Skaden reduseres med 10% for hvert etterfølgende treff.)",
-      "Alle fiender får -35% forsvar, og ytterligere -5% reduksjon hver gang de treffes i 3 runder, ned til -50% forsvar.",
+      "Alle fiender får -35% forsvar i 3 runder.",
       "Alle fiender er immune mot nye statuseffektøkninger i 3 runder."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blokkerer talentferdighet-aktivering for alle fiender i 6 runder.",
-      "Påfører 320% skade på alle fiender.",
+      "Påfører 280% skade på alle fiender.",
       "Alle fiender får -24% forsvar mot ild i 6 runder."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Brukeren stjeler 20% mana fra målet. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
-      "Fremkaller en alv-undersått med 15% HP og 15% angrep nedarvet fra brukeren.",
+      "Brukeren stjeler 15% mana fra målet. (Etter at en figur har mottatt 5 direkte mana i tilskudd fra spesialferdigheter under én enkelt runde, har alle etterfølgende direkte manatilskudd fra spesialferdigheter redusert kraft på den figuren.)",
+      "Fremkaller en alv-undersått med 10% HP og 10% angrep nedarvet fra brukeren.",
       "Målet får en giftbombe. Etter 3 runder eksploderer giftbomben, og den påfører[#Dynamic] 451 [#]skade på målet og fiender i nærheten. Giftbomben eksploderer også når målet er nedkjempet."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Påfør 450% skade på målet.",
+      "Påfør 500% skade på målet.",
       "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 4 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)",
       "Brukeren foretar motangrep med 100% av skaden mottatt i 4 runder.",
-      "Fremkaller en snøfe-undersått med 35% HP og 35% angrep nedarvet fra brukeren."
+      "Fremkaller en snøfe-undersått med 20% HP og 20% angrep nedarvet fra brukeren."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Få tilbake 35% helse til alle allierte.",
-      "Fremkaller en alv-undersått for hver allierte med 12% HP og 12% angrep nedarvet fra brukeren.",
+      "Fremkaller en alv-undersått for hver allierte med 10% HP og 10% angrep nedarvet fra brukeren.",
       "Alle allierte får 25% forsvar i 4 runder."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Gjør 300% skade på målet og fiender i nærheten.\n[*]Gjør ytterligere 20% skade for hvert is-skjold på brettet, opptil totalt 460% skade.",
-      "Fremkaller en alv-undersått for brukeren og allierte i nærheten, med 20% HP og 20% angrep nedarvet fra brukeren.",
-      "Målet og fiender i nærheten får -20% forsvar og ytterligere -5% reduksjon for hvert is-skjold på brettet i 4 runder, opptil -60% forsvar.",
+      "Gjør 370% skade på målet og fiender i nærheten.\n[*]Gjør ytterligere 10% skade for hvert is-skjold på brettet, opptil totalt 450% skade.",
+      "Fremkaller en alv-undersått for brukeren og allierte i nærheten, med 10% HP og 10% angrep nedarvet fra brukeren.",
+      "Målet og fiender i nærheten får -15% forsvar og ytterligere -5% reduksjon for hvert is-skjold på brettet i 4 runder, opptil -55% forsvar.",
       "Målet og fiender i nærheten får -15% nøyaktighet, og en ytterligere -5% reduksjon for hvert is-skjold på brettet i 4 runder, opptil -55% treffsikkerhet."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Påfør 540% skade på målet.",
       "Påfører ytterligere 180% skade på like mange fiender som det er megadjevler og djevler eid av fiender. Skaden reduseres for hvert påfølgende treff.",
       "Påkaller en røkelsedjevel for alle fiender. Djevelen skader fiender med 84% angrep hver runde.\n[*]Røkelsedjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 35% av målets maksimale helse.",
-      "Når fremkalt øker røkelsedjevelen skade påført målet fra alle kilder med 50%. Effekten varer så lenge målet har røkelsedjevler. Denne effekten kan ikke fjernes.",
       "Elementlink påkaller en isundersått for alle is-allierte, med 10% HP og 15% angrep nedarvet fra brukeren."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Påfører 420% skade på målet og fiender i nærheten.",
-      "Fremkaller en lekesoldatdjevel for målet og fiender i nærheten. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 1500 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)",
+      "Påfører 380% skade på målet og fiender i nærheten.",
+      "Fremkaller en lekesoldatdjevel for målet og fiender i nærheten. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 20% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -20%, ned til -60%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 700 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)",
       "Alle fiender som eier en undersått eller en djevel, tar[#Dynamic] 525 [#]frostskade over 3 runder."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Påfører 650% skade på målet og 2 tilfeldige fiender.\n[*]Fremkaller en lekesoldatdjevel for hvert treff. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 1500 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)",
-      "Alle mål som treffes blir forstummet i 5 runder.",
-      "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten. (Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 1500 skade på en tilfeldig fiende.\n[*]Lekesoldatundersåtter kan ikke erstattes av megadjevler.)"
+      "Påfører 650% skade på målet og fiender i nærheten.",
+      "Fremkaller en lekesoldatdjevel for målet og fiender i nærheten. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 20% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -20%, ned til -60%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 700 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)",
+      "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten. (Lekesoldatundersåtter har 10% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +50%, opptil +150%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 700 skade på en tilfeldig fiende.\n[*]Lekesoldatundersåtter kan ikke erstattes av megadjevler.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Påfører 230% skade på målet og fiender i nærheten.",
-      "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten. (Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 500 skade på en tilfeldig fiende.\n[*]Lekesoldatundersått blokkerer nye megadjevler.)"
+      "Påfører 300% skade på målet og fiender i nærheten.",
+      "Fremkaller en lekesoldatundersått til brukeren og allierte i nærheten. (Lekesoldatundersåtter har 5% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +50%, opptil +150%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 250 skade på en tilfeldig fiende.\n[*]Lekesoldatundersått blokkerer nye megadjevler.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Ødelegger alle djevler fra alle allierte og skader alle megadjevler.",
-      "Fremkaller en lekesoldatundersått for hver alliert. (Lekesoldatundersåtter har 2% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +100%, opptil +300%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 1500 skade på en tilfeldig fiende.\n[*]Lekesoldatundersåtter kan ikke erstattes av megadjevler.)",
-      "Alle alliertes helse økes med 200 HP for hver undersått eid av de allierte.",
+      "Fremkaller en lekesoldatundersått for hver alliert. (Lekesoldatundersåtter har 10% HP nedarvet fra brukeren.\n[*]Hver lekesoldatundersått øker eierens angrep med +50%, opptil +150%. Denne effekten kan ikke fjernes.\n[*]Lekesoldatundersått eksploderer etter 3 runder, noe som påfører 700 skade på en tilfeldig fiende.\n[*]Lekesoldatundersåtter kan ikke erstattes av megadjevler.)",
+      "Alle alliertes helse økes med 130 HP for hver undersått eid av de allierte.",
+      "Alle allierte er immune mot nye negative manaeffekter i 4 runder. (Dette inkluderer både lidelser som påvirker managenerering, og direkte manareduksjoner.)",
       "Renser bort statuslidelser fra alle allierte."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Påfør 300% skade på målet.",
-      "Fremkaller 2 lekesoldatdjevler på målet. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 1% av målets maksimale helse.\n[*]Hver lekesoldatdjevel reduserer målets forsvar med -25%, ned til -75%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 500 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)"
+      "Påfør 400% skade på målet.",
+      "Fremkaller 2 lekesoldatdjevler på målet. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 5% av målets maksimale helse.\n[*]Hver lekesoldatdjevel reduserer målets forsvar med -20%, ned til -60%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 250 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)"
      ]
     }
    ]

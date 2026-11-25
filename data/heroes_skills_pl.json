@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Zadaje 350% obrażeń wszystkim wrogom począwszy od lewego skraju formacji wroga. Obrażenia zmniejszają się z każdym kolejnym trafieniem. (Obrażenia zmniejszają się o 10% z każdym kolejnym trafieniem.)",
-      "Wszyscy wrogowie mają -35% obrony, która obniża się o dodatkowe -5% za każde otrzymane trafienie przez 3 tur(y). Obrona może obniżyć się maksymalnie do -50%.",
+      "Wszyscy wrogowie otrzymują -35% do obrony przez 3 tur(y).",
       "Wszyscy wrogowie są odporni na nowe wzmocnienia ze statusu przez 3 tur(y)."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blokuje aktywację umiejętności talentu dla wszystkich przeciwników przez 6 tur(y).",
-      "Zadaje 320% obrażeń wszystkim przeciwnikom.",
+      "Zadaje 280% obrażeń wszystkim przeciwnikom.",
       "Wszyscy przeciwnicy otrzymują -24% do obrony przeciw ogniowi przez okres 6 tur."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Rzucający kradnie 20% many celowi. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
-      "Przywołuje elfiego pomocnika z 15% PŻ i 15% ataku przejętymi od bohatera.",
+      "Rzucający kradnie 15% many celowi. (Gdy postać otrzyma bezpośrednie zwiększenie many z umiejętności specjalnych równe 5 pkt. podczas jednej tury, moc wszystkich kolejnych instancji bezpośredniego zwiększenia many przez umiejętności specjalne na tej postaci zostanie zmniejszona.)",
+      "Przywołuje elfiego pomocnika z 10% PŻ i 10% ataku przejętymi od bohatera.",
       "Cel otrzymuje bombę prezentową, która po 3 turach wybucha, zadając[#Dynamic] 451 [#]pkt. obrażeń celowi i pobliskim wrogom. Bomba wybucha również, gdy cel zostanie pokonany."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Zadaje 450% obrażeń celowi.",
+      "Zadaje 500% obrażeń celowi.",
       "Bohater zyskuje efekt Prowokacji, który uniemożliwia wrogom używanie umiejętności specjalnych na sojusznikach bohatera przez 4 tur(y). (Prowokacja sprawia, że żaden z wrogów nie może użyć umiejętności specjalnej na sojusznikach, którzy nie są pod wpływem Prowokacji.)",
       "Bohater kontratakuje z siłą 100% otrzymanych obrażeń przez 4 tur(y).",
-      "Przywołuje pomocnika śnieżnego duszka z 35% PŻ i 35% ataku przejętymi od rzucającego."
+      "Przywołuje pomocnika śnieżnego duszka z 20% PŻ i 20% ataku przejętymi od rzucającego."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Regeneruje 35% zdrowia wszystkich sojuszników.",
-      "Przywołuje elfiego pomocnika za każdego sojusznika z 12% PŻ i 12% ataku przejętymi od bohatera.",
+      "Przywołuje elfiego pomocnika za każdego sojusznika z 10% PŻ i 10% ataku przejętymi od bohatera.",
       "Wszyscy sojusznicy otrzymują 25% do obrony przez 4 tur(y)."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Zadaje 300% obrażeń celowi i pobliskim wrogom.\n[*]Zadaje dodatkowo 20% obrażeń za każdą tarczę lodu na planszy, łącznie do 460% obrażeń.",
-      "Przywołuje elfiego pomocnika dla bohatera i pobliskich sojuszników z 20% PŻ i 20% do ataku przejętymi od bohatera.",
-      "Cel i pobliscy wrogowie otrzymują -20% do obrony i kolejne -5% za każdą tarczę lodu na planszy na czas 4 tur, maksymalnie do -60% obrony.",
+      "Zadaje 370% obrażeń celowi i pobliskim wrogom.\n[*]Zadaje dodatkowo 10% obrażeń za każdą tarczę lodu na planszy, łącznie do 450% obrażeń.",
+      "Przywołuje elfiego pomocnika dla bohatera i pobliskich sojuszników z 10% PŻ i 10% do ataku przejętymi od bohatera.",
+      "Cel i pobliscy wrogowie otrzymują -15% do obrony i kolejne -5% za każdą tarczę lodu na planszy na czas 4 tur, maksymalnie do -55% obrony.",
       "Cel i pobliscy wrogowie otrzymują -15% do precyzji i dodatkowe zmniejszenie o -5% za każdą tarczę lodu na planszy na czas 4 tur, maksymalnie do -55% precyzji."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Zadaje 540% obrażeń celowi.",
       "Zadaje dodatkowe 180% obrażeń liczbie wrogów równej liczbie posiadanych przez nich megapotworów i potworów. Obrażenia zmniejszają się po każdym kolejnym trafieniu.",
       "Wzywa potworne kadzidło na wszystkich wrogów. Potwór zadaje przeciwnikom obrażenia o wartości 84% ataku w każdej turze.\n[*]Potworne kadzidło wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 35% maksymalnego zdrowia celu.",
-      "Po wezwaniu potworne kadzidło zwiększa obrażenia zadawane swojemu celowi ze wszystkich źródeł o 50% przez cały okres posiadania. Odwołanie tego efektu nie jest możliwe.",
       "Połączenie z żywiołem przywołuje pomocnika lodu dla wszystkich sojuszników lodu z 10% PŻ i 15% ataku przejętymi od bohatera."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Zadaje 420% obrażeń celowi i pobliskim wrogom.",
-      "Przywołuje potwora zabawkowego żołnierzyka dla celu i pobliskich wrogów. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)",
+      "Zadaje 380% obrażeń celowi i pobliskim wrogom.",
+      "Przywołuje potwora zabawkowego żołnierzyka dla celu i pobliskich wrogów. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 20% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -20% , aż do -60%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 700 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)",
       "Wszyscy przeciwnicy mający pomocników lub potwory, otrzymują[#Dynamic] 525 [#]pkt. obrażeń od mrozu przez okres 3 tur."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Zadaje 650% obrażeń celowi oraz 2 losowym wrogom.\n[*]Za każdym trafieniem wzywa potwora zabawkowego żołnierzyka. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)",
-      "Wszystkie trafione cele zostają uciszone przez 5 tur(y).",
-      "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników. (Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , do maks. +300%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.)"
+      "Zadaje 650% obrażeń celowi i pobliskim wrogom.",
+      "Przywołuje potwora zabawkowego żołnierzyka dla celu i pobliskich wrogów. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 20% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -20% , aż do -60%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 700 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)",
+      "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników. (Pomocnik zabawkowy żołnierzyk ma 10% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +50% , do maks. +150%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 700 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Zadaje 230% obrażeń celowi i pobliskim wrogom.",
-      "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników. (Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , aż do +300%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnik zabawkowy żołnierzyk blokuje megapotwory.)"
+      "Zadaje 300% obrażeń celowi i pobliskim wrogom.",
+      "Przywołuje zabawkowego żołnierzyka dla rzucającego i pobliskich sojuszników. (Pomocnik zabawkowy żołnierzyk ma 5% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +50% , aż do +150%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 250 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnik zabawkowy żołnierzyk blokuje megapotwory.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Niszczy wszystkie potwory wszystkich sojuszników i zadaje obrażenia mega potworom.",
-      "Przywołuje zabawkowego żołnierzyka dla każdego sojusznika. (Pomocnik zabawkowy żołnierzyk ma 2% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +100% , do maks. +300%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 1500 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.)",
-      "Zdrowie wszystkich sojuszników zwiększa się o 200 PŻ za każdego pomocnika sojuszników.",
+      "Przywołuje zabawkowego żołnierzyka dla każdego sojusznika. (Pomocnik zabawkowy żołnierzyk ma 10% PŻ przejętych od rzucającego.\n[*]Każdy pomocnik zabawkowy żołnierzyk zwiększa atak posiadacza o +50% , do maks. +150%. Odwołanie tego efektu nie jest możliwe.\n[*]Pomocnik zabawkowy żołnierzyk wybucha po 3 turach, zadając 700 pkt. obrażeń losowemu wrogowi.\n[*]Pomocnika zabawkowego żołnierzyka nie można zastąpić megapotworami.)",
+      "Zdrowie wszystkich sojuszników zwiększa się o 130 PŻ za każdego pomocnika sojuszników.",
+      "Wszyscy sojusznicy są odporni na nowe negatywne efekty many przez 4 tur(y). (Obejmuje to dolegliwości wpływające na generowanie many oraz bezpośrednie zmniejszenia many.)",
       "Oczyszcza status wszystkich sojuszników z dolegliwości."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Zadaje 300% obrażeń celowi.",
-      "Wzywa potwory zabawkowych żołnierzy (2) do celu. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 1% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -25% , aż do -75%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 500 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)"
+      "Zadaje 400% obrażeń celowi.",
+      "Wzywa potwory zabawkowych żołnierzy (2) do celu. (Potwór zabawkowy żołnierzyk wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 5% maksymalnego zdrowia celu.\n[*]Każdy potwór zabawkowy żołnierzyk zmniejsza obronę celu o -20% , aż do -60%. Oczyszczenie tego efektu nie jest możliwe.\n[*]Potwór zabawkowy żołnierzyk wybucha po 3 turach, zadając 250 pkt. obrażeń celowi.\n[*]Potwora zabawkowego żołnierzyka nie można zastąpić megapomocnikami.)"
      ]
     }
    ]

@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Tuottaa 350% vauriota kaikille vihollisille aloittaen vihollisryhmän vasemmasta laidasta. Vaurio vähenee jokaisen osuman myötä. (Vaurio vähenee 10% jokaisen osuman myötä.)",
-      "Kaikki viholliset saavat -35% puolustusta ja -5%:n vähennyksen aina, kun heihin osutaan 3 vuoron aikana. Alaraja on -50% puolustusta.",
+      "Kaikki viholliset saavat -35% puolustusta 3 vuoron ajaksi.",
       "Kaikki viholliset ovat immuuneja uusille tilaefektien tehosteille 3 vuoron ajan."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Estää kaikkien vihollisten kykyjen aktivoimisen 6 vuoron ajan.",
-      "Tuottaa 320% vauriota kaikille vihollisille.",
+      "Tuottaa 280% vauriota kaikille vihollisille.",
       "Kaikki viholliset saavat -24% puolustusta tulta vastaan 6 vuoron ajaksi."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Loitsija anastaa 20% manaa kohteelta. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
-      "Kutsuu tonttukäskyläisen, joka perii loitsijalta 15% terveyttä ja 15% hyökkäystä.",
+      "Loitsija anastaa 15% manaa kohteelta. (Kun hahmo on saanut 5 suoraa manalisäystä erikoistaidoista yhden vuoron aikana, kaikkien sen jälkeen erikoistaidoista tulevien manalisäysten teho on heikompi kyseisellä hahmolla.)",
+      "Kutsuu tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
       "Kohde saa lahjapommin. Lahjapommi räjähtää 3 vuoron jälkeen tehden[#Dynamic] 451 [#]vauriota kohteelle ja lähellä oleville vihollisille. Lahjapommi räjähtää myös silloin, jos kohde kukistuu."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Tuottaa 450% vauriota kohteelle.",
+      "Tuottaa 500% vauriota kohteelle.",
       "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 4 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
       "Loitsija tekee 4 vuoron ajan vastahyökkäyksen, jonka suuruus on 100% hänen kärsimästään vauriosta.",
-      "Kutsuu lumihaltijakäskyläisen, joka perii loitsijalta 35% terveyttä ja 35% hyökkäystä."
+      "Kutsuu lumihaltijakäskyläisen, joka perii loitsijalta 20% terveyttä ja 20% hyökkäystä."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Palauttaa 35% liittolaisten terveyttä.",
-      "Kutsuu jokaista liittolaista kohden tonttukäskyläisen, joka perii loitsijalta 12% terveyttä ja 12% hyökkäystä.",
+      "Kutsuu jokaista liittolaista kohden tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
       "Kaikki liittolaiset saavat 25% puolustusta 4 vuoron ajaksi."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Tuottaa 300% vauriota kohteelle ja lähellä oleville vihollisille.\n[*] Tuottaa 20% lisävauriota jokaisesta laudalla olevasta jääkilvestä. Yhteisvaurio on enintään 460%.",
-      "Kutsuu loitsijalle ja lähellä oleville liittolaisille tonttukäskyläisen, joka perii loitsijalta 20% terveyttä ja 20% hyökkäystä.",
-      "Kohde ja lähellä olevat viholliset saavat -20% puolustusta ja -5% lisävähennyksen jokaisesta laudalla olevasta jääkilvestä 4 vuoron ajaksi. Yhteisvaikutus on enintään -60% puolustusta.",
+      "Tuottaa 370% vauriota kohteelle ja lähellä oleville vihollisille.\n[*] Tuottaa 10% lisävauriota jokaisesta laudalla olevasta jääkilvestä. Yhteisvaurio on enintään 450%.",
+      "Kutsuu loitsijalle ja lähellä oleville liittolaisille tonttukäskyläisen, joka perii loitsijalta 10% terveyttä ja 10% hyökkäystä.",
+      "Kohde ja lähellä olevat viholliset saavat -15% puolustusta ja -5% lisävähennyksen jokaisesta laudalla olevasta jääkilvestä 4 vuoron ajaksi. Yhteisvaikutus on enintään -55% puolustusta.",
       "Kohde ja lähellä olevat viholliset saavat -15% tarkkuutta, sekä -5% lisävähennystä jokaista laudalla olevaa jääkilpeä kohti 4 vuoron ajaksi, yhteensä enintään -55% tarkkuutta."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Tuottaa 540% vauriota kohteelle.",
       "Tuottaa 180% lisävauriota niin monelle satunnaiselle viholliselle kuin vihollisilla on megariiviöitä ja riiviöitä. Vaurio vähenee jokaisella peräkkäisellä iskulla.",
       "Kutsuu suitsukeriiviön kaikille vihollisille. Riiviö vaurioittaa vihollisia 84%:n hyökkäyksellä joka vuorolla.\n[*]Suitsukeriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 35% sen kohteen maksimiterveydestä.",
-      "Kun suitsukeriiviö kutsutaan, se lisää kohteen kärsimää vauriota kaikista lähteistä 50%. Vaikutus kestää niin kauan kuin kohteella on suitsukeriiviöitä. Vaikutusta ei voi puhdistaa.",
       "Elementtilinkki kutsuu kaikille jääliittolaisille jääkäskyläisen, joka perii loitsijalta 10% terveyttä ja 15% hyökkäystä."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Tuottaa 420% vauriota kohteelle ja lähellä oleville vihollisille.",
-      "Kutsuu kohteelle ja lähellä oleville vihollisille lelusotilasriiviön. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 1% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -25%. Alaraja on -75%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 1500 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)",
+      "Tuottaa 380% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Kutsuu kohteelle ja lähellä oleville vihollisille lelusotilasriiviön. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 20% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -20%. Alaraja on -60%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 700 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)",
       "Kaikki käskyläisen tai riiviön omistavat viholliset kärsivät[#Dynamic] 525 [#]jäävauriota 3 vuoron aikana."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Tuottaa 650% vauriota kohteelle ja 2 satunnaiselle viholliselle.\n[*]Kutsuu lelusotilasriiviön jokaisella iskulla. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 1% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -25%. Alaraja on -75%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 1500 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)",
-      "Kaikki osutut kohteet hiljennetään 5 vuoron ajaksi.",
-      "Kutsuu loitsijalle ja lähellä oleville liittolaisille lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 2% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +100%, yhteensä enintään +300%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 1500 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläistä ei voi korvata megariiviöillä.)"
+      "Tuottaa 650% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Kutsuu kohteelle ja lähellä oleville vihollisille lelusotilasriiviön. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 20% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -20%. Alaraja on -60%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 700 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)",
+      "Kutsuu loitsijalle ja lähellä oleville liittolaisille lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 10% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +50%, yhteensä enintään +150%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 700 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläistä ei voi korvata megariiviöillä.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Tuottaa 230% vauriota kohteelle ja lähellä oleville vihollisille.",
-      "Kutsuu loitsijalle ja lähellä oleville liittolaisille lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 2% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +100%, yhteensä enintään +300%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 500 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläinen estää uudet megariiviöt.)"
+      "Tuottaa 300% vauriota kohteelle ja lähellä oleville vihollisille.",
+      "Kutsuu loitsijalle ja lähellä oleville liittolaisille lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 5% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +50%, yhteensä enintään +150%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 250 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläinen estää uudet megariiviöt.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Tuhoaa kaikki riiviöt kaikilta liittolaisilta ja vaurioittaa kaikkia megariiviöitä.",
-      "Kutsuu jokaiselle liittolaiselle lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 2% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +100%, yhteensä enintään +300%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 1500 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläistä ei voi korvata megariiviöillä.)",
-      "Kaikki liittolaiset saavat 200 terveyttä jokaista liittolaisten omistamaa käskyläistä kohti.",
+      "Kutsuu jokaiselle liittolaiselle lelusotilaskäskyläisen. (Lelusotilaskäskyläinen perii loitsijalta 10% terveyttä.\n[*]Jokainen lelusotilaskäskyläinen nostaa omistajansa hyökkäystä +50%, yhteensä enintään +150%. Vaikutusta ei voi häivyttää.\n[*]Lelusotilaskäskyläinen räjähtää 3 vuoron jälkeen, tuottaen 700 vauriota satunnaiselle viholliselle.\n[*]Lelusotilaskäskyläistä ei voi korvata megariiviöillä.)",
+      "Kaikki liittolaiset saavat 130 terveyttä jokaista liittolaisten omistamaa käskyläistä kohti.",
+      "Kaikki liittolaiset ovat immuuneja uusille negatiivisille manaefekteille 4 vuoron ajan. (Tämä koskee sekä manatuotantoa vähentäviä vaivoja että suoria manavähennyksiä.)",
       "Puhdistaa vaivat kaikilta liittolaisilta."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Tuottaa 300% vauriota kohteelle.",
-      "Kutsuu kohteelle 2 lelusotilasriiviötä. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 1% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -25%. Alaraja on -75%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 500 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)"
+      "Tuottaa 400% vauriota kohteelle.",
+      "Kutsuu kohteelle 2 lelusotilasriiviötä. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 5% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -20%. Alaraja on -60%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 250 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)"
      ]
     }
    ]

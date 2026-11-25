@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Deals 350% damage to all enemies starting from the left edge of the enemy formation. The damage is reduced on each consecutive hit. (The damage is reduced by 10% on each consecutive hit.)",
-      "All enemies get -35% defense and a further -5% decrease every time they are hit during 3 turns, down to -50% defense.",
+      "All enemies get -35% defense for 3 turns.",
       "All enemies are immune to new status effect buffs for 3 turns."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blocks Talent Skill activation for all enemies for 6 turns.",
-      "Deals 320% damage to all enemies.",
+      "Deals 280% damage to all enemies.",
       "All enemies get -24% defense against Fire for 6 turns."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "The caster steals 20% mana from the target. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
-      "Summons an Elf Minion with 15% HP and 15% attack inherited from the caster.",
+      "The caster steals 15% mana from the target. (After a character has received 5 direct mana additions from Special Skills during a single turn, all subsequent direct mana additions done by Special Skills will have reduced power on that character.)",
+      "Summons an Elf Minion with 10% HP and 10% attack inherited from the caster.",
       "The target receives a Gift Bomb. After 3 turns the Gift Bomb explodes and deals[#Dynamic] 451 [#]damage to the target and nearby enemies. The Gift Bomb also explodes when the target is defeated."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Deals 450% damage to the target.",
+      "Deals 500% damage to the target.",
       "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 4 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
       "The caster counterattacks with 100% of the damage received for 4 turns.",
-      "Summons a Snowsprite Minion with 35% HP and 35% attack inherited from the caster."
+      "Summons a Snowsprite Minion with 20% HP and 20% attack inherited from the caster."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Recovers 35% health for all allies.",
-      "Summons an Elf Minion for each ally with 12% HP and 12% attack inherited from the caster.",
+      "Summons an Elf Minion for each ally with 10% HP and 10% attack inherited from the caster.",
       "All allies get 25% defense for 4 turns."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Deals 300% damage to the target and nearby enemies.\n[*]Deals additional 20% damage per each Ice shield on the board, up to 460% damage in total.",
-      "Summons an Elf Minion for the caster and nearby allies with 20% HP and 20% attack inherited from the caster.",
-      "The target and nearby enemies get -20% defense, and a further -5% decrease per each Ice shield on the board for 4 turns, up to -60% defense.",
+      "Deals 370% damage to the target and nearby enemies.\n[*]Deals additional 10% damage per each Ice shield on the board, up to 450% damage in total.",
+      "Summons an Elf Minion for the caster and nearby allies with 10% HP and 10% attack inherited from the caster.",
+      "The target and nearby enemies get -15% defense, and a further -5% decrease per each Ice shield on the board for 4 turns, up to -55% defense.",
       "The target and nearby enemies get -15% accuracy, and a further -5% decrease per each Ice shield on the board for 4 turns, up to -55% accuracy."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Deals 540% damage to the target.",
       "Deals an additional 180% damage to as many random enemies as there are Mega Fiends and Fiends owned by enemies. The damage is reduced on each consecutive hit.",
       "Summons a Incense Fiend for all enemies. The Fiend damages the enemies with 84% attack every turn.\n[*]The Incense Fiend absorbs healing. It disappears after absorbing a healing amount equal to 35% of its target's max health.",
-      "When summoned, the Incense Fiend increases the damage dealt to its target from all sources by 50%. The effect lasts as long as the target has Incense Fiends. This effect can't be cleansed.",
       "Element Link summons an Ice Minion for all Ice allies with 10% HP and 15% attack inherited from the caster."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Deals 420% damage to the target and nearby enemies.",
-      "Summons a Toy Soldier Fiend for the target and nearby enemies. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 1% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -25% , down to -75%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 1500 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)",
+      "Deals 380% damage to the target and nearby enemies.",
+      "Summons a Toy Soldier Fiend for the target and nearby enemies. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 20% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -20% , down to -60%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 700 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)",
       "All enemies who own a Minion or a Fiend receive[#Dynamic] 525 [#]Frost damage over 3 turns."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Deals 650% damage to the target and 2 random enemies.\n[*]Summons a Toy Soldier Fiend with each hit. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 1% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -25% , down to -75%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 1500 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)",
-      "All hit targets get silenced for 5 turns.",
-      "Summons a Toy Soldier Minion for the caster and nearby allies. (Toy Soldier Minion has 2% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +100% , up to +300%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 1500 damage to a random enemy.\n[*]Toy Soldier Minion cannot be replaced by Mega Fiends.)"
+      "Deals 650% damage to the target and nearby enemies.",
+      "Summons a Toy Soldier Fiend for the target and nearby enemies. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 20% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -20% , down to -60%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 700 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)",
+      "Summons a Toy Soldier Minion for the caster and nearby allies. (Toy Soldier Minion has 10% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +50% , up to +150%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 700 damage to a random enemy.\n[*]Toy Soldier Minion cannot be replaced by Mega Fiends.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Deals 230% damage to the target and nearby enemies.",
-      "Summons a Toy Soldier Minion for the caster and nearby allies. (Toy Soldier Minion has 2% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +100% , up to +300%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 500 damage to a random enemy.\n[*]Toy Soldier Minion blocks new Mega Fiends.)"
+      "Deals 300% damage to the target and nearby enemies.",
+      "Summons a Toy Soldier Minion for the caster and nearby allies. (Toy Soldier Minion has 5% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +50% , up to +150%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 250 damage to a random enemy.\n[*]Toy Soldier Minion blocks new Mega Fiends.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Destroys all Fiends from all allies and damages all Mega Fiends.",
-      "Summons a Toy Soldier Minion for each ally. (Toy Soldier Minion has 2% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +100% , up to +300%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 1500 damage to a random enemy.\n[*]Toy Soldier Minion cannot be replaced by Mega Fiends.)",
-      "All allies' health is boosted by 200 HP for each Minion owned by the allies.",
+      "Summons a Toy Soldier Minion for each ally. (Toy Soldier Minion has 10% HP inherited from the caster.\n[*]Each Toy Soldier Minion increases its owner's attack by +50% , up to +150%. This effect can't be dispelled.\n[*]Toy Soldier Minion explodes after 3 turns, dealing 700 damage to a random enemy.\n[*]Toy Soldier Minion cannot be replaced by Mega Fiends.)",
+      "All allies' health is boosted by 130 HP for each Minion owned by the allies.",
+      "All allies are immune to new negative mana effects for 4 turns. (This includes both ailments affecting mana generation and direct mana reductions.)",
       "Cleanses status ailments from all allies."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Deals 300% damage to the target.",
-      "Summons 2 Toy Soldier Fiends for the target. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 1% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -25% , down to -75%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 500 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)"
+      "Deals 400% damage to the target.",
+      "Summons 2 Toy Soldier Fiends for the target. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 5% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -20% , down to -60%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 250 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)"
      ]
     }
    ]

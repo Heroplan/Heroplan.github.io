@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Brengt 350% schade toe aan alle vijanden, te beginnen aan de linkerkant van de vijandelijke formatie. De schade wordt verminderd bij elke opeenvolgende treffer. (De schade wordt bij iedere achtereenvolgende treffer verminderd met 10%.)",
-      "Alle vijanden krijgen 3 beurten lang -35% verdediging, en -5% extra afname elke keer dat ze worden geraakt, tot maximaal -50% minder verdediging.",
+      "Alle vijanden hebben 3 beurten lang -35% verdedigende kracht.",
       "Alle vijanden zijn 3 beurten lang immuun voor nieuwe oppeppers van statuseffecten."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blokkeert de activering van talentvaardigheden voor alle vijanden gedurende 6 beurten.",
-      "Alle vijanden lijden 320% schade.",
+      "Alle vijanden lijden 280% schade.",
       "Alle vijanden krijgen -24% verdediging tegen vuur gedurende 6 beurten."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "De spreukspreker steelt 20% mana van het doelwit. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
-      "Roept een elfvolgeling aan die 15% van de gezondheid en 15% van de aanvalskracht erft van de spreukspreker.",
+      "De spreukspreker steelt 15% mana van het doelwit. (Nadat een personage 5 directe mana heeft ontvangen van speciale vaardigheden tijdens één beurt, hebben alle daaropvolgende directe manatoevoegingen van speciale vaardigheden minder effect op dat personage.)",
+      "Roept een elfvolgeling aan die 10% van de gezondheid en 10% van de aanvalskracht erft van de spreukspreker.",
       "Het doelwit krijgt een cadeaubom. Na 3 beurten ontploft de cadeaubom en brengt[#Dynamic] 451 [#]schade toe aan het doelwit en vijanden in de buurt. De cadeaubom explodeert ook als het doelwit is verslagen."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Het doelwit lijdt 450% schade.",
+      "Het doelwit lijdt 500% schade.",
       "De spreukspreker krijgt het effect Uitlokken wat 4 beurten lang voorkomt dat vijanden hun Speciale vaardigheden op de bondgenoten van de spreukspreker kunnen richten. (Uitlokking voorkomt dat alle vijanden speciale vaardigheden gebruiken op bondgenoten die geen uitlokking hebben.)",
       "De held doet 4 beurten lang tegenaanvallen met 100% van de geleden schade.",
-      "Roept een sneeuwwezenvolgeling aan. De sneeuwwezenvolgeling erft 35% gezondheid en 35% aanval van de spreukspreker."
+      "Roept een sneeuwwezenvolgeling aan. De sneeuwwezenvolgeling erft 20% gezondheid en 20% aanval van de spreukspreker."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Alle bondgenoten genezen 35%.",
-      "Roept een elfvolgeling aan voor elke bondgenoot. De elfvolgeling erft 12% gezondheid en 12% aanvalskracht van de spreukspreker.",
+      "Roept een elfvolgeling aan voor elke bondgenoot. De elfvolgeling erft 10% gezondheid en 10% aanvalskracht van de spreukspreker.",
       "Alle bondgenoten hebben 4 beurten lang 25% verdedigende kracht."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Brengt 300% schade toe aan het doelwit en vijanden in de buurt.\n[*] Richt 20% extra schade aan voor elk ijsschild op het bord, tot maximaal 460% schade in totaal.",
-      "Roept een elfvolgeling aan voor de spreukspreker en bondgenoten in de buurt. De elfvolgeling erft 20% gezondheid en 20% aanvalskracht van de spreukspreker.",
-      "Het doelwit en vijanden in de buurt krijgen -20% verdediging en nog eens -5% afname per ijsschild op het bord gedurende 4 beurten tot maximaal -60% verdediging.",
+      "Brengt 370% schade toe aan het doelwit en vijanden in de buurt.\n[*] Richt 10% extra schade aan voor elk ijsschild op het bord, tot maximaal 450% schade in totaal.",
+      "Roept een elfvolgeling aan voor de spreukspreker en bondgenoten in de buurt. De elfvolgeling erft 10% gezondheid en 10% aanvalskracht van de spreukspreker.",
+      "Het doelwit en vijanden in de buurt krijgen -15% verdediging en nog eens -5% afname per ijsschild op het bord gedurende 4 beurten tot maximaal -55% verdediging.",
       "Het doelwit en vijanden in de buurt krijgen gedurende 4 beurten -15% trefzekerheid en nog eens -5% minder voor elk ijsschild op het bord, tot maximaal -55% trefzekerheid."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Het doelwit lijdt 540% schade.",
       "Brengt 180% extra schade toe aan evenveel willekeurige vijanden als er megademonen en demonen van vijanden zijn. De schade vermindert na elke opeenvolgende treffer.",
       "Roept een wierookdemon aan voor alle vijanden. De demon brengt vijanden elke beurt schade toe met 84% aanvalskracht.\n[*]De wierookdemon absorbeert genezing. Hij verdwijnt als hij het equivalent van 35% van de maximale gezondheid van het doelwit heeft geabsorbeerd.",
-      "Wanneer deze aangeroepen wordt, verhoogt de wierookdemon de schade van alle bronnen die toegebracht wordt aan het doelwit met 50%. Dit effect duurt zolang het doelwit wierookdemonen heeft. Dit effect kan niet worden gezuiverd.",
       "De elementenlink roept een ijsvolgeling aan voor alle ijsbondgenoten. De ijsvolgeling erft 10% gezondheid en 15% aanvalskracht van de spreukspreker."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Het doelwit en vijanden in de buurt lijden 420% schade.",
-      "Roept een speelgoedsoldaatjesdemon aan voor het doelwit en vijanden in de buurt. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 1% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -25% tot -75%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 1500 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)",
+      "Het doelwit en vijanden in de buurt lijden 380% schade.",
+      "Roept een speelgoedsoldaatjesdemon aan voor het doelwit en vijanden in de buurt. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 20% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -20% tot -60%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 700 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)",
       "Alle vijanden die een volgeling of een demon bezitten, lijden 3 beurten lang[#Dynamic] 525 [#]ijsschade."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Brengt 650% schade toe aan het doelwit en 2 willekeurige vijanden.\n[*]Roept met elke treffer een speelgoedsoldaatjesdemon aan. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 1% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -25% tot -75%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 1500 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)",
-      "Alle getroffen doelwitten zijn 5 beurten lang verstomd.",
-      "Roept een speelgoedsoldaatjesvolgeling aan voor de spreukspreker en bondgenoten in de buurt. (De speelgoedsoldaatjesvolgeling heeft 2% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +100% , tot +300%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 1500 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling kan niet worden vervangen door megademonen.)"
+      "Het doelwit en vijanden in de buurt lijden 650% schade.",
+      "Roept een speelgoedsoldaatjesdemon aan voor het doelwit en vijanden in de buurt. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 20% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -20% tot -60%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 700 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)",
+      "Roept een speelgoedsoldaatjesvolgeling aan voor de spreukspreker en bondgenoten in de buurt. (De speelgoedsoldaatjesvolgeling heeft 10% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +50% , tot +150%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 700 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling kan niet worden vervangen door megademonen.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Het doelwit en vijanden in de buurt lijden 230% schade.",
-      "Roept een speelgoedsoldaatjesvolgeling aan voor de spreukspreker en bondgenoten in de buurt. (De speelgoedsoldaatjesvolgeling heeft 2% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +100% , tot +300%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 500 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling blokkeert nieuwe megademonen.)"
+      "Het doelwit en vijanden in de buurt lijden 300% schade.",
+      "Roept een speelgoedsoldaatjesvolgeling aan voor de spreukspreker en bondgenoten in de buurt. (De speelgoedsoldaatjesvolgeling heeft 5% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +50% , tot +150%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 250 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling blokkeert nieuwe megademonen.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Vernietigt alle demonen van alle bondgenoten en brengt schade toe aan alle megademonen.",
-      "Roept een speelgoedsoldaatjesvolgeling aan voor elke bondgenoot. (De speelgoedsoldaatjesvolgeling heeft 2% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +100% , tot +300%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 1500 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling kan niet worden vervangen door megademonen.)",
-      "De gezondheid van alle bondgenoten wordt met 200 verhoogd voor iedere volgeling die de bondgenoten bezitten.",
+      "Roept een speelgoedsoldaatjesvolgeling aan voor elke bondgenoot. (De speelgoedsoldaatjesvolgeling heeft 10% gezondheid van de spreukspreker.\n[*]Elke speelgoedsoldaatjesvolgeling verhoogt de aanval van de eigenaar met +50% , tot +150%. Dit effect kan niet worden verwijderd.\n[*]De speelgoedsoldaatjesvolgeling ontploft na 3 beurten en brengt 700 schade toe aan een willekeurige vijand.\n[*]De speelgoedsoldaatjesvolgeling kan niet worden vervangen door megademonen.)",
+      "De gezondheid van alle bondgenoten wordt met 130 verhoogd voor iedere volgeling die de bondgenoten bezitten.",
+      "Alle bondgenoten zijn 4 beurten lang immuun voor nieuwe negatieve mana-effecten. (Dit geldt voor effecten die manarecuperatie beïnvloeden en die mana rechtstreeks verlagen.)",
       "Zuivert de statuseffecten van alle bondgenoten."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Het doelwit lijdt 300% schade.",
-      "Roept 2 speelgoedsoldaatjesdemonen aan voor het doelwit. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 1% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -25% tot -75%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 500 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)"
+      "Het doelwit lijdt 400% schade.",
+      "Roept 2 speelgoedsoldaatjesdemonen aan voor het doelwit. (De speelgoedsoldaatjesdemon absorbeert genezing. De demon verdwijnt als het equivalent van 5% van de maximale gezondheid van het doelwit geabsorbeerd is.\n[*]Elke speelgoedsoldaatjesdemon verlaagt de verdediging van het doelwit met -20% tot -60%. Dit effect kan niet worden gezuiverd.\n[*]De speelgoedsoldaatjesdemon ontploft na 3 beurten en brengt 250 schade toe aan het doelwit.\n[*]De speelgoedsoldaatjesdemon kan niet worden vervangen door megavolgelingen.)"
      ]
     }
    ]

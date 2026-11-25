@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Causa 350% de dano a todos os inimigos a partir da borda esquerda da formação inimiga. O dano diminui a cada acerto consecutivo. (O dano diminui em 10% a cada acerto consecutivo.)",
-      "Todos os inimigos ganham -35% de defesa e mais -5% de redução cada vez que são atingidos durante 3 turnos, até o limite de -50% de defesa.",
+      "Todos os inimigos recebem -35% de defesa por 3 turnos.",
       "Todos os inimigos ficam imunes a novos reforços de efeito de status por 3 turnos."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Bloqueia a ativação de habilidades de talento para todos os inimigos por 6 turnos.",
-      "Causa 320% de dano a todos os inimigos.",
+      "Causa 280% de dano a todos os inimigos.",
       "Todos os inimigos recebem -24% de defesa contra Fogo por 6 turnos."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "O invocador rouba 20% de mana do alvo. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
-      "Convoca um ajudante Elfo com 15% de PV e 15% de ataque herdados do invocador.",
+      "O invocador rouba 15% de mana do alvo. (Depois que um personagem recebe 5 adições diretas de mana de habilidades especiais em um mesmo turno, todas as adições diretas de mana subsequentes de habilidades especiais têm efeito reduzido sobre esse personagem.)",
+      "Convoca um ajudante Elfo com 10% de PV e 10% de ataque herdados do invocador.",
       "O alvo recebe uma bomba de presente. Após 3 turnos, ela explode e causa[#Dynamic] 451 [#]de dano ao alvo e aos inimigos próximos. A bomba de presente também explode quando o alvo é derrotado."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Causa 450% de dano ao alvo.",
+      "Causa 500% de dano ao alvo.",
       "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 4 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
       "O invocador contra-ataca com 100% do dano recebido por 4 turnos.",
-      "Convoca um ajudante Duende da Neve que herda 35% de PV e 35% de ataque do invocador."
+      "Convoca um ajudante Duende da Neve que herda 20% de PV e 20% de ataque do invocador."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Restaura 35% da vida de todos os aliados.",
-      "Convoca um ajudante Elfo para cada aliado. O ajudante herda 12% de PV e 12% de ataque do invocador.",
+      "Convoca um ajudante Elfo para cada aliado. O ajudante herda 10% de PV e 10% de ataque do invocador.",
       "Todos os aliados ganham 25% de defesa por 4 turnos."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Causa 300% de dano ao alvo e aos inimigos próximos.\n[*] Causa mais 20% de dano por cada escudo de Gelo no tabuleiro, até o limite de 460% de dano no total.",
-      "Convoca um ajudante Elfo para o invocador e os aliados próximos. O ajudante herda 20% de PV e 20% de ataque do invocador.",
-      "O alvo e os inimigos próximos recebem -20% de defesa e uma redução adicional de -5% por cada escudo de Gelo no tabuleiro por 4 turnos, até o limite de -60% da defesa.",
+      "Causa 370% de dano ao alvo e aos inimigos próximos.\n[*] Causa mais 10% de dano por cada escudo de Gelo no tabuleiro, até o limite de 450% de dano no total.",
+      "Convoca um ajudante Elfo para o invocador e os aliados próximos. O ajudante herda 10% de PV e 10% de ataque do invocador.",
+      "O alvo e os inimigos próximos recebem -15% de defesa e uma redução adicional de -5% por cada escudo de Gelo no tabuleiro por 4 turnos, até o limite de -55% da defesa.",
       "O alvo e os inimigos próximos recebem -15% de precisão e -5% de redução adicional por cada escudo de Gelo no tabuleiro por 4 turnos, até o limite de -55% de precisão."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Causa 540% de dano ao alvo.",
       "Causa mais 180% de dano a uma quantidade de inimigos aleatórios equivalente à quantidade de megademônios e demônios de inimigos. O dano é reduzido a cada acerto consecutivo.",
       "Convoca um demônio Incenso para todos os inimigos. O demônio causa dano aos inimigos com 84% do ataque a cada turno.\n[*] O demônio Incenso absorve a cura e desaparece depois de absorver cura equivalente a 35% do limite de vida do alvo.",
-      "Quando convocado, o demônio Incenso aumenta em 50% o dano causado ao alvo por todas as fontes. O efeito se mantém enquanto o alvo tem demônios Incenso e não pode ser expurgado.",
       "Vínculo Elemental convoca um ajudante de gelo para todos os aliados de gelo. O ajudante herda 10% de PV e 15% de ataque do invocador."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Causa 420% de dano ao alvo e inimigos próximos.",
-      "Convoca um demônio Soldado de Brinquedo para o alvo e os inimigos próximos. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 1% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -25% , até o limite de -75%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 1500 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)",
+      "Causa 380% de dano ao alvo e inimigos próximos.",
+      "Convoca um demônio Soldado de Brinquedo para o alvo e os inimigos próximos. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 20% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -20% , até o limite de -60%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 700 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)",
       "Todos os inimigos que têm um ajudante ou demônio recebem[#Dynamic] 525 [#]de dano de neve por 3 turnos."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Causa 650% de dano ao alvo e a 2 inimigos aleatórios.\n[*] Convoca um demônio Soldado de Brinquedo a cada acerto. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 1% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -25% , até o limite de -75%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 1500 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)",
-      "Todos os alvos atingidos são silenciados por 5 turnos.",
-      "Convoca um ajudante Soldado de Brinquedo para o invocador e os aliados próximos. (O ajudante Soldado de Brinquedo herda 2% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +100% , até o limite de +300%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 1500 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo não pode ser substituído por megademônios.)"
+      "Causa 650% de dano ao alvo e inimigos próximos.",
+      "Convoca um demônio Soldado de Brinquedo para o alvo e os inimigos próximos. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 20% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -20% , até o limite de -60%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 700 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)",
+      "Convoca um ajudante Soldado de Brinquedo para o invocador e os aliados próximos. (O ajudante Soldado de Brinquedo herda 10% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +50% , até o limite de +150%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 700 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo não pode ser substituído por megademônios.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Causa 230% de dano ao alvo e inimigos próximos.",
-      "Convoca um ajudante Soldado de Brinquedo para o invocador e os aliados próximos. (O ajudante Soldado de Brinquedo herda 2% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +100% , até o limite de +300%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 500 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo bloqueia novos megademônios.)"
+      "Causa 300% de dano ao alvo e inimigos próximos.",
+      "Convoca um ajudante Soldado de Brinquedo para o invocador e os aliados próximos. (O ajudante Soldado de Brinquedo herda 5% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +50% , até o limite de +150%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 250 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo bloqueia novos megademônios.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Destrói todos os demônios de todos os aliados e causa dano a todos os megademônios.",
-      "Convoca um ajudante Soldado de Brinquedo para cada aliado. (O ajudante Soldado de Brinquedo herda 2% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +100% , até o limite de +300%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 1500 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo não pode ser substituído por megademônios.)",
-      "A vida de todos os aliados aumenta em 200 PV por cada ajudante dos aliados.",
+      "Convoca um ajudante Soldado de Brinquedo para cada aliado. (O ajudante Soldado de Brinquedo herda 10% de PV do invocador.\n[*]Cada ajudante Soldado de Brinquedo aumenta o ataque do dono em +50% , até o limite de +150%. Este efeito não pode ser dissipado.\n[*]O ajudante Soldado de Brinquedo explode depois de 3 turnos, causando 700 de dano a um inimigo aleatório.\n[*]O ajudante Soldado de Brinquedo não pode ser substituído por megademônios.)",
+      "A vida de todos os aliados aumenta em 130 PV por cada ajudante dos aliados.",
+      "Todos os aliados ficam imunes a novos efeitos negativos de mana por 4 turnos. (Isso inclui males que afetam a geração de mana e reduções diretas de mana.)",
       "Expurga os males de status de todos os aliados."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Causa 300% de dano ao alvo.",
-      "Convoca 2 demônios Soldado de Brinquedo para o alvo. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 1% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -25% , até o limite de -75%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 500 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)"
+      "Causa 400% de dano ao alvo.",
+      "Convoca 2 demônios Soldado de Brinquedo para o alvo. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 5% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -20% , até o limite de -60%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 250 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)"
      ]
     }
    ]

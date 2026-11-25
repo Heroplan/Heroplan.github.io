@@ -60098,7 +60098,7 @@
      "id": "boar_barrage",
      "lines": [
       "Verursacht 350% Schaden an allen Gegnern, die vom linken Rand der gegnerischen Aufstellung aus starten. Der Schaden wird bei jedem weiteren Treffer verringert. (Der Schaden wird bei jedem aufeinanderfolgenden Treffer um 10% verringert.)",
-      "Alle Gegner erhalten -35% Verteidigung und eine weitere -5%ige Verringerung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu -50% Verteidigung.",
+      "Alle Gegner erhalten -35% Verteidigung für 3 Züge.",
       "Alle Gegner sind für 3 Runden immun gegen neue Statuseffekt-Boni."
      ]
     }
@@ -60126,7 +60126,7 @@
      "id": "fierce_bolts",
      "lines": [
       "Blockiert die Talentfähigkeitenaktivierung für alle Feinde für 6 Züge.",
-      "Verursacht 320% Schaden bei allen Gegnern.",
+      "Verursacht 280% Schaden bei allen Gegnern.",
       "Alle Gegner erhalten -24% Verteidigung gegen Feuer für 6 Züge."
      ]
     }
@@ -60210,8 +60210,8 @@
     {
      "id": "spiced_present",
      "lines": [
-      "Der Wirker stiehlt 20% Mana vom Ziel. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
-      "Beschwört einen Elflakaien mit 15% LP und 15% Angriff des Wirkers.",
+      "Der Wirker stiehlt 15% Mana vom Ziel. (Nachdem ein Charakter 5 direkte Manaspenden durch Spezialfähigkeiten in einer einzigen Runde erhalten hat, verfügen alle zukünftigen direkten Manaspenden durch Spezialfähigkeiten für diesen Charakter über eine verringerte Kraft.)",
+      "Beschwört einen Elflakaien mit 10% LP und 10% Angriff des Wirkers.",
       "Das Ziel erhält eine Giftbombe. Nach 3 Zügen explodiert die Giftbombe und fügt dem Ziel und nahen Gegnern[#Dynamic] 451 [#]Schaden zu. Die Giftbombe explodiert auch, wenn das Ziel besiegt wird."
      ]
     }
@@ -60239,10 +60239,10 @@
     {
      "id": "snowball_incoming",
      "lines": [
-      "Fügt dem Ziel 450% Schaden zu.",
+      "Fügt dem Ziel 500% Schaden zu.",
       "Der Wirker erhält Verspotten, was 4 Züge lang verhindert, dass die Gegner Spezialfähigkeiten bei den Verbündeten des Wirkers einsetzen können. (Verspotten hindert alle Gegner daran, Spezialfähigkeiten auf ihre Verbündeten anzuwenden, die nicht Verspotten haben.)",
       "Der Wirker führt 4 Züge lang Gegenangriffe mit 100% des erlittenen Schadens aus.",
-      "Beschwört einen Schneekobold-Lakaien mit 35% LP und 35% Angriff des Wirkers."
+      "Beschwört einen Schneekobold-Lakaien mit 20% LP und 20% Angriff des Wirkers."
      ]
     }
    ]
@@ -60270,7 +60270,7 @@
      "id": "joyful_conjuration",
      "lines": [
       "Heilt alle Verbündeten um 35%.",
-      "Beschwört für jeden Verbündeten einen Elflakaien mit 12% LP und 12% Angriff des Wirkers.",
+      "Beschwört für jeden Verbündeten einen Elflakaien mit 10% LP und 10% Angriff des Wirkers.",
       "Alle Verbündeten erhalten 25% Verteidigung für 4 Züge."
      ]
     }
@@ -60298,9 +60298,9 @@
     {
      "id": "malevolent_utensils",
      "lines": [
-      "Fügt dem Ziel und nahen Gegnern 300% Schaden zu.\n[*]Fügt zusätzlich 20% Schaden zu für jeden Eisschild auf dem Feld, bis zu 460% Schaden insgesamt.",
-      "Beschwört für den Wirker und nahe Verbündete einen Elflakaien mit 20% LP und 20% Angriff des Wirkers.",
-      "Das Ziel und nahe Gegner erhalten -20% Verteidigung und zusätzlich -5% Verringerung für jeden Eisschild auf dem Feld für 4 Züge, bis zu -60% Verteidigung.",
+      "Fügt dem Ziel und nahen Gegnern 370% Schaden zu.\n[*]Fügt zusätzlich 10% Schaden zu für jeden Eisschild auf dem Feld, bis zu 450% Schaden insgesamt.",
+      "Beschwört für den Wirker und nahe Verbündete einen Elflakaien mit 10% LP und 10% Angriff des Wirkers.",
+      "Das Ziel und nahe Gegner erhalten -15% Verteidigung und zusätzlich -5% Verringerung für jeden Eisschild auf dem Feld für 4 Züge, bis zu -55% Verteidigung.",
       "Das Ziel und nahe Gegner erhalten -15% Genauigkeit und zusätzlich -5% Verringerung pro Eisschild auf dem Feld für 4 Züge, bis zu -55% Genauigkeit."
      ]
     }
@@ -60504,7 +60504,6 @@
       "Fügt dem Ziel 540% Schaden zu.",
       "Verursacht zusätzliche 180% Schaden bei der gleichen Anzahl beliebiger Gegner wie Megafeinde und Feinde von Gegnern. Der Schaden ist mit jedem Folgetreffer schwächer.",
       "Beschwört einen Weihrauch-Feind für alle Gegner. Der Feind greift die Gegner mit 84% Angriff bei jedem Zug an.\n[*]Der Weihrauch-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 35% des max. Lebens des Ziels aufgenommen hat.",
-      "Bei Beschwörung erhöht der Weihrauch-Feind den Schaden am Ziel von allen Quellen um 50%. Dieser Effekt hält an, solange das Ziel von Weihrauch-Feindem besetzt ist. Dieser Effekt kann nicht gereinigt werden.",
       "Die elementare Verbindung beschwört einen Eis-Lakaien für alle Eis-Verbündeten mit 10% LP und 15% Angriff des Wirkers."
      ]
     }
@@ -60605,8 +60604,8 @@
     {
      "id": "midnight_barrage",
      "lines": [
-      "Fügt dem Ziel und nahen Gegnern 420% Schaden zu.",
-      "Beschwört einen Spielzeugsoldat-Feind für das Ziel und Gegner in der Nähe. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 1500 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)",
+      "Fügt dem Ziel und nahen Gegnern 380% Schaden zu.",
+      "Beschwört einen Spielzeugsoldat-Feind für das Ziel und Gegner in der Nähe. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 20% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -20% bis auf -60%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 700 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)",
       "Alle Gegner, die einen Lakaien oder Feind besitzen, erleiden[#Dynamic] 525 [#]Frostschaden über 3 Züge."
      ]
     }
@@ -60633,9 +60632,9 @@
     {
      "id": "midnight_ultimatum",
      "lines": [
-      "Verursacht 650% Schaden am Ziel und 2 zufälligen Gegnern.\n[*]Beschwört mit jedem Treffer einen Spielzeugsoldat-Feind. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 1500 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)",
-      "Alle getroffenen Ziele werden für 5 Züge zum Schweigen gebracht.",
-      "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe. (Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 1500 Schaden zu.\n[*]Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.)"
+      "Fügt dem Ziel und nahen Gegnern 650% Schaden zu.",
+      "Beschwört einen Spielzeugsoldat-Feind für das Ziel und Gegner in der Nähe. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 20% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -20% bis auf -60%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 700 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)",
+      "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe. (Der Spielzeugsoldat-Lakai hat 10% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +50% (bis zu +150%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 700 Schaden zu.\n[*]Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.)"
      ]
     }
    ]
@@ -60661,8 +60660,8 @@
     {
      "id": "cavalrys_downfall",
      "lines": [
-      "Fügt dem Ziel und nahen Gegnern 230% Schaden zu.",
-      "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe. (Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 500 Schaden zu.\n[*]Spielzeugsoldat-Lakaien blockieren neue Megafeinde.)"
+      "Fügt dem Ziel und nahen Gegnern 300% Schaden zu.",
+      "Beschwört einen Spielzeugsoldat-Lakaien für den Wirker und Verbündete in der Nähe. (Der Spielzeugsoldat-Lakai hat 5% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +50% (bis zu +150%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 250 Schaden zu.\n[*]Spielzeugsoldat-Lakaien blockieren neue Megafeinde.)"
      ]
     }
    ]
@@ -60688,9 +60687,9 @@
     {
      "id": "midnight_miracle",
      "lines": [
-      "Vernichtet alle Feinde von allen Verbündeten und fügt allen Mega-Feinden Schaden zu.",
-      "Beschwört einen Spielzeugsoldat-Lakaien für jeden Verbündeten. (Der Spielzeugsoldat-Lakai hat 2% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +100% (bis zu +300%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 1500 Schaden zu.\n[*]Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.)",
-      "Das Leben aller Verbündeten wird um 200 LP für jeden Lakaien im Besitz von Verbündeten erhöht.",
+      "Beschwört einen Spielzeugsoldat-Lakaien für jeden Verbündeten. (Der Spielzeugsoldat-Lakai hat 10% LP des Wirkers geerbt.\n[*]Jeder Spielzeugsoldat-Lakai erhöht den Angriff seines Besitzers um +50% (bis zu +150%). Dieser Effekt kann nicht gebannt werden.\n[*]Der Spielzeugsoldat-Lakai explodiert nach 3 Zügen und fügt einem zufälligen Gegner 700 Schaden zu.\n[*]Spielzeugsoldat-Lakaien können nicht durch Megafeinde ersetzt werden.)",
+      "Das Leben aller Verbündeten wird um 130 LP für jeden Lakaien im Besitz von Verbündeten erhöht.",
+      "Alle Verbündeten sind immun gegen neue negative Manaeffekte für 4 Züge. (Dies umfasst sowohl Beeinträchtigungen der Manaerzeugung als auch direkte Manareduzierungen.)",
       "Reinigt negative Statusänderungen von allen Verbündeten."
      ]
     }
@@ -60717,8 +60716,8 @@
     {
      "id": "petal_slash",
      "lines": [
-      "Fügt dem Ziel 300% Schaden zu.",
-      "Beschwört 2 Spielzeugsoldat-Feinde für das Ziel. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 1% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -25% bis auf -75%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 500 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)"
+      "Fügt dem Ziel 400% Schaden zu.",
+      "Beschwört 2 Spielzeugsoldat-Feinde für das Ziel. (Der Spielzeugsoldat-Feind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 5% des max. Lebens des Ziels aufgenommen hat.\n[*]Jeder Spielzeugsoldat-Feind verringert die Verteidigung des Ziels um -20% bis auf -60%. Dieser Effekt kann nicht gereinigt werden.\n[*]Der Spielzeugsoldat-Feind explodiert nach 3 Zügen und fügt seinem Ziel 250 Schaden zu.\n[*]Spielzeugsoldat-Feinde können nicht durch Mega-Lakaien ersetzt werden.)"
      ]
     }
    ]

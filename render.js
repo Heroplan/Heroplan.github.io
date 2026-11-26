@@ -2795,6 +2795,12 @@ function renderDetailsInModal(hero, context = {}) {
 
     modalContent.innerHTML = detailsHTML;
 
+    // 立刻重排成紧凑布局（与微任务的观察器同一份逻辑，这里显式调一次，
+    // 保证「旧版布局」连一帧都不会被画出来 —— 头像/加成圆环不会从上往下“掉”）
+    if (typeof window.__detailCompactTransform === 'function') {
+        try { window.__detailCompactTransform(modalContent); } catch (e) { /* 重排失败则退回观察器兜底 */ }
+    }
+
     // 「切换平衡数据」按钮：每个按钮只切自己那一节（`data-section`）
     (modalContent.querySelectorAll ? modalContent.querySelectorAll('.balanced-toggle') : []).forEach(el => {
         el.addEventListener('click', () => toggleBalancedData(hero, el.getAttribute('data-section')));
@@ -3850,3 +3856,396 @@ function getColorFilterForHero(color) {
     const colorKey = String(color || '').toLowerCase();
     return colorMap[colorKey] || colorMap['white']; // 默认使用白色光效
 }
+
+
+/* ==================== 英雄详情弹窗·紧凑布局接入层（已并入 render.js，原 detail-compact.js） ==================== */
+/* ────────────────────────────────────────────────────────────────
+   detail-compact.js — 英雄详情「紧凑布局」接入层
+   只做 DOM 搬家：把站点原有的节点重新摆进 .cy-shell / .cy-rail /
+   .cy-main / .cy-panel，不改任何内容，也不重建节点（原有事件绑定
+   跟着节点一起走）。外观全部交给 detail-compact.css。
+   详情每次重渲染（换英雄 / 切平衡数据）后自动重排一次。
+   ──────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var MODAL_ID = 'modal';
+  var CONTENT_ID = 'modal-content';
+
+  function div(cls) {
+    var d = document.createElement('div');
+    d.className = cls;
+    return d;
+  }
+
+  /* 常显面板：标题节点原样放进面板头（h3 / p.uniform-style 都行） */
+  function staticPanel(panelId, titleNode, nodes) {
+    var sec = document.createElement('section');
+    sec.className = 'skill-category-block cy-panel is-open';
+    sec.id = panelId;
+
+    var head = div('cy-panel-head cy-head-static');
+    if (titleNode) head.appendChild(titleNode);
+    sec.appendChild(head);
+
+    var body = div('cy-panel-body');
+    var inner = div('cy-body-inner');
+    var pad = div('cy-pad');
+    nodes.forEach(function (n) { if (n) pad.appendChild(n); });
+    inner.appendChild(pad);
+    body.appendChild(inner);
+    sec.appendChild(body);
+    return sec;
+  }
+
+  /* 可折叠面板（属性天赋 / 自定义天赋 / 技能标签）：
+     开合状态写进站点同款 Cookie（expanded / collapsed），导入导出随之带走 */
+  function readPanelOpen(cookieName, defaultOpen) {
+    if (!cookieName || typeof getCookie !== 'function') return defaultOpen;
+    var saved = getCookie(cookieName);
+    if (saved === 'expanded') return true;
+    if (saved === 'collapsed') return false;
+    return defaultOpen;
+  }
+
+  function writePanelCookie(cookieName, open) {
+    if (!cookieName || typeof setCookie !== 'function') return;
+    setCookie(cookieName, open ? 'expanded' : 'collapsed', 365);
+  }
+
+  function togglePanel(panelId, title, contentEl, defaultOpen, cookieName) {
+    var open = readPanelOpen(cookieName, defaultOpen);
+    var sec = document.createElement('section');
+    sec.className = 'skill-category-block cy-panel' + (open ? ' is-open' : '');
+    sec.id = panelId;
+
+    /* 用 div 当头部（标题节点原样搬进来，站点标题常带图标/按钮，塞进 <button> 会失效） */
+    var head = document.createElement('div');
+    head.className = 'cy-panel-head cy-panel-head-btn';
+    head.setAttribute('role', 'button');
+    head.tabIndex = 0;
+    head.setAttribute('aria-expanded', String(open));
+    if (typeof title === 'string') {
+      var label = document.createElement('span');
+      label.className = 'uniform-style';
+      label.textContent = title;
+      head.appendChild(label);
+    } else if (title) {
+      head.appendChild(title);
+    }
+    var chev = document.createElement('span');
+    chev.className = 'toggle-button cy-chev' + (open ? ' expanded' : '');
+    chev.setAttribute('aria-hidden', 'true');
+    chev.textContent = '▼';
+    head.appendChild(chev);
+
+    var flip = function () {
+      var nowOpen = !sec.classList.contains('is-open');
+      sec.classList.toggle('is-open', nowOpen);
+      head.setAttribute('aria-expanded', String(nowOpen));
+      chev.classList.toggle('expanded', nowOpen);
+      writePanelCookie(cookieName, nowOpen);
+      if (nowOpen) {
+        requestAnimationFrame(function () {
+          window.dispatchEvent(new Event('resize'));
+        });
+      }
+    };
+    head.addEventListener('click', flip);
+    head.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flip(); }
+    });
+    sec.appendChild(head);
+
+    var body = div('cy-panel-body');
+    var inner = div('cy-body-inner');
+    var pad = div('cy-pad');
+    pad.appendChild(contentEl);
+    inner.appendChild(pad);
+    body.appendChild(inner);
+    sec.appendChild(body);
+    return sec;
+  }
+
+  /* 站点原有区块（技能效果 / 被动 / 家族）→ 面板：
+     区块里的第一行标题搬进面板头，其余内容留在带原 id 的容器里 */
+  function sectionPanel(panelId, secEl) {
+    var title = secEl.querySelector('p.uniform-style');
+    var wrap = div('');
+    wrap.id = secEl.id;                    /* 保留原 id：站点样式/脚本都靠它 */
+    while (secEl.firstChild) {
+      var node = secEl.firstChild;
+      if (node === title) { secEl.removeChild(node); continue; }
+      wrap.appendChild(node);
+    }
+    secEl.remove();
+    return staticPanel(panelId, title, [wrap]);
+  }
+
+  /* 各折叠面板的 Cookie 键（与站点 data-cookie 命名一致） */
+  var PANEL_COOKIES = {
+    'panel-settings': 'modal_settings_state',
+    'panel-custom': 'modal_custom_talent_state',
+    'panel-skill-tags': 'modal_skill_tags_state'
+  };
+
+  /* 跳转：滚到对应面板，折叠的自动展开 */
+  function jump(modal, panelId) {
+    var target = modal.querySelector('#' + panelId);
+    if (!target) return;
+    if (target.classList.contains('cy-panel') && !target.classList.contains('is-open')) {
+      target.classList.add('is-open');
+      var head = target.querySelector('.cy-panel-head');
+      if (head) {
+        head.setAttribute('aria-expanded', 'true');
+        var chev = head.querySelector('.cy-chev');
+        if (chev) chev.classList.add('expanded');
+      }
+      writePanelCookie(PANEL_COOKIES[panelId], true);
+    }
+    var header = modal.querySelector('.details-header');
+    var top = target.getBoundingClientRect().top - modal.getBoundingClientRect().top
+      + modal.scrollTop - (header ? header.offsetHeight : 0) - 8;
+    modal.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
+  /* 横向排列的按钮/标签行：一行放得下就居中，折行了才左对齐 */
+  function checkWrap(row) {
+    if (!row || !row.firstElementChild) return;
+    var first = row.firstElementChild;
+    var last = row.lastElementChild;
+    var wrapped = Math.abs(last.getBoundingClientRect().top - first.getBoundingClientRect().top) > 2;
+    row.classList.toggle('is-wrapped', wrapped);
+  }
+
+  /* ── 主重排 ── */
+  function transform(mc) {
+    if (!mc || mc.querySelector('.cy-shell')) return;
+
+    var detailsBody = mc.querySelector('.details-body');
+    if (!detailsBody) return;                       /* 不是详情视图 */
+
+    var modal = mc.closest('#' + MODAL_ID) || document.getElementById(MODAL_ID);
+    if (modal) modal.classList.add('detail-sheet');
+
+    var header = mc.querySelector('.details-header');
+    var titleBlock = mc.querySelector('.hero-title-block');
+    var topLeft = detailsBody.querySelector('.details-top-left');
+    var topRight = detailsBody.querySelector('.details-top-right');
+    var infoLine = detailsBody.querySelector('.details-info-line');
+    var statsTitle = mc.querySelector('#modal-core-stats-header');
+    var statsGrid = mc.querySelector('.details-stats-grid');
+    var bottom = mc.querySelector('.details-bottom-section');
+    var footer = mc.querySelector('.modal-footer');
+
+    if (!titleBlock || !topLeft) return;
+
+    /* 顶部工具条：站点把标题和跳转按钮包在 .details-header-main 里，
+       拆开才能用「标题 / 跳转 / 操作」三列网格 */
+    if (header) {
+      var headMain = header.querySelector('.details-header-main');
+      if (headMain) {
+        while (headMain.firstChild) header.insertBefore(headMain.firstChild, headMain);
+        headMain.remove();
+      }
+    }
+
+    var shell = div('cy-shell');
+    if (header) shell.appendChild(header);
+
+    var meta = div('cy-meta');
+    if (infoLine) {
+      /* 族系（职业）筛选按钮：详情页按用户要求移除；家族标签保留 */
+      var classChip = infoLine.querySelector('.hero-info-block[data-filter-type="class"]');
+      if (classChip) classChip.remove();
+      meta.appendChild(infoLine);
+    }
+    if (meta.children.length) shell.appendChild(meta);
+
+    var layout = div('cy-layout');
+    var rail = document.createElement('aside');
+    rail.className = 'cy-rail';
+    var main = div('cy-main');
+    var colA = div('cy-col cy-col-main');
+    var colB = div('cy-col cy-col-side');
+
+    /* 身份卡：名字 / 立绘 / 核心属性 */
+    rail.appendChild(titleBlock);
+    rail.appendChild(topLeft);
+
+    var stats = div('details-top-right cy-stats');
+    if (statsTitle) {
+      statsTitle.classList.add('cy-stats-title');   /* 桌面小标题 / 平板隐藏 靠这个类 */
+      stats.appendChild(statsTitle);
+    }
+    if (statsGrid) stats.appendChild(statsGrid);
+    if (stats.children.length) rail.appendChild(stats);
+    if (topRight) topRight.remove();
+
+    /* 属性天赋 / 自定义天赋：站点原本的「标题+折叠内容」两行，改成面板自己管开合 */
+    var tsWrap = mc.querySelector('#modal-talent-system-wrapper');
+    if (tsWrap) {
+      var settingsContent = tsWrap.querySelector('#modal-talent-settings-content');
+      var customContent = tsWrap.querySelector('#modal-custom-talent-content');
+      var h2s = tsWrap.querySelectorAll('.filter-header h2');
+      if (settingsContent) {
+        settingsContent.classList.remove('collapsed');
+        rail.appendChild(togglePanel('panel-settings',
+          h2s[0] ? h2s[0].textContent.trim() : '⚙️ 属性天赋', settingsContent, false,
+          PANEL_COOKIES['panel-settings']));
+      }
+      if (customContent) {
+        customContent.classList.remove('collapsed');
+        rail.appendChild(togglePanel('panel-custom',
+          h2s[1] ? h2s[1].textContent.trim() : '🌳 自定义天赋', customContent, false,
+          PANEL_COOKIES['panel-custom']));
+      }
+      if (!settingsContent || !customContent) tsWrap.remove();
+      else if (tsWrap.parentNode) tsWrap.remove();
+    }
+
+    /* 技能详情（名称/法速）常显；下面的「技能标签」chips 单独做成可折叠面板 */
+    var skillH3 = mc.querySelector('#modal-skill-details-header');
+    if (skillH3) {
+      var skillBlock = skillH3.nextElementSibling;
+      var headerNodes = [];
+      var tagsTitle = null;
+      var tagNodes = [];
+      if (skillBlock && skillBlock.classList.contains('skill-category-block')) {
+        Array.prototype.slice.call(skillBlock.children).forEach(function (n) {
+          if (n.classList && n.classList.contains('skill-header-container')) {
+            headerNodes.push(skillBlock.removeChild(n));
+          } else if (!tagsTitle && n.tagName === 'P' && n.classList.contains('uniform-style')) {
+            tagsTitle = skillBlock.removeChild(n);
+          } else {
+            tagNodes.push(skillBlock.removeChild(n));
+          }
+        });
+        skillBlock.remove();
+      }
+      colA.appendChild(staticPanel('panel-skill', skillH3, headerNodes));
+      if (tagsTitle) {
+        var tagWrap = div('cy-bodywrap');
+        tagNodes.forEach(function (n) { tagWrap.appendChild(n); });
+        colA.appendChild(togglePanel('panel-skill-tags', tagsTitle, tagWrap, true,
+          PANEL_COOKIES['panel-skill-tags']));
+      }
+    }
+
+    var effectsSec = mc.querySelector('#modal-skill-effects-section');
+    if (effectsSec) colA.appendChild(sectionPanel('panel-effects', effectsSec));
+
+    var passivesSec = mc.querySelector('#modal-passives-section');
+    if (passivesSec) colB.appendChild(sectionPanel('panel-passives', passivesSec));
+
+    var familySec = mc.querySelector('#modal-family-bonus-section');
+    if (familySec) colB.appendChild(sectionPanel('panel-family', familySec));
+
+    main.appendChild(colA);
+    main.appendChild(colB);
+    layout.appendChild(rail);
+    layout.appendChild(main);
+    shell.appendChild(layout);
+    if (footer) shell.appendChild(footer);
+
+    mc.appendChild(shell);
+
+    /* 清掉搬空的旧壳 */
+    if (detailsBody.parentNode) detailsBody.remove();
+    if (bottom && bottom.parentNode) bottom.remove();
+
+    /* 顶部跳转按钮：重绑到面板（站点原来的滚动算法按 offsetTop 算，重排后不准） */
+    var navMap = {
+      'scroll-to-stats-btn': 'panel-settings',
+      'scroll-to-skill-tags-btn': 'panel-skill-tags',
+      'scroll-to-skill-effects-btn': 'panel-effects',
+      'scroll-to-passives-btn': 'panel-passives',
+      'scroll-to-family-btn': 'panel-family'
+    };
+    var nav = shell.querySelector('.scroll-to-section-btns');
+    if (nav) {
+      Object.keys(navMap).forEach(function (btnId) {
+        var btn = nav.querySelector('#' + btnId);
+        if (!btn) return;
+        var clone = btn.cloneNode(true);          /* 克隆=丢掉旧监听 */
+        btn.parentNode.replaceChild(clone, btn);
+        clone.addEventListener('click', function () { jump(modal, navMap[btnId]); });
+      });
+      checkWrap(nav);
+      nav.addEventListener('click', function () { setTimeout(function () { checkWrap(nav); }, 60); });
+    }
+
+    /* 元信息条（生命恢复加成 / 家族 / 来源 / 日期）同一套折行对齐规则 */
+    checkWrap(shell.querySelector('.details-info-line'));
+
+    /* 顶部标题点击回顶 */
+    var h2 = shell.querySelector('#modal-title-h2');
+    if (h2) {
+      var h2clone = h2.cloneNode(true);
+      h2.parentNode.replaceChild(h2clone, h2);
+      h2clone.addEventListener('click', function () {
+        modal.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    /* 天赋树连接线：容器尺寸变了才会重算，推一把 */
+    requestAnimationFrame(function () {
+      window.dispatchEvent(new Event('resize'));
+      var tree = shell.querySelector('#modal-talent-tree-wrapper');
+      if (tree) tree.dispatchEvent(new Event('resize'));
+    });
+  }
+
+  /* ── 触发：详情重渲染后自动重排 ──
+     MutationObserver 回调是微任务，在首帧绘制前执行，这里同步重排，
+     避免旧结构先被绘制一帧（旧布局规则已从 style.css 移除）。 */
+  var pending = false;
+  function tick() {
+    if (pending) return;
+    pending = true;
+    try {
+      var mc = document.getElementById(CONTENT_ID);
+      if (!mc) return;
+      var modal = document.getElementById(MODAL_ID);
+      if (modal) modal.classList.add('detail-sheet');
+      transform(mc);
+    } finally {
+      pending = false;
+    }
+  }
+
+  function start() {
+    var mc = document.getElementById(CONTENT_ID);
+    if (!mc) { setTimeout(start, 400); return; }
+    var modal = document.getElementById(MODAL_ID);
+    if (modal) modal.classList.add('detail-sheet');
+    new MutationObserver(tick).observe(mc, { childList: true });
+    /* 宽度变化后重新判断「一行 / 折行」（导航按钮 + 元信息条） */
+    var rzTimer = null;
+    window.addEventListener('resize', function () {
+      clearTimeout(rzTimer);
+      rzTimer = setTimeout(function () {
+        var m = document.getElementById(MODAL_ID);
+        if (!m) return;
+        m.querySelectorAll('.scroll-to-section-btns, .details-info-line').forEach(checkWrap);
+      }, 120);
+    });
+    tick();
+  }
+
+  /* 供 renderDetails 在写入 innerHTML 后立刻调用：同一任务内完成重排，
+     保证旧版结构不会被画出来（头像 + 生命恢复加成圆环不会从顶部“掉”下来） */
+  window.__detailCompactTransform = function (mc) {
+    if (!mc) return;
+    var modal = document.getElementById(MODAL_ID);
+    if (modal) modal.classList.add('detail-sheet');
+    transform(mc);
+  };
+
+  window.__probeCompactLoaded = 'v3';
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();

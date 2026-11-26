@@ -84,7 +84,7 @@ const OTHER_SETTING_COOKIE_KEYS = [
     'hideDonate', 'showSkillTypesInDetails', 'showSkillTypesInTeam', 'showCircleRay',
     'listViewMode',
     'heroCardZoom',
-    'modal_settings_state', 'modal_custom_talent_state',
+    'modal_settings_state', 'modal_custom_talent_state', 'modal_skill_tags_state',
     'lotterySoundEnabled', 'lotteryAnimationMode', 'lotteryShowAllHistory'
 ];
 

@@ -496,6 +496,8 @@ function toggleThemePicker(force) {
 function closeThemePicker() {
     toggleThemePicker(false);
 }
+// 给 main.js 的其它弹层用（如语言下拉展开时要顺手收起配色弹层）
+window.closeThemePicker = closeThemePicker;
 
 function setupThemePicker() {
     const container = document.querySelector('.theme-picker-container');
@@ -509,6 +511,9 @@ function setupThemePicker() {
 
     button.addEventListener('click', event => {
         event.stopPropagation();
+        // 打开配色弹层前先收起语言下拉，避免两个弹层叠在一起
+        const langList = document.getElementById('lang-options');
+        if (langList && !langList.classList.contains('hidden')) langList.classList.add('hidden');
         toggleThemePicker();
     });
 

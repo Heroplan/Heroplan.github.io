@@ -878,7 +878,13 @@ function addEventListeners() {
 
     // --- 主界面UI事件 ---
     // 主题按钮由 ui.js::setupThemePicker() 直接绑定（弹层 + 日/夜 + 5 套配色）。
-    langSelectBtn.addEventListener('click', (e) => { e.stopPropagation(); langOptions.classList.toggle('hidden'); });
+    langSelectBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // stopPropagation 会挡住 ui.js 里「点空白关配色弹层」的 document 监听，
+        // 所以这里手动收起配色弹层：主题按钮 → 语言按钮切换时不能两个菜单同时开着
+        if (typeof window.closeThemePicker === 'function') window.closeThemePicker();
+        langOptions.classList.toggle('hidden');
+    });
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.lang-selector-container')) {
             if (langOptions && !langOptions.classList.contains('hidden')) {

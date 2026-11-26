@@ -2964,3 +2964,82 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 /* 面板头宽度按边框盒算，避免 100% + 左右内边距把箭头挤出卡片 */
 #modal.detail-sheet .cy-panel-head,
 #modal.detail-sheet .cy-panel-body{box-sizing:border-box}
+
+/* ==================== 主题色应用：详情面板标题 + 筛选弹窗 ==================== */
+/* 技能详情 / 技能标签 / 技能效果 / 被动技能 / 家族奖励 / 突破、天赋与服装设置 / 自定义天赋 */
+#modal.detail-sheet .cy-panel-head .uniform-style,
+#modal.detail-sheet .cy-panel-head h3{color:var(--md-sys-color-primary)}
+
+/* 筛选弹窗：区块标题、字段名、筛选按钮文字 */
+#filters-modal .filter-header h2{color:var(--md-sys-color-primary)}
+#filters-modal .filter-item label{color:var(--md-sys-color-primary)}
+#filters-modal .filter-button{color:var(--md-sys-color-primary)}
+#filters-modal .filter-button.active{color:var(--md-sys-color-on-primary-container);font-weight:700}
+
+/* 设置面板字段名 + 筛选弹窗区间/日期 + 主页快捷筛选按钮 */
+#modal.detail-sheet #panel-settings label:not(.checkbox-label){color:var(--md-sys-color-primary)}
+#filters-modal .details-selector-item label{color:var(--md-sys-color-primary)}
+#filters-modal .stat-range-title,
+#filters-modal .stat-range-caption{color:var(--md-sys-color-primary)}
+#filters-modal .date-display-box{color:var(--md-sys-color-primary)}
+#quick-search-bar .quick-filter-button{color:var(--md-sys-color-primary)}
+#quick-search-bar .quick-filter-button.active{color:var(--md-sys-color-on-primary-container)}
+
+/* 核心属性 + 数值；主页「名称:」；筛选页法力速度优先；下拉框当前值与选项 */
+#modal.detail-sheet .cy-stats-title{color:var(--md-sys-color-primary)}
+#modal.detail-sheet .details-stats-grid .metric-value-style{color:var(--md-sys-color-primary)}
+#quick-search-bar .quick-search-name-field > label{color:var(--md-sys-color-primary)}
+#filters-modal .details-selector-item.toggle-item label{color:var(--md-sys-color-primary)}
+.md3-select-trigger{color:var(--md-sys-color-primary)}
+.md3-select-menu .md3-select-option{color:var(--md-sys-color-primary)}
+.md3-select-menu .md3-select-option[aria-selected="true"],
+.md3-select-menu .md3-select-option.selected{color:var(--md-sys-color-primary);font-weight:700}
+
+/* 导入/导出设置弹窗 + 多选弹窗（稀有度/元素/服装类型…）按钮文字 */
+#import-settings-modal p,
+#export-settings-modal p,
+#import-settings-modal label,
+#export-settings-modal label,
+#import-settings-modal strong,
+#export-settings-modal strong{color:var(--md-sys-color-primary)}
+#import-settings-modal .action-button,
+#export-settings-modal .action-button{color:var(--md-sys-color-primary)}
+#multi-select-modal .multi-select-option,
+#multi-select-modal .multi-select-option span{color:var(--md-sys-color-primary)}
+#multi-select-modal .multi-select-option.selected,
+#multi-select-modal .multi-select-option.selected span{color:var(--md-sys-color-on-primary-container);font-weight:700}
+#multi-select-modal .multi-select-search-box label{color:var(--md-sys-color-primary)}
+#multi-select-modal .multi-select-footer .action-button{color:var(--md-sys-color-primary)}
+
+/* 捐赠标题 / 抽奖历史控件 / 概率详情标题 / 详情页日期 */
+.donation-list-title{color:var(--md-sys-color-primary)}
+#summon-history-panel .toggle-label-text{color:var(--md-sys-color-primary)}
+#clear-history-btn{color:var(--md-sys-color-primary)}
+.probability-tooltip h4{color:var(--md-sys-color-primary)}
+#modal .details-info-line .hero-info-block:not(.skill-type-tag){color:var(--md-sys-color-primary)}
+
+/* 自定义天赋「加成与消耗」：标题、页签、每项标签（攻击/防御/生命/法力/纹章/食物/铁矿/大师纹章） */
+#modal.detail-sheet #panel-custom .desktop-only-header,
+#modal.detail-sheet #panel-custom .tab-link,
+#modal.detail-sheet #modal-talent-bonus-display .bonus-item,
+#modal.detail-sheet #modal-talent-bonus-display .bonus-item span{color:var(--md-sys-color-primary)}
+
+/* 语言选项文字 */
+#lang-options .lang-option{color:var(--md-sys-color-primary)}
+#lang-options .lang-option:hover{color:var(--md-sys-color-on-primary-container)}
+
+/* 列表模式表格：表头与单元格文字 */
+#hero-table thead th,
+#hero-table tbody td,
+#hero-table tbody td .hero-en-name{color:var(--md-sys-color-primary)}
+
+/* 语言弹层脱离跑马灯层叠压制：抬高 header-top-row 的层叠上下文 */
+.header-top-row{position:relative;z-index:40}
+#lang-options{z-index:1300}
+
+/* 兑换码空态文案 */
+.redeem-empty{color:var(--md-sys-color-primary)}
+
+/* 抽奖：召唤结果标题 + 召唤历史里的奖池信息 */
+#summon-summary-modal #summon-summary-title{color:var(--md-sys-color-primary)}
+#summon-history-panel .summon-history-group h5{color:var(--md-sys-color-primary)}

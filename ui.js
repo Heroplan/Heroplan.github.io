@@ -899,12 +899,20 @@ function closeDetailsModal() {
     if (!uiElements.modal.classList.contains('hidden') && !uiElements.modal.classList.contains('closing')) history.back();
 }
 
-function openFiltersModal() {
+function openFiltersModal(options = {}) {
     uiElements.filtersModal.classList.remove('hidden');
     cancelModalClose(uiElements.filtersModal);
     uiElements.filtersModal.showModal();
     document.body.classList.add('modal-open');
-    history.pushState({ modal: 'filters' }, null);
+    // 筛选页有自己的地址（`?filters=1`），其余业务参数原样保留：
+    //   复制地址可直接打开筛选页；关闭走 history.back()，地址自动退回原页面。
+    if (!options.fromHistory) {
+        history.pushState(
+            { modal: 'filters' },
+            '',
+            (typeof urlWithParams === 'function') ? urlWithParams({ filters: '1' }) : null
+        );
+    }
     state.modalStack.push('filters');
 }
 

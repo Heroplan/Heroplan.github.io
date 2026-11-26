@@ -512,6 +512,7 @@ async function initializeApp() {
         }
     }
     const bsharedTeamsFromUrl = urlParams.get('bsharedTeams');
+    const filtersFromUrl = urlParams.get('filters') === '1';
     if (bsharedTeamsFromUrl) {
         // 新二进制格式
         try {
@@ -653,6 +654,15 @@ async function initializeApp() {
     //   放在首屏渲染之后 —— 这些视图各自要建表格/卡池列表，数据（含已 await 的 `state.allSummonPools`）此刻才齐。
     //   地址与 `history.state` 已由上面那条 replaceState 对齐，视图函数内部的 `setMainViewHistory` 只会 replace，不会多压一条记录。
     if (viewFromUrl) applyMainView(viewFromUrl);
+
+    // `?filters=1`：筛选页深链接。先把地址退回不带 filters 的底层条目，再走正常打开流程，
+    // 这样浏览器后退能直接关闭筛选页；地址栏仍停在带 `?filters=1` 的筛选页上。
+    if (filtersFromUrl && !heroFromUrl) {
+        const _u = new URL(window.location.href);
+        _u.searchParams.delete('filters');
+        history.replaceState(history.state, '', _u.pathname + _u.search + _u.hash);
+        openFiltersModal();
+    }
 
     setTimeout(adjustStickyHeaders, 100);
 
@@ -1681,6 +1691,13 @@ function switchTeamTab(toShared) {
  * 该函数现在能够区分“关闭模态框”和“从主视图返回”两种情况。
  */
 function handlePopState(event) {
+    // 前进回筛选页：历史条目本身就标着 `modal:'filters'`，栈已在上次后退时弹空，需重新打开。
+    // 不 pushState（地址已经由浏览器恢复），只补 UI 与栈。
+    if (event.state && event.state.modal === 'filters' && !state.modalStack.includes('filters')) {
+        if (typeof openFiltersModal === 'function') openFiltersModal({ fromHistory: true });
+        return;
+    }
+
     // 优先检查模态框堆栈。如果堆栈不为空，则后退操作旨在关闭模态框。
     if (state.modalStack.length > 0) {
         const modalType = state.modalStack.pop(); // 从堆栈中弹出模态框类型

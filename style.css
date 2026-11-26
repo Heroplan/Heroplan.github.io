@@ -2781,6 +2781,8 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 /* 属性天赋面板：桌面一行一个设置（平板/手机保持两列或单列） */
 @container sheet (min-width:1024px){
   #modal.detail-sheet .cy-rail #panel-settings .modal-talent-settings-grid{grid-template-columns:1fr}
+  /* 桌面端三栏内容一屏可见，顶部跳转按钮冗余：隐藏 */
+  #modal.detail-sheet .scroll-to-section-btns{display:none}
   /* 展开后内容变高，底部留出粘性“关闭”栏的空间 */
   #modal.detail-sheet:has(#panel-settings.is-open) .cy-layout,
   #modal.detail-sheet:has(#panel-custom.is-open) .cy-layout{padding-bottom:54px}

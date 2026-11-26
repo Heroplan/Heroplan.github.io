@@ -3989,11 +3989,13 @@ function getColorFilterForHero(color) {
     'panel-skill-tags': 'modal_skill_tags_state'
   };
 
-  /* 跳转：滚到对应面板，折叠的自动展开 */
+  /* 跳转：滚到对应面板；折叠的自动展开（「属性天赋」除外——只滚过去，不展开
+     「突破、天赋与服装设置」，避免跳转顺手把大面板撑开、打乱滚动位置） */
   function jump(modal, panelId) {
     var target = modal.querySelector('#' + panelId);
     if (!target) return;
-    if (target.classList.contains('cy-panel') && !target.classList.contains('is-open')) {
+    var autoExpand = panelId !== 'panel-settings';
+    if (autoExpand && target.classList.contains('cy-panel') && !target.classList.contains('is-open')) {
       target.classList.add('is-open');
       var head = target.querySelector('.cy-panel-head');
       if (head) {

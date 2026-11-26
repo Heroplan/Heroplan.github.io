@@ -1526,7 +1526,8 @@ function handleTableBodyClick(event) {
                 LotterySimulator.addHeroToFeaturedSlot(hero);
             } else {
                 toggleFavorite(hero);
-                target.textContent = isFavorite(hero) ? '★' : '☆';
+                // 卡片用内联 SVG 图标（不能改 textContent），表格仍是 ★/☆ 字符
+                if (!target.querySelector('svg')) target.textContent = isFavorite(hero) ? '★' : '☆';
                 target.classList.toggle('favorited', isFavorite(hero));
                 if (state.multiSelectFilters.filterScope[0] === 'favorites') {
                     applyFiltersAndRender();

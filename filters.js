@@ -586,7 +586,7 @@ function openMultiSelectModal(filterType, title) {
         : '';
 
     modalContent.innerHTML = `
-        <div class="multi-select-header"><h3 id="multi-select-modal-title">${title}</h3>${searchHTML}<button class="close-btn" id="close-multi-select-modal-top">✖</button></div>
+        <div class="multi-select-header"><h3 id="multi-select-modal-title">${title}</h3>${searchHTML}<button class="close-btn" id="close-multi-select-modal-top"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button></div>
         <div class="multi-select-options-grid">${optionsHTML}</div>
         <div class="multi-select-empty hidden" id="multi-select-empty">${langDict.noMatchingResults || ''}</div>
         <div class="multi-select-footer">

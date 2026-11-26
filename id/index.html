@@ -415,7 +415,7 @@
     </script>
     <!-- 一律使用系统字体（见 style.css 的 font-family 栈）；跨源 Web 字体渲染阻塞且 font swap 造成 CLS，勿引入。 -->
     <link rel="stylesheet" href="theme.css?v=20261124a">
-    <link rel="stylesheet" href="style.css?v=20261126w">
+    <link rel="stylesheet" href="style.css?v=20261126x">
     <link rel="stylesheet" href="talent-tree.css?v=20261028b">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LPVF61FMD9"></script>
     <script>
@@ -863,7 +863,7 @@
         <div id="filters-modal-content">
             <div class="filters-modal-header">
                 <h2 id="filters-modal-title" data-lang-key="filterHeroes">Filter Pahlawan</h2>
-                <button id="close-filters-modal-btn" class="close-btn">✖</button>
+                <button id="close-filters-modal-btn" class="close-btn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button>
             </div>
 
             <div class="filters-grid">
@@ -1206,7 +1206,7 @@
     <dialog id="redeem-codes-modal" class="modal-dialog hidden" closedby="any" aria-labelledby="redeem-codes-modal-title">
         <div class="filters-modal-header">
             <h2 id="redeem-codes-modal-title" data-lang-key="redeemCodesModalTitle">Kode Penukaran yang Tersedia</h2>
-            <button id="close-redeem-codes-modal-btn" class="close-btn">✖</button>
+            <button id="close-redeem-codes-modal-btn" class="close-btn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button>
         </div>
         <div id="redeem-codes-content">
         </div>
@@ -1233,9 +1233,9 @@
     <script src="./state.js?v=20261126b" defer></script>
     <script src="./theme-config.js?v=20261123f" defer></script>
     <script src="./ui.js?v=20261126t" defer></script>
-    <script src="./filters.js?v=20261126b" defer></script>
-    <script src="./render.js?v=20261126e" defer></script>
-    <script src="./special-views.js?v=20261124a" defer></script>
+    <script src="./filters.js?v=20261126c" defer></script>
+    <script src="./render.js?v=20261126f" defer></script>
+    <script src="./special-views.js?v=20261126a" defer></script>
     <!-- 视图脚本懒加载（抽奖/队伍/聊天）：type 为非 JS MIME ⇒ 浏览器只当数据块存着，
          不下载也不执行；首次打开对应视图时 special-views.js::ensureViewScripts 按这里的
          先后顺序注入真 <script>（src 原样照抄）。?v= 戳留在原地，pre-commit 钩子照常逐引用换戳。
@@ -1243,10 +1243,10 @@
     <script type="application/x-lazy-view" data-view="lottery" src="./lottery-engine.js?v=20261124a"></script>
     <script type="application/x-lazy-view" data-view="lottery" src="./lottery-odds.js?v=20261119g"></script>
     <script type="application/x-lazy-view" data-view="lottery" src="./lottery-ui.js?v=20261124k"></script>
-    <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261125d"></script>
+    <script type="application/x-lazy-view" data-view="team" src="./team-simulator.js?v=20261126a"></script>
     <script type="application/x-lazy-view" data-view="chat" src="./chat-simulator.js?v=20261125d"></script>
-    <script src="./import-export.js?v=20261126a" defer></script>
-    <script src="./main.js?v=20261126v" defer></script>
+    <script src="./import-export.js?v=20261126b" defer></script>
+    <script src="./main.js?v=20261126w" defer></script>
     <!-- 游戏存档（.eva1）导入：由「打开游戏英雄列表」按钮触发 -->
     <input type="file" id="eva1-importer-input" accept=".eva1" hidden>
     <!-- 友情链接分组框区域 -->
@@ -1271,7 +1271,7 @@
     margin: 0 0 16px 0;
     font-size: 1.3em;
     font-weight: 500;
-    color: var(--md-sys-color-error);
+    color: var(--md-sys-color-primary);
 }
 
 .links-grid {
@@ -1281,23 +1281,34 @@
     gap: 16px;
 }
 
+/* 友情链接按钮：与「平衡数据英雄」按钮同款（主色容器底、12px 圆角、40px 高、粗体） */
 .link-card {
     color: var(--md-sys-color-on-primary-container);
     background-color: var(--md-sys-color-primary-container);
     border: 1px solid var(--md-sys-color-outline);
-    border-radius: 16px;
-    padding: 8px 20px;
+    border-radius: 12px;
+    min-height: 38px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
     transition: all 0.2s ease;
 }
 
 .link-card:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border-color: var(--md-sys-color-primary);
+    transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .link-card a {
-    color: inherit; /* 继承父级颜色，即 --md-sys-color-on-primary-container */
+    color: inherit; /* 兼容旧的 div>a 结构 */
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
@@ -1305,14 +1316,11 @@
     white-space: nowrap;
 }
 
-.link-card a:hover {
-    text-decoration: underline;
-}
-
 /* 移动端自适应 */
 @media (max-width: 600px) {
     .link-card {
         padding: 6px 16px;
+        font-size: 0.85rem;
     }
     .link-card a {
         font-size: 0.85rem;
@@ -1355,17 +1363,16 @@
         const gridContainer = document.getElementById('dynamic-links-grid');
         if (gridContainer) {
             links.forEach(link => {
-                const card = document.createElement('div');
+                // 整颗胶囊就是跳转按钮：和「平衡数据英雄」同款按钮形态
+                const card = document.createElement('a');
                 card.className = 'link-card';
-                const anchor = document.createElement('a');
-                anchor.href = link.url;
-                anchor.textContent = link.name;
-                anchor.target = '_blank';
-                anchor.rel = 'noopener noreferrer';
+                card.href = link.url;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.textContent = link.name;
                 if (link.desc) {
-                    anchor.title = link.desc;
+                    card.title = link.desc;
                 }
-                card.appendChild(anchor);
                 gridContainer.appendChild(card);
             });
         }

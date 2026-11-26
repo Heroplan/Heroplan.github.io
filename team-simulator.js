@@ -467,7 +467,7 @@ function renderSavedTeams(teams, isSharedView = false) {
     const langDict = i18n[state.currentLang];
 
     if (!teams || teams.length === 0) {
-        savedTeamsList.innerHTML = `<p style="text-align: center; color: var(--md-sys-color-outline);">${langDict[isSharedView ? 'noTeamsToShare' : 'noSavedTeams']}</p>`;
+        savedTeamsList.innerHTML = `<p style="text-align: center; color: var(--md-sys-color-primary);">${langDict[isSharedView ? 'noTeamsToShare' : 'noSavedTeams']}</p>`;
         return;
     }
 

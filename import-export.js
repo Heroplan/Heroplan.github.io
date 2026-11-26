@@ -339,7 +339,7 @@ async function openExportModal() {
 
     // 渲染模态框内容
     content.innerHTML = `
-        <div class="multi-select-header"><h3 id="export-settings-modal-title">${langDict.exportModalTitle}</h3><button class="close-btn" id="close-export-modal-btn">✖</button></div>
+        <div class="multi-select-header"><h3 id="export-settings-modal-title">${langDict.exportModalTitle}</h3><button class="close-btn" id="close-export-modal-btn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button></div>
         <p>${langDict.exportItems}</p>
         <div style="margin: 1rem 0;">
             <div><label style="cursor:pointer; font-weight: bold;"><input type="checkbox" id="export-select-all" checked> ${langDict.selectAll}</label></div>
@@ -376,7 +376,7 @@ function openImportModal() {
     const langDict = i18n[state.currentLang] || {};
 
     content.innerHTML = `
-        <div class="multi-select-header"><h3 id="import-settings-modal-title">${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn">✖</button></div>
+        <div class="multi-select-header"><h3 id="import-settings-modal-title">${langDict.importModalTitle}</h3><button class="close-btn" id="close-import-modal-btn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button></div>
         <p>${langDict.importInstructions}</p>
         <textarea id="import-settings-textarea" style="width: 100%; height: 120px; resize: vertical;"></textarea>
         <input type="file" id="file-importer-input" class="hidden" accept=".txt,text/plain">

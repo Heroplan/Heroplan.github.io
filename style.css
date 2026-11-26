@@ -259,7 +259,7 @@ html.dark-theme .loader-spinner{border-color:rgba(125,177,255,.18);border-top-co
 #lang-options:not(.hidden){animation:v2-fade-in var(--v2-t) var(--v2-ease)}
 
 /* —— 友情链接 / 页脚 —— */
-body .friendship-links p{color:var(--md-sys-color-on-surface-variant)}
+body .friendship-links p{color:var(--md-sys-color-primary)}
 body footer{
   background-color:var(--md-sys-color-surface);
   border-top:1px solid var(--md-sys-color-outline-variant);
@@ -306,11 +306,19 @@ dialog.modal-dialog:focus-visible,
 
 /* ==== V2 称谓修正（2026-11-22）：友情链接卡（index.html 尾部 <style> 同特异度在后，需抬特异度）==== */
 body .links-grid .link-card{
-  background-color:var(--md-sys-color-surface);
-  color:var(--md-sys-color-on-surface);
-  border:1px solid var(--md-sys-color-outline-variant);
-  border-radius:999px;
+  background-color:var(--md-sys-color-primary-container);
+  color:var(--md-sys-color-on-primary-container);
+  border:1px solid var(--md-sys-color-outline);
+  border-radius:12px;
   box-shadow:var(--v2-shadow-1);
+  min-height:38px;
+  padding:0 16px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.95rem;
+  font-weight:700;
+  text-decoration:none;
   transition:background-color var(--v2-t-fast) var(--v2-ease),
              border-color var(--v2-t-fast) var(--v2-ease),
              box-shadow var(--v2-t-fast) var(--v2-ease),
@@ -318,10 +326,11 @@ body .links-grid .link-card{
 }
 body .links-grid .link-card a{color:inherit}
 body .links-grid .link-card:hover{
-  background-color:var(--md-sys-color-primary-container);
+  background-color:var(--md-sys-color-primary);
   border-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
   box-shadow:var(--v2-shadow-2);
-  transform:translateY(-2px);
+  transform:translateY(-1px);
 }
 #name-input{background-color:var(--md-sys-color-surface)}
 
@@ -1363,9 +1372,10 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   }
   #filters-modal .close-btn:hover,
   #multi-select-modal .close-btn:hover{
-    background-image:var(--md-state-hover-error-layer);
-    border-color:var(--md-sys-color-error);
-    color:var(--md-sys-color-error);
+    background-color:var(--md-sys-color-primary-container);
+    background-image:var(--md-state-hover-layer);
+    border-color:var(--md-sys-color-primary);
+    color:var(--md-sys-color-on-primary-container);
   }
   #modal .favorite-btn.favorited:hover{
     background-color:#FFD700;
@@ -1648,8 +1658,14 @@ html[dir="rtl"] #filters-modal .checkbox-container input[type="checkbox"]:checke
   }
 }
 
-/* 信息行按顶部对齐，避免可点击标签被旁边较高的日期块拉伸 */
-#modal .details-info-line{align-items:flex-start;}
+/* 顶部按钮行：<a> 形态的圆形按钮（日历 / GitHub）默认 content-box，会比 <button> 大 2px
+   导致整行按顶边对齐时那一颗往下溢出；统一成 border-box 并让网格按中线对齐 */
+.header-buttons{align-items:center}
+.header-buttons > *{box-sizing:border-box}
+
+/* 信息行按中线对齐：同一行里各标签按各自高度垂直居中，避免较矮的日期块顶到行首 */
+#modal .details-info-line{align-items:center;}
+
 /* 详情页所有信息块使用同一内边距和最小高度（含不可点击的日期块） */
 #modal .hero-info-block{
   box-sizing:border-box;
@@ -1988,12 +2004,13 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   color:var(--md-sys-color-on-surface);
   font-size:.9rem;
   font-weight:500;
-  line-height:1;
+  /* 行高低于字号会把汉字底部切掉：1.35 保证单行/双行字形完整落在 37px 控件内 */
+  line-height:1.35;
   text-align:start;
   cursor:pointer;
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:3;
+  -webkit-line-clamp:2;
   overflow:hidden;
   overflow-wrap:anywhere;
 }
@@ -3022,7 +3039,13 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 #modal.detail-sheet #panel-custom .desktop-only-header,
 #modal.detail-sheet #panel-custom .tab-link,
 #modal.detail-sheet #modal-talent-bonus-display .bonus-item,
-#modal.detail-sheet #modal-talent-bonus-display .bonus-item span{color:var(--md-sys-color-primary)}
+#modal.detail-sheet #modal-talent-bonus-display .bonus-item span,
+#modal.detail-sheet #modal-talent-cost-display .cost-item,
+#modal.detail-sheet #modal-talent-cost-display .cost-item span{color:var(--md-sys-color-primary)}
+
+/* 突破/天赋/服装设置里的「服装奖励」按钮（无 / C1 / 卡通…）：未选中用主题色，选中态用主色容器上的前景色 */
+#modal.detail-sheet .costume-bonus-picker .costume-opt{color:var(--md-sys-color-primary)}
+#modal.detail-sheet .costume-bonus-picker .costume-opt.selected{color:var(--md-sys-color-on-primary-container)}
 
 /* 语言选项文字 */
 #lang-options .lang-option{color:var(--md-sys-color-primary)}
@@ -3043,3 +3066,164 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 /* 抽奖：召唤结果标题 + 召唤历史里的奖池信息 */
 #summon-summary-modal #summon-summary-title{color:var(--md-sys-color-primary)}
 #summon-history-panel .summon-history-group h5{color:var(--md-sys-color-primary)}
+
+/* 材料出处指南第二行（头像行）：章节代号改成按钮，外观沿用上方「返回」按钮（#results-count .reset-tag）的填充色，只收尺寸 */
+.manual-table.farming-guide-table td .mission-avatar-btn{
+  margin:0;
+  min-height:28px;
+  padding:0 10px;
+  font-family:inherit;
+  font-size:.78rem;
+  font-weight:600;
+  line-height:1.4;
+  white-space:nowrap;
+  text-decoration:none;
+  border:1px solid var(--md-sys-color-outline);
+  border-radius:12px;
+  background-color:var(--md-sys-color-primary-container);
+  color:var(--md-sys-color-on-primary-container);
+  box-shadow:0 1px 2px rgba(16,24,40,.06);
+}
+.manual-table.farming-guide-table td .mission-avatar-btn:hover{
+  background-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
+  border-color:var(--md-sys-color-primary);
+  box-shadow:var(--v2-shadow-2);
+  transform:translateY(-1px);
+}
+
+/* 队伍模拟器右侧「我的队伍」面板：三个操作按钮 / 两个页签 / 空状态提示都跟随主题色 */
+#saved-teams-panel .saved-teams-actions .action-button,
+#saved-teams-panel .saved-teams-tabs .tab-button,
+#saved-teams-list p{color:var(--md-sys-color-primary)}
+/* 禁用态（没有阵容可清空 / 保存）用淡化主色，仍看得出不可点 */
+#saved-teams-panel .saved-teams-actions .action-button.disabled{
+  color:color-mix(in srgb,var(--md-sys-color-primary) 55%,var(--md-sys-color-outline));
+}
+
+/* 进入特殊视图（队伍 / 抽奖 / 通缉 / 材料 / 聊天）后右上角那颗返回图标：底色跟随主题主色，不再是固定红 */
+#show-team-simulator-btn.simulator-exit-btn,
+#show-lottery-simulator-btn.simulator-exit-btn,
+#show-wanted-mission-btn.simulator-exit-btn,
+#show-farming-guide-btn.simulator-exit-btn,
+#show-chat-simulator-btn.simulator-exit-btn{
+  background-color:var(--md-sys-color-primary);
+  color:var(--md-sys-color-on-primary);
+  border-color:var(--md-sys-color-primary);
+}
+@media (hover:hover){
+  #show-team-simulator-btn.simulator-exit-btn:hover,
+  #show-lottery-simulator-btn.simulator-exit-btn:hover,
+  #show-wanted-mission-btn.simulator-exit-btn:hover,
+  #show-farming-guide-btn.simulator-exit-btn:hover,
+  #show-chat-simulator-btn.simulator-exit-btn:hover{
+    background-color:var(--md-sys-color-primary-container);
+    color:var(--md-sys-color-on-primary-container);
+    border-color:var(--md-sys-color-primary);
+    filter:none;
+    transform:scale(1.05);
+  }
+}
+
+/* 通缉任务表（首列 S1…UT2）与材料出处指南（表头 S1…UT1）的章节代号跟随主题色 */
+.manual-table.wanted-mission-table tbody tr td:first-child,
+.manual-table.farming-guide-table thead th{color:var(--md-sys-color-primary)}
+
+/* 聊天模拟器「已收藏的颜色」小标题跟随主题色 */
+#favorite-colors-container h4{color:var(--md-sys-color-primary)}
+
+/* 抽奖历史空状态「没有召唤历史」跟随主题色 */
+#summon-history-panel .feature-incomplete-message{color:var(--md-sys-color-primary)}
+
+/* 抽奖历史「清空」按钮：禁用态也保留主色（淡化），不再退回纯灰 */
+#clear-history-btn.disabled,
+#clear-history-btn:disabled{
+  color:color-mix(in srgb,var(--md-sys-color-primary) 55%,var(--md-sys-color-outline));
+}
+/* 详情页右上角三颗按钮：原来被 40px 的 min-width / flex-basis 撑成 40x30 的椭圆，
+   且图标是 ☆ / 🔗 / ✖ 三个字符（emoji 与字体回退混排，颜色也不受控）。
+   这里改成 1:1 正圆 + 内联线性 SVG 图标，颜色跟随主题令牌 */
+#modal .details-header-buttons > button{
+  min-width:0;
+  flex:0 0 auto;
+  padding:0;
+  box-sizing:border-box;
+}
+#modal .details-header-buttons > button svg{
+  display:block;
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  pointer-events:none;
+}
+#modal .details-header-buttons .favorite-btn.favorited svg{fill:currentColor}
+
+
+/* 收藏按钮未选中时配色与旁边两颗一致（原来用的是更浅的 surface + outline，看着像禁用） */
+#modal :where(.favorite-btn):not(.favorited){
+  color:var(--md-sys-color-on-surface-variant);
+  background-color:var(--md-sys-color-surface-variant);
+}
+
+/* 分享按钮「已复制」反馈：链接图标换成同笔宽的对勾（不再插入 emoji） */
+#modal .details-header-buttons .share-btn .icon-check{display:none}
+#modal .details-header-buttons .share-btn.is-copied .icon-link{display:none}
+#modal .details-header-buttons .share-btn.is-copied .icon-check{display:block}
+
+/* 全站弹窗关闭按钮共用同一枚线性 × 图标（模板与 filters/import-export 已同步换成 SVG） */
+.close-btn svg{
+  display:block;
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.9;
+  stroke-linecap:round;
+  pointer-events:none;
+}
+
+/* 详情页右上角三颗按钮按全站标准 40px 正圆，与筛选弹窗的关闭按钮同规格 */
+#modal.detail-sheet .details-header-buttons .favorite-btn,
+#modal.detail-sheet .details-header-buttons .share-btn,
+#modal.detail-sheet .details-header-buttons .close-btn{width:40px;height:40px}
+
+/* 底部粘性「关闭」栏：cy-shell 的 6px 下内边距会让 footer 在滚到最底时上跳 6px，去掉；
+   同时取消 hover 的 scale，避免鼠标停在按钮上时反复缩放 */
+#modal.detail-sheet .cy-shell{padding-bottom:0}
+#modal.detail-sheet .close-bottom-btn:hover{transform:none}
+
+/* 详情页右上角关闭按钮的悬停底色与筛选/多选弹窗一致（原来是中性底 + 只有描边变主色） */
+@media (hover:hover){
+  #modal.detail-sheet .details-header-buttons .close-btn:hover{
+    background-color:var(--md-sys-color-primary-container);
+    background-image:var(--md-state-hover-layer);
+    border-color:var(--md-sys-color-primary);
+    color:var(--md-sys-color-on-primary-container);
+    box-shadow:var(--v2-shadow-1);
+  }
+}
+
+/* 卡片视图收藏位：★/☆ 与锁标改用内联 SVG，在圆形底框里按几何中心居中 */
+.hero-card-favorite svg{
+  display:block;
+  width:58%;
+  height:58%;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  pointer-events:none;
+}
+.hero-card-favorite.favorited svg{fill:currentColor}
+
+/* 锁标恢复成 🔒 emoji（更醒目）：字号略放大，并用 0.1em 下内边距把它从基线略低的位置
+   抬回圆形底框的几何中心（emoji 墨迹中心比行盒中心低约 0.05em） */
+.hero-card-favorite.favorite-upcoming{
+  font-size:calc(var(--hero-card-width,100px) * .105);
+  padding-bottom:.1em;
+}

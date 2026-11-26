@@ -744,10 +744,11 @@ function initAndShowFarmingGuideView() {
                     return `<td data-col-index="${colIndex}"></td>`;
                 }
 
-                // 为第二行的非第一列添加点击事件
+                // 第二行（头像行）的章节代号做成按钮：与表头「返回」同一套 .reset-tag 样式
+                // 点击类名与 data-filename 仍留在 <td> 上，保持原有的「打开头像图 / 不参与高亮」行为
                 if (isSecondRow && key !== 'item') {
                     const fileName = String(value).replace(/\n/g, '');
-                    return `<td data-col-index="${colIndex}" class="clickable-avatar-mission" data-filename="${fileName}" style="cursor: pointer; text-decoration: underline; color: blue;">${String(value).replace(/\n/g, '<br>')}</td>`;
+                    return `<td data-col-index="${colIndex}" class="clickable-avatar-mission" data-filename="${fileName}"><button type="button" class="reset-tag mission-avatar-btn" title="${fileName}">${String(value).replace(/\n/g, '<br>')}</button></td>`;
                 }
 
                 return `<td data-col-index="${colIndex}">${String(value).replace(/\n/g, '<br>')}</td>`;

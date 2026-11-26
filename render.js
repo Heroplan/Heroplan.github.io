@@ -651,6 +651,10 @@ function buildHeroCard(hero, index, priority) {
         && lotteryFeaturedSelfSelectEnabled()
         && hero.rarity === 5
         && (cardChooseList.length === 0 || cardChooseList.includes(hero.heroId));
+    // 卡片收藏位改用内联 SVG：★/☆ 的字符基线、🔒 的彩色 emoji 在圆形底框里居中都不准，
+    // 且 emoji 不受主题色控制；SVG 用 currentColor，flex 居中即可精确对心
+    const cardStarSvg = '<svg class="icon-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.4l2.66 5.4 5.94.86-4.3 4.2 1.02 5.92L12 17.0l-5.32 2.78 1.02-5.92-4.3-4.2 5.94-.86z"/></svg>';
+    // 锁标恢复成原来的 🔒 emoji（比线性 SVG 更醒目），居中交给 CSS 微调
     let favoriteIcon = '';
     if (state.teamSimulatorActive) {
         favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite" data-hero-id="${hero.originalIndex}" data-fav-kind="featured">⬆️</span>`;
@@ -659,7 +663,7 @@ function buildHeroCard(hero, index, priority) {
         favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${inFeatured ? ' disabled' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="featured">⬆️</span>`;
     } else if (favoritable) {
         const title = escapeHtml(langDict.favoriteButtonTitle || '');
-        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${favorited ? ' favorited' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">${favorited ? '★' : '☆'}</span>`;
+        favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite${favorited ? ' favorited' : ''}" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">${cardStarSvg}</span>`;
     } else {
         const title = escapeHtml((langDict.favoriteLockedTitle || '') + (hero.releaseDate ? ` (${String(hero.releaseDate).slice(0, 10)})` : ''));
         favoriteIcon = `<span class="favorite-toggle-icon hero-card-favorite favorite-upcoming" data-hero-id="${hero.originalIndex}" data-fav-kind="favorite" title="${title}">🔒</span>`;
@@ -2729,9 +2733,9 @@ function renderDetailsInModal(hero, context = {}) {
                  </div>
             </div>
             <div class="details-header-buttons">
-                <button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}">☆</button>
-                <button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}">🔗</button>
-                <button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}">✖</button>
+                <button class="favorite-btn" id="favorite-hero-btn" title="${langDict.favoriteButtonTitle}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.4l2.66 5.4 5.94.86-4.3 4.2 1.02 5.92L12 17.0l-5.32 2.78 1.02-5.92-4.3-4.2 5.94-.86z"/></svg></button>
+                <button class="share-btn" id="share-hero-btn" title="${langDict.shareButtonTitle}"><svg class="icon-link" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.2 13.8a4.3 4.3 0 0 0 6.1 0l2.3-2.3a4.3 4.3 0 0 0-6.1-6.1l-1.2 1.2"/><path d="M13.8 10.2a4.3 4.3 0 0 0-6.1 0l-2.3 2.3a4.3 4.3 0 0 0 6.1 6.1l1.2-1.2"/></svg><svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5l4.4 4.4L19 6.9"/></svg></button>
+                <button class="close-btn" id="hide-details-btn" title="${langDict.closeBtnTitle}"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.4 6.4l11.2 11.2"/><path d="M17.6 6.4L6.4 17.6"/></svg></button>
             </div>
         </div>
         <div class="hero-title-block">${nameBlockHTML}${hero.fancy_name ? `<p class="hero-fancy-name">${hero.fancy_name}</p>` : ''}</div>
@@ -3259,13 +3263,9 @@ function renderDetailsInModal(hero, context = {}) {
     if (favoriteBtn) {
         const canFav = isFavoritable(hero);      // 未到发布时间(UTC 07:00) ⇒ 禁止收藏
         const updateFavoriteButton = () => {
-            if (isFavorite(hero)) {
-                favoriteBtn.textContent = '★';
-                favoriteBtn.classList.add('favorited');
-            } else {
-                favoriteBtn.textContent = '☆';
-                favoriteBtn.classList.remove('favorited');
-            }
+            // 图标是内联 SVG：只切状态类，不再改写节点文本（否则会把 svg 冲掉）
+            favoriteBtn.classList.toggle('favorited', isFavorite(hero));
+            favoriteBtn.setAttribute('aria-pressed', isFavorite(hero) ? 'true' : 'false');
         };
         if (!canFav) {
             favoriteBtn.disabled = true;
@@ -3280,7 +3280,8 @@ function renderDetailsInModal(hero, context = {}) {
             // 表格/卡片该格若是 ⬆️（加入精选/队伍）就不去动它；是 ★/☆ 才同步收藏状态。
             document.querySelectorAll(`.favorite-toggle-icon[data-hero-id="${hero.originalIndex}"]`).forEach(node => {
                 if (node.dataset.favKind === 'featured') return;
-                node.textContent = isFavorite(hero) ? '★' : '☆';
+                // 卡片里已是内联 SVG，不能改 textContent（会冲掉图标），只切状态类
+                if (!node.querySelector('svg')) node.textContent = isFavorite(hero) ? '★' : '☆';
                 node.classList.toggle('favorited', isFavorite(hero));
             });
         });
@@ -3298,11 +3299,11 @@ function renderDetailsInModal(hero, context = {}) {
             //   也不带当前视图/筛选（地址栏那边才会保留，见 ui.js::openDetailsModal）。
             const url = heroUrl(identifier, false);
             copyTextToClipboard(url).then(() => {
-                const originalText = shareBtn.innerHTML;
-                shareBtn.innerText = '✔️';
+                // 图标是内联 SVG，不能用 innerText 覆盖（会冲掉 svg）；改为切「已复制」状态类
+                shareBtn.classList.add('is-copied');
                 shareBtn.disabled = true;
                 setTimeout(() => {
-                    shareBtn.innerHTML = originalText;
+                    shareBtn.classList.remove('is-copied');
                     shareBtn.disabled = false;
                 }, 2000);
             }).catch(err => {

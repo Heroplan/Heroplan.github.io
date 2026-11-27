@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-11-25 08:06:33",
+    "generatedAt": "2026-11-27 09:19:43",
     "poolCount": 54
   },
   "pools": {
@@ -1538,16 +1538,6 @@
         "enabled": true,
         "lotteryEntries": [
           {
-            "productId": "lottery_costume_wardrobe2",
-            "id": "costume_summon_wardrobe2_2026_10_18",
-            "startDate": "2026-10-18 07:00:00",
-            "endDate": "2026-10-22 07:00:00",
-            "featuredCostumeItems": [
-              "forest_god_zeline_costume_cute",
-              "fire_god_natalya_costume_cute"
-            ]
-          },
-          {
             "productId": "lottery_costume_default",
             "id": "costume_summon_default_2026_11_9",
             "startDate": "2026-11-09 07:00:00",
@@ -1964,7 +1954,7 @@
             "startDate": "2026-12-05 07:00:00",
             "endDate": "2026-12-09 07:00:00",
             "featuredHeroes": [
-              "astral_demon_isharra",
+              "astral_demon_coronzom",
               "astral_demon_azaghim"
             ]
           }
@@ -2265,8 +2255,15 @@
       },
       {
         "productType": "ImprovedLegendaryTroopSummon",
-        "enabled": false,
-        "lotteryEntries": []
+        "enabled": true,
+        "lotteryEntries": [
+          {
+            "productId": "lottery_improved_legendary_troop_default",
+            "id": "improved_legendary_troop_summon",
+            "startDate": "2026-12-07 07:00:00",
+            "endDate": "2026-12-11 07:00:00"
+          }
+        ]
       }
     ],
     "mapSeasonLotteries": [
@@ -2823,28 +2820,6 @@
     "pickupLottery": {
       "enabled": true,
       "lotteryEntries": [
-        {
-          "productId": "lottery_pickup_default",
-          "id": "pickup259",
-          "startDate": "2026-11-25 07:00:00",
-          "endDate": "2026-11-26 07:00:00",
-          "featuredHeroes": [
-            "bard_bonzo",
-            "slime_knightus"
-          ],
-          "extraHeroesPoolId": "default"
-        },
-        {
-          "productId": "lottery_pickup_default",
-          "id": "pickup260",
-          "startDate": "2026-11-26 07:00:00",
-          "endDate": "2026-11-27 07:00:00",
-          "featuredHeroes": [
-            "fox_ashen",
-            "shadow_wulfstan"
-          ],
-          "extraHeroesPoolId": "default"
-        },
         {
           "productId": "lottery_pickup_default",
           "id": "pickup261",

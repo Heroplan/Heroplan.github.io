@@ -4,27 +4,27 @@
 const oneClickMaxDate = '2026-11-14';
 const purchaseCostumeDate = '2026-10-08';
 const soulExchange = {
-  "Date": "2026-08-29",
+  "Date": "2026-11-30",
   "five": [
-    "elemental_griffex_costume_camera",
-    "moth_satinpimenter",
-    "shadow_rosanna",
-    "fox_whitefang",
-    "garrison_kolya"
+    "garrison_flamehide",
+    "astral_dwarf_hygil",
+    "slime_slimgo",
+    "moth_auricarc",
+    "bard_darkbeat"
   ],
   "fifteen": [
-    "slime_slaymire",
-    "magic_carpet_zazha",
-    "outlaw_lu_zhishen",
-    "astral_dwarf_orcur",
-    "slime_verdigoo"
+    "beowulf_beowulf",
+    "faun_bramble",
+    "faun_ascian",
+    "construct_ironheart",
+    "tales1_medea_costume_goddess"
   ],
   "thirty": [
-    "beowulf_hygd",
-    "outlaw_ruan_xiaoqi",
-    "institute_wilcox",
-    "magic_carpet_kesha",
-    "valentines_vernon"
+    "moth_gardered",
+    "beauty_beast_laurent",
+    "beauty_beast_seraphine",
+    "moth_furgeant",
+    "wild_cat_rawn"
   ],
   "show": false
 };

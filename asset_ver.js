@@ -350,7 +350,6 @@ window.AV = {
   "langs_json/speed_tr.json": "3fb74f36",
   "lottery_display.json": "2b7df97d",
   "data/characters.json": "31899cf3",
-  "data/heroes_skill_types.json": "c353f2c4",
   "langs_json/i18n_ar.json": "5e229be3",
   "langs_json/i18n_cn.json": "2125fed6",
   "langs_json/i18n_da.json": "2158bdfe",
@@ -372,4 +371,5 @@ window.AV = {
   "langs_json/i18n_tc.json": "97e8b7ee",
   "langs_json/i18n_tr.json": "cf5ed914",
   "lottery_official.json": "ab1c44e5",
+  "data/heroes_skill_types.json": "86d5bd3f",
 };

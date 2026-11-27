@@ -26,7 +26,7 @@ const soulExchange = {
     "moth_furgeant",
     "wild_cat_rawn"
   ],
-  "show": false
+  "show": true
 };
 
 const redeemcodes = [

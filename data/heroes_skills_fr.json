@@ -839,7 +839,7 @@
       "Cette compétence spéciale ne rate jamais sa cible.",
       "Inflige 340% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent -35% de génération de mana pour 4 tours. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)",
-      "Les soins reçus par tous les ennemis augmentent de -85% pendant 4 tours."
+      "Les soins reçus par tous les ennemis diminuent de -85% pendant 4 tours."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Retire les bonus de la cible et des ennemis à proximité.",
       "Inflige 375% de dégâts à la cible et aux ennemis proches.",
       "La cible et les alliés proches reçoivent blessure de sbire pendant 3 tours.\n[*]Blessure de sbire: à chaque tour, la santé des sbires de la cible est réduite de 50%, et celle des méga sbires de 25%. (La réduction s'applique aux sbires possédés et à ceux qui sont reçus pendant que l'effet est actif.\n[*] La réduction affecte uniquement la santé actuelle des sbires.)",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -80% pendant 3 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -80% pendant 3 tours."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Inflige 270% de dégâts à la cible.",
       "La cible reçoit -30% de défense pendant 4 tours. La durée de l'effet est réinitialisée si la cible est soignée.",
-      "Les soins reçus par la cible augmentent de -40% pendant 4 tours."
+      "Les soins reçus par la cible diminuent de -40% pendant 4 tours."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Booste la santé de tous les alliés de 500. Le maximum de PV peut être dépassé.",
       "La santé maximale de tous les ennemis est réduite de 500. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 500.)",
       "Inflige 275% de dégâts à tous les ennemis.",
-      "Les soins reçus par tous les ennemis augmentent de -75% pendant 3 tours."
+      "Les soins reçus par tous les ennemis diminuent de -75% pendant 3 tours."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Restaure 32% de la santé de tous les alliés.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 4 tours."
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 4 tours."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Inflige 290% de dégâts à la cible et aux ennemis proches.",
       "L'attaque contourne les bonus défensifs. (Les contre-attaques sont également concernées.)",
       "La cible et les ennemis proches reçoivent -40% d'attaque pour 3 tours. L'attaque diminue de -5% à chaque tour, jusqu'à -50%.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -80% pendant 3 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -80% pendant 3 tours."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Purifie de façon sûre les effets négatifs de tous les alliés. (La purification sûre permet d'éviter les effets secondaires de la suppression d'un effet négatif, par exemple les dégâts lors de la suppression. Les effets externes comme les effets passifs ou de famille peuvent toujours s'appliquer.)",
       "Inflige 325% de dégâts à tous les ennemis.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 4 tours.",
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 4 tours.",
       "Tous les ennemis ne peuvent pas purifier ni transférer leurs effets négatifs avec leurs compétences spéciales pendant 4 tours. (Cet effet empêche également sa propre purification ou son transfert.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Inflige 450% de dégâts à la cible et aux ennemis proches.",
       "La cible et les ennemis proches reçoivent[#Dynamic] 848 [#]points de dégâts de brûlure en 4 tours. Le lanceur et ses alliés se soignent à hauteur de 50% des dégâts de brûlure.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -54% pendant 4 tours.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -54% pendant 4 tours.",
       "Le lanceur reçoit -51% de défense contre la glace pour 4 tours. Cet effet ne peut pas être purifié."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Inflige 230% de dégâts à tous les ennemis.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 3 tours. Cet effet ne peut pas être dissipé."
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 3 tours. Cet effet ne peut pas être purifié."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Inflige 245% de dégâts à tous les ennemis.",
       "Inflige 490% de dégâts contre les invocateurs de sbires et de démons.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 4 tours."
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 4 tours."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "La santé maximale de tous les ennemis est réduite de 550. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 550.)",
-      "Les soins reçus par tous les ennemis augmentent de -55% pendant 4 tours. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
+      "Les soins reçus par tous les ennemis diminuent de -55% pendant 4 tours. Cet effet est obstiné. (Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)",
       "Tous les ennemis subissent[#Dynamic] 85 [#]-[#Dynamic] 148 [#]points de dégâts de malédiction sur 4 tours, qui augmentent à chaque tour. Cet effet est obstiné. (Pendant le premier tour,[#Dynamic] 85 [#]points de dégâts sont infligés. Les dégâts augmentent de 20% à chaque tour, jusqu'à[#Dynamic] 148 [#]points de dégâts par tour.\n[*]Chaque tentative de dissipation, de purification ou de transfert d'un effet obstiné réduit sa durée d' 1 tour ou diminue ses activations restantes de 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Inflige 390% de dégâts à la cible.",
       "La cible reçoit -75% de précision pendant 2 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)",
-      "Les soins reçus par la cible augmentent de -75% pendant 2 tours.",
+      "Les soins reçus par la cible diminuent de -75% pendant 2 tours.",
       "Lien élémentaire donne à tous les alliés Sacrés 40% de défense contre les compétences spéciales sur 4 tours. Cet effet ne peut pas être dissipé."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Inflige 455% de dégâts à la cible.",
-      "Les soins reçus par la cible augmentent de -100% pendant 4 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible diminuent de -100% pendant 4 tours. Cet effet ne peut pas être purifié.",
       "Le lanceur et les alliés à proximité obtiennent 94% de défense contre la nature pour 4 tours.",
       "Lien élémentaire donne 10% de génération de mana à tous les alliés glace pendant 4 tours. Cet effet ne peut pas être dissipé. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Inflige 405% de dégâts à la cible et aux ennemis proches.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -100% pendant 4 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -100% pendant 4 tours. Cet effet ne peut pas être purifié.",
       "La cible et les ennemis proches reçoivent -68% de défense contre la glace pour 4 tours.",
       "Lien élémentaire donne 10% de génération de mana à tous les alliés glace pendant 4 tours. Cet effet ne peut pas être dissipé. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Inflige 280% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "La cible et les ennemis proches reçoivent -44% de défense et une augmentation supplémentaire de -4% à chaque coup subi pendant 3 tours, jusqu'à un maximum de -68%."
+      "La cible et les ennemis proches reçoivent -44% de défense et une réduction supplémentaire de -4% à chaque coup subi pendant 3 tours, jusqu'à un maximum de -68%."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]Charge de mana x 2:",
       "[**]La santé maximale de tous les ennemis est réduite de 900. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[***]La santé boostée subit une réduction supplémentaire de 900.)",
       "[**]Tous les ennemis reçoivent -58% de défense contre les compétences spéciales pour 5 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -45% pendant 5 tours."
+      "[**]Les soins reçus par tous les ennemis diminuent de -45% pendant 5 tours."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]Charge de mana x 1:",
       "[**]Le lanceur et les alliés proches reçoivent 45% d'attaque et une augmentation supplémentaire de 20% à chaque coup subi pendant 3 tours, jusqu'à un maximum de 145%.",
       "[*]Charge de mana x 2:",
-      "[**]La cible et les ennemis proches reçoivent -44% de défense et une augmentation supplémentaire de -4% à chaque coup subi pendant 6 tours, jusqu'à un maximum de -68%."
+      "[**]La cible et les ennemis proches reçoivent -44% de défense et une réduction supplémentaire de -4% à chaque coup subi pendant 6 tours, jusqu'à un maximum de -68%."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Retire les bonus de tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 1405 [#]points de dégâts de sable sur 5 tours.",
       "[**]Tous les ennemis reçoivent -50% d'attaque pendant 5 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -45% pendant 5 tours."
+      "[**]Les soins reçus par tous les ennemis diminuent de -45% pendant 5 tours."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Inflige 435% de dégâts à la cible.",
       "Invoque un démon piège d'os pour la cible. Il inflige des dégâts à l'ennemi à hauteur de 45% d'attaque à chaque tour. Les dégâts augmentent de 8% à chaque tour, jusqu'à un maximum de 93%.\n[*]Le démon absorbe les soins et disparaît après avoir absorbé 35% de la santé maximum de son propriétaire.",
-      "Les soins reçus par la cible augmentent de -50% pendant 3 tours.",
+      "Les soins reçus par la cible diminuent de -50% pendant 3 tours.",
       "Dissipe les bonus de la cible à la fin de chaque tour pendant 3 tours."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Inflige 325% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent[#Dynamic] 364 [#]points de dégâts de saignement sur 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres.",
-      "Les soins reçus par tous les ennemis augmentent de -75% pendant 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres.",
+      "Les soins reçus par tous les ennemis diminuent de -75% pendant 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres.",
       "Tous les ennemis reçoivent -35% de précision pendant 4 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages sombres. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)",
       "Inflige des dégâts supplémentaires contre l'élément sombre."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Inflige 330% de dégâts à tous les ennemis.",
-      "Les soins reçus par tous les ennemis augmentent de -70% pendant 3 tours.",
+      "Les soins reçus par tous les ennemis diminuent de -70% pendant 3 tours.",
       "Tous les ennemis reçoivent[#Dynamic] 450 [#]points de dégâts de saignement sur 2 tours. Cet effet appliqué ne peut pas être purifié et dure 2 tours de plus sur les personnages de glace.",
       "Lien élémentaire donne 10% de génération de mana à tous les alliés nature pendant 4 tours. Cet effet ne peut pas être dissipé. (Affecte uniquement le mana généré en associant des boucliers et le mana obtenu par l'équipe de défense à la fin du tour.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]Charge de mana x 1:",
       "[**]Inflige 160% de dégâts à tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 256 [#]dégâts de brûlure sur 2 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -64% pendant 2 tours.",
+      "[**]Les soins reçus par tous les ennemis diminuent de -64% pendant 2 tours.",
       "[*]Charge de mana x 2:",
       "[**]Inflige 275% de dégâts à tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 561 [#]dégâts de brûlure sur 3 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -74% pendant 3 tours.",
+      "[**]Les soins reçus par tous les ennemis diminuent de -74% pendant 3 tours.",
       "[*]Charge de mana x 3:",
       "[**]Inflige 340% de dégâts à tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 840 [#]dégâts de brûlure sur 4 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -84% pendant 4 tours."
+      "[**]Les soins reçus par tous les ennemis diminuent de -84% pendant 4 tours."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]Charge de mana x 1:",
       "[**]Retire les bonus de la cible.",
       "[**]La cible reçoit[#Dynamic] 780 [#]de dégâts de poison sur 2 tours.",
-      "[**]Les soins reçus par la cible augmentent de -80% pendant 2 tours.",
+      "[**]Les soins reçus par la cible diminuent de -80% pendant 2 tours.",
       "[*]Charge de mana x 2:",
       "[**]Retire les bonus de la cible et des ennemis à proximité.",
       "[**]La cible et les ennemis à proximité reçoivent[#Dynamic] 1608 [#]dégâts de poison sur 4 tours.",
-      "[**]Les soins reçus par la cible et les ennemis proches augmentent de -85% pendant 4 tours.",
+      "[**]Les soins reçus par la cible et les ennemis proches diminuent de -85% pendant 4 tours.",
       "[*]Charge de mana x 3:",
       "[**]Retire les bonus de tous les ennemis.",
       "[**]Tous les ennemis reçoivent[#Dynamic] 2412 [#]dégâts de poison sur 6 tours.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -90% pendant 6 tours."
+      "[**]Les soins reçus par tous les ennemis diminuent de -90% pendant 6 tours."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Inflige 160% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent -30% de précision pendant 4 tours. (Les chances d'échec s'appliquent également aux compétence spéciales offensives.)",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 4 tours. Cet effet ne peut pas être dissipé."
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 4 tours. Cet effet ne peut pas être purifié."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Attaque la cible et les ennemis proches avec Clair de lune, qui inflige jusqu'à 1440 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est sacrée. Cette compétence spéciale ne manque jamais sa cible.",
       "Pendant 3 tours, le mana de la cible et des ennemis proches est réduit de -15% à la fin du tour.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -50% pendant 3 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -50% pendant 3 tours."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Inflige 415% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -90% pendant 4 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -90% pendant 4 tours."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Inflige 415% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -100% pendant 4 tours.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -100% pendant 4 tours.",
       "La cible et les ennemis à proximité reçoivent[#Dynamic] 204 [#]dégâts d'eau sur 4 tours."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Inflige 150% de dégâts à tous les ennemis.",
       "La santé maximale de tous les ennemis est réduite de 100. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 100.)",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 4 tours."
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 4 tours."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Inflige 180% de dégâts à tous les ennemis.",
       "La santé maximale de tous les ennemis est réduite de 150. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 150.)",
-      "Les soins reçus par tous les ennemis augmentent de -55% pendant 4 tours.",
+      "Les soins reçus par tous les ennemis diminuent de -55% pendant 4 tours.",
       "Inflige des dégâts supplémentaires contre Sacré."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Inflige 280% de dégâts à la cible et aux ennemis proches.",
       "Réduit de 15% le mana de la cible et des ennemis à proximité.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -75% pendant 3 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -75% pendant 3 tours."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Inflige 280% de dégâts à la cible.",
       "La cible reçoit[#Dynamic] 104 [#]points de dégâts de sable sur 4 tours.",
-      "Les soins reçus par la cible augmentent de -100% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible diminuent de -100% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Inflige 200% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent[#Dynamic] 381 [#]points de dégâts de sable sur 3 tours.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 3 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 3 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs de tous les alliés."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Inflige 185% de dégâts à la cible et aux ennemis proches.",
       "La cible et les ennemis à proximité reçoivent[#Dynamic] 402 [#]points de dégâts de sable sur 3 tours.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -75% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -75% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Inflige 185% de dégâts à la cible et aux ennemis proches.",
       "La cible et les ennemis à proximité reçoivent[#Dynamic] 568 [#]dégâts d'eau sur 4 tours.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -75% pendant 4 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -75% pendant 4 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur et des alliés à proximité."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Tous les ennemis reçoivent[#Dynamic] 306 [#]points de dégâts de sable sur 3 tours.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs de tous les alliés."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Inflige 130% de dégâts à tous les ennemis.",
       "Tous les ennemis reçoivent[#Dynamic] 92 [#]points de dégâts de sable sur 4 tours.",
-      "Les soins reçus par tous les ennemis augmentent de -50% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par tous les ennemis diminuent de -50% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Inflige 235% de dégâts à la cible et des dégâts mineurs aux ennemis proches.",
       "La cible et les ennemis à proximité reçoivent[#Dynamic] 172 [#]points de dégâts de sable sur 4 tours.",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -75% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible et les ennemis proches diminuent de -75% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Inflige 260% de dégâts à la cible.",
       "La cible reçoit[#Dynamic] 228 [#]points de dégâts de sable sur 4 tours.",
-      "Les soins reçus par la cible augmentent de -100% pendant 2 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par la cible diminuent de -100% pendant 2 tours. Cet effet ne peut pas être purifié.",
       "Purifie les effets négatifs du lanceur."
      ]
     }
@@ -52147,14 +52147,14 @@
       "La compétence spéciale a un effet différent si elle est chargée avec 100% / 200% / 300% de mana:",
       "[*]Charge de mana x 1:",
       "[**]Inflige 200% de dégâts à tous les ennemis.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -25% pendant 3 tours.",
+      "[**]Les soins reçus par tous les ennemis diminuent de -25% pendant 3 tours.",
       "[*]Charge de mana x 2:",
       "[**]Inflige 315% de dégâts à tous les ennemis.",
       "[**]Invoque un démon esprit du Styx pour tous les ennemis. Il inflige des dégâts à sa cible à hauteur de 40% d'attaque à chaque tour.\n[***]Le démon esprit du Styx absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 25% de la santé maximum de sa cible.",
       "[*]Charge de mana x 3:",
       "[**]Inflige 365% de dégâts à tous les ennemis.",
       "[**]Invoque un démon esprit du Styx pour tous les ennemis. Il inflige des dégâts à sa cible à hauteur de 40% d'attaque à chaque tour.\n[***]Le démon esprit du Styx absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 25% de la santé maximum de sa cible.",
-      "[**]Les soins reçus par tous les ennemis augmentent de -75% pendant 4 tours."
+      "[**]Les soins reçus par tous les ennemis diminuent de -75% pendant 4 tours."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1 er:",
       "[**]Inflige 365% de dégâts à la cible et aux ennemis proches.",
       "[**]La cible lance automatiquement Attaque irréfléchie changeante sur un allié aléatoire quand son mana est plein pendant 3 tours. Quand cet effet est déclenché, il passe à l'allié touché et sa durée est réinitialisée.",
-      "[**]Les soins reçus par la cible et les ennemis proches augmentent de -50% pendant 3 tours.",
+      "[**]Les soins reçus par la cible et les ennemis proches diminuent de -50% pendant 3 tours.",
       "[*] 2 e:",
       "[**]Inflige 430% de dégâts à la cible et aux ennemis proches.",
       "[**]La cible lance automatiquement Attaque irréfléchie changeante sur un allié aléatoire quand son mana est plein pendant 4 tours. Quand cet effet est déclenché, il passe à l'allié touché et sa durée est réinitialisée.",
-      "[**]Les soins reçus par la cible et les ennemis proches augmentent de -75% pendant 4 tours."
+      "[**]Les soins reçus par la cible et les ennemis proches diminuent de -75% pendant 4 tours."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1 er:",
       "[**]Inflige 355% de dégâts à la cible et aux ennemis proches.",
       "[**]La cible lance automatiquement Attaque irréfléchie changeante sur un allié aléatoire quand son mana est plein pendant 3 tours. Quand cet effet est déclenché, il passe à l'allié touché et sa durée est réinitialisée.",
-      "[**]Les soins reçus par la cible et les ennemis proches augmentent de -45% pendant 3 tours.",
+      "[**]Les soins reçus par la cible et les ennemis proches diminuent de -45% pendant 3 tours.",
       "[*] 2 e:",
       "[**]Inflige 450% de dégâts à la cible et aux ennemis proches.",
       "[**]La cible lance automatiquement Attaque irréfléchie changeante sur un allié aléatoire quand son mana est plein pendant 4 tours. Quand cet effet est déclenché, il passe à l'allié touché et sa durée est réinitialisée.",
-      "[**]Les soins reçus par la cible et les ennemis proches augmentent de -85% pendant 4 tours."
+      "[**]Les soins reçus par la cible et les ennemis proches diminuent de -85% pendant 4 tours."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Attaque la cible et les ennemis proches avec Frappe du givre, qui inflige jusqu'à 2300 points de dégâts. Inflige 40% de dégâts supplémentaires si la cible est de feu. Cette compétence spéciale ne manque jamais sa cible.",
       "La santé maximale de la cible et des ennemis proches est réduite de 800. L'effet est plus puissant sur les ennemis dont la santé est boostée. (La santé maximum ne peut pas descendre sous 30% de la santé maximum d'origine.\n[*]La santé boostée subit une réduction supplémentaire de 800.)",
-      "Les soins reçus par la cible et les ennemis proches augmentent de -70% pendant 4 tours."
+      "Les soins reçus par la cible et les ennemis proches diminuent de -70% pendant 4 tours."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Flétrissement: tous les ennemis reçoivent -400 points d'attaque. (Le flétrissement et la croissance modifient les scores de capacité des personnages. L'effet persiste même si le personnage est vaincu.\n[*]Les nouveaux effets de flétrissement et de croissance modifient les scores de capacité.\n[*]Les purifications affaiblissent le flétrissement de 50%.\n[*]Les dissipations affaiblissent la croissance de 50%.\n[*]Limites des scores de capacité modifiés\n[*]Entre 30% et 170% de la valeur originale.\n[*]D'autres bonus et malus peuvent modifier les scores de capacité.\n[*]Cet effet est moins puissant lorsqu'il est activé par des monstres ou des boss.)",
-      "Les soins reçus par tous les ennemis augmentent de -80% pendant 4 tours. Cet effet ne peut pas être dissipé.",
+      "Les soins reçus par tous les ennemis diminuent de -80% pendant 4 tours. Cet effet ne peut pas être purifié.",
       "Retire l'effet négatif purifiable le plus récent de chaque allié, et inflige aléatoirement les effets retirés aux ennemis.",
       "Purifie les effets négatifs de tous les alliés à la fin de chaque tour pendant 4 tours."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Rend 27% de santé à tous les alliés.\n[*]Rend 3% supplémentaires pour chaque effet négatif sur les ennemis, jusqu'à un maximum de 42%.",
       "Retire l'effet négatif purifiable le plus récent de chaque allié, et inflige aléatoirement les effets retirés aux ennemis.",
-      "Les soins reçus par tous les ennemis augmentent de -75% pendant 3 tours."
+      "Les soins reçus par tous les ennemis diminuent de -75% pendant 3 tours."
      ]
     }
    ]

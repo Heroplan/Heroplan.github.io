@@ -839,7 +839,7 @@
       "Den här specialförmågan missar aldrig.",
       "Alla fiender tar 340% skada.",
       "Alla fiender genererar -35% mana under 4 rundor. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)",
-      "Alla fiender får -85% ökat helande i 4 rundor."
+      "Alla fiender får -85% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Tar bort bonusar från målet och fiender i närheten.",
       "Gör 375% skada mot målet och fiender i närheten.",
       "Målet och fiender i närheten får undersåtesår i 3 rundor.\n[*]Undersåtesår: Målets undersåtar får 50% mindre hälsa och megaundersåtar 25% mindre varje runda. (Sänkningen påverkar undersåtar som ägs och tillskansats medan effekten är aktiv.\n[*] Sänkningen påverkar bara undersåtarnas aktuella hälsa.)",
-      "Målet och fiender i närheten får -80% ökat helande i 3 rundor."
+      "Målet och fiender i närheten får -80% minskat helande i 3 rundor."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Skadar målet med 270%.",
       "Målet får -30% försvar i 4 rundor. Effektens varaktighet återställs om målet läks.",
-      "Målet får -40% ökat helande i 4 rundor."
+      "Målet får -40% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Ökar alla allierades hälsa med 500. Hälsan kan komma att överstiga maxhälsan.",
       "Minskar alla fienders maxhälsa med 500. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 500.)",
       "Gör 275% skada mot alla fiender.",
-      "Alla fiender får -75% ökat helande i 3 rundor."
+      "Alla fiender får -75% minskat helande i 3 rundor."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Alla allierade återfår 32% hälsa.",
-      "Alla fiender får -50% ökat helande i 4 rundor."
+      "Alla fiender får -50% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Skadar målet och fiender i närheten med 290%.",
       "Attacken passerar försvarsbonusar. (Det inkluderar motattacker)",
       "Målet och fiender i närheten får -40% attack i 3 rundor. Attacken minskar med -5% per runda, upp till -50%.",
-      "Målet och fiender i närheten får -80% ökat helande i 3 rundor."
+      "Målet och fiender i närheten får -80% minskat helande i 3 rundor."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Rensar, på säkert manér, negativa statuseffekter från alla allierade. (Säker rensning ignorerar sekundära effekter, som skada vid borttagning, från den borttagna negativa statuseffekten. Externa effekter som passiva förmågor och familjeeffekter kan dock fortfarande aktiveras.)",
       "Gör 325% skada mot alla fiender.",
-      "Alla fiender får -50% ökat helande i 4 rundor.",
+      "Alla fiender får -50% minskat helande i 4 rundor.",
       "Inga fiender kan inte få sina negativa statuseffekter renade eller överförda av specialförmågor i 4 rundor. (Effekten gör även att den inte kan renas eller överföras.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Skadar målet och fiender i närheten med 450%.",
       "Målet och fiender i närheten får[#Dynamic] 848 [#]eldskada under 4 rundor. Användaren och alla dess allierade absorberar 50% av gjord eldskada som hälsa.",
-      "Målet och fiender i närheten får -54% ökat helande i 4 rundor.",
+      "Målet och fiender i närheten får -54% minskat helande i 4 rundor.",
       "Anfallaren får -51% försvar mot is i 4 rundor. Effekten kan inte renas."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Alla fiender tar 230% skada.",
-      "Alla fiender får -50% ökat helande under 3 rundor. Denna effekt kan ej avbrytas."
+      "Alla fiender får -50% minskat helande under 3 rundor. Denna effekt kan ej renas."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Alla fiender tar 245% skada.",
       "Gör 490% skada mot undersåtar och odjursåkallare.",
-      "Alla fiender får -50% ökat helande i 4 rundor."
+      "Alla fiender får -50% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Minskar alla fienders maxhälsa med 550. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 550.)",
-      "Alla fiender får -55% ökat helande i 4 rundor. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
+      "Alla fiender får -55% minskat helande i 4 rundor. Den här effekten är envis. (Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)",
       "Alla fiender tar[#Dynamic] 85 [#]–[#Dynamic] 148 [#]stigande förbannelseskada varje runda i 4 rundor. Den här effekten är envis. (Den första rundan gör effekten[#Dynamic] 85 [#]skada. Skadan stiger med 20% varje runda, upp till[#Dynamic] 148 [#]skada per runda.\n[*]Varje försök att avbryta, rensa eller omfördela en envis effekt minskar varaktigheten med 1 runda eller minskar antalet återstående aktiveringar med 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Skadar målet med 390%.",
       "Målet får -75% träffsäkerhet i 2 rundor. (Chansen att missa gäller även offensiva specialförmågor.)",
-      "Målet får -75% ökat helande i 2 rundor.",
+      "Målet får -75% minskat helande i 2 rundor.",
       "Elementlänk ger alla heliga allierade 40% försvar mot specialförmågor under 4 rundor. Denna effekt kan ej avbrytas."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Skadar målet med 455%.",
-      "Målet får -100% ökat helande under 4 rundor. Denna effekt kan ej avbrytas.",
+      "Målet får -100% minskat helande under 4 rundor. Denna effekt kan ej renas.",
       "Anfallaren och allierade i närheten får 94% försvar mot natur under 4 rundor.",
       "Elementlänk ger 10% managenerering till alla isallierade i 4 rundor. Denna effekt kan ej avbrytas. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Skadar målet och fiender i närheten med 405%.",
-      "Målet och fiender i närheten får -100% ökat helande under 4 rundor. Denna effekt kan ej avbrytas.",
+      "Målet och fiender i närheten får -100% minskat helande under 4 rundor. Denna effekt kan ej renas.",
       "Målet och fiender i närheten får -68% försvar mot is under 4 rundor.",
       "Elementlänk ger 10% managenerering till alla isallierade i 4 rundor. Denna effekt kan ej avbrytas. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Skadar målet med 280% och fiender i närheten tar mindre skada.",
-      "Målet och fiender i närheten får -44% försvar och ytterligare -4% mer varje gång de blir träffade under 3 rundor, upp till -68% försvar."
+      "Målet och fiender i närheten får -44% försvar och ytterligare -4% mindre varje gång de blir träffade under 3 rundor, ner till -68% försvar."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*] 2 st manaladdningar",
       "[**]Minskar alla fienders maxhälsa med 900. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[***]Eventuell ökad hälsa minskas med ytterligare 900.)",
       "[**]Alla fiender får -58% försvar mot specialförmågor under 5 rundor.",
-      "[**]Alla fiender får -45% ökat helande i 5 rundor."
+      "[**]Alla fiender får -45% minskat helande i 5 rundor."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*] 1 st manaladdningar",
       "[**]Användaren och allierade i närheten får 45% attack och ytterligare 20% mer varje gång de blir träffade under 3 rundor, upp till 145%.",
       "[*] 2 st manaladdningar",
-      "[**]Målet och fiender i närheten får -44% försvar och ytterligare -4% mer varje gång de blir träffade under 6 rundor, upp till -68% försvar."
+      "[**]Målet och fiender i närheten får -44% försvar och ytterligare -4% mindre varje gång de blir träffade under 6 rundor, ner till -68% försvar."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Tar bort bonusar från alla fiender.",
       "[**]Alla fiender tar[#Dynamic] 1405 [#]sandskada under 5 rundor.",
       "[**]Alla fiender får -50% attack i 5 rundor.",
-      "[**]Alla fiender får -45% ökat helande i 5 rundor."
+      "[**]Alla fiender får -45% minskat helande i 5 rundor."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Skadar målet med 435%.",
       "Åkallar en benfälla för målet. Den skadar fienden med 45% attack varje runda. Skadan ökar med 8% varje runda upp till max 93%.\n[*]Benfällan absorberar läkning och försvinner när den absorberat den mängd hälsa som motsvarar 35% av sin ägares maximala hälsa.",
-      "Målet får -50% ökat helande i 3 rundor.",
+      "Målet får -50% minskat helande i 3 rundor.",
       "Tar bort bonusar från målet vid slutet av varje runda i 3 rundor."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Alla fiender tar 325% skada.",
       "Alla fiender får[#Dynamic] 364 [#]blödningsskada under 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem.",
-      "Alla fiender får -75% ökat helande i 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem.",
+      "Alla fiender får -75% minskat helande i 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem.",
       "Alla fiender får -35% träffsäkerhet i 4 rundor. Den här statuseffekten kan inte renas från mörkerkaraktärer och varar 2 rundor längre mot dem. (Chansen att missa gäller även offensiva specialförmågor.)",
       "Gör extra skada mot mörker."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Alla fiender tar 330% skada.",
-      "Alla fiender får -70% ökat helande i 3 rundor.",
+      "Alla fiender får -70% minskat helande i 3 rundor.",
       "Alla fiender får[#Dynamic] 450 [#]blödningsskada under 2 rundor. Den här statuseffekten kan inte renas från iskaraktärer och varar 2 rundor längre mot dem.",
       "Elementlänk ger 10% managenerering till alla naturallierade i 4 rundor. Denna effekt kan ej avbrytas. (Påverkar bara mana som genererats av matchning av sköldar eller mana försvarslaget får i slutet av sin runda.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*] 1 st manaladdningar",
       "[**]Alla fiender tar 160% skada.",
       "[**]All fiender får[#Dynamic] 256 [#]eldskada under 2 rundor.",
-      "[**]Alla fiender får -64% ökat helande i 2 rundor.",
+      "[**]Alla fiender får -64% minskat helande i 2 rundor.",
       "[*] 2 st manaladdningar",
       "[**]Alla fiender tar 275% skada.",
       "[**]All fiender får[#Dynamic] 561 [#]eldskada under 3 rundor.",
-      "[**]Alla fiender får -74% ökat helande i 3 rundor.",
+      "[**]Alla fiender får -74% minskat helande i 3 rundor.",
       "[*] 3 st manaladdningar",
       "[**]Alla fiender tar 340% skada.",
       "[**]All fiender får[#Dynamic] 840 [#]eldskada under 4 rundor.",
-      "[**]Alla fiender får -84% ökat helande i 4 rundor."
+      "[**]Alla fiender får -84% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*] 1 st manaladdningar",
       "[**]Tar bort bonusar från målet.",
       "[**]Målet tar[#Dynamic] 780 [#]giftskada under 2 rundor.",
-      "[**]Målet får -80% ökat helande i 2 rundor.",
+      "[**]Målet får -80% minskat helande i 2 rundor.",
       "[*] 2 st manaladdningar",
       "[**]Tar bort bonusar från målet och fiender i närheten.",
       "[**]Målet och fiender i närheten får[#Dynamic] 1608 [#]giftskada under 4 rundor.",
-      "[**]Målet och fiender i närheten får -85% ökat helande i 4 rundor.",
+      "[**]Målet och fiender i närheten får -85% minskat helande i 4 rundor.",
       "[*] 3 st manaladdningar",
       "[**]Tar bort bonusar från alla fiender.",
       "[**]All fiender får[#Dynamic] 2412 [#]giftskada under 6 rundor.",
-      "[**]Alla fiender får -90% ökat helande i 6 rundor."
+      "[**]Alla fiender får -90% minskat helande i 6 rundor."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Alla fiender tar 160% skada.",
       "Alla fiender får -30% träffsäkerhet i 4 rundor. (Chansen att missa gäller även offensiva specialförmågor.)",
-      "Alla fiender får -50% ökat helande under 4 rundor. Denna effekt kan ej avbrytas."
+      "Alla fiender får -50% minskat helande under 4 rundor. Denna effekt kan ej renas."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Angriper målet och fiender i närheten med månslag och gör upp till 1440 skada. Gör 40% mer skada om målet har elementet helig. Den här specialförmågan missar aldrig.",
       "Minskar målets och alla fiender i närhetens mana med -15% i slutet av rundan i 3 rundor.",
-      "Målet och fiender i närheten får -50% ökat helande i 3 rundor."
+      "Målet och fiender i närheten får -50% minskat helande i 3 rundor."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Skadar målet med 415% och fiender i närheten tar mindre skada.",
-      "Målet och fiender i närheten får -90% ökat helande i 4 rundor."
+      "Målet och fiender i närheten får -90% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Skadar målet med 415% och fiender i närheten tar mindre skada.",
-      "Målet och fiender i närheten får -100% ökat helande i 4 rundor.",
+      "Målet och fiender i närheten får -100% minskat helande i 4 rundor.",
       "Fiendemålet och fiender i närheten får[#Dynamic] 204 [#]vattenskada över 4 rundor."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Alla fiender tar 150% skada.",
       "Minskar alla fienders maxhälsa med 100. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 100.)",
-      "Alla fiender får -50% ökat helande i 4 rundor."
+      "Alla fiender får -50% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Alla fiender tar 180% skada.",
       "Minskar alla fienders maxhälsa med 150. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 150.)",
-      "Alla fiender får -55% ökat helande i 4 rundor.",
+      "Alla fiender får -55% minskat helande i 4 rundor.",
       "Gör extra skada mot heligt."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Skadar målet och fiender i närheten med 280%.",
       "Sänker mana för målet och fiender i närheten med 15%.",
-      "Målet och fiender i närheten får -75% ökat helande i 3 rundor."
+      "Målet och fiender i närheten får -75% minskat helande i 3 rundor."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Skadar målet med 280%.",
       "Målet tar[#Dynamic] 104 [#]sandskada under 4 rundor.",
-      "Målet får -100% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Målet får -100% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Alla fiender tar 200% skada.",
       "Alla fiender tar[#Dynamic] 381 [#]sandskada under 3 rundor.",
-      "Alla fiender får -50% ökat helande under 3 rundor. Denna effekt kan ej avbrytas.",
+      "Alla fiender får -50% minskat helande under 3 rundor. Denna effekt kan ej renas.",
       "Rensar negativa statuseffekter från alla allierade."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Skadar målet och fiender i närheten med 185%.",
       "Målet och fiender i närheten tar[#Dynamic] 402 [#]sandskada under 3 rundor.",
-      "Målet och fiender i närheten får -75% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Målet och fiender i närheten får -75% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Skadar målet och fiender i närheten med 185%.",
       "Fiendemålet och fiender i närheten får[#Dynamic] 568 [#]vattenskada över 4 rundor.",
-      "Målet och fiender i närheten får -75% ökat helande under 4 rundor. Denna effekt kan ej avbrytas.",
+      "Målet och fiender i närheten får -75% minskat helande under 4 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren och allierade i närheten."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Alla fiender tar[#Dynamic] 306 [#]sandskada under 3 rundor.",
-      "Alla fiender får -50% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Alla fiender får -50% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Rensar negativa statuseffekter från alla allierade."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Alla fiender tar 130% skada.",
       "Alla fiender tar[#Dynamic] 92 [#]sandskada under 4 rundor.",
-      "Alla fiender får -50% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Alla fiender får -50% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Skadar målet med 235% och fiender i närheten tar mindre skada.",
       "Målet och fiender i närheten tar[#Dynamic] 172 [#]sandskada under 4 rundor.",
-      "Målet och fiender i närheten får -75% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Målet och fiender i närheten får -75% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Skadar målet med 260%.",
       "Målet tar[#Dynamic] 228 [#]sandskada under 4 rundor.",
-      "Målet får -100% ökat helande under 2 rundor. Denna effekt kan ej avbrytas.",
+      "Målet får -100% minskat helande under 2 rundor. Denna effekt kan ej renas.",
       "Renar negativa statuseffekter från användaren."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Specialförmågan har olika effekter när den laddas med 100%/ 200%/ 300% mana:",
       "[*] 1 st manaladdningar",
       "[**]Alla fiender tar 200% skada.",
-      "[**]Alla fiender får -25% ökat helande i 3 rundor.",
+      "[**]Alla fiender får -25% minskat helande i 3 rundor.",
       "[*] 2 st manaladdningar",
       "[**]Alla fiender tar 315% skada.",
       "[**]Åkallar ett Styxandeodjur mot alla fiender. Odjuret skadar sitt mål med 40% attack i varje runda.\n[***]Styxandeodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 25% av målets maximala hälsa.",
       "[*] 3 st manaladdningar",
       "[**]Alla fiender tar 365% skada.",
       "[**]Åkallar ett Styxandeodjur mot alla fiender. Odjuret skadar sitt mål med 40% attack i varje runda.\n[***]Styxandeodjuret absorberar läkning. Det försvinner när det absorberat den mängd hälsa som motsvarar 25% av målets maximala hälsa.",
-      "[**]Alla fiender får -75% ökat helande i 4 rundor."
+      "[**]Alla fiender får -75% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1:a:",
       "[**]Skadar målet och fiender i närheten med 365%.",
       "[**]Målet kastar automatiskt Skiftande vettlös attack på en slumpmässig allierad när dess mana är full under 3 rundor. När den effekten aktiveras byter den till den träffade allierade och varaktigheten uppdateras.",
-      "[**]Målet och fiender i närheten får -50% ökat helande i 3 rundor.",
+      "[**]Målet och fiender i närheten får -50% minskat helande i 3 rundor.",
       "[*] 2:a:",
       "[**]Skadar målet och fiender i närheten med 430%.",
       "[**]Målet kastar automatiskt Skiftande vettlös attack på en slumpmässig allierad när dess mana är full under 4 rundor. När den effekten aktiveras byter den till den träffade allierade och varaktigheten uppdateras.",
-      "[**]Målet och fiender i närheten får -75% ökat helande i 4 rundor."
+      "[**]Målet och fiender i närheten får -75% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1:a:",
       "[**]Skadar målet och fiender i närheten med 355%.",
       "[**]Målet kastar automatiskt Skiftande vettlös attack på en slumpmässig allierad när dess mana är full under 3 rundor. När den effekten aktiveras byter den till den träffade allierade och varaktigheten uppdateras.",
-      "[**]Målet och fiender i närheten får -45% ökat helande i 3 rundor.",
+      "[**]Målet och fiender i närheten får -45% minskat helande i 3 rundor.",
       "[*] 2:a:",
       "[**]Skadar målet och fiender i närheten med 450%.",
       "[**]Målet kastar automatiskt Skiftande vettlös attack på en slumpmässig allierad när dess mana är full under 4 rundor. När den effekten aktiveras byter den till den träffade allierade och varaktigheten uppdateras.",
-      "[**]Målet och fiender i närheten får -85% ökat helande i 4 rundor."
+      "[**]Målet och fiender i närheten får -85% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Angriper målet och fiender i närheten med frostfallslag och gör upp till 2300 skada. Gör 40% mer skada om målet har elementet eld. Den här specialförmågan missar aldrig.",
       "Minskar målets och fiender i närhetens maxhälsa med 800. Effekten är starkare mot mål med bonushälsa. (Maxhälsan kan inte understiga 30% av den ursprungliga maxhälsan.\n[*] Eventuell ökad hälsa minskas med ytterligare 800.)",
-      "Målet och fiender i närheten får -70% ökat helande i 4 rundor."
+      "Målet och fiender i närheten får -70% minskat helande i 4 rundor."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Vittra: Alla fiender får -400 attack. (Vittring och tillväxt modifierar karaktärers förmågepoäng. Effekten kvarstår även om karaktären besegras.\n[*]Ytterligare vittrings- och tillväxteffekter modifierar förmågepoängen ytterligare.\n[*]Rensning försvagar vittring med 50%.\n[*]Avbrytning försvagar tillväxt med 50%.\n[*]Gränser för modifierade förmågepoäng.\n[*]Minst 30% och högst 170% av ursprungsvärdena.\n[*]Andra positiva och negativa effekter appliceras på modifierade förmågepoäng.\n[*]Den här effekten blir mindre effektiv när den aktiveras av monster och bossar.)",
-      "Alla fiender får -80% ökat helande under 4 rundor. Denna effekt kan ej avbrytas.",
+      "Alla fiender får -80% minskat helande under 4 rundor. Denna effekt kan ej renas.",
       "Lyfter den senaste statuseffekten som kan renas från alla allierade och fördelar den slumpmässigt till fienderna.",
       "Renar negativa statuseffekter från alla allierade i slutet av varje runda under 4 rundor."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Återställer 27% hälsa för alla allierade.\n[*]Återställer ytterligare 3% hälsa per negativ statuseffekt på alla fiender, upp till 42% hälsa sammanlagt.",
       "Lyfter den senaste statuseffekten som kan renas från alla allierade och fördelar den slumpmässigt till fienderna.",
-      "Alla fiender får -75% ökat helande i 3 rundor."
+      "Alla fiender får -75% minskat helande i 3 rundor."
      ]
     }
    ]

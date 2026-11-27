@@ -839,7 +839,7 @@
       "Esta habilidade especial nunca erra o alvo.",
       "Causa 340% de dano a todos os inimigos.",
       "Todos os inimigos ganham -35% de geração de mana por 4 turnos. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)",
-      "Todos os inimigos recebem -85% mais cura por 4 turnos."
+      "Todos os inimigos recebem -85% menos cura por 4 turnos."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Dissipa os reforços do alvo e dos inimigos próximos.",
       "Causa 375% de dano ao alvo e aos inimigos próximos.",
       "O alvo e os inimigos próximos recebem Ferimento de Ajudante por 3 turnos.\n[*]Ferimento de Ajudante: a cada turno, a vida dos ajudantes do alvo diminui em 50% , e a vida do mega-ajudante diminui em 25%. (A redução é aplicada aos próprios ajudantes e aos ajudantes recebidos durante o efeito.\n[*] A redução só afeta a vida atual dos ajudantes.)",
-      "O alvo e os inimigos próximos recebem -80% mais cura por 3 turnos."
+      "O alvo e os inimigos próximos recebem -80% menos cura por 3 turnos."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Causa 270% de dano ao alvo.",
       "O alvo recebe -30% de defesa por 4 turnos. A duração do efeito é restaurada ao valor inicial quando o alvo é curado.",
-      "O alvo recebe -40% mais cura por 4 turnos."
+      "O alvo recebe -40% menos cura por 4 turnos."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Aumenta a vida de todos os aliados em 500. A vida reforçada pode exceder o limite de PV.",
       "Reduz em 500 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 500.)",
       "Causa 275% de dano a todos os inimigos.",
-      "Todos os inimigos recebem -75% mais cura por 3 turnos."
+      "Todos os inimigos recebem -75% menos cura por 3 turnos."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Restaura 32% da vida de todos os aliados.",
-      "Todos os inimigos recebem -50% mais cura por 4 turnos."
+      "Todos os inimigos recebem -50% menos cura por 4 turnos."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Causa 290% de dano ao alvo e inimigos próximos.",
       "O ataque ignora reforços defensivos. (Inclui contra-ataques.)",
       "O alvo e os inimigos próximos recebem -40% de ataque por 3 turnos. O ataque diminui em -5% a cada turno, até o limite de -50%.",
-      "O alvo e os inimigos próximos recebem -80% mais cura por 3 turnos."
+      "O alvo e os inimigos próximos recebem -80% menos cura por 3 turnos."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Expurga com segurança os males de status de todos os aliados. (O expurgo seguro ignora efeitos secundários, como o dano ao remover, do mal de status removido. Efeitos externos, como habilidades passivas e efeitos da família, ainda podem ser ativados.)",
       "Causa 325% de dano a todos os inimigos.",
-      "Todos os inimigos recebem -50% mais cura por 4 turnos.",
+      "Todos os inimigos recebem -50% menos cura por 4 turnos.",
       "Os males de status de todos os inimigos não podem ser expurgados nem transferidos por habilidades especiais por 4 turnos. (Este efeito também impede o próprio expurgo ou transferência.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Causa 450% de dano ao alvo e inimigos próximos.",
       "O alvo e os inimigos próximos recebem[#Dynamic] 848 [#]de dano de queimadura por 4 turnos. O invocador e todos os aliados absorvem como vida 50% do dano de queimadura.",
-      "O alvo e os inimigos próximos recebem -54% mais cura por 4 turnos.",
+      "O alvo e os inimigos próximos recebem -54% menos cura por 4 turnos.",
       "O invocador recebe -51% de defesa contra Gelo por 4 turnos. Este efeito não pode ser expurgado."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Causa 230% de dano a todos os inimigos.",
-      "Todos os inimigos recebem -50% mais cura por 3 turnos. Este efeito não pode ser dissipado."
+      "Todos os inimigos recebem -50% menos cura por 3 turnos. Este efeito não pode ser expurgado."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Causa 245% de dano a todos os inimigos.",
       "Causa 490% de dano a invocadores de ajudantes e demônios.",
-      "Todos os inimigos recebem -50% mais cura por 4 turnos."
+      "Todos os inimigos recebem -50% menos cura por 4 turnos."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Reduz em 550 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 550.)",
-      "Todos os inimigos recebem -55% mais cura por 4 turnos. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
+      "Todos os inimigos recebem -55% menos cura por 4 turnos. Este efeito é persistente. (Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)",
       "Todos os inimigos recebem[#Dynamic] 85 [#]a[#Dynamic] 148 [#]de dano de maldição por 4 turnos, aumentando a cada turno. Este efeito é persistente. (No primeiro turno, causa[#Dynamic] 85 [#]de dano. O dano aumenta em 20% a cada turno, até o limite de[#Dynamic] 148 [#]de dano por turno.\n[*]Cada tentativa de dissipar, expurgar ou transferir um efeito persistente reduz a duração em 1 turno ou as ativações restantes em 1 ativação.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Causa 390% de dano ao alvo.",
       "O alvo recebe -75% de precisão por 2 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)",
-      "O alvo recebe -75% mais cura por 2 turnos.",
+      "O alvo recebe -75% menos cura por 2 turnos.",
       "Vínculo Elemental dá a todos os aliados de Luz 40% de defesa contra habilidades especiais por 4 turnos. Este efeito não pode ser dissipado."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Causa 455% de dano ao alvo.",
-      "O alvo recebe -100% mais cura por 4 turnos. Este efeito não pode ser dissipado.",
+      "O alvo recebe -100% menos cura por 4 turnos. Este efeito não pode ser expurgado.",
       "O invocador e os aliados próximos ganham 94% de defesa contra Natureza por 4 turnos.",
       "Vínculo elemental dá 10% de geração de mana para todos os aliados de gelo por 4 turnos. Este efeito não pode ser dissipado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Causa 405% de dano ao alvo e inimigos próximos.",
-      "O alvo e os inimigos próximos recebem -100% mais cura por 4 turnos. Este efeito não pode ser dissipado.",
+      "O alvo e os inimigos próximos recebem -100% menos cura por 4 turnos. Este efeito não pode ser expurgado.",
       "O alvo e os inimigos próximos ganham -68% de defesa contra Gelo por 4 turnos.",
       "Vínculo elemental dá 10% de geração de mana para todos os aliados de gelo por 4 turnos. Este efeito não pode ser dissipado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Causa 280% de dano ao alvo e pouco dano a inimigos próximos.",
-      "O alvo e os inimigos próximos recebem -44% de defesa e mais -4% de aumento cada vez que são atingidos durante 3 turnos, até o limite de -68% de defesa."
+      "O alvo e os inimigos próximos recebem -44% de defesa e mais -4% de redução cada vez que são atingidos durante 3 turnos, até o limite de -68% de defesa."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]x 2 carga de mana:",
       "[**]Reduz em 900 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[***]A vida reforçada recebe uma redução adicional de 900.)",
       "[**]Todos os inimigos ganham -58% de defesa contra habilidades especiais por 5 turnos.",
-      "[**]Todos os inimigos recebem -45% mais cura por 5 turnos."
+      "[**]Todos os inimigos recebem -45% menos cura por 5 turnos."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 carga de mana:",
       "[**]O invocador e os aliados próximos recebem 45% de ataque e mais 20% de aumento cada vez que são atingidos por 3 turnos, até o limite de 145% de ataque.",
       "[*]x 2 carga de mana:",
-      "[**]O alvo e os inimigos próximos recebem -44% de defesa e mais -4% de aumento cada vez que são atingidos durante 6 turnos, até o limite de -68% de defesa."
+      "[**]O alvo e os inimigos próximos recebem -44% de defesa e mais -4% de redução cada vez que são atingidos durante 6 turnos, até o limite de -68% de defesa."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Dissipa os reforços de todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 1405 [#]de dano de areia por 5 turnos.",
       "[**]Todos os inimigos ganham -50% de ataque por 5 turnos.",
-      "[**]Todos os inimigos recebem -45% mais cura por 5 turnos."
+      "[**]Todos os inimigos recebem -45% menos cura por 5 turnos."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Causa 435% de dano ao alvo.",
       "Convoca um demônio Armadilha de Ossos para o alvo. O demônio causa dano ao inimigo com 45% de ataque a cada turno. O dano aumenta em 8% a cada turno, até o limite de 93%.\n[*] O demônio Armadilha de Ossos absorve a cura e desaparece depois de absorver vida equivalente a 35% do limite de vida do dono.",
-      "O alvo recebe -50% mais cura por 3 turnos.",
+      "O alvo recebe -50% menos cura por 3 turnos.",
       "Dissipa reforços do alvo ao fim de cada turno durante 3 turnos."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Causa 325% de dano a todos os inimigos.",
       "Todos os inimigos recebem[#Dynamic] 364 [#]de dano de Sangramento por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos.",
-      "Todos os inimigos recebem -75% mais cura por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos.",
+      "Todos os inimigos recebem -75% menos cura por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos.",
       "Todos os inimigos recebem -35% de precisão por 4 turnos. Contra personagens de Trevas, este efeito de status não pode ser expurgado e dura mais 2 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)",
       "Causa dano extra contra Trevas."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Causa 330% de dano a todos os inimigos.",
-      "Todos os inimigos recebem -70% mais cura por 3 turnos.",
+      "Todos os inimigos recebem -70% menos cura por 3 turnos.",
       "Todos os inimigos recebem[#Dynamic] 450 [#]de dano de Sangramento por 2 turnos. Contra personagens de Gelo, este efeito de status não pode ser expurgado e dura mais 2 turnos.",
       "Vínculo elemental dá 10% de geração de mana para todos os aliados de natureza por 4 turnos. Este efeito não pode ser dissipado. (Afeta apenas o mana gerado por escudos combinados ou recebido pela equipe de defesa ao fim do turno dela.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]x 1 carga de mana:",
       "[**]Causa 160% de dano a todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 256 [#]de dano de queimadura por 2 turnos.",
-      "[**]Todos os inimigos recebem -64% mais cura por 2 turnos.",
+      "[**]Todos os inimigos recebem -64% menos cura por 2 turnos.",
       "[*]x 2 carga de mana:",
       "[**]Causa 275% de dano a todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 561 [#]de dano de queimadura por 3 turnos.",
-      "[**]Todos os inimigos recebem -74% mais cura por 3 turnos.",
+      "[**]Todos os inimigos recebem -74% menos cura por 3 turnos.",
       "[*]x 3 carga de mana:",
       "[**]Causa 340% de dano a todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 840 [#]de dano de queimadura por 4 turnos.",
-      "[**]Todos os inimigos recebem -84% mais cura por 4 turnos."
+      "[**]Todos os inimigos recebem -84% menos cura por 4 turnos."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]x 1 carga de mana:",
       "[**]Dissipa os reforços do alvo.",
       "[**]O alvo recebe[#Dynamic] 780 [#]de dano de veneno por 2 turnos.",
-      "[**]O alvo recebe -80% mais cura por 2 turnos.",
+      "[**]O alvo recebe -80% menos cura por 2 turnos.",
       "[*]x 2 carga de mana:",
       "[**]Dissipa os reforços do alvo e dos inimigos próximos.",
       "[**]O alvo e todos os inimigos próximos recebem[#Dynamic] 1608 [#]de dano de veneno por 4 turnos.",
-      "[**]O alvo e os inimigos próximos recebem -85% mais cura por 4 turnos.",
+      "[**]O alvo e os inimigos próximos recebem -85% menos cura por 4 turnos.",
       "[*]x 3 carga de mana:",
       "[**]Dissipa os reforços de todos os inimigos.",
       "[**]Todos os inimigos recebem[#Dynamic] 2412 [#]de dano de veneno por 6 turnos.",
-      "[**]Todos os inimigos recebem -90% mais cura por 6 turnos."
+      "[**]Todos os inimigos recebem -90% menos cura por 6 turnos."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Causa 160% de dano a todos os inimigos.",
       "Todos os inimigos recebem -30% de precisão por 4 turnos. (A chance de errar também se aplica às habilidades especiais ofensivas.)",
-      "Todos os inimigos recebem -50% mais cura por 4 turnos. Este efeito não pode ser dissipado."
+      "Todos os inimigos recebem -50% menos cura por 4 turnos. Este efeito não pode ser expurgado."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Ataca o alvo e os inimigos próximos com Golpe Lunar, causando até 1440 de dano. Causa 40% mais dano quando o alvo é do elemento Luz. Essa habilidade especial nunca erra os alvos.",
       "Por 3 turnos, reduz o mana do alvo e dos inimigos próximos em -15% ao fim de cada turno.",
-      "O alvo e os inimigos próximos recebem -50% mais cura por 3 turnos."
+      "O alvo e os inimigos próximos recebem -50% menos cura por 3 turnos."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Causa 415% de dano ao alvo e pouco dano a inimigos próximos.",
-      "O alvo e os inimigos próximos recebem -90% mais cura por 4 turnos."
+      "O alvo e os inimigos próximos recebem -90% menos cura por 4 turnos."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Causa 415% de dano ao alvo e pouco dano a inimigos próximos.",
-      "O alvo e os inimigos próximos recebem -100% mais cura por 4 turnos.",
+      "O alvo e os inimigos próximos recebem -100% menos cura por 4 turnos.",
       "O alvo e todos os inimigos próximos recebem[#Dynamic] 204 [#]de dano de água por 4 turnos."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Causa 150% de dano a todos os inimigos.",
       "Reduz em 100 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 100.)",
-      "Todos os inimigos recebem -50% mais cura por 4 turnos."
+      "Todos os inimigos recebem -50% menos cura por 4 turnos."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Causa 180% de dano a todos os inimigos.",
       "Reduz em 150 o limite de vida de todos os inimigos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 150.)",
-      "Todos os inimigos recebem -55% mais cura por 4 turnos.",
+      "Todos os inimigos recebem -55% menos cura por 4 turnos.",
       "Causa dano extra contra Luz."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Causa 280% de dano ao alvo e inimigos próximos.",
       "Reduz o mana do alvo e inimigos próximos em 15%.",
-      "O alvo e os inimigos próximos recebem -75% mais cura por 3 turnos."
+      "O alvo e os inimigos próximos recebem -75% menos cura por 3 turnos."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Causa 280% de dano ao alvo.",
       "O alvo recebe[#Dynamic] 104 [#]de dano de areia por 4 turnos.",
-      "O alvo recebe -100% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "O alvo recebe -100% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Causa 200% de dano a todos os inimigos.",
       "Todos os inimigos recebem[#Dynamic] 381 [#]de dano de areia por 3 turnos.",
-      "Todos os inimigos recebem -50% mais cura por 3 turnos. Este efeito não pode ser dissipado.",
+      "Todos os inimigos recebem -50% menos cura por 3 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status de todos os aliados."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Causa 185% de dano ao alvo e inimigos próximos.",
       "O alvo e todos os inimigos próximos recebem[#Dynamic] 402 [#]de dano de areia por 3 turnos.",
-      "O alvo e os inimigos próximos recebem -75% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "O alvo e os inimigos próximos recebem -75% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Causa 185% de dano ao alvo e inimigos próximos.",
       "O alvo e todos os inimigos próximos recebem[#Dynamic] 568 [#]de dano de água por 4 turnos.",
-      "O alvo e os inimigos próximos recebem -75% mais cura por 4 turnos. Este efeito não pode ser dissipado.",
+      "O alvo e os inimigos próximos recebem -75% menos cura por 4 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador e dos aliados próximos."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Todos os inimigos recebem[#Dynamic] 306 [#]de dano de areia por 3 turnos.",
-      "Todos os inimigos recebem -50% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "Todos os inimigos recebem -50% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status de todos os aliados."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Causa 130% de dano a todos os inimigos.",
       "Todos os inimigos recebem[#Dynamic] 92 [#]de dano de areia por 4 turnos.",
-      "Todos os inimigos recebem -50% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "Todos os inimigos recebem -50% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Causa 235% de dano ao alvo e pouco dano a inimigos próximos.",
       "O alvo e todos os inimigos próximos recebem[#Dynamic] 172 [#]de dano de areia por 4 turnos.",
-      "O alvo e os inimigos próximos recebem -75% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "O alvo e os inimigos próximos recebem -75% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Causa 260% de dano ao alvo.",
       "O alvo recebe[#Dynamic] 228 [#]de dano de areia por 4 turnos.",
-      "O alvo recebe -100% mais cura por 2 turnos. Este efeito não pode ser dissipado.",
+      "O alvo recebe -100% menos cura por 2 turnos. Este efeito não pode ser expurgado.",
       "Expurga os males de status do invocador."
      ]
     }
@@ -52147,14 +52147,14 @@
       "A habilidade especial tem um efeito diferente quando carregada com 100% / 200% / 300% de mana:",
       "[*]x 1 carga de mana:",
       "[**]Causa 200% de dano a todos os inimigos.",
-      "[**]Todos os inimigos recebem -25% mais cura por 3 turnos.",
+      "[**]Todos os inimigos recebem -25% menos cura por 3 turnos.",
       "[*]x 2 carga de mana:",
       "[**]Causa 315% de dano a todos os inimigos.",
       "[**]Convoca um demônio Espírito do Estige para todos os inimigos. O demônio causa dano ao alvo com 40% de ataque a cada turno.\n[***]O demônio Espírito do Estige absorve a cura e desaparece depois de absorver cura equivalente a 25% do limite de vida do alvo.",
       "[*]x 3 carga de mana:",
       "[**]Causa 365% de dano a todos os inimigos.",
       "[**]Convoca um demônio Espírito do Estige para todos os inimigos. O demônio causa dano ao alvo com 40% de ataque a cada turno.\n[***]O demônio Espírito do Estige absorve a cura e desaparece depois de absorver cura equivalente a 25% do limite de vida do alvo.",
-      "[**]Todos os inimigos recebem -75% mais cura por 4 turnos."
+      "[**]Todos os inimigos recebem -75% menos cura por 4 turnos."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1 º:",
       "[**]Causa 365% de dano ao alvo e inimigos próximos.",
       "[**]O alvo invoca automaticamente Ataque Irracional em um aliado aleatório, quando o mana está cheio, por 3 turnos. Quando este efeito é acionado, ele é transferido para o aliado atingido, e o temporizador de duração é reiniciado.",
-      "[**]O alvo e os inimigos próximos recebem -50% mais cura por 3 turnos.",
+      "[**]O alvo e os inimigos próximos recebem -50% menos cura por 3 turnos.",
       "[*] 2 º:",
       "[**]Causa 430% de dano ao alvo e inimigos próximos.",
       "[**]O alvo invoca automaticamente Ataque Irracional em um aliado aleatório, quando o mana está cheio, por 4 turnos. Quando este efeito é acionado, ele é transferido para o aliado atingido, e o temporizador de duração é reiniciado.",
-      "[**]O alvo e os inimigos próximos recebem -75% mais cura por 4 turnos."
+      "[**]O alvo e os inimigos próximos recebem -75% menos cura por 4 turnos."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1 º:",
       "[**]Causa 355% de dano ao alvo e inimigos próximos.",
       "[**]O alvo invoca automaticamente Ataque Irracional em um aliado aleatório, quando o mana está cheio, por 3 turnos. Quando este efeito é acionado, ele é transferido para o aliado atingido, e o temporizador de duração é reiniciado.",
-      "[**]O alvo e os inimigos próximos recebem -45% mais cura por 3 turnos.",
+      "[**]O alvo e os inimigos próximos recebem -45% menos cura por 3 turnos.",
       "[*] 2 º:",
       "[**]Causa 450% de dano ao alvo e inimigos próximos.",
       "[**]O alvo invoca automaticamente Ataque Irracional em um aliado aleatório, quando o mana está cheio, por 4 turnos. Quando este efeito é acionado, ele é transferido para o aliado atingido, e o temporizador de duração é reiniciado.",
-      "[**]O alvo e os inimigos próximos recebem -85% mais cura por 4 turnos."
+      "[**]O alvo e os inimigos próximos recebem -85% menos cura por 4 turnos."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Ataca o alvo e os inimigos próximos com Golpe da Nevasca, causando até 2300 de dano. Causa 40% mais dano quando o alvo é do elemento Fogo. Essa habilidade especial nunca erra os alvos.",
       "Reduz em 800 o limite de vida do alvo e dos inimigos próximos. O efeito é mais forte contra alvos com vida reforçada. (A vida máxima não pode ser inferior a 30% da vida máxima original.\n[*] A vida reforçada recebe uma redução adicional de 800.)",
-      "O alvo e os inimigos próximos recebem -70% mais cura por 4 turnos."
+      "O alvo e os inimigos próximos recebem -70% menos cura por 4 turnos."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Atrofia: todos os inimigos recebem -400 de ataque. (Atrofia e Crescimento modificam as pontuações de habilidade dos personagens. O efeito se mantém mesmo quando o personagem é derrotado.\n[*] Efeitos adicionais de Atrofia e Crescimento modificam ainda mais as pontuações de habilidade.\n[*] Expurgos enfraquecem Atrofia em 50%.\n[*] Dissipações enfraquecem Crescimento em 50%.\n[*]Limites de modificação das pontuações de habilidade:\n[*] Mínimo de 30% e máximo de 170% dos valores originais.\n[*] Outros reforços e males são aplicados às pontuações de habilidade modificadas.\n[*] Este efeito é menos eficaz quando ativado por monstros e chefes.)",
-      "Todos os inimigos recebem -80% mais cura por 4 turnos. Este efeito não pode ser dissipado.",
+      "Todos os inimigos recebem -80% menos cura por 4 turnos. Este efeito não pode ser expurgado.",
       "Remove o mal de status expurgável mais recente de todos os aliados e distribui esses males aleatoriamente entre os inimigos.",
       "Expurga os males de status de todos os aliados ao fim de cada turno por 4 turnos."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Restaura 27% da vida de todos os aliados.\n[*] Restaura mais 3% de vida por cada mal de status dos inimigos, até o limite total de 42% de vida.",
       "Remove o mal de status expurgável mais recente de todos os aliados e distribui esses males aleatoriamente entre os inimigos.",
-      "Todos os inimigos recebem -75% mais cura por 3 turnos."
+      "Todos os inimigos recebem -75% menos cura por 3 turnos."
      ]
     }
    ]

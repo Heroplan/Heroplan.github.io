@@ -2395,7 +2395,7 @@
       "Verwijdert oppeppers van het doelwit en vijanden in de buurt.",
       "Brengt 375% schade toe aan het doelwit en vijanden in de buurt.",
       "Het doelwit en de vijanden in de buurt krijgen 3 beurten lang volgelingenverwonding\n[*]Volgelingenverwonding: de gezondheid van de volgelingen van het doelwit wordt verminderd met 50% en de gezondheid van megavolgelingen wordt verminderd met 25% per beurt. (De vermindering wordt toegepast op volgelingen in bezit en alle ontvangen volgelingen terwijl het effect actief is.\n[*] Vermindering heeft alleen invloed op de huidige gezondheid van volgelingen.)",
-      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -80% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -80% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Het doelwit lijdt 270% schade.",
       "Het doelwit krijgt 4 beurten lang -30% verdediging. De effectduur reset als het doelwit wordt genezen.",
-      "Het doelwit geneest 4 beurten lang -40% extra wanneer hij/zij/het wordt genezen."
+      "Het doelwit geneest 4 beurten lang -40% minder wanneer hij/zij/het wordt genezen."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Het doelwit en vijanden in de buurt lijden 290% schade.",
       "De aanval negeert alle verdedigende oppeppers. (Dit geldt ook voor tegenaanvallen.)",
       "Het doelwit en vijanden in de buurt krijgen 3 beurten lang -40% aanvalskracht. De aanvalskracht neemt elke beurt af met -5% , tot minimaal -50%.",
-      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -80% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -80% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -10685,7 +10685,7 @@
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 450% schade.",
       "Het doelwit en vijanden in de buurt lijden gedurende 4 beurten[#Dynamic] 848 [#]vuurschade. De spreukspreker en alle bondgenoten absorberen 50% van de toegebrachte vuurschade als gezondheid.",
-      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -54% extra wanneer ze worden genezen.",
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -54% minder wanneer ze worden genezen.",
       "De spreukspreker krijgt 4 beurten -51% verdediging tegen ijs. Dit effect kan niet worden gezuiverd."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Alle vijanden lijden 230% schade.",
-      "Alle vijanden genezen 3 beurten lang -50% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt."
+      "Alle vijanden genezen 3 beurten lang -50% minder als ze worden genezen. Dit effect kan niet worden gezuiverd."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Vermindert de maximale gezondheid van alle vijanden met 550. Het effect is sterker tegen doelwitten met verhoogde gezondheid. (Max. gezondheid kan niet lager zijn dan 30% van de oorspronkelijke max. gezondheid.\n[*] Gebooste gezondheid wordt verminderd met nog eens 550.)",
-      "Alle vijanden genezen 4 beurten lang -55% extra wanneer ze worden genezen. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
+      "Alle vijanden genezen 4 beurten lang -55% minder wanneer ze worden genezen. Dit effect is hardnekkig. (Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)",
       "Alle vijanden lopen 4 beurten lang, iedere beurt[#Dynamic] 85 [#]-[#Dynamic] 148 [#]vloekschade op. Dit effect is hardnekkig. (De eerste beurt wordt[#Dynamic] 85 [#]schade aangebracht. De schade neemt iedere beurt met 20% toe, tot maximaal[#Dynamic] 148 [#]schade per beurt.\n[*]Elke poging om een hardnekkig effect te verwijderen, te zuiveren of te verplaatsen, vermindert de duur met 1 beurt of verlaagt de overgebleven activeringen met 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Het doelwit lijdt 390% schade.",
       "Het doelwit krijgt -75% trefzekerheid gedurende 2 beurten. (Miskansen gelden ook voor offensieve Speciale vaardigheden.)",
-      "Het doelwit geneest 2 beurten lang -75% extra wanneer hij/zij/het wordt genezen.",
+      "Het doelwit geneest 2 beurten lang -75% minder wanneer hij/zij/het wordt genezen.",
       "Elementenlink geeft alle heilige bondgenoten gedurende 4 beurten 40% verdediging tegen speciale vaardigheden. Dit effect kan niet ongedaan worden gemaakt."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Het doelwit lijdt 455% schade.",
-      "Het doelwit geneest 4 beurten lang -100% extra wanneer hij/zij/het wordt genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit geneest 4 beurten lang -100% minder als het wordt genezen. Dit effect kan niet worden gezuiverd.",
       "De held en bondgenoten in de buurt krijgen 4 beurten lang 94% verdediging tegen Natuur.",
       "Elementenlink herstelt 4 beurten lang 10% manarecuperatie van alle IJs-bondgenoten. Dit effect kan niet ongedaan worden gemaakt. (Beïnvloedt alleen mana die gegenereerd wordt door schilden te combineren of mana die het verdedigingsteam krijgt na afloop van hun beurt.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 405% schade.",
-      "Het doelwit en alle vijanden in de buurt genezen 4 beurten lang -100% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -100% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Het doelwit en vijanden in de buurt krijgen 4 beurten lang -68% verdediging tegen IJs.",
       "Elementenlink herstelt 4 beurten lang 10% manarecuperatie van alle IJs-bondgenoten. Dit effect kan niet ongedaan worden gemaakt. (Beïnvloedt alleen mana die gegenereerd wordt door schilden te combineren of mana die het verdedigingsteam krijgt na afloop van hun beurt.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Het doelwit lijdt 280% schade en vijanden in de buurt worden licht beschadigd.",
-      "Het doelwit en vijanden in de buurt krijgen 3 beurten lang -44% verdediging, en -4% extra elke keer dat ze worden geraakt, tot maximaal -68% verdediging."
+      "Het doelwit en vijanden in de buurt krijgen 3 beurten lang -44% verdediging, en -4% extra afname elke keer dat ze worden geraakt, tot maximaal -68% minder verdediging."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 manalading:",
       "[**]De spreukspreker en bondgenoten in de buurt krijgen 3 beurten lang 45% aanvalskracht, en 20% extra elke keer dat ze worden geraakt, tot maximaal 145% aanvalskracht.",
       "[*]x 2 manalading:",
-      "[**]Het doelwit en vijanden in de buurt krijgen 6 beurten lang -44% verdediging, en -4% extra elke keer dat ze worden geraakt, tot maximaal -68% verdediging."
+      "[**]Het doelwit en vijanden in de buurt krijgen 6 beurten lang -44% verdediging, en -4% extra afname elke keer dat ze worden geraakt, tot maximaal -68% minder verdediging."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Het doelwit lijdt 435% schade.",
       "Roept een botvaldemon aan voor het doelwit. De demon brengt de vijand elke beurt schade toe met 45% aanvalskracht. De schade neemt elke beurt toe met 8% , met een maximum van 93%.\n[*]De botvaldemon absorbeert genezing en verdwijnt als deze het equivalent van 35% van de maximale gezondheid van de eigenaar heeft geabsorbeerd.",
-      "Het doelwit geneest 3 beurten lang -50% extra wanneer hij/zij/het wordt genezen.",
+      "Het doelwit geneest 3 beurten lang -50% minder wanneer hij/zij/het wordt genezen.",
       "Verwijdert oppeppers van het doelwit aan het eind van elke beurt gedurende 3 beurten."
      ]
     }
@@ -35438,11 +35438,11 @@
       "[*]x 1 manalading:",
       "[**]Verwijdert oppeppers van het doelwit.",
       "[**]Het doelwit lijdt[#Dynamic] 780 [#]gifschade over 2 beurten.",
-      "[**]Het doelwit geneest 2 beurten lang -80% extra wanneer hij/zij/het wordt genezen.",
+      "[**]Het doelwit geneest 2 beurten lang -80% minder wanneer hij/zij/het wordt genezen.",
       "[*]x 2 manalading:",
       "[**]Verwijdert oppeppers van het doelwit en vijanden in de buurt.",
       "[**]Het doelwit en vijanden in de buurt lijden[#Dynamic] 1608 [#]gifschade over 4 beurten.",
-      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -85% extra wanneer ze worden genezen.",
+      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -85% minder wanneer ze worden genezen.",
       "[*]x 3 manalading:",
       "[**]Verwijdert de oppeppers van alle vijanden.",
       "[**]Alle vijanden lijden[#Dynamic] 2412 [#]gifschade over 6 beurten.",
@@ -39233,7 +39233,7 @@
      "lines": [
       "Alle vijanden lijden 160% schade.",
       "Alle vijanden krijgen -30% trefzekerheid gedurende 4 beurten. (Miskansen gelden ook voor offensieve Speciale vaardigheden.)",
-      "Alle vijanden genezen 4 beurten lang -50% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt."
+      "Alle vijanden genezen 4 beurten lang -50% minder als ze worden genezen. Dit effect kan niet worden gezuiverd."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Valt het doelwit en vijanden in de buurt aan met maanopkomstaanval en brengt maximaal 1440 schade toe. Brengt 40% meer schade toe als het doelwit van het element heilig is. Deze speciale vaardigheid mist zijn doel nooit.",
       "Vermindert gedurende 3 beurten de mana van het doelwit en vijanden in de buurt met -15% aan het einde van de beurt.",
-      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -50% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -50% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Het doelwit lijdt 415% schade en vijanden in de buurt worden licht beschadigd.",
-      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -90% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -90% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Het doelwit lijdt 415% schade en vijanden in de buurt worden licht beschadigd.",
-      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -100% extra wanneer ze worden genezen.",
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -100% minder wanneer ze worden genezen.",
       "Het doelwit en vijanden in de buurt lijden[#Dynamic] 204 [#]waterschade gedurende 4 beurten."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 280% schade.",
       "Vermindert de mana met 15% voor het doelwit en vijanden in de buurt.",
-      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -75% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 3 beurten lang -75% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Het doelwit lijdt 280% schade.",
       "Het doelwit lijdt[#Dynamic] 104 [#]zandschade gedurende 4 beurten.",
-      "Het doelwit geneest 2 beurten lang -100% extra wanneer hij/zij/het wordt genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit geneest 2 beurten lang -100% minder als het wordt genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Alle vijanden lijden 200% schade.",
       "Alle vijanden lijden[#Dynamic] 381 [#]zandschade gedurende 3 beurten.",
-      "Alle vijanden genezen 3 beurten lang -50% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Alle vijanden genezen 3 beurten lang -50% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van alle bondgenoten."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 185% schade.",
       "Het doelwit en vijanden in de buurt lijden[#Dynamic] 402 [#]zandschade gedurende 3 beurten.",
-      "Het doelwit en alle vijanden in de buurt genezen 2 beurten lang -75% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit en vijanden in de buurt genezen 2 beurten lang -75% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Het doelwit en vijanden in de buurt lijden 185% schade.",
       "Het doelwit en vijanden in de buurt lijden[#Dynamic] 568 [#]waterschade gedurende 4 beurten.",
-      "Het doelwit en alle vijanden in de buurt genezen 4 beurten lang -75% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -75% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker en alle bondgenoten in de buurt."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Alle vijanden lijden[#Dynamic] 306 [#]zandschade gedurende 3 beurten.",
-      "Alle vijanden genezen 2 beurten lang -50% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Alle vijanden genezen 2 beurten lang -50% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van alle bondgenoten."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Alle vijanden lijden 130% schade.",
       "Alle vijanden lijden[#Dynamic] 92 [#]zandschade gedurende 4 beurten.",
-      "Alle vijanden genezen 2 beurten lang -50% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Alle vijanden genezen 2 beurten lang -50% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Het doelwit lijdt 235% schade en vijanden in de buurt worden licht beschadigd.",
       "Het doelwit en vijanden in de buurt lijden[#Dynamic] 172 [#]zandschade gedurende 4 beurten.",
-      "Het doelwit en alle vijanden in de buurt genezen 2 beurten lang -75% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit en vijanden in de buurt genezen 2 beurten lang -75% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Het doelwit lijdt 260% schade.",
       "Het doelwit lijdt[#Dynamic] 228 [#]zandschade gedurende 4 beurten.",
-      "Het doelwit geneest 2 beurten lang -100% extra wanneer hij/zij/het wordt genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Het doelwit geneest 2 beurten lang -100% minder als het wordt genezen. Dit effect kan niet worden gezuiverd.",
       "Zuivert de statuseffecten van de spreukspreker."
      ]
     }
@@ -53462,11 +53462,11 @@
       "[*] 1 e:",
       "[**]Het doelwit en vijanden in de buurt lijden 365% schade.",
       "[**]Het doelwit gebruikt gedurende 3 beurten automatisch verschuivende hersenloze aanval op een willekeurige bondgenoot wanneer mana vol is. Wanneer dit effect wordt geactiveerd, verschuift het naar de getroffen bondgenoot en wordt de duur vernieuwd.",
-      "[**]Het doelwit en vijanden in de buurt genezen 3 beurten lang -50% extra wanneer ze worden genezen.",
+      "[**]Het doelwit en vijanden in de buurt genezen 3 beurten lang -50% minder wanneer ze worden genezen.",
       "[*] 2 e:",
       "[**]Het doelwit en vijanden in de buurt lijden 430% schade.",
       "[**]Het doelwit gebruikt gedurende 4 beurten automatisch verschuivende hersenloze aanval op een willekeurige bondgenoot wanneer mana vol is. Wanneer dit effect wordt geactiveerd, verschuift het naar de getroffen bondgenoot en wordt de duur vernieuwd.",
-      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -75% extra wanneer ze worden genezen."
+      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -75% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1 e:",
       "[**]Het doelwit en vijanden in de buurt lijden 355% schade.",
       "[**]Het doelwit gebruikt gedurende 3 beurten automatisch verschuivende hersenloze aanval op een willekeurige bondgenoot wanneer mana vol is. Wanneer dit effect wordt geactiveerd, verschuift het naar de getroffen bondgenoot en wordt de duur vernieuwd.",
-      "[**]Het doelwit en vijanden in de buurt genezen 3 beurten lang -45% extra wanneer ze worden genezen.",
+      "[**]Het doelwit en vijanden in de buurt genezen 3 beurten lang -45% minder wanneer ze worden genezen.",
       "[*] 2 e:",
       "[**]Het doelwit en vijanden in de buurt lijden 450% schade.",
       "[**]Het doelwit gebruikt gedurende 4 beurten automatisch verschuivende hersenloze aanval op een willekeurige bondgenoot wanneer mana vol is. Wanneer dit effect wordt geactiveerd, verschuift het naar de getroffen bondgenoot en wordt de duur vernieuwd.",
-      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -85% extra wanneer ze worden genezen."
+      "[**]Het doelwit en vijanden in de buurt genezen 4 beurten lang -85% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Valt het doelwit en vijanden in de buurt aan met vorstvalaanval en brengt maximaal 2300 schade toe. Brengt 40% meer schade toe als het doelwit van het element vuur is. Deze speciale vaardigheid mist zijn doel nooit.",
       "Vermindert de maximale gezondheid van het doelwit en vijanden in de buurt met 800. Het effect is sterker tegen doelwitten met gebooste gezondheid. (Max. gezondheid kan niet lager zijn dan 30% van de oorspronkelijke max. gezondheid.\n[*] Gebooste gezondheid wordt verminderd met nog eens 800.)",
-      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -70% extra wanneer ze worden genezen."
+      "Het doelwit en vijanden in de buurt genezen 4 beurten lang -70% minder wanneer ze worden genezen."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Verwelking: alle vijanden krijgen -400 aanval. (Verwelking en groei passen de vaardigheidsscores van personages aan. Het effect blijft zelfs als het personage verslagen wordt.\n[*]Zuivering verzwakt verwelking met 50%.\n[*]Verwijdering verzwakt groei met 50%.\n[*]Beperkingen voor aangepaste vaardigheidswaarden.\n[*] Verwelking en groei kunnen niet verwijderd of gezuiverd worden.\n[*]Limieten voor aangepaste vaardigheidsscores.\n[*] Min. 30% en max. 170% van hun oorspronkelijke waarden.\n[*] Andere oppeppers en debuffs worden toegepast op aangepaste vaardigheidsscores.\n[*] Dit effect is minder effectief als het geactiveerd wordt door monsters en eindbazen.)",
-      "Alle vijanden genezen 4 beurten lang -80% extra wanneer ze worden genezen. Dit effect kan niet ongedaan worden gemaakt.",
+      "Alle vijanden genezen 4 beurten lang -80% minder als ze worden genezen. Dit effect kan niet worden gezuiverd.",
       "Neemt het laatste zuiverbare statuseffect weg van alle bondgenoten en verdeelt het willekeurig over alle vijanden.",
       "Zuivert 4 beurten lang aan het eind van elke beurt statuseaandoeningen van alle bondgenoten."
      ]

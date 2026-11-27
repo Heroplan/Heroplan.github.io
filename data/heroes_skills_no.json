@@ -839,7 +839,7 @@
       "Denne spesialferdigheten bommer aldri på målet sitt.",
       "Påfører 340% skade på alle fiender.",
       "Alle fiender får -35% mana-generering i 4 runder. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)",
-      "Alle fiender får -85% økning på all helbredelse de mottar i 4 runder."
+      "Alle fiender får -85% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Fjerner økninger fra målet og fiender i nærheten.",
       "Påfører 375% skade på målet og fiender i nærheten.",
       "Målet og fiender i nærheten mottar undersåttsår i 3 runder.\n[*]Undersåttsår: Målets undersåtts helse reduseres med 50%, og megaundersått sin helse reduseres med 25% hver runde. (Reduksjonen brukes på eide undersåtter og mottatte undersåtter mens effekten er aktiv.\n[*] Reduksjonen påvirker bare undersåtters nåværende helse.)",
-      "Målet og fiender i nærheten får -80% økning på all helbredelse de mottar i 3 runder."
+      "Målet og fiender i nærheten får -80% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Påfør 270% skade på målet.",
       "Målet får -30% forsvar i 4 runder. Effektvarigheten tilbakestilles dersom målet helbredes.",
-      "Målet får -40% økning på all helbredelse de mottar i 4 runder."
+      "Målet får -40% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Øker helsen til alle allierte med 500. Økt helse kan overskride maks HP.",
       "Reduserer maksimal helse for alle fiender med 500. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 500.)",
       "Påfører 275% skade på alle fiender.",
-      "Alle fiender får -75% økning på all helbredelse de mottar i 3 runder."
+      "Alle fiender får -75% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Få tilbake 32% helse til alle allierte.",
-      "Alle fiender får -50% økning på all helbredelse de mottar i 4 runder."
+      "Alle fiender får -50% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Påfører 290% skade på målet og fiender i nærheten.",
       "Angrepet forbigår defensive økninger. (Dette inkluderer motangrep.)",
       "Målet og fiender i nærheten får -40% angrep i 3 runder. Angrepet reduseres med -5% hver runde opptil -50%.",
-      "Målet og fiender i nærheten får -80% økning på all helbredelse de mottar i 3 runder."
+      "Målet og fiender i nærheten får -80% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Renser bort statuslidelser fra alle allierte på en trygg måte. (Trygg rensing forbigår sekundære effekter, som skade ved fjerning, fra de fjernede statuslidelsene. Eksterne effekter, som passive ferdigheter og familieeffekter, kan fortsatt aktiveres.)",
       "Påfører 325% skade på alle fiender.",
-      "Alle fiender får -50% økning på all helbredelse de mottar i 4 runder.",
+      "Alle fiender får -50% reduksjon på all helbredelse de mottar i 4 runder.",
       "Alle fiender kan ikke få statuslidelsene sine fjernet eller flyttet av spesialferdigheter i 4 runder. (Denne effekten hindrer også rensing og flytting av seg selv.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Påfører 450% skade på målet og fiender i nærheten.",
       "Målet og fiender i nærheten tar[#Dynamic] 848 [#]brannskade over 4 runder. Brukeren og alle dens allierte absorberer 50% av påført brannskade som helse.",
-      "Målet og fiender i nærheten får -54% økning på all helbredelse de mottar i 4 runder.",
+      "Målet og fiender i nærheten får -54% reduksjon på all helbredelse de mottar i 4 runder.",
       "Brukeren får -51% forsvar mot is i 4 runder. Denne effekten kan ikke renses."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Påfører 230% skade på alle fiender.",
-      "Alle fiender får -50% økning for all helbredelse de mottar i 3 runder. Denne effekten kan ikke fjernes."
+      "Alle fiender får -50% reduksjon for all helbredelse de mottar i 3 runder. Denne effekten kan ikke renses bort."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Påfører 245% skade på alle fiender.",
       "Påfører 490% skade på undersåtter og djevelpåkallere.",
-      "Alle fiender får -50% økning på all helbredelse de mottar i 4 runder."
+      "Alle fiender får -50% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Reduserer maksimal helse for alle fiender med 550. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 550.)",
-      "Alle fiender får -55% økning på all helbredelse de mottar i 4 runder. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
+      "Alle fiender får -55% reduksjon på all helbredelse de mottar i 4 runder. Denne effekten er sta. (Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)",
       "Alle fiender tar[#Dynamic] 85 [#]–[#Dynamic] 148 [#]økt forbannelsesskade hver runde i 4 runder. Denne effekten er sta. (Den første gangen påføres[#Dynamic] 85 [#]skade. Skaden øker med 20% hver runde, opptil[#Dynamic] 148 [#]skade per runde.\n[*]Hvert forsøk på å fjerne, rense eller flytte en sta-effekt reduserer varigheten med 1 runde eller reduserer aktiveringene igjen med 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Påfør 390% skade på målet.",
       "Målet får -75% treffsikkerhet i 2 runder. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)",
-      "Målet får -75% økning på all helbredelse de mottar i 2 runder.",
+      "Målet får -75% reduksjon på all helbredelse de mottar i 2 runder.",
       "Elementlink gir alle hellig-allierte 40% forsvar mot spesialferdigheter i 4 runder. Denne effekten kan ikke fjernes."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Påfør 455% skade på målet.",
-      "Målet får -100% økning for all helbredelse de mottar i 4 runder. Denne effekten kan ikke fjernes.",
+      "Målet får -100% reduksjon for all helbredelse de mottar i 4 runder. Denne effekten kan ikke renses bort.",
       "Brukeren og allierte i nærheten får 94% forsvar mot natur i 4 runder.",
       "Elementlink gir 10% managenerering til alle is-allierte i 4 runder. Denne effekten kan ikke fjernes. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Påfører 405% skade på målet og fiender i nærheten.",
-      "Målet og fiender i nærheten får -100% økning for all helbredelse de mottar i 4 runder. Denne effekten kan ikke fjernes.",
+      "Målet og fiender i nærheten får -100% reduksjon for all helbredelse de mottar i 4 runder. Denne effekten kan ikke renses bort.",
       "Målet og fiender i nærheten får -68% forsvar mot is i 4 runder.",
       "Elementlink gir 10% managenerering til alle is-allierte i 4 runder. Denne effekten kan ikke fjernes. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Påfører 280% skade på målet og mindre skade på fiender i nærheten.",
-      "Målet og fiender i nærheten får -44% forsvar, og ytterligere -4% økning hver gang de treffes i 3 runder, opp til -68% forsvar."
+      "Målet og fiender i nærheten får -44% forsvar, og ytterligere -4% reduksjon hver gang de treffes i 3 runder, ned til -68% forsvar."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]x 2 manaladning",
       "[**]Reduserer maksimal helse for alle fiender med 900. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[***]Økt helse reduseres med ytterligere 900.)",
       "[**]Alle fiender får -58% forsvar mot spesialferdigheter i 5 runder.",
-      "[**]Alle fiender får -45% økning på all helbredelse de mottar i 5 runder."
+      "[**]Alle fiender får -45% reduksjon på all helbredelse de mottar i 5 runder."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 manaladning",
       "[**]Brukeren og allierte i nærheten får 45% angrep og ytterligere 20% økning hver gang de treffes gjennom 3 runder, opptil 145% angrep.",
       "[*]x 2 manaladning",
-      "[**]Målet og fiender i nærheten får -44% forsvar, og ytterligere -4% økning hver gang de treffes i 6 runder, opp til -68% forsvar."
+      "[**]Målet og fiender i nærheten får -44% forsvar, og ytterligere -4% reduksjon hver gang de treffes i 6 runder, ned til -68% forsvar."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Fjerner økninger fra alle fiender.",
       "[**]Alle fiender tar[#Dynamic] 1405 [#]sandskade over 5 runder.",
       "[**]Alle fiender får -50% angrep i 5 runder.",
-      "[**]Alle fiender får -45% økning på all helbredelse de mottar i 5 runder."
+      "[**]Alle fiender får -45% reduksjon på all helbredelse de mottar i 5 runder."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Påfør 435% skade på målet.",
       "Påkaller en beinfelledjevel for målet. Djevelen skader fienden med 45% angrep hver runde. Skaden øker med 8% hver runde, inntil 93%.\n[*]Beinfelledjevelen absorberer helbredelse og forsvinner når den har absorbert helse tilsvarende 35% av eierens maks helse.",
-      "Målet får -50% økning på all helbredelse de mottar i 3 runder.",
+      "Målet får -50% reduksjon på all helbredelse de mottar i 3 runder.",
       "Fjerner økninger fra målet ved slutten av hver tur, i 3 runder."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Påfører 325% skade på alle fiender.",
       "Alle fiender tar[#Dynamic] 364 [#]blødeskade gjennom 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger.",
-      "Alle fiender får -75% økning på all helbredelse de mottar i 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger.",
+      "Alle fiender får -75% reduksjon på all helbredelse de mottar i 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger.",
       "Alle fiender får -35% treffsikkerhet i 4 runder. Mot mørke-figurer kan ikke denne effekten renses bort og varer 2 runder lenger. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)",
       "Påfører ekstra skade mot mørke."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Påfører 330% skade på alle fiender.",
-      "Alle fiender får -70% økning på all helbredelse de mottar i 3 runder.",
+      "Alle fiender får -70% reduksjon på all helbredelse de mottar i 3 runder.",
       "Alle fiender tar[#Dynamic] 450 [#]blødeskade gjennom 2 runder. Mot is-figurer kan ikke denne effekten renses bort og varer 2 runder lenger.",
       "Elementlink gir 10% managenerering til alle natur-allierte i 4 runder. Denne effekten kan ikke fjernes. (Påvirker kun mana generert fra matchende skjold eller mana fått av forsvarsteamet ved slutten av runden deres.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]x 1 manaladning",
       "[**]Påfører 160% skade på alle fiender.",
       "[**]Alle fiender tar[#Dynamic] 256 [#]brannskade over 2 runder.",
-      "[**]Alle fiender får -64% økning på all helbredelse de mottar i 2 runder.",
+      "[**]Alle fiender får -64% reduksjon på all helbredelse de mottar i 2 runder.",
       "[*]x 2 manaladning",
       "[**]Påfører 275% skade på alle fiender.",
       "[**]Alle fiender tar[#Dynamic] 561 [#]brannskade over 3 runder.",
-      "[**]Alle fiender får -74% økning på all helbredelse de mottar i 3 runder.",
+      "[**]Alle fiender får -74% reduksjon på all helbredelse de mottar i 3 runder.",
       "[*]x 3 manaladning",
       "[**]Påfører 340% skade på alle fiender.",
       "[**]Alle fiender tar[#Dynamic] 840 [#]brannskade over 4 runder.",
-      "[**]Alle fiender får -84% økning på all helbredelse de mottar i 4 runder."
+      "[**]Alle fiender får -84% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]x 1 manaladning",
       "[**]Fjerner økninger fra målet.",
       "[**]Målet tar[#Dynamic] 780 [#]giftskade over 2 runder.",
-      "[**]Målet får -80% økning på all helbredelse de mottar i 2 runder.",
+      "[**]Målet får -80% reduksjon på all helbredelse de mottar i 2 runder.",
       "[*]x 2 manaladning",
       "[**]Fjerner økninger fra målet og fiender i nærheten.",
       "[**]Målet og fiender i nærheten tar[#Dynamic] 1608 [#]giftskade over 4 runder.",
-      "[**]Målet og fiender i nærheten får -85% økning på all helbredelse de mottar i 4 runder.",
+      "[**]Målet og fiender i nærheten får -85% reduksjon på all helbredelse de mottar i 4 runder.",
       "[*]x 3 manaladning",
       "[**]Fjerner økninger fra alle fiender.",
       "[**]Alle fiender tar[#Dynamic] 2412 [#]giftskade over 6 runder.",
-      "[**]Alle fiender får -90% økning på all helbredelse de mottar i 6 runder."
+      "[**]Alle fiender får -90% reduksjon på all helbredelse de mottar i 6 runder."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Påfører 160% skade på alle fiender.",
       "Alle fiender får -30% treffsikkerhet i 4 runder. (Sjansen for å bomme gjelder også offensive spesialferdigheter.)",
-      "Alle fiender får -50% økning for all helbredelse de mottar i 4 runder. Denne effekten kan ikke fjernes."
+      "Alle fiender får -50% reduksjon for all helbredelse de mottar i 4 runder. Denne effekten kan ikke renses bort."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Angriper målet og fiender i nærheten med måneskinnangrep, som påfører opptil 1440 skade. Påfører 40% mer skade hvis målet er av hellig-element. Denne spesialferdigheten bommer aldri på målene sine.",
       "I 3 runder reduseres manaen til målet og fiender i nærheten med -15% ved slutten av runden.",
-      "Målet og fiender i nærheten får -50% økning på all helbredelse de mottar i 3 runder."
+      "Målet og fiender i nærheten får -50% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Påfører 415% skade på målet og mindre skade på fiender i nærheten.",
-      "Målet og fiender i nærheten får -90% økning på all helbredelse de mottar i 4 runder."
+      "Målet og fiender i nærheten får -90% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Påfører 415% skade på målet og mindre skade på fiender i nærheten.",
-      "Målet og fiender i nærheten får -100% økning på all helbredelse de mottar i 4 runder.",
+      "Målet og fiender i nærheten får -100% reduksjon på all helbredelse de mottar i 4 runder.",
       "Målet og fiender i nærheten tar[#Dynamic] 204 [#]vannskade over 4 runder."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Påfører 150% skade på alle fiender.",
       "Reduserer maksimal helse for alle fiender med 100. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 100.)",
-      "Alle fiender får -50% økning på all helbredelse de mottar i 4 runder."
+      "Alle fiender får -50% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Påfører 180% skade på alle fiender.",
       "Reduserer maksimal helse for alle fiender med 150. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 150.)",
-      "Alle fiender får -55% økning på all helbredelse de mottar i 4 runder.",
+      "Alle fiender får -55% reduksjon på all helbredelse de mottar i 4 runder.",
       "Påfører ekstra skade mot hellig."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Påfører 280% skade på målet og fiender i nærheten.",
       "Reduserer mana for målet og fiender i nærheten med 15%.",
-      "Målet og fiender i nærheten får -75% økning på all helbredelse de mottar i 3 runder."
+      "Målet og fiender i nærheten får -75% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Påfør 280% skade på målet.",
       "Målet tar[#Dynamic] 104 [#]sandskade over 4 runder.",
-      "Målet får -100% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Målet får -100% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Påfører 200% skade på alle fiender.",
       "Alle fiender tar[#Dynamic] 381 [#]sandskade over 3 runder.",
-      "Alle fiender får -50% økning for all helbredelse de mottar i 3 runder. Denne effekten kan ikke fjernes.",
+      "Alle fiender får -50% reduksjon for all helbredelse de mottar i 3 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra alle allierte."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Påfører 185% skade på målet og fiender i nærheten.",
       "Målet og fiender i nærheten tar[#Dynamic] 402 [#]sandskade over 3 runder.",
-      "Målet og fiender i nærheten får -75% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Målet og fiender i nærheten får -75% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Påfører 185% skade på målet og fiender i nærheten.",
       "Målet og fiender i nærheten tar[#Dynamic] 568 [#]vannskade over 4 runder.",
-      "Målet og fiender i nærheten får -75% økning for all helbredelse de mottar i 4 runder. Denne effekten kan ikke fjernes.",
+      "Målet og fiender i nærheten får -75% reduksjon for all helbredelse de mottar i 4 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren og allierte i nærheten."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Alle fiender tar[#Dynamic] 306 [#]sandskade over 3 runder.",
-      "Alle fiender får -50% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Alle fiender får -50% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra alle allierte."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Påfører 130% skade på alle fiender.",
       "Alle fiender tar[#Dynamic] 92 [#]sandskade over 4 runder.",
-      "Alle fiender får -50% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Alle fiender får -50% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Påfører 235% skade på målet og mindre skade på fiender i nærheten.",
       "Målet og fiender i nærheten tar[#Dynamic] 172 [#]sandskade over 4 runder.",
-      "Målet og fiender i nærheten får -75% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Målet og fiender i nærheten får -75% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Påfør 260% skade på målet.",
       "Målet tar[#Dynamic] 228 [#]sandskade over 4 runder.",
-      "Målet får -100% økning for all helbredelse de mottar i 2 runder. Denne effekten kan ikke fjernes.",
+      "Målet får -100% reduksjon for all helbredelse de mottar i 2 runder. Denne effekten kan ikke renses bort.",
       "Renser bort statuslidelser fra brukeren."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Spesialferdighet har en annen effekt når den er ladet med 100% / 200% / 300% mana:",
       "[*]x 1 manaladning",
       "[**]Påfører 200% skade på alle fiender.",
-      "[**]Alle fiender får -25% økning på all helbredelse de mottar i 3 runder.",
+      "[**]Alle fiender får -25% reduksjon på all helbredelse de mottar i 3 runder.",
       "[*]x 2 manaladning",
       "[**]Påfører 315% skade på alle fiender.",
       "[**]Påkaller en Styx-ånddjevel for alle fiender. Djevelen skader målet sitt med 40% angrep hver runde.\n[***]Styx-ånddjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 25% av målets maksimale helse.",
       "[*]x 3 manaladning",
       "[**]Påfører 365% skade på alle fiender.",
       "[**]Påkaller en Styx-ånddjevel for alle fiender. Djevelen skader målet sitt med 40% angrep hver runde.\n[***]Styx-ånddjevelen absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 25% av målets maksimale helse.",
-      "[**]Alle fiender får -75% økning på all helbredelse de mottar i 4 runder."
+      "[**]Alle fiender får -75% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1.:",
       "[**]Påfører 365% skade på målet og fiender i nærheten.",
       "[**]Målet påfører automatisk skiftende tankeløst angrep på en tilfeldig alliert når mana er full over 3 runder. Når denne effekten utløses, skifter den til den allierte truffet og varigheten oppdateres",
-      "[**]Målet og fiender i nærheten får -50% økning på all helbredelse de mottar i 3 runder.",
+      "[**]Målet og fiender i nærheten får -50% reduksjon på all helbredelse de mottar i 3 runder.",
       "[*] 2.:",
       "[**]Påfører 430% skade på målet og fiender i nærheten.",
       "[**]Målet påfører automatisk skiftende tankeløst angrep på en tilfeldig alliert når mana er full over 4 runder. Når denne effekten utløses, skifter den til den allierte truffet og varigheten oppdateres",
-      "[**]Målet og fiender i nærheten får -75% økning på all helbredelse de mottar i 4 runder."
+      "[**]Målet og fiender i nærheten får -75% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1.:",
       "[**]Påfører 355% skade på målet og fiender i nærheten.",
       "[**]Målet påfører automatisk skiftende tankeløst angrep på en tilfeldig alliert når mana er full over 3 runder. Når denne effekten utløses, skifter den til den allierte truffet og varigheten oppdateres",
-      "[**]Målet og fiender i nærheten får -45% økning på all helbredelse de mottar i 3 runder.",
+      "[**]Målet og fiender i nærheten får -45% reduksjon på all helbredelse de mottar i 3 runder.",
       "[*] 2.:",
       "[**]Påfører 450% skade på målet og fiender i nærheten.",
       "[**]Målet påfører automatisk skiftende tankeløst angrep på en tilfeldig alliert når mana er full over 4 runder. Når denne effekten utløses, skifter den til den allierte truffet og varigheten oppdateres",
-      "[**]Målet og fiender i nærheten får -85% økning på all helbredelse de mottar i 4 runder."
+      "[**]Målet og fiender i nærheten får -85% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Angriper målet og fiender i nærheten med frostfallangrep, som påfører opptil 2300 skade. Påfører 40% mer skade hvis målet er av ild-element. Denne spesialferdigheten bommer aldri på målet.",
       "Reduserer maksimale helse for målet og alle fiender i nærheten 800. Effekten er sterkere mot helter med økt helse. (Maksimal helse kan ikke være mindre enn 30% av opprinnelig maksiamle helse.\n[*] Økt helse reduseres med ytterligere 800.)",
-      "Målet og fiender i nærheten får -70% økning på all helbredelse de mottar i 4 runder."
+      "Målet og fiender i nærheten får -70% reduksjon på all helbredelse de mottar i 4 runder."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Visne: Alle allfiendererte får -400 angrep. (Visne og vekst modifiserer figurens egenskapsscore. Effekten blir værende selv om figuren beseires.\n[*]Ekstra visne- eller vekst-effekter modifiserer egenskapsscorer ytterligere.\n[*]Rensing svekker visne med 50%.\n[*]Fjerning svekker vekst med 50%.\n[*]Grenser for modifisert egenskapsscorer.\n[*]Min. 30% og maks. 170% av deres originalverdier.\n[*]Andre økninger og svekkelser brukes på modifiserte egenskapsscorer.\n[*]Denne effekten er mindre effektiv når aktivert av monstre og sjefer.)",
-      "Alle fiender får -80% økning for all helbredelse de mottar i 4 runder. Denne effekten kan ikke fjernes.",
+      "Alle fiender får -80% reduksjon for all helbredelse de mottar i 4 runder. Denne effekten kan ikke renses bort.",
       "Fjerner nyeste statuslidelse som kan renses bort, fra alle allierte og fordeler dem tilfeldig på fiendene.",
       "Renser bort statuslidelser fra alle allierte etter hver runde i 4 runder."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Gjenvinner 27% helse for alle allierte.\n[*]Gjenvinner ytterligere 3% helse for hver statuslidelse på fiender, opptil 42% helse til sammen.",
       "Fjerner nyeste statuslidelse som kan renses bort, fra alle allierte og fordeler dem tilfeldig på fiendene.",
-      "Alle fiender får -75% økning på all helbredelse de mottar i 3 runder."
+      "Alle fiender får -75% reduksjon på all helbredelse de mottar i 3 runder."
      ]
     }
    ]

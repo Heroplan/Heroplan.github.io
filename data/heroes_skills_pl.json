@@ -839,7 +839,7 @@
       "Ta umiejętność specjalna nigdy nie chybia obranego celu.",
       "Zadaje 340% obrażeń wszystkim przeciwnikom.",
       "Wszyscy wrogowie otrzymują -35% regeneracji many przez 4 tur(y). (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)",
-      "Wszyscy wrogowie otrzymują -85% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -85% przez 4 tur(y)."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Odwołuje wzmocnienia celu i pobliskich wrogów.",
       "Zadaje 375% obrażeń celowi i pobliskim wrogom.",
       "Na cel i pobliskich wrogów nałożone zostaje zranienie pomocnika na 3 tur(y).\n[*]Zranienie pomocnika: Zdrowie pomocników celu zostaje zmniejszone o 50% , a zdrowie mega pomocników o 25% co turę. (Zmniejszenie jest nakładane na posiadanych pomocników i na wszelkich pomocników otrzymanych, gdy efekt jest aktywny.\n[*] Zmniejszenie wpływa tylko na bieżące zdrowie pomocników.)",
-      "Cel i pobliscy wrogowie otrzymują -80% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -80% przez 3 tur(y)."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Zadaje 270% obrażeń celowi.",
       "Cel otrzymuje -30% do obrony przez 4 tur(y). Czas trwania efektu resetuje się w razie wyleczenia celu.",
-      "Cel otrzymuje -40% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja celu spada o -40% przez 4 tur(y)."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Wzmacnia zdrowie wszystkich sojuszników o 500. Wzmocnione zdrowie może przekroczyć maks. liczbę PŻ.",
       "Obniża maks. poziom zdrowia wszystkich wrogów o 500 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 500 pkt.)",
       "Zadaje 275% obrażeń wszystkim przeciwnikom.",
-      "Wszyscy wrogowie otrzymują -75% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -75% przez 3 tur(y)."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Regeneruje 32% zdrowia wszystkich sojuszników.",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -50% przez 4 tur(y)."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Zadaje 290% obrażeń celowi i pobliskim wrogom.",
       "Atak pomija efekty obronne. (Obejmuje to także kontrataki.)",
       "Cel i pobliscy wrogowie otrzymują -40% do ataku na czas 3 tur. Atak zmniejsza się o -5% w każdej turze, maksymalnie do -50%.",
-      "Cel i pobliscy wrogowie otrzymują -80% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -80% przez 3 tur(y)."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Bezpiecznie oczyszcza status wszystkich sojuszników z dolegliwości. (Bezpieczne oczyszczenie pomija efekty drugorzędne, takie jak obrażenia nakładane przez usuwane osłabienia statusu. Efekty zewnętrzne, takie jak umiejętności pasywne i efekty rodziny wciąż mogą zostać aktywowane.)",
       "Zadaje 325% obrażeń wszystkim przeciwnikom.",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji przez 4 tur(y).",
+      "Regeneracja wszystkich wrogów spada o -50% przez 4 tur(y).",
       "Dolegliwości ze statusu wszystkich przeciwników nie mogą zostać oczyszczone ani przeniesione umiejętnościami specjalnymi przez 4 tur(y). (Efekt ten uniemożliwia również jego oczyszczenie lub przeniesienie.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Zadaje 450% obrażeń celowi i pobliskim wrogom.",
       "Cel oraz pobliscy wrogowie odnoszą[#Dynamic] 848 [#]pkt. obrażeń od oparzeń przez okres 4 tur. Rzucający i wszyscy sojusznicy pochłaniają 50% zadanych obrażeń od oparzeń w postaci zdrowia.",
-      "Cel i pobliscy wrogowie otrzymują -54% więcej każdej regeneracji przez 4 tur(y).",
+      "Regeneracja celu i pobliskich wrogów spada o -54% przez 4 tur(y).",
       "Bohater otrzymuje -51% do obrony przeciwko lodowi przez 4 tur(y). Oczyszczenie tego efektu nie jest możliwe."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Zadaje 230% obrażeń wszystkim przeciwnikom.",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji zdrowia przez 3 tur(y). Efekt nie może być odwołany czarami."
+      "Regeneracja zdrowia wszystkich wrogów spada o -50% przez 3 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Zadaje 245% obrażeń wszystkim przeciwnikom.",
       "Zadaje 490% obrażeń pomocnikom i przywoływaczom potworów.",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -50% przez 4 tur(y)."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Obniża maks. poziom zdrowia wszystkich wrogów o 550 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 550 pkt.)",
-      "Wszyscy wrogowie otrzymują -55% więcej każdej regeneracji przez 4 tur(y). (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
+      "Regeneracja zdrowia wszystkich wrogów spada o -55% przez 4 tur(y). Ten efekt jest nieustępliwy. (Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)",
       "Wszyscy wrogowie odnoszą[#Dynamic] 85 [#]-[#Dynamic] 148 [#]pkt. narastających obrażeń od klątwy przez okres 4 tur. Ten efekt jest nieustępliwy. (W pierwszej turze zadanych zostaje[#Dynamic] 85 [#]pkt. obrażeń. Obrażenia rosną co turę o 20% , do maksymalnie[#Dynamic] 148 [#]pkt. obrażeń na turę.\n[*]Każda próba rozproszenia, oczyszczenia lub przeniesienia efektu nieustępliwego skraca czas trwania o 1 turę lub zmniejsza liczbę pozostałych aktywacji o 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Zadaje 390% obrażeń celowi.",
       "Cel otrzymuje -75% do precyzji przez okres 2 tur. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)",
-      "Cel otrzymuje -75% więcej każdej regeneracji przez 2 tur(y).",
+      "Regeneracja celu spada o -75% przez 2 tur(y).",
       "Spoiwo żywiołów daje wszystkim sojusznikom światłości 40% do obrony przeciw specjalnym umiejętnościom przez 4 tur(y). Efekt nie może być odwołany czarami."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Zadaje 455% obrażeń celowi.",
-      "Cel otrzymuje -100% więcej każdej regeneracji zdrowia przez 4 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu spada o -100% przez 4 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Bohater i pobliscy sojusznicy otrzymują 94% do obrony przeciwko naturze przez 4 tur(y).",
       "Spoiwo żywiołów daje 10% regeneracji many wszystkim sojusznikom lodu przez 4 tur(y). Efekt nie może być odwołany czarami. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Zadaje 405% obrażeń celowi i pobliskim wrogom.",
-      "Cel i pobliscy wrogowie otrzymują -100% więcej każdej regeneracji zdrowia przez 4 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu i pobliskich wrogów spada o -100% przez 4 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Cel i pobliscy wrogowie otrzymują -68% do obrony przeciwko lodowi przez 4 tur(y).",
       "Spoiwo żywiołów daje 10% regeneracji many wszystkim sojusznikom lodu przez 4 tur(y). Efekt nie może być odwołany czarami. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Zadaje 280% obrażeń celowi i niewielkie obrażenia pobliskim wrogom.",
-      "Cel i pobliscy wrogowie otrzymują -44% do obrony i dodatkowe -4% za każde otrzymane trafienie przez 3 tur(y). Obrona może wzrosnąć maksymalnie do -68%."
+      "Cel i pobliscy wrogowie tracą -44% obrony i dodatkowe -4% za każde otrzymane trafienie przez 3 tur(y). Obrona może obniżyć się maksymalnie do -68%."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]Ładunek many x 2:",
       "[**]Obniża maks. poziom zdrowia wszystkich wrogów o 900 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[***]Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 900 pkt.)",
       "[**]Wszyscy wrogowie otrzymują -58% do obrony przeciwko umiejętnościom specjalnym przez 5 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -45% więcej każdej regeneracji przez 5 tur(y)."
+      "[**]Regeneracja wszystkich wrogów spada o -45% przez 5 tur(y)."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]Ładunek many x 1:",
       "[**]Rzucający i pobliscy sojusznicy zyskują 45% do ataku i dodatkowe 20% za każde otrzymane trafienie przez 3 tur(y). Atak może wzrosnąć maksymalnie do 145%.",
       "[*]Ładunek many x 2:",
-      "[**]Cel i pobliscy wrogowie otrzymują -44% do obrony i dodatkowe -4% za każde otrzymane trafienie przez 6 tur(y). Obrona może wzrosnąć maksymalnie do -68%."
+      "[**]Cel i pobliscy wrogowie tracą -44% obrony i dodatkowe -4% za każde otrzymane trafienie przez 6 tur(y). Obrona może obniżyć się maksymalnie do -68%."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Odwołuje wszystkie wzmocnienia wrogów.",
       "[**]Wszyscy przeciwnicy otrzymują[#Dynamic] 1405 [#]obrażeń od piasku przez 5 tur(y).",
       "[**]Wszyscy wrogowie otrzymują -50% do ataku przez 5 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -45% więcej każdej regeneracji przez 5 tur(y)."
+      "[**]Regeneracja wszystkich wrogów spada o -45% przez 5 tur(y)."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Zadaje 435% obrażeń celowi.",
       "Wzywa kościaną pułapkę do ataku na cel. Potwór zadaje przeciwnikowi obrażenia o wartości 45% ataku w każdej turze. Obrażenia zwiększają się o 8% co turę, łącznie do maks. 93%.\n[*]Kościana pułapka wysysa efekty leczenia i znika, gdy wchłonie zdrowie równe 35% maksymalnego zdrowia właściciela.",
-      "Cel otrzymuje -50% więcej każdej regeneracji przez 3 tur(y).",
+      "Regeneracja celu spada o -50% przez 3 tur(y).",
       "Odwołuje wzmocnienia celu na końcu każdej tury przez 3 tur(y)."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Zadaje 325% obrażeń wszystkim przeciwnikom.",
       "Wszyscy przeciwnicy otrzymują[#Dynamic] 364 [#]pkt. obrażeń od krwawienia przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności.",
-      "Wszyscy wrogowie otrzymują -75% więcej każdej regeneracji przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności.",
+      "Regeneracja wszystkich wrogów spada o -75% przez 4 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności.",
       "Wszyscy wrogowie otrzymują -35% do precyzji przez okres 4 tur. Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci ciemności. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)",
       "Zadaje dodatkowe obrażenia przeciwko mrokowi."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Zadaje 330% obrażeń wszystkim przeciwnikom.",
-      "Wszyscy wrogowie otrzymują -70% więcej każdej regeneracji przez 3 tur(y).",
+      "Regeneracja wszystkich wrogów spada o -70% przez 3 tur(y).",
       "Wszyscy przeciwnicy otrzymują[#Dynamic] 450 [#]pkt. obrażeń od krwawienia przez 2 tur(y). Tego efektu statusu nie da się usunąć i obowiązuje dłużej o 2 tur(y) w przypadku postaci lodu.",
       "Spoiwo żywiołów daje 10% regeneracji many wszystkim sojusznikom natury przez 4 tur(y). Efekt nie może być odwołany czarami. (Wpływa tylko na manę generowaną przez pasujące tarcze lub manę, którą broniąca się drużyna otrzymuje pod koniec swojej tury.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]Ładunek many x 1:",
       "[**]Zadaje 160% obrażeń wszystkim przeciwnikom.",
       "[**]Wszyscy przeciwnicy otrzymują[#Dynamic] 256 [#]obrażeń od poparzenia przez 2 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -64% więcej każdej regeneracji przez 2 tur(y).",
+      "[**]Regeneracja wszystkich wrogów spada o -64% przez 2 tur(y).",
       "[*]Ładunek many x 2:",
       "[**]Zadaje 275% obrażeń wszystkim przeciwnikom.",
       "[**]Wszyscy przeciwnicy otrzymują[#Dynamic] 561 [#]obrażeń od poparzenia przez 3 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -74% więcej każdej regeneracji przez 3 tur(y).",
+      "[**]Regeneracja wszystkich wrogów spada o -74% przez 3 tur(y).",
       "[*]Ładunek many x 3:",
       "[**]Zadaje 340% obrażeń wszystkim przeciwnikom.",
       "[**]Wszyscy przeciwnicy otrzymują[#Dynamic] 840 [#]obrażeń od poparzenia przez 4 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -84% więcej każdej regeneracji przez 4 tur(y)."
+      "[**]Regeneracja wszystkich wrogów spada o -84% przez 4 tur(y)."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]Ładunek many x 1:",
       "[**]Odwołuje wzmocnienia celu.",
       "[**]Cel otrzymuje[#Dynamic] 780 [#]obrażeń od zatrucia przez 2 tur(y).",
-      "[**]Cel otrzymuje -80% więcej każdej regeneracji przez 2 tur(y).",
+      "[**]Regeneracja celu spada o -80% przez 2 tur(y).",
       "[*]Ładunek many x 2:",
       "[**]Odwołuje wzmocnienia celu i pobliskich wrogów.",
       "[**]Cel i pobliscy wrogowie otrzymują[#Dynamic] 1608 [#]obrażeń od zatrucia przez 4 tur(y).",
-      "[**]Cel i pobliscy wrogowie otrzymują -85% więcej każdej regeneracji przez 4 tur(y).",
+      "[**]Regeneracja celu i pobliskich wrogów spada o -85% przez 4 tur(y).",
       "[*]Ładunek many x 3:",
       "[**]Odwołuje wszystkie wzmocnienia wrogów.",
       "[**]Wszyscy przeciwnicy otrzymują[#Dynamic] 2412 [#]obrażeń od zatrucia przez 6 tur(y).",
-      "[**]Wszyscy wrogowie otrzymują -90% więcej każdej regeneracji przez 6 tur(y)."
+      "[**]Regeneracja wszystkich wrogów spada o -90% przez 6 tur(y)."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Zadaje 160% obrażeń wszystkim przeciwnikom.",
       "Wszyscy wrogowie otrzymują -30% do precyzji przez okres 4 tur. (Obniżenie precyzji dotyczy również ofensywnych umiejętności specjalnych.)",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji zdrowia przez 4 tur(y). Efekt nie może być odwołany czarami."
+      "Regeneracja zdrowia wszystkich wrogów spada o -50% przez 4 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Atakuje cel i pobliskich wrogów księżycowym ciosem, zadając do 1440 pkt. obrażeń. Zadaje o 40% więcej obrażeń celom światłości. Ta umiejętność specjalna nigdy nie chybia obranego celu.",
       "Przez okres 3 tur zmniejsza manę celu i pobliskich wrogów o -15% na koniec każdej tury.",
-      "Cel i pobliscy wrogowie otrzymują -50% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -50% przez 3 tur(y)."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Zadaje 415% obrażeń celowi i niewielkie obrażenia pobliskim wrogom.",
-      "Cel i pobliscy wrogowie otrzymują -90% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -90% przez 4 tur(y)."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Zadaje 415% obrażeń celowi i niewielkie obrażenia pobliskim wrogom.",
-      "Cel i pobliscy wrogowie otrzymują -100% więcej każdej regeneracji przez 4 tur(y).",
+      "Regeneracja celu i pobliskich wrogów spada o -100% przez 4 tur(y).",
       "Cel i pobliscy wrogowie otrzymują[#Dynamic] 204 [#]obrażeń od wody w ciągu 4 tur."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Zadaje 150% obrażeń wszystkim przeciwnikom.",
       "Obniża maks. poziom zdrowia wszystkich wrogów o 100 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 100 pkt.)",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -50% przez 4 tur(y)."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Zadaje 180% obrażeń wszystkim przeciwnikom.",
       "Obniża maks. poziom zdrowia wszystkich wrogów o 150 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 150 pkt.)",
-      "Wszyscy wrogowie otrzymują -55% więcej każdej regeneracji przez 4 tur(y).",
+      "Regeneracja wszystkich wrogów spada o -55% przez 4 tur(y).",
       "Zadaje dodatkowe obrażenia przeciwko światłości."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Zadaje 280% obrażeń celowi i pobliskim wrogom.",
       "Zmniejsza manę celu i pobliskich wrogów o 15%.",
-      "Cel i pobliscy wrogowie otrzymują -75% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -75% przez 3 tur(y)."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Zadaje 280% obrażeń celowi.",
       "Cel otrzymuje[#Dynamic] 104 [#]obrażeń od piasku przez 4 tur(y).",
-      "Cel otrzymuje -100% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu spada o -100% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego z dolegliwości."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Zadaje 200% obrażeń wszystkim przeciwnikom.",
       "Wszyscy przeciwnicy otrzymują[#Dynamic] 381 [#]obrażeń od piasku przez 3 tur(y).",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji zdrowia przez 3 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia wszystkich wrogów spada o -50% przez 3 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status wszystkich sojuszników z dolegliwości."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Zadaje 185% obrażeń celowi i pobliskim wrogom.",
       "Cel i pobliscy wrogowie otrzymują[#Dynamic] 402 [#]obrażeń od piasku przez 3 tur(y).",
-      "Cel i pobliscy wrogowie otrzymują -75% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu i pobliskich wrogów spada o -75% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego z dolegliwości."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Zadaje 185% obrażeń celowi i pobliskim wrogom.",
       "Cel i pobliscy wrogowie otrzymują[#Dynamic] 568 [#]obrażeń od wody w ciągu 4 tur.",
-      "Cel i pobliscy wrogowie otrzymują -75% więcej każdej regeneracji zdrowia przez 4 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu i pobliskich wrogów spada o -75% przez 4 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego i pobliskich sojuszników z dolegliwości."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Wszyscy przeciwnicy otrzymują[#Dynamic] 306 [#]obrażeń od piasku przez 3 tur(y).",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia wszystkich wrogów spada o -50% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status wszystkich sojuszników z dolegliwości."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Zadaje 130% obrażeń wszystkim przeciwnikom.",
       "Wszyscy przeciwnicy otrzymują[#Dynamic] 92 [#]obrażeń od piasku przez 4 tur(y).",
-      "Wszyscy wrogowie otrzymują -50% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia wszystkich wrogów spada o -50% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego z dolegliwości."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Zadaje 235% obrażeń celowi i niewielkie obrażenia pobliskim wrogom.",
       "Cel i pobliscy wrogowie otrzymują[#Dynamic] 172 [#]obrażeń od piasku przez 4 tur(y).",
-      "Cel i pobliscy wrogowie otrzymują -75% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu i pobliskich wrogów spada o -75% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego z dolegliwości."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Zadaje 260% obrażeń celowi.",
       "Cel otrzymuje[#Dynamic] 228 [#]obrażeń od piasku przez 4 tur(y).",
-      "Cel otrzymuje -100% więcej każdej regeneracji zdrowia przez 2 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia celu spada o -100% przez 2 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Oczyszcza status rzucającego z dolegliwości."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Umiejętność specjalna ma różne efekty po naładowaniu 100% / 200% / 300% many:",
       "[*]Ładunek many x 1:",
       "[**]Zadaje 200% obrażeń wszystkim przeciwnikom.",
-      "[**]Wszyscy wrogowie otrzymują -25% więcej każdej regeneracji przez 3 tur(y).",
+      "[**]Regeneracja wszystkich wrogów spada o -25% przez 3 tur(y).",
       "[*]Ładunek many x 2:",
       "[**]Zadaje 315% obrażeń wszystkim przeciwnikom.",
       "[**]Przywołuje potwornego ducha Styksu na wszystkich wrogów. Potwór zadaje celowi obrażenia o wartości 40% ataku w każdej turze.\n[***]Duch Styksu wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 25% maksymalnego zdrowia celu.",
       "[*]Ładunek many x 3:",
       "[**]Zadaje 365% obrażeń wszystkim przeciwnikom.",
       "[**]Przywołuje potwornego ducha Styksu na wszystkich wrogów. Potwór zadaje celowi obrażenia o wartości 40% ataku w każdej turze.\n[***]Duch Styksu wysysa efekty leczenia i znika po wchłonięciu zdrowia równego 25% maksymalnego zdrowia celu.",
-      "[**]Wszyscy wrogowie otrzymują -75% więcej każdej regeneracji przez 4 tur(y)."
+      "[**]Regeneracja wszystkich wrogów spada o -75% przez 4 tur(y)."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*]Pierwsze:",
       "[**]Zadaje 365% obrażeń celowi i pobliskim wrogom.",
       "[**]Cel automatycznie rzuca Nieobliczalny furiacki atak na losowego sojusznika przez 3 tur(y), jeśli mana jest pełna na początku tury. Po aktywacji efektu migruje on na trafionego sojusznika, a czas trwania odnawia się.",
-      "[**]Cel i pobliscy wrogowie otrzymują -50% więcej każdej regeneracji przez 3 tur(y).",
+      "[**]Regeneracja celu i pobliskich wrogów spada o -50% przez 3 tur(y).",
       "[*]Drugie:",
       "[**]Zadaje 430% obrażeń celowi i pobliskim wrogom.",
       "[**]Cel automatycznie rzuca Nieobliczalny furiacki atak na losowego sojusznika przez 4 tur(y), jeśli mana jest pełna na początku tury. Po aktywacji efektu migruje on na trafionego sojusznika, a czas trwania odnawia się.",
-      "[**]Cel i pobliscy wrogowie otrzymują -75% więcej każdej regeneracji przez 4 tur(y)."
+      "[**]Regeneracja celu i pobliskich wrogów spada o -75% przez 4 tur(y)."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*]Pierwsze:",
       "[**]Zadaje 355% obrażeń celowi i pobliskim wrogom.",
       "[**]Cel automatycznie rzuca Nieobliczalny furiacki atak na losowego sojusznika przez 3 tur(y), jeśli mana jest pełna na początku tury. Po aktywacji efektu migruje on na trafionego sojusznika, a czas trwania odnawia się.",
-      "[**]Cel i pobliscy wrogowie otrzymują -45% więcej każdej regeneracji przez 3 tur(y).",
+      "[**]Regeneracja celu i pobliskich wrogów spada o -45% przez 3 tur(y).",
       "[*]Drugie:",
       "[**]Zadaje 450% obrażeń celowi i pobliskim wrogom.",
       "[**]Cel automatycznie rzuca Nieobliczalny furiacki atak na losowego sojusznika przez 4 tur(y), jeśli mana jest pełna na początku tury. Po aktywacji efektu migruje on na trafionego sojusznika, a czas trwania odnawia się.",
-      "[**]Cel i pobliscy wrogowie otrzymują -85% więcej każdej regeneracji przez 4 tur(y)."
+      "[**]Regeneracja celu i pobliskich wrogów spada o -85% przez 4 tur(y)."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Atakuje cel i pobliskich wrogów mroźnym ciosem, zadając do 2300 pkt. obrażeń. Zadaje o 40% więcej obrażeń celom ognia. Ta umiejętność specjalna nigdy nie chybia obranego celu.",
       "Obniża maks. poziom zdrowia celu i pobliskich wrogów o 800 pkt. Efekt jest silniejszy przeciwko celom ze wzmocnionym zdrowiem. (Maksymalne zdrowie nie może być niższe niż 30% pierwotnego maksymalnego zdrowia.\n[*] Wzmocnione zdrowie zostaje zmniejszone o dodatkowe 800 pkt.)",
-      "Cel i pobliscy wrogowie otrzymują -70% więcej każdej regeneracji przez 4 tur(y)."
+      "Regeneracja celu i pobliskich wrogów spada o -70% przez 4 tur(y)."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Susza: wszyscy wrogowie otrzymują -400 do ataku. (Susza i rozrost modyfikują siłę umiejętności postaci. Efekt ten utrzymuje się nawet po pokonaniu postaci.\n[*]Dodatkowe efekty suszy i rozrostu jeszcze bardziej modyfikują siłę umiejętności.\n[*]Oczyszczenie osłabia suszę o 50%.\n[*]Rozproszenie osłabia rozrost o 50%.\n[*]Limity zmodyfikowanej siły umiejętności.\n[*]Min. 30% i maks. 170% pierwotnych wartości.\n[*]Inne wzmocnienia i osłabienia wpływają na zmodyfikowaną siłę umiejętności.\n[*]Ten efekt ma mniejszą skuteczność, gdy zostaje aktywowany przez potwory i bossów.)",
-      "Wszyscy wrogowie otrzymują -80% więcej każdej regeneracji zdrowia przez 4 tur(y). Efekt nie może być odwołany czarami.",
+      "Regeneracja zdrowia wszystkich wrogów spada o -80% przez 4 tur(y). Oczyszczenie statusu z tego efektu nie jest możliwe.",
       "Zdejmuje ostatnią oczyszczalną dolegliwość ze statusu ze wszystkich sojuszników i losowo rzuca ją na wrogów.",
       "Na koniec każdej tury oczyszcza dolegliwości ze statusu wszystkich sojuszników przez 4 tur(y)."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Regeneruje 27% zdrowia wszystkich sojuszników.\n[*]Dodatkowo regeneruje 3% zdrowia za każdą nałożoną na wrogów dolegliwość ze statusu, maksymalnie do 42% zdrowia.",
       "Zdejmuje ostatnią oczyszczalną dolegliwość ze statusu ze wszystkich sojuszników i losowo rzuca ją na wrogów.",
-      "Wszyscy wrogowie otrzymują -75% więcej każdej regeneracji przez 3 tur(y)."
+      "Regeneracja wszystkich wrogów spada o -75% przez 3 tur(y)."
      ]
     }
    ]

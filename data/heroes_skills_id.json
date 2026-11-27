@@ -839,7 +839,7 @@
       "Keahlian Khusus ini tidak pernah meleset dari sasaran.",
       "Menimbulkan kerusakan 340% pada semua musuh.",
       "Generasi mana semua musuh jadi -35% selama 4 giliran. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)",
-      "Semua musuh mendapat tambahan -85% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Semua musuh mendapat pengurangan -85% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Mengenyahkan genjotan dari sasaran dan musuh terdekat.",
       "Menimbulkan kerusakan 375% kepada sasaran dan musuh terdekat.",
       "Sasaran dan musuh terdekat menerima Luka Antek selama 3 giliran.\n[*]Luka Antek: Kesehatan Antek sasaran berkurang 50% dan kesehatan Antek Mega berkurang 25% tiap giliran. (Pengurangan diterapkan pada Antek yang dimiliki dan setiap Antek yang diterima saat efeknya aktif.\n[*] Pengurangan hanya memengaruhi kesehatan Antek saat ini.)",
-      "Sasaran dan musuh terdekat mendapat tambahan -80% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -80% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Menimbulkan kerusakan 270% pada sasaran.",
       "Sasaran mendapat pertahanan -30% selama 4 giliran. Durasi efek ini direset jika sasaran disembuhkan.",
-      "Sasaran menerima tambahan -40% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Sasaran menerima pengurangan -40% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Meningkatkan kesehatan semua sekutu sebesar 500. Kesehatan yang ditingkatkan dapat melebihi HP maksimal",
       "Mengurangi kesehatan maksimal semua musuh sebesar 500. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 500 lagi.)",
       "Menimbulkan 275% kerusakan kepada semua musuh.",
-      "Semua musuh mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Semua musuh mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Memulihkan kesehatan semua sekutu sebesar 32%.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Semua musuh mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Menimbulkan kerusakan 290% pada sasaran dan musuh terdekat.",
       "Serangan itu menembus genjotan defensif. (Ini termasuk serangan balik.)",
       "Sasaran dan musuh terdekat mendapat -40% serangan selama 3 giliran. Serangan turun -5% setiap giliran, hingga -50%.",
-      "Sasaran dan musuh terdekat mendapat tambahan -80% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -80% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Dengan aman membersihkan status pelemahan dari semua sekutu. (Pembersihan yang aman melewati efek sekunder, seperti kerusakan pada penghapusan, dari status pelemahan yang dihapus. Efek eksternal seperti keahlian pasif dan efek keluarga masih bisa aktif.)",
       "Menimbulkan 325% kerusakan kepada semua musuh.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 4 giliran.",
+      "Semua musuh mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 4 giliran.",
       "Semua musuh tidak bisa mendapatkan status pelemahannya dibersihkan atau direalokasi oleh Keahlian Khusus selama 4 giliran. (Efek ini juga mencegah membersihkan dan realokasi diri sendiri.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Menimbulkan kerusakan 450% pada sasaran dan musuh terdekat.",
       "Sasaran dan musuh terdekat menerima[#Dynamic] 848 [#]kerusakan Terbakar selama 4 giliran. Perapal dan semua sekutunya menyerap 50% dari kerusakan Terbakar yang ditimbulkan sebagai kesehatan.",
-      "Sasaran dan musuh terdekat mendapat tambahan -54% untuk setiap kesembuhan yang diterima selama 4 giliran.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -54% untuk setiap kesembuhan yang diterima selama 4 giliran.",
       "Pertahanan perapal naik -51% terhadap Es selama 4 giliran. Efek ini tak dapat dibersihkan."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Menimbulkan kerusakan 230% pada semua musuh.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran. Efek ini tidak bisa dienyahkan."
+      "Semua musuh mendapat pengurangan -50% untuk tiap kesembuhan yang diterima selama 3 giliran. Efek ini tidak bisa dibersihkan."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Menimbulkan kerusakan 245% pada semua musuh.",
       "Menimbulkan kerusakan 490% melawan Antek dan Pemanggil Iblis.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Semua musuh mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Mengurangi kesehatan maksimal semua musuh sebesar 550. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 550 lagi.)",
-      "Semua musuh mendapat tambahan -55% untuk setiap kesembuhan yang diterima selama 4 giliran. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
+      "Semua musuh mendapat pengurangan -55% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini Bandel. (Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)",
       "Semua musuh menerima[#Dynamic] 85 [#]-[#Dynamic] 148 [#]kerusakan Kutukan yang bertambah besar pada tiap giliran selama 4 giliran. Efek ini Bandel. (Pada giliran pertama,[#Dynamic] 85 [#]kerusakan ditimbulkan. Kerusakan bertambah sebesar 20% di setiap giliran, hingga[#Dynamic] 148 [#]kerusakan per giliran.\n[*]Setiap upaya untuk mengenyahkan, membersihkan, atau merelokasi efek Bandel mengurangi durasi sebesar 1 giliran atau mengurangi aktivasi yang tersisa sebanyak 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Menimbulkan kerusakan 390% pada sasaran.",
       "Sasaran mendapat akurasi -75% selama 2 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)",
-      "Sasaran menerima tambahan -75% untuk setiap kesembuhan yang diterima selama 2 giliran.",
+      "Sasaran menerima pengurangan -75% untuk setiap kesembuhan yang diterima selama 2 giliran.",
       "Dinamika Elemen memberi semua sekutu Suci pertahanan 40% terhadap Keahlian Khusus selama 4 giliran. Efek ini tidak bisa dienyahkan."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Menimbulkan kerusakan 455% pada sasaran.",
-      "Sasaran menerima tambahan -100% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran menerima pengurangan -100% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dibersihkan.",
       "Pertahanan perapal dan sekutu terdekat naik 94% terhadap elemen Alam selama 4 giliran.",
       "Dinamika Elemen memberi 10% generasi mana kepada semua sekutu Es selama 4 giliran. Efek ini tidak bisa dienyahkan. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Menimbulkan kerusakan 405% pada sasaran dan musuh terdekat.",
-      "Sasaran dan musuh terdekat mendapat tambahan -100% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -100% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dibersihkan.",
       "Sasaran dan musuh terdekat mendapat -68% pertahanan terhadap elemen Es selama 4 giliran.",
       "Dinamika Elemen memberi 10% generasi mana kepada semua sekutu Es selama 4 giliran. Efek ini tidak bisa dienyahkan. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Menimbulkan kerusakan 280% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "Sasaran dan musuh terdekat mendapat -44% pertahanan dan naik -4% lagi setiap kali terkena serangan selama 3 giliran, hingga pertahanan -68%."
+      "Sasaran dan musuh terdekat mendapat -44% pertahanan dan turun -4% lagi setiap kali terkena serangan selama 3 giliran, hingga pertahanan -68%."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]x 2 Daya Mana:",
       "[**]Mengurangi kesehatan maksimal semua musuh sebesar 900. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 900 lagi.)",
       "[**]Pertahanan semua musuh terhadap Keahlian Khusus naik -58% selama 5 giliran.",
-      "[**]Semua musuh mendapat tambahan -45% untuk setiap kesembuhan yang diterima selama 5 giliran."
+      "[**]Semua musuh mendapat pengurangan -45% untuk setiap kesembuhan yang diterima selama 5 giliran."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 Daya Mana:",
       "[**]Perapal dan sekutu terdekat mendapat 45% serangan dan bertambah 20% setiap kali mereka terkena hantaman selama 3 giliran, hingga 145% serangan.",
       "[*]x 2 Daya Mana:",
-      "[**]Sasaran dan musuh terdekat mendapat -44% pertahanan dan naik -4% lagi setiap kali terkena serangan selama 6 giliran, hingga pertahanan -68%."
+      "[**]Sasaran dan musuh terdekat mendapat -44% pertahanan dan turun -4% lagi setiap kali terkena serangan selama 6 giliran, hingga pertahanan -68%."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Mengenyahkan genjotan semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 1405 [#]kerusakan Pasir selama 5 giliran.",
       "[**]Semua musuh mendapat -50% serangan selama 5 giliran.",
-      "[**]Semua musuh mendapat tambahan -45% untuk setiap kesembuhan yang diterima selama 5 giliran."
+      "[**]Semua musuh mendapat pengurangan -45% untuk setiap kesembuhan yang diterima selama 5 giliran."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Menimbulkan kerusakan 435% pada sasaran.",
       "Memanggil Iblis Jebakan Tulang untuk sasaran. Iblis merusak musuh dengan 45% serangan tiap giliran. Kerusakan bertambah 8% setiap giliran, hingga maksimum 93%.\n[*]Iblis Jebakan Tulang menyerap penyembuhan dan menghilang setelah menyerap kesehatan sebanyak 35% dari kesehatan maksimum pemiliknya.",
-      "Sasaran menerima tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "Sasaran menerima pengurangan -50% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "Mengenyahkan genjotan dari sasaran pada akhir giliran selama 3 giliran."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Menimbulkan kerusakan 325% pada semua musuh.",
       "Semua musuh mengalami[#Dynamic] 364 [#]kerusakan Berdarah selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama.",
-      "Semua musuh mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama.",
+      "Semua musuh mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama.",
       "Semua musuh mendapat akurasi -35% selama 4 giliran. Melawan karakter Gelap, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)",
       "Kerusakan ekstra terhadap elemen Gelap."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Menimbulkan kerusakan 330% pada semua musuh.",
-      "Semua musuh mendapat tambahan -70% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "Semua musuh mendapat pengurangan -70% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "Semua musuh mengalami[#Dynamic] 450 [#]kerusakan Berdarah selama 2 giliran. Melawan karakter Es, efek status ini menjadi tidak bisa dibersihkan selama 2 giliran lebih lama.",
       "Dinamika Elemen memberi 10% generasi mana kepada semua sekutu Alam selama 4 giliran. Efek ini tidak bisa dienyahkan. (Hanya memengaruhi mana dari hasil perisai yang cocok atau mana yang diperoleh tim pertahanan di akhir giliran mereka.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]x 1 Daya Mana:",
       "[**]Menimbulkan kerusakan 160% pada semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 256 [#]kerusakan Terbakar selama 2 giliran.",
-      "[**]Semua musuh mendapat tambahan -64% untuk setiap kesembuhan yang diterima selama 2 giliran.",
+      "[**]Semua musuh mendapat pengurangan -64% untuk setiap kesembuhan yang diterima selama 2 giliran.",
       "[*]x 2 Daya Mana:",
       "[**]Menimbulkan kerusakan 275% pada semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 561 [#]kerusakan Terbakar selama 3 giliran.",
-      "[**]Semua musuh mendapat tambahan -74% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "[**]Semua musuh mendapat pengurangan -74% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "[*]x 3 Daya Mana:",
       "[**]Menimbulkan kerusakan 340% pada semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 840 [#]kerusakan Terbakar selama 4 giliran.",
-      "[**]Semua musuh mendapat tambahan -84% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "[**]Semua musuh mendapat pengurangan -84% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]x 1 Daya Mana:",
       "[**]Mengenyahkan genjotan sasaran.",
       "[**]Sasaran mengalami[#Dynamic] 780 [#]kerusakan Racun selama 2 giliran.",
-      "[**]Sasaran menerima tambahan -80% untuk setiap kesembuhan yang diterima selama 2 giliran.",
+      "[**]Sasaran menerima pengurangan -80% untuk setiap kesembuhan yang diterima selama 2 giliran.",
       "[*]x 2 Daya Mana:",
       "[**]Mengenyahkan genjotan sasaran dan musuh terdekat.",
       "[**]Sasaran dan musuh terdekat mengalami kerusakan Racun[#Dynamic] 1608 [#]selama 4 giliran.",
-      "[**]Sasaran dan musuh terdekat mendapat tambahan -85% untuk setiap kesembuhan yang diterima selama 4 giliran.",
+      "[**]Sasaran dan musuh terdekat mendapat pengurangan -85% untuk setiap kesembuhan yang diterima selama 4 giliran.",
       "[*]x 3 Daya Mana:",
       "[**]Mengenyahkan genjotan semua musuh.",
       "[**]Semua musuh mengalami[#Dynamic] 2412 [#]kerusakan Racun selama 6 giliran.",
-      "[**]Semua musuh mendapat tambahan -90% untuk setiap kesembuhan yang diterima selama 6 giliran."
+      "[**]Semua musuh mendapat pengurangan -90% untuk setiap kesembuhan yang diterima selama 6 giliran."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Menimbulkan kerusakan 160% pada semua musuh.",
       "Semua musuh mendapat akurasi -30% selama 4 giliran. (Peluang lolos juga berlaku untuk Keahlian Khusus menyerang.)",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan."
+      "Semua musuh mendapat pengurangan -50% untuk tiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dibersihkan."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Menyerang sasaran dan musuh terdekat dengan Serangan Bulan Terbit, menimbulkan hingga 1440 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Suci. Keahlian Khusus ini tak pernah meleset dari sasaran",
       "Selama 3 giliran, mengurangi mana sasaran dan musuh terdekat sebesar -15% di akhir giliran.",
-      "Sasaran dan musuh terdekat mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Menimbulkan kerusakan 415% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "Sasaran dan musuh terdekat mendapat tambahan -90% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -90% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Menimbulkan kerusakan 415% pada sasaran dan kerusakan minor pada musuh terdekat.",
-      "Sasaran dan musuh terdekat mendapat tambahan -100% untuk setiap kesembuhan yang diterima selama 4 giliran.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -100% untuk setiap kesembuhan yang diterima selama 4 giliran.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 204 [#]kerusakan Air selama 4 giliran."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Menimbulkan kerusakan 150% pada semua musuh.",
       "Mengurangi kesehatan maksimal semua musuh sebesar 100. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 100 lagi.)",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Semua musuh mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Menimbulkan kerusakan 180% pada semua musuh.",
       "Mengurangi kesehatan maksimal semua musuh sebesar 150. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 150 lagi.)",
-      "Semua musuh mendapat tambahan -55% untuk setiap kesembuhan yang diterima selama 4 giliran.",
+      "Semua musuh mendapat pengurangan -55% untuk setiap kesembuhan yang diterima selama 4 giliran.",
       "Kerusakan ekstra terhadap elemen Suci."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Menimbulkan kerusakan 280% pada sasaran dan musuh terdekat.",
       "Mengurangi 15% mana sasaran dan musuh terdekat.",
-      "Sasaran dan musuh terdekat mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Menimbulkan kerusakan 280% pada sasaran.",
       "Sasaran mengalami[#Dynamic] 104 [#]kerusakan Pasir selama 4 giliran.",
-      "Sasaran menerima tambahan -100% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran menerima pengurangan -100% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari perapal."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Menimbulkan kerusakan 200% pada semua musuh.",
       "Semua musuh mengalami[#Dynamic] 381 [#]kerusakan Pasir selama 3 giliran.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran. Efek ini tidak bisa dienyahkan.",
+      "Semua musuh mendapat pengurangan -50% untuk tiap kesembuhan yang diterima selama 3 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari semua sekutu."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Menimbulkan kerusakan 185% pada sasaran dan musuh terdekat.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 402 [#]kerusakan Pasir selama 3 giliran.",
-      "Sasaran dan musuh terdekat mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari perapal."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Menimbulkan kerusakan 185% pada sasaran dan musuh terdekat.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 568 [#]kerusakan Air selama 4 giliran.",
-      "Sasaran dan musuh terdekat mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan perapal dan sekutu terdekat."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Semua musuh mengalami[#Dynamic] 306 [#]kerusakan Pasir selama 3 giliran.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Semua musuh mendapat pengurangan -50% untuk tiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari semua sekutu."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Menimbulkan kerusakan 130% pada semua musuh.",
       "Semua musuh mengalami[#Dynamic] 92 [#]kerusakan Pasir selama 4 giliran.",
-      "Semua musuh mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Semua musuh mendapat pengurangan -50% untuk tiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari perapal."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Menimbulkan kerusakan 235% pada sasaran dan kerusakan minor pada musuh terdekat.",
       "Sasaran dan musuh terdekat mengalami[#Dynamic] 172 [#]kerusakan Pasir selama 4 giliran.",
-      "Sasaran dan musuh terdekat mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran dan musuh terdekat mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari perapal."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Menimbulkan kerusakan 260% pada sasaran.",
       "Sasaran mengalami[#Dynamic] 228 [#]kerusakan Pasir selama 4 giliran.",
-      "Sasaran menerima tambahan -100% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dienyahkan.",
+      "Sasaran menerima pengurangan -100% untuk setiap kesembuhan yang diterima selama 2 giliran. Efek ini tidak bisa dibersihkan.",
       "Membersihkan status pelemahan dari perapal."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Keahlian Khusus memiliki efek yang berbeda saat diberi daya mana 100% / 200% / 300%:",
       "[*]x 1 Daya Mana:",
       "[**]Menimbulkan kerusakan 200% pada semua musuh.",
-      "[**]Semua musuh mendapat tambahan -25% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "[**]Semua musuh mendapat pengurangan -25% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "[*]x 2 Daya Mana:",
       "[**]Menimbulkan kerusakan 315% pada semua musuh.",
       "[**]Memanggil Iblis Roh Stiks untuk semua musuh. Iblis menyerang sasarannya dengan 40% serangan tiap giliran.\n[***]Iblis Roh Stiks menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 25% dari kesehatan maksimum sasarannya.",
       "[*]x 3 Daya Mana:",
       "[**]Menimbulkan kerusakan 365% pada semua musuh.",
       "[**]Memanggil Iblis Roh Stiks untuk semua musuh. Iblis menyerang sasarannya dengan 40% serangan tiap giliran.\n[***]Iblis Roh Stiks menyerap penyembuhan, lalu menghilang setelah menyerap penyembuhan sebanyak 25% dari kesehatan maksimum sasarannya.",
-      "[**]Semua musuh mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "[**]Semua musuh mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*]ke -1:",
       "[**]Menimbulkan kerusakan 365% pada sasaran dan musuh terdekat.",
       "[**]Sasaran otomatis mengerahkan Serangan Awur Berubah ke sekutu acak saat mananya penuh selama 3 giliran. Saat efek ini terpicu, efek beralih mengenai sekutu dan durasinya diperbarui.",
-      "[**]Sasaran dan musuh terdekat mendapat tambahan -50% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "[**]Sasaran dan musuh terdekat mendapat pengurangan -50% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "[*]ke -2:",
       "[**]Menimbulkan kerusakan 430% pada sasaran dan musuh terdekat.",
       "[**]Sasaran otomatis mengerahkan Serangan Awur Berubah ke sekutu acak saat mananya penuh selama 4 giliran. Saat efek ini terpicu, efek beralih mengenai sekutu dan durasinya diperbarui.",
-      "[**]Sasaran dan musuh terdekat mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "[**]Sasaran dan musuh terdekat mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*]ke -1:",
       "[**]Menimbulkan kerusakan 355% pada sasaran dan musuh terdekat.",
       "[**]Sasaran otomatis mengerahkan Serangan Awur Berubah ke sekutu acak saat mananya penuh selama 3 giliran. Saat efek ini terpicu, efek beralih mengenai sekutu dan durasinya diperbarui.",
-      "[**]Sasaran dan musuh terdekat mendapat tambahan -45% untuk setiap kesembuhan yang diterima selama 3 giliran.",
+      "[**]Sasaran dan musuh terdekat mendapat pengurangan -45% untuk setiap kesembuhan yang diterima selama 3 giliran.",
       "[*]ke -2:",
       "[**]Menimbulkan kerusakan 450% pada sasaran dan musuh terdekat.",
       "[**]Sasaran otomatis mengerahkan Serangan Awur Berubah ke sekutu acak saat mananya penuh selama 4 giliran. Saat efek ini terpicu, efek beralih mengenai sekutu dan durasinya diperbarui.",
-      "[**]Sasaran dan musuh terdekat mendapat tambahan -85% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "[**]Sasaran dan musuh terdekat mendapat pengurangan -85% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Menyerang sasaran dan musuh terdekat dengan Serbuan Jatuh Salju, menimbulkan hingga 2300 kerusakan. Menimbulkan kerusakan 40% lebih banyak jika sasarannya berelemen Api. Keahlian Khusus ini tak pernah meleset dari sasaran.",
       "Mengurangi kesehatan maksimal sasaran dan musuh terdekat sebesar 800. Efeknya lebih kuat terhadap sasaran dengan peningkatan kesehatan. (Kesehatan maks. tidak boleh rendah dari 30% dari kesehatan maks. awal. Peningkatan kesehatan dikurangi 800 lagi.)",
-      "Sasaran dan musuh terdekat mendapat tambahan -70% untuk setiap kesembuhan yang diterima selama 4 giliran."
+      "Sasaran dan musuh terdekat mendapat pengurangan -70% untuk setiap kesembuhan yang diterima selama 4 giliran."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Layu: Semua sekutu mendapat -400 serangan. (Layu dan Bertumbuh mengubah Skor Kemampuan karakter. Efeknya tetap ada meskipun karakter kalah.\n[*]Efek Layu dan Bertumbuh tambahan mengubah Skor Kemampuan lebih lanjut.\n[*]Pembersihan melemahkan Layu sebesar 50%.\n[*]Pengenyahan melemahkan Bertumbuh sebesar 50%.\n[*]Batas untuk Skor Kemampuan yang dimodifikasi.\n[*]Min 30% dan maksimal 170% dari nilai aslinya.\n[*]Genjotan dan pelemah lainnya diterapkan pada Skor Kemampuan yang dimodifikasi.\n[*]Efek ini kurang efektif bila diaktifkan oleh monster dan bos.)",
-      "Semua musuh mendapat tambahan -80% untuk setiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dienyahkan.",
+      "Semua musuh mendapat pengurangan -80% untuk tiap kesembuhan yang diterima selama 4 giliran. Efek ini tidak bisa dibersihkan.",
       "Mengangkat status pelemahan yang bisa dibersihkan terbaru dari semua sekutu dan secara acak membagikannya kepada musuh.",
       "Membersihkan status pelemahan pada akhir tiap giliran untuk semua sekutu selama 4 giliran."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Memulihkan 27% kesehatan untuk semua sekutu.\n[*]Memulihkan tambahan 3% kesehatan per status pelemahan pada musuh, hingga total 42% kesehatan.",
       "Mengangkat status pelemahan yang bisa dibersihkan terbaru dari semua sekutu dan secara acak membagikannya kepada musuh.",
-      "Semua musuh mendapat tambahan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
+      "Semua musuh mendapat pengurangan -75% untuk setiap kesembuhan yang diterima selama 3 giliran."
      ]
     }
    ]

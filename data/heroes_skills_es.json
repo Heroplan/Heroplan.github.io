@@ -839,7 +839,7 @@
       "Esta habilidad especial nunca falla.",
       "Causa un 340% de daño a todos los enemigos.",
       "Todos los enemigos reciben un -35% de regeneración de maná durante 4 turnos. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)",
-      "Todos los enemigos obtienen un aumento de un -85% en cualquier curación recibida durante 4 turnos."
+      "Todos los enemigos obtienen una reducción de un -85% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Descarta las bendiciones del objetivo y de los enemigos cercanos.",
       "Inflige un 375% de daño al objetivo y los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben Secuaces heridos durante 3 turnos.\n[*] Secuaces heridos: La vitalidad de los secuaces del objetivo se reduce un 50% y la del megasecuaz se reduce un 25% cada turno. (La reducción se aplica a los secuaces que ya se tienen y a los que se reciben mientras el efecto esté activo.\n[*] La reducción solo afecta a la vitalidad actual de los secuaces.)",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -80% en cualquier curación recibida durante 3 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -80% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Causa un 270% de daño al objetivo.",
       "El objetivo obtiene un -30% de defensa durante 4 turnos. La duración del efecto se restablece si se cura al objetivo.",
-      "El objetivo obtiene un aumento de un -40% en cualquier curación recibida durante 4 turnos."
+      "El objetivo obtiene una reducción de un -40% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Potencia la vitalidad de todos los aliados en 500. La vitalidad potenciada puede exceder la VIT máxima.",
       "Reduce la vitalidad máxima de todos los enemigos en 500. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 500 adicional.)",
       "Inflige un 275% de daño a todos los enemigos.",
-      "Todos los enemigos obtienen un aumento de un -75% en cualquier curación recibida durante 3 turnos."
+      "Todos los enemigos obtienen una reducción de un -75% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Recupera un 32% de vitalidad para todos los aliados.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 4 turnos."
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Causa un 290% de daño al objetivo y a los enemigos cercanos.",
       "El ataque ignora las bendiciones de defensa. (Esto incluye los contraataques.)",
       "El objetivo y los enemigos cercanos obtienen un -40% de ataque durante 3 turnos. El ataque se reduce un -5% en cada turno hasta un máximo del -50%.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -80% en cualquier curación recibida durante 3 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -80% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Purifica de forma segura los estados alterados de todos los aliados. (La purificación segura ignora los efectos secundarios (por ejemplo, el daño con la eliminación) del estado alterado eliminado. Pueden activarse efectos externos, como habilidades pasivas y efectos de familia.)",
       "Inflige un 325% de daño a todos los enemigos.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 4 turnos.",
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 4 turnos.",
       "Ningún enemigo puede purificar ni reasignar sus estados alterados con habilidades especiales durante 4 turnos. (Este efecto también impide su propia purificación o reasignación.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Causa un 450% de daño al objetivo y a los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 848 [#]de daño de quemadura durante 4 turnos. El héroe y todos los aliados absorben un 50% del daño de quemadura infligido como vitalidad.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -54% en cualquier curación recibida durante 4 turnos.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -54% en cualquier curación recibida durante 4 turnos.",
       "El héroe obtiene un -51% de defensa contra hielo durante 4 turnos. Este efecto no se puede purificar."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Causa un 230% de daño a todos los enemigos.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 3 turnos. Este efecto no se puede descartar."
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 3 turnos. Este efecto no se puede purificar."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Causa un 245% de daño a todos los enemigos.",
       "Inflige un 490% de daño a los invocadores de secuaces y demonios.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 4 turnos."
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Reduce la vitalidad máxima de todos los enemigos en 550. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 550 adicional.)",
-      "Todos los enemigos obtienen un aumento de un -55% en cualquier curación recibida durante 4 turnos. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
+      "Todos los enemigos obtienen una reducción de un -55% en cualquier curación recibida durante 4 turnos. Este efecto es obstinado. (Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)",
       "Todos los enemigos reciben[#Dynamic] 85 [#]-[#Dynamic] 148 [#]de daño de maldición creciente cada turno durante 4 turnos. Este efecto es obstinado. (En el primer turno, se inflige[#Dynamic] 85 [#]de daño. El daño aumenta un 20% cada turno hasta un máximo de[#Dynamic] 148 [#]de daño por turno.\n[*]Cada intento de descartar, purificar o reasignar un efecto obstinado reduce su duración en 1 turno o sus activaciones restantes en 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Causa un 390% de daño al objetivo.",
       "El objetivo obtiene un -75% de precisión durante 2 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)",
-      "El objetivo obtiene un aumento de un -75% en cualquier curación recibida durante 2 turnos.",
+      "El objetivo obtiene una reducción de un -75% en cualquier curación recibida durante 2 turnos.",
       "El enlace de elemento proporciona a todos los aliados sagrados un 40% de defensa contra habilidades especiales durante 4 turnos. Este efecto no se puede descartar."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Causa un 455% de daño al objetivo.",
-      "El objetivo obtiene un aumento de un -100% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar.",
+      "El objetivo obtiene una reducción de un -100% en cualquier curación recibida durante 4 turnos. Este efecto no se puede purificar.",
       "El héroe y los aliados cercanos reciben un 94% de defensa contra naturaleza durante 4 turnos.",
       "Enlace de elemento otorga un 10% de regeneración de maná para los aliados de hielo durante 4 turnos. Este efecto no se puede descartar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Causa un 405% de daño al objetivo y a los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -100% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -100% en cualquier curación recibida durante 4 turnos. Este efecto no se puede purificar.",
       "El objetivo y los enemigos cercanos reciben un -68% de defensa contra hielo durante 4 turnos.",
       "Enlace de elemento otorga un 10% de regeneración de maná para los aliados de hielo durante 4 turnos. Este efecto no se puede descartar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Causa un 280% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos obtienen un -44% de defensa y un aumento adicional de un -4% cada vez que son golpeados durante 3 turnos hasta un -68% de defensa."
+      "El objetivo y los enemigos cercanos reciben un -44% de defensa y una disminución adicional de un -4% cada vez que son golpeados durante 3 turnos hasta un -68% de defensa."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]x 2 de carga de maná:",
       "[**]Reduce la vitalidad máxima de todos los enemigos en 900. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[***]Reduce toda la vitalidad potenciada en 900 adicional.)",
       "[**]Todos los enemigos reciben un -58% de defensa contra habilidades especiales durante 5 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -45% en cualquier curación recibida durante 5 turnos."
+      "[**]Todos los enemigos obtienen una reducción de un -45% en cualquier curación recibida durante 5 turnos."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 de carga de maná:",
       "[**]El héroe y los aliados cercanos obtienen un 45% de ataque y un 20% más cada vez que son golpeados durante 3 turnos hasta un 145% de ataque.",
       "[*]x 2 de carga de maná:",
-      "[**]El objetivo y los enemigos cercanos obtienen un -44% de defensa y un aumento adicional de un -4% cada vez que son golpeados durante 6 turnos hasta un -68% de defensa."
+      "[**]El objetivo y los enemigos cercanos reciben un -44% de defensa y una disminución adicional de un -4% cada vez que son golpeados durante 6 turnos hasta un -68% de defensa."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Descarta las bendiciones de todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 1405 [#]de daño de arena durante 5 turnos.",
       "[**]Todos los enemigos reciben un -50% de ataque durante 5 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -45% en cualquier curación recibida durante 5 turnos."
+      "[**]Todos los enemigos obtienen una reducción de un -45% en cualquier curación recibida durante 5 turnos."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Causa un 435% de daño al objetivo.",
       "Invoca un demonio trampa ósea para el objetivo que daña al enemigo con un 45% de ataque cada turno. El daño aumenta un 8% cada turno hasta un máximo del 93%.\n[*] El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 35% de la vitalidad máxima de su dueño.",
-      "El objetivo obtiene un aumento de un -50% en cualquier curación recibida durante 3 turnos.",
+      "El objetivo obtiene una reducción de un -50% en cualquier curación recibida durante 3 turnos.",
       "Descarta las bendiciones del objetivo al final de cada turno durante 3 turnos."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Causa un 325% de daño a todos los enemigos.",
       "Todos los enemigos reciben[#Dynamic] 364 [#]de daño de sangrado durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros.",
-      "Todos los enemigos obtienen un aumento de un -75% en cualquier curación recibida durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros.",
+      "Todos los enemigos obtienen una reducción de un -75% en cualquier curación recibida durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros.",
       "Todos los enemigos obtienen un -35% de precisión durante 4 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes oscuros. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)",
       "Causa daño adicional contra oscuro."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Causa un 330% de daño a todos los enemigos.",
-      "Todos los enemigos obtienen un aumento de un -70% en cualquier curación recibida durante 3 turnos.",
+      "Todos los enemigos obtienen una reducción de un -70% en cualquier curación recibida durante 3 turnos.",
       "Todos los enemigos reciben[#Dynamic] 450 [#]de daño de sangrado durante 2 turnos. Este efecto de estado no se puede purificar y dura 2 turnos más en personajes de hielo.",
       "Enlace de elemento otorga un 10% de regeneración de maná para los aliados de naturaleza durante 4 turnos. Este efecto no se puede descartar. (Afecta solo al maná generado al combinar escudos u obtenido por el equipo de defensa al final de su turno.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]x 1 de carga de maná:",
       "[**]Causa un 160% de daño a todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 256 [#]de daño de quemadura durante 2 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -64% en cualquier curación recibida durante 2 turnos.",
+      "[**]Todos los enemigos obtienen una reducción de un -64% en cualquier curación recibida durante 2 turnos.",
       "[*]x 2 de carga de maná:",
       "[**]Causa un 275% de daño a todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 561 [#]de daño de quemadura durante 3 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -74% en cualquier curación recibida durante 3 turnos.",
+      "[**]Todos los enemigos obtienen una reducción de un -74% en cualquier curación recibida durante 3 turnos.",
       "[*]x 3 de carga de maná:",
       "[**]Causa un 340% de daño a todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 840 [#]de daño de quemadura durante 4 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -84% en cualquier curación recibida durante 4 turnos."
+      "[**]Todos los enemigos obtienen una reducción de un -84% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]x 1 de carga de maná:",
       "[**]Descarta las bendiciones del objetivo.",
       "[**]El objetivo recibe[#Dynamic] 780 [#]de daño de veneno durante 2 turnos.",
-      "[**]El objetivo obtiene un aumento de un -80% en cualquier curación recibida durante 2 turnos.",
+      "[**]El objetivo obtiene una reducción de un -80% en cualquier curación recibida durante 2 turnos.",
       "[*]x 2 de carga de maná:",
       "[**]Descarta las bendiciones del objetivo y de los enemigos cercanos.",
       "[**]Los enemigos objetivo y cercanos reciben[#Dynamic] 1608 [#]de daño de veneno durante 4 turnos.",
-      "[**]El objetivo y los enemigos cercanos obtienen un aumento de un -85% en cualquier curación recibida durante 4 turnos.",
+      "[**]El objetivo y los enemigos cercanos obtienen una reducción de un -85% en cualquier curación recibida durante 4 turnos.",
       "[*]x 3 de carga de maná:",
       "[**]Descarta las bendiciones de todos los enemigos.",
       "[**]Todos los enemigos reciben[#Dynamic] 2412 [#]de daño de veneno durante 6 turnos.",
-      "[**]Todos los enemigos obtienen un aumento de un -90% en cualquier curación recibida durante 6 turnos."
+      "[**]Todos los enemigos obtienen una reducción de un -90% en cualquier curación recibida durante 6 turnos."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Causa un 160% de daño a todos los enemigos.",
       "Todos los enemigos obtienen un -30% de precisión durante 4 turnos. (La probabilidad de fallar también se aplica a las habilidades especiales ofensivas.)",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar."
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 4 turnos. Este efecto no se puede purificar."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Ataca al objetivo y los enemigos cercanos con Golpe lunar e inflige hasta 1440 de daño. Inflige un 40% más de daño si el objetivo es del elemento sagrado. Esta habilidad especial no puede fallar.",
       "Durante 3 turnos, reduce el maná del objetivo y los enemigos cercanos un -15% al final del turno.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -50% en cualquier curación recibida durante 3 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -50% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Causa un 415% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -90% en cualquier curación recibida durante 4 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -90% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Causa un 415% de daño al objetivo y daño menor a los enemigos cercanos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -100% en cualquier curación recibida durante 4 turnos.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -100% en cualquier curación recibida durante 4 turnos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 204 [#]de daño de agua durante 4 turnos."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Causa un 150% de daño a todos los enemigos.",
       "Reduce la vitalidad máxima de todos los enemigos en 100. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 100 adicional.)",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 4 turnos."
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Causa un 180% de daño a todos los enemigos.",
       "Reduce la vitalidad máxima de todos los enemigos en 150. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 150 adicional.)",
-      "Todos los enemigos obtienen un aumento de un -55% en cualquier curación recibida durante 4 turnos.",
+      "Todos los enemigos obtienen una reducción de un -55% en cualquier curación recibida durante 4 turnos.",
       "Causa daño adicional contra sagrado."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Causa un 280% de daño al objetivo y a los enemigos cercanos.",
       "Reduce el maná del objetivo y de los enemigos cercanos en un 15%.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -75% en cualquier curación recibida durante 3 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -75% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Causa un 280% de daño al objetivo.",
       "El objetivo recibe[#Dynamic] 104 [#]de daño de arena durante 4 turnos.",
-      "El objetivo obtiene un aumento de un -100% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "El objetivo obtiene una reducción de un -100% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Causa un 200% de daño a todos los enemigos.",
       "Todos los enemigos reciben[#Dynamic] 381 [#]de daño de arena durante 3 turnos.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 3 turnos. Este efecto no se puede descartar.",
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 3 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados de todos los aliados."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Causa un 185% de daño al objetivo y a los enemigos cercanos.",
       "Los enemigos objetivo y cercanos reciben[#Dynamic] 402 [#]de daño de arena durante 3 turnos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -75% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -75% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Causa un 185% de daño al objetivo y a los enemigos cercanos.",
       "El objetivo y los enemigos cercanos reciben[#Dynamic] 568 [#]de daño de agua durante 4 turnos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -75% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -75% en cualquier curación recibida durante 4 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe y de los aliados cercanos."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Todos los enemigos reciben[#Dynamic] 306 [#]de daño de arena durante 3 turnos.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados de todos los aliados."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Causa un 130% de daño a todos los enemigos.",
       "Todos los enemigos reciben[#Dynamic] 92 [#]de daño de arena durante 4 turnos.",
-      "Todos los enemigos obtienen un aumento de un -50% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "Todos los enemigos obtienen una reducción de un -50% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Causa un 235% de daño al objetivo y daño menor a los enemigos cercanos.",
       "Los enemigos objetivo y cercanos reciben[#Dynamic] 172 [#]de daño de arena durante 4 turnos.",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -75% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -75% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Causa un 260% de daño al objetivo.",
       "El objetivo recibe[#Dynamic] 228 [#]de daño de arena durante 4 turnos.",
-      "El objetivo obtiene un aumento de un -100% en cualquier curación recibida durante 2 turnos. Este efecto no se puede descartar.",
+      "El objetivo obtiene una reducción de un -100% en cualquier curación recibida durante 2 turnos. Este efecto no se puede purificar.",
       "Purifica los estados alterados del héroe."
      ]
     }
@@ -52147,14 +52147,14 @@
       "La habilidad especial tiene un efecto diferente cuando se carga con un 100%/ 200%/ 300% de maná:",
       "[*]x 1 de carga de maná:",
       "[**]Causa un 200% de daño a todos los enemigos.",
-      "[**]Todos los enemigos obtienen un aumento de un -25% en cualquier curación recibida durante 3 turnos.",
+      "[**]Todos los enemigos obtienen una reducción de un -25% en cualquier curación recibida durante 3 turnos.",
       "[*]x 2 de carga de maná:",
       "[**]Causa un 315% de daño a todos los enemigos.",
       "[**]Invoca un demonio espíritu de Estigia para todos los enemigos que daña al objetivo con un 40% de ataque cada turno.\n[***]El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 25% de la vitalidad máxima de su objetivo.",
       "[*]x 3 de carga de maná:",
       "[**]Causa un 365% de daño a todos los enemigos.",
       "[**]Invoca un demonio espíritu de Estigia para todos los enemigos que daña al objetivo con un 40% de ataque cada turno.\n[***]El demonio absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 25% de la vitalidad máxima de su objetivo.",
-      "[**]Todos los enemigos obtienen un aumento de un -75% en cualquier curación recibida durante 4 turnos."
+      "[**]Todos los enemigos obtienen una reducción de un -75% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1.º:",
       "[**]Causa un 365% de daño al objetivo y a los enemigos cercanos.",
       "[**]El objetivo lanza automáticamente Ataque salvaje cambiante sobre un aliado aleatorio cuando el maná está lleno al comienzo de un turno durante 3 turnos. Al activarse este efecto, cambia al aliado golpeado y se reinicia.",
-      "[**]El objetivo y los enemigos cercanos obtienen un aumento de un -50% en cualquier curación recibida durante 3 turnos.",
+      "[**]El objetivo y los enemigos cercanos obtienen una reducción de un -50% en cualquier curación recibida durante 3 turnos.",
       "[*] 2.º:",
       "[**]Causa un 430% de daño al objetivo y a los enemigos cercanos.",
       "[**]El objetivo lanza automáticamente Ataque salvaje cambiante sobre un aliado aleatorio cuando el maná está lleno al comienzo de un turno durante 4 turnos. Al activarse este efecto, cambia al aliado golpeado y se reinicia.",
-      "[**]El objetivo y los enemigos cercanos obtienen un aumento de un -75% en cualquier curación recibida durante 4 turnos."
+      "[**]El objetivo y los enemigos cercanos obtienen una reducción de un -75% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1.º:",
       "[**]Causa un 355% de daño al objetivo y a los enemigos cercanos.",
       "[**]El objetivo lanza automáticamente Ataque salvaje cambiante sobre un aliado aleatorio cuando el maná está lleno al comienzo de un turno durante 3 turnos. Al activarse este efecto, cambia al aliado golpeado y se reinicia.",
-      "[**]El objetivo y los enemigos cercanos obtienen un aumento de un -45% en cualquier curación recibida durante 3 turnos.",
+      "[**]El objetivo y los enemigos cercanos obtienen una reducción de un -45% en cualquier curación recibida durante 3 turnos.",
       "[*] 2.º:",
       "[**]Causa un 450% de daño al objetivo y a los enemigos cercanos.",
       "[**]El objetivo lanza automáticamente Ataque salvaje cambiante sobre un aliado aleatorio cuando el maná está lleno al comienzo de un turno durante 4 turnos. Al activarse este efecto, cambia al aliado golpeado y se reinicia.",
-      "[**]El objetivo y los enemigos cercanos obtienen un aumento de un -85% en cualquier curación recibida durante 4 turnos."
+      "[**]El objetivo y los enemigos cercanos obtienen una reducción de un -85% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Ataca al objetivo y los enemigos cercanos con Golpe frígido e inflige hasta 2300 de daño. Inflige un 40% más de daño si el objetivo es del elemento fuego. Esta habilidad especial no puede fallar.",
       "Reduce la vitalidad máxima del objetivo y los enemigos cercanos en 800. El efecto es más fuerte contra objetivos con vitalidad potenciada. (La vitalidad máxima no puede ser inferior al 30% de la vitalidad máxima original.\n[*] Reduce toda la vitalidad potenciada en 800 adicional.)",
-      "El objetivo y los enemigos cercanos obtienen un aumento de un -70% en cualquier curación recibida durante 4 turnos."
+      "El objetivo y los enemigos cercanos obtienen una reducción de un -70% en cualquier curación recibida durante 4 turnos."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Merma: Todos los enemigos obtienen -400 de ataque. (Los efectos de merma y crecimiento alteran las puntuaciones de habilidad. El efecto se mantiene aunque el personaje caiga derrotado.\n[*] Los efectos de merma y crecimiento adicionales alteran aún más las puntuaciones de habilidad.\n[*] Purificar debilita la merma un 50%.\n[*] Descartar debilita el crecimiento un 50%.\n[*]Límites de la modificación de las puntuaciones de habilidad\n[*] Un mínimo del 30% y un máximo del 170% de su valor original.\n[*] Otras bendiciones y estados alterados se aplican a las puntuaciones de habilidad modificadas.\n[*] Este efecto es menos eficaz cuando lo activan monstruos y jefes.)",
-      "Todos los enemigos obtienen un aumento de un -80% en cualquier curación recibida durante 4 turnos. Este efecto no se puede descartar.",
+      "Todos los enemigos obtienen una reducción de un -80% en cualquier curación recibida durante 4 turnos. Este efecto no se puede purificar.",
       "Quita el último estado alterado purificable de todos los aliados y lo distribuye aleatoriamente entre los enemigos.",
       "Purifica los estados alterados de todos los aliados al final de cada turno durante 4 turnos."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Todos los aliados recuperan un 27% de vitalidad.\n[*] Recupera un 3% de vitalidad adicional por cada estado alterado que tengan los enemigos hasta un 42% en total.",
       "Quita el último estado alterado purificable de todos los aliados y lo distribuye aleatoriamente entre los enemigos.",
-      "Todos los enemigos obtienen un aumento de un -75% en cualquier curación recibida durante 3 turnos."
+      "Todos los enemigos obtienen una reducción de un -75% en cualquier curación recibida durante 3 turnos."
      ]
     }
    ]

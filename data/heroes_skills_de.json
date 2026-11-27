@@ -839,7 +839,7 @@
       "Diese Spezialfähigkeit verfehlt ihre Ziele nie.",
       "Verursacht 340% Schaden bei allen Gegnern.",
       "Alle Gegner erhalten -35% Manaregeneration für 4 Züge. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)",
-      "Alle Gegner erhalten -85% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Alle Gegner erhalten -85% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Entfernt Boni vom Ziel und nahen Gegnern.",
       "Fügt dem Ziel und nahen Gegnern 375% Schaden zu.",
       "Das Ziel und Gegner in der Nähe erhalten Lakaienwunde für 3 Züge.\n[*]Lakaienwunde: Das Leben der Lakaien des Ziels wird um 50% und das Leben der Mega-Lakaien um 25% pro Zug reduziert. (Die Reduzierung gilt für eigene Lakaien und für alle erhaltenen Lakaien, solange der Effekt aktiv ist.\n[*] Die Reduzierung wirkt sich nur auf das aktuelle Leben der Lakaien aus.)",
-      "Das Ziel und nahe Gegner erhalten -80% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Das Ziel und nahe Gegner erhalten -80% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Fügt dem Ziel 270% Schaden zu.",
       "Das Ziel erhält -30% Verteidigung für 4 Züge. Die Effektdauer wird zurückgesetzt, wenn das Ziel geheilt ist.",
-      "Das Ziel erhält -40% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Das Ziel erhält -40% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Verstärkt das Leben aller Verbündeten um 500. Verstärktes Leben kann die max. LP übersteigen.",
       "Verringert das maximale Leben aller Gegner um 500. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 500 verringert.)",
       "Verursacht 275% Schaden bei allen Gegnern.",
-      "Alle Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Alle Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Heilt alle Verbündeten um 32%.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Fügt dem Ziel und nahen Gegnern 290% Schaden zu.",
       "Der Angriff umgeht Defensivboni. (Schließt auch Gegenangriffe ein.)",
       "Das Ziel und nahe Feinde erhalten -40% Angriff für 3 Züge. Der Angriff verringert sich um -5% mit jedem Zug, bis zu -50%.",
-      "Das Ziel und nahe Gegner erhalten -80% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Das Ziel und nahe Gegner erhalten -80% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Reinigt sicher negative Statusänderungen von allen Verbündeten. (Sicheres Reinigen umgeht Sekundäreffekte wie z. B. Schaden beim Entfernen von negativen Statusänderungen. Externe Effekte wie passive Fähigkeiten und Familieneffekte können trotzdem aktiviert werden.)",
       "Verursacht 325% Schaden bei allen Gegnern.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 4 Züge.",
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 4 Züge.",
       "Alle Gegner können ihre negativen Statusänderungen oder Verschiebungen durch Spezialfähigkeiten für 4 Züge nicht entfernen. (Dieser Effekt verhindert auch die Selbstreinigung und -verschiebung.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 450% Schaden zu.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 848 [#]Brandschaden über 4 Züge. Der Wirker und all seine Verbündeten absorbieren 50% des zugefügten Brandschadens als Leben.",
-      "Das Ziel und nahe Gegner erhalten -54% Erhöhung für jede erhaltene Heilung für 4 Züge.",
+      "Das Ziel und nahe Gegner erhalten -54% Verringerung für jede erhaltene Heilung für 4 Züge.",
       "Der Wirker erhält -51% Verteidigung gegen Eis für 4 Runden. Dieser Effekt kann nicht gereinigt werden."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Verursacht 230% Schaden bei allen Gegnern.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 3 Züge. Der Effekt kann nicht gebannt werden."
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 3 Züge. Der Effekt kann nicht gereinigt werden."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Verursacht 245% Schaden bei allen Gegnern.",
       "Fügt Lakaien und Feindbeschwörern 490% Schaden zu.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Verringert das maximale Leben aller Gegner um 550. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 550 verringert.)",
-      "Alle Gegner erhalten -55% Erhöhung für jede erhaltene Heilung für 4 Züge. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
+      "Alle Gegner erhalten -55% Verringerung für jede erhaltene Heilung für 4 Züge. Dieser Effekt ist hartnäckig. (Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)",
       "Alle Gegner erleiden für 4 Züge[#Dynamic] 85 [#]-[#Dynamic] 148 [#]erhöhten, steigenden Fluchschaden. Dieser Effekt ist hartnäckig. (Im ersten Zug wird[#Dynamic] 85 [#]Schaden verursacht. Der Schaden steigt in jedem Zug um 20% bis zu einem Maximum von[#Dynamic] 148 [#]Schaden pro Zug.\n[*]Jeder Versuch, einen hartnäckigen Effekt zu entfernen, zu reinigen oder zu verschieben, verringert die Dauer um 1 Runde oder reduziert die verbleibenden Aktivierungen um 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Fügt dem Ziel 390% Schaden zu.",
       "Das Ziel erhält -75% Genauigkeit für 2 Züge. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)",
-      "Das Ziel erhält -75% Erhöhung für jede erhaltene Heilung für 2 Züge.",
+      "Das Ziel erhält -75% Verringerung für jede erhaltene Heilung für 2 Züge.",
       "Elementare Verbindung verleiht allen Licht-Verbündeten 40% Verteidigung gegen Spezialfähigkeiten für 4 Züge. Dieser Effekt kann nicht gebannt werden."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Fügt dem Ziel 455% Schaden zu.",
-      "Das Ziel erhält -100% Erhöhung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel erhält -100% Verringerung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gereinigt werden.",
       "Der Wirker und nahe Verbündete erhalten 94% Verteidigung gegen Natur für 4 Züge.",
       "Elementare Verbindung verleiht 10% Manaregeneration für alle Eis-Verbündeten für 4 Züge. Der Effekt kann nicht gebannt werden. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 405% Schaden zu.",
-      "Das Ziel und nahe Gegner erhalten -100% Erhöhung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel und nahe Gegner erhalten -100% Verringerung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gereinigt werden.",
       "Das Ziel und nahe Gegner erhalten -68% Verteidigung gegen Eis für 4 Züge.",
       "Elementare Verbindung verleiht 10% Manaregeneration für alle Eis-Verbündeten für 4 Züge. Der Effekt kann nicht gebannt werden. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Fügt dem Ziel 280% Schaden und nahen Gegnern geringen Schaden zu.",
-      "Das Ziel und nahe Gegner erhalten -44% Verteidigung und eine weitere -4%ige Erhöhung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu -68% Verteidigung."
+      "Das Ziel und nahe Gegner erhalten -44% Verteidigung und eine weitere -4%ige Verringerung für jedes Mal, das sie während 3 Zügen getroffen werden, bis zu -68% Verteidigung."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*] 2 x Manaaufladung:",
       "[**]Verringert das maximale Leben aller Gegner um 900. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[***]Verstärktes Leben wird zusätzlich um 900 verringert.)",
       "[**]Alle Gegner erhalten -58% Verteidigung gegen Spezialfähigkeiten für 5 Züge.",
-      "[**]Alle Gegner erhalten -45% Erhöhung für jede erhaltene Heilung für 5 Züge."
+      "[**]Alle Gegner erhalten -45% Verringerung für jede erhaltene Heilung für 5 Züge."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*] 1 x Manaaufladung:",
       "[**]Der Wirker und nahe Verbündete erhalten 45% Angriff und eine weitere 20% Erhöhung jedes Mal, wenn sie während 3 Runden getroffen werden, bis zu 145% Angriff.",
       "[*] 2 x Manaaufladung:",
-      "[**]Das Ziel und nahe Gegner erhalten -44% Verteidigung und eine weitere -4%ige Erhöhung für jedes Mal, das sie während 6 Zügen getroffen werden, bis zu -68% Verteidigung."
+      "[**]Das Ziel und nahe Gegner erhalten -44% Verteidigung und eine weitere -4%ige Verringerung für jedes Mal, das sie während 6 Zügen getroffen werden, bis zu -68% Verteidigung."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Entfernt Boni von allen Gegnern.",
       "[**]Alle Gegner erleiden[#Dynamic] 1405 [#]Sandschaden über 5 Züge.",
       "[**]Alle Gegner erhalten -50% Angriff für 5 Züge.",
-      "[**]Alle Gegner erhalten -45% Erhöhung für jede erhaltene Heilung für 5 Züge."
+      "[**]Alle Gegner erhalten -45% Verringerung für jede erhaltene Heilung für 5 Züge."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Fügt dem Ziel 435% Schaden zu.",
       "Beschwört einen Knochenfallen-Feind für das Ziel. Der Feind greift den Gegner mit 45% Angriff bei jedem Zug an. Der Schaden erhöht sich jeden Zug um 8%, bis zu maximal 93%.\n[*]Der Knochenfallen-Feind absorbiert Heilung und verschwindet, wenn er Leben in Höhe von 35% des max. Lebens des Besitzers aufgenommen hat.",
-      "Das Ziel erhält -50% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "Das Ziel erhält -50% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "Entfernt 3 Züge lang am Ende jedes Zugs Boni vom Ziel."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Verursacht 325% Schaden bei allen Gegnern.",
       "Alle Gegner erleiden[#Dynamic] 364 [#]Blutungsschaden über 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an.",
-      "Alle Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an.",
+      "Alle Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an.",
       "Alle Gegner erhalten -35% Genauigkeit für 4 Züge. Im Einsatz gegen Schatten-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)",
       "Fügt Schatten zusätzlichen Schaden zu."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Verursacht 330% Schaden bei allen Gegnern.",
-      "Alle Gegner erhalten -70% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "Alle Gegner erhalten -70% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "Alle Gegner erleiden[#Dynamic] 450 [#]Blutungsschaden über 2 Züge. Im Einsatz gegen Eis-Charaktere kann dieser Statuseffekt nicht gereinigt werden und hält 2 Züge länger an.",
       "Elementare Verbindung verleiht 10% Manaregeneration für alle Natur-Verbündeten für 4 Züge. Der Effekt kann nicht gebannt werden. (Betrifft nur Mana, das aus zueinander passenden Schilden generiert wird oder Mana, das das Verteidigungsteam am Ende dessen Zuges erhält.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*] 1 x Manaaufladung:",
       "[**]Verursacht 160% Schaden bei allen Gegnern.",
       "[**]Alle Gegner erleiden[#Dynamic] 256 [#]Brandschaden über 2 Züge.",
-      "[**]Alle Gegner erhalten -64% Erhöhung für jede erhaltene Heilung für 2 Züge.",
+      "[**]Alle Gegner erhalten -64% Verringerung für jede erhaltene Heilung für 2 Züge.",
       "[*] 2 x Manaaufladung:",
       "[**]Verursacht 275% Schaden bei allen Gegnern.",
       "[**]Alle Gegner erleiden[#Dynamic] 561 [#]Brandschaden über 3 Züge.",
-      "[**]Alle Gegner erhalten -74% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "[**]Alle Gegner erhalten -74% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "[*] 3 x Manaaufladung:",
       "[**]Verursacht 340% Schaden bei allen Gegnern.",
       "[**]Alle Gegner erleiden[#Dynamic] 840 [#]Brandschaden über 4 Züge.",
-      "[**]Alle Gegner erhalten -84% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "[**]Alle Gegner erhalten -84% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*] 1 x Manaaufladung:",
       "[**]Entfernt Boni vom Ziel.",
       "[**]Das Ziel erleidet[#Dynamic] 780 [#]Giftschaden über 2 Züge.",
-      "[**]Das Ziel erhält -80% Erhöhung für jede erhaltene Heilung für 2 Züge.",
+      "[**]Das Ziel erhält -80% Verringerung für jede erhaltene Heilung für 2 Züge.",
       "[*] 2 x Manaaufladung:",
       "[**]Entfernt Boni vom Ziel und nahen Gegnern.",
       "[**]Das Ziel und nahe Gegner erleiden[#Dynamic] 1608 [#]Giftschaden über 4 Züge.",
-      "[**]Das Ziel und nahe Gegner erhalten -85% Erhöhung für jede erhaltene Heilung für 4 Züge.",
+      "[**]Das Ziel und nahe Gegner erhalten -85% Verringerung für jede erhaltene Heilung für 4 Züge.",
       "[*] 3 x Manaaufladung:",
       "[**]Entfernt Boni von allen Gegnern.",
       "[**]Alle Gegner erleiden[#Dynamic] 2412 [#]Giftschaden über 6 Züge.",
-      "[**]Alle Gegner erhalten -90% Erhöhung für jede erhaltene Heilung für 6 Züge."
+      "[**]Alle Gegner erhalten -90% Verringerung für jede erhaltene Heilung für 6 Züge."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Verursacht 160% Schaden bei allen Gegnern.",
       "Alle Gegner erhalten -30% Genauigkeit für 4 Züge. (Die Chance zu verfehlen gilt auch für offensive Spezialfähigkeiten.)",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gebannt werden."
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gereinigt werden."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Greift das Ziel und alle Gegner in der Nähe mit dem Mondaufgang-Schlag an und verursacht dabei bis zu 1440 Schaden. Verursacht 40% mehr Schaden, wenn das Ziel das Element Licht hat. Diese Spezialfähigkeit verfehlt ihre Ziele niemals.",
       "Verringert das Mana des Ziels und von Gegnern in dessen Nähe 3 Züge lang am Ende jedes Zugs um -15%.",
-      "Das Ziel und nahe Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Das Ziel und nahe Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Fügt dem Ziel 415% Schaden und nahen Gegnern geringen Schaden zu.",
-      "Das Ziel und nahe Gegner erhalten -90% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Das Ziel und nahe Gegner erhalten -90% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Fügt dem Ziel 415% Schaden und nahen Gegnern geringen Schaden zu.",
-      "Das Ziel und nahe Gegner erhalten -100% Erhöhung für jede erhaltene Heilung für 4 Züge.",
+      "Das Ziel und nahe Gegner erhalten -100% Verringerung für jede erhaltene Heilung für 4 Züge.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 204 [#]Wasserschaden über 4 Züge."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Verursacht 150% Schaden bei allen Gegnern.",
       "Verringert das maximale Leben aller Gegner um 100. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 100 verringert.)",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Verursacht 180% Schaden bei allen Gegnern.",
       "Verringert das maximale Leben aller Gegner um 150. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 150 verringert.)",
-      "Alle Gegner erhalten -55% Erhöhung für jede erhaltene Heilung für 4 Züge.",
+      "Alle Gegner erhalten -55% Verringerung für jede erhaltene Heilung für 4 Züge.",
       "Fügt Licht zusätzlichen Schaden zu."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 280% Schaden zu.",
       "Reduziert das Mana vom Ziel und nahen Gegnern um 15%.",
-      "Das Ziel und nahe Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Das Ziel und nahe Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Fügt dem Ziel 280% Schaden zu.",
       "Das Ziel erleidet[#Dynamic] 104 [#]Sandschaden über 4 Züge.",
-      "Das Ziel erhält -100% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel erhält -100% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Verursacht 200% Schaden bei allen Gegnern.",
       "Alle Gegner erleiden[#Dynamic] 381 [#]Sandschaden über 3 Züge.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 3 Züge. Der Effekt kann nicht gebannt werden.",
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 3 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen von allen Verbündeten."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 185% Schaden zu.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 402 [#]Sandschaden über 3 Züge.",
-      "Das Ziel und nahe Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel und nahe Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Fügt dem Ziel und nahen Gegnern 185% Schaden zu.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 568 [#]Wasserschaden über 4 Züge.",
-      "Das Ziel und nahe Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel und nahe Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker und nahen Verbündeten."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "Alle Gegner erleiden[#Dynamic] 306 [#]Sandschaden über 3 Züge.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen von allen Verbündeten."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Verursacht 130% Schaden bei allen Gegnern.",
       "Alle Gegner erleiden[#Dynamic] 92 [#]Sandschaden über 4 Züge.",
-      "Alle Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Alle Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Fügt dem Ziel 235% Schaden und nahen Gegnern geringen Schaden zu.",
       "Das Ziel und nahe Gegner erleiden[#Dynamic] 172 [#]Sandschaden über 4 Züge.",
-      "Das Ziel und nahe Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel und nahe Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Fügt dem Ziel 260% Schaden zu.",
       "Das Ziel erleidet[#Dynamic] 228 [#]Sandschaden über 4 Züge.",
-      "Das Ziel erhält -100% Erhöhung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gebannt werden.",
+      "Das Ziel erhält -100% Verringerung für jede erhaltene Heilung für 2 Züge. Der Effekt kann nicht gereinigt werden.",
       "Reinigt negative Statusänderungen vom Wirker."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Die Spezialfähigkeit hat eine andere Wirkung, wenn sie mit 100%/ 200%/ 300% Mana aufgeladen ist:",
       "[*] 1 x Manaaufladung:",
       "[**]Verursacht 200% Schaden bei allen Gegnern.",
-      "[**]Alle Gegner erhalten -25% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "[**]Alle Gegner erhalten -25% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "[*] 2 x Manaaufladung:",
       "[**]Verursacht 315% Schaden bei allen Gegnern.",
       "[**]Beschwört einen Styx-Geisterfeind für alle Gegner. Der Feind greift sein Ziel mit 40% Angriff bei jedem Zug an.\n[***]Der Styx-Geisterfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 25% des max. Lebens des Ziels aufgenommen hat.",
       "[*] 3 x Manaaufladung:",
       "[**]Verursacht 365% Schaden bei allen Gegnern.",
       "[**]Beschwört einen Styx-Geisterfeind für alle Gegner. Der Feind greift sein Ziel mit 40% Angriff bei jedem Zug an.\n[***]Der Styx-Geisterfeind absorbiert Heilung. Er verschwindet, wenn er Leben in Höhe von 25% des max. Lebens des Ziels aufgenommen hat.",
-      "[**]Alle Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "[**]Alle Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1.:",
       "[**]Fügt dem Ziel und nahen Gegnern 365% Schaden zu.",
       "[**]Das Ziel wirkt automatisch Wechselnder blindwütiger Angriff auf einen zufälligen Verbündeten, sobald sein Mana innerhalb der nächsten 3 Züge voll ist. Wenn dieser Effekt ausgelöst wird, wird er auf den getroffenen Verbündeten übertragen und die Dauer startet von Neuem.",
-      "[**]Das Ziel und nahe Gegner erhalten -50% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "[**]Das Ziel und nahe Gegner erhalten -50% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "[*] 2.:",
       "[**]Fügt dem Ziel und nahen Gegnern 430% Schaden zu.",
       "[**]Das Ziel wirkt automatisch Wechselnder blindwütiger Angriff auf einen zufälligen Verbündeten, sobald sein Mana innerhalb der nächsten 4 Züge voll ist. Wenn dieser Effekt ausgelöst wird, wird er auf den getroffenen Verbündeten übertragen und die Dauer startet von Neuem.",
-      "[**]Das Ziel und nahe Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "[**]Das Ziel und nahe Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1.:",
       "[**]Fügt dem Ziel und nahen Gegnern 355% Schaden zu.",
       "[**]Das Ziel wirkt automatisch Wechselnder blindwütiger Angriff auf einen zufälligen Verbündeten, sobald sein Mana innerhalb der nächsten 3 Züge voll ist. Wenn dieser Effekt ausgelöst wird, wird er auf den getroffenen Verbündeten übertragen und die Dauer startet von Neuem.",
-      "[**]Das Ziel und nahe Gegner erhalten -45% Erhöhung für jede erhaltene Heilung für 3 Züge.",
+      "[**]Das Ziel und nahe Gegner erhalten -45% Verringerung für jede erhaltene Heilung für 3 Züge.",
       "[*] 2.:",
       "[**]Fügt dem Ziel und nahen Gegnern 450% Schaden zu.",
       "[**]Das Ziel wirkt automatisch Wechselnder blindwütiger Angriff auf einen zufälligen Verbündeten, sobald sein Mana innerhalb der nächsten 4 Züge voll ist. Wenn dieser Effekt ausgelöst wird, wird er auf den getroffenen Verbündeten übertragen und die Dauer startet von Neuem.",
-      "[**]Das Ziel und nahe Gegner erhalten -85% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "[**]Das Ziel und nahe Gegner erhalten -85% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Greift das Ziel und alle Gegner in der Nähe mit dem Frostfall-Schlag an und verursacht dabei bis zu 2300 Schaden. Verursacht 40% mehr Schaden, wenn das Ziel das Element Feuer hat. Diese Spezialfähigkeit verfehlt ihre Ziele niemals.",
       "Verringert das maximale Leben des Ziels und naher Gegner um 800. Der Effekt wirkt stärker gegen Ziele mit verstärktem Leben. (Das max. Leben kann nicht unter 30% des ursprünglichen max. Lebens fallen.\n[*] Verstärktes Leben wird zusätzlich um 800 verringert.)",
-      "Das Ziel und nahe Gegner erhalten -70% Erhöhung für jede erhaltene Heilung für 4 Züge."
+      "Das Ziel und nahe Gegner erhalten -70% Verringerung für jede erhaltene Heilung für 4 Züge."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Verwelken: Alle Gegner erhalten -400 Angriff. (Verwelken und Wachstum modifizieren die Fähigkeitspunkte von Charakteren. Der Effekt bleibt erhalten, auch wenn der Charakter besiegt wird.\n[*] Zusätzliche Verwelkungs- und Wachstumseffekte modifizieren die Fähigkeitspunkte weiter.\n[*] Durch Reinigen wird Verwelken um 50% geschwächt.\n[*] Durch Entfernen wird Wachstum um 50% geschwächt.\n[*]Limits für modifizierte Fähigkeitspunkte.\n[*] Mindestens 30% und max. 170% ihres ursprünglichen Wertes.\n[*] Andere Stärkungen und Schwächungen werden auf modifizierte Fähigkeitspunkte angewendet.\n[*] Dieser Effekt ist weniger effektiv, wenn er von Monstern und Bossen aktiviert wird.)",
-      "Alle Gegner erhalten -80% Erhöhung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gebannt werden.",
+      "Alle Gegner erhalten -80% Verringerung für jede erhaltene Heilung für 4 Züge. Der Effekt kann nicht gereinigt werden.",
       "Nimmt die letzte säuberbare, negative Statusänderung von allen Verbündeten und verteilt sie zufällig auf die Feinde.",
       "Reinigt am Ende des Zugs negative Statusänderungen für alle Verbündeten für 4 Züge."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Stellt 27% Leben für alle Verbündeten wieder her.\n[*] Stellt zusätzliche 3% Leben für jede negative Statusänderung der Gegner wieder her, bis zu 42% Leben insgesamt.",
       "Nimmt die letzte säuberbare, negative Statusänderung von allen Verbündeten und verteilt sie zufällig auf die Feinde.",
-      "Alle Gegner erhalten -75% Erhöhung für jede erhaltene Heilung für 3 Züge."
+      "Alle Gegner erhalten -75% Verringerung für jede erhaltene Heilung für 3 Züge."
      ]
     }
    ]

@@ -839,7 +839,7 @@
       "This Special Skill never misses its targets.",
       "Deals 340% damage to all enemies.",
       "All enemies get -35% mana generation for 4 turns. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)",
-      "All enemies get -85% increase for any healing received for 4 turns."
+      "All enemies get -85% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -2395,7 +2395,7 @@
       "Dispels buffs from the target and nearby enemies.",
       "Deals 375% damage to the target and nearby enemies.",
       "The target and nearby enemies receive Minion Wound for 3 turns.\n[*]Minion Wound: Target's Minions' health is reduced by 50% and Mega Minion's health is reduced by 25% each turn. (Reduction is applied to owned Minions and to any received Minions while the effect is active.\n[*] Reduction only affects Minions' current health.)",
-      "The target and nearby enemies get -80% increase for any healing received for 3 turns."
+      "The target and nearby enemies get -80% decrease for any healing received for 3 turns."
      ]
     }
    ]
@@ -3163,7 +3163,7 @@
      "lines": [
       "Deals 270% damage to the target.",
       "The target gets -30% defense for 4 turns. The effect duration resets if the target is healed.",
-      "The target gets -40% increase for any healing received for 4 turns."
+      "The target gets -40% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -3428,7 +3428,7 @@
       "Boosts health of all allies by 500. Boosted health can exceed max HP.",
       "Reduces max health of all enemies by 500. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 500.)",
       "Deals 275% damage to all enemies.",
-      "All enemies get -75% increase for any healing received for 3 turns."
+      "All enemies get -75% decrease for any healing received for 3 turns."
      ]
     }
    ]
@@ -5550,7 +5550,7 @@
      "id": "apothecary_kit",
      "lines": [
       "Recovers 32% health for all allies.",
-      "All enemies get -50% increase for any healing received for 4 turns."
+      "All enemies get -50% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -5935,7 +5935,7 @@
       "Deals 290% damage to the target and nearby enemies.",
       "The attack bypasses defensive buffs. (This includes counterattacks.)",
       "The target and nearby enemies get -40% attack for 3 turns. The attack decreases by -5% each turn, up to -50%.",
-      "The target and nearby enemies get -80% increase for any healing received for 3 turns."
+      "The target and nearby enemies get -80% decrease for any healing received for 3 turns."
      ]
     }
    ]
@@ -6278,7 +6278,7 @@
      "lines": [
       "Safely cleanses status ailments from all allies. (Safe cleanse bypasses secondary effects, such as damage on removal, from the removed status ailment. External effects such as passive skills and family effects can still activate.)",
       "Deals 325% damage to all enemies.",
-      "All enemies get -50% increase for any healing received for 4 turns.",
+      "All enemies get -50% decrease for any healing received for 4 turns.",
       "All enemies can't get their status ailments cleansed or reallocated by Special Skills for 4 turns. (This effect also prevents cleansing and reallocating of itself.)"
      ]
     }
@@ -10685,7 +10685,7 @@
      "lines": [
       "Deals 450% damage to the target and nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 848 [#]Burn damage over 4 turns. The caster and all their allies absorb 50% of dealt Burn damage as health.",
-      "The target and nearby enemies get -54% increase for any healing received for 4 turns.",
+      "The target and nearby enemies get -54% decrease for any healing received for 4 turns.",
       "The caster gets -51% defense against Ice for 4 turns. This effect can't be cleansed."
      ]
     }
@@ -16494,7 +16494,7 @@
      "id": "lunar_spear",
      "lines": [
       "Deals 230% damage to all enemies.",
-      "All enemies get -50% increase for any healing received for 3 turns. This effect can't be dispelled."
+      "All enemies get -50% decrease for any healing received for 3 turns. This effect can't be cleansed."
      ]
     }
    ]
@@ -18224,7 +18224,7 @@
      "lines": [
       "Deals 245% damage to all enemies.",
       "Deals 490% damage against Minion and Fiend Summoners.",
-      "All enemies get -50% increase for any healing received for 4 turns."
+      "All enemies get -50% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -19252,7 +19252,7 @@
      "id": "spiteful_curse",
      "lines": [
       "Reduces max health of all enemies by 550. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 550.)",
-      "All enemies get -55% increase for any healing received for 4 turns. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
+      "All enemies get -55% decrease for any healing received for 4 turns. This effect is Stubborn. (Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)",
       "All enemies receive[#Dynamic] 85 [#]-[#Dynamic] 148 [#]increasing Curse damage each turn for 4 turns. This effect is Stubborn. (On the first turn,[#Dynamic] 85 [#]damage is dealt. The damage increases by 20% each turn, up to[#Dynamic] 148 [#]damage per turn.\n[*]Each attempt to dispel, cleanse or reallocate a Stubborn effect reduces the duration by 1 turn or decreases activations left by 1.)"
      ]
     }
@@ -21973,7 +21973,7 @@
      "lines": [
       "Deals 390% damage to the target.",
       "The target gets -75% accuracy for 2 turns. (Chance to miss also applies to offensive Special Skills.)",
-      "The target gets -75% increase for any healing received for 2 turns.",
+      "The target gets -75% decrease for any healing received for 2 turns.",
       "Element Link gives all Holy allies 40% defense against Special Skills for 4 turns. This effect can't be dispelled."
      ]
     }
@@ -23403,7 +23403,7 @@
      "id": "everlasting_wound",
      "lines": [
       "Deals 455% damage to the target.",
-      "The target gets -100% increase for any healing received for 4 turns. This effect can't be dispelled.",
+      "The target gets -100% decrease for any healing received for 4 turns. This effect can't be cleansed.",
       "The caster and nearby allies get 94% defense against Nature for 4 turns.",
       "Element Link gives 10% mana generation for all Ice allies for 4 turns. This effect can't be dispelled. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
@@ -23458,7 +23458,7 @@
      "id": "arctic_wound",
      "lines": [
       "Deals 405% damage to the target and nearby enemies.",
-      "The target and nearby enemies get -100% increase for any healing received for 4 turns. This effect can't be dispelled.",
+      "The target and nearby enemies get -100% decrease for any healing received for 4 turns. This effect can't be cleansed.",
       "The target and nearby enemies get -68% defense against Ice for 4 turns.",
       "Element Link gives 10% mana generation for all Ice allies for 4 turns. This effect can't be dispelled. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
@@ -25440,7 +25440,7 @@
      "id": "royal_blades",
      "lines": [
       "Deals 280% damage to the target and minor damage to nearby enemies.",
-      "The target and nearby enemies get -44% defense, and a further -4% increase every time they are hit during 3 turns, up to -68% defense."
+      "The target and nearby enemies get -44% defense, and a further -4% decrease every time they are hit during 3 turns, down to -68% defense."
      ]
     }
    ]
@@ -27020,7 +27020,7 @@
       "[*]x 2 Mana Charge:",
       "[**]Reduces max health of all enemies by 900. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[***]Any boosted health is reduced by an additional 900.)",
       "[**]All enemies get -58% defense against Special Skills for 5 turns.",
-      "[**]All enemies get -45% increase for any healing received for 5 turns."
+      "[**]All enemies get -45% decrease for any healing received for 5 turns."
      ]
     }
    ]
@@ -27743,7 +27743,7 @@
       "[*]x 1 Mana Charge:",
       "[**]The caster and nearby allies get 45% attack, and a further 20% increase every time they are hit during 3 turns, up to 145% attack.",
       "[*]x 2 Mana Charge:",
-      "[**]The target and nearby enemies get -44% defense, and a further -4% increase every time they are hit during 6 turns, up to -68% defense."
+      "[**]The target and nearby enemies get -44% defense, and a further -4% decrease every time they are hit during 6 turns, down to -68% defense."
      ]
     }
    ]
@@ -28313,7 +28313,7 @@
       "[**]Dispels buffs from all enemies.",
       "[**]All enemies receive[#Dynamic] 1405 [#]Sand damage over 5 turns.",
       "[**]All enemies get -50% attack for 5 turns.",
-      "[**]All enemies get -45% increase for any healing received for 5 turns."
+      "[**]All enemies get -45% decrease for any healing received for 5 turns."
      ]
     }
    ]
@@ -31730,7 +31730,7 @@
      "lines": [
       "Deals 435% damage to the target.",
       "Summons a Bone Trap Fiend for the target. The Fiend damages the enemy with 45% attack every turn. The damage increases by 8% each turn, up to a maximum of 93%.\n[*]The Bone Trap Fiend absorbs healing and disappears when it has absorbed health equal to 35% of its owner's max health.",
-      "The target gets -50% increase for any healing received for 3 turns.",
+      "The target gets -50% decrease for any healing received for 3 turns.",
       "Dispels buffs from the target at the end of each turn for 3 turns."
      ]
     }
@@ -31823,7 +31823,7 @@
      "lines": [
       "Deals 325% damage to all enemies.",
       "All enemies receive[#Dynamic] 364 [#]Bleed damage over 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer.",
-      "All enemies get -75% increase for any healing received for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer.",
+      "All enemies get -75% decrease for any healing received for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer.",
       "All enemies get -35% accuracy for 4 turns. Against Dark characters, this status effect becomes uncleansable and lasts 2 turns longer. (Chance to miss also applies to offensive Special Skills.)",
       "Deals extra damage against Dark."
      ]
@@ -33747,7 +33747,7 @@
      "id": "fury_of_ash",
      "lines": [
       "Deals 330% damage to all enemies.",
-      "All enemies get -70% increase for any healing received for 3 turns.",
+      "All enemies get -70% decrease for any healing received for 3 turns.",
       "All enemies receive[#Dynamic] 450 [#]Bleed damage over 2 turns. Against Ice characters, this status effect becomes uncleansable and lasts 2 turns longer.",
       "Element Link gives 10% mana generation for all Nature allies for 4 turns. This effect can't be dispelled. (Affects only mana generated from matching shields or mana gained by the defense team at the end of their turn.)"
      ]
@@ -35211,15 +35211,15 @@
       "[*]x 1 Mana Charge:",
       "[**]Deals 160% damage to all enemies.",
       "[**]All enemies receive[#Dynamic] 256 [#]Burn damage over 2 turns.",
-      "[**]All enemies get -64% increase for any healing received for 2 turns.",
+      "[**]All enemies get -64% decrease for any healing received for 2 turns.",
       "[*]x 2 Mana Charge:",
       "[**]Deals 275% damage to all enemies.",
       "[**]All enemies receive[#Dynamic] 561 [#]Burn damage over 3 turns.",
-      "[**]All enemies get -74% increase for any healing received for 3 turns.",
+      "[**]All enemies get -74% decrease for any healing received for 3 turns.",
       "[*]x 3 Mana Charge:",
       "[**]Deals 340% damage to all enemies.",
       "[**]All enemies receive[#Dynamic] 840 [#]Burn damage over 4 turns.",
-      "[**]All enemies get -84% increase for any healing received for 4 turns."
+      "[**]All enemies get -84% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -35438,15 +35438,15 @@
       "[*]x 1 Mana Charge:",
       "[**]Dispels buffs from the target.",
       "[**]The target receives[#Dynamic] 780 [#]Poison damage over 2 turns.",
-      "[**]The target gets -80% increase for any healing received for 2 turns.",
+      "[**]The target gets -80% decrease for any healing received for 2 turns.",
       "[*]x 2 Mana Charge:",
       "[**]Dispels buffs from the target and nearby enemies.",
       "[**]The target and nearby enemies receive[#Dynamic] 1608 [#]Poison damage over 4 turns.",
-      "[**]The target and nearby enemies get -85% increase for any healing received for 4 turns.",
+      "[**]The target and nearby enemies get -85% decrease for any healing received for 4 turns.",
       "[*]x 3 Mana Charge:",
       "[**]Dispels buffs from all enemies.",
       "[**]All enemies receive[#Dynamic] 2412 [#]Poison damage over 6 turns.",
-      "[**]All enemies get -90% increase for any healing received for 6 turns."
+      "[**]All enemies get -90% decrease for any healing received for 6 turns."
      ]
     }
    ]
@@ -39233,7 +39233,7 @@
      "lines": [
       "Deals 160% damage to all enemies.",
       "All enemies get -30% accuracy for 4 turns. (Chance to miss also applies to offensive Special Skills.)",
-      "All enemies get -50% increase for any healing received for 4 turns. This effect can't be dispelled."
+      "All enemies get -50% decrease for any healing received for 4 turns. This effect can't be cleansed."
      ]
     }
    ]
@@ -40226,7 +40226,7 @@
      "lines": [
       "Attacks the target and nearby enemies with Moonrise Strike, dealing up to 1440 damage. Deals 40% more damage if the target is of the Holy element. This Special Skill never misses its targets.",
       "For 3 turns, reduces the mana of the target and nearby enemies by -15% at the end of the turn.",
-      "The target and nearby enemies get -50% increase for any healing received for 3 turns."
+      "The target and nearby enemies get -50% decrease for any healing received for 3 turns."
      ]
     }
    ]
@@ -40704,7 +40704,7 @@
      "id": "curse_of_sargasso",
      "lines": [
       "Deals 415% damage to the target and minor damage to nearby enemies.",
-      "The target and nearby enemies get -90% increase for any healing received for 4 turns."
+      "The target and nearby enemies get -90% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -40732,7 +40732,7 @@
      "id": "curse_of_the_sea",
      "lines": [
       "Deals 415% damage to the target and minor damage to nearby enemies.",
-      "The target and nearby enemies get -100% increase for any healing received for 4 turns.",
+      "The target and nearby enemies get -100% decrease for any healing received for 4 turns.",
       "The target and nearby enemies receive[#Dynamic] 204 [#]Water damage over 4 turns."
      ]
     }
@@ -44709,7 +44709,7 @@
      "lines": [
       "Deals 150% damage to all enemies.",
       "Reduces max health of all enemies by 100. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 100.)",
-      "All enemies get -50% increase for any healing received for 4 turns."
+      "All enemies get -50% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -44734,7 +44734,7 @@
      "lines": [
       "Deals 180% damage to all enemies.",
       "Reduces max health of all enemies by 150. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 150.)",
-      "All enemies get -55% increase for any healing received for 4 turns.",
+      "All enemies get -55% decrease for any healing received for 4 turns.",
       "Deals extra damage against Holy."
      ]
     }
@@ -44754,7 +44754,7 @@
      "lines": [
       "Deals 280% damage to the target and nearby enemies.",
       "Reduces the mana of the target and nearby enemies by 15%.",
-      "The target and nearby enemies get -75% increase for any healing received for 3 turns."
+      "The target and nearby enemies get -75% decrease for any healing received for 3 turns."
      ]
     }
    ]
@@ -49557,7 +49557,7 @@
      "lines": [
       "Deals 280% damage to the target.",
       "The target receives[#Dynamic] 104 [#]Sand damage over 4 turns.",
-      "The target gets -100% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "The target gets -100% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster."
      ]
     }
@@ -49580,7 +49580,7 @@
      "lines": [
       "Deals 200% damage to all enemies.",
       "All enemies receive[#Dynamic] 381 [#]Sand damage over 3 turns.",
-      "All enemies get -50% increase for any healing received for 3 turns. This effect can't be dispelled.",
+      "All enemies get -50% decrease for any healing received for 3 turns. This effect can't be cleansed.",
       "Cleanses status ailments from all allies."
      ]
     }
@@ -49626,7 +49626,7 @@
      "lines": [
       "Deals 185% damage to the target and nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 402 [#]Sand damage over 3 turns.",
-      "The target and nearby enemies get -75% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "The target and nearby enemies get -75% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster."
      ]
     }
@@ -49649,7 +49649,7 @@
      "lines": [
       "Deals 185% damage to the target and nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 568 [#]Water damage over 4 turns.",
-      "The target and nearby enemies get -75% increase for any healing received for 4 turns. This effect can't be dispelled.",
+      "The target and nearby enemies get -75% decrease for any healing received for 4 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster and nearby allies."
      ]
     }
@@ -49671,7 +49671,7 @@
      "id": "sand_cyclone",
      "lines": [
       "All enemies receive[#Dynamic] 306 [#]Sand damage over 3 turns.",
-      "All enemies get -50% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "All enemies get -50% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from all allies."
      ]
     }
@@ -49716,7 +49716,7 @@
      "lines": [
       "Deals 130% damage to all enemies.",
       "All enemies receive[#Dynamic] 92 [#]Sand damage over 4 turns.",
-      "All enemies get -50% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "All enemies get -50% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster."
      ]
     }
@@ -49739,7 +49739,7 @@
      "lines": [
       "Deals 235% damage to the target and minor damage to nearby enemies.",
       "The target and nearby enemies receive[#Dynamic] 172 [#]Sand damage over 4 turns.",
-      "The target and nearby enemies get -75% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "The target and nearby enemies get -75% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster."
      ]
     }
@@ -49762,7 +49762,7 @@
      "lines": [
       "Deals 260% damage to the target.",
       "The target receives[#Dynamic] 228 [#]Sand damage over 4 turns.",
-      "The target gets -100% increase for any healing received for 2 turns. This effect can't be dispelled.",
+      "The target gets -100% decrease for any healing received for 2 turns. This effect can't be cleansed.",
       "Cleanses status ailments from the caster."
      ]
     }
@@ -52147,14 +52147,14 @@
       "Special Skill has a different effect when charged with 100% / 200% / 300% mana:",
       "[*]x 1 Mana Charge:",
       "[**]Deals 200% damage to all enemies.",
-      "[**]All enemies get -25% increase for any healing received for 3 turns.",
+      "[**]All enemies get -25% decrease for any healing received for 3 turns.",
       "[*]x 2 Mana Charge:",
       "[**]Deals 315% damage to all enemies.",
       "[**]Summons a Styx Spirit Fiend for all enemies. The Fiend damages its target with 40% attack every turn.\n[***]The Styx Spirit Fiend absorbs healing. It disappears after absorbing a healing amount equal to 25% of its target's max health.",
       "[*]x 3 Mana Charge:",
       "[**]Deals 365% damage to all enemies.",
       "[**]Summons a Styx Spirit Fiend for all enemies. The Fiend damages its target with 40% attack every turn.\n[***]The Styx Spirit Fiend absorbs healing. It disappears after absorbing a healing amount equal to 25% of its target's max health.",
-      "[**]All enemies get -75% increase for any healing received for 4 turns."
+      "[**]All enemies get -75% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -53462,11 +53462,11 @@
       "[*] 1 st:",
       "[**]Deals 365% damage to the target and nearby enemies.",
       "[**]The target automatically casts Shifting Mindless Attack on a random ally when mana is full at the start of a turn during 3 turns. When this effect is triggered, it shifts to the hit ally and the duration is refreshed.",
-      "[**]The target and nearby enemies get -50% increase for any healing received for 3 turns.",
+      "[**]The target and nearby enemies get -50% decrease for any healing received for 3 turns.",
       "[*] 2 nd:",
       "[**]Deals 430% damage to the target and nearby enemies.",
       "[**]The target automatically casts Shifting Mindless Attack on a random ally when mana is full at the start of a turn during 4 turns. When this effect is triggered, it shifts to the hit ally and the duration is refreshed.",
-      "[**]The target and nearby enemies get -75% increase for any healing received for 4 turns."
+      "[**]The target and nearby enemies get -75% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -53504,11 +53504,11 @@
       "[*] 1 st:",
       "[**]Deals 355% damage to the target and nearby enemies.",
       "[**]The target automatically casts Shifting Mindless Attack on a random ally when mana is full at the start of a turn during 3 turns. When this effect is triggered, it shifts to the hit ally and the duration is refreshed.",
-      "[**]The target and nearby enemies get -45% increase for any healing received for 3 turns.",
+      "[**]The target and nearby enemies get -45% decrease for any healing received for 3 turns.",
       "[*] 2 nd:",
       "[**]Deals 450% damage to the target and nearby enemies.",
       "[**]The target automatically casts Shifting Mindless Attack on a random ally when mana is full at the start of a turn during 4 turns. When this effect is triggered, it shifts to the hit ally and the duration is refreshed.",
-      "[**]The target and nearby enemies get -85% increase for any healing received for 4 turns."
+      "[**]The target and nearby enemies get -85% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -55023,7 +55023,7 @@
      "lines": [
       "Attacks the target and nearby enemies with Frostfall Strike, dealing up to 2300 damage. Deals 40% more damage if the target is of the Fire element. This Special Skill never misses its targets.",
       "Reduces max health of the target and nearby enemies by 800. The effect is stronger against targets with boosted health. (Max health can't get lower than 30% of the original max health.\n[*] Any boosted health is reduced by an additional 800.)",
-      "The target and nearby enemies get -70% increase for any healing received for 4 turns."
+      "The target and nearby enemies get -70% decrease for any healing received for 4 turns."
      ]
     }
    ]
@@ -58812,7 +58812,7 @@
      "id": "feline_constellation",
      "lines": [
       "Wither: All enemies get -400 attack. (Wither and Growth modify characters' Ability Scores. The effect remains even if the character is defeated.\n[*]Additional Wither and Growth effects modify the Ability Scores further.\n[*]Cleansing weakens Wither by 50%.\n[*]Dispelling weakens Growth by 50%.\n[*]Limits for modified Ability Scores.\n[*]Min 30% and max 170% of their original values.\n[*]Other buffs and debuffs are applied to modified Ability Scores.\n[*]This effect is less effective when activated by monsters and bosses.)",
-      "All enemies get -80% increase for any healing received for 4 turns. This effect can't be dispelled.",
+      "All enemies get -80% decrease for any healing received for 4 turns. This effect can't be cleansed.",
       "Lifts the latest cleansable status ailment from all allies and randomly distributes them on enemies.",
       "Cleanses status ailments from all allies at the end of each turn for 4 turns."
      ]
@@ -60000,7 +60000,7 @@
      "lines": [
       "Recovers 27% health for all allies.\n[*]Recovers additional 3% health for each status ailment on enemies, up to 42% health in total.",
       "Lifts the latest cleansable status ailment from all allies and randomly distributes them on enemies.",
-      "All enemies get -75% increase for any healing received for 3 turns."
+      "All enemies get -75% decrease for any healing received for 3 turns."
      ]
     }
    ]

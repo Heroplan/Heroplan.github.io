@@ -60476,7 +60476,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Gelo su servitore colpito",
-     "text": "Ogni colpo dei servitori posseduti dal personaggio infligge[#Dynamic] 520 [#]danni da gelo nel corso di 4 turni"
+     "text": "Ogni colpo dei servitori posseduti dal personaggio infligge[#Dynamic] 532 [#]danni da gelo nel corso di 4 turni"
     }
    ],
    "skills": [
@@ -60484,8 +60484,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Infligge 500% di danni al bersaglio.",
-      "L'evocatore ottiene Deridi, che impedisce ai nemici di usare le Abilità speciali sui suoi alleati per 4 turni. (Deridi impedisce a tutti i nemici di usare le Abilità speciali sugli alleati che non hanno Deridi.)",
-      "L'evocatore contrattacca col 100% dei danni subiti per 4 turni.",
+      "L'evocatore ottiene Deridi, che impedisce ai nemici di usare le Abilità speciali sui suoi alleati per 3 turni. (Deridi impedisce a tutti i nemici di usare le Abilità speciali sugli alleati che non hanno Deridi.)",
+      "L'evocatore contrattacca col 100% dei danni subiti per 3 turni.",
       "Chiama un servitore Spirito della neve con il 20% degli HP e il 20% dell'Attacco ereditati dall'evocatore."
      ]
     }
@@ -60850,7 +60850,7 @@
      "lines": [
       "Infligge 380% di danni al bersaglio e ai nemici vicini.",
       "Chiama un demone Soldatino per il bersaglio e i nemici vicini. (Il demone Soldatino assorbe della guarigione. Scompare dopo aver assorbito una quantità di guarigione pari al 20% della Salute massima del proprio bersaglio.\n[*]Ogni demone Soldatino riduce la Difesa del proprio bersaglio del -20% , fino a un minimo del -60%. Questo effetto non può essere rimosso.\n[*]Il demone Soldatino esplode dopo 3 turni, infliggendo 700 danni al suo bersaglio.\n[*]Il demone Soldatino non può essere sostituito dai servitori Mega.)",
-      "Tutti i nemici che possiedono un servitore o un demone subiscono[#Dynamic] 525 [#]danni da gelo nell'arco di 3 turni."
+      "Tutti i nemici che possiedono un servitore o un demone subiscono[#Dynamic] 534 [#]danni da gelo nell'arco di 3 turni."
      ]
     }
    ]

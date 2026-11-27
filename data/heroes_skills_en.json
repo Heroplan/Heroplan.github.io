@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Frost On Minion Hit",
-     "text": "Each hit from the Minions owned by the character inflicts[#Dynamic] 520 [#]Frost damage over 4 turns"
+     "text": "Each hit from the Minions owned by the character inflicts[#Dynamic] 532 [#]Frost damage over 4 turns"
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Deals 500% damage to the target.",
-      "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 4 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
-      "The caster counterattacks with 100% of the damage received for 4 turns.",
+      "The caster gets Taunt that prevents enemies from using Special Skills on the caster's allies for 3 turns. (Taunt prevents all enemies from using Special Skills on allies who don't have Taunt.)",
+      "The caster counterattacks with 100% of the damage received for 3 turns.",
       "Summons a Snowsprite Minion with 20% HP and 20% attack inherited from the caster."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Deals 380% damage to the target and nearby enemies.",
       "Summons a Toy Soldier Fiend for the target and nearby enemies. (Toy Soldier Fiend absorbs healing. It disappears after absorbing a healing amount equal to 20% of its target's max health.\n[*]Each Toy Soldier Fiend decreases its target's defense by -20% , down to -60%. This effect can't be cleansed.\n[*]Toy Soldier Fiend explodes after 3 turns, dealing 700 damage to its target.\n[*]Toy Soldier Fiend cannot be replaced by Mega Minions.)",
-      "All enemies who own a Minion or a Fiend receive[#Dynamic] 525 [#]Frost damage over 3 turns."
+      "All enemies who own a Minion or a Fiend receive[#Dynamic] 534 [#]Frost damage over 3 turns."
      ]
     }
    ]

@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Givre sur coups des sbires",
-     "text": "Chaque coup des sbires du personnage inflige[#Dynamic] 520 [#]points de dégâts de givre sur 4 tours."
+     "text": "Chaque coup des sbires du personnage inflige[#Dynamic] 532 [#]points de dégâts de givre sur 4 tours."
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Inflige 500% de dégâts à la cible.",
-      "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 4 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
-      "Le lanceur riposte avec 100% des dégâts qu'ils reçoivent pendant 4 tours.",
+      "Le lanceur reçoit Provoquer qui empêche les ennemis d'utiliser les compétences spéciales sur les alliés du lanceur pendant 3 tours. (La provocation empêche tous les ennemis d'utiliser leurs compétences spéciales sur les alliés ne subissant pas cet effet.)",
+      "Le lanceur riposte avec 100% des dégâts qu'ils reçoivent pendant 3 tours.",
       "Invoque un sbire esprit des neiges avec 20% de PV et 20% d'attaque hérités du lanceur."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Inflige 380% de dégâts à la cible et aux ennemis proches.",
       "Invoque un démon soldat jouet pour la cible et les ennemis proches. (Le démon soldat jouet absorbe les soins. Il disparaît après avoir absorbé une quantité de soins équivalente à 20% de la santé maximum de sa cible.\n[*]Chaque démon soldat jouet réduit la défense de la cible de -20%, jusqu'à -60%. Cet effet ne peut pas être purifié.\n[*]Le démon soldat jouet explose au bout de 3 tours et inflige 700 points de dégâts à sa cible.\n[*]Le démon soldat jouet ne peut pas être remplacé par des méga sbires.)",
-      "Tous les ennemis qui possèdent un sbire ou un démon reçoivent[#Dynamic] 525 [#]points de dégâts de givre sur 3 tours."
+      "Tous les ennemis qui possèdent un sbire ou un démon reçoivent[#Dynamic] 534 [#]points de dégâts de givre sur 3 tours."
      ]
     }
    ]

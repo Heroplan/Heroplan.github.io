@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Neve por acerto de ajudante",
-     "text": "Cada acerto dos ajudantes do personagem causa[#Dynamic] 520 [#]de dano de Neve ao longo de 4 turnos."
+     "text": "Cada acerto dos ajudantes do personagem causa[#Dynamic] 532 [#]de dano de Neve ao longo de 4 turnos."
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Causa 500% de dano ao alvo.",
-      "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 4 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
-      "O invocador contra-ataca com 100% do dano recebido por 4 turnos.",
+      "O invocador recebe Provocar que impede os inimigos de usar habilidades especiais nos aliados do invocador por 3 turnos. (Provocar impede que todos os inimigos usem habilidades especiais nos aliados que não têm Provocar.)",
+      "O invocador contra-ataca com 100% do dano recebido por 3 turnos.",
       "Convoca um ajudante Duende da Neve que herda 20% de PV e 20% de ataque do invocador."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Causa 380% de dano ao alvo e inimigos próximos.",
       "Convoca um demônio Soldado de Brinquedo para o alvo e os inimigos próximos. (O demônio Soldado de Brinquedo absorve a cura e desaparece depois de absorver cura equivalente a 20% do limite de vida do alvo.\n[*]Cada demônio Soldado de Brinquedo reduz a defesa do alvo em -20% , até o limite de -60%. Este efeito não pode ser expurgado.\n[*]O demônio Soldado de Brinquedo explode depois de 3 turnos, causando 700 de dano ao alvo.\n[*]O demônio Soldado de Brinquedo não pode ser substituído por mega-ajudantes.)",
-      "Todos os inimigos que têm um ajudante ou demônio recebem[#Dynamic] 525 [#]de dano de neve por 3 turnos."
+      "Todos os inimigos que têm um ajudante ou demônio recebem[#Dynamic] 534 [#]de dano de neve por 3 turnos."
      ]
     }
    ]

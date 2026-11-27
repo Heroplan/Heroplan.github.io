@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Jäävauriota käskyläisen osumasta",
-     "text": "Jokainen osuma hahmon omistamilta käskyläisiltä tuottaa[#Dynamic] 520 [#]jäävauriota 4 vuoron aikana."
+     "text": "Jokainen osuma hahmon omistamilta käskyläisiltä tuottaa[#Dynamic] 532 [#]jäävauriota 4 vuoron aikana."
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Tuottaa 500% vauriota kohteelle.",
-      "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 4 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
-      "Loitsija tekee 4 vuoron ajan vastahyökkäyksen, jonka suuruus on 100% hänen kärsimästään vauriosta.",
+      "Loitsija saa piikittelyn, joka estää vihollisia käyttämästä erikoistaitoa loitsijan liittolaisiin 3 vuoron ajan. (Piikittely estää kaikkia vihollisia käyttämästä erikoistaitojaan liittolaisiin, joilla ei ole piikittelyä.)",
+      "Loitsija tekee 3 vuoron ajan vastahyökkäyksen, jonka suuruus on 100% hänen kärsimästään vauriosta.",
       "Kutsuu lumihaltijakäskyläisen, joka perii loitsijalta 20% terveyttä ja 20% hyökkäystä."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Tuottaa 380% vauriota kohteelle ja lähellä oleville vihollisille.",
       "Kutsuu kohteelle ja lähellä oleville vihollisille lelusotilasriiviön. (Lelusotilasriiviö imee parannuksen itseensä. Se katoaa, kun se on imenyt parannusta määrän, joka on 20% sen kohteen maksimiterveydestä.\n[*]Jokainen lelusotilasriiviö laskee kohteensa puolustusta -20%. Alaraja on -60%. Vaikutusta ei voi puhdistaa.\n[*]Lelusotilasriiviö räjähtää 3 vuoron jälkeen, tuottaen 700 vauriota kohteelleen.\n[*]Lelusotilasriiviötä ei voi korvata megakäskyläisillä.)",
-      "Kaikki käskyläisen tai riiviön omistavat viholliset kärsivät[#Dynamic] 525 [#]jäävauriota 3 vuoron aikana."
+      "Kaikki käskyläisen tai riiviön omistavat viholliset kärsivät[#Dynamic] 534 [#]jäävauriota 3 vuoron aikana."
      ]
     }
    ]

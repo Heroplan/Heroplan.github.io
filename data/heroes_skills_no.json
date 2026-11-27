@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Frost når undersått treffer",
-     "text": "Hvert treff fra undersåttene eid av figuren påfører[#Dynamic] 520 [#]frostskade i 4 runder"
+     "text": "Hvert treff fra undersåttene eid av figuren påfører[#Dynamic] 532 [#]frostskade i 4 runder"
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Påfør 500% skade på målet.",
-      "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 4 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)",
-      "Brukeren foretar motangrep med 100% av skaden mottatt i 4 runder.",
+      "Brukeren mottar Provoser, som forhindrer fiender fra å bruke spesialferdigheter på brukerens allierte i 3 runder. (Provoser hindrer alle fiender fra å bruke spesialferdigheter på allierte som ikke har Provoser.)",
+      "Brukeren foretar motangrep med 100% av skaden mottatt i 3 runder.",
       "Fremkaller en snøfe-undersått med 20% HP og 20% angrep nedarvet fra brukeren."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Påfører 380% skade på målet og fiender i nærheten.",
       "Fremkaller en lekesoldatdjevel for målet og fiender i nærheten. (Lekesoldatdjevel absorberer helbredelse. Den forsvinner etter å ha absorbert et helbredende tall tilsvarende 20% av målets maksimale helse.\n[*]Hver lekesoldatundersått reduserer målets forsvar med -20%, ned til -60%. Denne effekten kan ikke renses bort.\n[*]Lekesoldatdjevel eksploderer etter 3 runder, noe som påfører målet 700 skade.\n[*]Lekesoldatdjevel kan ikke erstattes av megaundersåtter.)",
-      "Alle fiender som eier en undersått eller en djevel, tar[#Dynamic] 525 [#]frostskade over 3 runder."
+      "Alle fiender som eier en undersått eller en djevel, tar[#Dynamic] 534 [#]frostskade over 3 runder."
      ]
     }
    ]

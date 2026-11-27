@@ -2952,9 +2952,35 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   border-bottom:2px solid transparent;color:var(--md-sys-color-on-surface-variant);
   font-size:.84rem;font-weight:500;cursor:pointer;text-align:center}
 #modal.detail-sheet .cy-panel .tab-link.active{color:var(--md-sys-color-primary);border-bottom-color:var(--md-sys-color-primary);font-weight:700}
-#modal.detail-sheet .cy-panel .desktop-side-by-side{display:block}
-#modal.detail-sheet .cy-panel .mobile-tab-content{display:none;padding-top:10px}
-#modal.detail-sheet .cy-panel .mobile-tab-content.active{display:block}
+/* 自定义天赋两个页签叠放在同一网格单元：隐藏页仍参与高度计算，
+   容器高度始终取「加成与消耗 / 天赋树」中较高的一页 ⇒ 切换页签不改变面板高度。 */
+#modal.detail-sheet .cy-panel .desktop-side-by-side{display:grid;grid-template-columns:minmax(0,1fr)}
+#modal.detail-sheet .cy-panel .mobile-tab-content{
+  grid-area:1/1;
+  display:block;
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+  padding-top:10px
+}
+#modal.detail-sheet .cy-panel .mobile-tab-content.active{
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+  z-index:1
+}
+/* 天赋树页保留原页面高度；树框绝对铺满页签内容区。
+   若「加成与消耗」更高，两页随同一网格一起变高，树框也同步撑满，不再留空。 */
+#modal.detail-sheet .cy-panel #talent-tree-panel{position:relative;box-sizing:border-box;min-height:352px}
+#modal.detail-sheet .cy-panel #talent-tree-panel #modal-talent-tree-wrapper{
+  position:absolute;
+  inset:10px 0 0 0;
+  height:auto;
+  max-height:none
+}
+@container sheet (max-width:780px){
+  #modal.detail-sheet .cy-panel #talent-tree-panel{min-height:318px}
+}
 #modal.detail-sheet .cy-panel .desktop-only-header{display:none}
 #modal.detail-sheet .cy-panel #modal-talent-tree-wrapper{max-height:340px;padding:10px 0}
 #modal.detail-sheet .cy-panel .modal-talent-settings-grid{grid-template-columns:1fr 1fr}
@@ -3133,13 +3159,17 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
 .probability-tooltip h4{color:var(--md-sys-color-primary)}
 #modal .details-info-line .hero-info-block:not(.skill-type-tag){color:var(--md-sys-color-primary)}
 
-/* 自定义天赋「加成与消耗」：标题、页签、每项标签（攻击/防御/生命/法力/纹章/食物/铁矿/大师纹章） */
+/* 自定义天赋「加成与消耗」：标题、每项标签（攻击/防御/生命/法力/纹章/食物/铁矿/大师纹章） */
 #modal.detail-sheet #panel-custom .desktop-only-header,
-#modal.detail-sheet #panel-custom .tab-link,
 #modal.detail-sheet #modal-talent-bonus-display .bonus-item,
 #modal.detail-sheet #modal-talent-bonus-display .bonus-item span,
 #modal.detail-sheet #modal-talent-cost-display .cost-item,
 #modal.detail-sheet #modal-talent-cost-display .cost-item span{color:var(--md-sys-color-primary)}
+
+/* 自定义天赋页签：未选中跟随主题正文色（深色主题白 / 浅色主题黑），选中才用主题色；
+   两个状态保持同一字重，避免字重变化引起文字行盒和页签高度跳动 */
+#modal.detail-sheet #panel-custom .tab-link{color:var(--md-sys-color-on-surface);font-weight:500}
+#modal.detail-sheet #panel-custom .tab-link.active{color:var(--md-sys-color-primary);font-weight:500}
 
 /* 突破/天赋/服装设置里的「服装奖励」按钮（无 / C1 / 卡通…）：未选中用主题色，选中态用主色容器上的前景色 */
 #modal.detail-sheet .costume-bonus-picker .costume-opt{color:var(--md-sys-color-primary)}
@@ -3190,10 +3220,26 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
   transform:translateY(-1px);
 }
 
-/* 队伍模拟器右侧「我的队伍」面板：三个操作按钮 / 两个页签 / 空状态提示都跟随主题色 */
+/* 队伍模拟器右侧「我的队伍」面板：三个操作按钮 / 空状态提示跟随主题色 */
 #saved-teams-panel .saved-teams-actions .action-button,
-#saved-teams-panel .saved-teams-tabs .tab-button,
 #saved-teams-list p{color:var(--md-sys-color-primary)}
+
+/* 聊天 / 抽奖 / 队伍模拟器页签统一：
+   未选中跟随主题正文色（深色主题白 / 浅色主题黑），选中才用主题色；
+   两个状态同字重，避免字重变化引起文字行盒和页签高度跳动 */
+.chat-mobile-tabs .tab-button,
+.lottery-mobile-tabs .tab-button,
+#saved-teams-panel .saved-teams-tabs .tab-button{
+  color:var(--md-sys-color-on-surface);
+  font-weight:500;
+}
+.chat-mobile-tabs .tab-button.active,
+.lottery-mobile-tabs .tab-button.active,
+#saved-teams-panel .saved-teams-tabs .tab-button.active{
+  color:var(--md-sys-color-primary);
+  border-bottom-color:var(--md-sys-color-primary);
+  font-weight:500;
+}
 /* 禁用态（没有阵容可清空 / 保存）用淡化主色，仍看得出不可点 */
 #saved-teams-panel .saved-teams-actions .action-button.disabled{
   color:color-mix(in srgb,var(--md-sys-color-primary) 55%,var(--md-sys-color-outline));

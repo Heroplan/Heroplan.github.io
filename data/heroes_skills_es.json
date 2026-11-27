@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Escarcha con golpe de secuaz",
-     "text": "Cada golpe de los secuaces de este personaje inflige[#Dynamic] 520 [#]de daño de escarcha a lo largo de 4 turnos."
+     "text": "Cada golpe de los secuaces de este personaje inflige[#Dynamic] 532 [#]de daño de escarcha a lo largo de 4 turnos."
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Causa un 500% de daño al objetivo.",
-      "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 4 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
-      "El héroe contraataca con un 100% del daño recibido durante 4 turnos.",
+      "El héroe obtiene Burla, que evita que los enemigos utilicen habilidades especiales en los aliados del héroe durante 3 turnos. (La burla impide a todos los enemigos usar habilidades especiales en los aliados que no la tengan.)",
+      "El héroe contraataca con un 100% del daño recibido durante 3 turnos.",
       "Invoca un secuaz hada de nieve con un 20% de VIT y un 20% de ataque heredados del héroe."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Causa un 380% de daño al objetivo y a los enemigos cercanos.",
       "Invoca un demonio soldado de juguete para el objetivo y los enemigos cercanos. (El demonio soldado de juguete absorbe la curación y desaparece tras absorber una cantidad de vitalidad equivalente al 20% de la vitalidad máxima de su objetivo.\n[*]Cada demonio soldado de juguete reduce la defensa de su objetivo un -20%, hasta un -60%. Este efecto no se puede purificar.\n[*]El demonio soldado de juguete explota después de 3 turnos e inflige 700 de daño al objetivo.\n[*]El demonio soldado de juguete no puede ser reemplazado por megasecuaces.)",
-      "Todos los enemigos que tengan un secuaz o un demonio reciben[#Dynamic] 525 [#]de daño de escarcha durante 3 turnos."
+      "Todos los enemigos que tengan un secuaz o un demonio reciben[#Dynamic] 534 [#]de daño de escarcha durante 3 turnos."
      ]
     }
    ]

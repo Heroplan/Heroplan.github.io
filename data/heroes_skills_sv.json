@@ -60232,7 +60232,7 @@
     {
      "id": "frost_on_minion_damage_done",
      "title": "Frost vid undersåteträff",
-     "text": "När den här karaktärens undersåtar träffar gör de[#Dynamic] 520 [#]frostskada över 4 rundor"
+     "text": "När den här karaktärens undersåtar träffar gör de[#Dynamic] 532 [#]frostskada över 4 rundor"
     }
    ],
    "skills": [
@@ -60240,8 +60240,8 @@
      "id": "snowball_incoming",
      "lines": [
       "Skadar målet med 500%.",
-      "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 4 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
-      "Anfallaren motanfaller med 100% av skadan de tagit emot i 4 rundor.",
+      "Användaren får hån som hindrar fiender från att använda specialförmågor på användarens allierade under 3 rundor. (Hån hindrar alla fiender från att använda specialförmågor på allierade som inte har hån.)",
+      "Anfallaren motanfaller med 100% av skadan de tagit emot i 3 rundor.",
       "Åkallar en snöandeundersåte med 20% hälsa och 20% attack som ärvs från anfallaren."
      ]
     }
@@ -60606,7 +60606,7 @@
      "lines": [
       "Skadar målet och fiender i närheten med 380%.",
       "Åkallar ett leksakssoldatsodjur på målet och fiender i närheten. (Leksakssoldatsodjuret absorberar läkning. Det försvinner efter att det har absorberat läkning motsvarande 20% av målets maxhälsa.\n[*]Varje leksakssoldatsodjur sänker målets försvar med -20%, ned till -60%. Effekten kan inte rensas.\n[*]Leksakssoldatsodjuret exploderar efter 3 rundor och gör 700 skada på sitt mål.\n[*]Leksakssoldatsodjur kan inte ersättas av megaundersåtar.)",
-      "Alla fiender med en undersåte eller ett odjur tar[#Dynamic] 525 [#]frostskada över 3 rundor."
+      "Alla fiender med en undersåte eller ett odjur tar[#Dynamic] 534 [#]frostskada över 3 rundor."
      ]
     }
    ]

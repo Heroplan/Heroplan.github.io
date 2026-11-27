@@ -2640,6 +2640,25 @@ function renderDetailsInModal(hero, context = {}) {
         const name = (typeof Lang !== 'undefined') ? Lang.t('costume_type', key) : key;
         return { name: name, icon: icons[cid] || 'c1' };
     };
+    // 服装奖励四项属性（攻击/防御/生命/法力）：表内是千分比，展示时换算成百分比。
+    // 与「加成与消耗」共用 `imgs/talents/*.webp` 图标；选项切到「无」时四项归零。
+    const costumeBonusStatsHTML = (sets) => {
+        if (!hero.costumeBonusLevels) return '';
+        const cb = (typeof costumeBonusEntry === 'function') ? costumeBonusEntry(hero, sets) : null;
+        const rows = [
+            { key: 'attack', label: langDict.attackBonusLabel, icon: 'attack.webp', value: cb ? cb.attackBonusPerMil : 0 },
+            { key: 'defense', label: langDict.defenseBonusLabel, icon: 'defense.webp', value: cb ? cb.defenseBonusPerMil : 0 },
+            { key: 'health', label: langDict.healthBonusLabel, icon: 'health.webp', value: cb ? cb.healthBonusPerMil : 0 },
+            { key: 'mana', label: langDict.manaBonusLabel, icon: 'mana.webp', value: cb ? cb.manaBonusPerMil : 0 }
+        ];
+        const pct = v => {
+            const n = (Number(v) || 0) / 10;
+            return (Math.round(n * 10) / 10).toString();
+        };
+        return rows.map(row => `<div class="bonus-item" data-costume-stat="${row.key}" title="${row.label}" aria-label="${row.label}">`
+            + `<img loading="lazy" src="imgs/talents/${row.icon}" decoding="async" class="bonus-icon" alt="${row.label}">`
+            + `<span class="costume-stat-value">+${pct(row.value)}%</span></div>`).join('');
+    };
     const costumePickerHTML = (() => {
         if (!hero.costumeBonusLevels) return '';
         const N = hero.costumeMaxSets || 1;
@@ -2652,11 +2671,17 @@ function renderDetailsInModal(hero, context = {}) {
                 + `<img loading="lazy" src="imgs/costume/${sk.icon}.webp" decoding="async" alt="" onerror="this.style.display='none'"><span>${sk.name}</span></button>`;
         }
         return `<div class="details-selector-item"><label data-lang-key="costumeBonusSetting">${langDict.costumeBonusSetting}</label>`
+            + `<div class="costume-bonus-stats" id="modal-costume-bonus-stats" aria-live="polite">${costumeBonusStatsHTML(sel)}</div>`
             + `<div class="costume-bonus-picker" id="modal-costume-picker">${out}</div></div>`;
     })();
 
     // 读当前选中的服装档位：选择器不存在（无服装奖励表 / 未开天赋面板）⇒ 默认最多套
     const readCostumeSets = () => modalCostumeSets(hero);
+    // 只重绘服装奖励的 2×2 数值，不重建选择器本身
+    const refreshCostumeBonusStats = () => {
+        const el = document.getElementById('modal-costume-bonus-stats');
+        if (el) el.innerHTML = costumeBonusStatsHTML(readCostumeSets());
+    };
 
     const talentSystemHTML = filterInputs.showLbTalentDetailsCheckbox.checked ? `
         <div id="modal-talent-system-wrapper">
@@ -2718,7 +2743,6 @@ function renderDetailsInModal(hero, context = {}) {
     <p class="uniform-style">${langDict.modalSkillType}</p>
     ${heroTypesContent}
   ` : '';
-
 
     const detailsHTML = `
         <div class="details-header">
@@ -3156,6 +3180,7 @@ function renderDetailsInModal(hero, context = {}) {
 
         // 一个通用的UI更新函数
         const updateCommonUI = (bonuses, nodeCount) => {
+            refreshCostumeBonusStats();
             const settings = {
                 lb: modalLbSelect.value,
                 talent: modalTalentSelect.value,
@@ -3238,6 +3263,7 @@ function renderDetailsInModal(hero, context = {}) {
                 if (!btn) return;
                 costumePicker.querySelectorAll('.costume-opt').forEach(b => b.classList.remove('selected'));
                 btn.classList.add('selected');
+                refreshCostumeBonusStats();
                 handleTreeAndStatUpdate();
             });
         }

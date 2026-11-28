@@ -3390,3 +3390,24 @@ html[dir="rtl"] #modal .modal-talent-settings-grid .details-toggle-item input[ty
     table-layout:auto;
   }
 }
+
+/* 服装加成四项数值（攻击/防御/生命/法力）：桌面、窄屏与 RTL 都固定为 2×2，
+   不随断点改成单列。grid 两列均为 minmax(0,1fr)，窄屏下图标和数值不会撑破容器。 */
+#modal .costume-bonus-stats{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;
+  margin:0 0 6px;
+}
+#modal .costume-bonus-stats .bonus-item{
+  min-width:0;
+  width:100%;
+  box-sizing:border-box;
+  justify-content:space-between;
+  gap:6px;
+}
+#modal .costume-bonus-stats .costume-stat-value{
+  margin:0;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+}
